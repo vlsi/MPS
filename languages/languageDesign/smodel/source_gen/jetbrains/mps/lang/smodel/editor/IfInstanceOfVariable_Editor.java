@@ -32,8 +32,8 @@ public class IfInstanceOfVariable_Editor extends DefaultNodeEditor {
     return this.createCollection_7qsf43_a(editorContext, node);
   }
 
-  public static class IfInstanceOfVariable_name_postfixCellMenu_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public IfInstanceOfVariable_name_postfixCellMenu_a0a0() {
+  public static class IfInstanceOfVariable_name_postfixCellMenu_7qsf43_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public IfInstanceOfVariable_name_postfixCellMenu_7qsf43_a0a0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -67,7 +67,7 @@ public class IfInstanceOfVariable_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyLocalVariable(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IfInstanceOfVariable_Editor.IfInstanceOfVariable_name_postfixCellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IfInstanceOfVariable_Editor.IfInstanceOfVariable_name_postfixCellMenu_7qsf43_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

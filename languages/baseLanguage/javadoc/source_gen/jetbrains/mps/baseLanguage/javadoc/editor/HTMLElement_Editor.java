@@ -6,11 +6,12 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -31,15 +32,18 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class HTMLElement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_h096ql_a(editorContext, node);
   }
 
-  public static class HTMLElement_name_cellMenu_a0b0a extends AbstractCellMenuPart_PropertyValues {
-    public HTMLElement_name_cellMenu_a0b0a() {
+  private static boolean renderingCondition_h096ql_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty();
+  }
+
+  public static class HTMLElement_name_cellMenu_h096ql_a0b0a extends AbstractCellMenuPart_PropertyValues {
+    public HTMLElement_name_cellMenu_h096ql_a0b0a() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -47,8 +51,8 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class HTMLElement_name_cellMenu_a0b0a_0 extends AbstractCellMenuPart_PropertyValues {
-    public HTMLElement_name_cellMenu_a0b0a_0() {
+  public static class HTMLElement_name_cellMenu_h096ql_a0b0a_0 extends AbstractCellMenuPart_PropertyValues {
+    public HTMLElement_name_cellMenu_h096ql_a0b0a_0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -218,7 +222,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "html-tag");
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_a0b0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_h096ql_a0b0a_0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -262,7 +266,7 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     DocumentationCommentStyleSheet_StyleSheet.applyCommentHTMLTag(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "html-tag");
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_a0b0a_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new HTMLElement_Editor.HTMLElement_name_cellMenu_h096ql_a0b0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -271,9 +275,5 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_h096ql_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty();
   }
 }

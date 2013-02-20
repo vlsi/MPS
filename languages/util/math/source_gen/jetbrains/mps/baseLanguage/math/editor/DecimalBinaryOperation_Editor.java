@@ -33,8 +33,8 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_sl2ryj_a_0(editorContext, node);
   }
 
-  public static class ReplaceWith_BinaryOperation_cellMenu_a0b0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BinaryOperation_cellMenu_a0b0_1() {
+  public static class ReplaceWith_BinaryOperation_cellMenu_sl2ryj_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BinaryOperation_cellMenu_sl2ryj_a0b0() {
     }
 
     public String getReplacementConceptName() {
@@ -86,7 +86,7 @@ public class DecimalBinaryOperation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DecimalBinaryOperation_Editor.ReplaceWith_BinaryOperation_cellMenu_a0b0_1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DecimalBinaryOperation_Editor.ReplaceWith_BinaryOperation_cellMenu_sl2ryj_a0b0()}));
     return editorCell;
   }
 

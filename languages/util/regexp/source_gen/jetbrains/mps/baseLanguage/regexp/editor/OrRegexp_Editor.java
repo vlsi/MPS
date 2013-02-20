@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -17,12 +19,18 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior;
 
 public class OrRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_36u1b4_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_36u1b4_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
+  }
+
+  private static boolean renderingCondition_36u1b4_a4a(SNode node, EditorContext editorContext, IScope scope) {
+    return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
   }
 
   private EditorCell createCollection_36u1b4_a(EditorContext editorContext, SNode node) {
@@ -104,13 +112,5 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_36u1b4_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
-  }
-
-  private static boolean renderingCondition_36u1b4_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
   }
 }

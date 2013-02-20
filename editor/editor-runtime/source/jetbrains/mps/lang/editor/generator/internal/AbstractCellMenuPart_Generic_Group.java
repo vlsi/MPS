@@ -61,8 +61,8 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
           return AbstractCellMenuPart_Generic_Group.this.getDescriptionText(parameterObject);
         }
 
-        public Icon getIconFor(String pattern, boolean referent_presentation) {
-          return AbstractCellMenuPart_Generic_Group.this.getIconFor(parameterObject);
+        public Icon getIconFor(String pattern) {
+          return getIconFor(pattern, isReferentPresentation());
         }
 
         public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
@@ -92,13 +92,6 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
       return NodePresentationUtil.descriptionText((SNode) parameterObject, isReferentPresentation());
     }
     return "";
-  }
-
-  protected Icon getIconFor(Object parameterObject) {
-    if (parameterObject instanceof SNode) {
-      return NodeIconUtil.getIcon((SNode) parameterObject, isReferentPresentation());
-    }
-    return IdeIcons.DEFAULT_ICON;
   }
 
   /**

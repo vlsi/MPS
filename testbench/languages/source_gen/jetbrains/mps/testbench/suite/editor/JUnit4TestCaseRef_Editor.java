@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -17,11 +18,14 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class JUnit4TestCaseRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hazblc_a(editorContext, node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_hazblc_a0a0(EditorContext editorContext, SNode node) {
+    return SPropertyOperations.getBoolean(node, "muted");
   }
 
   public static class _Inline_hazblc_a1a extends InlineCellProvider {
@@ -97,9 +101,5 @@ public class JUnit4TestCaseRef_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean _StyleParameter_QueryFunction_hazblc_a0a0(EditorContext editorContext, SNode node) {
-    return SPropertyOperations.getBoolean(node, "muted");
   }
 }

@@ -30,8 +30,8 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     return this.createCollection_ufuydf_a(editorContext, node);
   }
 
-  public static class ForEachVariable_name_postfixCellMenu_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public ForEachVariable_name_postfixCellMenu_a0a0() {
+  public static class ForEachVariable_name_postfixCellMenu_ufuydf_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public ForEachVariable_name_postfixCellMenu_ufuydf_a0a0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -60,7 +60,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ForEachVariable_Editor.ForEachVariable_name_postfixCellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ForEachVariable_Editor.ForEachVariable_name_postfixCellMenu_ufuydf_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -28,8 +28,8 @@ public class LogicalOperator_Editor extends DefaultNodeEditor {
     return this.createCollection_iyfdbj_a(editorContext, node);
   }
 
-  public static class ReplaceWith_LogicalOperator_cellMenu_a0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_LogicalOperator_cellMenu_a0c0() {
+  public static class ReplaceWith_LogicalOperator_cellMenu_iyfdbj_a0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_LogicalOperator_cellMenu_iyfdbj_a0c0() {
     }
 
     public String getReplacementConceptName() {
@@ -57,7 +57,7 @@ public class LogicalOperator_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_4_RTransform");
     editorCell.getStyle().putAll(style);
     DeleteLogicalOperator.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new LogicalOperator_Editor.ReplaceWith_LogicalOperator_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new LogicalOperator_Editor.ReplaceWith_LogicalOperator_cellMenu_iyfdbj_a0c0()}));
     return editorCell;
   }
 

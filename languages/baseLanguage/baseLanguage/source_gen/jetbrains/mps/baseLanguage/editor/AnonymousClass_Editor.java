@@ -6,14 +6,19 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -38,54 +43,10 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class AnonymousClass_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_msf9u8_a(editorContext, node);
-  }
-
-  public static class AnonymousClass_generic_cellMenu_a0a7c1a extends AbstractCellMenuPart_Generic_Item {
-    public AnonymousClass_generic_cellMenu_a0a7c1a() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, "member", "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-    }
-
-    public String getMatchingText() {
-      return "add field";
-    }
-  }
-
-  public static class AnonymousClass_generic_cellMenu_b0a7c1a extends AbstractCellMenuPart_Generic_Item {
-    public AnonymousClass_generic_cellMenu_b0a7c1a() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.addNewChild(node, "member", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-    }
-
-    public String getMatchingText() {
-      return "add method";
-    }
-  }
-
-  public static class AnonymousClass_generic_cellMenu_c0a7c1a extends AbstractCellMenuPart_Generic_Item {
-    public AnonymousClass_generic_cellMenu_c0a7c1a() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeFactoryOperations.setNewChild(node, "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
-    }
-
-    public String getMatchingText() {
-      return "add initializer";
-    }
   }
 
   public static class _Inline_msf9u8_a0a0 extends InlineCellProvider {
@@ -105,6 +66,85 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
       editorCell.setCellId("ReferencePresentation_msf9u8_a0a0a");
       return editorCell;
+    }
+  }
+
+  private static boolean renderingCondition_msf9u8_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_msf9u8_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_msf9u8_a3a0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_msf9u8_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).subtract(ListSequence.fromList(SLinkOperations.getTargets(node, "member", true))).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_msf9u8_a2c1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null;
+  }
+
+  private static boolean renderingCondition_msf9u8_a3c1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_msf9u8_a4c1a(SNode node, EditorContext editorContext, IScope scope) {
+    return Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_msf9u8_a5c1a(SNode node, EditorContext editorContext, IScope scope) {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_msf9u8_a6c1a(SNode node, EditorContext editorContext, IScope scope) {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_msf9u8_a7c1a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty() && Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
+  }
+
+  public static class AnonymousClass_generic_cellMenu_msf9u8_a0a7c1a extends AbstractCellMenuPart_Generic_Item {
+    public AnonymousClass_generic_cellMenu_msf9u8_a0a7c1a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNodeFactoryOperations.addNewChild(node, "member", "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    }
+
+    public String getMatchingText() {
+      return "add field";
+    }
+  }
+
+  public static class AnonymousClass_generic_cellMenu_msf9u8_b0a7c1a extends AbstractCellMenuPart_Generic_Item {
+    public AnonymousClass_generic_cellMenu_msf9u8_b0a7c1a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNodeFactoryOperations.addNewChild(node, "member", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    }
+
+    public String getMatchingText() {
+      return "add method";
+    }
+  }
+
+  public static class AnonymousClass_generic_cellMenu_msf9u8_c0a7c1a extends AbstractCellMenuPart_Generic_Item {
+    public AnonymousClass_generic_cellMenu_msf9u8_c0a7c1a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SNodeFactoryOperations.setNewChild(node, "instanceInitializer", "jetbrains.mps.baseLanguage.structure.InstanceInitializer");
+    }
+
+    public String getMatchingText() {
+      return "add initializer";
     }
   }
 
@@ -633,7 +673,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_msf9u8_a7c1a");
     editorCell.setDefaultText("<add members (ctrl+space)>");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_a0a7c1a(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_b0a7c1a(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_c0a7c1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_msf9u8_a0a7c1a(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_msf9u8_b0a7c1a(), new AnonymousClass_Editor.AnonymousClass_generic_cellMenu_msf9u8_c0a7c1a()}));
     return editorCell;
   }
 
@@ -737,45 +777,5 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_msf9u8_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_msf9u8_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_msf9u8_a3a0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_msf9u8_a2c1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null;
-  }
-
-  private static boolean renderingCondition_msf9u8_a3c1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_msf9u8_a4c1a(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_msf9u8_a5c1a(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_msf9u8_a6c1a(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_msf9u8_a7c1a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty() && Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
-  }
-
-  private static boolean renderingCondition_msf9u8_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).subtract(ListSequence.fromList(SLinkOperations.getTargets(node, "member", true))).isNotEmpty();
   }
 }

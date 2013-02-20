@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.selection;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -156,16 +157,31 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
   }
 
   @Override
-  public void executeAction(CellActionType type) {
-    getEditorComponent().assertModelNotDisposed();
-    // TODO: add separate handler for Backspace action.
+  public boolean canExecuteAction(CellActionType type) {
+
     if (type == CellActionType.BACKSPACE) {
       type = CellActionType.DELETE;
     }
+
     if (type == CellActionType.DELETE && suppressDelete()) {
-      return;
+      return false;
     }
-    getEditorComponent().getActionHandler().executeAction(myEditorCell, type);
+
+    CellAction applicableCellAction = getEditorComponent().getActionHandler().getApplicableCellAction(myEditorCell, type);
+    return applicableCellAction != null && applicableCellAction.canExecute(getEditorComponent().getEditorContext());
+  }
+
+
+
+  @Override
+  public void executeAction(CellActionType type) {
+    getEditorComponent().assertModelNotDisposed();
+    if (type == CellActionType.BACKSPACE) {
+      type = CellActionType.DELETE;
+    }
+    if (canExecuteAction(type)) {
+      getEditorComponent().getActionHandler().executeAction(myEditorCell, type);
+    }
   }
 
   protected boolean suppressDelete() {

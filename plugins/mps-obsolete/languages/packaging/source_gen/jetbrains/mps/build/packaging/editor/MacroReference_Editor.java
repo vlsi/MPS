@@ -10,6 +10,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
@@ -23,18 +25,16 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MacroReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_yfwtie_a(editorContext, node);
   }
 
-  public static class MacroReference_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
+  public static class MacroReference_component_cellMenu_yfwtie_a0a implements SubstituteInfoPartExt {
     private MacroReference_MenuComponent myComponent;
 
-    public MacroReference_component_cellMenu_a0a0() {
+    public MacroReference_component_cellMenu_yfwtie_a0a() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
@@ -43,10 +43,14 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class MacroReference_component_cellMenu_a0b0 implements SubstituteInfoPartExt {
+  private static boolean renderingCondition_yfwtie_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return isNotEmpty_yfwtie_a0a0c(SPropertyOperations.getString(node, "name"));
+  }
+
+  public static class MacroReference_component_cellMenu_yfwtie_a0a0 implements SubstituteInfoPartExt {
     private MacroReference_MenuComponent myComponent;
 
-    public MacroReference_component_cellMenu_a0b0() {
+    public MacroReference_component_cellMenu_yfwtie_a0a0() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
@@ -55,10 +59,14 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class MacroReference_component_cellMenu_a0a implements SubstituteInfoPartExt {
+  private static boolean renderingCondition_yfwtie_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return isEmpty_yfwtie_a0a0e(SPropertyOperations.getString(node, "name"));
+  }
+
+  public static class MacroReference_component_cellMenu_yfwtie_a0b0 implements SubstituteInfoPartExt {
     private MacroReference_MenuComponent myComponent;
 
-    public MacroReference_component_cellMenu_a0a() {
+    public MacroReference_component_cellMenu_yfwtie_a0b0() {
       this.myComponent = new MacroReference_MenuComponent();
     }
 
@@ -70,7 +78,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_yfwtie_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yfwtie_a");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_yfwtie_a0a()}));
     if (renderingCondition_yfwtie_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createProperty_yfwtie_a0(editorContext, node));
     }
@@ -88,7 +96,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_yfwtie_a0b0()}));
     return editorCell;
   }
 
@@ -103,7 +111,7 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     PackagingStyles_StyleSheet.applyVariable(style, editorCell);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MacroReference_Editor.MacroReference_component_cellMenu_yfwtie_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -114,19 +122,11 @@ public class MacroReference_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_yfwtie_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_yfwtie_a0a0h(SPropertyOperations.getString(node, "name"));
-  }
-
-  private static boolean renderingCondition_yfwtie_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_yfwtie_a0a0i(SPropertyOperations.getString(node, "name"));
-  }
-
-  public static boolean isNotEmpty_yfwtie_a0a0h(String str) {
+  public static boolean isNotEmpty_yfwtie_a0a0c(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_yfwtie_a0a0i(String str) {
+  public static boolean isEmpty_yfwtie_a0a0e(String str) {
     return str == null || str.length() == 0;
   }
 }

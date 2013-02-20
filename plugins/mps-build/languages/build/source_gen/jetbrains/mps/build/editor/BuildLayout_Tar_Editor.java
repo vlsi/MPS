@@ -33,8 +33,8 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     return this.createCollection_9nqz5z_a_0(editorContext, node);
   }
 
-  public static class ReplaceWith_BuildLayout_NamedContainer_cellMenu_a0a0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildLayout_NamedContainer_cellMenu_a0a0_1() {
+  public static class ReplaceWith_BuildLayout_NamedContainer_cellMenu_9nqz5z_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildLayout_NamedContainer_cellMenu_9nqz5z_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -69,7 +69,7 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyOutputLayout(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_Tar_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_a0a0_1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_Tar_Editor.ReplaceWith_BuildLayout_NamedContainer_cellMenu_9nqz5z_a0a0()}));
     return editorCell;
   }
 

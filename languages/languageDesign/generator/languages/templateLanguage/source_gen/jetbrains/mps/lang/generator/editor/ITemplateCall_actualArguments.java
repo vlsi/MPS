@@ -6,6 +6,9 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -23,9 +26,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ITemplateCall_actualArguments extends AbstractCellProvider {
   public ITemplateCall_actualArguments(SNode node) {
@@ -44,6 +44,18 @@ public class ITemplateCall_actualArguments extends AbstractCellProvider {
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
+  }
+
+  private static boolean renderingCondition_1xd1xh_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "template", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "template", false), "parameter", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_1xd1xh_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return true;
+  }
+
+  private static boolean renderingCondition_1xd1xh_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+    return true;
   }
 
   private static class actualArgumentListHandler_1xd1xh_b0a extends RefNodeListHandler {
@@ -173,17 +185,5 @@ public class ITemplateCall_actualArguments extends AbstractCellProvider {
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
-  }
-
-  private static boolean renderingCondition_1xd1xh_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return true;
-  }
-
-  private static boolean renderingCondition_1xd1xh_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return true;
-  }
-
-  private static boolean renderingCondition_1xd1xh_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "template", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "template", false), "parameter", true)).isNotEmpty();
   }
 }

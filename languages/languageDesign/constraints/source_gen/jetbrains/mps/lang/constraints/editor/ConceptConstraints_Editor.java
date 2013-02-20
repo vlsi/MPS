@@ -11,6 +11,10 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -28,10 +32,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConceptConstraints_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -71,6 +71,10 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_g00aa7_a0d0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "concept", false), "abstract");
+  }
+
   public static class _Inline_g00aa7_a1a3a extends InlineCellProvider {
     public _Inline_g00aa7_a1a3a() {
       super();
@@ -102,6 +106,54 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_g00aa7_a1b3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "canBeChild", true) == null;
+  }
+
+  private static boolean renderingCondition_g00aa7_a2d0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "canBeChild", true) != null;
+  }
+
+  private static boolean renderingCondition_g00aa7_a4d0(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(((SNode) SLinkOperations.getTarget(node, "concept", false)), "rootable");
+  }
+
+  private static boolean renderingCondition_g00aa7_a1a4d0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "canBeRoot", true) == null);
+  }
+
+  private static boolean renderingCondition_g00aa7_a1e3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "canBeRoot", true) != null);
+  }
+
+  private static boolean renderingCondition_g00aa7_a1f3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "canBeParent", true) == null;
+  }
+
+  private static boolean renderingCondition_g00aa7_a6d0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "canBeParent", true) != null;
+  }
+
+  private static boolean renderingCondition_g00aa7_a9d0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "canBeAncestor", true) == null;
+  }
+
+  private static boolean renderingCondition_g00aa7_a01d0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "canBeAncestor", true) != null;
+  }
+
+  private static boolean renderingCondition_g00aa7_a21d0(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && isNotEmpty_g00aa7_a0a0a31(SPropertyOperations.getString(((SNode) SLinkOperations.getTarget(node, "concept", false)), "iconPath"));
+  }
+
+  private static boolean renderingCondition_g00aa7_a1a21d0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "canBeRoot", true) == null);
+  }
+
+  private static boolean renderingCondition_g00aa7_a1m3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "canBeRoot", true) != null);
   }
 
   private static class propertyListHandler_g00aa7_o3a extends RefNodeListHandler {
@@ -861,59 +913,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_g00aa7_a0d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "concept", false), "abstract");
-  }
-
-  private static boolean renderingCondition_g00aa7_a1b3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "canBeChild", true) == null;
-  }
-
-  private static boolean renderingCondition_g00aa7_a2d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "canBeChild", true) != null;
-  }
-
-  private static boolean renderingCondition_g00aa7_a4d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(((SNode) SLinkOperations.getTarget(node, "concept", false)), "rootable");
-  }
-
-  private static boolean renderingCondition_g00aa7_a1a4d0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "canBeRoot", true) == null);
-  }
-
-  private static boolean renderingCondition_g00aa7_a1e3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "canBeRoot", true) != null);
-  }
-
-  private static boolean renderingCondition_g00aa7_a1f3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "canBeParent", true) == null;
-  }
-
-  private static boolean renderingCondition_g00aa7_a6d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "canBeParent", true) != null;
-  }
-
-  private static boolean renderingCondition_g00aa7_a9d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "canBeAncestor", true) == null;
-  }
-
-  private static boolean renderingCondition_g00aa7_a01d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "canBeAncestor", true) != null;
-  }
-
-  private static boolean renderingCondition_g00aa7_a21d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && isNotEmpty_g00aa7_a0a0a06(SPropertyOperations.getString(((SNode) SLinkOperations.getTarget(node, "concept", false)), "iconPath"));
-  }
-
-  private static boolean renderingCondition_g00aa7_a1a21d0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "canBeRoot", true) == null);
-  }
-
-  private static boolean renderingCondition_g00aa7_a1m3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "canBeRoot", true) != null);
-  }
-
-  public static boolean isNotEmpty_g00aa7_a0a0a06(String str) {
+  public static boolean isNotEmpty_g00aa7_a0a0a31(String str) {
     return str != null && str.length() > 0;
   }
 }

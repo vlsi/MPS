@@ -32,8 +32,8 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
     return this.createCollection_snw1l8_a(editorContext, node);
   }
 
-  public static class GridBagConstraints_constraintsKind_cellMenu_a0c0 extends AbstractCellMenuPart_PropertyValues {
-    public GridBagConstraints_constraintsKind_cellMenu_a0c0() {
+  public static class GridBagConstraints_constraintsKind_cellMenu_snw1l8_a0c0 extends AbstractCellMenuPart_PropertyValues {
+    public GridBagConstraints_constraintsKind_cellMenu_snw1l8_a0c0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -117,7 +117,7 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_constraintsKind");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new GridBagConstraints_Editor.GridBagConstraints_constraintsKind_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new GridBagConstraints_Editor.GridBagConstraints_constraintsKind_cellMenu_snw1l8_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

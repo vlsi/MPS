@@ -30,8 +30,8 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
     return this.createCollection_pdl482_a(editorContext, node);
   }
 
-  public static class BootstrapActionReference_actionId_cellMenu_a0b0 extends AbstractCellMenuPart_PropertyValues {
-    public BootstrapActionReference_actionId_cellMenu_a0b0() {
+  public static class BootstrapActionReference_actionId_cellMenu_pdl482_a0b0 extends AbstractCellMenuPart_PropertyValues {
+    public BootstrapActionReference_actionId_cellMenu_pdl482_a0b0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -72,7 +72,7 @@ public class BootstrapActionReference_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BootstrapActionReference_Editor.BootstrapActionReference_actionId_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BootstrapActionReference_Editor.BootstrapActionReference_actionId_cellMenu_pdl482_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

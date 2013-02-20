@@ -32,8 +32,8 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     return this.createCollection_m61dlm_a(editorContext, node);
   }
 
-  public static class ElsifClause_generic_cellMenu_a0a0 extends AbstractCellMenuPart_Generic_Group {
-    public ElsifClause_generic_cellMenu_a0a0() {
+  public static class ElsifClause_generic_cellMenu_m61dlm_a0a0 extends AbstractCellMenuPart_Generic_Group {
+    public ElsifClause_generic_cellMenu_m61dlm_a0a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -88,7 +88,7 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu_m61dlm_a0a0()}));
     return editorCell;
   }
 

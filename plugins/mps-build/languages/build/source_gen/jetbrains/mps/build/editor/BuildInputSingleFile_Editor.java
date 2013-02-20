@@ -25,8 +25,8 @@ public class BuildInputSingleFile_Editor extends DefaultNodeEditor {
     return this.createCollection_odna9y_a(editorContext, node);
   }
 
-  public static class ReplaceWith_BuildInputResourceSet_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildInputResourceSet_cellMenu_a0a0_0() {
+  public static class ReplaceWith_BuildInputResourceSet_cellMenu_odna9y_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildInputResourceSet_cellMenu_odna9y_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -48,7 +48,7 @@ public class BuildInputSingleFile_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildInputSingleFile_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_a0a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildInputSingleFile_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_odna9y_a0a0()}));
     return editorCell;
   }
 

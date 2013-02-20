@@ -6,6 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.editor._DeprecatedPart;
@@ -22,14 +26,15 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TestMethod_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ml6tu4_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_ml6tu4_a5a(SNode node, EditorContext editorContext, IScope scope) {
+    List<SNode> nextSiblings = SNodeOperations.getNextSiblings(node, false);
+    return ListSequence.fromList(nextSiblings).isNotEmpty();
   }
 
   private EditorCell createCollection_ml6tu4_a(EditorContext editorContext, SNode node) {
@@ -107,10 +112,5 @@ public class TestMethod_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_ml6tu4_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    List<SNode> nextSiblings = SNodeOperations.getNextSiblings(node, false);
-    return ListSequence.fromList(nextSiblings).isNotEmpty();
   }
 }

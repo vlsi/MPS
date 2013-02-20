@@ -6,11 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -31,8 +31,12 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_lnae77_a(editorContext, node);
   }
 
-  public static class PropertyDeclaration_generic_cellMenu_a0b0 extends AbstractCellMenuPart_Generic_Item {
-    public PropertyDeclaration_generic_cellMenu_a0b0() {
+  private static boolean renderingCondition_lnae77_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(node, "shortDescription") != null;
+  }
+
+  public static class PropertyDeclaration_generic_cellMenu_lnae77_a0b0 extends AbstractCellMenuPart_Generic_Item {
+    public PropertyDeclaration_generic_cellMenu_lnae77_a0b0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -68,7 +72,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_lnae77_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lnae77_b0");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new PropertyDeclaration_Editor.PropertyDeclaration_generic_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new PropertyDeclaration_Editor.PropertyDeclaration_generic_cellMenu_lnae77_a0b0()}));
     editorCell.addEditorCell(this.createComponent_lnae77_a1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lnae77_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lnae77_c1a(editorContext, node));
@@ -186,9 +190,5 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_lnae77_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "shortDescription") != null;
   }
 }

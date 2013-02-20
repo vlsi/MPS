@@ -6,6 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -20,9 +23,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -31,6 +31,10 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_wbyfib_a_0(editorContext, node);
+  }
+
+  private static boolean renderingCondition_wbyfib_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a2(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
   }
 
   public static class _Inline_wbyfib_a2a extends InlineCellProvider {
@@ -68,6 +72,14 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_wbyfib_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a4(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
+  }
+
+  private static boolean renderingCondition_wbyfib_a1a_0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && isNotEmpty_wbyfib_a0a0a5(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName"));
   }
 
   private EditorCell createCollection_wbyfib_a(EditorContext editorContext, SNode node) {
@@ -261,27 +273,15 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_wbyfib_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a81(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
-  }
-
-  private static boolean renderingCondition_wbyfib_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a91(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
-  }
-
-  private static boolean renderingCondition_wbyfib_a1a_0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && isNotEmpty_wbyfib_a0a0a02(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName"));
-  }
-
-  public static boolean isEmpty_wbyfib_a0a0a0a81(String str) {
+  public static boolean isEmpty_wbyfib_a0a0a0a2(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_wbyfib_a0a0a0a91(String str) {
+  public static boolean isEmpty_wbyfib_a0a0a0a4(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isNotEmpty_wbyfib_a0a0a02(String str) {
+  public static boolean isNotEmpty_wbyfib_a0a0a5(String str) {
     return str != null && str.length() > 0;
   }
 }

@@ -41,8 +41,8 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_zabbeg_a(editorContext, node);
   }
 
-  public static class CellKeyMapDeclaration_name_postfixCellMenu_a0b0a extends AbstractCellMenuPart_PropertyPostfixHints {
-    public CellKeyMapDeclaration_name_postfixCellMenu_a0b0a() {
+  public static class CellKeyMapDeclaration_name_postfixCellMenu_zabbeg_a0b0a extends AbstractCellMenuPart_PropertyPostfixHints {
+    public CellKeyMapDeclaration_name_postfixCellMenu_zabbeg_a0b0a() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -283,7 +283,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellKeyMapDeclaration_Editor.CellKeyMapDeclaration_name_postfixCellMenu_a0b0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellKeyMapDeclaration_Editor.CellKeyMapDeclaration_name_postfixCellMenu_zabbeg_a0b0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

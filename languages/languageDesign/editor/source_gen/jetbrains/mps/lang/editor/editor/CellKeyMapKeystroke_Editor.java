@@ -30,8 +30,8 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     return this.createCollection_y8xyxm_a(editorContext, node);
   }
 
-  public static class CellKeyMapKeystroke_modifiers_cellMenu_a0b0 extends AbstractCellMenuPart_PropertyValues {
-    public CellKeyMapKeystroke_modifiers_cellMenu_a0b0() {
+  public static class CellKeyMapKeystroke_modifiers_cellMenu_y8xyxm_a0b0 extends AbstractCellMenuPart_PropertyValues {
+    public CellKeyMapKeystroke_modifiers_cellMenu_y8xyxm_a0b0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -41,8 +41,8 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class CellKeyMapKeystroke_keycode_cellMenu_a0d0 extends AbstractCellMenuPart_PropertyValues {
-    public CellKeyMapKeystroke_keycode_cellMenu_a0d0() {
+  public static class CellKeyMapKeystroke_keycode_cellMenu_y8xyxm_a0d0 extends AbstractCellMenuPart_PropertyValues {
+    public CellKeyMapKeystroke_keycode_cellMenu_y8xyxm_a0d0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -110,7 +110,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
     style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_modifiers_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_modifiers_cellMenu_y8xyxm_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -132,7 +132,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
     style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_keycode_cellMenu_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellKeyMapKeystroke_Editor.CellKeyMapKeystroke_keycode_cellMenu_y8xyxm_a0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

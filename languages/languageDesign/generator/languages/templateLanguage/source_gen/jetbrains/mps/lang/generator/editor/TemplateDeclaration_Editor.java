@@ -42,8 +42,8 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_pyph5i_a(editorContext, node);
   }
 
-  public static class TemplateDeclaration_name_cellMenu_a0b0a0 extends AbstractCellMenuPart_PropertyValues {
-    public TemplateDeclaration_name_cellMenu_a0b0a0() {
+  public static class TemplateDeclaration_name_cellMenu_pyph5i_a0b0a0 extends AbstractCellMenuPart_PropertyValues {
+    public TemplateDeclaration_name_cellMenu_pyph5i_a0b0a0() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -290,7 +290,7 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new TemplateDeclaration_Editor.TemplateDeclaration_name_cellMenu_a0b0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new TemplateDeclaration_Editor.TemplateDeclaration_name_cellMenu_pyph5i_a0b0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -86,7 +86,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     return actions;
   }
 
-  public InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
+  protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     CopyUtil.copy(Arrays.asList(myParentNode.getContainingRoot()), mapping).get(0);
 

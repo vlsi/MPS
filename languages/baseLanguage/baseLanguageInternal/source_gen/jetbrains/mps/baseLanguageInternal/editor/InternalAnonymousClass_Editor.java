@@ -6,9 +6,13 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -39,18 +43,38 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_lqrwoi_a(editorContext, node);
   }
 
-  public static class InternalAnonymousClass_generic_cellMenu_a0a6b0 extends AbstractCellMenuPart_Generic_Item {
-    public InternalAnonymousClass_generic_cellMenu_a0a6b0() {
+  private static boolean renderingCondition_lqrwoi_a1b0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null;
+  }
+
+  private static boolean renderingCondition_lqrwoi_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_lqrwoi_a3b0(SNode node, EditorContext editorContext, IScope scope) {
+    return Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_lqrwoi_a4b0(SNode node, EditorContext editorContext, IScope scope) {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_lqrwoi_a5b0(SNode node, EditorContext editorContext, IScope scope) {
+    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_lqrwoi_a6b0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty() && Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
+  }
+
+  public static class InternalAnonymousClass_generic_cellMenu_lqrwoi_a0a6b0 extends AbstractCellMenuPart_Generic_Item {
+    public InternalAnonymousClass_generic_cellMenu_lqrwoi_a0a6b0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -62,8 +86,8 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class InternalAnonymousClass_generic_cellMenu_b0a6b0 extends AbstractCellMenuPart_Generic_Item {
-    public InternalAnonymousClass_generic_cellMenu_b0a6b0() {
+  public static class InternalAnonymousClass_generic_cellMenu_lqrwoi_b0a6b0 extends AbstractCellMenuPart_Generic_Item {
+    public InternalAnonymousClass_generic_cellMenu_lqrwoi_b0a6b0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -75,8 +99,8 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class InternalAnonymousClass_generic_cellMenu_c0a6b0 extends AbstractCellMenuPart_Generic_Item {
-    public InternalAnonymousClass_generic_cellMenu_c0a6b0() {
+  public static class InternalAnonymousClass_generic_cellMenu_lqrwoi_c0a6b0 extends AbstractCellMenuPart_Generic_Item {
+    public InternalAnonymousClass_generic_cellMenu_lqrwoi_c0a6b0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -526,7 +550,7 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_lqrwoi_a6b0");
     editorCell.setDefaultText("<add members (ctrl+space)>");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_a0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_b0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_c0a6b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_lqrwoi_a0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_lqrwoi_b0a6b0(), new InternalAnonymousClass_Editor.InternalAnonymousClass_generic_cellMenu_lqrwoi_c0a6b0()}));
     return editorCell;
   }
 
@@ -636,29 +660,5 @@ public class InternalAnonymousClass_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_lqrwoi_a1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null;
-  }
-
-  private static boolean renderingCondition_lqrwoi_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "instanceInitializer", true) != null && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_lqrwoi_a3b0(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_lqrwoi_a4b0(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_lqrwoi_a5b0(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_lqrwoi_a6b0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(Sequence.fromIterable(ClassConcept_Behavior.call_fields_5292274854859383272(node)).isNotEmpty() && Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty() && SLinkOperations.getTarget(node, "instanceInitializer", true) != null);
   }
 }

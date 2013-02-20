@@ -135,4 +135,8 @@ public interface EditorCell {
   void setAction(CellActionType type, CellAction action);
 
   Collection<CellActionType> getAvailableActions();
+
+  void setSubstituteInfo(SubstituteInfo info);
+
+  SubstituteInfo getSubstituteInfo();
 }

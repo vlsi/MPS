@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -18,12 +20,18 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8khnja_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_8khnja_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "name", true) != null) || (SLinkOperations.getTarget(node, "value", true) != null);
+  }
+
+  private static boolean renderingCondition_8khnja_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "name", true) == null) && (SLinkOperations.getTarget(node, "value", true) == null);
   }
 
   private EditorCell createCollection_8khnja_a(EditorContext editorContext, SNode node) {
@@ -104,13 +112,5 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_8khnja_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "name", true) != null) || (SLinkOperations.getTarget(node, "value", true) != null);
-  }
-
-  private static boolean renderingCondition_8khnja_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "name", true) == null) && (SLinkOperations.getTarget(node, "value", true) == null);
   }
 }

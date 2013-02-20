@@ -28,8 +28,8 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
     return this.createCollection_ns5ajd_a(editorContext, node);
   }
 
-  public static class ReplaceWith_SolutionRef_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SolutionRef_cellMenu_a0a0() {
+  public static class ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -37,8 +37,8 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ReplaceWith_SolutionRef_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SolutionRef_cellMenu_a0b0() {
+  public static class ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0() {
     }
 
     public String getReplacementConceptName() {
@@ -61,7 +61,7 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SolutionRef_Editor.ReplaceWith_SolutionRef_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SolutionRef_Editor.ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0a0()}));
     return editorCell;
   }
 
@@ -79,7 +79,7 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SolutionRef_Editor.ReplaceWith_SolutionRef_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SolutionRef_Editor.ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_ns5ajd_b0");
     return editorCell;
   }

@@ -19,14 +19,16 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Author: Sergey Dmitriev.
@@ -36,7 +38,6 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
   private List<INodeSubstituteAction> myCachedActionList;
   private Map<String, List<INodeSubstituteAction>> myPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();
   private Map<String, List<INodeSubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();
-  private SNode myOriginalNode;
   private String myOriginalText;
   private EditorContext myEditorContext;
 
@@ -50,14 +51,6 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
 
   public IOperationContext getOperationContext() {
     return myEditorContext.getOperationContext();
-  }
-
-  public void setOriginalNode(SNode node) {
-    myOriginalNode = node;
-  }
-
-  public SNode getOriginalNode() {
-    return myOriginalNode;
   }
 
   public void setOriginalText(String text) {
@@ -76,26 +69,13 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     myStrictPatternsToActionListsCache.clear();
   }
 
-  public boolean hasNoActionsWithPrefix(String pattern) {
-    return getMatchingActions(pattern, false).isEmpty();
-  }
-
   public boolean hasExactlyNActions(final String pattern, final boolean strictMatching, final int n) {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
-        Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
-        List<INodeSubstituteAction> result = pair.o2;
-
         int count = 0;
-        for (INodeSubstituteAction action : result) {
-          if (strictMatching) {
-            if (action.canSubstituteStrictly(pattern)) {
-              count++;
-            }
-          } else {
-            if (action.canSubstitute(pattern)) {
-              count++;
-            }
+        for (INodeSubstituteAction action : getActionsFromCache(pattern, strictMatching)) {
+          if (strictMatching ? action.canSubstituteStrictly(pattern) : action.canSubstitute(pattern)) {
+            count++;
           }
 
           if (count > n) return false;
@@ -106,7 +86,7 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     });
   }
 
-  public InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
+  protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
     return null;
   }
 
@@ -130,28 +110,16 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
   public List<INodeSubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
     return ModelAccess.instance().runReadAction(new Computable<List<INodeSubstituteAction>>() {
       public List<INodeSubstituteAction> compute() {
-        Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
-
-        List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-        for (INodeSubstituteAction item : pair.o2) {
-          if (strictMatching) {
-            if (item.canSubstituteStrictly(pattern)) {
-              result.add(item);
-            }
-          } else {
-            if (item.canSubstitute(pattern)) {
-              result.add(item);
-            }
+        List<INodeSubstituteAction> actionsFromCache = getActionsFromCache(pattern, strictMatching);
+        ArrayList<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>(actionsFromCache.size());
+        for (INodeSubstituteAction item : actionsFromCache) {
+          if (strictMatching ? item.canSubstituteStrictly(pattern) : item.canSubstitute(pattern)) {
+            result.add(item);
           }
         }
-
-        if (strictMatching) {
-          myStrictPatternsToActionListsCache.put(pattern, new ArrayList<INodeSubstituteAction>(result));
-        } else {
-          myPatternsToActionListsCache.put(pattern, new ArrayList<INodeSubstituteAction>(result));
-        }
-
-        return (List) result;
+        putActionsToCache(pattern, strictMatching, result);
+        result.trimToSize();
+        return result;
       }
     });
   }
@@ -160,40 +128,36 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     if (myCachedActionList == null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          myCachedActionList = (List) createActions();
+          myCachedActionList = createActions();
         }
       });
     }
-    return Collections.unmodifiableList(myCachedActionList);
+    return myCachedActionList;
   }
 
-  private Pair<String, List<INodeSubstituteAction>> getPatternAndActions(String pattern, boolean strictMatching) {
-    String smallPattern = pattern;
-    List<INodeSubstituteAction> result = null;
+  private void putActionsToCache(String pattern, boolean strictMatching, List<INodeSubstituteAction> actions) {
+    List<INodeSubstituteAction> actionsCopy = new ArrayList<INodeSubstituteAction>(actions);
+    if (strictMatching) {
+      myStrictPatternsToActionListsCache.put(pattern, actionsCopy);
+    } else {
+      myPatternsToActionListsCache.put(pattern, actionsCopy);
+    }
+  }
+
+  private List<INodeSubstituteAction> getActionsFromCache(String pattern, boolean strictMatching) {
     if (!strictMatching) {
-      if (smallPattern != null) {
-        while (smallPattern.length() > 0) {
-          if (myPatternsToActionListsCache.containsKey(smallPattern)) {
-            result = new ArrayList<INodeSubstituteAction>();
-            result.addAll(myPatternsToActionListsCache.get(smallPattern));
-            break;
-          } else {
-            smallPattern = smallPattern.substring(0, smallPattern.length() - 1);
-          }
+      for (; pattern != null && pattern.length() > 0; pattern = pattern.substring(0, pattern.length() - 1)) {
+        if (myPatternsToActionListsCache.containsKey(pattern)) {
+          return Collections.unmodifiableList(myPatternsToActionListsCache.get(pattern));
         }
       }
     } else {
-      if (myStrictPatternsToActionListsCache.containsKey(smallPattern)) {
-        result = new ArrayList<INodeSubstituteAction>();
-        result.addAll(myStrictPatternsToActionListsCache.get(smallPattern));
-      } else if (myPatternsToActionListsCache.containsKey(smallPattern)) {
-        result = new ArrayList<INodeSubstituteAction>();
-        result.addAll(myPatternsToActionListsCache.get(smallPattern));
+      if (myStrictPatternsToActionListsCache.containsKey(pattern)) {
+        return Collections.unmodifiableList(myStrictPatternsToActionListsCache.get(pattern));
+      } else if (myPatternsToActionListsCache.containsKey(pattern)) {
+        return Collections.unmodifiableList(myPatternsToActionListsCache.get(pattern));
       }
     }
-    if (result == null) {
-      result = new ArrayList<INodeSubstituteAction>(getActions());
-    }
-    return new Pair<String, List<INodeSubstituteAction>>(smallPattern, result);
+    return Collections.unmodifiableList(getActions());
   }
 }

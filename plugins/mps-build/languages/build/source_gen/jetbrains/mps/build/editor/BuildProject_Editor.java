@@ -6,6 +6,16 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.build.util.RelativePathHelper;
+import jetbrains.mps.build.util.Context;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import javax.swing.JComponent;
+import jetbrains.mps.ide.editor.util.EditorUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -21,7 +31,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
-import jetbrains.mps.build.util.Context;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -32,15 +41,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.build.util.RelativePathHelper;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import javax.swing.JComponent;
-import jetbrains.mps.ide.editor.util.EditorUtil;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class BuildProject_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -49,6 +49,40 @@ public class BuildProject_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vny568_a_0(editorContext, node);
+  }
+
+  private static boolean renderingCondition_vny568_a1g0(SNode node, EditorContext editorContext, IScope scope) {
+    final RelativePathHelper rph = Context.defaultContext().getRelativePathHelper(SNodeOperations.getModel(node));
+    return rph != null;
+  }
+
+  private static JComponent _QueryFunction_JComponent_vny568_a0b6a(final SNode node, final EditorContext editorContext) {
+    final RelativePathHelper rph = Context.defaultContext().getRelativePathHelper(SNodeOperations.getModel(node));
+    if (rph == null) {
+      // never happens, see show if condition on outer cell 
+      return null;
+    }
+    return EditorUtil.createSelectButton(node, "internalBaseDirectory", editorContext, false, new _FunctionTypes._return_P1_E0<String, String>() {
+      public String invoke(String path) {
+        try {
+          return rph.makeRelative(path);
+        } catch (Exception ex) {
+          return path;
+        }
+      }
+    }, new _FunctionTypes._return_P1_E0<String, String>() {
+      public String invoke(String path) {
+        try {
+          return rph.makeAbsolute(path);
+        } catch (Exception ex) {
+          return path;
+        }
+      }
+    });
+  }
+
+  private static boolean renderingCondition_vny568_a91a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).isEmpty() || SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).last()), "abstract");
   }
 
   private static class pluginsListHandler_vny568_j0 extends RefNodeListHandler {
@@ -711,39 +745,5 @@ public class BuildProject_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_vny568_a1g0(SNode node, EditorContext editorContext, IScope scope) {
-    final RelativePathHelper rph = Context.defaultContext().getRelativePathHelper(SNodeOperations.getModel(node));
-    return rph != null;
-  }
-
-  private static boolean renderingCondition_vny568_a91a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).isEmpty() || SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(ListSequence.fromList(SLinkOperations.getTargets(node, "parts", true)).last()), "abstract");
-  }
-
-  private static JComponent _QueryFunction_JComponent_vny568_a0b6a(final SNode node, final EditorContext editorContext) {
-    final RelativePathHelper rph = Context.defaultContext().getRelativePathHelper(SNodeOperations.getModel(node));
-    if (rph == null) {
-      // never happens, see show if condition on outer cell 
-      return null;
-    }
-    return EditorUtil.createSelectButton(node, "internalBaseDirectory", editorContext, false, new _FunctionTypes._return_P1_E0<String, String>() {
-      public String invoke(String path) {
-        try {
-          return rph.makeRelative(path);
-        } catch (Exception ex) {
-          return path;
-        }
-      }
-    }, new _FunctionTypes._return_P1_E0<String, String>() {
-      public String invoke(String path) {
-        try {
-          return rph.makeAbsolute(path);
-        } catch (Exception ex) {
-          return path;
-        }
-      }
-    });
   }
 }

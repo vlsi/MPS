@@ -7,9 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
@@ -28,8 +28,8 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   protected List<INodeSubstituteAction> createActions() {
-    List<INodeSubstituteAction> actions = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     SNode enumDataType = (SNode) SLinkOperations.getTarget(myPropertyDeclaration, "dataType", false);
+    List<INodeSubstituteAction> actions = ListSequence.fromList(new ArrayList<INodeSubstituteAction>(ListSequence.fromList(SLinkOperations.getTargets(enumDataType, "member", true)).count()));
     for (final SNode enumMemberDeclaration : SLinkOperations.getTargets(enumDataType, "member", true)) {
       ListSequence.fromList(actions).addElement(new AbstractNodeSubstituteAction(null, enumMemberDeclaration, myNode) {
         @Override

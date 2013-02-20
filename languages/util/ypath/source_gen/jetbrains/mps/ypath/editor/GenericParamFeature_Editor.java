@@ -6,17 +6,19 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -34,21 +36,27 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.ypath.behavior.IFeature_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GenericParamFeature_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_a19ihi_a(editorContext, node);
   }
 
-  public static class GenericParamFeature_generic_cellMenu_a0a0a extends AbstractCellMenuPart_Generic_Group {
-    public GenericParamFeature_generic_cellMenu_a0a0a() {
+  private static boolean renderingCondition_a19ihi_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "default");
+  }
+
+  private static boolean renderingCondition_a19ihi_a0a0_0(SNode node, EditorContext editorContext, IScope scope) {
+    return false;
+  }
+
+  public static class GenericParamFeature_generic_cellMenu_a19ihi_a0a0a extends AbstractCellMenuPart_Generic_Group {
+    public GenericParamFeature_generic_cellMenu_a19ihi_a0a0a() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -90,10 +98,14 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class GenericParamFeature_component_cellMenu_a0a0a5a0 implements SubstituteInfoPartExt {
+  private static boolean renderingCondition_a19ihi_a0f0a(SNode node, EditorContext editorContext, IScope scope) {
+    return IFeature_Behavior.call_hasPartialOpposites_1213877499758(node);
+  }
+
+  public static class GenericParamFeature_component_cellMenu_a19ihi_a0a0a5a0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
-    public GenericParamFeature_component_cellMenu_a0a0a5a0() {
+    public GenericParamFeature_component_cellMenu_a19ihi_a0a0a5a0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
@@ -102,10 +114,14 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class GenericParamFeature_component_cellMenu_a0a0a5a0_0 implements SubstituteInfoPartExt {
+  private static boolean renderingCondition_a19ihi_a0a0f0a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "opposite", false) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "opposite", false), "opposite", false) != node;
+  }
+
+  public static class GenericParamFeature_component_cellMenu_a19ihi_a0a0a5a0_0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
-    public GenericParamFeature_component_cellMenu_a0a0a5a0_0() {
+    public GenericParamFeature_component_cellMenu_a19ihi_a0a0a5a0_0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
@@ -114,10 +130,14 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class GenericParamFeature_component_cellMenu_a0b0a5a0 implements SubstituteInfoPartExt {
+  private static boolean renderingCondition_a19ihi_a1a0f0a(SNode node, EditorContext editorContext, IScope scope) {
+    return IFeature_Behavior.call_hasMutualOpposite_1213877499741(node);
+  }
+
+  public static class GenericParamFeature_component_cellMenu_a19ihi_a0b0a5a0 implements SubstituteInfoPartExt {
     private menu_FeatureSetOpposite myComponent;
 
-    public GenericParamFeature_component_cellMenu_a0b0a5a0() {
+    public GenericParamFeature_component_cellMenu_a19ihi_a0b0a5a0() {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
@@ -162,6 +182,10 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_a19ihi_a2a0f0a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "opposite", false) != null);
+  }
+
   private EditorCell createAlternation_a19ihi_a0a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = GenericParamFeature_Editor.renderingCondition_a19ihi_a0a0(node, editorContext, editorContext.getOperationContext().getScope());
@@ -172,7 +196,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
       editorCell = this.createConstant_a19ihi_a0a0_0(editorContext, node);
     }
     IFeature_default_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericParamFeature_Editor.GenericParamFeature_generic_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericParamFeature_Editor.GenericParamFeature_generic_cellMenu_a19ihi_a0a0a()}));
     return editorCell;
   }
 
@@ -475,7 +499,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     stylesheet_Feature_StyleSheet.applyOPPOSITE(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericParamFeature_Editor.GenericParamFeature_component_cellMenu_a0a0a5a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericParamFeature_Editor.GenericParamFeature_component_cellMenu_a19ihi_a0a0a5a0()}));
     return editorCell;
   }
 
@@ -487,7 +511,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericParamFeature_Editor.GenericParamFeature_component_cellMenu_a0a0a5a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericParamFeature_Editor.GenericParamFeature_component_cellMenu_a19ihi_a0a0a5a0_0()}));
     return editorCell;
   }
 
@@ -499,7 +523,7 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     IFeature_opposite_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericParamFeature_Editor.GenericParamFeature_component_cellMenu_a0b0a5a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenericParamFeature_Editor.GenericParamFeature_component_cellMenu_a19ihi_a0b0a5a0()}));
     return editorCell;
   }
 
@@ -754,29 +778,5 @@ public class GenericParamFeature_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_a19ihi_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "default");
-  }
-
-  private static boolean renderingCondition_a19ihi_a0a0_0(SNode node, EditorContext editorContext, IScope scope) {
-    return false;
-  }
-
-  private static boolean renderingCondition_a19ihi_a0f0a(SNode node, EditorContext editorContext, IScope scope) {
-    return IFeature_Behavior.call_hasPartialOpposites_1213877499758(node);
-  }
-
-  private static boolean renderingCondition_a19ihi_a0a0f0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "opposite", false) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "opposite", false), "opposite", false) != node;
-  }
-
-  private static boolean renderingCondition_a19ihi_a1a0f0a(SNode node, EditorContext editorContext, IScope scope) {
-    return IFeature_Behavior.call_hasMutualOpposite_1213877499741(node);
-  }
-
-  private static boolean renderingCondition_a19ihi_a2a0f0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "opposite", false) != null);
   }
 }

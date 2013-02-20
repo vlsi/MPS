@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.editor.behavior.BaseEditorComponent_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
-import javax.swing.Icon;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -718,10 +717,6 @@ public class QueriesGenerated {
 
               public String getDescriptionText(String pattern) {
                 return "";
-              }
-
-              public Icon getIconFor(String pattern) {
-                return null;
               }
             });
           }

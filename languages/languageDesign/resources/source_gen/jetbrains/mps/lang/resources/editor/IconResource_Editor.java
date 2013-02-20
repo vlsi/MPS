@@ -6,6 +6,13 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.resources.behavior.IconResource_Behavior;
+import javax.swing.JComponent;
+import jetbrains.mps.ide.editor.util.EditorUtil;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -14,7 +21,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Image;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -22,12 +28,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.resources.behavior.IconResource_Behavior;
-import javax.swing.JComponent;
-import jetbrains.mps.ide.editor.util.EditorUtil;
-import java.awt.Color;
 
 public class IconResource_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -36,6 +36,37 @@ public class IconResource_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createProperty_79r3b6_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_79r3b6_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "iconExpression", true) == null);
+  }
+
+  private static boolean renderingCondition_79r3b6_a0a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return isEmpty_79r3b6_a0a0d(SPropertyOperations.getString(node, "path"));
+  }
+
+  private static boolean renderingCondition_79r3b6_a0a0a0(SNode node, EditorContext editorContext, IScope scope) {
+    return IconResource_Behavior.call_isValid_8974276187400030063(node);
+  }
+
+  private static JComponent _QueryFunction_JComponent_79r3b6_a1a0a(final SNode node, final EditorContext editorContext) {
+    return EditorUtil.createSelectIconButton(node, "path", editorContext);
+  }
+
+  private static boolean renderingCondition_79r3b6_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return isEmpty_79r3b6_a0a0g(SPropertyOperations.getString(node, "path"));
+  }
+
+  private static boolean renderingCondition_79r3b6_a1a_0(SNode node, EditorContext editorContext, IScope scope) {
+    return isEmpty_79r3b6_a0a0h(SPropertyOperations.getString(node, "path"));
+  }
+
+  private static Color _StyleParameter_QueryFunction_79r3b6_a0a(EditorContext editorContext, SNode node) {
+    return (IconResource_Behavior.call_isValid_8974276187400030063(node) ?
+      Color.BLACK :
+      Color.RED
+    );
   }
 
   private EditorCell createAlternation_79r3b6_a0(EditorContext editorContext, SNode node) {
@@ -208,46 +239,15 @@ public class IconResource_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_79r3b6_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "iconExpression", true) == null);
-  }
-
-  private static boolean renderingCondition_79r3b6_a0a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_79r3b6_a0a0s(SPropertyOperations.getString(node, "path"));
-  }
-
-  private static boolean renderingCondition_79r3b6_a0a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return IconResource_Behavior.call_isValid_8974276187400030063(node);
-  }
-
-  private static boolean renderingCondition_79r3b6_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_79r3b6_a0a0u(SPropertyOperations.getString(node, "path"));
-  }
-
-  private static boolean renderingCondition_79r3b6_a1a_0(SNode node, EditorContext editorContext, IScope scope) {
-    return isEmpty_79r3b6_a0a0v(SPropertyOperations.getString(node, "path"));
-  }
-
-  private static JComponent _QueryFunction_JComponent_79r3b6_a1a0a(final SNode node, final EditorContext editorContext) {
-    return EditorUtil.createSelectIconButton(node, "path", editorContext);
-  }
-
-  private static Color _StyleParameter_QueryFunction_79r3b6_a0a(EditorContext editorContext, SNode node) {
-    return (IconResource_Behavior.call_isValid_8974276187400030063(node) ?
-      Color.BLACK :
-      Color.RED
-    );
-  }
-
-  public static boolean isEmpty_79r3b6_a0a0s(String str) {
+  public static boolean isEmpty_79r3b6_a0a0d(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_79r3b6_a0a0u(String str) {
+  public static boolean isEmpty_79r3b6_a0a0g(String str) {
     return str == null || str.length() == 0;
   }
 
-  public static boolean isEmpty_79r3b6_a0a0v(String str) {
+  public static boolean isEmpty_79r3b6_a0a0h(String str) {
     return str == null || str.length() == 0;
   }
 }

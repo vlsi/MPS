@@ -37,10 +37,10 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_8okfes_a_0(editorContext, node);
   }
 
-  public static class IncludeMacro_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
+  public static class IncludeMacro_component_cellMenu_8okfes_a0a0 implements SubstituteInfoPartExt {
     private replace_node_macro myComponent;
 
-    public IncludeMacro_component_cellMenu_a0a0() {
+    public IncludeMacro_component_cellMenu_8okfes_a0a0() {
       this.myComponent = new replace_node_macro();
     }
 
@@ -221,7 +221,7 @@ public class IncludeMacro_Editor extends DefaultNodeEditor {
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IncludeMacro_Editor.IncludeMacro_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IncludeMacro_Editor.IncludeMacro_component_cellMenu_8okfes_a0a0()}));
     return editorCell;
   }
 

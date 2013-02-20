@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -19,11 +20,14 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ayjduv_a(editorContext, node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_ayjduv_a1a0(EditorContext editorContext, SNode node) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_624440001685459414", new Object[]{}));
   }
 
   public static class _Inline_ayjduv_a1a extends InlineCellProvider {
@@ -60,6 +64,10 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean _StyleParameter_QueryFunction_ayjduv_a1c0(EditorContext editorContext, SNode node) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_624440001685490925", new Object[]{}));
   }
 
   private EditorCell createCollection_ayjduv_a(EditorContext editorContext, SNode node) {
@@ -128,13 +136,5 @@ public class BuildVarRefStringPart_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean _StyleParameter_QueryFunction_ayjduv_a1a0(EditorContext editorContext, SNode node) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_624440001685459414", new Object[]{}));
-  }
-
-  private static boolean _StyleParameter_QueryFunction_ayjduv_a1c0(EditorContext editorContext, SNode node) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_624440001685490925", new Object[]{}));
   }
 }

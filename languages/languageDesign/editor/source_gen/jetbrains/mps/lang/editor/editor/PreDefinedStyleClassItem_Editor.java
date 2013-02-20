@@ -29,8 +29,8 @@ public class PreDefinedStyleClassItem_Editor extends DefaultNodeEditor {
     return this.createCollection_vnxsp2_a(editorContext, node);
   }
 
-  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_15 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_StyleClassItem_cellMenu_a0a0_15() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_vnxsp2_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_vnxsp2_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -89,7 +89,7 @@ public class PreDefinedStyleClassItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.applyItem(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new PreDefinedStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_15()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new PreDefinedStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_vnxsp2_a0a0()}));
     return editorCell;
   }
 

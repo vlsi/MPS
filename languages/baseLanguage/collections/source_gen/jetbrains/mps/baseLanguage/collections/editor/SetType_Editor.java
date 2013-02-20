@@ -33,10 +33,10 @@ public class SetType_Editor extends DefaultNodeEditor {
     return this.createCollection_3jefrc_a(editorContext, node);
   }
 
-  public static class SetType_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
+  public static class SetType_component_cellMenu_3jefrc_a0a0 implements SubstituteInfoPartExt {
     private replace_withAnotherSequenceType myComponent;
 
-    public SetType_component_cellMenu_a0a0() {
+    public SetType_component_cellMenu_3jefrc_a0a0() {
       this.myComponent = new replace_withAnotherSequenceType();
     }
 
@@ -63,7 +63,7 @@ public class SetType_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SetType_Editor.SetType_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SetType_Editor.SetType_component_cellMenu_3jefrc_a0a0()}));
     return editorCell;
   }
 

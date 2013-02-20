@@ -7,9 +7,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -28,15 +29,14 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7mrjrs_a(editorContext, node);
   }
 
-  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_14 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_StyleClassItem_cellMenu_a0a0_14() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_7mrjrs_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_7mrjrs_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -44,8 +44,12 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class MaxWidthStyleClassItem_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Item {
-    public MaxWidthStyleClassItem_generic_cellMenu_a0c0() {
+  private static boolean renderingCondition_7mrjrs_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "query", true) == null;
+  }
+
+  public static class MaxWidthStyleClassItem_generic_cellMenu_7mrjrs_a0c0 extends AbstractCellMenuPart_Generic_Item {
+    public MaxWidthStyleClassItem_generic_cellMenu_7mrjrs_a0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -55,6 +59,10 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "query";
     }
+  }
+
+  private static boolean renderingCondition_7mrjrs_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "query", true) != null);
   }
 
   private EditorCell createCollection_7mrjrs_a(EditorContext editorContext, SNode node) {
@@ -77,7 +85,7 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.applyItem(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MaxWidthStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_14()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MaxWidthStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_7mrjrs_a0a0()}));
     return editorCell;
   }
 
@@ -118,7 +126,7 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MaxWidthStyleClassItem_Editor.MaxWidthStyleClassItem_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new MaxWidthStyleClassItem_Editor.MaxWidthStyleClassItem_generic_cellMenu_7mrjrs_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -127,13 +135,5 @@ public class MaxWidthStyleClassItem_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_7mrjrs_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "query", true) == null;
-  }
-
-  private static boolean renderingCondition_7mrjrs_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "query", true) != null);
   }
 }

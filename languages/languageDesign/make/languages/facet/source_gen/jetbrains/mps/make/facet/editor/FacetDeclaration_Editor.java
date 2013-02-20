@@ -6,6 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -28,13 +31,34 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class FacetDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_aj8zjo_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_aj8zjo_a0a1b0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "required", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_aj8zjo_a1b1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "required", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_aj8zjo_a0c1b0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "optional", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_aj8zjo_a3b1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "optional", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_aj8zjo_a4b1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "targetDeclaration", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_aj8zjo_a0f1b0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "targetDeclaration", true)).isNotEmpty();
   }
 
   private static class extendedListHandler_aj8zjo_d0a extends RefNodeListHandler {
@@ -533,29 +557,5 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_aj8zjo_a0a1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "required", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_aj8zjo_a1b1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "required", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_aj8zjo_a0c1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "optional", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_aj8zjo_a3b1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "optional", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_aj8zjo_a4b1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "targetDeclaration", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_aj8zjo_a0f1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "targetDeclaration", true)).isNotEmpty();
   }
 }

@@ -23,13 +23,18 @@ import com.intellij.psi.FileViewProviderFactory;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.SingleRootFileViewProvider;
-import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.testFramework.LightVirtualFile;
+import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -93,17 +98,32 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
       if (virtualFile instanceof LightVirtualFile) {
         virtualFile = ((LightVirtualFile)virtualFile).getOriginalFile();
       }
-
-      SModelReference smref = virtualFile.getUserData(MPSKeys.MODEL_REFERENCE);
-      if(smref != null) {
-        MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
-        MPSPsiModel psiModel = mpsPsiProvider.getPsi(smref);
-
-        FileSourcePsiFile psiFile = new FileSourcePsiFile(this, smref.getModelName());
-        psiFile.update(psiModel.getChildren());
-        return psiFile;
+      if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MODEL_FILE_TYPE) {
+        return null;
       }
-      return null;
+      final IFile modelFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
+
+      FileSourcePsiFile psiFile = ModelAccess.instance().runReadAction(new Computable<FileSourcePsiFile>() {
+        @Override
+        public FileSourcePsiFile compute() {
+          SModelDescriptor descr = SModelFileTracker.getInstance().findModel(modelFile);
+          if(descr != null) {
+            return createAndUpdatePsiFile(descr);
+          }
+          return null;
+        }
+      });
+      return psiFile;
+    }
+
+    private FileSourcePsiFile createAndUpdatePsiFile (SModelDescriptor descr) {
+      FileSourcePsiFile result = new FileSourcePsiFile(this, descr.getModelName());
+
+      MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
+      MPSPsiModel psiModel = mpsPsiProvider.getPsi(descr);
+
+      result.update(psiModel.getChildren());
+      return result;
     }
   }
 }
