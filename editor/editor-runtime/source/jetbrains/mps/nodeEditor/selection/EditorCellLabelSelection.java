@@ -148,6 +148,17 @@ public class EditorCellLabelSelection extends EditorCellSelection {
   }
 
   @Override
+  public boolean canExecuteAction(CellActionType type) {
+    if (type == CellActionType.DELETE || type == CellActionType.BACKSPACE) {
+      return true;
+    }
+    if (type == CellActionType.DELETE_TO_WORD_END) {
+      type = CellActionType.DELETE;
+    }
+    return super.canExecuteAction(type);
+  }
+
+  @Override
   public void executeAction(CellActionType type) {
     getEditorComponent().assertModelNotDisposed();
     if (type == CellActionType.DELETE || type == CellActionType.BACKSPACE) {

@@ -36,7 +36,8 @@ public interface Selection {
 
   boolean isSame(Selection another);
 
-  // TODO: add canExecuteAction() method
+
+  public boolean canExecuteAction(CellActionType type);
   void executeAction(CellActionType type);
 
   /**
