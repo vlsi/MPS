@@ -135,7 +135,7 @@ public abstract class ModelAccess implements ModelCommandExecutor, SModelAccess 
   @Override
   public void assertReadAccess() {
     if (!canRead()) {
-      throw new IllegalStateException();
+      throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }
 
@@ -156,28 +156,6 @@ public abstract class ModelAccess implements ModelCommandExecutor, SModelAccess 
     if (!instance().canRead()) {
       LOG.error(new IllegalModelAccessError("You can read model only inside read actions"));
       // TODO throw
-    }
-  }
-
-  static void assertLegalRead(SNode node) {
-    ModelAccess.instance().doAssertLegalRead(node);
-  }
-
-  protected void doAssertLegalRead(SNode node) {
-    if (canRead()) return;
-
-    boolean old = setReadEnabledFlag(true);
-    boolean reg = false;
-    try {
-      SModel model = node.getModel();
-      if (model == null) return;
-      reg = model.isRegistered();
-    } finally {
-      setReadEnabledFlag(old);
-    }
-
-    if (reg) {
-      throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }
 

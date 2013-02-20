@@ -57,7 +57,7 @@ public class SModel {
 
   private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
 
-  private SModelDescriptor myModelDescriptor;
+  private volatile SModelDescriptor myModelDescriptor;
 
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
@@ -230,7 +230,9 @@ public class SModel {
   }
 
   public boolean isRegistered() {
-    return myModelDescriptor != null && myModelDescriptor.isRegistered();
+    // Note: can be called without read action
+    SModelDescriptor copy = myModelDescriptor;
+    return copy != null && copy.isRegistered();
   }
 
 //---------listeners--------

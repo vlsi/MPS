@@ -45,7 +45,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   protected SModelReference myModelReference;
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
-  private SModule myModule;
+  private volatile SModule myModule;
 
 
   protected BaseSModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource source) {
@@ -126,7 +126,9 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   @Override
   public boolean isRegistered() {
-    return myModule != null && myModule.getRepository() != null;
+    // Note: can be called without read action
+    SModule copy = myModule;
+    return copy != null && copy.getRepository() != null;
   }
 
   @Override

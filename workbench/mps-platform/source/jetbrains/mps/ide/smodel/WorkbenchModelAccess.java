@@ -30,11 +30,11 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -93,25 +93,6 @@ public class WorkbenchModelAccess extends ModelAccess {
       }
     }
     super.dispose();
-  }
-
-  @Override
-  protected void doAssertLegalRead(SNode node) {
-    if (canRead()) return;
-
-    boolean old = setReadEnabledFlag(true);
-    boolean reg = false;
-    try {
-      SModel model = node.getModel();
-      if (model == null) return;
-      reg = model.isRegistered();
-    } finally {
-      setReadEnabledFlag(old);
-    }
-
-    if (reg && !myIndexingThreads.contains(Thread.currentThread())) {
-      throw new IllegalModelAccessError("You can read model only inside read actions");
-    }
   }
 
   @Override
@@ -661,6 +642,14 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   public boolean isInsideCommand() {
     return canWrite() && myCommandLevel > 0;
+  }
+
+  @Override
+  public void assertReadAccess() {
+    // TODO remove this method
+    if (!canRead() /* && !myIndexingThreads.contains(Thread.currentThread())*/) {
+      throw new IllegalModelAccessError("You can read model only inside read actions");
+    }
   }
 
   @Override
