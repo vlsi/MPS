@@ -179,7 +179,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     }
     String oldStereo = SModelStereotype.getStereotype(myDescriptor);
     String newName = myPackageName.getText();
-    if (oldStereo != null) {
+    if (oldStereo != null && oldStereo.length() > 0) {
       newName = newName + "@" + oldStereo;
     }
 
