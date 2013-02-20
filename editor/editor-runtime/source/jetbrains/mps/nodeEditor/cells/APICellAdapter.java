@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.openapi.editor.cells.*;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -80,10 +80,10 @@ public class APICellAdapter {
     return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell, Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
     jetbrains.mps.openapi.editor.cells.EditorCell current = getNextLeaf(cell);
     while (current != null) {
-      if (condition.met(current)) {
+      if (condition.met((jetbrains.mps.nodeEditor.cells.EditorCell) current)) {
         return current;
       }
       current = getNextLeaf(current);
@@ -105,10 +105,10 @@ public class APICellAdapter {
     return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell, Condition<jetbrains.mps.openapi.editor.cells.EditorCell> condition) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
     jetbrains.mps.openapi.editor.cells.EditorCell current = getPrevLeaf(cell);
     while (current != null) {
-      if (condition.met(current)) {
+      if (condition.met((jetbrains.mps.nodeEditor.cells.EditorCell) current)) {
         return current;
       }
       current = getPrevLeaf(current);

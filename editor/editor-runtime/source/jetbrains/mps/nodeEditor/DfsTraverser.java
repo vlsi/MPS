@@ -21,40 +21,36 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.util.containers.EmptyIterator;
 
 import java.util.Iterator;
+import java.util.Stack;
 
 public class DfsTraverser {
   private EditorCell myCurrent;
+  private boolean myVisitChildrenOnly;
+  private EditorCell myCurrentDfsRoot;
   private boolean myForward;
-  private Iterator<EditorCell> myCellIterator;
+  private Stack<Iterator<EditorCell>> myCellIteratorStack;
 
-  public DfsTraverser(EditorCell start, boolean forward) {
+  public DfsTraverser(EditorCell start, boolean forward, boolean visitChildrenOnly) {
     myCurrent = start;
+    myVisitChildrenOnly = visitChildrenOnly;
+    myCurrentDfsRoot = myCurrent;
     myForward = forward;
-    setIteratorFor(myCurrent);
+    myCellIteratorStack = new Stack<Iterator<EditorCell>>();
+    myCellIteratorStack.push(iteratorByCell(myCurrent));
     next();
   }
 
-  private void setIteratorFor(EditorCell cell) {
+  private Iterator<EditorCell> iteratorByCell(EditorCell cell) {
     if (cell == null) {
-      myCellIterator = new EmptyIterator<EditorCell>();
-      return;
+      return new EmptyIterator<EditorCell>();
     }
 
-    EditorCell_Collection collection = cell.getParent();
-    if (collection == null ) {
-      myCellIterator = new EmptyIterator<EditorCell>();
-      return;
+    if (cell instanceof EditorCell_Collection) {
+      return getCellIterator((EditorCell_Collection) cell);
+    } else {
+      return new EmptyIterator<EditorCell>();
     }
 
-    myCellIterator = getCellIterator(collection);
-
-    if (!cell.equals(collection)) {
-      while (myCellIterator.hasNext()) {
-        if (myCellIterator.next().equals(cell)){
-          break;
-        }
-      }
-    }
   }
 
   public EditorCell getCurrent() {
@@ -62,40 +58,54 @@ public class DfsTraverser {
   }
 
   public void next() {
-    if (myCurrent == null) {
+    if (myCurrent == null || myCellIteratorStack.empty()) {
       return;
     }
 
-    if (myCurrent instanceof EditorCell_Collection) {
-      EditorCell child = getChild((EditorCell_Collection) myCurrent);
-      if (child != null) {
-        myCurrent = child;
-        myCellIterator = getCellIterator((EditorCell_Collection) myCurrent);
-        myCellIterator.next();
+    while (!myCellIteratorStack.empty() && !myCellIteratorStack.peek().hasNext()){
+      myCellIteratorStack.pop();
+    }
+
+    if (myCellIteratorStack.empty()) {
+
+      if (myVisitChildrenOnly) {
+        myCurrent = null;
         return;
       }
-    }
 
-    EditorCell current = myCurrent;
-
-    while (current != null) {
-      while (myCellIterator.hasNext()) {
-        EditorCell next = myCellIterator.next();
-        if (next != null) {
-          myCurrent = next;
-          return;
-        }
+      EditorCell_Collection parent = myCurrentDfsRoot.getParent();
+      if (parent == null) {
+        myCurrent = null;
+        return;
       }
-      current = current.getParent();
-      setIteratorFor(current);
+
+      Iterator<EditorCell> newIterator = getCellIterator(parent);
+      EditorCell nextCell = null;
+      while (newIterator.hasNext()) {
+        nextCell = newIterator.next();
+        if (nextCell == myCurrentDfsRoot) {
+           break;
+         }
+      }
+      //parent cell contains its children
+      assert nextCell != null && nextCell == myCurrentDfsRoot;
+
+      myCellIteratorStack.push(newIterator);
+      myCurrentDfsRoot = parent;
+      next();
+
+    } else {
+      myCurrent = myCellIteratorStack.peek().next();
+
+      assert myCurrent != null : "cell for node " + myCurrentDfsRoot.getSNode().getPresentation()+ " at " + myCurrentDfsRoot.getSNode().getContainingRoot() + " has null child cell";
+
+      if (myCurrent instanceof EditorCell_Collection) {
+        myCellIteratorStack.push(getCellIterator((EditorCell_Collection) myCurrent));
+      }
     }
 
-    myCurrent = null;
   }
 
-  private EditorCell getChild(EditorCell_Collection cell) {
-    return myForward ? cell.firstCell() : cell.lastCell();
-  }
 
   private Iterator<EditorCell> getCellIterator(EditorCell_Collection cell) {
     return myForward ? cell.iterator() : cell.reverseIterator();

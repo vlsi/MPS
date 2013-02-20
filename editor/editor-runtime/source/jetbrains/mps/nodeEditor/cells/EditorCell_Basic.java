@@ -1252,21 +1252,22 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public EditorCell getFirstDescendant(Condition<EditorCell> condition) {
-    DfsTraverser traverser = new DfsTraverser(this, true);
-    while (traverser.getCurrent() != null) {
-      if (condition.met((EditorCell) traverser.getCurrent())) {
-        return (EditorCell)traverser.getCurrent();
-      }
-      traverser.next();
-      if (((EditorCell) traverser.getCurrent()).isAncestorOf(this) || this.equals(traverser.getCurrent())) {
+    DfsTraverser traverser = new DfsTraverser(this, true, true);
+    jetbrains.mps.openapi.editor.cells.EditorCell current = traverser.getCurrent();
+    while (current != null) {
+      if (this.isAncestorOf((EditorCell) current)) {
         return null;
       }
+      if (condition.met((EditorCell) current)) {
+        return (EditorCell) current;
+      }
+      traverser.next();
     }
     return null;
   }
 
   public EditorCell getLastDescendant(Condition<EditorCell> condition) {
-    DfsTraverser traverser = new DfsTraverser(this, false);
+    DfsTraverser traverser = new DfsTraverser(this, false, true);
     while (traverser.getCurrent() != null) {
       if (condition.met((EditorCell) traverser.getCurrent())) {
         return (EditorCell)traverser.getCurrent();

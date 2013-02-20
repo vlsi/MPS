@@ -70,7 +70,7 @@ public class ChildrenCollectionFinder {
             return curr;
           }
         }
-        DfsTraverser traverser = new DfsTraverser(myCurrent, myForward);
+        DfsTraverser traverser = new DfsTraverser(myCurrent, myForward, false);
         while (traverser.getCurrent() != null) {
           EditorCell current = traverser.getCurrent();
           SNode currentNode = current.getSNode();
