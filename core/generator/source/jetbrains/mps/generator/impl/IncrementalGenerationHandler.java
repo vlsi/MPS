@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
@@ -227,7 +228,7 @@ public class IncrementalGenerationHandler {
       String oldHash = entry.getValue();
       if (oldHash == null) {
         // TODO hash for packaged models
-        if ((sm instanceof EditableSModelDescriptor) && !((EditableSModelDescriptor) sm).isReadOnly()) {
+        if ((sm instanceof EditableSModel) && !((EditableSModel) sm).isReadOnly()) {
           changedModels.add(modelReference);
         }
         continue;

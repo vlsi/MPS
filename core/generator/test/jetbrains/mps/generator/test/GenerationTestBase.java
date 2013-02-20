@@ -18,6 +18,7 @@ package jetbrains.mps.generator.test;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.TestMain;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
@@ -31,7 +32,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.Testbench;
@@ -274,7 +274,7 @@ public class GenerationTestBase {
   protected static SModelDescriptor findModel(Project project, String fqName) {
     for (SModule m : project.getModules()) {
       for (SModel descr : m.getModels()) {
-        if (!(descr instanceof EditableSModelDescriptor)) {
+        if (!(descr instanceof EditableSModel)) {
           continue;
         }
         String longName = descr.getModelReference().getModelName();

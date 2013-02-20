@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
@@ -33,7 +34,6 @@ import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -147,8 +147,8 @@ public class GenerationFacade {
     ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
         for (SModelDescriptor d : inputModels) {
-          if (d instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) d).needsReloading()) {
-            ((EditableSModelDescriptor) d).reloadFromDisk();
+          if (d instanceof EditableSModel && ((EditableSModel) d).needsReloading()) {
+            ((EditableSModel) d).reloadFromDisk();
             LOG.info("Model " + d + " reloaded from disk.");
           }
           transientModelsComponent.createModule(d.getModule());
