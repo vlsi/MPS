@@ -313,7 +313,7 @@
     <scopeInfo nodeId="6893245555985399815" fileName="Execution_PluginInitializer.java" startLine="13" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="6893245555985399815" fileName="Execution_PluginInitializer.java" startLine="14" startPosition="54" endLine="22" endPosition="5" unitName="jetbrains.mps.build.deprecated.execution.Execution_PluginInitializer$1" />
     <unitInfo nodeId="6893245555985399815" fileName="Execution_PluginInitializer.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.deprecated.execution.Execution_PluginInitializer" />
-    <unitInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="1" startPosition="0" endLine="25" endPosition="14" unitName="jetbrains.mps.build.deprecated.execution.plugin" />
+    <unitInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="1" startPosition="0" endLine="23" endPosition="14" unitName="jetbrains.mps.build.deprecated.execution.plugin" />
   </root>
   <root nodeRef="r:78fddae4-c085-42f0-a758-ca4c7b372a36(jetbrains.mps.build.deprecated.execution)/7162597690968026150">
     <nodeInfo nodeId="7162597690968026150" fileName="Execution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
