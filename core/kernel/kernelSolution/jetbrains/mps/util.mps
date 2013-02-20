@@ -3960,8 +3960,8 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2718315470531188877">
-      <property name="name" nameId="tpck.1169194664001" value="getChildRoles" />
       <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="getChildRoles" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2718315470531188878">
         <property name="name" nameId="tpck.1169194664001" value="n" />
@@ -4066,8 +4066,8 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="2718315470531188917">
-      <property name="name" nameId="tpck.1169194664001" value="getChild" />
       <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="getChild" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="2718315470531188918">
         <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -4957,6 +4957,9 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="9160302885342295159">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="7738736717686620430">
+            <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6730903852673505156">
+              <property name="value" nameId="tpee.1070475926801" value="" />
+            </node>
             <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="7738736717686616997">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7738736717686617034">
                 <property name="value" nameId="tpee.1068580320021" value="-1" />
@@ -4964,9 +4967,6 @@
               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7738736717686613538">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7738736717686601391" resolveInfo="index" />
               </node>
-            </node>
-            <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7738736717686620597">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9160302885342297969" resolveInfo="name" />
             </node>
             <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9160302885342299402">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9160302885342311361">

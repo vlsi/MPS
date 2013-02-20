@@ -298,7 +298,7 @@ public class SNodeOperations {
     String name = model.getModelName();
     int index = name.indexOf("@");
     return (index == -1 ?
-      name :
+      "" :
       name.substring(index + 1)
     );
   }
