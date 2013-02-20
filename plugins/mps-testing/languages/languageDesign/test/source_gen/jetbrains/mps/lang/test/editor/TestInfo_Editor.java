@@ -40,20 +40,6 @@ public class TestInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_v9r28m_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "UI test:");
-    editorCell.setCellId("Constant_v9r28m_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_v9r28m_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ReOpen project:");
-    editorCell.setCellId("Constant_v9r28m_e0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createProperty_v9r28m_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("projectPath");
@@ -75,6 +61,13 @@ public class TestInfo_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_v9r28m_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "UI test:");
+    editorCell.setCellId("Constant_v9r28m_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createProperty_v9r28m_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("uiTest");
@@ -93,6 +86,13 @@ public class TestInfo_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_v9r28m_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ReOpen project:");
+    editorCell.setCellId("Constant_v9r28m_e0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 

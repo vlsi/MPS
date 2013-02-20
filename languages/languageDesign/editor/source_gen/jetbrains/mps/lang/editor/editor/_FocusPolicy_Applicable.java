@@ -6,12 +6,12 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -37,10 +37,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
-  private static boolean renderingCondition_pmdlax_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
-  }
-
   private EditorCell createCollection_pmdlax_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pmdlax_a");
@@ -64,6 +60,17 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     return editorCell;
   }
 
+  private static boolean renderingCondition_pmdlax_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
+  }
+
+  private EditorCell createConstant_pmdlax_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "focus policy applicable:");
+    editorCell.setCellId("Constant_pmdlax_a0a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createCollection_pmdlax_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pmdlax_b0a");
@@ -71,13 +78,6 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNode_pmdlax_a1a0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_pmdlax_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "focus policy applicable:");
-    editorCell.setCellId("Constant_pmdlax_a0a");
-    editorCell.setDefaultText("");
     return editorCell;
   }
 

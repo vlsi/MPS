@@ -38,27 +38,6 @@ public class VerticalConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_f02xlo_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-[");
-    editorCell.setCellId("Constant_f02xlo_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_f02xlo_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]-");
-    editorCell.setCellId("Constant_f02xlo_e0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_f02xlo_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-|");
-    editorCell.setCellId("Constant_f02xlo_g0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createRefNode_f02xlo_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("top");
@@ -73,6 +52,13 @@ public class VerticalConstraint_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_f02xlo_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-[");
+    editorCell.setCellId("Constant_f02xlo_c0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -93,6 +79,13 @@ public class VerticalConstraint_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_f02xlo_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]-");
+    editorCell.setCellId("Constant_f02xlo_e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNode_f02xlo_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("bottom");
@@ -107,6 +100,13 @@ public class VerticalConstraint_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_f02xlo_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-|");
+    editorCell.setCellId("Constant_f02xlo_g0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }

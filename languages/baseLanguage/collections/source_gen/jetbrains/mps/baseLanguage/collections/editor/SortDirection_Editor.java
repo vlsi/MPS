@@ -21,10 +21,6 @@ public class SortDirection_Editor extends DefaultNodeEditor {
     return this.createAlternation_hdhct1_a(editorContext, node);
   }
 
-  private static boolean renderingCondition_hdhct1_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "value");
-  }
-
   private EditorCell createAlternation_hdhct1_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = SortDirection_Editor.renderingCondition_hdhct1_a0(node, editorContext, editorContext.getOperationContext().getScope());
@@ -35,6 +31,10 @@ public class SortDirection_Editor extends DefaultNodeEditor {
       editorCell = this.createConstant_hdhct1_a0_0(editorContext, node);
     }
     return editorCell;
+  }
+
+  private static boolean renderingCondition_hdhct1_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "value");
   }
 
   private EditorCell createConstant_hdhct1_a0(EditorContext editorContext, SNode node) {

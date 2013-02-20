@@ -6,6 +6,17 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.Measure;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -13,21 +24,56 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.editor.runtime.style.Padding;
-import jetbrains.mps.editor.runtime.style.Measure;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 
 public class MigratedToMethodAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ykmn9g_a(editorContext, node);
+  }
+
+  private EditorCell createCollection_ykmn9g_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_ykmn9g_a");
+    editorCell.addEditorCell(this.createCollection_ykmn9g_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_ykmn9g_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_ykmn9g_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_ykmn9g_a0");
+    editorCell.addEditorCell(this.createConstant_ykmn9g_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_ykmn9g_b0a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_ykmn9g_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Migrated to");
+    editorCell.setCellId("Constant_ykmn9g_a0a");
+    Style style = new StyleImpl();
+    structure_StyleSheet.applyAnnotationNode(style, editorCell);
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
+    editorCell.getStyle().putAll(style);
+    DeprecatedNodeAnnotation_ActionMap.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefCell_ykmn9g_b0a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
+    provider.setRole("method");
+    provider.setNoTargetText("<no method>");
+    EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new MigratedToMethodAnnotation_Editor._Inline_ykmn9g_a1a0());
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
   }
 
   public static class _Inline_ykmn9g_a1a0 extends InlineCellProvider {
@@ -62,22 +108,6 @@ public class MigratedToMethodAnnotation_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createCollection_ykmn9g_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_ykmn9g_a");
-    editorCell.addEditorCell(this.createCollection_ykmn9g_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_ykmn9g_b0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_ykmn9g_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ykmn9g_a0");
-    editorCell.addEditorCell(this.createConstant_ykmn9g_a0a(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_ykmn9g_b0a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createCollection_ykmn9g_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ykmn9g_b0");
@@ -88,40 +118,10 @@ public class MigratedToMethodAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_ykmn9g_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Migrated to");
-    editorCell.setCellId("Constant_ykmn9g_a0a");
-    Style style = new StyleImpl();
-    structure_StyleSheet.applyAnnotationNode(style, editorCell);
-    style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
-    editorCell.getStyle().putAll(style);
-    DeprecatedNodeAnnotation_ActionMap.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createAttributedNodeCell_ykmn9g_a1a(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
-    return editorCell;
-  }
-
-  private EditorCell createRefCell_ykmn9g_b0a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("method");
-    provider.setNoTargetText("<no method>");
-    EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MigratedToMethodAnnotation_Editor._Inline_ykmn9g_a1a0());
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
     return editorCell;
   }
 }

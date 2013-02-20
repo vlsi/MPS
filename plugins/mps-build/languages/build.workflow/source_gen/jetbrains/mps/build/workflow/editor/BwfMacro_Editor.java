@@ -6,12 +6,12 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -25,18 +25,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kawrig_a_0(editorContext, node);
-  }
-
-  private static boolean renderingCondition_kawrig_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "exportToProperiesFile");
-  }
-
-  private static boolean renderingCondition_kawrig_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isLocation");
-  }
-
-  private static boolean renderingCondition_kawrig_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "uninitialized");
   }
 
   private EditorCell createCollection_kawrig_a(EditorContext editorContext, SNode node) {
@@ -59,18 +47,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_kawrig_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_kawrig_a_0");
-    editorCell.addEditorCell(this.createConstant_kawrig_a0_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_kawrig_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_kawrig_c0_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_kawrig_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_kawrig_e0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_kawrig_f0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createConstant_kawrig_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export");
     editorCell.setCellId("Constant_kawrig_a0");
@@ -79,6 +55,10 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_kawrig_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "exportToProperiesFile");
   }
 
   private EditorCell createConstant_kawrig_b0(EditorContext editorContext, SNode node) {
@@ -91,6 +71,10 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_kawrig_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isLocation");
+  }
+
   private EditorCell createConstant_kawrig_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uninitialized");
     editorCell.setCellId("Constant_kawrig_c0");
@@ -101,53 +85,13 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_kawrig_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "uninitialized");
+  }
+
   private EditorCell createConstant_kawrig_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macro");
     editorCell.setCellId("Constant_kawrig_d0");
-    Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_kawrig_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
-    editorCell.setCellId("Constant_kawrig_f0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_kawrig_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_kawrig_h0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_kawrig_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export:");
-    editorCell.setCellId("Constant_kawrig_a0_0");
-    Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_kawrig_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "location:");
-    editorCell.setCellId("Constant_kawrig_c0_0");
-    Style style = new StyleImpl();
-    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_kawrig_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uninitialized:");
-    editorCell.setCellId("Constant_kawrig_e0");
     Style style = new StyleImpl();
     workflowStyles_StyleSheet.applyKeyword(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -173,6 +117,13 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_kawrig_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
+    editorCell.setCellId("Constant_kawrig_f0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createProperty_kawrig_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("defaultValue");
@@ -192,6 +143,35 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_kawrig_h0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_kawrig_h0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_kawrig_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_kawrig_a_0");
+    editorCell.addEditorCell(this.createConstant_kawrig_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_kawrig_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kawrig_c0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_kawrig_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_kawrig_e0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_kawrig_f0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_kawrig_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export:");
+    editorCell.setCellId("Constant_kawrig_a0_0");
+    Style style = new StyleImpl();
+    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -216,6 +196,16 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_kawrig_c0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "location:");
+    editorCell.setCellId("Constant_kawrig_c0_0");
+    Style style = new StyleImpl();
+    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createProperty_kawrig_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isLocation");
@@ -234,6 +224,16 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_kawrig_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uninitialized:");
+    editorCell.setCellId("Constant_kawrig_e0");
+    Style style = new StyleImpl();
+    workflowStyles_StyleSheet.applyKeyword(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 

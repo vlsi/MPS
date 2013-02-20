@@ -6,36 +6,20 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
 
 public class JavaImport_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cbnorm_a(editorContext, node);
-  }
-
-  private static boolean renderingCondition_cbnorm_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "onDemand");
-  }
-
-  private EditorCell createAlternation_cbnorm_c0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = JavaImport_Editor.renderingCondition_cbnorm_a2a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_cbnorm_a2a(editorContext, node);
-    } else {
-      editorCell = this.createEmpty_cbnorm_a2a(editorContext, node);
-    }
-    return editorCell;
   }
 
   private EditorCell createCollection_cbnorm_a(EditorContext editorContext, SNode node) {
@@ -61,6 +45,22 @@ public class JavaImport_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new TokensWithDots(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
+  }
+
+  private EditorCell createAlternation_cbnorm_c0(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = JavaImport_Editor.renderingCondition_cbnorm_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createConstant_cbnorm_a2a(editorContext, node);
+    } else {
+      editorCell = this.createEmpty_cbnorm_a2a(editorContext, node);
+    }
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_cbnorm_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "onDemand");
   }
 
   private EditorCell createConstant_cbnorm_a2a(EditorContext editorContext, SNode node) {

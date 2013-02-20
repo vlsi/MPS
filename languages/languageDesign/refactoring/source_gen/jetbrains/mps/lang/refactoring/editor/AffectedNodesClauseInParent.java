@@ -6,12 +6,12 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -39,10 +39,6 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
-  private static boolean renderingCondition_33nozx_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "affectedNodesClause", true) != null;
-  }
-
   private EditorCell createCollection_33nozx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_33nozx_a");
@@ -64,6 +60,10 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
     editorCell.addEditorCell(this.createConstant_33nozx_a0a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_33nozx_b0a(editorContext, node));
     return editorCell;
+  }
+
+  private static boolean renderingCondition_33nozx_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "affectedNodesClause", true) != null;
   }
 
   private EditorCell createConstant_33nozx_a0a(EditorContext editorContext, SNode node) {

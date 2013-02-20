@@ -6,18 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
-import java.util.List;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -26,17 +14,53 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_689p1d_a(editorContext, node);
+  }
+
+  private EditorCell createCollection_689p1d_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_689p1d_a");
+    editorCell.addEditorCell(this.createComponent_689p1d_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_689p1d_b0(editorContext, node));
+    if (renderingCondition_689p1d_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createProperty_689p1d_c0(editorContext, node));
+    }
+    if (renderingCondition_689p1d_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_689p1d_d0(editorContext, node));
+    }
+    return editorCell;
+  }
+
+  private EditorCell createComponent_689p1d_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyItem(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.ReplaceWith_StyleClassItem_cellMenu_689p1d_a0a0()}));
+    return editorCell;
   }
 
   public static class ReplaceWith_StyleClassItem_cellMenu_689p1d_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
@@ -46,6 +70,34 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
+  }
+
+  private EditorCell createConstant_689p1d_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_689p1d_b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_689p1d_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("flag");
+    provider.setNoTargetText("<no flag>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_flag");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_flag_cellMenu_689p1d_a0c0(), new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_generic_cellMenu_689p1d_b0c0()}));
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
   }
 
   private static boolean renderingCondition_689p1d_a2a(SNode node, EditorContext editorContext, IScope scope) {
@@ -74,41 +126,6 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static boolean renderingCondition_689p1d_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "query", true) != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_useQuery_1223387362946", new Object[]{});
-  }
-
-  private EditorCell createCollection_689p1d_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_689p1d_a");
-    editorCell.addEditorCell(this.createComponent_689p1d_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_689p1d_b0(editorContext, node));
-    if (renderingCondition_689p1d_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createProperty_689p1d_c0(editorContext, node));
-    }
-    if (renderingCondition_689p1d_a3a(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_689p1d_d0(editorContext, node));
-    }
-    return editorCell;
-  }
-
-  private EditorCell createComponent_689p1d_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    Styles_StyleSheet.applyItem(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.ReplaceWith_StyleClassItem_cellMenu_689p1d_a0a0()}));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_689p1d_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
-    editorCell.setCellId("Constant_689p1d_b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createRefNode_689p1d_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");
@@ -129,24 +146,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_689p1d_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("flag");
-    provider.setNoTargetText("<no flag>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_flag");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_flag_cellMenu_689p1d_a0c0(), new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_generic_cellMenu_689p1d_b0c0()}));
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
+  private static boolean renderingCondition_689p1d_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "query", true) != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_useQuery_1223387362946", new Object[]{});
   }
 }

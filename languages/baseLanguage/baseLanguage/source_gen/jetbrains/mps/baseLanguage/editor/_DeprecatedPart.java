@@ -6,12 +6,12 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class _DeprecatedPart extends AbstractCellProvider {
@@ -31,10 +31,6 @@ public class _DeprecatedPart extends AbstractCellProvider {
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
-  }
-
-  private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isDeprecated");
   }
 
   private EditorCell createCollection_uc5iyq_a(EditorContext editorContext, SNode node) {
@@ -63,6 +59,10 @@ public class _DeprecatedPart extends AbstractCellProvider {
     editorCell.addEditorCell(this.createConstant_uc5iyq_c0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_uc5iyq_d0a(editorContext, node));
     return editorCell;
+  }
+
+  private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isDeprecated");
   }
 
   private EditorCell createConstant_uc5iyq_a0a(EditorContext editorContext, SNode node) {

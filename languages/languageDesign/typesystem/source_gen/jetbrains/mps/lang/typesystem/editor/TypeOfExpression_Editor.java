@@ -6,15 +6,15 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.awt.Color;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import java.awt.Color;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -30,14 +30,6 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_ndq0bl_a_0(editorContext, node);
   }
 
-  private static Color _StyleParameter_QueryFunction_ndq0bl_a0a0(EditorContext editorContext, SNode node) {
-    if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
-      return Color.GRAY;
-    } else {
-      return MPSColors.DARK_BLUE;
-    }
-  }
-
   private EditorCell createCollection_ndq0bl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ndq0bl_a");
@@ -45,14 +37,6 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ndq0bl_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_ndq0bl_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ndq0bl_d0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_ndq0bl_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_ndq0bl_a_0");
-    editorCell.addEditorCell(this.createConstant_ndq0bl_a0_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_ndq0bl_b0(editorContext, node));
     return editorCell;
   }
 
@@ -73,31 +57,19 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static Color _StyleParameter_QueryFunction_ndq0bl_a0a0(EditorContext editorContext, SNode node) {
+    if (SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent")) {
+      return Color.GRAY;
+    } else {
+      return MPSColors.DARK_BLUE;
+    }
+  }
+
   private EditorCell createConstant_ndq0bl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ndq0bl_b0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ndq0bl_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_ndq0bl_d0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ndq0bl_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "skip dependency on current:");
-    editorCell.setCellId("Constant_ndq0bl_a0_0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -117,6 +89,34 @@ public class TypeOfExpression_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_ndq0bl_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_ndq0bl_d0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_ndq0bl_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_ndq0bl_a_0");
+    editorCell.addEditorCell(this.createConstant_ndq0bl_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ndq0bl_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_ndq0bl_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "skip dependency on current:");
+    editorCell.setCellId("Constant_ndq0bl_a0_0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 

@@ -6,13 +6,13 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -24,10 +24,6 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     return this.createCollection_165sw5_a(editorContext, node);
   }
 
-  private static boolean renderingCondition_165sw5_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "initializer", true) != null;
-  }
-
   private EditorCell createCollection_165sw5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_165sw5_a");
@@ -35,6 +31,12 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     if (renderingCondition_165sw5_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_165sw5_b0(editorContext, node));
     }
+    return editorCell;
+  }
+
+  private EditorCell createComponent_165sw5_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new VariableDeclaration_NameCellComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -49,10 +51,8 @@ public class AdditionalForLoopVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_165sw5_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new VariableDeclaration_NameCellComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    return editorCell;
+  private static boolean renderingCondition_165sw5_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
 
   private EditorCell createConstant_165sw5_a1a(EditorContext editorContext, SNode node) {

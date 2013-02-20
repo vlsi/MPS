@@ -38,16 +38,6 @@ public class OverrideAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_9raxvs_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_9raxvs_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createAttributedNodeCell_9raxvs_a1a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createConstant_9raxvs_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Override");
     editorCell.setCellId("Constant_9raxvs_a0a");
@@ -55,6 +45,16 @@ public class OverrideAnnotation_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_9raxvs_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_9raxvs_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createAttributedNodeCell_9raxvs_a1a(editorContext, node));
     return editorCell;
   }
 

@@ -7,11 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class OptionDeclaration_EditorComponent extends AbstractCellProvider {
   public OptionDeclaration_EditorComponent(SNode node) {
@@ -41,13 +41,6 @@ public class OptionDeclaration_EditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createConstant_vqukkr_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
-    editorCell.setCellId("Constant_vqukkr_b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createProperty_vqukkr_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("symbol");
@@ -63,6 +56,13 @@ public class OptionDeclaration_EditorComponent extends AbstractCellProvider {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_vqukkr_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
+    editorCell.setCellId("Constant_vqukkr_b0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 

@@ -6,10 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -28,10 +28,6 @@ public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
     return this.createCollection_l3f4id_a_0(editorContext, node);
   }
 
-  private static boolean renderingCondition_l3f4id_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "striptabs");
-  }
-
   private EditorCell createCollection_l3f4id_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_l3f4id_a");
@@ -42,14 +38,6 @@ public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_l3f4id_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_l3f4id_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_l3f4id_e0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_l3f4id_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_l3f4id_a_0");
-    editorCell.addEditorCell(this.createConstant_l3f4id_a0_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_l3f4id_b0(editorContext, node));
     return editorCell;
   }
 
@@ -67,11 +55,8 @@ public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_l3f4id_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip tabs:");
-    editorCell.setCellId("Constant_l3f4id_a0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
+  private static boolean renderingCondition_l3f4id_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "striptabs");
   }
 
   private EditorCell createRefNode_l3f4id_c0(EditorContext editorContext, SNode node) {
@@ -129,6 +114,21 @@ public class HereDocumentRedirection_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createCollection_l3f4id_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_l3f4id_a_0");
+    editorCell.addEditorCell(this.createConstant_l3f4id_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_l3f4id_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_l3f4id_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip tabs:");
+    editorCell.setCellId("Constant_l3f4id_a0_0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 

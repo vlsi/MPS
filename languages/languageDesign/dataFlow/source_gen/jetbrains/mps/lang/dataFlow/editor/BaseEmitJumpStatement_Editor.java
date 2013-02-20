@@ -6,14 +6,14 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -22,14 +22,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bs8xw7_a(editorContext, node);
-  }
-
-  private static boolean renderingCondition_bs8xw7_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "position", true) != null;
-  }
-
-  private static boolean renderingCondition_bs8xw7_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "position", true) != null;
   }
 
   private EditorCell createCollection_bs8xw7_a(EditorContext editorContext, SNode node) {
@@ -46,15 +38,6 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_bs8xw7_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    DataFlow_StyleSheet.applyInstruction(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-
   private EditorCell createConstant_bs8xw7_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert");
     editorCell.setCellId("Constant_bs8xw7_a0");
@@ -62,6 +45,19 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
     DataFlow_StyleSheet.applyInsertPosition(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_bs8xw7_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "position", true) != null;
+  }
+
+  private EditorCell createComponent_bs8xw7_b0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    DataFlow_StyleSheet.applyInstruction(style, editorCell);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -97,5 +93,9 @@ public class BaseEmitJumpStatement_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static boolean renderingCondition_bs8xw7_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "position", true) != null;
   }
 }

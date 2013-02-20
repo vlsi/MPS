@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -17,6 +16,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
 public class UnknownNew_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -29,12 +29,6 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_lvgr57_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lvgr57_b0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_lvgr57_c0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createComponent_lvgr57_c0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IMethodCall_actualArguments(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -66,6 +60,12 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createComponent_lvgr57_c0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IMethodCall_actualArguments(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 }

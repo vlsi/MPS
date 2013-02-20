@@ -6,12 +6,12 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
@@ -24,6 +24,12 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_4l84js_a(editorContext, node);
   }
 
+  private EditorCell createComponent_4l84js_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ReplaceableAliasAndParms_Comp(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
   private EditorCell createCollection_4l84js_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4l84js_a");
@@ -33,30 +39,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_4l84js_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4l84js_e0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_4l84js_f0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_4l84js_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_4l84js_f0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_4l84js_a5a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4l84js_b5a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4l84js_c5a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4l84js_d5a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4l84js_e5a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4l84js_f5a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4l84js_g5a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_4l84js_h5a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createComponent_4l84js_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ReplaceableAliasAndParms_Comp(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -111,6 +93,24 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_4l84js_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_4l84js_f0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_4l84js_a5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4l84js_b5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4l84js_c5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4l84js_d5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4l84js_e5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4l84js_f5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4l84js_g5a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_4l84js_h5a(editorContext, node));
     return editorCell;
   }
 

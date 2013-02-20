@@ -6,18 +6,18 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -28,32 +28,12 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     return this.createCollection_dsthrr_a(editorContext, node);
   }
 
-  private static boolean renderingCondition_dsthrr_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isPublic");
-  }
-
-  public static class XmlExternalId_component_cellMenu_dsthrr_a0a0a0 implements SubstituteInfoPartExt {
-    private ExternalIdMenu myComponent;
-
-    public XmlExternalId_component_cellMenu_dsthrr_a0a0a0() {
-      this.myComponent = new ExternalIdMenu();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  public static class XmlExternalId_component_cellMenu_dsthrr_a0a0a implements SubstituteInfoPartExt {
-    private ExternalIdMenu myComponent;
-
-    public XmlExternalId_component_cellMenu_dsthrr_a0a0a() {
-      this.myComponent = new ExternalIdMenu();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
+  private EditorCell createCollection_dsthrr_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_dsthrr_a");
+    editorCell.addEditorCell(this.createAlternation_dsthrr_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_dsthrr_b0(editorContext, node));
+    return editorCell;
   }
 
   private EditorCell createAlternation_dsthrr_a0(EditorContext editorContext, SNode node) {
@@ -68,12 +48,8 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_dsthrr_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_dsthrr_a");
-    editorCell.addEditorCell(this.createAlternation_dsthrr_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_dsthrr_b0(editorContext, node));
-    return editorCell;
+  private static boolean renderingCondition_dsthrr_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isPublic");
   }
 
   private EditorCell createCollection_dsthrr_a0a(EditorContext editorContext, SNode node) {
@@ -95,15 +71,16 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_dsthrr_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "SYSTEM");
-    editorCell.setCellId("Constant_dsthrr_a0a");
-    Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlTagName(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_dsthrr_a0a0a()}));
-    return editorCell;
+  public static class XmlExternalId_component_cellMenu_dsthrr_a0a0a0 implements SubstituteInfoPartExt {
+    private ExternalIdMenu myComponent;
+
+    public XmlExternalId_component_cellMenu_dsthrr_a0a0a0() {
+      this.myComponent = new ExternalIdMenu();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
   }
 
   private EditorCell createProperty_dsthrr_b0a0(EditorContext editorContext, SNode node) {
@@ -126,6 +103,29 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createConstant_dsthrr_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "SYSTEM");
+    editorCell.setCellId("Constant_dsthrr_a0a");
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlTagName(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_dsthrr_a0a0a()}));
+    return editorCell;
+  }
+
+  public static class XmlExternalId_component_cellMenu_dsthrr_a0a0a implements SubstituteInfoPartExt {
+    private ExternalIdMenu myComponent;
+
+    public XmlExternalId_component_cellMenu_dsthrr_a0a0a() {
+      this.myComponent = new ExternalIdMenu();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
   }
 
   private EditorCell createProperty_dsthrr_b0(EditorContext editorContext, SNode node) {

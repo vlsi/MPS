@@ -35,13 +35,6 @@ public class IdeaVersion_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_4gdxid_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "until build=");
-    editorCell.setCellId("Constant_4gdxid_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createProperty_4gdxid_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("sinceBuild");
@@ -58,6 +51,13 @@ public class IdeaVersion_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_4gdxid_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "until build=");
+    editorCell.setCellId("Constant_4gdxid_c0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 

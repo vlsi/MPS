@@ -6,14 +6,14 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import java.awt.Color;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import java.awt.Color;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -28,22 +28,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_zgm7s3_a_0(editorContext, node);
-  }
-
-  private static Color _StyleParameter_QueryFunction_zgm7s3_a2b0(EditorContext editorContext, SNode node) {
-    return _EditorUtil.grayIfNotSelectable(node);
-  }
-
-  private static boolean renderingCondition_zgm7s3_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "vertical");
-  }
-
-  private static Color _StyleParameter_QueryFunction_zgm7s3_a1c0(EditorContext editorContext, SNode node) {
-    return _EditorUtil.grayIfNotSelectable(node);
-  }
-
-  private static boolean renderingCondition_zgm7s3_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "vertical"));
   }
 
   private EditorCell createCollection_zgm7s3_a(EditorContext editorContext, SNode node) {
@@ -61,6 +45,15 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_zgm7s3_c0(editorContext, node));
     }
     editorCell.addEditorCell(this.createComponent_zgm7s3_d0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_zgm7s3_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new _OpenTag(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -84,6 +77,14 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static Color _StyleParameter_QueryFunction_zgm7s3_a2b0(EditorContext editorContext, SNode node) {
+    return _EditorUtil.grayIfNotSelectable(node);
+  }
+
+  private static boolean renderingCondition_zgm7s3_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "vertical");
+  }
+
   private EditorCell createCollection_zgm7s3_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zgm7s3_a1a");
@@ -95,6 +96,36 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_zgm7s3_a0b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "true:");
+    editorCell.setCellId("Constant_zgm7s3_a0b0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyBordered(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_zgm7s3_b0b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("ifTrueCellModel");
+    provider.setNoTargetText("<no cell model>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private EditorCell createCollection_zgm7s3_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zgm7s3_b1a");
@@ -103,6 +134,36 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_zgm7s3_a1b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_zgm7s3_b1b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_zgm7s3_a1b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "false:");
+    editorCell.setCellId("Constant_zgm7s3_a1b0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyBordered(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_zgm7s3_b1b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("ifFalseCellModel");
+    provider.setNoTargetText("<none>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
@@ -125,6 +186,14 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static Color _StyleParameter_QueryFunction_zgm7s3_a1c0(EditorContext editorContext, SNode node) {
+    return _EditorUtil.grayIfNotSelectable(node);
+  }
+
+  private static boolean renderingCondition_zgm7s3_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "vertical"));
+  }
+
   private EditorCell createCollection_zgm7s3_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zgm7s3_a2a");
@@ -133,6 +202,37 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_zgm7s3_a0c0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_zgm7s3_b0c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_zgm7s3_a0c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "true:");
+    editorCell.setCellId("Constant_zgm7s3_a0c0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyBordered(style, editorCell);
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_zgm7s3_b0c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("ifTrueCellModel");
+    provider.setNoTargetText("<no cell model>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
@@ -147,6 +247,45 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_zgm7s3_a1c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "false:");
+    editorCell.setCellId("Constant_zgm7s3_a1c0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyBordered(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_zgm7s3_b1c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("ifFalseCellModel");
+    provider.setNoTargetText("<no cell model>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createComponent_zgm7s3_d0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new _CloseTag(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+
   private EditorCell createCollection_zgm7s3_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_zgm7s3_a_0");
@@ -157,6 +296,29 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_zgm7s3_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_zgm7s3_c0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_zgm7s3_d0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_zgm7s3_a0_0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new _CellModel_Common(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
+  private EditorCell createConstant_zgm7s3_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_zgm7s3_b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_zgm7s3_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cell alternation:");
+    editorCell.setCellId("Constant_zgm7s3_c0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyHeader(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -184,6 +346,37 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_zgm7s3_a0d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vertical");
+    editorCell.setCellId("Constant_zgm7s3_a0d0");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyProperty(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_zgm7s3_b0d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("vertical");
+    provider.setNoTargetText("<no vertical>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_vertical");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.DRAW_BORDER, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private EditorCell createCollection_zgm7s3_b3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zgm7s3_b3a");
@@ -193,98 +386,6 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_zgm7s3_a1d0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_zgm7s3_b1d0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createComponent_zgm7s3_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _OpenTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-
-  private EditorCell createComponent_zgm7s3_d0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CloseTag(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-
-  private EditorCell createComponent_zgm7s3_a0_0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new _CellModel_Common(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    return editorCell;
-  }
-
-  private EditorCell createConstant_zgm7s3_a0b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "true:");
-    editorCell.setCellId("Constant_zgm7s3_a0b0");
-    Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_zgm7s3_a1b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "false:");
-    editorCell.setCellId("Constant_zgm7s3_a1b0");
-    Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_zgm7s3_a0c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "true:");
-    editorCell.setCellId("Constant_zgm7s3_a0c0");
-    Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_zgm7s3_a1c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "false:");
-    editorCell.setCellId("Constant_zgm7s3_a1c0");
-    Style style = new StyleImpl();
-    Styles_StyleSheet.applyBordered(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_zgm7s3_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_zgm7s3_b0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_zgm7s3_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Cell alternation:");
-    editorCell.setCellId("Constant_zgm7s3_c0");
-    Style style = new StyleImpl();
-    Styles_StyleSheet.applyHeader(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_zgm7s3_a0d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vertical");
-    editorCell.setCellId("Constant_zgm7s3_a0d0");
-    Style style = new StyleImpl();
-    Styles_StyleSheet.applyProperty(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -298,113 +399,12 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_zgm7s3_b0b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("ifTrueCellModel");
-    provider.setNoTargetText("<no cell model>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_zgm7s3_b1b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("ifFalseCellModel");
-    provider.setNoTargetText("<none>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_zgm7s3_b0c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("ifTrueCellModel");
-    provider.setNoTargetText("<no cell model>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_zgm7s3_b1c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("ifFalseCellModel");
-    provider.setNoTargetText("<no cell model>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
   private EditorCell createRefNode_zgm7s3_b1d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("alternationCondition");
     provider.setNoTargetText("<no alternationCondition>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.DRAW_BORDER, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_zgm7s3_b0d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("vertical");
-    provider.setNoTargetText("<no vertical>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_vertical");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);

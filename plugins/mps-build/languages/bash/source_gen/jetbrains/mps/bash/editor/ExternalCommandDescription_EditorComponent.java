@@ -6,13 +6,13 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -37,10 +37,6 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
     return createEditorCell((EditorContext) editorContext);
   }
 
-  private static boolean renderingCondition_3xyrme_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_3xyrme_a0a0e(SPropertyOperations.getString(node, "description"));
-  }
-
   private EditorCell createCollection_3xyrme_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3xyrme_a");
@@ -60,6 +56,10 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_3xyrme_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return isNotEmpty_3xyrme_a0a0g(SPropertyOperations.getString(node, "description"));
   }
 
   private EditorCell createProperty_3xyrme_b0(EditorContext editorContext, SNode node) {
@@ -84,7 +84,7 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
     return editorCell;
   }
 
-  public static boolean isNotEmpty_3xyrme_a0a0e(String str) {
+  public static boolean isNotEmpty_3xyrme_a0a0g(String str) {
     return str != null && str.length() > 0;
   }
 }

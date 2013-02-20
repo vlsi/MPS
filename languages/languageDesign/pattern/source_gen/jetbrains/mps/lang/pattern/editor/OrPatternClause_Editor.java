@@ -7,11 +7,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class OrPatternClause_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -23,13 +23,6 @@ public class OrPatternClause_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_jkilyg_a");
     editorCell.addEditorCell(this.createRefNode_jkilyg_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_jkilyg_b0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_jkilyg_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_jkilyg_b0");
-    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -47,6 +40,13 @@ public class OrPatternClause_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_jkilyg_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_jkilyg_b0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }

@@ -6,31 +6,23 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 
 public class OrRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_36u1b4_a(editorContext, node);
-  }
-
-  private static boolean renderingCondition_36u1b4_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
-  }
-
-  private static boolean renderingCondition_36u1b4_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
   }
 
   private EditorCell createCollection_36u1b4_a(EditorContext editorContext, SNode node) {
@@ -48,16 +40,6 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_36u1b4_c0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AliasEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-
   private EditorCell createConstant_36u1b4_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_36u1b4_a0");
@@ -68,14 +50,8 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_36u1b4_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_36u1b4_e0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
+  private static boolean renderingCondition_36u1b4_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
   }
 
   private EditorCell createRefNode_36u1b4_b0(EditorContext editorContext, SNode node) {
@@ -96,6 +72,16 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createComponent_36u1b4_c0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AliasEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+
   private EditorCell createRefNode_36u1b4_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("right");
@@ -112,5 +98,19 @@ public class OrRegexp_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createConstant_36u1b4_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_36u1b4_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_36u1b4_a4a(SNode node, EditorContext editorContext, IScope scope) {
+    return OrRegexp_Behavior.call_inParentheses_1353467374623956858(node);
   }
 }
