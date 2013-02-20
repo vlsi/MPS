@@ -34,6 +34,8 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.idea.core.psi.MPSKeys;
 import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -73,7 +75,28 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
     return reference;
   }
 
-  MPSPsiNode resolve(SNodeId nodeId) {
+  void reload(SNodeId sNodeId) {
+    ModelAccess.assertLegalWrite();
+    MPSPsiNode mpsPsiNode = lookupNode(sNodeId);
+    if (mpsPsiNode == null) return;
+
+    SNode sNode = mpsPsiNode.getNodeReference().resolve(MPSModuleRepository.getInstance());
+    MPSPsiNode replacement = convert(sNode);
+    ((MPSPsiNodeBase)mpsPsiNode.getParent()).replaceChild(mpsPsiNode, replacement);
+  }
+
+  void reloadAll() {
+    ModelAccess.assertLegalWrite();
+    SModel sModel = reference.resolve(MPSModuleRepository.getInstance());
+    for (SNode root : sModel.getRootNodes()) {
+      MPSPsiNode mpsPsiNode = lookupNode(root.getNodeId());
+      if (mpsPsiNode == null) continue;
+      drop(mpsPsiNode);
+    }
+    reload(sModel);
+  }
+
+  MPSPsiNode lookupNode(SNodeId nodeId) {
     return nodes.get(nodeId);
   }
 
@@ -122,6 +145,14 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
       last = psiChild;
     }
     return psiNode;
+  }
+
+  void drop (MPSPsiNode psiNode) {
+    nodes.remove(psiNode.getId());
+
+    for (MPSPsiNodeBase node : psiNode.children()) {
+      drop((MPSPsiNode) node);
+    }
   }
 
   @Override

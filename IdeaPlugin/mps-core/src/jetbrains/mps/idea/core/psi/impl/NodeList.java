@@ -164,6 +164,15 @@ import org.jetbrains.annotations.NotNull;
     size--;
   }
 
+  void replace (@NotNull MPSPsiNodeBase old, @NotNull MPSPsiNodeBase replacement) {
+    assert old.getEntry().list() == this;
+    assert replacement.getEntry() == null;
+
+    Entry entry = old.getEntry();
+    old.setEntry(null);
+    replacement.setEntry(entry);
+  }
+
   void clear () {
     Entry e = head;
     if (e == null) return;
