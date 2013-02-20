@@ -38,10 +38,6 @@
     </jar>
   </target>
   
-  <target name="prepareDependents" />
-  
-  <target name="prepare" depends="prepareDependents" />
-  
   <target name="build" depends="assemble, check" />
   
   <target name="clean">

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1oynt7toclnunet4h17qq0wa4frcymk">
+<dependencies version="2" modelHash="ecwak2w6m1z9da6r1tia5jlvj5rd1wz">
   <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-8cg3incxiljk3bq8078a2fws9395rb0" />
   <common hash="5tdjcn09dpulynpx3i0itpzbq7x3nq7" />
   <source id="7306485738221408314" name="java" hash="26jdthg6u04cxluhs5p9rw4nupmb4ru">
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <file name="java" />
   </source>
-  <source id="7306485738221408315" name="common" hash="djfngoscrj9qe4lgn43m3lozbyiqcvn">
+  <source id="7306485738221408315" name="common" hash="-ec9qafq2bsn6anfu7hfvenanvb8wtmj">
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
     <file name="common" />
   </source>
