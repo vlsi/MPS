@@ -30,15 +30,23 @@ import jetbrains.mps.idea.core.ui.ImportedModelsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nls;
 
-import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class ModelPropertiesConfigurable implements Configurable, Disposable {
   private EditableSModelDescriptor myDescriptor;
@@ -169,9 +177,13 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
     if (myModelLongName.equals(myPackageName.getText())) {
       return;
     }
-    SModelFqName oldFqName = myDescriptor.getSModelReference().getSModelFqName();
-    SModelFqName newFqName = new SModelFqName(myPackageName.getText(), oldFqName.getStereotype());
-    myDescriptor.rename(newFqName, true);
+    String oldStereo = SModelStereotype.getStereotype(myDescriptor);
+    String newName = myPackageName.getText();
+    if (oldStereo != null) {
+      newName = newName + "@" + oldStereo;
+    }
+
+    myDescriptor.rename(newName, true);
   }
 
   private void saveUsedLanguages(SModel sModel, IModule module) {
