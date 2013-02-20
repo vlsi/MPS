@@ -73,8 +73,8 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
 
   @Override
   public SModel resolve(SRepository repo) {
-    // TODO
-    return null;
+    // TODO repo ???
+    return SModelRepository.getInstance().getModelDescriptor(this);
   }
 
   public boolean equals(Object o) {
