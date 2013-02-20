@@ -83,6 +83,7 @@ import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.junit.BeforeClass;
@@ -865,10 +866,10 @@ public class ChangesManagerTest {
         newModelDiff.value = getCurrentDifference(modelName);
       }
     });
-    final EditableSModelDescriptor md = newModelDiff.value.getModelDescriptor();
+    final EditableSModel md = newModelDiff.value.getModelDescriptor();
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
-        md.getSModel();
+        ((SModelDescriptor) md).forceLoad();
         md.save();
       }
     });
@@ -888,7 +889,7 @@ public class ChangesManagerTest {
 
     runCommandAndWait(new Runnable() {
       public void run() {
-        SModel m = md.getSModel();
+        SModel m = ((SModelDescriptor) md).getSModel();
         m.addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
         createNewRoot(m);
       }

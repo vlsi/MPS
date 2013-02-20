@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.vfs.IFile;
 
 /**
@@ -24,11 +24,11 @@ import jetbrains.mps.vfs.IFile;
  */
 public abstract class DiskMemoryConflictResolver {
   // TODO replace with extension point & interface
-  public abstract void resolveDiskMemoryConflict(IFile modelFile, SModel model, EditableSModelDescriptor modelDescriptor);
+  public abstract void resolveDiskMemoryConflict(IFile modelFile, SModel model, EditableSModel modelDescriptor);
 
   private static DiskMemoryConflictResolver ourResolver = new DiskMemoryConflictResolver() {
     @Override
-    public void resolveDiskMemoryConflict(IFile modelFile, SModel model, EditableSModelDescriptor modelDescriptor) {
+    public void resolveDiskMemoryConflict(IFile modelFile, SModel model, EditableSModel modelDescriptor) {
     }
   };
 

@@ -16,6 +16,8 @@ import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.logging.Logger;
@@ -92,9 +94,9 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     }
   }
 
-  /*package*/ void updateImportVersions(EditableSModelDescriptor model, final Map<String, Object> _params) {
-    jetbrains.mps.smodel.SModel m = model.getSModel();
-    for (jetbrains.mps.smodel.SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model.getSModel()))) {
+  /*package*/ void updateImportVersions(EditableSModel model, final Map<String, Object> _params) {
+    jetbrains.mps.smodel.SModel m = ((SModelDescriptor) model).getSModel();
+    for (jetbrains.mps.smodel.SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(m))) {
       RefactorableSModelDescriptor usedModel = as_hexye9_a0a0a1a7(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
       if (usedModel == null) {
         continue;

@@ -19,9 +19,9 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.ui.LayeredIcon;
-import com.intellij.util.Icons;
+import com.intellij.util.PlatformIcons;
 import com.intellij.ui.RowIcon;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
@@ -115,8 +115,8 @@ public class IconManager {
         if (model == null || model.isDisposed()) {
           return mainIcon;
         }
-        if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) model.getModelDescriptor()).isReadOnly()) {
-          mainIcon = new LayeredIcon(mainIcon, Icons.LOCKED_ICON);
+        if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof EditableSModel && ((EditableSModel) model.getModelDescriptor()).isReadOnly()) {
+          mainIcon = new LayeredIcon(mainIcon, PlatformIcons.LOCKED_ICON);
         }
         RowIcon result = new RowIcon(2);
         result.setIcon(mainIcon, 0);

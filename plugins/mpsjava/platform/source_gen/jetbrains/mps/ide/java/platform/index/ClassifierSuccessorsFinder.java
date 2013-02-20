@@ -17,12 +17,12 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.Queue;
@@ -51,11 +51,11 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
     Set<VirtualFile> unModifiedModelFiles = SetSequence.fromSet(new HashSet<VirtualFile>());
     List<SNode> modifiedClasses = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> modifiedInterfaces = ListSequence.fromList(new ArrayList<SNode>());
-    for (SModelDescriptor md : scope.getModelDescriptors()) {
-      if (!((md instanceof EditableSModelDescriptor))) {
+    for (SModel md : scope.getModels()) {
+      if (!((md instanceof EditableSModel))) {
         continue;
       }
-      EditableSModelDescriptor emd = (EditableSModelDescriptor) md;
+      EditableSModel emd = (EditableSModel) md;
       DataSource source = emd.getSource();
       IFile modelFile = (source instanceof FileDataSource ?
         ((FileDataSource) source).getFile() :
@@ -65,7 +65,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         continue;
       }
       if (emd.isChanged()) {
-        SModel m = md.getSModel();
+        jetbrains.mps.smodel.SModel m = ((SModelDescriptor) md).getSModel();
         ListSequence.fromList(modifiedClasses).addSequence(ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
         ListSequence.fromList(modifiedInterfaces).addSequence(ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.structure.Interface")));
       } else {

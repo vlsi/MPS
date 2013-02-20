@@ -979,7 +979,7 @@
     <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="69" startPosition="61" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="73" startPosition="60" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="76" startPosition="178" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="76" startPosition="158" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="78" startPosition="5" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3366942412399973398" fileName="ShowMappingsPartitioning_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="85" startPosition="27" endLine="86" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1013,7 +1013,7 @@
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="65" startPosition="60" endLine="66" endPosition="19" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="69" startPosition="61" endLine="70" endPosition="19" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="73" startPosition="60" endLine="74" endPosition="19" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="76" startPosition="178" endLine="77" endPosition="19" />
+    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="76" startPosition="158" endLine="77" endPosition="19" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="284" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="85" startPosition="0" endLine="86" endPosition="96">
       <varInfo nodeId="3366942412399973391" varName="t" />
@@ -3427,7 +3427,7 @@
     <nodeInfo nodeId="8610665572788515808" fileName="TextPreviewModel_Action.java" startLine="87" startPosition="5" endLine="88" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5551197716189850100" fileName="TextPreviewModel_Action.java" startLine="91" startPosition="85" endLine="92" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8610665572788515819" fileName="TextPreviewModel_Action.java" startLine="93" startPosition="65" endLine="94" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8610665572788515821" fileName="TextPreviewModel_Action.java" startLine="95" startPosition="5" endLine="96" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8610665572788515821" fileName="TextPreviewModel_Action.java" startLine="95" startPosition="5" endLine="96" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="99" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="9010458443787641484" fileName="TextPreviewModel_Action.java" startLine="37" startPosition="87" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="57" startPosition="95" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3479,7 +3479,7 @@
     <scopeInfo nodeId="8610665572788515978" fileName="TextPreviewModel_Action.java" startLine="37" startPosition="87" endLine="42" endPosition="87">
       <varInfo nodeId="8610665572788515980" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="8610665572788515813" fileName="TextPreviewModel_Action.java" startLine="91" startPosition="85" endLine="96" endPosition="101" />
+    <scopeInfo nodeId="8610665572788515813" fileName="TextPreviewModel_Action.java" startLine="91" startPosition="85" endLine="96" endPosition="81" />
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="8610665572788515769" varName="_params" />
       <varInfo nodeId="8610665572788515769" varName="event" />

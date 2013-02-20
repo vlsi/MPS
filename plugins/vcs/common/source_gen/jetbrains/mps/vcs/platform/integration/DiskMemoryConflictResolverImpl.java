@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.platform.integration;
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import java.io.File;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
@@ -29,7 +29,8 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   public DiskMemoryConflictResolverImpl() {
   }
 
-  public void resolveDiskMemoryConflict(final IFile file, final SModel model, final EditableSModelDescriptor modelDescriptor) {
+  @Override
+  public void resolveDiskMemoryConflict(final IFile file, final SModel model, final EditableSModel modelDescriptor) {
     final File backupFile = doBackup(file, model);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {

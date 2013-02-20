@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -58,7 +59,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
       return false;
     }
-    if (!(MapSequence.fromMap(_params).get("modelDescriptor") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")).isReadOnly()) {
+    if (!(MapSequence.fromMap(_params).get("modelDescriptor") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("modelDescriptor")).isReadOnly()) {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));

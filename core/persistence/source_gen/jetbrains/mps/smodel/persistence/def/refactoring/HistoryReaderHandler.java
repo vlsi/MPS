@@ -13,7 +13,7 @@ import org.xml.sax.SAXParseException;
 import jetbrains.mps.refactoring.StructureModification;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 
@@ -249,7 +249,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       Map<SModelReference, Integer> result = (Map<SModelReference, Integer>) resultObject;
       if ("model".equals(tagName)) {
         String[] child = (String[]) value;
-        SModelReference modelRef = SModelReference.fromString(child[1]);
+        jetbrains.mps.smodel.SModelReference modelRef = jetbrains.mps.smodel.SModelReference.fromString(child[1]);
         MapSequence.fromMap(result).put(modelRef, Integer.parseInt(child[2]));
         fieldhelper.addModelRef(child[0], modelRef);
         return;
@@ -363,7 +363,7 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
 
     @Override
     protected StructureModification.RenameModel createObject(Attributes attrs) {
-      return new StructureModification.RenameModel(SModelReference.fromString(attrs.getValue("oldModel")), SModelReference.fromString(attrs.getValue("newModel")));
+      return new StructureModification.RenameModel(jetbrains.mps.smodel.SModelReference.fromString(attrs.getValue("oldModel")), jetbrains.mps.smodel.SModelReference.fromString(attrs.getValue("newModel")));
     }
 
     @Override

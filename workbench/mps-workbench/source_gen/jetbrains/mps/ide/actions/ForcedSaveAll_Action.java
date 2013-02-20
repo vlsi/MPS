@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.logging.Logger;
 
 public class ForcedSaveAll_Action extends BaseAction {
@@ -50,12 +51,12 @@ public class ForcedSaveAll_Action extends BaseAction {
         if (!(SModelStereotype.isUserModel(descr) && descr instanceof EditableSModelDescriptor)) {
           continue;
         }
-        EditableSModelDescriptor modelDescr = (EditableSModelDescriptor) descr;
+        EditableSModel modelDescr = (EditableSModel) descr;
         if (modelDescr.isReadOnly()) {
           continue;
         }
         // ensure model is loaded 
-        modelDescr.getSModel();
+        ((SModelDescriptor) modelDescr).forceLoad();
         //  and force to save model 
         modelDescr.setChanged(true);
         modelDescr.save();

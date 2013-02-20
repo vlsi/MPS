@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.extapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
@@ -416,8 +419,8 @@ public class SModelRepository implements CoreComponent {
   @Deprecated
   public void markChanged(SModel model) {
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    if (modelDescriptor instanceof EditableSModelDescriptor) {
-      ((EditableSModelDescriptor) modelDescriptor).setChanged(true);
+    if (modelDescriptor instanceof EditableSModel) {
+      ((EditableSModel) modelDescriptor).setChanged(true);
     }
   }
 

@@ -190,7 +190,7 @@ public class SModelOperations {
   }
 
   @Nullable
-  public static ImportElement getImportElement(SModel model, @NotNull SModelReference modelReference) {
+  public static ImportElement getImportElement(SModel model, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
     for (ImportElement importElement : model.importedModels()) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
@@ -276,7 +276,7 @@ public class SModelOperations {
   }
 
   @Nullable
-  public static ImportElement getAdditionalModelElement(SModel sModel, @NotNull SModelReference modelReference) {
+  public static ImportElement getAdditionalModelElement(SModel sModel, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
     for (ImportElement importElement : sModel.getAdditionalModelVersions()) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;

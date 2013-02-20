@@ -16,7 +16,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -43,7 +43,7 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
     try {
       ScriptsForSelection_ActionGroup.this.removeAll();
       List<SModelDescriptor> models = MPSDataKeys.MODELS.getData(event.getDataContext());
-      if ((int) ListSequence.fromList(models).count() == 1 && !(ListSequence.fromList(models).first() instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) ListSequence.fromList(models).first()).isReadOnly()))) {
+      if ((int) ListSequence.fromList(models).count() == 1 && !(ListSequence.fromList(models).first() instanceof EditableSModel && !(((EditableSModel) ListSequence.fromList(models).first()).isReadOnly()))) {
         event.getPresentation().setVisible(false);
         return;
       }

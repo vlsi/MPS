@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelStereotype;
 
 public abstract class AbstractMigrationScriptHelper {
@@ -79,10 +79,10 @@ public abstract class AbstractMigrationScriptHelper {
   }
 
   private static boolean includeModel(SModel model) {
-    if (!(((model instanceof EditableSModelDescriptor)))) {
+    if (!(((model instanceof EditableSModel)))) {
       return false;
     }
-    if (((EditableSModelDescriptor) model).isReadOnly()) {
+    if (((EditableSModel) model).isReadOnly()) {
       return false;
     }
     String modelStereotype = SModelStereotype.getStereotype(model);

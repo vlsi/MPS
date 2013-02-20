@@ -12,7 +12,7 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -185,12 +185,12 @@ public class ModelLinkMap {
     for (SModel.ImportElement element : ListSequence.fromList(myModel.importedModels())) {
       if (model.equals(element.getModelReference())) {
         res = true;
-        element.setModelReference(newModel);
+        element.setModelReference((jetbrains.mps.smodel.SModelReference) newModel);
       }
     }
     for (SModel.ImportElement element : ListSequence.fromList(myModel.getAdditionalModelVersions())) {
       if (model.equals(element.getModelReference())) {
-        element.setModelReference(newModel);
+        element.setModelReference((jetbrains.mps.smodel.SModelReference) newModel);
       }
     }
     // update references 
@@ -199,7 +199,7 @@ public class ModelLinkMap {
       res = true;
       ListSequence.fromList(list).visitAll(new IVisitor<DynamicReference>() {
         public void visit(DynamicReference it) {
-          it.setTargetSModelReference(newModel);
+          it.setTargetSModelReference((jetbrains.mps.smodel.SModelReference) newModel);
         }
       });
       MapSequence.fromMap(myDynRefMap).put(newModel, list);
@@ -209,7 +209,7 @@ public class ModelLinkMap {
         res = true;
         ListSequence.fromList(MapSequence.fromMap(myTargetMap).get(ptr)).visitAll(new IVisitor<StaticReference>() {
           public void visit(StaticReference it) {
-            it.setTargetSModelReference(newModel);
+            it.setTargetSModelReference((jetbrains.mps.smodel.SModelReference) newModel);
           }
         });
       }
@@ -221,7 +221,7 @@ public class ModelLinkMap {
         ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode node) {
             String name = NameUtil.shortNameFromLongName(node.getConcept().getConceptId());
-            ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(newModel.getLongName(), name));
+            ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(newModel.getModelName(), name));
           }
         });
       }
@@ -334,7 +334,7 @@ public class ModelLinkMap {
     }).toListSequence();
     for (SNodeReference ptr : ListSequence.fromList(ptrList)) {
       List<T> list = MapSequence.fromMap(map).removeKey(ptr);
-      MapSequence.fromMap(map).put(new SNodePointer(newModel, ((SNodePointer) ptr).getNodeId()), list);
+      MapSequence.fromMap(map).put(new SNodePointer((jetbrains.mps.smodel.SModelReference) newModel, ((SNodePointer) ptr).getNodeId()), list);
     }
   }
 

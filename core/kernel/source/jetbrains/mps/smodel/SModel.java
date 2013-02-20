@@ -15,9 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
-
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -29,8 +26,12 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.security.SecureRandom;
 import java.util.*;
@@ -744,8 +745,8 @@ public class SModel {
     return Collections.unmodifiableList(myImplicitImports);
   }
 
-  public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
-    addAdditionalModelVersion(new ImportElement(modelReference, -1, usedVersion));
+  public void addAdditionalModelVersion(@NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference, int usedVersion) {
+    addAdditionalModelVersion(new ImportElement((SModelReference) modelReference, -1, usedVersion));
   }
 
   public void addAdditionalModelVersion(@NotNull ImportElement element) {
@@ -835,7 +836,7 @@ public class SModel {
   public void setVersion(int version) {
   }
 
-  public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
+  public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
     ModelChange.assertLegalChange(this);
 
     ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
