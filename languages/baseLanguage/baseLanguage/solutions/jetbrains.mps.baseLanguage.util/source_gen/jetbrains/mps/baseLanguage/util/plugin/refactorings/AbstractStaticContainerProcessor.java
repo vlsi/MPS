@@ -11,6 +11,7 @@ public abstract class AbstractStaticContainerProcessor implements IStaticContain
     this.myStaticContainer = staticContainer;
   }
 
+  @Override
   public void addMethod(SNode method) {
     AbstractExtractMethodRefactoringProcessor.universalAddMethod(this.myStaticContainer, method);
   }

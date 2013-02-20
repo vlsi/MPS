@@ -1297,7 +1297,7 @@
                                         </node>
                                         <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="2834132315319613830">
                                           <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="kog3.~ModelUtil" resolveInfo="ModelUtil" />
-                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kog3.~ModelUtil%dgetFilesByModelDescriptor(jetbrains%dmps%dsmodel%dSModelDescriptor)%cjava%dutil%dCollection" resolveInfo="getFilesByModelDescriptor" />
+                                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="kog3.~ModelUtil%dgetFilesByModelDescriptor(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cjava%dutil%dCollection" resolveInfo="getFilesByModelDescriptor" />
                                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2834132315319613831">
                                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3316697760692356795" resolveInfo="md" />
                                           </node>

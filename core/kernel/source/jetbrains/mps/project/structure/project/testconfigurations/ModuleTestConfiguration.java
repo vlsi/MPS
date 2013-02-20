@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.structure.project.testconfigurations;
 
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.GenParameters;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.project.IModule;
@@ -24,10 +25,9 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class ModuleTestConfiguration extends BaseTestConfiguration {
@@ -54,32 +54,29 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     if (module instanceof Solution) {
       Solution solution = (Solution) module;
 
-      List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor sm : solution.getOwnModelDescriptors()) {
-        if (!sm.isGeneratable()) continue;
+      List<SModel> models = new ArrayList<SModel>();
+      for (SModel sm : solution.getModels()) {
+        if (!(sm instanceof GeneratableSModel) || !((GeneratableSModel) sm).isGeneratable()) continue;
         models.add(sm);
       }
 
-      if(!fullRegeneration) {
-        models = new ArrayList<SModelDescriptor>(GenerationFacade.getModifiedModels(models, new ProjectOperationContext(project)));
+      if (!fullRegeneration) {
+        models = new ArrayList<SModel>(GenerationFacade.getModifiedModels(models, new ProjectOperationContext(project)));
       }
 
       return new GenParameters(models, solution);
     } else if (module instanceof Language) {
       Language lang = (Language) module;
 
-      List<SModelDescriptor> inputModels = lang.getOwnModelDescriptors();
-
-      Iterator<SModelDescriptor> it = inputModels.iterator();
-      while (it.hasNext()) {
-        SModelDescriptor model = it.next();
-        if (!model.isGeneratable()) {
-          it.remove();
+      List<SModel> inputModels = new ArrayList<SModel>();
+      for (SModel m : lang.getModels()) {
+        if (m instanceof GeneratableSModel && ((GeneratableSModel) m).isGeneratable()) {
+          inputModels.add(m);
         }
       }
 
-      if(!fullRegeneration) {
-        inputModels = new ArrayList<SModelDescriptor>(GenerationFacade.getModifiedModels(inputModels, new ProjectOperationContext(project)));
+      if (!fullRegeneration) {
+        inputModels = new ArrayList<SModel>(GenerationFacade.getModifiedModels(inputModels, new ProjectOperationContext(project)));
       }
 
       return new GenParameters(inputModels, lang);

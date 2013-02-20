@@ -22,18 +22,22 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
     this.myNodesToRefactor = nodesToRefactor;
   }
 
+  @Override
   public void addMethod(SNode method) {
     universalAddMethod(this.myNode, method);
   }
 
+  @Override
   public SNode createNewMethod() {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", null);
   }
 
+  @Override
   public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres) {
     return null;
   }
 
+  @Override
   public SNode getContainerMethod() {
     SNode node = ListSequence.fromList(this.myNodesToRefactor).first();
     while (node != null) {
@@ -48,6 +52,7 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
     throw new IllegalStateException("can't be applied in this case");
   }
 
+  @Override
   public SNode getContainerReturnType() {
     SNode containerMethod = this.getContainerMethod();
     if (SNodeOperations.isInstanceOf(containerMethod, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {

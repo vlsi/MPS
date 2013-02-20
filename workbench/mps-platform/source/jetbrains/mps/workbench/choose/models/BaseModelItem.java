@@ -18,10 +18,10 @@ package jetbrains.mps.workbench.choose.models;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseModelItem implements NavigationItem {
@@ -35,28 +35,29 @@ public abstract class BaseModelItem implements NavigationItem {
     return myModelReference;
   }
 
+  @Override
   public String getName() {
     return null;
   }
 
+  @Override
   @Nullable
   public ItemPresentation getPresentation() {
     return new ModelPresentation(myModelReference);
   }
 
   public FileStatus getFileStatus() {
-    boolean changed = false;
     SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(myModelReference);
-    if (md instanceof EditableSModelDescriptor) {
-      changed = ((EditableSModelDescriptor) md).isChanged();
-    }
+    boolean changed = md instanceof EditableSModel && ((EditableSModel) md).isChanged();
     return changed ? FileStatus.MODIFIED : FileStatus.NOT_CHANGED;
   }
 
+  @Override
   public boolean canNavigate() {
     return true;
   }
 
+  @Override
   public boolean canNavigateToSource() {
     return false;
   }

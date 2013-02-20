@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -98,7 +98,7 @@ public class ModelProperties {
   }
 
   public void saveChanges() {
-    if (!(myModelDescriptor instanceof EditableSModelDescriptor)) {
+    if (!(myModelDescriptor instanceof EditableSModel)) {
       return;
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -126,7 +126,7 @@ public class ModelProperties {
           }
         }
 
-        ((EditableSModelDescriptor) myModelDescriptor).save();
+        ((EditableSModel) myModelDescriptor).save();
       }
     });
     new MissingDependenciesFixer(myModelDescriptor).fix(true);

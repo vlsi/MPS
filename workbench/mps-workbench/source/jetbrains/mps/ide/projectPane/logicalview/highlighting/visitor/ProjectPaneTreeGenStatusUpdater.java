@@ -18,6 +18,7 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.DumbService;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -29,7 +30,6 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -56,14 +56,14 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     if (application.isDisposed() || application.isDisposeInProgress()) return;
 
     SModel md = modelNode.getModel();
-    if (!(md instanceof EditableSModelDescriptor)) return;
+    if (!(md instanceof EditableSModel)) return;
     if (!(md instanceof GeneratableSModel) || !(((GeneratableSModel) md).isGeneratable())) return;
     if (md.getModule() == null) return;
 
     TreeNode node = modelNode;
     final ProjectModuleTreeNode moduleNode = getContainingModuleNode(node);
 
-    boolean wasChanged = md instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) md).isChanged();
+    boolean wasChanged = md instanceof EditableSModel && ((EditableSModel) md).isChanged();
 
     if (moduleNode.getModule().isPackaged()) {
       ourUpdater.addUpdate(modelNode, new GenStatusNodeUpdate(GenerationStatus.PACKAGED.getMessage()));
@@ -141,8 +141,8 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   private boolean isPackaged(SModelTreeNode node) {
     SModel md = node.getModel();
-    if (!(md instanceof EditableSModelDescriptor)) return false;
-    return ((EditableSModelDescriptor) md).isReadOnly();
+    if (!(md instanceof EditableSModel)) return false;
+    return ((EditableSModel) md).isReadOnly();
   }
 
   private boolean isDoNotGenerate(SModelTreeNode node) {

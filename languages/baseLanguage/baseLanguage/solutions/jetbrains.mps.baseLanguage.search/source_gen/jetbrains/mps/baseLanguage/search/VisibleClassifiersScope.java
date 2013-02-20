@@ -29,6 +29,7 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getClassifiers() {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode classifier : super.getClassifiers()) {
@@ -39,6 +40,7 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
     return result;
   }
 
+  @Override
   public boolean isInScope(SNode node) {
     // speed up IVisible nodes with context 
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IVisible"))) {

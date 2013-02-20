@@ -16,30 +16,43 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class GenParameters {
-  private List<SModelDescriptor> myModelDescriptors = new ArrayList<SModelDescriptor>();
+  private List<SModel> myModels = new ArrayList<SModel>();
   private IModule myModule;
 
-  public GenParameters(List<SModelDescriptor> models, IModule module) {
-    myModelDescriptors.addAll(models);
+  public GenParameters(List<? extends SModel> models, IModule module) {
+    myModels.addAll(models);
     myModule = module;
   }
 
-  public List<SModelDescriptor> getModelDescriptors() {
-    return Collections.unmodifiableList(myModelDescriptors);
+  public List<SModel> getModels() {
+    return Collections.unmodifiableList(myModels);
   }
 
-  public List<SModel> getSModels() {
-    List<SModel> result = new ArrayList<SModel>();
-    for (SModelDescriptor sm : myModelDescriptors) {
-      result.add(sm.getSModel());
+  /**
+   * use getModels()
+   */
+  @Deprecated
+  public List<SModelDescriptor> getModelDescriptors() {
+    for (SModel model : myModels) {
+      if (!(model instanceof SModelDescriptor)) {
+        throw new IllegalStateException();
+      }
+    }
+    return (List) Collections.unmodifiableList(myModels);
+  }
+
+  public List<jetbrains.mps.smodel.SModel> getSModels() {
+    List<jetbrains.mps.smodel.SModel> result = new ArrayList<jetbrains.mps.smodel.SModel>();
+    for (SModel sm : myModels) {
+      result.add(((SModelDescriptor) sm).getSModel());
     }
     return result;
   }

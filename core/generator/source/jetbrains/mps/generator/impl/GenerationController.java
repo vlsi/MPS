@@ -27,7 +27,6 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.SubProgressKind;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -44,7 +43,7 @@ public class GenerationController implements ITaskPoolProvider {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
   private final TransientModelsProvider myTransientModelsProvider;
-  private List<SModelDescriptor> myInputModels;
+  private List<? extends SModel> myInputModels;
   private final IOperationContext myOperationContext;
   protected final IGenerationHandler myGenerationHandler;
   protected GeneratorLoggerAdapter myLogger;
@@ -54,7 +53,7 @@ public class GenerationController implements ITaskPoolProvider {
 
   protected List<Pair<SModule, List<SModel>>> myModuleSequence = new ArrayList<Pair<SModule, List<SModel>>>();
 
-  public GenerationController(List<SModelDescriptor> _inputModels, TransientModelsProvider transientModelsProvider, GenerationOptions options,
+  public GenerationController(List<? extends SModel> _inputModels, TransientModelsProvider transientModelsProvider, GenerationOptions options,
                 IGenerationHandler generationHandler, GeneratorLoggerAdapter generatorLogger, IOperationContext operationContext, ProgressMonitor cancellationMonitor) {
     myTransientModelsProvider = transientModelsProvider;
     myInputModels = _inputModels;

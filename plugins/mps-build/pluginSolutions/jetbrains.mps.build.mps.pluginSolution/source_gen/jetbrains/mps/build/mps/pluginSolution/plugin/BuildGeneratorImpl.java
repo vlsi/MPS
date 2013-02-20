@@ -8,8 +8,9 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -88,12 +89,12 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
         addRequiredImports(descriptor.getSModel(), descriptor.getModule().getModuleDescriptor());
 
-        final EditableSModelDescriptor targetModelDescriptor = ((EditableSModelDescriptor) descriptor);
+        final EditableSModel targetModelDescriptor = ((EditableSModel) descriptor);
         Iterable<SNode> result = createBuildScripts(targetModelDescriptor, BuildGeneratorImpl.this.getProjectName(), BuildGeneratorImpl.this.myProject.getBaseDir().getPath(), BuildGeneratorImpl.this.getModules());
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            targetModelDescriptor.getModule().save();
+            ((AbstractModule) targetModelDescriptor.getModule()).save();
             targetModelDescriptor.save();
           }
         });
@@ -212,7 +213,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     this.setNewSolutionName(solutionName);
   }
 
-  protected Iterable<SNode> createBuildScripts(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
+  protected Iterable<SNode> createBuildScripts(EditableSModel targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     // setup build project 
     SNode buildProject = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildProject", null);
     SPropertyOperations.set(buildProject, "name", name);
@@ -220,7 +221,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "plugins", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMPSPlugin", null));
 
     // internal base dir is a project base dir 
-    SModel targetSModel = targetModelDescriptor.getSModel();
+    SModel targetSModel = ((SModelDescriptor) targetModelDescriptor).getSModel();
     try {
       String relativeToModuleProjectPath = Context.defaultContext().getRelativePathHelper(targetSModel).makeRelative(myProject.getBasePath());
       SPropertyOperations.set(buildProject, "internalBaseDirectory", relativeToModuleProjectPath);

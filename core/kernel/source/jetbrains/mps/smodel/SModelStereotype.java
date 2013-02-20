@@ -91,12 +91,24 @@ public class SModelStereotype {
   }
 
   public static String getStereotype(org.jetbrains.mps.openapi.model.SModel model) {
-    String name = model.getModelName();
-    int atIndex = name.lastIndexOf('@');
+    return getStereotype(model.getModelName());
+  }
+
+  public static String getStereotype(String modelName) {
+    int atIndex = modelName.lastIndexOf('@');
     if (atIndex == -1) {
       return "";
     } else {
-      return name.substring(atIndex + 1);
+      return modelName.substring(atIndex + 1);
+    }
+  }
+
+  public static String withoutStereotype(String modelName) {
+    int atIndex = modelName.lastIndexOf('@');
+    if (atIndex == -1) {
+      return modelName;
+    } else {
+      return modelName.substring(0, atIndex);
     }
   }
 }

@@ -26,7 +26,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.OptimizeImportsHelper;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.changes.CommitContext;
@@ -90,7 +90,7 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
             public void run() {
               new OptimizeImportsHelper(operationContext).optimizeModelsImports(affectedModels);
               for (SModelDescriptor affectedModel : affectedModels) {
-                ((EditableSModelDescriptor) affectedModel).save();
+                ((EditableSModel) affectedModel).save();
               }
             }
           }, project);

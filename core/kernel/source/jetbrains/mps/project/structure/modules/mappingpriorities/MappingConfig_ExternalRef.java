@@ -17,7 +17,7 @@ package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.HashSet;
 import java.util.Set;

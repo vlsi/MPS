@@ -30,8 +30,10 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(final Condition<SNode> condition) {
     return myClassifierScope.getNodes(new Condition<SNode>() {
+      @Override
       public boolean met(SNode node) {
         SNode member = SNodeOperations.as(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
         return (member != null) && ((myContextNode == null) || isVisible(member)) && condition.met(node);
@@ -39,6 +41,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     });
   }
 
+  @Override
   public boolean isInScope(SNode node) {
     if (myContextNode == null || !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
       LOG.error("isInScope(" + node + ") - context is null or not ClassifierMember");
@@ -47,6 +50,7 @@ public class ClassifierVisibleMembersScope extends AbstractSearchScope {
     return myClassifierScope.getClassifierNodes().contains(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) && isVisible(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"));
   }
 
+  @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     if (this.myClassifierType != null) {
       if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {

@@ -29,7 +29,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
@@ -100,7 +100,7 @@ public class FixMissingImportsInProject_Action extends BaseAction {
           if (!(SModelStereotype.isUserModel(modelDescriptor))) {
             continue;
           }
-          if (!(modelDescriptor instanceof EditableSModelDescriptor)) {
+          if (!(modelDescriptor instanceof EditableSModel)) {
             continue;
           }
 

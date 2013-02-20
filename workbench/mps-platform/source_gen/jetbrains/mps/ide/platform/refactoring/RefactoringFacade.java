@@ -32,13 +32,14 @@ import jetbrains.mps.findUsages.UsagesList;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelRepository;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
@@ -273,7 +274,9 @@ public class RefactoringFacade {
         model.updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
       }
     }
-    SModelRepository.getInstance().markChanged(model);
+    if (model instanceof EditableSModel) {
+      ((EditableSModel) model).setChanged(true);
+    }
   }
 
   private void generateModels(@NotNull final List<SModel> sourceModels, @NotNull final RefactoringContext context) {

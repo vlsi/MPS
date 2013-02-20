@@ -16,10 +16,12 @@ public class ClassifierSuccessors implements CoreComponent {
   public ClassifierSuccessors() {
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
   }
 
+  @Override
   public void init() {
     INSTANCE = this;
   }

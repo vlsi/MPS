@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 
@@ -71,7 +71,7 @@ public class ModelStep extends TwoOptionsStep<SModel> {
           }
           return Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
-              return it instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) it).isReadOnly());
+              return it instanceof EditableSModel && !(((EditableSModel) it).isReadOnly());
             }
           }).toListSequence();
         }

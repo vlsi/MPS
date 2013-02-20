@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
@@ -44,8 +44,8 @@ public class ModelFindOperations {
       (myModelDescriptor instanceof DefaultSModelDescriptor) &&
         ((DefaultSModelDescriptor) myModelDescriptor).getLoadingState() != ModelLoadingState.FULLY_LOADED &&
         !(
-          myModelDescriptor instanceof EditableSModelDescriptor &&
-            ((EditableSModelDescriptor) myModelDescriptor).isChanged()
+          myModelDescriptor instanceof EditableSModel &&
+            ((EditableSModel) myModelDescriptor).isChanged()
         );
   }
 

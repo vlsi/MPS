@@ -31,13 +31,13 @@ import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.*;
 import java.util.*;
@@ -63,7 +63,7 @@ public class GeneratorUIFacade {
    * @return false if canceled
    */
   public boolean generateModels(final IOperationContext operationContext,
-                  final List<SModelDescriptor> inputModels,
+                  final List<? extends SModel> inputModels,
                   final IGenerationHandler generationHandler,
                   boolean rebuildAll,
                   boolean skipRequirementsGeneration) {
@@ -74,7 +74,7 @@ public class GeneratorUIFacade {
    * @return false if canceled
    */
   private boolean generateModelsWithProgressWindow(final IOperationContext invocationContext,
-                           final List<SModelDescriptor> inputModels,
+                           final List<? extends SModel> inputModels,
                            final IGenerationHandler generationHandler,
                            final boolean rebuildAll, boolean skipRequirementsGeneration) {
     if (inputModels.isEmpty()) return true;
@@ -125,16 +125,16 @@ public class GeneratorUIFacade {
     if (!skipRequirementsGeneration && generateRequirements(settings)) {
       boolean wasSaveTransientModels = settings.isSaveTransientModels();
       try {
-        final Set<SModelDescriptor> requirements = new LinkedHashSet<SModelDescriptor>();
+        final Set<SModel> requirements = new LinkedHashSet<SModel>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            for (SModelDescriptor inputModel : inputModels) {
+            for (SModel inputModel : inputModels) {
               requirements.addAll(getModelsToGenerateBeforeGeneration(inputModel, project));
             }
           }
         });
 
-        for (SModelDescriptor inputModel : inputModels) {
+        for (SModel inputModel : inputModels) {
           requirements.remove(inputModel);
         }
 
@@ -144,8 +144,8 @@ public class GeneratorUIFacade {
           if (false && settings.getGenerateRequirementsPolicy() == GenerationSettings.GenerateRequirementsPolicy.ASK) {
             final StringBuffer message = new StringBuffer("The following models might be required for generation\n" +
               "but aren't generated. Do you want to generate them?\n");
-            for (SModelDescriptor sm : requirements) {
-              message.append("\n").append(sm.getSModelReference().getSModelFqName());
+            for (SModel sm : requirements) {
+              message.append("\n").append(sm.getModelName());
             }
 
             if (!MPSCore.getInstance().isTestMode()) {
@@ -161,7 +161,7 @@ public class GeneratorUIFacade {
           if (result == 1) return false;
           // answer was "yes"
           if (result == 0) {
-            generateModels(invocationContext, new ArrayList<SModelDescriptor>(requirements), getDefaultGenerationHandler(), rebuildAll, true);
+            generateModels(invocationContext, new ArrayList<SModel>(requirements), getDefaultGenerationHandler(), rebuildAll, true);
           }
         }
       } finally {
@@ -253,13 +253,13 @@ public class GeneratorUIFacade {
     return false && settings.getGenerateRequirementsPolicy() != GenerationSettings.GenerateRequirementsPolicy.NEVER;
   }
 
-  private Collection<SModelDescriptor> getModelsToGenerateBeforeGeneration(SModelDescriptor model, Project project) {
-    IModule module = model.getModule();
+  private Collection<SModel> getModelsToGenerateBeforeGeneration(SModel model, Project project) {
+    SModule module = model.getModule();
     if (module == null) return Collections.emptyList();
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
 
-    for (TemplateModule templateModule : GenerationPartitioningUtil.getTemplateModules(model.getSModel())) {
+    for (TemplateModule templateModule : GenerationPartitioningUtil.getTemplateModules(((SModelDescriptor) model).getSModel())) {
       Generator g = ModuleRepositoryFacade.getInstance().getModule(templateModule.getReference(), Generator.class);
       if (g == null) continue;
 

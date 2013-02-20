@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
@@ -33,10 +34,10 @@ import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
@@ -59,14 +60,14 @@ public class GenerationFacade {
     return mappings;
   }
 
-  public static Collection<TemplateModule> getPossiblyEngagedGenerators(SModel model) {
+  public static Collection<TemplateModule> getPossiblyEngagedGenerators(jetbrains.mps.smodel.SModel model) {
     return GenerationPartitioningUtil.getTemplateModules(model);
   }
 
-  public static Collection<SModelDescriptor> getModifiedModels(Collection<SModelDescriptor> models, IOperationContext context) {
-    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
+  public static Collection<SModel> getModifiedModels(Collection<? extends SModel> models, IOperationContext context) {
+    Set<SModel> result = new LinkedHashSet<SModel>();
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
-    for (SModelDescriptor sm : models) {
+    for (SModel sm : models) {
       if (statusManager.generationRequired(sm)) {
         result.add(sm);
         continue;
@@ -124,12 +125,12 @@ public class GenerationFacade {
     return result;
   }
 
-  public static boolean canGenerate(org.jetbrains.mps.openapi.model.SModel sm) {
+  public static boolean canGenerate(SModel sm) {
     return sm instanceof GeneratableSModel && ((GeneratableSModel) sm).isGeneratable();
   }
 
   public static boolean generateModels(final Project p,
-                     final List<SModelDescriptor> inputModels,
+                     final List<? extends SModel> inputModels,
                      final IOperationContext invocationContext,
                      final IGenerationHandler generationHandler,
                      final ProgressMonitor monitor,
@@ -146,9 +147,9 @@ public class GenerationFacade {
 
     ModelAccess.instance().requireWrite(new Runnable() {
       public void run() {
-        for (SModelDescriptor d : inputModels) {
-          if (d instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) d).needsReloading()) {
-            ((EditableSModelDescriptor) d).reloadFromDisk();
+        for (SModel d : inputModels) {
+          if (d instanceof EditableSModel && ((EditableSModel) d).needsReloading()) {
+            ((EditableSModel) d).reloadFromDisk();
             LOG.info("Model " + d + " reloaded from disk.");
           }
           transientModelsComponent.createModule(d.getModule());

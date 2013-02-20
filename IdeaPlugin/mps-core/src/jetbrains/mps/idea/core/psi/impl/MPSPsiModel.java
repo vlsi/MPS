@@ -151,7 +151,9 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
     nodes.remove(psiNode.getId());
 
     for (MPSPsiNodeBase node : psiNode.children()) {
-      drop((MPSPsiNode) node);
+      if (node instanceof MPSPsiNode) {
+        drop((MPSPsiNode) node);
+      }
     }
   }
 

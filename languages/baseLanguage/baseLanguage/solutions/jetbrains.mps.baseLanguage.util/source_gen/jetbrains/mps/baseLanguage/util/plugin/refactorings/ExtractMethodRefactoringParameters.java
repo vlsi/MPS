@@ -48,6 +48,7 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
     return this.myParameters;
   }
 
+  @Override
   public List<String> getParametersNames() {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     for (MethodParameter param : ListSequence.fromList(this.myParameters)) {
@@ -103,6 +104,7 @@ public class ExtractMethodRefactoringParameters extends MethodModel {
     }
   }
 
+  @Override
   public String getMethodText() {
     String result = this.myVisibility.getName() + " " + super.getMethodText();
     return result;

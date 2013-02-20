@@ -10,7 +10,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.refactoring.RenameModelDialog;
@@ -38,7 +38,7 @@ public class RenameModel_Action extends BaseAction {
     if (!(Language.isLanguageOwnedAccessoryModel(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))))) {
       return false;
     }
-    return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor;
+    return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -69,7 +69,7 @@ public class RenameModel_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
     }
-    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
       return false;
     }
     MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
@@ -81,7 +81,7 @@ public class RenameModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).show();
+      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModel) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).show();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RenameModel", t);
     }
