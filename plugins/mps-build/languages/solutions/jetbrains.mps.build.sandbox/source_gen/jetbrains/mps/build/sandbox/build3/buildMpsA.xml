@@ -54,6 +54,13 @@
     <ant antfile="jetbrains.mps.build.sandbox/samples/buildMpsB.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
+  <target name="prepareDependents">
+    <ant antfile="jetbrains.mps.build.sandbox/samples/buildMpsB.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+  </target>
+  
   <target name="fetchDependencies">
     <mkdir dir="${build.tmp}/deps/buildMpsB/MpsB.zip" />
     <unzip src="${artifacts.buildMpsB}/X/MpsB.zip" dest="${build.tmp}/deps/buildMpsB/MpsB.zip" />

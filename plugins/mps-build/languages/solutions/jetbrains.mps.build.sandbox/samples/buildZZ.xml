@@ -10,7 +10,19 @@
   </target>
   
   <target name="buildDependents">
+    <ant antfile="buildY.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="buildZ.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
+  
+  <target name="prepareDependents">
+    <ant antfile="buildY.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="buildZ.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
   </target>
   
   <target name="fetchDependencies">

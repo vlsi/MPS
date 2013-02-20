@@ -34,6 +34,21 @@
     <ant antfile="subprojects/buildB/buildB.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
+  <target name="prepareDependents">
+    <ant antfile="buildCore/buildCore.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="buildA/buildA.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="subprojects/buildB/buildB.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+  </target>
+  
   <target name="fetchDependencies">
     <mkdir dir="${build.tmp}/deps/buildCore/release.zip" />
     <unzip src="${artifacts.buildCore}/default/release.zip" dest="${build.tmp}/deps/buildCore/release.zip" />

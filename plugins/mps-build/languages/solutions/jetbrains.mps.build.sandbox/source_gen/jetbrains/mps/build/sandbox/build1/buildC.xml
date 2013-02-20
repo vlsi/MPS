@@ -14,7 +14,19 @@
   </target>
   
   <target name="buildDependents">
+    <ant antfile="buildA/buildA.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="subprojects/buildB/buildB.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
+  
+  <target name="prepareDependents">
+    <ant antfile="buildA/buildA.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="subprojects/buildB/buildB.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
   </target>
   
   <target name="fetchDependencies" />

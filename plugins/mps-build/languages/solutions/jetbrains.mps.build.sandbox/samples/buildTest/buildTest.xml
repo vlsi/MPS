@@ -52,8 +52,112 @@
   </target>
   
   <target name="buildDependents">
+    <ant antfile="../../../../build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsDates.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsStandalone.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsDevKit.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsExperimental.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsJava.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsPlugins.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsDeprecatedBuildlanguage.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../build/mpsObsolete.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="../../../../build/mps.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
+  
+  <target name="prepareDependents">
+    <ant antfile="../../../../build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsCore.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsDates.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsStandalone.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsDevKit.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsExperimental.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsJava.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsPlugins.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsBuildUI.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsVcs.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsDeprecatedBuildlanguage.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mpsObsolete.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="../../../../build/mps.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="prepare" />
+      <target name="assemble" />
+    </ant>
+  </target>
+  
+  <target name="prepare" depends="generate" />
   
   <target name="fetchDependencies" />
   
@@ -74,51 +178,7 @@
   
   <target name="check" depends="test" />
   
-  <target name="java.compile.jetbrains.mps.build.sandbox" depends="fetchDependencies">
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" fork="true" includeantruntime="false">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-ui.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.mps}/lib/annotations.jar" />
-        <fileset file="${artifacts.mps}/lib/jdom.jar" />
-        <fileset file="${artifacts.mps}/lib/log4j.jar" />
-        <fileset file="${artifacts.mps}/lib/ecj-4.2.jar" />
-        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.mps}/lib/asm4-all.jar" />
-        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
-        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-      </classpath>
-    </javac>
-  </target>
-  
-  <target name="declare-mps-tasks">
-    <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path" />
-  </target>
-  
-  <target name="generate" depends="fetchDependencies, declare-mps-tasks">
+  <target name="generate" depends="declare-mps-tasks, fetchDependencies, prepareDependents">
     <echo message="generating" />
     <generate parallelMode="true" fork="true">
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -179,6 +239,50 @@
         <module file="${basedir}/jetbrains.mps.build.sandbox/jetbrains.mps.build.sandbox.msd" />
       </chunk>
     </generate>
+  </target>
+  
+  <target name="declare-mps-tasks">
+    <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path" />
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.build.sandbox" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" />
+    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" fork="true" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/jetbrains.mps.build.sandbox/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.2.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/xstream-1.4.3.jar" />
+        <fileset file="${artifacts.mps}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+      </classpath>
+    </javac>
   </target>
   
   <target name="cleanSources">
