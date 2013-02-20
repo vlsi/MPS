@@ -82,10 +82,12 @@ import jetbrains.mps.vcs.diff.changes.NodeCopier;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import org.junit.BeforeClass;
 import jetbrains.mps.smodel.SReference;
 import com.intellij.openapi.util.registry.Registry;
@@ -772,7 +774,7 @@ public class ChangesManagerTest {
 
       Assert.assertEquals(ListSequence.fromList(changesBefore).count() - 1, ListSequence.fromList(check_4gxggu_a1a6a8a55(myUiDiff.getChangeSet())).count());
 
-      ListSequence.fromList(affectedNodePointers).addElement(new SNodePointer(myUiDiff.getModelDescriptor().getSModelReference(), changeToPick.getRootId()));
+      ListSequence.fromList(affectedNodePointers).addElement(new SNodePointer(myUiDiff.getModelDescriptor().getModelReference(), changeToPick.getRootId()));
     }
 
     MapSequence.fromMap(myExpectedFileStatuses).removeKey("ui.DocumentLayout");
@@ -861,8 +863,8 @@ public class ChangesManagerTest {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         String modelName = "newmodel";
-        IModule module = myUiDiff.getModelDescriptor().getModule();
-        module.createModel(MODEL_PREFIX + modelName, module.getModelRoots().iterator().next(), null);
+        SModule module = myUiDiff.getModelDescriptor().getModule();
+        ((AbstractModule) module).createModel(MODEL_PREFIX + modelName, module.getModelRoots().iterator().next(), null);
         newModelDiff.value = getCurrentDifference(modelName);
       }
     });
@@ -962,7 +964,7 @@ public class ChangesManagerTest {
     doSomethingAndWaitForFileStatusChange(new Runnable() {
       public void run() {
       }
-    }, VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) myUiDiff.getModelDescriptor()).getSource().getFile()), FileStatus.MODIFIED);
+    }, VirtualFileUtils.getVirtualFile(((BaseEditableSModelDescriptor) myUiDiff.getModelDescriptor()).getSource().getFile()), FileStatus.MODIFIED);
     waitForChangesManager();
     Assert.assertEquals(changeSetStringBefore, getChangeSetString(myUiDiff.getChangeSet()));
 
