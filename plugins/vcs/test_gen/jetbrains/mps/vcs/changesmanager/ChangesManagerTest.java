@@ -934,7 +934,7 @@ public class ChangesManagerTest {
 
     checkRootStatuses();
 
-    final EditableSModelDescriptor md = myUiDiff.getModelDescriptor();
+    final EditableSModel md = myUiDiff.getModelDescriptor();
     String changeSetStringBefore = getChangeSetString(myUiDiff.getChangeSet());
     runCommandAndWait(new Runnable() {
       public void run() {

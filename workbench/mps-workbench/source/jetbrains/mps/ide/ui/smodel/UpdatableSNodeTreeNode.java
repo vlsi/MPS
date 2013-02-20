@@ -15,21 +15,16 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelRepositoryListener;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.util.HashSet;
@@ -92,18 +87,18 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     myModelRepositoryListener = new SModelRepositoryAdapter() {
       @Override
       public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
-         if (replacedModels.contains(getModelDescriptor())) {
-           ModelAccess.instance().runReadInEDT(new Runnable() {
-             public void run() {
-               if (mySNodeModelListener.isValid()) {
-                 UpdatableSNodeTreeNode.this.updatePresentation(true, true);
-               }
-             }
-           });
-         }
+        if (replacedModels.contains(getModelDescriptor())) {
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            public void run() {
+              if (mySNodeModelListener.isValid()) {
+                UpdatableSNodeTreeNode.this.updatePresentation(true, true);
+              }
+            }
+          });
+        }
       }
     };
-    if (getModelDescriptor() instanceof EditableSModelDescriptor) {
+    if (getModelDescriptor() instanceof EditableSModel) {
       myTreeUpdater = new MySNodeTreeUpdater(getOperationContext().getProject(), this);
     }
     addListeners();

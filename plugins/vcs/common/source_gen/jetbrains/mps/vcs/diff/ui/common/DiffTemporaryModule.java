@@ -44,14 +44,17 @@ public class DiffTemporaryModule extends AbstractModule {
     myProject = project;
   }
 
+  @Override
   public String toString() {
     return getModuleFqName();
   }
 
+  @Override
   public List<SModelDescriptor> getOwnModelDescriptors() {
     return Arrays.asList(myModel.getModelDescriptor());
   }
 
+  @Override
   protected AbstractModule.ModuleScope createScope() {
     return new DiffTemporaryModule.DiffModuleScope();
   }

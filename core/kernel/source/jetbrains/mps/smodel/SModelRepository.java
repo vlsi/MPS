@@ -24,7 +24,6 @@ import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -224,12 +223,12 @@ public class SModelRepository implements CoreComponent {
   //----------------------------stuff-----------------------------
 
 
-  private List<EditableSModelDescriptor> getModelsToSave() {
-    List<EditableSModelDescriptor> modelsToSave = new ArrayList<EditableSModelDescriptor>();
+  private List<EditableSModel> getModelsToSave() {
+    List<EditableSModel> modelsToSave = new ArrayList<EditableSModel>();
     for (SModelDescriptor md : myModelOwner.keySet()) {
-      if (!(md instanceof EditableSModelDescriptor)) continue;
+      if (!(md instanceof EditableSModel)) continue;
 
-      EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
+      EditableSModel emd = ((EditableSModel) md);
       // HOTFIX MPS-13326
       if (emd.isChanged() && !emd.isReadOnly()) {
         modelsToSave.add(emd);
@@ -241,19 +240,19 @@ public class SModelRepository implements CoreComponent {
   public void saveAll() {
     ModelAccess.assertLegalWrite();
 
-    List<EditableSModelDescriptor> modelsToRefresh;
+    List<EditableSModel> modelsToRefresh;
     synchronized (myModelsLock) {
       modelsToRefresh = getModelsToSave();
     }
 
-    for (EditableSModelDescriptor emd : modelsToRefresh) {
+    for (EditableSModel emd : modelsToRefresh) {
       DataSource source = emd.getSource();
       if (!(source instanceof DataSourceBase)) continue;
       ((DataSourceBase) source).refresh();
     }
 
     synchronized (myModelsLock) {
-      for (EditableSModelDescriptor emd : getModelsToSave()) {
+      for (EditableSModel emd : getModelsToSave()) {
         try {
           emd.save();
         } catch (Throwable t) {

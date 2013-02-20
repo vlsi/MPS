@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
@@ -103,8 +104,8 @@ public class SModel {
   public boolean isNotEditable() {
     assert !isDisposed();
     SModelDescriptor d = getModelDescriptor();
-    if (!(d instanceof EditableSModelDescriptor)) return true;
-    return ((EditableSModelDescriptor) d).isReadOnly();
+    if (!(d instanceof EditableSModel)) return true;
+    return ((EditableSModel) d).isReadOnly();
   }
 
   public boolean isDisposed() {

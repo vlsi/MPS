@@ -15,17 +15,13 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.*;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -62,7 +58,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     lang.getDependenciesManager().collectAllExtendedLanguages(ext);
 
     for (Language language : ext) {
-      EditableSModelDescriptor descriptor = LanguageAspect.BEHAVIOR.get(language);
+      EditableSModel descriptor = LanguageAspect.BEHAVIOR.get(language);
       if (descriptor == null) {
         if (lang == language)
           errors.add("Behavior aspect is absent");

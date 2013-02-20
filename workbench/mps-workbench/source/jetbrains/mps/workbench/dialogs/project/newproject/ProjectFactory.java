@@ -24,13 +24,16 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.platform.ProjectBaseDirectory;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -72,8 +75,7 @@ public class ProjectFactory {
     try {
       ApplicationManagerEx.getApplicationEx().doNotSave(false);
       myCreatedProject.save();
-    }
-    finally {
+    } finally {
       ApplicationManagerEx.getApplicationEx().doNotSave(doNotSave);
     }
 
@@ -102,12 +104,12 @@ public class ProjectFactory {
               myCreatedSolution.save();
 
               if (myOptions.getCreateModel()) {
-                EditableSModelDescriptor model = myCreatedSolution.createModel(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox", myCreatedSolution.getModelRoots().iterator().next(), null);
-                model.getSModel().addLanguage(myCreatedLanguage.getModuleReference());
+                EditableSModel model = myCreatedSolution.createModel(myCreatedSolution.getModuleReference().getModuleFqName() + ".sandbox", myCreatedSolution.getModelRoots().iterator().next(), null);
+                ((DefaultSModelDescriptor) model).getSModel().addLanguage(myCreatedLanguage.getModuleReference());
                 model.save();
               }
             }
-            if(myOptions.getCreateNewSolution() || myOptions.getCreateNewLanguage()) {
+            if (myOptions.getCreateNewSolution() || myOptions.getCreateNewLanguage()) {
               ((StandaloneMPSProject) mpsProject).update();
             }
           }
@@ -189,7 +191,7 @@ public class ProjectFactory {
     LanguageAspect.CONSTRAINTS.createNew(language, false).save();
     LanguageAspect.BEHAVIOR.createNew(language, false).save();
     LanguageAspect.TYPESYSTEM.createNew(language, false).save();
-    
+
     language.setLanguageDescriptor(languageDescriptor, false);
 
     return language;

@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
-import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.General;
 import com.intellij.openapi.actionSystem.*;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.actions.CreateAspect_Action;
-import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.*;
 import java.util.Iterator;
@@ -46,18 +45,22 @@ public abstract class AddAspectAction extends AnAction {
     setShortcutSet(ActionManager.getInstance().getAction(CreateAspect_Action.class.getName()).getShortcutSet());
   }
 
+  @Override
   public boolean displayTextInToolbar() {
     return true;
   }
 
+  @Override
   public void update(AnActionEvent e) {
     SModelDescriptor model = e.getData(MPSDataKeys.CONTEXT_MODEL);
-    boolean enabled = model instanceof EditableSModelDescriptor && !((EditableSModelDescriptor) model).isReadOnly();
+    boolean enabled = model instanceof EditableSModel && !((EditableSModel) model).isReadOnly();
     e.getPresentation().setEnabled(enabled);
   }
 
+  @Override
   public void actionPerformed(final AnActionEvent e) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         ActionPopupMenu popup = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, getCreateGroup());
         JPopupMenu popupComponent = popup.getComponent();

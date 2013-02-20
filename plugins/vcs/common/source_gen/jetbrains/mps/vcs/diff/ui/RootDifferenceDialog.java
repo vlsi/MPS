@@ -56,7 +56,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.wm.WindowManager;
 import java.awt.GraphicsDevice;
@@ -330,7 +330,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
           node.getPresentation()
         );
 
-        boolean isEditable = newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_vu2gar_a0a0g0a7a23(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
+        boolean isEditable = newModel.getModelDescriptor() instanceof EditableSModel && check_vu2gar_a0a0g0a7a23(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
 
         return dialog.value = new RootDifferenceDialog(project, changeSet, rootId, rootName, contentTitles, WindowManager.getInstance().getFrame(project), isEditable, null, scrollTo);
       }

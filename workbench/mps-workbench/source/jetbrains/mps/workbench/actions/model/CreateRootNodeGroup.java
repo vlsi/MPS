@@ -25,6 +25,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
@@ -33,11 +34,9 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -47,9 +46,11 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.Icon;
+import javax.swing.*;
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -73,6 +74,7 @@ public class CreateRootNodeGroup extends BaseGroup {
     myPlain = plain;
   }
 
+  @Override
   public void doUpdate(AnActionEvent event) {
     removeAll();
 
@@ -82,7 +84,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       return;
     }
 
-    if (!(modelDescriptor instanceof EditableSModelDescriptor) || (((EditableSModelDescriptor) modelDescriptor).isReadOnly())) {
+    if (!(modelDescriptor instanceof EditableSModel) || (((EditableSModel) modelDescriptor).isReadOnly())) {
       event.getPresentation().setEnabled(false);
       event.getPresentation().setVisible(false);
       return;
@@ -200,6 +202,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       myNodeConcept = nodeConcept;
       myModelDescriptor = modelDescriptor;
       Icon icon = ModelAccess.instance().runReadAction(new Computable<Icon>() {
+        @Override
         public Icon compute() {
           return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.resolve(MPSModuleRepository.getInstance())));
         }
@@ -208,6 +211,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       setExecuteOutsideCommand(true);
     }
 
+    @Override
     protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
       if (!super.collectActionData(e, _params)) return false;
       myProject = MPSDataKeys.PROJECT.getData(e.getDataContext());
@@ -218,6 +222,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       return true;
     }
 
+    @Override
     protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
@@ -251,6 +256,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       if (target == null) return false;
 
       SNodeReference pointer = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+        @Override
         public SNodeReference compute() {
           return new jetbrains.mps.smodel.SNodePointer(node);
         }
@@ -269,20 +275,24 @@ public class CreateRootNodeGroup extends BaseGroup {
         myNode = node;
       }
 
+      @Override
       @NotNull
       public Project getProject() {
         return myProject;
       }
 
+      @Override
       @NotNull
       public VirtualFile getVirtualFile() {
         return MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode);
       }
 
+      @Override
       public Object getSelectorInFile() {
         return null;
       }
 
+      @Override
       public FileEditorProvider getFileEditorProvider() {
         return null;
       }

@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 
 public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final Map<SModelReference, CurrentDifference> myCurrentDifferences = MapSequence.fromMap(new HashMap<SModelReference, CurrentDifference>());
@@ -156,7 +156,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
 
     @Override
     public void beforeModelRemoved(SModelDescriptor descriptor) {
-      if (descriptor instanceof EditableSModelDescriptor) {
+      if (descriptor instanceof EditableSModel) {
         disposeModelChangesManager(descriptor.getSModelReference());
       }
     }
