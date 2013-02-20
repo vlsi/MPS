@@ -33,7 +33,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
 
 public class DiffTemporaryModule extends AbstractModule {
   private SModel myModel;
@@ -200,34 +199,43 @@ public class DiffTemporaryModule extends AbstractModule {
       }
     }
 
+    @Override
     public void reloadFromDisk() {
     }
 
+    @Override
     public void updateDiskTimestamp() {
     }
 
-    public void rename(SModelFqName name, boolean b) {
+    @Override
+    public void rename(String newModelName, boolean changeFile) {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public boolean isReadOnly() {
       return !(myEditable);
     }
 
+    @Override
     public void setChanged(boolean b) {
     }
 
+    @Override
     public boolean isChanged() {
       return false;
     }
 
+    @Override
     public void save() {
     }
 
+    @Override
     protected SModel createModel() {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public boolean needsReloading() {
       return false;
     }

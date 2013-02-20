@@ -142,14 +142,14 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
   protected abstract boolean saveModel();
 
   @Override
-  public void rename(SModelFqName newModelFqName, boolean changeFile) {
+  public void rename(String newModelName, boolean changeFile) {
     ModelAccess.assertLegalWrite();
 
-    SModelFqName oldFqName = getModelReference().getSModelFqName();
+    String oldName = getModelReference().getModelName();
     SModel model = getSModel();
-    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
+    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldName, newModelName));
 
-    SModelReference newModelReference = new SModelReference(newModelFqName, myModelReference.getSModelId());
+    SModelReference newModelReference = new SModelReference(SModelFqName.fromString(newModelName), myModelReference.getSModelId());
     model.changeModelReference(newModelReference);
 
     if (!changeFile) {
@@ -167,7 +167,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
             break;
           }
         }
-        IFile newFile = defaultModelRoot.createSource(newModelFqName.toString(), FileUtil.getExtension(oldFile.getName()), sourceRoot).getFile();
+        IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot).getFile();
         newFile.getParent().mkdirs();
         newFile.createNewFile();
         changeModelFile(newFile);
@@ -178,7 +178,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
 
     myModelReference = newModelReference;
 
-    fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelFqName));
+    fireModelRenamed(new SModelRenamedEvent(model, oldName, newModelName));
   }
 
   @Override

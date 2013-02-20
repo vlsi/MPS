@@ -13,7 +13,6 @@ import java.io.OutputStream;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.IOException;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.InputStream;
@@ -58,7 +57,8 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     updateDiskTimestamp();
   }
 
-  public void rename(SModelFqName name, boolean b) {
+  @Override
+  public void rename(String newModelName, boolean changeFile) {
     throw new UnsupportedOperationException();
   }
 

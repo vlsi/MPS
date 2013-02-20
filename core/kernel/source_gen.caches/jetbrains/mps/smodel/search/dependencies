@@ -116,7 +116,6 @@
     <classNode extendsClassName="jetbrains.mps.util.Condition" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" file="ModelAndImportedModelsScope.java">
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -127,8 +126,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.search.IsInstanceCondition" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode dependClassName="jetbrains.mps.util.ConditionalIterable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>

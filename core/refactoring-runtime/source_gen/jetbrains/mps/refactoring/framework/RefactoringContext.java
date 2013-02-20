@@ -33,7 +33,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -313,7 +312,7 @@ public class RefactoringContext {
     }
 
     SModelReference oldModelRef = model.getSModelReference();
-    model.rename(SModelFqName.fromString(newName), false);
+    model.rename(newName, false);
     ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameModel(oldModelRef, model.getSModelReference()));
   }
 

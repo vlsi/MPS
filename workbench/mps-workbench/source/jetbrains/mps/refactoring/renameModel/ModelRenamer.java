@@ -21,17 +21,22 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class ModelRenamer {
   private EditableSModelDescriptor myModelDescriptor;
-  private SModelFqName myModelFqName;
+  private String myModelName;
   private boolean myLazy;
 
-  public ModelRenamer(EditableSModelDescriptor modelDescriptor, SModelFqName fqName, boolean lazy) {
+  public ModelRenamer(EditableSModelDescriptor modelDescriptor, String modelName, boolean lazy) {
     myModelDescriptor = modelDescriptor;
-    myModelFqName = fqName;
+    myModelName = modelName;
     myLazy = lazy;
   }
 
+  @Deprecated
+  public ModelRenamer(EditableSModelDescriptor modelDescriptor, SModelFqName fqName, boolean lazy) {
+    this(modelDescriptor, fqName.toString(), lazy);
+  }
+
   public void rename() {
-    myModelDescriptor.rename(myModelFqName, true);
+    myModelDescriptor.rename(myModelName, true);
   }
 
   public void updateReferencesIfNeeded() {

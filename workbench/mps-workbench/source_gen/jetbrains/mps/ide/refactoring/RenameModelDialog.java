@@ -12,8 +12,8 @@ import java.awt.HeadlessException;
 import javax.swing.JComponent;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import jetbrains.mps.smodel.SModelFqName;
 import javax.lang.model.SourceVersion;
+import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import jetbrains.mps.refactoring.renameModel.ModelRenamer;
@@ -53,8 +53,8 @@ public class RenameModelDialog extends RenameDialog {
 
   @Override
   protected void doRefactoringAction() {
-    final SModelFqName fqName = SModelFqName.fromString(getCurrentValue());
-    if (!((SourceVersion.isName(fqName.getLongName())))) {
+    final String fqName = getCurrentValue();
+    if (!((SourceVersion.isName(SModelStereotype.withoutStereotype(fqName))))) {
       setErrorText("Model name should be valid Java package");
       return;
     }

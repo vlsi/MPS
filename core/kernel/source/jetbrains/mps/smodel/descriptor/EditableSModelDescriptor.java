@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.descriptor;
 
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
 
 public interface EditableSModelDescriptor extends SModelDescriptor, EditableSModel {
 
@@ -28,7 +27,7 @@ public interface EditableSModelDescriptor extends SModelDescriptor, EditableSMod
   @Override
   void save();
 
-  void rename(SModelFqName newModelFqName, boolean changeFile);
+  void rename(String newModelName, boolean changeFile);
 
   boolean isReadOnly();
 

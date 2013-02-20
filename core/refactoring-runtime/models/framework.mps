@@ -7324,13 +7324,9 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7064882795684141685" resolveInfo="model" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7064882795684141693">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rhwp.~EditableSModelDescriptor%drename(jetbrains%dmps%dsmodel%dSModelFqName,boolean)%cvoid" resolveInfo="rename" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="7064882795684141694">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelFqName%dfromString(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSModelFqName" resolveInfo="fromString" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~SModelFqName" resolveInfo="SModelFqName" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7064882795684141869">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7064882795684141687" resolveInfo="newName" />
-                </node>
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rhwp.~EditableSModelDescriptor%drename(java%dlang%dString,boolean)%cvoid" resolveInfo="rename" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7396589207130617890">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7064882795684141687" resolveInfo="newName" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="7064882795684141698">
                 <property name="value" nameId="tpee.1068580123138" value="false" />

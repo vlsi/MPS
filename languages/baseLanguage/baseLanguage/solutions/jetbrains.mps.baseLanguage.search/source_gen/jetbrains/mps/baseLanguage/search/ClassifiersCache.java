@@ -9,8 +9,9 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
+import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
@@ -30,9 +31,9 @@ import jetbrains.mps.cache.CachesManager;
   private Map<SNode, String> myNameByClassifier = MapSequence.fromMap(new HashMap<SNode, String>());
 
   @Deprecated
-  protected ClassifiersCache(Object key, SModelDescriptor model) {
+  protected ClassifiersCache(Object key, SModel model) {
     super(key);
-    for (SNode node : model.getSModel().roots()) {
+    for (SNode node : model.getRootNodes()) {
       this.processNode(node, true);
     }
   }
@@ -166,11 +167,11 @@ import jetbrains.mps.cache.CachesManager;
     }
   }
 
-  public static ClassifiersCache getInstance(SModelDescriptor model) {
-    String uid = model.getSModelReference().toString();
+  public static ClassifiersCache getInstance(SModel model) {
+    String uid = model.getModelReference().toString();
     Object key = keyProducer.createKey(uid);
-    return (ClassifiersCache) CachesManager.getInstance().getCache(key, model, new CachesManager.CacheCreator<SModelDescriptor>() {
-      public AbstractCache create(Object key, SModelDescriptor element) {
+    return (ClassifiersCache) CachesManager.getInstance().getCache(key, model, new CachesManager.CacheCreator<SModel>() {
+      public AbstractCache create(Object key, SModel element) {
         return new ClassifiersCache(key, element);
       }
     });
