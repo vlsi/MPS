@@ -5,6 +5,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -115,6 +116,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.AbstractClassifiersScope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" file="ClassifierSuccessors.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
@@ -124,6 +126,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ClassifierVisibleMembersScope" file="ClassifierVisibleMembersScope.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.InstanceMethodReferenceInfoResolver" />
@@ -215,6 +218,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.InstanceMethodReferenceInfoResolver" file="InstanceMethodReferenceInfoResolver.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
@@ -262,6 +266,7 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
@@ -308,6 +313,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ParameterScope" file="ParameterScope.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -354,6 +360,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.StaticMethodReferenceInfoResolver" file="StaticMethodReferenceInfoResolver.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
@@ -370,6 +377,7 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.IClassifiersSearchScope" />
@@ -405,6 +413,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
@@ -434,6 +443,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.VisibleClassifiersScope" file="VisibleClassifiersScope.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.search.VisibilityUtil" />
@@ -448,6 +458,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.VisibleThrowablesScope" file="VisibleThrowablesScope.java">
     <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />

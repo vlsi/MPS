@@ -13,6 +13,7 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
     super(moving, destination);
   }
 
+  @Override
   public void replaceSingleUsage(SNode usage) {
     super.replaceSingleUsage(usage);
     if (SNodeOperations.getAncestor(usage, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == this.myDestination) {

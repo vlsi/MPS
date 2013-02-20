@@ -109,14 +109,17 @@ import jetbrains.mps.cache.CachesManager;
     return new ArrayList<SNode>();
   }
 
+  @Override
   public void rootAdded(SModelRootEvent event) {
     this.processNode(event.getRoot(), true);
   }
 
+  @Override
   public void rootRemoved(SModelRootEvent event) {
     this.processNode(event.getRoot(), false);
   }
 
+  @Override
   public void childAdded(SModelChildEvent event) {
     SNode node = event.getChild();
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
@@ -127,6 +130,7 @@ import jetbrains.mps.cache.CachesManager;
     this.processNode(node, true);
   }
 
+  @Override
   public void beforeChildRemoved(SModelChildEvent event) {
     SNode node = event.getChild();
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
@@ -137,6 +141,7 @@ import jetbrains.mps.cache.CachesManager;
     this.processNode(node, false);
   }
 
+  @Override
   public void propertyChanged(SModelPropertyEvent event) {
     SNode node = event.getNode();
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") && "name".equals(event.getPropertyName())) {
@@ -171,6 +176,7 @@ import jetbrains.mps.cache.CachesManager;
     String uid = model.getModelReference().toString();
     Object key = keyProducer.createKey(uid);
     return (ClassifiersCache) CachesManager.getInstance().getCache(key, model, new CachesManager.CacheCreator<SModel>() {
+      @Override
       public AbstractCache create(Object key, SModel element) {
         return new ClassifiersCache(key, element);
       }

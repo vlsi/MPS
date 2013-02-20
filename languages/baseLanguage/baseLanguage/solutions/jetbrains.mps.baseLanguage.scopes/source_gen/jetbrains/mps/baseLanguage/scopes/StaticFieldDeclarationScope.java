@@ -34,6 +34,7 @@ public class StaticFieldDeclarationScope extends Scope {
     this.extendsScopes = extendsScopes;
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
@@ -80,6 +81,7 @@ public class StaticFieldDeclarationScope extends Scope {
   }
 
   @Nullable
+  @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     if (MapSequence.fromMap(nameToField).containsKey(refText)) {
       return MapSequence.fromMap(nameToField).get(refText);
@@ -101,6 +103,7 @@ public class StaticFieldDeclarationScope extends Scope {
   }
 
   @Nullable
+  @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     // todo: look! mixin "INamedConcept" 
     return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "name");

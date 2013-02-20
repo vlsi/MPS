@@ -49,6 +49,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getClassifiers() {
     List<? extends org.jetbrains.mps.openapi.model.SModel> models = new ModelAndImportedModelsScope(this.myModel, false, this.myScope).getModels();
     List<SNode> result = new ArrayList<SNode>();
@@ -76,6 +77,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       this.myScope = scope;
     }
 
+    @Override
     public SNode resolve(String referenceInfo, @Nullable SModelReference targetModelReference) {
       String classname = referenceInfo;
       int dotIndex = classname.lastIndexOf(".");

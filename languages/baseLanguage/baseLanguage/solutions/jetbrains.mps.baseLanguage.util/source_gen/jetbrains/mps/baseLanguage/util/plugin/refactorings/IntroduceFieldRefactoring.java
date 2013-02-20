@@ -27,6 +27,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   public void run() {
   }
 
+  @Override
   public SNode doRefactoring() {
     this.findDuplicates();
     SNode newDeclaration;
@@ -64,6 +65,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     return newDeclaration;
   }
 
+  @Override
   public void replaceNode(SNode node, SNode declaration) {
     SNodeOperations.replaceWithAnother(node, _quotation_createNode_baxqxe_a0a0a4(declaration));
   }

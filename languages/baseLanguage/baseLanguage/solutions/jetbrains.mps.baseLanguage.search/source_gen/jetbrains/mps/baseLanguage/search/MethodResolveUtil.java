@@ -141,6 +141,7 @@ public class MethodResolveUtil {
           typeOfArg = nodesAndTypes.get(term);
         } else {
           typeOfArg = TypeContextManager.getInstance().runResolveAction(new Computable<SNode>() {
+            @Override
             public SNode compute() {
               return TypeChecker.getInstance().getTypeOf(term);
             }

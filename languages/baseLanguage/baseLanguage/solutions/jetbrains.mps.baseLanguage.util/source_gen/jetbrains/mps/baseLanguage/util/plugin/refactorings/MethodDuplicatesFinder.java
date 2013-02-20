@@ -73,6 +73,7 @@ public class MethodDuplicatesFinder {
       this.myMatch = new MethodMatch(MethodDuplicatesFinder.this.myParameterOrder);
     }
 
+    @Override
     public boolean accept(SNode candidate, SNode original) {
       if (SetSequence.fromSet(myOutputRefs).contains(original)) {
         this.myMatch.putOutputReference(candidate);
@@ -83,14 +84,17 @@ public class MethodDuplicatesFinder {
       return false;
     }
 
+    @Override
     public boolean acceptList(List<SNode> list1, List<SNode> list2) {
       return false;
     }
 
+    @Override
     public void performAction(SNode candidate, SNode original) {
       this.myMatch.putMapping(candidate, MapSequence.fromMap(MethodDuplicatesFinder.this.myMapping).get(original));
     }
 
+    @Override
     public void performGroupAction(List<SNode> list1, List<SNode> list2) {
     }
 

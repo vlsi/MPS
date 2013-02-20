@@ -22,6 +22,7 @@ public class VisibleThrowablesScope extends VisibleClassifiersScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getClassifiers() {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode cls : super.getClassifiers()) {
