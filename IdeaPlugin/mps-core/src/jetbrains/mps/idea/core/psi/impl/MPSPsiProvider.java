@@ -96,6 +96,12 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
     final SNode node = nodeRef.resolve(MPSModuleRepository.getInstance());
     if (node == null) return null;
 
+    return getPsi(node);
+  }
+
+  public PsiElement getPsi(SNode node) {
+    if (node == null) return null;
+
     // give chance to other to tell us what the PSI element is
     for (MPSNodePsiSourceFinder finder : MPSNodePsiSourceFinder.EP_NAME.getExtensions()) {
       PsiElement psiElement = finder.getPsiSource(node, myProject);
@@ -103,12 +109,6 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
         return psiElement;
       }
     }
-
-    return getPsi(node);
-  }
-
-  public MPSPsiNode getPsi(SNode node) {
-    if (node == null) return null;
 
     final SModel containingModel = node.getContainingModel();
     if (containingModel == null) return null;
