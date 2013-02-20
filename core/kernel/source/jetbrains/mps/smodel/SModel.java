@@ -877,7 +877,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   }
 
-  public void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion) {
+  public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
     ModelChange.assertLegalChange(this);
 
     ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
@@ -888,7 +888,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (importElement != null) {
       importElement.myUsedVersion = currentVersion;
     } else {
-      addAdditionalModelVersion(sModelReference, currentVersion);
+      addAdditionalModelVersion(((SModelReference) sModelReference), currentVersion);
     }
   }
 

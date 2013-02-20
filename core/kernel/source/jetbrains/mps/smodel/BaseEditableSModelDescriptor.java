@@ -145,9 +145,9 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
   public void rename(String newModelName, boolean changeFile) {
     ModelAccess.assertLegalWrite();
 
-    SModelFqName oldFqName = getReference().getSModelFqName();
+    String oldFqName = getReference().getModelName();
     SModel model = getSModel();
-    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldName, newModelName));
+    fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
 
     SModelReference newModelReference = new SModelReference(SModelFqName.fromString(newModelName), myModelReference.getSModelId());
     model.changeModelReference(newModelReference);
@@ -178,7 +178,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
 
     myModelReference = newModelReference;
 
-    fireModelRenamed(new SModelRenamedEvent(model, oldName, newModelName));
+    fireModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
   }
 
   @Override

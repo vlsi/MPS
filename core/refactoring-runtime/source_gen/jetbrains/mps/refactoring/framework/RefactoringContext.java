@@ -315,9 +315,9 @@ public class RefactoringContext {
       }
     }
 
-    SModelReference oldModelRef = model.getModelReference();
+    SModelReference oldModelRef = model.getReference();
     model.rename(newName, false);
-    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameModel(oldModelRef, model.getModelReference()));
+    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameModel(oldModelRef, model.getReference()));
   }
 
   public void updateByDefault(SModel model) {

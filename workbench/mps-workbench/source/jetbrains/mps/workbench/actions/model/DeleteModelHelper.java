@@ -106,7 +106,7 @@ public class DeleteModelHelper {
   }
 
   private static boolean deleteModelFromLanguage(Language language, SModel modelDescriptor) {
-    if (language.isAccessoryModel(modelDescriptor.getModelReference())) {
+    if (language.isAccessoryModel(modelDescriptor.getReference())) {
       language.removeAccessoryModel(modelDescriptor);
       return false;
     } else {
@@ -119,7 +119,7 @@ public class DeleteModelHelper {
   }
 
   private static void deleteModelFromGenerator(Generator generator, SModel modelDescriptor) {
-    generator.deleteReferenceFromPriorities(modelDescriptor.getModelReference());
+    generator.deleteReferenceFromPriorities(modelDescriptor.getReference());
   }
 
   private static class SafeDeleteModel_Target implements IRefactoringTarget {

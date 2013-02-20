@@ -335,7 +335,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     Iterator<SModelReference> i = myLanguageDescriptor.getAccessoryModels().iterator();
     while (i.hasNext()) {
       SModelReference model = i.next();
-      if (model.equals(sm.getModelReference())) {
+      if (model.equals(sm.getReference())) {
         i.remove();
       }
     }

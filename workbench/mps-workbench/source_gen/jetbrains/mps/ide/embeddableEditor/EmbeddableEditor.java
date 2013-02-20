@@ -212,7 +212,7 @@ public class EmbeddableEditor {
   public void addLanguageStructureModel(final Language language) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SModelReference ref = (SModelReference) language.getStructureModelDescriptor().getModelReference();
+        SModelReference ref = (SModelReference) language.getStructureModelDescriptor().getReference();
         smodel().addModelImport(ref, false);
       }
     });
