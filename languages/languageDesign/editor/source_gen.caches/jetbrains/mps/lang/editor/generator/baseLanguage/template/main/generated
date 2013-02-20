@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8rusiuslwxow18ps0lfi79uxtfgbdln">
+<dependencies version="2" modelHash="bjwus9w71y64rjp4bq1bqvj7i8rnoe5">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cellLayout(MPS.Editor/jetbrains.mps.nodeEditor.cellLayout@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" />
@@ -58,10 +58,8 @@
     <dep root="1149851533317" />
     <dep root="1165277100275" />
     <dep root="1165793019302" />
-    <dep root="1165793177119" />
     <dep root="1166063029142" />
     <dep root="1176476223559" />
-    <dep root="1176476881461" />
     <dep root="1176886006175" />
     <dep root="1184139379136" />
     <dep root="1184142154197" />
@@ -145,7 +143,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1096630339736" name="class_ConceptEditorDeclaration" hash="2716jy8qf3dx6cbwuf05n1t1f2sr8md">
+  <source id="1096630339736" name="class_ConceptEditorDeclaration" hash="6ycjrkze8wys4emwir7qa7pw4i0enha">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1096647705671" name="reduce_CellModel_Collection" hash="6am6r8287oxhhsuprcxza8d99qy8t3r">
@@ -154,7 +152,7 @@
   <source id="1097139242515" name="reduce_CellModel_Alternation" hash="-5ndmvtqhpmok7oic5vlgk9jawv3d3b8">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1097143944735" name="class_EditorComponentDeclaration" hash="-b4kko14u07xm98y4fn3g4rh4a7nuoae">
+  <source id="1097143944735" name="class_EditorComponentDeclaration" hash="-2p25o7bbcnkrlmhexd1w1zmvoojapaq">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1097151314077" name="reduce_CellModel_Constant" hash="28o0m6q41qe2hwdtwvk7us9zmi8kr5f">
@@ -217,10 +215,7 @@
   <source id="1165277100275" name="template_CellMenuPart_AbstractGroup" hash="60vspa52qsceq3cyxvl1fcjq1swvu4k">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1165793019302" name="template_CreateCellExpression" hash="-6iv1qe84k3si44d6d77jfvui16v2ube">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
-  <source id="1165793177119" name="reduce_CellModel_Constant_CreateCellExpression" hash="-2qfz3967wfjougl6q2s3svahccfls9p">
+  <source id="1165793019302" name="template_CreateCellExpression" hash="-1ejlhdj5ixz3n90mfcjzhpu5zuxw3ft">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1166063029142" name="class_CellMenuComponent" hash="3joostji923qrlq73ytjib6wjexub76">
@@ -229,16 +224,13 @@
   <source id="1176476223559" name="reduce_QueryFunction_JComponent" hash="9sclbmm9ba30lxh4d0mpelopwzpouv8">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1176476881461" name="reduce_CellModel_JComponent_CreateCellExpression" hash="-4owj1f91k9g6e9k0y16yh8fvtyayrc6">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
   <source id="1176732010646" name="reduce_ConceptFunctionParameter_oldText" hash="-42zuo0886x6cmckj091gnrg0zwd7exq">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1176886006175" name="reduce_QueryFunction_StyleParameter" hash="-754sqft7lkzoh4tdwr42p6c28g0dyap">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1184139379136" name="reduce_InlineEditorComponent" hash="4r1v97mt9cd7u2t010qycxmry1mo7xm">
+  <source id="1184139379136" name="reduce_InlineEditorComponent" hash="apaeh6ynaxdc996eagrvba6nckpdecr">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1184142154197" name="reduce_RefNodeList_ListHandler" hash="139igkqq07p6hdfedwzr9uph08tqyoe">
@@ -283,7 +275,7 @@
   <source id="1186404688558" name="StyleSheet" hash="-9foq0m65doxrje95d7rbwkhszicb3ct">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1186404727331" name="StyleSheetClass" hash="-8e7o8w1wefp2174jseq91jqkh98f3r0">
+  <source id="1186404727331" name="StyleSheetClass" hash="5ojvhe6irwtejdhfuaizxqlggh56rq2">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1186404942965" name="StyleAttributeValue" hash="-8h7kxr4a2uitj6rrub08xgak066mdrr">
@@ -376,7 +368,7 @@
   <source id="2548761562336829589" name="CellModel" hash="601q6usow2kfwwev958apez6kjaj71y">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2548761562337839713" name="template_EditorCellModel_CommonMethods" hash="-hr6py5mef55hciyl6wf98semnzalp9">
+  <source id="2548761562337839713" name="template_EditorCellModel_CommonMethods" hash="-5sitqafbu8dalnh1to5dannmwt4wvp3">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="2548761562342008913" name="StyleClassItemQueryMethods" hash="-1xjstzhwnatbjf90wxqk7o668lboxtp">
