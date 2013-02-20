@@ -105,11 +105,8 @@
       <zipfileset file="${basedir}/bin/nix/idea.sh" prefix="MPS ${mpsBootstrapCore.version}/bin/nix" filemode="755" />
       <zipfileset file="${basedir}/bin/nix/inspect.sh" prefix="MPS ${mpsBootstrapCore.version}/bin/nix" filemode="755" />
       <zipfileset file="${basedir}/bin/nix/inspect_diff.sh" prefix="MPS ${mpsBootstrapCore.version}/bin/nix" filemode="755" />
-      <zipfileset file="${basedir}/bin/mac/info_plist_parser.scpt" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" />
       <zipfileset file="${basedir}/bin/mac/libbreakgen.jnilib" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" />
       <zipfileset file="${basedir}/bin/mac/libbreakgen64.jnilib" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" />
-      <zipfileset file="${basedir}/bin/mac/libquaqua.jnilib" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" />
-      <zipfileset file="${basedir}/bin/mac/libquaqua64.jnilib" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" />
       <zipfileset file="${basedir}/bin/mac/relaunch" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" filemode="755" />
       <zipfileset file="${basedir}/bin/mac/fsnotifier" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" filemode="755" />
       <zipfileset file="${basedir}/build/resources/mps.icns" prefix="MPS ${mpsBootstrapCore.version}/bin/mac/Contents/Resources" />
@@ -158,11 +155,8 @@
       <zipfileset dir="${artifacts.mps}" prefix="MPS ${mpsBootstrapCore.version}.app" />
       <zipfileset file="${basedir}/build/resources/mps.icns" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/Resources" />
       <zipfileset file="${basedir}/build/resources/mps" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/MacOS" filemode="755" />
-      <zipfileset file="${basedir}/bin/mac/info_plist_parser.scpt" prefix="MPS ${mpsBootstrapCore.version}.app/bin" />
       <zipfileset file="${basedir}/bin/mac/libbreakgen.jnilib" prefix="MPS ${mpsBootstrapCore.version}.app/bin" />
       <zipfileset file="${basedir}/bin/mac/libbreakgen64.jnilib" prefix="MPS ${mpsBootstrapCore.version}.app/bin" />
-      <zipfileset file="${basedir}/bin/mac/libquaqua.jnilib" prefix="MPS ${mpsBootstrapCore.version}.app/bin" />
-      <zipfileset file="${basedir}/bin/mac/libquaqua64.jnilib" prefix="MPS ${mpsBootstrapCore.version}.app/bin" />
       <zipfileset file="${basedir}/bin/mac/relaunch" prefix="MPS ${mpsBootstrapCore.version}.app/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/mac/fsnotifier" prefix="MPS ${mpsBootstrapCore.version}.app/bin" filemode="755" />
       <zipfileset dir="${build.tmp}/default/_dl_{build.number}-macos.zip_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}.app" />
