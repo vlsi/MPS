@@ -23,6 +23,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.*;
 
@@ -44,6 +45,7 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
     myModels.add(m);
   }
 
+  @Override
   public GenParameters getGenParams(Project project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
     Set<SModelDescriptor> modelDescriptors = new LinkedHashSet<SModelDescriptor>();
 
@@ -67,7 +69,7 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
       throw new IllegalGeneratorConfigurationException("there is no module that can be used to generate models " + modelDescriptors);
     }
 
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+    List<SModel> models = new ArrayList<SModel>();
     if(fullRegeneration) {
       models.addAll(modelDescriptors);
     } else {

@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
-
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
@@ -33,15 +31,12 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SModelRepository implements CoreComponent {
@@ -61,7 +56,7 @@ public class SModelRepository implements CoreComponent {
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
-  private final MultiMap<SModelDescriptor, SModel> myReloadingDescriptorMap = new MultiMap<SModelDescriptor, SModel>();
+  private final MultiMap<SModelDescriptor, jetbrains.mps.smodel.SModel> myReloadingDescriptorMap = new MultiMap<SModelDescriptor, jetbrains.mps.smodel.SModel>();
 
   private SModelListener myModelsListener = new ModelChangeListener();
 
@@ -156,11 +151,11 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  public void deleteModel(SModelDescriptor d) {
+  public void deleteModel(SModel d) {
     ModelAccess.assertLegalWrite();
 
     fireModelWillBeDeletedEvent(d);
-    removeModelDescriptor(d);
+    removeModelDescriptor((SModelDescriptor) d);
 
     DataSource source = d.getSource();
     if (source instanceof FileDataSource) {
@@ -170,7 +165,7 @@ public class SModelRepository implements CoreComponent {
         modelFile.delete();
       }
     }
-    SModelRepository.getInstance().fireModelDeletedEvent(d);
+    fireModelDeletedEvent(d);
   }
 
   //----------------------------get-----------------------------
@@ -220,7 +215,7 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  public SModule getOwner(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
+  public SModule getOwner(SModel modelDescriptor) {
     synchronized (myModelsLock) {
       return myModelOwner.get((SModelDescriptor) modelDescriptor);
     }
@@ -271,10 +266,10 @@ public class SModelRepository implements CoreComponent {
   public void refreshModels() {
   }
 
-  void notifyModelReplaced(BaseSModelDescriptor modelDescriptor, SModel oldSModel) {
+  void notifyModelReplaced(BaseSModelDescriptor modelDescriptor, jetbrains.mps.smodel.SModel oldSModel) {
     ModelAccess.assertLegalWrite();
 
-    if (mySModelRepositoryListeners.isEmpty()){
+    if (mySModelRepositoryListeners.isEmpty()) {
       oldSModel.dispose();
       return;
     }
@@ -287,7 +282,6 @@ public class SModelRepository implements CoreComponent {
       if (needToNotify) {
         notifyAfterReload();
       }
-
 
 
     }
@@ -311,7 +305,7 @@ public class SModelRepository implements CoreComponent {
   }
 
   private void disposeOldModels() {
-    for (SModel oldModel : myReloadingDescriptorMap.values()) {
+    for (jetbrains.mps.smodel.SModel oldModel : myReloadingDescriptorMap.values()) {
       if (oldModel != null) {
         oldModel.dispose();
       }
@@ -373,30 +367,30 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  private void fireModelRenamed(SModelDescriptor modelDescriptor) {
+  private void fireModelRenamed(SModel modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
       try {
-        l.modelRenamed(modelDescriptor);
+        l.modelRenamed((SModelDescriptor) modelDescriptor);
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
   }
 
-  private void fireModelDeletedEvent(SModelDescriptor modelDescriptor) {
+  private void fireModelDeletedEvent(SModel modelDescriptor) {
     for (SModelRepositoryListener listener : listeners()) {
       try {
-        listener.modelDeleted(modelDescriptor);
+        listener.modelDeleted((SModelDescriptor) modelDescriptor);
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
   }
 
-  private void fireModelWillBeDeletedEvent(SModelDescriptor modelDescriptor) {
+  private void fireModelWillBeDeletedEvent(SModel modelDescriptor) {
     for (SModelRepositoryListener listener : listeners()) {
       try {
-        listener.beforeModelDeleted(modelDescriptor);
+        listener.beforeModelDeleted((SModelDescriptor) modelDescriptor);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -417,7 +411,7 @@ public class SModelRepository implements CoreComponent {
   //-------todo: changed functionality - is better to be moved to SModelDescriptor fully
 
   @Deprecated
-  public void markChanged(SModel model) {
+  public void markChanged(jetbrains.mps.smodel.SModel model) {
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor instanceof EditableSModel) {
       ((EditableSModel) modelDescriptor).setChanged(true);
@@ -435,12 +429,12 @@ public class SModelRepository implements CoreComponent {
     }
 
     @Override
-    public void modelChanged(SModel model) {
+    public void modelChanged(jetbrains.mps.smodel.SModel model) {
       markChanged(model);
     }
 
     @Override
-    public void modelChangedDramatically(SModel model) {
+    public void modelChangedDramatically(jetbrains.mps.smodel.SModel model) {
       markChanged(model);
     }
 

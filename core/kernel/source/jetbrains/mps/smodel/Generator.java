@@ -247,7 +247,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return null;
   }
 
-  public boolean deleteReferenceFromPriorities(SModelReference ref) {
+  public boolean deleteReferenceFromPriorities(org.jetbrains.mps.openapi.model.SModelReference ref) {
     boolean[] descriptorChanged = new boolean[]{false};
     Iterator<MappingPriorityRule> it = myGeneratorDescriptor.getPriorityRules().iterator();
     while (it.hasNext()) {
