@@ -102,6 +102,10 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     return myConceptName;
   }
 
+  public void internalSetId(String id) {
+    myConceptName = id;
+  }
+
   private static boolean eq_vein7o_a0a0a0a0a0a0a8(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
