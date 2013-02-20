@@ -293,12 +293,17 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
 
   public final IArrayValueProxy createArrayProxyFromValues(String className, VirtualMachine machine, Object... args) throws EvaluationException {
     assertEvaluating();
-    IArrayValueProxy array = createArrayProxy(className, machine, args.length);
-    List<Value> values = MirrorUtil.getInstance().getValues(machine, args);
-    for (int i = 0; i < values.size(); i++) {
-      array.setElement(values.get(i), i);
+    if (args == null) {
+      // array of one element -- null 
+      return createArrayProxy(className, machine, 1);
+    } else {
+      IArrayValueProxy array = createArrayProxy(className, machine, args.length);
+      List<Value> values = MirrorUtil.getInstance().getValues(machine, args);
+      for (int i = 0; i < values.size(); i++) {
+        array.setElement(values.get(i), i);
+      }
+      return array;
     }
-    return array;
   }
 
   @NotNull
