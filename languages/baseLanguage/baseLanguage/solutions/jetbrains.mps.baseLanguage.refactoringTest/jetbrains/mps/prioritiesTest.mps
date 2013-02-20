@@ -191,30 +191,30 @@
                   </node>
                 </node>
               </node>
-              <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.BitwiseAndExpression" typeId="tpee.1224500764161" id="1488872796929091187">
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1488872796929091188">
-                  <property name="value" nameId="tpee.1068580320021" value="1" />
+              <node role="actualArgument" roleId="tp4f.1205770614681" type="tpee.BitwiseOrExpression" typeId="tpee.1224500790866" id="1488872796929091194">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1488872796929091195">
+                  <property name="value" nameId="tpee.1068580320021" value="6" />
                 </node>
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.BitwiseOrExpression" typeId="tpee.1224500790866" id="1488872796929091194">
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1488872796929091195">
-                    <property name="value" nameId="tpee.1068580320021" value="6" />
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.BitwiseOrExpression" typeId="tpee.1224500790866" id="1488872796929091189">
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.BitwiseAndExpression" typeId="tpee.1224500764161" id="1488872796929091187">
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1488872796929091188">
+                      <property name="value" nameId="tpee.1068580320021" value="1" />
+                    </node>
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1488872796929091190">
+                      <property name="value" nameId="tpee.1068580320021" value="2" />
+                    </node>
                   </node>
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.BitwiseXorExpression" typeId="tpee.1224500799915" id="1488872796929091192">
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.BitwiseXorExpression" typeId="tpee.1224500799915" id="1488872796929091192">
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1488872796929091196">
+                      <property name="value" nameId="tpee.1068580320021" value="5" />
+                    </node>
                     <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.ShiftLeftExpression" typeId="tpee.1225892208569" id="1488872796929091186">
-                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.BitwiseOrExpression" typeId="tpee.1224500790866" id="1488872796929091189">
-                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1488872796929091190">
-                          <property name="value" nameId="tpee.1068580320021" value="2" />
-                        </node>
-                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1488872796929091191">
-                          <property name="value" nameId="tpee.1068580320021" value="3" />
-                        </node>
-                      </node>
                       <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1488872796929091193">
                         <property name="value" nameId="tpee.1068580320021" value="4" />
                       </node>
-                    </node>
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1488872796929091196">
-                      <property name="value" nameId="tpee.1068580320021" value="5" />
+                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1488872796929091191">
+                        <property name="value" nameId="tpee.1068580320021" value="3" />
+                      </node>
                     </node>
                   </node>
                 </node>
