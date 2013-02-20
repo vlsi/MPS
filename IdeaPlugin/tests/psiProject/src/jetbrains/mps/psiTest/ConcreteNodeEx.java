@@ -15,7 +15,8 @@ public class ConcreteNodeEx extends ConcreteNode {
 
     @Override
     public void newMethod(CharSequence arg) {
-        abstractNodeMethod();
+        // used for findUsages
+//        abstractNodeMethod();
     }
 
 

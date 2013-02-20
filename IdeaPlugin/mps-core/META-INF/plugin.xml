@@ -112,6 +112,7 @@
     <mps.LanguageLibrary dir="/languages"/>
     <mps.LanguageLibrary dir="/lib"/>
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.core.psi.impl.ClassStubPsiSourceFinder"/>
+    <customUsageSearcher implementation="jetbrains.mps.idea.core.usages.MPSUsageSearcher"/>
     <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
     <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
