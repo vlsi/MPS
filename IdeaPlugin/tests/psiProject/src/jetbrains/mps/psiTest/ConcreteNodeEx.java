@@ -10,11 +10,12 @@ public class ConcreteNodeEx extends ConcreteNode {
 
     public void justStatements() {
         ConcreteNode myVar = new ConcreteNode();
-        newMethod();
+        newMethod(null);
     }
 
     @Override
-    public void newMethod() {
+    public void newMethod(CharSequence arg) {
+        abstractNodeMethod();
     }
 
 

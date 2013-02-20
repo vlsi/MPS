@@ -15,7 +15,7 @@ public class PsiTestMain {
         node1.dump(sb);
         node3.dump(sb);
         try {
-            node3.newMethod();
+            node3.newMethod(null);
         } catch (IOException e) {
             // checking resolve of classes from libs
             // (MPSClassStubPsiSourceFinder)
