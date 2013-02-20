@@ -10,10 +10,8 @@
   <target name="build" depends="platform, base, signed"/>
 
   <target name="base" depends="platform">
-    <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true">
-      <target name="buildDependents"/>
-      <target name="build"/>
-    </ant>
+    <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="buildDependents"/>
+    <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="assemble"/>
   </target>
 
   <target name="signed" depends="base">
