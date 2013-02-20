@@ -34,6 +34,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
+          @Override
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Collection collection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createVertical(context, node);
             collection.addEditorCell(new EditorCell_Constant(context, node, "Concept function help:"));

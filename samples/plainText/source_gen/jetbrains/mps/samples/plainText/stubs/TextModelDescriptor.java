@@ -28,19 +28,23 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     updateDiskTimestamp();
   }
 
+  @Override
   protected void reloadFromDiskSafe() {
     reloadFromDisk();
   }
 
+  @Override
   public boolean isChanged() {
     return isChanged;
   }
 
+  @Override
   public void setChanged(boolean value) {
     isChanged = value;
     updateDiskTimestamp();
   }
 
+  @Override
   public void save() {
     SModel model = getSModel();
     for (SNode tf : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.samples.plainText.structure.TextFile"))) {
@@ -63,14 +67,17 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   }
 
   @Deprecated
+  @Override
   public boolean isReadOnly() {
     return false;
   }
 
+  @Override
   protected SModel getCurrentModelInternal() {
     return myModel;
   }
 
+  @Override
   public synchronized SModel getSModel() {
     if (myModel == null) {
       myModel = loadSModel();
@@ -105,6 +112,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     return myModel != null;
   }
 
+  @Override
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
