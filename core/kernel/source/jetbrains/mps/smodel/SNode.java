@@ -230,7 +230,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
     for (SNode child = firstChild; child != null; child = child.nextSibling()) {
-      if (role.equals(child.getRoleInParent())) {
+      // Note: accessing through child.getRoleInParent() reports excess node read access
+      if (role.equals(child.myRoleInParent)) {
         result.add(child);
         child.fireNodeReadAccess();
         fireNodeChildReadAccess(role, child);
@@ -903,7 +904,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private void enforceModelLoad() {
-    if (myModel == null) return;
+    if (myModel == null || parent != null) return;
     if (!myModel.isRoot(this)) return;
     myModel.enforceFullLoad();
   }
