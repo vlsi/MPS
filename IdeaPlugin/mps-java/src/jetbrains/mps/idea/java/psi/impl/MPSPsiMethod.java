@@ -233,8 +233,8 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
   @Override
   public PsiClass getContainingClass() {
     PsiElement node = getParent();
-    if (node instanceof MPSPsiClass) {
-      return (MPSPsiClass) node;
+    if (node instanceof MPSPsiClassifier) {
+      return (MPSPsiClassifier) node;
     } else {
       return null;
     }

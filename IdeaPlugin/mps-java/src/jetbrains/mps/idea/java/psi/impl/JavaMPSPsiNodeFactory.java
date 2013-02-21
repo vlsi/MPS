@@ -49,13 +49,19 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPSNodePsiSourc
         return new MPSPsiClass(id, concept, containingRole);
       }
     });
+    // TODO use MPS-generated constant value
     factories.put("jetbrains.mps.baseLanguage.structure.Interface", new MPSPsiNodeFactory() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiInterface(id, concept, containingRole);
       }
     });
-    // TODO use MPS-generated constant value
+    factories.put("jetbrains.mps.baseLanguage.structure.EnumClass", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiEnum(id, concept, containingRole);
+      }
+    });
     factories.put("jetbrains.mps.baseLanguage.structure.ClassifierType", new MPSPsiNodeFactory() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
@@ -65,8 +71,7 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPSNodePsiSourc
     factories.put("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", new MPSPsiNodeFactory() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        MPSPsiMethod method = new MPSPsiMethod(id, concept, containingRole);
-        return method;
+        return new MPSPsiMethod(id, concept, containingRole);
       }
     });
     factories.put("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", new MPSPsiNodeFactory() {
@@ -98,6 +103,12 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPSNodePsiSourc
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiField(id, concept, containingRole);
+      }
+    });
+    factories.put("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiEnumConstant(id, concept, containingRole);
       }
     });
     factories.put("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", new MPSPsiNodeFactory() {

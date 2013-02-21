@@ -30,8 +30,10 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -91,8 +93,9 @@ public class MPSJavaClassFinder extends PsiElementFinder {
   }
 
   private void findMPSClasses(@NotNull SModel model, @NotNull String className, @Nullable String innerClassName, Consumer<SNode> consumer) {
+    SConcept classifierConcept = SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.Classifier");
     for (SNode root : model.getRootNodes()) {
-      if (BootstrapLanguages.concept_baseLanguage_ClassConcept.equals(root.getConcept().getQualifiedName())
+      if (root.getConcept().isSubConceptOf(classifierConcept)
           && className.equals(root.getName())) {
         if (innerClassName == null) {
           consumer.consume(root);
@@ -127,12 +130,13 @@ public class MPSJavaClassFinder extends PsiElementFinder {
     return ModelAccess.instance().runReadAction(new Computable<PsiClass[]>() {
       @Override
       public PsiClass[] compute() {
+        SConcept classifierConcept = SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.Classifier");
         CollectConsumer<SModel> consumer = new CollectConsumer<SModel>(new ArrayList<SModel>());
         findMPSPackage(packageName, consumer);
         List<SNode> result = new ArrayList<SNode>();
         for (SModel model : consumer.getResult()) {
           for (SNode root : model.getRootNodes()) {
-            if (BootstrapLanguages.concept_baseLanguage_ClassConcept.equals(root.getConcept().getQualifiedName())) {
+            if (root.getConcept().isSubConceptOf(classifierConcept)) {
               result.add(root);
             }
           }
