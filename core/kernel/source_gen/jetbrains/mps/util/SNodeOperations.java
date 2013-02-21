@@ -31,6 +31,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.FastNodeFinder;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 public class SNodeOperations {
@@ -326,6 +327,14 @@ public class SNodeOperations {
         return ((ModuleReference) it.getModule().getModuleReference());
       }
     }).toListSequence();
+  }
+
+  public static boolean isModelDisposed(org.jetbrains.mps.openapi.model.SModel model) {
+    return ((SModel) model).isDisposed();
+  }
+
+  public static FastNodeFinder getModelFastFinder(org.jetbrains.mps.openapi.model.SModel model) {
+    return ((SModel) model).getFastNodeFinder();
   }
 
   public static int nodesCount(org.jetbrains.mps.openapi.model.SModel model) {
