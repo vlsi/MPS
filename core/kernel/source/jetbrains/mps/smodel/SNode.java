@@ -2019,6 +2019,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     @Override
+    public SModelDescriptor getModelDescriptor() {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
     public SModelId getModelId() {
       return myModel.getModelId();
     }

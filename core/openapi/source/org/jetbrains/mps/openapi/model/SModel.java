@@ -28,6 +28,9 @@ import java.io.IOException;
  */
 public interface SModel {
 
+  @Deprecated//todo migration only. REMOVE
+  SModelDescriptor getModelDescriptor() ;
+
   /**
    * Returns the id of the model valid within the containing module.
    */

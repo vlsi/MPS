@@ -55,6 +55,11 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
+  public SModelDescriptor getModelDescriptor() {
+    return this;
+  }
+
+  @Override
   public SModelScope getModelScope() {
     return getSModel().getModelScope();
   }
