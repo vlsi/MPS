@@ -598,7 +598,7 @@ public class RefactoringContext {
 
               break;
             case MODEL:
-              SModelDescriptor descriptor = ((SModel) target).getModelDescriptor();
+              SModelDescriptor descriptor = ((org.jetbrains.mps.openapi.model.SModel) target).getModelDescriptor();
               setSelectedModel(descriptor);
               setSelectedModule(descriptor.getModule());
               break;
