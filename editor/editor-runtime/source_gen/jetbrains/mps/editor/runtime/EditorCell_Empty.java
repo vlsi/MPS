@@ -80,6 +80,7 @@ public class EditorCell_Empty extends EditorCell_Basic {
     }
     final CellSide fside = side;
     return editorContext.executeCommand(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         if (fside == CellSide.LEFT) {
           return EditorCell_Empty.this.applyLeftTransform(editorContext, EditorCell_Empty.this, symbol);

@@ -26,6 +26,7 @@ public class SReferenceCreator implements SReferenceHandler {
     this.model = model;
   }
 
+  @Override
   public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation) {
     if (pack.equals(model.getLongName())) {
       SNode nodeInSameModel = model.getNodeById(targetNodeId);

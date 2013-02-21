@@ -461,53 +461,53 @@
     <unitInfo nodeId="1733398552130474119" fileName="RuleUtil.java" startLine="16" startPosition="0" endLine="352" endPosition="0" unitName="jetbrains.mps.generator.impl.RuleUtil" />
   </root>
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/263434549788570114">
-    <nodeInfo nodeId="263434549788570146" fileName="RootTemplateAnnotator.java" startLine="27" startPosition="52" endLine="28" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="263434549788717052" fileName="RootTemplateAnnotator.java" startLine="31" startPosition="215" endLine="32" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="44" startPosition="36" endLine="45" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="46" startPosition="5" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="51" startPosition="36" endLine="52" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="53" startPosition="5" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="263434549788570146" fileName="RootTemplateAnnotator.java" startLine="29" startPosition="52" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="263434549788717052" fileName="RootTemplateAnnotator.java" startLine="33" startPosition="215" endLine="34" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="47" startPosition="36" endLine="48" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="49" startPosition="5" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="54" startPosition="36" endLine="55" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="56" startPosition="5" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="263434549788570117" fileName="RootTemplateAnnotator.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootTemplateAnnotator#(Ljetbrains/mps/smodel/GlobalSModelEventsManager;)V" />
-    <nodeInfo nodeId="263434549788570193" fileName="RootTemplateAnnotator.java" startLine="40" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="263434549788685425" fileName="RootTemplateAnnotator.java" startLine="30" startPosition="351" endLine="33" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="43" startPosition="83" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="50" startPosition="85" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="263434549788570158" fileName="RootTemplateAnnotator.java" startLine="29" startPosition="80" endLine="34" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_epzavk_a0a0a0b0a0a0a0a0b#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-    <nodeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_epzavk_a0a0a0b0a0a0a0a0b_0#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-    <nodeInfo nodeId="263434549788570152" fileName="RootTemplateAnnotator.java" startLine="28" startPosition="37" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="263434549788570140" fileName="RootTemplateAnnotator.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootAdded#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" />
-    <nodeInfo nodeId="263434549788570133" fileName="RootTemplateAnnotator.java" startLine="25" startPosition="22" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="263434549788570129" fileName="RootTemplateAnnotator.java" startLine="25" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="263434549788685425" fileName="RootTemplateAnnotator.java" startLine="32" startPosition="351" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="263434549788570193" fileName="RootTemplateAnnotator.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="46" startPosition="83" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="53" startPosition="85" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="263434549788570158" fileName="RootTemplateAnnotator.java" startLine="31" startPosition="80" endLine="36" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_epzavk_a0a0a0b0a0a0a0a0b#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+    <nodeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_epzavk_a0a0a0b0a0a0a0a0b_0#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+    <nodeInfo nodeId="263434549788570152" fileName="RootTemplateAnnotator.java" startLine="30" startPosition="37" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="263434549788570140" fileName="RootTemplateAnnotator.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootAdded#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" />
+    <nodeInfo nodeId="263434549788570133" fileName="RootTemplateAnnotator.java" startLine="26" startPosition="22" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="263434549788570129" fileName="RootTemplateAnnotator.java" startLine="25" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <scopeInfo nodeId="263434549788570120" fileName="RootTemplateAnnotator.java" startLine="22" startPosition="63" endLine="22" endPosition="63" />
-    <scopeInfo nodeId="263434549788570196" fileName="RootTemplateAnnotator.java" startLine="40" startPosition="25" endLine="40" endPosition="25" />
-    <scopeInfo nodeId="263434549788685426" fileName="RootTemplateAnnotator.java" startLine="31" startPosition="215" endLine="32" endPosition="336" />
-    <scopeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="44" startPosition="36" endLine="45" endPosition="43" />
-    <scopeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="51" startPosition="36" endLine="52" endPosition="43" />
+    <scopeInfo nodeId="263434549788570196" fileName="RootTemplateAnnotator.java" startLine="43" startPosition="25" endLine="43" endPosition="25" />
+    <scopeInfo nodeId="263434549788685426" fileName="RootTemplateAnnotator.java" startLine="33" startPosition="215" endLine="34" endPosition="336" />
+    <scopeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="47" startPosition="36" endLine="48" endPosition="43" />
+    <scopeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="54" startPosition="36" endLine="55" endPosition="43" />
     <scopeInfo nodeId="263434549788570117" fileName="RootTemplateAnnotator.java" startLine="22" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="2481791643076243538" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="263434549788570193" fileName="RootTemplateAnnotator.java" startLine="40" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="263434549788570170" fileName="RootTemplateAnnotator.java" startLine="30" startPosition="351" endLine="33" endPosition="13" />
-    <scopeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="43" startPosition="83" endLine="47" endPosition="16" />
-    <scopeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="50" startPosition="85" endLine="54" endPosition="16" />
-    <scopeInfo nodeId="263434549788570157" fileName="RootTemplateAnnotator.java" startLine="29" startPosition="80" endLine="34" endPosition="11" />
-    <scopeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="263434549788570170" fileName="RootTemplateAnnotator.java" startLine="32" startPosition="351" endLine="35" endPosition="13" />
+    <scopeInfo nodeId="263434549788570193" fileName="RootTemplateAnnotator.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="46" startPosition="83" endLine="50" endPosition="16" />
+    <scopeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="53" startPosition="85" endLine="57" endPosition="16" />
+    <scopeInfo nodeId="263434549788570157" fileName="RootTemplateAnnotator.java" startLine="31" startPosition="80" endLine="36" endPosition="11" />
+    <scopeInfo nodeId="2381446136244093866" fileName="RootTemplateAnnotator.java" startLine="46" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="2381446136244093866" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="50" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="2381446136244093908" fileName="RootTemplateAnnotator.java" startLine="53" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="2381446136244093908" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="263434549788570145" fileName="RootTemplateAnnotator.java" startLine="27" startPosition="52" endLine="35" endPosition="9">
+    <scopeInfo nodeId="263434549788570145" fileName="RootTemplateAnnotator.java" startLine="29" startPosition="52" endLine="37" endPosition="9">
       <varInfo nodeId="263434549788570147" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="263434549788570140" fileName="RootTemplateAnnotator.java" startLine="27" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="263434549788570140" fileName="RootTemplateAnnotator.java" startLine="28" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="263434549788570143" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="263434549788570132" fileName="RootTemplateAnnotator.java" startLine="25" startPosition="22" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="263434549788570129" fileName="RootTemplateAnnotator.java" startLine="25" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="263434549788570139" fileName="RootTemplateAnnotator.java" startLine="26" startPosition="71" endLine="37" endPosition="5" unitName="jetbrains.mps.generator.impl.RootTemplateAnnotator$1" />
-    <unitInfo nodeId="263434549788570114" fileName="RootTemplateAnnotator.java" startLine="21" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.generator.impl.RootTemplateAnnotator" />
+    <scopeInfo nodeId="263434549788570132" fileName="RootTemplateAnnotator.java" startLine="26" startPosition="22" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="263434549788570129" fileName="RootTemplateAnnotator.java" startLine="25" startPosition="0" endLine="41" endPosition="0" />
+    <unitInfo nodeId="263434549788570139" fileName="RootTemplateAnnotator.java" startLine="27" startPosition="71" endLine="39" endPosition="5" unitName="jetbrains.mps.generator.impl.RootTemplateAnnotator$1" />
+    <unitInfo nodeId="263434549788570114" fileName="RootTemplateAnnotator.java" startLine="21" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.generator.impl.RootTemplateAnnotator" />
   </root>
   <root nodeRef="r:ab837574-aa54-4b18-9762-b783ef089263(jetbrains.mps.generator.impl)/4814657600604696799">
     <nodeInfo nodeId="4814657600604696802" fileName="DismissTopMappingRuleException.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMessageType" />

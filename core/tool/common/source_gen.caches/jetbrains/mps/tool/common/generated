@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-76lgyw47u7hdqvielavc13ctw2vxipc">
+<dependencies version="2" modelHash="-ef2ftjkwcqxned2r2gu3k0gvinik3f8">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
   <common hash="-4kmnk3zbyyw1ks399xklvrjl2wjqik4" />
   <source id="878521226297927156" name="Script" hash="-anvfqfd4xz23hr6c3ltusc0xugv91rn">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
@@ -16,14 +16,14 @@
   <source id="2546981710035421490" name="IMessageFormat" hash="-2r6qa5mkvpcuthbizmrstw47s5kk5wi">
     <file name="IMessageFormat.java" />
   </source>
-  <source id="7910428321252775322" name="TeamCityMessageFormat" hash="7ryrte9tosourrjeya2eiut55j4zyjo">
+  <source id="7910428321252775322" name="TeamCityMessageFormat" hash="168bcica8vx69slhy9yacad19ggacq7">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TeamCityMessageFormat.java" />
   </source>
   <source id="7910428321252780319" name="ScriptProperties" hash="85wpxd7oivv7657kla6ikwrkmtnhp0p">
     <file name="ScriptProperties.java" />
   </source>
-  <source id="8797607015334522630" name="JDOMUtil" hash="-cdru7snowvr9jrmh814bdqt0120dguo">
+  <source id="8797607015334522630" name="JDOMUtil" hash="-ow5z8nlrq64mqbupo80q2vzrk7w4k8">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JDOMUtil.java" />
   </source>

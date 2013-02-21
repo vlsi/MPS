@@ -40,6 +40,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<? extends org.jetbrains.mps.openapi.model.SModel> models = getModels();
     List<SNode> result = new ArrayList<SNode>();

@@ -10,60 +10,76 @@ public class SignatureVisitorAdapter extends SignatureVisitor {
     super(Opcodes.ASM4);
   }
 
+  @Override
   public void visitFormalTypeParameter(String name) {
   }
 
+  @Override
   public SignatureVisitor visitClassBound() {
     return NullSignatureVisitor.INSTANCE;
   }
 
+  @Override
   public SignatureVisitor visitInterfaceBound() {
     return NullSignatureVisitor.INSTANCE;
   }
 
+  @Override
   public SignatureVisitor visitSuperclass() {
     return NullSignatureVisitor.INSTANCE;
   }
 
+  @Override
   public SignatureVisitor visitInterface() {
     return NullSignatureVisitor.INSTANCE;
   }
 
+  @Override
   public SignatureVisitor visitParameterType() {
     return NullSignatureVisitor.INSTANCE;
   }
 
+  @Override
   public SignatureVisitor visitReturnType() {
     return NullSignatureVisitor.INSTANCE;
   }
 
+  @Override
   public SignatureVisitor visitExceptionType() {
     return NullSignatureVisitor.INSTANCE;
   }
 
+  @Override
   public void visitBaseType(char descriptor) {
   }
 
+  @Override
   public void visitTypeVariable(String name) {
   }
 
+  @Override
   public SignatureVisitor visitArrayType() {
     return NullSignatureVisitor.INSTANCE;
   }
 
+  @Override
   public void visitClassType(String name) {
   }
 
+  @Override
   public void visitInnerClassType(String name) {
   }
 
+  @Override
   public void visitTypeArgument() {
   }
 
+  @Override
   public SignatureVisitor visitTypeArgument(char wildcard) {
     return NullSignatureVisitor.INSTANCE;
   }
 
+  @Override
   public void visitEnd() {
   }
 }

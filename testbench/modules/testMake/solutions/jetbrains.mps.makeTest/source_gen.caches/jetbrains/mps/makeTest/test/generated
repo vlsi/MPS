@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7yeixlro1r4tsg184l24d4hzgjntxs9">
+<dependencies version="2" modelHash="-40feopmzr4nv4uphjsz7r3rdma5094w">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -95,7 +95,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="NotMake_Test.java" />
   </source>
-  <source id="7196776143116381095" name="ChangeModelProcessor" hash="-6xagv397mm2aiz4ozm7l8uf56pqmtne">
+  <source id="7196776143116381095" name="ChangeModelProcessor" hash="-150haeyqtkmuzdion05eeuvux4mz1ll">
     <dep root="1957199320903967681" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />

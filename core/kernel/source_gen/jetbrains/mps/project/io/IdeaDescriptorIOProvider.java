@@ -14,14 +14,17 @@ public class IdeaDescriptorIOProvider implements DescriptorIOProvider {
   /*package*/ IdeaDescriptorIOProvider() {
   }
 
+  @Override
   public DescriptorIO<SolutionDescriptor> solutionDescriptorIO() {
     return SOLUTION;
   }
 
+  @Override
   public DescriptorIO<LanguageDescriptor> languageDescriptorIO() {
     return null;
   }
 
+  @Override
   public DescriptorIO<DevkitDescriptor> devkitDescriptorIO() {
     return null;
   }

@@ -226,12 +226,14 @@ public class SNodeOperations {
     Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ?
       Condition.FALSE_CONDITION :
       new Condition<SNode>() {
+        @Override
         public boolean met(SNode node) {
           return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
         }
       }
     );
     SNodeOperations._populateListOfDescendants(result, node, new Condition<SNode>() {
+      @Override
       public boolean met(SNode node) {
         return SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(childConceptFqName));
       }
@@ -257,12 +259,14 @@ public class SNodeOperations {
     Condition<SNode> stopCondition = (stopConceptFqNames.length == 0 ?
       Condition.FALSE_CONDITION :
       new Condition<SNode>() {
+        @Override
         public boolean met(SNode node) {
           return SNodeOperations._isInstanceOf(node, stopConceptFqNames);
         }
       }
     );
     SNodeOperations._populateListOfDescendants(result, node, new Condition<SNode>() {
+      @Override
       public boolean met(SNode node) {
         return SNodeOperations._isInstanceOf(node, descendantConceptFqNames);
       }

@@ -18,6 +18,7 @@ public class ModelNodesSearchScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> result = new ArrayList<SNode>();
     Iterable<SNode> roots = new ConditionalIterable(myModel.roots(), condition);

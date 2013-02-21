@@ -33,6 +33,7 @@ import jetbrains.mps.project.IModule;
 public class LanguagesKeymapManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(LanguagesKeymapManager.class);
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       clearCaches();
     }
@@ -54,6 +55,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     return MapSequence.fromMap(myLanguagesToKeyMaps).get(l);
   }
 
+  @Override
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
     myRepository.addModuleRepositoryListener(myListener);
@@ -61,10 +63,12 @@ public class LanguagesKeymapManager implements ApplicationComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Language KeyMap Manager";
   }
 
+  @Override
   public void disposeComponent() {
     myRepository.removeModuleRepositoryListener(myListener);
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
@@ -126,9 +130,11 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     private MyModuleRepositoryListener() {
     }
 
+    @Override
     public void moduleInitialized(IModule module) {
     }
 
+    @Override
     public void beforeModuleRemoved(IModule module) {
       if (module instanceof Language) {
         unregisterLanguageKeyMaps((Language) module);

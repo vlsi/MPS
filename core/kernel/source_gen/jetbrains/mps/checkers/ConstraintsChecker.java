@@ -42,6 +42,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     }
   }
 
+  @Override
   public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext, IScope scope) {
     final ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getConceptId());
 

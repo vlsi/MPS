@@ -335,6 +335,7 @@ public abstract class MpsLoadTask extends Task {
     public LogLevelAttribute() {
     }
 
+    @Override
     public String[] getValues() {
       return new String[]{"error", "warn", "warning", "info", "debug"};
     }
@@ -355,6 +356,7 @@ public abstract class MpsLoadTask extends Task {
       this.myInputStream = inputStream;
     }
 
+    @Override
     public void run() {
       Scanner s = new Scanner(this.myInputStream);
       try {

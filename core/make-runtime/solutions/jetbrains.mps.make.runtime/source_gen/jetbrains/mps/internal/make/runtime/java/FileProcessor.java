@@ -109,6 +109,7 @@ import jetbrains.mps.util.JDOMUtil;
       myContent = content;
     }
 
+    @Override
     public void saveToFile(IFile file) {
       OutputStreamWriter writer = null;
       try {
@@ -126,6 +127,7 @@ import jetbrains.mps.util.JDOMUtil;
       }
     }
 
+    @Override
     public boolean isUnchanged(IFile file) {
       if (!(file.exists())) {
         return false;
@@ -152,6 +154,7 @@ import jetbrains.mps.util.JDOMUtil;
       }
     }
 
+    @Override
     public int calcApproximateSize() {
       return myContent.getBytes().length;
     }
@@ -164,6 +167,7 @@ import jetbrains.mps.util.JDOMUtil;
       myContent = content;
     }
 
+    @Override
     public void saveToFile(IFile file) {
       OutputStream stream = null;
       try {
@@ -181,6 +185,7 @@ import jetbrains.mps.util.JDOMUtil;
       }
     }
 
+    @Override
     public boolean isUnchanged(IFile file) {
       if (!(file.exists())) {
         return false;
@@ -211,6 +216,7 @@ import jetbrains.mps.util.JDOMUtil;
       }
     }
 
+    @Override
     public int calcApproximateSize() {
       return myContent.length;
     }
@@ -223,6 +229,7 @@ import jetbrains.mps.util.JDOMUtil;
       myDocument = new Document(element);
     }
 
+    @Override
     public void saveToFile(IFile file) {
       try {
         JDOMUtil.writeDocument(myDocument, file);
@@ -233,6 +240,7 @@ import jetbrains.mps.util.JDOMUtil;
 
 
 
+    @Override
     public int calcApproximateSize() {
       try {
         return JDOMUtil.printDocument(myDocument).length;
@@ -241,6 +249,7 @@ import jetbrains.mps.util.JDOMUtil;
       }
     }
 
+    @Override
     public boolean isUnchanged(IFile file) {
       return false;
     }

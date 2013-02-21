@@ -188,54 +188,67 @@ public class TargetRange {
       this.second = second;
     }
 
+    @Override
     public Iterable<ITarget.Name> notAfter() {
       return Sequence.fromIterable(first.notAfter()).concat(Sequence.fromIterable(second.notAfter()));
     }
 
+    @Override
     public Iterable<ITarget.Name> after() {
       return Sequence.fromIterable(first.after()).concat(Sequence.fromIterable(second.after()));
     }
 
+    @Override
     public Iterable<ITarget.Name> notBefore() {
       return Sequence.fromIterable(first.notBefore()).concat(Sequence.fromIterable(second.notBefore()));
     }
 
+    @Override
     public Iterable<ITarget.Name> before() {
       return Sequence.fromIterable(first.before()).concat(Sequence.fromIterable(second.before()));
     }
 
+    @Override
     public ITarget.Name getName() {
       return first.getName();
     }
 
+    @Override
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
 
+    @Override
     public <T> T createParameters(Class<T> varCls, T copyFrom) {
       return null;
     }
 
+    @Override
     public IJob createJob() {
       return null;
     }
 
+    @Override
     public IConfig createConfig() {
       return null;
     }
 
+    @Override
     public boolean requiresInput() {
       return false;
     }
 
+    @Override
     public boolean producesOutput() {
       return false;
     }
 
+    @Override
     public Iterable<Class<? extends IResource>> expectedInput() {
       return null;
     }
 
+    @Override
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }

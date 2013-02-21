@@ -199,6 +199,7 @@ public class ApiMigrationHelper {
     }));
 
     ip.getComponent(RefactoringView.class).showRefactoringView(ip, new RefactoringViewAction() {
+      @Override
       public void performAction(RefactoringViewItem refactoringViewItem) {
         refactoringViewItem.close();
 
@@ -293,6 +294,7 @@ public class ApiMigrationHelper {
     }
 
     ip.getComponent(RefactoringView.class).showRefactoringView(ip, new RefactoringViewAction() {
+      @Override
       public void performAction(RefactoringViewItem refactoringViewItem) {
         final List<SNodeReference> included = ((RefactoringViewItemImpl) refactoringViewItem).getUsagesView().getIncludedResultNodes();
         refactoringViewItem.close();

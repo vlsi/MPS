@@ -26,14 +26,17 @@ public abstract class DefaultHName<T> implements IHName<T> {
     }
   }
 
+  @Override
   public final T parentName() {
     return parentName;
   }
 
+  @Override
   public final String fqName() {
     return prefix() + name;
   }
 
+  @Override
   public String name() {
     return name;
   }

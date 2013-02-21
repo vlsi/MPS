@@ -19,6 +19,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
   public TargetConceptChecker() {
   }
 
+  @Override
   public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext, IScope scope) {
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

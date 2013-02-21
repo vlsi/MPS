@@ -81,14 +81,17 @@ public class StateMachine_Editor extends DefaultNodeEditor {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
         return new AbstractTableModel() {
+          @Override
           public int getColumnCount() {
             return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).count();
           }
 
+          @Override
           public int getRowCount() {
             return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).count();
           }
 
+          @Override
           public SNode getValueAt(int row, int column) {
             if (row == 0 && column > 0) {
               return ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).getElement(column - 1);

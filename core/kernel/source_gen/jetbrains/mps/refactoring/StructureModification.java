@@ -99,10 +99,12 @@ public class StructureModification {
       newID = to;
     }
 
+    @Override
     public boolean apply(ModelLinkMap linkMap) {
       return linkMap.moveNode(oldID, newID);
     }
 
+    @Override
     public Iterable<SModelReference> getDependentModels() {
       return Sequence.fromArray(new SModelReference[]{oldID.getModelReference(), newID.getModelReference()});
     }
@@ -121,6 +123,7 @@ public class StructureModification {
       this.newValue = newValue;
     }
 
+    @Override
     public boolean apply(ModelLinkMap linkMap) {
       switch (type) {
         case CONCEPT:
@@ -134,6 +137,7 @@ public class StructureModification {
       }
     }
 
+    @Override
     public Iterable<SModelReference> getDependentModels() {
       return Sequence.fromArray(new SModelReference[]{oldID.getModelReference()});
     }
@@ -158,10 +162,12 @@ public class StructureModification {
       newModel = to;
     }
 
+    @Override
     public boolean apply(ModelLinkMap linkMap) {
       return linkMap.updateModelReference(oldModel, newModel);
     }
 
+    @Override
     public Iterable<SModelReference> getDependentModels() {
       return Sequence.fromArray(new SModelReference[]{oldModel, newModel});
     }

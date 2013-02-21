@@ -47,6 +47,7 @@ public class SModelOperations {
     GlobalScope scope = GlobalScope.getInstance();
     List<SNode> list = new ArrayList<SNode>();
     Condition<SNode> cond = new Condition<SNode>() {
+      @Override
       public boolean met(SNode node) {
         return SNodeUtil.isInstanceOf(node, SNodeOperations.getConcept(conceptFqName));
       }

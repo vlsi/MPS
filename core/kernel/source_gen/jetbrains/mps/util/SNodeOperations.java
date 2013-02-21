@@ -253,10 +253,12 @@ public class SNodeOperations {
       }
     }
 
+    @Override
     public boolean hasNext() {
       return current != null;
     }
 
+    @Override
     public SNode next() {
       SNode result = current;
       do {
@@ -265,6 +267,7 @@ public class SNodeOperations {
       return ((SNode) result);
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }
@@ -280,6 +283,7 @@ public class SNodeOperations {
       return next;
     }
 
+    @Override
     public Iterator<SNode> iterator() {
       return this;
     }

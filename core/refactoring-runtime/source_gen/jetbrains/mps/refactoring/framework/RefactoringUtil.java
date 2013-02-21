@@ -54,6 +54,7 @@ public class RefactoringUtil {
   public static List<SNode> getAllRefactoringNodes() {
     final List<SNode> availableRefactorings = new ArrayList<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SConcept c1 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.refactoring.structure.Refactoring");
         Set<SNode> newRefactorings = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(c1), SearchType.INSTANCES, GlobalScope.getInstance(), null));

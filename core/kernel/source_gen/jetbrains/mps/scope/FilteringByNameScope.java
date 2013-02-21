@@ -21,6 +21,7 @@ public class FilteringByNameScope extends Scope {
     this.scope = scope;
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     return Sequence.fromIterable(scope.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -30,6 +31,7 @@ public class FilteringByNameScope extends Scope {
   }
 
   @Nullable
+  @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     return (!(SetSequence.fromSet(filteredNames).contains(refText)) ?
       scope.resolve(contextNode, refText) :
@@ -38,6 +40,7 @@ public class FilteringByNameScope extends Scope {
   }
 
   @Nullable
+  @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     return scope.getReferenceText(contextNode, node);
   }

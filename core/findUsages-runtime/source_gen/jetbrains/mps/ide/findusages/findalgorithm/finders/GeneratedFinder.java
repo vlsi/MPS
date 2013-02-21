@@ -27,21 +27,26 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
   public GeneratedFinder() {
   }
 
+  @Override
   public boolean isApplicable(SNode node) {
     return true;
   }
 
+  @Override
   public boolean isVisible(SNode node) {
     return true;
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public SNode getNodeToNavigate() {
     final SNode[] finderNode = new SNode[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         finderNode[0] = FindersManager.getInstance().getNodeByFinder(GeneratedFinder.this);
       }
@@ -49,6 +54,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     return finderNode[0];
   }
 
+  @Override
   public boolean canNavigate() {
     return true;
   }
@@ -63,6 +69,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     return "Uncategorized";
   }
 
+  @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults<SNode> results = new SearchResults<SNode>();
     IHolder holder = query.getObjectHolder();

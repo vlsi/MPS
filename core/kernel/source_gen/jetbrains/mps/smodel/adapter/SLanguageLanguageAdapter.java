@@ -28,10 +28,12 @@ public class SLanguageLanguageAdapter implements SLanguage {
     this.myLanguage = language;
   }
 
+  @Override
   public String getPresentation() {
     return myLanguage.getModuleFqName();
   }
 
+  @Override
   public Iterable<SAbstractConcept> getConcepts() {
     Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(myLanguage).getSModel().roots();
     List<SAbstractConcept> c = ListSequence.fromList(new ArrayList<SAbstractConcept>());
@@ -56,10 +58,12 @@ public class SLanguageLanguageAdapter implements SLanguage {
     return c;
   }
 
+  @Override
   public Iterable<SModuleReference> getLanguageRuntimes() {
     return null;
   }
 
+  @Override
   public SModule getModule() {
     return myLanguage;
   }

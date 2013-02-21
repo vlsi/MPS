@@ -120,6 +120,7 @@ public abstract class MpsWorker {
 
   protected void make() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         ClassLoaderManager.getInstance().updateClassPath();
         ModuleMaker maker = new ModuleMaker();
@@ -131,6 +132,7 @@ public abstract class MpsWorker {
 
   protected void reload() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
@@ -369,18 +371,22 @@ public abstract class MpsWorker {
     public MyMessageHandlerAppender() {
     }
 
+    @Override
     public void info(LogEntry e) {
       MpsWorker.this.info(e.getMessage());
     }
 
+    @Override
     public void warning(LogEntry e) {
       MpsWorker.this.warning(e.getMessage());
     }
 
+    @Override
     public void debug(LogEntry e) {
       MpsWorker.this.debug(e.getMessage());
     }
 
+    @Override
     public void error(LogEntry e) {
       if (e.getThrowable() != null) {
         MpsWorker.this.log(e.getThrowable());
@@ -389,6 +395,7 @@ public abstract class MpsWorker {
       }
     }
 
+    @Override
     public void fatal(LogEntry e) {
       if (e.getThrowable() != null) {
         MpsWorker.this.log(e.getThrowable());
@@ -406,6 +413,7 @@ public abstract class MpsWorker {
     public SystemOutLogger() {
     }
 
+    @Override
     public void log(String text, Level level) {
       if (level == Level.ERROR) {
         System.err.println(text);
@@ -419,6 +427,7 @@ public abstract class MpsWorker {
     public LogLogger() {
     }
 
+    @Override
     public void log(String text, Level level) {
       switch (level.toInt()) {
         case Level.ERROR_INT:

@@ -15,6 +15,7 @@ public class ASMClassType extends ASMType {
     return myName;
   }
 
+  @Override
   public String toString() {
     return "(" + myName + ")";
   }

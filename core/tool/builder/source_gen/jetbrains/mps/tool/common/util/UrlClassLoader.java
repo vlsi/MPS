@@ -54,6 +54,7 @@ public class UrlClassLoader extends ClassLoader {
     return Collections.unmodifiableList(myURLs);
   }
 
+  @Override
   protected Class findClass(final String name) throws ClassNotFoundException {
     Resource res = myClassPath.getResource(name.replace('.', '/').concat(CLASS_EXTENSION), false);
     if (res == null) {
@@ -66,6 +67,7 @@ public class UrlClassLoader extends ClassLoader {
     }
   }
 
+  @Override
   protected Class<?> loadClass(final String name, final boolean resolve) throws ClassNotFoundException {
     return super.loadClass(name, resolve);
   }
@@ -106,6 +108,7 @@ public class UrlClassLoader extends ClassLoader {
   }
 
   @Nullable
+  @Override
   public URL findResource(final String name) {
     final long started = (myDebugTime ?
       System.nanoTime() :
@@ -155,6 +158,7 @@ public class UrlClassLoader extends ClassLoader {
     }
   }
 
+  @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
     return myClassPath.getResources(name, true);
   }

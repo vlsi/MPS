@@ -30,12 +30,14 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
 
   public abstract TableRow createTableRow(SNode childNode, int rowNumber);
 
+  @Override
   public void removeRow(int index) {
     TableRow row = getRow(index);
     SNode rowNode = MapSequence.fromMap(myRowToNodeMap).get(row);
     SNodeOperations.deleteNode(rowNode);
   }
 
+  @Override
   public List<TableRow> getRows() {
     if (myTableRows == null) {
       myTableRows = ListSequence.fromList(new ArrayList<TableRow>());
@@ -49,6 +51,7 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
     return myTableRows;
   }
 
+  @Override
   public void createNewRow(int index) {
     int rowCount = getRowCount();
     assert index <= rowCount;

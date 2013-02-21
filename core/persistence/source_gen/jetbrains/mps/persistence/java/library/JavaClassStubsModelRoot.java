@@ -31,6 +31,7 @@ public class JavaClassStubsModelRoot extends FolderModelRootBase {
     return JavaClassStubConstants.STUB_TYPE;
   }
 
+  @Override
   public String getPresentation() {
     return ((getPath() != null ?
       getPath() :
@@ -38,11 +39,13 @@ public class JavaClassStubsModelRoot extends FolderModelRootBase {
     )) + " (java classes)";
   }
 
+  @Override
   public SModel getModel(SModelId id) {
     // todo implement 
     return null;
   }
 
+  @Override
   public Iterable<SModel> loadModels() {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     IClassPathItem cp = create(getPath());
@@ -50,14 +53,17 @@ public class JavaClassStubsModelRoot extends FolderModelRootBase {
     return result;
   }
 
+  @Override
   public boolean canCreateModels() {
     return true;
   }
 
+  @Override
   public boolean canCreateModel(String string) {
     return false;
   }
 
+  @Override
   public SModel createModel(String string) {
     return null;
   }

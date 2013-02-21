@@ -17,6 +17,7 @@ public class SInterfaceConceptNodeAdapter extends SConceptNodeAdapterBase implem
     super(conceptName);
   }
 
+  @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     return ListSequence.fromList(SLinkOperations.getTargets(((SNode) (getConcept().resolve(MPSModuleRepository.getInstance()))), "extends", true)).select(new ISelector<SNode, SInterfaceConcept>() {
       public SInterfaceConcept select(SNode it) {
@@ -25,6 +26,7 @@ public class SInterfaceConceptNodeAdapter extends SConceptNodeAdapterBase implem
     });
   }
 
+  @Override
   public SNodePointer getConcept() {
     return super.getConcept();
   }

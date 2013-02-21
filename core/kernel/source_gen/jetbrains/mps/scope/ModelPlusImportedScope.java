@@ -50,6 +50,7 @@ public class ModelPlusImportedScope extends Scope {
     return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(myTargetConcept)) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && getModels().contains(node.getModel().getModelDescriptor());
   }
 
+  @Override
   public SNode resolve(SNode contextNode, String refText) {
     Collection<SModelDescriptor> models = getModels();
     SNode result = null;
@@ -91,6 +92,7 @@ public class ModelPlusImportedScope extends Scope {
     return result;
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     Collection<SModelDescriptor> models = getModels();
     List<SNode> result = new ArrayList<SNode>();
@@ -128,6 +130,7 @@ public class ModelPlusImportedScope extends Scope {
     return result;
   }
 
+  @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     String resolveInfo = SNodeOperations.getResolveInfo(node);
     if ((resolveInfo != null && resolveInfo.length() > 0)) {

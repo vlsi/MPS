@@ -19,6 +19,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
   public IdeaModuleSolutionDescriptorIO() {
   }
 
+  @Override
   public SolutionDescriptor readFromFile(final IFile file) throws DescriptorIOException {
     final MPSFacetConfiguration mpsConf = this.readMPSFacetConf(file);
     if (mpsConf == null) {
@@ -101,14 +102,17 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
     }
   }
 
+  @Override
   public void writeToFile(SolutionDescriptor t, IFile file) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public SolutionDescriptor readFromXml(Element element, IFile anchorFile) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public void writeToXml(SolutionDescriptor t, Element element, IFile anchorFile) {
     throw new UnsupportedOperationException();
   }

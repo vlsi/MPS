@@ -330,26 +330,31 @@ public class Execute_Test extends MockTestCase {
       {
         final Object[] job = new Object[1];
         exactly(1).of(mons).runJobWithMonitor((_FunctionTypes._void_P1_E0<? super IJobMonitor>) with(new BaseMatcher<Object>() {
+          @Override
           public boolean matches(Object o) {
             job[0] = o;
             return true;
           }
 
+          @Override
           public void describeTo(Description p0) {
           }
         }));
         will(new Action() {
+          @Override
           public Object invoke(Invocation invocation) throws Throwable {
             ((_FunctionTypes._void_P1_E0<? super IJobMonitor>) job[0]).invoke(jmon);
             return null;
           }
 
+          @Override
           public void describeTo(Description description) {
           }
         });
         exactly(1).of(mons).setup(with(aNonNull(IPropertiesPool.class)), with(aNonNull(Iterable.class)), with(any(Iterable.class)));
         atLeast(1).of(mons).useMonitor(with(aNonNull(ProgressMonitor.class)));
         exactly(1).of(jmon).reportFeedback(with(new BaseMatcher<IFeedback>() {
+          @Override
           public boolean matches(Object o) {
             if (o instanceof IFeedback.ERROR) {
               fbk[0] = (IFeedback) o;
@@ -358,6 +363,7 @@ public class Execute_Test extends MockTestCase {
             return false;
           }
 
+          @Override
           public void describeTo(Description p0) {
           }
         }));

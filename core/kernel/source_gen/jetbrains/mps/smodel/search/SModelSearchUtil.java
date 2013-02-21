@@ -69,6 +69,7 @@ public class SModelSearchUtil {
 
   public static List<SNode> getReferenceLinkDeclarations(final SNode concept) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
+      @Override
       public List<SNode> compute() {
         List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
         List<SNode> result = new ArrayList<SNode>();
@@ -134,6 +135,7 @@ public class SModelSearchUtil {
     }
 
     @NotNull
+    @Override
     public List<SNode> getNodes(Condition<SNode> condition) {
       if (myConcepts == null) {
         myConcepts = new ArrayList<SNode>();

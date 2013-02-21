@@ -29,6 +29,7 @@ public class AutoResolver extends EditorCheckerAdapter {
   public AutoResolver() {
   }
 
+  @Override
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     if (SNodeOperations.getModel(rootNode) == null || SNodeOperations.getModel(rootNode).getModelDescriptor() == null) {
@@ -50,8 +51,10 @@ public class AutoResolver extends EditorCheckerAdapter {
       final IOperationContext operationContext = editorContext.getOperationContext();
       if (operationContext != null) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+              @Override
               public void run() {
                 // in case this becomes a performance bottleneck, consider reusing the editor's typechecking context  
                 ResolverComponent.getInstance().resolveScopesOnly(badReferences, operationContext);
@@ -95,6 +98,7 @@ public class AutoResolver extends EditorCheckerAdapter {
     }
   }
 
+  @Override
   public boolean isLaterThan(BaseEditorChecker editorChecker) {
     return editorChecker instanceof TypesEditorChecker;
   }

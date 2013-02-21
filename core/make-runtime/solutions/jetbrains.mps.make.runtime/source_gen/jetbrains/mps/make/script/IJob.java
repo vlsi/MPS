@@ -19,6 +19,7 @@ public interface IJob {
       throw new UnsupportedOperationException();
     }
 
+    @Override
     public IResult execute(Iterable<IResource> input, IJobMonitor mon, IPropertiesAccessor pa, @NotNull ProgressMonitor monitor) {
       // compatibility 
       return execute(input, mon, pa);

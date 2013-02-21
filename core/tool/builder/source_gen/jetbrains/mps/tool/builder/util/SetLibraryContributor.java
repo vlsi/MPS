@@ -13,10 +13,12 @@ public class SetLibraryContributor implements LibraryContributor {
     this.libraryPaths = libraryPaths;
   }
 
+  @Override
   public Set<LibraryContributor.LibDescriptor> getLibraries() {
     return Collections.unmodifiableSet(libraryPaths);
   }
 
+  @Override
   public boolean hiddenLanguages() {
     return false;
   }
