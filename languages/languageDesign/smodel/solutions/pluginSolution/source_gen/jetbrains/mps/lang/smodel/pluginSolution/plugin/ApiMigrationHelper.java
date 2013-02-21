@@ -180,15 +180,15 @@ public class ApiMigrationHelper {
 
     Iterable<SearchResult<SNode>> results = SetSequence.fromSet(changedClassUsages).select(new ISelector<SNode, SearchResult<SNode>>() {
       public SearchResult<SNode> select(SNode it) {
-        return new SearchResult<SNode>(it, "replaced SNode occurences");
+        return new SearchResult<SNode>(it, "replaced Clazz occurences");
       }
     }).union(SetSequence.fromSet(changedClassUsagesInTemplates).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
       public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
-        return new SearchResult<SNode>(it._0(), "replaced SNode in new XYZ<SNode,...>");
+        return new SearchResult<SNode>(it._0(), "replaced Clazz in new XYZ<Clazz,...>");
       }
     })).union(SetSequence.fromSet(changedClassUsagesInTypes).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
       public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
-        return new SearchResult<SNode>(it._0(), "replaced SNode in Type<SNode,...>");
+        return new SearchResult<SNode>(it._0(), "replaced Clazz in Type<Clazz,...>");
       }
     })).union(SetSequence.fromSet(changedMethodCalls).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
       public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
@@ -333,7 +333,7 @@ public class ApiMigrationHelper {
   }
 
   private SNode getNewMethod(SNode old, SNode newClass) {
-    for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(newClass))) {
+    for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(newClass)).union(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0a31(), "classifier", false))))) {
       if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(method, old)) {
         return method;
       }
@@ -441,6 +441,13 @@ public class ApiMigrationHelper {
     }
     quotedNode_3.addChild("expression", quotedNode_4);
     return quotedNode_3;
+  }
+
+  private static SNode _quotation_createNode_yke5lt_a0a0a0a31() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    return quotedNode_1;
   }
 
   private static boolean eq_yke5lt_a0b0l(Object a, Object b) {
