@@ -1162,7 +1162,7 @@
     <nodeInfo nodeId="1213877269082" fileName="PlusExpression_Behavior.java" startLine="19" startPosition="43" endLine="20" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877269095" fileName="PlusExpression_Behavior.java" startLine="21" startPosition="12" endLine="22" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="1213877269098" fileName="PlusExpression_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741702969" fileName="PlusExpression_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741702969" fileName="PlusExpression_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877269056" fileName="PlusExpression_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1213877269093" fileName="PlusExpression_Behavior.java" startLine="21" startPosition="10" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1213877269056" fileName="PlusExpression_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
@@ -1171,7 +1171,7 @@
     <scopeInfo nodeId="1213877269104" fileName="PlusExpression_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
     <scopeInfo nodeId="1213877269081" fileName="PlusExpression_Behavior.java" startLine="19" startPosition="43" endLine="20" endPosition="53" />
     <scopeInfo nodeId="1213877269094" fileName="PlusExpression_Behavior.java" startLine="21" startPosition="12" endLine="22" endPosition="48" />
-    <scopeInfo nodeId="1262430001741702967" fileName="PlusExpression_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="13" />
+    <scopeInfo nodeId="1262430001741702967" fileName="PlusExpression_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="14" />
     <scopeInfo nodeId="1213877269056" fileName="PlusExpression_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="1213877269056" varName="thisNode" />
     </scopeInfo>
@@ -11055,11 +11055,11 @@
     <unitInfo nodeId="1262430001741638303" fileName="EqualsExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.EqualsExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1262430001741639242">
-    <nodeInfo nodeId="1262430001741639241" fileName="MinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741639241" fileName="MinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741639242" fileName="MinusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741639242" fileName="MinusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <scopeInfo nodeId="1262430001741639244" fileName="MinusExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741639239" fileName="MinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741639239" fileName="MinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741639242" fileName="MinusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741639242" varName="thisNode" />
     </scopeInfo>
@@ -11097,11 +11097,11 @@
     <unitInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ArrayAccessExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1262430001741646919">
-    <nodeInfo nodeId="1262430001741646918" fileName="RemExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646918" fileName="RemExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646919" fileName="RemExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741646919" fileName="RemExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <scopeInfo nodeId="1262430001741646921" fileName="RemExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741646916" fileName="RemExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741646916" fileName="RemExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741646919" fileName="RemExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741646919" varName="thisNode" />
     </scopeInfo>
@@ -11111,11 +11111,11 @@
     <unitInfo nodeId="1262430001741646919" fileName="RemExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.RemExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1262430001741646928">
-    <nodeInfo nodeId="1262430001741646927" fileName="MulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646927" fileName="MulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741646928" fileName="MulExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741646928" fileName="MulExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <scopeInfo nodeId="1262430001741646930" fileName="MulExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741646925" fileName="MulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741646925" fileName="MulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741646928" fileName="MulExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741646928" varName="thisNode" />
     </scopeInfo>
@@ -11209,11 +11209,11 @@
     <unitInfo nodeId="1262430001741647371" fileName="ParameterReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ParameterReference_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1262430001741647407">
-    <nodeInfo nodeId="1262430001741647406" fileName="DivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647406" fileName="DivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647407" fileName="DivExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647407" fileName="DivExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <scopeInfo nodeId="1262430001741647409" fileName="DivExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741647404" fileName="DivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741647404" fileName="DivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741647407" fileName="DivExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741647407" varName="thisNode" />
     </scopeInfo>
@@ -11223,11 +11223,11 @@
     <unitInfo nodeId="1262430001741647407" fileName="DivExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.DivExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1262430001741647685">
-    <nodeInfo nodeId="1262430001741647684" fileName="AndExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647684" fileName="AndExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741647685" fileName="AndExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741647685" fileName="AndExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <scopeInfo nodeId="1262430001741647687" fileName="AndExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741647682" fileName="AndExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
+    <scopeInfo nodeId="1262430001741647682" fileName="AndExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
     <scopeInfo nodeId="1262430001741647685" fileName="AndExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741647685" varName="thisNode" />
     </scopeInfo>
@@ -11293,11 +11293,11 @@
     <unitInfo nodeId="1262430001741717288" fileName="NPEEqualsExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.NPEEqualsExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1262430001741717330">
-    <nodeInfo nodeId="1262430001741717329" fileName="BitwiseOrExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741717329" fileName="BitwiseOrExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741717330" fileName="BitwiseOrExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741717330" fileName="BitwiseOrExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <scopeInfo nodeId="1262430001741717332" fileName="BitwiseOrExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741717327" fileName="BitwiseOrExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
+    <scopeInfo nodeId="1262430001741717327" fileName="BitwiseOrExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
     <scopeInfo nodeId="1262430001741717330" fileName="BitwiseOrExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741717330" varName="thisNode" />
     </scopeInfo>
@@ -11321,11 +11321,11 @@
     <unitInfo nodeId="1262430001741717456" fileName="LocalStaticFieldReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LocalStaticFieldReference_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1262430001741718259">
-    <nodeInfo nodeId="1262430001741718258" fileName="OrExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718258" fileName="OrExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718259" fileName="OrExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741718259" fileName="OrExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <scopeInfo nodeId="1262430001741718261" fileName="OrExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741718256" fileName="OrExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
+    <scopeInfo nodeId="1262430001741718256" fileName="OrExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
     <scopeInfo nodeId="1262430001741718259" fileName="OrExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741718259" varName="thisNode" />
     </scopeInfo>
