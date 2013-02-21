@@ -30,6 +30,10 @@ public class HidingByNameScope extends Scope {
     this(NameUtil.nodeFQName(hidingRoot), NameUtil.nodeFQName(kind), scope, parentScope);
   }
 
+  public HidingByNameScope(String hidingRootConceptFQName, SNode kind, @NotNull Scope scope, @NotNull Scope parentScope) {
+    this(hidingRootConceptFQName, NameUtil.nodeFQName(kind), scope, parentScope);
+  }
+
   public HidingByNameScope(String hidingRootConceptFQName, String kindConceptFQName, @NotNull Scope scope, @NotNull Scope parentScope) {
     // hiding root: all subconcepts of hidingRoot hide each other 
     this.scope = scope;
