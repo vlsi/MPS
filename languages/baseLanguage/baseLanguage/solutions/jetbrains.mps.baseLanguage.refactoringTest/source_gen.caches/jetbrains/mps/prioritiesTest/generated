@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3inzy0zk2sgnvm4ehkol0da68wycp98">
+<dependencies version="2" modelHash="-330kzba9d5nz5kqsf73mnr8ekomqol1">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-5th73gn6wpglky4mjfelk75wmsxh666" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
@@ -19,7 +19,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="5936308221645772775" name="TestBlPriorities" hash="1eareyk0oby04z1gts1iudtrixswd99" dependsOnNodes="true">
+  <source id="5936308221645772775" name="TestBlPriorities" hash="-dvzd3xhyyo68af46yl3pb13c3nkl0jg" dependsOnNodes="true">
     <dep root="418758558327350365" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

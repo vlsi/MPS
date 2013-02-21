@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.prioritiesTest.TestBlPriorities_Test" file="TestBlPriorities_Test.java">
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.HashSet" />

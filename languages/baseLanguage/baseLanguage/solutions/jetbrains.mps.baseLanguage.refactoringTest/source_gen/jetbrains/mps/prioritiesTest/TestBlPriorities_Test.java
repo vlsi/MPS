@@ -20,18 +20,28 @@ import jetbrains.mps.project.GlobalScope;
 @MPSLaunch
 public class TestBlPriorities_Test extends BaseTransformationTest4 {
   @Test
-  public void test_testPriorities1() throws Throwable {
+  public void test_testBitwisePriorities() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest)");
-    this.runTest("jetbrains.mps.prioritiesTest.TestBlPriorities_Test$TestBody", "test_testPriorities1", true);
+    this.runTest("jetbrains.mps.prioritiesTest.TestBlPriorities_Test$TestBody", "test_testBitwisePriorities", true);
+  }
+
+  @Test
+  public void test_testBooleanAndWithEqualsOperation() throws Throwable {
+    this.initTest("${mps_home}/MPS.mpr", "r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest)");
+    this.runTest("jetbrains.mps.prioritiesTest.TestBlPriorities_Test$TestBody", "test_testBooleanAndWithEqualsOperation", true);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
-    public void test_testPriorities1() throws Exception {
+    public void test_testBitwisePriorities() throws Exception {
       this.check(new TestBlPriorities_Test.TestBody.QuotationClass_p8h609_a0a0a0a0().createNode(), 1 & 2 | 3 << 4 ^ 5 | 6);
     }
 
-    public void check(SNode expr, int expectedValue) {
+    public void test_testBooleanAndWithEqualsOperation() throws Exception {
+      this.check(new TestBlPriorities_Test.TestBody.QuotationClass_p8h609_a0a0a0b0().createNode(), true || false == false);
+    }
+
+    public void check(SNode expr, Object expectedValue) {
       this.expressionPriorityRebalance(expr);
       Assert.assertEquals(expectedValue, this.eval(SLinkOperations.getTarget(expr, "expression", true)));
     }
@@ -47,35 +57,56 @@ public class TestBlPriorities_Test extends BaseTransformationTest4 {
       }
     }
 
-    public int eval(SNode e) {
+    public Object eval(SNode e) {
       if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
         return this.evalBinaryOperation(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
       }
       if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.IntegerConstant")) {
         return SPropertyOperations.getInteger(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value");
       }
+      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
+        return SPropertyOperations.getBoolean(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value");
+      }
 
       throw new UnsupportedOperationException(e.getPresentation());
     }
 
-    public int evalBinaryOperation(SNode e) {
-      int left = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true));
-      int right = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true));
+    public Object evalBinaryOperation(SNode e) {
+      Object left = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "leftExpression", true));
+      Object right = this.eval(SLinkOperations.getTarget(SNodeOperations.cast(e, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true));
 
       if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression")) {
-        return left << right;
+        return ((Integer) left) << ((Integer) right);
       }
       if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression")) {
-        return left & right;
+        return ((Integer) left) & ((Integer) right);
       }
       if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression")) {
-        return left | right;
+        return ((Integer) left) | ((Integer) right);
       }
       if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression")) {
-        return left ^ right;
+        return ((Integer) left) ^ ((Integer) right);
+      }
+
+      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.AndExpression")) {
+        return ((Boolean) left) && ((Boolean) right);
+      }
+      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.OrExpression")) {
+        return ((Boolean) left) || ((Boolean) right);
+      }
+
+      if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
+        return eq_p8h609_a0a0l0f0(left, right);
       }
 
       throw new UnsupportedOperationException(e.getPresentation());
+    }
+
+    private static boolean eq_p8h609_a0a0l0f0(Object a, Object b) {
+      return (a != null ?
+        a.equals(b) :
+        a == b
+      );
     }
 
     public static class QuotationClass_p8h609_a0a0a0a0 {
@@ -162,6 +193,56 @@ public class TestBlPriorities_Test extends BaseTransformationTest4 {
             quotedNode_1.addChild("expression", quotedNode1_14);
           }
           result = quotedNode1_13;
+        }
+        return result;
+      }
+    }
+
+    public static class QuotationClass_p8h609_a0a0a0b0 {
+      public QuotationClass_p8h609_a0a0a0b0() {
+      }
+
+      public SNode createNode() {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_1 = null;
+        SNode quotedNode_2 = null;
+        SNode quotedNode_3 = null;
+        SNode quotedNode_4 = null;
+        SNode quotedNode_5 = null;
+        SNode quotedNode_6 = null;
+        {
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_7 = quotedNode_1;
+          {
+            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EqualsExpression", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_8 = quotedNode_2;
+            {
+              quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, GlobalScope.getInstance(), false);
+              SNode quotedNode1_9 = quotedNode_3;
+              quotedNode1_9.setProperty("value", "false");
+              quotedNode_2.addChild("rightExpression", quotedNode1_9);
+            }
+            {
+              quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.OrExpression", null, GlobalScope.getInstance(), false);
+              SNode quotedNode1_10 = quotedNode_4;
+              {
+                quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, GlobalScope.getInstance(), false);
+                SNode quotedNode1_11 = quotedNode_5;
+                quotedNode1_11.setProperty("value", "false");
+                quotedNode_4.addChild("rightExpression", quotedNode1_11);
+              }
+              {
+                quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, GlobalScope.getInstance(), false);
+                SNode quotedNode1_12 = quotedNode_6;
+                quotedNode1_12.setProperty("value", "true");
+                quotedNode_4.addChild("leftExpression", quotedNode1_12);
+              }
+              quotedNode_2.addChild("leftExpression", quotedNode1_10);
+            }
+            quotedNode_1.addChild("expression", quotedNode1_8);
+          }
+          result = quotedNode1_7;
         }
         return result;
       }
