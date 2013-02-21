@@ -637,6 +637,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.NodeHighlightManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

@@ -26,6 +26,7 @@ import com.intellij.ide.DataManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.NotNull;
@@ -108,7 +109,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
   protected abstract List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor);
 
   public SNode getNode() {
-    return ((SNodePointer) this.myNodePointer).getNode();
+    return ((SNodePointer) this.myNodePointer).resolve(MPSModuleRepository.getInstance());
   }
 
   public void setNode(SNode node) {
@@ -163,7 +164,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
   private void fireNodeChanged() {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<_FunctionTypes._void_P1_E0<? super SNode>>() {
       public void visit(_FunctionTypes._void_P1_E0<? super SNode> it) {
-        it.invoke(((SNodePointer) AbstractMainNodeChooser.this.myNodePointer).getNode());
+        it.invoke(((SNodePointer) AbstractMainNodeChooser.this.myNodePointer).resolve(MPSModuleRepository.getInstance()));
       }
     });
   }

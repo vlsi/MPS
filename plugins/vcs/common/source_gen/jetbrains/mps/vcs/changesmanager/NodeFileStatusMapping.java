@@ -15,6 +15,7 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -59,7 +60,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       public void run() {
         FileStatusManager fsm = FileStatusManager.getInstance(myProject);
         MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
-        SNode currentNode = ((SNodePointer) nodePointer).getNode();
+        SNode currentNode = ((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance());
         if (currentNode == null) {
           return;
         }

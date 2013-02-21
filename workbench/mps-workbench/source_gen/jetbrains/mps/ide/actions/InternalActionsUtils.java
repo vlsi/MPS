@@ -130,7 +130,7 @@ public class InternalActionsUtils {
         SearchResults results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodeReference, SNode>() {
           public SNode select(SNodeReference it) {
-            return ((SNodePointer) it).getNode();
+            return ((SNodePointer) it).resolve(MPSModuleRepository.getInstance());
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

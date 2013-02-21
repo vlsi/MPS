@@ -39,6 +39,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.SModelReference;
@@ -323,7 +324,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myStaticTarget = (dialog.getResult() != null ?
-          ((SNodePointer) dialog.getResult()).getNode() :
+          ((SNodePointer) dialog.getResult()).resolve(MPSModuleRepository.getInstance()) :
           null
         );
       }

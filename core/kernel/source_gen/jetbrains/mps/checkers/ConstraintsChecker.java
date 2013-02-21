@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -35,7 +36,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     if (breakingNodePointer == null) {
       return null;
     } else {
-      SNode node = ((SNodePointer) breakingNodePointer).getNode();
+      SNode node = ((SNodePointer) breakingNodePointer).resolve(MPSModuleRepository.getInstance());
       checkingNodeContext.setBreakingNode(null);
 
       return node;

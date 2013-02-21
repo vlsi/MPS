@@ -41,6 +41,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -475,7 +476,7 @@ public class RefactoringContext {
       if (data.type == StructureModification.RenameNode.RenameType.CONCEPT) {
         continue;
       }
-      SNode oldNode = ((SNodePointer) data.oldID).getNode();
+      SNode oldNode = ((SNodePointer) data.oldID).resolve(MPSModuleRepository.getInstance());
       if (oldNode == null || oldNode.getParent() == null) {
         continue;
       }

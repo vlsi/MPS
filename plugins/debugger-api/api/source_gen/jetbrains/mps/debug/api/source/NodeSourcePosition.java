@@ -5,6 +5,7 @@ package jetbrains.mps.debug.api.source;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class NodeSourcePosition extends SourcePosition {
   private final SNodeReference myNode;
@@ -30,7 +31,7 @@ public class NodeSourcePosition extends SourcePosition {
   }
 
   public SNode getNode() {
-    return ((SNodePointer) myNode).getNode();
+    return ((SNodePointer) myNode).resolve(MPSModuleRepository.getInstance());
   }
 
   private static boolean eq_1z1n6b_a0e0d(Object a, Object b) {

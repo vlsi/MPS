@@ -16,6 +16,7 @@ import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -58,7 +59,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         SNode ruleNode = null;
         if (scopeProvider != null) {
           ruleNode = (scopeProvider.getSearchScopeValidatorNode() != null ?
-            ((SNodePointer) scopeProvider.getSearchScopeValidatorNode()).getNode() :
+            ((SNodePointer) scopeProvider.getSearchScopeValidatorNode()).resolve(MPSModuleRepository.getInstance()) :
             null
           );
         }
