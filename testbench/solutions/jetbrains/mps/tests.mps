@@ -54,6 +54,7 @@
   <import index="rq2b" modelUID="r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)" version="-1" />
   <import index="msle" modelUID="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" version="-1" />
   <import index="537h" modelUID="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)" version="-1" />
+  <import index="709f" modelUID="r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest)" version="-1" />
   <import index="pop3" modelUID="r:c8b27be8-26f9-4593-9ae5-f70dd005d131(jetbrains.mps.testbench.suite.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="2712670354707830840" />
@@ -822,6 +823,9 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707831089">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.4038232163187008743" resolveInfo="IntroduceFinalField" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="3134782558147610220">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="709f.5936308221645772775" resolveInfo="TestBlPriorities" />
     </node>
   </root>
   <root id="2712670354707832431">
