@@ -191,9 +191,6 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("persistence".equals(tagName)) {
         return persistencehandler;
       }
-      if ("maxImportIndex".equals(tagName)) {
-        return maxImportIndexhandler;
-      }
       if ("languageAspect".equals(tagName)) {
         return languageAspecthandler;
       }
@@ -224,13 +221,6 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("persistence".equals(tagName)) {
         return;
       }
-      if ("maxImportIndex".equals(tagName)) {
-        Integer child = (Integer) value;
-        if (child > fieldmodel.getMaxImportIndex()) {
-          fieldmodel.setMaxImportIndex(child);
-        }
-        return;
-      }
       if ("languageAspect".equals(tagName)) {
         String[] child = (String[]) value;
         int version = Integer.parseInt(child[1]);
@@ -254,9 +244,6 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("import".equals(tagName)) {
         SModel.ImportElement child = (SModel.ImportElement) value;
-        if (child.getReferenceID() > fieldmodel.getMaxImportIndex()) {
-          fieldmodel.setMaxImportIndex(child.getReferenceID());
-        }
         fieldmodel.addModelImport(child);
         return;
       }

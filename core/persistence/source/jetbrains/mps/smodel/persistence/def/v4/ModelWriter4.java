@@ -16,13 +16,13 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -81,11 +81,18 @@ public class ModelWriter4 implements IModelWriter {
 
     // imports
     Element maxRefID = new Element(ModelPersistence.MAX_IMPORT_INDEX);
-    maxRefID.setAttribute(ModelPersistence.VALUE, "" + sourceModel.getMaxImportIndex());
     rootElement.addContent(maxRefID);
+
+    int maxImport = 0;
+    for (ImportElement importElement : sourceModel.importedModels()) {
+      maxImport = Math.max(maxImport, importElement.getReferenceID());
+    }
 
     for (ImportElement importElement : sourceModel.importedModels()) {
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
+      if (importElement.getReferenceID() < 0) {
+        importElement.setReferenceID(++maxImport);
+      }
       importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
       SModelReference modelReference = importElement.getModelReference();
       importElem.setAttribute(ModelPersistence.MODEL_UID, modelReference.toString());
@@ -101,6 +108,8 @@ public class ModelWriter4 implements IModelWriter {
       }
       rootElement.addContent(importElem);
     }
+
+    maxRefID.setAttribute(ModelPersistence.VALUE, "" + maxImport);
 
     VisibleModelElements visibleModelElements = new DOMVisibleModelElements(rootElement);
 

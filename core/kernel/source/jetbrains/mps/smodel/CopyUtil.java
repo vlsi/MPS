@@ -15,15 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.model.SReference;
-
-import org.jetbrains.mps.openapi.model.SNode;
-
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.*;
 
@@ -33,14 +31,14 @@ public final class CopyUtil {
   }
 
   public static void copyModelContent(SModel from, SModel to) {
-    for (SNode root : from.getRootNodes()) {
-      to.addRootNode(copy(root));
+    for (SNode root : from.roots()) {
+      to.addRoot(copy(root));
     }
   }
 
   public static void copyModelContentAndPreserveIds(SModel from, SModel to) {
-    for (SNode root : from.getRootNodes()) {
-      to.addRootNode(copyAndPreserveId(root, true));
+    for (SNode root : from.roots()) {
+      to.addRoot(copyAndPreserveId(root, true));
     }
   }
 
@@ -64,34 +62,13 @@ public final class CopyUtil {
   }
 
   public static void copyModelProperties(SModel from, SModel to) {
-    for (ImportElement ie : from.getAdditionalModelVersions()) {
-      to.addAdditionalModelVersion(new ImportElement(ie.getModelReference(),
-        ie.getReferenceID(), ie.getUsedVersion()));
-    }
-    for (ImportElement ie : from.importedModels()) {
-      to.addModelImport(new ImportElement(ie.getModelReference(),
-        ie.getReferenceID(), ie.getUsedVersion()));
-    }
-    for (ModuleReference mr : from.importedDevkits()) {
-      to.addDevKit(mr);
-    }
-    for (ModuleReference mr : from.importedLanguages()) {
-      to.addLanguage(mr);
-    }
-    for (ModuleReference mr : from.engagedOnGenerationLanguages()) {
-      to.addEngagedOnGenerationLanguage(mr);
-    }
-    if (from instanceof DefaultSModel && to instanceof DefaultSModel) {
-      ((DefaultSModel) to).setPersistenceVersion(((DefaultSModel) from).getPersistenceVersion());
-    }
-    to.setVersion(from.getVersion());
+    from.copyPropertiesTo(to);
   }
 
   public static SModel copyModel(SModel model) {
-    SModel copy = new SModel((SModelReference) model.getReference());
+    SModel copy = model.createEmptyCopy();
     copyModelContentAndPreserveIds(model, copy);
     copyModelProperties(model, copy);
-    copy.setMaxImportIndex(model.getMaxImportIndex());
     return copy;
   }
 

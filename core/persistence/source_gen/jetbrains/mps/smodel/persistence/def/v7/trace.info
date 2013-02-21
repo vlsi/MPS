@@ -928,103 +928,102 @@
     <nodeInfo nodeId="4362914091961475630" fileName="ReadHelper.java" startLine="34" startPosition="89" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4362914091961475634" fileName="ReadHelper.java" startLine="36" startPosition="5" endLine="37" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4362914091961475647" fileName="ReadHelper.java" startLine="37" startPosition="68" endLine="38" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4362914091961475699" fileName="ReadHelper.java" startLine="38" startPosition="96" endLine="39" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4362914091961475665" fileName="ReadHelper.java" startLine="40" startPosition="19" endLine="41" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4362914091961475681" fileName="ReadHelper.java" startLine="42" startPosition="12" endLine="43" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4362914091961475708" fileName="ReadHelper.java" startLine="44" startPosition="5" endLine="45" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1121566508702404870" fileName="ReadHelper.java" startLine="56" startPosition="70" endLine="57" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1121566508702404725" fileName="ReadHelper.java" startLine="57" startPosition="57" endLine="58" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1121566508702404809" fileName="ReadHelper.java" startLine="58" startPosition="58" endLine="59" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1121566508702404729" fileName="ReadHelper.java" startLine="60" startPosition="22" endLine="61" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1121566508702404734" fileName="ReadHelper.java" startLine="62" startPosition="5" endLine="63" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1121566508702404741" fileName="ReadHelper.java" startLine="63" startPosition="59" endLine="64" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1121566508702404826" fileName="ReadHelper.java" startLine="68" startPosition="8" endLine="69" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1121566508702404853" fileName="ReadHelper.java" startLine="77" startPosition="6" endLine="78" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1121566508702404791" fileName="ReadHelper.java" startLine="78" startPosition="51" endLine="79" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4362914091961475765" fileName="ReadHelper.java" startLine="82" startPosition="48" endLine="83" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4703487121563610229" fileName="ReadHelper.java" startLine="83" startPosition="58" endLine="84" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4362914091961475953" fileName="ReadHelper.java" startLine="87" startPosition="36" endLine="88" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4362914091961476017" fileName="ReadHelper.java" startLine="89" startPosition="18" endLine="90" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2615562934856440536" fileName="ReadHelper.java" startLine="90" startPosition="38" endLine="91" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4362914091961475974" fileName="ReadHelper.java" startLine="91" startPosition="77" endLine="92" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4362914091961476022" fileName="ReadHelper.java" startLine="93" startPosition="5" endLine="94" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4362914091961476046" fileName="ReadHelper.java" startLine="95" startPosition="27" endLine="96" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4362914091961476083" fileName="ReadHelper.java" startLine="96" startPosition="128" endLine="97" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4362914091961476098" fileName="ReadHelper.java" startLine="98" startPosition="12" endLine="99" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4362914091961476136" fileName="ReadHelper.java" startLine="103" startPosition="36" endLine="104" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4362914091961476146" fileName="ReadHelper.java" startLine="107" startPosition="36" endLine="108" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4362914091961475519" fileName="ReadHelper.java" startLine="111" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4362914091961475679" fileName="ReadHelper.java" startLine="42" startPosition="10" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4362914091961476096" fileName="ReadHelper.java" startLine="98" startPosition="10" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4362914091961475665" fileName="ReadHelper.java" startLine="39" startPosition="19" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4362914091961475681" fileName="ReadHelper.java" startLine="41" startPosition="12" endLine="42" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4362914091961475708" fileName="ReadHelper.java" startLine="43" startPosition="5" endLine="44" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1121566508702404870" fileName="ReadHelper.java" startLine="55" startPosition="70" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1121566508702404725" fileName="ReadHelper.java" startLine="56" startPosition="57" endLine="57" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1121566508702404809" fileName="ReadHelper.java" startLine="57" startPosition="58" endLine="58" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1121566508702404729" fileName="ReadHelper.java" startLine="59" startPosition="22" endLine="60" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1121566508702404734" fileName="ReadHelper.java" startLine="61" startPosition="5" endLine="62" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1121566508702404741" fileName="ReadHelper.java" startLine="62" startPosition="59" endLine="63" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1121566508702404826" fileName="ReadHelper.java" startLine="67" startPosition="8" endLine="68" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1121566508702404853" fileName="ReadHelper.java" startLine="76" startPosition="6" endLine="77" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1121566508702404791" fileName="ReadHelper.java" startLine="77" startPosition="51" endLine="78" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4362914091961475765" fileName="ReadHelper.java" startLine="81" startPosition="48" endLine="82" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4703487121563610229" fileName="ReadHelper.java" startLine="82" startPosition="58" endLine="83" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4362914091961475953" fileName="ReadHelper.java" startLine="86" startPosition="36" endLine="87" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4362914091961476017" fileName="ReadHelper.java" startLine="88" startPosition="18" endLine="89" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2615562934856440536" fileName="ReadHelper.java" startLine="89" startPosition="38" endLine="90" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4362914091961475974" fileName="ReadHelper.java" startLine="90" startPosition="77" endLine="91" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4362914091961476022" fileName="ReadHelper.java" startLine="92" startPosition="5" endLine="93" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4362914091961476046" fileName="ReadHelper.java" startLine="94" startPosition="27" endLine="95" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4362914091961476083" fileName="ReadHelper.java" startLine="95" startPosition="128" endLine="96" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4362914091961476098" fileName="ReadHelper.java" startLine="97" startPosition="12" endLine="98" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4362914091961476136" fileName="ReadHelper.java" startLine="102" startPosition="36" endLine="103" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4362914091961476146" fileName="ReadHelper.java" startLine="106" startPosition="36" endLine="107" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4362914091961475519" fileName="ReadHelper.java" startLine="110" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="4362914091961475679" fileName="ReadHelper.java" startLine="41" startPosition="10" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4362914091961476096" fileName="ReadHelper.java" startLine="97" startPosition="10" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4362914091961475567" fileName="ReadHelper.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModelRef#(Ljava/lang/String;Ljetbrains/mps/smodel/SModelReference;)V" />
-    <nodeInfo nodeId="1121566508702404727" fileName="ReadHelper.java" startLine="59" startPosition="90" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4362914091961476129" fileName="ReadHelper.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readRole#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4362914091961476139" fileName="ReadHelper.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readName#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1121566508702404727" fileName="ReadHelper.java" startLine="58" startPosition="90" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4362914091961476129" fileName="ReadHelper.java" startLine="102" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readRole#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4362914091961476139" fileName="ReadHelper.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readName#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="4362914091961475553" fileName="ReadHelper.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReadHelper#(Ljetbrains/mps/smodel/SModelReference;)V" />
     <nodeInfo nodeId="4362914091961475607" fileName="ReadHelper.java" startLine="32" startPosition="108" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4362914091961475749" fileName="ReadHelper.java" startLine="48" startPosition="97" endLine="52" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1121566508702404748" fileName="ReadHelper.java" startLine="64" startPosition="65" endLine="68" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1121566508702404766" fileName="ReadHelper.java" startLine="69" startPosition="62" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1121566508702404780" fileName="ReadHelper.java" startLine="73" startPosition="7" endLine="77" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4362914091961475758" fileName="ReadHelper.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readLinkId#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="4362914091961475660" fileName="ReadHelper.java" startLine="39" startPosition="46" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4362914091961475965" fileName="ReadHelper.java" startLine="88" startPosition="57" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4362914091961475713" fileName="ReadHelper.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSModelReference#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-    <nodeInfo nodeId="4362914091961476037" fileName="ReadHelper.java" startLine="94" startPosition="102" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4362914091961475589" fileName="ReadHelper.java" startLine="32" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addImportToModel#(Ljetbrains/mps/smodel/SModel;Ljava/lang/String;Ljava/lang/String;IZ)V" />
-    <nodeInfo nodeId="4362914091961475946" fileName="ReadHelper.java" startLine="87" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readType#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1121566508702404714" fileName="ReadHelper.java" startLine="55" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readLink_internal#(Ljava/lang/String;)Ljetbrains/mps/util/Pair;" />
+    <nodeInfo nodeId="4362914091961475749" fileName="ReadHelper.java" startLine="47" startPosition="97" endLine="51" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1121566508702404748" fileName="ReadHelper.java" startLine="63" startPosition="65" endLine="67" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1121566508702404766" fileName="ReadHelper.java" startLine="68" startPosition="62" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1121566508702404780" fileName="ReadHelper.java" startLine="72" startPosition="7" endLine="76" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4362914091961475758" fileName="ReadHelper.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readLinkId#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="4362914091961475660" fileName="ReadHelper.java" startLine="38" startPosition="96" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4362914091961475965" fileName="ReadHelper.java" startLine="87" startPosition="57" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4362914091961475713" fileName="ReadHelper.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSModelReference#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
+    <nodeInfo nodeId="4362914091961476037" fileName="ReadHelper.java" startLine="93" startPosition="102" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4362914091961475589" fileName="ReadHelper.java" startLine="32" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addImportToModel#(Ljetbrains/mps/smodel/SModel;Ljava/lang/String;Ljava/lang/String;IZ)V" />
+    <nodeInfo nodeId="4362914091961475946" fileName="ReadHelper.java" startLine="86" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readType#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1121566508702404714" fileName="ReadHelper.java" startLine="54" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readLink_internal#(Ljava/lang/String;)Ljetbrains/mps/util/Pair;" />
     <scopeInfo nodeId="4362914091961475570" fileName="ReadHelper.java" startLine="28" startPosition="67" endLine="29" endPosition="58" />
-    <scopeInfo nodeId="4362914091961475661" fileName="ReadHelper.java" startLine="40" startPosition="19" endLine="41" endPosition="44" />
-    <scopeInfo nodeId="4362914091961475680" fileName="ReadHelper.java" startLine="42" startPosition="12" endLine="43" endPosition="33" />
-    <scopeInfo nodeId="1121566508702404728" fileName="ReadHelper.java" startLine="60" startPosition="22" endLine="61" endPosition="20" />
-    <scopeInfo nodeId="4362914091961476097" fileName="ReadHelper.java" startLine="98" startPosition="12" endLine="99" endPosition="101" />
-    <scopeInfo nodeId="4362914091961476132" fileName="ReadHelper.java" startLine="103" startPosition="36" endLine="104" endPosition="13" />
-    <scopeInfo nodeId="4362914091961476142" fileName="ReadHelper.java" startLine="107" startPosition="36" endLine="108" endPosition="13" />
+    <scopeInfo nodeId="4362914091961475661" fileName="ReadHelper.java" startLine="39" startPosition="19" endLine="40" endPosition="44" />
+    <scopeInfo nodeId="4362914091961475680" fileName="ReadHelper.java" startLine="41" startPosition="12" endLine="42" endPosition="33" />
+    <scopeInfo nodeId="1121566508702404728" fileName="ReadHelper.java" startLine="59" startPosition="22" endLine="60" endPosition="20" />
+    <scopeInfo nodeId="4362914091961476097" fileName="ReadHelper.java" startLine="97" startPosition="12" endLine="98" endPosition="101" />
+    <scopeInfo nodeId="4362914091961476132" fileName="ReadHelper.java" startLine="102" startPosition="36" endLine="103" endPosition="13" />
+    <scopeInfo nodeId="4362914091961476142" fileName="ReadHelper.java" startLine="106" startPosition="36" endLine="107" endPosition="13" />
     <scopeInfo nodeId="4362914091961475556" fileName="ReadHelper.java" startLine="23" startPosition="47" endLine="25" endPosition="26" />
     <scopeInfo nodeId="4362914091961475609" fileName="ReadHelper.java" startLine="33" startPosition="27" endLine="35" endPosition="13" />
-    <scopeInfo nodeId="4362914091961475761" fileName="ReadHelper.java" startLine="82" startPosition="48" endLine="84" endPosition="37" />
-    <scopeInfo nodeId="4362914091961476038" fileName="ReadHelper.java" startLine="95" startPosition="27" endLine="97" endPosition="33" />
+    <scopeInfo nodeId="4362914091961475761" fileName="ReadHelper.java" startLine="81" startPosition="48" endLine="83" endPosition="37" />
+    <scopeInfo nodeId="4362914091961476038" fileName="ReadHelper.java" startLine="94" startPosition="27" endLine="96" endPosition="33" />
     <scopeInfo nodeId="4362914091961475567" fileName="ReadHelper.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="4362914091961475571" varName="index" />
       <varInfo nodeId="4362914091961475576" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="4362914091961475966" fileName="ReadHelper.java" startLine="89" startPosition="18" endLine="92" endPosition="33" />
-    <scopeInfo nodeId="4362914091961476129" fileName="ReadHelper.java" startLine="103" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="4362914091961475966" fileName="ReadHelper.java" startLine="88" startPosition="18" endLine="91" endPosition="33" />
+    <scopeInfo nodeId="4362914091961476129" fileName="ReadHelper.java" startLine="102" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="4362914091961476134" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="4362914091961476139" fileName="ReadHelper.java" startLine="107" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="4362914091961476139" fileName="ReadHelper.java" startLine="106" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="4362914091961476144" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="4362914091961475553" fileName="ReadHelper.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="4362914091961475557" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="4362914091961475716" fileName="ReadHelper.java" startLine="48" startPosition="97" endLine="52" endPosition="6" />
-    <scopeInfo nodeId="4362914091961475758" fileName="ReadHelper.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="4362914091961475716" fileName="ReadHelper.java" startLine="47" startPosition="97" endLine="51" endPosition="6" />
+    <scopeInfo nodeId="4362914091961475758" fileName="ReadHelper.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="4362914091961475763" varName="src" />
     </scopeInfo>
-    <scopeInfo nodeId="4362914091961475713" fileName="ReadHelper.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="4362914091961475713" fileName="ReadHelper.java" startLine="47" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="4362914091961475718" varName="ix" />
     </scopeInfo>
-    <scopeInfo nodeId="4362914091961475592" fileName="ReadHelper.java" startLine="32" startPosition="108" endLine="45" endPosition="33">
+    <scopeInfo nodeId="4362914091961475592" fileName="ReadHelper.java" startLine="32" startPosition="108" endLine="44" endPosition="33">
       <varInfo nodeId="4362914091961475648" varName="elem" />
       <varInfo nodeId="4362914091961475635" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="4362914091961475949" fileName="ReadHelper.java" startLine="87" startPosition="36" endLine="100" endPosition="5">
+    <scopeInfo nodeId="4362914091961475949" fileName="ReadHelper.java" startLine="86" startPosition="36" endLine="99" endPosition="5">
       <varInfo nodeId="4362914091961475954" varName="ix" />
       <varInfo nodeId="4362914091961476023" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="4362914091961475589" fileName="ReadHelper.java" startLine="32" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="4362914091961475589" fileName="ReadHelper.java" startLine="32" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="4362914091961475604" varName="implicit" />
       <varInfo nodeId="4362914091961475595" varName="index" />
       <varInfo nodeId="4362914091961475593" varName="model" />
       <varInfo nodeId="4362914091961475598" varName="modelUID" />
       <varInfo nodeId="4362914091961475601" varName="version" />
     </scopeInfo>
-    <scopeInfo nodeId="4362914091961475946" fileName="ReadHelper.java" startLine="87" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="4362914091961475946" fileName="ReadHelper.java" startLine="86" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="4362914091961475951" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1121566508702404717" fileName="ReadHelper.java" startLine="56" startPosition="70" endLine="79" endPosition="18">
+    <scopeInfo nodeId="1121566508702404717" fileName="ReadHelper.java" startLine="55" startPosition="70" endLine="78" endPosition="18">
       <varInfo nodeId="1121566508702404735" varName="i0" />
       <varInfo nodeId="1121566508702404742" varName="i1" />
       <varInfo nodeId="1121566508702404767" varName="modelRef" />
@@ -1032,10 +1031,10 @@
       <varInfo nodeId="1121566508702404810" varName="result" />
       <varInfo nodeId="1121566508702404749" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="1121566508702404714" fileName="ReadHelper.java" startLine="55" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="1121566508702404714" fileName="ReadHelper.java" startLine="54" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1121566508702404723" varName="src" />
     </scopeInfo>
-    <unitInfo nodeId="4362914091961475519" fileName="ReadHelper.java" startLine="18" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ReadHelper" />
+    <unitInfo nodeId="4362914091961475519" fileName="ReadHelper.java" startLine="18" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.ReadHelper" />
   </root>
   <root nodeRef="r:b11ed8aa-3bfd-4e32-9f42-fbe92f0be58c(jetbrains.mps.smodel.persistence.def.v7)/5797832288566425370">
     <nodeInfo nodeId="5797832288566425370" fileName="LineToContentMapReader7Handler.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />

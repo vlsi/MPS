@@ -23,18 +23,12 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
-import jetbrains.mps.smodel.event.SModelChildEvent;
-import jetbrains.mps.smodel.event.SModelDevKitEvent;
-import jetbrains.mps.smodel.event.SModelImportEvent;
-import jetbrains.mps.smodel.event.SModelLanguageEvent;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.TranslatingIterator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -52,13 +46,7 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 import java.io.IOException;
 import java.security.SecureRandom;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class SModel implements org.jetbrains.mps.openapi.model.SModel {
@@ -71,7 +59,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   private FastNodeFinder myFastNodeFinder;
 
-  private int myMaxImportIndex;
   private List<ModuleReference> myLanguages = new ArrayList<ModuleReference>();
   private List<ModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<ModuleReference>();
   private List<ModuleReference> myDevKits = new ArrayList<ModuleReference>();
@@ -201,7 +188,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
       }
 
       public Iterable<SLanguage> getLanguages() {
-        return new TranslatingIterator<ModuleReference,SLanguage>(myLanguages.iterator()) {
+        return new TranslatingIterator<ModuleReference, SLanguage>(myLanguages.iterator()) {
           protected SLanguage translate(ModuleReference ref) {
             return new SLanguageLanguageAdapter(((Language) ref.resolve(MPSModuleRepository.getInstance())));
           }
@@ -627,11 +614,14 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
       if (modelDescriptor instanceof RefactorableSModelDescriptor) {
         usedVersion = ((RefactorableSModelDescriptor) modelDescriptor).getVersion();
       }
-      importElement = new ImportElement(modelReference, ++myMaxImportIndex, firstVersion ? -1 : usedVersion);
+      importElement = new ImportElement(modelReference, -1, firstVersion ? -1 : usedVersion);
     }
-    if (importElement.getReferenceID() < 0) { // fix for persistence <6
-      importElement.setReferenceID(++myMaxImportIndex);
-    }
+
+    addModelImport(importElement);
+  }
+
+  public void addModelImport(ImportElement importElement) {
+    ModelChange.assertLegalChange(this);
 
     myImports.add(importElement);
     fireImportAddedEvent(importElement.getModelReference());
@@ -836,6 +826,10 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
       return myUsedVersion;
     }
 
+    protected ImportElement copy() {
+      return new ImportElement(myModelReference, myReferenceID, myUsedVersion);
+    }
+
     public String toString() {
       return "ImportElement(" +
         "uid=" + myModelReference + ", " +
@@ -991,6 +985,29 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
    */
   public boolean isRegistered() {
     return myModelDescriptor != null && myModelDescriptor.isRegistered();
+  }
+
+  protected SModel createEmptyCopy() {
+    return new SModel(((SModelReference) getReference()));
+  }
+
+  protected void copyPropertiesTo(SModel to) {
+    for (ImportElement ie : getAdditionalModelVersions()) {
+      to.addAdditionalModelVersion(ie.copy());
+    }
+    for (ImportElement ie : importedModels()) {
+      to.addModelImport(ie.copy());
+    }
+    for (ModuleReference mr : importedDevkits()) {
+      to.addDevKit(mr);
+    }
+    for (ModuleReference mr : importedLanguages()) {
+      to.addLanguage(mr);
+    }
+    for (ModuleReference mr : engagedOnGenerationLanguages()) {
+      to.addEngagedOnGenerationLanguage(mr);
+    }
+    to.setVersion(getVersion());
   }
 
 
@@ -1149,23 +1166,5 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(idString);
     assert nodeId != null : "wrong node id string";
     return getNodeById(nodeId);
-  }
-
-  @Deprecated
-  public void addModelImport(ImportElement importElement) {
-    ModelChange.assertLegalChange(this);
-
-    myImports.add(importElement);
-    fireImportAddedEvent(importElement.getModelReference());
-  }
-
-  @Deprecated
-  public void setMaxImportIndex(int i) {
-    myMaxImportIndex = i;
-  }
-
-  @Deprecated
-  public int getMaxImportIndex() {
-    return myMaxImportIndex;
   }
 }

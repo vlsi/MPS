@@ -54,6 +54,11 @@ public class BinarySModel extends SModel {
     header.setVersion(version);
   }
 
+  @Override
+  protected SModel createEmptyCopy() {
+    return new BinarySModel(new BinaryModelHeader(((SModelReference) getReference())));
+  }
+
   public static class InvalidBinarySModel extends BinarySModel implements InvalidSModel {
 
     @Nullable

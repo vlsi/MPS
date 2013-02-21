@@ -17,15 +17,19 @@ package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.persistence.def.*;
+import jetbrains.mps.smodel.persistence.def.IModelReader;
+import jetbrains.mps.smodel.persistence.def.IReferencePersister;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import jetbrains.mps.util.InternUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
@@ -35,14 +39,6 @@ public class ModelReader4 implements IModelReader {
   private static final Logger LOG = Logger.getLogger(ModelReader4.class);
 
   protected String getLegacyImportedModelUIDString(Element element) {
-    return null;
-  }
-
-  protected Element getLegacyMaxImportIndexElement(Element rootElement) {
-    return null;
-  }
-
-  protected String getLegacyModelName(String modelShortName, Element rootElement) {
     return null;
   }
 
@@ -64,16 +60,6 @@ public class ModelReader4 implements IModelReader {
     DefaultSModel model = new DefaultSModel(modelReference);
     model.setPersistenceVersion(getVersion());
     model.getSModelHeader().updateDefaults(header);
-
-    try {
-      Element maxImportIndex = rootElement.getChild(ModelPersistence.MAX_IMPORT_INDEX);
-      if (maxImportIndex == null) {
-        maxImportIndex = getLegacyMaxImportIndexElement(rootElement); // old manner
-      }
-      model.setMaxImportIndex(DocUtil.readIntAttributeValue(maxImportIndex, ModelPersistence.VALUE));
-    } catch (Throwable e) {
-      LOG.error(e);
-    }
 
     // languages
     List languages = rootElement.getChildren(ModelPersistence.LANGUAGE);
@@ -134,10 +120,6 @@ public class ModelReader4 implements IModelReader {
       if (importedModelUIDString == null) {
         LOG.error("Error loading import element for index " + importIndex + " in " + model.getReference());
         continue;
-      }
-      if (importIndex > model.getMaxImportIndex()) {
-        LOG.warning("Import element " + importIndex + ":" + importedModelUIDString + " greater then max import index (" + model.getMaxImportIndex() + ") in " + model.getReference());
-        model.setMaxImportIndex(importIndex);
       }
 
       SModelReference importedModelReference = SModelReference.fromString(importedModelUIDString);

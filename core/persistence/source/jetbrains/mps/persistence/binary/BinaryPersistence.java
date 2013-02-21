@@ -216,7 +216,7 @@ public class BinaryPersistence {
     List<ImportElement> result = new ArrayList<ImportElement>();
     for (int i = 0; i < size; i++) {
       SModelReference ref = is.readModelReference();
-      result.add(new ImportElement(ref, 0, is.readInt()));
+      result.add(new ImportElement(ref, -1, is.readInt()));
     }
     return result;
   }

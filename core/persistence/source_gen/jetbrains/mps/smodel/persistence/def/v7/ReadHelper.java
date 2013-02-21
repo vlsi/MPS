@@ -36,7 +36,6 @@ public class ReadHelper {
     }
     SModelReference modelRef = SModelReference.fromString(modelUID);
     SModel.ImportElement elem = new SModel.ImportElement(modelRef, ++myMaxImportIndex, version);
-    model.setMaxImportIndex(myMaxImportIndex);
     if (implicit) {
       model.addAdditionalModelVersion(elem);
     } else {
@@ -54,8 +53,8 @@ public class ReadHelper {
 
   @NotNull
   public Pair<Boolean, SNodeReference> readLink_internal(String src) {
-    // returns <true, xxx> - if src is Dynamic Reference 
-    // [modelID.]nodeID[:version] | [modelID.]^[:version] 
+    // returns <true, xxx> - if src is Dynamic Reference
+    // [modelID.]nodeID[:version] | [modelID.]^[:version]
     Pair<Boolean, SNodeReference> result = new Pair<Boolean, SNodeReference>(false, null);
     if (src == null) {
       return result;
@@ -80,14 +79,14 @@ public class ReadHelper {
   }
 
   public SNodeReference readLinkId(String src) {
-    // [modelID.]nodeID[:version] | [modelID.]^[:version] 
+    // [modelID.]nodeID[:version] | [modelID.]^[:version]
     return readLink_internal(src).o2;
   }
 
   public String readType(String s) {
     int ix = s.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     if (ix <= 0) {
-      // no model ID - fqName is here 
+      // no model ID - fqName is here
       LOG.error("Broken reference to type=" + s + " in model " + myModelRef);
       return s.substring(ix + 1);
     }
