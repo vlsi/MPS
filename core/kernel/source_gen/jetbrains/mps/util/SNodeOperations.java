@@ -28,6 +28,9 @@ import jetbrains.mps.smodel.SModelRepository;
 import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 public class SNodeOperations {
@@ -316,9 +319,16 @@ public class SNodeOperations {
     );
   }
 
+  public static List<ModuleReference> getUsedLanguages(org.jetbrains.mps.openapi.model.SModel model) {
+    Iterable<SLanguage> languages = model.getModelScope().getLanguages();
+    return Sequence.fromIterable(languages).select(new ISelector<SLanguage, ModuleReference>() {
+      public ModuleReference select(SLanguage it) {
+        return ((ModuleReference) it.getModule().getModuleReference());
+      }
+    }).toListSequence();
+  }
+
   public static int nodesCount(org.jetbrains.mps.openapi.model.SModel model) {
     return IterableUtil.asCollection(new NodesIterable(model)).size();
   }
-
-
 }

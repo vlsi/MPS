@@ -1,401 +1,417 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/2089287822043606602">
-    <nodeInfo nodeId="4951414497584670777" fileName="SNodeOperations.java" startLine="38" startPosition="27" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4951414497584670785" fileName="SNodeOperations.java" startLine="40" startPosition="5" endLine="41" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4951414497584670796" fileName="SNodeOperations.java" startLine="42" startPosition="32" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4951414497584670798" fileName="SNodeOperations.java" startLine="44" startPosition="5" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2137520868335978052" fileName="SNodeOperations.java" startLine="48" startPosition="80" endLine="49" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2137520868335978247" fileName="SNodeOperations.java" startLine="51" startPosition="68" endLine="52" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2137520868335978277" fileName="SNodeOperations.java" startLine="54" startPosition="5" endLine="55" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="559469824002293300" fileName="SNodeOperations.java" startLine="58" startPosition="105" endLine="59" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4951414497584670894" fileName="SNodeOperations.java" startLine="62" startPosition="74" endLine="63" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4951414497584670909" fileName="SNodeOperations.java" startLine="65" startPosition="34" endLine="66" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4951414497584670911" fileName="SNodeOperations.java" startLine="67" startPosition="7" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4951414497584670917" fileName="SNodeOperations.java" startLine="69" startPosition="5" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8237392235999086874" fileName="SNodeOperations.java" startLine="73" startPosition="63" endLine="74" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7036185364863702400" fileName="SNodeOperations.java" startLine="75" startPosition="72" endLine="76" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8237392235999086968" fileName="SNodeOperations.java" startLine="77" startPosition="5" endLine="78" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1831640603945222947" fileName="SNodeOperations.java" startLine="81" startPosition="84" endLine="82" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1831640603945292380" fileName="SNodeOperations.java" startLine="82" startPosition="68" endLine="83" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1831640603945292239" fileName="SNodeOperations.java" startLine="83" startPosition="45" endLine="84" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1831640603945292207" fileName="SNodeOperations.java" startLine="89" startPosition="133" endLine="90" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1831640603945292362" fileName="SNodeOperations.java" startLine="91" startPosition="7" endLine="92" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2089287822043606744" fileName="SNodeOperations.java" startLine="99" startPosition="50" endLine="100" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1958256073812991547" fileName="SNodeOperations.java" startLine="106" startPosition="52" endLine="107" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7036185364855564182" fileName="SNodeOperations.java" startLine="108" startPosition="64" endLine="109" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1958256073812969566" fileName="SNodeOperations.java" startLine="110" startPosition="5" endLine="111" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1958256073812999122" fileName="SNodeOperations.java" startLine="117" startPosition="57" endLine="118" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1958256073812999135" fileName="SNodeOperations.java" startLine="119" startPosition="69" endLine="120" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1958256073812999146" fileName="SNodeOperations.java" startLine="121" startPosition="5" endLine="122" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1958256073813024446" fileName="SNodeOperations.java" startLine="128" startPosition="50" endLine="129" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7036185364855583360" fileName="SNodeOperations.java" startLine="130" startPosition="64" endLine="131" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1958256073813024473" fileName="SNodeOperations.java" startLine="132" startPosition="5" endLine="133" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1958256073813316686" fileName="SNodeOperations.java" startLine="139" startPosition="56" endLine="140" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7036185364862533469" fileName="SNodeOperations.java" startLine="141" startPosition="69" endLine="142" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1958256073813316710" fileName="SNodeOperations.java" startLine="143" startPosition="5" endLine="144" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668733596672476757" fileName="SNodeOperations.java" startLine="150" startPosition="41" endLine="151" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668733596672433075" fileName="SNodeOperations.java" startLine="151" startPosition="42" endLine="152" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="559469824002200297" fileName="SNodeOperations.java" startLine="159" startPosition="17" endLine="160" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="559469824002200182" fileName="SNodeOperations.java" startLine="161" startPosition="12" endLine="162" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2089287822043606781" fileName="SNodeOperations.java" startLine="171" startPosition="48" endLine="172" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2718315470531186038" fileName="SNodeOperations.java" startLine="178" startPosition="49" endLine="179" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2718315470531188884" fileName="SNodeOperations.java" startLine="182" startPosition="83" endLine="183" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2718315470531188902" fileName="SNodeOperations.java" startLine="185" startPosition="81" endLine="186" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2718315470531188912" fileName="SNodeOperations.java" startLine="188" startPosition="5" endLine="189" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2718315470531188924" fileName="SNodeOperations.java" startLine="192" startPosition="57" endLine="193" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2718315470531188939" fileName="SNodeOperations.java" startLine="194" startPosition="43" endLine="195" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2718315470531188942" fileName="SNodeOperations.java" startLine="196" startPosition="5" endLine="197" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2718315470531181956" fileName="SNodeOperations.java" startLine="203" startPosition="48" endLine="204" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2718315470531181970" fileName="SNodeOperations.java" startLine="205" startPosition="30" endLine="206" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2718315470531181972" fileName="SNodeOperations.java" startLine="207" startPosition="5" endLine="208" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8410922863731703522" fileName="SNodeOperations.java" startLine="212" startPosition="72" endLine="213" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3702719675910238107" fileName="SNodeOperations.java" startLine="217" startPosition="50" endLine="218" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8441062577042956734" fileName="SNodeOperations.java" startLine="222" startPosition="72" endLine="223" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4910195192867549596" fileName="SNodeOperations.java" startLine="227" startPosition="80" endLine="228" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4910195192867553385" fileName="SNodeOperations.java" startLine="229" startPosition="21" endLine="230" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4910195192867553669" fileName="SNodeOperations.java" startLine="231" startPosition="5" endLine="232" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="559469824002248649" fileName="SNodeOperations.java" startLine="236" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="condition" />
-    <nodeInfo nodeId="5125917333820891705" fileName="SNodeOperations.java" startLine="237" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="queue" />
-    <nodeInfo nodeId="9153498572536592344" fileName="SNodeOperations.java" startLine="238" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="current" />
-    <nodeInfo nodeId="559469824002248793" fileName="SNodeOperations.java" startLine="240" startPosition="113" endLine="241" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9153498572536597716" fileName="SNodeOperations.java" startLine="241" startPosition="33" endLine="242" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9153498572536597820" fileName="SNodeOperations.java" startLine="244" startPosition="51" endLine="245" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5125917333820915410" fileName="SNodeOperations.java" startLine="248" startPosition="28" endLine="249" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9153498572536597802" fileName="SNodeOperations.java" startLine="251" startPosition="119" endLine="252" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9153498572536597748" fileName="SNodeOperations.java" startLine="257" startPosition="30" endLine="258" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5125917333820915456" fileName="SNodeOperations.java" startLine="262" startPosition="25" endLine="263" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="559469824002249035" fileName="SNodeOperations.java" startLine="264" startPosition="10" endLine="265" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="559469824002249045" fileName="SNodeOperations.java" startLine="266" startPosition="120" endLine="267" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="559469824002293290" fileName="SNodeOperations.java" startLine="271" startPosition="26" endLine="272" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5125917333820892791" fileName="SNodeOperations.java" startLine="275" startPosition="34" endLine="276" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5125917333820892882" fileName="SNodeOperations.java" startLine="277" startPosition="25" endLine="278" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5125917333820892913" fileName="SNodeOperations.java" startLine="280" startPosition="46" endLine="281" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="559469824002248935" fileName="SNodeOperations.java" startLine="282" startPosition="7" endLine="283" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="559469824002293287" fileName="SNodeOperations.java" startLine="287" startPosition="39" endLine="288" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9196220778517154465" fileName="SNodeOperations.java" startLine="293" startPosition="9" endLine="294" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9196220778517154662" fileName="SNodeOperations.java" startLine="294" startPosition="55" endLine="295" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9196220778517154509" fileName="SNodeOperations.java" startLine="296" startPosition="15" endLine="297" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9160302885342297968" fileName="SNodeOperations.java" startLine="301" startPosition="89" endLine="302" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738736717686601390" fileName="SNodeOperations.java" startLine="302" startPosition="39" endLine="303" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9160302885342508449" fileName="SNodeOperations.java" startLine="310" startPosition="87" endLine="311" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7738736717686571748" fileName="SNodeOperations.java" startLine="311" startPosition="39" endLine="312" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8650600364352893185" fileName="SNodeOperations.java" startLine="319" startPosition="78" endLine="320" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2089287822043606816" fileName="SNodeOperations.java" startLine="34" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNodeOperations#()V" />
-    <nodeInfo nodeId="559469824002200180" fileName="SNodeOperations.java" startLine="161" startPosition="10" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4951414497584670748" fileName="SNodeOperations.java" startLine="37" startPosition="64" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4951414497584670791" fileName="SNodeOperations.java" startLine="41" startPosition="43" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1831640603945403874" fileName="SNodeOperations.java" startLine="50" startPosition="44" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2089287822043606648" fileName="SNodeOperations.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDescendants#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/util/Condition;Z)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4951414497584670903" fileName="SNodeOperations.java" startLine="64" startPosition="28" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7036185364863700613" fileName="SNodeOperations.java" startLine="74" startPosition="63" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1831640603945223024" fileName="SNodeOperations.java" startLine="88" startPosition="67" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7036185364855562280" fileName="SNodeOperations.java" startLine="107" startPosition="65" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7036185364862526450" fileName="SNodeOperations.java" startLine="118" startPosition="56" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7036185364855583354" fileName="SNodeOperations.java" startLine="129" startPosition="68" endLine="132" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7036185364862533463" fileName="SNodeOperations.java" startLine="140" startPosition="65" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2718315470531188892" fileName="SNodeOperations.java" startLine="184" startPosition="41" endLine="187" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2718315470531188935" fileName="SNodeOperations.java" startLine="193" startPosition="64" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2718315470531181964" fileName="SNodeOperations.java" startLine="204" startPosition="84" endLine="207" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8410922863731336857" fileName="SNodeOperations.java" startLine="211" startPosition="65" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3702719675910208408" fileName="SNodeOperations.java" startLine="217" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLanguage#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/Language;" />
-    <nodeInfo nodeId="1233806025863265290" fileName="SNodeOperations.java" startLine="221" startPosition="66" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4910195192867552997" fileName="SNodeOperations.java" startLine="228" startPosition="49" endLine="231" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9153498572536597818" fileName="SNodeOperations.java" startLine="243" startPosition="28" endLine="246" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5125917333820892639" fileName="SNodeOperations.java" startLine="247" startPosition="7" endLine="250" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9153498572536597775" fileName="SNodeOperations.java" startLine="250" startPosition="7" endLine="253" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="559469824002249020" fileName="SNodeOperations.java" startLine="263" startPosition="29" endLine="266" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="5125917333820892853" fileName="SNodeOperations.java" startLine="276" startPosition="32" endLine="279" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5125917333820892782" fileName="SNodeOperations.java" startLine="279" startPosition="7" endLine="282" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8650600364352893169" fileName="SNodeOperations.java" startLine="319" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodesCount#(Lorg/jetbrains/mps/openapi/model/SModel;)I" />
-    <nodeInfo nodeId="559469824002248616" fileName="SNodeOperations.java" startLine="256" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
-    <nodeInfo nodeId="559469824002248626" fileName="SNodeOperations.java" startLine="270" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
-    <nodeInfo nodeId="559469824002249101" fileName="SNodeOperations.java" startLine="286" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="9160302885342295159" fileName="SNodeOperations.java" startLine="303" startPosition="34" endLine="307" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9160302885342508455" fileName="SNodeOperations.java" startLine="312" startPosition="34" endLine="316" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1831640603945403866" fileName="SNodeOperations.java" startLine="49" startPosition="45" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2089287822043606718" fileName="SNodeOperations.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDescendants#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
-    <nodeInfo nodeId="559469824002200129" fileName="SNodeOperations.java" startLine="158" startPosition="104" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2718315470531188889" fileName="SNodeOperations.java" startLine="183" startPosition="53" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8441062577042923658" fileName="SNodeOperations.java" startLine="211" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="copyProperties#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8441062577042956614" fileName="SNodeOperations.java" startLine="221" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="copyUserObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="9153498572536597832" fileName="SNodeOperations.java" startLine="242" startPosition="25" endLine="247" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4951414497584670898" fileName="SNodeOperations.java" startLine="63" startPosition="46" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7036185364855542149" fileName="SNodeOperations.java" startLine="87" startPosition="100" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2089287822043606740" fileName="SNodeOperations.java" startLine="96" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/language/SConcept;" />
-    <nodeInfo nodeId="9117569544655367277" fileName="SNodeOperations.java" startLine="175" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="9196220778517154441" fileName="SNodeOperations.java" startLine="292" startPosition="61" endLine="298" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="2089287822043606700" fileName="SNodeOperations.java" startLine="73" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getProperties#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;" />
-    <nodeInfo nodeId="2668733596672433050" fileName="SNodeOperations.java" startLine="147" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isRoot#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2718315470531188917" fileName="SNodeOperations.java" startLine="192" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getChild#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4910195192867523186" fileName="SNodeOperations.java" startLine="227" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelFromNodeReference#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Ljetbrains/mps/smodel/SModelDescriptor;" />
-    <nodeInfo nodeId="1831640603945292311" fileName="SNodeOperations.java" startLine="87" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectDescendants#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;Ljetbrains/mps/util/Condition;)V" />
-    <nodeInfo nodeId="2089287822043606777" fileName="SNodeOperations.java" startLine="166" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isDisposed#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="559469824002248622" fileName="SNodeOperations.java" startLine="261" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="9196220778517123067" fileName="SNodeOperations.java" startLine="292" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTargetNodeSilently#(Lorg/jetbrains/mps/openapi/model/SReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="9160302885342289749" fileName="SNodeOperations.java" startLine="301" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelStereotype#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
-    <nodeInfo nodeId="9160302885342508446" fileName="SNodeOperations.java" startLine="310" startPosition="0" endLine="318" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelLongName#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2089287822043606625" fileName="SNodeOperations.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getChildren#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/util/List;" />
-    <nodeInfo nodeId="2718315470531188877" fileName="SNodeOperations.java" startLine="182" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getChildRoles#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/util/Set;" />
-    <nodeInfo nodeId="2089287822043606603" fileName="SNodeOperations.java" startLine="37" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2089287822043606678" fileName="SNodeOperations.java" startLine="62" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findParent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/util/Condition;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1958256073812969427" fileName="SNodeOperations.java" startLine="103" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getChildRoles#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
-    <nodeInfo nodeId="1958256073812999117" fileName="SNodeOperations.java" startLine="114" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferences#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1958256073813024441" fileName="SNodeOperations.java" startLine="125" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getChildren#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="1958256073813316681" fileName="SNodeOperations.java" startLine="136" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceRoles#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
-    <nodeInfo nodeId="3395068133255551311" fileName="SNodeOperations.java" startLine="155" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="insertChild#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
-    <nodeInfo nodeId="6792623998776975955" fileName="SNodeOperations.java" startLine="200" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getResolveInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="559469824002248847" fileName="SNodeOperations.java" startLine="275" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nextInternal#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="559469824002248606" fileName="SNodeOperations.java" startLine="240" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DescendantsIterable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/util/Condition;Z)V" />
-    <scopeInfo nodeId="2089287822043606819" fileName="SNodeOperations.java" startLine="34" startPosition="28" endLine="34" endPosition="28" />
-    <scopeInfo nodeId="4951414497584670749" fileName="SNodeOperations.java" startLine="38" startPosition="27" endLine="39" endPosition="18" />
-    <scopeInfo nodeId="4951414497584670795" fileName="SNodeOperations.java" startLine="42" startPosition="32" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="1831640603945403875" fileName="SNodeOperations.java" startLine="51" startPosition="68" endLine="52" endPosition="33" />
-    <scopeInfo nodeId="2089287822043606652" fileName="SNodeOperations.java" startLine="58" startPosition="105" endLine="59" endPosition="77" />
-    <scopeInfo nodeId="4951414497584670908" fileName="SNodeOperations.java" startLine="65" startPosition="34" endLine="66" endPosition="32" />
-    <scopeInfo nodeId="7036185364863700619" fileName="SNodeOperations.java" startLine="75" startPosition="72" endLine="76" endPosition="47" />
-    <scopeInfo nodeId="1831640603945223025" fileName="SNodeOperations.java" startLine="89" startPosition="133" endLine="90" endPosition="64" />
-    <scopeInfo nodeId="2089287822043606743" fileName="SNodeOperations.java" startLine="99" startPosition="50" endLine="100" endPosition="61" />
-    <scopeInfo nodeId="7036185364855562295" fileName="SNodeOperations.java" startLine="108" startPosition="64" endLine="109" endPosition="67" />
-    <scopeInfo nodeId="7036185364862526456" fileName="SNodeOperations.java" startLine="119" startPosition="69" endLine="120" endPosition="55" />
-    <scopeInfo nodeId="7036185364855583359" fileName="SNodeOperations.java" startLine="130" startPosition="64" endLine="131" endPosition="59" />
-    <scopeInfo nodeId="7036185364862533468" fileName="SNodeOperations.java" startLine="141" startPosition="69" endLine="142" endPosition="57" />
-    <scopeInfo nodeId="559469824002200131" fileName="SNodeOperations.java" startLine="159" startPosition="17" endLine="160" endPosition="67" />
-    <scopeInfo nodeId="559469824002200181" fileName="SNodeOperations.java" startLine="161" startPosition="12" endLine="162" endPosition="46" />
-    <scopeInfo nodeId="2089287822043606780" fileName="SNodeOperations.java" startLine="171" startPosition="48" endLine="172" endPosition="60" />
-    <scopeInfo nodeId="9117569544655367280" fileName="SNodeOperations.java" startLine="178" startPosition="49" endLine="179" endPosition="50" />
-    <scopeInfo nodeId="2718315470531188901" fileName="SNodeOperations.java" startLine="185" startPosition="81" endLine="186" endPosition="44" />
-    <scopeInfo nodeId="2718315470531188941" fileName="SNodeOperations.java" startLine="194" startPosition="43" endLine="195" endPosition="18" />
-    <scopeInfo nodeId="2718315470531181969" fileName="SNodeOperations.java" startLine="205" startPosition="30" endLine="206" endPosition="25" />
-    <scopeInfo nodeId="8410922863731336863" fileName="SNodeOperations.java" startLine="212" startPosition="72" endLine="213" endPosition="51" />
-    <scopeInfo nodeId="3702719675910208411" fileName="SNodeOperations.java" startLine="217" startPosition="50" endLine="218" endPosition="125" />
-    <scopeInfo nodeId="1233806025863265296" fileName="SNodeOperations.java" startLine="222" startPosition="72" endLine="223" endPosition="53" />
-    <scopeInfo nodeId="4910195192867552999" fileName="SNodeOperations.java" startLine="229" startPosition="21" endLine="230" endPosition="18" />
-    <scopeInfo nodeId="9153498572536597819" fileName="SNodeOperations.java" startLine="244" startPosition="51" endLine="245" endPosition="29" />
-    <scopeInfo nodeId="5125917333820892640" fileName="SNodeOperations.java" startLine="248" startPosition="28" endLine="249" endPosition="33" />
-    <scopeInfo nodeId="9153498572536597777" fileName="SNodeOperations.java" startLine="251" startPosition="119" endLine="252" endPosition="33" />
-    <scopeInfo nodeId="559469824002248619" fileName="SNodeOperations.java" startLine="257" startPosition="30" endLine="258" endPosition="29" />
-    <scopeInfo nodeId="559469824002249034" fileName="SNodeOperations.java" startLine="264" startPosition="10" endLine="265" endPosition="33" />
-    <scopeInfo nodeId="559469824002248629" fileName="SNodeOperations.java" startLine="271" startPosition="26" endLine="272" endPosition="48" />
-    <scopeInfo nodeId="5125917333820892854" fileName="SNodeOperations.java" startLine="277" startPosition="25" endLine="278" endPosition="20" />
-    <scopeInfo nodeId="5125917333820892783" fileName="SNodeOperations.java" startLine="280" startPosition="46" endLine="281" endPosition="27" />
-    <scopeInfo nodeId="559469824002249104" fileName="SNodeOperations.java" startLine="287" startPosition="39" endLine="288" endPosition="18" />
-    <scopeInfo nodeId="9196220778517154444" fileName="SNodeOperations.java" startLine="296" startPosition="15" endLine="297" endPosition="54" />
-    <scopeInfo nodeId="8650600364352893171" fileName="SNodeOperations.java" startLine="319" startPosition="78" endLine="320" endPosition="70" />
-    <scopeInfo nodeId="2089287822043606816" fileName="SNodeOperations.java" startLine="34" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="2668733596672433054" fileName="SNodeOperations.java" startLine="150" startPosition="41" endLine="152" endPosition="54">
+    <nodeInfo nodeId="4951414497584670777" fileName="SNodeOperations.java" startLine="41" startPosition="27" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4951414497584670785" fileName="SNodeOperations.java" startLine="43" startPosition="5" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4951414497584670796" fileName="SNodeOperations.java" startLine="45" startPosition="32" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4951414497584670798" fileName="SNodeOperations.java" startLine="47" startPosition="5" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2137520868335978052" fileName="SNodeOperations.java" startLine="51" startPosition="80" endLine="52" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2137520868335978247" fileName="SNodeOperations.java" startLine="54" startPosition="68" endLine="55" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2137520868335978277" fileName="SNodeOperations.java" startLine="57" startPosition="5" endLine="58" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="559469824002293300" fileName="SNodeOperations.java" startLine="61" startPosition="105" endLine="62" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4951414497584670894" fileName="SNodeOperations.java" startLine="65" startPosition="74" endLine="66" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4951414497584670909" fileName="SNodeOperations.java" startLine="68" startPosition="34" endLine="69" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4951414497584670911" fileName="SNodeOperations.java" startLine="70" startPosition="7" endLine="71" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4951414497584670917" fileName="SNodeOperations.java" startLine="72" startPosition="5" endLine="73" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8237392235999086874" fileName="SNodeOperations.java" startLine="76" startPosition="63" endLine="77" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7036185364863702400" fileName="SNodeOperations.java" startLine="78" startPosition="72" endLine="79" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8237392235999086968" fileName="SNodeOperations.java" startLine="80" startPosition="5" endLine="81" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1831640603945222947" fileName="SNodeOperations.java" startLine="84" startPosition="84" endLine="85" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1831640603945292380" fileName="SNodeOperations.java" startLine="85" startPosition="68" endLine="86" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1831640603945292239" fileName="SNodeOperations.java" startLine="86" startPosition="45" endLine="87" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1831640603945292207" fileName="SNodeOperations.java" startLine="92" startPosition="133" endLine="93" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1831640603945292362" fileName="SNodeOperations.java" startLine="94" startPosition="7" endLine="95" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2089287822043606744" fileName="SNodeOperations.java" startLine="102" startPosition="50" endLine="103" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1958256073812991547" fileName="SNodeOperations.java" startLine="109" startPosition="52" endLine="110" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7036185364855564182" fileName="SNodeOperations.java" startLine="111" startPosition="64" endLine="112" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1958256073812969566" fileName="SNodeOperations.java" startLine="113" startPosition="5" endLine="114" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1958256073812999122" fileName="SNodeOperations.java" startLine="120" startPosition="57" endLine="121" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1958256073812999135" fileName="SNodeOperations.java" startLine="122" startPosition="69" endLine="123" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1958256073812999146" fileName="SNodeOperations.java" startLine="124" startPosition="5" endLine="125" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1958256073813024446" fileName="SNodeOperations.java" startLine="131" startPosition="50" endLine="132" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7036185364855583360" fileName="SNodeOperations.java" startLine="133" startPosition="64" endLine="134" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1958256073813024473" fileName="SNodeOperations.java" startLine="135" startPosition="5" endLine="136" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1958256073813316686" fileName="SNodeOperations.java" startLine="142" startPosition="56" endLine="143" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7036185364862533469" fileName="SNodeOperations.java" startLine="144" startPosition="69" endLine="145" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1958256073813316710" fileName="SNodeOperations.java" startLine="146" startPosition="5" endLine="147" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668733596672476757" fileName="SNodeOperations.java" startLine="153" startPosition="41" endLine="154" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668733596672433075" fileName="SNodeOperations.java" startLine="154" startPosition="42" endLine="155" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="559469824002200297" fileName="SNodeOperations.java" startLine="162" startPosition="17" endLine="163" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="559469824002200182" fileName="SNodeOperations.java" startLine="164" startPosition="12" endLine="165" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2089287822043606781" fileName="SNodeOperations.java" startLine="174" startPosition="48" endLine="175" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2718315470531186038" fileName="SNodeOperations.java" startLine="181" startPosition="49" endLine="182" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2718315470531188884" fileName="SNodeOperations.java" startLine="185" startPosition="83" endLine="186" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2718315470531188902" fileName="SNodeOperations.java" startLine="188" startPosition="81" endLine="189" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2718315470531188912" fileName="SNodeOperations.java" startLine="191" startPosition="5" endLine="192" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2718315470531188924" fileName="SNodeOperations.java" startLine="195" startPosition="57" endLine="196" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2718315470531188939" fileName="SNodeOperations.java" startLine="197" startPosition="43" endLine="198" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2718315470531188942" fileName="SNodeOperations.java" startLine="199" startPosition="5" endLine="200" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2718315470531181956" fileName="SNodeOperations.java" startLine="206" startPosition="48" endLine="207" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2718315470531181970" fileName="SNodeOperations.java" startLine="208" startPosition="30" endLine="209" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2718315470531181972" fileName="SNodeOperations.java" startLine="210" startPosition="5" endLine="211" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8410922863731703522" fileName="SNodeOperations.java" startLine="215" startPosition="72" endLine="216" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3702719675910238107" fileName="SNodeOperations.java" startLine="220" startPosition="50" endLine="221" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8441062577042956734" fileName="SNodeOperations.java" startLine="225" startPosition="72" endLine="226" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4910195192867549596" fileName="SNodeOperations.java" startLine="230" startPosition="80" endLine="231" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4910195192867553385" fileName="SNodeOperations.java" startLine="232" startPosition="21" endLine="233" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4910195192867553669" fileName="SNodeOperations.java" startLine="234" startPosition="5" endLine="235" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="559469824002248649" fileName="SNodeOperations.java" startLine="239" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="condition" />
+    <nodeInfo nodeId="5125917333820891705" fileName="SNodeOperations.java" startLine="240" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="queue" />
+    <nodeInfo nodeId="9153498572536592344" fileName="SNodeOperations.java" startLine="241" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="current" />
+    <nodeInfo nodeId="559469824002248793" fileName="SNodeOperations.java" startLine="243" startPosition="113" endLine="244" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9153498572536597716" fileName="SNodeOperations.java" startLine="244" startPosition="33" endLine="245" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9153498572536597820" fileName="SNodeOperations.java" startLine="247" startPosition="51" endLine="248" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5125917333820915410" fileName="SNodeOperations.java" startLine="251" startPosition="28" endLine="252" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9153498572536597802" fileName="SNodeOperations.java" startLine="254" startPosition="119" endLine="255" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9153498572536597748" fileName="SNodeOperations.java" startLine="260" startPosition="30" endLine="261" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5125917333820915456" fileName="SNodeOperations.java" startLine="265" startPosition="25" endLine="266" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="559469824002249035" fileName="SNodeOperations.java" startLine="267" startPosition="10" endLine="268" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="559469824002249045" fileName="SNodeOperations.java" startLine="269" startPosition="120" endLine="270" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="559469824002293290" fileName="SNodeOperations.java" startLine="274" startPosition="26" endLine="275" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5125917333820892791" fileName="SNodeOperations.java" startLine="278" startPosition="34" endLine="279" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5125917333820892882" fileName="SNodeOperations.java" startLine="280" startPosition="25" endLine="281" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5125917333820892913" fileName="SNodeOperations.java" startLine="283" startPosition="46" endLine="284" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="559469824002248935" fileName="SNodeOperations.java" startLine="285" startPosition="7" endLine="286" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="559469824002293287" fileName="SNodeOperations.java" startLine="290" startPosition="39" endLine="291" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9196220778517154465" fileName="SNodeOperations.java" startLine="296" startPosition="9" endLine="297" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9196220778517154662" fileName="SNodeOperations.java" startLine="297" startPosition="55" endLine="298" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9196220778517154509" fileName="SNodeOperations.java" startLine="299" startPosition="15" endLine="300" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9160302885342297968" fileName="SNodeOperations.java" startLine="304" startPosition="89" endLine="305" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738736717686601390" fileName="SNodeOperations.java" startLine="305" startPosition="39" endLine="306" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9160302885342508449" fileName="SNodeOperations.java" startLine="313" startPosition="87" endLine="314" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7738736717686571748" fileName="SNodeOperations.java" startLine="314" startPosition="39" endLine="315" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4302290624633049537" fileName="SNodeOperations.java" startLine="322" startPosition="102" endLine="323" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4302290624633228457" fileName="SNodeOperations.java" startLine="325" startPosition="51" endLine="326" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8650600364352893185" fileName="SNodeOperations.java" startLine="331" startPosition="78" endLine="332" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2089287822043606816" fileName="SNodeOperations.java" startLine="37" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNodeOperations#()V" />
+    <nodeInfo nodeId="559469824002200180" fileName="SNodeOperations.java" startLine="164" startPosition="10" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4951414497584670748" fileName="SNodeOperations.java" startLine="40" startPosition="64" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4951414497584670791" fileName="SNodeOperations.java" startLine="44" startPosition="43" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1831640603945403874" fileName="SNodeOperations.java" startLine="53" startPosition="44" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2089287822043606648" fileName="SNodeOperations.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDescendants#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/util/Condition;Z)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4951414497584670903" fileName="SNodeOperations.java" startLine="67" startPosition="28" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7036185364863700613" fileName="SNodeOperations.java" startLine="77" startPosition="63" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1831640603945223024" fileName="SNodeOperations.java" startLine="91" startPosition="67" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7036185364855562280" fileName="SNodeOperations.java" startLine="110" startPosition="65" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7036185364862526450" fileName="SNodeOperations.java" startLine="121" startPosition="56" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7036185364855583354" fileName="SNodeOperations.java" startLine="132" startPosition="68" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7036185364862533463" fileName="SNodeOperations.java" startLine="143" startPosition="65" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2718315470531188892" fileName="SNodeOperations.java" startLine="187" startPosition="41" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2718315470531188935" fileName="SNodeOperations.java" startLine="196" startPosition="64" endLine="199" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2718315470531181964" fileName="SNodeOperations.java" startLine="207" startPosition="84" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8410922863731336857" fileName="SNodeOperations.java" startLine="214" startPosition="65" endLine="217" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3702719675910208408" fileName="SNodeOperations.java" startLine="220" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLanguage#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/Language;" />
+    <nodeInfo nodeId="1233806025863265290" fileName="SNodeOperations.java" startLine="224" startPosition="66" endLine="227" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4910195192867552997" fileName="SNodeOperations.java" startLine="231" startPosition="49" endLine="234" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9153498572536597818" fileName="SNodeOperations.java" startLine="246" startPosition="28" endLine="249" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5125917333820892639" fileName="SNodeOperations.java" startLine="250" startPosition="7" endLine="253" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9153498572536597775" fileName="SNodeOperations.java" startLine="253" startPosition="7" endLine="256" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="559469824002249020" fileName="SNodeOperations.java" startLine="266" startPosition="29" endLine="269" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="5125917333820892853" fileName="SNodeOperations.java" startLine="279" startPosition="32" endLine="282" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5125917333820892782" fileName="SNodeOperations.java" startLine="282" startPosition="7" endLine="285" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4302290624633084258" fileName="SNodeOperations.java" startLine="325" startPosition="0" endLine="328" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/language/SLanguage;)Ljetbrains/mps/project/structure/modules/ModuleReference;" />
+    <nodeInfo nodeId="8650600364352893169" fileName="SNodeOperations.java" startLine="331" startPosition="0" endLine="334" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodesCount#(Lorg/jetbrains/mps/openapi/model/SModel;)I" />
+    <nodeInfo nodeId="559469824002248616" fileName="SNodeOperations.java" startLine="259" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
+    <nodeInfo nodeId="559469824002248626" fileName="SNodeOperations.java" startLine="273" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
+    <nodeInfo nodeId="559469824002249101" fileName="SNodeOperations.java" startLine="289" startPosition="0" endLine="293" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="9160302885342295159" fileName="SNodeOperations.java" startLine="306" startPosition="34" endLine="310" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9160302885342508455" fileName="SNodeOperations.java" startLine="315" startPosition="34" endLine="319" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1831640603945403866" fileName="SNodeOperations.java" startLine="52" startPosition="45" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2089287822043606718" fileName="SNodeOperations.java" startLine="84" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDescendants#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
+    <nodeInfo nodeId="559469824002200129" fileName="SNodeOperations.java" startLine="161" startPosition="104" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2718315470531188889" fileName="SNodeOperations.java" startLine="186" startPosition="53" endLine="191" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8441062577042923658" fileName="SNodeOperations.java" startLine="214" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="copyProperties#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8441062577042956614" fileName="SNodeOperations.java" startLine="224" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="copyUserObjects#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9153498572536597832" fileName="SNodeOperations.java" startLine="245" startPosition="25" endLine="250" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4302290624633061563" fileName="SNodeOperations.java" startLine="323" startPosition="73" endLine="328" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4951414497584670898" fileName="SNodeOperations.java" startLine="66" startPosition="46" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7036185364855542149" fileName="SNodeOperations.java" startLine="90" startPosition="100" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2089287822043606740" fileName="SNodeOperations.java" startLine="99" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConcept#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/language/SConcept;" />
+    <nodeInfo nodeId="9117569544655367277" fileName="SNodeOperations.java" startLine="178" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDebugText#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="9196220778517154441" fileName="SNodeOperations.java" startLine="295" startPosition="61" endLine="301" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="2089287822043606700" fileName="SNodeOperations.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getProperties#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;" />
+    <nodeInfo nodeId="2668733596672433050" fileName="SNodeOperations.java" startLine="150" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isRoot#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2718315470531188917" fileName="SNodeOperations.java" startLine="195" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getChild#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4910195192867523186" fileName="SNodeOperations.java" startLine="230" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelFromNodeReference#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <nodeInfo nodeId="1831640603945292311" fileName="SNodeOperations.java" startLine="90" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="collectDescendants#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;Ljetbrains/mps/util/Condition;)V" />
+    <nodeInfo nodeId="2089287822043606777" fileName="SNodeOperations.java" startLine="169" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isDisposed#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="559469824002248622" fileName="SNodeOperations.java" startLine="264" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="9196220778517123067" fileName="SNodeOperations.java" startLine="295" startPosition="0" endLine="303" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTargetNodeSilently#(Lorg/jetbrains/mps/openapi/model/SReference;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="9160302885342289749" fileName="SNodeOperations.java" startLine="304" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelStereotype#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
+    <nodeInfo nodeId="9160302885342508446" fileName="SNodeOperations.java" startLine="313" startPosition="0" endLine="321" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelLongName#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4302290624632864373" fileName="SNodeOperations.java" startLine="322" startPosition="0" endLine="330" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUsedLanguages#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+    <nodeInfo nodeId="2089287822043606625" fileName="SNodeOperations.java" startLine="51" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getChildren#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/util/List;" />
+    <nodeInfo nodeId="2718315470531188877" fileName="SNodeOperations.java" startLine="185" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getChildRoles#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/util/Set;" />
+    <nodeInfo nodeId="2089287822043606603" fileName="SNodeOperations.java" startLine="40" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2089287822043606678" fileName="SNodeOperations.java" startLine="65" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findParent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/util/Condition;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1958256073812969427" fileName="SNodeOperations.java" startLine="106" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getChildRoles#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
+    <nodeInfo nodeId="1958256073812999117" fileName="SNodeOperations.java" startLine="117" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferences#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1958256073813024441" fileName="SNodeOperations.java" startLine="128" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getChildren#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="1958256073813316681" fileName="SNodeOperations.java" startLine="139" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceRoles#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Set;" />
+    <nodeInfo nodeId="3395068133255551311" fileName="SNodeOperations.java" startLine="158" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="insertChild#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
+    <nodeInfo nodeId="6792623998776975955" fileName="SNodeOperations.java" startLine="203" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getResolveInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="559469824002248847" fileName="SNodeOperations.java" startLine="278" startPosition="0" endLine="288" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nextInternal#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="559469824002248606" fileName="SNodeOperations.java" startLine="243" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DescendantsIterable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/util/Condition;Z)V" />
+    <scopeInfo nodeId="2089287822043606819" fileName="SNodeOperations.java" startLine="37" startPosition="28" endLine="37" endPosition="28" />
+    <scopeInfo nodeId="4951414497584670749" fileName="SNodeOperations.java" startLine="41" startPosition="27" endLine="42" endPosition="18" />
+    <scopeInfo nodeId="4951414497584670795" fileName="SNodeOperations.java" startLine="45" startPosition="32" endLine="46" endPosition="19" />
+    <scopeInfo nodeId="1831640603945403875" fileName="SNodeOperations.java" startLine="54" startPosition="68" endLine="55" endPosition="33" />
+    <scopeInfo nodeId="2089287822043606652" fileName="SNodeOperations.java" startLine="61" startPosition="105" endLine="62" endPosition="77" />
+    <scopeInfo nodeId="4951414497584670908" fileName="SNodeOperations.java" startLine="68" startPosition="34" endLine="69" endPosition="32" />
+    <scopeInfo nodeId="7036185364863700619" fileName="SNodeOperations.java" startLine="78" startPosition="72" endLine="79" endPosition="47" />
+    <scopeInfo nodeId="1831640603945223025" fileName="SNodeOperations.java" startLine="92" startPosition="133" endLine="93" endPosition="64" />
+    <scopeInfo nodeId="2089287822043606743" fileName="SNodeOperations.java" startLine="102" startPosition="50" endLine="103" endPosition="61" />
+    <scopeInfo nodeId="7036185364855562295" fileName="SNodeOperations.java" startLine="111" startPosition="64" endLine="112" endPosition="67" />
+    <scopeInfo nodeId="7036185364862526456" fileName="SNodeOperations.java" startLine="122" startPosition="69" endLine="123" endPosition="55" />
+    <scopeInfo nodeId="7036185364855583359" fileName="SNodeOperations.java" startLine="133" startPosition="64" endLine="134" endPosition="59" />
+    <scopeInfo nodeId="7036185364862533468" fileName="SNodeOperations.java" startLine="144" startPosition="69" endLine="145" endPosition="57" />
+    <scopeInfo nodeId="559469824002200131" fileName="SNodeOperations.java" startLine="162" startPosition="17" endLine="163" endPosition="67" />
+    <scopeInfo nodeId="559469824002200181" fileName="SNodeOperations.java" startLine="164" startPosition="12" endLine="165" endPosition="46" />
+    <scopeInfo nodeId="2089287822043606780" fileName="SNodeOperations.java" startLine="174" startPosition="48" endLine="175" endPosition="60" />
+    <scopeInfo nodeId="9117569544655367280" fileName="SNodeOperations.java" startLine="181" startPosition="49" endLine="182" endPosition="50" />
+    <scopeInfo nodeId="2718315470531188901" fileName="SNodeOperations.java" startLine="188" startPosition="81" endLine="189" endPosition="44" />
+    <scopeInfo nodeId="2718315470531188941" fileName="SNodeOperations.java" startLine="197" startPosition="43" endLine="198" endPosition="18" />
+    <scopeInfo nodeId="2718315470531181969" fileName="SNodeOperations.java" startLine="208" startPosition="30" endLine="209" endPosition="25" />
+    <scopeInfo nodeId="8410922863731336863" fileName="SNodeOperations.java" startLine="215" startPosition="72" endLine="216" endPosition="51" />
+    <scopeInfo nodeId="3702719675910208411" fileName="SNodeOperations.java" startLine="220" startPosition="50" endLine="221" endPosition="125" />
+    <scopeInfo nodeId="1233806025863265296" fileName="SNodeOperations.java" startLine="225" startPosition="72" endLine="226" endPosition="53" />
+    <scopeInfo nodeId="4910195192867552999" fileName="SNodeOperations.java" startLine="232" startPosition="21" endLine="233" endPosition="18" />
+    <scopeInfo nodeId="9153498572536597819" fileName="SNodeOperations.java" startLine="247" startPosition="51" endLine="248" endPosition="29" />
+    <scopeInfo nodeId="5125917333820892640" fileName="SNodeOperations.java" startLine="251" startPosition="28" endLine="252" endPosition="33" />
+    <scopeInfo nodeId="9153498572536597777" fileName="SNodeOperations.java" startLine="254" startPosition="119" endLine="255" endPosition="33" />
+    <scopeInfo nodeId="559469824002248619" fileName="SNodeOperations.java" startLine="260" startPosition="30" endLine="261" endPosition="29" />
+    <scopeInfo nodeId="559469824002249034" fileName="SNodeOperations.java" startLine="267" startPosition="10" endLine="268" endPosition="33" />
+    <scopeInfo nodeId="559469824002248629" fileName="SNodeOperations.java" startLine="274" startPosition="26" endLine="275" endPosition="48" />
+    <scopeInfo nodeId="5125917333820892854" fileName="SNodeOperations.java" startLine="280" startPosition="25" endLine="281" endPosition="20" />
+    <scopeInfo nodeId="5125917333820892783" fileName="SNodeOperations.java" startLine="283" startPosition="46" endLine="284" endPosition="27" />
+    <scopeInfo nodeId="559469824002249104" fileName="SNodeOperations.java" startLine="290" startPosition="39" endLine="291" endPosition="18" />
+    <scopeInfo nodeId="9196220778517154444" fileName="SNodeOperations.java" startLine="299" startPosition="15" endLine="300" endPosition="54" />
+    <scopeInfo nodeId="4302290624633084259" fileName="SNodeOperations.java" startLine="325" startPosition="51" endLine="326" endPosition="71" />
+    <scopeInfo nodeId="8650600364352893171" fileName="SNodeOperations.java" startLine="331" startPosition="78" endLine="332" endPosition="70" />
+    <scopeInfo nodeId="2089287822043606816" fileName="SNodeOperations.java" startLine="37" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="2668733596672433054" fileName="SNodeOperations.java" startLine="153" startPosition="41" endLine="155" endPosition="54">
       <varInfo nodeId="2668733596672476758" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="9196220778517154443" fileName="SNodeOperations.java" startLine="293" startPosition="9" endLine="295" endPosition="33" />
-    <scopeInfo nodeId="1831640603945403867" fileName="SNodeOperations.java" startLine="50" startPosition="44" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="2089287822043606648" fileName="SNodeOperations.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="9196220778517154443" fileName="SNodeOperations.java" startLine="296" startPosition="9" endLine="298" endPosition="33" />
+    <scopeInfo nodeId="1831640603945403867" fileName="SNodeOperations.java" startLine="53" startPosition="44" endLine="56" endPosition="7" />
+    <scopeInfo nodeId="2089287822043606648" fileName="SNodeOperations.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="2089287822043606670" varName="cond" />
       <varInfo nodeId="2089287822043606673" varName="includeFirst" />
       <varInfo nodeId="2089287822043606668" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7036185364863700613" fileName="SNodeOperations.java" startLine="74" startPosition="63" endLine="77" endPosition="5">
+    <scopeInfo nodeId="7036185364863700613" fileName="SNodeOperations.java" startLine="77" startPosition="63" endLine="80" endPosition="5">
       <varInfo nodeId="7036185364863700615" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606721" fileName="SNodeOperations.java" startLine="81" startPosition="84" endLine="84" endPosition="15">
+    <scopeInfo nodeId="2089287822043606721" fileName="SNodeOperations.java" startLine="84" startPosition="84" endLine="87" endPosition="15">
       <varInfo nodeId="1831640603945222948" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="7036185364855562280" fileName="SNodeOperations.java" startLine="107" startPosition="65" endLine="110" endPosition="5">
+    <scopeInfo nodeId="7036185364855562280" fileName="SNodeOperations.java" startLine="110" startPosition="65" endLine="113" endPosition="5">
       <varInfo nodeId="7036185364855562285" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="7036185364862526450" fileName="SNodeOperations.java" startLine="118" startPosition="56" endLine="121" endPosition="5">
+    <scopeInfo nodeId="7036185364862526450" fileName="SNodeOperations.java" startLine="121" startPosition="56" endLine="124" endPosition="5">
       <varInfo nodeId="7036185364862526452" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="7036185364855583354" fileName="SNodeOperations.java" startLine="129" startPosition="68" endLine="132" endPosition="5">
+    <scopeInfo nodeId="7036185364855583354" fileName="SNodeOperations.java" startLine="132" startPosition="68" endLine="135" endPosition="5">
       <varInfo nodeId="7036185364855583358" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="7036185364862533463" fileName="SNodeOperations.java" startLine="140" startPosition="65" endLine="143" endPosition="5">
+    <scopeInfo nodeId="7036185364862533463" fileName="SNodeOperations.java" startLine="143" startPosition="65" endLine="146" endPosition="5">
       <varInfo nodeId="7036185364862533467" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="2718315470531188891" fileName="SNodeOperations.java" startLine="184" startPosition="41" endLine="187" endPosition="7" />
-    <scopeInfo nodeId="8410922863731336857" fileName="SNodeOperations.java" startLine="211" startPosition="65" endLine="214" endPosition="5">
+    <scopeInfo nodeId="2718315470531188891" fileName="SNodeOperations.java" startLine="187" startPosition="41" endLine="190" endPosition="7" />
+    <scopeInfo nodeId="8410922863731336857" fileName="SNodeOperations.java" startLine="214" startPosition="65" endLine="217" endPosition="5">
       <varInfo nodeId="8410922863731336859" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="8441062577042923661" fileName="SNodeOperations.java" startLine="211" startPosition="65" endLine="214" endPosition="5" />
-    <scopeInfo nodeId="3702719675910208408" fileName="SNodeOperations.java" startLine="217" startPosition="0" endLine="220" endPosition="0">
+    <scopeInfo nodeId="8441062577042923661" fileName="SNodeOperations.java" startLine="214" startPosition="65" endLine="217" endPosition="5" />
+    <scopeInfo nodeId="3702719675910208408" fileName="SNodeOperations.java" startLine="220" startPosition="0" endLine="223" endPosition="0">
       <varInfo nodeId="3702719675910238105" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1233806025863265290" fileName="SNodeOperations.java" startLine="221" startPosition="66" endLine="224" endPosition="5">
+    <scopeInfo nodeId="1233806025863265290" fileName="SNodeOperations.java" startLine="224" startPosition="66" endLine="227" endPosition="5">
       <varInfo nodeId="1233806025863265292" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="8441062577042956621" fileName="SNodeOperations.java" startLine="221" startPosition="66" endLine="224" endPosition="5" />
-    <scopeInfo nodeId="9153498572536597818" fileName="SNodeOperations.java" startLine="243" startPosition="28" endLine="246" endPosition="9">
+    <scopeInfo nodeId="8441062577042956621" fileName="SNodeOperations.java" startLine="224" startPosition="66" endLine="227" endPosition="5" />
+    <scopeInfo nodeId="9153498572536597818" fileName="SNodeOperations.java" startLine="246" startPosition="28" endLine="249" endPosition="9">
       <varInfo nodeId="9153498572536597825" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="9153498572536597833" fileName="SNodeOperations.java" startLine="243" startPosition="28" endLine="246" endPosition="9" />
-    <scopeInfo nodeId="5125917333820892782" fileName="SNodeOperations.java" startLine="279" startPosition="7" endLine="282" endPosition="7">
+    <scopeInfo nodeId="9153498572536597833" fileName="SNodeOperations.java" startLine="246" startPosition="28" endLine="249" endPosition="9" />
+    <scopeInfo nodeId="5125917333820892782" fileName="SNodeOperations.java" startLine="282" startPosition="7" endLine="285" endPosition="7">
       <varInfo nodeId="5125917333820892785" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="8650600364352893169" fileName="SNodeOperations.java" startLine="319" startPosition="0" endLine="322" endPosition="0">
+    <scopeInfo nodeId="4302290624633084258" fileName="SNodeOperations.java" startLine="325" startPosition="0" endLine="328" endPosition="0">
+      <varInfo nodeId="4302290624633084258" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="8650600364352893169" fileName="SNodeOperations.java" startLine="331" startPosition="0" endLine="334" endPosition="0">
       <varInfo nodeId="8650600364352893197" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4951414497584670902" fileName="SNodeOperations.java" startLine="64" startPosition="28" endLine="68" endPosition="44" />
-    <scopeInfo nodeId="7036185364855542155" fileName="SNodeOperations.java" startLine="88" startPosition="67" endLine="92" endPosition="49" />
-    <scopeInfo nodeId="559469824002248616" fileName="SNodeOperations.java" startLine="256" startPosition="0" endLine="260" endPosition="0" />
-    <scopeInfo nodeId="559469824002248626" fileName="SNodeOperations.java" startLine="270" startPosition="0" endLine="274" endPosition="0" />
-    <scopeInfo nodeId="559469824002249101" fileName="SNodeOperations.java" startLine="286" startPosition="0" endLine="290" endPosition="0" />
-    <scopeInfo nodeId="1831640603945403866" fileName="SNodeOperations.java" startLine="49" startPosition="45" endLine="54" endPosition="5">
+    <scopeInfo nodeId="4951414497584670902" fileName="SNodeOperations.java" startLine="67" startPosition="28" endLine="71" endPosition="44" />
+    <scopeInfo nodeId="7036185364855542155" fileName="SNodeOperations.java" startLine="91" startPosition="67" endLine="95" endPosition="49" />
+    <scopeInfo nodeId="559469824002248616" fileName="SNodeOperations.java" startLine="259" startPosition="0" endLine="263" endPosition="0" />
+    <scopeInfo nodeId="559469824002248626" fileName="SNodeOperations.java" startLine="273" startPosition="0" endLine="277" endPosition="0" />
+    <scopeInfo nodeId="559469824002249101" fileName="SNodeOperations.java" startLine="289" startPosition="0" endLine="293" endPosition="0" />
+    <scopeInfo nodeId="1831640603945403866" fileName="SNodeOperations.java" startLine="52" startPosition="45" endLine="57" endPosition="5">
       <varInfo nodeId="1831640603945403869" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606705" fileName="SNodeOperations.java" startLine="73" startPosition="63" endLine="78" endPosition="18">
+    <scopeInfo nodeId="2089287822043606705" fileName="SNodeOperations.java" startLine="76" startPosition="63" endLine="81" endPosition="18">
       <varInfo nodeId="8237392235999086875" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606718" fileName="SNodeOperations.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="2089287822043606718" fileName="SNodeOperations.java" startLine="84" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="2089287822043606732" varName="condition" />
       <varInfo nodeId="2089287822043606730" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1958256073812969430" fileName="SNodeOperations.java" startLine="106" startPosition="52" endLine="111" endPosition="15">
+    <scopeInfo nodeId="1958256073812969430" fileName="SNodeOperations.java" startLine="109" startPosition="52" endLine="114" endPosition="15">
       <varInfo nodeId="1958256073812991548" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="1958256073812999121" fileName="SNodeOperations.java" startLine="117" startPosition="57" endLine="122" endPosition="15">
+    <scopeInfo nodeId="1958256073812999121" fileName="SNodeOperations.java" startLine="120" startPosition="57" endLine="125" endPosition="15">
       <varInfo nodeId="1958256073812999123" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="1958256073813024445" fileName="SNodeOperations.java" startLine="128" startPosition="50" endLine="133" endPosition="15">
+    <scopeInfo nodeId="1958256073813024445" fileName="SNodeOperations.java" startLine="131" startPosition="50" endLine="136" endPosition="15">
       <varInfo nodeId="1958256073813024447" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="1958256073813316685" fileName="SNodeOperations.java" startLine="139" startPosition="56" endLine="144" endPosition="15">
+    <scopeInfo nodeId="1958256073813316685" fileName="SNodeOperations.java" startLine="142" startPosition="56" endLine="147" endPosition="15">
       <varInfo nodeId="1958256073813316687" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="3395068133255551315" fileName="SNodeOperations.java" startLine="158" startPosition="104" endLine="163" endPosition="5" />
-    <scopeInfo nodeId="2718315470531188889" fileName="SNodeOperations.java" startLine="183" startPosition="53" endLine="188" endPosition="5">
+    <scopeInfo nodeId="3395068133255551315" fileName="SNodeOperations.java" startLine="161" startPosition="104" endLine="166" endPosition="5" />
+    <scopeInfo nodeId="2718315470531188889" fileName="SNodeOperations.java" startLine="186" startPosition="53" endLine="191" endPosition="5">
       <varInfo nodeId="2718315470531188907" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="2718315470531188922" fileName="SNodeOperations.java" startLine="192" startPosition="57" endLine="197" endPosition="38">
+    <scopeInfo nodeId="2718315470531188922" fileName="SNodeOperations.java" startLine="195" startPosition="57" endLine="200" endPosition="38">
       <varInfo nodeId="2718315470531188923" varName="children" />
     </scopeInfo>
-    <scopeInfo nodeId="6792623998776975958" fileName="SNodeOperations.java" startLine="203" startPosition="48" endLine="208" endPosition="85">
+    <scopeInfo nodeId="6792623998776975958" fileName="SNodeOperations.java" startLine="206" startPosition="48" endLine="211" endPosition="85">
       <varInfo nodeId="2718315470531181955" varName="resolveInfo" />
     </scopeInfo>
-    <scopeInfo nodeId="8441062577042923658" fileName="SNodeOperations.java" startLine="211" startPosition="0" endLine="216" endPosition="0">
+    <scopeInfo nodeId="8441062577042923658" fileName="SNodeOperations.java" startLine="214" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="8441062577042923662" varName="from" />
       <varInfo nodeId="8441062577042923665" varName="to" />
     </scopeInfo>
-    <scopeInfo nodeId="8441062577042956614" fileName="SNodeOperations.java" startLine="221" startPosition="0" endLine="226" endPosition="0">
+    <scopeInfo nodeId="8441062577042956614" fileName="SNodeOperations.java" startLine="224" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="8441062577042956615" varName="from" />
       <varInfo nodeId="8441062577042956617" varName="to" />
     </scopeInfo>
-    <scopeInfo nodeId="4910195192867522306" fileName="SNodeOperations.java" startLine="227" startPosition="80" endLine="232" endPosition="65">
+    <scopeInfo nodeId="4910195192867522306" fileName="SNodeOperations.java" startLine="230" startPosition="80" endLine="235" endPosition="65">
       <varInfo nodeId="4910195192867549597" varName="mr" />
     </scopeInfo>
-    <scopeInfo nodeId="559469824002248625" fileName="SNodeOperations.java" startLine="262" startPosition="25" endLine="267" endPosition="30">
+    <scopeInfo nodeId="559469824002248625" fileName="SNodeOperations.java" startLine="265" startPosition="25" endLine="270" endPosition="30">
       <varInfo nodeId="5125917333820915457" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1831640603945292314" fileName="SNodeOperations.java" startLine="87" startPosition="100" endLine="93" endPosition="5" />
-    <scopeInfo nodeId="7036185364855542149" fileName="SNodeOperations.java" startLine="87" startPosition="100" endLine="93" endPosition="5">
+    <scopeInfo nodeId="1831640603945292314" fileName="SNodeOperations.java" startLine="90" startPosition="100" endLine="96" endPosition="5" />
+    <scopeInfo nodeId="7036185364855542149" fileName="SNodeOperations.java" startLine="90" startPosition="100" endLine="96" endPosition="5">
       <varInfo nodeId="7036185364855542151" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606740" fileName="SNodeOperations.java" startLine="96" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="2089287822043606740" fileName="SNodeOperations.java" startLine="99" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="2089287822043606753" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="9117569544655367277" fileName="SNodeOperations.java" startLine="175" startPosition="0" endLine="181" endPosition="0">
+    <scopeInfo nodeId="9117569544655367277" fileName="SNodeOperations.java" startLine="178" startPosition="0" endLine="184" endPosition="0">
       <varInfo nodeId="9117569544655367908" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9196220778517122163" fileName="SNodeOperations.java" startLine="292" startPosition="61" endLine="298" endPosition="5" />
-    <scopeInfo nodeId="9160302885342288828" fileName="SNodeOperations.java" startLine="301" startPosition="89" endLine="307" endPosition="6">
+    <scopeInfo nodeId="9196220778517122163" fileName="SNodeOperations.java" startLine="295" startPosition="61" endLine="301" endPosition="5" />
+    <scopeInfo nodeId="9160302885342288828" fileName="SNodeOperations.java" startLine="304" startPosition="89" endLine="310" endPosition="6">
       <varInfo nodeId="7738736717686601391" varName="index" />
       <varInfo nodeId="9160302885342297969" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="9160302885342508448" fileName="SNodeOperations.java" startLine="310" startPosition="87" endLine="316" endPosition="6">
+    <scopeInfo nodeId="9160302885342508448" fileName="SNodeOperations.java" startLine="313" startPosition="87" endLine="319" endPosition="6">
       <varInfo nodeId="7738736717686571749" varName="index" />
       <varInfo nodeId="9160302885342508450" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606633" fileName="SNodeOperations.java" startLine="48" startPosition="80" endLine="55" endPosition="15">
+    <scopeInfo nodeId="4302290624632864375" fileName="SNodeOperations.java" startLine="322" startPosition="102" endLine="328" endPosition="24">
+      <varInfo nodeId="4302290624633049538" varName="languages" />
+    </scopeInfo>
+    <scopeInfo nodeId="2089287822043606633" fileName="SNodeOperations.java" startLine="51" startPosition="80" endLine="58" endPosition="15">
       <varInfo nodeId="2137520868335978053" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606700" fileName="SNodeOperations.java" startLine="73" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="2089287822043606700" fileName="SNodeOperations.java" startLine="76" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="2089287822043606713" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2668733596672433050" fileName="SNodeOperations.java" startLine="147" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="2668733596672433050" fileName="SNodeOperations.java" startLine="150" startPosition="0" endLine="157" endPosition="0">
       <varInfo nodeId="2668733596672433081" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="2718315470531188882" fileName="SNodeOperations.java" startLine="182" startPosition="83" endLine="189" endPosition="18">
+    <scopeInfo nodeId="2718315470531188882" fileName="SNodeOperations.java" startLine="185" startPosition="83" endLine="192" endPosition="18">
       <varInfo nodeId="2718315470531188883" varName="augend" />
     </scopeInfo>
-    <scopeInfo nodeId="2718315470531188917" fileName="SNodeOperations.java" startLine="192" startPosition="0" endLine="199" endPosition="0">
+    <scopeInfo nodeId="2718315470531188917" fileName="SNodeOperations.java" startLine="195" startPosition="0" endLine="202" endPosition="0">
       <varInfo nodeId="2718315470531188918" varName="node" />
       <varInfo nodeId="2718315470531188920" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="4910195192867523186" fileName="SNodeOperations.java" startLine="227" startPosition="0" endLine="234" endPosition="0">
+    <scopeInfo nodeId="4910195192867523186" fileName="SNodeOperations.java" startLine="230" startPosition="0" endLine="237" endPosition="0">
       <varInfo nodeId="4910195192867541322" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606606" fileName="SNodeOperations.java" startLine="37" startPosition="64" endLine="45" endPosition="47">
+    <scopeInfo nodeId="2089287822043606606" fileName="SNodeOperations.java" startLine="40" startPosition="64" endLine="48" endPosition="47">
       <varInfo nodeId="4951414497584670786" varName="parentOfChild" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606681" fileName="SNodeOperations.java" startLine="62" startPosition="74" endLine="70" endPosition="16">
+    <scopeInfo nodeId="2089287822043606681" fileName="SNodeOperations.java" startLine="65" startPosition="74" endLine="73" endPosition="16">
       <varInfo nodeId="4951414497584670895" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="1831640603945292311" fileName="SNodeOperations.java" startLine="87" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="1831640603945292311" fileName="SNodeOperations.java" startLine="90" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="1831640603945292319" varName="condition" />
       <varInfo nodeId="1831640603945292315" varName="list" />
       <varInfo nodeId="1831640603945292353" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606777" fileName="SNodeOperations.java" startLine="166" startPosition="0" endLine="174" endPosition="0">
+    <scopeInfo nodeId="2089287822043606777" fileName="SNodeOperations.java" startLine="169" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="2089287822043606788" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="559469824002248622" fileName="SNodeOperations.java" startLine="261" startPosition="0" endLine="269" endPosition="0" />
-    <scopeInfo nodeId="559469824002248850" fileName="SNodeOperations.java" startLine="275" startPosition="34" endLine="283" endPosition="18">
+    <scopeInfo nodeId="559469824002248622" fileName="SNodeOperations.java" startLine="264" startPosition="0" endLine="272" endPosition="0" />
+    <scopeInfo nodeId="559469824002248850" fileName="SNodeOperations.java" startLine="278" startPosition="34" endLine="286" endPosition="18">
       <varInfo nodeId="5125917333820892792" varName="next" />
     </scopeInfo>
-    <scopeInfo nodeId="9196220778517123067" fileName="SNodeOperations.java" startLine="292" startPosition="0" endLine="300" endPosition="0">
+    <scopeInfo nodeId="9196220778517123067" fileName="SNodeOperations.java" startLine="295" startPosition="0" endLine="303" endPosition="0">
       <varInfo nodeId="9196220778517153466" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="9160302885342289749" fileName="SNodeOperations.java" startLine="301" startPosition="0" endLine="309" endPosition="0">
+    <scopeInfo nodeId="9160302885342289749" fileName="SNodeOperations.java" startLine="304" startPosition="0" endLine="312" endPosition="0">
       <varInfo nodeId="9160302885342295078" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="9160302885342508446" fileName="SNodeOperations.java" startLine="310" startPosition="0" endLine="318" endPosition="0">
+    <scopeInfo nodeId="9160302885342508446" fileName="SNodeOperations.java" startLine="313" startPosition="0" endLine="321" endPosition="0">
       <varInfo nodeId="9160302885342508466" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606625" fileName="SNodeOperations.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="4302290624632864373" fileName="SNodeOperations.java" startLine="322" startPosition="0" endLine="330" endPosition="0">
+      <varInfo nodeId="4302290624632864401" varName="model" />
+    </scopeInfo>
+    <scopeInfo nodeId="2089287822043606625" fileName="SNodeOperations.java" startLine="51" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="2089287822043606628" varName="includeAttributes" />
       <varInfo nodeId="2089287822043606626" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2718315470531188877" fileName="SNodeOperations.java" startLine="182" startPosition="0" endLine="191" endPosition="0">
+    <scopeInfo nodeId="2718315470531188877" fileName="SNodeOperations.java" startLine="185" startPosition="0" endLine="194" endPosition="0">
       <varInfo nodeId="2718315470531188880" varName="includeAttributeRoles" />
       <varInfo nodeId="2718315470531188878" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606603" fileName="SNodeOperations.java" startLine="37" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="2089287822043606603" fileName="SNodeOperations.java" startLine="40" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="2089287822043606618" varName="ancestor" />
       <varInfo nodeId="2089287822043606620" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2089287822043606678" fileName="SNodeOperations.java" startLine="62" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="2089287822043606678" fileName="SNodeOperations.java" startLine="65" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="2089287822043606692" varName="condition" />
       <varInfo nodeId="2089287822043606690" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1958256073812969427" fileName="SNodeOperations.java" startLine="103" startPosition="0" endLine="113" endPosition="0">
+    <scopeInfo nodeId="1958256073812969427" fileName="SNodeOperations.java" startLine="106" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="1958256073812969435" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1958256073812999117" fileName="SNodeOperations.java" startLine="114" startPosition="0" endLine="124" endPosition="0">
+    <scopeInfo nodeId="1958256073812999117" fileName="SNodeOperations.java" startLine="117" startPosition="0" endLine="127" endPosition="0">
       <varInfo nodeId="1958256073812999152" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1958256073813024441" fileName="SNodeOperations.java" startLine="125" startPosition="0" endLine="135" endPosition="0">
+    <scopeInfo nodeId="1958256073813024441" fileName="SNodeOperations.java" startLine="128" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="1958256073813024479" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="1958256073813316681" fileName="SNodeOperations.java" startLine="136" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="1958256073813316681" fileName="SNodeOperations.java" startLine="139" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="1958256073813316716" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="3395068133255551311" fileName="SNodeOperations.java" startLine="155" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="3395068133255551311" fileName="SNodeOperations.java" startLine="158" startPosition="0" endLine="168" endPosition="0">
       <varInfo nodeId="3395068133255551352" varName="anchor" />
       <varInfo nodeId="3395068133255551355" varName="before" />
       <varInfo nodeId="3395068133255551349" varName="child" />
       <varInfo nodeId="3395068133255551359" varName="parent" />
       <varInfo nodeId="3395068133255551346" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="6792623998776975955" fileName="SNodeOperations.java" startLine="200" startPosition="0" endLine="210" endPosition="0">
+    <scopeInfo nodeId="6792623998776975955" fileName="SNodeOperations.java" startLine="203" startPosition="0" endLine="213" endPosition="0">
       <varInfo nodeId="6792623998776996049" varName="n" />
     </scopeInfo>
-    <scopeInfo nodeId="559469824002248847" fileName="SNodeOperations.java" startLine="275" startPosition="0" endLine="285" endPosition="0" />
-    <scopeInfo nodeId="559469824002248609" fileName="SNodeOperations.java" startLine="240" startPosition="113" endLine="253" endPosition="7" />
-    <scopeInfo nodeId="559469824002248606" fileName="SNodeOperations.java" startLine="240" startPosition="0" endLine="255" endPosition="0">
+    <scopeInfo nodeId="559469824002248847" fileName="SNodeOperations.java" startLine="278" startPosition="0" endLine="288" endPosition="0" />
+    <scopeInfo nodeId="559469824002248609" fileName="SNodeOperations.java" startLine="243" startPosition="113" endLine="256" endPosition="7" />
+    <scopeInfo nodeId="559469824002248606" fileName="SNodeOperations.java" startLine="243" startPosition="0" endLine="258" endPosition="0">
       <varInfo nodeId="559469824002248635" varName="condition" />
       <varInfo nodeId="5125917333820891583" varName="includeFirst" />
       <varInfo nodeId="559469824002248630" varName="original" />
     </scopeInfo>
-    <unitInfo nodeId="559469824002248604" fileName="SNodeOperations.java" startLine="235" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.util.SNodeOperations$DescendantsIterable" />
-    <unitInfo nodeId="2089287822043606602" fileName="SNodeOperations.java" startLine="33" startPosition="0" endLine="325" endPosition="0" unitName="jetbrains.mps.util.SNodeOperations" />
+    <unitInfo nodeId="4302290624633084258" fileName="SNodeOperations.java" startLine="324" startPosition="55" endLine="328" endPosition="5" unitName="jetbrains.mps.util.SNodeOperations$1" />
+    <unitInfo nodeId="559469824002248604" fileName="SNodeOperations.java" startLine="238" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.util.SNodeOperations$DescendantsIterable" />
+    <unitInfo nodeId="2089287822043606602" fileName="SNodeOperations.java" startLine="36" startPosition="0" endLine="335" endPosition="0" unitName="jetbrains.mps.util.SNodeOperations" />
   </root>
   <root nodeRef="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)/4972886494893373483">
     <nodeInfo nodeId="4972886494893402206" fileName="LongestCommonSubsequenceFinder.java" startLine="106" startPosition="29" endLine="106" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
