@@ -359,14 +359,14 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1174644028587(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
-    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getReference().getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1174644237197(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode patternExpr = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
-    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getReference().getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1175607860006(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -484,7 +484,7 @@ public class QueriesGenerated {
     if (id != null) {
       smodelId = SPropertyOperations.getString(id, "modelId");
     } else {
-      smodelId = SNodeOperations.getModel(quickFix).getLongName();
+      smodelId = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(quickFix));
     }
     return smodelId + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
@@ -533,7 +533,7 @@ public class QueriesGenerated {
     if (id != null) {
       smodelId = SPropertyOperations.getString(id, "modelId");
     } else {
-      smodelId = SNodeOperations.getModel(quickFix).getLongName();
+      smodelId = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(quickFix));
     }
     return smodelId + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
@@ -578,7 +578,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4519034502526420619(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "pattern", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
-    return concept.getModel().getLongName() + "." + SPropertyOperations.getString(concept, "name");
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(concept.getModel()) + "." + SPropertyOperations.getString(concept, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_4519034502526420644(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -598,7 +598,7 @@ public class QueriesGenerated {
     if (sModel == null) {
       return null;
     }
-    return sModel.getLongName() + "." + SPropertyOperations.getString(concept, "name");
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(sModel) + "." + SPropertyOperations.getString(concept, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_587287717303152865(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -637,27 +637,27 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1188831219936(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
-    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getReference().getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1188831219976(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode patternExpr = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
-    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getReference().getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1188831339623(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "anotherNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
-    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getReference().getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1188831339663(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "anotherNode", true);
     SNode patternExpr = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
-    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getReference().getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1188910585269(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -688,27 +688,27 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1201609469872(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
-    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getReference().getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1201609469912(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode patternExpr = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
-    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getReference().getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1201609469964(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
-    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getReference().getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1201609470004(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true);
     SNode patternExpr = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
-    return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
+    return SNodeOperations.getModel(conceptDecl).getReference().getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1201609470053(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -746,7 +746,7 @@ public class QueriesGenerated {
     if (id != null) {
       smodelId = SPropertyOperations.getString(id, "modelId");
     } else {
-      smodelId = SNodeOperations.getModel(quickFix).getLongName();
+      smodelId = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(quickFix));
     }
     return smodelId + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
@@ -791,7 +791,7 @@ public class QueriesGenerated {
     if (id != null) {
       smodelId = SPropertyOperations.getString(id, "modelId");
     } else {
-      smodelId = SNodeOperations.getModel(quickFix).getLongName();
+      smodelId = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(quickFix));
     }
     return smodelId + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
@@ -902,7 +902,7 @@ public class QueriesGenerated {
     if (id != null) {
       smodelId = SPropertyOperations.getString(id, "modelId");
     } else {
-      smodelId = SNodeOperations.getModel(quickFix).getLongName();
+      smodelId = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(quickFix));
     }
     return smodelId + "." + SPropertyOperations.getString(quickFix, "name") + "_QuickFix";
   }
@@ -987,7 +987,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_3311531675558730392(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode conceptDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.MatchStatementItem"), "condition", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
-    return SNodeOperations.getModel(conceptDeclaration).getLongName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(conceptDeclaration)) + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
   public static Object referenceMacro_GetReferent_1175002064909(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -2546,7 +2546,7 @@ parametersLoop:
     for (SNode node : nodesToProcess) {
       SModel originalModel = _context.getOriginalInputModel();
       String modelId = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix") ?
-        originalModel.getLongName() :
+        jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel) :
         originalModel.toString()
       );
       String nodeId = _context.getOriginalCopiedInputNode(node).getNodeId().toString();

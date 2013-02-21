@@ -208,7 +208,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   }
 
   private DiffEditor addEditor(int index, SModel model) {
-    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myProject, model), model.getNodeById(myRootId), myTitles[index], index == 0);
+    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myProject, model), model.getNode(myRootId), myTitles[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :
@@ -263,7 +263,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       myTopPanel
     )).add(separator, gbc);
     ListSequence.fromList(myEditorSeparators).addElement(separator);
-    if (!(myChangeSet.getNewModel().isNotEditable())) {
+    if (!(myChangeSet.getNewModel().isReadOnly())) {
       DiffButtonsPainter.addTo(this, myOldEditor, layout, inspector);
       DiffButtonsPainter.addTo(this, myNewEditor, layout, inspector);
     }
@@ -327,16 +327,16 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       public RootDifferenceDialog invoke() {
         ModelChangeSet changeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
 
-        SNode node = newModel.getNodeById(rootId);
+        SNode node = newModel.getNode(rootId);
         if (node == null) {
-          node = oldModel.getNodeById(rootId);
+          node = oldModel.getNode(rootId);
         }
         String rootName = (node == null ?
           "root" :
           node.getPresentation()
         );
 
-        boolean isEditable = newModel.getModelDescriptor() instanceof EditableSModel && check_vu2gar_a0a0g0a7a23(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
+        boolean isEditable = newModel.getModelDescriptor() instanceof EditableSModel && check_vu2gar_a0a0g0a7a23(SModelRepository.getInstance().getModelDescriptor(newModel.getReference())) == newModel;
 
         return dialog.value = new RootDifferenceDialog(project, changeSet, rootId, rootName, contentTitles, WindowManager.getInstance().getFrame(project), isEditable, null, scrollTo);
       }

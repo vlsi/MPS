@@ -56,7 +56,7 @@ public class DiffEditorsGroup {
           EditorCell thisCell = thisEditor.findNodeCell(visibleNode);
           if (thisCell != null) {
             int newRelativePos = viewY - thisCell.getY();
-            EditorCell otherCell = otherEditor.findNodeCell(otherModel.getNodeById(id));
+            EditorCell otherCell = otherEditor.findNodeCell(otherModel.getNode(id));
             Point position = thisEditor.getViewport().getViewPosition();
             if (otherCell != null) {
               Rectangle viewRect = otherEditor.getViewport().getViewRect();

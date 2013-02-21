@@ -2438,8 +2438,8 @@
     <nodeInfo nodeId="2920791803321297765" fileName="QueriesGenerated.java" startLine="2198" startPosition="135" endLine="2199" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2920791803321306882" fileName="QueriesGenerated.java" startLine="2199" startPosition="124" endLine="2200" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2920791803321357118" fileName="QueriesGenerated.java" startLine="2200" startPosition="50" endLine="2201" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2920791803321297773" fileName="QueriesGenerated.java" startLine="2201" startPosition="205" endLine="2202" endPosition="349" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2920791803321357136" fileName="QueriesGenerated.java" startLine="2202" startPosition="349" endLine="2203" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2920791803321297773" fileName="QueriesGenerated.java" startLine="2201" startPosition="205" endLine="2202" endPosition="337" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2920791803321357136" fileName="QueriesGenerated.java" startLine="2202" startPosition="337" endLine="2203" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2920791803321357146" fileName="QueriesGenerated.java" startLine="2203" startPosition="67" endLine="2204" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <scopeInfo nodeId="2948164764175066099" fileName="QueriesGenerated.java" startLine="133" startPosition="203" endLine="134" endPosition="366" />
     <scopeInfo nodeId="2948164764175065185" fileName="QueriesGenerated.java" startLine="2137" startPosition="105" endLine="2140" endPosition="167">

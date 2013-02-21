@@ -72,7 +72,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   private SModelListener myModelListener = new SModelAdapter() {
     @Override
     public void beforeModelDisposed(SModel model) {
-      clearForModel(model.getSModelReference());
+      clearForModel(model.getReference());
     }
   };
   private Set<SModelDescriptor> myListenedModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());

@@ -13,6 +13,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.util.IterableUtil;
 import java.util.List;
 import java.util.LinkedList;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -43,16 +44,16 @@ public class LanguageConceptsUsagesFinder implements IFinder {
     if (sModel == null) {
       return searchResults;
     }
-    if (sModel.rootsCount() == 0) {
+    if (IterableUtil.asCollection(sModel.getRootNodes()).size() == 0) {
       return searchResults;
     }
     List<SNode> roots = new LinkedList<SNode>();
-    for (SNode root : sModel.roots()) {
+    for (SNode root : sModel.getRootNodes()) {
       roots.add(root);
     }
     searchResults.getSearchedNodes().addAll(roots);
 
-    monitor.start("", sModel.rootsCount() + 1);
+    monitor.start("", IterableUtil.asCollection(sModel.getRootNodes()).size() + 1);
     try {
       SearchResults<SModel> modelResults = FindUtils.getSearchResults(monitor.subTask(1), new SearchQuery(sModel, GlobalScopeMinusTransient.getInstance()), new ModelUsagesFinder());
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();

@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.util.SNodeOperations;
 
 public class PatternTest_Behavior {
   public static void init(SNode thisNode) {
@@ -22,7 +23,7 @@ public class PatternTest_Behavior {
   }
 
   public static String virtual_getClassName_1216136193905(SNode thisNode) {
-    return thisNode.getModel().getLongName() + "." + PatternTest_Behavior.call_getPatternTestName_394224946578869064(thisNode);
+    return SNodeOperations.getModelLongName(thisNode.getModel()) + "." + PatternTest_Behavior.call_getPatternTestName_394224946578869064(thisNode);
   }
 
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {

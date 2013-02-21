@@ -17,7 +17,7 @@ public class DefaultGeneratorParameter_Behavior {
       SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.INamedConcept"), "name") :
       "default"
     );
-    return SNodeOperations.getModel(thisNode).getSModelId() + "." + containerName + "." + SPropertyOperations.getString(thisNode, "name");
+    return SNodeOperations.getModel(thisNode).getModelId() + "." + containerName + "." + SPropertyOperations.getString(thisNode, "name");
   }
 
   @Deprecated

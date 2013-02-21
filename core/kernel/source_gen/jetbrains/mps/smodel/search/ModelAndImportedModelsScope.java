@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 public class ModelAndImportedModelsScope extends AbstractSearchScope {
   private static final Logger LOG = Logger.getLogger(ModelAndImportedModelsScope.class);
@@ -63,7 +64,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
             IsInstanceCondition isInstance = (IsInstanceCondition) condition;
             result.addAll(md.getFastNodeFinder().getNodes(isInstance.getConceptFqName(), true));
           } else {
-            for (SNode node : md.nodes()) {
+            for (SNode node : new NodesIterable(md)) {
               if (condition.met(node)) {
                 result.add(node);
               }

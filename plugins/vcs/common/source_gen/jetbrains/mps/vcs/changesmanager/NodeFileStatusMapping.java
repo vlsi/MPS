@@ -178,7 +178,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
 
     private void addAffectedRoot(@NotNull ModelChange change) {
       if (change.getRootId() != null) {
-        ListSequence.fromList(myAffectedRoots).addElement(new SNodePointer(change.getChangeSet().getNewModel().getSModelReference(), change.getRootId()));
+        ListSequence.fromList(myAffectedRoots).addElement(new SNodePointer(change.getChangeSet().getNewModel().getReference(), change.getRootId()));
       }
     }
 

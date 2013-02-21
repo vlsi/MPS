@@ -61,7 +61,7 @@ public final class VisibilityUtil {
   }
 
   public static String packageName(@NotNull SNode node) {
-    return SNodeOperations.getModel(node).getSModelFqName().getLongName();
+    return SNodeOperations.getModel(node).getReference().getSModelFqName().getLongName();
   }
 
   public static SNode topClassifier(@NotNull SNode node) {

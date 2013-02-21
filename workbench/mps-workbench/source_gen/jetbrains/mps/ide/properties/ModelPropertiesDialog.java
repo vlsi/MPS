@@ -24,6 +24,7 @@ import javax.swing.JCheckBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
 import javax.swing.SwingConstants;
@@ -120,12 +121,12 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
         int properties = 0;
         messageText.append("<html>");
         SModel model = myModel.getSModel();
-        for (SNode node : model.nodes()) {
+        for (SNode node : new NodesIterable(model)) {
           references += IterableUtil.asCollection(node.getReferences()).size();
           properties += SNodeOperations.getProperties(node).keySet().size();
         }
-        messageText.append("Roots : ").append(model.rootsCount()).append("<br>");
-        messageText.append("Nodes : ").append(model.registeredNodesCount()).append("<br>");
+        messageText.append("Roots : ").append(IterableUtil.asCollection(model.getRootNodes()).size()).append("<br>");
+        messageText.append("Nodes : ").append(SNodeOperations.nodesCount(model)).append("<br>");
         messageText.append("References : ").append(references).append("<br>");
         messageText.append("Properties : ").append(properties).append("<br>");
       }

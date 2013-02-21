@@ -63,7 +63,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3987319776542716753(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).getLongName() + ".StringUtils";
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(_context.getNode())) + ".StringUtils";
   }
 
   public static Object propertyMacro_GetPropertyValue_4592826945245316729(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -71,11 +71,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2696770507970538131(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).getLongName() + ".StringUtils";
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(_context.getNode())) + ".StringUtils";
   }
 
   public static Object propertyMacro_GetPropertyValue_2696770507970471606(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).getLongName() + ".StringUtils";
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(_context.getNode())) + ".StringUtils";
   }
 
   public static Object propertyMacro_GetPropertyValue_4592826945245316688(final IOperationContext operationContext, final PropertyMacroContext _context) {

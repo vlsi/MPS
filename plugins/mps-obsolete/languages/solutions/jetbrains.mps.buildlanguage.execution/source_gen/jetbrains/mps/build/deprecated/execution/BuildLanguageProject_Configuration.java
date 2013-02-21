@@ -17,6 +17,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SNodeId;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -106,7 +107,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
       public void run() {
         SNode node = BuildLanguageProject_Configuration.this.getNode().getNode();
         if (node != null) {
-          target.value = SNodeOperations.cast(SNodeOperations.getModel(node).getNodeById(BuildLanguageProject_Configuration.this.getTargetId()), "jetbrains.mps.buildlanguage.structure.TargetDeclaration");
+          target.value = SNodeOperations.cast(SNodeOperations.getModel(node).getNode(SNodeId.fromString(BuildLanguageProject_Configuration.this.getTargetId())), "jetbrains.mps.buildlanguage.structure.TargetDeclaration");
         } else {
           target.value = null;
         }

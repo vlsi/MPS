@@ -342,7 +342,7 @@ public class ConfReader {
       if (href.endsWith(".xml") || href.endsWith(".XML")) {
         href = href.substring(0, href.length() - 4);
       }
-      String pkg = SNodeOperations.getModel(node).getSModelReference().getLongName();
+      String pkg = SNodeOperations.getModel(node).getReference().getLongName();
       String name = href;
       int lastSlash = href.lastIndexOf("/");
       if (lastSlash > 0) {
@@ -427,7 +427,7 @@ public class ConfReader {
 
   private void addConfXmlDocumentReference(SNode link, SNode src, String fqName) {
     SModelReference trgsmref = this.confstubResolver.stubModelReference(namespace(fqName));
-    if (SNodeOperations.getModel(src).getSModelReference().equals(trgsmref)) {
+    if (SNodeOperations.getModel(src).getReference().equals(trgsmref)) {
       src.setReference(new StaticReference(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName), null).getRole(), new StaticReference(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName), null));
     } else {
       SNodeOperations.getModel(src).addModelImport(trgsmref, false);
@@ -437,7 +437,7 @@ public class ConfReader {
 
   private void addConfXmlNodeReference(SNode link, SNode src, String fqName) {
     SModelReference trgsmref = this.confstubResolver.stubModelReference(namespace(fqName));
-    if (SNodeOperations.getModel(src).getSModelReference().equals(trgsmref)) {
+    if (SNodeOperations.getModel(src).getReference().equals(trgsmref)) {
       String shortName = shortName(fqName);
       int dlr = shortName.indexOf("$");
       if (dlr >= 0) {

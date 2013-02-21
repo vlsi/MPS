@@ -32,10 +32,10 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.actionSystem.ActionManager;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.icons.IdeIcons;
 import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.icons.IconManager;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -208,7 +208,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   public class ModelTreeNode extends DiffModelTree.TreeNode {
     public ModelTreeNode() {
       setText("model");
-      setText(Sequence.fromIterable(getModels()).first().getLongName());
+      setText(SNodeOperations.getModelLongName(Sequence.fromIterable(getModels()).first()));
       setIcon(IdeIcons.MODEL_ICON);
     }
   }
@@ -235,8 +235,8 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       myPresentation = null;
       Icon icon = null;
       for (SModel model : Sequence.fromIterable(getModels())) {
-        SNode root = model.getNodeById(myRootId);
-        if (root != null && SNodeOperations.getParent(root) == null) {
+        SNode root = model.getNode(myRootId);
+        if (root != null && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(root) == null) {
           String presentation = root.getPresentation();
           if (myPresentation == null) {
             myPresentation = presentation;

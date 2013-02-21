@@ -98,7 +98,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       }
 
       if (targetModelReference == null) {
-        targetModelReference = myModel.getSModelReference();
+        targetModelReference = myModel.getReference();
       }
       if (targetModelReference.getSModelId() != null) {
         org.jetbrains.mps.openapi.model.SModel targetModel = this.myScope.getModelDescriptor(targetModelReference);
@@ -159,11 +159,11 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
         warning.append("reference can't be resolved: ");
         warning.append(nestedClassName);
         warning.append(" in ");
-        warning.append(myModel.getLongName());
+        warning.append(jetbrains.mps.util.SNodeOperations.getModelLongName(myModel));
         warning.append(" can reference nodes from models: ");
         ListSequence.fromList(classifiers).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            warning.append(SNodeOperations.getModel(it).getSModelReference()).append("; ");
+            warning.append(SNodeOperations.getModel(it).getReference()).append("; ");
           }
         });
 

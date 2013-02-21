@@ -43,10 +43,10 @@ public class ClassCreator_Behavior {
 
     SModel targetModel = ((StaticReference) cRef).getTargetSModel();
     SNodeId targetId = cRef.getTargetNodeId();
-    if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(targetModel.getStereotype()) && targetId != null) {
+    if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(jetbrains.mps.util.SNodeOperations.getModelStereotype(targetModel)) && targetId != null) {
       String constructorId = targetId.toString();
       String classId = constructorId.substring(0, constructorId.indexOf("."));
-      classConcept = SNodeOperations.cast(targetModel.getNodeById(classId), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      classConcept = SNodeOperations.cast(targetModel.getNode(jetbrains.mps.smodel.SNodeId.fromString(classId)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     }
 
 

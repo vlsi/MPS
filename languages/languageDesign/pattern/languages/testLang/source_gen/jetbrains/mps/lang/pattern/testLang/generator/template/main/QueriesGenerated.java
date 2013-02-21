@@ -25,7 +25,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_602731281382637740(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
+    return _context.getOriginalInputModel().getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_602731281382637757(final IOperationContext operationContext, final PropertyMacroContext _context) {

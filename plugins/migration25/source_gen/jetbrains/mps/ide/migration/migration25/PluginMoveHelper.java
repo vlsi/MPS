@@ -167,7 +167,7 @@ public class PluginMoveHelper {
       pluginModel.value = s.createModel(modelName, s.getModelRoots().iterator().next(), null);
     }
 
-    List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().roots());
+    List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().getRootNodes());
 
     Iterable<SNode> nodes2Refactor = ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

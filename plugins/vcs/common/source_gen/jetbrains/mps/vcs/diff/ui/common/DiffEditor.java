@@ -48,7 +48,7 @@ public class DiffEditor implements EditorMessageOwner {
 
     SModel model = SNodeOperations.getModel(node);
     if (model != null) {
-      boolean editable = !(model.isNotEditable());
+      boolean editable = !(model.isReadOnly());
       setReadOnly(!(editable));
     }
 
@@ -76,7 +76,7 @@ public class DiffEditor implements EditorMessageOwner {
   public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull SModel model) {
     SNode root = (rootId == null ?
       null :
-      model.getNodeById(rootId)
+      model.getNode(rootId)
     );
     if (SNodeOperations.getParent(root) == null) {
       getMainEditor().editNode(root, DiffTemporaryModule.getOperationContext(project, model));

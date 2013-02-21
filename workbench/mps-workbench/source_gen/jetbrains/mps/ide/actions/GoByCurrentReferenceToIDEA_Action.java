@@ -9,7 +9,7 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.annotations.NotNull;
@@ -48,7 +48,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     if (targetNode == ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNode()) {
       return false;
     }
-    String targetSter = SNodeOperations.getModel(targetNode).getStereotype();
+    String targetSter = SNodeOperations.getModelStereotype(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode));
     String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
     return eq_xgilk9_a0f0d(stubSter, targetSter);
   }
@@ -122,16 +122,16 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   }
 
   private boolean navigateToJavaStub(@NotNull String projectPath, SNode targetNode, final Map<String, Object> _params) {
-    SModelReference ref = SNodeOperations.getModel(targetNode).getSModelReference();
-    boolean isClassifier = SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier");
-    boolean isConstructor = SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
-    boolean isMethod = SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
-    boolean isField = (SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
+    SModelReference ref = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode).getReference();
+    boolean isClassifier = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier");
+    boolean isConstructor = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+    boolean isMethod = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
+    boolean isField = (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
     if (!(isClassifier || isConstructor || isMethod || isField)) {
       return false;
     }
     if (isClassifier) {
-      String fqName = ref.getLongName() + "." + SPropertyOperations.getString(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
+      String fqName = ref.getLongName() + "." + SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openClass(projectPath, fqName)) {
           return true;
@@ -139,7 +139,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       }
     } else if (isConstructor) {
       String classifierName = GoByCurrentReferenceToIDEA_Action.this.getClassifierName(targetNode, ref, _params);
-      int paramCount = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).count();
+      int paramCount = ListSequence.fromList(SLinkOperations.getTargets(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "parameter", true)).count();
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openClass(projectPath, classifierName)) {
           if (np.openConstructor(projectPath, classifierName, paramCount)) {
@@ -149,7 +149,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       }
     } else if (isMethod) {
       String classifierName = GoByCurrentReferenceToIDEA_Action.this.getClassifierName(targetNode, ref, _params);
-      SNode method = SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+      SNode method = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(targetNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
         if (np.openMethod(projectPath, classifierName, SPropertyOperations.getString(method, "name"), ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count())) {
           return true;
@@ -167,7 +167,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   }
 
   private String getClassifierName(SNode targetNode, SModelReference ref, final Map<String, Object> _params) {
-    SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
+    SNode classifier = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
     assert classifier != null;
     return ref.getLongName() + "." + SPropertyOperations.getString(classifier, "name");
   }

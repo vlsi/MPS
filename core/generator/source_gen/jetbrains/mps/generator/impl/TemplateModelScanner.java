@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.IterableUtil;
 
 public class TemplateModelScanner {
   private SModel myTemplateModel;
@@ -25,7 +26,7 @@ public class TemplateModelScanner {
   }
 
   public void scan() {
-    for (SNode root : myTemplateModel.roots()) {
+    for (SNode root : myTemplateModel.getRootNodes()) {
       if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
         scanControlNode(root);
       } else if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.generator.structure.TemplateSwitch")) {
@@ -46,7 +47,7 @@ public class TemplateModelScanner {
       }
     }
     SetSequence.fromSet(myTargetLanguages).removeElement("jetbrains.mps.lang.generator");
-    if (myTemplateModel.rootsCount() > 0) {
+    if (IterableUtil.asCollection(myTemplateModel.getRootNodes()).size() > 0) {
       SetSequence.fromSet(myQueryLanguages).addElement("jetbrains.mps.lang.generator");
     }
   }

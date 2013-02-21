@@ -284,7 +284,7 @@ public class ChangesTracking {
 
   @Nullable
   private SNode getOldNode(@NotNull SNodeId id) {
-    return check_5iuzi5_a0a0a52(myDifference.getChangeSet()).getNodeById(id);
+    return check_5iuzi5_a0a0a52(myDifference.getChangeSet()).getNode(id);
   }
 
   private void runUpdateTask(final _FunctionTypes._void_P0_E0 task, SNode currentNode, final SModelEvent event) {

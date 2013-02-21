@@ -18,6 +18,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -121,7 +122,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           if (!(namespace.equals(descriptor.getModelName()))) {
             continue;
           }
-          SNode node = ((SModelDescriptor) descriptor).getSModel().getNodeById(id);
+          SNode node = ((SModelDescriptor) descriptor).getSModel().getNode(SNodeId.fromString(id));
           if (node != null) {
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
             NavigationSupport.getInstance().openNode(context, node, true, !(SNodeOperations.isRoot(node)));

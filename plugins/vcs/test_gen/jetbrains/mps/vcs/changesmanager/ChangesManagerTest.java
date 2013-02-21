@@ -43,6 +43,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -50,7 +51,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.vcs.changes.Change;
 import jetbrains.mps.vcs.concrete.GitUtils;
 import com.intellij.openapi.vcs.VcsException;
@@ -286,7 +286,7 @@ public class ChangesManagerTest {
       public void run() {
         ListSequence.fromList(interestingModels).translate(new ITranslator2<DefaultSModelDescriptor, SNode>() {
           public Iterable<SNode> translate(DefaultSModelDescriptor md) {
-            return md.getSModel().roots();
+            return md.getSModel().getRootNodes();
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode r) {
@@ -301,10 +301,10 @@ public class ChangesManagerTest {
       public void run() {
         for (SNode r : ListSequence.fromList(interestingModels).translate(new ITranslator2<DefaultSModelDescriptor, SNode>() {
           public Iterable<SNode> translate(DefaultSModelDescriptor md) {
-            return md.getSModel().roots();
+            return md.getSModel().getRootNodes();
           }
         })) {
-          String simpleName = NameUtil.shortNameFromLongName(r.getModel().getLongName()) + "." + r.getName();
+          String simpleName = NameUtil.shortNameFromLongName(SNodeOperations.getModelLongName(r.getModel())) + "." + r.getName();
           FileStatus expectedStatus = MapSequence.fromMap(myExpectedFileStatuses).get(simpleName);
           FileStatus actualStatus = fsm.getStatus(r);
           actualStatus = (FileStatus.NOT_CHANGED == actualStatus ?
@@ -333,7 +333,7 @@ public class ChangesManagerTest {
         }), "name", "getImageAttempts2");
         ListSequence.fromList(SLinkOperations.getTargets(root, "member", true)).removeWhere(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+            return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
           }
         });
       }
@@ -508,7 +508,7 @@ public class ChangesManagerTest {
       runCommandAndWait(new Runnable() {
         public void run() {
           SNode node = t.invoke();
-          assert node == null || jetbrains.mps.util.SNodeOperations.isRoot(node);
+          assert node == null || SNodeOperations.isRoot(node);
           ListSequence.fromList(affectedNodePointers).addElement((node == null ?
             null :
             new SNodePointer(node)
@@ -580,7 +580,7 @@ public class ChangesManagerTest {
     doSomethingAndUndo(myUiDiff, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         SNode root = getDocumentLayoutRoot();
-        SNodeOperations.deleteNode(root);
+        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(root);
         return (SNode) null;
       }
     });
@@ -618,12 +618,12 @@ public class ChangesManagerTest {
         });
         Assert.assertNotNull(method.value);
         SPropertyOperations.set(method.value, "name", "selectEverything");
-        return SNodeOperations.getContainingRoot(method.value);
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(method.value);
       }
     }, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         SPropertyOperations.set(method.value, "name", "selectEverySinglePiece");
-        return SNodeOperations.getContainingRoot(method.value);
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(method.value);
       }
     });
   }
@@ -641,13 +641,13 @@ public class ChangesManagerTest {
           }
         });
         Assert.assertNotNull(method.value);
-        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", root.value, false);
+        SLinkOperations.setTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", root.value, false);
         return root.value;
       }
     }, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})).first(), false);
-        return SNodeOperations.getContainingRoot(method.value);
+        SLinkOperations.setTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(SLinkOperations.getTarget(method.value, "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})).first(), false);
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(method.value);
       }
     });
   }
@@ -670,22 +670,22 @@ public class ChangesManagerTest {
 
     _FunctionTypes._return_P0_E0<? extends SNode> moveUpTwice = new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNodeOperations.insertPrevSiblingChild(field.value, SNodeOperations.getPrevSibling(field.value));
-        SNodeOperations.insertPrevSiblingChild(field.value, SNodeOperations.getPrevSibling(field.value));
-        return SNodeOperations.getContainingRoot(field.value);
+        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.insertPrevSiblingChild(field.value, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getPrevSibling(field.value));
+        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.insertPrevSiblingChild(field.value, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getPrevSibling(field.value));
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(field.value);
       }
     };
     _FunctionTypes._return_P0_E0<? extends SNode> moveDown = new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNodeOperations.insertNextSiblingChild(field.value, SNodeOperations.getNextSibling(field.value));
-        return SNodeOperations.getContainingRoot(field.value);
+        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.insertNextSiblingChild(field.value, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNextSibling(field.value));
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(field.value);
       }
     };
     _FunctionTypes._return_P0_E0<? extends SNode> moveToOtherClass = new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode inner = SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})).first(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        SNode inner = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), root.value, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})).first(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
         ListSequence.fromList(SLinkOperations.getTargets(inner, "member", true)).addElement(field.value);
-        return SNodeOperations.getContainingRoot(field.value);
+        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(field.value);
       }
     };
 
@@ -717,18 +717,18 @@ public class ChangesManagerTest {
     doSomethingAndUndo(myUiDiff, true, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
         SNode ifBefore = (SNode) new jetbrains.mps.smodel.SNode(InternUtil.intern("jetbrains.mps.baseLanguage.structure.IfStatement"));
-        SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).first(), ifBefore);
+        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).first(), ifBefore);
         return root.value;
       }
     }, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode foreachBody = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(1), "jetbrains.mps.baseLanguage.structure.ForeachStatement"), "body", true);
-        SNode declarationStatement = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(foreachBody, "statement", true)).getElement(0), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+        SNode foreachBody = SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(1), "jetbrains.mps.baseLanguage.structure.ForeachStatement"), "body", true);
+        SNode declarationStatement = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(foreachBody, "statement", true)).getElement(0), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
         final SNode declaration = SLinkOperations.getTarget(declarationStatement, "localVariableDeclaration", true);
         final SNode initializer = SLinkOperations.getTarget(declaration, "initializer", true);
-        ListSequence.fromList(SNodeOperations.getDescendants(foreachBody, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
+        ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getDescendants(foreachBody, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+            return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
           }
         }).toListSequence().where(new IWhereFilter<SNode>() {
           public boolean accept(SNode vr) {
@@ -736,16 +736,16 @@ public class ChangesManagerTest {
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode vr) {
-            SNodeOperations.replaceWithAnother(vr, SNodeOperations.copyNode(initializer));
+            jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.replaceWithAnother(vr, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.copyNode(initializer));
           }
         });
-        SNodeOperations.deleteNode(declarationStatement);
+        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(declarationStatement);
         return root.value;
       }
     }, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(2));
-        SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(1));
+        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(2));
+        jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).getElement(1));
         return root.value;
       }
     });

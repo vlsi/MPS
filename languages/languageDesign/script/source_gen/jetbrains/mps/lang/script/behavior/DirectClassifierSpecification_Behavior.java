@@ -16,6 +16,6 @@ public class DirectClassifierSpecification_Behavior {
   }
 
   public static String virtual_getSModelReference_5434557751113441014(SNode thisNode) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(thisNode, "classifier", false)).getSModelReference().toString();
+    return SNodeOperations.getModel(SLinkOperations.getTarget(thisNode, "classifier", false)).getReference().toString();
   }
 }

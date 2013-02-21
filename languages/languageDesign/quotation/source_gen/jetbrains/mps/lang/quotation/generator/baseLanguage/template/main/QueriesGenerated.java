@@ -156,7 +156,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_429601079676782496(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.lang.quotation.structure.NodeBuilderRef"), "target", false).getModel().getSModelReference().toString();
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.lang.quotation.structure.NodeBuilderRef"), "target", false).getModel().getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_429601079676782506(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -2,8 +2,8 @@
 <debugInfo>
   <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903967681">
     <nodeInfo nodeId="1957199320903967682" fileName="ChangeModel.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="1957199320903967690" fileName="ChangeModel.java" startLine="18" startPosition="36" endLine="19" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8788437410276520176" fileName="ChangeModel.java" startLine="19" startPosition="65" endLine="20" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1957199320903967690" fileName="ChangeModel.java" startLine="18" startPosition="36" endLine="19" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8788437410276520176" fileName="ChangeModel.java" startLine="19" startPosition="59" endLine="20" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8788437410276521488" fileName="ChangeModel.java" startLine="20" startPosition="60" endLine="21" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7301870151127307007" fileName="ChangeModel.java" startLine="24" startPosition="38" endLine="25" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7137969394171673935" fileName="ChangeModel.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeModel#()V" />

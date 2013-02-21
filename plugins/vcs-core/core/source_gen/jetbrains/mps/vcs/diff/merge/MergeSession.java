@@ -323,7 +323,7 @@ public class MergeSession {
   }
 
   public static SModel copyModel(SModel m) {
-    SModelReference ref = m.getSModelReference();
+    SModelReference ref = m.getReference();
     SModel copy = (m instanceof DefaultSModel ?
       new DefaultSModel(ref) :
       new SModel(ref)
@@ -406,7 +406,7 @@ public class MergeSession {
         return;
       }
 
-      SNode baseParent = myMineChangeSet.getOldModel().getNodeById(parent.getNodeId());
+      SNode baseParent = myMineChangeSet.getOldModel().getNode(parent.getNodeId());
       if (baseParent == null) {
         return;
       }

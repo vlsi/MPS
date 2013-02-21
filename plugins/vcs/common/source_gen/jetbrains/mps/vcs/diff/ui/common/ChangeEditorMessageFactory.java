@@ -51,7 +51,7 @@ public class ChangeEditorMessageFactory {
 
       String role = ngc.getRole();
       SNodeId parentId = ngc.getParentNodeId();
-      SNode parentNode = changeModel.getNodeById(parentId);
+      SNode parentNode = changeModel.getNode(parentId);
       if (parentNode == null) {
         return null;
       }
@@ -80,11 +80,11 @@ public class ChangeEditorMessageFactory {
 
       int beginIndex = (beginId == null ?
         currentChildrenSize :
-        SNodeOperations.getIndexInParent(((SNode) editedModel.getNodeById(beginId)))
+        SNodeOperations.getIndexInParent(((SNode) editedModel.getNode(beginId)))
       );
       int endIndex = (endId == null ?
         currentChildrenSize :
-        SNodeOperations.getIndexInParent(((SNode) editedModel.getNodeById(endId)))
+        SNodeOperations.getIndexInParent(((SNode) editedModel.getNode(endId)))
       );
 
       if (!(0 <= beginIndex && beginIndex <= endIndex && endIndex <= currentChildrenSize)) {
@@ -95,7 +95,7 @@ public class ChangeEditorMessageFactory {
         id = parentId;
         messageTarget = new DeletedNodeMessageTarget(role, beginIndex);
       } else {
-        List<? extends SNode> editedChildren = IterableUtil.asList(editedModel.getNodeById(parentId).getChildren(role));
+        List<? extends SNode> editedChildren = IterableUtil.asList(editedModel.getNode(parentId).getChildren(role));
         for (int i = beginIndex; i < endIndex; i++) {
           ListSequence.fromList(messages).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker, highlighted));
         }
@@ -104,7 +104,7 @@ public class ChangeEditorMessageFactory {
     } else {
       return null;
     }
-    SNode node = editedModel.getNodeById(id);
+    SNode node = editedModel.getNode(id);
     ListSequence.fromList(messages).addElement(new ChangeEditorMessage(node, messageTarget, owner, change, conflictChecker, highlighted));
     return messages;
   }

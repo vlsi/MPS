@@ -667,14 +667,14 @@
     <nodeInfo nodeId="5487985028841967706" fileName="Gcc_Command.java" startLine="82" startPosition="69" endLine="83" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967712" fileName="Gcc_Command.java" startLine="85" startPosition="25" endLine="86" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967723" fileName="Gcc_Command.java" startLine="86" startPosition="87" endLine="87" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967728" fileName="Gcc_Command.java" startLine="87" startPosition="55" endLine="88" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967728" fileName="Gcc_Command.java" startLine="87" startPosition="55" endLine="88" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967741" fileName="Gcc_Command.java" startLine="90" startPosition="7" endLine="91" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967761" fileName="Gcc_Command.java" startLine="94" startPosition="55" endLine="95" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967764" fileName="Gcc_Command.java" startLine="95" startPosition="67" endLine="96" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967767" fileName="Gcc_Command.java" startLine="96" startPosition="69" endLine="97" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967773" fileName="Gcc_Command.java" startLine="99" startPosition="25" endLine="100" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967784" fileName="Gcc_Command.java" startLine="100" startPosition="87" endLine="101" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967789" fileName="Gcc_Command.java" startLine="101" startPosition="59" endLine="102" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967789" fileName="Gcc_Command.java" startLine="101" startPosition="59" endLine="102" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967802" fileName="Gcc_Command.java" startLine="104" startPosition="7" endLine="105" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Gcc_Command#()V" />
     <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="27" startPosition="64" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -707,8 +707,8 @@
     <scopeInfo nodeId="5487985028841967685" fileName="Gcc_Command.java" startLine="74" startPosition="39" endLine="75" endPosition="20" />
     <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="5487985028841967711" fileName="Gcc_Command.java" startLine="85" startPosition="25" endLine="88" endPosition="91" />
-    <scopeInfo nodeId="5487985028841967772" fileName="Gcc_Command.java" startLine="99" startPosition="25" endLine="102" endPosition="91" />
+    <scopeInfo nodeId="5487985028841967711" fileName="Gcc_Command.java" startLine="85" startPosition="25" endLine="88" endPosition="130" />
+    <scopeInfo nodeId="5487985028841967772" fileName="Gcc_Command.java" startLine="99" startPosition="25" endLine="102" endPosition="130" />
     <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="27" startPosition="64" endLine="31" endPosition="16" />
     <scopeInfo nodeId="7114233001712015523" fileName="Gcc_Command.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="5487985028841967652" fileName="Gcc_Command.java" startLine="61" startPosition="51" endLine="65" endPosition="21" />

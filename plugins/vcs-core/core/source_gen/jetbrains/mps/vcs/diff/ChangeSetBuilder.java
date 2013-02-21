@@ -107,11 +107,11 @@ public class ChangeSetBuilder {
       check_nbyrtw_a0a3a9(newReference)
     );
     SModelReference oldTargetModel = check_nbyrtw_a0e0j(oldReference);
-    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(oldNode).getSModelReference().equals(oldTargetModel)) {
+    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(oldNode).getReference().equals(oldTargetModel)) {
       oldTargetModel = null;
     }
     SModelReference newTargetModel = check_nbyrtw_a0g0j(newReference);
-    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(newNode).getSModelReference().equals(newTargetModel)) {
+    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(newNode).getReference().equals(newTargetModel)) {
       newTargetModel = null;
     }
     if (eq_nbyrtw_a0a0i0j(oldTargetId, newTargetId) && eq_nbyrtw_a0a0i0j_0(oldTargetModel, newTargetModel) && eq_nbyrtw_a0a8a9(check_nbyrtw_a0a8a9(((jetbrains.mps.smodel.SReference) oldReference)), check_nbyrtw_a0a8a9_0(((jetbrains.mps.smodel.SReference) newReference)))) {
@@ -176,7 +176,7 @@ public class ChangeSetBuilder {
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode child) {
-        buildForNode(child, myNewModel.getNodeById(child.getNodeId()));
+        buildForNode(child, myNewModel.getNode(child.getNodeId()));
       }
     });
   }
@@ -264,7 +264,7 @@ public class ChangeSetBuilder {
       }
     });
     for (SNodeId rootId : SetSequence.fromSetWithValues(new HashSet<SNodeId>(), allRootIds)) {
-      buildForNode(myOldModel.getNodeById(rootId), myNewModel.getNodeById(rootId));
+      buildForNode(myOldModel.getNode(rootId), myNewModel.getNode(rootId));
     }
 
     buildForMetadata();
