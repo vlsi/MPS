@@ -3096,7 +3096,7 @@
     <nodeInfo nodeId="3311548509052425823" fileName="ClassifierScopes.java" startLine="96" startPosition="108" endLine="97" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="229277139747456598" fileName="ClassifierScopes.java" startLine="97" startPosition="122" endLine="98" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3311548509049416788" fileName="ClassifierScopes.java" startLine="101" startPosition="110" endLine="102" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="229277139747455871" fileName="ClassifierScopes.java" startLine="102" startPosition="122" endLine="103" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="229277139747455871" fileName="ClassifierScopes.java" startLine="102" startPosition="122" endLine="103" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3311548509049423023" fileName="ClassifierScopes.java" startLine="106" startPosition="93" endLine="107" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="229277139747456015" fileName="ClassifierScopes.java" startLine="110" startPosition="45" endLine="111" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8483743094179640416" fileName="ClassifierScopes.java" startLine="111" startPosition="60" endLine="112" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3179,7 +3179,7 @@
     <scopeInfo nodeId="229277139747456525" fileName="ClassifierScopes.java" startLine="96" startPosition="108" endLine="98" endPosition="174">
       <varInfo nodeId="3311548509052425824" varName="clas" />
     </scopeInfo>
-    <scopeInfo nodeId="6425165886015298945" fileName="ClassifierScopes.java" startLine="101" startPosition="110" endLine="103" endPosition="172">
+    <scopeInfo nodeId="6425165886015298945" fileName="ClassifierScopes.java" startLine="101" startPosition="110" endLine="103" endPosition="185">
       <varInfo nodeId="3311548509049416789" varName="clas" />
     </scopeInfo>
     <scopeInfo nodeId="8483743094179640656" fileName="ClassifierScopes.java" startLine="110" startPosition="45" endLine="112" endPosition="297" />
