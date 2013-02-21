@@ -103,7 +103,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   @NotNull
-  public org.jetbrains.mps.openapi.model.SModelReference getReference() {
+  public SModelReference getReference() {
     return myReference;
   }
 

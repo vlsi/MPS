@@ -2032,7 +2032,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     @NotNull
     @Override
-    public SModelReference getReference() {
+    public jetbrains.mps.smodel.SModelReference getReference() {
       return myModel.getReference();
     }
 

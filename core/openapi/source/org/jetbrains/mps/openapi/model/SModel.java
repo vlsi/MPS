@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -40,7 +41,7 @@ public interface SModel {
   String getModelName();
 
   @NotNull
-  SModelReference getReference();
+  jetbrains.mps.smodel.SModelReference getReference();
 
   ModelRoot getModelRoot();
 
