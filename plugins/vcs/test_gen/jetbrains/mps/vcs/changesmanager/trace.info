@@ -288,7 +288,7 @@
     <nodeInfo nodeId="1813489455856692638" fileName="ChangesManagerTest.java" startLine="773" startPosition="29" endLine="774" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1813489455856692642" fileName="ChangesManagerTest.java" startLine="774" startPosition="0" endLine="775" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1813489455856685462" fileName="ChangesManagerTest.java" startLine="775" startPosition="156" endLine="776" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="599300103647481293" fileName="ChangesManagerTest.java" startLine="776" startPosition="0" endLine="777" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="599300103647481293" fileName="ChangesManagerTest.java" startLine="776" startPosition="0" endLine="777" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8182644708897713778" fileName="ChangesManagerTest.java" startLine="778" startPosition="5" endLine="779" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8182644708897713783" fileName="ChangesManagerTest.java" startLine="779" startPosition="0" endLine="780" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8182644708897713798" fileName="ChangesManagerTest.java" startLine="780" startPosition="79" endLine="781" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1107,7 +1107,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5364815602089924277" fileName="ChangesManagerTest.java" startLine="214" startPosition="0" endLine="229" endPosition="0" />
     <scopeInfo nodeId="3907542737155192890" fileName="ChangesManagerTest.java" startLine="370" startPosition="27" endLine="385" endPosition="24" />
-    <scopeInfo nodeId="599300103647481176" fileName="ChangesManagerTest.java" startLine="762" startPosition="18" endLine="777" endPosition="156">
+    <scopeInfo nodeId="599300103647481176" fileName="ChangesManagerTest.java" startLine="762" startPosition="18" endLine="777" endPosition="151">
       <varInfo nodeId="599300103647481264" varName="changeToPick" />
       <varInfo nodeId="599300103647481222" varName="changesBefore" />
     </scopeInfo>
