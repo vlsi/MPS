@@ -84,38 +84,36 @@ public class PrecedenceUtil {
   private static PrecedenceUtil.Precedence getPriority(SNode expression) {
     if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       switch (SConceptPropertyOperations.getInteger(((SNode) expression), "priority")) {
-        case -2:
+        case 2:
           // || 
           return PrecedenceUtil.Precedence.J_13;
-        case -1:
+        case 3:
           // && 
           return PrecedenceUtil.Precedence.J_12;
-        case 0:
-          // ==, != 
-          return PrecedenceUtil.Precedence.J_8;
-        case 1:
-          // <, <=, >, >= 
-          return PrecedenceUtil.Precedence.J_7;
-        case 2:
-          // +, - 
-          return PrecedenceUtil.Precedence.J_5;
-        case 3:
-          // *, /, % 
-          return PrecedenceUtil.Precedence.J_4;
         case 4:
-          return PrecedenceUtil.Precedence.MPS_EQUALITY_OPERATIONS;
-        case 5:
-          // >>, << 
-          return PrecedenceUtil.Precedence.J_6;
-        case 8:
-          // & 
-          return PrecedenceUtil.Precedence.J_9;
-        case 9:
-          // ^ 
-          return PrecedenceUtil.Precedence.J_10;
-        case 10:
           // | 
           return PrecedenceUtil.Precedence.J_11;
+        case 5:
+          // ^ 
+          return PrecedenceUtil.Precedence.J_10;
+        case 6:
+          // & 
+          return PrecedenceUtil.Precedence.J_9;
+        case 7:
+          // ==, != 
+          return PrecedenceUtil.Precedence.J_8;
+        case 8:
+          // <, <=, >, >= 
+          return PrecedenceUtil.Precedence.J_7;
+        case 9:
+          // >>, << 
+          return PrecedenceUtil.Precedence.J_6;
+        case 10:
+          // +, - 
+          return PrecedenceUtil.Precedence.J_5;
+        case 11:
+          // *, /, % 
+          return PrecedenceUtil.Precedence.J_4;
         default:
       }
     }
@@ -160,7 +158,6 @@ public class PrecedenceUtil {
     POSTFIX_EXPRESSIONS(),
     J_2(),
     J_3(),
-    MPS_EQUALITY_OPERATIONS(),
     J_4(),
     J_5(),
     J_6(),
