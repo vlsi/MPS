@@ -80,11 +80,6 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
     addChild(null, new MPSPsiParameterList());
   }
 
-  @Override
-  public String toString() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
-
   @Nullable
   @Override
   public PsiType getReturnType() {
