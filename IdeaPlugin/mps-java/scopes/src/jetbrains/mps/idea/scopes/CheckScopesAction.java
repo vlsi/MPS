@@ -26,15 +26,19 @@ import jetbrains.mps.baseLanguage.search.MpsScopesUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 

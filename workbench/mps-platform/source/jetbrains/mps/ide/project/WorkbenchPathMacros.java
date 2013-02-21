@@ -33,11 +33,11 @@ import com.intellij.openapi.util.AsyncResult.Handler;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.PathMacrosProvider;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkEvent.EventType;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;

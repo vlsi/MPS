@@ -102,11 +102,11 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   }
 
   public MPSTreeNode testBuildTree(IModule from, IModule dependency, IModule used, boolean showRuntime) {
-    jetbrains.mps.util.misc.hash.HashSet<IModule> dependencies = new jetbrains.mps.util.misc.hash.HashSet<IModule>();
+    HashSet<IModule> dependencies = new HashSet<IModule>();
     if (dependency != null) {
       dependencies.add(dependency);
     }
-    jetbrains.mps.util.misc.hash.HashSet<IModule> usedLanguages = new jetbrains.mps.util.misc.hash.HashSet<IModule>();
+    HashSet<IModule> usedLanguages = new HashSet<IModule>();
     if (used != null) {
       usedLanguages.add(used);
     }

@@ -18,7 +18,6 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.testbench.CheckProjectStructureHelper;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterizedWithMake;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.junit.AfterClass;
