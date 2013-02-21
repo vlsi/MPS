@@ -534,7 +534,7 @@ public class SNodeOperations {
       if (parent != null) {
         parent.removeChild(node);
       } else {
-        node.getModel().removeRoot(node);
+        node.getModel().removeRootNode(node);
       }
     }
     return node;

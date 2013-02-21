@@ -44,7 +44,7 @@
     <nodeInfo nodeId="3748622964431481101" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="125" startPosition="5" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3748622964431480765" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="126" startPosition="0" endLine="127" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="130" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="133" startPosition="36" endLine="134" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="133" startPosition="36" endLine="134" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="135" startPosition="5" endLine="136" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="56" startPosition="95" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="175734484443909642" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="71" startPosition="67" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -90,7 +90,7 @@
     <scopeInfo nodeId="6056407548442057003" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="117" startPosition="115" endLine="118" endPosition="169" />
     <scopeInfo nodeId="8857655676219703347" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="120" startPosition="109" endLine="121" endPosition="154" />
     <scopeInfo nodeId="550410144631182847" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="123" startPosition="105" endLine="124" endPosition="159" />
-    <scopeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="133" startPosition="36" endLine="134" endPosition="52" />
+    <scopeInfo nodeId="3748622964431012559" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="133" startPosition="36" endLine="134" endPosition="46" />
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="50" startPosition="0" endLine="52" endPosition="44">
       <varInfo nodeId="175734484443895487" varName="t" />
     </scopeInfo>

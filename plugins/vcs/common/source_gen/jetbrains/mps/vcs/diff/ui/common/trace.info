@@ -1652,7 +1652,7 @@
     <nodeInfo nodeId="4652592318748338941" fileName="DiffEditorsGroup.java" startLine="153" startPosition="5" endLine="154" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748338942" fileName="DiffEditorsGroup.java" startLine="158" startPosition="36" endLine="159" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748338942" fileName="DiffEditorsGroup.java" startLine="160" startPosition="5" endLine="161" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748338961" fileName="DiffEditorsGroup.java" startLine="165" startPosition="36" endLine="166" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748338961" fileName="DiffEditorsGroup.java" startLine="165" startPosition="36" endLine="166" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748338961" fileName="DiffEditorsGroup.java" startLine="167" startPosition="5" endLine="168" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748338962" fileName="DiffEditorsGroup.java" startLine="172" startPosition="36" endLine="173" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748338962" fileName="DiffEditorsGroup.java" startLine="174" startPosition="5" endLine="175" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1713,7 +1713,7 @@
     <scopeInfo nodeId="7313603104359490623" fileName="DiffEditorsGroup.java" startLine="144" startPosition="36" endLine="145" endPosition="49" />
     <scopeInfo nodeId="4652592318748338941" fileName="DiffEditorsGroup.java" startLine="151" startPosition="36" endLine="152" endPosition="43" />
     <scopeInfo nodeId="4652592318748338942" fileName="DiffEditorsGroup.java" startLine="158" startPosition="36" endLine="159" endPosition="42" />
-    <scopeInfo nodeId="4652592318748338961" fileName="DiffEditorsGroup.java" startLine="165" startPosition="36" endLine="166" endPosition="56" />
+    <scopeInfo nodeId="4652592318748338961" fileName="DiffEditorsGroup.java" startLine="165" startPosition="36" endLine="166" endPosition="52" />
     <scopeInfo nodeId="4652592318748338962" fileName="DiffEditorsGroup.java" startLine="172" startPosition="36" endLine="173" endPosition="42" />
     <scopeInfo nodeId="4652592318748339076" fileName="DiffEditorsGroup.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="4652592318748338974" fileName="DiffEditorsGroup.java" startLine="82" startPosition="0" endLine="84" endPosition="0" />
