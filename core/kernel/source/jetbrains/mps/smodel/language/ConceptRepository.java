@@ -40,6 +40,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
 
   private final Map<String, SConcept> myConcepts = new HashMap<String, SConcept>();
 
+  @Override
   public SConcept getConcept(String id) {
     synchronized (myConcepts) {
       if (!myConcepts.containsKey(id)) {

@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmptyValidator implements ModuleValidator {
+  @Override
   public List<String> getErrors() {
     return new ArrayList<String>();
   }
@@ -28,6 +29,7 @@ public class EmptyValidator implements ModuleValidator {
     return new ArrayList<String>();
   }
 
+  @Override
   public boolean isValid() {
     return true;
   }

@@ -23,6 +23,7 @@ import java.util.List;
 
 public class ProjectDescriptor {
   private static final Comparator<Path> MODULE_BY_PATH_COMPARATOR = new Comparator<Path>() {
+    @Override
     public int compare(Path p1, Path p2) {
       return p1.isSamePath(p2) ? 0 : -1;
     }

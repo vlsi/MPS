@@ -44,6 +44,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
     myModuleRef = moduleRef;
   }
 
+  @Override
   public GenParameters getGenParams(Project project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
     IModule module = MPSModuleRepository.getInstance().getModule(myModuleRef);
 

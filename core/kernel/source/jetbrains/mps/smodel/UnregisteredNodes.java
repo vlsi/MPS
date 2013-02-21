@@ -47,6 +47,7 @@ public class UnregisteredNodes {
 
   private UnregisteredNodes() {
     ModelAccess.instance().addCommandListener(new ModelAccessAdapter() {
+      @Override
       public void commandFinished() {
         clear();
       }

@@ -34,6 +34,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 class UsagesSearchType extends SearchType<SReference, SNode> {
+  @Override
   public MultiMap<SModel, SNode> findMatchingModelsInCache(Set<SNode> nodes, Iterable<SModel> models, @Nullable Computable<Boolean> callback) {
     MultiMap<SModel, SNode> result = new MultiMap<SModel, SNode>();
     MultiMap<FastFindSupport, SModel> gm = groupModelByFastFindSupport(models);
@@ -50,6 +51,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
     return result;
   }
 
+  @Override
   public Set<SReference> findInModel(MultiMap<org.jetbrains.mps.openapi.model.SModel, SNode> models, @Nullable Computable<Boolean> callback) {
     Set<SReference> result = new HashSet<SReference>();
     for (Entry<SModel, Collection<SNode>> e : models.entrySet()) {

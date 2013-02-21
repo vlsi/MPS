@@ -27,16 +27,19 @@ public abstract class ArrayWrapper<T> extends AbstractList<T> {
     myArray = getArray();
   }
 
+  @Override
   public T get(int index) {
     return myArray[index];
   }
 
+  @Override
   public T set(int index, @NotNull T element) {
     T oldItem = myArray[index];
     myArray[index] = element;
     return oldItem;
   }
 
+  @Override
   public void add(int index, @NotNull T element) {
     T[] oldArray = myArray;
     T[] newArray = newArray(oldArray.length + 1);
@@ -47,6 +50,7 @@ public abstract class ArrayWrapper<T> extends AbstractList<T> {
     setArray(newArray);
   }
 
+  @Override
   public T remove(int index) {
     T oldItem = myArray[index];
     T[] oldArray = myArray;
@@ -58,6 +62,7 @@ public abstract class ArrayWrapper<T> extends AbstractList<T> {
     return oldItem;
   }
 
+  @Override
   public int indexOf(Object o) {
     int len = myArray.length;
     for (int i = 0; i < len; i++) {
@@ -84,6 +89,7 @@ public abstract class ArrayWrapper<T> extends AbstractList<T> {
     return a;
   }
 
+  @Override
   public int size() {
     return myArray.length;
   }

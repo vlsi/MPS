@@ -38,6 +38,7 @@ public class ModelWriter4 implements IModelWriter {
     return 4;
   }
 
+  @Override
   public Document saveModel(SModel sourceModel) {
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());

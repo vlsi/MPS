@@ -29,6 +29,7 @@ public class SModelLanguageEvent extends SModelEvent {
     myAdded = added;
   }
 
+  @Override
   public SNode getAffectedRoot() {
     return null;
   }
@@ -41,6 +42,7 @@ public class SModelLanguageEvent extends SModelEvent {
     return myAdded;
   }
 
+  @Override
   public void accept(SModelEventVisitor visitor) {
     //todo add method to the Visitor class
 //    visitor.visitRootEvent(this);

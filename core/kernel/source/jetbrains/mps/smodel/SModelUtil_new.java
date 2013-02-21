@@ -42,11 +42,13 @@ public class SModelUtil_new implements CoreComponent {
   private ClassLoaderManager myClManager;
   private GlobalSModelEventsManager myMeManager;
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       SModelUtil.clearCaches();
     }
   };
   private SModelAdapter myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
+    @Override
     public void rootRemoved(SModelRootEvent p0) {
       if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
         return;
@@ -59,6 +61,7 @@ public class SModelUtil_new implements CoreComponent {
     }
 
 
+    @Override
     public void propertyChanged(SModelPropertyEvent p0) {
       if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
         return;
@@ -97,12 +100,14 @@ public class SModelUtil_new implements CoreComponent {
     myMeManager = meManager;
   }
 
+  @Override
   public void init() {
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
     myClManager.addReloadHandler(myReloadHandler);
     myMeManager.addGlobalModelListener(myModelListener);
   }
 
+  @Override
   public void dispose() {
     myMeManager.removeGlobalModelListener(myModelListener);
     myClManager.removeReloadHandler(myReloadHandler);

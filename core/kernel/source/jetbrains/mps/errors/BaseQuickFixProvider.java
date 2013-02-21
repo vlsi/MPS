@@ -48,6 +48,7 @@ public class BaseQuickFixProvider implements QuickFixProvider {
     myExecuteImmediately = executeImmediately;
   }
 
+  @Override
   public void setIsError(boolean isError) {
     myIsError = isError;
   }
@@ -56,10 +57,12 @@ public class BaseQuickFixProvider implements QuickFixProvider {
     myMap.put(key, argument);
   }
 
+  @Override
   public boolean isExecutedImmediately() {
     return myExecuteImmediately;
   }
 
+  @Override
   public QuickFix_Runtime getQuickFix() {
     if (myQuickFixTaken) {
       return myQuickFix;
@@ -86,6 +89,7 @@ public class BaseQuickFixProvider implements QuickFixProvider {
     }
   }
 
+  @Override
   public boolean isError() {
     return myIsError;
   }

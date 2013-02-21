@@ -417,6 +417,7 @@ public class ModuleMaker {
       myErrorCount += 1;
     }
 
+    @Override
     public void onCompilationResult(CompilationResult cr) {
       Set<String> classesWithErrors = new HashSet<String>();
       if (cr.getErrors() != null) {
@@ -529,30 +530,37 @@ public class ModuleMaker {
       myHintObject = hintObject;
     }
 
+    @Override
     public MessageKind getKind() {
       return myKind;
     }
 
+    @Override
     public Throwable getException() {
       return null;
     }
 
+    @Override
     public String getText() {
       return myText;
     }
 
+    @Override
     public String getSender() {
       return null;
     }
 
+    @Override
     public long getCreationTime() {
       return 0;
     }
 
+    @Override
     public Object getHintObject() {
       return myHintObject;
     }
 
+    @Override
     public String getHelpUrl() {
       return null;
     }

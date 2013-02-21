@@ -163,6 +163,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     INSTANCE = this;
     MPSModuleRepository.getInstance().addModuleRepositoryListener(myListener);
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         MPSModuleRepository.getInstance().registerModule(ProjectStructureModule.this, myOwner);
       }
@@ -176,6 +177,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     INSTANCE = null;
     clearAll();
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         MPSModuleRepository.getInstance().unregisterModule(ProjectStructureModule.this, myOwner);
       }
@@ -185,6 +187,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
   public void clearAll() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         removeAll();
         invalidateCaches();
@@ -237,10 +240,12 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     return getModuleFqName();
   }
 
+  @Override
   public List<SModelDescriptor> getOwnModelDescriptors() {
     return new ArrayList<SModelDescriptor>(myModels.values());
   }
 
+  @Override
   protected ModuleScope createScope() {
     return new ProjectStructureModuleScope();
   }
@@ -251,6 +256,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   public class ProjectStructureModuleScope extends ModuleScope {
+    @Override
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(ProjectStructureModule.this);
@@ -268,6 +274,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       myProjectStructureModule = projectStructureModule;
     }
 
+    @Override
     protected ProjectStructureSModel createModel() {
       final ProjectStructureSModel model = new ProjectStructureSModel(getSModelReference());
       final ModuleDescriptor moduleDescriptor = ((IModule) myModule).getModuleDescriptor();
@@ -325,10 +332,12 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       }
     }
 
+    @Override
     public IModule getModule() {
       return myProjectStructureModule;
     }
 
+    @Override
     public boolean isReadOnly() {
       return true;
     }
@@ -344,6 +353,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       super(modelReference, new ForeignNodeIdMap());
     }
 
+    @Override
     public boolean canFireEvent() {
       return false;
     }

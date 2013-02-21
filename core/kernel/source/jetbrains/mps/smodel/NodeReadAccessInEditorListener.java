@@ -65,16 +65,19 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
     myReferentTargetsToDependOn.addAll(targets);
   }
 
+  @Override
   public void propertyDirtyReadAccess(SNode node, String propertyName) {
     myDirtilyReadAccessedProperties.add(new Pair<SNodeReference, String>(new jetbrains.mps.smodel.SNodePointer(node), propertyName));
     //refactored here from calling after unique usage
     nodeUnclassifiedReadAccess(node);
   }
 
+  @Override
   public void propertyCleanReadAccess(SNode node, String propertyName) {
     myCleanlyReadAccessedProperties.add(new Pair<SNodeReference, String>(new jetbrains.mps.smodel.SNodePointer(node), propertyName));
   }
 
+  @Override
   public void nodeUnclassifiedReadAccess(SNode node) {
     myNodesToDependOn.add(node);
   }
@@ -84,6 +87,7 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
     /* ignored */
   }
 
+  @Override
   public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
      addRefTargetToDependOn(new jetbrains.mps.smodel.SNodePointer(referent));
   }
@@ -92,6 +96,7 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
     myReferentTargetsToDependOn.add(target);
   }
 
+  @Override
   public void propertyExistenceAccess(SNode node, String propertyName) {
     myExistenceReadAccessProperties.add(new Pair<SNodeReference, String>(new jetbrains.mps.smodel.SNodePointer(node), propertyName));
     //refactored here from from calling after unique usage
@@ -102,10 +107,12 @@ public class NodeReadAccessInEditorListener implements INodesReadListener {
     myCleanlyReadAccessedProperties = new HashSet<Pair<SNodeReference, String>>();
   }
 
+  @Override
   public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
     nodeUnclassifiedReadAccess(node);
   }
 
+  @Override
   public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
     // todo remove when refactoring completed
   }

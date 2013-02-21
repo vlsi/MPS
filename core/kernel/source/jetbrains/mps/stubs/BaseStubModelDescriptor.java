@@ -97,6 +97,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
     final SModel result = getSource().loadSModel((IModule) myModule, this);
     updateDiskTimestamp();
     replaceModel(new Runnable() {
+      @Override
       public void run() {
         mySModel = result;
       }

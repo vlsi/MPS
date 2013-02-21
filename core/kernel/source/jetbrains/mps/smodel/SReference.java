@@ -51,29 +51,36 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     mySourceNode = sourceNode;
   }
 
+  @Override
   public String getRole() {
     return myRole;
   }
 
+  @Override
   public SNode getSourceNode() {
     return mySourceNode;
   }
 
+  @Override
   public final SNode getTargetNode() {
     return getTargetNode_internal();
   }
 
+  @Override
   public SLink getLink() {
     return getSourceNode().getConcept().findLink(getRole());
   }
 
+  @Override
   public SNodeReference toNodePointer() {
     return new SNodePointer(getTargetSModelReference(), getTargetNodeId());
   }
 
+  @Override
   @Nullable
   public abstract SModelReference getTargetSModelReference();
 
+  @Override
   @Nullable
   public SNodeId getTargetNodeId() {
     SNode targetNode = getTargetNode();

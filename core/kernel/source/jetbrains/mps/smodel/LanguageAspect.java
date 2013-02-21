@@ -24,100 +24,120 @@ import java.util.*;
 
 public enum LanguageAspect {
   STRUCTURE("structure") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.STRUCTURE;
     }
 
+    @Override
     public String getHelpURL() {
       return CONFLUENCE_BASE + "Structure";
     }
   },
 
   EDITOR("editor") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.EDITOR;
     }
 
+    @Override
     public String getHelpURL() {
       return CONFLUENCE_BASE + "Editor";
     }
   },
 
   ACTIONS("actions") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.ACTIONS;
     }
 
+    @Override
     public String getHelpURL() {
       return CONFLUENCE_BASE + "Editor+Actions";
     }
   },
 
   CONSTRAINTS("constraints") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.CONSTRAINTS;
     }
 
+    @Override
     public String getHelpURL() {
       return CONFLUENCE_BASE + "Constraints";
     }
   },
 
   BEHAVIOR("behavior") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.BEHAVIOR;
     }
 
+    @Override
     public String getHelpURL() {
       return CONFLUENCE_BASE + "Behavior";
     }
   },
 
   TYPESYSTEM("typesystem") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.TYPESYSTEM;
     }
 
+    @Override
     public String getHelpURL() {
       return CONFLUENCE_BASE + "Typesystem";
     }
   },
 
   REFACTORINGS("refactorings") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.REFACTORING;
     }
 
+    @Override
     public String getHelpURL() {
       return "";
     }
   },
 
   SCRIPTS("scripts") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.SCRIPT;
     }
 
+    @Override
     public String getHelpURL() {
       return "";
     }
   },
 
   INTENTIONS("intentions") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.INTENTIONS;
     }
 
+    @Override
     public String getHelpURL() {
       return CONFLUENCE_BASE + "Intentions";
     }
   },
 
   FIND_USAGES("findUsages") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.FIND_USAGES;
     }
 
+    @Override
     public String getHelpURL() {
       return CONFLUENCE_BASE + "Find+usages";
     }
@@ -125,50 +145,60 @@ public enum LanguageAspect {
 
   @Deprecated
   PLUGIN("plugin") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.MAKE_FACET;
     }
 
+    @Override
     public String getHelpURL() {
       return "";
     }
   },
 
   DATA_FLOW("dataFlow") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.DATA_FLOW;
     }
 
+    @Override
     public String getHelpURL() {
       return CONFLUENCE_BASE + "Data+flow#Dataflow-intermediatelanguage";
     }
   },
 
   TEST("test") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.TEST;
     }
 
+    @Override
     public String getHelpURL() {
       return CONFLUENCE_BASE + "Language+tests+language#Languagetestslanguage-introduction";
     }
   },
 
   TEXT_GEN("textGen") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.TEXT_GEN;
     }
 
+    @Override
     public String getHelpURL() {
       return "";
     }
   },
 
   STUBS("stubs") {
+    @Override
     public ModuleReference getMainLanguage() {
       return BootstrapLanguages.STUBS;
     }
 
+    @Override
     public String getHelpURL() {
       return "";
     }

@@ -24,6 +24,7 @@ public class EmptyIterable<T> implements Iterable<T> {
     return INSTANCE;
   }
 
+  @Override
   public Iterator<T> iterator() {
     return EmptyIterator.getInstance();
   }

@@ -45,6 +45,7 @@ public class SModelFileTracker implements CoreComponent {
     return INSTANCE;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -56,6 +57,7 @@ public class SModelFileTracker implements CoreComponent {
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
 
@@ -84,10 +86,12 @@ public class SModelFileTracker implements CoreComponent {
   }
 
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
+    @Override
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       removeModelFromFileCache(modelDescriptor);
     }
 
+    @Override
     public void modelAdded(SModelDescriptor modelDescriptor) {
       addModelToFileCache(modelDescriptor);
     }
@@ -98,18 +102,22 @@ public class SModelFileTracker implements CoreComponent {
       super(SModelListenerPriority.PLATFORM);
     }
 
+    @Override
     public void beforeModelRenamed(SModelRenamedEvent event) {
       removeModelFromFileCache(event.getModelDescriptor());
     }
 
+    @Override
     public void modelRenamed(SModelRenamedEvent event) {
       addModelToFileCache(event.getModelDescriptor());
     }
 
+    @Override
     public void beforeModelFileChanged(SModelFileChangedEvent event) {
       removeModelFromFileCache(event.getModelDescriptor());
     }
 
+    @Override
     public void modelFileChanged(SModelFileChangedEvent event) {
       addModelToFileCache(event.getModelDescriptor());
     }

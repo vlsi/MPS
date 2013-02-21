@@ -23,6 +23,7 @@ import javax.swing.text.DocumentFilter;
  * @author Kostik
  */
 public class IntegerValueDocumentFilter extends DocumentFilter {
+  @Override
   public void remove(FilterBypass fb, int offset, int length) throws BadLocationException {
     StringBuilder text = getDocumentText(fb);
     text.delete(offset, offset + length);
@@ -39,6 +40,7 @@ public class IntegerValueDocumentFilter extends DocumentFilter {
     }
   }
 
+  @Override
   public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
     StringBuilder text = getDocumentText(fb);
     text.insert(offset, string);
@@ -48,6 +50,7 @@ public class IntegerValueDocumentFilter extends DocumentFilter {
     }
   }
 
+  @Override
   public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
     StringBuilder documentText = getDocumentText(fb);
     documentText.replace(offset, offset + length, text);

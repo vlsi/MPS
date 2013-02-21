@@ -40,6 +40,7 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
     myNodeID = nodeID;
   }
 
+  @Override
   public MappingConfig_SimpleRef getCopy() {
     MappingConfig_SimpleRef result = new MappingConfig_SimpleRef();
     result.myModelUID = myModelUID;

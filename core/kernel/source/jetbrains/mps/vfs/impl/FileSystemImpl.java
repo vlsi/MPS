@@ -74,6 +74,7 @@ public class FileSystemImpl extends FileSystem {
     }
   }
 
+  @Override
   public void scheduleUpdateForWrittenFiles(Iterable<IFile> writtenFiles) {
     myFileSystemProvider.scheduleUpdateForWrittenFiles(writtenFiles);
   }

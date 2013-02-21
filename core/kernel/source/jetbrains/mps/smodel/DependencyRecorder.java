@@ -57,18 +57,22 @@ public class DependencyRecorder<T> {
       return Collections.unmodifiableSet(myDependencies);
     }
 
+    @Override
     public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
       myDependencies.add(node);
     }
 
+    @Override
     public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
       myDependencies.add(node);
     }
 
+    @Override
     public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
       myDependencies.add(node);
     }
 
+    @Override
     public void nodeUnclassifiedReadAccess(SNode node) {
       myDependencies.add(node);
     }

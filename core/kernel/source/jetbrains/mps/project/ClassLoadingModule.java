@@ -45,6 +45,7 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     super(myDescriptorFile);
   }
 
+  @Override
   public Class getClass(String fqName) {
     if (myClassLoader == null) return null;
 
@@ -71,6 +72,7 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     }
   }
 
+  @Override
   public String getPluginPath() {
     IFile bundleHome = getBundleHome();
     if (bundleHome == null) return null;
@@ -86,26 +88,32 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
   }
 
   //can be used only from ModuleClassLoader
+  @Override
   public ModuleClassLoader getClassLoader() {
     return myClassLoader;
   }
 
+  @Override
   public boolean canFindClass(String name) {
     return createClassPathItem().hasClass(name);
   }
 
+  @Override
   public byte[] findClassBytes(String name) {
     return createClassPathItem().getClass(name);
   }
 
+  @Override
   public URL findResource(String name) {
     return createClassPathItem().getResource(name);
   }
 
+  @Override
   public String findLibrary(String name) {
     return null;
   }
 
+  @Override
   public Iterable<IClassLoadingModule> getClassLoadingDependencies() {
     synchronized (LOCK) {
       if (myClassLoadingDepsCache == null) {
@@ -124,10 +132,12 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
     return JavaModuleOperations.createClassPathItem(getFacet(JavaModuleFacet.class).getClassPath(), ClassLoadingModule.class.getName());
   }
 
+  @Override
   public boolean canLoadFromSelf() {
     return true;
   }
 
+  @Override
   public boolean canLoad() {
     return true;
   }

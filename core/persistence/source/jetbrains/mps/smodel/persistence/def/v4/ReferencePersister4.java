@@ -86,23 +86,28 @@ public class ReferencePersister4 implements IReferencePersister {
     return referenceTargetDescriptor;
   }
 
+  @Override
   public SNode getSourceNode() {
     return mySourceNode;
   }
 
 
+  @Override
   public String getRole() {
     return myRole;
   }
 
+  @Override
   public String getTargetId() {
     return myTargetId;
   }
 
+  @Override
   public String getResolveInfo() {
     return myResolveInfo;
   }
 
+  @Override
   public String getExtResolveInfo() {
     return null;
   }
@@ -146,6 +151,7 @@ public class ReferencePersister4 implements IReferencePersister {
       this.getResolveInfo());
   }
 
+  @Override
   public void createReferenceInModel(SModel model, VisibleModelElements visibleModelElements) {
     SReference reference = createReferenceInModelDoNotAddToSourceNode(model, visibleModelElements);
     if (reference != null) this.getSourceNode().setReference(reference.getRole(), reference);
@@ -153,6 +159,7 @@ public class ReferencePersister4 implements IReferencePersister {
 
   //-- save reference
 
+  @Override
   public void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
     assert useUIDs || visibleModelElements != null;
     SNode node = reference.getSourceNode();
@@ -197,6 +204,7 @@ public class ReferencePersister4 implements IReferencePersister {
     if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
   }
 
+  @Override
   public int getImportIndex() {
     try {
       return Integer.parseInt(myImportedModelInfo);

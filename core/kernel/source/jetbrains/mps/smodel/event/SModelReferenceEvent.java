@@ -32,6 +32,7 @@ public class SModelReferenceEvent extends SModelEvent {
     myAdded = added;
   }
 
+  @Override
   public SNode getAffectedRoot() {
     return myReference.getSourceNode().getContainingRoot();
   }
@@ -48,6 +49,7 @@ public class SModelReferenceEvent extends SModelEvent {
     return !myAdded;
   }
 
+  @Override
   public void accept(SModelEventVisitor visitor) {
     visitor.visitReferenceEvent(this);
   }

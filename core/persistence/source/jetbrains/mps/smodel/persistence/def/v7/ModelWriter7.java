@@ -37,6 +37,7 @@ public class ModelWriter7 implements IModelWriter {
     return 7;
   }
 
+  @Override
   public Document saveModel(SModel sourceModel) {
     myModel = sourceModel;
     myHelper = new WriteHelper((SModelReference) sourceModel.getReference());

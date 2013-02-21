@@ -23,10 +23,12 @@ class AddRootUndoableAction extends SNodeUndoableAction {
     super(root);
   }
 
+  @Override
   protected void doUndo() {
     getAffectedNode().getModel().removeRootNode(getAffectedNode());
   }
 
+  @Override
   protected void doRedo() {
     getAffectedNode().getModel().addRootNode(getAffectedNode());
   }

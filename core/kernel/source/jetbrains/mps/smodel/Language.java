@@ -82,11 +82,13 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     setModuleReference(descriptor.getModuleReference());
   }
 
+  @Override
   protected void reloadAfterDescriptorChange() {
     super.reloadAfterDescriptorChange();
     revalidateGenerators();
   }
 
+  @Override
   public LanguageDependenciesManager getDependenciesManager() {
     return myLanguageDependenciesManager;
   }
@@ -110,6 +112,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return ModuleUtil.refsToLanguages(getExtendedLanguageRefs());
   }
 
+  @Override
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
     for (ModuleReference ref : getExtendedLanguageRefs()) {
@@ -132,6 +135,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return Collections.unmodifiableSet(descriptor.getRuntimeModules());
   }
 
+  @Override
   protected ModuleDescriptor loadDescriptor() {
     return ModulesMiner.getInstance().loadModuleDescriptor(getDescriptorFile());
   }
@@ -172,16 +176,19 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     }
   }
 
+  @Override
   public void dispose() {
     super.dispose();
     myLanguageDependenciesManager.dispose();
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
   }
 
+  @Override
   public LanguageDescriptor getModuleDescriptor() {
     return myLanguageDescriptor;
   }
 
+  @Override
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
   }
@@ -252,6 +259,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
+  @Override
   public void invalidateCaches() {
     super.invalidateCaches();
     myNameToConceptCache.clear();
@@ -307,6 +315,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return node.getProperty(SNodeUtil.property_INamedConcept_name);
   }
 
+  @Override
   public void save() {
     super.save();
     if (isPackaged()) return;
@@ -421,10 +430,12 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       super(SModelListenerPriority.PLATFORM);
     }
 
+    @Override
     public void modelChanged(SModel model) {
       invalidateCaches();
     }
 
+    @Override
     public void modelChangedDramatically(SModel model) {
       invalidateCaches();
     }
@@ -435,6 +446,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       super(Language.class.getClassLoader());
     }
 
+    @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
       byte[] bytes = findClassBytes(name);
       if (bytes == null) return null;

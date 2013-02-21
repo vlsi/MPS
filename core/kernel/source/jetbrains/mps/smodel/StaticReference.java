@@ -43,6 +43,7 @@ public final class StaticReference extends SReferenceBase {
     myTargetNodeId = nodeId;
   }
 
+  @Override
   @Nullable
   public SNodeId getTargetNodeId() {
     SNode immatureNode = myImmatureTargetNode;
@@ -55,6 +56,7 @@ public final class StaticReference extends SReferenceBase {
     myTargetNodeId = nodeId;
   }
 
+  @Override
   protected SNode getTargetNode_internal() {
     SModelReference mr = getTargetSModelReference();
     if (mr != null) {

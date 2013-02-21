@@ -411,6 +411,7 @@ public class ModelPersistence {
       myResult = result;
     }
 
+    @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
       if (MODEL.equals(qName)) {
         for (int idx = 0; idx < attributes.getLength(); idx++) {
@@ -442,6 +443,7 @@ public class ModelPersistence {
       }
     }
 
+    @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
       throw new BreakParseSAXException();
     }

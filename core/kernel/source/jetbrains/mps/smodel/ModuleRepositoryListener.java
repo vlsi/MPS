@@ -29,5 +29,6 @@ public interface ModuleRepositoryListener extends SRepositoryListener {
 
   void moduleChanged(IModule module);
 
+  @Override
   void repositoryChanged();
 }

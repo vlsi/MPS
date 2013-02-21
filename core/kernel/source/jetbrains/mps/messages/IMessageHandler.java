@@ -17,8 +17,10 @@ package jetbrains.mps.messages;
 
 public interface IMessageHandler {
   public static final IMessageHandler NULL_HANDLER = new IMessageHandler() {
+    @Override
     public void handle(IMessage msg) {
     }
+    @Override
     public void clear() {
     }
   };

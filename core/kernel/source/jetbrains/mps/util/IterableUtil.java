@@ -56,6 +56,7 @@ public class IterableUtil {
 
   public static <T> Iterable<T> asIterable(final Iterator<T> i) {
     return new Iterable<T>() {
+      @Override
       public Iterator<T> iterator() {
         return i;
       }

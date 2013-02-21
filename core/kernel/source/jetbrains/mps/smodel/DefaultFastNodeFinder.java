@@ -89,6 +89,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       }
 
       Collections.sort(result, new Comparator<SNode>() {
+        @Override
         public int compare(SNode o1, SNode o2) {
           return ((jetbrains.mps.smodel.SNodeId) o1.getNodeId()).compareTo(((jetbrains.mps.smodel.SNodeId) o2.getNodeId()));
         }
@@ -152,6 +153,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       super(SModelListenerPriority.PLATFORM);
     }
 
+    @Override
     public void childAdded(SModelChildEvent event) {
       synchronized (myLock) {
         if (!myInitialized) return;
@@ -160,6 +162,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       }
     }
 
+    @Override
     public void childRemoved(SModelChildEvent event) {
       synchronized (myLock) {
         if (!myInitialized) return;
@@ -168,6 +171,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       }
     }
 
+    @Override
     public void rootAdded(SModelRootEvent event) {
       synchronized (myLock) {
         if (!myInitialized) return;
@@ -176,6 +180,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       }
     }
 
+    @Override
     public void rootRemoved(SModelRootEvent event) {
       synchronized (myLock) {
         if (!myInitialized) return;

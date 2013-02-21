@@ -65,6 +65,7 @@ public class ImmatureReferences implements CoreComponent {
     cleanup();
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -75,6 +76,7 @@ public class ImmatureReferences implements CoreComponent {
     ModelAccess.instance().addCommandListener(myModelAccessListener);
   }
 
+  @Override
   public void dispose() {
     mySModelRepository.removeModelRepositoryListener(myReposListener);
     ModelAccess.instance().removeCommandListener(myModelAccessListener);
@@ -125,12 +127,14 @@ public class ImmatureReferences implements CoreComponent {
   }
 
   private class MyModelAccessAdapter extends ModelAccessAdapter {
+    @Override
     public void commandFinished() {
       cleanup();
     }
   }
 
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
+    @Override
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       ConcurrentMap<SReferenceBase, Object> refSet = myReferences.remove(modelDescriptor.getSModelReference());
       if (refSet != null) {

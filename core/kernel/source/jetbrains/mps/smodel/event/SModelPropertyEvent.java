@@ -35,6 +35,7 @@ public class SModelPropertyEvent extends SModelEvent {
     myNewPropertyValue = newPropertyValue;
   }
 
+  @Override
   public SNode getAffectedRoot() {
     return myNode.getContainingRoot();
   }
@@ -47,6 +48,7 @@ public class SModelPropertyEvent extends SModelEvent {
     return myNode;
   }
 
+  @Override
   public void accept(SModelEventVisitor visitor) {
     visitor.visitPropertyEvent(this);
   }

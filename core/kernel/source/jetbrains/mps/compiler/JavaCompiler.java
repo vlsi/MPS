@@ -97,10 +97,12 @@ public class JavaCompiler {
       super(parent);
     }
 
+    @Override
     protected byte[] findClassBytes(String name) {
       return getClasses().get(name);
     }
 
+    @Override
     protected boolean isExcluded(String name) {
       return false;
     }
@@ -113,10 +115,12 @@ public class JavaCompiler {
       myClassPath = classPath;
     }
 
+    @Override
     protected IClassPathItem getClassPathItem() {
       return myClassPath;
     }
 
+    @Override
     protected NameEnvironmentAnswer findType(String fqName) {
       if (myCompilationUnits.containsKey(fqName)) {
         return new NameEnvironmentAnswer(myCompilationUnits.get(fqName), null);
@@ -127,10 +131,12 @@ public class JavaCompiler {
   }
 
   private static class MyErrorHandlingPolicy implements IErrorHandlingPolicy {
+    @Override
     public boolean proceedOnErrors() {
       return true;
     }
 
+    @Override
     public boolean stopOnFirstError() {
       return false;
     }
@@ -151,6 +157,7 @@ public class JavaCompiler {
   private static Logger LOG = Logger.getLogger(JavaCompiler.class);
 
   private class MyCompilerRequestor implements ICompilerRequestor {
+    @Override
     public void acceptResult(CompilationResult result) {
       if (result.getErrors() != null) {
         for (CategorizedProblem e : result.getErrors()) {

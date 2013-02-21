@@ -64,6 +64,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return getSModel().isRoot(node);
   }
 
+  @Override
   public void setModelRoot(ModelRoot modelRoot) {
 //    if (myModelRoot != null && modelRoot != null) {
 //      LOG.error("Duplicate model roots for model " + getLongName() + " in module " + modelRoot.getModule() + ": \n" +
@@ -74,6 +75,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myModelRoot = modelRoot;
   }
 
+  @Override
   public ModelRoot getModelRoot() {
     return myModelRoot;
   }

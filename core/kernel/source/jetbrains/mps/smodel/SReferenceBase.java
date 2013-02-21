@@ -62,6 +62,7 @@ abstract class SReferenceBase extends SReference {
     myImmatureTargetNode = immatureTargetNode;
   }
 
+  @Override
   @Deprecated
   public boolean isExternal() {
     SModel m = getSourceNode().getModel();
@@ -70,6 +71,7 @@ abstract class SReferenceBase extends SReference {
     return !(m.getReference().equals(getTargetSModelReference()));
   }
 
+  @Override
   public SModelReference getTargetSModelReference() {
     SNode immatureNode = myImmatureTargetNode;
     if (immatureNode == null || makeIndirect()) return myTargetModelReference;
@@ -77,19 +79,23 @@ abstract class SReferenceBase extends SReference {
     return model == null ? null : (SModelReference) model.getReference();
   }
 
+  @Override
   public synchronized void setTargetSModelReference(@NotNull SModelReference modelReference) {
     if (!makeIndirect()) makeMature(); // hack: make mature anyway: only can store ref to target model in 'mature' ref.
     myTargetModelReference = modelReference;
   }
 
+  @Override
   public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
     return SModelRepository.getInstance().getModelDescriptor(getTargetSModelReference());
   }
 
+  @Override
   public final boolean makeIndirect() {
     return makeIndirect(false);
   }
 
+  @Override
   public void makeDirect() {
     myImmatureTargetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(this);
     if (myImmatureTargetNode != null) {

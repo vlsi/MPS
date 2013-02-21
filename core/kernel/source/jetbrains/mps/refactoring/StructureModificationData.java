@@ -49,6 +49,7 @@ public class StructureModificationData {
       this(node.getNodeId(), (SModelReference) node.getModel().getReference());
     }
 
+    @Override
     public int compareTo(FullNodeId o) {
       int i2 = myModelReference.getLongName().compareTo(o.myModelReference.getLongName());
       if (i2 != 0) return i2;
@@ -119,6 +120,7 @@ public class StructureModificationData {
       myConceptFQName = InternUtil.intern(conceptFQName);
     }
 
+    @Override
     public int compareTo(ConceptFeature o) {
       int i1 = myConceptFQName.compareTo(o.myConceptFQName);
       int i2 = myConceptFeatureKind.compareTo(o.myConceptFeatureKind);

@@ -43,6 +43,7 @@ public class QueryMethodGenerated implements CoreComponent {
   private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();
 
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       clearCaches();
     }
@@ -54,10 +55,12 @@ public class QueryMethodGenerated implements CoreComponent {
     myClassLoaderManager = manager;
   }
 
+  @Override
   public void init() {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
+  @Override
   public void dispose() {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }

@@ -74,6 +74,7 @@ public class DynamicReference extends SReferenceBase {
     return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SLinkOperations.findLinkDeclaration(node.getConcept().getId(), role), "target", false), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
+  @Override
   protected SNode getTargetNode_internal() {
     // seems like getTargetNode() doesn't make sense if target node is detached
     assert mySourceNode.getModel() != null;
@@ -161,10 +162,12 @@ public class DynamicReference extends SReferenceBase {
     return null;
   }
 
+  @Override
   public void makeDirect() {
 
   }
 
+  @Override
   protected synchronized void makeMature() {
 
   }

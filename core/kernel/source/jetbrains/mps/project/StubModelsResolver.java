@@ -41,6 +41,7 @@ public class StubModelsResolver {
 
   private StubModelsResolver() {
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
+      @Override
       public void eventsHappenedInCommand(List<SModelEvent> events) {
         //make it more optimal
         myStubModulesCache.clear();

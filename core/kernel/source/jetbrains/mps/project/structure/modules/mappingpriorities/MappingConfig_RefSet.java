@@ -35,6 +35,7 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
     return myRefs;
   }
 
+  @Override
   public MappingConfig_RefSet getCopy() {
     MappingConfig_RefSet result = new MappingConfig_RefSet();
     for (MappingConfig_AbstractRef ref : myRefs) {
