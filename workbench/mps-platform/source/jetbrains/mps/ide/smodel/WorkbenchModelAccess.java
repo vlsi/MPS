@@ -645,7 +645,7 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public void assertReadAccess() {
+  public void checkReadAccess() {
     // TODO remove this method
     if (!canRead() /* && !myIndexingThreads.contains(Thread.currentThread())*/) {
       throw new IllegalModelAccessError("You can read model only inside read actions");

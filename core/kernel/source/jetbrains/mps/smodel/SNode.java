@@ -22,7 +22,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -40,7 +39,6 @@ import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SReference;
-import org.jetbrains.mps.openapi.module.SModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -884,13 +882,13 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (desc == null) return;
 
     SModule module = desc.getModule();
-    if(module == null) return;
+    if (module == null) return;
 
     SRepository repository = module.getRepository();
-    if(repository == null) return;
+    if (repository == null) return;
 
-    SModelAccess ma = repository.getModelAccess();
-    ma.assertReadAccess();
+    org.jetbrains.mps.openapi.module.ModelAccess ma = repository.getModelAccess();
+    ma.checkReadAccess();
   }
 
   private void assertDisposed() {

@@ -172,7 +172,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   //---------------get by-----------------------------
 
   @Override
-  public SModelAccess getModelAccess() {
+  public ModelAccess getModelAccess() {
     return ModelAccess.instance();
   }
 
