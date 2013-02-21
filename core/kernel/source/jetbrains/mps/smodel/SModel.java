@@ -1039,7 +1039,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
    */
   @NotNull
   public SModelReference getSModelReference() {
-    return ((SModelReference) getReference());
+    return getReference();
   }
 
   @Deprecated
