@@ -94,7 +94,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
     final PasteNodeData pasteNodeData = data;
 
     //this is used in case node is in repo to pass it into invokeLater
-    final SNodeReference selectedNodePointer = new jetbrains.mps.smodel.SNodePointer(nodeSelected);
+    final SNodeReference selectedNodePointer = nodeSelected.getReference();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modeltoPaste, context.getOperationContext());

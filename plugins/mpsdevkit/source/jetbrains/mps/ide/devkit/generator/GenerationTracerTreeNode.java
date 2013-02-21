@@ -62,6 +62,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     }
   }
 
+  @Override
   protected void doUpdatePresentation() {
     Kind kind = myTracerNode.getKind();
     SNodeReference nodePointer = myTracerNode.getNodePointer();
@@ -82,6 +83,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     return myTracerNode;
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     if (myTracerNode.getKind() == Kind.INPUT ||
       myTracerNode.getKind() == Kind.APPROXIMATE_INPUT) {
@@ -94,6 +96,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     return null;
   }
 
+  @Override
   public int getToggleClickCount() {
     return -1;
   }
@@ -110,10 +113,12 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     TracerNode rootTracerNode = rootNode.getTracerNode();
     if (rootTracerNode != null && rootTracerNode.getKind() == Kind.OUTPUT) {
       group.add(new BaseAction("Show Trace") {
+        @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           tracer.showTraceInputData(tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()));
         }
 
+        @Override
         protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
           boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelReference());
           setEnabledState(e.getPresentation(), enabled);
@@ -122,10 +127,12 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     }
 
     group.add(new BaseAction("Show Prev Step Traceback") {
+      @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         tracer.showTracebackData(tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()));
       }
 
+      @Override
       protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
         boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelReference());
         setEnabledState(e.getPresentation(), enabled);
@@ -147,10 +154,12 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     TracerNode rootTracerNode = rootNode.getTracerNode();
     if (rootTracerNode != null && (rootTracerNode.getKind() == Kind.INPUT || rootTracerNode.getKind() == Kind.RULE)) {
       group.add(new BaseAction("Show Traceback") {
+        @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           tracer.showTracebackData(tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()));
         }
 
+        @Override
         protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
           boolean enabled = enable && tracer.hasTracebackData(tracerNode.getNodePointer().getModelReference());
           setEnabledState(e.getPresentation(), enabled);
@@ -159,10 +168,12 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     }
 
     group.add(new BaseAction("Show Next Step Trace") {
+      @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         tracer.showTraceInputData(tracerNode.getNodePointer().resolve(MPSModuleRepository.getInstance()));
       }
 
+      @Override
       protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
         boolean enabled = enable && tracer.hasTraceInputData(tracerNode.getNodePointer().getModelReference());
         setEnabledState(e.getPresentation(), enabled);
@@ -172,6 +183,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
 
+  @Override
   public void autoscroll() {
     super.autoscroll();
     ModelAccess.instance().runWriteInEDT(new Runnable() {
@@ -186,6 +198,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     });
   }
 
+  @Override
   public void doubleClick() {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
@@ -203,6 +216,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
     });
   }
 
+  @Override
   public boolean isLeaf() {
     return getChildCount() == 0;
   }

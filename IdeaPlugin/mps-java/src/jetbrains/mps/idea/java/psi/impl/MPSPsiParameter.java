@@ -22,6 +22,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiExpression;
 import com.intellij.psi.PsiIdentifier;
 import com.intellij.psi.PsiJavaCodeReferenceElement;
+import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiModifier.ModifierConstant;
 import com.intellij.psi.PsiModifierList;
 import com.intellij.psi.PsiParameter;
@@ -57,8 +58,8 @@ public class MPSPsiParameter extends MPSPsiNode implements PsiParameter {
     final PsiElement parent = getParent();
     if (parent == null) return this;
 
-    if (parent instanceof PsiParameterList) {
-      return parent.getParent();
+    if (parent instanceof PsiMethod) {
+      return parent;
     }
     return null;
   }

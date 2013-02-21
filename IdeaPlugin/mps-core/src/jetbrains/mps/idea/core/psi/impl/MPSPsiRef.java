@@ -50,6 +50,11 @@ public class MPSPsiRef extends MPSPsiNodeBase {
     this.referenceText = referenceText;
   }
 
+  @Override
+  public PsiElement getParent() {
+    return super.getParent();
+  }
+
   public String getContainingRole() {
     return role;
   }

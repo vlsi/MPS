@@ -19,11 +19,10 @@ import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.editor.Document;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNodePointer;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collections;
 import java.util.List;
@@ -34,7 +33,7 @@ public class NodeEditor extends BaseNodeEditor {
   public NodeEditor(IOperationContext context, SNode node) {
     super(context);
     myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
-    editNode(new SNodePointer(node), context, false);
+    editNode(node.getReference(), context, false);
   }
 
   public Object getData(@NonNls String dataId) {

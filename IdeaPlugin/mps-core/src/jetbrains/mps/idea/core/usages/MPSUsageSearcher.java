@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.java.psi.impl;
+package jetbrains.mps.idea.core.usages;
 
 import com.intellij.facet.FacetManager;
+import com.intellij.find.findUsages.CustomUsageSearcher;
+import com.intellij.find.findUsages.FindUsagesOptions;
 import com.intellij.openapi.application.QueryExecutorBase;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
@@ -25,14 +27,16 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.PsiReference;
 import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.psi.search.searches.MethodReferencesSearch;
 import com.intellij.psi.search.searches.MethodReferencesSearch.SearchParameters;
+import com.intellij.usages.Usage;
 import com.intellij.util.Processor;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
+import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
+import jetbrains.mps.idea.core.usages.NodeUsage;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -48,20 +52,19 @@ import java.util.Deque;
  * danilla 2/13/13
  */
 
-public class MPSMethodReferenceSearch extends QueryExecutorBase<PsiReference, SearchParameters> {
+public class MPSUsageSearcher extends CustomUsageSearcher {
   @Override
-  public void processQuery(@NotNull MethodReferencesSearch.SearchParameters queryParameters, @NotNull final Processor<PsiReference> consumer) {
+  public void processElementUsages(final PsiElement element, final Processor<Usage> processor, final FindUsagesOptions options) {
 
-    if (!(queryParameters.getScope() instanceof GlobalSearchScope)) {
+    if (!(options.searchScope instanceof GlobalSearchScope)) {
       // ??
       return;
     }
 
-    GlobalSearchScope scope = (GlobalSearchScope) queryParameters.getScope();
+    GlobalSearchScope scope = (GlobalSearchScope) options.searchScope;
 
-    Project project = scope.getProject();
+    final Project project = scope.getProject();
     final MPSPsiProvider psiProvider = MPSPsiProvider.getInstance(project);
-    final PsiMethod targetMethod = queryParameters.getMethod();
 
     for (Module module : ModuleManager.getInstance(project).getModules()) {
       if (!scope.isSearchInModuleContent(module)) continue;
@@ -85,18 +88,23 @@ public class MPSMethodReferenceSearch extends QueryExecutorBase<PsiReference, Se
               }
               for (SReference ref : node.getReferences()) {
                 SNode targetNode = ref.getTargetNode();
-                PsiElement targetPsiElement = JavaMPSPsiNodeFactory.getPsiSourceOf(targetNode);
+                PsiElement targetPsiElement = null;
 
-                if (targetPsiElement == targetMethod) {
-                  PsiElement mpsPsiElem = psiProvider.getPsi(node);
-                  if (!(mpsPsiElem instanceof MPSPsiNode)) continue;
-                  MPSPsiNode mpsPsiNode = (MPSPsiNode) mpsPsiElem;
-                  MPSPsiRef[] refs = mpsPsiNode.getReferences("baseMethodDeclaration");
-                  if (refs.length == 0) {
-                    continue;
+                for (MPSNodePsiSourceFinder finder : MPSNodePsiSourceFinder.EP_NAME.getExtensions()) {
+                  PsiElement psiElement = finder.getPsiSource(targetNode, project);
+                  if (psiElement != null) {
+                    targetPsiElement = psiElement;
                   }
+                }
 
-                  boolean proceed = consumer.process(refs[0].getReference());
+                if (targetPsiElement == null) {
+                  // no one could tell us what psi element corresponds to this MPS node
+                  // bad, we can't continue
+                  continue;
+                }
+
+                if (targetPsiElement == element) {
+                  boolean proceed = processor.process(new NodeUsage(node.getReference(), project, "Bla-bla"));
                   if (!proceed) return;
                 }
               }

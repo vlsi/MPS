@@ -24,23 +24,20 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.LightColors;
 import jetbrains.mps.ide.bookmark.BookmarkManager.MyState;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.Icon;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.Graphics;
+import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -126,7 +123,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       LOG.error("node to bookmark is null");
       return;
     }
-    SNodeReference newBookmark = new jetbrains.mps.smodel.SNodePointer(node);
+    SNodeReference newBookmark = node.getReference();
     boolean bookmarkRemoved = false;
     for (int i = 0; i < 10; i++) {
       if (myBookmarks[i] != null && myBookmarks[i].resolve(MPSModuleRepository.getInstance()) == node) {
@@ -342,7 +339,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     //for serialization/deserialization
     @SuppressWarnings("UnusedDeclaration")
     public String getNodeRef() {
-      if (myNodeRef==null) return "";
+      if (myNodeRef == null) return "";
       return jetbrains.mps.smodel.SNodePointer.serialize(myNodeRef);
     }
 
@@ -392,7 +389,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       if (this == o) return true;
       if (o == null || getClass() != o.getClass()) return false;
 
-      MnemonicIcon that = (MnemonicIcon)o;
+      MnemonicIcon that = (MnemonicIcon) o;
 
       return myMnemonic == that.myMnemonic;
     }

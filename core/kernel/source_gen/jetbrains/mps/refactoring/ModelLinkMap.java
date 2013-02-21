@@ -334,7 +334,7 @@ public class ModelLinkMap {
     }).toListSequence();
     for (SNodeReference ptr : ListSequence.fromList(ptrList)) {
       List<T> list = MapSequence.fromMap(map).removeKey(ptr);
-      MapSequence.fromMap(map).put(new SNodePointer((jetbrains.mps.smodel.SModelReference) newModel, ((SNodePointer) ptr).getNodeId()), list);
+      MapSequence.fromMap(map).put(new SNodePointer(newModel, ((SNodePointer) ptr).getNodeId()), list);
     }
   }
 

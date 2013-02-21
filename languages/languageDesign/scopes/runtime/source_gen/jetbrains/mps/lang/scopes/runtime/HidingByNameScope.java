@@ -27,11 +27,15 @@ public class HidingByNameScope extends Scope {
   private final Set<String> names;
 
   public HidingByNameScope(SNode hidingRoot, SNode kind, @NotNull Scope scope, @NotNull Scope parentScope) {
+    this(NameUtil.nodeFQName(hidingRoot), NameUtil.nodeFQName(kind), scope, parentScope);
+  }
+
+  public HidingByNameScope(String hidingRootConceptFQName, String kindConceptFQName, @NotNull Scope scope, @NotNull Scope parentScope) {
     // hiding root: all subconcepts of hidingRoot hide each other 
     this.scope = scope;
     this.parentScope = parentScope;
-    this.hidingRootConceptFqName = NameUtil.nodeFQName(hidingRoot);
-    this.kindConceptFqName = NameUtil.nodeFQName(kind);
+    this.hidingRootConceptFqName = hidingRootConceptFQName;
+    this.kindConceptFqName = kindConceptFQName;
     // todo: maybe lazy in getAvailableElements? 
     // todo: I need this micro optimizations? 
     Iterable<SNode> tmpResult = scope.getAvailableElements(null);

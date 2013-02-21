@@ -290,7 +290,7 @@ public class GenerationTracer implements IGenerationTracer {
     return myModelsProcessedByScripts != null && myModelsProcessedByScripts.hasInput(modelReference);
   }
 
-  public boolean showTraceInputData(SNode node) {
+  public boolean showTraceInputData(@NotNull SNode node) {
     int index = getTracerViewTool().getTabIndex(Kind.INPUT, node);
     if (index > -1) {
       getTracerViewTool().selectIndex(index);
@@ -305,8 +305,8 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   @Nullable
-  private TracerNode buildTraceInputTree(SNode node) {
-    List<TracerNode> tracerNodes = findAllTopmostTracerNodes(Kind.INPUT, new jetbrains.mps.smodel.SNodePointer(node));
+  private TracerNode buildTraceInputTree(@NotNull SNode node) {
+    List<TracerNode> tracerNodes = findAllTopmostTracerNodes(Kind.INPUT, node.getReference());
     if (!tracerNodes.isEmpty()) {
       TracerNode resultTracerNode = new TracerNode(tracerNodes.get(0).getKind(), tracerNodes.get(0).getNodePointer());
       for (TracerNode tracerNode : tracerNodes) {

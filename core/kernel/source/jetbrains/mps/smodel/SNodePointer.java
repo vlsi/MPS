@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -26,13 +27,12 @@ public class SNodePointer implements SNodeReference {
   private SNodeId myNodeId;
 
   public SNodePointer(String modelUID, String nodeId) {
-    this(SModelReference.fromString(modelUID), jetbrains.mps.smodel.SNodeId.fromString(nodeId));
+    this(jetbrains.mps.smodel.SModelReference.fromString(modelUID), jetbrains.mps.smodel.SNodeId.fromString(nodeId));
   }
 
   public SNodePointer(SNode node) {
     if (node == null) return;
-    SModel model = node.getModel();
-    myModelReference = (SModelReference) model.getReference();
+    myModelReference = node.getContainingModel().getReference();
     myNodeId = node.getNodeId();
   }
 
@@ -42,7 +42,7 @@ public class SNodePointer implements SNodeReference {
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SNode resolve(SRepository repo) {
+  public SNode resolve(SRepository repo) {
     if (myNodeId == null) return null;
 
     if (myModelReference != null) {
@@ -62,8 +62,9 @@ public class SNodePointer implements SNodeReference {
     return null;
   }
 
-  public SModelReference getModelReference() {
-    return myModelReference;
+  @Override
+  public jetbrains.mps.smodel.SModelReference getModelReference() {
+    return (jetbrains.mps.smodel.SModelReference) myModelReference;
   }
 
   public String toString() {

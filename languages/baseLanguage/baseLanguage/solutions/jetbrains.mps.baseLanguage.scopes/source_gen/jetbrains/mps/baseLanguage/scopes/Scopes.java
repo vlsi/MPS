@@ -52,6 +52,7 @@ public class Scopes {
 
   public static Scope forTypeVariables(Iterable<SNode> variables, Scope parentScope) {
     // Hiding only other type variables 
-    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), new NamedElementsScope(variables), parentScope);
+    String typeVarConceptFQName = "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration";
+    return new HidingByNameScope(typeVarConceptFQName, typeVarConceptFQName, new NamedElementsScope(variables), parentScope);
   }
 }
