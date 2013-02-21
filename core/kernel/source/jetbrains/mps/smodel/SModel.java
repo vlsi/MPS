@@ -81,47 +81,57 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     myIdToNodeMap = map;
   }
 
+  @Override
   public SModelId getModelId() {
     return getSModelReference().getSModelId();
   }
 
+  @Override
   public String getModelName() {
     return getReference().getModelName();
   }
 
+  @Override
   @NotNull
   public SModelReference getReference() {
     return myReference;
   }
 
+  @Override
   public ModelRoot getModelRoot() {
     return getModelDescriptor() == null ? null : getModelDescriptor().getModelRoot();
   }
 
+  @Override
   public void setModelRoot(ModelRoot mr) {
     if (getModelDescriptor() != null) {
       getModelDescriptor().setModelRoot(mr);
     }
   }
 
+  @Override
   public SModule getModule() {
     SModelDescriptor md = getModelDescriptor();
     return md == null ? null : md.getModule();
   }
 
+  @Override
   public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
     fireModelNodesReadAccess();
     return new Iterable<org.jetbrains.mps.openapi.model.SNode>() {
+      @Override
       public Iterator<org.jetbrains.mps.openapi.model.SNode> iterator() {
         return (Iterator) myRoots.iterator();
       }
     };
   }
 
+  @Override
   public boolean isRoot(@Nullable org.jetbrains.mps.openapi.model.SNode node) {
     return myRoots.contains(node);
   }
 
+  @Override
   public void addRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
     ModelChange.assertLegalNodeRegistration(this, node);
@@ -141,6 +151,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     myRoots.add(sn);
     sn.registerInModel(this);
     performUndoableAction(new Computable<SNodeUndoableAction>() {
+      @Override
       public SNodeUndoableAction compute() {
         return new AddRootUndoableAction(node);
       }
@@ -148,6 +159,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     fireRootAddedEvent(sn);
   }
 
+  @Override
   public void removeRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
     ModelChange.assertLegalNodeUnRegistration(this, node);
@@ -157,6 +169,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
       SNode sn = (SNode) node;
       sn.unRegisterFromModel();
       performUndoableAction(new Computable<SNodeUndoableAction>() {
+        @Override
         public SNodeUndoableAction compute() {
           return new RemoveRootUndoableAction(node);
         }
@@ -165,6 +178,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     }
   }
 
+  @Override
   @Nullable
   public SNode getNode(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
     checkNotDisposed();
@@ -179,16 +193,20 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   @Override
   public SModelScope getModelScope() {
     return new SModelScope() {
+      @Override
       public Iterable<? extends org.jetbrains.mps.openapi.model.SModel> getModels() {
         return new TranslatingIterator<ImportElement, org.jetbrains.mps.openapi.model.SModel>(myImports.iterator()) {
+          @Override
           protected org.jetbrains.mps.openapi.model.SModel translate(ImportElement imp) {
             return imp.getModelReference().resolve(MPSModuleRepository.getInstance());
           }
         };
       }
 
+      @Override
       public Iterable<SLanguage> getLanguages() {
         return new TranslatingIterator<ModuleReference, SLanguage>(myLanguages.iterator()) {
+          @Override
           protected SLanguage translate(ModuleReference ref) {
             return new SLanguageLanguageAdapter(((Language) ref.resolve(MPSModuleRepository.getInstance())));
           }
@@ -197,6 +215,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     };
   }
 
+  @Override
   @NotNull
   public DataSource getSource() {
     SModelDescriptor md = getModelDescriptor();
@@ -209,10 +228,12 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return md != null && md.isReadOnly();
   }
 
+  @Override
   public void save() throws IOException {
     //todo
   }
 
+  @Override
   public void unload() {
     //todo
   }
