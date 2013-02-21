@@ -31,5 +31,11 @@ public class PsiTestMain {
         for (String line : node3) {
             System.out.println(line);
         }
+
+        // enums
+        switch (node3.color) {
+            case BLACK: break;
+            case RED: break;
+        }
     }
 }
