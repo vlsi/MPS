@@ -48,6 +48,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     myProject = project;
   }
 
+  @Override
   public void projectOpened() {
     if (MPSCore.getInstance().isTestMode()) {
       return;
@@ -67,6 +68,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     }.start();
   }
 
+  @Override
   public void projectClosed() {
     if (MPSCore.getInstance().isTestMode()) {
       return;
@@ -93,13 +95,16 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "MPS Project IDE Handler";
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
@@ -107,6 +112,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     return WindowManager.getInstance().getFrame(myProject);
   }
 
+  @Override
   public void showNode(final String namespace, final String id) throws RemoteException {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
@@ -125,12 +131,14 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     });
   }
 
+  @Override
   public void showAspectMethodUsages(final String namespace, final String name) throws RemoteException {
     SearchQuery searchQuery = new SearchQuery(new AspectMethodsFinder.AspectMethodsHolder(namespace, name), GlobalScope.getInstance());
     IFinder[] finders = new IFinder[]{new AspectMethodsFinder()};
     myProject.getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finders), searchQuery, false, true, false, "No usages for that method");
   }
 
+  @Override
   public void showConceptNode(final String fqName) throws RemoteException {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
@@ -141,6 +149,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     });
   }
 
+  @Override
   public void showClassUsages(final String fqName) throws RemoteException {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -155,6 +164,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     });
   }
 
+  @Override
   public void showMethodUsages(final String classFqName, final String methodName, final int parameterCount) throws RemoteException {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

@@ -29,6 +29,7 @@ public class NanocConfigRunPreparationUtil {
     AbstractModule module = (AbstractModule) descriptor.getModule();
     final Wrappers._T<String> sourceFileName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         sourceFileName.value = SPropertyOperations.getString(sourceFileNode, "name");
       }

@@ -27,7 +27,7 @@ public abstract class MigrationScriptsController {
 
   public Collection<SearchResult<SNode>> computeAliveIncludedResults(final List<SNodeReference> includedResultNodes) {
     ThreadUtils.assertEDT();
-    final List aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
+    final List<SearchResult<SNode>> aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
     final Set aliveIncludedNodes = new HashSet<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

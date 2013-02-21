@@ -211,6 +211,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeConfirmation" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />

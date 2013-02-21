@@ -52,6 +52,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import javax.swing.JComponent;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
@@ -339,6 +340,8 @@ public class MergeRootsDialog extends DialogWrapper {
     });
   }
 
+  @NotNull
+  @Override
   protected Action[] createActions() {
     List<Action> actions = ListSequence.fromList(new ArrayList<Action>());
     ListSequence.fromList(actions).addElement(getOKAction());

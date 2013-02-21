@@ -18,6 +18,7 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="java.lang.ProcessBuilder" />
     <classNode dependClassName="java.lang.Runnable" />
