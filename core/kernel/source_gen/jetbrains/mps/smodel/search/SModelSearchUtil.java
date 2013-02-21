@@ -143,7 +143,7 @@ public class SModelSearchUtil {
         for (Language language : languages) {
           if (myRootsOnly) {
             SModel structureModel = language.getStructureModelDescriptor().getSModel();
-            for (SNode node : structureModel.roots()) {
+            for (SNode node : structureModel.getRootNodes()) {
               if (SNodeUtil.isInstanceOfConceptDeclaration(node)) {
                 myConcepts.add(node);
               }

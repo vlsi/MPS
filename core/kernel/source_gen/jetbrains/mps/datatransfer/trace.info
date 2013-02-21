@@ -219,7 +219,7 @@
     <scopeInfo nodeId="1058093769519024494" fileName="CopyPasteManager.java" startLine="95" startPosition="0" endLine="123" endPosition="0" />
     <unitInfo nodeId="5948027493683574988" fileName="CopyPasteManager.java" startLine="56" startPosition="76" endLine="60" endPosition="7" unitName="jetbrains.mps.datatransfer.CopyPasteManager$1" />
     <unitInfo nodeId="1617630891477329381" fileName="CopyPasteManager.java" startLine="69" startPosition="76" endLine="73" endPosition="7" unitName="jetbrains.mps.datatransfer.CopyPasteManager$2" />
-    <unitInfo nodeId="2197509460969624306" fileName="CopyPasteManager.java" startLine="106" startPosition="109" endLine="110" endPosition="7" unitName="jetbrains.mps.datatransfer.CopyPasteManager$3" />
+    <unitInfo nodeId="2197509460969624306" fileName="CopyPasteManager.java" startLine="106" startPosition="116" endLine="110" endPosition="7" unitName="jetbrains.mps.datatransfer.CopyPasteManager$3" />
     <unitInfo nodeId="1622834379618551046" fileName="CopyPasteManager.java" startLine="24" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.datatransfer.CopyPasteManager" />
   </root>
   <root nodeRef="r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.datatransfer)/5948027493682472176">

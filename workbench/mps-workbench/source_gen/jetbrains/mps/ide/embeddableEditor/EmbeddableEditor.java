@@ -89,7 +89,7 @@ public class EmbeddableEditor {
   private void setNode(@NotNull final SNode node, boolean addToModel) {
     myNode = node;
     if (addToModel) {
-      smodel().addRoot(node);
+      smodel().addRootNode(node);
     }
     myFileNodeEditor = new MPSFileNodeEditor(myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode));
     Editor editor = myFileNodeEditor.getNodeEditor();

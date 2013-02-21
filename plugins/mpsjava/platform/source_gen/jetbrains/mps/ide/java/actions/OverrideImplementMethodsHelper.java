@@ -69,7 +69,7 @@ public class OverrideImplementMethodsHelper {
   }
 
   private void update(SNode method, SNode baseMethod) {
-    if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(baseMethod).getStereotype())) {
+    if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(baseMethod)))) {
       setVariableNames(method, MapSequence.fromMap(new HashMap<String, Integer>()));
     }
     if (myRemoveAttributes) {

@@ -43,7 +43,7 @@ public class ShowGenerationTraceback_Action extends BaseAction {
         }
         GenerationTracer tracer = (GenerationTracer) ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(IGenerationTracer.class);
         event.getPresentation().setVisible(tracer.hasTracingData());
-        event.getPresentation().setEnabled(tracer.hasTracebackData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getSModelReference()));
+        event.getPresentation().setEnabled(tracer.hasTracebackData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getReference()));
       }
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "ShowGenerationTraceback", t);

@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.util.SNodeOperations;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -28,10 +29,10 @@ public class SReferenceCreator implements SReferenceHandler {
 
   @Override
   public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation) {
-    if (pack.equals(model.getLongName())) {
-      SNode nodeInSameModel = model.getNodeById(targetNodeId);
+    if (pack.equals(SNodeOperations.getModelLongName(model))) {
+      SNode nodeInSameModel = model.getNode(targetNodeId);
       if (nodeInSameModel != null) {
-        return jetbrains.mps.smodel.SReference.create(role, source, model.getSModelReference(), targetNodeId, resolveInfo);
+        return jetbrains.mps.smodel.SReference.create(role, source, model.getReference(), targetNodeId, resolveInfo);
       }
     }
 
@@ -45,16 +46,16 @@ public class SReferenceCreator implements SReferenceHandler {
       for (SModelReference m : models) {
         model.addModelImport(m, false);
       }
-      return new DynamicReference(role, source, new SModelReference(pack, model.getStereotype()), resolveInfo);
+      return new DynamicReference(role, source, new SModelReference(pack, SNodeOperations.getModelStereotype(model)), resolveInfo);
     }
 
     ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(SetSequence.fromSet(models).first()).getModule().getModuleReference();
-    SModelReference ref = StubHelper.uidForPackageInStubs(new SModelFqName(pack, model.getStereotype()), moduleRef, false);
+    SModelReference ref = StubHelper.uidForPackageInStubs(new SModelFqName(pack, SNodeOperations.getModelStereotype(model)), moduleRef, false);
     model.addModelImport(SetSequence.fromSet(models).first(), false);
     return jetbrains.mps.smodel.SReference.create(role, source, ref, targetNodeId, resolveInfo);
   }
 
   private Set<SModelReference> getModelReferencesFor(String pack, String rootPresentation) {
-    return StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pack, model.getStereotype()), null);
+    return StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pack, SNodeOperations.getModelStereotype(model)), null);
   }
 }

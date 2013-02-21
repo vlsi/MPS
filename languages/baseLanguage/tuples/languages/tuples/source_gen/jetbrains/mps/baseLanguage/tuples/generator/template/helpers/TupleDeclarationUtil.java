@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.tuples.generator.template.helpers;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 
 public class TupleDeclarationUtil {
   public TupleDeclarationUtil() {
@@ -12,7 +12,7 @@ public class TupleDeclarationUtil {
 
   public static String getResolveInfo(SNode tupleDeclaration) {
     String fqName = BehaviorReflection.invokeVirtual(String.class, tupleDeclaration, "virtual_getFqName_1213877404258", new Object[]{});
-    String packageName = SNodeOperations.getModel(tupleDeclaration).getLongName();
+    String packageName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(tupleDeclaration));
     if (fqName.startsWith(packageName + ".")) {
       return "[" + packageName + "]" + fqName.substring(packageName.length() + 1);
     }

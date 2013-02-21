@@ -19,6 +19,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.lang.reflect.Constructor;
@@ -82,7 +83,7 @@ public class RefactoringUtil {
       SModelDescriptor scriptsModelDescriptor = LanguageAspect.SCRIPTS.get(language);
       if (scriptsModelDescriptor != null) {
         SModel scriptsModel = scriptsModelDescriptor.getSModel();
-        String packageName = scriptsModel.getLongName();
+        String packageName = SNodeOperations.getModelLongName(scriptsModel);
         for (SNode refactoring : SModelOperations.getRoots(scriptsModel, "jetbrains.mps.lang.refactoring.structure.OldRefactoring")) {
           try {
             String fqName = packageName + "." + SPropertyOperations.getString(refactoring, "name");
@@ -104,7 +105,7 @@ public class RefactoringUtil {
     SModelDescriptor refModelDescriptor = LanguageAspect.REFACTORINGS.get(language);
     if (refModelDescriptor != null) {
       SModel refactoringsModel = refModelDescriptor.getSModel();
-      String packageName = refactoringsModel.getLongName();
+      String packageName = SNodeOperations.getModelLongName(refactoringsModel);
       for (SNode refactoring : SModelOperations.getRoots(refactoringsModel, "jetbrains.mps.lang.refactoring.structure.Refactoring")) {
         try {
           String fqName = packageName + "." + SPropertyOperations.getString(refactoring, "name");

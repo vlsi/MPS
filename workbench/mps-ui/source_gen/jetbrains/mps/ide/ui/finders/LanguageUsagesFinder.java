@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.SNodeOperations;
 
 public class LanguageUsagesFinder implements IFinder {
@@ -129,7 +130,7 @@ public class LanguageUsagesFinder implements IFinder {
     if (!(SModelStereotype.isUserModel(modelDescriptor.getSModel()))) {
       return;
     }
-    for (SNode node : modelDescriptor.getSModel().nodes()) {
+    for (SNode node : new NodesIterable(modelDescriptor.getSModel())) {
       if (SNodeOperations.getLanguage(node) == searchedLanguage) {
         searchResults.getSearchResults().add(new SearchResult<SNode>(node, NODES_IN_LANGUAGE));
       }

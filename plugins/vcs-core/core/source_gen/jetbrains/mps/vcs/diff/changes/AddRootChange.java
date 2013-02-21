@@ -25,7 +25,7 @@ public class AddRootChange extends ModelChange {
 
   @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
-    SNode newNode = getChangeSet().getNewModel().getNodeById(myNodeId);
+    SNode newNode = getChangeSet().getNewModel().getNode(myNodeId);
     SModelOperations.addRootNode(model, nodeCopier.copyNode(newNode));
   }
 

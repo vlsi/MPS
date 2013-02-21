@@ -15,6 +15,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class Context {
@@ -94,11 +95,11 @@ public class Context {
   }
 
   public RelativePathHelper getRelativePathHelper(@NotNull SModel model) {
-    if (model.isTransient() && myGenerationContext != null) {
+    if (model instanceof TransientSModel && myGenerationContext != null) {
       model = myGenerationContext.getOriginalInputModel();
     }
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    if (model.isTransient() || modelDescriptor == null) {
+    if (model instanceof TransientSModel || modelDescriptor == null) {
       return null;
     }
     IModule module = modelDescriptor.getModule();

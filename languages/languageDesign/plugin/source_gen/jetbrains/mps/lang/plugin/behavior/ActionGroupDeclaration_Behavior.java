@@ -28,7 +28,7 @@ public class ActionGroupDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_1213877494288(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(thisNode);
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(thisNode)) + "." + ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(thisNode);
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {

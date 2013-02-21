@@ -16,6 +16,7 @@ import java.util.Collections;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.NameUtil;
@@ -39,7 +40,7 @@ public class SModelOperations {
     }
     if (conceptFqName == null) {
       ArrayList<SNode> result = new ArrayList<SNode>();
-      for (SNode root : model.roots()) {
+      for (SNode root : model.getRootNodes()) {
         result.add(root);
       }
       return result;
@@ -52,7 +53,7 @@ public class SModelOperations {
         return SNodeUtil.isInstanceOf(node, SNodeOperations.getConcept(conceptFqName));
       }
     };
-    Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.roots(), cond);
+    Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.getRootNodes(), cond);
     for (SNode node : iterable) {
       list.add(node);
     }
@@ -98,8 +99,8 @@ public class SModelOperations {
     List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
       Iterable<? extends SNode> nodes = (roots ?
-        aModel.roots() :
-        aModel.nodes()
+        aModel.getRootNodes() :
+        new NodesIterable(aModel)
       );
       if (concept == null) {
         resultNodes.addAll(IterableUtil.asList(nodes));
@@ -120,7 +121,7 @@ public class SModelOperations {
       return model.getFastNodeFinder().getNodes(conceptFqName, true);
     }
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode node : model.nodes()) {
+    for (SNode node : new NodesIterable(model)) {
       result.add(node);
     }
     return result;
@@ -157,13 +158,13 @@ public class SModelOperations {
 
   public static jetbrains.mps.smodel.SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
     jetbrains.mps.smodel.SNode newNode = createNewNode(model, conceptFqName);
-    model.addRoot(newNode);
+    model.addRootNode(newNode);
     return newNode;
   }
 
   public static SNode addRootNode(SModel model, SNode node) {
     if (model != null && node != null) {
-      model.addRoot(node);
+      model.addRootNode(node);
     }
     return node;
   }
@@ -172,7 +173,7 @@ public class SModelOperations {
     if (model == null) {
       return null;
     }
-    return model.getLongName();
+    return SNodeOperations.getModelLongName(model);
   }
 
   public static SNode getModuleStub(SModel model) {

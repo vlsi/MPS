@@ -360,10 +360,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1219355399537(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SModelReference targetModelRef = SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "referentNode", false)).getSModelReference();
-    SModelReference sourceModelRef = SNodeOperations.getModel(_context.getNode()).getSModelReference();
+    SModelReference targetModelRef = SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "referentNode", false)).getReference();
+    SModelReference sourceModelRef = SNodeOperations.getModel(_context.getNode()).getReference();
     if (sourceModelRef.equals(targetModelRef)) {
-      return _context.getOriginalInputModel().getSModelReference().toString();
+      return _context.getOriginalInputModel().getReference().toString();
     }
     return targetModelRef.toString();
   }
@@ -373,10 +373,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1828409047608049663(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SModelReference targetModelRef = SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "referentNode", false)).getSModelReference();
-    SModelReference sourceModelRef = SNodeOperations.getModel(_context.getNode()).getSModelReference();
+    SModelReference targetModelRef = SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "referentNode", false)).getReference();
+    SModelReference sourceModelRef = SNodeOperations.getModel(_context.getNode()).getReference();
     if (sourceModelRef.equals(targetModelRef)) {
-      return _context.getOriginalInputModel().getSModelReference().toString();
+      return _context.getOriginalInputModel().getReference().toString();
     }
     return targetModelRef.toString();
   }
@@ -755,7 +755,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1241008498022(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).getSModelReference().toString();
+    return SNodeOperations.getModel(_context.getNode()).getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1241008498035(final IOperationContext operationContext, final PropertyMacroContext _context) {

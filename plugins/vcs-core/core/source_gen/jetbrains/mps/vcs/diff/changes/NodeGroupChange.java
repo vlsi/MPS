@@ -65,7 +65,7 @@ public class NodeGroupChange extends ModelChange {
 
   public void prepare() {
     if (myPreparedIdsToDelete == null) {
-      SNode parent = getChangeSet().getOldModel().getNodeById(myParentNodeId);
+      SNode parent = getChangeSet().getOldModel().getNode(myParentNodeId);
       assert parent != null;
 
       List<? extends SNode> children = IterableUtil.asList(parent.getChildren(myRole));
@@ -86,14 +86,14 @@ public class NodeGroupChange extends ModelChange {
     prepare();
     ListSequence.fromList(myPreparedIdsToDelete).visitAll(new IVisitor<SNodeId>() {
       public void visit(SNodeId id) {
-        model.getNodeById(id).delete();
+        model.getNode(id).delete();
       }
     });
     myPreparedIdsToDelete = null;
 
     // copy nodes to insert 
     List<SNode> nodesToAdd = ListSequence.fromList(new ArrayList<SNode>());
-    List<? extends SNode> newChildren = IterableUtil.asList(getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole));
+    List<? extends SNode> newChildren = IterableUtil.asList(getChangeSet().getNewModel().getNode(myParentNodeId).getChildren(myRole));
     for (int i = myResultBegin; i < myResultEnd; i++) {
       ListSequence.fromList(nodesToAdd).addElement(nodeCopier.copyNode(newChildren.get(i)));
     }
@@ -101,9 +101,9 @@ public class NodeGroupChange extends ModelChange {
     // insert new nodes 
     SNode anchor = (myPreparedAnchorId == null ?
       null :
-      model.getNodeById(myPreparedAnchorId)
+      model.getNode(myPreparedAnchorId)
     );
-    SNode parent = model.getNodeById(myParentNodeId);
+    SNode parent = model.getNode(myParentNodeId);
     for (SNode newNode : ListSequence.fromList(nodesToAdd).reversedList()) {
       parent.insertChild(myRole, newNode, anchor);
     }
@@ -112,7 +112,7 @@ public class NodeGroupChange extends ModelChange {
   @Nullable
   @Override
   public SNodeId getRootId() {
-    return getChangeSet().getOldModel().getNodeById(myParentNodeId).getContainingRoot().getNodeId();
+    return getChangeSet().getOldModel().getNode(myParentNodeId).getContainingRoot().getNodeId();
   }
 
   @NotNull
@@ -147,7 +147,7 @@ public class NodeGroupChange extends ModelChange {
     List<? extends SNode> newChildren = null;
     String newIds = null;
     if (verbose) {
-      newChildren = IterableUtil.asList(getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole));
+      newChildren = IterableUtil.asList(getChangeSet().getNewModel().getNode(myParentNodeId).getChildren(myRole));
       newIds = IterableUtils.join(ListSequence.fromList(newChildren).page(myResultBegin, myResultEnd).select(new ISelector<SNode, String>() {
         public String select(SNode n) {
           return "#" + n.getNodeId();

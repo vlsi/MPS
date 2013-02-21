@@ -64,7 +64,7 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              SNode root = sModel.rootsIterator().next();
+              SNode root = sModel.getRootNodes().iterator().next();
               result[0] = (IterableUtil.asCollection(root.getChildren(newLinkName)).size() == 4);
             } catch (Throwable t) {
               t.printStackTrace();

@@ -25,6 +25,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import jetbrains.mps.generator.textGen.TextGeneratorEngine;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.util.IterableUtil;
 import java.util.Map;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -157,7 +158,7 @@ public class TextGen_Facet extends IFacet.Stub {
                         public void run() {
                           SModel outputModel = currentResource.status().getOutputModel();
                           if (outputModel != null) {
-                            currentRootsCount.value += outputModel.rootsCount();
+                            currentRootsCount.value += IterableUtil.asCollection(outputModel.getRootNodes()).size();
                           }
                         }
                       });
@@ -195,7 +196,7 @@ public class TextGen_Facet extends IFacet.Stub {
                   });
 
                   // textgen 
-                  String nameOfStep = ListSequence.fromList(currentInput).first().status().getInputModel().getSModelReference().getSModelFqName().getLongName();
+                  String nameOfStep = ListSequence.fromList(currentInput).first().status().getInputModel().getReference().getSModelFqName().getLongName();
                   monitor.currentProgress().advanceWork("Writing", ListSequence.fromList(currentInput).count() * 100, nameOfStep);
 
                   final List<IMessage> errors = ListSequence.fromList((ListSequence.fromList(new ArrayList<IMessage>()))).asSynchronized();
@@ -251,7 +252,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       }
                     }).foldLeft(0, new ILeftCombinator<SModelDescriptor, Integer>() {
                       public Integer combine(Integer s, SModelDescriptor it) {
-                        return s + it.getSModel().rootsCount();
+                        return s + IterableUtil.asCollection(it.getSModel().getRootNodes()).size();
                       }
                     });
                     LOG.info("roots count: " + overallRootsCount);
@@ -448,7 +449,7 @@ public class TextGen_Facet extends IFacet.Stub {
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
                     sModel.value = resource.status().getOutputModel();
-                    for (SNode root : sModel.value.roots()) {
+                    for (SNode root : sModel.value.getRootNodes()) {
                       TextGenerationResult tgr = TextGenerationUtil.generateText(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Generate_Facet.Target_checkParameters.Variables.class).operationContext(), root);
                       errors.value |= tgr.hasErrors();
                       if (errors.value) {

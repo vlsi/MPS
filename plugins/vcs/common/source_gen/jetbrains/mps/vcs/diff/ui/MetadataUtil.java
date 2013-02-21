@@ -11,6 +11,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -37,8 +38,8 @@ public class MetadataUtil {
 
   public static SNode createModelRoot(SModel model) {
     SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
-    SPropertyOperations.set(root, "longname", model.getLongName());
-    SPropertyOperations.set(root, "uuid", model.getSModelId() + "");
+    SPropertyOperations.set(root, "longname", SNodeOperations.getModelLongName(model));
+    SPropertyOperations.set(root, "uuid", model.getModelId() + "");
     SPropertyOperations.set(root, "version", "" + (model.getVersion()));
     if (model instanceof DefaultSModel) {
       SPropertyOperations.set(root, "donotgenerate", "" + (check_ca1g54_a0a0e0c(((DefaultSModel) model).getSModelHeader())));

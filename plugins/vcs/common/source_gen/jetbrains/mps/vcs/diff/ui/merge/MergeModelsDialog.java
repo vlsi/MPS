@@ -499,7 +499,7 @@ public class MergeModelsDialog extends DialogWrapper {
         rootTreeNode.setAdditionalText("with conflicts");
       } else {
         if (nonConflictedCount == 0) {
-          if (rootTreeNode.getRootId() != null && myMergeSession.getResultModel().getNodeById(rootTreeNode.getRootId()) == null) {
+          if (rootTreeNode.getRootId() != null && myMergeSession.getResultModel().getNode(rootTreeNode.getRootId()) == null) {
             rootTreeNode.setTextStyle(SimpleTextAttributes.STYLE_STRIKEOUT);
           }
         } else {

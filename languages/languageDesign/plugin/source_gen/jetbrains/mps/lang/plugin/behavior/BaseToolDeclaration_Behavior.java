@@ -5,7 +5,7 @@ package jetbrains.mps.lang.plugin.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.checkedName.PropertyReference;
@@ -25,7 +25,7 @@ public class BaseToolDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_6547237850567463438(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + BaseToolDeclaration_Behavior.call_getGeneratedName_6547237850567463427(thisNode);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + BaseToolDeclaration_Behavior.call_getGeneratedName_6547237850567463427(thisNode);
   }
 
   public static boolean call_hasNumber_6547237850567463455(SNode thisNode) {
@@ -41,7 +41,7 @@ public class BaseToolDeclaration_Behavior {
   }
 
   public static String call_getExpandedIconPath_6547237850567463492(SNode thisNode) {
-    IModule module = SNodeOperations.getModel(thisNode).getModelDescriptor().getModule();
+    IModule module = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode).getModelDescriptor().getModule();
     if (module == null) {
       return null;
     }

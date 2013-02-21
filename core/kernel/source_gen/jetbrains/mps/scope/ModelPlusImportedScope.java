@@ -13,6 +13,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -62,13 +63,13 @@ public class ModelPlusImportedScope extends Scope {
       String conceptToCheck;
 
       if (myRootsOnly) {
-        nodes = model.getSModel().roots();
+        nodes = model.getSModel().getRootNodes();
         conceptToCheck = myTargetConcept;
       } else if (myTargetConcept != null) {
         nodes = model.getSModel().getFastNodeFinder().getNodes(myTargetConcept, true);
         conceptToCheck = null;
       } else {
-        nodes = ((Iterable) model.getSModel().nodes());
+        nodes = ((Iterable) new NodesIterable(model.getSModel()));
         conceptToCheck = null;
       }
 
@@ -104,13 +105,13 @@ public class ModelPlusImportedScope extends Scope {
       String conceptToCheck;
 
       if (myRootsOnly) {
-        nodes = model.getSModel().roots();
+        nodes = model.getSModel().getRootNodes();
         conceptToCheck = myTargetConcept;
       } else if (myTargetConcept != null) {
         nodes = model.getSModel().getFastNodeFinder().getNodes(myTargetConcept, true);
         conceptToCheck = null;
       } else {
-        nodes = ((Iterable) model.getSModel().nodes());
+        nodes = ((Iterable) new NodesIterable(model.getSModel()));
         conceptToCheck = null;
       }
 

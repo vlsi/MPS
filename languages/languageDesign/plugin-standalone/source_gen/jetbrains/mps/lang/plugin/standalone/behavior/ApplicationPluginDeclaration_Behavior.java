@@ -5,7 +5,7 @@ package jetbrains.mps.lang.plugin.standalone.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -18,7 +18,7 @@ public class ApplicationPluginDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_481983775135179025(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + ApplicationPluginDeclaration_Behavior.call_getGeneratedName_481983775135179014(thisNode);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ApplicationPluginDeclaration_Behavior.call_getGeneratedName_481983775135179014(thisNode);
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {

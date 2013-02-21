@@ -49,7 +49,7 @@ public class ModelChooser extends BaseChooserComponent {
         Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, GlobalScope.getInstance(), null);
         for (SNode node : ((Set<SNode>) ((Set) usages))) {
           SModel model = SNodeOperations.getModel(node);
-          SModelReference md = model.getSModelReference();
+          SModelReference md = model.getReference();
           if (ListSequence.fromList(ModelChooser.this.myCheckedModels).contains(md)) {
             continue;
           }

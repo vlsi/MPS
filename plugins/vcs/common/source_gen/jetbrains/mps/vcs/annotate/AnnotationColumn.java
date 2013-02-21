@@ -169,7 +169,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       SNode node = null;
       SNodeId id = check_5mnya_a0b0l0w(ListSequence.fromList(myFileLineToContent).getElement(line));
       if (id != null && SetSequence.fromSet(descendantIds).contains(id)) {
-        node = model.getNodeById(id);
+        node = model.getNode(id);
       }
       if (node == null) {
         continue;
@@ -334,7 +334,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
     EditorComponent editor = getEditorComponent();
     SNode editedNode = editor.getEditedNode();
-    SNode node = editedNode.getModel().getNodeById(content.getNodeId());
+    SNode node = editedNode.getModel().getNode(content.getNodeId());
     if (node == null || !(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).contains(editedNode))) {
       return null;
     }
@@ -724,9 +724,9 @@ __switch__:
                 ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodeId>() {
                   public SNodeId invoke() {
                     SNodeId nodeId = check_5mnya_a0a0a91a8a2a0a0a0a1a1a2vb(ListSequence.fromList(myFileLineToContent).getElement(myFileLine));
-                    SNode node = afterModel.getNodeById(nodeId);
+                    SNode node = afterModel.getNode(nodeId);
                     if ((node == null)) {
-                      node = beforeModel.value.getNodeById(nodeId);
+                      node = beforeModel.value.getNode(nodeId);
                     }
                     return rootId.value = check_5mnya_a0d0a91a8a2a0a0a0a1a1a2vb(SNodeOperations.getContainingRoot(node));
                   }

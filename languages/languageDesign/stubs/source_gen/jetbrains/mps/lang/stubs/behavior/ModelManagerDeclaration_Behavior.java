@@ -5,7 +5,7 @@ package jetbrains.mps.lang.stubs.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -25,7 +25,7 @@ public class ModelManagerDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_4063774604867753801(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + ModelManagerDeclaration_Behavior.call_getGeneratedName_4063774604867753792(thisNode);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ModelManagerDeclaration_Behavior.call_getGeneratedName_4063774604867753792(thisNode);
   }
 
   @Deprecated
@@ -35,7 +35,7 @@ public class ModelManagerDeclaration_Behavior {
 
   @Deprecated
   public static SNode callSuper_createType_5553449326502622488(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_v31ybx_a0a0(Object parameter_1) {

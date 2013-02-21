@@ -59,12 +59,12 @@ public class ActionDataParameterDeclaration_Constraints extends BaseConstraintsD
             // add MPSDataKeys if mps.workbench is imported 
             for (SModelDescriptor importedModel : SModelOperations.allImportedModels(_context.getModel(), operationContext.getScope())) {
               if (importedModel.getLongName().equals("jetbrains.mps.workbench")) {
-                for (SNode root : importedModel.getSModel().roots()) {
+                for (SNode root : importedModel.getSModel().getRootNodes()) {
                   if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ClassConcept") && "MPSDataKeys".equals(SPropertyOperations.getString(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "name"))) {
                     ListSequence.fromList(dataKeys).addSequence(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
                   }
                 }
-                importedModel.getSModel().roots();
+                importedModel.getSModel().getRootNodes();
               }
             }
 

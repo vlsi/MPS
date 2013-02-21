@@ -355,7 +355,7 @@ public class TreeHighlighter implements TreeMessageOwner {
 
     @Override
     public void beforeModelDisposed(SModel model) {
-      SModelReference modelRef = model.getSModelReference();
+      SModelReference modelRef = model.getReference();
       List<MPSTreeNode> obsoleteTreeNodes = ListSequence.fromList(new ArrayList<MPSTreeNode>());
       synchronized (myFeaturesHolder) {
         for (Feature f : ListSequence.fromList(myFeaturesHolder.getFeaturesByModelReference(modelRef))) {

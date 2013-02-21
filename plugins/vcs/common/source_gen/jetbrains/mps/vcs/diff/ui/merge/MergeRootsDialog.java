@@ -285,7 +285,7 @@ public class MergeRootsDialog extends DialogWrapper {
   }
 
   private SNodeId getRootNodeId(SModel model) {
-    SNode node = model.getNodeById(myRootId);
+    SNode node = model.getNode(myRootId);
     if (node != null && node.getParent() == null) {
       return myRootId;
     }
@@ -302,7 +302,7 @@ public class MergeRootsDialog extends DialogWrapper {
     SNodeId rootId = getRootNodeId(model);
     SNode root = (rootId == null ?
       null :
-      model.getNodeById(rootId)
+      model.getNode(rootId)
     );
     final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myProject, model), root, myTitles[index], index == 0);
 

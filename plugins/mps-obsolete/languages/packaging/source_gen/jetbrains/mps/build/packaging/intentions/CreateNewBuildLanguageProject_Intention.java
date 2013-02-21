@@ -96,7 +96,7 @@ public class CreateNewBuildLanguageProject_Intention implements IntentionFactory
         ListSequence.fromList(SLinkOperations.getTargets(project, "property", true)).addElement(property);
       }
       SModel model = editorContext.getModel();
-      model.addRoot(project);
+      model.addRootNode(project);
       SLinkOperations.setTarget(node, "project", project, false);
       SLinkOperations.setTarget(node, "targetDeclaration", SLinkOperations.getTarget(SLinkOperations.getTarget(project, "default", true), "targetDeclaration", false), false);
       NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), project, true, !(SNodeOperations.isRoot(project)));

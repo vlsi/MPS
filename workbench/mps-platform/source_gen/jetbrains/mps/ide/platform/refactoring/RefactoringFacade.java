@@ -39,6 +39,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.smodel.SNode;
@@ -274,7 +275,7 @@ public class RefactoringFacade {
     try {
       ((ILoggableRefactoring) refactoring).updateModel(model, context);
     } catch (Throwable t) {
-      myLog.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + model.getLongName() + ". Models could have been corrupted.", t);
+      myLog.error("An exception was thrown by refactoring " + refactoring.getUserFriendlyName() + " while updating model " + SNodeOperations.getModelLongName(model) + ". Models could have been corrupted.", t);
     }
     if (!(context.isLocal())) {
       Map<SModelReference, Integer> dependencies = context.getStructureModification().getDependencies();

@@ -131,13 +131,13 @@
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/5434557751112931020">
     <nodeInfo nodeId="5434557751112932611" fileName="DirectClassifierSpecification_Behavior.java" startLine="14" startPosition="88" endLine="15" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5434557751113449151" fileName="DirectClassifierSpecification_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5434557751113449151" fileName="DirectClassifierSpecification_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5434557751112931020" fileName="DirectClassifierSpecification_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5434557751112931020" fileName="DirectClassifierSpecification_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClassifierFqName_5434557751112930827#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="5434557751112931020" fileName="DirectClassifierSpecification_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSModelReference_5434557751113441014#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="5434557751112931022" fileName="DirectClassifierSpecification_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
     <scopeInfo nodeId="5434557751112932606" fileName="DirectClassifierSpecification_Behavior.java" startLine="14" startPosition="88" endLine="15" endPosition="167" />
-    <scopeInfo nodeId="5434557751113449103" fileName="DirectClassifierSpecification_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="126" />
+    <scopeInfo nodeId="5434557751113449103" fileName="DirectClassifierSpecification_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="120" />
     <scopeInfo nodeId="5434557751112931020" fileName="DirectClassifierSpecification_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="5434557751112931020" varName="thisNode" />
     </scopeInfo>

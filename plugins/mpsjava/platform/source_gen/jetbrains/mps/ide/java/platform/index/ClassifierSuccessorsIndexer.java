@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -94,7 +95,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
         @Override
         public void run() {
           SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
-          for (final SNode nextNode : sModel.nodes()) {
+          for (final SNode nextNode : new NodesIterable(sModel)) {
             if (isInstanceOfClassConcept(nextNode)) {
               SNode classNode = (SNode) nextNode;
               if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {

@@ -263,9 +263,9 @@
     <nodeInfo nodeId="2182758403694684124" fileName="TestCollector.java" startLine="139" startPosition="44" endLine="140" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2182758403694684139" fileName="TestCollector.java" startLine="149" startPosition="29" endLine="150" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2182758403694684157" fileName="TestCollector.java" startLine="152" startPosition="44" endLine="153" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2179243551222162625" fileName="TestCollector.java" startLine="160" startPosition="108" endLine="161" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2179243551222162625" fileName="TestCollector.java" startLine="160" startPosition="108" endLine="161" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2179243551222162669" fileName="TestCollector.java" startLine="162" startPosition="23" endLine="163" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2179243551222162840" fileName="TestCollector.java" startLine="163" startPosition="29" endLine="164" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2179243551222162840" fileName="TestCollector.java" startLine="163" startPosition="29" endLine="164" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2179243551222162874" fileName="TestCollector.java" startLine="165" startPosition="5" endLine="166" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2182758403694684176" fileName="TestCollector.java" startLine="169" startPosition="56" endLine="170" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2182758403694684194" fileName="TestCollector.java" startLine="173" startPosition="56" endLine="174" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -309,7 +309,7 @@
     <nodeInfo nodeId="2182758403694684155" fileName="TestCollector.java" startLine="152" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="2182758403694684169" fileName="TestCollector.java" startLine="169" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allClassifiers#(Ljetbrains/mps/smodel/SModel;)Ljava/util/List;" />
     <nodeInfo nodeId="2182758403694684187" fileName="TestCollector.java" startLine="173" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allAnnotations#(Ljetbrains/mps/smodel/SModel;)Ljava/util/List;" />
-    <nodeInfo nodeId="2179243551222162664" fileName="TestCollector.java" startLine="161" startPosition="123" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2179243551222162664" fileName="TestCollector.java" startLine="161" startPosition="138" endLine="165" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2182758403694683852" fileName="TestCollector.java" startLine="62" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isJunit38Test#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="2182758403694684013" fileName="TestCollector.java" startLine="98" startPosition="46" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2182758403694684048" fileName="TestCollector.java" startLine="111" startPosition="224" endLine="116" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -358,7 +358,7 @@
     <scopeInfo nodeId="2182758403694684156" fileName="TestCollector.java" startLine="152" startPosition="44" endLine="153" endPosition="143" />
     <scopeInfo nodeId="2182758403694684175" fileName="TestCollector.java" startLine="169" startPosition="56" endLine="170" endPosition="139" />
     <scopeInfo nodeId="2182758403694684193" fileName="TestCollector.java" startLine="173" startPosition="56" endLine="174" endPosition="144" />
-    <scopeInfo nodeId="2179243551222162668" fileName="TestCollector.java" startLine="162" startPosition="23" endLine="164" endPosition="118" />
+    <scopeInfo nodeId="2179243551222162668" fileName="TestCollector.java" startLine="162" startPosition="23" endLine="164" endPosition="133" />
     <scopeInfo nodeId="2182758403694684044" fileName="TestCollector.java" startLine="178" startPosition="30" endLine="180" endPosition="288" />
     <scopeInfo nodeId="2182758403694684078" fileName="TestCollector.java" startLine="185" startPosition="30" endLine="187" endPosition="272" />
     <scopeInfo nodeId="2182758403694684111" fileName="TestCollector.java" startLine="192" startPosition="30" endLine="194" endPosition="274" />

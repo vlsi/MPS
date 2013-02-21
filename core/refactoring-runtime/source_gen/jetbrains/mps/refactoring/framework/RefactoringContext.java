@@ -35,6 +35,7 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -214,7 +215,7 @@ public class RefactoringContext {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, mapping);
     for (SNode node : targetNodes) {
-      targetModel.addRoot(node);
+      targetModel.addRootNode(node);
     }
     for (SNode key : mapping.keySet()) {
       SNode target = mapping.get(key);
@@ -352,7 +353,7 @@ public class RefactoringContext {
       computeCaches();
     }
 
-    for (SNode node : model.nodes()) {
+    for (SNode node : new NodesIterable(model)) {
       String conceptFQName = node.getConcept().getConceptId();
       Set<StructureModificationData.ConceptFeature> exactConceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
       if (exactConceptFeatures != null) {

@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlow;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -37,7 +38,7 @@ public class DataFlowUtil {
     if (statementList == null) {
       return;
     }
-    if (SNodeOperations.getModel(statementList).isTransient()) {
+    if (SNodeOperations.getModel(statementList) instanceof TransientSModel) {
       return;
     }
     try {
