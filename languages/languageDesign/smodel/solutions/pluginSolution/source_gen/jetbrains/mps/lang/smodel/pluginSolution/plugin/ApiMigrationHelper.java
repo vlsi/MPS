@@ -106,7 +106,7 @@ public class ApiMigrationHelper {
     final Set<Tuples._2<SNode, SReference>> changedClassUsagesInTypes = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
     for (SReference ref : SetSequence.fromSet(usages)) {
       SNode rNode = ((SNode) ref.getSourceNode());
-      if (rNode.getModel().isNotEditable()) {
+      if (rNode.getModel().isReadOnly()) {
         continue;
       }
 
@@ -166,7 +166,7 @@ public class ApiMigrationHelper {
 
     for (SReference ref : SetSequence.fromSet(smusages)) {
       SNode rNode = ref.getSourceNode();
-      if (rNode.getModel().isNotEditable()) {
+      if (rNode.getModel().isReadOnly()) {
         continue;
       }
       SetSequence.fromSet(unknownUsages).addElement(rNode);
@@ -235,7 +235,7 @@ public class ApiMigrationHelper {
   }
 
   private boolean needMigration(SNode n) {
-    if (n.getModel().isNotEditable()) {
+    if (n.getModel().isReadOnly()) {
       return false;
     }
     if (eq_yke5lt_a0b0k(SModelOperations.getModelName(SNodeOperations.getModel(n)), SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", "")).getSModel()))) {
