@@ -15,6 +15,7 @@ public class ModuleSearchScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     return ListSequence.fromList(new ArrayList());
   }

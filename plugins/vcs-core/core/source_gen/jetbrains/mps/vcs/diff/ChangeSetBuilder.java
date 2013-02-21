@@ -326,6 +326,7 @@ public class ChangeSetBuilder {
     private DefaultPropertySupport() {
     }
 
+    @Override
     protected boolean canSetValue(String string) {
       return true;
     }

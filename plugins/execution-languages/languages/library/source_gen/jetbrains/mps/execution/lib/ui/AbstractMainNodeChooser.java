@@ -39,6 +39,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
 
   public AbstractMainNodeChooser() {
     this.init(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
 
         final FindUsagesManager findUsegesManager = FindUsagesManager.getInstance();
@@ -66,6 +67,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     });
 
     addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent event) {
         final String text = getText();
         if ((text == null || text.length() == 0)) {
@@ -166,6 +168,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     });
   }
 
+  @Override
   public void dispose() {
     super.dispose();
     ListSequence.fromList(myListeners).clear();

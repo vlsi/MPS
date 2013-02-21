@@ -44,6 +44,7 @@ public class RenameLanguageDialog extends RenameDialog {
     setTitle("Rename Language");
 
     myRegenerateLanguage.getModel().setSelected(ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         return !(myLanguage.isBootstrap());
       }
@@ -86,6 +87,7 @@ public class RenameLanguageDialog extends RenameDialog {
     if (needToRegenerate) {
       final Set<Language> langs = new LinkedHashSet<Language>();
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           langs.add(myLanguage);
           langs.addAll(ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(myLanguage));
@@ -93,6 +95,7 @@ public class RenameLanguageDialog extends RenameDialog {
       });
       for (final Language l : langs) {
         GenParameters params = ModelAccess.instance().runReadAction(new Computable<GenParameters>() {
+          @Override
           public GenParameters compute() {
             ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
             languageConfig.setModuleRef(l.getModuleReference());

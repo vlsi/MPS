@@ -13,14 +13,17 @@ public class NullSortedSetSequence<T> extends NullSetSequence<T> implements ISor
   protected NullSortedSetSequence() {
   }
 
+  @Override
   public ISortedSetSequence<T> headSet(T toElement) {
     return this;
   }
 
+  @Override
   public ISortedSetSequence<T> subSet(T fromElement, T toElement) {
     return this;
   }
 
+  @Override
   public ISortedSetSequence<T> tailSet(T fromElement) {
     return this;
   }
@@ -35,6 +38,7 @@ public class NullSortedSetSequence<T> extends NullSetSequence<T> implements ISor
     return this;
   }
 
+  @Override
   public Comparator<? super T> comparator() {
     return null;
   }

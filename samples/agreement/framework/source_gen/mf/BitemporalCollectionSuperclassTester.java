@@ -8,6 +8,7 @@ public class BitemporalCollectionSuperclassTester extends TemporalCollectionTest
     super(name);
   }
 
+  @Override
   protected void createSubject() {
     mySubject = new BitemporalCollection();
   }

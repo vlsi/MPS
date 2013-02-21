@@ -14,6 +14,7 @@ public class NodeListIterableAdapter implements Iterable<Node> {
     this.nodeList = nodeList;
   }
 
+  @Override
   public Iterator<Node> iterator() {
     return new NodeListIterableAdapter.NodeListIterator();
   }
@@ -24,10 +25,12 @@ public class NodeListIterableAdapter implements Iterable<Node> {
     private NodeListIterator() {
     }
 
+    @Override
     public boolean hasNext() {
       return index < nodeList.getLength();
     }
 
+    @Override
     public Node next() {
       if (hasNext()) {
         return nodeList.item(index++);
@@ -35,6 +38,7 @@ public class NodeListIterableAdapter implements Iterable<Node> {
       throw new NoSuchElementException();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

@@ -54,6 +54,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
       return;
     }
     new Thread() {
+      @Override
       public void run() {
         try {
           IProjectHandler handler = MPSPlugin.getInstance().getProjectHandler(myProject);
@@ -141,6 +142,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   @Override
   public void showConceptNode(final String fqName) throws RemoteException {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         SNode concept = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
         NavigationSupport.getInstance().openNode(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), concept, true, false);
@@ -152,6 +154,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   @Override
   public void showClassUsages(final String fqName) throws RemoteException {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SNode cls = SModelUtil.findNodeByFQName(fqName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), GlobalScope.getInstance());
         if (cls == null) {
@@ -167,6 +170,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   @Override
   public void showMethodUsages(final String classFqName, final String methodName, final int parameterCount) throws RemoteException {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         if (classFqName == null || methodName == null) {
           MPSProjectIDEHandler.LOG.error("Can't find a method " + classFqName + "." + methodName);
@@ -201,8 +205,10 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
   private void findUsages(@NotNull final SNode node, final IScope scope, final IResultProvider provider) {
     new Thread() {
+      @Override
       public void run() {
         SearchQuery query = ModelAccess.instance().runReadAction(new Computable<SearchQuery>() {
+          @Override
           public SearchQuery compute() {
             return new SearchQuery(node, scope);
           }

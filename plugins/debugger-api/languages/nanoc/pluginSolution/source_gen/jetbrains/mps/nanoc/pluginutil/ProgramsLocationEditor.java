@@ -19,6 +19,7 @@ public class ProgramsLocationEditor extends JPanel {
   private JTextField myTextFieldGDB = new JTextField();
   private JTextField myTextFieldGCC = new JTextField();
   private JButton myButtonGDB = new JButton(new AbstractAction("Choose GDB Location") {
+    @Override
     public void actionPerformed(ActionEvent event) {
       JFileChooser fileChooser = new JFileChooser();
       int result = fileChooser.showDialog(ProgramsLocationEditor.this, "OK");
@@ -31,6 +32,7 @@ public class ProgramsLocationEditor extends JPanel {
     }
   });
   private JButton myButtonGCC = new JButton(new AbstractAction("Choose GCC Location") {
+    @Override
     public void actionPerformed(ActionEvent event) {
       JFileChooser fileChooser = new JFileChooser();
       int result = fileChooser.showDialog(ProgramsLocationEditor.this, "OK");

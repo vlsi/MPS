@@ -43,6 +43,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     coreTask = new MakeTask.WorkbenchMakeTask(title, scripts, scrName, clInput, ctl, mh);
   }
 
+  @Override
   public void run(@NotNull final ProgressIndicator pi) {
     if (myState.compareAndSet(MakeTask.TaskState.NOT_STARTED, MakeTask.TaskState.RUNNING)) {
       if (ThreadUtils.isEventDispatchThread()) {
@@ -56,6 +57,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   private void spawnMakeThreadThenDoRunRelayingLog(final ProgressMonitor monitor) {
     ThreadGroup tg = new ThreadGroup("MPS Make Thread Group");
     Thread makeThread = new Thread(tg, new Runnable() {
+      @Override
       public void run() {
         CoreMakeTask.RelayingLoggingHandler rlh = new CoreMakeTask.RelayingLoggingHandler(coreTask.getMessageHandler());
         try {
@@ -80,18 +82,22 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     isCanceled = true;
   }
 
+  @Override
   public boolean cancel(boolean b) {
     return false;
   }
 
+  @Override
   public boolean isCancelled() {
     return myState.get() == MakeTask.TaskState.CANCELLED;
   }
 
+  @Override
   public boolean isDone() {
     return myState.get() != MakeTask.TaskState.NOT_STARTED && myState.get() != MakeTask.TaskState.RUNNING;
   }
 
+  @Override
   public IResult get() throws InterruptedException, ExecutionException {
     myLatch.await();
     if (myState.get() == MakeTask.TaskState.CANCELLED) {
@@ -100,6 +106,7 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     return coreTask.getResult();
   }
 
+  @Override
   public IResult get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
     myLatch.await(timeout, unit);
     if (myState.get() == MakeTask.TaskState.CANCELLED) {
@@ -188,22 +195,27 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
         Logger.removeLoggingHandler(this);
       }
 
+      @Override
       public void fatal(LogEntry entry) {
         handle(MessageKind.ERROR, entry);
       }
 
+      @Override
       public void error(LogEntry entry) {
         handle(MessageKind.ERROR, entry);
       }
 
+      @Override
       public void debug(LogEntry entry) {
         handle(MessageKind.INFORMATION, entry);
       }
 
+      @Override
       public void warning(LogEntry entry) {
         handle(MessageKind.WARNING, entry);
       }
 
+      @Override
       public void info(LogEntry entry) {
         handle(MessageKind.INFORMATION, entry);
       }

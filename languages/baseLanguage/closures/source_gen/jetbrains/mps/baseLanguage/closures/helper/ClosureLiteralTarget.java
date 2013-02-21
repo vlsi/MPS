@@ -78,6 +78,7 @@ public class ClosureLiteralTarget {
       // TODO: rewrite throws types matching algorithm 
       List<SNode> normFunThrowsTypes = FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(funType);
       Iterator<SNode> funThrIt = ListSequence.fromList(normFunThrowsTypes).sort(new ISelector<SNode, Comparable<?>>() {
+        @Override
         public Comparable<?> select(SNode t) {
           String key = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.as(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getNestedName_8540045600162184125", new Object[]{});
           return (key != null ?

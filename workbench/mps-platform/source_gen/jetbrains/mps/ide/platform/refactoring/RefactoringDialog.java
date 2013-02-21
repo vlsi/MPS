@@ -26,6 +26,7 @@ public abstract class RefactoringDialog extends DialogWrapper {
     return myRefactorAction;
   }
 
+  @Override
   protected Action[] createActions() {
     List<Action> actions = ListSequence.fromList(new ArrayList<Action>());
     ListSequence.fromList(actions).addElement(getRefactorAction());
@@ -53,6 +54,7 @@ public abstract class RefactoringDialog extends DialogWrapper {
       putValue(DialogWrapper.DEFAULT_ACTION, Boolean.TRUE);
     }
 
+    @Override
     public void actionPerformed(ActionEvent event) {
       doRefactoringAction();
     }

@@ -179,6 +179,7 @@ public class PluginMoveHelper {
     rc.setLocal(true);
 
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         RefactoringAccess.getInstance().getRefactoringFacade().executeSimple(context);
       }

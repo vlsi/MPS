@@ -21,14 +21,17 @@ public class RefactoringView extends TabbedUsagesTool {
     super(project, "RefactoringView", -1, IdeIcons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
+  @Override
   protected UsagesView getUsagesView(int index) {
     return myRefactoringViews.get(index).getUsagesView();
   }
 
+  @Override
   protected void onRemove(int index) {
     myRefactoringViews.remove(index);
   }
 
+  @Override
   protected boolean forceCloseOnReload() {
     return true;
   }
@@ -62,6 +65,7 @@ public class RefactoringView extends TabbedUsagesTool {
       super(p, refactoringViewAction, searchResults, hasModelsToGenerate);
     }
 
+    @Override
     public void close() {
       int index = myRefactoringViews.indexOf(this);
       RefactoringView.this.closeTab(index);

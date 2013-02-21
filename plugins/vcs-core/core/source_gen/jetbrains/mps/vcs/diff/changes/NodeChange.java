@@ -27,6 +27,7 @@ public abstract class NodeChange extends ModelChange {
   }
 
   @NotNull
+  @Override
   public ChangeType getType() {
     return ChangeType.CHANGE;
   }

@@ -127,6 +127,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
       final List<SNodeReference> nodes = ListSequence.fromList(new ArrayList<SNodeReference>());
 
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
+        @Override
         public void run(@NotNull final ProgressIndicator p) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {

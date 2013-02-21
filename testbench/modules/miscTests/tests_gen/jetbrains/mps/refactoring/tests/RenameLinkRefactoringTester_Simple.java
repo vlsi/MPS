@@ -24,6 +24,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
   public RenameLinkRefactoringTester_Simple() {
   }
 
+  @Override
   public boolean testRefactoring(final Project project, final SModelDescriptor sandbox1, final SModelDescriptor sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
     final String newLinkName = "sister";
     final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
@@ -35,6 +36,7 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
     final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
     refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         SModel model = structureModelDescriptor.getSModel();
@@ -49,8 +51,10 @@ public class RenameLinkRefactoringTester_Simple implements IRefactoringTester {
     new RefactoringTestFacade().doExecuteInTest(refactoringContext);
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             try {
               if (sandbox1.isLoaded()) {

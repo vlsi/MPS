@@ -84,6 +84,7 @@ public class DesignPartLoader {
     private ReloadHandler() {
     }
 
+    @Override
     public void unload() {
       clearCache();
     }

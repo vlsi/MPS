@@ -17,11 +17,13 @@ public class DeletedChildFeature extends AbstractNodeFeature {
   }
 
   @NotNull
+  @Override
   public String toString() {
     return "Node reference {" + getNodePointerString() + "|" + myRole + "|" + myIndex + "}";
   }
 
   @Nullable
+  @Override
   public Feature getParent() {
     return new NodeFeature(getNodePointer());
   }

@@ -36,6 +36,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
   public RuleOperandRenderer() {
   }
 
+  @Override
   public Component getTableCellRendererComponent(JTable table, final Object value, boolean isSelected, boolean hasFocus, int row, int column) {
     if (value == null) {
       return new JLabel("Error");
@@ -55,6 +56,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
       } else {
         final SNodeReference p = new SNodePointer(refC.getModelUID(), refC.getNodeID());
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {
+          @Override
           public String compute() {
             SModelDescriptor model = SNodeOperations.getModelFromNodeReference((SNodePointer) p);
             SNode node = p.resolve(MPSModuleRepository.getInstance());

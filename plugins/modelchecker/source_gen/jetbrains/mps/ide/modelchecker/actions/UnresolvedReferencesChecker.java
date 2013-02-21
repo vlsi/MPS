@@ -31,6 +31,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
   }
 
+  @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
     if (model == null || model.getModelDescriptor() == null || model.getModelDescriptor().getModule() == null) {

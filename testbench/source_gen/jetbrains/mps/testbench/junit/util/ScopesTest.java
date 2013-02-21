@@ -78,6 +78,7 @@ public class ScopesTest {
   @Test
   public void test() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SReference reference = null;
         for (SReference ref : SNodeOperations.getReferences(SNodeOperations.getParent(ScopesTest.this.myNode))) {
@@ -103,6 +104,7 @@ public class ScopesTest {
   @Parameterized.Parameters
   public static List<SNode[]> getNodesToCheck() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         ScopesTest.ourProject = ProjectManager.getInstance().getOpenProjects()[0];
         ScopesTest.ourNodesToCheck.clear();

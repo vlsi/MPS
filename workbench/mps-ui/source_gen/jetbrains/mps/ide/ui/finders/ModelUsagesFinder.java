@@ -26,6 +26,7 @@ public class ModelUsagesFinder implements IFinder {
   public ModelUsagesFinder() {
   }
 
+  @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
     IHolder holder = query.getObjectHolder();

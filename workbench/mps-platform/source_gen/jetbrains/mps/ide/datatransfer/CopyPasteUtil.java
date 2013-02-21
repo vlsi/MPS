@@ -321,6 +321,7 @@ public class CopyPasteUtil {
     final List<ModuleReference> additionalLanguages = new ArrayList<ModuleReference>();
     final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
         for (SModelDescriptor sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {

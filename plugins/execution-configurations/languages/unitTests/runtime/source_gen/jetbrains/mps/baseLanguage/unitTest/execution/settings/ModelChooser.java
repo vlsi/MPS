@@ -28,6 +28,7 @@ public class ModelChooser extends BaseChooserComponent {
   public ModelChooser() {
     super();
     this.init(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         ModelChooser.this.collectModels();
         StringBuilder result = new StringBuilder();

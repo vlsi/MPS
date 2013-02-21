@@ -19,10 +19,12 @@ public abstract class GroupedToggleAction extends ToggleAction {
     myGroup = group;
   }
 
+  @Override
   public boolean isSelected(AnActionEvent e) {
     return mySelected;
   }
 
+  @Override
   public void setSelected(AnActionEvent e, boolean state) {
     if (!(state)) {
       return;

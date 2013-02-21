@@ -11,6 +11,7 @@ public abstract class NodeAggregationFeature extends AbstractNodeFeature {
   }
 
   @NotNull
+  @Override
   public Feature getParent() {
     return new NodeFeature(getNodePointer());
   }

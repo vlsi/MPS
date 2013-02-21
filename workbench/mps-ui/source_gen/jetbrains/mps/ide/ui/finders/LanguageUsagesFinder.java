@@ -37,6 +37,7 @@ public class LanguageUsagesFinder implements IFinder {
   public LanguageUsagesFinder() {
   }
 
+  @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
     IHolder objectHolder = query.getObjectHolder();

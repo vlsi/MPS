@@ -15,10 +15,12 @@ public class ControlIterator implements Iterator<Control> {
     this.children = panel.getChildren();
   }
 
+  @Override
   public boolean hasNext() {
     return this.nextIdx() >= 0;
   }
 
+  @Override
   public Control next() {
     this.idx = this.nextIdx();
     if (this.idx < 0) {
@@ -27,6 +29,7 @@ public class ControlIterator implements Iterator<Control> {
     return this.children[this.idx];
   }
 
+  @Override
   public void remove() {
     if (this.idx < 0 || this.children[this.idx] == null) {
       throw new IllegalStateException();

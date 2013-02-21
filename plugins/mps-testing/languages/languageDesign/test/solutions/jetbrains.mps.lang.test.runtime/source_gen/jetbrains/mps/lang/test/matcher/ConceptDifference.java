@@ -12,10 +12,12 @@ public class ConceptDifference extends DifferanceItem {
     myConcept2 = concept2;
   }
 
+  @Override
   public String toString() {
     return "Different concepts: " + myConcept1 + ", " + myConcept2;
   }
 
+  @Override
   public boolean equals(Object obj) {
     if (obj == null) {
       return false;

@@ -42,6 +42,7 @@ public class EditOperandDialog extends DialogWrapper {
     setTitle("Choose Mappings");
     final DefaultMutableTreeNode root = new DefaultMutableTreeNode(new MappingSelectTree.RootNodeData("All generators"));
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         if (isLeft) {
           addGeneratorModels(currentGen, root);
@@ -97,6 +98,7 @@ public class EditOperandDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myMainComponent;
   }
@@ -300,6 +302,7 @@ public class EditOperandDialog extends DialogWrapper {
     final DefaultMutableTreeNode root = (DefaultMutableTreeNode) myTree.getModel().getRoot();
     setCheckedUnder(root);
     myResult = ModelAccess.instance().runReadAction(new Computable<MappingConfig_AbstractRef>() {
+      @Override
       public MappingConfig_AbstractRef compute() {
         return getRootMappingRef(root);
       }

@@ -18,10 +18,12 @@ public class JComponentIterator implements Iterator<JComponent> {
     this.children = panel.getComponents();
   }
 
+  @Override
   public boolean hasNext() {
     return this.nextIdx() >= 0;
   }
 
+  @Override
   public JComponent next() {
     this.idx = this.nextIdx();
     if (this.idx < 0) {
@@ -30,6 +32,7 @@ public class JComponentIterator implements Iterator<JComponent> {
     return (JComponent) this.children[this.idx];
   }
 
+  @Override
   public void remove() {
     if (this.idx < 0 || this.children[this.idx] == null) {
       throw new IllegalStateException();

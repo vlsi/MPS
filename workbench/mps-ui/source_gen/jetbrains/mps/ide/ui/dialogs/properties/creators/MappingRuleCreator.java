@@ -9,6 +9,7 @@ public class MappingRuleCreator implements Computable<MappingPriorityRule> {
   public MappingRuleCreator() {
   }
 
+  @Override
   public MappingPriorityRule compute() {
     return new MappingPriorityRule();
   }

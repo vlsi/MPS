@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.workbench.goTo.index.JavaStubNavigationContributor" file="JavaStubNavigationContributor.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />

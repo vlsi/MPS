@@ -105,14 +105,17 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
     return model;
   }
 
+  @Override
   public long getTimestamp() {
     return 0;
   }
 
+  @Override
   public FastFindSupport getFastFindSupport() {
     return FastFindSupportRegistry.getInstance().getFastFindSupport(JavaStubModelDataSource.FAST_FIND_ID);
   }
 
+  @Override
   public boolean hasModel(SModelDescriptor md) {
     return !(getPaths().isEmpty());
   }

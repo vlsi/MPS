@@ -63,6 +63,7 @@ public class RenameModelDialog extends RenameDialog {
       });
       final ModelRenamer renamer = new ModelRenamer(myModelDescriptor, newModelName, !(myUpdateAllReferences.getModel().isSelected()));
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        @Override
         public void run() {
           renamer.rename();
         }
@@ -74,6 +75,7 @@ public class RenameModelDialog extends RenameDialog {
           indicator.setIndeterminate(true);
           try {
             ModelAccess.instance().runWriteAction(new Runnable() {
+              @Override
               public void run() {
                 renamer.updateReferencesIfNeeded();
               }

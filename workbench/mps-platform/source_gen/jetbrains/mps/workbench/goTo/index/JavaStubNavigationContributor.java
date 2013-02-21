@@ -33,6 +33,7 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
 
 
 
+  @Override
   public Collection<NodeDescriptor> getNodeDescriptors(Collection<SModel> models, Project project) {
     Set<NodeDescriptor> res = new HashSet<NodeDescriptor>();
     for (SModel model : models) {
@@ -79,16 +80,19 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
     }
   }
 
+  @Override
   public void initComponent() {
     FastGoToRegistry.getInstance().setNavigationContributor(PersistenceRegistry.JAVA_CLASSES_ROOT, this);
   }
 
+  @Override
   public void disposeComponent() {
     FastGoToRegistry.getInstance().setNavigationContributor(PersistenceRegistry.JAVA_CLASSES_ROOT, null);
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return JavaStubNavigationContributor.class.getSimpleName();
   }

@@ -118,6 +118,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       this.myTests = tests;
     }
 
+    @Override
     public void run(RunNotifier notifier) {
       if (myTests == null) {
         runFailure(createTestDescription(ModuleSymbolicSuite.NO_TESTS), new IllegalStateException("no tests found in " + myClassName), notifier);
@@ -130,6 +131,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       }
     }
 
+    @Override
     public Description getDescription() {
       Description desc = Description.createSuiteDescription(myClassName);
       if (myTests == null) {

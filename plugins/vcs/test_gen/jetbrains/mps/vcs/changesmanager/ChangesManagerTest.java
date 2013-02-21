@@ -228,10 +228,12 @@ public class ChangesManagerTest {
           }
         };
         listener.value = new FileStatusListener() {
+          @Override
           public void fileStatusesChanged() {
             stopIfNeeded.invoke();
           }
 
+          @Override
           public void fileStatusChanged(@NotNull VirtualFile f) {
             stopIfNeeded.invoke();
           }
@@ -991,9 +993,11 @@ public class ChangesManagerTest {
     public MyReloadListener() {
     }
 
+    @Override
     public void reloadStarted() {
     }
 
+    @Override
     public void reloadFinished() {
       synchronized (this) {
         check_4gxggu_a0a0a2lc(myAfterReloadTask);

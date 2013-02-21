@@ -31,6 +31,7 @@ public class GdbProcessListener extends ProcessAdapter {
     myExecutableFile = executableFile;
   }
 
+  @Override
   public void onTextAvailable(ProcessEvent event, Key outputType) {
     if (!(myReadyForInput)) {
       String s = event.getText();
@@ -41,9 +42,11 @@ public class GdbProcessListener extends ProcessAdapter {
         ProcessUtil.inputWithFlush(myProcess, "-file-exec-and-symbols " + myExecutableFile.getAbsolutePath().replace(File.separatorChar, '/') + "\n");
         final CppDebugSession cppDebugSession = this.getDebugSession();
         cppDebugSession.getGDBRequestManager().createRequest(new BreakpointRequestor("main") {
+          @Override
           public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
             final GDBEventsHandler eventsHandler = cppDebugSession.getGDBEventsHandler();
             eventsHandler.addEventListener(new GDBEventsAdapter() {
+              @Override
               public void paused(AsyncAnswer answer, ProcessHandler gdbProcess) {
                 eventsHandler.removeEventListener(this);
                 connectedToDebuggee(cppDebugSession);

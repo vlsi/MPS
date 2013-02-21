@@ -32,6 +32,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
 
   protected abstract T createTaskImpl();
 
+  @Override
   public String getName() {
     return myAlias;
   }
@@ -110,6 +111,7 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     return hasExecuteMethod(runConfiguration);
   }
 
+  @Override
   public boolean canExecuteTask(RunConfiguration configuration, T task) {
     return true;
   }

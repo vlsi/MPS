@@ -18,6 +18,7 @@ public class DiffRowTable extends JTable {
     setUI(new BasicDiffRowTableUI());
   }
 
+  @Override
   public int rowAtPoint(Point point) {
     int y = point.y;
     int rowSpacing = getIntercellSpacing().height;
@@ -41,10 +42,12 @@ public class DiffRowTable extends JTable {
     return getRowHeight();
   }
 
+  @Override
   public int getRowHeight() {
     return getFontMetrics(getFont()).getHeight();
   }
 
+  @Override
   public int getRowHeight(int row) {
     TableModel tm = getModel();
     int height = getFontMetrics(getFont()).getHeight();
@@ -57,6 +60,7 @@ public class DiffRowTable extends JTable {
     return height;
   }
 
+  @Override
   public Rectangle getCellRect(int row, int column, boolean includeSpacing) {
     Rectangle cellFrame;
     TableColumn aColumn;
@@ -85,10 +89,12 @@ public class DiffRowTable extends JTable {
     return cellFrame;
   }
 
+  @Override
   public void columnSelectionChanged(ListSelectionEvent e) {
     repaint();
   }
 
+  @Override
   public void valueChanged(ListSelectionEvent e) {
     int firstIndex = e.getFirstIndex();
     int lastIndex = e.getLastIndex();

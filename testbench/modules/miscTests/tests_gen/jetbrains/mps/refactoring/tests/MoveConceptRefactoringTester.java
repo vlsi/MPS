@@ -24,6 +24,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
   public MoveConceptRefactoringTester() {
   }
 
+  @Override
   public boolean testRefactoring(final Project project, final SModelDescriptor sandbox1, final SModelDescriptor sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
     final String conceptName = "MyVeryGoodConcept1";
     final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
@@ -36,6 +37,7 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
     refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
     final SModelReference[] targetStructureModelReference = new SModelReference[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         targetStructureModelReference[0] = (SModelReference) testRefactoringTargetLanguage.getStructureModelDescriptor().getReference();
@@ -51,8 +53,10 @@ public class MoveConceptRefactoringTester implements IRefactoringTester {
     new RefactoringTestFacade().doExecuteInTest(refactoringContext);
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             try {
               if (sandbox1.isLoaded()) {

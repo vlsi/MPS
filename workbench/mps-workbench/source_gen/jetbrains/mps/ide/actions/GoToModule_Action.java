@@ -67,8 +67,10 @@ public class GoToModule_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.module");
       // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
       BaseModuleModel goToModuleModel = new BaseModuleModel(project, "module") {
+        @Override
         public NavigationItem doGetNavigationItem(final SModuleReference ref) {
           return new BaseModuleItem(ref) {
+            @Override
             public void navigate(boolean requestFocus) {
               ProjectPane projectPane = ProjectPane.getInstance(project);
               IModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
@@ -77,6 +79,7 @@ public class GoToModule_Action extends BaseAction {
           };
         }
 
+        @Override
         public SModuleReference[] find(IScope scope) {
           List<SModuleReference> modules = new ArrayList<SModuleReference>();
           for (IModule module : scope.getVisibleModules()) {

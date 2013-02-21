@@ -4,6 +4,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcsHelper" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
@@ -62,6 +63,7 @@
     <classNode dependClassName="com.intellij.openapi.fileTypes.FileType" />
     <classNode dependClassName="java.awt.Window" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.fileTypes.MPSFileTypeFactory" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
@@ -90,6 +92,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
@@ -141,6 +144,7 @@
     <classNode extendsClassName="com.intellij.openapi.vcs.checkin.CheckinHandlerFactory" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.PluginVCSManager" file="PluginVCSManager.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.smodel.DiskMemoryConflictResolver" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl" />
@@ -150,6 +154,7 @@
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.integration.ToolsApplicationComponent" file="ToolsApplicationComponent.java">
     <classNode dependClassName="com.intellij.openapi.diff.DiffManager" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.integration.ModelDiffTool" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.integration.ModelMergeTool" />

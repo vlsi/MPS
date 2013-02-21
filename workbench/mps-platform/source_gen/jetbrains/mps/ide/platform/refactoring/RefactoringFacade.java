@@ -93,10 +93,12 @@ public class RefactoringFacade {
     final Project ideaProject = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
     final List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         final boolean cancelled = RefactoringAccess.getInstance().showRefactoringDialog(ideaProject, refactoringContext, refactoring, !(modelsToGenerate.isEmpty()));
         if (!(cancelled)) {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
+            @Override
             public void run() {
               executeSimple(refactoringContext);
             }
@@ -118,8 +120,10 @@ public class RefactoringFacade {
 
   private void findUsagesAndRun(final RefactoringContext refactoringContext) {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject()), "Finding usages...", false) {
+          @Override
           public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             SearchResults usages = findUsagesSimple(refactoringContext);
@@ -155,6 +159,7 @@ public class RefactoringFacade {
   private void showConfirmDialogAndExecuteInUI(SearchResults result, final RefactoringContext refactoringContext) {
     if (result == null) {
       SwingUtilities.invokeLater(new Runnable() {
+        @Override
         public void run() {
           int promptResult = JOptionPane.showConfirmDialog(MPSCommonDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()), "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
           if (promptResult == JOptionPane.YES_OPTION) {
@@ -169,6 +174,7 @@ public class RefactoringFacade {
 
   private void executeInUI(final SearchResults usages, final RefactoringContext refactoringContext) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         refactoringContext.setUsages(usages);
         if (!(usages.getSearchResults().isEmpty())) {
@@ -182,8 +188,10 @@ public class RefactoringFacade {
 
   private void showRefactoring(final RefactoringContext refactoringContext, final SearchResults searchResults) {
     RefactoringViewAction okAction = new RefactoringViewAction() {
+      @Override
       public void performAction(final RefactoringViewItem refactoringViewItem) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             executeSimple(refactoringContext);
             refactoringViewItem.close();
@@ -298,6 +306,7 @@ public class RefactoringFacade {
 
     final IOperationContext operationContext = new ProjectOperationContext(context.getSelectedProject());
     new Thread() {
+      @Override
       public void run() {
         try {
           MakeSession sess = new MakeSession(operationContext);

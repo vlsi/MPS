@@ -20,6 +20,7 @@ public class RawLineEditorComponent extends BaseFieldWithButtonComponent {
   public RawLineEditorComponent() {
     this.setLayout(new BorderLayout());
     this.myField = new TextFieldWithBrowseButton(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         Messages.showTextAreaDialog(RawLineEditorComponent.this.myField.getTextField(), RawLineEditorComponent.this.myDialogCaption, "EditParametersPopupWindow");
         RawLineEditorComponent.this.onChange();
@@ -30,6 +31,7 @@ public class RawLineEditorComponent extends BaseFieldWithButtonComponent {
     this.setDescriptor(null);
   }
 
+  @Override
   public JTextField getTextField() {
     return this.myField.getTextField();
   }

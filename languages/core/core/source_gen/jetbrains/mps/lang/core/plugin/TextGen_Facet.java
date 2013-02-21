@@ -205,6 +205,7 @@ public class TextGen_Facet extends IFacet.Stub {
                       generateTime.value += TextGenUtil.withTimeTracking(new Runnable() {
                         public void run() {
                           TextGenUtil.generateText(engine, currentInput, new TextGenUtil.TextGenerationCallback() {
+                            @Override
                             public void textGenerated(GResource inputResource, List<TextGenerationResult> results) {
                               try {
                                 CacheGenerator[] cacheGenerators = new CacheGenerator[]{BLDependenciesCache.getInstance().getGenerator(), (_generateDebugInfo ?

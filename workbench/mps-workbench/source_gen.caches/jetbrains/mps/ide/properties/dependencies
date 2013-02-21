@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.properties.DevKitPropertiesDialog" file="DevKitPropertiesDialog.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.ide.properties.DevkitProperties" />
     <classNode dependClassName="jetbrains.mps.project.DevKit" />
@@ -28,6 +29,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.properties.ModuleProperties" />
   </dependency>
   <dependency className="jetbrains.mps.ide.properties.GeneratorPropertiesDialog" file="GeneratorPropertiesDialog.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -57,6 +59,7 @@
   <dependency className="jetbrains.mps.ide.properties.LanguagePropertiesDialog" file="LanguagePropertiesDialog.java">
     <classNode dependClassName="com.intellij.openapi.Disposable" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
@@ -86,6 +89,7 @@
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -140,6 +144,7 @@
   <dependency className="jetbrains.mps.ide.properties.SolutionPropertiesDialog" file="SolutionPropertiesDialog.java">
     <classNode dependClassName="com.intellij.openapi.Disposable" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -174,6 +179,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.NullPointerException" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />

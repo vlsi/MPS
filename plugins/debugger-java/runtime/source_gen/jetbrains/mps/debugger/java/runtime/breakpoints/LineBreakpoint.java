@@ -69,6 +69,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
   }
 
   @Nullable
+  @Override
   protected String getClassNameToPrepare() {
     String className = myLocation.getTargetUnitName();
     if (className == null) {

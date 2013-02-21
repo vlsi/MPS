@@ -9,6 +9,7 @@ public class SingleTemporalCollectionTester extends TemporalCollectionTester {
     super(name);
   }
 
+  @Override
   protected void createSubject() {
     mySubject = new SingleTemporalCollection();
   }

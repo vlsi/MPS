@@ -11,6 +11,7 @@ public class AltBlock extends AbstractBlock {
     super(x, y, width, height, source, caption);
   }
 
+  @Override
   public void paintBlock(Graphics g) {
     g.setColor(new Color(251, 217, 154));
     g.fillOval(this.myX, this.myY, this.myWidth, this.myHeight);

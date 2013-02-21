@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 public class ClassifierAdapters_Test extends TestCase {
   public void test_interfaceAsFunctionType() throws Exception {
     Worker wrk = new Worker() {
+      @Override
       public String doWork(Integer d) {
         return "Done: " + Integer.valueOf(d);
       }

@@ -71,6 +71,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     myScrollPane.getViewport().setViewPosition(viewRect.getLocation());
   }
 
+  @Override
   protected EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().getModel() == null) {
       EditorContext editorContext = getEditorContext();

@@ -69,6 +69,7 @@ public abstract class DebugConnectionSettings implements IDebuggerSettings {
   }
 
   @NotNull
+  @Override
   public String getCommandLine(boolean application) {
     boolean serverMode = isServerMode();
     if (application) {

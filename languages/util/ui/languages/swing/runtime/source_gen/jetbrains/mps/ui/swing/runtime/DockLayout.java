@@ -30,28 +30,33 @@ public class DockLayout implements LayoutManager, LayoutManager2 {
     return this.componentData.get(comp);
   }
 
+  @Override
   public void addLayoutComponent(String string, Component component) {
     this.addLayoutComponent(component, DockLayoutData.fromString(string));
   }
 
+  @Override
   public void removeLayoutComponent(Component component) {
     synchronized (component.getTreeLock()) {
       this.componentData.remove(component);
     }
   }
 
+  @Override
   public Dimension preferredLayoutSize(Container container) {
     synchronized (container.getTreeLock()) {
       return this.computeSize(container, true);
     }
   }
 
+  @Override
   public Dimension minimumLayoutSize(Container container) {
     synchronized (container.getTreeLock()) {
       return this.computeSize(container, false);
     }
   }
 
+  @Override
   public void layoutContainer(Container container) {
     synchronized (container.getTreeLock()) {
       Insets insets = container.getInsets();
@@ -68,6 +73,7 @@ public class DockLayout implements LayoutManager, LayoutManager2 {
     }
   }
 
+  @Override
   public void addLayoutComponent(Component component, Object object) {
     synchronized (component.getTreeLock()) {
       DockLayoutData bd = (object == null ?
@@ -78,18 +84,22 @@ public class DockLayout implements LayoutManager, LayoutManager2 {
     }
   }
 
+  @Override
   public Dimension maximumLayoutSize(Container container) {
     return DockLayout.MAX;
   }
 
+  @Override
   public float getLayoutAlignmentX(Container container) {
     return 0.5f;
   }
 
+  @Override
   public float getLayoutAlignmentY(Container container) {
     return 0.5f;
   }
 
+  @Override
   public void invalidateLayout(Container container) {
     //  do nothing 
   }

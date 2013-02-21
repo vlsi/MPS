@@ -109,10 +109,12 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
     return model;
   }
 
+  @Override
   public long getTimestamp() {
     return 0;
   }
 
+  @Override
   public FastFindSupport getFastFindSupport() {
     return FastFindSupportRegistry.getInstance().getFastFindSupport(JavaStubModelDataSource.FAST_FIND_ID);
   }

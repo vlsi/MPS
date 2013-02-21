@@ -22,10 +22,12 @@ public class MPSVcsProjectConfiguration extends AbstractProjectComponent impleme
     super(project);
   }
 
+  @Override
   public MPSVcsProjectConfiguration.MyState getState() {
     return myState;
   }
 
+  @Override
   public void loadState(MPSVcsProjectConfiguration.MyState state) {
     myState = state;
   }
@@ -40,6 +42,7 @@ public class MPSVcsProjectConfiguration extends AbstractProjectComponent impleme
       ModuleRootListener moduleRootListener = myProject.getMessageBus().asyncPublisher(ProjectTopics.PROJECT_ROOTS);
       moduleRootListener.rootsChanged(new ModuleRootEventImpl(myProject, false));
       VirtualFileManager.getInstance().refresh(true, new Runnable() {
+        @Override
         public void run() {
           if (!(myProject.isDisposed())) {
             VcsDirtyScopeManager.getInstance(myProject).markEverythingDirty();

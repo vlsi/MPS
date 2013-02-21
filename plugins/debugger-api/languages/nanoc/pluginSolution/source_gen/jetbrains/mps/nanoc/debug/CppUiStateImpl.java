@@ -30,17 +30,20 @@ public class CppUiStateImpl extends CppUiState {
     myFrame = frame;
   }
 
+  @Override
   public DefaultThread getThread() {
     return myThread;
   }
 
   @NotNull
+  @Override
   public List<IThread> getThreads() {
     ArrayList<IThread> list = new ArrayList<IThread>();
     list.add(myThread);
     return list;
   }
 
+  @Override
   public IStackFrame getStackFrame() {
     if (myThread == null) {
       return null;
@@ -48,6 +51,7 @@ public class CppUiStateImpl extends CppUiState {
     return myThread.getFrames().get(myFrame);
   }
 
+  @Override
   public boolean isPausedOnBreakpoint() {
     return myAbstractDebugSession.isPaused();
   }
@@ -56,10 +60,12 @@ public class CppUiStateImpl extends CppUiState {
     return myThread;
   }
 
+  @Override
   protected AbstractUiState selectThreadInternal(@Nullable IThread thread) {
     return this;
   }
 
+  @Override
   protected AbstractUiState selectFrameInternal(int frame) {
     if (myFrame == frame) {
       return this;

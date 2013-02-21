@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ui.sandbox.BusinessObject" file="BusinessObject.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.ui.sandbox.ControlsDemo_GWT" file="ControlsDemo_GWT.java">
@@ -191,6 +192,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ui.sandbox.UIDemo_SWT" file="UIDemo_SWT.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ui.sandbox.BusinessObject" />
@@ -218,6 +220,7 @@
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.BoxLayout" />
     <classNode dependClassName="javax.swing.ButtonGroup" />

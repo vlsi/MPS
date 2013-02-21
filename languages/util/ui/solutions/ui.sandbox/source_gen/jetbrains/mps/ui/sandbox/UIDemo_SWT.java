@@ -269,6 +269,7 @@ public class UIDemo_SWT {
     widget_lh9w84_a0a0a0a9.setText("kino");
     widget_lh9w84_a0a0a0a9.setSelection(this.bo.isKino());
     widget_lh9w84_a0a0a0a9.addSelectionListener(new SelectionAdapter() {
+      @Override
       public void widgetSelected(SelectionEvent e) {
         new _FunctionTypes._void_P1_E0<Boolean>() {
           public void invoke(Boolean value) {
@@ -282,6 +283,7 @@ public class UIDemo_SWT {
     widget_lh9w84_b0a0a0a9.setText("vino");
     widget_lh9w84_b0a0a0a9.setSelection(this.bo.isVino());
     widget_lh9w84_b0a0a0a9.addSelectionListener(new SelectionAdapter() {
+      @Override
       public void widgetSelected(SelectionEvent e) {
         new _FunctionTypes._void_P1_E0<Boolean>() {
           public void invoke(Boolean value) {
@@ -295,6 +297,7 @@ public class UIDemo_SWT {
     widget_lh9w84_c0a0a0a9.setText("domino");
     widget_lh9w84_c0a0a0a9.setSelection(this.bo.isDomino());
     widget_lh9w84_c0a0a0a9.addSelectionListener(new SelectionAdapter() {
+      @Override
       public void widgetSelected(SelectionEvent e) {
         new _FunctionTypes._void_P1_E0<Boolean>() {
           public void invoke(Boolean value) {

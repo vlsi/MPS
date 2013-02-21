@@ -12,6 +12,7 @@ public interface IGenericFeatureDesign extends IFeatureDesign {
     public Stub() {
     }
 
+    @Override
     public SNode getterExpression(SNode srcExpr, ITemplateGenerator generator) {
       return null;
     }

@@ -104,6 +104,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       final String modulePath = module.getDescriptorFile().getPath();
 
       new Thread() {
+        @Override
         public void run() {
           // todo command here is a must for read action. Without it, openNode will be deadlocked for now 
           ModelAccess.instance().runWriteInEDT(new Runnable() {

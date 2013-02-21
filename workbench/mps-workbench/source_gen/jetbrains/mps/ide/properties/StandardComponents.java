@@ -229,6 +229,7 @@ public class StandardComponents {
         result_wf5hwp_a0a0a9.setCellRenderer(result_wf5hwp_a1a0a0a9);
         final JList uiList = result_wf5hwp_a0a0a9.getList();
         final BaseValidatedAction result_wf5hwp_a3a0a0a9 = new ListEditAction(uiList) {
+          @Override
           public void doEdit() {
             Object value = getList().getSelectedValue();
             if (!(value instanceof ModelRootDescriptor)) {
@@ -367,6 +368,7 @@ public class StandardComponents {
     final TextFieldWithBrowseButton tfNamespace = new TextFieldWithBrowseButton();
     Disposer.register(parent, tfNamespace);
     tfNamespace.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         TreeFileChooser chooser = new TreeFileChooser();
         chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
@@ -413,6 +415,7 @@ public class StandardComponents {
 
         final JList jlist = result_wf5hwp_a0a0a61.getList();
         final BaseValidatedAction result_wf5hwp_a3a0a0a61 = new ListAddAction(jlist) {
+          @Override
           protected int doAdd(AnActionEvent e) {
             TestConfigurationDialog dialog = new TestConfigurationDialog(owner.getOperationContext().getProject(), null);
             dialog.show();
@@ -427,6 +430,7 @@ public class StandardComponents {
         };
         result_wf5hwp_a0a0a61.setAddAction(result_wf5hwp_a3a0a0a61);
         final BaseValidatedAction result_wf5hwp_a4a0a0a61 = new ListRemoveAction(jlist) {
+          @Override
           protected void doRemove(AnActionEvent e) {
             for (Object value : jlist.getSelectedValues()) {
               properties.testConfigsChanged();
@@ -436,6 +440,7 @@ public class StandardComponents {
         };
         result_wf5hwp_a0a0a61.setRemoveAction(result_wf5hwp_a4a0a0a61);
         final BaseValidatedAction result_wf5hwp_a5a0a0a61 = new ListEditAction(jlist) {
+          @Override
           public void doEdit() {
             Object value = jlist.getSelectedValue();
             if (value == null) {
@@ -504,6 +509,7 @@ public class StandardComponents {
     panel.add(new JLabel(caption + ":"), BorderLayout.WEST);
     final TextFieldWithBrowseButton.NoPathCompletion tfNamespace = new TextFieldWithBrowseButton.NoPathCompletion();
     tfNamespace.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         String s = CommonChoosers.showDialogStringChooser(owner.getMainComponent(), caption, values);
         if (s == null) {

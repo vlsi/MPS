@@ -651,109 +651,109 @@
     <nodeInfo nodeId="5487985028841967844" fileName="Gcc_Command.java" startLine="38" startPosition="0" endLine="39" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967858" fileName="Gcc_Command.java" startLine="40" startPosition="35" endLine="41" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="5487985028841967864" fileName="Gcc_Command.java" startLine="42" startPosition="5" endLine="43" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841967871" fileName="Gcc_Command.java" startLine="47" startPosition="29" endLine="48" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967877" fileName="Gcc_Command.java" startLine="52" startPosition="7" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5487985028841967878" fileName="Gcc_Command.java" startLine="53" startPosition="0" endLine="54" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5487985028841967880" fileName="Gcc_Command.java" startLine="54" startPosition="44" endLine="55" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5487985028841967882" fileName="Gcc_Command.java" startLine="55" startPosition="36" endLine="56" endPosition="329" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967655" fileName="Gcc_Command.java" startLine="60" startPosition="34" endLine="61" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967665" fileName="Gcc_Command.java" startLine="62" startPosition="5" endLine="63" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967673" fileName="Gcc_Command.java" startLine="66" startPosition="46" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967679" fileName="Gcc_Command.java" startLine="70" startPosition="46" endLine="71" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841967686" fileName="Gcc_Command.java" startLine="72" startPosition="39" endLine="73" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967692" fileName="Gcc_Command.java" startLine="74" startPosition="5" endLine="75" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967700" fileName="Gcc_Command.java" startLine="78" startPosition="59" endLine="79" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841967703" fileName="Gcc_Command.java" startLine="79" startPosition="67" endLine="80" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841967706" fileName="Gcc_Command.java" startLine="80" startPosition="69" endLine="81" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841967712" fileName="Gcc_Command.java" startLine="83" startPosition="25" endLine="84" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967723" fileName="Gcc_Command.java" startLine="84" startPosition="87" endLine="85" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967728" fileName="Gcc_Command.java" startLine="85" startPosition="55" endLine="86" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967741" fileName="Gcc_Command.java" startLine="88" startPosition="7" endLine="89" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967761" fileName="Gcc_Command.java" startLine="92" startPosition="55" endLine="93" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841967764" fileName="Gcc_Command.java" startLine="93" startPosition="67" endLine="94" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841967767" fileName="Gcc_Command.java" startLine="94" startPosition="69" endLine="95" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841967773" fileName="Gcc_Command.java" startLine="97" startPosition="25" endLine="98" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967784" fileName="Gcc_Command.java" startLine="98" startPosition="87" endLine="99" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967789" fileName="Gcc_Command.java" startLine="99" startPosition="59" endLine="100" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967802" fileName="Gcc_Command.java" startLine="102" startPosition="7" endLine="103" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841967871" fileName="Gcc_Command.java" startLine="49" startPosition="29" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967877" fileName="Gcc_Command.java" startLine="54" startPosition="7" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5487985028841967878" fileName="Gcc_Command.java" startLine="55" startPosition="0" endLine="56" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5487985028841967880" fileName="Gcc_Command.java" startLine="56" startPosition="44" endLine="57" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5487985028841967882" fileName="Gcc_Command.java" startLine="57" startPosition="36" endLine="58" endPosition="329" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841967655" fileName="Gcc_Command.java" startLine="62" startPosition="34" endLine="63" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841967665" fileName="Gcc_Command.java" startLine="64" startPosition="5" endLine="65" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841967673" fileName="Gcc_Command.java" startLine="68" startPosition="46" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841967679" fileName="Gcc_Command.java" startLine="72" startPosition="46" endLine="73" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841967686" fileName="Gcc_Command.java" startLine="74" startPosition="39" endLine="75" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841967692" fileName="Gcc_Command.java" startLine="76" startPosition="5" endLine="77" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841967700" fileName="Gcc_Command.java" startLine="80" startPosition="59" endLine="81" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841967703" fileName="Gcc_Command.java" startLine="81" startPosition="67" endLine="82" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841967706" fileName="Gcc_Command.java" startLine="82" startPosition="69" endLine="83" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841967712" fileName="Gcc_Command.java" startLine="85" startPosition="25" endLine="86" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967723" fileName="Gcc_Command.java" startLine="86" startPosition="87" endLine="87" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967728" fileName="Gcc_Command.java" startLine="87" startPosition="55" endLine="88" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967741" fileName="Gcc_Command.java" startLine="90" startPosition="7" endLine="91" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841967761" fileName="Gcc_Command.java" startLine="94" startPosition="55" endLine="95" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841967764" fileName="Gcc_Command.java" startLine="95" startPosition="67" endLine="96" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841967767" fileName="Gcc_Command.java" startLine="96" startPosition="69" endLine="97" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841967773" fileName="Gcc_Command.java" startLine="99" startPosition="25" endLine="100" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967784" fileName="Gcc_Command.java" startLine="100" startPosition="87" endLine="101" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967789" fileName="Gcc_Command.java" startLine="101" startPosition="59" endLine="102" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967802" fileName="Gcc_Command.java" startLine="104" startPosition="7" endLine="105" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Gcc_Command#()V" />
     <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="27" startPosition="64" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841967827" fileName="Gcc_Command.java" startLine="34" startPosition="77" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5487985028841967851" fileName="Gcc_Command.java" startLine="39" startPosition="55" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7114233001712015523" fileName="Gcc_Command.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841967653" fileName="Gcc_Command.java" startLine="59" startPosition="51" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSourceExtension#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5487985028841967684" fileName="Gcc_Command.java" startLine="71" startPosition="50" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7114233001712011365" fileName="Gcc_Command.java" startLine="45" startPosition="25" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967710" fileName="Gcc_Command.java" startLine="83" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841967771" fileName="Gcc_Command.java" startLine="97" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841967653" fileName="Gcc_Command.java" startLine="61" startPosition="51" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSourceExtension#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5487985028841967684" fileName="Gcc_Command.java" startLine="73" startPosition="50" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7114233001712015523" fileName="Gcc_Command.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841967710" fileName="Gcc_Command.java" startLine="85" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841967771" fileName="Gcc_Command.java" startLine="99" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGccLocation_String#(Ljava/lang/String;)Ljetbrains/mps/nanoc/pluginSolution/plugin/Gcc_Command;" />
-    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="protect#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7114233001712011361" fileName="Gcc_Command.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="70" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOutputExtension#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5487985028841967709" fileName="Gcc_Command.java" startLine="81" startPosition="70" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967770" fileName="Gcc_Command.java" startLine="95" startPosition="70" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7114233001712011171" fileName="Gcc_Command.java" startLine="43" startPosition="69" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="78" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getExecutableFile#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="92" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSourceFile#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="34" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProcess#(Lorg/jetbrains/mps/openapi/model/SNode;)Lcom/intellij/execution/process/ProcessHandler;" />
+    <nodeInfo nodeId="7114233001712011365" fileName="Gcc_Command.java" startLine="46" startPosition="25" endLine="52" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="61" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="protect#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="72" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOutputExtension#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5487985028841967709" fileName="Gcc_Command.java" startLine="83" startPosition="70" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967770" fileName="Gcc_Command.java" startLine="97" startPosition="70" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7114233001712011361" fileName="Gcc_Command.java" startLine="45" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7114233001712011171" fileName="Gcc_Command.java" startLine="43" startPosition="69" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="80" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getExecutableFile#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="94" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSourceFile#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="34" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProcess#(Lorg/jetbrains/mps/openapi/model/SNode;)Lcom/intellij/execution/process/ProcessHandler;" />
     <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="24" startPosition="24" endLine="24" endPosition="24" />
     <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="28" startPosition="30" endLine="29" endPosition="41" />
     <scopeInfo nodeId="5487985028841967838" fileName="Gcc_Command.java" startLine="35" startPosition="125" endLine="36" endPosition="89" />
     <scopeInfo nodeId="5487985028841967857" fileName="Gcc_Command.java" startLine="40" startPosition="35" endLine="41" endPosition="103" />
-    <scopeInfo nodeId="7114233001712015526" fileName="Gcc_Command.java" startLine="47" startPosition="29" endLine="48" endPosition="48" />
-    <scopeInfo nodeId="5487985028841967654" fileName="Gcc_Command.java" startLine="60" startPosition="34" endLine="61" endPosition="37" />
-    <scopeInfo nodeId="5487985028841967672" fileName="Gcc_Command.java" startLine="66" startPosition="46" endLine="67" endPosition="16" />
-    <scopeInfo nodeId="5487985028841967685" fileName="Gcc_Command.java" startLine="72" startPosition="39" endLine="73" endPosition="20" />
+    <scopeInfo nodeId="7114233001712015526" fileName="Gcc_Command.java" startLine="49" startPosition="29" endLine="50" endPosition="48" />
+    <scopeInfo nodeId="5487985028841967654" fileName="Gcc_Command.java" startLine="62" startPosition="34" endLine="63" endPosition="37" />
+    <scopeInfo nodeId="5487985028841967672" fileName="Gcc_Command.java" startLine="68" startPosition="46" endLine="69" endPosition="16" />
+    <scopeInfo nodeId="5487985028841967685" fileName="Gcc_Command.java" startLine="74" startPosition="39" endLine="75" endPosition="20" />
     <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="7114233001712015523" fileName="Gcc_Command.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="5487985028841967711" fileName="Gcc_Command.java" startLine="83" startPosition="25" endLine="86" endPosition="91" />
-    <scopeInfo nodeId="5487985028841967772" fileName="Gcc_Command.java" startLine="97" startPosition="25" endLine="100" endPosition="91" />
+    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="5487985028841967711" fileName="Gcc_Command.java" startLine="85" startPosition="25" endLine="88" endPosition="91" />
+    <scopeInfo nodeId="5487985028841967772" fileName="Gcc_Command.java" startLine="99" startPosition="25" endLine="102" endPosition="91" />
     <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="27" startPosition="64" endLine="31" endPosition="16" />
-    <scopeInfo nodeId="5487985028841967652" fileName="Gcc_Command.java" startLine="59" startPosition="51" endLine="63" endPosition="21" />
-    <scopeInfo nodeId="7114233001712011364" fileName="Gcc_Command.java" startLine="45" startPosition="25" endLine="50" endPosition="11" />
-    <scopeInfo nodeId="5487985028841967678" fileName="Gcc_Command.java" startLine="70" startPosition="46" endLine="75" endPosition="14">
+    <scopeInfo nodeId="7114233001712015523" fileName="Gcc_Command.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="5487985028841967652" fileName="Gcc_Command.java" startLine="61" startPosition="51" endLine="65" endPosition="21" />
+    <scopeInfo nodeId="5487985028841967678" fileName="Gcc_Command.java" startLine="72" startPosition="46" endLine="77" endPosition="14">
       <varInfo nodeId="5487985028841967680" varName="osName" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841967710" fileName="Gcc_Command.java" startLine="83" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="5487985028841967771" fileName="Gcc_Command.java" startLine="97" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="5487985028841967710" fileName="Gcc_Command.java" startLine="85" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="5487985028841967771" fileName="Gcc_Command.java" startLine="99" startPosition="0" endLine="104" endPosition="0" />
     <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="5487985028841967648" varName="gccLocation" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="7114233001712011364" fileName="Gcc_Command.java" startLine="46" startPosition="25" endLine="52" endPosition="11" />
+    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="5487985028841967667" varName="rawString" />
     </scopeInfo>
-    <scopeInfo nodeId="7114233001712011361" fileName="Gcc_Command.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="70" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="5487985028841967699" fileName="Gcc_Command.java" startLine="78" startPosition="59" endLine="89" endPosition="172">
+    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="72" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="7114233001712011361" fileName="Gcc_Command.java" startLine="45" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="5487985028841967699" fileName="Gcc_Command.java" startLine="80" startPosition="59" endLine="91" endPosition="172">
       <varInfo nodeId="5487985028841967701" varName="module" />
       <varInfo nodeId="5487985028841967707" varName="packageName" />
       <varInfo nodeId="5487985028841967704" varName="sourceName" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841967760" fileName="Gcc_Command.java" startLine="92" startPosition="55" endLine="103" endPosition="189">
+    <scopeInfo nodeId="5487985028841967760" fileName="Gcc_Command.java" startLine="94" startPosition="55" endLine="105" endPosition="189">
       <varInfo nodeId="5487985028841967762" varName="module" />
       <varInfo nodeId="5487985028841967768" varName="packageName" />
       <varInfo nodeId="5487985028841967765" varName="sourceName" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="78" startPosition="0" endLine="91" endPosition="0">
+    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="80" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="5487985028841967695" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="92" startPosition="0" endLine="105" endPosition="0">
+    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="94" startPosition="0" endLine="107" endPosition="0">
       <varInfo nodeId="5487985028841967756" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841967826" fileName="Gcc_Command.java" startLine="34" startPosition="77" endLine="56" endPosition="329">
+    <scopeInfo nodeId="5487985028841967826" fileName="Gcc_Command.java" startLine="34" startPosition="77" endLine="58" endPosition="329">
       <varInfo nodeId="5487985028841967865" varName="executableFile" />
       <varInfo nodeId="5487985028841967845" varName="sourceFile" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="34" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="34" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="5487985028841967648" varName="file" />
     </scopeInfo>
-    <unitInfo nodeId="7114233001712015521" fileName="Gcc_Command.java" startLine="46" startPosition="48" endLine="50" endPosition="9" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command$2" />
-    <unitInfo nodeId="5487985028841967710" fileName="Gcc_Command.java" startLine="82" startPosition="45" endLine="88" endPosition="5" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command$2" />
-    <unitInfo nodeId="5487985028841967771" fileName="Gcc_Command.java" startLine="96" startPosition="45" endLine="102" endPosition="5" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command$3" />
-    <unitInfo nodeId="7114233001712011359" fileName="Gcc_Command.java" startLine="44" startPosition="41" endLine="52" endPosition="5" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command$1" />
-    <unitInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="21" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command" />
+    <unitInfo nodeId="7114233001712015521" fileName="Gcc_Command.java" startLine="47" startPosition="48" endLine="52" endPosition="9" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command$2" />
+    <unitInfo nodeId="5487985028841967710" fileName="Gcc_Command.java" startLine="84" startPosition="45" endLine="90" endPosition="5" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command$2" />
+    <unitInfo nodeId="5487985028841967771" fileName="Gcc_Command.java" startLine="98" startPosition="45" endLine="104" endPosition="5" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command$3" />
+    <unitInfo nodeId="7114233001712011359" fileName="Gcc_Command.java" startLine="44" startPosition="41" endLine="54" endPosition="5" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command$1" />
+    <unitInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="21" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command" />
   </root>
   <root nodeRef="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)/5487985028841967924">
     <nodeInfo nodeId="5487985028841967924" fileName="Gdb_Command.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGdbLocation_File" />

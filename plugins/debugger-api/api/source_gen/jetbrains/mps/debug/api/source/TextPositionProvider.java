@@ -20,6 +20,7 @@ public class TextPositionProvider implements IPositionProvider<TextSourcePositio
   }
 
   @Nullable
+  @Override
   public TextSourcePosition getPosition(@Nullable ILocation location) {
     if (location == null || location instanceof NullLocation) {
       return null;
@@ -32,6 +33,7 @@ public class TextPositionProvider implements IPositionProvider<TextSourcePositio
   }
 
   @Nullable
+  @Override
   public TextSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
     VirtualFile file = getFile(unitName, fileName);
     if (file != null) {
@@ -53,6 +55,7 @@ public class TextPositionProvider implements IPositionProvider<TextSourcePositio
     return FileOpenUtil.findFile(myProject, unitName, fileName);
   }
 
+  @Override
   public boolean accepts(AbstractDebugSession session) {
     return true;
   }

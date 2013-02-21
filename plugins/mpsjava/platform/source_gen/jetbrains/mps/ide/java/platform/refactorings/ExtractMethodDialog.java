@@ -133,6 +133,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     myPanel = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
@@ -161,6 +162,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     c.gridwidth = 1;
     myVisibilityPanel = new VisibilityPanel();
     myVisibilityPanel.addChangeListener(new ChangeListener() {
+      @Override
       public void stateChanged(ChangeEvent e) {
         ExtractMethodDialog.this.myParameters.setVisibilityLevel(ExtractMethodDialog.this.myVisibilityPanel.getResult());
         ExtractMethodDialog.this.update();
@@ -213,6 +215,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     parametersPanel.setBorder(this.createBorder("Parameters"));
     ParametersTableModel tableModel = parametersPanel.getTableModel();
     tableModel.addTableModelListener(new TableModelListener() {
+      @Override
       public void tableChanged(TableModelEvent p0) {
         ExtractMethodDialog.this.update();
       }
@@ -241,6 +244,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     myNameField = new JTextField(20);
     methodPanel.add(myNameField, c);
     myNameField.getDocument().addDocumentListener(new DocumentAdapter() {
+      @Override
       protected void textChanged(DocumentEvent p0) {
         ExtractMethodDialog.this.myParameters.setName(myNameField.getText());
         ExtractMethodDialog.this.update();
@@ -259,6 +263,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     return methodPanel;
   }
 
+  @Override
   public JComponent getPreferredFocusedComponent() {
     return myNameField;
   }
@@ -271,6 +276,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     this.myStaticEnabled = canBeStatic && !(shouldBeStatic);
     setCheckBox(result, this.myStaticSelected, this.myStaticEnabled);
     result.addItemListener(new ItemListener() {
+      @Override
       public void itemStateChanged(ItemEvent e) {
         myStaticSelected = result.isSelected();
         ExtractMethodDialog.this.myParameters.setStatic(myStaticSelected);
@@ -307,6 +313,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     });
 
     final BaseChooseNodeDialog dialog = new BaseChooseNodeDialog(myProject, myContext.getOperationContext(), model.value, "Choose class") {
+      @Override
       protected boolean isAcceptable(SNode node) {
         return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods");
       }
@@ -337,6 +344,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
    * This method will be called on pressing "Refactor" button in dialog.
    * 
    */
+  @Override
   protected void doRefactoringAction() {
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>(null);
     if (!(myCanRefactor)) {
@@ -378,6 +386,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
       this.myMethod = method;
     }
 
+    @Override
     public void substitute(MethodMatch duplicate) {
       duplicate.getRefactoring().replaceMatch(duplicate, this.myMethod);
     }
@@ -400,6 +409,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     private void initPanel() {
       ExtractMethodDialog.this.setCheckBox(this.myOuterContainerCheckBox, ExtractMethodDialog.this.myExtractIntoOuterContainer, !(ExtractMethodDialog.this.myExtractIntoOuterContainer));
       myOuterContainerCheckBox.addActionListener(new ActionListener() {
+        @Override
         public void actionPerformed(ActionEvent p0) {
           ExtractMethodDialog.this.myExtractIntoOuterContainer = myOuterContainerCheckBox.isSelected();
           myChooseContainerButton.setEnabled(ExtractMethodDialog.this.myExtractIntoOuterContainer);
@@ -413,6 +423,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
 
       myChooseContainerButton.setEnabled(ExtractMethodDialog.this.myExtractIntoOuterContainer);
       myChooseContainerButton.addActionListener(new ActionListener() {
+        @Override
         public void actionPerformed(ActionEvent p0) {
           chooseStaticContainer();
           ModelAccess.instance().runReadAction(new Runnable() {

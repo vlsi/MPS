@@ -115,6 +115,7 @@ public class InternalActionsUtils {
       throw new IllegalStateException("Must be executed outside of write action");
     }
     ProgressManager.getInstance().run(new Task.Modal(project, actionName, true) {
+      @Override
       public void run(@NotNull ProgressIndicator indicator) {
         executeActionOnAllNodes(actionName, new ProgressMonitorAdapter(indicator), nodeCallback);
       }
@@ -123,6 +124,7 @@ public class InternalActionsUtils {
 
   public static void showUsagesViewForNodes(Project project, final List<SNodeReference> nodes) {
     IResultProvider provider = FindUtils.makeProvider(new IFinder() {
+      @Override
       public SearchResults find(SearchQuery query, ProgressMonitor progress) {
         SearchResults results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodeReference, SNode>() {

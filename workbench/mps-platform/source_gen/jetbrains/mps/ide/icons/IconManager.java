@@ -58,13 +58,16 @@ public class IconManager {
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
   private static Map<LanguageAspect, Icon> ourAspectsToIcons;
   public static final Icon EMPTY_ICON = new Icon() {
+    @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
     }
 
+    @Override
     public int getIconWidth() {
       return 18;
     }
 
+    @Override
     public int getIconHeight() {
       return 18;
     }
@@ -83,6 +86,7 @@ public class IconManager {
 
   public static Icon getIconFor(@NotNull final SNode node, final boolean withoutAdditional) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+      @Override
       public Icon compute() {
         Icon mainIcon = null;
         if (SNodeOperations.isUnknown(node)) {

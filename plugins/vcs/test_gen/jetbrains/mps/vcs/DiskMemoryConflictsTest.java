@@ -63,6 +63,7 @@ public class DiskMemoryConflictsTest {
     final DiskMemoryConflictsTest.DiskModification[] startedDiskModification = new DiskMemoryConflictsTest.DiskModification[1];
     final DiskMemoryConflictsTest.VersionToChoose[] startedVersion = new DiskMemoryConflictsTest.VersionToChoose[1];
     final boolean result = TestMain.testOnProjectCopy(PROJECT_ARCHIVE, DESTINATION_PROJECT_DIR, PROJECT_FILE, new TestMain.ProjectRunnable() {
+      @Override
       public boolean execute(final Project project) {
         final boolean[] resultArr = new boolean[1];
         try {
@@ -70,6 +71,7 @@ public class DiskMemoryConflictsTest {
           myModelDescriptor = (DefaultSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(DiskMemoryConflictsTest.MODEL_REFERENCE);
           myModule = (Solution) myModelDescriptor.getModule();
           ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
             public void run() {
               myNodeBackup = CopyUtil.copyAndPreserveId(myModelDescriptor.getSModel().rootsIterator().next());
             }
@@ -102,6 +104,7 @@ public class DiskMemoryConflictsTest {
   private String processFieldNameInModel(final String nameToWrite) {
     final String[] result = new String[1];
     ModelAccess.instance().runCommandInEDT(new Runnable() {
+      @Override
       public void run() {
         if (SModelRepository.getInstance().getModelDescriptor(myModelDescriptor.getSModelReference()) != null) {
           try {
@@ -237,6 +240,7 @@ public class DiskMemoryConflictsTest {
     } else {
       //  reload conflict 
       ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
         public void run() {
           myModelDescriptor.reloadFromDiskSafe();
         }
@@ -245,6 +249,7 @@ public class DiskMemoryConflictsTest {
     ModelAccess.instance().flushEventQueue();
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
         public void run() {
         }
       });
@@ -281,6 +286,7 @@ public class DiskMemoryConflictsTest {
       setFieldNameInFile(FIELD_DEFAULT_NAME);
       refreshVfs();
       ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
         public void run() {
           myModelDescriptor.reloadFromDisk();
         }
@@ -288,6 +294,7 @@ public class DiskMemoryConflictsTest {
     } else {
       //  Restore model 
       ModelAccess.instance().runCommandInEDT(new Runnable() {
+        @Override
         public void run() {
           myModelDescriptor = ((DefaultSModelDescriptor) myModule.createModel(DiskMemoryConflictsTest.MODEL_REFERENCE.getSModelFqName().toString(), myModule.getModelRoots().iterator().next(), null));
           myModelDescriptor.getSModel().addRoot(CopyUtil.copyAndPreserveId(myNodeBackup));

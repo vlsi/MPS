@@ -27,6 +27,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
   public LanguageConceptsUsagesFinder() {
   }
 
+  @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults<SNode> searchResults = new SearchResults<SNode>();
     IHolder holder = query.getObjectHolder();

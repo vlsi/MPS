@@ -120,6 +120,7 @@ public class ChangeMethodSignature_Action extends BaseAction {
         return;
       }
       ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("method")));
           if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("method"))))) {

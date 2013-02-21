@@ -92,6 +92,7 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     JPanel panel = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
@@ -105,9 +106,11 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     return panel;
   }
 
+  @Override
   protected void doRefactoringAction() {
     final Wrappers._T<List<SNode>> methodsToRefactor = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
     ProgressManager.getInstance().run(new Task.Modal(myProject, "Search for overriding methods", true) {
+      @Override
       public void run(@NotNull final ProgressIndicator indicator) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {

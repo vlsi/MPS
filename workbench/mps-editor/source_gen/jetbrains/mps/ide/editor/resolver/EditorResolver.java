@@ -27,6 +27,7 @@ public class EditorResolver implements IResolver {
   }
 
   @Nullable
+  @Override
   public boolean resolve(@NotNull SReference reference, @NotNull SNode sourceNode, @NotNull IOperationContext operationContext) {
     final String resolveInfo = getResolveInfo(reference, sourceNode);
     if (resolveInfo == null) {
@@ -87,6 +88,7 @@ public class EditorResolver implements IResolver {
       editNode(node);
     }
 
+    @Override
     protected EditorCell createRootCell(List<SModelEvent> events) {
       return getEditorContext().createRootCell(getEditedNode(), events);
     }

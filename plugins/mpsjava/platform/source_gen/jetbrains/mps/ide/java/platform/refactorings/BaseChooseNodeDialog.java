@@ -93,6 +93,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     final DefaultMutableTreeNode rootNode = createRootNode();
     myTree = new SimpleTree(new DefaultTreeModel(rootNode));
@@ -101,9 +102,11 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
     myTree.setRootVisible(false);
     myTree.setShowsRootHandles(true);
     new ModelTreeBuilder(myTree) {
+      @Override
       protected void initTreeNode(final ModelTreeNode node) {
         if (node.getUserObject() instanceof SModelDescriptor) {
           ModelAccess.instance().runReadInEDT(new Runnable() {
+            @Override
             public void run() {
               initModelDescriptorNode(node, (SModelDescriptor) node.getUserObject());
             }
@@ -127,6 +130,7 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
       }
     };
     myTree.getSelectionModel().addTreeSelectionListener(new TreeSelectionListener() {
+      @Override
       public void valueChanged(TreeSelectionEvent event) {
         Object selectedNode = event.getPath().getLastPathComponent();
         if (selectedNode instanceof ModelTreeNode) {

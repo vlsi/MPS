@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.plugin.IdeaJavaCompilerImpl" file="IdeaJavaCompilerImpl.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Thread" />
@@ -96,6 +97,7 @@
     <classNode dependClassName="com.intellij.openapi.wm.IdeFrame" />
     <classNode dependClassName="com.intellij.openapi.wm.StatusBar" />
     <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.plugin.PluginStateWidget" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
@@ -112,6 +114,7 @@
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />

@@ -109,6 +109,7 @@ public class NewModelDialog extends DialogWrapper {
       }
     });
     myModelRoots.addItemListener(new ItemListener() {
+      @Override
       public void itemStateChanged(ItemEvent e) {
         check();
       }
@@ -122,6 +123,7 @@ public class NewModelDialog extends DialogWrapper {
     mainPanel.add(new JLabel("Model name:"));
     mainPanel.add(myModelName);
     myModelName.addKeyListener(new KeyAdapter() {
+      @Override
       public void keyReleased(KeyEvent event) {
         check();
       }
@@ -131,11 +133,13 @@ public class NewModelDialog extends DialogWrapper {
     myModelStereotype.setEditable(true);
     myModelStereotype.setModel(new DefaultComboBoxModel(SModelStereotype.values));
     myModelStereotype.addKeyListener(new KeyAdapter() {
+      @Override
       public void keyReleased(KeyEvent event) {
         check();
       }
     });
     myModelStereotype.addItemListener(new ItemListener() {
+      @Override
       public void itemStateChanged(ItemEvent p0) {
         check();
       }
@@ -168,6 +172,7 @@ public class NewModelDialog extends DialogWrapper {
       final ModelRootDescriptor newModelRootDescriptor = new ModelRootDescriptor(newModelRoot.getType(), memento);
 
       ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
         public void run() {
           final LanguageDescriptor languageDescriptor = (LanguageDescriptor) myModule.getModuleDescriptor();
           Iterator<ModelRootDescriptor> iterator = languageDescriptor.getModelRootDescriptors().iterator();
@@ -194,6 +199,7 @@ public class NewModelDialog extends DialogWrapper {
     }
 
     myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
+      @Override
       public SModelDescriptor compute() {
         String fqName = getFqName();
         ModelRoot mr = (ModelRoot) myModelRoots.getSelectedItem();
@@ -206,6 +212,7 @@ public class NewModelDialog extends DialogWrapper {
     MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myContext);
     final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myContext.getProject()), configurable, "#MPSPropertiesConfigurable");
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         configurableEditor.show();
       }
@@ -271,6 +278,7 @@ public class NewModelDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myContentPane;
   }

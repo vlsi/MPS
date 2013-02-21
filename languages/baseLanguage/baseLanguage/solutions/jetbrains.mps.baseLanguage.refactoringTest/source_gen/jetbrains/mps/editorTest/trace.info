@@ -2683,36 +2683,36 @@
     <nodeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="35" startPosition="99" endLine="36" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5423119640845749257" fileName="DefaultCellInfoTest_Test.java" startLine="36" startPosition="93" endLine="37" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5423119640845751028" fileName="DefaultCellInfoTest_Test.java" startLine="37" startPosition="100" endLine="38" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5423119640845780913" fileName="DefaultCellInfoTest_Test.java" startLine="40" startPosition="42" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3349229934431906055" fileName="DefaultCellInfoTest_Test.java" startLine="43" startPosition="9" endLine="44" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="403806536168445080" fileName="DefaultCellInfoTest_Test.java" startLine="44" startPosition="63" endLine="45" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5423119640845780913" fileName="DefaultCellInfoTest_Test.java" startLine="41" startPosition="42" endLine="42" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3349229934431906055" fileName="DefaultCellInfoTest_Test.java" startLine="44" startPosition="9" endLine="45" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="403806536168445080" fileName="DefaultCellInfoTest_Test.java" startLine="45" startPosition="63" endLine="46" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultCellInfoTest_Test#()V" />
     <nodeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5423119640845780907" fileName="DefaultCellInfoTest_Test.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" />
+    <nodeInfo nodeId="5423119640845780907" fileName="DefaultCellInfoTest_Test.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Z" />
     <nodeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_DefaultCellInfoTest#()V" />
-    <nodeInfo nodeId="5423119640845780895" fileName="DefaultCellInfoTest_Test.java" startLine="38" startPosition="100" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="33" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <nodeInfo nodeId="5423119640845780895" fileName="DefaultCellInfoTest_Test.java" startLine="38" startPosition="100" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="33" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
     <scopeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="19" startPosition="37" endLine="19" endPosition="37" />
     <scopeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="30" startPosition="23" endLine="30" endPosition="23" />
-    <scopeInfo nodeId="5423119640845780912" fileName="DefaultCellInfoTest_Test.java" startLine="40" startPosition="42" endLine="41" endPosition="47" />
+    <scopeInfo nodeId="5423119640845780912" fileName="DefaultCellInfoTest_Test.java" startLine="41" startPosition="42" endLine="42" endPosition="47" />
     <scopeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="23" startPosition="59" endLine="25" endPosition="100" />
     <scopeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="5423119640845780907" fileName="DefaultCellInfoTest_Test.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="5423119640845780907" fileName="DefaultCellInfoTest_Test.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="5423119640845780910" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="34" startPosition="51" endLine="45" endPosition="107">
+    <scopeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="34" startPosition="51" endLine="46" endPosition="107">
       <varInfo nodeId="6249787563914683642" varName="editor" />
       <varInfo nodeId="5423119640845780896" varName="editorCell" />
       <varInfo nodeId="6249787563914683642" varName="editorComponent" />
       <varInfo nodeId="5423119640845751029" varName="inspector" />
       <varInfo nodeId="5423119640845749258" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="33" startPosition="0" endLine="47" endPosition="0" />
-    <unitInfo nodeId="5423119640845780905" fileName="DefaultCellInfoTest_Test.java" startLine="39" startPosition="71" endLine="43" endPosition="7" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$1" />
-    <unitInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="28" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$TestBody" />
-    <unitInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test" />
+    <scopeInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="33" startPosition="0" endLine="48" endPosition="0" />
+    <unitInfo nodeId="5423119640845780905" fileName="DefaultCellInfoTest_Test.java" startLine="39" startPosition="71" endLine="44" endPosition="7" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$1" />
+    <unitInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="28" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test$TestBody" />
+    <unitInfo nodeId="6249787563914683642" fileName="DefaultCellInfoTest_Test.java" startLine="17" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.editorTest.DefaultCellInfoTest_Test" />
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)/6386137884199284577">
     <nodeInfo nodeId="6386137884199284577" fileName="LT_ListElementAccess_with_PlusOperation_Test.java" startLine="18" startPosition="79" endLine="19" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

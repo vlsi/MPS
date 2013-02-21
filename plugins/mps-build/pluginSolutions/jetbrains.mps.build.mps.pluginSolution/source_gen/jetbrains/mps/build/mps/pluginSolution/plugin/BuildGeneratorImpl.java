@@ -82,6 +82,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     setValidDefaultSolutionName(projectName);
   }
 
+  @Override
   public void generate() {
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
@@ -115,6 +116,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   private void copyIcons() {
     FileSystem.getInstance().runWriteTransaction(new Runnable() {
+      @Override
       public void run() {
         IFile baseDir = FileSystem.getInstance().getFileByPath(myProject.getBaseDir().getPath());
         IFile iconsDir = baseDir.getDescendant(BuildGeneratorImpl.ICONS);

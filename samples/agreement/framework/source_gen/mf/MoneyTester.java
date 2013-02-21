@@ -31,6 +31,7 @@ public class MoneyTester extends TestCase {
     Assert.assertEquals(expected[9], Money.dollars(0.1));
   }
 
+  @Override
   public void setUp() {
     myD15 = Money.dollars(15);
     myD2_51 = Money.dollars(2.51);

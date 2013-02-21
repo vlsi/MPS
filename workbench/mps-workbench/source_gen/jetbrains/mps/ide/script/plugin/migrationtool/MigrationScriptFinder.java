@@ -38,6 +38,7 @@ public class MigrationScriptFinder implements IFinder {
     myOperationContext = context;
   }
 
+  @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     myResults = new SearchResults<SNode>();
     IScope queryScope = query.getScope();

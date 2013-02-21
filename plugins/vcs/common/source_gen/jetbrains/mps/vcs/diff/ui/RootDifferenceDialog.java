@@ -109,10 +109,12 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     myActionGroup.addSeparator();
     if (isEditable) {
       myActionGroup.add(new RevertRootsAction(rootName) {
+        @Override
         protected Iterable<ModelChange> getChanges() {
           return myChangeSet.getChangesForRoot(myRootId);
         }
 
+        @Override
         protected void after() {
           rehighlight();
         }
@@ -180,15 +182,18 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myContainer;
   }
 
+  @Override
   public String getDimensionServiceKey() {
     return getClass().getName();
   }
 
   @Nullable
+  @Override
   public Object getData(@NonNls String dataId) {
     if (DiffModelTree.NODE_ID_DATAKEY.is(dataId)) {
       return new Ref<SNodeId>(myRootId);
@@ -197,6 +202,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   }
 
   @NotNull
+  @Override
   protected Action[] createActions() {
     return new Action[0];
   }

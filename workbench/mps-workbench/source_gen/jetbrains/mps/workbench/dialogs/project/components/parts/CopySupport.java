@@ -25,6 +25,7 @@ public class CopySupport {
     final PopupMenu popup = new PopupMenu();
     MenuItem menuItem = new MenuItem("Copy name to clipboard");
     menuItem.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         component.getTransferHandler().exportToClipboard(component, clipboard, TransferHandler.COPY);
@@ -33,6 +34,7 @@ public class CopySupport {
     popup.add(menuItem);
     component.add(popup);
     component.addMouseListener(new MouseAdapter() {
+      @Override
       public void mouseClicked(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON3) {
           Point point = e.getPoint();
@@ -46,6 +48,7 @@ public class CopySupport {
     public ModelReferenceTransferHandler() {
     }
 
+    @Override
     public void exportToClipboard(JComponent comp, Clipboard clip, int action) throws IllegalStateException {
       int clipboardAction = getSourceActions(comp) & action;
       if (clipboardAction == TransferHandler.NONE) {

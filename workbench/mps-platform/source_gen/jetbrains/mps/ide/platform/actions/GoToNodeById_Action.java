@@ -83,6 +83,7 @@ public class GoToNodeById_Action extends BaseAction {
       }
       final String trimmedValue = value;
       ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
         public void run() {
           SNode node;
           node = ((SModelDescriptor) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getSModel().getNodeById(id);

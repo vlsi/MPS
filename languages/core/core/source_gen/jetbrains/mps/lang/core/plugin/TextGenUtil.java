@@ -35,6 +35,7 @@ public class TextGenUtil {
     }
 
     engine.generateModels(modelToInput.keySet(), new TextGeneratorEngine.GenerateCallback() {
+      @Override
       public void modelGenerated(SModel model, List<TextGenerationResult> results) {
         GResource generatedResource = modelToInput.get(model);
         callback.textGenerated(generatedResource, results);
@@ -46,6 +47,7 @@ public class TextGenUtil {
     long outerStartTime = System.currentTimeMillis();
     final AtomicLong innerTime = new AtomicLong(0);
     boolean result = FileSystem.getInstance().runWriteTransaction(new Runnable() {
+      @Override
       public void run() {
         long innerStartTime = System.currentTimeMillis();
         runnable.run();

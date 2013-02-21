@@ -97,18 +97,22 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
     public MyComboBoxModel() {
     }
 
+    @Override
     public void setSelectedItem(Object object) {
       ChildChoosePanel.this.myChild = (C) object;
     }
 
+    @Override
     public int getSize() {
       return ListSequence.fromList(this.getConfigurations()).count();
     }
 
+    @Override
     public Object getSelectedItem() {
       return ChildChoosePanel.this.myChild;
     }
 
+    @Override
     public Object getElementAt(int i) {
       return ListSequence.fromList(this.getConfigurations()).getElement(i);
     }

@@ -56,6 +56,7 @@ import java.awt.event.ActionEvent;
     parametersTable.setIntercellSpacing(new Dimension(0, 0));
     parametersTable.setTableHeader(null);
     parametersTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+      @Override
       public void valueChanged(ListSelectionEvent p0) {
         int s = parametersTable.getSelectedRow();
         upButton.setEnabled(s > 0);
@@ -66,6 +67,7 @@ import java.awt.event.ActionEvent;
     parametersTable.getColumnModel().getColumn(1).setCellEditor(this.createCellEditor());
     parametersTable.getColumnModel().getColumn(0).setMaxWidth(new JCheckBox().getPreferredSize().width);
     this.myTableModel.addTableModelListener(new TableModelListener() {
+      @Override
       public void tableChanged(TableModelEvent p0) {
         ParametersPanel.this.fitTableColumns(parametersTable);
       }
@@ -118,6 +120,7 @@ import java.awt.event.ActionEvent;
     c.weighty = 0;
     c.anchor = GridBagConstraints.PAGE_END;
     JButton button = new JButton(new AbstractAction(name) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         int row = parametersTable.getSelectedRow();
         ParametersPanel.this.myTableModel.swapRows(row, row + dr);

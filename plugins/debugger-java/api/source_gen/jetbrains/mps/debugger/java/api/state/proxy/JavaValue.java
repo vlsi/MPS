@@ -32,12 +32,14 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
     return myClassFQName;
   }
 
+  @Override
   public void initSubvalues() {
     mySubvalues = calculateSubvalues();
   }
 
   public abstract List<IWatchable> calculateSubvalues();
 
+  @Override
   public List<IWatchable> getSubvalues() {
     return mySubvalues;
   }

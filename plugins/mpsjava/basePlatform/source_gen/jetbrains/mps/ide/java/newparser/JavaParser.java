@@ -326,6 +326,7 @@ public class JavaParser {
         }
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          @Override
           public void run() {
             SNode theRightNode = subst.invoke();
             SNodeOperations.replaceWithAnother(unkNode, theRightNode);

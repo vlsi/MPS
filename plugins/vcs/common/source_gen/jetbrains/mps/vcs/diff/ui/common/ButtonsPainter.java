@@ -49,6 +49,7 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
     return myHighlightLeft;
   }
 
+  @Override
   public int getWeight() {
     return 2;
   }

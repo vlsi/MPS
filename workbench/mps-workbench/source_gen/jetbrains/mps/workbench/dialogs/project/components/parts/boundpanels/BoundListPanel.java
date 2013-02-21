@@ -23,6 +23,7 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
     super(owner, caption, ts);
   }
 
+  @Override
   protected JComponent initUIComponentAndBinding() {
     if (myCellRenderer != null) {
       myUIList.setCellRenderer(myCellRenderer);
@@ -31,14 +32,17 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
     return myUIList;
   }
 
+  @Override
   protected BaseValidatedAction createAddAction(Computable<List<T>> chooser) {
     return new BoundListPanel.MyListAddAction(chooser);
   }
 
+  @Override
   protected BaseValidatedAction createRemoveAction() {
     return new BoundListPanel.MyListRemoveAction();
   }
 
+  @Override
   protected int[] getSelectedIndices() {
     return myUIList.getSelectedIndices();
   }
@@ -55,6 +59,7 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
       myChooser = chooser;
     }
 
+    @Override
     protected int doAdd(AnActionEvent e) {
       List<T> chosen = myChooser.compute();
       if (chosen == null) {
@@ -78,6 +83,7 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
       super(myUIList);
     }
 
+    @Override
     protected void doRemove(AnActionEvent e) {
       String errorMessage = BoundListPanel.this.removeSelectedWithCheck();
       if ((errorMessage == null || errorMessage.length() == 0)) {

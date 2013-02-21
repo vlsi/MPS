@@ -80,6 +80,7 @@ public class NodeGroupChange extends ModelChange {
     }
   }
 
+  @Override
   public void apply(@NotNull final SModel model, @NotNull NodeCopier nodeCopier) {
     // delete old nodes 
     prepare();
@@ -115,6 +116,7 @@ public class NodeGroupChange extends ModelChange {
   }
 
   @NotNull
+  @Override
   public ChangeType getType() {
     if (myBegin == myEnd) {
       return ChangeType.ADD;
@@ -136,6 +138,7 @@ public class NodeGroupChange extends ModelChange {
     return String.format("Replace %s with nodes %s in role %s of node %s", nodeRange(myBegin, myEnd), nodeRange(myResultBegin, myResultEnd), myRole, myParentNodeId);
   }
 
+  @Override
   public String getDescription() {
     return getDescription(true);
   }
@@ -187,6 +190,7 @@ public class NodeGroupChange extends ModelChange {
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
     return new NodeGroupChange(getChangeSet().getOppositeChangeSet(), myParentNodeId, myRole, myResultBegin, myResultEnd, myBegin, myEnd);
   }

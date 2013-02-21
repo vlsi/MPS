@@ -20,6 +20,7 @@ public class BitemporalCollectionTester extends TestCase {
     super(name);
   }
 
+  @Override
   public void setUp() {
     MfDate.setToday(new MfDate(1996, 1, 1));
     mySubject = new BitemporalCollection();

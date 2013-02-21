@@ -79,6 +79,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
     return null;
   }
 
+  @Override
   protected void doInit() {
     Set<IModule> reqModules = SetSequence.fromSet(new HashSet<IModule>());
     Set<IModule> rtModules = SetSequence.fromSet(new HashSet<IModule>());
@@ -135,10 +136,12 @@ public class ModuleDependencyNode extends MPSTreeNode {
     myInitialized = true;
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   public void doubleClick() {
     if ((int) ListSequence.fromList(myModules).count() == 1) {
       ProjectPane.getInstance(check_lba8jw_a0a0a0a41(((DependencyTree) getTree()), this)).selectModule(ListSequence.fromList(myModules).first(), false);
@@ -157,6 +160,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
       }
     }
 
+    @Override
     public boolean isUsedLanguage() {
       return false;
     }
@@ -171,6 +175,7 @@ public class ModuleDependencyNode extends MPSTreeNode {
       }
     }
 
+    @Override
     public boolean isUsedLanguage() {
       return true;
     }

@@ -250,10 +250,12 @@ public class AnnotationColumn extends AbstractLeftColumn {
     });
   }
 
+  @Override
   public String getName() {
     return "Annotations";
   }
 
+  @Override
   public void paint(Graphics graphics) {
     graphics.setFont(myFont);
     EditorComponent.turnOnAliasingIfPossible((Graphics2D) graphics);
@@ -306,6 +308,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
   }
 
+  @Override
   public int getWidth() {
     return (ListSequence.fromList(myAspectSubcolumns).isEmpty() ?
       0 :
@@ -411,6 +414,7 @@ __switch__:
     }.invoke();
   }
 
+  @Override
   public void relayout() {
     EditorComponent editor = getEditorComponent();
     if (editor == null || editor.isDisposed() || editor.getGraphics() == null) {
@@ -531,6 +535,7 @@ __switch__:
     List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
     final int fileLine = findFileLineByY(event.getY());
     ListSequence.fromList(actions).addElement(new BaseAction("Close Annotations") {
+      @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         close();
       }
@@ -540,6 +545,7 @@ __switch__:
     if (fileLine != -1) {
       ListSequence.fromList(actions).addElement(new AnnotationColumn.ShowDiffFromAnnotationAction(fileLine));
       ListSequence.fromList(actions).addElement(new BaseAction("Copy revision number") {
+        @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> params) {
           String asString = myFileAnnotation.getLineRevisionNumber(fileLine).asString();
           CopyPasteManager.getInstance().setContents(new TextTransferrable(asString, asString));
@@ -608,6 +614,7 @@ __switch__:
     public MyAnnotationListener() {
     }
 
+    @Override
     public void onAnnotationChanged() {
       final EditorComponent editor = getEditorComponent();
       close();
@@ -623,6 +630,7 @@ __switch__:
     public MyDifferenceListener() {
     }
 
+    @Override
     public void changeUpdateFinished() {
       calculateCurrentPseudoLinesLater();
     }
@@ -646,11 +654,13 @@ __switch__:
       myFileLine = fileLine;
     }
 
+    @Override
     public void actionPerformed(AnActionEvent event) {
       final VcsRevisionNumber revisionNumber = myFileAnnotation.getLineRevisionNumber(myFileLine);
       if (revisionNumber != null) {
         final Project project = getProject();
         ProgressManager.getInstance().run(new Task.Backgroundable(project, "Loading revision " + revisionNumber.asString() + " contents", true, BackgroundFromStartOption.getInstance()) {
+          @Override
           public void run(@NotNull ProgressIndicator pi) {
             CommittedChangesProvider provider = myVcs.getCommittedChangesProvider();
 
@@ -760,9 +770,11 @@ __switch__:
     public MyEditorComponentCreateListener() {
     }
 
+    @Override
     public void editorComponentCreated(@NotNull EditorComponent ec) {
     }
 
+    @Override
     public void editorComponentDisposed(@NotNull EditorComponent ec) {
       if (ec == getEditorComponent()) {
         close();

@@ -59,6 +59,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       }
     });
     setCellRenderer(new ColoredTreeCellRenderer() {
+      @Override
       public void customizeCellRenderer(JTree p0, Object value, boolean p2, boolean p3, boolean p4, int p5, boolean p6) {
         if (value instanceof DiffModelTree.TreeNode) {
           ((DiffModelTree.TreeNode) value).renderTreeNode(this);
@@ -186,6 +187,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   }
 
   @Nullable
+  @Override
   public Object getData(@NonNls String dataId) {
     if (NODE_ID_DATAKEY.is(dataId)) {
       DiffModelTree.RootTreeNode[] selectedNodes = getSelectedNodes(DiffModelTree.RootTreeNode.class, null);
@@ -228,6 +230,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       doUpdatePresentation();
     }
 
+    @Override
     protected void doUpdatePresentation() {
       myPresentation = null;
       Icon icon = null;

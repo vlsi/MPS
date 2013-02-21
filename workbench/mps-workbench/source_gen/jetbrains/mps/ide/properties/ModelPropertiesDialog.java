@@ -51,6 +51,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     super("Model Properties for " + sm.getSModelReference().getSModelFqName(), context);
     myModel = sm;
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myPresenter = new ModelProperties(sm, context);
       }
@@ -102,6 +103,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     final JCheckBox checkBox = new JCheckBox("Do Not Generate");
     checkBox.getModel().setSelected(myPresenter.isDoNotGenerate());
     checkBox.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         myPresenter.setDoNotGenerate(checkBox.getModel().isSelected());
       }
@@ -112,6 +114,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   public JComponent createInfoComponent() {
     final StringBuilder messageText = new StringBuilder();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         int references = 0;
         int properties = 0;
@@ -132,6 +135,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
 
   public JComponent createAdditionalButtonsComponent() {
     JButton bShowModelUsages = new JButton(new AbstractAction("Show Model Usages") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         ModelPropertiesDialog.this.dispose();
         performActionInContext(new ModelPropertiesDialog.MyDataContext(), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.FindModelUsages_Action")));
@@ -149,6 +153,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     return result;
   }
 
+  @Override
   protected boolean doSaveChanges() {
     myPresenter.saveChanges();
     return true;
@@ -166,6 +171,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
     }
 
     @Nullable
+    @Override
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
         return ModelPropertiesDialog.this.getOperationContext();
@@ -184,6 +190,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
       myModels = models;
     }
 
+    @Override
     public boolean met(final SModelReference object) {
       return !(myModels.contains(object));
     }
@@ -196,6 +203,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
       myUsedLanguages = usedLanguages;
     }
 
+    @Override
     public boolean met(final ModuleReference object) {
       return !(myUsedLanguages.contains(object));
     }

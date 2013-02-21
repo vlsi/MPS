@@ -20,18 +20,22 @@ public abstract class TreePath<T> implements ITreePath<T> {
   public TreePath() {
   }
 
+  @Override
   public ITreeTraversal<T> startTraversal(T t) {
     return new StartTreeTraversal<T>(this, t);
   }
 
+  @Override
   public ITreeTraversal<T> startTraversal(Iterable<T> it) {
     return new StartTreeTraversal<T>(this, it);
   }
 
+  @Override
   public final Iterable<IFeatureDescriptor<T>> getAllFeatureDescriptors() {
     return featureDescriptors;
   }
 
+  @Override
   public final IFeatureDescriptor<T> getFeatureDescriptor(String name) {
     if (name == null) {
       throw new NullPointerException();
@@ -57,8 +61,10 @@ public abstract class TreePath<T> implements ITreePath<T> {
   private Iterable<T> getAllContents(final T t) {
     if (!(featureDescriptors.isEmpty())) {
       return new Iterable<T>() {
+        @Override
         public Iterator<T> iterator() {
           return new TreePath.AllFeaturesIterator(t, new TreePath.FeatureFilter<T>() {
+            @Override
             public boolean accept(IFeatureDescriptor<T> desc) {
               return !((desc.isAscending()));
             }
@@ -72,8 +78,10 @@ public abstract class TreePath<T> implements ITreePath<T> {
   private Iterable<T> getAllOppositeContents(final T t) {
     if (!(featureDescriptors.isEmpty())) {
       return new Iterable<T>() {
+        @Override
         public Iterator<T> iterator() {
           return new TreePath.AllFeaturesIterator(t, new TreePath.FeatureFilter<T>() {
+            @Override
             public boolean accept(IFeatureDescriptor<T> desc) {
               return desc.isAscending();
             }
@@ -175,10 +183,12 @@ while_not_hasnext:
       }
     }
 
+    @Override
     public boolean hasNext() {
       return hasNext;
     }
 
+    @Override
     public T next() {
       if (!(hasNext())) {
         throw new NoSuchElementException();
@@ -188,6 +198,7 @@ while_not_hasnext:
       return tmp;
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

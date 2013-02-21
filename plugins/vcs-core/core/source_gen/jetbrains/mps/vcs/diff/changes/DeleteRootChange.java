@@ -21,17 +21,20 @@ public class DeleteRootChange extends ModelChange {
     return myNodeId;
   }
 
+  @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     assert model.getNodeById(myNodeId) != null;
     model.getNodeById(myNodeId).delete();
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
     return new AddRootChange(getChangeSet().getOppositeChangeSet(), myNodeId);
   }
 
   @NotNull
+  @Override
   public ChangeType getType() {
     return ChangeType.DELETE;
   }
@@ -41,6 +44,7 @@ public class DeleteRootChange extends ModelChange {
     return "Delete root " + myNodeId;
   }
 
+  @Override
   public String getDescription() {
     return "Deleted root #" + myNodeId;
   }

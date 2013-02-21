@@ -15,6 +15,7 @@ public class JUnit3MethodWrapper extends AbstractTestWrapper<SNode> {
     super(method);
   }
 
+  @Override
   public boolean isTestCase() {
     return false;
   }

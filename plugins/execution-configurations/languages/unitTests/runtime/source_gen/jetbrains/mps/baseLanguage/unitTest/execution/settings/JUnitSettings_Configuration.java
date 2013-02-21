@@ -114,6 +114,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     final JUnitRunTypes2 runTypes2 = this.getRunType();
     final JUnitSettings_Configuration settings = this;
     Runnable collect = new Runnable() {
+      @Override
       public void run() {
         if (runTypes2 != null) {
           ModelAccess.instance().runReadAction(new Runnable() {
@@ -137,6 +138,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
   public List<SNodeReference> getTestsToMake(final Project project) {
     final List<ITestNodeWrapper>[] stuffToTest = (List<ITestNodeWrapper>[]) new List[1];
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         stuffToTest[0] = getTestsUnderProgress(project);
       }

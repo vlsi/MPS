@@ -54,10 +54,12 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
     super.dispose();
   }
 
+  @Override
   protected AbstractDebugSession getCurrentSession() {
     return myProject.getComponent(DebugSessionManagerComponent.class).getDebugSessionByCurrentTab();
   }
 
+  @Override
   public SNode getNode(AbstractDebugSession session) {
     IStackFrame stackFrame = session.getUiState().getStackFrame();
     if (stackFrame != null) {

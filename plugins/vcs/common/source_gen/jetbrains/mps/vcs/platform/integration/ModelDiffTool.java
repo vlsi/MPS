@@ -34,6 +34,7 @@ public class ModelDiffTool implements DiffTool {
   public ModelDiffTool() {
   }
 
+  @Override
   public void show(final DiffRequest request) {
     DiffContent[] contents = request.getContents();
     final SModel oldModel;
@@ -49,6 +50,7 @@ public class ModelDiffTool implements DiffTool {
     new ModelDifferenceDialog(oldModel, newModel, request).show();
   }
 
+  @Override
   public boolean canShow(DiffRequest request) {
     DiffContent[] contents = request.getContents();
     return contents.length == 2 && isModelFile(contents[0]) && isModelFile(contents[1]);
@@ -63,6 +65,7 @@ public class ModelDiffTool implements DiffTool {
   }
 
   @Nullable
+  @Override
   public DiffViewer createComponent(String string, DiffRequest request, Window window, Disposable disposable) {
     return null;
   }
@@ -73,6 +76,7 @@ public class ModelDiffTool implements DiffTool {
 
       if (modelDescriptor != null) {
         return ModelAccess.instance().runReadAction(new Computable<SModel>() {
+          @Override
           public SModel compute() {
             return modelDescriptor.getSModel();
           }

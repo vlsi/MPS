@@ -113,6 +113,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     return buildTree(from, dependencies, usedLanguages, showRuntime);
   }
 
+  @Override
   protected MPSTreeNode rebuild() {
     MPSTreeNode result = new TextMPSTreeNode((ListSequence.fromList(myAllDependencies).isEmpty() ?
       "No Dependencies Selected" :
@@ -138,6 +139,7 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
   }
 
   @Nullable
+  @Override
   public Object getData(@NonNls String id) {
     DependencyTreeNode current = as_9bg0dz_a0a0a31(getCurrentNode(), DependencyTreeNode.class);
     if (id.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) {

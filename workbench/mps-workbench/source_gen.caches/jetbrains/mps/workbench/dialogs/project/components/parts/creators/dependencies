@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser" file="ModelRootChooser.java">
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.BaseDialog" />
@@ -22,6 +23,7 @@
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser" file="ModulePathChooser.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.project.structure.project.Path" />
@@ -31,6 +33,7 @@
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.creators.SourcePathChooser" file="SourcePathChooser.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />

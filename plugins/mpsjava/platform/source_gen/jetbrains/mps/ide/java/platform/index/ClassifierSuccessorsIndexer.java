@@ -36,31 +36,38 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
   }
 
   @NotNull
+  @Override
   public ID<GlobalSNodeId, List<GlobalSNodeId>> getName() {
     return NAME;
   }
 
+  @Override
   public int getVersion() {
     return 4;
   }
 
+  @Override
   public boolean dependsOnFileContent() {
     return true;
   }
 
+  @Override
   public FileBasedIndex.InputFilter getInputFilter() {
     return myInputFilter;
   }
 
+  @Override
   public KeyDescriptor<GlobalSNodeId> getKeyDescriptor() {
     return myKeyDescriptor;
   }
 
+  @Override
   public DataExternalizer<List<GlobalSNodeId>> getValueExternalizer() {
     return myDataExternalizer;
   }
 
   @NotNull
+  @Override
   public DataIndexer<GlobalSNodeId, List<GlobalSNodeId>, FileContent> getIndexer() {
     return myIndexer;
   }
@@ -69,6 +76,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
     private InputFilter() {
     }
 
+    @Override
     public boolean acceptInput(VirtualFile file) {
       return MPSFileTypeFactory.MODEL_FILE_TYPE.equals(file.getFileType());
     }
@@ -79,9 +87,11 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
     }
 
     @NotNull
+    @Override
     public Map<GlobalSNodeId, List<GlobalSNodeId>> map(final FileContent inputData) {
       final Map<GlobalSNodeId, List<GlobalSNodeId>> result = MapSequence.fromMap(new HashMap<GlobalSNodeId, List<GlobalSNodeId>>());
       ModelAccess.instance().runIndexing(new Runnable() {
+        @Override
         public void run() {
           SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
           for (final SNode nextNode : sModel.nodes()) {

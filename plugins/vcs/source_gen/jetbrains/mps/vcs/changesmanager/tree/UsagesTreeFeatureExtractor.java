@@ -21,6 +21,7 @@ public class UsagesTreeFeatureExtractor implements TreeNodeFeatureExtractor {
   }
 
   @Nullable
+  @Override
   public Feature getFeature(@NotNull MPSTreeNode treeNode) {
     if (treeNode instanceof UsagesTree.UsagesTreeNode) {
       BaseNodeData nodeData = check_f7pfq7_a0a0a0b(((UsagesTree.UsagesTreeNode) treeNode).getUserObject());

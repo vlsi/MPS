@@ -32,6 +32,7 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     initDialog(refactoringContext, refactoring, hasModelsToGenerate);
   }
 
+  @Override
   protected JComponent createCenterPanel() {
     myInnerPanel = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
@@ -61,6 +62,7 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     return myIsCancelled;
   }
 
+  @Override
   protected void doOKAction() {
     myIsCancelled = false;
     if (myRefactoring instanceof ILoggableRefactoring) {

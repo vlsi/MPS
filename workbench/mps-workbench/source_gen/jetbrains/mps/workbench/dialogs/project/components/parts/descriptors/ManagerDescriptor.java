@@ -18,10 +18,12 @@ public class ManagerDescriptor extends VoidColumnDescriptor {
     myOwner = owner;
   }
 
+  @Override
   public TableCellEditor createEditor() {
     return new ManagerTableCellEditor();
   }
 
+  @Override
   public TableCellRenderer createRenderer() {
     return new ListRendererAdapter(new ManagerRenderer());
   }

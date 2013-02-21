@@ -29,6 +29,7 @@ public class Customer extends NamedObject implements Subject {
     return myAccounts.get(type);
   }
 
+  @Override
   public void addEntry(Entry arg, AccountType type) {
     accountFor(type).addEntry(arg);
   }
@@ -45,6 +46,7 @@ public class Customer extends NamedObject implements Subject {
     return myAccounts;
   }
 
+  @Override
   public Subject getAdjuster() {
     return this;
   }
@@ -53,11 +55,13 @@ public class Customer extends NamedObject implements Subject {
     return myServiceAgreement;
   }
 
+  @Override
   public void reverseEntry(Entry arg) {
     Entry reversingEntry = new Entry(arg.getAmount().negate(), arg.getDate());
     accountFor(arg.getAccount().type()).addEntry(reversingEntry);
   }
 
+  @Override
   public void process(AccountingEvent e) {
     myServiceAgreement.process(e);
   }
@@ -70,6 +74,7 @@ public class Customer extends NamedObject implements Subject {
     myServiceAgreement = arg;
   }
 
+  @Override
   public String toString() {
     StringBuffer result = new StringBuffer();
     AccountType[] types = accountTypes();

@@ -18,6 +18,7 @@ public abstract class RevertRootsAction extends BaseAction implements DumbAware 
     myRevertTitle = revertTitle;
   }
 
+  @Override
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     ModelChange.rollbackChanges(getChanges());
     after();

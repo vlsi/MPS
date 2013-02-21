@@ -51,6 +51,7 @@ import javax.swing.UIManager;
     myBreakpointsManager.addChangeListener(myListener);
     updateBreakpointsData();
     myTree = new GroupedTree<AbstractBreakpointsTree.BreakpointNodeData>(myContext) {
+      @Override
       protected AbstractBreakpointsTree.BreakpointTreeNode createDataNode(IOperationContext operationContext, AbstractBreakpointsTree.BreakpointNodeData data) {
         return new AbstractBreakpointsTree.BreakpointTreeNode(operationContext, data);
       }
@@ -133,6 +134,7 @@ import javax.swing.UIManager;
     return myTree;
   }
 
+  @Override
   public void update() {
     updateBreakpoints();
     updateBreakpointsData();
@@ -318,6 +320,7 @@ import javax.swing.UIManager;
       setText(bp.getText());
     }
 
+    @Override
     public boolean isLeaf() {
       return true;
     }

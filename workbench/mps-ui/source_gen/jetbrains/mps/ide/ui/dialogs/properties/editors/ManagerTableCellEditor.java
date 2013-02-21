@@ -34,6 +34,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
     myCombo = ((JComboBox) super.getComponent());
 
     myCombo.setRenderer(new DefaultListCellRenderer() {
+      @Override
       public Component getListCellRendererComponent(JList list, Object value, int index, boolean selected, boolean focus) {
         ModelRootManager manager = ((ModelRootManager) value);
         String managerName = (manager == null ?

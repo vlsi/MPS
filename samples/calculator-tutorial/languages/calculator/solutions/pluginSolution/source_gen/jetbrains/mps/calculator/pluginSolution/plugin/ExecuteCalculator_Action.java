@@ -70,6 +70,7 @@ public class ExecuteCalculator_Action extends BaseAction {
       try {
         final Method method = ExecuteCalculator_Action.this.getMainMethod(_params);
         Thread thread = new Thread(new Runnable() {
+          @Override
           public void run() {
             try {
               String[] args = new String[0];

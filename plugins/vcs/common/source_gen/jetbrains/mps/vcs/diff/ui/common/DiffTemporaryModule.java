@@ -160,6 +160,7 @@ public class DiffTemporaryModule extends AbstractModule {
     private DiffModuleScope() {
     }
 
+    @Override
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = SetSequence.fromSet(new HashSet<IModule>());
       SetSequence.fromSet(result).addElement(DiffTemporaryModule.this);
@@ -167,6 +168,7 @@ public class DiffTemporaryModule extends AbstractModule {
       return result;
     }
 
+    @Override
     protected Set<Language> getInitialUsedLanguages() {
       return SetSequence.fromSetWithValues(new HashSet<Language>(), GlobalScope.getInstance().getVisibleLanguages());
     }

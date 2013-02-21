@@ -88,11 +88,13 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     }
   }
 
+  @Override
   protected MPSTreeNode rebuild() {
     if (myHierarchyNode == null) {
       return new AbstractHierarchyTree.RootTextTreeNode(noNodeString());
     }
     return ModelAccess.instance().runReadAction(new Computable<MPSTreeNode>() {
+      @Override
       public MPSTreeNode compute() {
         return rebuildParentHierarchy();
       }
@@ -116,6 +118,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     }
     if (myOnlyInOneModel) {
       result = CollectionUtil.filter(result, new Condition<SNode>() {
+        @Override
         public boolean met(SNode n) {
           if (n == null) {
             return false;
@@ -126,6 +129,7 @@ public abstract class AbstractHierarchyTree extends MPSTree {
     }
     if (!(myShowGeneratorModels)) {
       result = CollectionUtil.filter(result, new Condition<SNode>() {
+        @Override
         public boolean met(SNode n) {
           if (n == null) {
             return false;

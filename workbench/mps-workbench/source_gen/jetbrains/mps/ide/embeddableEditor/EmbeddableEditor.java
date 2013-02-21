@@ -141,8 +141,10 @@ public class EmbeddableEditor {
 
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      @Override
       public void run() {
         IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
+          @Override
           public <T extends IOption> T relayQuery(IQuery<T> query) {
             return query.defaultOption();
           }

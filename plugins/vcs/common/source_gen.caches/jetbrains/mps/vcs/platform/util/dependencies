@@ -25,6 +25,7 @@
     <classNode dependClassName="java.io.FilenameFilter" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

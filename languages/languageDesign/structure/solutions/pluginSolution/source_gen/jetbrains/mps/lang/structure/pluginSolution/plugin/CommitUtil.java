@@ -25,6 +25,7 @@ public class CommitUtil {
     });
 
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         IRefactoring refactoring;
         SNode refactoringNode = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ?

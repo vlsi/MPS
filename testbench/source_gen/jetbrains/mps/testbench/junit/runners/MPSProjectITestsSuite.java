@@ -65,6 +65,7 @@ public class MPSProjectITestsSuite extends Suite {
 
     final List<Tuples._2<String, SModule>> testClassDescriptors = ListSequence.fromList(new ArrayList<Tuples._2<String, SModule>>());
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         for (SModel model : Sequence.fromIterable(modelDescriptors)) {
           for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {

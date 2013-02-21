@@ -171,6 +171,7 @@ import org.jetbrains.annotations.NotNull;
     return null;
   }
 
+  @Override
   public boolean useMiddleMatching() {
     return true;
   }

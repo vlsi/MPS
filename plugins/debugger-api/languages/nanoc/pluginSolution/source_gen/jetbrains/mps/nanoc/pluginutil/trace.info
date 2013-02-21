@@ -3,46 +3,46 @@
   <root nodeRef="r:6d35499a-6bbf-4603-99de-254d0c8b91cb(jetbrains.mps.nanoc.pluginutil)/8247677264794236929">
     <nodeInfo nodeId="8247677264794236932" fileName="ExecutableParametersEditor.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileName" />
     <nodeInfo nodeId="8247677264794236935" fileName="ExecutableParametersEditor.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextField" />
-    <nodeInfo nodeId="8247677264794236954" fileName="ExecutableParametersEditor.java" startLine="20" startPosition="52" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794236959" fileName="ExecutableParametersEditor.java" startLine="21" startPosition="52" endLine="22" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794236972" fileName="ExecutableParametersEditor.java" startLine="23" startPosition="50" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794236978" fileName="ExecutableParametersEditor.java" startLine="24" startPosition="58" endLine="25" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794236984" fileName="ExecutableParametersEditor.java" startLine="25" startPosition="57" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794236988" fileName="ExecutableParametersEditor.java" startLine="26" startPosition="30" endLine="27" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794236998" fileName="ExecutableParametersEditor.java" startLine="32" startPosition="39" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8247677264794237001" fileName="ExecutableParametersEditor.java" startLine="33" startPosition="31" endLine="34" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237008" fileName="ExecutableParametersEditor.java" startLine="34" startPosition="75" endLine="35" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237013" fileName="ExecutableParametersEditor.java" startLine="35" startPosition="59" endLine="36" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237022" fileName="ExecutableParametersEditor.java" startLine="39" startPosition="31" endLine="40" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8247677264794237032" fileName="ExecutableParametersEditor.java" startLine="43" startPosition="44" endLine="44" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237036" fileName="ExecutableParametersEditor.java" startLine="44" startPosition="26" endLine="45" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237018" fileName="ExecutableParametersEditor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFileName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8247677264794237026" fileName="ExecutableParametersEditor.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFileName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8247677264794236967" fileName="ExecutableParametersEditor.java" startLine="22" startPosition="81" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8247677264794236994" fileName="ExecutableParametersEditor.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExecutableParametersEditor#()V" />
-    <nodeInfo nodeId="8247677264794236948" fileName="ExecutableParametersEditor.java" startLine="20" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="8247677264794236940" fileName="ExecutableParametersEditor.java" startLine="19" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myButton" />
-    <scopeInfo nodeId="8247677264794237021" fileName="ExecutableParametersEditor.java" startLine="39" startPosition="31" endLine="40" endPosition="27" />
-    <scopeInfo nodeId="8247677264794237031" fileName="ExecutableParametersEditor.java" startLine="43" startPosition="44" endLine="45" endPosition="36" />
-    <scopeInfo nodeId="8247677264794237018" fileName="ExecutableParametersEditor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="8247677264794236971" fileName="ExecutableParametersEditor.java" startLine="23" startPosition="50" endLine="27" endPosition="38">
+    <nodeInfo nodeId="8247677264794236954" fileName="ExecutableParametersEditor.java" startLine="21" startPosition="52" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794236959" fileName="ExecutableParametersEditor.java" startLine="22" startPosition="52" endLine="23" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794236972" fileName="ExecutableParametersEditor.java" startLine="24" startPosition="50" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794236978" fileName="ExecutableParametersEditor.java" startLine="25" startPosition="58" endLine="26" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794236984" fileName="ExecutableParametersEditor.java" startLine="26" startPosition="57" endLine="27" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794236988" fileName="ExecutableParametersEditor.java" startLine="27" startPosition="30" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794236998" fileName="ExecutableParametersEditor.java" startLine="33" startPosition="39" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8247677264794237001" fileName="ExecutableParametersEditor.java" startLine="34" startPosition="31" endLine="35" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237008" fileName="ExecutableParametersEditor.java" startLine="35" startPosition="75" endLine="36" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237013" fileName="ExecutableParametersEditor.java" startLine="36" startPosition="59" endLine="37" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237022" fileName="ExecutableParametersEditor.java" startLine="40" startPosition="31" endLine="41" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8247677264794237032" fileName="ExecutableParametersEditor.java" startLine="44" startPosition="44" endLine="45" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237036" fileName="ExecutableParametersEditor.java" startLine="45" startPosition="26" endLine="46" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237018" fileName="ExecutableParametersEditor.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFileName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8247677264794237026" fileName="ExecutableParametersEditor.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFileName#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8247677264794236967" fileName="ExecutableParametersEditor.java" startLine="23" startPosition="81" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8247677264794236994" fileName="ExecutableParametersEditor.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExecutableParametersEditor#()V" />
+    <nodeInfo nodeId="8247677264794236948" fileName="ExecutableParametersEditor.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="8247677264794236940" fileName="ExecutableParametersEditor.java" startLine="19" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myButton" />
+    <scopeInfo nodeId="8247677264794237021" fileName="ExecutableParametersEditor.java" startLine="40" startPosition="31" endLine="41" endPosition="27" />
+    <scopeInfo nodeId="8247677264794237031" fileName="ExecutableParametersEditor.java" startLine="44" startPosition="44" endLine="46" endPosition="36" />
+    <scopeInfo nodeId="8247677264794237018" fileName="ExecutableParametersEditor.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="8247677264794236971" fileName="ExecutableParametersEditor.java" startLine="24" startPosition="50" endLine="28" endPosition="38">
       <varInfo nodeId="8247677264794236979" varName="fileName" />
       <varInfo nodeId="8247677264794236973" varName="selectedFile" />
     </scopeInfo>
-    <scopeInfo nodeId="8247677264794236997" fileName="ExecutableParametersEditor.java" startLine="32" startPosition="39" endLine="36" endPosition="56" />
-    <scopeInfo nodeId="8247677264794237026" fileName="ExecutableParametersEditor.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="8247677264794236997" fileName="ExecutableParametersEditor.java" startLine="33" startPosition="39" endLine="37" endPosition="56" />
+    <scopeInfo nodeId="8247677264794237026" fileName="ExecutableParametersEditor.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="8247677264794237029" varName="fileName" />
     </scopeInfo>
-    <scopeInfo nodeId="8247677264794236994" fileName="ExecutableParametersEditor.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="8247677264794236953" fileName="ExecutableParametersEditor.java" startLine="20" startPosition="52" endLine="28" endPosition="7">
+    <scopeInfo nodeId="8247677264794236994" fileName="ExecutableParametersEditor.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="8247677264794236953" fileName="ExecutableParametersEditor.java" startLine="21" startPosition="52" endLine="29" endPosition="7">
       <varInfo nodeId="8247677264794236955" varName="fileChooser" />
       <varInfo nodeId="8247677264794236960" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8247677264794236948" fileName="ExecutableParametersEditor.java" startLine="20" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="8247677264794236948" fileName="ExecutableParametersEditor.java" startLine="20" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="8247677264794236951" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="8247677264794236947" fileName="ExecutableParametersEditor.java" startLine="19" startPosition="45" endLine="30" endPosition="3" unitName="jetbrains.mps.nanoc.pluginutil.ExecutableParametersEditor$1" />
-    <unitInfo nodeId="8247677264794236929" fileName="ExecutableParametersEditor.java" startLine="16" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.nanoc.pluginutil.ExecutableParametersEditor" />
+    <unitInfo nodeId="8247677264794236947" fileName="ExecutableParametersEditor.java" startLine="19" startPosition="45" endLine="31" endPosition="3" unitName="jetbrains.mps.nanoc.pluginutil.ExecutableParametersEditor$1" />
+    <unitInfo nodeId="8247677264794236929" fileName="ExecutableParametersEditor.java" startLine="16" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.nanoc.pluginutil.ExecutableParametersEditor" />
   </root>
   <root nodeRef="r:6d35499a-6bbf-4603-99de-254d0c8b91cb(jetbrains.mps.nanoc.pluginutil)/8247677264794237122">
     <nodeInfo nodeId="8247677264794237136" fileName="NanocConfigRunPreparationUtil.java" startLine="25" startPosition="88" endLine="26" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -137,81 +137,81 @@
     <nodeInfo nodeId="8247677264794237389" fileName="ProgramsLocationEditor.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGCCLocationFileName" />
     <nodeInfo nodeId="8247677264794237392" fileName="ProgramsLocationEditor.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextFieldGDB" />
     <nodeInfo nodeId="8247677264794237397" fileName="ProgramsLocationEditor.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextFieldGCC" />
-    <nodeInfo nodeId="8247677264794237416" fileName="ProgramsLocationEditor.java" startLine="22" startPosition="52" endLine="23" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794237421" fileName="ProgramsLocationEditor.java" startLine="23" startPosition="52" endLine="24" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794237434" fileName="ProgramsLocationEditor.java" startLine="25" startPosition="50" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794237440" fileName="ProgramsLocationEditor.java" startLine="26" startPosition="58" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794237446" fileName="ProgramsLocationEditor.java" startLine="27" startPosition="57" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237450" fileName="ProgramsLocationEditor.java" startLine="28" startPosition="41" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237470" fileName="ProgramsLocationEditor.java" startLine="34" startPosition="52" endLine="35" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794237475" fileName="ProgramsLocationEditor.java" startLine="35" startPosition="52" endLine="36" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794237488" fileName="ProgramsLocationEditor.java" startLine="37" startPosition="50" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794237494" fileName="ProgramsLocationEditor.java" startLine="38" startPosition="58" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8247677264794237500" fileName="ProgramsLocationEditor.java" startLine="39" startPosition="57" endLine="40" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237504" fileName="ProgramsLocationEditor.java" startLine="40" startPosition="41" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237514" fileName="ProgramsLocationEditor.java" startLine="46" startPosition="35" endLine="47" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8247677264794237517" fileName="ProgramsLocationEditor.java" startLine="47" startPosition="31" endLine="48" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237524" fileName="ProgramsLocationEditor.java" startLine="48" startPosition="74" endLine="49" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237529" fileName="ProgramsLocationEditor.java" startLine="49" startPosition="62" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237534" fileName="ProgramsLocationEditor.java" startLine="50" startPosition="59" endLine="51" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237541" fileName="ProgramsLocationEditor.java" startLine="51" startPosition="74" endLine="52" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237546" fileName="ProgramsLocationEditor.java" startLine="52" startPosition="62" endLine="53" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237557" fileName="ProgramsLocationEditor.java" startLine="56" startPosition="50" endLine="57" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237563" fileName="ProgramsLocationEditor.java" startLine="57" startPosition="45" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237576" fileName="ProgramsLocationEditor.java" startLine="61" startPosition="50" endLine="62" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237580" fileName="ProgramsLocationEditor.java" startLine="62" startPosition="40" endLine="63" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8247677264794237589" fileName="ProgramsLocationEditor.java" startLine="66" startPosition="34" endLine="67" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8247677264794237595" fileName="ProgramsLocationEditor.java" startLine="70" startPosition="34" endLine="71" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8247677264794237585" fileName="ProgramsLocationEditor.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGDBLocation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8247677264794237591" fileName="ProgramsLocationEditor.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGCCLocation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8247677264794237551" fileName="ProgramsLocationEditor.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGDBLocation#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8247677264794237570" fileName="ProgramsLocationEditor.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGCCLocation#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8247677264794237429" fileName="ProgramsLocationEditor.java" startLine="24" startPosition="77" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8247677264794237483" fileName="ProgramsLocationEditor.java" startLine="36" startPosition="77" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8247677264794237510" fileName="ProgramsLocationEditor.java" startLine="46" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProgramsLocationEditor#()V" />
-    <nodeInfo nodeId="8247677264794237410" fileName="ProgramsLocationEditor.java" startLine="22" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="8247677264794237464" fileName="ProgramsLocationEditor.java" startLine="34" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="8247677264794237402" fileName="ProgramsLocationEditor.java" startLine="21" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myButtonGDB" />
-    <nodeInfo nodeId="8247677264794237456" fileName="ProgramsLocationEditor.java" startLine="33" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myButtonGCC" />
-    <scopeInfo nodeId="8247677264794237588" fileName="ProgramsLocationEditor.java" startLine="66" startPosition="34" endLine="67" endPosition="33" />
-    <scopeInfo nodeId="8247677264794237594" fileName="ProgramsLocationEditor.java" startLine="70" startPosition="34" endLine="71" endPosition="33" />
-    <scopeInfo nodeId="8247677264794237556" fileName="ProgramsLocationEditor.java" startLine="56" startPosition="50" endLine="58" endPosition="55" />
-    <scopeInfo nodeId="8247677264794237575" fileName="ProgramsLocationEditor.java" startLine="61" startPosition="50" endLine="63" endPosition="50" />
-    <scopeInfo nodeId="8247677264794237585" fileName="ProgramsLocationEditor.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="8247677264794237591" fileName="ProgramsLocationEditor.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="8247677264794237433" fileName="ProgramsLocationEditor.java" startLine="25" startPosition="50" endLine="29" endPosition="41">
+    <nodeInfo nodeId="8247677264794237416" fileName="ProgramsLocationEditor.java" startLine="23" startPosition="52" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794237421" fileName="ProgramsLocationEditor.java" startLine="24" startPosition="52" endLine="25" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794237434" fileName="ProgramsLocationEditor.java" startLine="26" startPosition="50" endLine="27" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794237440" fileName="ProgramsLocationEditor.java" startLine="27" startPosition="58" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794237446" fileName="ProgramsLocationEditor.java" startLine="28" startPosition="57" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237450" fileName="ProgramsLocationEditor.java" startLine="29" startPosition="41" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237470" fileName="ProgramsLocationEditor.java" startLine="36" startPosition="52" endLine="37" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794237475" fileName="ProgramsLocationEditor.java" startLine="37" startPosition="52" endLine="38" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794237488" fileName="ProgramsLocationEditor.java" startLine="39" startPosition="50" endLine="40" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794237494" fileName="ProgramsLocationEditor.java" startLine="40" startPosition="58" endLine="41" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8247677264794237500" fileName="ProgramsLocationEditor.java" startLine="41" startPosition="57" endLine="42" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237504" fileName="ProgramsLocationEditor.java" startLine="42" startPosition="41" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237514" fileName="ProgramsLocationEditor.java" startLine="48" startPosition="35" endLine="49" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8247677264794237517" fileName="ProgramsLocationEditor.java" startLine="49" startPosition="31" endLine="50" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237524" fileName="ProgramsLocationEditor.java" startLine="50" startPosition="74" endLine="51" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237529" fileName="ProgramsLocationEditor.java" startLine="51" startPosition="62" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237534" fileName="ProgramsLocationEditor.java" startLine="52" startPosition="59" endLine="53" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237541" fileName="ProgramsLocationEditor.java" startLine="53" startPosition="74" endLine="54" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237546" fileName="ProgramsLocationEditor.java" startLine="54" startPosition="62" endLine="55" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237557" fileName="ProgramsLocationEditor.java" startLine="58" startPosition="50" endLine="59" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237563" fileName="ProgramsLocationEditor.java" startLine="59" startPosition="45" endLine="60" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237576" fileName="ProgramsLocationEditor.java" startLine="63" startPosition="50" endLine="64" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237580" fileName="ProgramsLocationEditor.java" startLine="64" startPosition="40" endLine="65" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8247677264794237589" fileName="ProgramsLocationEditor.java" startLine="68" startPosition="34" endLine="69" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8247677264794237595" fileName="ProgramsLocationEditor.java" startLine="72" startPosition="34" endLine="73" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8247677264794237585" fileName="ProgramsLocationEditor.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGDBLocation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8247677264794237591" fileName="ProgramsLocationEditor.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getGCCLocation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8247677264794237551" fileName="ProgramsLocationEditor.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGDBLocation#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8247677264794237570" fileName="ProgramsLocationEditor.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setGCCLocation#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8247677264794237429" fileName="ProgramsLocationEditor.java" startLine="25" startPosition="77" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8247677264794237483" fileName="ProgramsLocationEditor.java" startLine="38" startPosition="77" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8247677264794237510" fileName="ProgramsLocationEditor.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProgramsLocationEditor#()V" />
+    <nodeInfo nodeId="8247677264794237410" fileName="ProgramsLocationEditor.java" startLine="22" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="8247677264794237464" fileName="ProgramsLocationEditor.java" startLine="35" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="8247677264794237402" fileName="ProgramsLocationEditor.java" startLine="21" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myButtonGDB" />
+    <nodeInfo nodeId="8247677264794237456" fileName="ProgramsLocationEditor.java" startLine="34" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myButtonGCC" />
+    <scopeInfo nodeId="8247677264794237588" fileName="ProgramsLocationEditor.java" startLine="68" startPosition="34" endLine="69" endPosition="33" />
+    <scopeInfo nodeId="8247677264794237594" fileName="ProgramsLocationEditor.java" startLine="72" startPosition="34" endLine="73" endPosition="33" />
+    <scopeInfo nodeId="8247677264794237556" fileName="ProgramsLocationEditor.java" startLine="58" startPosition="50" endLine="60" endPosition="55" />
+    <scopeInfo nodeId="8247677264794237575" fileName="ProgramsLocationEditor.java" startLine="63" startPosition="50" endLine="65" endPosition="50" />
+    <scopeInfo nodeId="8247677264794237585" fileName="ProgramsLocationEditor.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="8247677264794237591" fileName="ProgramsLocationEditor.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="8247677264794237433" fileName="ProgramsLocationEditor.java" startLine="26" startPosition="50" endLine="30" endPosition="41">
       <varInfo nodeId="8247677264794237441" varName="fileName" />
       <varInfo nodeId="8247677264794237435" varName="selectedFile" />
     </scopeInfo>
-    <scopeInfo nodeId="8247677264794237487" fileName="ProgramsLocationEditor.java" startLine="37" startPosition="50" endLine="41" endPosition="41">
+    <scopeInfo nodeId="8247677264794237487" fileName="ProgramsLocationEditor.java" startLine="39" startPosition="50" endLine="43" endPosition="41">
       <varInfo nodeId="8247677264794237495" varName="fileName" />
       <varInfo nodeId="8247677264794237489" varName="selectedFile" />
     </scopeInfo>
-    <scopeInfo nodeId="8247677264794237551" fileName="ProgramsLocationEditor.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="8247677264794237551" fileName="ProgramsLocationEditor.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="8247677264794237554" varName="gdbLocation" />
     </scopeInfo>
-    <scopeInfo nodeId="8247677264794237570" fileName="ProgramsLocationEditor.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="8247677264794237570" fileName="ProgramsLocationEditor.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="8247677264794237573" varName="gccLocation" />
     </scopeInfo>
-    <scopeInfo nodeId="8247677264794237513" fileName="ProgramsLocationEditor.java" startLine="46" startPosition="35" endLine="53" endPosition="59" />
-    <scopeInfo nodeId="8247677264794237415" fileName="ProgramsLocationEditor.java" startLine="22" startPosition="52" endLine="30" endPosition="7">
+    <scopeInfo nodeId="8247677264794237513" fileName="ProgramsLocationEditor.java" startLine="48" startPosition="35" endLine="55" endPosition="59" />
+    <scopeInfo nodeId="8247677264794237415" fileName="ProgramsLocationEditor.java" startLine="23" startPosition="52" endLine="31" endPosition="7">
       <varInfo nodeId="8247677264794237417" varName="fileChooser" />
       <varInfo nodeId="8247677264794237422" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8247677264794237469" fileName="ProgramsLocationEditor.java" startLine="34" startPosition="52" endLine="42" endPosition="7">
+    <scopeInfo nodeId="8247677264794237469" fileName="ProgramsLocationEditor.java" startLine="36" startPosition="52" endLine="44" endPosition="7">
       <varInfo nodeId="8247677264794237471" varName="fileChooser" />
       <varInfo nodeId="8247677264794237476" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8247677264794237510" fileName="ProgramsLocationEditor.java" startLine="46" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="8247677264794237410" fileName="ProgramsLocationEditor.java" startLine="22" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="8247677264794237510" fileName="ProgramsLocationEditor.java" startLine="48" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="8247677264794237410" fileName="ProgramsLocationEditor.java" startLine="22" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="8247677264794237413" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8247677264794237464" fileName="ProgramsLocationEditor.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="8247677264794237464" fileName="ProgramsLocationEditor.java" startLine="35" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="8247677264794237467" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="8247677264794237409" fileName="ProgramsLocationEditor.java" startLine="21" startPosition="48" endLine="32" endPosition="3" unitName="jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor$1" />
-    <unitInfo nodeId="8247677264794237463" fileName="ProgramsLocationEditor.java" startLine="33" startPosition="48" endLine="44" endPosition="3" unitName="jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor$2" />
-    <unitInfo nodeId="8247677264794237383" fileName="ProgramsLocationEditor.java" startLine="16" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor" />
+    <unitInfo nodeId="8247677264794237409" fileName="ProgramsLocationEditor.java" startLine="21" startPosition="48" endLine="33" endPosition="3" unitName="jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor$1" />
+    <unitInfo nodeId="8247677264794237463" fileName="ProgramsLocationEditor.java" startLine="34" startPosition="48" endLine="46" endPosition="3" unitName="jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor$2" />
+    <unitInfo nodeId="8247677264794237383" fileName="ProgramsLocationEditor.java" startLine="16" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.nanoc.pluginutil.ProgramsLocationEditor" />
   </root>
 </debugInfo>
 

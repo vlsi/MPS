@@ -24,6 +24,7 @@ public class GDBRequestManager {
     myBreakpointManager = breakpointManager;
     myEventsHandler = eventsHandler;
     myEventsHandler.addEventListener(new GDBEventsAdapter() {
+      @Override
       public void resultReceived(ResultAnswer result, List<StreamAnswer> receivedStreamAnswers, ProcessHandler gdbProcess) {
         requestResultReceived(result, receivedStreamAnswers);
       }

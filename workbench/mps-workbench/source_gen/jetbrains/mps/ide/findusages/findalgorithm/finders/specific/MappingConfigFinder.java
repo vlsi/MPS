@@ -28,6 +28,7 @@ public class MappingConfigFinder implements IFinder {
     myNodeToFindUsages = nodeToFindUsages;
   }
 
+  @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     List<SearchResult<SNode>> results = new ArrayList<SearchResult<SNode>>();
     List<SNode> mappingConfigs = (List<SNode>) GenerationFacade.getOwnMappings(myGenerator);

@@ -33,6 +33,7 @@ public enum Flags {
     return val != null;
   }
 
+  @Override
   public String toString() {
     return this.name;
   }

@@ -68,6 +68,7 @@ public class EvaluationPanel extends EvaluationUi {
     }
 
     myEditor.getComponenet().registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         evaluate();
       }
@@ -80,6 +81,7 @@ public class EvaluationPanel extends EvaluationUi {
     return myEvaluationModel;
   }
 
+  @Override
   public void dispose() {
     ApplicationManager.getApplication().assertIsDispatchThread();
     if (myIsDisposed) {
@@ -91,12 +93,14 @@ public class EvaluationPanel extends EvaluationUi {
     myEditor.disposeEditor(false);
   }
 
+  @Override
   public void evaluate() {
     evaluate(myEvaluationModel);
   }
 
   private void updateGenerationResultTab(final SNode generatedResult) {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
+      @Override
       public void run() {
         if (EvaluationPanel.this.myResultEditor == null) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -117,6 +121,7 @@ public class EvaluationPanel extends EvaluationUi {
     }, ModalityState.NON_MODAL);
   }
 
+  @Override
   protected void update() {
     myEvaluationModel.updateState();
   }

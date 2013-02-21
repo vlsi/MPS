@@ -44,21 +44,25 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
   public StubModelsFastFindSupport() {
   }
 
+  @Override
   public void initComponent() {
     FastFindUsagesRegistry.getInstance().setFastFindSupport(PersistenceRegistry.JAVA_CLASSES_ROOT, this);
   }
 
+  @Override
   public void disposeComponent() {
     FastFindUsagesRegistry.getInstance().setFastFindSupport(PersistenceRegistry.JAVA_CLASSES_ROOT, null);
   }
 
   @NotNull
+  @Override
   public String getComponentName() {
     return StubModelsFastFindSupport.class.getSimpleName();
   }
 
 
 
+  @Override
   public Map<SModel, Collection<SNode>> findModelsWithPossibleUsages(Collection<SModel> models, Set<SNode> nodes) {
     nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -66,6 +70,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
       }
     }));
     MultiMap<SModel, SNode> result = findModels(models, nodes, new Mapper<SNode, String>() {
+      @Override
       public String value(SNode key) {
         return key.getNodeId().toString();
       }
@@ -85,6 +90,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
     return res;
   }
 
+  @Override
   public Map<SModel, Collection<SConcept>> findModelsWithPossibleInstances(Collection<SModel> models, Set<SConcept> concepts) {
     final String blName = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleFqName();
     concepts = SetSequence.fromSetWithValues(new HashSet<SConcept>(), SetSequence.fromSet(concepts).where(new IWhereFilter<SConcept>() {
@@ -128,6 +134,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
           continue;
         }
         VfsUtilCore.visitChildrenRecursively(vf, new VirtualFileVisitor() {
+          @Override
           public boolean visitFile(@NotNull VirtualFile file) {
             if (file.isDirectory()) {
               return dirs.add(file);

@@ -16,6 +16,7 @@ public abstract class BaseAddAction extends BaseValidatedAction {
     mySelectionModel = model;
   }
 
+  @Override
   public final void doPerform(AnActionEvent e) {
     List<Integer> indices = doAddMul(e);
     getSelectionModel().clearSelection();

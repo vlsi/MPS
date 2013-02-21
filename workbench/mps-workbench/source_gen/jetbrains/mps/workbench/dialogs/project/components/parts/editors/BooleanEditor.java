@@ -17,6 +17,7 @@ public class BooleanEditor extends DefaultCellEditor {
     return true;
   }
 
+  @Override
   public Component getTableCellEditorComponent(final JTable table, Object value, boolean isSelected, final int row, final int column) {
     JComponent component = (JComponent) super.getTableCellEditorComponent(table, value, isSelected, row, column);
     component.setBackground(table.getSelectionBackground());

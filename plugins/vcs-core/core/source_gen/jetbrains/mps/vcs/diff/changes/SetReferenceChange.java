@@ -54,6 +54,7 @@ public class SetReferenceChange extends NodeChange {
     return myResolveInfo;
   }
 
+  @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     SNode node = model.getNodeById(getAffectedNodeId());
     assert node != null;
@@ -89,6 +90,7 @@ public class SetReferenceChange extends NodeChange {
     return String.format("Set reference in role %s for node %s to %s [resolveInfo=%s]", myRole, getAffectedNodeId(), targetString, myResolveInfo);
   }
 
+  @Override
   public String getDescription() {
     // TODO consider dynamic references 
     SReference oldRef = getChangeSet().getOldModel().getNodeById(getAffectedNodeId()).getReference(myRole);
@@ -131,6 +133,7 @@ public class SetReferenceChange extends NodeChange {
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
     SNode node = getChangeSet().getOldModel().getNodeById(getAffectedNodeId());
     assert node != null;

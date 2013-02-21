@@ -29,6 +29,7 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
     myBundleHome = bundleHome;
   }
 
+  @Override
   public ModelRootDescriptor compute() {
     PersistenceFacade pReg = PersistenceRegistry.getInstance();
     Iterable<String> ti = pReg.getTypeIds();
@@ -67,6 +68,7 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
     final ModelRootSettingsEditor editor = PersistenceComponent.getModelRootSettingsEditor(mr.getType());
     editor.reset(null, mr);
     new BaseDialog(null) {
+      @Override
       protected JComponent getMainComponent() {
         return editor.getComponent();
       }

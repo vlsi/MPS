@@ -32,6 +32,7 @@ public class FileProcessor extends EventProcessor {
     this.listenersContainer = ((IdeaFileSystemProvider) FileSystem.getInstance().getFileSystemProvider()).getListenersContainer();
   }
 
+  @Override
   public void update(ProgressMonitor monitor) {
     monitor.start("Reloading files... Please wait.", MapSequence.fromMap(dataMap).count() + 1);
     try {
@@ -104,10 +105,12 @@ public class FileProcessor extends EventProcessor {
     }
   }
 
+  @Override
   protected boolean accepts(VirtualFile file) {
     return true;
   }
 
+  @Override
   protected void processDelete(VirtualFile file) {
     String path = file.getPath();
     final IFile ifile = FileSystem.getInstance().getFileByPath(path);
@@ -118,6 +121,7 @@ public class FileProcessor extends EventProcessor {
     });
   }
 
+  @Override
   protected void processCreate(VirtualFile file) {
     String path = file.getPath();
     final IFile ifile = FileSystem.getInstance().getFileByPath(path);
@@ -128,6 +132,7 @@ public class FileProcessor extends EventProcessor {
     });
   }
 
+  @Override
   protected void processContentChanged(VirtualFile file) {
     String path = file.getPath();
     final IFile ifile = FileSystem.getInstance().getFileByPath(path);
@@ -138,6 +143,7 @@ public class FileProcessor extends EventProcessor {
     });
   }
 
+  @Override
   public boolean isEmpty() {
     return MapSequence.fromMap(dataMap).isEmpty();
   }
@@ -164,18 +170,22 @@ public class FileProcessor extends EventProcessor {
     private ListenerData() {
     }
 
+    @Override
     public Iterable<IFile> getCreated() {
       return added;
     }
 
+    @Override
     public Iterable<IFile> getRemoved() {
       return removed;
     }
 
+    @Override
     public Iterable<IFile> getChanged() {
       return changed;
     }
 
+    @Override
     public void notify(FileSystemListener listener) {
       FileProcessor.this.notify(listener, this);
     }

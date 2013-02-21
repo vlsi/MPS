@@ -93,6 +93,7 @@ public class TestMergeAction_Action extends BaseAction {
           final SModel result = dialog.getResultModelWithFixedId();
           if (result != null) {
             ModelAccess.instance().runWriteAction(new Runnable() {
+              @Override
               public void run() {
                 IFile iFile = FileSystem.getInstance().getFileByPath(resFile);
                 if (!(iFile.exists())) {

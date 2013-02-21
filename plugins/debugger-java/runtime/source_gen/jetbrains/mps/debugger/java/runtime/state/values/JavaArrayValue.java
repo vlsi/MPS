@@ -34,6 +34,7 @@ import jetbrains.mps.debugger.java.runtime.state.watchables.JavaArrayItemWatchab
     return myIsStructure;
   }
 
+  @Override
   public List<IWatchable> calculateSubvalues() {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
     ArrayReference arrayRef = (ArrayReference) myValue;

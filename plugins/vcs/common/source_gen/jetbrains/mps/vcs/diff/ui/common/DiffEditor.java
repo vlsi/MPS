@@ -169,6 +169,7 @@ public class DiffEditor implements EditorMessageOwner {
       super(operationContext, false, rightToLeft);
     }
 
+    @Override
     public EditorCell createRootCell(List<SModelEvent> events) {
       if (getEditedNode() == null || getEditedNode().getModel() == null) {
         EditorContext editorContext = getEditorContext();

@@ -162,8 +162,10 @@ public class GoToRulesHelper {
             putValue(Action.SMALL_ICON, IconManager.getIconFor(node));
           }
 
+          @Override
           public void actionPerformed(ActionEvent e) {
             ModelAccess.instance().runWriteInEDT(new Runnable() {
+              @Override
               public void run() {
                 if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel().getModelDescriptor() == null) {
                   return;

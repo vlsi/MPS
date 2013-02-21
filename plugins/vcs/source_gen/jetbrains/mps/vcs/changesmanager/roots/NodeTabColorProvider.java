@@ -24,6 +24,7 @@ public class NodeTabColorProvider implements TabColorProvider {
   }
 
   @Nullable
+  @Override
   public Color getAspectColor(Iterable<SNodeReference> nodePointers) {
     final List<FileStatus> statuses = Sequence.fromIterable(nodePointers).select(new ISelector<SNodeReference, FileStatus>() {
       public FileStatus select(SNodeReference np) {
@@ -46,6 +47,7 @@ public class NodeTabColorProvider implements TabColorProvider {
   }
 
   @Nullable
+  @Override
   public Color getNodeColor(@NotNull SNode node) {
     return check_6tqz68_a0a3(myFileStatusMapping.getStatus(node));
   }

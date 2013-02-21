@@ -25,6 +25,7 @@ public interface IFeatureDescriptor<T> {
       this.id = id;
     }
 
+    @Override
     public String toString() {
       return id;
     }
@@ -44,30 +45,37 @@ public interface IFeatureDescriptor<T> {
     public Stub() {
     }
 
+    @Override
     public Collection<T> getFeature(T t) {
       return null;
     }
 
+    @Override
     public Iterable<T> getContents(T t) {
       return getFeature(t);
     }
 
+    @Override
     public String getName() {
       return null;
     }
 
+    @Override
     public String getOpposite() {
       return null;
     }
 
+    @Override
     public IFeatureDescriptor.Type getType() {
       return null;
     }
 
+    @Override
     public boolean isDefault() {
       return false;
     }
 
+    @Override
     public boolean isAscending() {
       return true;
     }

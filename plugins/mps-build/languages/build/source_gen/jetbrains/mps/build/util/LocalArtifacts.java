@@ -16,6 +16,7 @@ public class LocalArtifacts extends VisibleArtifacts {
     collectInProject(SLinkOperations.getTarget(project, "layout", true), project);
   }
 
+  @Override
   public SNode findArtifact(Object id) {
     for (SNode artifact : this.getArtifacts()) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, artifact, "virtual_exports_6547494638219603457", new Object[]{id})) {

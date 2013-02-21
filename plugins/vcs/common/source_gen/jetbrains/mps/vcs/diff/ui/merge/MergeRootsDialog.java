@@ -194,6 +194,7 @@ public class MergeRootsDialog extends DialogWrapper {
     return layout;
   }
 
+  @Override
   public String getDimensionServiceKey() {
     return getClass().getName();
   }
@@ -324,10 +325,12 @@ public class MergeRootsDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myContainer;
   }
 
+  @Override
   protected void doOKAction() {
     MergeConfirmation.showMergeConfirmationAndTakeAction(this, myMergeSession, myMergeSession.getChangesForRoot(myRootId), new _FunctionTypes._void_P0_E0() {
       public void invoke() {

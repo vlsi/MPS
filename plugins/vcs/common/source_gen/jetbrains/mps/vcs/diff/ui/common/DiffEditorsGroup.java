@@ -104,6 +104,7 @@ public class DiffEditorsGroup {
       myDiffEditor = diffEditor;
     }
 
+    @Override
     public void stateChanged(ChangeEvent event) {
       if (myViewportSetInProgress) {
         return;

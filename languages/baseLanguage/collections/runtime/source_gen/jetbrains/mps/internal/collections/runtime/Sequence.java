@@ -33,79 +33,98 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
   public Sequence() {
   }
 
+  @Override
   public ISequence<T> where(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return new FilteringSequence<T>(this, filter);
   }
 
+  @Override
   public T findFirst(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return where(filter).first();
   }
 
+  @Override
   public T findLast(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return where(filter).last();
   }
 
+  @Override
   public boolean any(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return where(filter).isNotEmpty();
   }
 
+  @Override
   public boolean all(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return where(new NegateWhereFilter<T>(filter)).isEmpty();
   }
 
+  @Override
   public <U> ISequence<U> translate(@AdapterClass(value = "ITranslator2") _FunctionTypes._return_P1_E0<? extends Iterable<U>, ? super T> translator) {
     return new TranslatingSequence<T, U>(this, translator);
   }
 
+  @Override
   public <U> ISequence<U> select(@AdapterClass(value = "ISelector") _FunctionTypes._return_P1_E0<? extends U, ? super T> selector) {
     return new SelectingSequence<T, U>(this, selector);
   }
 
+  @Override
   public <U> ISequence<U> ofType(Class<U> type) {
     return new OfTypeSequence<T, U>(this, type);
   }
 
+  @Override
   public ISequence<T> sort(@AdapterClass(value = "ISelector") _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super T> selector, boolean ascending) {
     return new SortingSequence<T>(this, new SelectComparator<T>(selector), ascending);
   }
 
+  @Override
   public ISequence<T> alsoSort(@AdapterClass(value = "ISelector") _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super T> selector, boolean ascending) {
     return sort(selector, ascending);
   }
 
+  @Override
   public ISequence<T> sort(Comparator<? super T> comparator, boolean ascending) {
     return new SortingSequence<T>(this, comparator, ascending);
   }
 
+  @Override
   public ISequence<T> distinct() {
     return new LimitedCardinalitySequence<T>(this, 1);
   }
 
+  @Override
   public void visitAll(@AdapterClass(value = "IVisitor") _FunctionTypes._void_P1_E0<? super T> visitor) {
     IterableUtils.visitAll(toIterable(), visitor);
   }
 
+  @Override
   public ISequence<T> take(int length) {
     return new PagingSequence<T>(this, PagingSequence.Page.TAKE, length);
   }
 
+  @Override
   public ISequence<T> skip(int length) {
     return new PagingSequence<T>(this, PagingSequence.Page.SKIP, length);
   }
 
+  @Override
   public ISequence<T> cut(int length) {
     return new PagingSequence<T>(this, PagingSequence.Page.CUT, length);
   }
 
+  @Override
   public ISequence<T> tail(int length) {
     return new PagingSequence<T>(this, PagingSequence.Page.TAIL, length);
   }
 
+  @Override
   public ISequence<T> page(int skip, int skipplustake) {
     int take = skipplustake - skip;
     return skip(skip).take(take);
   }
 
+  @Override
   public ISequence<T> concat(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
@@ -115,6 +134,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return new ConcatingSequence<T>(this, that);
   }
 
+  @Override
   public ISequence<T> intersect(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
@@ -124,6 +144,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return new ComparingSequence<T>(this, that, ComparingSequence.Kind.INTERSECTION);
   }
 
+  @Override
   public ISequence<T> subtract(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
@@ -133,6 +154,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return new ComparingSequence<T>(this, that, ComparingSequence.Kind.SUBSTRACTION);
   }
 
+  @Override
   public ISequence<T> union(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
@@ -142,6 +164,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return new ComparingSequence<T>(this, that, ComparingSequence.Kind.UNION);
   }
 
+  @Override
   public ISequence<T> disjunction(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
@@ -151,14 +174,17 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return new ComparingSequence<T>(this, that, ComparingSequence.Kind.DISJUNCTION);
   }
 
+  @Override
   public ISequence<T> reverse() {
     return new ReversingSequence<T>(this);
   }
 
+  @Override
   public boolean contains(T t) {
     return IterableUtils.contains(toIterable(), t);
   }
 
+  @Override
   public boolean containsSequence(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
@@ -168,66 +194,82 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return this.intersect(that).disjunction(that).isEmpty();
   }
 
+  @Override
   public int indexOf(T t) {
     return IterableUtils.indexOf(toIterable(), t);
   }
 
+  @Override
   public int lastIndexOf(T t) {
     return IterableUtils.lastIndexOf(toIterable(), t);
   }
 
+  @Override
   public int count() {
     return IterableUtils.count(toIterable());
   }
 
+  @Override
   public boolean isEmpty() {
     return IterableUtils.isEmpty(toIterable());
   }
 
+  @Override
   public boolean isNotEmpty() {
     return IterableUtils.isNotEmpty(toIterable());
   }
 
+  @Override
   public T first() {
     return IterableUtils.first(toIterable());
   }
 
+  @Override
   public T last() {
     return IterableUtils.last(toIterable());
   }
 
+  @Override
   public T reduceLeft(_FunctionTypes._return_P2_E0<? extends T, ? super T, ? super T> comb) {
     return IterableUtils.reduceLeft(this, comb);
   }
 
+  @Override
   public T reduceRight(_FunctionTypes._return_P2_E0<? extends T, ? super T, ? super T> comb) {
     return IterableUtils.reduceRight(reverse(), comb);
   }
 
+  @Override
   public <S> S foldLeft(S seed, _FunctionTypes._return_P2_E0<? extends S, ? super S, ? super T> comb) {
     return IterableUtils.foldLeft(this, seed, comb);
   }
 
+  @Override
   public <S> S foldRight(S seed, _FunctionTypes._return_P2_E0<? extends S, ? super T, ? super S> comb) {
     return IterableUtils.foldRight(reverse(), seed, comb);
   }
 
+  @Override
   public Iterable<T> toIterable() {
     return this;
   }
 
+  @Override
   public IListSequence<T> toListSequence() {
     return ListSequence.fromIterable(toIterable());
   }
 
+  @Override
   public T[] toGenericArray() {
     return toListSequence().toGenericArray();
   }
 
+  @Override
   public T[] toGenericArray(Class<T> runtimeClass) {
     return toListSequence().toGenericArray(runtimeClass);
   }
 
+  @Override
   public IEnumerator<T> enumerator() {
     return EnumeratorIterator.fromIterator(toIterable().iterator());
   }

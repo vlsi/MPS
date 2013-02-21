@@ -30,6 +30,7 @@ public class ProblemsDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     JPanel panel = new JPanel(new GridLayout(1, 1));
     JTextArea area = new JTextArea("Following problems were found:\n" + myErrors);
@@ -51,6 +52,7 @@ public class ProblemsDialog extends DialogWrapper {
   protected void createDefaultActions() {
     super.createDefaultActions();
     myIgnoreAction = new DialogWrapper.DialogWrapperAction("Ignore") {
+      @Override
       protected void doAction(ActionEvent event) {
         close(DialogWrapper.NEXT_USER_EXIT_CODE);
       }

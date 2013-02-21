@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.AbstractOverrideEditorMessage" file="AbstractOverrideEditorMessage.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JPopupMenu" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -27,6 +28,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters" file="JavaHighlighters.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.MethodDeclarationsFixer" />
@@ -145,6 +147,7 @@
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverridenMethodEditorMessage" file="OverridenMethodEditorMessage.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements" />
@@ -157,6 +160,7 @@
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverridingMethodEditorMessage" file="OverridingMethodEditorMessage.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements" />
@@ -169,6 +173,7 @@
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage" file="SubclassedClassifierEditorMessage.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JPopupMenu" />
@@ -187,6 +192,7 @@
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.ToDoHighlighter" file="ToDoHighlighter.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.LinkedHashSet" />
     <classNode dependClassName="java.util.List" />
@@ -206,6 +212,7 @@
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.ToDoMessage" file="ToDoMessage.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />

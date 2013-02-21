@@ -23,6 +23,7 @@ public class BuildJavaPlugin_Behavior {
   public static Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, final SNode kind) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaOptions")) {
       return ScopeUtil.where(new SimpleRoleScope(SNodeOperations.getParent(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), "jetbrains.mps.build.structure.BuildSource_JavaOptions") {
+        @Override
         public String getName(SNode jo) {
           String optionsName = SPropertyOperations.getString(SNodeOperations.cast(jo, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName");
           return ((optionsName == null || optionsName.length() == 0) ?

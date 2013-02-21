@@ -54,6 +54,7 @@ public class Currency {
     return myAmount.compareTo(c.myAmount);
   }
 
+  @Override
   public String toString() {
     return myAmount + myCurrency;
   }
@@ -62,6 +63,7 @@ public class Currency {
     return myAmount.compareTo(new BigDecimal("0.00")) == 0;
   }
 
+  @Override
   public boolean equals(Object o) {
     if (!((o instanceof Currency))) {
       return false;
@@ -75,6 +77,7 @@ public class Currency {
     }
   }
 
+  @Override
   public int hashCode() {
     return myAmount.hashCode() * 283 + myCurrency.hashCode();
   }

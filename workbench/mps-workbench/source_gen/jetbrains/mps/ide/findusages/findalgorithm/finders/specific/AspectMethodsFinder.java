@@ -27,10 +27,12 @@ public class AspectMethodsFinder implements IFinder {
   public AspectMethodsFinder() {
   }
 
+  @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     final AspectMethodsFinder.AspectMethodQueryData data = (AspectMethodsFinder.AspectMethodQueryData) query.getObjectHolder().getObject();
     final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         for (final SModelDescriptor descriptor : SModelRepository.getInstance().getModelDescriptorsByModelName(data.myModelName)) {
           if (!(SModelStereotype.isStubModelStereotype(descriptor.getStereotype()))) {
@@ -77,20 +79,24 @@ public class AspectMethodsFinder implements IFinder {
       myData.myMethodName = methodName;
     }
 
+    @Override
     public AspectMethodsFinder.AspectMethodQueryData getObject() {
       return myData;
     }
 
     @NotNull
+    @Override
     public String getCaption() {
       return myData.myMethodName + " in " + myData.myModelName;
     }
 
+    @Override
     public void read(Element element, Project project) throws CantLoadSomethingException {
       myData.myModelName = element.getAttributeValue(MODEL_NAME);
       myData.myMethodName = element.getAttributeValue(METHOD_NAME);
     }
 
+    @Override
     public void write(Element element, Project project) throws CantSaveSomethingException {
       element.setAttribute(MODEL_NAME, myData.myModelName);
       element.setAttribute(METHOD_NAME, myData.myMethodName);

@@ -53,10 +53,12 @@ public class SNodeTransferable implements Transferable {
     saveNodes(list, null);
   }
 
+  @Override
   public DataFlavor[] getTransferDataFlavors() {
     return ((DataFlavor[]) flavors).clone();
   }
 
+  @Override
   public boolean isDataFlavorSupported(DataFlavor flavor) {
     for (DataFlavor flavor1 : flavors) {
       if (flavor.equals(flavor1)) {
@@ -66,6 +68,7 @@ public class SNodeTransferable implements Transferable {
     return false;
   }
 
+  @Override
   public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
     if (flavor.equals(flavors[NODE])) {
       return this;

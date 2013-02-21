@@ -139,6 +139,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
       mySuffix = suffix;
     }
 
+    @Override
     public String getSuffix() {
       return mySuffix;
     }

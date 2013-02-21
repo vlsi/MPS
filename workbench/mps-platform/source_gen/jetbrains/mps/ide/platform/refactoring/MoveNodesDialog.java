@@ -22,6 +22,7 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
     setTitle(REFACTORING_NAME + " " + "nodes");
   }
 
+  @Override
   protected void doRefactoringAction() {
     Object selectedObject = myChooser.getSelectedObject();
     if (myFilter == null || myFilter.checkForObject(selectedObject, myModel, myChooser.getComponent())) {
@@ -31,6 +32,7 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     myChooser = RefactoringAccess.getInstance().createTargetChooser(myProject, myModel);
     JComponent centerPanel = myChooser.getComponent();

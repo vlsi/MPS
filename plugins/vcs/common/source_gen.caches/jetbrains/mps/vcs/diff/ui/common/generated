@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8xr3s6ifwupl7ud2u8ck5yajcbn7p7e">
+<dependencies version="2" modelHash="-7mhsltvwh8wl47c1kwlc6rc7o6fhm9p">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -69,19 +69,19 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="akhdydbhjjog28feg67o2k0h0fepfz2" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-1y364c3x08ezyxfrbl16vh2nde1fe7q" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="d5cnpujtqu721m7jpcehnnksdbi4kbf" />
-  <dep model="r:2170b42c-b000-4bd7-a2c2-c5cf5fe74d08(jetbrains.mps.ide.tooltips)" hash="899qlp4m456oj36ebc9m41ccqq3z2er" />
+  <dep model="r:2170b42c-b000-4bd7-a2c2-c5cf5fe74d08(jetbrains.mps.ide.tooltips)" hash="-brgv0lt69ap8egrtxljvv2igt4q3i4u" />
   <dep model="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" hash="-6bmz59p0qeuzy2j0zmtv3lfwfczldfh" />
-  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-civmjgp9lyvc1592lp0bed4tl3qfjvc" />
-  <dep model="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" hash="9ywdfei20bidhwexu9nyjjk8miudx9d" />
-  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="13nkr3qvbiuu7qm0m5km14x1nu24gum" />
-  <dep model="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" hash="-kx1tregwj8lnhwkk83395rg0jjtvpl" />
+  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-58ocwuod1hpr2tjsask05cw1cxy8jv8" />
+  <dep model="r:5744ed46-c83f-47cd-94ce-f24d1f92d6a1(jetbrains.mps.vcs.diff)" hash="-bddzrkzdk0myoes6cy8485j84bc6vz5" />
+  <dep model="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" hash="c4a7c36llbqdlxil0kegw5meoievtp9" />
+  <dep model="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" hash="-db58wnwkv2epdo1wzsmwu3s3hjtmn48" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="8mfe7n9xwshuy8g4qjangnfwidrl40j" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="691c29wj7owdlqxnb0jrsjbdcafv9mb" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-4b847p9mp63aban07vitke0a3lw8bal" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="3hm2q9sdwa5gbhcoe9gy73uwt7wzgqb" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="7uflk7ixrewtgvgg4gnbwh32e088dja" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-dtcjnjk6lww15wxj6oyv44k28fu5g1d" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
   <common hash="-ch3htny6dufe6rs7cw4zisiaf1fedgo" />
   <source id="4652592318748334972" name="Bounds" hash="2r5nvqzelpiesgg6vxr7ycv4u91nwww">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -105,7 +105,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BaseDiffModelTreeAction.java" />
   </source>
-  <source id="4652592318748335093" name="ButtonsPainter" hash="-b1gtqqhnwtm5j4iyt8lais7jklo3cg6">
+  <source id="4652592318748335093" name="ButtonsPainter" hash="63x4m2x05cgph8uspcoxk7o8y3mz535">
     <dep root="4652592318748334972" />
     <dep root="4652592318748337213" />
     <dep root="4652592318748337772" />
@@ -238,7 +238,7 @@
   <source id="4652592318748337772" name="ChangeGroupInvalidateListener" hash="1coo3elwx7fmqa7p4kbspz9ow9ascn2">
     <file name="ChangeGroupInvalidateListener.java" />
   </source>
-  <source id="4652592318748337778" name="DiffEditorSeparator" hash="-5jkid0fzedz3lg8o8cyo1hn8y2vir70" dependsOnNodes="true">
+  <source id="4652592318748337778" name="DiffEditorSeparator" hash="48qyciy058p4wwldt9hdwqr2fr3pn3r" dependsOnNodes="true">
     <dep root="4652592318748334972" />
     <dep root="4652592318748335014" />
     <dep root="4652592318748335093" />
@@ -280,7 +280,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DiffEditorSeparator.java" />
   </source>
-  <source id="4652592318748338308" name="DiffEditor" hash="7sfwwhoqjwjybln96s89yu9mksarxic">
+  <source id="4652592318748338308" name="DiffEditor" hash="-6dlcnxkt4hsqefd83u1wznzg2p59t71">
     <dep root="4652592318748335691" />
     <dep root="9170101780449072521" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
@@ -305,7 +305,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DiffEditor.java" />
   </source>
-  <source id="4652592318748338723" name="DiffEditorsGroup" hash="dlk3ox5jlkimlpg3mqhdoay4kx5s2jl">
+  <source id="4652592318748338723" name="DiffEditorsGroup" hash="dhkof2na4c2sq3tigu1cw287eyw27zn">
     <dep root="4652592318748338308" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -336,7 +336,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DiffEditorsGroup.java" />
   </source>
-  <source id="4652592318748339080" name="DiffModelTree" hash="-b0gdnt55r051s5lscy70lp0fht6aiyr">
+  <source id="4652592318748339080" name="DiffModelTree" hash="-73292cfncmuoszbclhk8dm2ne63ntka">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.dnd(JDK/java.awt.dnd@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
@@ -376,7 +376,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="DiffModelTree.java" />
   </source>
-  <source id="4652592318748339723" name="DiffTemporaryModule" hash="-davg6x2rnaslpxurtfd3gv0byofnr4f">
+  <source id="4652592318748339723" name="DiffTemporaryModule" hash="-9jw2u34yo7yrjhc553bqhajhi7xbrre">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -399,7 +399,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FoldingAreaButton.java" />
   </source>
-  <source id="4652592318748340352" name="GoToNeighbourRootActions" hash="-eedqe4b7psvotdycq3cqswbl5tlmjgg">
+  <source id="4652592318748340352" name="GoToNeighbourRootActions" hash="-4xmu21u1fhaaoqrujypt9f3ve0jnmfz">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.actionSystem(MPS.Platform/com.intellij.openapi.actionSystem@java_stub)" />
@@ -410,7 +410,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GoToNeighbourRootActions.java" />
   </source>
-  <source id="4652592318748340561" name="NextPreviousTraverser" hash="-7hwplg38g811hdknflo5j5przkiqvgi">
+  <source id="4652592318748340561" name="NextPreviousTraverser" hash="-5hc7bnxg4i7ty2g50cjfvjnq40tmskd">
     <dep root="4652592318748334972" />
     <dep root="4652592318748337083" />
     <dep root="4652592318748337213" />
@@ -450,7 +450,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="NextPreviousTraverser.java" />
   </source>
-  <source id="4652592318748341187" name="SimpleDiffRequest" hash="-6evzs67sm32c0gawk14g16uolfi4w5v">
+  <source id="4652592318748341187" name="SimpleDiffRequest" hash="-6jw2s1rz6szypdioe32dc3cvegjevbp">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -459,13 +459,14 @@
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.fileTypes(MPS.Platform/com.intellij.openapi.fileTypes@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.options(MPS.Platform/com.intellij.openapi.options@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.fileTypes(MPS.Platform/jetbrains.mps.fileTypes@java_stub)" />
+    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SimpleDiffRequest.java" />
   </source>
-  <source id="739457190729175664" name="ChangeGroupMessages" hash="27voc4rxegg7nov3yqgjndzl8hb16xx">
+  <source id="739457190729175664" name="ChangeGroupMessages" hash="ayv7lotgjy3lj01eecf6l9qplc3r82d">
     <dep root="4652592318748334972" />
     <dep root="4652592318748337083" />
     <dep root="4652592318748337213" />
@@ -487,7 +488,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ChangeGroupMessages.java" />
   </source>
-  <source id="6402272430682108518" name="DiffChangeGroupLayout" hash="62souy5i0009vreqv6z02sm4ztsiixz">
+  <source id="6402272430682108518" name="DiffChangeGroupLayout" hash="-bslcqwguz3f2klzluwf6jz1m2xyimxu">
     <dep root="4652592318748337213" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -503,7 +504,7 @@
     <dep model="r:9b4a89e1-ec38-42c4-b1bd-96ab47ffcb3f(jetbrains.mps.vcs.diff.changes)" />
     <file name="ChangeEditorMessageFactory.java" />
   </source>
-  <source id="8733553229778921962" name="InvokeTextDiffAction" hash="31mc0s9fvc5k4rni8g7xfokme12xq2">
+  <source id="8733553229778921962" name="InvokeTextDiffAction" hash="4l4l2e4ukd512i7yx3manbin4r6qdg6">
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.ui(MPS.Platform/com.intellij.openapi.ui@java_stub)" />
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)" />

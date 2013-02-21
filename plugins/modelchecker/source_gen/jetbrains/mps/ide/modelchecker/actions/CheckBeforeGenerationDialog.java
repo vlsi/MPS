@@ -30,11 +30,13 @@ import javax.swing.JLabel;
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     JPanel panel = new JPanel(new BorderLayout());
 
     JCheckBox checkBox = new JCheckBox("Don't check models before generation");
     checkBox.addItemListener(new ItemListener() {
+      @Override
       public void itemStateChanged(ItemEvent ev) {
         boolean selected = ev.getStateChange() == ItemEvent.SELECTED;
         GenerationSettings.getInstance().setCheckModelsBeforeGeneration(!(selected));

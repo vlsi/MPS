@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.BaseTestOccurenceNavigator" file="BaseTestOccurenceNavigator.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
@@ -20,6 +21,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.FailedTestOccurenceNavigator" file="FailedTestOccurenceNavigator.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMethodTreeNode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTree" />
@@ -54,6 +56,7 @@
     <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="java.awt.GridLayout" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.BorderFactory" />
     <classNode dependClassName="javax.swing.JComponent" />
@@ -71,6 +74,7 @@
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -97,6 +101,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseRow" file="TestCaseRow.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestContainerRow" />
@@ -120,6 +125,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.BaseTestTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestContainerRow" file="TestContainerRow.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -128,6 +134,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestMethodRow" file="TestMethodRow.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -214,6 +221,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ToggleAction" />
     <classNode dependClassName="com.intellij.openapi.keymap.KeymapManager" />
     <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.SwingConstants" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.FailedTestOccurenceNavigator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTree" />
@@ -257,6 +265,7 @@
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.util.Alarm" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -272,6 +281,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTreeRootMouseListener" file="TestTreeRootMouseListener.java">
     <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.StatisticsTableModel" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestOutputComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTree" />
@@ -279,6 +289,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestTreeSelectionListener" file="TestTreeSelectionListener.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.event.TreeSelectionEvent" />
     <classNode dependClassName="javax.swing.tree.TreePath" />
@@ -291,6 +302,7 @@
     <classNode extendsClassName="javax.swing.event.TreeSelectionListener" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.tool.TotalRow" file="TotalRow.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestContainerRow" />
   </dependency>
@@ -325,6 +337,7 @@
     <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
     <classNode dependClassName="com.intellij.execution.process.ProcessTerminatedListener" />
     <classNode dependClassName="com.intellij.openapi.util.Key" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Process" />
     <classNode dependClassName="java.lang.StackTraceElement" />
     <classNode dependClassName="java.lang.String" />
@@ -399,6 +412,7 @@
     <classNode dependClassName="java.lang.Float" />
     <classNode dependClassName="java.lang.NumberFormatException" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />

@@ -544,10 +544,12 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               });
               IMessageHandler mh = new IMessageHandler() {
+                @Override
                 public void handle(IMessage msg) {
                   monitor.reportFeedback(new IFeedback.MESSAGE(msg));
                 }
 
+                @Override
                 public void clear() {
                 }
               };
@@ -573,14 +575,17 @@ public class Generate_Facet extends IFacet.Stub {
                 return new IResult.FAILURE(_output_fi61u2_a0d.value);
               }
               _output_fi61u2_a0d.value = Sequence.fromIterable(_output_fi61u2_a0d.value).concat(Sequence.fromIterable(Sequence.<IResource>singleton(new DResource(Sequence.<IDelta>singleton(new IInternalDelta() {
+                @Override
                 public IDelta merge(IDelta toMerge) {
                   return this;
                 }
 
+                @Override
                 public boolean contains(IDelta other) {
                   return false;
                 }
 
+                @Override
                 public boolean reconcile() {
                   if (!(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient())) {
                     pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).transientModelsProvider().removeAllTransient();
@@ -588,6 +593,7 @@ public class Generate_Facet extends IFacet.Stub {
                   return true;
                 }
 
+                @Override
                 public boolean acceptVisitor(IDeltaVisitor visitor) {
                   return true;
                 }

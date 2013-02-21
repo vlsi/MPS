@@ -14,6 +14,7 @@ public class SelectComparator<T> implements Comparator<T> {
   }
 
   @SuppressWarnings(value = "unchecked")
+  @Override
   public int compare(T a, T b) {
     if (a == b) {
       return 0;

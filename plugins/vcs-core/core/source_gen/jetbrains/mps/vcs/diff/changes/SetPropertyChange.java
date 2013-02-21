@@ -27,6 +27,7 @@ public class SetPropertyChange extends NodeChange {
     return myNewValue;
   }
 
+  @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     SNode node = model.getNodeById(getAffectedNodeId());
     assert node != null;
@@ -34,6 +35,7 @@ public class SetPropertyChange extends NodeChange {
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
     SNode node = getChangeSet().getOldModel().getNodeById(getAffectedNodeId());
     assert node != null;
@@ -45,6 +47,7 @@ public class SetPropertyChange extends NodeChange {
     return String.format("Set property %s to %s in node %s", myPropertyName, myNewValue, getAffectedNodeId());
   }
 
+  @Override
   public String getDescription() {
     return String.format("Changed %s of #%s from '%s' to '%s'", myPropertyName, getAffectedNodeId(), getChangeSet().getOldModel().getNodeById(getAffectedNodeId()).getProperty(myPropertyName), getChangeSet().getNewModel().getNodeById(getAffectedNodeId()).getProperty(myPropertyName));
   }
