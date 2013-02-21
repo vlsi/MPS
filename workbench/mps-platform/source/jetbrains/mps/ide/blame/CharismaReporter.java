@@ -32,6 +32,7 @@ import jetbrains.mps.ide.blame.perform.Response;
 import java.awt.*;
 
 public class CharismaReporter extends ErrorReportSubmitter {
+  @Override
   public String getReportActionText() {
     return "Report To JetBrains MPS Tracker";
   }
@@ -64,6 +65,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
     }
   }
 
+  @Override
   public SubmittedReportInfo submit(IdeaLoggingEvent[] events, Component parentComponent) {
     // obsolete API
     return new SubmittedReportInfo(null, "0", SubmittedReportInfo.SubmissionStatus.FAILED);

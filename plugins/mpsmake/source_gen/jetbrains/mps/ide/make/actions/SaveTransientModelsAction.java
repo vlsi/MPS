@@ -13,10 +13,12 @@ public class SaveTransientModelsAction extends ToggleAction {
     super("Save Transient Models");
   }
 
+  @Override
   public boolean isSelected(AnActionEvent e) {
     return GenerationSettings.getInstance().isSaveTransientModels();
   }
 
+  @Override
   public void update(AnActionEvent e) {
     super.update(e);
     e.getPresentation().setVisible(e.getData(PlatformDataKeys.PROJECT) != null);
@@ -27,6 +29,7 @@ public class SaveTransientModelsAction extends ToggleAction {
     }
   }
 
+  @Override
   public void setSelected(AnActionEvent e, boolean state) {
     GenerationSettings.getInstance().setSaveTransientModels(state);
     TransientModelsNotification.updateWidgets();

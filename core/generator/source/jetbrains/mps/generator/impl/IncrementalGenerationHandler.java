@@ -24,7 +24,8 @@ import jetbrains.mps.generator.impl.dependencies.*;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.DifflibFacade;
 import org.jetbrains.annotations.NotNull;
@@ -242,10 +243,10 @@ public class IncrementalGenerationHandler {
 
     // collect unchanged roots (same hash; external dependencies are unchanged)
     SModel smodel = myModel.getSModel();
-    myRootsCount = smodel.rootsCount();
+    myRootsCount = IterableUtil.asCollection(smodel.getRootNodes()).size();
 
     myUnchangedRoots = new HashSet<SNode>();
-    for (SNode root : smodel.roots()) {
+    for (SNode root : smodel.getRootNodes()) {
       String id = root.getNodeId().toString();
       GenerationRootDependencies rd = oldDependencies.getDependenciesFor(id);
       String oldHash;
@@ -296,7 +297,7 @@ public class IncrementalGenerationHandler {
     boolean changed;
 
     ArrayList<SNode> roots = new ArrayList<SNode>();
-    for (SNode root : smodel.roots()) {
+    for (SNode root : smodel.getRootNodes()) {
       roots.add(root);
     }
 

@@ -392,8 +392,8 @@
     <nodeInfo nodeId="7376433222636453951" fileName="QueriesGenerated.java" startLine="55" startPosition="139" endLine="56" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1202246979893" fileName="QueriesGenerated.java" startLine="57" startPosition="54" endLine="58" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1206478331710" fileName="QueriesGenerated.java" startLine="59" startPosition="5" endLine="60" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195510471017" fileName="QueriesGenerated.java" startLine="60" startPosition="64" endLine="61" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195598105572" fileName="QueriesGenerated.java" startLine="61" startPosition="90" endLine="62" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195510471017" fileName="QueriesGenerated.java" startLine="60" startPosition="64" endLine="61" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195598105572" fileName="QueriesGenerated.java" startLine="61" startPosition="129" endLine="62" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1195598114060" fileName="QueriesGenerated.java" startLine="62" startPosition="151" endLine="63" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1202340629491" fileName="QueriesGenerated.java" startLine="63" startPosition="91" endLine="64" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1202245790005" fileName="QueriesGenerated.java" startLine="56" startPosition="18" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -434,8 +434,8 @@
     <nodeInfo nodeId="7376433222636454223" fileName="QueriesGenerated.java" startLine="67" startPosition="139" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1206478452703" fileName="QueriesGenerated.java" startLine="68" startPosition="18" endLine="69" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206478475661" fileName="QueriesGenerated.java" startLine="70" startPosition="25" endLine="71" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195510384871" fileName="QueriesGenerated.java" startLine="72" startPosition="5" endLine="73" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195510606892" fileName="QueriesGenerated.java" startLine="73" startPosition="91" endLine="74" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195510384871" fileName="QueriesGenerated.java" startLine="72" startPosition="5" endLine="73" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195510606892" fileName="QueriesGenerated.java" startLine="73" startPosition="130" endLine="74" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1195510616412" fileName="QueriesGenerated.java" startLine="74" startPosition="154" endLine="75" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206478456010" fileName="QueriesGenerated.java" startLine="69" startPosition="66" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1195510384868" fileName="Scripttest__postMappingScript.java" startLine="16" startPosition="41" endLine="17" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.datatransfer)/1058093769518980128">
-    <nodeInfo nodeId="7084145171935594026" fileName="AbstractManager.java" startLine="13" startPosition="26" endLine="14" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3138738821092035818" fileName="AbstractManager.java" startLine="21" startPosition="22" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3138738821092036609" fileName="AbstractManager.java" startLine="25" startPosition="25" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519002869" fileName="AbstractManager.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearCaches#()V" />
-    <nodeInfo nodeId="1058093769519031479" fileName="AbstractManager.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassName" />
-    <nodeInfo nodeId="1058093769519031482" fileName="AbstractManager.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguage" />
-    <nodeInfo nodeId="1058093769519031485" fileName="AbstractManager.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInstance" />
-    <nodeInfo nodeId="1058093769519031488" fileName="AbstractManager.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWasInitialized" />
-    <nodeInfo nodeId="1058093769519031491" fileName="AbstractManager.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLog" />
-    <nodeInfo nodeId="1058093769519031505" fileName="AbstractManager.java" startLine="38" startPosition="72" endLine="39" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1058093769519031509" fileName="AbstractManager.java" startLine="39" startPosition="31" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519031515" fileName="AbstractManager.java" startLine="40" startPosition="30" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1058093769519031519" fileName="AbstractManager.java" startLine="41" startPosition="30" endLine="42" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519031525" fileName="AbstractManager.java" startLine="42" startPosition="28" endLine="43" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1058093769519031529" fileName="AbstractManager.java" startLine="43" startPosition="25" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519031406" fileName="AbstractManager.java" startLine="48" startPosition="32" endLine="49" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1058093769519031421" fileName="AbstractManager.java" startLine="51" startPosition="15" endLine="52" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519031435" fileName="AbstractManager.java" startLine="53" startPosition="33" endLine="54" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519031458" fileName="AbstractManager.java" startLine="56" startPosition="16" endLine="57" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519031469" fileName="AbstractManager.java" startLine="58" startPosition="9" endLine="59" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519031475" fileName="AbstractManager.java" startLine="60" startPosition="7" endLine="61" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2481791643076228577" fileName="AbstractManager.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractManager#()V" />
-    <nodeInfo nodeId="1058093769519031456" fileName="AbstractManager.java" startLine="56" startPosition="14" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7084145171935594019" fileName="AbstractManager.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unload#()V" />
-    <nodeInfo nodeId="1720905492960355658" fileName="AbstractManager.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="1058093769518980213" fileName="AbstractManager.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="1058093769518981030" fileName="AbstractManager.java" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadListener" />
-    <nodeInfo nodeId="1058093769519031419" fileName="AbstractManager.java" startLine="50" startPosition="41" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1058093769519031495" fileName="AbstractManager.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Descriptor#(Ljava/lang/String;Ljetbrains/mps/smodel/Language;Ljetbrains/mps/logging/Logger;)V" />
-    <nodeInfo nodeId="1058093769519031417" fileName="AbstractManager.java" startLine="49" startPosition="68" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1058093769519031400" fileName="AbstractManager.java" startLine="47" startPosition="28" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1058093769519031396" fileName="AbstractManager.java" startLine="47" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInstance#()null" />
-    <scopeInfo nodeId="2481791643076228580" fileName="AbstractManager.java" startLine="18" startPosition="28" endLine="18" endPosition="28" />
-    <scopeInfo nodeId="7084145171935594022" fileName="AbstractManager.java" startLine="13" startPosition="26" endLine="14" endPosition="41" />
-    <scopeInfo nodeId="1720905492960355661" fileName="AbstractManager.java" startLine="21" startPosition="22" endLine="22" endPosition="72" />
-    <scopeInfo nodeId="1058093769518980216" fileName="AbstractManager.java" startLine="25" startPosition="25" endLine="26" endPosition="75" />
-    <scopeInfo nodeId="1058093769519002869" fileName="AbstractManager.java" startLine="29" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1058093769519031420" fileName="AbstractManager.java" startLine="51" startPosition="15" endLine="52" endPosition="62" />
-    <scopeInfo nodeId="1058093769519031431" fileName="AbstractManager.java" startLine="53" startPosition="0" endLine="54" endPosition="27">
+    <nodeInfo nodeId="7084145171935594026" fileName="AbstractManager.java" startLine="14" startPosition="26" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3138738821092035818" fileName="AbstractManager.java" startLine="22" startPosition="22" endLine="23" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3138738821092036609" fileName="AbstractManager.java" startLine="26" startPosition="25" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519002869" fileName="AbstractManager.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearCaches#()V" />
+    <nodeInfo nodeId="1058093769519031479" fileName="AbstractManager.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassName" />
+    <nodeInfo nodeId="1058093769519031482" fileName="AbstractManager.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguage" />
+    <nodeInfo nodeId="1058093769519031485" fileName="AbstractManager.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInstance" />
+    <nodeInfo nodeId="1058093769519031488" fileName="AbstractManager.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWasInitialized" />
+    <nodeInfo nodeId="1058093769519031491" fileName="AbstractManager.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLog" />
+    <nodeInfo nodeId="1058093769519031505" fileName="AbstractManager.java" startLine="39" startPosition="72" endLine="40" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1058093769519031509" fileName="AbstractManager.java" startLine="40" startPosition="31" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519031515" fileName="AbstractManager.java" startLine="41" startPosition="30" endLine="42" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1058093769519031519" fileName="AbstractManager.java" startLine="42" startPosition="30" endLine="43" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519031525" fileName="AbstractManager.java" startLine="43" startPosition="28" endLine="44" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1058093769519031529" fileName="AbstractManager.java" startLine="44" startPosition="25" endLine="45" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519031406" fileName="AbstractManager.java" startLine="49" startPosition="32" endLine="50" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1058093769519031421" fileName="AbstractManager.java" startLine="52" startPosition="15" endLine="53" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519031435" fileName="AbstractManager.java" startLine="54" startPosition="33" endLine="55" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519031458" fileName="AbstractManager.java" startLine="57" startPosition="16" endLine="58" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519031469" fileName="AbstractManager.java" startLine="59" startPosition="9" endLine="60" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519031475" fileName="AbstractManager.java" startLine="61" startPosition="7" endLine="62" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2481791643076228577" fileName="AbstractManager.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractManager#()V" />
+    <nodeInfo nodeId="1058093769519031456" fileName="AbstractManager.java" startLine="57" startPosition="14" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1720905492960355658" fileName="AbstractManager.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="1058093769518980213" fileName="AbstractManager.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="7084145171935594019" fileName="AbstractManager.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unload#()V" />
+    <nodeInfo nodeId="1058093769519031419" fileName="AbstractManager.java" startLine="51" startPosition="41" endLine="56" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1058093769518981030" fileName="AbstractManager.java" startLine="12" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadListener" />
+    <nodeInfo nodeId="1058093769519031495" fileName="AbstractManager.java" startLine="39" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Descriptor#(Ljava/lang/String;Ljetbrains/mps/smodel/Language;Ljetbrains/mps/logging/Logger;)V" />
+    <nodeInfo nodeId="1058093769519031417" fileName="AbstractManager.java" startLine="50" startPosition="68" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1058093769519031400" fileName="AbstractManager.java" startLine="48" startPosition="28" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1058093769519031396" fileName="AbstractManager.java" startLine="48" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInstance#()null" />
+    <scopeInfo nodeId="2481791643076228580" fileName="AbstractManager.java" startLine="19" startPosition="28" endLine="19" endPosition="28" />
+    <scopeInfo nodeId="7084145171935594022" fileName="AbstractManager.java" startLine="14" startPosition="26" endLine="15" endPosition="41" />
+    <scopeInfo nodeId="1720905492960355661" fileName="AbstractManager.java" startLine="22" startPosition="22" endLine="23" endPosition="72" />
+    <scopeInfo nodeId="1058093769518980216" fileName="AbstractManager.java" startLine="26" startPosition="25" endLine="27" endPosition="75" />
+    <scopeInfo nodeId="1058093769519002869" fileName="AbstractManager.java" startLine="30" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1058093769519031420" fileName="AbstractManager.java" startLine="52" startPosition="15" endLine="53" endPosition="62" />
+    <scopeInfo nodeId="1058093769519031431" fileName="AbstractManager.java" startLine="54" startPosition="0" endLine="55" endPosition="27">
       <varInfo nodeId="1058093769519031432" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="1058093769519031434" fileName="AbstractManager.java" startLine="53" startPosition="33" endLine="54" endPosition="27" />
-    <scopeInfo nodeId="1058093769519031457" fileName="AbstractManager.java" startLine="56" startPosition="16" endLine="57" endPosition="121" />
-    <scopeInfo nodeId="2481791643076228577" fileName="AbstractManager.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="7084145171935594019" fileName="AbstractManager.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1720905492960355658" fileName="AbstractManager.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1058093769518980213" fileName="AbstractManager.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1058093769519031418" fileName="AbstractManager.java" startLine="50" startPosition="41" endLine="55" endPosition="11" />
-    <scopeInfo nodeId="1058093769519031504" fileName="AbstractManager.java" startLine="38" startPosition="72" endLine="44" endPosition="18" />
-    <scopeInfo nodeId="1058093769519031495" fileName="AbstractManager.java" startLine="38" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="1058093769519031434" fileName="AbstractManager.java" startLine="54" startPosition="33" endLine="55" endPosition="27" />
+    <scopeInfo nodeId="1058093769519031457" fileName="AbstractManager.java" startLine="57" startPosition="16" endLine="58" endPosition="121" />
+    <scopeInfo nodeId="2481791643076228577" fileName="AbstractManager.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1720905492960355658" fileName="AbstractManager.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1058093769518980213" fileName="AbstractManager.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="7084145171935594019" fileName="AbstractManager.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="1058093769519031418" fileName="AbstractManager.java" startLine="51" startPosition="41" endLine="56" endPosition="11" />
+    <scopeInfo nodeId="1058093769519031504" fileName="AbstractManager.java" startLine="39" startPosition="72" endLine="45" endPosition="18" />
+    <scopeInfo nodeId="1058093769519031495" fileName="AbstractManager.java" startLine="39" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="1058093769519031496" varName="className" />
       <varInfo nodeId="1058093769519031498" varName="language" />
       <varInfo nodeId="1058093769519031500" varName="log" />
     </scopeInfo>
-    <scopeInfo nodeId="1058093769519031405" fileName="AbstractManager.java" startLine="48" startPosition="32" endLine="59" endPosition="32">
+    <scopeInfo nodeId="1058093769519031405" fileName="AbstractManager.java" startLine="49" startPosition="32" endLine="60" endPosition="32">
       <varInfo nodeId="1058093769519031407" varName="postProcessorClass" />
     </scopeInfo>
-    <scopeInfo nodeId="1058093769519031399" fileName="AbstractManager.java" startLine="47" startPosition="28" endLine="61" endPosition="24" />
-    <scopeInfo nodeId="1058093769519031396" fileName="AbstractManager.java" startLine="47" startPosition="0" endLine="63" endPosition="0" />
-    <unitInfo nodeId="7084145171935594013" fileName="AbstractManager.java" startLine="12" startPosition="48" endLine="16" endPosition="3" unitName="jetbrains.mps.datatransfer.AbstractManager$1" />
-    <unitInfo nodeId="1058093769519031395" fileName="AbstractManager.java" startLine="31" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.datatransfer.AbstractManager$Descriptor" />
-    <unitInfo nodeId="1058093769518980128" fileName="AbstractManager.java" startLine="11" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.datatransfer.AbstractManager" />
+    <scopeInfo nodeId="1058093769519031399" fileName="AbstractManager.java" startLine="48" startPosition="28" endLine="62" endPosition="24" />
+    <scopeInfo nodeId="1058093769519031396" fileName="AbstractManager.java" startLine="48" startPosition="0" endLine="64" endPosition="0" />
+    <unitInfo nodeId="7084145171935594013" fileName="AbstractManager.java" startLine="12" startPosition="48" endLine="17" endPosition="3" unitName="jetbrains.mps.datatransfer.AbstractManager$1" />
+    <unitInfo nodeId="1058093769519031395" fileName="AbstractManager.java" startLine="32" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.datatransfer.AbstractManager$Descriptor" />
+    <unitInfo nodeId="1058093769518980128" fileName="AbstractManager.java" startLine="11" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.datatransfer.AbstractManager" />
   </root>
   <root nodeRef="r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.datatransfer)/1315898236614019768">
     <nodeInfo nodeId="1315898236614019770" fileName="PastePostProcessor.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConcept#()Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -79,148 +79,148 @@
     <nodeInfo nodeId="1058093769519026572" fileName="CopyPasteManager.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPostProcessors" />
     <nodeInfo nodeId="5948027493682745517" fileName="CopyPasteManager.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPreProcessors" />
     <nodeInfo nodeId="5948027493682745607" fileName="CopyPasteManager.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLoaded" />
-    <nodeInfo nodeId="2481791643076228558" fileName="CopyPasteManager.java" startLine="35" startPosition="27" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2481791643076228564" fileName="CopyPasteManager.java" startLine="37" startPosition="5" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2481791643076228567" fileName="CopyPasteManager.java" startLine="38" startPosition="0" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2481791643076228536" fileName="CopyPasteManager.java" startLine="39" startPosition="20" endLine="40" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2481791643076228539" fileName="CopyPasteManager.java" startLine="43" startPosition="25" endLine="44" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2481791643076228542" fileName="CopyPasteManager.java" startLine="44" startPosition="20" endLine="45" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5948027493683574958" fileName="CopyPasteManager.java" startLine="48" startPosition="89" endLine="49" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5948027493683574397" fileName="CopyPasteManager.java" startLine="49" startPosition="55" endLine="50" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5948027493683574408" fileName="CopyPasteManager.java" startLine="51" startPosition="53" endLine="52" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5948027493683574995" fileName="CopyPasteManager.java" startLine="55" startPosition="37" endLine="56" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1617630891477327851" fileName="CopyPasteManager.java" startLine="62" startPosition="43" endLine="63" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1617630891477327876" fileName="CopyPasteManager.java" startLine="64" startPosition="32" endLine="65" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1617630891477329388" fileName="CopyPasteManager.java" startLine="68" startPosition="37" endLine="69" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5948027493683074571" fileName="CopyPasteManager.java" startLine="75" startPosition="58" endLine="76" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5948027493683074576" fileName="CopyPasteManager.java" startLine="76" startPosition="11" endLine="77" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1058093769519027092" fileName="CopyPasteManager.java" startLine="84" startPosition="62" endLine="85" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519031754" fileName="CopyPasteManager.java" startLine="85" startPosition="11" endLine="86" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1058093769519026456" fileName="CopyPasteManager.java" startLine="94" startPosition="19" endLine="95" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1058093769519026370" fileName="CopyPasteManager.java" startLine="96" startPosition="5" endLine="97" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5948027493682745690" fileName="CopyPasteManager.java" startLine="97" startPosition="113" endLine="98" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519026214" fileName="CopyPasteManager.java" startLine="99" startPosition="98" endLine="100" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2197509460969615726" fileName="CopyPasteManager.java" startLine="101" startPosition="43" endLine="102" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="2197509460969624901" fileName="CopyPasteManager.java" startLine="105" startPosition="40" endLine="106" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2197509460969624961" fileName="CopyPasteManager.java" startLine="110" startPosition="194" endLine="111" endPosition="430" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2197509460969624995" fileName="CopyPasteManager.java" startLine="113" startPosition="196" endLine="114" endPosition="437" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2197509460969624926" fileName="CopyPasteManager.java" startLine="115" startPosition="9" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5948027493682745660" fileName="CopyPasteManager.java" startLine="118" startPosition="5" endLine="119" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1058093769519026639" fileName="CopyPasteManager.java" startLine="122" startPosition="29" endLine="123" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5948027493682745599" fileName="CopyPasteManager.java" startLine="123" startPosition="28" endLine="124" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5948027493682745626" fileName="CopyPasteManager.java" startLine="124" startPosition="27" endLine="125" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1617630891477333003" fileName="CopyPasteManager.java" startLine="128" startPosition="48" endLine="129" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2481791643076228558" fileName="CopyPasteManager.java" startLine="36" startPosition="27" endLine="37" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2481791643076228564" fileName="CopyPasteManager.java" startLine="38" startPosition="5" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2481791643076228567" fileName="CopyPasteManager.java" startLine="39" startPosition="0" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2481791643076228536" fileName="CopyPasteManager.java" startLine="40" startPosition="20" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2481791643076228539" fileName="CopyPasteManager.java" startLine="45" startPosition="25" endLine="46" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2481791643076228542" fileName="CopyPasteManager.java" startLine="46" startPosition="20" endLine="47" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5948027493683574958" fileName="CopyPasteManager.java" startLine="50" startPosition="89" endLine="51" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5948027493683574397" fileName="CopyPasteManager.java" startLine="51" startPosition="55" endLine="52" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5948027493683574408" fileName="CopyPasteManager.java" startLine="53" startPosition="53" endLine="54" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5948027493683574995" fileName="CopyPasteManager.java" startLine="57" startPosition="37" endLine="58" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1617630891477327851" fileName="CopyPasteManager.java" startLine="64" startPosition="43" endLine="65" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1617630891477327876" fileName="CopyPasteManager.java" startLine="66" startPosition="32" endLine="67" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1617630891477329388" fileName="CopyPasteManager.java" startLine="70" startPosition="37" endLine="71" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5948027493683074571" fileName="CopyPasteManager.java" startLine="77" startPosition="58" endLine="78" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5948027493683074576" fileName="CopyPasteManager.java" startLine="78" startPosition="11" endLine="79" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1058093769519027092" fileName="CopyPasteManager.java" startLine="86" startPosition="62" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519031754" fileName="CopyPasteManager.java" startLine="87" startPosition="11" endLine="88" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1058093769519026456" fileName="CopyPasteManager.java" startLine="96" startPosition="19" endLine="97" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1058093769519026370" fileName="CopyPasteManager.java" startLine="98" startPosition="5" endLine="99" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5948027493682745690" fileName="CopyPasteManager.java" startLine="99" startPosition="113" endLine="100" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519026214" fileName="CopyPasteManager.java" startLine="101" startPosition="98" endLine="102" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2197509460969615726" fileName="CopyPasteManager.java" startLine="103" startPosition="43" endLine="104" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="2197509460969624901" fileName="CopyPasteManager.java" startLine="107" startPosition="40" endLine="108" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2197509460969624961" fileName="CopyPasteManager.java" startLine="112" startPosition="194" endLine="113" endPosition="430" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2197509460969624995" fileName="CopyPasteManager.java" startLine="115" startPosition="196" endLine="116" endPosition="437" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2197509460969624926" fileName="CopyPasteManager.java" startLine="117" startPosition="9" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5948027493682745660" fileName="CopyPasteManager.java" startLine="120" startPosition="5" endLine="121" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1058093769519026639" fileName="CopyPasteManager.java" startLine="125" startPosition="29" endLine="126" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5948027493682745599" fileName="CopyPasteManager.java" startLine="126" startPosition="28" endLine="127" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5948027493682745626" fileName="CopyPasteManager.java" startLine="127" startPosition="27" endLine="128" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1617630891477333003" fileName="CopyPasteManager.java" startLine="131" startPosition="48" endLine="132" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1622834379618551048" fileName="CopyPasteManager.java" startLine="31" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CopyPasteManager#(Ljetbrains/mps/reloading/ClassLoaderManager;)V" />
-    <nodeInfo nodeId="2481791643076228549" fileName="CopyPasteManager.java" startLine="34" startPosition="22" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5948027493683574988" fileName="CopyPasteManager.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1617630891477329381" fileName="CopyPasteManager.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1058093769519026445" fileName="CopyPasteManager.java" startLine="93" startPosition="23" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1058093769519026220" fileName="CopyPasteManager.java" startLine="100" startPosition="85" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2197509460969624306" fileName="CopyPasteManager.java" startLine="105" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2197509460969624955" fileName="CopyPasteManager.java" startLine="109" startPosition="32" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2197509460969624989" fileName="CopyPasteManager.java" startLine="112" startPosition="9" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1617630891477332988" fileName="CopyPasteManager.java" startLine="128" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/datatransfer/CopyPasteManager;" />
-    <nodeInfo nodeId="1720905492960354568" fileName="CopyPasteManager.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="5948027493683074601" fileName="CopyPasteManager.java" startLine="77" startPosition="112" endLine="81" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1058093769519031313" fileName="CopyPasteManager.java" startLine="86" startPosition="115" endLine="90" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5948027493683574976" fileName="CopyPasteManager.java" startLine="53" startPosition="12" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1617630891477327895" fileName="CopyPasteManager.java" startLine="66" startPosition="12" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2197509460969615846" fileName="CopyPasteManager.java" startLine="103" startPosition="7" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1058093769519024419" fileName="CopyPasteManager.java" startLine="122" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearCaches#()V" />
-    <nodeInfo nodeId="5948027493683574418" fileName="CopyPasteManager.java" startLine="53" startPosition="10" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5948027493683575022" fileName="CopyPasteManager.java" startLine="66" startPosition="10" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1720905492960354560" fileName="CopyPasteManager.java" startLine="34" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="5948027493683074536" fileName="CopyPasteManager.java" startLine="75" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreProcessor#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/datatransfer/CopyPreProcessor;" />
-    <nodeInfo nodeId="1058093769519024451" fileName="CopyPasteManager.java" startLine="84" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPostProcessor#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/datatransfer/PastePostProcessor;" />
-    <nodeInfo nodeId="5948027493683574406" fileName="CopyPasteManager.java" startLine="50" startPosition="97" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1617630891477327866" fileName="CopyPasteManager.java" startLine="63" startPosition="101" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2197509460969624923" fileName="CopyPasteManager.java" startLine="108" startPosition="9" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1622834379618786064" fileName="CopyPasteManager.java" startLine="62" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="postProcessNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5948027493683571719" fileName="CopyPasteManager.java" startLine="48" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="preProcessNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1058093769519026207" fileName="CopyPasteManager.java" startLine="98" startPosition="110" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1058093769519024494" fileName="CopyPasteManager.java" startLine="93" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="load#()V" />
+    <nodeInfo nodeId="2481791643076228549" fileName="CopyPasteManager.java" startLine="35" startPosition="22" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5948027493683574988" fileName="CopyPasteManager.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1617630891477329381" fileName="CopyPasteManager.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1058093769519026445" fileName="CopyPasteManager.java" startLine="95" startPosition="23" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1058093769519026220" fileName="CopyPasteManager.java" startLine="102" startPosition="85" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2197509460969624306" fileName="CopyPasteManager.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="2197509460969624955" fileName="CopyPasteManager.java" startLine="111" startPosition="32" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2197509460969624989" fileName="CopyPasteManager.java" startLine="114" startPosition="9" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1617630891477332988" fileName="CopyPasteManager.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/datatransfer/CopyPasteManager;" />
+    <nodeInfo nodeId="5948027493683074601" fileName="CopyPasteManager.java" startLine="79" startPosition="112" endLine="83" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1058093769519031313" fileName="CopyPasteManager.java" startLine="88" startPosition="115" endLine="92" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1720905492960354568" fileName="CopyPasteManager.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="5948027493683574976" fileName="CopyPasteManager.java" startLine="55" startPosition="12" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1617630891477327895" fileName="CopyPasteManager.java" startLine="68" startPosition="12" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2197509460969615846" fileName="CopyPasteManager.java" startLine="105" startPosition="7" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5948027493683574418" fileName="CopyPasteManager.java" startLine="55" startPosition="10" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5948027493683575022" fileName="CopyPasteManager.java" startLine="68" startPosition="10" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1058093769519024419" fileName="CopyPasteManager.java" startLine="124" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearCaches#()V" />
+    <nodeInfo nodeId="5948027493683074536" fileName="CopyPasteManager.java" startLine="77" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreProcessor#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/datatransfer/CopyPreProcessor;" />
+    <nodeInfo nodeId="1058093769519024451" fileName="CopyPasteManager.java" startLine="86" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPostProcessor#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/datatransfer/PastePostProcessor;" />
+    <nodeInfo nodeId="1720905492960354560" fileName="CopyPasteManager.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="5948027493683574406" fileName="CopyPasteManager.java" startLine="52" startPosition="97" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1617630891477327866" fileName="CopyPasteManager.java" startLine="65" startPosition="101" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2197509460969624923" fileName="CopyPasteManager.java" startLine="110" startPosition="9" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1622834379618786064" fileName="CopyPasteManager.java" startLine="64" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="postProcessNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5948027493683571719" fileName="CopyPasteManager.java" startLine="50" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="preProcessNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1058093769519026207" fileName="CopyPasteManager.java" startLine="100" startPosition="110" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1058093769519024494" fileName="CopyPasteManager.java" startLine="95" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="load#()V" />
     <scopeInfo nodeId="1622834379618551051" fileName="CopyPasteManager.java" startLine="31" startPosition="66" endLine="31" endPosition="66" />
-    <scopeInfo nodeId="2481791643076228550" fileName="CopyPasteManager.java" startLine="35" startPosition="27" endLine="36" endPosition="63" />
-    <scopeInfo nodeId="5948027493683574407" fileName="CopyPasteManager.java" startLine="51" startPosition="53" endLine="52" endPosition="51" />
-    <scopeInfo nodeId="5948027493683574989" fileName="CopyPasteManager.java" startLine="55" startPosition="37" endLine="56" endPosition="52" />
-    <scopeInfo nodeId="1617630891477327875" fileName="CopyPasteManager.java" startLine="64" startPosition="32" endLine="65" endPosition="41" />
-    <scopeInfo nodeId="1617630891477329382" fileName="CopyPasteManager.java" startLine="68" startPosition="37" endLine="69" endPosition="30" />
-    <scopeInfo nodeId="1058093769519026446" fileName="CopyPasteManager.java" startLine="94" startPosition="19" endLine="95" endPosition="13" />
-    <scopeInfo nodeId="2197509460969615722" fileName="CopyPasteManager.java" startLine="101" startPosition="43" endLine="102" endPosition="17" />
-    <scopeInfo nodeId="2197509460969624307" fileName="CopyPasteManager.java" startLine="105" startPosition="40" endLine="106" endPosition="110" />
-    <scopeInfo nodeId="2197509460969624960" fileName="CopyPasteManager.java" startLine="110" startPosition="194" endLine="111" endPosition="430" />
-    <scopeInfo nodeId="2197509460969624994" fileName="CopyPasteManager.java" startLine="113" startPosition="196" endLine="114" endPosition="437" />
-    <scopeInfo nodeId="1617630891477332991" fileName="CopyPasteManager.java" startLine="128" startPosition="48" endLine="129" endPosition="20" />
+    <scopeInfo nodeId="2481791643076228550" fileName="CopyPasteManager.java" startLine="36" startPosition="27" endLine="37" endPosition="63" />
+    <scopeInfo nodeId="5948027493683574407" fileName="CopyPasteManager.java" startLine="53" startPosition="53" endLine="54" endPosition="51" />
+    <scopeInfo nodeId="5948027493683574989" fileName="CopyPasteManager.java" startLine="57" startPosition="37" endLine="58" endPosition="52" />
+    <scopeInfo nodeId="1617630891477327875" fileName="CopyPasteManager.java" startLine="66" startPosition="32" endLine="67" endPosition="41" />
+    <scopeInfo nodeId="1617630891477329382" fileName="CopyPasteManager.java" startLine="70" startPosition="37" endLine="71" endPosition="30" />
+    <scopeInfo nodeId="1058093769519026446" fileName="CopyPasteManager.java" startLine="96" startPosition="19" endLine="97" endPosition="13" />
+    <scopeInfo nodeId="2197509460969615722" fileName="CopyPasteManager.java" startLine="103" startPosition="43" endLine="104" endPosition="17" />
+    <scopeInfo nodeId="2197509460969624307" fileName="CopyPasteManager.java" startLine="107" startPosition="40" endLine="108" endPosition="110" />
+    <scopeInfo nodeId="2197509460969624960" fileName="CopyPasteManager.java" startLine="112" startPosition="194" endLine="113" endPosition="430" />
+    <scopeInfo nodeId="2197509460969624994" fileName="CopyPasteManager.java" startLine="115" startPosition="196" endLine="116" endPosition="437" />
+    <scopeInfo nodeId="1617630891477332991" fileName="CopyPasteManager.java" startLine="131" startPosition="48" endLine="132" endPosition="20" />
     <scopeInfo nodeId="1622834379618551048" fileName="CopyPasteManager.java" startLine="31" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1622834379618764256" varName="classLoaderManager" />
     </scopeInfo>
-    <scopeInfo nodeId="1720905492960354571" fileName="CopyPasteManager.java" startLine="43" startPosition="25" endLine="45" endPosition="20" />
-    <scopeInfo nodeId="5948027493683574988" fileName="CopyPasteManager.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="1720905492960354571" fileName="CopyPasteManager.java" startLine="45" startPosition="25" endLine="47" endPosition="20" />
+    <scopeInfo nodeId="5948027493683574988" fileName="CopyPasteManager.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="5948027493683574988" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1617630891477329381" fileName="CopyPasteManager.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="1617630891477329381" fileName="CopyPasteManager.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1617630891477329381" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2197509460969624306" fileName="CopyPasteManager.java" startLine="105" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="2197509460969624306" fileName="CopyPasteManager.java" startLine="107" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="2197509460969624306" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2197509460969624955" fileName="CopyPasteManager.java" startLine="109" startPosition="32" endLine="112" endPosition="9">
+    <scopeInfo nodeId="2197509460969624955" fileName="CopyPasteManager.java" startLine="111" startPosition="32" endLine="114" endPosition="9">
       <varInfo nodeId="2197509460969624956" varName="preProcessor" />
     </scopeInfo>
-    <scopeInfo nodeId="2197509460969624989" fileName="CopyPasteManager.java" startLine="112" startPosition="9" endLine="115" endPosition="9">
+    <scopeInfo nodeId="2197509460969624989" fileName="CopyPasteManager.java" startLine="114" startPosition="9" endLine="117" endPosition="9">
       <varInfo nodeId="2197509460969624990" varName="postProcessor" />
     </scopeInfo>
-    <scopeInfo nodeId="1058093769519024422" fileName="CopyPasteManager.java" startLine="122" startPosition="29" endLine="125" endPosition="21" />
-    <scopeInfo nodeId="1617630891477332988" fileName="CopyPasteManager.java" startLine="128" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="1720905492960354568" fileName="CopyPasteManager.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="5948027493683574419" fileName="CopyPasteManager.java" startLine="53" startPosition="12" endLine="58" endPosition="9" />
-    <scopeInfo nodeId="5948027493683575023" fileName="CopyPasteManager.java" startLine="66" startPosition="12" endLine="71" endPosition="9" />
-    <scopeInfo nodeId="1058093769519024419" fileName="CopyPasteManager.java" startLine="122" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="1720905492960354563" fileName="CopyPasteManager.java" startLine="34" startPosition="22" endLine="40" endPosition="17" />
-    <scopeInfo nodeId="5948027493683074539" fileName="CopyPasteManager.java" startLine="75" startPosition="58" endLine="81" endPosition="6">
+    <scopeInfo nodeId="1058093769519024422" fileName="CopyPasteManager.java" startLine="125" startPosition="29" endLine="128" endPosition="21" />
+    <scopeInfo nodeId="1617630891477332988" fileName="CopyPasteManager.java" startLine="131" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="1720905492960354568" fileName="CopyPasteManager.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="5948027493683574419" fileName="CopyPasteManager.java" startLine="55" startPosition="12" endLine="60" endPosition="9" />
+    <scopeInfo nodeId="5948027493683575023" fileName="CopyPasteManager.java" startLine="68" startPosition="12" endLine="73" endPosition="9" />
+    <scopeInfo nodeId="1720905492960354563" fileName="CopyPasteManager.java" startLine="35" startPosition="22" endLine="41" endPosition="17" />
+    <scopeInfo nodeId="5948027493683074539" fileName="CopyPasteManager.java" startLine="77" startPosition="58" endLine="83" endPosition="6">
       <varInfo nodeId="5948027493683074577" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="1058093769519024454" fileName="CopyPasteManager.java" startLine="84" startPosition="62" endLine="90" endPosition="6">
+    <scopeInfo nodeId="1058093769519024454" fileName="CopyPasteManager.java" startLine="86" startPosition="62" endLine="92" endPosition="6">
       <varInfo nodeId="1058093769519031755" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="2197509460969624925" fileName="CopyPasteManager.java" startLine="109" startPosition="32" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="1720905492960354560" fileName="CopyPasteManager.java" startLine="34" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="5948027493683074536" fileName="CopyPasteManager.java" startLine="75" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="1058093769519024419" fileName="CopyPasteManager.java" startLine="124" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="2197509460969624925" fileName="CopyPasteManager.java" startLine="111" startPosition="32" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="5948027493683074536" fileName="CopyPasteManager.java" startLine="77" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="5948027493683074568" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="1058093769519024451" fileName="CopyPasteManager.java" startLine="84" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="1058093769519024451" fileName="CopyPasteManager.java" startLine="86" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="1058093769519024465" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="2197509460969624923" fileName="CopyPasteManager.java" startLine="108" startPosition="9" endLine="117" endPosition="7">
+    <scopeInfo nodeId="1720905492960354560" fileName="CopyPasteManager.java" startLine="34" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2197509460969624923" fileName="CopyPasteManager.java" startLine="110" startPosition="9" endLine="119" endPosition="7">
       <varInfo nodeId="2197509460969624924" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="1622834379618786067" fileName="CopyPasteManager.java" startLine="62" startPosition="43" endLine="72" endPosition="5">
+    <scopeInfo nodeId="1622834379618786067" fileName="CopyPasteManager.java" startLine="64" startPosition="43" endLine="74" endPosition="5">
       <varInfo nodeId="1617630891477327852" varName="postProcessor" />
     </scopeInfo>
-    <scopeInfo nodeId="5948027493683571722" fileName="CopyPasteManager.java" startLine="48" startPosition="89" endLine="59" endPosition="5">
+    <scopeInfo nodeId="5948027493683571722" fileName="CopyPasteManager.java" startLine="50" startPosition="89" endLine="61" endPosition="5">
       <varInfo nodeId="5948027493683574398" varName="preProcessor" />
       <varInfo nodeId="5948027493683574959" varName="sourceNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1622834379618786064" fileName="CopyPasteManager.java" startLine="62" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1622834379618786064" fileName="CopyPasteManager.java" startLine="64" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1622834379618786074" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5948027493683571719" fileName="CopyPasteManager.java" startLine="48" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="5948027493683571719" fileName="CopyPasteManager.java" startLine="50" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="5948027493683571741" varName="copy" />
       <varInfo nodeId="5948027493683571804" varName="newNodesToSourceNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1058093769519026213" fileName="CopyPasteManager.java" startLine="99" startPosition="98" endLine="117" endPosition="7">
+    <scopeInfo nodeId="1058093769519026213" fileName="CopyPasteManager.java" startLine="101" startPosition="98" endLine="119" endPosition="7">
       <varInfo nodeId="1058093769519026215" varName="actionsModelDescriptor" />
       <varInfo nodeId="2197509460969615847" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="1058093769519026207" fileName="CopyPasteManager.java" startLine="98" startPosition="110" endLine="118" endPosition="5">
+    <scopeInfo nodeId="1058093769519026207" fileName="CopyPasteManager.java" startLine="100" startPosition="110" endLine="120" endPosition="5">
       <varInfo nodeId="1058093769519026211" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="1058093769519024497" fileName="CopyPasteManager.java" startLine="93" startPosition="23" endLine="119" endPosition="20" />
-    <scopeInfo nodeId="1058093769519024494" fileName="CopyPasteManager.java" startLine="93" startPosition="0" endLine="121" endPosition="0" />
-    <unitInfo nodeId="5948027493683574988" fileName="CopyPasteManager.java" startLine="54" startPosition="76" endLine="58" endPosition="7" unitName="jetbrains.mps.datatransfer.CopyPasteManager$1" />
-    <unitInfo nodeId="1617630891477329381" fileName="CopyPasteManager.java" startLine="67" startPosition="76" endLine="71" endPosition="7" unitName="jetbrains.mps.datatransfer.CopyPasteManager$2" />
-    <unitInfo nodeId="2197509460969624306" fileName="CopyPasteManager.java" startLine="104" startPosition="109" endLine="108" endPosition="7" unitName="jetbrains.mps.datatransfer.CopyPasteManager$3" />
-    <unitInfo nodeId="1622834379618551046" fileName="CopyPasteManager.java" startLine="24" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.datatransfer.CopyPasteManager" />
+    <scopeInfo nodeId="1058093769519024497" fileName="CopyPasteManager.java" startLine="95" startPosition="23" endLine="121" endPosition="20" />
+    <scopeInfo nodeId="1058093769519024494" fileName="CopyPasteManager.java" startLine="95" startPosition="0" endLine="123" endPosition="0" />
+    <unitInfo nodeId="5948027493683574988" fileName="CopyPasteManager.java" startLine="56" startPosition="76" endLine="60" endPosition="7" unitName="jetbrains.mps.datatransfer.CopyPasteManager$1" />
+    <unitInfo nodeId="1617630891477329381" fileName="CopyPasteManager.java" startLine="69" startPosition="76" endLine="73" endPosition="7" unitName="jetbrains.mps.datatransfer.CopyPasteManager$2" />
+    <unitInfo nodeId="2197509460969624306" fileName="CopyPasteManager.java" startLine="106" startPosition="116" endLine="110" endPosition="7" unitName="jetbrains.mps.datatransfer.CopyPasteManager$3" />
+    <unitInfo nodeId="1622834379618551046" fileName="CopyPasteManager.java" startLine="24" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.datatransfer.CopyPasteManager" />
   </root>
   <root nodeRef="r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.datatransfer)/5948027493682472176">
     <nodeInfo nodeId="5948027493682472178" fileName="CopyPreProcessor.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConcept#()Lorg/jetbrains/mps/openapi/model/SNode;" />

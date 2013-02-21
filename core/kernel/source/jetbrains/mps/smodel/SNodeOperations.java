@@ -68,9 +68,11 @@ public class SNodeOperations {
     if (lookupHierarchy) {
       final SNode finalConceptDeclaration = conceptDeclaration;
       return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
+        @Override
         public List<SNode> compute() {
           return new ConceptAndSuperConceptsScope(finalConceptDeclaration).
             getNodes(new Condition<SNode>() {
+              @Override
               public boolean met(SNode n) {
                 if (SNodeUtil.isInstanceOfConceptLink(n)) {
                   SNode conceptLinkDeclaration = SNodeUtil.getConceptLink_Declaration(n);

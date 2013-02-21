@@ -39,12 +39,14 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
     super(project, entityName);
   }
 
+  @Override
   public String doGetFullName(Object element) {
     NodePresentation presentation = (NodePresentation) ((NavigationItem) element).getPresentation();
     assert presentation != null;
     return presentation.getModelName() + "." + presentation.getPresentableText();
   }
 
+  @Override
   public String doGetObjectName(SNode node) {
     String name = node.getName();
     if (name == null) {
@@ -53,12 +55,15 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
     return name;
   }
 
+  @Override
   public NavigationItem doGetNavigationItem(SNode node) {
     return new BaseNodeItem(node) {
       private Project myProject = getProject();
 
+      @Override
       public void navigate(boolean requestFocus) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             SNode node = getNode();
             if (node == null || jetbrains.mps.util.SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel().getModelDescriptor() == null) {
@@ -73,6 +78,7 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
     };
   }
 
+  @Override
   protected String doGetCheckBoxName() {
     return "Include &non-&&project models";
   }

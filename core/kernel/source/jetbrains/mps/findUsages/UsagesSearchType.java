@@ -16,7 +16,6 @@
 package jetbrains.mps.findUsages;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -35,6 +34,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 class UsagesSearchType extends SearchType<SReference, SNode> {
+  @Override
   public MultiMap<SModel, SNode> findMatchingModelsInCache(Set<SNode> nodes, Iterable<SModel> models, @Nullable Computable<Boolean> callback) {
     MultiMap<SModel, SNode> result = new MultiMap<SModel, SNode>();
     MultiMap<FastFindSupport, SModel> gm = groupModelByFastFindSupport(models);
@@ -51,6 +51,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
     return result;
   }
 
+  @Override
   public Set<SReference> findInModel(MultiMap<org.jetbrains.mps.openapi.model.SModel, SNode> models, @Nullable Computable<Boolean> callback) {
     Set<SReference> result = new HashSet<SReference>();
     for (Entry<SModel, Collection<SNode>> e : models.entrySet()) {
@@ -60,7 +61,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
       Collection<SNode> nodes = e.getValue();
       Set<StaticReferenceInfo> srefs = new THashSet<StaticReferenceInfo>();
       for (SNode n : nodes) {
-        SModelReference mr = n.getModel().getSModelReference();
+        SModelReference mr = (SModelReference) n.getModel().getReference();
         srefs.add(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), ((SNodeId) n.getNodeId())));
       }
 

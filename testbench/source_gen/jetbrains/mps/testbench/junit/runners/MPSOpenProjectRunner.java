@@ -34,11 +34,13 @@ public class MPSOpenProjectRunner extends Runner {
     doOpenProject(testClass);
   }
 
+  @Override
   public void run(RunNotifier notifier) {
     notifier.fireTestStarted(getDescription());
     notifier.fireTestFinished(getDescription());
   }
 
+  @Override
   public Description getDescription() {
     if (myDescription == null) {
       myDescription = Description.createSuiteDescription("\"" + ourMPSProject.getName() + "\" project opened");

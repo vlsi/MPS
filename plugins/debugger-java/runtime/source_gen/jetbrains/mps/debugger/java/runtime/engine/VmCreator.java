@@ -78,6 +78,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
   }
 
   @Nullable
+  @Override
   public ExecutionResult startSession(final Executor executor, final ProgramRunner runner, final RunProfileState state, Project project) throws ExecutionException {
     assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
     myConnectionSettings = createLocalConnectionSettings(state);
@@ -124,6 +125,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
       //  RemoteProcessHandler on the other hand will call debugProcess.stop() as a part of destroyProcess() and detachProcess() implementation, 
       //  so we shouldn't add the listener to avoid calling stop() twice 
       processHandler.addProcessListener(new ProcessAdapter() {
+        @Override
         public void processWillTerminate(ProcessEvent event, boolean willBeDestroyed) {
           if (event.getProcessHandler() != processHandler) {
             return;
@@ -157,6 +159,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
     semaphore.down();
     final DebugProcessMulticaster processMulticaster = myEventsProcessor.getMulticaster();
     processMulticaster.addListener(new DebugProcessAdapter() {
+      @Override
       public void connectorIsReady() {
         VmCreator.LOG.debug("Connector is ready.");
         semaphore.up();
@@ -183,6 +186,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
         }
         if (vm.value != null) {
           executeAfterProcessStarted(new Runnable() {
+            @Override
             public void run() {
               VmCreator.LOG.debug("Schedule commit command.");
               myEventsProcessor.schedule(new _FunctionTypes._void_P0_E0() {
@@ -341,6 +345,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
     }
   }
 
+  @Override
   public DebugSession getDebugSession() {
     return myDebuggerSession;
   }
@@ -365,6 +370,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
       removeProcessListener(this);
     }
 
+    @Override
     public void startNotified(ProcessEvent event) {
       run();
     }

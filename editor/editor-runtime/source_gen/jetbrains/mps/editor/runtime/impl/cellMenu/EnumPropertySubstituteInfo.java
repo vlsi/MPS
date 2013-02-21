@@ -27,6 +27,7 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
     myPropertyDeclaration = propertyDeclaration;
   }
 
+  @Override
   protected List<INodeSubstituteAction> createActions() {
     SNode enumDataType = (SNode) SLinkOperations.getTarget(myPropertyDeclaration, "dataType", false);
     List<INodeSubstituteAction> actions = ListSequence.fromList(new ArrayList<INodeSubstituteAction>(ListSequence.fromList(SLinkOperations.getTargets(enumDataType, "member", true)).count()));

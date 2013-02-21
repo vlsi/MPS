@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.BooleanSequence" file="BooleanSequence.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.Generics1_Test" file="Generics1_Test.java">
@@ -16,6 +17,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.IntegerSequence" file="IntegerSequence.java">
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence" file="MySequence.java">

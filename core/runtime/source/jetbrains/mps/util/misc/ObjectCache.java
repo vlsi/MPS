@@ -64,6 +64,7 @@ public final class ObjectCache<K, V> {
 
   public void clear() {
     _firstGenerationQueue = new LinkedHashMap<K, V>() {
+      @Override
       protected boolean removeEldestEntry(final Map.Entry<K, V> eldest) {
         final boolean result = size() + _secondGenerationQueue.size() > _size;
         if (result) {
@@ -74,6 +75,7 @@ public final class ObjectCache<K, V> {
     };
     final int secondGenSizeBound = (int) (_size * _secondGenSizeRatio);
     _secondGenerationQueue = new LinkedHashMap<K, V>() {
+      @Override
       protected boolean removeEldestEntry(final Map.Entry<K, V> eldest) {
         final boolean result = size() > secondGenSizeBound;
         if (result) {
@@ -206,14 +208,17 @@ public final class ObjectCache<K, V> {
       _secondGenIterator = cache._secondGenerationQueue.keySet().iterator();
     }
 
+    @Override
     public boolean hasNext() {
       return _firstGenIterator.hasNext() || _secondGenIterator.hasNext();
     }
 
+    @Override
     public K next() {
       return (_firstGenIterator.hasNext()) ? _firstGenIterator.next() : _secondGenIterator.next();
     }
 
+    @Override
     public void remove() {
       if (_firstGenIterator.hasNext()) {
         _firstGenIterator.remove();
@@ -232,14 +237,17 @@ public final class ObjectCache<K, V> {
       _secondGenIterator = cache._secondGenerationQueue.values().iterator();
     }
 
+    @Override
     public boolean hasNext() {
       return _firstGenIterator.hasNext() || _secondGenIterator.hasNext();
     }
 
+    @Override
     public V next() {
       return (_firstGenIterator.hasNext()) ? _firstGenIterator.next() : _secondGenIterator.next();
     }
 
+    @Override
     public void remove() {
       if (_firstGenIterator.hasNext()) {
         _firstGenIterator.remove();

@@ -50,10 +50,12 @@ public class DependencyTreeNode extends MPSTreeNode {
     setText("<html>" + linktype + myLink.module.getModuleFqName() + "... <b>--></b></html>");
   }
 
+  @Override
   public boolean isLeaf() {
     return children == null || children.isEmpty();
   }
 
+  @Override
   public void doubleClick() {
     if (myLinkedNode == null) {
       ProjectPane.getInstance(check_akkfj9_a0a0a0a8(((DependencyPathTree) getTree()), this)).selectModule(getModule(), false);

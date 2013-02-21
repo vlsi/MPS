@@ -173,6 +173,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
       action.run();
     } else {
       getTree().rebuildTreeLater(new Runnable() {
+        @Override
         public void run() {
           if (myProject.isDisposed()) return;
           action.run();
@@ -188,6 +189,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
       myEvents = events;
     }
 
+    @Override
     public void run() {
       if (myProject.isDisposed()) return;
 
@@ -206,6 +208,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
 
       for (SModelEvent event : myEvents) {
         event.accept(new SModelEventVisitorAdapter() {
+          @Override
           public void visitRootEvent(SModelRootEvent event) {
             changedNodes.add(event.getRoot());
 
@@ -220,6 +223,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
             }
           }
 
+          @Override
           public void visitChildEvent(SModelChildEvent event) {
             changedNodes.add(event.getParent());
             changedNodes.add(event.getChild());
@@ -233,6 +237,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
             }
           }
 
+          @Override
           public void visitPropertyEvent(SModelPropertyEvent event) {
             changedNodes.add(event.getNode());
 
@@ -243,6 +248,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
             }
           }
 
+          @Override
           public void visitReferenceEvent(SModelReferenceEvent event) {
             changedNodes.add(event.getReference().getSourceNode());
 

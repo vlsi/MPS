@@ -17,6 +17,7 @@ public class SubnodesSearchScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     if (myEnclosingNode == null) {
       return new ArrayList<SNode>();

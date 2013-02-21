@@ -7,6 +7,7 @@ public class Further extends Descendant {
   public Further() {
   }
 
+  @Override
   public void newDisp(Integer o) {
   }
 

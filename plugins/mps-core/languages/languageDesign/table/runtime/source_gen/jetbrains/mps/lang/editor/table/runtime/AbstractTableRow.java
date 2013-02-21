@@ -11,6 +11,7 @@ public abstract class AbstractTableRow implements TableRow {
     assert myNumber >= 0;
   }
 
+  @Override
   public int getRowNumber() {
     return myNumber;
   }

@@ -27,22 +27,27 @@ public class JavaNodePositionProvider extends NodePositionProvider implements Pr
     return TraceInfoUtil.getJavaNode(unitName, fileName, position);
   }
 
+  @Override
   public void projectOpened() {
   }
 
+  @Override
   public void projectClosed() {
   }
 
+  @Override
   public void initComponent() {
     myProvider.addProvider(this, NodeSourcePosition.class.getName());
   }
 
+  @Override
   public void disposeComponent() {
     myProvider.removeProvider(this);
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Java Node Position Provider";
   }

@@ -25,11 +25,13 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.make.FileWithPosition;
 
 class FileWithPositionNavigationHandler implements INavigationHandler<FileWithPosition> {
+  @Override
   public boolean canNavigate(FileWithPosition pos) {
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(pos.getFile());
     return vf != null;
   }
 
+  @Override
   public void navigate(FileWithPosition pos, Project project, boolean focus, boolean select) {
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(pos.getFile());
     if (vf == null) return;

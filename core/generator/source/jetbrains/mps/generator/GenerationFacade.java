@@ -146,6 +146,7 @@ public class GenerationFacade {
     options.getGenerationTracer().startTracing();
 
     ModelAccess.instance().requireWrite(new Runnable() {
+      @Override
       public void run() {
         for (SModel d : inputModels) {
           if (d instanceof EditableSModel && ((EditableSModel) d).needsReloading()) {
@@ -181,6 +182,7 @@ public class GenerationFacade {
     if (result[0]) {
       try {
         ModelAccess.instance().requireWrite(new Runnable() {
+          @Override
           public void run() {
             //fireModelsGenerated(Collections.unmodifiableList(inputModels), result[0]);
           }
@@ -193,6 +195,7 @@ public class GenerationFacade {
     options.getGenerationTracer().finishTracing();
 
     ModelAccess.instance().requireWrite(new Runnable() {
+      @Override
       public void run() {
         //fireAfterGeneration(inputModels, options, invocationContext);
         transientModelsComponent.publishAll();

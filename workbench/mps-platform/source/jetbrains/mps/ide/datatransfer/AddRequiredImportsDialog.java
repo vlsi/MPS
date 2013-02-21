@@ -91,6 +91,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
     }
   }
 
+  @Override
   protected void doOKAction() {
     Object[] values;
     if (myModelsList != null) {
@@ -149,6 +150,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
     return panel;
   }
 
+  @Override
   protected String getDimensionServiceKey() {
     return "#jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog2";
   }
@@ -172,6 +174,7 @@ public class AddRequiredImportsDialog extends DialogWrapper {
       setOpaque(true);
     }
 
+    @Override
     public Component getListCellRendererComponent(
       JList list,
       Object value,

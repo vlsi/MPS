@@ -34,44 +34,53 @@ public class NonExistingClassPathItem extends RealClassPathItem {
     myClassPath = classPath;
   }
 
+  @Override
   public String getPath() {
     checkValidity();
     return myClassPath;
   }
 
+  @Override
   public boolean hasClass(String name) {
     return false;
   }
 
+  @Override
   public synchronized byte[] getClass(String name) {
     checkValidity();
     return null;
   }
 
+  @Override
   public ClassifierKind getClassifierKind(String name) {
     return null;
   }
 
+  @Override
   public URL getResource(String name) {
     checkValidity();
     return null;
   }
 
+  @Override
   public synchronized Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     return Collections.emptyList();
   }
 
+  @Override
   public synchronized Iterable<String> getSubpackages(String namespace) {
     checkValidity();
     return Collections.emptyList();
   }
 
+  @Override
   public long getClassesTimestamp(String namespace) {
     checkValidity();
     return -1;
   }
 
+  @Override
   public List<RealClassPathItem> flatten() {
     checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
@@ -79,6 +88,7 @@ public class NonExistingClassPathItem extends RealClassPathItem {
     return result;
   }
 
+  @Override
   public void accept(IClassPathItemVisitor visitor) {
     checkValidity();
     //visitor.visit(this);

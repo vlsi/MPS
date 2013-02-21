@@ -19,10 +19,12 @@ public abstract class SimpleMigration extends AbstractMigrationRefactoring {
     return false;
   }
 
+  @Override
   public String getFqNameOfConceptToSearchInstances() {
     return BehaviorReflection.invokeVirtual(String.class, applicableConcept, "virtual_getFqName_1213877404258", new Object[]{});
   }
 
+  @Override
   public String getAdditionalInfo() {
     return getName();
   }

@@ -22,6 +22,7 @@ public class Usage extends AccountingEvent {
     return myAmount;
   }
 
+  @Override
   public String toString() {
     return "Usage " + myAmount;
   }

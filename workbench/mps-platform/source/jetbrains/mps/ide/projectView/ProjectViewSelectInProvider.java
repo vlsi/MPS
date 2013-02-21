@@ -34,6 +34,7 @@ import org.jetbrains.annotations.Nullable;
 public class ProjectViewSelectInProvider implements ApplicationComponent {
   public SelectInContext getContext(jetbrains.mps.project.Project p, final SNodeReference node) {
     VirtualFile modelFile = ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+      @Override
       public VirtualFile compute() {
         if (node == null) return null;
         SNode n = node.resolve(MPSModuleRepository.getInstance());
@@ -44,14 +45,17 @@ public class ProjectViewSelectInProvider implements ApplicationComponent {
     return new VirtualFileSelectInContext(ProjectHelper.toIdeaProject(p), modelFile);
   }
 
+  @Override
   public void initComponent() {
 
   }
 
+  @Override
   public void disposeComponent() {
 
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return getClass().getSimpleName();
@@ -66,21 +70,25 @@ public class ProjectViewSelectInProvider implements ApplicationComponent {
       myVirtualFile = virtualFile;
     }
 
+    @Override
     @NotNull
     public Project getProject() {
       return myProject;
     }
 
+    @Override
     @NotNull
     public VirtualFile getVirtualFile() {
       return myVirtualFile;
     }
 
+    @Override
     @Nullable
     public Object getSelectorInFile() {
       return myVirtualFile;
     }
 
+    @Override
     @Nullable
     public FileEditorProvider getFileEditorProvider() {
       return null;

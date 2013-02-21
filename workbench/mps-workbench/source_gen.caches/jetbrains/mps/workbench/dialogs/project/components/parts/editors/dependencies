@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.editors.BooleanEditor" file="BooleanEditor.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JTable" />
@@ -11,6 +12,7 @@
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ModuleEditor" file="ModuleEditor.java">
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JTable" />
     <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />

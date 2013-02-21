@@ -115,11 +115,13 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" file="CurrentDifferenceAdapter.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.CurrentDifferenceBroadcaster" file="CurrentDifferenceBroadcaster.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -229,6 +231,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.util.ThreeState" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />

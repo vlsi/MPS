@@ -16,6 +16,7 @@ public class BigDecimalScalarOperations implements MatrixScalarOperations {
     myContext = context;
   }
 
+  @Override
   public BigDecimal cast(Object o) {
     if (o instanceof BigDecimal) {
       return (BigDecimal) o;
@@ -29,6 +30,7 @@ public class BigDecimalScalarOperations implements MatrixScalarOperations {
     throw new ClassCastException();
   }
 
+  @Override
   public BigDecimal add(Object o1, Object o2) {
     if (myContext == null) {
       return cast(o1).add(cast(o2));
@@ -36,6 +38,7 @@ public class BigDecimalScalarOperations implements MatrixScalarOperations {
     return cast(o1).add(cast(o2), myContext);
   }
 
+  @Override
   public BigDecimal mul(Object i1, Object o2) {
     if (myContext == null) {
       return cast(i1).multiply(cast(o2));
@@ -43,10 +46,12 @@ public class BigDecimalScalarOperations implements MatrixScalarOperations {
     return cast(i1).multiply(cast(o2), myContext);
   }
 
+  @Override
   public BigDecimal neg(Object i) {
     return cast(i).negate();
   }
 
+  @Override
   public BigDecimal inv(Object d) {
     if (myContext == null) {
       return BigDecimal.valueOf(1.0).divide(cast(d));
@@ -54,10 +59,12 @@ public class BigDecimalScalarOperations implements MatrixScalarOperations {
     return BigDecimal.valueOf(1.0).divide(cast(d), myContext);
   }
 
+  @Override
   public BigDecimal conj(Object o) {
     return cast(o);
   }
 
+  @Override
   public Object abs(Object o) {
     return cast(o).abs();
   }

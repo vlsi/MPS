@@ -36,6 +36,7 @@ public class NodeEditor extends BaseNodeEditor {
     editNode(node.getReference(), context, false);
   }
 
+  @Override
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(LangDataKeys.VIRTUAL_FILE.getName())) {
       return myVirtualFile;
@@ -50,6 +51,7 @@ public class NodeEditor extends BaseNodeEditor {
     return virtualFile != null ? Collections.singletonList(MPSUndoUtil.getDoc(virtualFile)) : Collections.<Document>emptyList();
   }
 
+  @Override
   public void showNode(SNode node, boolean select) {
     getCurrentEditorComponent().selectNode(node);
   }

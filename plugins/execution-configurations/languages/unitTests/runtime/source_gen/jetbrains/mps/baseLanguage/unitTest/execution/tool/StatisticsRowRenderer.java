@@ -77,6 +77,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     myAloneError.setFont(boldFont);
   }
 
+  @Override
   public Component getTableCellRendererComponent(JTable table, @Nullable Object value, boolean isSelected, boolean hasFocus, int row, int column) {
     if (value == null) {
       value = table.getModel().getValueAt(row, column);

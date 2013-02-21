@@ -25,22 +25,27 @@ public class SuppressErrorsMessage extends AbstractLeftEditorHighlighterMessage 
     super(node, owner, tooltip);
   }
 
+  @Override
   public Icon getIcon() {
     return IconManager.loadIcon(ICON_PATH, true);
   }
 
+  @Override
   public EditorMessageIconRenderer.IconRendererType getType() {
     return TYPE;
   }
 
+  @Override
   public EditorCell getAnchorCell(EditorCell cell) {
     return cell;
   }
 
+  @Override
   public AnAction getClickAction() {
     return ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.DoNotSuppressErrors_Action"));
   }
 
+  @Override
   public JPopupMenu getPopupMenu() {
     return null;
   }

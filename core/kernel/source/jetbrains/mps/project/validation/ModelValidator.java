@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.project.validation;
 
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IterableUtil;
 
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class ModelValidator {
     ModelAccess.assertLegalRead();
 
     List<String> errors = new ArrayList<String>();
-    if (myModel.isTransient()) {
+    if (myModel instanceof TransientSModel) {
       return errors;
     }
     if (myModel.isDisposed()) {

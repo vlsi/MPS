@@ -392,6 +392,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -744,6 +745,7 @@
     <classNode dependClassName="com.intellij.ide.structureView.ModelListener" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -863,6 +865,7 @@
     <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
@@ -925,6 +928,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>

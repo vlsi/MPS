@@ -75,7 +75,7 @@ public class WriteHelper {
     if (name == null) {
       return MODEL_SEPARATOR_CHAR + fqName;
     }
-    String index = MapSequence.fromMap(myModelIndex).get(SNodeOperations.getModel(concept).getSModelReference());
+    String index = MapSequence.fromMap(myModelIndex).get(SNodeOperations.getModel(concept).getReference());
     if (index == null) {
       return MODEL_SEPARATOR_CHAR + fqName;
     }

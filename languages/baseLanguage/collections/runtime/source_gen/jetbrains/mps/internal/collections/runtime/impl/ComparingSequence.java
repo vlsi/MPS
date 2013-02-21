@@ -23,6 +23,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
     this.kind = kind;
   }
 
+  @Override
   public Iterator<U> iterator() {
     return new ComparingSequence.ComparingIterator();
   }
@@ -48,6 +49,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
     private ComparingIterator() {
     }
 
+    @Override
     public boolean hasNext() {
       if (leftIt == null && rightIt == null) {
         init();
@@ -58,6 +60,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
       return hasNext.hasNext();
     }
 
+    @Override
     public U next() {
       if (leftIt == null && rightIt == null) {
         init();
@@ -71,6 +74,7 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
       return clearNext();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

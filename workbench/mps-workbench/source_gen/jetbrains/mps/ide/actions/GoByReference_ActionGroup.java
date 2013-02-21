@@ -64,10 +64,12 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
 
         final SReference finalRef = ref;
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             String text = "Bad reference: [" + finalRef.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) finalRef).getResolveInfo();
 
             ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+              @Override
               public void run() {
                 ResolverComponent.getInstance().resolve(finalRef, context);
               }

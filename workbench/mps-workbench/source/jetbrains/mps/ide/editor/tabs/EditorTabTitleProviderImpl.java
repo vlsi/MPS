@@ -25,9 +25,11 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
 public class EditorTabTitleProviderImpl implements EditorTabTitleProvider {
+  @Override
   public String getEditorTabTitle(final Project project, final VirtualFile file) {
     if (!(file instanceof MPSNodeVirtualFile)) return null;
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         if (!ModelAccess.instance().isInEDT()) {
           return "";

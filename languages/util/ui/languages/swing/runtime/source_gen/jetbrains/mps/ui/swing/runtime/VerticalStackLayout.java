@@ -12,12 +12,15 @@ public abstract class VerticalStackLayout implements LayoutManager {
   public VerticalStackLayout() {
   }
 
+  @Override
   public void addLayoutComponent(String string, Component component) {
   }
 
+  @Override
   public void removeLayoutComponent(Component component) {
   }
 
+  @Override
   public Dimension preferredLayoutSize(Container container) {
     synchronized (container.getTreeLock()) {
       Insets ins = container.getInsets();
@@ -46,10 +49,12 @@ public abstract class VerticalStackLayout implements LayoutManager {
     }
   }
 
+  @Override
   public Dimension minimumLayoutSize(Container container) {
     return this.preferredLayoutSize(container);
   }
 
+  @Override
   public void layoutContainer(Container container) {
     synchronized (container.getTreeLock()) {
       Insets ins = container.getInsets();

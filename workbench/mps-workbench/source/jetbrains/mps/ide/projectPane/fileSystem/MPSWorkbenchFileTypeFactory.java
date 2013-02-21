@@ -35,6 +35,7 @@ public class MPSWorkbenchFileTypeFactory extends MPSPlatformFileTypeFactory {
     MPSExtentions.IDEAMODULE,
     MPSExtentions.IDEA_PROJECT};
 
+  @Override
   public void createFileTypes(@NotNull FileTypeConsumer consumer) {
     consumer.consume(JAVA_FILE_TYPE, JAVA_FILE_TYPE.getDefaultExtension());
     consumer.consume(CLASS_FILE_TYPE, CLASS_FILE_TYPE.getDefaultExtension());

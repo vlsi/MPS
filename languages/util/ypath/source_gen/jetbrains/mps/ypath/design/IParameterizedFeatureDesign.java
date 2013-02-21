@@ -13,14 +13,17 @@ public interface IParameterizedFeatureDesign<T> extends IFeatureDesign {
     public Stub() {
     }
 
+    @Override
     public Iterable<E> getParameters(SNode nodeType) {
       return null;
     }
 
+    @Override
     public SNode getTargetType(E param, SNode nodeType) {
       return null;
     }
 
+    @Override
     public String parameterToString(E param) {
       return null;
     }

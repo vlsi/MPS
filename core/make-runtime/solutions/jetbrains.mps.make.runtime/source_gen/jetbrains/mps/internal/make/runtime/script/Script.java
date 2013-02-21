@@ -90,18 +90,22 @@ public class Script implements IScript {
     this.validated = false;
   }
 
+  @Override
   public boolean isValid() {
     return validated && ListSequence.fromList(errors).isEmpty();
   }
 
+  @Override
   public Iterable<IMessage> validationErrors() {
     return ListSequence.fromList(errors).ofType(IMessage.class);
   }
 
+  @Override
   public Iterable<ITarget> allTargets() {
     return targetRange.sortedTargets();
   }
 
+  @Override
   public ITarget finalTarget() {
     ITarget trg = targetRange.getTarget(finalTarget);
     if (trg == null) {
@@ -110,6 +114,7 @@ public class Script implements IScript {
     return trg;
   }
 
+  @Override
   public ITarget startingTarget() {
     if (startingTarget == null) {
       return null;
@@ -131,6 +136,7 @@ public class Script implements IScript {
     ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
 
+  @Override
   public IResult execute(IScriptController controller, Iterable<? extends IResource> scriptInput, ProgressMonitor monitor) {
     monitor.start("", 20);
     try {
@@ -389,6 +395,7 @@ with_targets:
     public ParametersPool() {
     }
 
+    @Override
     public <T> T properties(ITarget.Name target, Class<T> cls) {
       if (!(MapSequence.fromMap(cache).containsKey(target))) {
         if (targetRange.hasTarget(target)) {
@@ -416,10 +423,12 @@ with_targets:
       return cls.cast(MapSequence.fromMap(cache).get(target));
     }
 
+    @Override
     public boolean hasProperties(ITarget.Name target) {
       return MapSequence.fromMap(cache).containsKey(target) || MapSequence.fromMap(copyFrom).containsKey(target);
     }
 
+    @Override
     public void setPredecessor(IPropertiesPool ppool) {
       if (ppool != null) {
         this.copyFrom = ((Script.ParametersPool) ppool).cache;
@@ -440,6 +449,7 @@ with_targets:
       init();
     }
 
+    @Override
     public void setPredecessor(IPropertiesPool ppool) {
       if (ppool instanceof Script.PropertiesWithBackstore) {
         ppool = ((Script.PropertiesWithBackstore) ppool).transProps;
@@ -447,6 +457,7 @@ with_targets:
       transProps.setPredecessor(ppool);
     }
 
+    @Override
     public <T> T properties(ITarget.Name target, Class<T> cls) {
       if (transProps.hasProperties(target)) {
         return transProps.properties(target, cls);
@@ -455,6 +466,7 @@ with_targets:
       return persProps.<T>properties(target, cls);
     }
 
+    @Override
     public boolean hasProperties(ITarget.Name target) {
       if (transProps.hasProperties(target)) {
         return true;
@@ -492,10 +504,12 @@ with_targets:
       this.transProps = transProps;
     }
 
+    @Override
     public IPropertiesPool global() {
       return transProps;
     }
 
+    @Override
     public IPropertiesPool forResource(IResource res) {
       if (!(res instanceof IResourceWithProperties)) {
         return transProps;
@@ -519,10 +533,12 @@ with_targets:
     }
 
     @SuppressWarnings(value = {"unchecked"})
+    @Override
     public Iterable<IResource> output() {
       return (Iterable<IResource>) output;
     }
 
+    @Override
     public boolean isSucessful() {
       return result.isSucessful();
     }

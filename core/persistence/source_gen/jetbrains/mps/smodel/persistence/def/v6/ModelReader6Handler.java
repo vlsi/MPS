@@ -160,7 +160,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldmodel = new DefaultSModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(6);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
-      fieldhelper = new VersionUtil(fieldmodel.getSModelReference());
+      fieldhelper = new VersionUtil(fieldmodel.getReference());
       return new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
     }
 
@@ -233,7 +233,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (child != null) {
-          fieldmodel.addRoot(child);
+          fieldmodel.addRootNode(child);
         }
         return;
       }
@@ -369,7 +369,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (fieldtoState == ModelLoadingState.ROOTS_LOADED && child != null) {
-          fieldmodel.addRoot(child);
+          fieldmodel.addRootNode(child);
         }
         return;
       }

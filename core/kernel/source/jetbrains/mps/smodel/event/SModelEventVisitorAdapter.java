@@ -16,16 +16,20 @@
 package jetbrains.mps.smodel.event;
 
 public class SModelEventVisitorAdapter implements SModelEventVisitor {
+  @Override
   public void visitRootEvent(SModelRootEvent event) {
   }
 
+  @Override
   public void visitChildEvent(SModelChildEvent event) {
   }
 
+  @Override
   public void visitPropertyEvent(SModelPropertyEvent event) {
   }
 
 
+  @Override
   public void visitReferenceEvent(SModelReferenceEvent event) {
   }
 }

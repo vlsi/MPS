@@ -68,6 +68,7 @@ public class VisibilityPanel extends JPanel {
     c.weighty = 0;
     c.anchor = GridBagConstraints.FIRST_LINE_START;
     JRadioButton button = new JRadioButton(new AbstractAction(levelToSet.getButtonText()) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         VisibilityPanel.this.setResult(levelToSet);
       }

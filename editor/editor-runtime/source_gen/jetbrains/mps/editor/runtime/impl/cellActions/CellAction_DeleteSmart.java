@@ -23,10 +23,12 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
     myTarget = target;
   }
 
+  @Override
   public boolean canExecute(EditorContext context) {
     return true;
   }
 
+  @Override
   public void execute(EditorContext context) {
     SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLink);
     if (SPropertyOperations.hasValue(genuineLinkDeclaration, "metaClass", "aggregation", "reference")) {

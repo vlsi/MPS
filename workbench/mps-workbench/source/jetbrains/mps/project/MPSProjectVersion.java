@@ -37,12 +37,14 @@ public class MPSProjectVersion extends AbstractProjectComponent implements Persi
     super(project);
   }
 
+  @Override
   public MyState getState() {
     MyState res = new MyState();
     res.version = myVersion.toString();
     return res;
   }
 
+  @Override
   public void loadState(MyState state) {
     try {
       myVersion = Version.fromString(state.version);

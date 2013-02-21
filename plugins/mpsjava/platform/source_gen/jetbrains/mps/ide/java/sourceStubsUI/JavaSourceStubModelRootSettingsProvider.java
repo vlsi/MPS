@@ -9,6 +9,7 @@ public class JavaSourceStubModelRootSettingsProvider implements ModelRootSetting
   public JavaSourceStubModelRootSettingsProvider() {
   }
 
+  @Override
   public ModelRootSettingsEditor createEditor() {
     return new JavaSourceStubModelRootSettingsEditor();
   }

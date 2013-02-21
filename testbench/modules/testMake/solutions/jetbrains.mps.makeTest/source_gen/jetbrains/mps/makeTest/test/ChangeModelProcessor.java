@@ -96,12 +96,14 @@ public class ChangeModelProcessor {
     final List<String> results = ListSequence.fromList(new ArrayList<String>());
     List<EditableSModel> models = Collections.singletonList(model);
     IMessageHandler handler = new IMessageHandler() {
+      @Override
       public void handle(IMessage msg) {
         if (msg.getKind() == MessageKind.ERROR) {
           ListSequence.fromList(results).addElement(msg.getText());
         }
       }
 
+      @Override
       public void clear() {
       }
     };

@@ -109,6 +109,7 @@ public class RunTestInMPS_Action extends BaseAction {
       Constructor ctor = c.getConstructor(Project.class, SModelDescriptor.class);
       final Object testClass = ctor.newInstance(((Project) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor());
       Thread thread = new Thread(new Runnable() {
+        @Override
         public void run() {
           try {
             meth.invoke(testClass, className + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295(), testName, true);

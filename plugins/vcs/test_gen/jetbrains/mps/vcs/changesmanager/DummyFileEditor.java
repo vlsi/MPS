@@ -31,81 +31,99 @@ import com.intellij.ide.structureView.StructureViewBuilder;
   }
 
   @NotNull
+  @Override
   public JComponent getComponent() {
     throw new UnsupportedOperationException();
   }
 
   @Nullable
+  @Override
   public <T> T getUserData(@NotNull Key<T> key) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public void dispose() {
   }
 
+  @Override
   public Collection<DocumentReference> getDocumentReferences() {
     return Arrays.<DocumentReference>asList(DocumentReferenceManager.getInstance().create(myFile));
   }
 
   @Nullable
+  @Override
   public JComponent getPreferredFocusedComponent() {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public <T> void putUserData(@NotNull Key<T> key, @Nullable T T) {
     throw new UnsupportedOperationException();
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getName() {
     throw new UnsupportedOperationException();
   }
 
   @NotNull
+  @Override
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public void setState(@NotNull FileEditorState state) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public boolean isModified() {
     return false;
   }
 
+  @Override
   public boolean isValid() {
     return true;
   }
 
+  @Override
   public void selectNotify() {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public void deselectNotify() {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public void addPropertyChangeListener(@NotNull PropertyChangeListener listener) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public void removePropertyChangeListener(@NotNull PropertyChangeListener listener) {
     throw new UnsupportedOperationException();
   }
 
   @Nullable
+  @Override
   public BackgroundEditorHighlighter getBackgroundHighlighter() {
     throw new UnsupportedOperationException();
   }
 
   @Nullable
+  @Override
   public FileEditorLocation getCurrentLocation() {
     throw new UnsupportedOperationException();
   }
 
   @Nullable
+  @Override
   public StructureViewBuilder getStructureViewBuilder() {
     throw new UnsupportedOperationException();
   }

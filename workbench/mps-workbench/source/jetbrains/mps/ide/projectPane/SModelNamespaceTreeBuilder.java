@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.NameUtil;
 
 public class SModelNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder<SModelTreeNode> {
+  @Override
   protected String getNamespace(SModelTreeNode node) {
     SModelDescriptor d = node.getSModelDescriptor();
     return NameUtil.namespaceFromLongName(d.getSModelReference().getLongName());

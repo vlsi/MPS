@@ -89,7 +89,7 @@ public class TextGeneratorEngine {
 
       resultsForModel.put(model, new ArrayList<TextGenerationResult>());
       int rootsCount = 0;
-      for (SNode root : model.roots()) {
+      for (SNode root : model.getRootNodes()) {
         roots.add(root);
         rootsCount++;
         assert root.getModel() == model;
@@ -153,6 +153,7 @@ public class TextGeneratorEngine {
       namePrefix = "textgen-thread-";
     }
 
+    @Override
     @NotNull
     public Thread newThread(@NotNull final Runnable original) {
       Thread t = new Thread(group, original, namePrefix + threadNumber.getAndIncrement());

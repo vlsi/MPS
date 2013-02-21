@@ -22,48 +22,59 @@ public class ModelStep extends TwoOptionsStep<SModel> {
     super(project, buildGenerator, handler);
   }
 
+  @Override
   protected void setChecked(boolean checked) {
     this.myGenerator.setCreateModel(checked);
   }
 
+  @Override
   protected boolean getChecked() {
     return this.myGenerator.getCreateModel();
   }
 
+  @Override
   protected String getComboBoxName() {
     return "Use existing model:";
   }
 
+  @Override
   protected String getVariantName(final SModel model) {
     return NameUtil.shortNameFromLongName(model.getModelName());
   }
 
+  @Override
   protected String getTextFieldText() {
     return this.myGenerator.getNewModelName();
   }
 
+  @Override
   protected void setTextFieldText(String text) {
     this.myGenerator.setNewModelName(text);
   }
 
+  @Override
   protected String getCheckBoxName() {
     return "Create new model";
   }
 
+  @Override
   protected void setVariant(SModel m) {
     this.myGenerator.setModel(m);
   }
 
+  @Override
   protected String getTextFieldName() {
     return "New model name:";
   }
 
+  @Override
   protected SModel[] getVariants() {
     final Solution solution = this.myGenerator.getSolution();
     if (solution == null) {
       return new SModel[0];
     } else {
       List<SModel> models = ModelAccess.instance().runReadAction(new Computable<List<SModel>>() {
+        @Override
         public List<SModel> compute() {
           Iterable<SModel> models = Sequence.fromIterable(Collections.<SModel>emptyList());
           for (ModelRoot mr : solution.getModelRoots()) {
@@ -80,18 +91,22 @@ public class ModelStep extends TwoOptionsStep<SModel> {
     }
   }
 
+  @Override
   public String getDescription() {
     return "Select a model to create a new build script.";
   }
 
+  @Override
   protected boolean isCheckBoxEnabled() {
     return !(this.myGenerator.getCreateSolution());
   }
 
+  @Override
   protected boolean isValid(String text) {
     return this.myGenerator.isValidModelName(text);
   }
 
+  @Override
   protected String getWarningText(String text) {
     if (text.equals("")) {
       return "Empty model name is not allowed.";

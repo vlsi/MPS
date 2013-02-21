@@ -30,25 +30,30 @@ import java.util.Comparator;
 
 public class AspectNodeSorter implements Sorter {
 
+  @Override
   public Comparator getComparator() {
     return new EditorTabComparator();
   }
 
+  @Override
   public boolean isVisible() {
     return false;
   }
 
+  @Override
   @NotNull
   public ActionPresentation getPresentation() {
     return new ActionPresentationData("Sort Nodes by Aspect", "", jetbrains.mps.workbench.structureview.adds.icons.Icons.SORT_NODES_BY_ASPECT_ICON);
   }
 
+  @Override
   @NotNull
   public String getName() {
     return "AspectNodesSorter";
   }
 
   private static class EditorTabComparator implements Comparator {
+    @Override
     public int compare(Object o1, Object o2) {
       if (!(o1 instanceof AspectTreeElement || o2 instanceof AspectTreeElement)) return 0;
 
@@ -70,6 +75,7 @@ public class AspectNodeSorter implements Sorter {
       if (r1 != 0) return r1;
 
       return ModelAccess.instance().runReadAction(new Computable<Integer>() {
+        @Override
         public Integer compute() {
           SNode n1 = ate1.getValue().resolve(MPSModuleRepository.getInstance());
           SNode n2 = ate2.getValue().resolve(MPSModuleRepository.getInstance());

@@ -45,18 +45,22 @@ public class WeakSet<T> extends AbstractSet<T> {
     }
   }
 
+  @Override
   public boolean add(T t) {
     return myWeakHashMap.put(t, VALUE) == null;
   }
 
+  @Override
   public boolean remove(Object o) {
     return myWeakHashMap.remove(o) != null;
   }
 
+  @Override
   public Iterator iterator() {
     return myWeakHashMap.keySet().iterator();
   }
 
+  @Override
   public int size() {
     return myWeakHashMap.size();
   }

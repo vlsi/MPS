@@ -38,6 +38,7 @@ public class BaseModuleValidator<T extends AbstractModule> implements ModuleVali
     myModule = module;
   }
 
+  @Override
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>();
     Throwable loadException = myModule.getModuleDescriptor().getLoadException();
@@ -94,6 +95,7 @@ public class BaseModuleValidator<T extends AbstractModule> implements ModuleVali
     return Collections.emptyList();
   }
 
+  @Override
   public final boolean isValid() {
     return getErrors().isEmpty();
   }

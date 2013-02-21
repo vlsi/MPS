@@ -13,6 +13,7 @@ public class ValueQuantity implements Function<Quantity> {
     myValueName = valueName;
   }
 
+  @Override
   public Quantity compute(Object parm) {
     AccountingEvent event = (AccountingEvent) parm;
     return (Quantity) event.getAgreement().getValue(myValueName, event.getWhenOccurred());

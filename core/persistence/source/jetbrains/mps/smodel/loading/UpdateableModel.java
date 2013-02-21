@@ -63,8 +63,10 @@ public abstract class UpdateableModel {
     myState = state;  //this is for elimination of infinite recursion
 
     ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
+      @Override
       public ModelLoadResult compute() {
         return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
+          @Override
           public ModelLoadResult compute() {
             return doLoad(state, myModel);
           }

@@ -42,6 +42,7 @@ public class LanguagesStep extends AbstractStep {
     this.myHandler = handler;
   }
 
+  @Override
   public void _init() {
     super._init();
     String errorText = null;
@@ -51,6 +52,7 @@ public class LanguagesStep extends AbstractStep {
     this.myHandler.setErrorText(errorText);
   }
 
+  @Override
   public JComponent createMainComponent() {
     this.myCheckTree = this.createCheckTree();
     return this.myCheckTree;
@@ -100,10 +102,12 @@ public class LanguagesStep extends AbstractStep {
     }
   }
 
+  @Override
   public String getDescription() {
     return "Select languages and solutions included in build script.";
   }
 
+  @Override
   public void _commit(boolean finish) {
     Set<NodeData> selectedItems = this.myCheckTree.getSelectedItems();
     Set<NodeData> modules = SetSequence.fromSet(new LinkedHashSet<NodeData>());
@@ -131,6 +135,7 @@ public class LanguagesStep extends AbstractStep {
     }
   }
 
+  @Override
   protected JPanel createStepPanel() {
     JPanel stepPanel = new JPanel(new GridBagLayout());
     stepPanel.add(new JLabel(this.getDescription()), this.createConstraint(0, 0));
@@ -156,18 +161,22 @@ public class LanguagesStep extends AbstractStep {
 
     public MyTreeBuilder(MPSProject mpsProject) {
       super(new NamespaceTreeBuilder.NamespaceNodeBuilder<CheckBoxNamespaceNode>() {
+        @Override
         public CheckBoxNamespaceNode createNamespaceNode(String text, IOperationContext context) {
           return new CheckBoxNamespaceNode(new NamespaceData(text));
         }
 
+        @Override
         public String getName(CheckBoxNamespaceNode p0) {
           return p0.getName();
         }
 
+        @Override
         public boolean isNamespaceNode(MPSTreeNode p0) {
           return p0 instanceof CheckBoxNamespaceNode;
         }
 
+        @Override
         public void setName(CheckBoxNamespaceNode p0, String p1) {
           p0.setName(p1);
         }
@@ -175,6 +184,7 @@ public class LanguagesStep extends AbstractStep {
       this.myMpsProject = mpsProject;
     }
 
+    @Override
     protected String getNamespace(CheckBoxNode node) {
       NodeData data = node.getData();
       String namespace = "";

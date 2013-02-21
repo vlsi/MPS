@@ -89,7 +89,7 @@ public class EmbeddableEditor {
   private void setNode(@NotNull final SNode node, boolean addToModel) {
     myNode = node;
     if (addToModel) {
-      smodel().addRoot(node);
+      smodel().addRootNode(node);
     }
     myFileNodeEditor = new MPSFileNodeEditor(myContext, MPSNodesVirtualFileSystem.getInstance().getFileFor(myNode));
     Editor editor = myFileNodeEditor.getNodeEditor();
@@ -141,8 +141,10 @@ public class EmbeddableEditor {
 
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      @Override
       public void run() {
         IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
+          @Override
           public <T extends IOption> T relayQuery(IQuery<T> query) {
             return query.defaultOption();
           }
@@ -212,7 +214,7 @@ public class EmbeddableEditor {
   public void addLanguageStructureModel(final Language language) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SModelReference ref = (SModelReference) language.getStructureModelDescriptor().getModelReference();
+        SModelReference ref = (SModelReference) language.getStructureModelDescriptor().getReference();
         smodel().addModelImport(ref, false);
       }
     });

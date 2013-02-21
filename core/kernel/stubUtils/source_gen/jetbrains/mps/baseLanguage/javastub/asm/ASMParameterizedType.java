@@ -35,6 +35,7 @@ public class ASMParameterizedType extends ASMType {
     return Collections.unmodifiableList(myTypeArguments);
   }
 
+  @Override
   public String toString() {
     return "" + myRawType + getActualTypeArguments();
   }

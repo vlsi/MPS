@@ -49,9 +49,9 @@
     <nodeInfo nodeId="4832363360995122069" fileName="GoToRulesHelper.java" startLine="155" startPosition="9" endLine="156" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4832363360995122085" fileName="GoToRulesHelper.java" startLine="157" startPosition="54" endLine="158" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4832363360995122115" fileName="GoToRulesHelper.java" startLine="161" startPosition="11" endLine="162" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7732671373443366457" fileName="GoToRulesHelper.java" startLine="168" startPosition="130" endLine="169" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6107809127287259013" fileName="GoToRulesHelper.java" startLine="170" startPosition="17" endLine="171" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1071422968910407207" fileName="GoToRulesHelper.java" startLine="171" startPosition="48" endLine="172" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7732671373443366457" fileName="GoToRulesHelper.java" startLine="170" startPosition="130" endLine="171" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6107809127287259013" fileName="GoToRulesHelper.java" startLine="172" startPosition="17" endLine="173" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1071422968910407207" fileName="GoToRulesHelper.java" startLine="173" startPosition="48" endLine="174" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4832363360995121640" fileName="GoToRulesHelper.java" startLine="39" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GoToRulesHelper#()V" />
     <nodeInfo nodeId="4832363360995121979" fileName="GoToRulesHelper.java" startLine="136" startPosition="10" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1071422968910407180" fileName="GoToRulesHelper.java" startLine="45" startPosition="40" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -69,7 +69,7 @@
     <nodeInfo nodeId="4832363360995121952" fileName="GoToRulesHelper.java" startLine="123" startPosition="5" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4832363360995122063" fileName="GoToRulesHelper.java" startLine="152" startPosition="37" endLine="155" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4832363360995122075" fileName="GoToRulesHelper.java" startLine="156" startPosition="41" endLine="159" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7732671373443366455" fileName="GoToRulesHelper.java" startLine="167" startPosition="33" endLine="170" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7732671373443366455" fileName="GoToRulesHelper.java" startLine="169" startPosition="33" endLine="172" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4832363360995121697" fileName="GoToRulesHelper.java" startLine="53" startPosition="14" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4832363360995122024" fileName="GoToRulesHelper.java" startLine="143" startPosition="33" endLine="147" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4832363360995121735" fileName="GoToRulesHelper.java" startLine="75" startPosition="58" endLine="80" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -77,18 +77,18 @@
     <nodeInfo nodeId="4832363360995121975" fileName="GoToRulesHelper.java" startLine="133" startPosition="10" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4832363360995121663" fileName="GoToRulesHelper.java" startLine="43" startPosition="49" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4832363360995121877" fileName="GoToRulesHelper.java" startLine="108" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDeclaringLanguage#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/Language;" />
-    <nodeInfo nodeId="2511793679788297867" fileName="GoToRulesHelper.java" startLine="167" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4832363360995121834" fileName="GoToRulesHelper.java" startLine="95" startPosition="0" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4832363360995121971" fileName="GoToRulesHelper.java" startLine="130" startPosition="67" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2511793679788297832" fileName="GoToRulesHelper.java" startLine="165" startPosition="54" endLine="174" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2511793679788297867" fileName="GoToRulesHelper.java" startLine="168" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4832363360995121965" fileName="GoToRulesHelper.java" startLine="130" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getApplicableConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4832363360995122097" fileName="GoToRulesHelper.java" startLine="165" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="2511793679788297832" fileName="GoToRulesHelper.java" startLine="166" startPosition="54" endLine="176" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4832363360995121742" fileName="GoToRulesHelper.java" startLine="81" startPosition="0" endLine="94" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4832363360995121901" fileName="GoToRulesHelper.java" startLine="116" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
-    <nodeInfo nodeId="4832363360995122091" fileName="GoToRulesHelper.java" startLine="159" startPosition="9" endLine="176" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4832363360995122097" fileName="GoToRulesHelper.java" startLine="165" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
     <nodeInfo nodeId="4832363360995121644" fileName="GoToRulesHelper.java" startLine="42" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="go#(Ljava/awt/Frame;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/IOperationContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4832363360995122058" fileName="GoToRulesHelper.java" startLine="151" startPosition="17" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4832363360995121632" fileName="GoToRulesHelper.java" startLine="142" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMenu#(Ljava/util/List;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="4832363360995122091" fileName="GoToRulesHelper.java" startLine="159" startPosition="9" endLine="178" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4832363360995122058" fileName="GoToRulesHelper.java" startLine="151" startPosition="17" endLine="179" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4832363360995121632" fileName="GoToRulesHelper.java" startLine="142" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMenu#(Ljava/util/List;Ljetbrains/mps/smodel/IOperationContext;)V" />
     <nodeInfo nodeId="4832363360995121721" fileName="GoToRulesHelper.java" startLine="61" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRules#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/util/List;" />
     <scopeInfo nodeId="4832363360995121643" fileName="GoToRulesHelper.java" startLine="39" startPosition="28" endLine="39" endPosition="28" />
     <scopeInfo nodeId="1071422968910407181" fileName="GoToRulesHelper.java" startLine="46" startPosition="35" endLine="47" endPosition="119" />
@@ -110,7 +110,7 @@
     <scopeInfo nodeId="4832363360995122067" fileName="GoToRulesHelper.java" startLine="153" startPosition="27" endLine="154" endPosition="19" />
     <scopeInfo nodeId="4832363360995122084" fileName="GoToRulesHelper.java" startLine="157" startPosition="54" endLine="158" endPosition="49" />
     <scopeInfo nodeId="4832363360995122114" fileName="GoToRulesHelper.java" startLine="161" startPosition="11" endLine="162" endPosition="70" />
-    <scopeInfo nodeId="7732671373443366456" fileName="GoToRulesHelper.java" startLine="168" startPosition="130" endLine="169" endPosition="25" />
+    <scopeInfo nodeId="7732671373443366456" fileName="GoToRulesHelper.java" startLine="170" startPosition="130" endLine="171" endPosition="25" />
     <scopeInfo nodeId="4832363360995121640" fileName="GoToRulesHelper.java" startLine="39" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="4832363360995121701" fileName="GoToRulesHelper.java" startLine="54" startPosition="23" endLine="56" endPosition="22" />
     <scopeInfo nodeId="3256144589678342142" fileName="GoToRulesHelper.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
@@ -134,32 +134,32 @@
     <scopeInfo nodeId="4832363360995121882" fileName="GoToRulesHelper.java" startLine="108" startPosition="63" endLine="113" endPosition="90">
       <varInfo nodeId="4832363360995121884" varName="languageFqName" />
     </scopeInfo>
-    <scopeInfo nodeId="2511793679788297870" fileName="GoToRulesHelper.java" startLine="167" startPosition="33" endLine="172" endPosition="120" />
+    <scopeInfo nodeId="2511793679788297870" fileName="GoToRulesHelper.java" startLine="169" startPosition="33" endLine="174" endPosition="120" />
     <scopeInfo nodeId="4832363360995121838" fileName="GoToRulesHelper.java" startLine="96" startPosition="45" endLine="102" endPosition="9">
       <varInfo nodeId="4832363360995121840" varName="subConcept" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121877" fileName="GoToRulesHelper.java" startLine="108" startPosition="0" endLine="115" endPosition="0">
       <varInfo nodeId="4832363360995121880" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="2511793679788297867" fileName="GoToRulesHelper.java" startLine="167" startPosition="0" endLine="174" endPosition="0" />
     <scopeInfo nodeId="4832363360995121834" fileName="GoToRulesHelper.java" startLine="95" startPosition="0" endLine="103" endPosition="5">
       <varInfo nodeId="4832363360995121836" varName="overridingRule" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121970" fileName="GoToRulesHelper.java" startLine="130" startPosition="67" endLine="138" endPosition="5" />
-    <scopeInfo nodeId="4832363360995122120" fileName="GoToRulesHelper.java" startLine="165" startPosition="54" endLine="174" endPosition="15" />
+    <scopeInfo nodeId="2511793679788297867" fileName="GoToRulesHelper.java" startLine="168" startPosition="0" endLine="176" endPosition="0" />
     <scopeInfo nodeId="4832363360995121965" fileName="GoToRulesHelper.java" startLine="130" startPosition="0" endLine="140" endPosition="0">
       <varInfo nodeId="4832363360995121968" varName="applicableNode" />
     </scopeInfo>
+    <scopeInfo nodeId="4832363360995122120" fileName="GoToRulesHelper.java" startLine="166" startPosition="54" endLine="176" endPosition="15" />
     <scopeInfo nodeId="4832363360995121910" fileName="GoToRulesHelper.java" startLine="116" startPosition="88" endLine="127" endPosition="70">
       <varInfo nodeId="4832363360995121939" varName="applicableConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="4832363360995122097" fileName="GoToRulesHelper.java" startLine="165" startPosition="0" endLine="176" endPosition="0">
-      <varInfo nodeId="4832363360995122100" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121901" fileName="GoToRulesHelper.java" startLine="116" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="4832363360995121906" varName="concept" />
       <varInfo nodeId="4832363360995121908" varName="exactConcept" />
       <varInfo nodeId="4832363360995121904" varName="rule" />
+    </scopeInfo>
+    <scopeInfo nodeId="4832363360995122097" fileName="GoToRulesHelper.java" startLine="165" startPosition="0" endLine="178" endPosition="0">
+      <varInfo nodeId="4832363360995122100" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="4832363360995121655" fileName="GoToRulesHelper.java" startLine="42" startPosition="97" endLine="58" endPosition="24">
       <varInfo nodeId="4832363360995121683" varName="m" />
@@ -173,17 +173,17 @@
       <varInfo nodeId="4832363360995121651" varName="context" />
       <varInfo nodeId="4832363360995121647" varName="frame" />
     </scopeInfo>
-    <scopeInfo nodeId="4832363360995122062" fileName="GoToRulesHelper.java" startLine="152" startPosition="37" endLine="176" endPosition="38">
+    <scopeInfo nodeId="4832363360995122062" fileName="GoToRulesHelper.java" startLine="152" startPosition="37" endLine="178" endPosition="38">
       <varInfo nodeId="4832363360995122070" varName="nodeName" />
     </scopeInfo>
-    <scopeInfo nodeId="4832363360995122058" fileName="GoToRulesHelper.java" startLine="151" startPosition="17" endLine="177" endPosition="7">
+    <scopeInfo nodeId="4832363360995122058" fileName="GoToRulesHelper.java" startLine="151" startPosition="17" endLine="179" endPosition="7">
       <varInfo nodeId="4832363360995122060" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4832363360995122020" fileName="GoToRulesHelper.java" startLine="142" startPosition="79" endLine="177" endPosition="7">
+    <scopeInfo nodeId="4832363360995122020" fileName="GoToRulesHelper.java" startLine="142" startPosition="79" endLine="179" endPosition="7">
       <varInfo nodeId="4832363360995122025" varName="caption" />
       <varInfo nodeId="4832363360995122034" varName="label" />
     </scopeInfo>
-    <scopeInfo nodeId="4832363360995121632" fileName="GoToRulesHelper.java" startLine="142" startPosition="0" endLine="179" endPosition="0">
+    <scopeInfo nodeId="4832363360995121632" fileName="GoToRulesHelper.java" startLine="142" startPosition="0" endLine="181" endPosition="0">
       <varInfo nodeId="4832363360995121635" varName="list" />
       <varInfo nodeId="4832363360995121638" varName="operationContext" />
     </scopeInfo>
@@ -203,10 +203,10 @@
     <unitInfo nodeId="3256144589678342562" fileName="GoToRulesHelper.java" startLine="86" startPosition="18" endLine="90" endPosition="5" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$3" />
     <unitInfo nodeId="3256144589678342624" fileName="GoToRulesHelper.java" startLine="90" startPosition="17" endLine="94" endPosition="5" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$4" />
     <unitInfo nodeId="3256144589678342861" fileName="GoToRulesHelper.java" startLine="98" startPosition="51" endLine="102" endPosition="7" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$5" />
-    <unitInfo nodeId="2511793679788297865" fileName="GoToRulesHelper.java" startLine="166" startPosition="53" endLine="174" endPosition="13" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$2" />
-    <unitInfo nodeId="4832363360995122096" fileName="GoToRulesHelper.java" startLine="160" startPosition="16" endLine="176" endPosition="9" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$1" />
-    <unitInfo nodeId="4832363360995121629" fileName="GoToRulesHelper.java" startLine="141" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$MyMenu" />
-    <unitInfo nodeId="4832363360995121627" fileName="GoToRulesHelper.java" startLine="38" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper" />
+    <unitInfo nodeId="2511793679788297865" fileName="GoToRulesHelper.java" startLine="167" startPosition="53" endLine="176" endPosition="13" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$2" />
+    <unitInfo nodeId="4832363360995122096" fileName="GoToRulesHelper.java" startLine="160" startPosition="16" endLine="178" endPosition="9" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$1" />
+    <unitInfo nodeId="4832363360995121629" fileName="GoToRulesHelper.java" startLine="141" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper$MyMenu" />
+    <unitInfo nodeId="4832363360995121627" fileName="GoToRulesHelper.java" startLine="38" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.ide.actions.nodes.GoToRulesHelper" />
   </root>
 </debugInfo>
 

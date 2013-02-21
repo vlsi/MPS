@@ -44,37 +44,46 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
   public BuildMakeService() {
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
     return doMake(session, resources, script, controller, monitor);
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
     return make(session, resources, script, controller, new EmptyProgressMonitor());
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
     return make(session, resources, script, null, new EmptyProgressMonitor());
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
     return make(session, resources, defaultMakeScript(), null, new EmptyProgressMonitor());
   }
 
+  @Override
   public boolean isSessionActive() {
     return false;
   }
 
+  @Override
   public boolean openNewSession(MakeSession session) {
     return false;
   }
 
+  @Override
   public void closeSession(MakeSession session) {
   }
 
+  @Override
   public void addListener(IMakeNotificationListener listener) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public void removeListener(IMakeNotificationListener listener) {
     throw new UnsupportedOperationException();
   }
@@ -93,6 +102,7 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
 
   private IScriptController completeController(final MakeSession msess, final IScriptController ctl) {
     return new BuildMakeService.DelegatingScriptController(ctl, new BuildMakeService.MessageFeedbackStrategy(msess.getMessageHandler())) {
+      @Override
       public void setup(IPropertiesPool pool) {
         super.setup(pool);
         Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);

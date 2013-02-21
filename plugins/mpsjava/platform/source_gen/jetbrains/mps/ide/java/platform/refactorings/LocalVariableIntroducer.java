@@ -38,12 +38,14 @@ public class LocalVariableIntroducer {
   public void invoke(DataContext dataContext) {
     if (myRefactoring.hasDuplicates()) {
       AnAction thisOnly = new AnAction("Replace this occurence only") {
+        @Override
         public void actionPerformed(AnActionEvent e) {
           myRefactoring.setReplacingAll(false);
           execute();
         }
       };
       AnAction allOccurences = new AnAction("Replace all " + NameUtil.formatNumericalString(ListSequence.fromList(myRefactoring.getDuplicates()).count() + 1, "occurence")) {
+        @Override
         public void actionPerformed(AnActionEvent e) {
           myRefactoring.setReplacingAll(true);
           execute();

@@ -2,64 +2,64 @@
 <debugInfo>
   <root nodeRef="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)/4193578441191911527">
     <nodeInfo nodeId="4193578441191970303" fileName="JavaCopyPasteDataConverter.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MIN_TEXT_LENGTH_TO_CONVERT" />
-    <nodeInfo nodeId="4193578441191921069" fileName="JavaCopyPasteDataConverter.java" startLine="24" startPosition="31" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441191921073" fileName="JavaCopyPasteDataConverter.java" startLine="28" startPosition="34" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4193578441191912031" fileName="JavaCopyPasteDataConverter.java" startLine="34" startPosition="36" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1963440973928800045" fileName="JavaCopyPasteDataConverter.java" startLine="38" startPosition="62" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1963440973928800082" fileName="JavaCopyPasteDataConverter.java" startLine="39" startPosition="57" endLine="40" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1963440973928800181" fileName="JavaCopyPasteDataConverter.java" startLine="43" startPosition="73" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1963440973928800214" fileName="JavaCopyPasteDataConverter.java" startLine="45" startPosition="69" endLine="46" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1963440973928800236" fileName="JavaCopyPasteDataConverter.java" startLine="50" startPosition="72" endLine="51" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1963440973928800121" fileName="JavaCopyPasteDataConverter.java" startLine="51" startPosition="32" endLine="52" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1963440973928800158" fileName="JavaCopyPasteDataConverter.java" startLine="53" startPosition="69" endLine="54" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1963440973928800139" fileName="JavaCopyPasteDataConverter.java" startLine="54" startPosition="133" endLine="55" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1963440973928800152" fileName="JavaCopyPasteDataConverter.java" startLine="56" startPosition="5" endLine="57" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4193578441191921069" fileName="JavaCopyPasteDataConverter.java" startLine="25" startPosition="31" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441191921073" fileName="JavaCopyPasteDataConverter.java" startLine="30" startPosition="34" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4193578441191912031" fileName="JavaCopyPasteDataConverter.java" startLine="37" startPosition="36" endLine="38" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1963440973928800045" fileName="JavaCopyPasteDataConverter.java" startLine="42" startPosition="62" endLine="43" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1963440973928800082" fileName="JavaCopyPasteDataConverter.java" startLine="43" startPosition="57" endLine="44" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1963440973928800181" fileName="JavaCopyPasteDataConverter.java" startLine="48" startPosition="73" endLine="49" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1963440973928800214" fileName="JavaCopyPasteDataConverter.java" startLine="50" startPosition="69" endLine="51" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1963440973928800236" fileName="JavaCopyPasteDataConverter.java" startLine="56" startPosition="72" endLine="57" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1963440973928800121" fileName="JavaCopyPasteDataConverter.java" startLine="57" startPosition="32" endLine="58" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1963440973928800158" fileName="JavaCopyPasteDataConverter.java" startLine="59" startPosition="69" endLine="60" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1963440973928800139" fileName="JavaCopyPasteDataConverter.java" startLine="60" startPosition="133" endLine="61" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1963440973928800152" fileName="JavaCopyPasteDataConverter.java" startLine="62" startPosition="5" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4193578441191911529" fileName="JavaCopyPasteDataConverter.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaCopyPasteDataConverter#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-    <nodeInfo nodeId="4193578441191912013" fileName="JavaCopyPasteDataConverter.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="4193578441191912017" fileName="JavaCopyPasteDataConverter.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="1963440973928800185" fileName="JavaCopyPasteDataConverter.java" startLine="44" startPosition="57" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4193578441191921088" fileName="JavaCopyPasteDataConverter.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canPasteAsNodes#(Ljetbrains/mps/smodel/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1963440973928800126" fileName="JavaCopyPasteDataConverter.java" startLine="52" startPosition="57" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4193578441191912021" fileName="JavaCopyPasteDataConverter.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4193578441191921098" fileName="JavaCopyPasteDataConverter.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteAsNodes#(Ljetbrains/mps/smodel/SModel;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/Project;)V" />
-    <nodeInfo nodeId="4193578441191921106" fileName="JavaCopyPasteDataConverter.java" startLine="50" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPasteNodeData#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/project/Project;)Ljetbrains/mps/datatransfer/PasteNodeData;" />
+    <nodeInfo nodeId="1963440973928800185" fileName="JavaCopyPasteDataConverter.java" startLine="49" startPosition="57" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4193578441191912013" fileName="JavaCopyPasteDataConverter.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="4193578441191912017" fileName="JavaCopyPasteDataConverter.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="1963440973928800126" fileName="JavaCopyPasteDataConverter.java" startLine="58" startPosition="57" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4193578441191921088" fileName="JavaCopyPasteDataConverter.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canPasteAsNodes#(Ljetbrains/mps/smodel/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4193578441191912021" fileName="JavaCopyPasteDataConverter.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4193578441191921098" fileName="JavaCopyPasteDataConverter.java" startLine="47" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteAsNodes#(Ljetbrains/mps/smodel/SModel;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/Project;)V" />
+    <nodeInfo nodeId="4193578441191921106" fileName="JavaCopyPasteDataConverter.java" startLine="55" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPasteNodeData#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/project/Project;)Ljetbrains/mps/datatransfer/PasteNodeData;" />
     <scopeInfo nodeId="4193578441191911532" fileName="JavaCopyPasteDataConverter.java" startLine="21" startPosition="71" endLine="21" endPosition="71" />
-    <scopeInfo nodeId="4193578441191912016" fileName="JavaCopyPasteDataConverter.java" startLine="24" startPosition="31" endLine="25" endPosition="41" />
-    <scopeInfo nodeId="4193578441191912020" fileName="JavaCopyPasteDataConverter.java" startLine="28" startPosition="34" endLine="29" endPosition="41" />
-    <scopeInfo nodeId="4193578441191912026" fileName="JavaCopyPasteDataConverter.java" startLine="34" startPosition="36" endLine="35" endPosition="67" />
-    <scopeInfo nodeId="1963440973928800186" fileName="JavaCopyPasteDataConverter.java" startLine="45" startPosition="69" endLine="46" endPosition="99" />
+    <scopeInfo nodeId="4193578441191912016" fileName="JavaCopyPasteDataConverter.java" startLine="25" startPosition="31" endLine="26" endPosition="41" />
+    <scopeInfo nodeId="4193578441191912020" fileName="JavaCopyPasteDataConverter.java" startLine="30" startPosition="34" endLine="31" endPosition="41" />
+    <scopeInfo nodeId="4193578441191912026" fileName="JavaCopyPasteDataConverter.java" startLine="37" startPosition="36" endLine="38" endPosition="67" />
+    <scopeInfo nodeId="1963440973928800186" fileName="JavaCopyPasteDataConverter.java" startLine="50" startPosition="69" endLine="51" endPosition="99" />
     <scopeInfo nodeId="4193578441191911529" fileName="JavaCopyPasteDataConverter.java" startLine="21" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="4450057996090661301" varName="coreComponents" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441191921095" fileName="JavaCopyPasteDataConverter.java" startLine="38" startPosition="62" endLine="40" endPosition="70">
+    <scopeInfo nodeId="4193578441191921095" fileName="JavaCopyPasteDataConverter.java" startLine="42" startPosition="62" endLine="44" endPosition="70">
       <varInfo nodeId="1963440973928800046" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="1963440973928800127" fileName="JavaCopyPasteDataConverter.java" startLine="53" startPosition="69" endLine="55" endPosition="43">
+    <scopeInfo nodeId="1963440973928800127" fileName="JavaCopyPasteDataConverter.java" startLine="59" startPosition="69" endLine="61" endPosition="43">
       <varInfo nodeId="1963440973928800159" varName="transferable" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441191912013" fileName="JavaCopyPasteDataConverter.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="4193578441191912017" fileName="JavaCopyPasteDataConverter.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="4193578441191921088" fileName="JavaCopyPasteDataConverter.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="4193578441191912013" fileName="JavaCopyPasteDataConverter.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4193578441191912017" fileName="JavaCopyPasteDataConverter.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="4193578441191921105" fileName="JavaCopyPasteDataConverter.java" startLine="48" startPosition="73" endLine="52" endPosition="5">
+      <varInfo nodeId="1963440973928800182" varName="text" />
+    </scopeInfo>
+    <scopeInfo nodeId="4193578441191921088" fileName="JavaCopyPasteDataConverter.java" startLine="41" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="4193578441191921093" varName="anchor" />
       <varInfo nodeId="4193578441191921091" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441191921105" fileName="JavaCopyPasteDataConverter.java" startLine="43" startPosition="73" endLine="47" endPosition="5">
-      <varInfo nodeId="1963440973928800182" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="4193578441191912021" fileName="JavaCopyPasteDataConverter.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="4193578441191921098" fileName="JavaCopyPasteDataConverter.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="4193578441191912021" fileName="JavaCopyPasteDataConverter.java" startLine="34" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="4193578441191921098" fileName="JavaCopyPasteDataConverter.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="4193578441191921103" varName="anchor" />
       <varInfo nodeId="4193578441191921101" varName="model" />
       <varInfo nodeId="912131512389473552" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441191921111" fileName="JavaCopyPasteDataConverter.java" startLine="50" startPosition="72" endLine="57" endPosition="16">
+    <scopeInfo nodeId="4193578441191921111" fileName="JavaCopyPasteDataConverter.java" startLine="56" startPosition="72" endLine="63" endPosition="16">
       <varInfo nodeId="1963440973928800122" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="4193578441191921106" fileName="JavaCopyPasteDataConverter.java" startLine="50" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="4193578441191921106" fileName="JavaCopyPasteDataConverter.java" startLine="55" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="4193578441191921109" varName="model" />
       <varInfo nodeId="912131512389473569" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="4193578441191911527" fileName="JavaCopyPasteDataConverter.java" startLine="18" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.ide.java.util.JavaCopyPasteDataConverter" />
+    <unitInfo nodeId="4193578441191911527" fileName="JavaCopyPasteDataConverter.java" startLine="18" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.java.util.JavaCopyPasteDataConverter" />
   </root>
   <root nodeRef="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)/5646944109420335310">
     <nodeInfo nodeId="5646944109420336544" fileName="JavaPaster.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -311,7 +311,7 @@
     <nodeInfo nodeId="9073603541474871880" fileName="StubResolver.java" startLine="49" startPosition="25" endLine="50" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="9073603541474871883" fileName="StubResolver.java" startLine="50" startPosition="36" endLine="51" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9073603541474871877" fileName="StubResolver.java" startLine="54" startPosition="48" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="9073603541474867584" fileName="StubResolver.java" startLine="57" startPosition="48" endLine="58" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9073603541474867584" fileName="StubResolver.java" startLine="57" startPosition="48" endLine="58" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9073603541474871874" fileName="StubResolver.java" startLine="63" startPosition="117" endLine="64" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="9073603541474867678" fileName="StubResolver.java" startLine="64" startPosition="58" endLine="65" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9073603541474867706" fileName="StubResolver.java" startLine="67" startPosition="89" endLine="68" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -347,7 +347,7 @@
     <nodeInfo nodeId="2742102018362199401" fileName="StubResolver.java" startLine="142" startPosition="54" endLine="143" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="6770603745029714855" fileName="StubResolver.java" startLine="144" startPosition="9" endLine="145" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2742102018362199415" fileName="StubResolver.java" startLine="146" startPosition="45" endLine="147" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="2742102018362199429" fileName="StubResolver.java" startLine="152" startPosition="46" endLine="153" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2742102018362199429" fileName="StubResolver.java" startLine="152" startPosition="46" endLine="153" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2742102018362199455" fileName="StubResolver.java" startLine="158" startPosition="58" endLine="159" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742102018362199469" fileName="StubResolver.java" startLine="161" startPosition="58" endLine="162" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2742102018362199480" fileName="StubResolver.java" startLine="162" startPosition="122" endLine="163" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -394,7 +394,7 @@
     <nodeInfo nodeId="2742102018362199370" fileName="StubResolver.java" startLine="137" startPosition="20" endLine="167" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2742102018362199364" fileName="StubResolver.java" startLine="135" startPosition="18" endLine="168" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
     <nodeInfo nodeId="2742102018362199349" fileName="StubResolver.java" startLine="133" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolveReferences#(Ljava/util/List;Ljava/util/Map;Ljetbrains/mps/smodel/IOperationContext;)I" />
-    <scopeInfo nodeId="9073603541474867581" fileName="StubResolver.java" startLine="57" startPosition="48" endLine="58" endPosition="39" />
+    <scopeInfo nodeId="9073603541474867581" fileName="StubResolver.java" startLine="57" startPosition="48" endLine="58" endPosition="33" />
     <scopeInfo nodeId="9073603541474867723" fileName="StubResolver.java" startLine="69" startPosition="92" endLine="70" endPosition="19" />
     <scopeInfo nodeId="4008291884597295668" fileName="StubResolver.java" startLine="75" startPosition="31" endLine="76" endPosition="19" />
     <scopeInfo nodeId="2534586358646788788" fileName="StubResolver.java" startLine="90" startPosition="53" endLine="91" endPosition="13" />
@@ -406,7 +406,7 @@
     <scopeInfo nodeId="8883975518329349206" fileName="StubResolver.java" startLine="126" startPosition="85" endLine="127" endPosition="53" />
     <scopeInfo nodeId="2742102018362199400" fileName="StubResolver.java" startLine="142" startPosition="54" endLine="143" endPosition="19" />
     <scopeInfo nodeId="2742102018362199414" fileName="StubResolver.java" startLine="146" startPosition="45" endLine="147" endPosition="19" />
-    <scopeInfo nodeId="6770603745029716121" fileName="StubResolver.java" startLine="152" startPosition="46" endLine="153" endPosition="165" />
+    <scopeInfo nodeId="6770603745029716121" fileName="StubResolver.java" startLine="152" startPosition="46" endLine="153" endPosition="159" />
     <scopeInfo nodeId="2742102018362199454" fileName="StubResolver.java" startLine="158" startPosition="58" endLine="159" endPosition="138" />
     <scopeInfo nodeId="9073603541474867746" fileName="StubResolver.java" startLine="175" startPosition="36" endLine="176" endPosition="52" />
     <scopeInfo nodeId="5778265495851109961" fileName="StubResolver.java" startLine="49" startPosition="25" endLine="51" endPosition="24" />

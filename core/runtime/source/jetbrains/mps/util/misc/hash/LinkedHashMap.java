@@ -40,6 +40,7 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
     init(capacity);
   }
 
+  @Override
   public V put(final K key, final V value) {
     final Entry<K, V>[] table = this.table;
     final int hash = key.hashCode();
@@ -74,6 +75,7 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
     return null;
   }
 
+  @Override
   public V remove(final Object key) {
     final Entry<K, V>[] table = this.table;
     final int hash = key.hashCode();
@@ -105,6 +107,7 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
     return false;
   }
 
+  @Override
   protected Map.Entry<K, V> getEntry(Object key) {
     final Entry<K, V>[] table = this.table;
     final int hash = key.hashCode();
@@ -121,6 +124,7 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
     return null;
   }
 
+  @Override
   protected void init(int capacity) {
     if (capacity < HashUtil.MIN_CAPACITY) {
       capacity = HashUtil.MIN_CAPACITY;
@@ -131,6 +135,7 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
     size = 0;
   }
 
+  @Override
   protected HashMapIterator hashIterator() {
     return new HashIterator();
   }
@@ -206,14 +211,17 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
       this.value = value;
     }
 
+    @Override
     public K getKey() {
       return key;
     }
 
+    @Override
     public V getValue() {
       return value;
     }
 
+    @Override
     public V setValue(final V value) {
       final V result = this.value;
       this.value = value;
@@ -226,10 +234,12 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
     private Entry<K, V> e = top;
     private Entry<K, V> last;
 
+    @Override
     public boolean hasNext() {
       return e != null;
     }
 
+    @Override
     public void remove() {
       if (last == null) {
         throw new IllegalStateException();
@@ -238,6 +248,7 @@ public class LinkedHashMap<K, V> extends AbstractHashMap<K, V> implements Map<K,
       last = null;
     }
 
+    @Override
     protected Entry<K, V> nextEntry() {
       final Entry<K, V> result = last = e;
       e = result.next;

@@ -57,6 +57,7 @@ public abstract class AbstractProgressStrategy {
       this.total = ofTotal;
     }
 
+    @Override
     public void beginWork(String name, int estimate, int ofTotal) {
       if (estimate <= 0) {
         throw new IllegalArgumentException("invalid estimate value");
@@ -67,10 +68,12 @@ public abstract class AbstractProgressStrategy {
       begunWork(pushProgress(name, estimate, ofTotal));
     }
 
+    @Override
     public void advanceWork(String name, int done) {
       advanceWork(name, done, null);
     }
 
+    @Override
     public void advanceWork(String name, int done, String comment) {
       if (done < 0) {
         throw new IllegalArgumentException("invalid done value");
@@ -78,6 +81,7 @@ public abstract class AbstractProgressStrategy {
       matchingOrTotal(name).primDone(done, comment);
     }
 
+    @Override
     public void finishWork(String name) {
       AbstractProgressStrategy.Work wrk = matchingOrTotal(name);
       wrk.primDone(wrk.workLeft(), null);
@@ -85,6 +89,7 @@ public abstract class AbstractProgressStrategy {
       popProgress(wrk);
     }
 
+    @Override
     public int workLeft() {
       return Math.max(0, estimate - done);
     }
@@ -160,22 +165,27 @@ public abstract class AbstractProgressStrategy {
     public CurrentProgress() {
     }
 
+    @Override
     public void beginWork(String name, int estimate, int ofTotal) {
       lastProgress().beginWork(name, estimate, ofTotal);
     }
 
+    @Override
     public void finishWork(String name) {
       lastProgress().finishWork(name);
     }
 
+    @Override
     public void advanceWork(String name, int done) {
       lastProgress().advanceWork(name, done);
     }
 
+    @Override
     public void advanceWork(String name, int done, String comment) {
       lastProgress().advanceWork(name, done, comment);
     }
 
+    @Override
     public int workLeft() {
       return lastProgress().workLeft();
     }

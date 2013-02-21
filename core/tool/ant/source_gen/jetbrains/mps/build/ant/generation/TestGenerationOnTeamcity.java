@@ -58,6 +58,7 @@ public class TestGenerationOnTeamcity extends GenerateTask {
     return new MyTeamcityAwareExecuteStreamHandler(this, new TeamCityMessageFormat());
   }
 
+  @Override
   public void addConfiguredProject(ProjectNested projectInner) {
     if (projectInner.getWholeProject()) {
       Iterator it = projectInner.iterator();

@@ -5,6 +5,7 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -95,6 +96,7 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -240,6 +242,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />

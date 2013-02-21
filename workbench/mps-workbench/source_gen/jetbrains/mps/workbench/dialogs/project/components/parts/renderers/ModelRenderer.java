@@ -16,6 +16,7 @@ public class ModelRenderer extends ProjectLevelRenderer {
     super(moduleScope, projectScope);
   }
 
+  @Override
   public String getItemLabel(Object value) {
     final SModelReference modelReference = (SModelReference) value;
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
@@ -29,6 +30,7 @@ public class ModelRenderer extends ProjectLevelRenderer {
     return modelReference.getSModelFqName().toString();
   }
 
+  @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
     final SModelReference modelReference = (SModelReference) value;

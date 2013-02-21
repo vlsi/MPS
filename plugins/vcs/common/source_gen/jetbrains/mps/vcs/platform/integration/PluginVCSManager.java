@@ -11,16 +11,19 @@ public class PluginVCSManager implements ApplicationComponent {
   public PluginVCSManager() {
   }
 
+  @Override
   public void initComponent() {
     DiskMemoryConflictResolver.setResolver(new DiskMemoryConflictResolverImpl());
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "VCS manager";
   }
 
+  @Override
   public void disposeComponent() {
   }
 }

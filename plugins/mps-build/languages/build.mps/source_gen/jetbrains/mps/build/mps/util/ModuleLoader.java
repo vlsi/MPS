@@ -904,6 +904,7 @@ public class ModuleLoader {
       this.moduleFile = moduleFile;
     }
 
+    @Override
     public String expandPath(@Nullable String path) {
       if (path == null) {
         return null;
@@ -958,6 +959,7 @@ public class ModuleLoader {
       return path;
     }
 
+    @Override
     public String shrinkPath(@Nullable String string) {
       throw new UnsupportedOperationException("cannot shrink");
     }

@@ -17,11 +17,11 @@
         </modelRoot>
       </models>
       <external-templates>
-        <generator generatorUID="857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.baseLanguage.closures#1199623535494)" />
         <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
-        <generator generatorUID="d95e286a-03bd-41d2-a04d-9db8f070e89c(jetbrains.mps.baseLanguage.logging#1167240554582)" />
         <generator generatorUID="a150150e-46ee-4c9e-b080-08d136e4eefb(jetbrains.mps.baseLanguage.tuples#1238919486295)" />
         <generator generatorUID="0e7466c6-bdd9-48a0-921b-a0f4bac08259(jetbrains.mps.baseLanguage.classifiers#1205839057922)" />
+        <generator generatorUID="857d0a79-6f44-4f46-84ed-9c5b42632011(jetbrains.mps.baseLanguage.closures#1199623535494)" />
+        <generator generatorUID="d95e286a-03bd-41d2-a04d-9db8f070e89c(jetbrains.mps.baseLanguage.logging#1167240554582)" />
       </external-templates>
       <dependencies>
         <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>

@@ -50,6 +50,7 @@ public class FindUsagesDialog extends DialogWrapper {
     setOKButtonText("Find");
 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myScopeEditor = new ScopeEditor(defaultOptions.getOption(ScopeOptions.class));
         myFindersEditor = new MyFindersEditor(defaultOptions, node, project) {
@@ -108,6 +109,7 @@ public class FindUsagesDialog extends DialogWrapper {
       myProject = project;
     }
 
+    @Override
     public void goToFinder(final ReloadableFinder finder) {
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override

@@ -17,6 +17,7 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.smodel.SModel;
 import java.io.File;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import java.awt.Frame;
@@ -108,7 +109,7 @@ public class GetModelContentsFromSource_Action extends BaseAction {
         }
         initial = sourceRoot;
         if (sourceRoot.exists()) {
-          File modelSource = new File(sourceRoot, NameUtil.pathFromNamespace(sModel.getLongName()));
+          File modelSource = new File(sourceRoot, NameUtil.pathFromNamespace(SNodeOperations.getModelLongName(sModel)));
           if (modelSource.exists()) {
             initial = modelSource;
           }

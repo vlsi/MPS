@@ -60,35 +60,35 @@
     <nodeInfo nodeId="4391314372875405365" fileName="EnumPropertySubstituteInfo.java" startLine="24" startPosition="105" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4391314372875405376" fileName="EnumPropertySubstituteInfo.java" startLine="25" startPosition="25" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4391314372875405383" fileName="EnumPropertySubstituteInfo.java" startLine="26" startPosition="18" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4391314372875430617" fileName="EnumPropertySubstituteInfo.java" startLine="30" startPosition="57" endLine="31" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4391314372875424942" fileName="EnumPropertySubstituteInfo.java" startLine="31" startPosition="101" endLine="32" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4391314372875510386" fileName="EnumPropertySubstituteInfo.java" startLine="36" startPosition="55" endLine="37" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4391314372875510404" fileName="EnumPropertySubstituteInfo.java" startLine="41" startPosition="93" endLine="42" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4391314372875510411" fileName="EnumPropertySubstituteInfo.java" startLine="42" startPosition="93" endLine="43" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4391314372875510423" fileName="EnumPropertySubstituteInfo.java" startLine="43" startPosition="38" endLine="44" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3056131523063466461" fileName="EnumPropertySubstituteInfo.java" startLine="44" startPosition="140" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3056131523063489071" fileName="EnumPropertySubstituteInfo.java" startLine="46" startPosition="38" endLine="47" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3056131523063489453" fileName="EnumPropertySubstituteInfo.java" startLine="47" startPosition="91" endLine="48" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3056131523063563680" fileName="EnumPropertySubstituteInfo.java" startLine="48" startPosition="40" endLine="49" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3056131523063581891" fileName="EnumPropertySubstituteInfo.java" startLine="50" startPosition="109" endLine="51" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3056131523063583094" fileName="EnumPropertySubstituteInfo.java" startLine="51" startPosition="70" endLine="52" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4391314372875510419" fileName="EnumPropertySubstituteInfo.java" startLine="54" startPosition="11" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4391314372875424941" fileName="EnumPropertySubstituteInfo.java" startLine="58" startPosition="5" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4391314372875430609" fileName="EnumPropertySubstituteInfo.java" startLine="59" startPosition="0" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4391314372875510233" fileName="EnumPropertySubstituteInfo.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3056131523063571638" fileName="EnumPropertySubstituteInfo.java" startLine="49" startPosition="70" endLine="53" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4391314372875430617" fileName="EnumPropertySubstituteInfo.java" startLine="31" startPosition="57" endLine="32" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4391314372875424942" fileName="EnumPropertySubstituteInfo.java" startLine="32" startPosition="101" endLine="33" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4391314372875510386" fileName="EnumPropertySubstituteInfo.java" startLine="37" startPosition="55" endLine="38" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4391314372875510404" fileName="EnumPropertySubstituteInfo.java" startLine="42" startPosition="93" endLine="43" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4391314372875510411" fileName="EnumPropertySubstituteInfo.java" startLine="43" startPosition="93" endLine="44" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4391314372875510423" fileName="EnumPropertySubstituteInfo.java" startLine="44" startPosition="38" endLine="45" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3056131523063466461" fileName="EnumPropertySubstituteInfo.java" startLine="45" startPosition="140" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3056131523063489071" fileName="EnumPropertySubstituteInfo.java" startLine="47" startPosition="38" endLine="48" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3056131523063489453" fileName="EnumPropertySubstituteInfo.java" startLine="48" startPosition="91" endLine="49" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3056131523063563680" fileName="EnumPropertySubstituteInfo.java" startLine="49" startPosition="40" endLine="50" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3056131523063581891" fileName="EnumPropertySubstituteInfo.java" startLine="51" startPosition="109" endLine="52" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3056131523063583094" fileName="EnumPropertySubstituteInfo.java" startLine="52" startPosition="70" endLine="53" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4391314372875510419" fileName="EnumPropertySubstituteInfo.java" startLine="55" startPosition="11" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4391314372875424941" fileName="EnumPropertySubstituteInfo.java" startLine="59" startPosition="5" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4391314372875430609" fileName="EnumPropertySubstituteInfo.java" startLine="60" startPosition="0" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4391314372875510233" fileName="EnumPropertySubstituteInfo.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3056131523063571638" fileName="EnumPropertySubstituteInfo.java" startLine="50" startPosition="70" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4391314372875337329" fileName="EnumPropertySubstituteInfo.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EnumPropertySubstituteInfo#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="3056131523063487739" fileName="EnumPropertySubstituteInfo.java" startLine="45" startPosition="0" endLine="54" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4391314372875510222" fileName="EnumPropertySubstituteInfo.java" startLine="40" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSubstitute#(Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4391314372875510209" fileName="EnumPropertySubstituteInfo.java" startLine="33" startPosition="104" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4391314372875515996" fileName="EnumPropertySubstituteInfo.java" startLine="32" startPosition="191" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4391314372875424931" fileName="EnumPropertySubstituteInfo.java" startLine="30" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()Ljava/util/List;" />
-    <scopeInfo nodeId="4391314372875510238" fileName="EnumPropertySubstituteInfo.java" startLine="36" startPosition="55" endLine="37" endPosition="87" />
-    <scopeInfo nodeId="3056131523063571640" fileName="EnumPropertySubstituteInfo.java" startLine="50" startPosition="109" endLine="52" endPosition="25">
+    <nodeInfo nodeId="3056131523063487739" fileName="EnumPropertySubstituteInfo.java" startLine="46" startPosition="0" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4391314372875510222" fileName="EnumPropertySubstituteInfo.java" startLine="41" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSubstitute#(Ljetbrains/mps/openapi/editor/EditorContext;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4391314372875510209" fileName="EnumPropertySubstituteInfo.java" startLine="34" startPosition="104" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4391314372875515996" fileName="EnumPropertySubstituteInfo.java" startLine="33" startPosition="191" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4391314372875424931" fileName="EnumPropertySubstituteInfo.java" startLine="30" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()Ljava/util/List;" />
+    <scopeInfo nodeId="4391314372875510238" fileName="EnumPropertySubstituteInfo.java" startLine="37" startPosition="55" endLine="38" endPosition="87" />
+    <scopeInfo nodeId="3056131523063571640" fileName="EnumPropertySubstituteInfo.java" startLine="51" startPosition="109" endLine="53" endPosition="25">
       <varInfo nodeId="3056131523063581892" varName="cell" />
     </scopeInfo>
     <scopeInfo nodeId="4391314372875337332" fileName="EnumPropertySubstituteInfo.java" startLine="24" startPosition="105" endLine="27" endPosition="48" />
-    <scopeInfo nodeId="4391314372875510233" fileName="EnumPropertySubstituteInfo.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="4391314372875510233" fileName="EnumPropertySubstituteInfo.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="4391314372875510236" varName="pattern" />
     </scopeInfo>
     <scopeInfo nodeId="4391314372875337329" fileName="EnumPropertySubstituteInfo.java" startLine="24" startPosition="0" endLine="29" endPosition="0">
@@ -96,27 +96,27 @@
       <varInfo nodeId="4391314372875347588" varName="node" />
       <varInfo nodeId="4391314372875347591" varName="propertyDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="3056131523063487741" fileName="EnumPropertySubstituteInfo.java" startLine="46" startPosition="38" endLine="53" endPosition="13">
+    <scopeInfo nodeId="3056131523063487741" fileName="EnumPropertySubstituteInfo.java" startLine="47" startPosition="38" endLine="54" endPosition="13">
       <varInfo nodeId="3056131523063563681" varName="selectedCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4391314372875510227" fileName="EnumPropertySubstituteInfo.java" startLine="41" startPosition="93" endLine="55" endPosition="22">
+    <scopeInfo nodeId="4391314372875510227" fileName="EnumPropertySubstituteInfo.java" startLine="42" startPosition="93" endLine="56" endPosition="22">
       <varInfo nodeId="4391314372875510405" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="4391314372875510222" fileName="EnumPropertySubstituteInfo.java" startLine="40" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="4391314372875510222" fileName="EnumPropertySubstituteInfo.java" startLine="41" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="2457764533250410852" varName="editorContext" />
       <varInfo nodeId="4391314372875510395" varName="pattern" />
     </scopeInfo>
-    <scopeInfo nodeId="4391314372875510203" fileName="EnumPropertySubstituteInfo.java" startLine="33" startPosition="104" endLine="57" endPosition="9" />
-    <scopeInfo nodeId="4391314372875515996" fileName="EnumPropertySubstituteInfo.java" startLine="32" startPosition="191" endLine="58" endPosition="5">
+    <scopeInfo nodeId="4391314372875510203" fileName="EnumPropertySubstituteInfo.java" startLine="34" startPosition="104" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="4391314372875515996" fileName="EnumPropertySubstituteInfo.java" startLine="33" startPosition="191" endLine="59" endPosition="5">
       <varInfo nodeId="4391314372875516052" varName="enumMemberDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="4391314372875424935" fileName="EnumPropertySubstituteInfo.java" startLine="30" startPosition="57" endLine="60" endPosition="19">
+    <scopeInfo nodeId="4391314372875424935" fileName="EnumPropertySubstituteInfo.java" startLine="31" startPosition="57" endLine="61" endPosition="19">
       <varInfo nodeId="4391314372875424943" varName="actions" />
       <varInfo nodeId="4391314372875430618" varName="enumDataType" />
     </scopeInfo>
-    <scopeInfo nodeId="4391314372875424931" fileName="EnumPropertySubstituteInfo.java" startLine="30" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="4391314372875510220" fileName="EnumPropertySubstituteInfo.java" startLine="34" startPosition="52" endLine="57" endPosition="7" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo$1" />
-    <unitInfo nodeId="4391314372875337327" fileName="EnumPropertySubstituteInfo.java" startLine="20" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo" />
+    <scopeInfo nodeId="4391314372875424931" fileName="EnumPropertySubstituteInfo.java" startLine="30" startPosition="0" endLine="63" endPosition="0" />
+    <unitInfo nodeId="4391314372875510220" fileName="EnumPropertySubstituteInfo.java" startLine="35" startPosition="52" endLine="58" endPosition="7" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo$1" />
+    <unitInfo nodeId="4391314372875337327" fileName="EnumPropertySubstituteInfo.java" startLine="20" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellMenu.EnumPropertySubstituteInfo" />
   </root>
 </debugInfo>
 

@@ -49,6 +49,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
 
     List<ReloadableFinder> sortedFinders = new ArrayList<ReloadableFinder>(availableFinders);
     Collections.sort(sortedFinders, new Comparator<ReloadableFinder>() {
+      @Override
       public int compare(ReloadableFinder o1, ReloadableFinder o2) {
         return o1.getDescription().compareToIgnoreCase(o2.getDescription());
       }
@@ -73,6 +74,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       finderCheckBox.setToolTipText("Right click to go to finder declaration");
 
       finderCheckBox.addChangeListener(new ChangeListener() {
+        @Override
         public void stateChanged(ChangeEvent e) {
           String finderClassName = finder.getFinder().getClass().getName();
           if (((JCheckBox) e.getSource()).isSelected()) {
@@ -88,6 +90,7 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       });
 
       finderCheckBox.addKeyListener(new KeyAdapter() {
+        @Override
         public void keyPressed(KeyEvent e) {
           if ((e.getKeyCode() == MenuKeyEvent.VK_B) && (e.getID() == MenuKeyEvent.KEY_PRESSED) && (e.isControlDown())) {
             if (finder.canNavigate()) {

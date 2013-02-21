@@ -17,6 +17,7 @@ public class QuantityConstant implements Function<Quantity> {
     myQuantity = quantity;
   }
 
+  @Override
   public Quantity compute(Object parm) {
     return myQuantity;
   }

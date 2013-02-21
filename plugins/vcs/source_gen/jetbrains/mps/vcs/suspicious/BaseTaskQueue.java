@@ -14,6 +14,7 @@ public abstract class BaseTaskQueue<T> {
 
   public BaseTaskQueue() {
     myTimer = new Timer("Task Queue", 500) {
+      @Override
       protected void onTimer() throws InterruptedException {
         process();
       }

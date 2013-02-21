@@ -15,6 +15,7 @@ public class DisposeMPSStatement extends Statement {
     myPrev = prev;
   }
 
+  @Override
   public void evaluate() throws Throwable {
     List<Throwable> errors = new ArrayList<Throwable>();
     try {

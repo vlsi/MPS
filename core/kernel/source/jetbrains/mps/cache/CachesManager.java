@@ -38,10 +38,12 @@ public class CachesManager implements CoreComponent {
   private ConcurrentMap<AbstractCache, ModelEventRouter> myModelEventRouters = new ConcurrentHashMap<AbstractCache, ModelEventRouter>();
   private ConcurrentMap<Object, List<SModelDescriptor>> myDependsOnModels = new ConcurrentHashMap<Object, List<SModelDescriptor>>();
   private SModelRepositoryAdapter myModelRepoListener = new SModelRepositoryAdapter() {
+    @Override
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       onModelRemoved(modelDescriptor);
     }
 
+    @Override
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       for (SModelDescriptor replacedModel : replacedModels) {
         onModelRemoved(replacedModel);
@@ -50,6 +52,7 @@ public class CachesManager implements CoreComponent {
   };
 
   private ReloadAdapter myCLMListener = new ReloadAdapter() {
+    @Override
     public void unload() {
       removeAllCaches();
     }
@@ -66,6 +69,7 @@ public class CachesManager implements CoreComponent {
     mySModelRepository = repo;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -76,6 +80,7 @@ public class CachesManager implements CoreComponent {
     myClassLoaderManager.addReloadHandler(myCLMListener);
   }
 
+  @Override
   public void dispose() {
     myClassLoaderManager.removeReloadHandler(myCLMListener);
     mySModelRepository.removeModelRepositoryListener(myModelRepoListener);
@@ -177,34 +182,42 @@ public class CachesManager implements CoreComponent {
     }
 
 
+    @Override
     public void languageAdded(SModelLanguageEvent event) {
       myCache.languageAdded(event);
     }
 
+    @Override
     public void languageRemoved(SModelLanguageEvent event) {
       myCache.languageRemoved(event);
     }
 
+    @Override
     public void importAdded(SModelImportEvent event) {
       myCache.importAdded(event);
     }
 
+    @Override
     public void importRemoved(SModelImportEvent event) {
       myCache.importRemoved(event);
     }
 
+    @Override
     public void devkitAdded(SModelDevKitEvent event) {
       myCache.devkitAdded(event);
     }
 
+    @Override
     public void devkitRemoved(SModelDevKitEvent event) {
       myCache.devkitRemoved(event);
     }
 
+    @Override
     public void rootAdded(SModelRootEvent event) {
       myCache.rootAdded(event);
     }
 
+    @Override
     public void rootRemoved(SModelRootEvent event) {
       myCache.rootRemoved(event);
       if (!myCache.isAttached()) return;
@@ -216,6 +229,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void beforeRootRemoved(SModelRootEvent event) {
       myCache.beforeRootRemoved(event);
       if (!myCache.isAttached()) return;
@@ -227,6 +241,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void propertyChanged(SModelPropertyEvent event) {
       myCache.propertyChanged(event);
       if (!myCache.isAttached()) return;
@@ -238,6 +253,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void childAdded(SModelChildEvent event) {
       myCache.childAdded(event);
       if (!myCache.isAttached()) return;
@@ -249,6 +265,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void childRemoved(SModelChildEvent event) {
       myCache.childRemoved(event);
       if (!myCache.isAttached()) return;
@@ -261,6 +278,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void beforeChildRemoved(SModelChildEvent event) {
       myCache.beforeChildRemoved(event);
       if (!myCache.isAttached()) return;
@@ -273,6 +291,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void referenceAdded(SModelReferenceEvent event) {
       myCache.referenceAdded(event);
       if (!myCache.isAttached()) return;
@@ -284,6 +303,7 @@ public class CachesManager implements CoreComponent {
       }
     }
 
+    @Override
     public void referenceRemoved(SModelReferenceEvent event) {
       myCache.referenceRemoved(event);
       if (!myCache.isAttached()) return;

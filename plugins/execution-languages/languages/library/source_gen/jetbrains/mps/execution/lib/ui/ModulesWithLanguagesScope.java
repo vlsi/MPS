@@ -23,6 +23,7 @@ public class ModulesWithLanguagesScope extends FilteredScope {
     this.requiredLanguages = SetSequence.fromSetWithValues(new HashSet<Language>(), requiredLanguages);
   }
 
+  @Override
   protected boolean acceptModel(SModel model) {
     if (SModelStereotype.isUserModel(model) && !(SModelStereotype.isGeneratorModel(model))) {
       return acceptModule(model.getModule());
@@ -30,6 +31,7 @@ public class ModulesWithLanguagesScope extends FilteredScope {
     return false;
   }
 
+  @Override
   protected boolean acceptModule(SModule module) {
     if (module instanceof TransientModelsModule || module instanceof Generator) {
       return false;

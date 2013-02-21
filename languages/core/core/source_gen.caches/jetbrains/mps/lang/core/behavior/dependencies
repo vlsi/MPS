@@ -142,6 +142,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
@@ -197,6 +198,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" file="INamedConcept_BehaviorDescriptor.java">

@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.DynamicReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -43,7 +44,7 @@ public class ModelLinkMap {
 
   public ModelLinkMap build() {
     // build map based on already loaded model 
-    for (SNode node : myModel.nodes()) {
+    for (SNode node : new NodesIterable(myModel)) {
       addRoleLocation(ptr(SNodeOperations.getContainingLinkDeclaration(node)), node);
       addTypeLocation(ptr(SNodeOperations.getConceptDeclaration(node)), node);
       for (String prop : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).keySet())) {

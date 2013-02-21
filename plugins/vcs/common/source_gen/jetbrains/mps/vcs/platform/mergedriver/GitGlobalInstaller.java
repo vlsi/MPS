@@ -30,6 +30,7 @@ import jetbrains.mps.logging.Logger;
   }
 
   @NotNull
+  @Override
   protected AbstractInstaller.State install(boolean dryRun) {
     if (!(PluginUtil.isGitPluginEnabled())) {
       return AbstractInstaller.State.NOT_ENABLED;
@@ -133,10 +134,12 @@ import jetbrains.mps.logging.Logger;
     }
   }
 
+  @Override
   public String getActionTitle() {
     return "Git global merge driver setting (~/.gitconfig)";
   }
 
+  @Override
   public String getAffectedVcsName() {
     return "Git";
   }

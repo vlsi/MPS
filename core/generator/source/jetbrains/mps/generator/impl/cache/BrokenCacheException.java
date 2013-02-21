@@ -24,6 +24,6 @@ import jetbrains.mps.smodel.SModel;
 public class BrokenCacheException extends GenerationFailureException {
 
   public BrokenCacheException(SModel model) {
-    super("cache is broken for " + model.getLongName()+ ": try to regenerate");
+    super("cache is broken for " + jetbrains.mps.util.SNodeOperations.getModelLongName(model) + ": try to regenerate");
   }
 }

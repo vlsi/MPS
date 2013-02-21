@@ -25,6 +25,7 @@ public abstract class ModelCheckerController {
       issuesSize = ListSequence.fromList(issuesCopy).count();
       final CountDownLatch latch = new CountDownLatch(1);
       runCommand(new Runnable() {
+        @Override
         public void run() {
           try {
             for (Iterator<ModelCheckerIssue> lit = ListSequence.fromList(issuesCopy).iterator(); lit.hasNext();) {

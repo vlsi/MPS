@@ -3,88 +3,88 @@
   <root nodeRef="r:54883260-1d2e-4108-8311-3a1f6d27f2b4(jetbrains.mps.workbench.dialogs.project.components.parts)/1560298786499494350">
     <nodeInfo nodeId="1560298786499494375" fileName="CopySupport.java" startLine="24" startPosition="63" endLine="25" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1560298786499494380" fileName="CopySupport.java" startLine="25" startPosition="44" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499494533" fileName="CopySupport.java" startLine="28" startPosition="50" endLine="29" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499494539" fileName="CopySupport.java" startLine="29" startPosition="79" endLine="30" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494398" fileName="CopySupport.java" startLine="32" startPosition="7" endLine="33" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494403" fileName="CopySupport.java" startLine="33" startPosition="24" endLine="34" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494556" fileName="CopySupport.java" startLine="37" startPosition="50" endLine="38" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499494562" fileName="CopySupport.java" startLine="38" startPosition="37" endLine="39" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494422" fileName="CopySupport.java" startLine="49" startPosition="109" endLine="50" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499494436" fileName="CopySupport.java" startLine="51" startPosition="52" endLine="52" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494443" fileName="CopySupport.java" startLine="53" startPosition="7" endLine="54" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499494453" fileName="CopySupport.java" startLine="54" startPosition="61" endLine="55" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499494470" fileName="CopySupport.java" startLine="56" startPosition="49" endLine="57" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499494478" fileName="CopySupport.java" startLine="57" startPosition="65" endLine="58" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494492" fileName="CopySupport.java" startLine="59" startPosition="35" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494497" fileName="CopySupport.java" startLine="62" startPosition="7" endLine="63" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499494518" fileName="CopySupport.java" startLine="64" startPosition="11" endLine="65" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494524" fileName="CopySupport.java" startLine="65" startPosition="34" endLine="66" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494508" fileName="CopySupport.java" startLine="67" startPosition="41" endLine="68" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494533" fileName="CopySupport.java" startLine="29" startPosition="50" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499494539" fileName="CopySupport.java" startLine="30" startPosition="79" endLine="31" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494398" fileName="CopySupport.java" startLine="33" startPosition="7" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494403" fileName="CopySupport.java" startLine="34" startPosition="24" endLine="35" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494556" fileName="CopySupport.java" startLine="39" startPosition="50" endLine="40" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499494562" fileName="CopySupport.java" startLine="40" startPosition="37" endLine="41" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494422" fileName="CopySupport.java" startLine="52" startPosition="109" endLine="53" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499494436" fileName="CopySupport.java" startLine="54" startPosition="52" endLine="55" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494443" fileName="CopySupport.java" startLine="56" startPosition="7" endLine="57" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499494453" fileName="CopySupport.java" startLine="57" startPosition="61" endLine="58" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499494470" fileName="CopySupport.java" startLine="59" startPosition="49" endLine="60" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499494478" fileName="CopySupport.java" startLine="60" startPosition="65" endLine="61" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494492" fileName="CopySupport.java" startLine="62" startPosition="35" endLine="63" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494497" fileName="CopySupport.java" startLine="65" startPosition="7" endLine="66" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1560298786499494518" fileName="CopySupport.java" startLine="67" startPosition="11" endLine="68" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494524" fileName="CopySupport.java" startLine="68" startPosition="34" endLine="69" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494508" fileName="CopySupport.java" startLine="70" startPosition="41" endLine="71" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499494366" fileName="CopySupport.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CopySupport#()V" />
-    <nodeInfo nodeId="1560298786499494355" fileName="CopySupport.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelReferenceTransferHandler#()V" />
-    <nodeInfo nodeId="1560298786499494431" fileName="CopySupport.java" startLine="50" startPosition="60" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499494485" fileName="CopySupport.java" startLine="58" startPosition="60" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499494393" fileName="CopySupport.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="1560298786499494549" fileName="CopySupport.java" startLine="36" startPosition="46" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499494386" fileName="CopySupport.java" startLine="26" startPosition="63" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494415" fileName="CopySupport.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseClicked#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="1560298786499494505" fileName="CopySupport.java" startLine="63" startPosition="75" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1560298786499494458" fileName="CopySupport.java" startLine="55" startPosition="59" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1560298786499494408" fileName="CopySupport.java" startLine="34" startPosition="25" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494369" fileName="CopySupport.java" startLine="24" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addCopyPopup#(Ljavax/swing/JComponent;)V" />
-    <nodeInfo nodeId="1560298786499494357" fileName="CopySupport.java" startLine="49" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="exportToClipboard#(Ljavax/swing/JComponent;Ljava/awt/datatransfer/Clipboard;I)V" />
+    <nodeInfo nodeId="1560298786499494355" fileName="CopySupport.java" startLine="48" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelReferenceTransferHandler#()V" />
+    <nodeInfo nodeId="1560298786499494431" fileName="CopySupport.java" startLine="53" startPosition="60" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499494485" fileName="CopySupport.java" startLine="61" startPosition="60" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499494549" fileName="CopySupport.java" startLine="38" startPosition="46" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1560298786499494393" fileName="CopySupport.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="1560298786499494505" fileName="CopySupport.java" startLine="66" startPosition="75" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1560298786499494386" fileName="CopySupport.java" startLine="26" startPosition="63" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494415" fileName="CopySupport.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseClicked#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="1560298786499494458" fileName="CopySupport.java" startLine="58" startPosition="59" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="1560298786499494408" fileName="CopySupport.java" startLine="35" startPosition="25" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1560298786499494369" fileName="CopySupport.java" startLine="24" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addCopyPopup#(Ljavax/swing/JComponent;)V" />
+    <nodeInfo nodeId="1560298786499494357" fileName="CopySupport.java" startLine="51" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="exportToClipboard#(Ljavax/swing/JComponent;Ljava/awt/datatransfer/Clipboard;I)V" />
     <scopeInfo nodeId="1560298786499494368" fileName="CopySupport.java" startLine="21" startPosition="24" endLine="21" endPosition="24" />
-    <scopeInfo nodeId="1560298786499494420" fileName="CopySupport.java" startLine="46" startPosition="44" endLine="46" endPosition="44" />
-    <scopeInfo nodeId="1560298786499494435" fileName="CopySupport.java" startLine="51" startPosition="52" endLine="52" endPosition="53" />
-    <scopeInfo nodeId="1560298786499494491" fileName="CopySupport.java" startLine="59" startPosition="35" endLine="60" endPosition="40" />
-    <scopeInfo nodeId="1560298786499494506" fileName="CopySupport.java" startLine="67" startPosition="0" endLine="68" endPosition="50">
+    <scopeInfo nodeId="1560298786499494420" fileName="CopySupport.java" startLine="48" startPosition="44" endLine="48" endPosition="44" />
+    <scopeInfo nodeId="1560298786499494435" fileName="CopySupport.java" startLine="54" startPosition="52" endLine="55" endPosition="53" />
+    <scopeInfo nodeId="1560298786499494491" fileName="CopySupport.java" startLine="62" startPosition="35" endLine="63" endPosition="40" />
+    <scopeInfo nodeId="1560298786499494506" fileName="CopySupport.java" startLine="70" startPosition="0" endLine="71" endPosition="50">
       <varInfo nodeId="1560298786499494515" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499494507" fileName="CopySupport.java" startLine="67" startPosition="41" endLine="68" endPosition="50" />
+    <scopeInfo nodeId="1560298786499494507" fileName="CopySupport.java" startLine="70" startPosition="41" endLine="71" endPosition="50" />
     <scopeInfo nodeId="1560298786499494366" fileName="CopySupport.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1560298786499494532" fileName="CopySupport.java" startLine="28" startPosition="50" endLine="30" endPosition="101">
+    <scopeInfo nodeId="1560298786499494532" fileName="CopySupport.java" startLine="29" startPosition="50" endLine="31" endPosition="101">
       <varInfo nodeId="1560298786499494534" varName="clipboard" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499494555" fileName="CopySupport.java" startLine="37" startPosition="50" endLine="39" endPosition="50">
+    <scopeInfo nodeId="1560298786499494555" fileName="CopySupport.java" startLine="39" startPosition="50" endLine="41" endPosition="50">
       <varInfo nodeId="1560298786499494557" varName="point" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499494355" fileName="CopySupport.java" startLine="46" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1560298786499494517" fileName="CopySupport.java" startLine="64" startPosition="11" endLine="66" endPosition="36" />
-    <scopeInfo nodeId="1560298786499494393" fileName="CopySupport.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="1560298786499494355" fileName="CopySupport.java" startLine="48" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1560298786499494517" fileName="CopySupport.java" startLine="67" startPosition="11" endLine="69" endPosition="36" />
+    <scopeInfo nodeId="1560298786499494548" fileName="CopySupport.java" startLine="38" startPosition="46" endLine="42" endPosition="9" />
+    <scopeInfo nodeId="1560298786499494393" fileName="CopySupport.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="1560298786499494396" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499494548" fileName="CopySupport.java" startLine="36" startPosition="46" endLine="40" endPosition="9" />
-    <scopeInfo nodeId="1560298786499494469" fileName="CopySupport.java" startLine="56" startPosition="49" endLine="61" endPosition="9">
+    <scopeInfo nodeId="1560298786499494469" fileName="CopySupport.java" startLine="59" startPosition="49" endLine="64" endPosition="9">
       <varInfo nodeId="1560298786499494471" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499494415" fileName="CopySupport.java" startLine="36" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1560298786499494415" fileName="CopySupport.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1560298786499494418" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499494458" fileName="CopySupport.java" startLine="55" startPosition="59" endLine="62" endPosition="7">
+    <scopeInfo nodeId="1560298786499494458" fileName="CopySupport.java" startLine="58" startPosition="59" endLine="65" endPosition="7">
       <varInfo nodeId="1560298786499494464" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499494374" fileName="CopySupport.java" startLine="24" startPosition="63" endLine="42" endPosition="7">
+    <scopeInfo nodeId="1560298786499494374" fileName="CopySupport.java" startLine="24" startPosition="63" endLine="44" endPosition="7">
       <varInfo nodeId="1560298786499494381" varName="menuItem" />
       <varInfo nodeId="1560298786499494376" varName="popup" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499494369" fileName="CopySupport.java" startLine="24" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="1560298786499494372" varName="component" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499494421" fileName="CopySupport.java" startLine="49" startPosition="109" endLine="69" endPosition="7">
+    <scopeInfo nodeId="1560298786499494421" fileName="CopySupport.java" startLine="52" startPosition="109" endLine="72" endPosition="7">
       <varInfo nodeId="1560298786499494423" varName="clipboardAction" />
       <varInfo nodeId="1560298786499494444" varName="selected" />
       <varInfo nodeId="1560298786499494498" varName="t" />
       <varInfo nodeId="1560298786499494454" varName="textPresentation" />
     </scopeInfo>
-    <scopeInfo nodeId="1560298786499494357" fileName="CopySupport.java" startLine="49" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="1560298786499494369" fileName="CopySupport.java" startLine="24" startPosition="0" endLine="46" endPosition="0">
+      <varInfo nodeId="1560298786499494372" varName="component" />
+    </scopeInfo>
+    <scopeInfo nodeId="1560298786499494357" fileName="CopySupport.java" startLine="51" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1560298786499494364" varName="action" />
       <varInfo nodeId="1560298786499494362" varName="clip" />
       <varInfo nodeId="1560298786499494360" varName="comp" />
     </scopeInfo>
-    <unitInfo nodeId="1560298786499494392" fileName="CopySupport.java" startLine="27" startPosition="35" endLine="32" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$1" />
-    <unitInfo nodeId="1560298786499494414" fileName="CopySupport.java" startLine="35" startPosition="35" endLine="42" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$2" />
-    <unitInfo nodeId="1560298786499494352" fileName="CopySupport.java" startLine="45" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$ModelReferenceTransferHandler" />
-    <unitInfo nodeId="1560298786499494350" fileName="CopySupport.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport" />
+    <unitInfo nodeId="1560298786499494392" fileName="CopySupport.java" startLine="27" startPosition="35" endLine="33" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$1" />
+    <unitInfo nodeId="1560298786499494414" fileName="CopySupport.java" startLine="36" startPosition="35" endLine="44" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$2" />
+    <unitInfo nodeId="1560298786499494352" fileName="CopySupport.java" startLine="47" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport$ModelReferenceTransferHandler" />
+    <unitInfo nodeId="1560298786499494350" fileName="CopySupport.java" startLine="20" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.CopySupport" />
   </root>
   <root nodeRef="r:54883260-1d2e-4108-8311-3a1f6d27f2b4(jetbrains.mps.workbench.dialogs.project.components.parts)/4972790448884483620" />
 </debugInfo>

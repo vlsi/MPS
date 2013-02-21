@@ -12,6 +12,7 @@ public class ReadComboBoxRenderrer extends DefaultListCellRenderer {
   public ReadComboBoxRenderrer() {
   }
 
+  @Override
   public Component getListCellRendererComponent(final JList list, final Object value, final int index, final boolean isSelected, final boolean cellHasFocus) {
     final Wrappers._T<Component> result = new Wrappers._T<Component>();
     ModelAccess.instance().runReadAction(new Runnable() {

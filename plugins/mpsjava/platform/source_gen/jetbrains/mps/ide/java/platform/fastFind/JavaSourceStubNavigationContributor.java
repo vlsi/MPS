@@ -25,6 +25,7 @@ public class JavaSourceStubNavigationContributor implements NodeNavigationContri
   public JavaSourceStubNavigationContributor() {
   }
 
+  @Override
   public Collection<NodeDescriptor> getNodeDescriptors(final Collection<SModel> collection, Project project) {
     List<NodeDescriptor> nodes = ListSequence.fromList(new ArrayList<NodeDescriptor>());
 
@@ -42,14 +43,17 @@ public class JavaSourceStubNavigationContributor implements NodeNavigationContri
         final SNode rootNode = root;
 
         ListSequence.fromList(nodes).addElement(new NodeDescriptor() {
+          @Override
           public String getName() {
             return name;
           }
 
+          @Override
           public SConcept getConcept() {
             return rootNode.getConcept();
           }
 
+          @Override
           public SNodeReference getNodeReference() {
             return new SNodePointer((SNode) rootNode);
           }
@@ -60,16 +64,19 @@ public class JavaSourceStubNavigationContributor implements NodeNavigationContri
     return nodes;
   }
 
+  @Override
   public void initComponent() {
     FastGoToRegistry.getInstance().setNavigationContributor("java_source_stubs", this);
   }
 
+  @Override
   public void disposeComponent() {
     FastGoToRegistry.getInstance().setNavigationContributor("java_source_stubs", null);
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Java source stubs navigation contributor";
   }

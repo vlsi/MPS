@@ -70,6 +70,7 @@ public class ExecuteCalculator_Action extends BaseAction {
       try {
         final Method method = ExecuteCalculator_Action.this.getMainMethod(_params);
         Thread thread = new Thread(new Runnable() {
+          @Override
           public void run() {
             try {
               String[] args = new String[0];
@@ -90,7 +91,7 @@ public class ExecuteCalculator_Action extends BaseAction {
 
   private Class getCalcClass(final Map<String, Object> _params) {
     String className = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("calcNode")), "name");
-    String fqClassName = SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getLongName() + "." + className;
+    String fqClassName = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode")))) + "." + className;
     return ((IClassLoadingModule) SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getModelDescriptor().getModule()).getClass(fqClassName);
   }
 

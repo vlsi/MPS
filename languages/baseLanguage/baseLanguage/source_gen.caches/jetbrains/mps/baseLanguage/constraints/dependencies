@@ -972,6 +972,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ReferenceScopeProvider" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.base.BaseScopeProvider" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

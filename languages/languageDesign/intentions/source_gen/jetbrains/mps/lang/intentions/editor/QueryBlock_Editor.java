@@ -92,6 +92,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
+          @Override
           public EditorCell createEditorCell(EditorContext editorContext) {
             jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Concept function help:"));

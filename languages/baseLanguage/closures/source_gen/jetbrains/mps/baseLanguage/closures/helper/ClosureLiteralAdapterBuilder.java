@@ -68,6 +68,7 @@ public class ClosureLiteralAdapterBuilder {
   private SNode lookupAdapterClassAnnotation(SNode literal) {
     final SNode adapterAnn = SLinkOperations.getTarget(_quotation_createNode_wzrebk_a0a0a5(), "annotation", false);
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(literal), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true)).getElement(SNodeOperations.getIndexInParent(literal)), "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
+      @Override
       public boolean accept(SNode ann) {
         return SLinkOperations.getTarget(ann, "annotation", false) == adapterAnn;
       }
@@ -76,6 +77,7 @@ public class ClosureLiteralAdapterBuilder {
 
   private SNode findAdapterClassDeclaration(SNode literal, final SNode annInst) {
     return ListSequence.fromList(SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(literal), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false)), genContext.getScope(), "jetbrains.mps.baseLanguage.structure.ClassConcept")).findFirst(new IWhereFilter<SNode>() {
+      @Override
       public boolean accept(SNode cls) {
         return SPropertyOperations.getString(cls, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(annInst, "value", true)).first(), "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"));
       }
@@ -84,6 +86,7 @@ public class ClosureLiteralAdapterBuilder {
 
   private SNode getAdapterClassFunctionType(SNode cls) {
     return FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(cls)).findFirst(new IWhereFilter<SNode>() {
+      @Override
       public boolean accept(SNode md) {
         return SNodeOperations.isInstanceOf(md, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration");
       }

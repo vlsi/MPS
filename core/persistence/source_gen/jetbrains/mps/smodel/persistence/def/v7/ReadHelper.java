@@ -36,7 +36,6 @@ public class ReadHelper {
     }
     SModelReference modelRef = SModelReference.fromString(modelUID);
     SModel.ImportElement elem = new SModel.ImportElement(modelRef, ++myMaxImportIndex, version);
-    model.setMaxImportIndex(myMaxImportIndex);
     if (implicit) {
       model.addAdditionalModelVersion(elem);
     } else {

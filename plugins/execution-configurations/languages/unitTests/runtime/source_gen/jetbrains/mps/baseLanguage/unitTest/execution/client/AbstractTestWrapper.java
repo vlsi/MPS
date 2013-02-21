@@ -33,11 +33,13 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   }
 
   @Nullable
+  @Override
   public N getNode() {
     return (N) ((SNodePointer) myNodePointer).getNode();
   }
 
   @NotNull
+  @Override
   public SNodeReference getNodePointer() {
     return myNodePointer;
   }
@@ -73,20 +75,24 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   }
 
   @Nullable
+  @Override
   public ITestNodeWrapper getTestCase() {
     return null;
   }
 
   @NotNull
+  @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
     return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
   }
 
   @NotNull
+  @Override
   public Tuples._3<String, List<String>, List<String>> getTestRunParameters() {
     return getDefaultRunParameters();
   }
 
+  @Override
   public String getName() {
     SNode node = getNode();
     if (node == null) {
@@ -99,6 +105,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     }
   }
 
+  @Override
   public String getFqName() {
     ITestNodeWrapper testCase = getTestCase();
     if (isTestCase() || testCase == null) {
@@ -115,6 +122,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
     return testCase.getFqName() + "." + getName();
   }
 
+  @Override
   public String getCachedFqName() {
     if (myFqName == null) {
       ModelAccess.instance().runReadAction(new Runnable() {

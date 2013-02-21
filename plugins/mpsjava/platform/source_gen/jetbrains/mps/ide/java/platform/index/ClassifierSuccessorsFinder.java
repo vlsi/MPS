@@ -43,10 +43,12 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
   public ClassifierSuccessorsFinder(MPSCoreComponents coreComponents) {
   }
 
+  @Override
   public boolean isIndexReady(Project project) {
     return !(DumbService.getInstance(ProjectHelper.toIdeaProject(project)).isDumb());
   }
 
+  @Override
   public List<SNode> getDerivedClassifiers(SNode classifier, IScope scope) {
     Set<VirtualFile> unModifiedModelFiles = SetSequence.fromSet(new HashSet<VirtualFile>());
     List<SNode> modifiedClasses = ListSequence.fromList(new ArrayList<SNode>());
@@ -86,16 +88,19 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
     return result;
   }
 
+  @Override
   public void initComponent() {
     ClassifierSuccessors.getInstance().setFinder(this);
   }
 
+  @Override
   public void disposeComponent() {
     ClassifierSuccessors.getInstance().setFinder(null);
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Classifiers successors finder";
   }

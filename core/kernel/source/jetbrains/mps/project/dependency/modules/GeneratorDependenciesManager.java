@@ -29,6 +29,7 @@ public class GeneratorDependenciesManager extends ModuleDependenciesManager<Gene
     super(gen);
   }
 
+  @Override
   public Collection<IModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes) {
     Collection<IModule> result = super.directlyUsedModules(includeNonReexport, runtimes);
     //generator sees all modules from source language as non-reexported

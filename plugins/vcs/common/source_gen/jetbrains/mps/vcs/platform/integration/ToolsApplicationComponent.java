@@ -16,15 +16,18 @@ public class ToolsApplicationComponent implements ApplicationComponent {
   }
 
   @NotNull
+  @Override
   public String getComponentName() {
     return ToolsApplicationComponent.class.getSimpleName();
   }
 
+  @Override
   public void initComponent() {
     myDiffManager.registerDiffTool(myModelDiffTool);
     myDiffManager.registerDiffTool(myModelMergeTool);
   }
 
+  @Override
   public void disposeComponent() {
     myDiffManager.unregisterDiffTool(myModelDiffTool);
     myDiffManager.unregisterDiffTool(myModelMergeTool);

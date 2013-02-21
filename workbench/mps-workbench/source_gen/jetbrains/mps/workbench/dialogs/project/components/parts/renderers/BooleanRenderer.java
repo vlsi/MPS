@@ -14,6 +14,7 @@ public class BooleanRenderer extends DefaultListCellRenderer {
     myCheckBox = new JCheckBox();
   }
 
+  @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     myCheckBox.setSelected((value == null ?
       false :

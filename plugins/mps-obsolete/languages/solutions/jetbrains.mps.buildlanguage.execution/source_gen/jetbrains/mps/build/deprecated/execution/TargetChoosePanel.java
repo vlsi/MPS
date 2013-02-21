@@ -15,10 +15,12 @@ public class TargetChoosePanel extends ChildChoosePanel<SNode, SNode> {
     super("Target:");
   }
 
+  @Override
   public List<SNode> getChildrenNodes(SNode node) {
     return SLinkOperations.getTargets(node, "target", true);
   }
 
+  @Override
   protected String selectFromChangedNode(final SNode node) {
     final Wrappers._T<String> child = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {

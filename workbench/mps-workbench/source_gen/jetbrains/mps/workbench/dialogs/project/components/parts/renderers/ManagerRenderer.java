@@ -12,6 +12,7 @@ public class ManagerRenderer extends DefaultListCellRenderer {
   public ManagerRenderer() {
   }
 
+  @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     ModelRootManager manager = (ModelRootManager) value;
     String representation = (manager == null ?

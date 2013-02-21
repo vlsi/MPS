@@ -31,6 +31,7 @@ public class AndCondition<T> implements Condition<T> {
     myExecuteBoth = executeBoth;
   }
 
+  @Override
   public boolean met(T object) {
     if (myExecuteBoth) {
       boolean b1 = myC1.met(object);

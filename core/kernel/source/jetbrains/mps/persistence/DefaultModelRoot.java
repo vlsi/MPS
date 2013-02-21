@@ -65,8 +65,8 @@ public class DefaultModelRoot extends FileBasedModelRoot {
   }
 
   @Override
-  public boolean isReadOnly() {
-    if (super.isReadOnly()) {
+  public boolean canCreateModels() {
+    if (super.canCreateModels()) {
       return true;
     }
     Collection<String> modelRoots = getFiles(SOURCE_ROOTS);

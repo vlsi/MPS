@@ -45,6 +45,7 @@ public class GenerationResult implements IClassesData {
     return mySuccesful;
   }
 
+  @Override
   public ClassLoader getClassLoader(ClassLoader parent) {
     return getLoader(parent);
   }

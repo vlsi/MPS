@@ -13,21 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModelAccess;
 
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public abstract class ModelAccess implements ModelCommandExecutor, SModelAccess {
+public abstract class ModelAccess implements ModelCommandExecutor {
   protected static final Logger LOG = Logger.getLogger(ModelAccess.class);
 
   private static ModelAccess ourInstance = new DefaultModelAccess();
@@ -121,26 +118,12 @@ public abstract class ModelAccess implements ModelCommandExecutor, SModelAccess 
   @Override
   public void checkReadAccess() {
     if (!canRead()) {
-      throw new IllegalStateException();
-    }
-  }
-
-  @Override
-  public void checkWriteAccess() {
-    if (!canWrite()) {
-      throw new IllegalStateException();
-    }
-  }
-
-  @Override
-  public void assertReadAccess() {
-    if (!canRead()) {
       throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }
 
   @Override
-  public void assertWriteAccess() {
+  public void checkWriteAccess() {
     if (!canWrite()) {
       throw new IllegalModelAccessError("You can write model only inside write actions");
     }

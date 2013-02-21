@@ -130,6 +130,7 @@ public class JDOMUtil {
   public static SAXBuilder createBuilder() {
     final SAXBuilder saxBuilder = new SAXBuilder();
     saxBuilder.setEntityResolver(new EntityResolver() {
+      @Override
       public InputSource resolveEntity(String publicId,
                        String systemId)
         throws SAXException, IOException {
@@ -202,10 +203,12 @@ public class JDOMUtil {
   }
 
   public static class MyXMLOutputter extends XMLOutputter {
+    @Override
     public String escapeAttributeEntities(String str) {
       return escapeText(str, false, true);
     }
 
+    @Override
     public String escapeElementEntities(String str) {
       return escapeText(str, false, false);
     }

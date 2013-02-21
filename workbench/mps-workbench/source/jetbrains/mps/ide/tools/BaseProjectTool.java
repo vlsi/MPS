@@ -33,6 +33,7 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
     super(project, id, number, icon, anchor, canCloseContent);
   }
 
+  @Override
   public void projectOpened() {
     final MPSProjectMigrationState migrationState = getProject().getComponent(MPSProjectMigrationState.class);
     if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
@@ -53,10 +54,12 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
     }
   }
 
+  @Override
   public void projectClosed() {
 
   }
 
+  @Override
   public void initComponent() {
   }
 
@@ -64,6 +67,7 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
     createTool(early);
     if (early) {
       StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+        @Override
         public void run() {
           registerLater();
         }
@@ -74,6 +78,7 @@ public abstract class BaseProjectTool extends BaseTool implements ProjectCompone
     }
   }
 
+  @Override
   public void disposeComponent() {
     unregister();
   }

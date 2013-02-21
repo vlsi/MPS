@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -41,11 +41,11 @@ public class PluginModule_Behavior {
   }
 
   public static String call_getFullPathToPluginXml_989489456094444401(SNode thisNode) {
-    return PluginModule_Behavior.call_getPluginModule_989489456094442313(thisNode).getGeneratorOutputPath() + Util.SEPARATOR + IdeaInitializerReference_Behavior.call_getContainigModel_4015626213813769728(SLinkOperations.getTarget(thisNode, "pluginXmlReference", true)).getLongName().replace(".", Util.SEPARATOR) + Util.SEPARATOR + IdeaInitializerReference_Behavior.call_getGeneratedFileName_4015626213814034867(SLinkOperations.getTarget(thisNode, "pluginXmlReference", true));
+    return PluginModule_Behavior.call_getPluginModule_989489456094442313(thisNode).getGeneratorOutputPath() + Util.SEPARATOR + SNodeOperations.getModelLongName(IdeaInitializerReference_Behavior.call_getContainigModel_4015626213813769728(SLinkOperations.getTarget(thisNode, "pluginXmlReference", true))).replace(".", Util.SEPARATOR) + Util.SEPARATOR + IdeaInitializerReference_Behavior.call_getGeneratedFileName_4015626213814034867(SLinkOperations.getTarget(thisNode, "pluginXmlReference", true));
   }
 
   public static SNode call_createPluginXmlPathHolder_989489456094459829(SNode thisNode) {
-    SNode layout = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", true, true);
+    SNode layout = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder", true, true);
     return PathHolder_Behavior.createPathHolder_55204148067446946(PluginModule_Behavior.call_getFullPathToPluginXml_989489456094444401(thisNode), BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), layout, "virtual_getMacro_1107726059764558743", new Object[]{}), AbstractProjectComponent_Behavior.call_getHomeFile_1213877333764(thisNode).getPath(), thisNode);
   }
 

@@ -18,8 +18,10 @@ public class HLineCellProvider extends AbstractCellProvider {
     this.myNode = node;
   }
 
+  @Override
   public EditorCell createEditorCell(EditorContext p0) {
     EditorCell_Basic result = new EditorCell_Basic(p0, this.myNode) {
+      @Override
       public void paintContent(Graphics g, ParentSettings parentSettings) {
         if (this.isSelectionPaintedOnAncestor(parentSettings).isSelectionPainted()) {
           g.setColor(Color.WHITE);
@@ -33,10 +35,12 @@ public class HLineCellProvider extends AbstractCellProvider {
         g.fillRect(x, this.getY() + 1, width, 1);
       }
 
+      @Override
       public int getAscent() {
         return this.getPrevLeaf().getHeight() / 4;
       }
 
+      @Override
       public void relayoutImpl() {
         this.myWidth = 20;
         this.myHeight = 3;

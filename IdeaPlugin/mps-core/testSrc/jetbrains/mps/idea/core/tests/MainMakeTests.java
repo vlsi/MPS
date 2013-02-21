@@ -30,13 +30,13 @@ import jetbrains.mps.idea.core.make.MPSMakeLauncher;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.library.contributor.PluginLibrariesContributor;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 

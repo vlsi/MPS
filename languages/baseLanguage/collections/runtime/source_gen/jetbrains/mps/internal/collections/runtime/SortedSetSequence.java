@@ -29,18 +29,22 @@ public class SortedSetSequence<T> extends SetSequence<T> implements ISortedSetSe
     return getSet().last();
   }
 
+  @Override
   public ISortedSetSequence<T> headSet(T toElement) {
     return SortedSetSequence.fromSet(getSet().headSet(toElement));
   }
 
+  @Override
   public ISortedSetSequence<T> subSet(T fromElement, T toElement) {
     return SortedSetSequence.fromSet(getSet().subSet(fromElement, toElement));
   }
 
+  @Override
   public ISortedSetSequence<T> tailSet(T fromElement) {
     return SortedSetSequence.fromSet(getSet().tailSet(fromElement));
   }
 
+  @Override
   public Comparator<? super T> comparator() {
     return getSet().comparator();
   }

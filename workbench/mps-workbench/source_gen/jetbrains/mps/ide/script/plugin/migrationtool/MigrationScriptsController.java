@@ -27,9 +27,10 @@ public abstract class MigrationScriptsController {
 
   public Collection<SearchResult<SNode>> computeAliveIncludedResults(final List<SNodeReference> includedResultNodes) {
     ThreadUtils.assertEDT();
-    final List aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
+    final List<SearchResult<SNode>> aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
     final Set aliveIncludedNodes = new HashSet<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         List<SNodeReference> includedNodes = includedResultNodes;
         for (SNodeReference includedNode : includedNodes) {
@@ -52,6 +53,7 @@ public abstract class MigrationScriptsController {
     pmonitor.start("", searchResults.size());
     for (final SearchResult<SNode> seachResult : searchResults) {
       runCommand(new Runnable() {
+        @Override
         public void run() {
           pmonitor.advance(1);
         }
@@ -74,6 +76,7 @@ public abstract class MigrationScriptsController {
 
     }
     runCommand(new Runnable() {
+      @Override
       public void run() {
         pmonitor.done();
       }

@@ -35,10 +35,12 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
   @Nullable
   protected abstract SNode getSNode();
 
+  @Override
   public boolean paintsAbove() {
     return true;
   }
 
+  @Override
   public void paint(Graphics graphics, EditorComponent editorComponent) {
     EditorCell nodeCell = getNodeCell(editorComponent);
     if (nodeCell == null) {
@@ -54,10 +56,12 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
     graphics.drawRect(nodeCell.getX(), nodeCell.getY(), nodeCell.getWidth() - 1, nodeCell.getHeight() - 1);
   }
 
+  @Override
   public boolean paintsBackground() {
     return true;
   }
 
+  @Override
   public void paintBackground(Graphics graphics, EditorComponent component) {
     paintStripeBackground(graphics, component);
     paintCellBackground(graphics, component);
@@ -161,6 +165,7 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
       return true;
     }
     return nodeCell.findParent(new Condition<jetbrains.mps.nodeEditor.cells.EditorCell_Collection>() {
+      @Override
       public boolean met(jetbrains.mps.nodeEditor.cells.EditorCell_Collection cellCollection) {
         // do not want an explicit dependency on table.runtime 
         return eq_mgy25g_a0b0a0a0a0a5a71(cellCollection.getClass().getSimpleName(), "EditorCell_Table");

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cup5ikf632ajjncmv1bbo1vsa3mrz6u">
+<dependencies version="2" modelHash="8kqrnclm9ygbwng8dhjwuccrnzvt8fu">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -7,19 +7,19 @@
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-1y364c3x08ezyxfrbl16vh2nde1fe7q" />
   <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="2dwxf8w6oj5zpfbtgmdrreuj7n7ytal" />
-  <dep model="r:0b933946-5ee4-42ea-9b69-bd1790a8e611(jetbrains.mps.debugger.java.runtime.engine)" hash="5vndx0u5lycoh0ag0eky1b0kefdisvc" />
-  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-civmjgp9lyvc1592lp0bed4tl3qfjvc" />
-  <dep model="r:6c060161-192f-4aa3-a797-df89b30aa449(jetbrains.mps.debugger.java.runtime.engine.events)" hash="6v403ryu27cgrwqtcfedabp4k3m4ceb" />
-  <dep model="r:6c15a5c9-1bba-4ade-a066-13f2741b04fc(jetbrains.mps.debugger.java.api.state)" hash="8cr00plh4h1ffhdx8l5gkug5477iewf" />
-  <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" hash="-8133rmrfsjl85wv7xje3f8l0gn7pgkk" />
-  <dep model="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)" hash="-bhllm5gju13qc9f57s7qqqkuj6gmykr" />
+  <dep model="r:0b933946-5ee4-42ea-9b69-bd1790a8e611(jetbrains.mps.debugger.java.runtime.engine)" hash="-6eceba7nwzkzt1uawlhkvbr5ghmjy2g" />
+  <dep model="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)" hash="-58ocwuod1hpr2tjsask05cw1cxy8jv8" />
+  <dep model="r:6c060161-192f-4aa3-a797-df89b30aa449(jetbrains.mps.debugger.java.runtime.engine.events)" hash="-4ohkbgjnrdp27afwg3h621mdgksh60w" />
+  <dep model="r:6c15a5c9-1bba-4ade-a066-13f2741b04fc(jetbrains.mps.debugger.java.api.state)" hash="6jb2ru7a0r4k4i2hv7rwth0wza83as3" />
+  <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" hash="azt5ycwy1i90ybw80ao0do2x744xjae" />
+  <dep model="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)" hash="dnwbhxqeqciu6zr8z0r3qekb91dm2yu" />
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="8mfe7n9xwshuy8g4qjangnfwidrl40j" />
-  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="5xhpnwgaud84z3dx07nvdqm5c9bdesm" />
-  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="6xm79v7qanoqnroa8o52kzwgdabk69a" />
+  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="-8f6qvi9h2vngdm52q9cwrnnmi62t32v" />
+  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="-9kxz85khss4f533df92af5k3ykmlzok" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
   <common hash="-cs8mkl1ql7811idkfdaidog5teqds4" />
-  <source id="4352118152439824931" name="DebugSession" hash="205oas6ge53vbqqw4xtg52e5icnqbqy">
+  <source id="4352118152439824931" name="DebugSession" hash="45wrl0wxytcr6g4rtgexbzmzyobb7jg">
     <dep root="4352118152439825362" />
     <dep root="4352118152439825500" />
     <dep root="4352118152439826150" />
@@ -34,14 +34,14 @@
     <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" />
     <file name="DebugSession.java" />
   </source>
-  <source id="4352118152439825362" name="JavaUiStateImpl" hash="9o1ftjp1pplrvsan52yxmb6cd63700e">
+  <source id="4352118152439825362" name="JavaUiStateImpl" hash="c1n086v0mewoyz7bs50ig81c19jybwx">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
     <dep model="r:6c15a5c9-1bba-4ade-a066-13f2741b04fc(jetbrains.mps.debugger.java.api.state)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaUiStateImpl.java" />
   </source>
-  <source id="4352118152439825500" name="PausedJavaUiState" hash="bfnjticxy87ye3klb8z1evbi6jst5re">
+  <source id="4352118152439825500" name="PausedJavaUiState" hash="9u58jz5sajuh2lq1hbqw6fxf3ze33ff">
     <dep root="4352118152439825362" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -59,7 +59,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="PausedJavaUiState.java" />
   </source>
-  <source id="4352118152439826150" name="RunningJavaUiState" hash="-7gn1patn9mhctbcy7d60rq4zwdzcs7y">
+  <source id="4352118152439826150" name="RunningJavaUiState" hash="92f9u63ig0hfcndmcjn9y0kclgklcom">
     <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" />
     <file name="RunningJavaUiState.java" />
   </source>

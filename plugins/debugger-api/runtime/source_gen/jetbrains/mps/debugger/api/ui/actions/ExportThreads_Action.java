@@ -93,6 +93,7 @@ public class ExportThreads_Action extends BaseAction {
       final ExportThreadsDialog dialog = new ExportThreadsDialog(((Project) MapSequence.fromMap(_params).get("project")), sb);
 
       ApplicationManager.getApplication().invokeLater(new Runnable() {
+        @Override
         public void run() {
           dialog.show();
         }

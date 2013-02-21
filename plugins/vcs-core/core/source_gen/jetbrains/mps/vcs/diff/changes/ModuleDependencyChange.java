@@ -27,10 +27,12 @@ public class ModuleDependencyChange extends DependencyChange {
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
     return new ModuleDependencyChange(getChangeSet().getOppositeChangeSet(), myModuleReference, myType, !(isDelete()));
   }
 
+  @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     if (isDelete()) {
       myType.myDeleteTask.invoke(model, myModuleReference);

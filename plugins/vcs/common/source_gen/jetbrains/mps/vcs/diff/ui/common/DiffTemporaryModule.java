@@ -64,7 +64,7 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   private SModelDescriptor findModel(SModelReference reference) {
-    if (reference.equals(myModel.getSModelReference())) {
+    if (reference.equals(myModel.getReference())) {
       return myModel.getModelDescriptor();
     }
     List<IScope> scopes = ListSequence.fromList(new ArrayList<IScope>());
@@ -100,7 +100,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
     IModule module = null;
     if (mergeResultModel) {
-      SModelDescriptor mdInRepo = SModelRepository.getInstance().getModelDescriptor(model.getSModelReference());
+      SModelDescriptor mdInRepo = SModelRepository.getInstance().getModelDescriptor(model.getReference());
       if (mdInRepo != null) {
         module = mdInRepo.getModule();
       }
@@ -113,12 +113,12 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   public static void setSModelId(SModel model, String version) {
-    SModelReference modelRef = model.getSModelReference();
+    SModelReference modelRef = model.getReference();
     CopyUtil.changeModelReference(model, new SModelReference(modelRef.getSModelFqName(), genMergeSModelId(modelRef.getSModelId(), version)));
   }
 
   public static void resetSModelId(SModel model) {
-    SModelReference modelRef = model.getSModelReference();
+    SModelReference modelRef = model.getReference();
     assert modelRef.getSModelId() instanceof SModelId.ForeignSModelId;
     CopyUtil.changeModelReference(model, new SModelReference(modelRef.getSModelFqName(), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getSModelId())));
   }
@@ -160,6 +160,7 @@ public class DiffTemporaryModule extends AbstractModule {
     private DiffModuleScope() {
     }
 
+    @Override
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = SetSequence.fromSet(new HashSet<IModule>());
       SetSequence.fromSet(result).addElement(DiffTemporaryModule.this);
@@ -167,6 +168,7 @@ public class DiffTemporaryModule extends AbstractModule {
       return result;
     }
 
+    @Override
     protected Set<Language> getInitialUsedLanguages() {
       return SetSequence.fromSetWithValues(new HashSet<Language>(), GlobalScope.getInstance().getVisibleLanguages());
     }
@@ -182,7 +184,7 @@ public class DiffTemporaryModule extends AbstractModule {
     private boolean myEditable;
 
     private DiffSModelDescriptor(IModule module, SModel model, boolean editable) {
-      super(model.getSModelReference());
+      super(model.getReference());
       myModule = module;
       mySModel = model;
       myEditable = editable;

@@ -65,15 +65,18 @@ public class NodeStructureViewProviderImpl implements ApplicationComponent, Node
     return create(project, nodePointer);
   }
 
+  @Override
   public void initComponent() {
     // TODO move to plugin.xml
     Extensions.getArea(null).getExtensionPoint(NodeStructureViewProvider.EP_NODE_STRUCTURE_VIEW_PROVIDER).registerExtension(this);
   }
 
+  @Override
   public void disposeComponent() {
     Extensions.getArea(null).getExtensionPoint(NodeStructureViewProvider.EP_NODE_STRUCTURE_VIEW_PROVIDER).unregisterExtension(this);
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return NodeStructureViewProviderImpl.class.getName();

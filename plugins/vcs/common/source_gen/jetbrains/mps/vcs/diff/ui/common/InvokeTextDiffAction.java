@@ -27,6 +27,7 @@ public class InvokeTextDiffAction extends BaseAction implements DumbAware {
     setExecuteOutsideCommand(true);
   }
 
+  @Override
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     if (myDiffTool.canShow(myDiffRequest)) {
       myDialog.close(DialogWrapper.NEXT_USER_EXIT_CODE);

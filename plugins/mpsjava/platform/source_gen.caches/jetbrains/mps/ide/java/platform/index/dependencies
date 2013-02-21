@@ -52,6 +52,7 @@
     <classNode dependClassName="com.intellij.util.indexing.ID" />
     <classNode dependClassName="com.intellij.util.io.DataExternalizer" />
     <classNode dependClassName="com.intellij.util.io.KeyDescriptor" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -71,6 +72,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.util.NodesIterable" />
     <classNode extendsClassName="com.intellij.util.indexing.DataIndexer" />
     <classNode extendsClassName="com.intellij.util.indexing.FileBasedIndexExtension" />
     <classNode extendsClassName="com.intellij.util.indexing.InputFilter" />
@@ -83,6 +85,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
@@ -91,6 +94,7 @@
     <classNode dependClassName="java.io.DataInput" />
     <classNode dependClassName="java.io.DataOutput" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" />
     <classNode extendsClassName="com.intellij.util.io.KeyDescriptor" />
@@ -99,6 +103,7 @@
     <classNode dependClassName="java.io.DataInput" />
     <classNode dependClassName="java.io.DataOutput" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

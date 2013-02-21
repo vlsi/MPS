@@ -28,6 +28,7 @@ public abstract class SimpleRoleScope extends Scope {
     this.conceptFqName = null;
   }
 
+  @Override
   public SNode resolve(SNode contextNode, String refText) {
     SNode result = null;
     for (SNode n : SNodeOperations.getChildren(myNode, myLink)) {
@@ -46,6 +47,7 @@ public abstract class SimpleRoleScope extends Scope {
     return result;
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode n : SNodeOperations.getChildren(myNode, myLink)) {
@@ -60,6 +62,7 @@ public abstract class SimpleRoleScope extends Scope {
     return result;
   }
 
+  @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     if (node == null || SNodeOperations.getParent(node) != myNode) {
       return null;
@@ -89,6 +92,7 @@ public abstract class SimpleRoleScope extends Scope {
 
   public static SimpleRoleScope forNamedElements(SNode node, SNode linkDeclaration) {
     return new SimpleRoleScope(node, linkDeclaration) {
+      @Override
       public String getName(SNode child) {
         return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }

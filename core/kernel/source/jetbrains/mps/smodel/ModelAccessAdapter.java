@@ -17,14 +17,17 @@
 package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 public class ModelAccessAdapter implements ModelAccessListener {
+  @Override
   public void commandStarted() {
 
   }
 
+  @Override
   public void beforeCommandFinished() {
 
   }
 
+  @Override
   public void commandFinished() {
 
   }

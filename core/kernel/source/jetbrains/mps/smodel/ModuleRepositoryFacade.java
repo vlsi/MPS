@@ -41,6 +41,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
     REPO = repo;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -49,6 +50,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
   }

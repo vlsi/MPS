@@ -1249,11 +1249,11 @@
     <unitInfo nodeId="1262430001741497834" fileName="ExponentialOperation_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741519697">
-    <nodeInfo nodeId="1262430001741519696" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741519696" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <scopeInfo nodeId="1262430001741519699" fileName="DecimalPlusExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741519694" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741519694" fileName="DecimalPlusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741519697" varName="thisNode" />
     </scopeInfo>
@@ -1263,11 +1263,11 @@
     <unitInfo nodeId="1262430001741519697" fileName="DecimalPlusExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.DecimalPlusExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741642110">
-    <nodeInfo nodeId="1262430001741642109" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642109" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <scopeInfo nodeId="1262430001741642112" fileName="DecimalDivExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741642107" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741642107" fileName="DecimalDivExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741642110" fileName="DecimalDivExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741642110" varName="thisNode" />
     </scopeInfo>
@@ -1403,11 +1403,11 @@
     <unitInfo nodeId="1262430001741704846" fileName="BigMaxExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigMaxExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741718335">
-    <nodeInfo nodeId="1262430001741718334" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718334" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <scopeInfo nodeId="1262430001741718337" fileName="DecimalMinusExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741718332" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741718332" fileName="DecimalMinusExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741718335" fileName="DecimalMinusExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741718335" varName="thisNode" />
     </scopeInfo>
@@ -1431,11 +1431,11 @@
     <unitInfo nodeId="1262430001741718383" fileName="BigMinExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.behavior.BigMinExpression_Behavior" />
   </root>
   <root nodeRef="r:feb4a112-d0b1-417f-b9b7-9058aab93ce6(jetbrains.mps.baseLanguage.math.behavior)/1262430001741718542">
-    <nodeInfo nodeId="1262430001741718541" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718541" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_1262430001741497858#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <scopeInfo nodeId="1262430001741718544" fileName="DecimalMulExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741718539" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="13" />
+    <scopeInfo nodeId="1262430001741718539" fileName="DecimalMulExpression_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="14" />
     <scopeInfo nodeId="1262430001741718542" fileName="DecimalMulExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="1262430001741718542" varName="thisNode" />
     </scopeInfo>

@@ -22,18 +22,22 @@ public abstract class BaseLeaf extends BaseNode {
 
   }
 
+  @Override
   public void addChild(BaseNode child) {
     throw new UnsupportedOperationException("add child to leaf node");
   }
 
+  @Override
   public void removeChild(BaseNode child) {
     throw new UnsupportedOperationException("remove child from leaf node");
   }
 
+  @Override
   public void clearChildren() {
     throw new UnsupportedOperationException("clear children in leaf node");
   }
 
+  @Override
   public List<BaseNode> getChildren() {
     throw new UnsupportedOperationException("get children in leaf node");
   }

@@ -34,42 +34,52 @@ public abstract class AbstractBlock implements IBlock {
     this.myCaption = caption;
   }
 
+  @Override
   public SNodeReference getSourceNode() {
     return this.mySourceNode;
   }
 
+  @Override
   public int getX() {
     return this.myX;
   }
 
+  @Override
   public int getY() {
     return this.myY;
   }
 
+  @Override
   public int getWidth() {
     return this.myWidth;
   }
 
+  @Override
   public int getHeight() {
     return this.myHeight;
   }
 
+  @Override
   public void addBlockListener(IBlockListener listener) {
     this.myBlockListeners.add(listener);
   }
 
+  @Override
   public void removeBlockListener(IBlockListener listener) {
     this.myBlockListeners.remove(listener);
   }
 
+  @Override
   public void setSucc(Set<IBlock> succ) {
     this.mySucc = succ;
   }
 
+  @Override
   public Set<IBlock> succ() {
     return this.mySucc;
   }
 
+  @Override
   public boolean processMousePressed(MouseEvent mEvent) {
     int x = mEvent.getX();
     int y = mEvent.getY();
@@ -83,6 +93,7 @@ public abstract class AbstractBlock implements IBlock {
     }
   }
 
+  @Override
   public void relayout(Component c) {
     Font font = c.getFont();
     FontMetrics metrics = c.getFontMetrics(font);
@@ -100,20 +111,24 @@ public abstract class AbstractBlock implements IBlock {
     return metrics.getHeight() / 3;
   }
 
+  @Override
   public void setWidth(int width) {
     this.myWidth = width;
     this.myPaddingX = (this.myWidth - this.myStringWidth) / 2;
   }
 
+  @Override
   public void setHeight(int height) {
     this.myHeight = height;
     this.myPaddingY = (this.myHeight - this.myCharHeight) / 2;
   }
 
+  @Override
   public void setX(int x) {
     this.myX = x;
   }
 
+  @Override
   public void setY(int y) {
     this.myY = y;
   }
@@ -124,6 +139,7 @@ public abstract class AbstractBlock implements IBlock {
 
   protected abstract void paintBlock(Graphics g);
 
+  @Override
   public void paint(Graphics g) {
     AbstractBlock.this.paintBlock(g);
     AbstractBlock.this.paintCaption(g);

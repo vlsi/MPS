@@ -50,6 +50,7 @@ import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import javax.swing.*;
@@ -161,6 +162,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       final IResultProvider[] provider = new IResultProvider[1];
       final IScope scope = new ModelsOnlyScope(myModelDescriptor);
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           if (value instanceof SModelReference) {
             query[0] = new SearchQuery(
@@ -338,6 +340,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       final IResultProvider[] provider = new IResultProvider[1];
       final IScope scope = new ModelsOnlyScope(myModelDescriptor);
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           query[0] = new SearchQuery(
             MPSModuleRepository.getInstance().getModuleByFqName(((ModuleReference) value).getModuleFqName()), scope);
@@ -384,17 +387,18 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     private String getInfoText() {
       final StringBuilder messageText = new StringBuilder();
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           int references = 0;
           int properties = 0;
           messageText.append("<html>");
           SModel model = myModelDescriptor.getSModel();
-          for (SNode node : model.nodes()) {
+          for (SNode node : new NodesIterable(model)) {
             references += IterableUtil.asCollection(node.getReferences()).size();
             properties += jetbrains.mps.util.SNodeOperations.getProperties(node).keySet().size();
           }
-          messageText.append("Roots : ").append(model.rootsCount()).append("<br>");
-          messageText.append("Nodes : ").append(model.registeredNodesCount()).append("<br>");
+          messageText.append("Roots : ").append(IterableUtil.asCollection(model.getRootNodes()).size()).append("<br>");
+          messageText.append("Nodes : ").append(jetbrains.mps.util.SNodeOperations.nodesCount(model)).append("<br>");
           messageText.append("References : ").append(references).append("<br>");
           messageText.append("Properties : ").append(properties).append("<br>");
         }

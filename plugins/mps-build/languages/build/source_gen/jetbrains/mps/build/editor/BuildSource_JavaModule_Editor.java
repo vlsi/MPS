@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -50,7 +51,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_kr3er8_a1c0(SNode node, EditorContext editorContext, IScope scope) {
-    if (SNodeOperations.getModel(node).isTransient() || (SLinkOperations.getTarget(node, "options", true) != null)) {
+    if (SNodeOperations.getModel(node) instanceof TransientSModel || (SLinkOperations.getTarget(node, "options", true) != null)) {
       return true;
     }
     SNode project = SNodeOperations.as(SNodeOperations.getContainingRoot(node), "jetbrains.mps.build.structure.BuildProject");

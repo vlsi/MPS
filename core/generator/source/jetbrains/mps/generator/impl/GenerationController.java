@@ -243,6 +243,7 @@ public class GenerationController implements ITaskPoolProvider {
     return currentGenerationOK;
   }
 
+  @Override
   public IGenerationTaskPool getTaskPool() {
     if (myParallelTaskPool != null || !myOptions.isGenerateInParallel()) {
       return myParallelTaskPool;

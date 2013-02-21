@@ -62,24 +62,28 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
         BorderFactory.createEmptyBorder(7, 3, 3, 3)));
 
     myGlobalScopeButton = new JRadioButton(new AbstractAction(GLOBAL_SCOPE) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         setCompletionFieldsState(false, false);
       }
     });
 
     myProjectScopeButton = new JRadioButton(new AbstractAction(PROJECT_SCOPE) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         setCompletionFieldsState(false, false);
       }
     });
 
     myModuleScopeButton = new JRadioButton(new AbstractAction(MODULE_SCOPE) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         setCompletionFieldsState(true, false);
       }
     });
 
     myModelScopeButton = new JRadioButton(new AbstractAction(MODEL_SCOPE) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         setCompletionFieldsState(false, true);
       }
@@ -87,6 +91,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
 
     if (InternalFlag.isInternalMode()) {
       myBootstrapScopeButton = new JRadioButton(new AbstractAction(BOOTSTRAP_SCOPE) {
+        @Override
         public void actionPerformed(ActionEvent e) {
           setCompletionFieldsState(false, false);
         }
@@ -190,6 +195,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     }
   }
 
+  @Override
   public ScopeOptions getOptions() {
     if (myModuleNameList.contains(myModuleField.getText())) {
       myOptions.setModule(myModuleField.getText());

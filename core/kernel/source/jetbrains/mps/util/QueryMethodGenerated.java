@@ -21,14 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IllegalModelChangeError;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -50,6 +43,7 @@ public class QueryMethodGenerated implements CoreComponent {
   private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();
 
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       clearCaches();
     }
@@ -61,10 +55,12 @@ public class QueryMethodGenerated implements CoreComponent {
     myClassLoaderManager = manager;
   }
 
+  @Override
   public void init() {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
+  @Override
   public void dispose() {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
@@ -90,7 +86,7 @@ public class QueryMethodGenerated implements CoreComponent {
 
   @NotNull
   public static Class getQueriesGeneratedClassFor(@NotNull SModelDescriptor sm, boolean suppressErrorLogging) throws ClassNotFoundException {
-    String packageName = JavaNameUtil.packageNameForModelUID(sm.getSModel().getSModelReference());
+    String packageName = JavaNameUtil.packageNameForModelUID(sm.getSModel().getReference());
     String queriesClassName = packageName + ".QueriesGenerated";
 
     IModule module = sm.getModule();
@@ -117,12 +113,12 @@ public class QueryMethodGenerated implements CoreComponent {
   }
 
   private static Method getQueryMethod(SModel sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Map<String, Method> methods = ourMethods.get(sourceModel.getSModelReference());
+    Map<String, Method> methods = ourMethods.get(sourceModel.getReference());
 
     if (methods == null) {
       Class queriesClass = getQueriesGeneratedClassFor(sourceModel.getModelDescriptor(), suppressErrorLogging);
 
-      methods = ourMethods.get(sourceModel.getSModelReference());
+      methods = ourMethods.get(sourceModel.getReference());
       if (methods == null) {
         methods = new HashMap<String, Method>();
         Method[] declaredMethods = queriesClass.getDeclaredMethods();
@@ -132,16 +128,16 @@ public class QueryMethodGenerated implements CoreComponent {
           methods.put(name, declaredMethod);
         }
 
-        ourMethods.putIfAbsent(sourceModel.getSModelReference(), methods);
+        ourMethods.putIfAbsent((SModelReference) sourceModel.getReference(), methods);
       }
     }
 
 
     Method method = methods.get(methodName);
     if (method == null) {
-      String className = JavaNameUtil.packageNameForModelUID(sourceModel.getSModelReference()) + ".QueriesGenerated";
+      String className = JavaNameUtil.packageNameForModelUID(sourceModel.getReference()) + ".QueriesGenerated";
       if (!suppressErrorLogging) {
-        LOG.error("couldn't find method '" + methodName + "' in '" + className + "' : TRY TO GENERATE model '" + sourceModel.getSModelReference() + "'");
+        LOG.error("couldn't find method '" + methodName + "' in '" + className + "' : TRY TO GENERATE model '" + sourceModel.getReference() + "'");
       }
       throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + className + "'");
     }

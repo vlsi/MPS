@@ -114,7 +114,7 @@ public class QueriesUtil {
     if ((conceptDeclaration == null)) {
       return "jetbrains.mps.core.structure.BaseConcept";
     }
-    return SNodeOperations.getModel(conceptDeclaration).getLongName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(conceptDeclaration)) + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
   public static String getEnumClassResolveInfo(SNode enumDeclaration) {

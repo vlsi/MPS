@@ -191,6 +191,6 @@ public class GeneratorUtil {
   }
 
   public static String getTemplateNodeId(SNode templateNode) {
-    return "tpl/" + templateNode.getModel().getSModelId() + "/" + templateNode.getNodeId();
+    return "tpl/" + templateNode.getModel().getModelId() + "/" + templateNode.getNodeId();
   }
 }

@@ -5,6 +5,7 @@ package jetbrains.mps.testModels.interfaces1;
 import jetbrains.mps.testModels.interfaces2.Int2;
 
 public class MyClass implements Int2 {
+  @Override
   public void bbb() {
   }
 }

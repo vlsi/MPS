@@ -91,7 +91,7 @@ public class QueriesGenerated {
     if (overriden == null) {
       return null;
     }
-    return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
+    return SNodeOperations.getModel(overriden).getReference().getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1199462157225(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -103,7 +103,7 @@ public class QueriesGenerated {
     if (overriden == null) {
       return null;
     }
-    return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
+    return SNodeOperations.getModel(overriden).getReference().getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1198673899511(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -143,7 +143,7 @@ public class QueriesGenerated {
     if (overriden == null) {
       return null;
     }
-    return SNodeOperations.getModel(overriden).getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
+    return SNodeOperations.getModel(overriden).getReference().getSModelFqName() + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_7573235936722758651(final IOperationContext operationContext, final PropertyMacroContext _context) {

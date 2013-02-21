@@ -24,6 +24,7 @@
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.startup.StartupManager" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.optionseditor.DefaultOptionsContainer" />

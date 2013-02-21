@@ -68,6 +68,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
+          @Override
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Error result = new EditorCell_Error(context, node, "<no content>");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
@@ -89,6 +90,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
+          @Override
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Error result = new EditorCell_Error(context, node, "<no content>");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));

@@ -35,7 +35,6 @@ import jetbrains.mps.project.ProjectOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;

@@ -14,6 +14,7 @@ public class BaseChooserComponent extends BaseFieldWithButtonComponent {
   public BaseChooserComponent() {
   }
 
+  @Override
   public JTextField getTextField() {
     return this.myFieldWithButton[0].getTextField();
   }

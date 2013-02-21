@@ -30,12 +30,14 @@ public class ConditionalIterator<T> implements Iterator<T> {
     myCond = cond;
   }
 
+  @Override
   public boolean hasNext() {
     if (myObject != null) return true;
     myObject = moveToNext();
     return myObject != null;
   }
 
+  @Override
   public T next() {
     if (myObject == null) {
       myObject = moveToNext();
@@ -47,6 +49,7 @@ public class ConditionalIterator<T> implements Iterator<T> {
     return obj;
   }
 
+  @Override
   public void remove() {
     myIterator.remove();
   }

@@ -173,7 +173,7 @@ import jetbrains.mps.cache.CachesManager;
   }
 
   public static ClassifiersCache getInstance(SModel model) {
-    String uid = model.getModelReference().toString();
+    String uid = model.getReference().toString();
     Object key = keyProducer.createKey(uid);
     return (ClassifiersCache) CachesManager.getInstance().getCache(key, model, new CachesManager.CacheCreator<SModel>() {
       @Override

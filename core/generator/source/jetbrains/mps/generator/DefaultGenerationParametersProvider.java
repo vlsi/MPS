@@ -16,7 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.util.misc.hash.HashMap;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -31,6 +31,7 @@ public class DefaultGenerationParametersProvider implements GenerationParameters
   private List<String> defaultLanguages = new ArrayList<String>();
   private Map<SModelDescriptor, List<String>> additionalLanguages = new HashMap<SModelDescriptor, List<String>>();
 
+  @Override
   public Map<String, Object> getParameters(SModelDescriptor descriptor) {
     if (descriptor == null) { throw new NullPointerException();}
 
@@ -96,6 +97,7 @@ public class DefaultGenerationParametersProvider implements GenerationParameters
       myDefaults = defaults;
     }
 
+    @NotNull
     @Override
     public Set<Entry<K, V>> entrySet() {
       HashSet<Entry<K, V>> set = new HashSet<Entry<K, V>>(myDelegate.entrySet());

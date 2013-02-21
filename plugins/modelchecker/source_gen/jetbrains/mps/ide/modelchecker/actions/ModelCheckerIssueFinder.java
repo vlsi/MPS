@@ -23,6 +23,7 @@ public class ModelCheckerIssueFinder implements IFinder {
     return null;
   }
 
+  @Override
   public SearchResults find(SearchQuery searchQuery, ProgressMonitor monitor) {
     IHolder objectHolder = searchQuery.getObjectHolder();
     IOperationContext operationContext;

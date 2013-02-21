@@ -2,12 +2,14 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ui.swt.runtime.widgets.ControlIterator" file="ControlIterator.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="org.eclipse.swt.widgets.Composite" />
     <classNode dependClassName="org.eclipse.swt.widgets.Control" />
     <classNode extendsClassName="java.util.Iterator" />
   </dependency>
   <dependency className="jetbrains.mps.ui.swt.runtime.widgets.ExpandController" file="ExpandController.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Iterator" />

@@ -57,56 +57,68 @@ public class WeakValueHashMap<K, V> implements Map<K, V> {
     }
   }
 
+  @Override
   public V get(Object key) {
     MyReference<K, V> ref = myMap.get(key);
     if (ref == null) return null;
     return ref.get();
   }
 
+  @Override
   public V put(K key, V value) {
     processQueue();
     MyReference<K, V> oldRef = myMap.put(key, new MyReference<K, V>(key, value, myQueue));
     return oldRef != null ? oldRef.get() : null;
   }
 
+  @Override
   public V remove(Object key) {
     processQueue();
     MyReference<K, V> ref = myMap.remove(key);
     return ref != null ? ref.get() : null;
   }
 
+  @Override
   public void putAll(Map<? extends K, ? extends V> t) {
     throw new RuntimeException("method not implemented");
   }
 
+  @Override
   public void clear() {
     myMap.clear();
   }
 
+  @Override
   public int size() {
     return myMap.size();
   }
 
+  @Override
   public boolean isEmpty() {
     return myMap.isEmpty();
   }
 
+  @Override
   public boolean containsKey(Object key) {
     return get(key) != null;
   }
 
+  @Override
   public boolean containsValue(Object value) {
     throw new RuntimeException("method not implemented");
   }
 
+  @Override
   public Set<K> keySet() {
     return myMap.keySet();
   }
 
+  @Override
   public Collection<V> values() {
     throw new RuntimeException("method not implemented");
   }
 
+  @Override
   public Set<Entry<K, V>> entrySet() {
     throw new RuntimeException("method not implemented");
   }

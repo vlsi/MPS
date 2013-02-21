@@ -60,6 +60,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
     myComponent.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
 
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         DefaultActionGroup group = ActionUtils.groupFromActions(createCloseAction());
         JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
@@ -69,6 +70,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
     myTree.rebuildLater();
   }
 
+  @Override
   public JComponent getComponent() {
     return myComponent;
   }
@@ -79,6 +81,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
   }
 
   private class MyClassPathTree extends MPSTree {
+    @Override
     protected MPSTreeNode rebuild() {
       if (myInspectedModule == null) {
         return new TextTreeNode("No Module");
@@ -115,6 +118,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
         setIcon(IconManager.getIconFor(myModule));
       }
 
+      @Override
       public boolean isLeaf() {
         return true;
       }

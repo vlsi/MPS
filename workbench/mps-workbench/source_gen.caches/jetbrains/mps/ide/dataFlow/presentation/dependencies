@@ -6,6 +6,7 @@
     <classNode dependClassName="java.awt.FontMetrics" />
     <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
@@ -16,6 +17,7 @@
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.AltBlock" file="AltBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
@@ -54,6 +56,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.FreeZone" file="FreeZone.java" />
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.GraphCreator" file="GraphCreator.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.AltBlock" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IBlock" />
@@ -99,6 +102,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.InstructionWrapper" file="InstructionWrapper.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
@@ -108,6 +112,7 @@
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.JumpBlock" file="JumpBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
@@ -115,6 +120,7 @@
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.Line" file="Line.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.LineDirection" />
     <classNode extendsClassName="java.lang.Comparable" />
   </dependency>
@@ -124,6 +130,7 @@
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.Line" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.ProgramWrapper" file="ProgramWrapper.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IInstruction" />
@@ -135,6 +142,7 @@
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.ReadBlock" file="ReadBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
@@ -142,6 +150,7 @@
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.ReturnBlock" file="ReturnBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
@@ -156,6 +165,7 @@
     <classNode dependClassName="java.awt.Rectangle" />
     <classNode dependClassName="java.awt.event.MouseAdapter" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="javax.swing.Action" />
     <classNode dependClassName="javax.swing.JScrollPane" />
@@ -176,6 +186,7 @@
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.SimpleBlock" file="SimpleBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />
@@ -183,6 +194,7 @@
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.WriteBlock" file="WriteBlock.java">
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.ide.dataFlow.presentation.AbstractBlock" />

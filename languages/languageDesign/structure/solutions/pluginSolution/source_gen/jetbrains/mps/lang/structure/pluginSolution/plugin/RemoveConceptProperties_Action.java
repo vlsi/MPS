@@ -62,6 +62,7 @@ public class RemoveConceptProperties_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
           new ConceptPropertiesHelper(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))).migrate();
         }

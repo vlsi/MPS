@@ -24,6 +24,7 @@ public class NodeFileStatusProvider implements FileStatusProvider {
     myMapping = mapping;
   }
 
+  @Override
   public FileStatus getFileStatus(VirtualFile file) {
     if (!(file instanceof MPSNodeVirtualFile)) {
       return null;
@@ -43,9 +44,11 @@ public class NodeFileStatusProvider implements FileStatusProvider {
     return myMapping.getStatus(root);
   }
 
+  @Override
   public void refreshFileStatusFromDocument(VirtualFile file, Document document) {
   }
 
+  @Override
   public ThreeState getNotChangedDirectoryParentingStatus(VirtualFile file) {
     return ThreeState.NO;
   }

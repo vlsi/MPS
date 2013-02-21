@@ -16,14 +16,17 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     myAdditionalText = additionalText;
   }
 
+  @Override
   public String getText() {
     return myText;
   }
 
+  @Override
   public String getAdditionalText() {
     return myAdditionalText;
   }
 
+  @Override
   public long getElapsedTime() {
     long elapsedTime = 0;
     for (TestStatisticsRow row : ListSequence.fromList(myRows)) {
@@ -35,6 +38,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     return elapsedTime;
   }
 
+  @Override
   public long getUsageBefore() {
     long usageBefore = -1;
     TestStatisticsRow row = ListSequence.fromList(myRows).first();
@@ -47,6 +51,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     return usageBefore;
   }
 
+  @Override
   public long getUsageAfter() {
     long usageAfter = -1;
     TestStatisticsRow row = ListSequence.fromList(myRows).last();
@@ -59,6 +64,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     return usageAfter;
   }
 
+  @Override
   public long getUsageDelta() {
     long usageBefore = getUsageBefore();
     long usageAfter = getUsageAfter();
@@ -69,6 +75,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     return usageDelta;
   }
 
+  @Override
   public int getSuccessful() {
     int count = 0;
     for (TestStatisticsRow row : ListSequence.fromList(myRows)) {
@@ -77,6 +84,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     return count;
   }
 
+  @Override
   public int getErrored() {
     int count = 0;
     for (TestStatisticsRow row : ListSequence.fromList(myRows)) {
@@ -85,6 +93,7 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     return count;
   }
 
+  @Override
   public int getFailed() {
     int count = 0;
     for (TestStatisticsRow row : ListSequence.fromList(myRows)) {

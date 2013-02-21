@@ -29,9 +29,17 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseMPSModuleOwner;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
 import jetbrains.mps.testbench.Testbench;
@@ -42,6 +50,7 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
+import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
@@ -277,7 +286,7 @@ public class GenerationTestBase {
         if (!(descr instanceof EditableSModel)) {
           continue;
         }
-        String longName = descr.getModelReference().getModelName();
+        String longName = descr.getReference().getModelName();
         if (longName.equals(fqName)) {
           return (SModelDescriptor) descr;
         }

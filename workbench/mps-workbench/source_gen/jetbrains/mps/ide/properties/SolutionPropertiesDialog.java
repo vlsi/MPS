@@ -20,6 +20,7 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
   public Solution mySolution;
   public SolutionProperties myProperties;
   public Disposable myDisposable = new Disposable() {
+    @Override
     public void dispose() {
     }
   };
@@ -50,11 +51,13 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
     myProperties.loadFrom(mySolution.getModuleDescriptor());
   }
 
+  @Override
   protected boolean doSaveChanges() {
     if (!(checkValidity())) {
       return false;
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         SolutionDescriptor solutionDescriptor = mySolution.getModuleDescriptor();
         myProperties.saveTo(solutionDescriptor);
@@ -65,6 +68,7 @@ public class SolutionPropertiesDialog extends BasePropertiesDialog {
     return true;
   }
 
+  @Override
   public void dispose() {
     super.dispose();
     Disposer.dispose(myDisposable);

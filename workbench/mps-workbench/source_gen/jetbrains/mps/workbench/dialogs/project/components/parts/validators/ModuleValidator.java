@@ -9,6 +9,7 @@ public class ModuleValidator implements Validator {
   public ModuleValidator() {
   }
 
+  @Override
   public boolean isBrokenValue(Object value) {
     if (!((value instanceof ModuleReference))) {
       return true;

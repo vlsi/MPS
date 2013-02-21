@@ -88,6 +88,7 @@ public class MergeDriverNotification {
         );
         String message = String.format("<p>You are using %s. %s.</p><p><a href=\"http://confluence.jetbrains.com/display/MPSD2/Version+Control\">More info</a>.</p><p><a href=\"dismiss\">Don't offer again</a>.</p>", whichVcses, mainMessage);
         myLastNotification = new Notification("MergeDriver", "VCS Addons", message, NotificationType.WARNING, new NotificationListener() {
+          @Override
           public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent e) {
             if (e.getEventType() != HyperlinkEvent.EventType.ACTIVATED) {
               return;

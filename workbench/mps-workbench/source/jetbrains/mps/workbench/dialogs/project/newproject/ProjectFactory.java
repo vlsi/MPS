@@ -58,6 +58,7 @@ public class ProjectFactory {
   public Project createProject() throws ProjectNotCreatedException {
     final String[] error = new String[]{null};
     ProgressManager.getInstance().run(new Task.Modal(myCurrentProject, "Creating", false) {
+      @Override
       public void run(@NotNull() ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         error[0] = createDirs();
@@ -86,6 +87,7 @@ public class ProjectFactory {
       @Override
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          @Override
           public void run() {
             if (myOptions.getCreateNewLanguage()) {
               myCreatedLanguage = createNewLanguage(mpsProject);
@@ -131,6 +133,7 @@ public class ProjectFactory {
     if (opened) {
       StartupManagerEx startupManager = StartupManagerEx.getInstanceEx(myCreatedProject);
       Runnable projectPaneActivator = new Runnable() {
+        @Override
         public void run() {
           ProjectPane.getInstance(myCreatedProject).activate();
         }

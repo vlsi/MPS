@@ -4,6 +4,7 @@ package jetbrains.mps.lang.descriptor.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
@@ -11,7 +12,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -44,7 +44,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_8780540425167326385(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return _context.getOriginalInputModel().getStereotype().equals("descriptor");
+    return SNodeOperations.getModelStereotype(_context.getOriginalInputModel()).equals("descriptor");
   }
 
   public static boolean baseMappingRule_Condition_1820665478710839841(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -101,7 +101,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1698302279987411159(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode l = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
+    SNode l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
     return ((int) ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).count() == 1 ?
       "Generator" :
       "Generator" + ListSequence.fromList(SLinkOperations.getTargets(l, "generator", true)).indexOf(_context.getNode())
@@ -132,7 +132,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5102832340571646536(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode l = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
+    SNode l = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
     return SPropertyOperations.getString(l, "namespace") + "/" + ((isEmpty_x583g4_a0a0a1a91(SPropertyOperations.getString(_context.getNode(), "name")) ?
       "<no name>" :
       SPropertyOperations.getString(_context.getNode(), "name")
@@ -341,7 +341,7 @@ public class QueriesGenerated {
   }
 
   public static SNode insertMacro_Query_1509962061695074412(final IOperationContext operationContext, final TemplateQueryContextWithMacro _context) {
-    return SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Language");
+    return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(SModelOperations.getModuleStub(_context.getOriginalInputModel()), "jetbrains.mps.lang.project.structure.Language");
   }
 
   public static TemplateModel getDescriptor(TemplateModule module) {

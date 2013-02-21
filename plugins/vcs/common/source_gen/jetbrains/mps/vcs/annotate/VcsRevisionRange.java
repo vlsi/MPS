@@ -37,6 +37,7 @@ public class VcsRevisionRange extends BaseGroup {
     add(myBeforeAction);
     add(myAfterAction);
     add(new BaseAction("Remove Highlighting") {
+      @Override
       protected void doExecute(AnActionEvent event, Map<String, Object> map) {
         myBeforeAction.myRevision = null;
         myAfterAction.myRevision = null;
@@ -74,6 +75,7 @@ public class VcsRevisionRange extends BaseGroup {
       }
     }
 
+    @Override
     protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
       String text = (myBefore ?
         "Show Before..." :
@@ -91,8 +93,10 @@ public class VcsRevisionRange extends BaseGroup {
       event.getPresentation().setEnabled(ListSequence.fromList(myColumn.getRevisions()).isNotEmpty());
     }
 
+    @Override
     protected void doExecute(AnActionEvent event, Map<String, Object> _params) {
       CompareWithSelectedRevisionAction.showListPopup(myColumn.getRevisions(), myColumn.getProject(), new Consumer<VcsFileRevision>() {
+        @Override
         public void consume(VcsFileRevision revision) {
           myRevision = revision;
           myColumn.invalidateLayout();

@@ -68,6 +68,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     }
   }
 
+  @Override
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>(super.getErrors());
     for (ModuleReference lang : myModule.getExtendedLanguageRefs()) {

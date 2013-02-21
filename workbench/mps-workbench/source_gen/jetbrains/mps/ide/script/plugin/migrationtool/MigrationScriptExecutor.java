@@ -57,8 +57,10 @@ public class MigrationScriptExecutor {
     final Object cmd = startCommand(task);
     Runnable process = createProcess(true, null);
     Runnable afterFinish = new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().runCommandInEDT(new Runnable() {
+          @Override
           public void run() {
             finishCommand(cmd);
           }
@@ -71,23 +73,28 @@ public class MigrationScriptExecutor {
   private TaskInfo createTaskInfo() {
     return new TaskInfo() {
       @NotNull
+      @Override
       public String getTitle() {
         return title;
       }
 
+      @Override
       public String getCancelText() {
         return null;
       }
 
+      @Override
       public String getCancelTooltipText() {
         return null;
       }
 
+      @Override
       public boolean isCancellable() {
         return false;
       }
 
       @NonNls
+      @Override
       public String getProcessId() {
         return "script";
       }
@@ -96,9 +103,11 @@ public class MigrationScriptExecutor {
 
   private Runnable createProcess(final boolean spawnCommands, final ProgressMonitor monitor) {
     return new Runnable() {
+      @Override
       public void run() {
         final MigrationScriptFinder finder = new MigrationScriptFinder(Collections.singletonList(script), context);
         final MigrationScriptsController controller = new MigrationScriptsController(finder) {
+          @Override
           public void runCommand(Runnable cmd) {
             if (spawnCommands) {
               ModelAccess.instance().runCommandInEDT(cmd, getMPSProject());
@@ -113,6 +122,7 @@ public class MigrationScriptExecutor {
         final List<SearchResult<SNode>>[] searchResults = ((List<SearchResult<SNode>>[]) new List[1]);
         // can this be done? 
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             IScope scope = AbstractMigrationScriptHelper.createMigrationScope(Collections.<SModel>emptyList(), getMPSProject().getModules());
             SearchResults results = finder.find(new SearchQuery(scope), promon.subTask(100));
@@ -141,6 +151,7 @@ public class MigrationScriptExecutor {
 
   private void primExec(TaskInfo task, final Runnable proc, final Runnable afterFinish, Frame frame) {
     Runnable process = new Runnable() {
+      @Override
       public void run() {
         proc.run();
         if (afterFinish != null) {

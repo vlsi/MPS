@@ -40,11 +40,13 @@ public class SetNodePackageDialog extends DialogWrapper {
     myCbPackage.setEditable(true);
     myCbPackage.setModel(new DefaultComboBoxModel(ListSequence.fromList(existingPackages).toGenericArray(String.class)));
     myCbPackage.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         myPackage = ((String) myCbPackage.getSelectedItem());
       }
     });
     myCbPackage.getEditor().getEditorComponent().addKeyListener(new KeyAdapter() {
+      @Override
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER && !(myCbPackage.isPopupVisible())) {
           doOKAction();
@@ -64,6 +66,7 @@ public class SetNodePackageDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myMainPanel;
   }

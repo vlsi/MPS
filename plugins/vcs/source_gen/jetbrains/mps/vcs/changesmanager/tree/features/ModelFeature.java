@@ -12,11 +12,13 @@ public class ModelFeature extends Feature {
   }
 
   @Nullable
+  @Override
   public Feature getParent() {
     return null;
   }
 
   @NotNull
+  @Override
   public String toString() {
     return "Model {" + getModelReference() + "}";
   }

@@ -18,11 +18,11 @@
  * danilla 11/21/12
  */
 
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.Set;
 
 /**

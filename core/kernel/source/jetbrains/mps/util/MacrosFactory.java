@@ -90,6 +90,7 @@ public class MacrosFactory {
   }
 
   private static class ModuleMacros extends HomeMacros {
+    @Override
     protected String expand(String path, IFile anchorFile) {
       for (String d : descriptors) {
         if (path.startsWith(d)) {
@@ -105,6 +106,7 @@ public class MacrosFactory {
       return super.expand(path, anchorFile);
     }
 
+    @Override
     protected String shrink(String absolutePath, IFile anchorFile) {
       IFile anchorFolder = anchorFile.getParent();
       if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
@@ -120,6 +122,7 @@ public class MacrosFactory {
   }
 
   private static class ProjectMacros extends HomeMacros {
+    @Override
     protected String expand(String path, IFile anchorFile) {
       if (path.startsWith(PROJECT)) {
         IFile anchorFolder = anchorFile.getParent();
@@ -130,6 +133,7 @@ public class MacrosFactory {
       return super.expand(path, anchorFile);
     }
 
+    @Override
     protected String shrink(String absolutePath, IFile anchorFile) {
       //project dir (for any project persistence)
       String prefix = IFileUtils.getCanonicalPath(anchorFile.isDirectory() ? anchorFile : anchorFile.getParent());
@@ -153,6 +157,7 @@ public class MacrosFactory {
   }
 
   private static class HomeMacros extends Macros {
+    @Override
     protected String expand(String path, IFile anchorFile) {
       if (path.startsWith(MPS_HOME)) {
         String relativePath = removePrefix(path);
@@ -163,6 +168,7 @@ public class MacrosFactory {
       return super.expand(path, anchorFile);
     }
 
+    @Override
     protected String shrink(String absolutePath, IFile anchorFile) {
       if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
         String relationalPath = shrink(absolutePath, PathManager.getHomePath());
@@ -251,6 +257,7 @@ public class MacrosFactory {
       this.macros = macros;
     }
 
+    @Override
     public String expandPath(@Nullable String path) {
       if (path == null || !path.startsWith("${")) return path; // No macros to expand
 
@@ -268,6 +275,7 @@ public class MacrosFactory {
       return macros.expand(path, anchorFile);
     }
 
+    @Override
     public String shrinkPath(@Nullable String absolutePath) {
       if (absolutePath == null) return null;
 

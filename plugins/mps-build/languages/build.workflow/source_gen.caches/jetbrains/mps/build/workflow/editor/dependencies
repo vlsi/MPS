@@ -323,6 +323,7 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.build.workflow.editor.BwfProjectPart_Editor" file="BwfProjectPart_Editor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

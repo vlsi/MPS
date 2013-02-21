@@ -88,25 +88,25 @@
     <nodeInfo nodeId="6033226775805315504" fileName="TestFilterTraversal.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE1" />
     <nodeInfo nodeId="6033226775805315582" fileName="TestFilterTraversal.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE1_PRECEDING_SIBLINGS_D" />
     <nodeInfo nodeId="6033226775805315586" fileName="TestFilterTraversal.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE1_FOLLOWING_SIBLINGS_D" />
-    <nodeInfo nodeId="6033226775805315647" fileName="TestFilterTraversal.java" startLine="23" startPosition="38" endLine="24" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6033226775805315611" fileName="TestFilterTraversal.java" startLine="26" startPosition="6" endLine="27" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6033226775805315628" fileName="TestFilterTraversal.java" startLine="27" startPosition="211" endLine="28" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6033226775805315647" fileName="TestFilterTraversal.java" startLine="24" startPosition="38" endLine="25" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6033226775805315611" fileName="TestFilterTraversal.java" startLine="27" startPosition="6" endLine="28" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6033226775805315628" fileName="TestFilterTraversal.java" startLine="28" startPosition="211" endLine="29" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6033226775805315590" fileName="TestFilterTraversal.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestFilterTraversal#()V" />
-    <nodeInfo nodeId="6033226775805315606" fileName="TestFilterTraversal.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ltest/ypath/util/YNode;)Z" />
-    <nodeInfo nodeId="6033226775805315598" fileName="TestFilterTraversal.java" startLine="21" startPosition="32" endLine="26" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6033226775805315594" fileName="TestFilterTraversal.java" startLine="20" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testSampleData#()V" />
+    <nodeInfo nodeId="6033226775805315606" fileName="TestFilterTraversal.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ltest/ypath/util/YNode;)Z" />
+    <nodeInfo nodeId="6033226775805315598" fileName="TestFilterTraversal.java" startLine="21" startPosition="32" endLine="27" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6033226775805315594" fileName="TestFilterTraversal.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testSampleData#()V" />
     <scopeInfo nodeId="6033226775805315593" fileName="TestFilterTraversal.java" startLine="17" startPosition="32" endLine="17" endPosition="32" />
-    <scopeInfo nodeId="6033226775805315646" fileName="TestFilterTraversal.java" startLine="23" startPosition="38" endLine="24" endPosition="43" />
+    <scopeInfo nodeId="6033226775805315646" fileName="TestFilterTraversal.java" startLine="24" startPosition="38" endLine="25" endPosition="43" />
     <scopeInfo nodeId="6033226775805315590" fileName="TestFilterTraversal.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="6033226775805315606" fileName="TestFilterTraversal.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="6033226775805315606" fileName="TestFilterTraversal.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="6033226775805315609" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6033226775805315597" fileName="TestFilterTraversal.java" startLine="21" startPosition="32" endLine="28" endPosition="211">
+    <scopeInfo nodeId="6033226775805315597" fileName="TestFilterTraversal.java" startLine="21" startPosition="32" endLine="29" endPosition="211">
       <varInfo nodeId="6033226775805315599" varName="nameStartsWithD" />
     </scopeInfo>
-    <scopeInfo nodeId="6033226775805315594" fileName="TestFilterTraversal.java" startLine="20" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="6033226775805315604" fileName="TestFilterTraversal.java" startLine="22" startPosition="41" endLine="26" endPosition="5" unitName="test.ypath.util.TestFilterTraversal$1" />
-    <unitInfo nodeId="6033226775805315497" fileName="TestFilterTraversal.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="test.ypath.util.TestFilterTraversal" />
+    <scopeInfo nodeId="6033226775805315594" fileName="TestFilterTraversal.java" startLine="20" startPosition="0" endLine="31" endPosition="0" />
+    <unitInfo nodeId="6033226775805315604" fileName="TestFilterTraversal.java" startLine="22" startPosition="41" endLine="27" endPosition="5" unitName="test.ypath.util.TestFilterTraversal$1" />
+    <unitInfo nodeId="6033226775805315497" fileName="TestFilterTraversal.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="test.ypath.util.TestFilterTraversal" />
   </root>
   <root nodeRef="r:a822b011-296a-478b-9b72-dc6e0c3c30e7(test.ypath.util)/6033226775805315825">
     <nodeInfo nodeId="6033226775805315827" fileName="TestTraversal.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TREE_PATH" />

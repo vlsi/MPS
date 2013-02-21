@@ -645,7 +645,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_99767819676169157(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode original = _context.getOriginalCopiedInputNode(_context.getNode());
-    return SNodeOperations.getModel(original).getSModelReference().toString();
+    return SNodeOperations.getModel(original).getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_99767819676169177(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -730,27 +730,27 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7635689088545006189(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getLongName();
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(_context.getOriginalInputModel());
   }
 
   public static Object propertyMacro_GetPropertyValue_330583488647110451(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getLongName();
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(_context.getOriginalInputModel());
   }
 
   public static Object propertyMacro_GetPropertyValue_330583488647110468(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getStereotype();
+    return jetbrains.mps.util.SNodeOperations.getModelStereotype(_context.getOriginalInputModel());
   }
 
   public static Object propertyMacro_GetPropertyValue_330583488647058978(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Long.toString(((SModelId.RegularSModelId) _context.getOriginalInputModel().getSModelId()).getId().getMostSignificantBits()) + "L";
+    return Long.toString(((SModelId.RegularSModelId) _context.getOriginalInputModel().getModelId()).getId().getMostSignificantBits()) + "L";
   }
 
   public static Object propertyMacro_GetPropertyValue_330583488647059004(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Long.toString(((SModelId.RegularSModelId) _context.getOriginalInputModel().getSModelId()).getId().getLeastSignificantBits()) + "L";
+    return Long.toString(((SModelId.RegularSModelId) _context.getOriginalInputModel().getModelId()).getId().getLeastSignificantBits()) + "L";
   }
 
   public static Object propertyMacro_GetPropertyValue_330583488647110434(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelId().toString();
+    return _context.getOriginalInputModel().getModelId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_5577795813925497656(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -834,7 +834,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_9196441569928398217(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "'" + SPropertyOperations.getString(_context.getNode(), "name") + "' (" + _context.getOriginalInputModel().getSModelFqName() + ")";
+    return "'" + SPropertyOperations.getString(_context.getNode(), "name") + "' (" + _context.getOriginalInputModel().getReference().getSModelFqName() + ")";
   }
 
   public static Object propertyMacro_GetPropertyValue_9196441569928383193(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -2504,7 +2504,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_330583488647010333(final IOperationContext operationContext, final IfMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelId() instanceof SModelId.RegularSModelId;
+    return _context.getOriginalInputModel().getModelId() instanceof SModelId.RegularSModelId;
   }
 
   public static boolean ifMacro_Condition_5577795813925497600(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -15,6 +15,7 @@ public class SingleTemporalCollection implements TemporalCollection {
   public SingleTemporalCollection() {
   }
 
+  @Override
   public Object get(MfDate when) {
     for (Object o : milestones()) {
       MfDate thisDate = (MfDate) o;
@@ -25,6 +26,7 @@ public class SingleTemporalCollection implements TemporalCollection {
     throw new IllegalArgumentException("no records that early");
   }
 
+  @Override
   public void put(MfDate at, Object item) {
     myContents.put(at, item);
     clearMilestoneCache();
@@ -47,14 +49,17 @@ public class SingleTemporalCollection implements TemporalCollection {
     myMilestoneCache = null;
   }
 
+  @Override
   public Object get(int year, int month, int date) {
     return get(new MfDate(year, month, date));
   }
 
+  @Override
   public Object get() {
     return get(MfDate.today());
   }
 
+  @Override
   public void put(Object item) {
     put(MfDate.today(), item);
   }

@@ -26,6 +26,7 @@ public class MfDateTester extends TestCase {
     return new GregorianCalendar(1999, 0, 1, 0, 0, 0);
   }
 
+  @Override
   public void setUp() {
     myJan1 = new MfDate(jan1());
     GregorianCalendar gc = jan1();

@@ -32,6 +32,7 @@ import java.io.IOException;
 public class FilePanePasteProvider implements PasteProvider {
   private final static Logger LOG = Logger.getLogger(FilePanePasteProvider.class);
 
+  @Override
   public void performPaste(DataContext dataContext) {
     CopyPasteFilesData data = getData(dataContext);
     if (data != null) {
@@ -92,10 +93,12 @@ public class FilePanePasteProvider implements PasteProvider {
     }
   }
 
+  @Override
   public boolean isPastePossible(DataContext dataContext) {
     return (getDir(dataContext) != null) && (getData(dataContext) != null);
   }
 
+  @Override
   public boolean isPasteEnabled(DataContext dataContext) {
     return (getDir(dataContext) != null) && (getData(dataContext) != null);
   }

@@ -42,18 +42,22 @@ public class SimpleErrorReporter extends AbstractErrorReporter implements IError
     myErrorTarget = errorTarget;
   }
 
+  @Override
   public String reportError() {
     return myErrorString;
   }
 
+  @Override
   public MessageStatus getMessageStatus() {
     return myMessageStatus;
   }
 
+  @Override
   public MessageTarget getErrorTarget() {
     return myErrorTarget;
   }
 
+  @Override
   public SNode getSNode() {
     return mySNode;
   }

@@ -108,7 +108,7 @@ public class QueriesGenerated {
     // 
     // setting roots and deleting input roots 
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(structureModel, null))) {
-      structureModel.removeRoot(root);
+      structureModel.removeRootNode(root);
     }
     for (SNode conceptDeclaration : allConcepts) {
       SNode concept = MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration);
@@ -119,7 +119,7 @@ public class QueriesGenerated {
       SModelOperations.addRootNode(structureModel, concept);
     }
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(editorModel, null))) {
-      editorModel.removeRoot(root);
+      editorModel.removeRootNode(root);
     }
     for (SNode conceptDeclaration : allConcepts) {
       SNode editorDeclaration = MapSequence.fromMap(conceptsToEditors).get(MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration));
@@ -130,11 +130,11 @@ public class QueriesGenerated {
       SModelOperations.addRootNode(editorModel, editorDeclaration);
     }
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(actionsModel, null))) {
-      actionsModel.removeRoot(root);
+      actionsModel.removeRootNode(root);
     }
     SModelOperations.addRootNode(actionsModel, actions);
     for (SNode root : ListSequence.fromListWithValues(new ArrayList<SNode>(), SModelOperations.getRoots(constraintsModel, null))) {
-      constraintsModel.removeRoot(root);
+      constraintsModel.removeRootNode(root);
     }
     for (SNode conceptDeclaration : allConcepts) {
       SNode conceptConstraints = MapSequence.fromMap(conceptsToConstraints).get(conceptDeclaration);

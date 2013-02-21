@@ -55,12 +55,15 @@ public class ImportHelper {
   public static void addModelImport(final Project project, final IModule module, final SModelDescriptor model,
                     @Nullable BaseAction parentAction) {
     BaseModelModel goToModelModel = new BaseModelModel(project) {
+      @Override
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new AddModelItem(project, model, modelReference, module);
       }
 
+      @Override
       public SModelReference[] find(IScope scope) {
         Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
+          @Override
           public boolean met(SModelDescriptor modelDescriptor) {
             boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
               || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
@@ -76,6 +79,7 @@ public class ImportHelper {
         return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
       }
 
+      @Override
       @Nullable
       public String getPromptText() {
         return "Import model:";
@@ -84,10 +88,12 @@ public class ImportHelper {
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
+      @Override
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
       }
 
+      @Override
       public void elementChosen(final Object element) {
         ((NavigationItem) element).navigate(true);
       }
@@ -120,10 +126,12 @@ public class ImportHelper {
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToLanguageModel, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
+      @Override
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
       }
 
+      @Override
       public void elementChosen(Object element) {
         ((NavigationItem) element).navigate(true);
       }
@@ -142,11 +150,13 @@ public class ImportHelper {
       myModel = model;
     }
 
+    @Override
     public void navigate(boolean requestFocus) {
       assert !ModelAccess.instance().canRead();
 
       final Set<ModuleReference> importCandidates = new HashSet<ModuleReference>();
       ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
         public void run() {
           Language lang = ModuleRepositoryFacade.getInstance().getModule(getModuleReference(), Language.class);
 
@@ -177,6 +187,7 @@ public class ImportHelper {
       toImport.add(getModuleReference());
 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        @Override
         public void run() {
           boolean reload = false;
           for (SModuleReference ref : toImport) {
@@ -204,8 +215,10 @@ public class ImportHelper {
   public static void addModelImportByRoot(final Project project, final IModule contextModule, final SModelDescriptor model,
                       String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
     BaseMPSChooseModel goToNodeModel = new RootChooseModel(project, new RootNodeNameIndex()) {
+      @Override
       public NavigationItem doGetNavigationItem(final NodeDescriptor object) {
         return new RootNodeElement(object) {
+          @Override
           public void navigate(boolean requestFocus) {
             ModelAccess.assertLegalRead();
             new AddModelItem(project, model, ((SModelReference) object.getNodeReference().getModelReference()), contextModule).navigate(requestFocus);
@@ -213,6 +226,7 @@ public class ImportHelper {
         };
       }
 
+      @Override
       @Nullable
       public String getPromptText() {
         return "Import model that contains root:";
@@ -221,12 +235,15 @@ public class ImportHelper {
     ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, initialText, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
+      @Override
       public void onClose() {
         //if (GoToRootNodeAction.class.equals(myInAction)) myInAction = null;
       }
 
+      @Override
       public void elementChosen(final Object element) {
         ModelAccess.instance().runWriteAction(new Runnable() {
+          @Override
           public void run() {
             NavigationItem navigationItem = (NavigationItem) element;
             navigationItem.navigate(true);
@@ -253,8 +270,10 @@ public class ImportHelper {
       return WindowManager.getInstance().getFrame(myProject);
     }
 
+    @Override
     public void navigate(boolean requestFocus) {
       final ModuleReference moduleToImport = ModelAccess.instance().runReadAction(new Computable<ModuleReference>() {
+        @Override
         public ModuleReference compute() {
           SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(getModelReference());
           final ModuleReference moduleReference = md.getModule().getModuleReference();
@@ -274,6 +293,7 @@ public class ImportHelper {
           "Module import", JOptionPane.YES_NO_OPTION);
         if (res == JOptionPane.YES_OPTION) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            @Override
             public void run() {
               myModule.addDependency(moduleToImport, false);
               ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -283,6 +303,7 @@ public class ImportHelper {
       }
 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        @Override
         public void run() {
           myModel.getSModel().addModelImport(getModelReference(), false);
         }

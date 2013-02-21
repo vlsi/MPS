@@ -47,6 +47,7 @@ public class GenerationStatus extends Status {
     myDependencies = dependencies;
   }
 
+  @Override
   public boolean isOk() {
     return !myCanceled && super.isOk();
   }

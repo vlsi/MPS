@@ -50,6 +50,7 @@ public class WarningPanel extends JPanel {
       HyperlinkLabel hyperlinkLabel = new HyperlinkLabel(linkText);
       hyperlinkLabel.setOpaque(false);
       hyperlinkLabel.addHyperlinkListener(new HyperlinkListener() {
+        @Override
         public void hyperlinkUpdate(HyperlinkEvent e) {
           handler.run();
         }

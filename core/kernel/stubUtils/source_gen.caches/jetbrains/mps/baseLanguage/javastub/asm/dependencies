@@ -17,6 +17,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMClass" file="ASMClass.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
@@ -41,6 +42,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.SignatureVisitorAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMClassType" file="ASMClassType.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
   </dependency>
@@ -93,6 +95,7 @@
     <classNode dependClassName="org.jetbrains.asm4.tree.MethodNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMParameterizedType" file="ASMParameterizedType.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -101,6 +104,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMPrimitiveType" file="ASMPrimitiveType.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
   </dependency>
@@ -109,6 +113,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMType" file="ASMType.java" />
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.ASMTypeVariable" file="ASMTypeVariable.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
   </dependency>
@@ -119,11 +124,13 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.javastub.asm.ASMType" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.NullSignatureVisitor" file="NullSignatureVisitor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.jetbrains.asm4.Opcodes" />
     <classNode extendsClassName="org.jetbrains.asm4.signature.SignatureVisitor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.SignatureVisitorAdapter" file="SignatureVisitorAdapter.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.asm.NullSignatureVisitor" />
     <classNode dependClassName="org.jetbrains.asm4.Opcodes" />
@@ -131,6 +138,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.asm.TypeUtil" file="TypeUtil.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />

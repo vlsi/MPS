@@ -78,6 +78,7 @@ public class SModelNodeListeners implements NodeListeners {
     myEventsListener = new MySModelEventsListener();
   }
 
+  @Override
   public void startListening() {
     visitNode(myTreeNode);
 
@@ -91,6 +92,7 @@ public class SModelNodeListeners implements NodeListeners {
     }
   }
 
+  @Override
   public void stopListening() {
     if (!SModelStereotype.isStubModelStereotype(myModel.getStereotype())) {
       ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
@@ -124,16 +126,19 @@ public class SModelNodeListeners implements NodeListeners {
       myModelNode = modelNode;
     }
 
+    @Override
     public void modelChangedDramatically(SModel model) {
       updateNodePresentation(false, true);
       visitNode(myModelNode);
     }
 
+    @Override
     public void modelChanged(SModel model) {
       updateNodePresentation(false, true);
       visitNode(myModelNode);
     }
 
+    @Override
     public void modelSaved(SModelDescriptor sm) {
       visitNode(myModelNode);
     }
@@ -147,11 +152,13 @@ public class SModelNodeListeners implements NodeListeners {
   }
 
   private class MySModelEventsListener implements SModelEventsListener {
+    @Override
     @NotNull
     public SModelDescriptor getModelDescriptor() {
       return myModel;
     }
 
+    @Override
     public void eventsHappened(List<SModelEvent> events) {
       if (myTreeUpdater == null) return;
       myTreeUpdater.eventsHappenedInCommand(events);
@@ -163,6 +170,7 @@ public class SModelNodeListeners implements NodeListeners {
       super(project, treeNode);
     }
 
+    @Override
     public boolean showPropertiesAndReferences() {
       return showPropertiesAndReferences(myTreeNode);
     }
@@ -196,10 +204,12 @@ public class SModelNodeListeners implements NodeListeners {
       return null;
     }
 
+    @Override
     public SModelDescriptor getSModelDescriptor() {
       return myTreeNode.getSModelDescriptor();
     }
 
+    @Override
     public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       for (SNode root : removedRoots) {
@@ -216,6 +226,7 @@ public class SModelNodeListeners implements NodeListeners {
       myTreeNode.insertRoots(addedRoots);
     }
 
+    @Override
     public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 

@@ -23,6 +23,7 @@ public class SampleModule implements EntryPoint {
   public SampleModule() {
   }
 
+  @Override
   public void onModuleLoad() {
     Widget cmp = this.createComponent();
     RootLayoutPanel.get().add(cmp);

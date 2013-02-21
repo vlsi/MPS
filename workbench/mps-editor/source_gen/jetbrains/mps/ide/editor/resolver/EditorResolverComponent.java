@@ -14,11 +14,13 @@ public class EditorResolverComponent implements ApplicationComponent {
   public EditorResolverComponent(MPSCoreComponents coreComponents) {
   }
 
+  @Override
   public void initComponent() {
     myResolver = new EditorResolver();
     ResolverComponent.getInstance().addResolver(myResolver);
   }
 
+  @Override
   public void disposeComponent() {
     ResolverComponent.getInstance().removeResolver(myResolver);
     myResolver = null;
@@ -26,6 +28,7 @@ public class EditorResolverComponent implements ApplicationComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "MPS Editor-based Resolver Component";
   }

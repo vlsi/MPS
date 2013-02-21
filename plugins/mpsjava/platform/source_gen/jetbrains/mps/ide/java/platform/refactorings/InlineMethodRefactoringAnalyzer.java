@@ -35,6 +35,7 @@ public class InlineMethodRefactoringAnalyzer {
   public String findProblems(final SearchResults<SNode> ussages) {
     final Wrappers._T<List<SNode>> myOverriding = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
     ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(InlineMethodRefactoringAnalyzer.this.myOperationContext.getProject()), "Search for overriding methods", true) {
+      @Override
       public void run(@NotNull final ProgressIndicator indicator) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {

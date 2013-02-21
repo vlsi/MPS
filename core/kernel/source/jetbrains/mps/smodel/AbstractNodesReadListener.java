@@ -16,14 +16,17 @@
 package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class AbstractNodesReadListener implements INodesReadListener {
+  @Override
   public void propertyExistenceAccess(SNode node, String propertyName) {
     this.nodePropertyReadAccess(node, propertyName, null);
   }
 
+  @Override
   public void propertyDirtyReadAccess(SNode node, String propertyName) {
     this.nodePropertyReadAccess(node, propertyName, null);
   }
 
+  @Override
   public void propertyCleanReadAccess(SNode node, String propertyName) {
     this.nodePropertyReadAccess(node, propertyName, null);
   }

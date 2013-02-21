@@ -13,10 +13,12 @@ public class SDataTypeAdapter implements SDataType {
     this.dNode = dNode;
   }
 
+  @Override
   public Object fromString(String string) {
     return null;
   }
 
+  @Override
   public String toString(Object object) {
     return null;
   }

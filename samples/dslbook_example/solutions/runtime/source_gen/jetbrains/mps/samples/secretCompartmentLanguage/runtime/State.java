@@ -38,6 +38,7 @@ public class State {
     }
   }
 
+  @Override
   public String toString() {
     StringBuilder result = new StringBuilder();
     result.append(String.format("State: %s\n", name));

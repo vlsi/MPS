@@ -18,6 +18,7 @@ public class GWTDemo extends UIDemo_GWT implements EntryPoint {
     RootLayoutPanel.get().add(cmp);
   }
 
+  @Override
   public void onModuleLoad() {
     GWT.log("Woo-hoo!!!", null);
     /*

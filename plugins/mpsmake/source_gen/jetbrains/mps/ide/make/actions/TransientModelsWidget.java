@@ -29,10 +29,12 @@ import javax.swing.JComponent;
     myComponent = new CustomIconWrapper(this);
   }
 
+  @Override
   public void install(@NotNull StatusBar bar) {
   }
 
   @Nullable
+  @Override
   public String getTooltipText() {
     if (isSaveTransientModels()) {
       return "Stop saving transient models.";
@@ -41,8 +43,10 @@ import javax.swing.JComponent;
   }
 
   @Nullable
+  @Override
   public Consumer<MouseEvent> getClickConsumer() {
     return new Consumer<MouseEvent>() {
+      @Override
       public void consume(MouseEvent e) {
         if (!(e.isPopupTrigger()) && MouseEvent.BUTTON1 == e.getButton()) {
           boolean saveTransientModels = GenerationSettings.getInstance().isSaveTransientModels();
@@ -65,14 +69,17 @@ import javax.swing.JComponent;
   }
 
   @Nullable
+  @Override
   public StatusBarWidget.WidgetPresentation getPresentation(@NotNull StatusBarWidget.PlatformType type) {
     return this;
   }
 
+  @Override
   public void dispose() {
   }
 
   @NotNull
+  @Override
   public Icon getIcon() {
     if (isSaveTransientModels()) {
       return myIcon;
@@ -83,6 +90,7 @@ import javax.swing.JComponent;
   }
 
   @NotNull
+  @Override
   public String ID() {
     return WIDGET_ID;
   }
@@ -91,6 +99,7 @@ import javax.swing.JComponent;
     return GenerationSettings.getInstance().isSaveTransientModels();
   }
 
+  @Override
   public JComponent getComponent() {
     return this.myComponent;
   }

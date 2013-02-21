@@ -6,6 +6,7 @@ public class Integer {
         i = x+1;
     }
 
+    @Override
     public String toString() {
         return "[[" + i + "]]";
     }

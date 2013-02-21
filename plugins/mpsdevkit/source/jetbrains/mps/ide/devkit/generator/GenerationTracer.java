@@ -21,7 +21,8 @@ import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -104,16 +105,16 @@ public class GenerationTracer implements IGenerationTracer {
   public void startTracing(SModel inputModel, SModel outputModel) {
     if (!myActive) return;
     myCurrentTracingData = new ArrayList<TracerNode>();
-    myTracingDataByInputModel.put(inputModel.getSModelReference().toString(), myCurrentTracingData);
-    myTracingDataByOutputModel.put(outputModel.getSModelReference().toString(), myCurrentTracingData);
+    myTracingDataByInputModel.put(inputModel.getReference().toString(), myCurrentTracingData);
+    myTracingDataByOutputModel.put(outputModel.getReference().toString(), myCurrentTracingData);
     myCurrentTraceNode = null;
   }
 
   @Override
   public void discardTracing(SModel inputModel, SModel outputModel) {
     if (!myActive) return;
-    myTracingDataByInputModel.remove(inputModel.getSModelReference().toString());
-    myTracingDataByOutputModel.remove(outputModel.getSModelReference().toString());
+    myTracingDataByInputModel.remove(inputModel.getReference().toString());
+    myTracingDataByOutputModel.remove(outputModel.getReference().toString());
     myCurrentTracingData = null;
     myCurrentTraceNode = null;
   }
@@ -328,7 +329,9 @@ public class GenerationTracer implements IGenerationTracer {
     SNode inputNode = node;
     SNode outputNode = null;
     while (inputNode != null) {
-      outputNode = outputModel.getNodeById(inputNode.getNodeId().toString());
+      SNodeId nodeId = SNodeId.fromString(inputNode.getNodeId().toString());
+      assert nodeId != null : "wrong node id string";
+      outputNode = outputModel.getNode(nodeId);
       if (outputNode != null) break;
       inputNode = inputNode.getParent();
     }
@@ -391,7 +394,9 @@ public class GenerationTracer implements IGenerationTracer {
     SNode outputNode = node;
     SNode inputNode = null;
     while (outputNode != null) {
-      inputNode = inputModel.getNodeById(outputNode.getNodeId().toString());
+      SNodeId nodeId = SNodeId.fromString(outputNode.getNodeId().toString());
+      assert nodeId != null : "wrong node id string";
+      inputNode = inputModel.getNode(nodeId);
       if (inputNode != null) break;
       outputNode = outputNode.getParent();
     }
@@ -531,8 +536,8 @@ public class GenerationTracer implements IGenerationTracer {
     List<List<TemplateMappingScript>> myScripts = new ArrayList<List<TemplateMappingScript>>();
 
     public void put(SModel inputModel, SModel outputModel, List<TemplateMappingScript> scripts) {
-      myInputModels.add(inputModel.getSModelReference().toString());
-      myOutputModels.add(outputModel.getSModelReference().toString());
+      myInputModels.add(inputModel.getReference().toString());
+      myOutputModels.add(outputModel.getReference().toString());
       myScripts.add(scripts);
     }
 
@@ -545,7 +550,7 @@ public class GenerationTracer implements IGenerationTracer {
     }
 
     public List<TemplateMappingScript> getScriptsForInput(SModel model) {
-      int i = myInputModels.indexOf(model.getSModelReference().toString());
+      int i = myInputModels.indexOf(model.getReference().toString());
       if (i >= 0) {
         return myScripts.get(i);
       }
@@ -553,7 +558,7 @@ public class GenerationTracer implements IGenerationTracer {
     }
 
     public List<TemplateMappingScript> getScriptsForOutput(SModel model) {
-      int i = myOutputModels.indexOf(model.getSModelReference().toString());
+      int i = myOutputModels.indexOf(model.getReference().toString());
       if (i >= 0) {
         return myScripts.get(i);
       }
@@ -561,7 +566,7 @@ public class GenerationTracer implements IGenerationTracer {
     }
 
     public SModelReference getOutputForInput(SModel model) {
-      int i = myInputModels.indexOf(model.getSModelReference().toString());
+      int i = myInputModels.indexOf(model.getReference().toString());
       if (i >= 0) {
         return SModelReference.fromString(myOutputModels.get(i));
       }
@@ -569,7 +574,7 @@ public class GenerationTracer implements IGenerationTracer {
     }
 
     public SModelReference getInputForOutput(SModel model) {
-      int i = myOutputModels.indexOf(model.getSModelReference().toString());
+      int i = myOutputModels.indexOf(model.getReference().toString());
       if (i >= 0) {
         return SModelReference.fromString(myInputModels.get(i));
       }

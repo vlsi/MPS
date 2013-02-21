@@ -132,6 +132,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
   }
 
   @Nullable
+  @Override
   public ObjectReference getThisObject() {
     JavaStackFrame javaStackFrame = getStackFrame();
     if (javaStackFrame != null) {
@@ -140,12 +141,14 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     return null;
   }
 
+  @Override
   protected PausedJavaUiState selectThreadInternal(@Nullable IThread thread) {
     int index = ListSequence.fromList(myThreads).indexOf(thread);
     //  changes state on user selection 
     return new PausedJavaUiState(this, myDebugSession, index);
   }
 
+  @Override
   protected PausedJavaUiState selectFrameInternal(int frame) {
     if (myStackFrameIndex != frame) {
       return new PausedJavaUiState(this, frame, myDebugSession);
@@ -178,24 +181,29 @@ public class PausedJavaUiState extends JavaUiStateImpl {
   }
 
   @NotNull
+  @Override
   public Context getContext() {
     return myContext;
   }
 
   @NotNull
+  @Override
   public synchronized List<JavaThread> getThreads() {
     return myThreads;
   }
 
+  @Override
   public boolean isPausedOnBreakpoint() {
     return getEventProcessor().getContextManager().isPausedOnEvent(myContext);
   }
 
+  @Override
   public synchronized JavaThread getThread() {
     return (JavaThread) ListSequence.fromList(myThreads).getElement(myThreadIndex);
   }
 
   @Nullable
+  @Override
   public synchronized JavaStackFrame getStackFrame() {
     if (myStackFrameIndex == AbstractUiState.NO_FRAME) {
       return null;
@@ -238,6 +246,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
   }
 
   @NotNull
+  @Override
   public synchronized List<IWatchable> getWatchables() {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
     watchables.addAll(super.getWatchables());

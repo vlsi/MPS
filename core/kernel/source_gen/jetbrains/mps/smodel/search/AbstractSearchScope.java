@@ -11,6 +11,7 @@ import java.util.List;
 
 public abstract class AbstractSearchScope implements ISearchScope {
   protected static final Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
+    @Override
     public boolean met(SNode object) {
       return true;
     }
@@ -19,8 +20,10 @@ public abstract class AbstractSearchScope implements ISearchScope {
   public AbstractSearchScope() {
   }
 
+  @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     return new IReferenceInfoResolver() {
+      @Override
       public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
         if (referenceInfo == null) {
           return null;
@@ -36,12 +39,15 @@ public abstract class AbstractSearchScope implements ISearchScope {
   }
 
   @NotNull
+  @Override
   public final List<SNode> getNodes() {
     return getNodes(TRUE_CONDITION);
   }
 
+  @Override
   public boolean isInScope(final SNode node) {
     return getNodes(new Condition<SNode>() {
+      @Override
       public boolean met(SNode n) {
         return n == node;
       }

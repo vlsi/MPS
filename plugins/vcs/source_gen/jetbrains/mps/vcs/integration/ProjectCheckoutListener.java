@@ -15,8 +15,10 @@ public class ProjectCheckoutListener implements CheckoutListener {
   public ProjectCheckoutListener() {
   }
 
+  @Override
   public boolean processCheckedOutDirectory(Project project, File directory) {
     File[] files = directory.listFiles(new FilenameFilter() {
+      @Override
       public boolean accept(File dir, String name) {
         return name.endsWith(MPSExtentions.DOT_MPS_PROJECT);
       }
@@ -34,6 +36,7 @@ public class ProjectCheckoutListener implements CheckoutListener {
     return false;
   }
 
+  @Override
   public void processOpenedProject(Project lastOpenedProject) {
   }
 }

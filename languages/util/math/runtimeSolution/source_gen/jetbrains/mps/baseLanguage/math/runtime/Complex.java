@@ -15,6 +15,7 @@ public class Complex extends Number {
     myImagPart = im;
   }
 
+  @Override
   public boolean equals(Object obj) {
     if ((obj == null) || !((obj instanceof Complex))) {
       return false;
@@ -23,6 +24,7 @@ public class Complex extends Number {
     return (Cobj.myRealPart == myRealPart) && (Cobj.myImagPart == myImagPart);
   }
 
+  @Override
   public String toString() {
     if (myImagPart == 0) {
       return "" + myRealPart;
@@ -109,18 +111,22 @@ public class Complex extends Number {
     return new Complex(r * Math.cos(theta), r * Math.sin(theta));
   }
 
+  @Override
   public int intValue() {
     return (int) this.myRealPart;
   }
 
+  @Override
   public long longValue() {
     return (long) this.myRealPart;
   }
 
+  @Override
   public float floatValue() {
     return (short) this.myRealPart;
   }
 
+  @Override
   public double doubleValue() {
     return this.myRealPart;
   }

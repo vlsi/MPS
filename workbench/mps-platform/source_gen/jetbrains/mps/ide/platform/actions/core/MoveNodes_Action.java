@@ -91,6 +91,7 @@ public class MoveNodes_Action extends BaseAction {
         }
       });
       final Object newLocation = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), targetModelDescriptor.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {
+        @Override
         public boolean check(Object selectedObject, SModelDescriptor model) {
           return selectedObject instanceof SNode || selectedObject instanceof SModelDescriptor;
         }
@@ -99,6 +100,7 @@ public class MoveNodes_Action extends BaseAction {
         return;
       }
       ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
           for (SNode n : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {
             SNode node = ((SNode) n);

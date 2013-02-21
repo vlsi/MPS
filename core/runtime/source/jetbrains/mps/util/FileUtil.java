@@ -78,6 +78,7 @@ public class FileUtil {
 
   public static void jar(File dir, final Manifest mf, File to) {
     new Packer() {
+      @Override
       protected ZipOutputStream createDeflaterStream(FileOutputStream fos) throws Exception {
         return new JarOutputStream(fos, mf);
       }
@@ -87,6 +88,7 @@ public class FileUtil {
   @SuppressWarnings({"UnusedDeclaration"})
   public static void zip(File dir, File to) {
     new Packer() {
+      @Override
       protected ZipOutputStream createDeflaterStream(FileOutputStream fos) throws Exception {
         return new ZipOutputStream(fos);
       }

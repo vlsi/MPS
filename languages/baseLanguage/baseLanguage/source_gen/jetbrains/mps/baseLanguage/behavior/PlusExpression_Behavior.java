@@ -25,6 +25,6 @@ public class PlusExpression_Behavior {
   }
 
   public static int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
-    return 2;
+    return 10;
   }
 }

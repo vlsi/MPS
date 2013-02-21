@@ -25,10 +25,12 @@ public class ModulesListData implements NodeData {
     }, true);
   }
 
+  @Override
   public String getText() {
     return "All Modules In Project";
   }
 
+  @Override
   public List<NodeData> getChildren() {
     return this.myData;
   }
@@ -37,22 +39,27 @@ public class ModulesListData implements NodeData {
     return this.myModules;
   }
 
+  @Override
   public Icon getIcon(boolean expanded) {
     return null;
   }
 
+  @Override
   public boolean canHaveChildren() {
     return true;
   }
 
+  @Override
   public void addChildren(NodeData nodeData) {
     ListSequence.fromList(this.myData).addElement(nodeData);
   }
 
+  @Override
   public NodeData getParent() {
     return null;
   }
 
+  @Override
   public void setParent(NodeData parent) {
   }
 }

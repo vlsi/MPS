@@ -44,6 +44,7 @@ public class MappingDialog extends DialogWrapper {
   private Project myProject;
   private SNode myResult;
   private MPSTree myTree = new MPSTree() {
+    @Override
     protected MPSTreeNode rebuild() {
       return MappingDialog.this.rebuildTree();
     }
@@ -59,6 +60,7 @@ public class MappingDialog extends DialogWrapper {
     myMainComponent.setPreferredSize(new Dimension(500, 400));
     myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
     myTree.addTreeSelectionListener(new TreeSelectionListener() {
+      @Override
       public void valueChanged(TreeSelectionEvent e) {
         if (e.getNewLeadSelectionPath() == null) {
           return;
@@ -73,6 +75,7 @@ public class MappingDialog extends DialogWrapper {
         }
         final SNodeTreeNode treeNode = (SNodeTreeNode) node;
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             SNode node = treeNode.getSNode();
             if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel().getModelDescriptor() == null) {
@@ -91,6 +94,7 @@ public class MappingDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myMainComponent;
   }
@@ -110,6 +114,7 @@ public class MappingDialog extends DialogWrapper {
         SModel model = md.getSModel();
         for (SNode node : SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {
           SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, null, moduleContext, new Condition<SNode>() {
+            @Override
             public boolean met(SNode p0) {
               return false;
             }
@@ -128,6 +133,7 @@ public class MappingDialog extends DialogWrapper {
   @Override
   protected void doOKAction() {
     Object[] selectedNode = myTree.getSelectedNodes(SNodeTreeNode.class, new Tree.NodeFilter() {
+      @Override
       public boolean accept(Object p0) {
         return true;
       }

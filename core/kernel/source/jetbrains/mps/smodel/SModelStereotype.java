@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -46,7 +46,7 @@ public class SModelStereotype {
   public static final String[] values = new String[]{NONE, GENERATOR, TESTS};
 
   public static boolean isUserModel(@NotNull SModel model) {
-    return isUserModelStereotype(model.getStereotype());
+    return isUserModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(model));
   }
 
   public static boolean isUserModel(@NotNull org.jetbrains.mps.openapi.model.SModel model) {
@@ -59,7 +59,7 @@ public class SModelStereotype {
   }
 
   public static boolean isGeneratorModel(@NotNull SModel model) {
-    return isGeneratorModelStereotype(model.getStereotype());
+    return isGeneratorModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(model));
   }
 
   public static boolean isGeneratorModel(@NotNull org.jetbrains.mps.openapi.model.SModel model) {
@@ -75,7 +75,7 @@ public class SModelStereotype {
   }
 
   public static boolean isTestModel(SModel model) {
-    return isTestModelStereotype(model.getStereotype());
+    return isTestModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(model));
   }
 
   public static boolean isStubModelStereotype(String stereotype) {

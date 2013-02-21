@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.concurrent.ConcurrentHashMap;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GenerationUtil {
@@ -46,6 +47,6 @@ public class GenerationUtil {
   }
 
   private static String getKey(String prefix, TemplateQueryContext genContext, SNode project) {
-    return prefix + "/" + genContext.getOriginalInputModel().getLongName() + "/" + SPropertyOperations.getString(project, "name");
+    return prefix + "/" + SNodeOperations.getModelLongName(genContext.getOriginalInputModel()) + "/" + SPropertyOperations.getString(project, "name");
   }
 }

@@ -43,7 +43,7 @@ import jetbrains.mps.logging.Logger;
     try {
       LOG.info("Reading models...");
       baseModel = ModelPersistence.readModel(new String(baseContent, FileUtil.DEFAULT_CHARSET), false);
-      myModelFqName = baseModel.getSModelFqName();
+      myModelFqName = baseModel.getReference().getSModelFqName();
       localModel = ModelPersistence.readModel(new String(localContent, FileUtil.DEFAULT_CHARSET), false);
       latestModel = ModelPersistence.readModel(new String(latestContent, FileUtil.DEFAULT_CHARSET), false);
     } catch (ModelReadException e) {
@@ -66,7 +66,7 @@ import jetbrains.mps.logging.Logger;
     }
 
     try {
-      LOG.info("Merging " + baseModel.getSModelReference() + "...");
+      LOG.info("Merging " + baseModel.getReference() + "...");
       final MergeSession mergeSession = new MergeSession(baseModel, localModel, latestModel);
       int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange c) {

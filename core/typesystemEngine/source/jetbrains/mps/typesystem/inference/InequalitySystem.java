@@ -23,14 +23,11 @@ import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.misc.hash.HashSet;
+import org.jetbrains.mps.openapi.model.SReference;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class InequalitySystem {
   private SNode myHoleType;
@@ -117,7 +114,7 @@ public class InequalitySystem {
     for (SNode node : set) {
       SNode expanded = equations.expandNode(node, true);
       //if (!TypesUtil.isVariable(expanded)) {
-        result.add(expanded);
+      result.add(expanded);
       //}
     }
 
@@ -169,24 +166,24 @@ public class InequalitySystem {
     return result;
   }
 
-   public SNode getExpectedType() {
-     if (isEmpty()) return null;
-     SubTypingManagerNew subtypingManager = (SubTypingManagerNew)TypeChecker.getInstance().getSubtypingManager();
-     List<SNode> superTypes = new LinkedList<SNode>();
-     expandAll(myState.getEquations());
-     superTypes.addAll(mySuperTypes);
-     superTypes.addAll(myStrongSuperTypes);
-     if (superTypes.isEmpty()) {
-       superTypes.addAll(myComparableTypes);
-       superTypes.addAll(myStrongComparableTypes);
-     }
-     return SubtypingUtil.createLeastCommonSupertype(superTypes, myState.getTypeCheckingContext());
-   }
-  
+  public SNode getExpectedType() {
+    if (isEmpty()) return null;
+    SubTypingManagerNew subtypingManager = (SubTypingManagerNew) TypeChecker.getInstance().getSubtypingManager();
+    List<SNode> superTypes = new LinkedList<SNode>();
+    expandAll(myState.getEquations());
+    superTypes.addAll(mySuperTypes);
+    superTypes.addAll(myStrongSuperTypes);
+    if (superTypes.isEmpty()) {
+      superTypes.addAll(myComparableTypes);
+      superTypes.addAll(myStrongComparableTypes);
+    }
+    return SubtypingUtil.createLeastCommonSupertype(superTypes, myState.getTypeCheckingContext());
+  }
+
   public void replaceRefs(Map<SNode, SNode> mapping) {
-    Map<SNode, SNode> back = new HashMap<SNode, SNode>();    
+    Map<SNode, SNode> back = new HashMap<SNode, SNode>();
     for (SNode key : mapping.keySet()) {
-      back.put(mapping.get(key), key);      
+      back.put(mapping.get(key), key);
     }
     replaceRefs(mySuperTypes, back);
     replaceRefs(myStrongSuperTypes, back);
@@ -207,6 +204,6 @@ public class InequalitySystem {
         }
       }
     }
-  } 
-  
+  }
+
 }

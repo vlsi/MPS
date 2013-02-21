@@ -28,8 +28,8 @@
   <import index="as9o" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="nu8v" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" version="-1" />
   <import index="srng" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" version="-1" />
+  <import index="nu8v" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" version="-1" />
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpfo" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" implicit="yes" />
@@ -15097,213 +15097,196 @@
             </node>
           </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961048">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.SwitchStatement" typeId="tpee.1163670490218" id="1302191354693961055">
-              <node role="defaultBlock" roleId="tpee.1163670592366" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961094" />
-              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1302191354693961056">
-                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1302191354693961057">
-                  <property name="value" nameId="tpee.1068580320021" value="-2" />
-                </node>
-                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961058">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1302191354693961059">
-                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1302191354693961060">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.SwitchStatement" typeId="tpee.1163670490218" id="8425917838863473625">
+              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="8425917838863473626">
+                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473627">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8425917838863473628">
+                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8425917838863473629">
                       <property name="text" nameId="tpee.6329021646629104958" value="||" />
                     </node>
                   </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1302191354693961061">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1302191354693961062">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8425917838863473630">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8425917838863473631">
                       <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000790" resolveInfo="J_13" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
                     </node>
                   </node>
                 </node>
-              </node>
-              <node role="expression" roleId="tpee.1163670766145" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1262430001741892762">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1262430001741892763">
-                  <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1262430001741892764">
-                    <node role="type" roleId="tpee.1070534934091" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1262430001741892765">
-                      <link role="conceptDeclaraton" roleId="tp25.1180481110358" targetNodeId="tpee.1081773326031" resolveInfo="BinaryOperation" />
-                    </node>
-                    <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1262430001741892766">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1302191354693905839" resolveInfo="expression" />
-                    </node>
-                  </node>
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1262430001741892761">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1262430001741497858" resolveInfo="getPriority" />
+                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6611143953833872661">
+                  <property name="value" nameId="tpee.1068580320021" value="2" />
                 </node>
               </node>
-              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1302191354693961063">
-                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1302191354693961064">
-                  <property name="value" nameId="tpee.1068580320021" value="-1" />
+              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="8425917838863473632">
+                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8425917838863473633">
+                  <property name="value" nameId="tpee.1068580320021" value="3" />
                 </node>
-                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961065">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1302191354693961066">
-                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1302191354693961067">
+                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473634">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8425917838863473635">
+                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8425917838863473636">
                       <property name="text" nameId="tpee.6329021646629104958" value="&amp;&amp;" />
                     </node>
                   </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1302191354693961068">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1302191354693961069">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8425917838863473637">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8425917838863473638">
                       <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000789" resolveInfo="J_12" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1302191354693961070">
-                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961072">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1302191354693961073">
-                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1302191354693961074">
-                      <property name="text" nameId="tpee.6329021646629104958" value="==, !=" />
+              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="8425917838863473639">
+                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473640">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8425917838863473641">
+                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8425917838863473642">
+                      <property name="text" nameId="tpee.6329021646629104958" value="|" />
                     </node>
                   </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1302191354693961075">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1302191354693961076">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8425917838863473643">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8425917838863473644">
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000788" resolveInfo="J_11" />
                       <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000785" resolveInfo="J_8" />
                     </node>
                   </node>
                 </node>
-                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1302191354693961071">
-                  <property name="value" nameId="tpee.1068580320021" value="0" />
-                </node>
-              </node>
-              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1302191354693961077">
-                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961079">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1302191354693961080">
-                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1302191354693961081">
-                      <property name="text" nameId="tpee.6329021646629104958" value="&lt;, &lt;=, &gt;, &gt;=" />
-                    </node>
-                  </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1302191354693961082">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1302191354693961083">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000784" resolveInfo="J_7" />
-                    </node>
-                  </node>
-                </node>
-                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1302191354693961078">
-                  <property name="value" nameId="tpee.1068580320021" value="1" />
-                </node>
-              </node>
-              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1302191354693961084">
-                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1302191354693961085">
-                  <property name="value" nameId="tpee.1068580320021" value="2" />
-                </node>
-                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961086">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1302191354693961087">
-                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1302191354693961088">
-                      <property name="text" nameId="tpee.6329021646629104958" value="+, -" />
-                    </node>
-                  </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1302191354693961089">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1302191354693961090">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000782" resolveInfo="J_5" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1302191354693961095">
-                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961097">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1302191354693961098">
-                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1302191354693961099">
-                      <property name="text" nameId="tpee.6329021646629104958" value="*, /, %" />
-                    </node>
-                  </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1302191354693961100">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1302191354693961101">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000781" resolveInfo="J_4" />
-                    </node>
-                  </node>
-                </node>
-                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1302191354693961096">
-                  <property name="value" nameId="tpee.1068580320021" value="3" />
-                </node>
-              </node>
-              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1302191354693961102">
-                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961104">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1302191354693961105">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1302191354693961154">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000780" resolveInfo="MPS_EQUALITY_OPERATIONS" />
-                    </node>
-                  </node>
-                </node>
-                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1302191354693961103">
+                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6611143953833872778">
                   <property name="value" nameId="tpee.1068580320021" value="4" />
                 </node>
               </node>
-              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1302191354693961107">
-                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1302191354693961108">
+              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="8425917838863473645">
+                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473646">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8425917838863473647">
+                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8425917838863473648">
+                      <property name="text" nameId="tpee.6329021646629104958" value="^" />
+                    </node>
+                  </node>
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8425917838863473649">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8425917838863473650">
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000787" resolveInfo="J_10" />
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
+                    </node>
+                  </node>
+                </node>
+                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6611143953833872771">
                   <property name="value" nameId="tpee.1068580320021" value="5" />
                 </node>
-                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961109">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1302191354693961110">
-                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1302191354693961111">
-                      <property name="text" nameId="tpee.6329021646629104958" value="&gt;&gt;, &lt;&lt;" />
-                    </node>
-                  </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1302191354693961112">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1302191354693961113">
-                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000783" resolveInfo="J_6" />
-                    </node>
-                  </node>
-                </node>
               </node>
-              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1302191354693961114">
-                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961116">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1302191354693961117">
-                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1302191354693961118">
+              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="8425917838863473651">
+                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473652">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8425917838863473653">
+                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8425917838863473654">
                       <property name="text" nameId="tpee.6329021646629104958" value="&amp;" />
                     </node>
                   </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1302191354693961119">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1302191354693961120">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8425917838863473655">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8425917838863473656">
                       <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
                       <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000786" resolveInfo="J_9" />
                     </node>
                   </node>
                 </node>
-                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1302191354693961115">
+                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6611143953833872758">
+                  <property name="value" nameId="tpee.1068580320021" value="6" />
+                </node>
+              </node>
+              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="8425917838863473657">
+                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8425917838863473658">
+                  <property name="value" nameId="tpee.1068580320021" value="7" />
+                </node>
+                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473659">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8425917838863473660">
+                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8425917838863473661">
+                      <property name="text" nameId="tpee.6329021646629104958" value="==, !=" />
+                    </node>
+                  </node>
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8425917838863473662">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8425917838863473663">
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000785" resolveInfo="J_8" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="8425917838863473664">
+                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473665">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8425917838863473666">
+                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8425917838863473667">
+                      <property name="text" nameId="tpee.6329021646629104958" value="&lt;, &lt;=, &gt;, &gt;=" />
+                    </node>
+                  </node>
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8425917838863473668">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8425917838863473669">
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000784" resolveInfo="J_7" />
+                    </node>
+                  </node>
+                </node>
+                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6611143953833872687">
                   <property name="value" nameId="tpee.1068580320021" value="8" />
                 </node>
               </node>
-              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1302191354693961121">
-                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961123">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1302191354693961124">
-                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1302191354693961125">
-                      <property name="text" nameId="tpee.6329021646629104958" value="^" />
+              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="8425917838863473670">
+                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473671">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8425917838863473672">
+                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8425917838863473673">
+                      <property name="text" nameId="tpee.6329021646629104958" value="&gt;&gt;, &lt;&lt;" />
                     </node>
                   </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1302191354693961126">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1302191354693961127">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8425917838863473674">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8425917838863473675">
                       <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000787" resolveInfo="J_10" />
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000783" resolveInfo="J_6" />
                     </node>
                   </node>
                 </node>
-                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1302191354693961122">
+                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6611143953833872751">
                   <property name="value" nameId="tpee.1068580320021" value="9" />
                 </node>
               </node>
-              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="1302191354693961128">
-                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1302191354693961129">
-                  <property name="value" nameId="tpee.1068580320021" value="10" />
-                </node>
-                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="1302191354693961130">
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1302191354693961131">
-                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1302191354693961132">
-                      <property name="text" nameId="tpee.6329021646629104958" value="|" />
+              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="8425917838863473676">
+                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473677">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8425917838863473678">
+                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8425917838863473679">
+                      <property name="text" nameId="tpee.6329021646629104958" value="+, -" />
                     </node>
                   </node>
-                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1302191354693961133">
-                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="1302191354693961134">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8425917838863473680">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8425917838863473681">
                       <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
-                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000788" resolveInfo="J_11" />
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000782" resolveInfo="J_5" />
                     </node>
+                  </node>
+                </node>
+                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6611143953833872694">
+                  <property name="value" nameId="tpee.1068580320021" value="10" />
+                </node>
+              </node>
+              <node role="defaultBlock" roleId="tpee.1163670592366" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473682" />
+              <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="8425917838863473683">
+                <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473684">
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8425917838863473685">
+                    <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8425917838863473686">
+                      <property name="text" nameId="tpee.6329021646629104958" value="*, /, %" />
+                    </node>
+                  </node>
+                  <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8425917838863473687">
+                    <node role="expression" roleId="tpee.1068581517676" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="8425917838863473688">
+                      <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="1302191354694000771" resolveInfo="PrecedenceUtil.Precedence" />
+                      <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="1302191354694000781" resolveInfo="J_4" />
+                    </node>
+                  </node>
+                </node>
+                <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6611143953833872738">
+                  <property name="value" nameId="tpee.1068580320021" value="11" />
+                </node>
+              </node>
+              <node role="expression" roleId="tpee.1163670766145" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5160624142075082477">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5160624142075117477">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1262430001741497858" resolveInfo="getPriority" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="5160624142075105947">
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1081773326031" resolveInfo="BinaryOperation" />
+                  <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5160624142075065411">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1302191354693905839" resolveInfo="expression" />
                   </node>
                 </node>
               </node>
@@ -15716,10 +15699,6 @@
         <property name="name" nameId="tpck.1169194664001" value="J_3" />
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1302191354694000773" resolveInfo="PrecedenceUtil.Precedence" />
       </node>
-      <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1302191354694000780">
-        <property name="name" nameId="tpck.1169194664001" value="MPS_EQUALITY_OPERATIONS" />
-        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1302191354694000773" resolveInfo="PrecedenceUtil.Precedence" />
-      </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1302191354694000781">
         <property name="name" nameId="tpck.1169194664001" value="J_4" />
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1302191354694000773" resolveInfo="PrecedenceUtil.Precedence" />
@@ -16096,17 +16075,17 @@
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3442345692339772820">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2920791803321297766" resolveInfo="smc" />
                           </node>
-                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3442345692339772821">
-                            <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="3442345692339772822">
-                              <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3442345692339772823">
-                                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3442345692339772824">
+                          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2722862962576143297">
+                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2722862962576143298">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModel%dgetReference()%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="getReference" />
+                            </node>
+                            <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="2722862962576143299">
+                              <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2722862962576143300">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2722862962576143301">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2920791803321297766" resolveInfo="smc" />
                                 </node>
-                                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetModelOperation" typeId="tp25.1143234257716" id="3442345692339772825" />
+                                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetModelOperation" typeId="tp25.1143234257716" id="2722862962576143302" />
                               </node>
-                            </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3442345692339772826">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModel%dgetSModelReference()%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="getSModelReference" />
                             </node>
                           </node>
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3442345692339772827" />
@@ -16140,17 +16119,17 @@
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3442345692339772835">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2920791803321297766" resolveInfo="smc" />
                         </node>
-                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3442345692339772836">
-                          <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="3442345692339772837">
-                            <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3442345692339772838">
-                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3442345692339772839">
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2722862962576142437">
+                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2722862962576142438">
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModel%dgetReference()%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="getReference" />
+                          </node>
+                          <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="2722862962576142439">
+                            <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2722862962576142440">
+                              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2722862962576142441">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2920791803321297766" resolveInfo="smc" />
                               </node>
-                              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetModelOperation" typeId="tp25.1143234257716" id="3442345692339772840" />
+                              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetModelOperation" typeId="tp25.1143234257716" id="2722862962576142442" />
                             </node>
-                          </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3442345692339772841">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModel%dgetSModelReference()%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="getSModelReference" />
                           </node>
                         </node>
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3442345692339772842" />

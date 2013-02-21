@@ -15,6 +15,7 @@ public class NodeSubstituteActionsComparator implements Comparator<INodeSubstitu
     myContainingRoot = containingRoot;
   }
 
+  @Override
   public int compare(INodeSubstituteAction action1, INodeSubstituteAction action2) {
     Object parameter1 = action1.getParameterObject();
     Object parameter2 = action2.getParameterObject();

@@ -10,6 +10,7 @@ public class PoorCapPR extends PostingRule {
     super(type, isTaxable);
   }
 
+  @Override
   protected Money calculateAmount(AccountingEvent evt) {
     Quantity amountUsed = ((Usage) evt).getAmount();
     Quantity usageLimit = (Quantity) evt.getAgreement().getValue("CAP", evt.getWhenOccurred());

@@ -2199,7 +2199,7 @@ __switch__:
             SNode smc = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
             String role = "baseMethodDeclaration";
             SReference sReference = SNodeOperations.cast(SLinkOperations.getTarget(dotExpression, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation").getReference(role);
-            smc.setReference(new StaticReference(role, smc, SNodeOperations.getModel(smc).getSModelReference(), null, ((jetbrains.mps.smodel.SReference) sReference).getResolveInfo()).getRole(), new StaticReference(role, smc, SNodeOperations.getModel(smc).getSModelReference(), null, ((jetbrains.mps.smodel.SReference) sReference).getResolveInfo()));
+            smc.setReference(new StaticReference(role, smc, SNodeOperations.getModel(smc).getReference(), null, ((jetbrains.mps.smodel.SReference) sReference).getResolveInfo()).getRole(), new StaticReference(role, smc, SNodeOperations.getModel(smc).getReference(), null, ((jetbrains.mps.smodel.SReference) sReference).getResolveInfo()));
             SNodeOperations.replaceWithAnother(dotExpression, smc);
             return smc;
           }

@@ -17,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
   /*package*/ AbstractShowInFileView() {
   }
 
+  @Override
   protected void actionPerformed(VcsContext e) {
     final Project project = e.getProject();
     VirtualFile selectedFile = calculateSelectedFile(e);
@@ -41,6 +42,7 @@ import org.jetbrains.annotations.NotNull;
 
   protected abstract FileViewProjectPane getView(Project project);
 
+  @Override
   protected void update(VcsContext vcsContext, Presentation presentation) {
     List<VirtualFile> baseDirs = getRoots(vcsContext);
     VirtualFile selectedFile = calculateSelectedFile(vcsContext);

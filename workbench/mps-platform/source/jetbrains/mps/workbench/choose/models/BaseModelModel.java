@@ -25,16 +25,19 @@ public abstract class BaseModelModel extends BaseMPSChooseModel<SModelReference>
     super(project, "model");
   }
 
+  @Override
   public boolean willOpenEditor() {
     return false;
   }
 
+  @Override
   public String doGetFullName(Object element) {
     BaseModelItem navigationItem = (BaseModelItem) element;
     SModelReference ref = navigationItem.getModelReference();
     return ref.getLongName() + getStereotypeString(ref);
   }
 
+  @Override
   public String doGetObjectName(SModelReference ref) {
     return NameUtil.shortNameFromLongName(ref.getLongName()) + getStereotypeString(ref);
   }

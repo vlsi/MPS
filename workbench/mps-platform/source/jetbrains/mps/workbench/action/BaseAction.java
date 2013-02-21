@@ -75,6 +75,7 @@ public abstract class BaseAction extends AnAction {
   public boolean isApplicable(final AnActionEvent e) {
     final THashMap<String, Object> params = new THashMap<String, Object>();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         collectActionData(e, params);
       }
@@ -91,6 +92,7 @@ public abstract class BaseAction extends AnAction {
     getTemplatePresentation().setText(newText.toString());
   }
 
+  @Override
   public final void update(final AnActionEvent e) {
     super.update(e);
 
@@ -106,6 +108,7 @@ public abstract class BaseAction extends AnAction {
     }
 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         if (myDisableOnNoProject && e.getData(PlatformDataKeys.PROJECT) == null) {
           disable(e.getPresentation());
@@ -121,9 +124,11 @@ public abstract class BaseAction extends AnAction {
     });
   }
 
+  @Override
   public final void actionPerformed(final AnActionEvent event) {
     final THashMap<String, Object> params = new THashMap<String, Object>();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         collectActionData(event, params);
       }
@@ -136,6 +141,7 @@ public abstract class BaseAction extends AnAction {
       if (project != null) {
         // modern API
         access.runWriteActionInCommand(new Runnable() {
+          @Override
           public void run() {
             doExecute(event, params);
           }
@@ -143,6 +149,7 @@ public abstract class BaseAction extends AnAction {
       } else {
         // deprecated API
         access.runWriteActionInCommand(new Runnable() {
+          @Override
           public void run() {
             doExecute(event, params);
           }

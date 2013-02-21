@@ -29,10 +29,12 @@ public class MPSPackageItemProvider extends DefaultChooseByNameItemProvider {
     super(context);
   }
 
+  @Override
   public boolean filterElements(ChooseByNameBase base, String pattern, boolean everywhere, ProgressIndicator cancelled, Processor<Object> consumer) {
     return super.filterElements(base, transformPattern(pattern), everywhere, cancelled, consumer);
   }
 
+  @Override
   public List<String> filterNames(ChooseByNameBase base, String[] names, String pattern) {
     return super.filterNames(base, names, transformPattern(pattern));
   }

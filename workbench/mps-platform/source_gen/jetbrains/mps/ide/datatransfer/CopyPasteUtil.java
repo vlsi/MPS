@@ -151,7 +151,7 @@ public class CopyPasteUtil {
         newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {
         if (oldTargetNode != null) {
-          newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getNodeId());
+          newReference = jetbrains.mps.smodel.SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getReference(), oldTargetNode.getNodeId());
         } else
         if (((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() != null) {
           newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo());
@@ -182,7 +182,7 @@ public class CopyPasteUtil {
           );
           if (resolveInfo != null) {
             if (oldTargetNode != null && !(SNodeOperations.isDisposed(oldTargetNode)) && oldTargetNode.getModel() != null) {
-              newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getNodeId(), resolveInfo);
+              newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getReference(), oldTargetNode.getNodeId(), resolveInfo);
             } else {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
             }
@@ -200,7 +200,7 @@ public class CopyPasteUtil {
   }
 
   private static SModel copyModelProperties(SModel model) {
-    SModelReference modelReference = model.getSModelReference();
+    SModelReference modelReference = model.getReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
     SModel newModel = new SModel(new SModelReference(fqName, SModelId.generate()));
     for (ModuleReference language : model.importedLanguages()) {
@@ -321,13 +321,14 @@ public class CopyPasteUtil {
     final List<ModuleReference> additionalLanguages = new ArrayList<ModuleReference>();
     final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
         for (SModelDescriptor sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {
           allImportedModels.add(sm.getSModelReference());
         }
         for (SModelReference modelReference : necessaryImports) {
-          if (modelReference != null && !((allImportedModels.contains(modelReference))) && !((targetModel.getSModelReference().equals(modelReference)))) {
+          if (modelReference != null && !((allImportedModels.contains(modelReference))) && !((targetModel.getReference().equals(modelReference)))) {
             additionalModels.add(modelReference);
           }
         }

@@ -54,10 +54,12 @@ public class EditorHighlighterFactory extends AbstractProjectComponent {
     public MyEditorComponentCreateListener() {
     }
 
+    @Override
     public void editorComponentCreated(@NotNull EditorComponent editorComponent) {
       addHighighlighterIfNeeded(editorComponent);
     }
 
+    @Override
     public void editorComponentDisposed(@NotNull EditorComponent editorComponent) {
       disposeHighlighterIfNeeded(editorComponent);
     }

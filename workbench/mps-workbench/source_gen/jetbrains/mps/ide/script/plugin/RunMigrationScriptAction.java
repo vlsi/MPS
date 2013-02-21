@@ -33,6 +33,7 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
     myApplyToSelection = applyToSelection;
   }
 
+  @Override
   protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
     IScope migrationScope = AbstractMigrationScriptHelper.createMigrationScope(myModels, myModules, myApplyToSelection);
     if (!(migrationScope.getModelDescriptors().iterator().hasNext())) {
@@ -43,6 +44,7 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
     AbstractMigrationScriptHelper.doRunScripts(scripts, migrationScope, myContext);
   }
 
+  @Override
   protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
     if (!(super.collectActionData(e, _params))) {
       return false;

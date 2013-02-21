@@ -26,6 +26,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.util.messages.MessageBusConnection" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -54,6 +55,7 @@
     <classNode dependClassName="com.intellij.openapi.roots.impl.ModuleRootEventImpl" />
     <classNode dependClassName="com.intellij.openapi.vcs.changes.VcsDirtyScopeManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="com.intellij.openapi.components.PersistentStateComponent" />
@@ -62,6 +64,7 @@
     <classNode dependClassName="com.intellij.openapi.application.PathManager" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.LinkedHashSet" />
@@ -77,6 +80,7 @@
   <dependency className="jetbrains.mps.vcs.VcsGeneratedFilesPanel" file="VcsGeneratedFilesPanel.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.BorderLayout" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.border.TitledBorder" />

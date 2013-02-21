@@ -31,24 +31,29 @@ public class DiffChangeGroupLayout extends ChangeGroupLayout {
   }
 
   @NotNull
+  @Override
   public EditorComponent getLeftComponent() {
     return myLeftEditor.getEditorComponent(myInspector);
   }
 
   @NotNull
+  @Override
   public EditorComponent getRightComponent() {
     return myRightEditor.getEditorComponent(myInspector);
   }
 
+  @Override
   protected List<ChangeEditorMessage> getLeftMessages(ModelChange change) {
     return myLeftEditor.getMessagesForChange(change);
   }
 
+  @Override
   protected List<ChangeEditorMessage> getRightMessages(ModelChange change) {
     return myRightEditor.getMessagesForChange(change);
   }
 
   @Nullable
+  @Override
   protected ChangeSet getChangeSet() {
     return myChangeSet;
   }

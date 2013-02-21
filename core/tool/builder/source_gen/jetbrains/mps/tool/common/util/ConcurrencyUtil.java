@@ -94,6 +94,7 @@ public class ConcurrencyUtil {
   @NotNull
   public static ThreadPoolExecutor newSingleThreadExecutor(@NotNull final String threadFactoryName, final int threadPriority) {
     return new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(), new ThreadFactory() {
+      @Override
       public Thread newThread(final Runnable r) {
         final Thread thread = new Thread(r, threadFactoryName);
         thread.setPriority(threadPriority);
@@ -110,6 +111,7 @@ public class ConcurrencyUtil {
   @NotNull
   public static ScheduledThreadPoolExecutor newSingleScheduledThreadExecutor(@NotNull final String threadFactoryName, final int threadPriority) {
     ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1, new ThreadFactory() {
+      @Override
       public Thread newThread(final Runnable r) {
         final Thread thread = new Thread(r, threadFactoryName);
         thread.setPriority(threadPriority);

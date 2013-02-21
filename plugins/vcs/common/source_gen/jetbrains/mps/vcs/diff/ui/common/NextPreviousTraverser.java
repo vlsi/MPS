@@ -247,6 +247,7 @@ public class NextPreviousTraverser {
       myPrevious = previous;
     }
 
+    @Override
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
       assert getNeighbourGroupBounds(myPrevious) != null;
       goToBounds(getNeighbourGroupBounds(myPrevious));

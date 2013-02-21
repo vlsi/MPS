@@ -226,12 +226,10 @@
     <nodeInfo nodeId="3432969378036016019" fileName="JavaStaticContext.java" startLine="79" startPosition="34" endLine="80" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="3432969378036016020" fileName="JavaStaticContext.java" startLine="81" startPosition="9" endLine="82" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3432969378036016029" fileName="JavaStaticContext.java" startLine="83" startPosition="7" endLine="84" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="948222233231454699" fileName="JavaStaticContext.java" startLine="87" startPosition="44" endLine="88" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="948222233231459609" fileName="JavaStaticContext.java" startLine="91" startPosition="33" endLine="92" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="948222233231454699" fileName="JavaStaticContext.java" startLine="88" startPosition="44" endLine="89" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="948222233231459609" fileName="JavaStaticContext.java" startLine="93" startPosition="33" endLine="94" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3432969378036015911" fileName="JavaStaticContext.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StaticContextValue#()V" />
     <nodeInfo nodeId="3432969378036016013" fileName="JavaStaticContext.java" startLine="78" startPosition="49" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="948222233231448888" fileName="JavaStaticContext.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvalues#()Ljava/util/List;" />
-    <nodeInfo nodeId="948222233231438914" fileName="JavaStaticContext.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initSubvalues#()V" />
     <nodeInfo nodeId="3432969378036015947" fileName="JavaStaticContext.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
     <nodeInfo nodeId="3432969378036015954" fileName="JavaStaticContext.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategory#()Ljetbrains/mps/debug/api/programState/WatchablesCategory;" />
     <nodeInfo nodeId="3432969378036015969" fileName="JavaStaticContext.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
@@ -239,6 +237,8 @@
     <nodeInfo nodeId="3432969378036015914" fileName="JavaStaticContext.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValuePresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="3432969378036015917" fileName="JavaStaticContext.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
     <nodeInfo nodeId="3432969378036015920" fileName="JavaStaticContext.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStructure#()Z" />
+    <nodeInfo nodeId="948222233231448888" fileName="JavaStaticContext.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvalues#()Ljava/util/List;" />
+    <nodeInfo nodeId="948222233231438914" fileName="JavaStaticContext.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initSubvalues#()V" />
     <nodeInfo nodeId="3432969378036015930" fileName="JavaStaticContext.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaStaticContext#(Lcom/sun/jdi/ReferenceType;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)V" />
     <nodeInfo nodeId="3432969378036015961" fileName="JavaStaticContext.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljetbrains/mps/debug/api/programState/IValue;" />
     <nodeInfo nodeId="3432969378036016006" fileName="JavaStaticContext.java" startLine="77" startPosition="60" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -252,13 +252,11 @@
     <scopeInfo nodeId="3432969378036015990" fileName="JavaStaticContext.java" startLine="67" startPosition="39" endLine="68" endPosition="32" />
     <scopeInfo nodeId="3432969378036015994" fileName="JavaStaticContext.java" startLine="72" startPosition="34" endLine="73" endPosition="18" />
     <scopeInfo nodeId="3432969378036016018" fileName="JavaStaticContext.java" startLine="79" startPosition="34" endLine="80" endPosition="19" />
-    <scopeInfo nodeId="948222233231448893" fileName="JavaStaticContext.java" startLine="87" startPosition="44" endLine="88" endPosition="25" />
-    <scopeInfo nodeId="948222233231438918" fileName="JavaStaticContext.java" startLine="91" startPosition="33" endLine="92" endPosition="41" />
+    <scopeInfo nodeId="948222233231448893" fileName="JavaStaticContext.java" startLine="88" startPosition="44" endLine="89" endPosition="25" />
+    <scopeInfo nodeId="948222233231438918" fileName="JavaStaticContext.java" startLine="93" startPosition="33" endLine="94" endPosition="41" />
     <scopeInfo nodeId="3432969378036015964" fileName="JavaStaticContext.java" startLine="38" startPosition="28" endLine="40" endPosition="19" />
     <scopeInfo nodeId="3432969378036015939" fileName="JavaStaticContext.java" startLine="21" startPosition="107" endLine="24" endPosition="57" />
     <scopeInfo nodeId="3432969378036015911" fileName="JavaStaticContext.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="948222233231448888" fileName="JavaStaticContext.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="948222233231438914" fileName="JavaStaticContext.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="3432969378036015947" fileName="JavaStaticContext.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="3432969378036015954" fileName="JavaStaticContext.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="3432969378036015969" fileName="JavaStaticContext.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
@@ -267,6 +265,8 @@
     <scopeInfo nodeId="3432969378036015917" fileName="JavaStaticContext.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="3432969378036015920" fileName="JavaStaticContext.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="3432969378036016012" fileName="JavaStaticContext.java" startLine="78" startPosition="49" endLine="82" endPosition="81" />
+    <scopeInfo nodeId="948222233231448888" fileName="JavaStaticContext.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="948222233231438914" fileName="JavaStaticContext.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
     <scopeInfo nodeId="3432969378036015930" fileName="JavaStaticContext.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="3432969378036015935" varName="classFqName" />
       <varInfo nodeId="3432969378036015933" varName="staticType" />
@@ -280,8 +280,8 @@
       <varInfo nodeId="3432969378036016000" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3432969378036015923" fileName="JavaStaticContext.java" startLine="76" startPosition="0" endLine="86" endPosition="0" />
-    <unitInfo nodeId="3432969378036015908" fileName="JavaStaticContext.java" startLine="53" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.watchables.JavaStaticContext$StaticContextValue" />
-    <unitInfo nodeId="3432969378036015904" fileName="JavaStaticContext.java" startLine="17" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.watchables.JavaStaticContext" />
+    <unitInfo nodeId="3432969378036015908" fileName="JavaStaticContext.java" startLine="53" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.watchables.JavaStaticContext$StaticContextValue" />
+    <unitInfo nodeId="3432969378036015904" fileName="JavaStaticContext.java" startLine="17" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.watchables.JavaStaticContext" />
   </root>
   <root nodeRef="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)/3432969378036016095">
     <nodeInfo nodeId="3432969378036016099" fileName="JavaStaticField.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myField" />

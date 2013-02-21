@@ -123,8 +123,10 @@ public class ShowImplementations_Action extends BaseAction {
           final ShowImplementationComponent component = new ShowImplementationComponent(nodes, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
 
           JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPrefferedFocusableComponent()).setRequestFocus(true).setProject(((Project) MapSequence.fromMap(_params).get("project"))).setMovable(true).setResizable(true).setTitle(title).setCancelCallback(new Computable<Boolean>() {
+            @Override
             public Boolean compute() {
               ModelAccess.instance().runCommandInEDT(new Runnable() {
+                @Override
                 public void run() {
                   component.dispose();
                 }

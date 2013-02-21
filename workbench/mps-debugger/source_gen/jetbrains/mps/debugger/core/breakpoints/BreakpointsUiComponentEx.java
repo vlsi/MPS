@@ -167,6 +167,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
 
   public void repaintBreakpoints() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
+      @Override
       public void run() {
         List<EditorComponent> allEditorComponents = EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true);
         for (EditorComponent component : ListSequence.fromList(allEditorComponents)) {

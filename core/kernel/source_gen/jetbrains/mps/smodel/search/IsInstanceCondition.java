@@ -23,6 +23,7 @@ public class IsInstanceCondition implements Condition<SNode> {
     return myConceptFqName;
   }
 
+  @Override
   public boolean met(SNode node) {
     return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(myConceptFqName));
   }

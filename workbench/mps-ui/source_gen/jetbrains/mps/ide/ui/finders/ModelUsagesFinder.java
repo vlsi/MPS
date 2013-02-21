@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.ModelsOnlyScope;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
@@ -26,13 +27,14 @@ public class ModelUsagesFinder implements IFinder {
   public ModelUsagesFinder() {
   }
 
+  @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
     IHolder holder = query.getObjectHolder();
     assert holder instanceof ModelHolder;
     SModel model = ((ModelHolder) holder).getObject();
     searchResults.getSearchedNodes().add(model);
-    SModelReference modelReference = model.getSModelReference();
+    SModelReference modelReference = model.getReference();
     if (query.getScope() instanceof ModelsOnlyScope) {
       for (SModelDescriptor modelDescriptor : (as_s8v3jk_a0a0a0g0b(query.getScope(), ModelsOnlyScope.class)).getModelDescriptors()) {
         if (monitor.isCanceled()) {
@@ -41,7 +43,7 @@ public class ModelUsagesFinder implements IFinder {
         if (!(SModelStereotype.isUserModel(modelDescriptor))) {
           continue;
         }
-        for (SNode node : modelDescriptor.getSModel().nodes()) {
+        for (SNode node : new NodesIterable(modelDescriptor.getSModel())) {
           for (SReference reference : node.getReferences()) {
             if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
               continue;
@@ -67,7 +69,7 @@ public class ModelUsagesFinder implements IFinder {
         if (!(SModelStereotype.isUserModel(scopeModel))) {
           continue;
         }
-        for (SNode node : descriptor.getSModel().nodes()) {
+        for (SNode node : new NodesIterable(descriptor.getSModel())) {
           for (SReference reference : node.getReferences()) {
             if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
               continue;

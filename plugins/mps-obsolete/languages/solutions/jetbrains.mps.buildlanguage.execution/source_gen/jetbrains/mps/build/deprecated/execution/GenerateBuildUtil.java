@@ -87,6 +87,7 @@ public class GenerateBuildUtil {
       generate.invoke();
     } else {
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+        @Override
         public void run() {
           generate.invoke();
         }

@@ -25,6 +25,7 @@ public final class ProjectPropertiesDialog extends DialogWrapper {
 
 
   @Nullable
+  @Override
   public JComponent createCenterPanel() {
     return myPropertiesComponent;
   }

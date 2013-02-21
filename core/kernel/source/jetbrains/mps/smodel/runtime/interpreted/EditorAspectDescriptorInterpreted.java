@@ -17,8 +17,8 @@ package jetbrains.mps.smodel.runtime.interpreted;
 
 import jetbrains.mps.smodel.runtime.EditorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.EditorDescriptor;
-import jetbrains.mps.util.misc.hash.HashMap;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**

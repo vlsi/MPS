@@ -41,8 +41,10 @@ class ChooseItemWindowCellRenderer<Item> extends JPanel implements ListCellRende
     add(myDescriptionLabel, BorderLayout.EAST);
   }
 
+  @Override
   public Component getListCellRendererComponent(final JList list, final Object value, int index, final boolean isSelected, boolean cellHasFocus) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         Item item = (Item) value;
         setIcon(myChooseItemComponent.getItemIcon(item));

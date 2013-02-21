@@ -51,6 +51,7 @@ public class JDOMUtil {
   public static SAXBuilder createBuilder() {
     final SAXBuilder saxBuilder = new SAXBuilder();
     saxBuilder.setEntityResolver(new EntityResolver() {
+      @Override
       public InputSource resolveEntity(String publicId, String systemId) throws SAXException, IOException {
         return new InputSource(new CharArrayReader(new char[0]));
       }
@@ -104,10 +105,12 @@ public class JDOMUtil {
     public MyXMLOutputter() {
     }
 
+    @Override
     public String escapeAttributeEntities(String str) {
       return escapeText(str, false, true);
     }
 
+    @Override
     public String escapeElementEntities(String str) {
       return escapeText(str, false, false);
     }

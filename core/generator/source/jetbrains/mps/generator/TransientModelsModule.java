@@ -24,7 +24,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -57,6 +57,7 @@ public class TransientModelsModule extends ClassLoadingModule {
     setModuleReference(reference);
   }
 
+  @Override
   public Class getClass(String fqName) {
     // todo: TransientModelsModule? seriously?
     if (!(myOriginalModule instanceof IClassLoadingModule)) {
@@ -103,7 +104,7 @@ public class TransientModelsModule extends ClassLoadingModule {
 
   public boolean addModelToKeep(SModel model, boolean force) {
     assert model instanceof TransientSModel;
-    String modelRef = model.getSModelReference().toString();
+    String modelRef = model.getReference().toString();
     if (force) {
       myModelsToKeep.add(modelRef);
       return true;
@@ -123,7 +124,7 @@ public class TransientModelsModule extends ClassLoadingModule {
 
   public boolean isModelToKeep(SModel model) {
     assert model instanceof TransientSModel;
-    return myModelsToKeep.contains(model.getSModelReference().toString());
+    return myModelsToKeep.contains(model.getReference().toString());
   }
 
   private boolean isValidName(String longName, String stereotype) {
@@ -190,15 +191,18 @@ public class TransientModelsModule extends ClassLoadingModule {
     return getModuleFqName();
   }
 
+  @Override
   public List<SModelDescriptor> getOwnModelDescriptors() {
     return new ArrayList<SModelDescriptor>(myModels.values());
   }
 
+  @Override
   protected ModuleScope createScope() {
     return new TransientModuleScope();
   }
 
   public class TransientModuleScope extends ModuleScope {
+    @Override
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(TransientModelsModule.this);
@@ -206,6 +210,7 @@ public class TransientModelsModule extends ClassLoadingModule {
       return result;
     }
 
+    @Override
     protected Set<Language> getInitialUsedLanguages() {
       return new HashSet<Language>(new GlobalModuleDependenciesManager(myOriginalModule).getUsedLanguages());
     }
@@ -220,6 +225,7 @@ public class TransientModelsModule extends ClassLoadingModule {
       myLongName = longName;
     }
 
+    @Override
     protected SModel createModel() {
       if (wasUnloaded) {
         LOG.debug("Re-loading " + getSModelReference());
@@ -263,6 +269,11 @@ public class TransientModelsModule extends ClassLoadingModule {
     @Override
     public IModule getModule() {
       return TransientModelsModule.this;
+    }
+
+    @Override
+    public boolean isReadOnly() {
+      return true;
     }
 
     @Override

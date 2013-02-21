@@ -46,6 +46,7 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
         return false;
       }
 
+      @Override
       public void onTextAvailable(ProcessEvent event, Key k) {
         if (isTerminatedEvent()) {
           myDispatcher.onProcessTerminated(event.getText());

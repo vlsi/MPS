@@ -33,6 +33,7 @@ public class Post_ThisSettingClassConcept_Test extends BaseTransformationTest4 {
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveDown_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "$Paste");
     }
   }

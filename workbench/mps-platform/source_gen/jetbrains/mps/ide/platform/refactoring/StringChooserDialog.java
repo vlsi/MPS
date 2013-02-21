@@ -35,10 +35,12 @@ public class StringChooserDialog extends RefactoringDialog {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return null;
   }
 
+  @Override
   public JComponent getPreferredFocusedComponent() {
     return myTextField;
   }
@@ -80,6 +82,7 @@ public class StringChooserDialog extends RefactoringDialog {
     return this.myTextField.getText();
   }
 
+  @Override
   protected void doRefactoringAction() {
     myResultString = this.myTextField.getText();
     super.doRefactoringAction();

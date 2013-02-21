@@ -12,10 +12,12 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T> {
   public AbstractTreeTraversal() {
   }
 
+  @Override
   public ITreeTraversal<T> traverse(TraversalAxis axis) {
     return traverse(axis, (IFeatureDescriptor<T>) null);
   }
 
+  @Override
   public ITreeTraversal<T> traverse(TraversalAxis axis, String feature) {
     IFeatureDescriptor<T> featureDescriptor = null;
     if (feature != null) {
@@ -24,6 +26,7 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T> {
     return traverse(axis, featureDescriptor);
   }
 
+  @Override
   public ITreeTraversal<T> traverse(TraversalAxis axis, IFeatureDescriptor<T> featureDesc) {
     switch (axis) {
       case DESCENDANTS:
@@ -40,11 +43,13 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T> {
         return new SiblingsTreeTraversal<T>(this, new ISiblingsFilter<T>() {
           private boolean accepting;
 
+          @Override
           public boolean accept(T t) {
             accepting = false;
             return true;
           }
 
+          @Override
           public boolean accept(T sibling, T thisNode) {
             if (sibling == thisNode || (sibling != null && sibling.equals(thisNode))) {
               accepting = true;
@@ -57,11 +62,13 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T> {
         return new SiblingsTreeTraversal<T>(this, new ISiblingsFilter<T>() {
           private boolean accepting;
 
+          @Override
           public boolean accept(T t) {
             accepting = false;
             return true;
           }
 
+          @Override
           public boolean accept(T sibling, T thisNode) {
             if (sibling == thisNode || (sibling != null && sibling.equals(thisNode))) {
               accepting = true;
@@ -73,11 +80,13 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T> {
         return new SiblingsTreeTraversal<T>(this, new ISiblingsFilter<T>() {
           private boolean accepting;
 
+          @Override
           public boolean accept(T t) {
             accepting = true;
             return true;
           }
 
+          @Override
           public boolean accept(T sibling, T thisNode) {
             if (sibling == thisNode || (sibling != null && sibling.equals(thisNode))) {
               accepting = false;
@@ -89,11 +98,13 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T> {
         return new SiblingsTreeTraversal<T>(this, new ISiblingsFilter<T>() {
           private boolean accepting;
 
+          @Override
           public boolean accept(T t) {
             accepting = true;
             return true;
           }
 
+          @Override
           public boolean accept(T sibling, T thisNode) {
             if (sibling == thisNode || (sibling != null && sibling.equals(thisNode))) {
               accepting = false;
@@ -108,6 +119,7 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T> {
     return null;
   }
 
+  @Override
   public final ITreeTraversal<T> filter(IFilter<T> filter) {
     return new FilteredTreeTraversal<T>(this, filter);
   }

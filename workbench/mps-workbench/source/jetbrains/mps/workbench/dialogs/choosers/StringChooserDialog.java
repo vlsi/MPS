@@ -62,8 +62,10 @@ class StringChooserDialog extends BaseDialog {
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
     BaseStringModel goToStringModel = new BaseStringModel(project) {
+      @Override
       public NavigationItem doGetNavigationItem(final String string) {
         return new BaseStringItem(string) {
+          @Override
           public void navigate(boolean requestFocus) {
           }
         };
@@ -74,10 +76,12 @@ class StringChooserDialog extends BaseDialog {
         return myValues.toArray(new String[myValues.size()]);
       }
 
+      @Override
       public String[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 
+      @Override
       @Nullable
       public String getPromptText() {
         return "Select:";
@@ -91,6 +95,7 @@ class StringChooserDialog extends BaseDialog {
 
     myChooser = MpsPopupFactory.createPanelForNode(goToStringModel, false);
     myChooser.invoke(new Callback() {
+      @Override
       public void elementChosen(Object element) {
         if (!myOkDone) {
           myOkDone = true;
@@ -100,14 +105,17 @@ class StringChooserDialog extends BaseDialog {
     }, ModalityState.current(), false);
   }
 
+  @Override
   public boolean stretchMainComponent() {
     return true;
   }
 
+  @Override
   public DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensions(100, 100, 500, 600);
   }
 
+  @Override
   protected JComponent getMainComponent() {
     return myChooser.getPanel();
   }

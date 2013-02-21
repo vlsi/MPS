@@ -120,6 +120,7 @@ public class TestMergeDialog {
           System.exit(0);
         }
         ModelAccess.instance().runWriteAction(new Runnable() {
+          @Override
           public void run() {
             IFile iFile = FileSystem.getInstance().getFileByPath(finalResultFile);
             if (!(iFile.exists())) {

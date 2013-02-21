@@ -51,6 +51,7 @@ public class EnumMemberValueRefExpression_Constraints extends BaseConstraintsDes
               SNode enumMemberValueRef = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression", true, false);
               return new SimpleScope(SLinkOperations.getTargets(SLinkOperations.getTarget(enumMemberValueRef, "enum", false), "member", true)) {
                 @Nullable
+                @Override
                 public String getReferenceText(@NotNull SNode target) {
                   return SPropertyOperations.getString(SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"), "externalValue");
                 }

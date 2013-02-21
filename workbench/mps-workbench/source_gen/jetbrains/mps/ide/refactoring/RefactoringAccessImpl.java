@@ -20,38 +20,46 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
   public RefactoringAccessImpl(MPSCoreComponents coreComponents) {
   }
 
+  @Override
   public void initComponent() {
     RefactoringAccess.setInstance(this);
   }
 
+  @Override
   public void disposeComponent() {
     RefactoringAccess.setInstance(null);
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "MPS Workbench-specific Refactoring Access implementation";
   }
 
+  @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model) {
     return new ModelOrNodeChooser(project, model);
   }
 
+  @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {
     return new ModelOrNodeChooser(project, node);
   }
 
+  @Override
   public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     RefactoringView refactoringView = project.getComponent(RefactoringView.class);
     refactoringView.showRefactoringView(project, callback, searchResults, hasModelsToGenerate, name);
   }
 
+  @Override
   public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     RefactoringView refactoringView = refactoringContext.getCurrentOperationContext().getComponent(RefactoringView.class);
     refactoringView.showRefactoringView(refactoringContext, callback, searchResults, hasModelsToGenerate);
   }
 
+  @Override
   public boolean showRefactoringDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
     return showRefactoringDialogBase(project, refactoringContext, refactoring, hasModelsToGenerate);
   }

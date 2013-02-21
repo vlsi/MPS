@@ -27,6 +27,7 @@ public interface ITarget {
       super(name);
     }
 
+    @Override
     protected final IFacet.Name createParentName(String parentFqName) {
       return new IFacet.Name(parentFqName);
     }

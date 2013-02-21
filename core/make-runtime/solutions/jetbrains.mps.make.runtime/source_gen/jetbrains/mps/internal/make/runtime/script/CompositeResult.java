@@ -25,6 +25,7 @@ public class CompositeResult implements IResult {
     return MapSequence.fromMap(results).get(target);
   }
 
+  @Override
   public boolean isSucessful() {
     return Sequence.fromIterable(MapSequence.fromMap(results).values()).all(new IWhereFilter<IResult>() {
       public boolean accept(IResult r) {
@@ -33,6 +34,7 @@ public class CompositeResult implements IResult {
     });
   }
 
+  @Override
   public Iterable<IResource> output() {
     if (MapSequence.fromMap(results).isEmpty()) {
       return null;

@@ -33,20 +33,24 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class MPSModelsIndexer implements ApplicationComponent {
+  @Override
   public void initComponent() {
     IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new MyFileTypeIdIndexer());
   }
 
+  @Override
   public void disposeComponent() {
 
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return MPSModelsIndexer.class.getSimpleName();
   }
 
   private static class MyFileTypeIdIndexer extends FileTypeIdIndexer {
+    @Override
     @NotNull
     public Map<IdIndexEntry, Integer> map(FileContent inputData) {
       CharSequence data = inputData.getContentAsText();

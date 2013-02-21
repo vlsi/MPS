@@ -216,6 +216,7 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsUtil" file="BreakpointsUtil.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataKey" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />

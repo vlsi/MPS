@@ -20,22 +20,27 @@ class Log4jLoggingHandler implements ILoggingHandler {
     return org.apache.log4j.Logger.getLogger(fqName);
   }
 
+  @Override
   public void info(LogEntry e) {
     getLogger(e.getSourceClass()).info(e.getMessage(), e.getThrowable());
   }
 
+  @Override
   public void warning(LogEntry e) {
     getLogger(e.getSourceClass()).warn(e.getMessage(), e.getThrowable());
   }
 
+  @Override
   public void debug(LogEntry e) {
     getLogger(e.getSourceClass()).debug(e.getMessage(), e.getThrowable());
   }
 
+  @Override
   public void error(LogEntry e) {
     getLogger(e.getSourceClass()).error(e.getMessage(), e.getThrowable());
   }
 
+  @Override
   public void fatal(LogEntry e) {
     getLogger(e.getSourceClass()).fatal(e.getMessage(), e.getThrowable());
   }

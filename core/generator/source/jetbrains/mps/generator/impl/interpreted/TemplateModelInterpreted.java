@@ -45,7 +45,7 @@ public class TemplateModelInterpreted implements TemplateModel {
   }
 
   private void init() {
-    for (SNode root : myModel.roots()) {
+    for (SNode root : myModel.getRootNodes()) {
       String conceptName = root.getConcept().getId();
       if (conceptName.equals(RuleUtil.concept_TemplateSwitch)) {
         mySwitches.add(new TemplateSwitchMappingInterpreted(root));
@@ -68,7 +68,7 @@ public class TemplateModelInterpreted implements TemplateModel {
   @Override
   public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
     assert template.getModelReference().equals(getSModelReference());
-    SNode templateNode = myModel.getNodeById(((SNodePointer) template).getNodeId());
+    SNode templateNode = myModel.getNode(((SNodePointer) template).getNodeId());
     if (templateNode == null || !RuleUtil.concept_TemplateDeclaration.equals(templateNode.getConcept().getId())) {
       return null;
     }
@@ -78,12 +78,12 @@ public class TemplateModelInterpreted implements TemplateModel {
 
   @Override
   public String getLongName() {
-    return myModel.getLongName();
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(myModel);
   }
 
   @Override
   public SModelReference getSModelReference() {
-    return myModel.getSModelReference();
+    return ((SModelReference) myModel.getReference());
   }
 
   @Override

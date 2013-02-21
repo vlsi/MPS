@@ -25,6 +25,7 @@ public class FieldWithPathChooseDialog extends BaseFieldWithButtonComponent {
     this.setLayout(new BorderLayout());
     this.myChooser = descriptor;
     this.myField = new TextFieldWithBrowseButton.NoPathCompletion(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(FieldWithPathChooseDialog.this.myChooser, FieldWithPathChooseDialog.this);
         VirtualFile[] selectedFiles = dialog.choose(null, null);
@@ -53,6 +54,7 @@ public class FieldWithPathChooseDialog extends BaseFieldWithButtonComponent {
     return this.myChooser.getTitle();
   }
 
+  @Override
   public JTextField getTextField() {
     return this.myField.getTextField();
   }

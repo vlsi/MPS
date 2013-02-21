@@ -35,19 +35,23 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware 
 
   private static final String CLASS = "class";
 
+  @Override
   public boolean accept(@NotNull Project project, @NotNull VirtualFile file) {
     return file instanceof MPSNodeVirtualFile;
   }
 
+  @Override
   @NotNull
   public FileEditor createEditor(@NotNull Project project, @NotNull VirtualFile file) {
     return new MPSFileNodeEditor(project, (MPSNodeVirtualFile) file);
   }
 
+  @Override
   public void disposeEditor(@NotNull FileEditor editor) {
     Disposer.dispose(editor);
   }
 
+  @Override
   @NotNull
   public FileEditorState readState(@NotNull Element sourceElement, @NotNull Project project, @NotNull VirtualFile file) {
     String className = sourceElement.getAttributeValue(CLASS);
@@ -69,6 +73,7 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware 
     return FileEditorState.INSTANCE;
   }
 
+  @Override
   public void writeState(@NotNull FileEditorState state, @NotNull Project project, @NotNull Element targetElement) {
     if (!(state instanceof MPSEditorStateWrapper)) return;
 
@@ -78,12 +83,14 @@ public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware 
     editorState.save(targetElement);
   }
 
+  @Override
   @NotNull
   @NonNls
   public String getEditorTypeId() {
     return "MPSFileEditor";
   }
 
+  @Override
   @NotNull
   public FileEditorPolicy getPolicy() {
     return FileEditorPolicy.HIDE_DEFAULT_EDITOR;

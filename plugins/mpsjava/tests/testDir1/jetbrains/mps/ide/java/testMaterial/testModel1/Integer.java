@@ -6,6 +6,7 @@ public class Integer {
         i = x;
     }
 
+    @Override
     public String toString() {
         return "<<" + i + ">>";
     }

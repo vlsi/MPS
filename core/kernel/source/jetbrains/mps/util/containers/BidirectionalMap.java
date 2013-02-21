@@ -24,6 +24,7 @@ public class BidirectionalMap<K, V> implements Map<K, V> {
   private final Map<K, V> myKeyToValueMap = new THashMap<K, V>();
   private final Map<V, List<K>> myValueToKeysMap = new THashMap<V, List<K>>();
 
+  @Override
   public V put(K key, V value) {
     V oldValue = myKeyToValueMap.put(key, value);
     if (oldValue != null) {
@@ -41,6 +42,7 @@ public class BidirectionalMap<K, V> implements Map<K, V> {
     return oldValue;
   }
 
+  @Override
   public void clear() {
     myKeyToValueMap.clear();
     myValueToKeysMap.clear();
@@ -51,27 +53,33 @@ public class BidirectionalMap<K, V> implements Map<K, V> {
     return myValueToKeysMap.get(value);
   }
 
+  @Override
   public Set<K> keySet() {
     return myKeyToValueMap.keySet();
   }
 
+  @Override
   public int size() {
     return myKeyToValueMap.size();
   }
 
+  @Override
   public boolean isEmpty() {
     return myKeyToValueMap.isEmpty();
   }
 
+  @Override
   public boolean containsKey(Object key) {
     return myKeyToValueMap.containsKey(key);
   }
 
+  @Override
   @SuppressWarnings({"SuspiciousMethodCalls"})
   public boolean containsValue(Object value) {
     return myValueToKeysMap.containsKey(value);
   }
 
+  @Override
   public V get(Object key) {
     return myKeyToValueMap.get(key);
   }
@@ -85,6 +93,7 @@ public class BidirectionalMap<K, V> implements Map<K, V> {
     }
   }
 
+  @Override
   @SuppressWarnings({"SuspiciousMethodCalls"})
   public V remove(Object key) {
     final V value = myKeyToValueMap.remove(key);
@@ -96,16 +105,19 @@ public class BidirectionalMap<K, V> implements Map<K, V> {
     return value;
   }
 
+  @Override
   public void putAll(Map<? extends K, ? extends V> t) {
     for (final K k1 : t.keySet()) {
       put(k1, t.get(k1));
     }
   }
 
+  @Override
   public Collection<V> values() {
     return myValueToKeysMap.keySet();
   }
 
+  @Override
   public Set<Entry<K, V>> entrySet() {
     return myKeyToValueMap.entrySet();
   }

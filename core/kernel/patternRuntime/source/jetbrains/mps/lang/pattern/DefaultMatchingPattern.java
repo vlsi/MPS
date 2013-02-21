@@ -18,10 +18,12 @@ package jetbrains.mps.lang.pattern;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class DefaultMatchingPattern implements IMatchingPattern {
+  @Override
   public boolean match(SNode nodeToMatch) {
     return true;
   }
 
+  @Override
   public String getConceptFQName() {
     return null;
   }

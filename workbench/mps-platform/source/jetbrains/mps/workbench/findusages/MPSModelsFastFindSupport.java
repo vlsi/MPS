@@ -46,29 +46,36 @@ import java.util.Set;
 public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindSupport {
   private static Logger LOG = Logger.getLogger(MPSModelsFastFindSupport.class);
 
+  @Override
   public void initComponent() {
     FastFindUsagesRegistry.getInstance().setFastFindSupport(PersistenceRegistry.DEFAULT_MODEL_ROOT, this);
   }
 
+  @Override
   public void disposeComponent() {
     FastFindUsagesRegistry.getInstance().setFastFindSupport(PersistenceRegistry.DEFAULT_MODEL_ROOT, null);
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return MPSModelsFastFindSupport.class.getSimpleName();
   }
 
+  @Override
   public Map<SModel, Collection<org.jetbrains.mps.openapi.model.SNode>> findModelsWithPossibleUsages(Collection<SModel> models, Set<org.jetbrains.mps.openapi.model.SNode> nodes) {
     return findModels(models, nodes, new Mapper<org.jetbrains.mps.openapi.model.SNode, String>() {
+      @Override
       public String value(org.jetbrains.mps.openapi.model.SNode key) {
         return key.getNodeId().toString();
       }
     });
   }
 
+  @Override
   public Map<SModel, Collection<SConcept>> findModelsWithPossibleInstances(Collection<SModel> models, Set<SConcept> concepts) {
     return findModels(models, concepts, new Mapper<SConcept, String>() {
+      @Override
       public String value(SConcept key) {
         return key.getName();
       }

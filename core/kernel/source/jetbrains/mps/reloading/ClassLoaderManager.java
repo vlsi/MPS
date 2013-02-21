@@ -57,6 +57,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -64,6 +65,7 @@ public class ClassLoaderManager implements CoreComponent {
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
   }
@@ -80,6 +82,7 @@ public class ClassLoaderManager implements CoreComponent {
 
       monitor.step("Disposing old classes...");
       callListeners(new ListenerCaller() {
+        @Override
         public void call(ReloadListener l) {
           l.unload();
         }
@@ -101,6 +104,7 @@ public class ClassLoaderManager implements CoreComponent {
 
       monitor.step("Rebuilding ui...");
       callListeners(new ListenerCaller() {
+        @Override
         public void call(ReloadListener l) {
           l.onAfterReload();
         }
@@ -144,6 +148,7 @@ public class ClassLoaderManager implements CoreComponent {
     try {
       monitor.step("Disposing old classes...");
       callListeners(new ListenerCaller() {
+        @Override
         public void call(ReloadListener l) {
           l.unload();
         }

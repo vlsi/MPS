@@ -53,108 +53,108 @@
   </root>
   <root nodeRef="r:044f5891-b1a8-40d1-8dc9-dd5797045766(jetbrains.mps.internal.collections.runtime.backports)/6543581031674032086">
     <nodeInfo nodeId="6543581031674032118" fileName="LinkedList.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="serialVersionUID" />
-    <nodeInfo nodeId="6543581031674032132" fileName="LinkedList.java" startLine="15" startPosition="43" endLine="16" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032144" fileName="LinkedList.java" startLine="19" startPosition="34" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674032147" fileName="LinkedList.java" startLine="20" startPosition="16" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032155" fileName="LinkedList.java" startLine="24" startPosition="33" endLine="25" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674032158" fileName="LinkedList.java" startLine="25" startPosition="15" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032167" fileName="LinkedList.java" startLine="30" startPosition="20" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032169" fileName="LinkedList.java" startLine="32" startPosition="5" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032178" fileName="LinkedList.java" startLine="37" startPosition="20" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032180" fileName="LinkedList.java" startLine="39" startPosition="5" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032186" fileName="LinkedList.java" startLine="43" startPosition="24" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032192" fileName="LinkedList.java" startLine="47" startPosition="23" endLine="48" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032198" fileName="LinkedList.java" startLine="51" startPosition="18" endLine="52" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032206" fileName="LinkedList.java" startLine="55" startPosition="25" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674032215" fileName="LinkedList.java" startLine="59" startPosition="50" endLine="60" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032240" fileName="LinkedList.java" startLine="65" startPosition="44" endLine="66" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674032244" fileName="LinkedList.java" startLine="66" startPosition="20" endLine="67" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032246" fileName="LinkedList.java" startLine="69" startPosition="5" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032099" fileName="LinkedList.java" startLine="81" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="listIterator" />
-    <nodeInfo nodeId="6543581031674032269" fileName="LinkedList.java" startLine="83" startPosition="61" endLine="84" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674032276" fileName="LinkedList.java" startLine="87" startPosition="30" endLine="88" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032281" fileName="LinkedList.java" startLine="91" startPosition="21" endLine="92" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032286" fileName="LinkedList.java" startLine="95" startPosition="26" endLine="96" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674032132" fileName="LinkedList.java" startLine="16" startPosition="43" endLine="17" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032144" fileName="LinkedList.java" startLine="21" startPosition="34" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674032147" fileName="LinkedList.java" startLine="22" startPosition="16" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032155" fileName="LinkedList.java" startLine="27" startPosition="33" endLine="28" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674032158" fileName="LinkedList.java" startLine="28" startPosition="15" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032167" fileName="LinkedList.java" startLine="34" startPosition="20" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032169" fileName="LinkedList.java" startLine="36" startPosition="5" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032178" fileName="LinkedList.java" startLine="42" startPosition="20" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032180" fileName="LinkedList.java" startLine="44" startPosition="5" endLine="45" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032186" fileName="LinkedList.java" startLine="49" startPosition="24" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032192" fileName="LinkedList.java" startLine="54" startPosition="23" endLine="55" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032198" fileName="LinkedList.java" startLine="59" startPosition="18" endLine="60" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032206" fileName="LinkedList.java" startLine="64" startPosition="25" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674032215" fileName="LinkedList.java" startLine="69" startPosition="50" endLine="70" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032240" fileName="LinkedList.java" startLine="76" startPosition="44" endLine="77" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674032244" fileName="LinkedList.java" startLine="77" startPosition="20" endLine="78" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032246" fileName="LinkedList.java" startLine="80" startPosition="5" endLine="81" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032099" fileName="LinkedList.java" startLine="92" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="listIterator" />
+    <nodeInfo nodeId="6543581031674032269" fileName="LinkedList.java" startLine="94" startPosition="61" endLine="95" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674032276" fileName="LinkedList.java" startLine="99" startPosition="30" endLine="100" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032281" fileName="LinkedList.java" startLine="104" startPosition="21" endLine="105" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032286" fileName="LinkedList.java" startLine="109" startPosition="26" endLine="110" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674032123" fileName="LinkedList.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LinkedList#()V" />
-    <nodeInfo nodeId="6543581031674032127" fileName="LinkedList.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="descendingIterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="6543581031674032164" fileName="LinkedList.java" startLine="29" startPosition="24" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674032175" fileName="LinkedList.java" startLine="36" startPosition="23" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674032182" fileName="LinkedList.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pollFirst#()null" />
-    <nodeInfo nodeId="6543581031674032188" fileName="LinkedList.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pollLast#()null" />
-    <nodeInfo nodeId="6543581031674032194" fileName="LinkedList.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pop#()null" />
-    <nodeInfo nodeId="6543581031674032200" fileName="LinkedList.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="push#(null)V" />
-    <nodeInfo nodeId="6543581031674032209" fileName="LinkedList.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeFirstOccurrence#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6543581031674032103" fileName="LinkedList.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DescendingIterator#(Ljava/util/ListIterator;)V" />
-    <nodeInfo nodeId="6543581031674032109" fileName="LinkedList.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
-    <nodeInfo nodeId="6543581031674032112" fileName="LinkedList.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
-    <nodeInfo nodeId="6543581031674032115" fileName="LinkedList.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
-    <nodeInfo nodeId="6543581031674032138" fileName="LinkedList.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="offerFirst#(null)Z" />
-    <nodeInfo nodeId="6543581031674032149" fileName="LinkedList.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="offerLast#(null)Z" />
-    <nodeInfo nodeId="6543581031674032233" fileName="LinkedList.java" startLine="64" startPosition="69" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674032256" fileName="LinkedList.java" startLine="73" startPosition="49" endLine="77" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674032160" fileName="LinkedList.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="peekFirst#()null" />
-    <nodeInfo nodeId="6543581031674032171" fileName="LinkedList.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="peekLast#()null" />
-    <nodeInfo nodeId="6543581031674032224" fileName="LinkedList.java" startLine="63" startPosition="49" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6543581031674032248" fileName="LinkedList.java" startLine="73" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6543581031674032218" fileName="LinkedList.java" startLine="63" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeLastOccurrence#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6543581031674032164" fileName="LinkedList.java" startLine="33" startPosition="24" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674032175" fileName="LinkedList.java" startLine="41" startPosition="23" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674032103" fileName="LinkedList.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DescendingIterator#(Ljava/util/ListIterator;)V" />
+    <nodeInfo nodeId="6543581031674032127" fileName="LinkedList.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="descendingIterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="6543581031674032182" fileName="LinkedList.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pollFirst#()null" />
+    <nodeInfo nodeId="6543581031674032188" fileName="LinkedList.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pollLast#()null" />
+    <nodeInfo nodeId="6543581031674032194" fileName="LinkedList.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pop#()null" />
+    <nodeInfo nodeId="6543581031674032200" fileName="LinkedList.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="push#(null)V" />
+    <nodeInfo nodeId="6543581031674032209" fileName="LinkedList.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeFirstOccurrence#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6543581031674032233" fileName="LinkedList.java" startLine="75" startPosition="69" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674032256" fileName="LinkedList.java" startLine="84" startPosition="49" endLine="88" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674032109" fileName="LinkedList.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
+    <nodeInfo nodeId="6543581031674032112" fileName="LinkedList.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
+    <nodeInfo nodeId="6543581031674032115" fileName="LinkedList.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
+    <nodeInfo nodeId="6543581031674032138" fileName="LinkedList.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="offerFirst#(null)Z" />
+    <nodeInfo nodeId="6543581031674032149" fileName="LinkedList.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="offerLast#(null)Z" />
+    <nodeInfo nodeId="6543581031674032224" fileName="LinkedList.java" startLine="74" startPosition="49" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="6543581031674032248" fileName="LinkedList.java" startLine="84" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="6543581031674032160" fileName="LinkedList.java" startLine="32" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="peekFirst#()null" />
+    <nodeInfo nodeId="6543581031674032171" fileName="LinkedList.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="peekLast#()null" />
+    <nodeInfo nodeId="6543581031674032218" fileName="LinkedList.java" startLine="73" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeLastOccurrence#(Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="6543581031674032126" fileName="LinkedList.java" startLine="12" startPosition="23" endLine="12" endPosition="23" />
-    <scopeInfo nodeId="6543581031674032131" fileName="LinkedList.java" startLine="15" startPosition="43" endLine="16" endPosition="70" />
-    <scopeInfo nodeId="6543581031674032166" fileName="LinkedList.java" startLine="30" startPosition="20" endLine="31" endPosition="18" />
-    <scopeInfo nodeId="6543581031674032177" fileName="LinkedList.java" startLine="37" startPosition="20" endLine="38" endPosition="18" />
-    <scopeInfo nodeId="6543581031674032185" fileName="LinkedList.java" startLine="43" startPosition="24" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="6543581031674032191" fileName="LinkedList.java" startLine="47" startPosition="23" endLine="48" endPosition="21" />
-    <scopeInfo nodeId="6543581031674032197" fileName="LinkedList.java" startLine="51" startPosition="18" endLine="52" endPosition="25" />
-    <scopeInfo nodeId="6543581031674032205" fileName="LinkedList.java" startLine="55" startPosition="25" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="6543581031674032214" fileName="LinkedList.java" startLine="59" startPosition="50" endLine="60" endPosition="21" />
-    <scopeInfo nodeId="6543581031674032268" fileName="LinkedList.java" startLine="83" startPosition="61" endLine="84" endPosition="39" />
-    <scopeInfo nodeId="6543581031674032275" fileName="LinkedList.java" startLine="87" startPosition="30" endLine="88" endPosition="40" />
-    <scopeInfo nodeId="6543581031674032280" fileName="LinkedList.java" startLine="91" startPosition="21" endLine="92" endPosition="37" />
-    <scopeInfo nodeId="6543581031674032285" fileName="LinkedList.java" startLine="95" startPosition="26" endLine="96" endPosition="28" />
+    <scopeInfo nodeId="6543581031674032131" fileName="LinkedList.java" startLine="16" startPosition="43" endLine="17" endPosition="70" />
+    <scopeInfo nodeId="6543581031674032166" fileName="LinkedList.java" startLine="34" startPosition="20" endLine="35" endPosition="18" />
+    <scopeInfo nodeId="6543581031674032177" fileName="LinkedList.java" startLine="42" startPosition="20" endLine="43" endPosition="18" />
+    <scopeInfo nodeId="6543581031674032185" fileName="LinkedList.java" startLine="49" startPosition="24" endLine="50" endPosition="22" />
+    <scopeInfo nodeId="6543581031674032191" fileName="LinkedList.java" startLine="54" startPosition="23" endLine="55" endPosition="21" />
+    <scopeInfo nodeId="6543581031674032197" fileName="LinkedList.java" startLine="59" startPosition="18" endLine="60" endPosition="25" />
+    <scopeInfo nodeId="6543581031674032205" fileName="LinkedList.java" startLine="64" startPosition="25" endLine="65" endPosition="16" />
+    <scopeInfo nodeId="6543581031674032214" fileName="LinkedList.java" startLine="69" startPosition="50" endLine="70" endPosition="21" />
+    <scopeInfo nodeId="6543581031674032268" fileName="LinkedList.java" startLine="94" startPosition="61" endLine="95" endPosition="39" />
+    <scopeInfo nodeId="6543581031674032275" fileName="LinkedList.java" startLine="99" startPosition="30" endLine="100" endPosition="40" />
+    <scopeInfo nodeId="6543581031674032280" fileName="LinkedList.java" startLine="104" startPosition="21" endLine="105" endPosition="37" />
+    <scopeInfo nodeId="6543581031674032285" fileName="LinkedList.java" startLine="109" startPosition="26" endLine="110" endPosition="28" />
     <scopeInfo nodeId="6543581031674032123" fileName="LinkedList.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="6543581031674032143" fileName="LinkedList.java" startLine="19" startPosition="34" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="6543581031674032154" fileName="LinkedList.java" startLine="24" startPosition="33" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="6543581031674032239" fileName="LinkedList.java" startLine="65" startPosition="44" endLine="67" endPosition="20" />
-    <scopeInfo nodeId="6543581031674032127" fileName="LinkedList.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="6543581031674032182" fileName="LinkedList.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6543581031674032188" fileName="LinkedList.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="6543581031674032194" fileName="LinkedList.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="6543581031674032200" fileName="LinkedList.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="6543581031674032203" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="6543581031674032209" fileName="LinkedList.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="6543581031674032212" varName="o" />
-    </scopeInfo>
-    <scopeInfo nodeId="6543581031674032103" fileName="LinkedList.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="6543581031674032143" fileName="LinkedList.java" startLine="21" startPosition="34" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="6543581031674032154" fileName="LinkedList.java" startLine="27" startPosition="33" endLine="29" endPosition="16" />
+    <scopeInfo nodeId="6543581031674032239" fileName="LinkedList.java" startLine="76" startPosition="44" endLine="78" endPosition="20" />
+    <scopeInfo nodeId="6543581031674032103" fileName="LinkedList.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="6543581031674032106" varName="listIterator" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674032109" fileName="LinkedList.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="6543581031674032112" fileName="LinkedList.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="6543581031674032115" fileName="LinkedList.java" startLine="95" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="6543581031674032138" fileName="LinkedList.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="6543581031674032127" fileName="LinkedList.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="6543581031674032163" fileName="LinkedList.java" startLine="33" startPosition="24" endLine="37" endPosition="22" />
+    <scopeInfo nodeId="6543581031674032174" fileName="LinkedList.java" startLine="41" startPosition="23" endLine="45" endPosition="21" />
+    <scopeInfo nodeId="6543581031674032182" fileName="LinkedList.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="6543581031674032188" fileName="LinkedList.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="6543581031674032194" fileName="LinkedList.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="6543581031674032200" fileName="LinkedList.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
+      <varInfo nodeId="6543581031674032203" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674032209" fileName="LinkedList.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="6543581031674032212" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="6543581031674032232" fileName="LinkedList.java" startLine="75" startPosition="69" endLine="79" endPosition="7" />
+    <scopeInfo nodeId="6543581031674032255" fileName="LinkedList.java" startLine="84" startPosition="49" endLine="88" endPosition="6" />
+    <scopeInfo nodeId="6543581031674032109" fileName="LinkedList.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="6543581031674032112" fileName="LinkedList.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="6543581031674032115" fileName="LinkedList.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
+    <scopeInfo nodeId="6543581031674032138" fileName="LinkedList.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="6543581031674032141" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674032149" fileName="LinkedList.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="6543581031674032149" fileName="LinkedList.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="6543581031674032152" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674032163" fileName="LinkedList.java" startLine="29" startPosition="24" endLine="33" endPosition="22" />
-    <scopeInfo nodeId="6543581031674032174" fileName="LinkedList.java" startLine="36" startPosition="23" endLine="40" endPosition="21" />
-    <scopeInfo nodeId="6543581031674032232" fileName="LinkedList.java" startLine="64" startPosition="69" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="6543581031674032255" fileName="LinkedList.java" startLine="73" startPosition="49" endLine="77" endPosition="6" />
-    <scopeInfo nodeId="6543581031674032160" fileName="LinkedList.java" startLine="29" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="6543581031674032171" fileName="LinkedList.java" startLine="36" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="6543581031674032224" fileName="LinkedList.java" startLine="63" startPosition="49" endLine="69" endPosition="5">
+    <scopeInfo nodeId="6543581031674032224" fileName="LinkedList.java" startLine="74" startPosition="49" endLine="80" endPosition="5">
       <varInfo nodeId="6543581031674032228" varName="li" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674032248" fileName="LinkedList.java" startLine="73" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="6543581031674032248" fileName="LinkedList.java" startLine="84" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="6543581031674032251" varName="a" />
       <varInfo nodeId="6543581031674032253" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674032223" fileName="LinkedList.java" startLine="63" startPosition="49" endLine="70" endPosition="17" />
-    <scopeInfo nodeId="6543581031674032218" fileName="LinkedList.java" startLine="63" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="6543581031674032160" fileName="LinkedList.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="6543581031674032171" fileName="LinkedList.java" startLine="40" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="6543581031674032223" fileName="LinkedList.java" startLine="74" startPosition="49" endLine="81" endPosition="17" />
+    <scopeInfo nodeId="6543581031674032218" fileName="LinkedList.java" startLine="73" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="6543581031674032221" varName="o" />
     </scopeInfo>
-    <unitInfo nodeId="6543581031674032094" fileName="LinkedList.java" startLine="80" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList$DescendingIterator" />
-    <unitInfo nodeId="6543581031674032086" fileName="LinkedList.java" startLine="9" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
+    <unitInfo nodeId="6543581031674032094" fileName="LinkedList.java" startLine="91" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList$DescendingIterator" />
+    <unitInfo nodeId="6543581031674032086" fileName="LinkedList.java" startLine="9" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
   </root>
 </debugInfo>
 

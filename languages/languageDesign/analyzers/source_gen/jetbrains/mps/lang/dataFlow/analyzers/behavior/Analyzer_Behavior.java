@@ -4,7 +4,7 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -21,7 +21,7 @@ public class Analyzer_Behavior {
   }
 
   public static String call_getAnalyzerRunnerFqName_178770917832652115(SNode thisNode) {
-    String longName = SNodeOperations.getModel(thisNode).getLongName();
+    String longName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode));
     if (longName.equals("")) {
       return Analyzer_Behavior.call_getAnalyzerRunnerName_178770917832626025(thisNode);
     }
@@ -34,7 +34,7 @@ public class Analyzer_Behavior {
 
   public static List<SNode> call_getRules_4130591939054429267(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode rule : SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(thisNode), GlobalScope.getInstance(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule")) {
+    for (SNode rule : SModelOperations.getRootsIncludingImported(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode), GlobalScope.getInstance(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule")) {
       if (SLinkOperations.getTarget(rule, "analyzer", false) == thisNode) {
         ListSequence.fromList(result).addElement(rule);
       }

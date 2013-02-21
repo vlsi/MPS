@@ -34,18 +34,22 @@ public class PresentationReferentConstraintContext extends ReferentConstraintCon
     myInEditor = inEditor;
   }
 
+  @Override
   public SNode getParameterNode() {
     return myParameterNode;
   }
 
+  @Override
   public boolean getVisible() {
     return myVisible;
   }
 
+  @Override
   public boolean getSmartReference() {
     return mySmartReference;
   }
 
+  @Override
   public boolean getInEditor() {
     return myInEditor;
   }

@@ -196,6 +196,7 @@ public class MPSModulesClosure {
 
   private Iterable<SNode> includingExtended(Iterable<SNode> devkits) {
     return new RecursiveIterator<SNode>(Sequence.fromIterable(devkits).iterator(), false) {
+      @Override
       protected Iterator<SNode> children(SNode node) {
         return ListSequence.fromList(SLinkOperations.getTargets(node, "extends", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -212,6 +213,7 @@ public class MPSModulesClosure {
 
   private Iterable<SNode> includingExtendedLanguages(Iterable<SNode> langs) {
     return new RecursiveIterator<SNode>(Sequence.fromIterable(langs).iterator(), false) {
+      @Override
       protected Iterator<SNode> children(SNode node) {
         return Sequence.fromIterable(dependencies(node)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

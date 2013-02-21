@@ -27,18 +27,22 @@ public class Status implements IStatus {
     myMessage = message;
   }
 
+  @Override
   public boolean isOk() {
     return myCode == Code.OK;
   }
 
+  @Override
   public boolean isError() {
     return myCode == Code.ERROR;
   }
 
+  @Override
   public Code getCode() {
     return myCode;
   }
 
+  @Override
   public String getMessage() {
     return myMessage;
   }
@@ -47,6 +51,7 @@ public class Status implements IStatus {
     myMessage = myMessage + "\n" + s;
   }
 
+  @Override
   public Object getUserObject() {
     return myUserObject;
   }

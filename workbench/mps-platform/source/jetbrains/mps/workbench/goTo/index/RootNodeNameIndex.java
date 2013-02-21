@@ -72,14 +72,15 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
     return model;
   }
 
+  @Override
   @NotNull
   public ID<Integer, List<SNodeDescriptor>> getName() {
     return NAME;
   }
 
   public Iterable<SNode> getRootsToIterate(SModel model) {
-    if (SModelStereotype.isStubModelStereotype(model.getStereotype())) return new EmptyIterable<SNode>();
-    return new ConditionalIterable<SNode>(model.roots(), new MyCondition());
+    if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(model))) return new EmptyIterable<SNode>();
+    return new ConditionalIterable<SNode>(model.getRootNodes(), new MyCondition());
   }
 
   @Override
@@ -93,29 +94,35 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
     return new MyIndexer();
   }
 
+  @Override
   public InputFilter getInputFilter() {
     return new MyInputFilter();
   }
 
+  @Override
   public boolean dependsOnFileContent() {
     return true;
   }
 
+  @Override
   public int getVersion() {
     return 6;
   }
 
+  @Override
   public int getCacheSize() {
     return DEFAULT_CACHE_SIZE;
   }
 
   private static class MyCondition implements Condition<SNode> {
+    @Override
     public boolean met(SNode node) {
       return !node.getNodeId().toString().contains("$");
     }
   }
 
   private static class MyInputFilter implements FileBasedIndex.InputFilter {
+    @Override
     public boolean acceptInput(VirtualFile file) {
       return (file.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE));
     }
@@ -126,9 +133,11 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
       super(false);
     }
 
+    @Override
     protected List<SNodeDescriptor> computeValue(@NotNull final FileContent inputData) {
       final List<SNodeDescriptor> descriptors = new ArrayList<SNodeDescriptor>();
       ModelAccess.instance().runIndexing(new Runnable() {
+        @Override
         public void run() {
           try {
             SModel model = doModelParsing(inputData);
@@ -137,7 +146,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
               String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
               String nodeName = (persistentName == null) ? "null" : persistentName;
               String conceptFqName = node.getConcept().getId();
-              SModelReference modelRef = model.getSModelReference();
+              SModelReference modelRef = (SModelReference) model.getReference();
               SNodeId id = node.getNodeId();
               SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
               descriptors.add(value);

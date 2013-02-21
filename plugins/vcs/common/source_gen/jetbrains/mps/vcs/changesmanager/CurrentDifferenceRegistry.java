@@ -37,6 +37,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     super(project);
   }
 
+  @Override
   public void projectOpened() {
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
@@ -44,6 +45,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     updateLoadedModels();
   }
 
+  @Override
   public void projectClosed() {
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
@@ -141,10 +143,12 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     public MyFileStatusListener() {
     }
 
+    @Override
     public void fileStatusesChanged() {
       updateLoadedModels();
     }
 
+    @Override
     public void fileStatusChanged(@NotNull VirtualFile vf) {
       updateModel(vf);
     }

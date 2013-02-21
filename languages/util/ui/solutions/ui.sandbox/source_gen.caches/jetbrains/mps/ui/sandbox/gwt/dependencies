@@ -5,6 +5,7 @@
     <classNode dependClassName="com.google.gwt.user.client.ui.RootLayoutPanel" />
     <classNode dependClassName="com.google.gwt.user.client.ui.RootPanel" />
     <classNode dependClassName="com.google.gwt.user.client.ui.Widget" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ui.sandbox.UIDemo_GWT" />
     <classNode dependClassName="jetbrains.mps.ui.sandbox.gwt.MyResources" />
     <classNode extendsClassName="com.google.gwt.core.client.EntryPoint" />

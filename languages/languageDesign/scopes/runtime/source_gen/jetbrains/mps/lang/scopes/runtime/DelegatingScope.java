@@ -14,15 +14,18 @@ public abstract class DelegatingScope extends Scope {
   protected abstract Scope getScope();
 
   @Nullable
+  @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     return getScope().getReferenceText(contextNode, node);
   }
 
   @Nullable
+  @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     return getScope().resolve(contextNode, refText);
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     return getScope().getAvailableElements(prefix);
   }

@@ -102,6 +102,7 @@ public class ModelProperties {
       return;
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         addNewModels();
         removeUnusedModels();
@@ -251,6 +252,7 @@ public class ModelProperties {
       myModels = models;
     }
 
+    @Override
     public boolean met(final SModelReference object) {
       return !(myModels.contains(object));
     }
@@ -263,6 +265,7 @@ public class ModelProperties {
       myUsedLanguages = usedLanguages;
     }
 
+    @Override
     public boolean met(final ModuleReference object) {
       IModule module = MPSModuleRepository.getInstance().getModuleByFqName(object.getModuleFqName());
       if (!(module instanceof DevKit)) {

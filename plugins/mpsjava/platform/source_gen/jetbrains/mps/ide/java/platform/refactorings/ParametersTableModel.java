@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     this.myParameters = parameters;
   }
 
+  @Override
   public Class<?> getColumnClass(int columnIndex) {
     switch (columnIndex) {
       case IS_SELECTED_COLUMN_INDEX:
@@ -30,10 +31,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     }
   }
 
+  @Override
   public int getRowCount() {
     return ListSequence.fromList(this.myParameters).count();
   }
 
+  @Override
   public int getColumnCount() {
     return 3;
   }
@@ -45,6 +48,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     fireTableRowsUpdated(a, b);
   }
 
+  @Override
   public Object getValueAt(int row, int column) {
     switch (column) {
       case IS_SELECTED_COLUMN_INDEX:
@@ -58,6 +62,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     }
   }
 
+  @Override
   public void setValueAt(Object value, int row, int column) {
     switch (column) {
       case IS_SELECTED_COLUMN_INDEX:
@@ -74,6 +79,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     this.fireTableCellUpdated(row, column);
   }
 
+  @Override
   public boolean isCellEditable(int row, int column) {
     return true;
   }

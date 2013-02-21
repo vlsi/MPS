@@ -38,6 +38,7 @@ public class Line implements Comparable<Line> {
     this.myDirection.paint(g, this.myFirst, this.mySecond, this.myLevel, backGround);
   }
 
+  @Override
   public int compareTo(Line o) {
     return this.myDirection.ordinal() - o.myDirection.ordinal();
   }

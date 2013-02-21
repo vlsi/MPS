@@ -42,18 +42,22 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
     init();
   }
 
+  @Override
   public AbstractModule getModule() {
     return mySolution;
   }
 
+  @Override
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return ActionUtils.getGroup(ProjectPaneActionGroups.SOLUTION_NEW_ACTIONS);
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_SOLUTION_ACTIONS);
   }
 
+  @Override
   protected String getModulePresentation() {
     String name = mySolution.getModuleFqName();
 
@@ -67,10 +71,12 @@ public class ProjectSolutionTreeNode extends jetbrains.mps.ide.projectPane.logic
     return "solution";
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   public void init() {
     populate();
     myInitialized = true;

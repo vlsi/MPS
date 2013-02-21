@@ -60,6 +60,7 @@ public class BuildGeneratorUtil {
     final Solution solution;
     if (solutionFile.exists()) {
       IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+        @Override
         public IModule compute() {
           return ModuleFileTracker.getInstance().getModuleByFile(solutionFile);
         }

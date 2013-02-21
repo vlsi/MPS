@@ -28,8 +28,11 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -109,13 +112,13 @@ public class ReferencesTest extends BaseMPSTest {
       LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : " + item);
     }
 
-    for (SNode node : sm.getSModel().nodes()) {
+    for (SNode node : new NodesIterable(sm.getSModel())) {
       if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
         LOG.error("Error in model " + sm.getSModelReference().getSModelFqName() + " : Unknown concept " + node.getConcept().getId());
       }
     }
 
-    for (SNode node : sm.getSModel().nodes()) {
+    for (SNode node : new NodesIterable(sm.getSModel())) {
 
       for (SReference ref : node.getReferences()) {
         if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {

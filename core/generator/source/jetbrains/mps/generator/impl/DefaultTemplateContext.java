@@ -82,14 +82,17 @@ public class DefaultTemplateContext implements TemplateContext {
     return myParent;
   }
 
+  @Override
   public SNode getInput() {
     return myInputNode;
   }
 
+  @Override
   public String getInputName() {
     return myInputName;
   }
 
+  @Override
   public Object getPatternVariable(String id) {
     for (DefaultTemplateContext current = this; current != null; current = current.myParent) {
       if (current.pattern != null) {
@@ -99,6 +102,7 @@ public class DefaultTemplateContext implements TemplateContext {
     return null;
   }
 
+  @Override
   public Object getVariable(String name) {
     for (DefaultTemplateContext current = this; current != null; current = current.myParent) {
       if (current.variables != null && current.variables.containsKey(name)) {
@@ -108,6 +112,7 @@ public class DefaultTemplateContext implements TemplateContext {
     return null;
   }
 
+  @Override
   public boolean hasVariable(String name) {
     for (DefaultTemplateContext current = this; current != null; current = current.myParent) {
       if (current.variables != null && current.variables.containsKey(name)) {
@@ -117,6 +122,7 @@ public class DefaultTemplateContext implements TemplateContext {
     return false;
   }
 
+  @Override
   public SNode getNamedInput(String name) {
     for (DefaultTemplateContext current = this; current != null; current = current.myParent) {
       if (current.myInputName != null && current.myInputName.equals(name)) {
@@ -126,6 +132,7 @@ public class DefaultTemplateContext implements TemplateContext {
     return null;
   }
 
+  @Override
   public Iterable<SNode> getInputHistory() {
     return new Iterable<SNode>() {
       @Override

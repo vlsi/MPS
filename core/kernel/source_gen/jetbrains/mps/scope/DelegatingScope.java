@@ -21,14 +21,17 @@ public class DelegatingScope extends Scope {
     // setup wrapped field later, before using the scope! 
   }
 
+  @Override
   public SNode resolve(SNode contextNode, String refText) {
     return wrapped.resolve(contextNode, refText);
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     return wrapped.getAvailableElements(prefix);
   }
 
+  @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     return wrapped.getReferenceText(contextNode, node);
   }

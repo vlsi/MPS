@@ -44,6 +44,7 @@ public class Quantity {
     return newObject(getAmount() / arg, myUnit);
   }
 
+  @Override
   public boolean equals(Object arg) {
     if (!((arg instanceof Quantity))) {
       return false;
@@ -131,6 +132,7 @@ public class Quantity {
     return newObject(getAmount() - arg.getAmount(), myUnit);
   }
 
+  @Override
   public String toString() {
     return String.valueOf(getAmount()) + " " + myUnit.toString();
   }

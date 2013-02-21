@@ -23,10 +23,11 @@ public abstract class NodeChange extends ModelChange {
   @Nullable
   @Override
   public SNodeId getRootId() {
-    return getChangeSet().getOldModel().getNodeById(getAffectedNodeId()).getContainingRoot().getNodeId();
+    return getChangeSet().getOldModel().getNode(getAffectedNodeId()).getContainingRoot().getNodeId();
   }
 
   @NotNull
+  @Override
   public ChangeType getType() {
     return ChangeType.CHANGE;
   }

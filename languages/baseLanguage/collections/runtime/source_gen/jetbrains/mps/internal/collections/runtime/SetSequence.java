@@ -24,54 +24,67 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
     set = new HashSet<T>(other.set);
   }
 
+  @Override
   public boolean addAll(Collection<? extends T> c) {
     return set.addAll(c);
   }
 
+  @Override
   public void clear() {
     set.clear();
   }
 
+  @Override
   public boolean contains(Object o) {
     return set.contains(o);
   }
 
+  @Override
   public boolean containsAll(Collection<?> c) {
     return set.containsAll(c);
   }
 
+  @Override
   public boolean equals(Object o) {
     return set.equals(o);
   }
 
+  @Override
   public int hashCode() {
     return set.hashCode();
   }
 
+  @Override
   public boolean isEmpty() {
     return set.isEmpty();
   }
 
+  @Override
   public Iterator<T> iterator() {
     return set.iterator();
   }
 
+  @Override
   public boolean removeAll(Collection<?> c) {
     return set.removeAll(c);
   }
 
+  @Override
   public boolean retainAll(Collection<?> c) {
     return set.retainAll(c);
   }
 
+  @Override
   public int size() {
     return set.size();
   }
 
+  @Override
   public Object[] toArray() {
     return set.toArray();
   }
 
+  @Override
   public <U> U[] toArray(U[] a) {
     return set.toArray(a);
   }
@@ -111,6 +124,7 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
     return super.union(that);
   }
 
+  @Override
   public ISetSequence<T> addSequence(ISequence<? extends T> seq) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (seq == null) {
@@ -128,6 +142,7 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
     return this;
   }
 
+  @Override
   public ISetSequence<T> removeSequence(ISequence<? extends T> seq) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (seq == null) {
@@ -141,16 +156,19 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
   }
 
   @SuppressWarnings(value = "unchecked")
+  @Override
   public T[] toGenericArray() {
     return (T[]) set.toArray();
   }
 
   @SuppressWarnings(value = "unchecked")
+  @Override
   public T[] toGenericArray(Class<T> runtimeClass) {
     T[] arr = (T[]) ArrayUtils.newArrayInstance(runtimeClass, set.size());
     return set.toArray(arr);
   }
 
+  @Override
   public Set<T> toSet() {
     return set;
   }
@@ -169,6 +187,7 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
     return set;
   }
 
+  @Override
   protected Collection<T> getCollection() {
     return set;
   }

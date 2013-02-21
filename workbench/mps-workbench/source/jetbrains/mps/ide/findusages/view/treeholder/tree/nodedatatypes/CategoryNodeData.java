@@ -74,6 +74,7 @@ public class CategoryNodeData extends BaseNodeData {
     }
   }
 
+  @Override
   public Object getIdObject() {
     return myCategory;
   }
@@ -82,6 +83,7 @@ public class CategoryNodeData extends BaseNodeData {
     return myCategoryKindName;
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     element.setAttribute(CATEGORY, myCategory);
@@ -90,12 +92,14 @@ public class CategoryNodeData extends BaseNodeData {
     }
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     myCategory = element.getAttributeValue(CATEGORY);
     myCategoryKindName = element.getAttributeValue(CATEGORY_KIND);
   }
 
+  @Override
   public String getText(TextOptions options) {
     if (myNodeRepresentator == null) {
       String counter = "";

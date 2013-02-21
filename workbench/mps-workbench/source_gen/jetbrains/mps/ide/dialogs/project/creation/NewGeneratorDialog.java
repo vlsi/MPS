@@ -62,6 +62,7 @@ public class NewGeneratorDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myContenetPane;
   }
@@ -74,6 +75,7 @@ public class NewGeneratorDialog extends DialogWrapper {
 
     myTemplateModelsDir = new TextFieldWithBrowseButton();
     myTemplateModelsDir.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         String oldPath = myTemplateModelsDir.getText();
         TreeFileChooser chooser = new TreeFileChooser();
@@ -151,6 +153,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     super.doOKAction();
   }
 
+  @Override
   protected void dispose() {
     super.dispose();
     Disposer.dispose(myTemplateModelsDir);

@@ -181,6 +181,7 @@ public class EventsCollector {
 
     if (myEvents.isEmpty()) return;
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         List<SModelEvent> wrappedEvents = Collections.unmodifiableList(myEvents);
         myEvents = new ArrayList<SModelEvent>();
@@ -210,6 +211,7 @@ public class EventsCollector {
   }
 
   private class MyModelAccessAdapter extends ModelAccessAdapter {
+    @Override
     public void commandStarted() {
       if (myDisposed) {
         return;
@@ -218,6 +220,7 @@ public class EventsCollector {
       myIsInCommand = true;
     }
 
+    @Override
     public void beforeCommandFinished() {
       if (myDisposed) {
         return;

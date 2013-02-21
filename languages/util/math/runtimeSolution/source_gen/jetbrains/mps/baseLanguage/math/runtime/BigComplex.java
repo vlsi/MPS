@@ -24,6 +24,7 @@ public class BigComplex extends Number {
     myImagPart = BigDecimal.valueOf(d2);
   }
 
+  @Override
   public boolean equals(Object obj) {
     if ((obj == null) || !((obj instanceof BigComplex))) {
       return false;
@@ -32,6 +33,7 @@ public class BigComplex extends Number {
     return (Cobj.myRealPart.compareTo(myRealPart) == 0) && (Cobj.myImagPart.compareTo(myImagPart) == 0);
   }
 
+  @Override
   public String toString() {
     if (myImagPart.signum() == 0) {
       return "" + myRealPart;
@@ -107,18 +109,22 @@ public class BigComplex extends Number {
     return new Complex(myRealPart.doubleValue(), myImagPart.doubleValue());
   }
 
+  @Override
   public int intValue() {
     return this.myRealPart.intValue();
   }
 
+  @Override
   public long longValue() {
     return this.myRealPart.longValue();
   }
 
+  @Override
   public float floatValue() {
     return this.myRealPart.floatValue();
   }
 
+  @Override
   public double doubleValue() {
     return this.myRealPart.doubleValue();
   }

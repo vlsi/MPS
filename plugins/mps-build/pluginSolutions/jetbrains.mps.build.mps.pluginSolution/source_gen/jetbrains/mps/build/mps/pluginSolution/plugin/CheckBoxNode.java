@@ -45,6 +45,7 @@ public class CheckBoxNode<N extends NodeData> extends MPSTreeNode {
     }
   }
 
+  @Override
   public boolean isLeaf() {
     return !(this.myData.canHaveChildren());
   }

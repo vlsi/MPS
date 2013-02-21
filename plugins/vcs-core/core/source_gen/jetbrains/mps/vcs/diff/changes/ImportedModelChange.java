@@ -28,10 +28,12 @@ public class ImportedModelChange extends DependencyChange {
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
     return new ImportedModelChange(getChangeSet().getOppositeChangeSet(), myModelReference, !(isDelete()));
   }
 
+  @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     if (isDelete()) {
       model.deleteModelImport(myModelReference);

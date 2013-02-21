@@ -284,13 +284,15 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     }
   }
 
+  @Override
   @Nullable
   public Object getData(@NonNls final String id) {
     MPSTreeNode currentNode = this.getCurrentNode();
     if (currentNode instanceof TypeSystemTraceTreeNode) {
       final Wrappers._T<Object> _data = new Wrappers._T<Object>();
       ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
+        @Override
+    public void run() {
           _data.value = _getData(id);
         }
       });
@@ -328,7 +330,8 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   private void showState(final TypeSystemTraceTreeNode newNode) {
     ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
+      @Override
+    public void run() {
         Object difference = newNode.getUserObject();
         myParent.resetState(myContextTracker.resetCurrentState((AbstractOperation) difference));
 
@@ -342,7 +345,8 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   private void showState(final MPSTreeNode fromNode, final MPSTreeNode toNode) {
     ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
+      @Override
+    public void run() {
         Object fromDiff = fromNode.getUserObject();
         Object toDiff = toNode.getUserObject();
 
@@ -517,13 +521,15 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       return result;
     }
 
-    @Nullable
+    @Override
+  @Nullable
     public Object getData(@NonNls final String id) {
       MPSTreeNode currentNode = this.getCurrentNode();
       if (currentNode instanceof TypeSystemTraceTreeNode) {
         final Wrappers._T<Object> _data = new Wrappers._T<Object>();
         ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
+          @Override
+      public void run() {
             _data.value = _getData(id);
           }
         });
@@ -558,7 +564,8 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       return TypeSystemTraceTree.this.createPopupMenu(node);
     }
 
-    protected MPSTreeNode rebuild() {
+    @Override
+  protected MPSTreeNode rebuild() {
       setRootVisible(false);
       MPSTreeNode result;
       Collection<MPSTreeNode> nodes = create(myOperations, false);

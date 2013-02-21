@@ -43,8 +43,10 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     super(baseNode, possibleTabs, editor, callback, showGrayed, null, operationContext);
 
     getComponent().addHierarchyListener(new HierarchyListener() {
+      @Override
       public void hierarchyChanged(HierarchyEvent e) {
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             updateTabs();
           }
@@ -57,6 +59,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     return myToolbar.getComponent().getComponent(index);
   }
 
+  @Override
   public RelationDescriptor getCurrentTabAspect() {
     SNode currentAspect = getLastNode().resolve(MPSModuleRepository.getInstance());
     assert currentAspect != null;
@@ -70,6 +73,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     return null;
   }
 
+  @Override
   protected void updateTabs() {
     if (isDisposedNode()) return;
 
@@ -87,6 +91,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
       List<SNode> nodes = newContent.get(tab);
       if (nodes != null) {
         myRealTabs.add(new ButtonEditorTab(this, new NodeChangeCallback() {
+          @Override
           public void changeNode(SNode newNode) {
             onNodeChange(newNode);
           }
@@ -107,6 +112,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     getComponent().add(myToolbar.getComponent(), BorderLayout.CENTER);
   }
 
+  @Override
   public void nextTab() {
     for (ButtonEditorTab tab : myRealTabs) {
       if (!isCurrent(tab)) continue;
@@ -133,6 +139,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     return current;
   }
 
+  @Override
   public void prevTab() {
     for (ButtonEditorTab tab : myRealTabs) {
       if (!isCurrent(tab)) continue;
@@ -155,6 +162,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     myRealTabs.get(index).getSelectTabAction().actionPerformed(event);
   }
 
+  @Override
   protected boolean isTabUpdateNeeded(SNodeReference node) {
     return getLastNode().equals(node);
   }

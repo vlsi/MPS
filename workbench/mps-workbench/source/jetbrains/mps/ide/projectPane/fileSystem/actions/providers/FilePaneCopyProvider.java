@@ -23,10 +23,12 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 
 public class FilePaneCopyProvider implements CopyProvider, CutProvider {
+  @Override
   public void performCopy(DataContext dataContext) {
     perform(dataContext, false);
   }
 
+  @Override
   public void performCut(DataContext dataContext) {
     perform(dataContext, true);
   }
@@ -43,18 +45,22 @@ public class FilePaneCopyProvider implements CopyProvider, CutProvider {
     return null;
   }
 
+  @Override
   public boolean isCopyEnabled(DataContext dataContext) {
     return isEnabled(dataContext, false);
   }
 
+  @Override
   public boolean isCopyVisible(DataContext dataContext) {
     return true;
   }
 
+  @Override
   public boolean isCutEnabled(DataContext dataContext) {
     return isEnabled(dataContext, true);
   }
 
+  @Override
   public boolean isCutVisible(DataContext dataContext) {
     return true;
   }

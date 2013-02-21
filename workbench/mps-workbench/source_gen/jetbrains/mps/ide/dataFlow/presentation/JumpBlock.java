@@ -11,6 +11,7 @@ public class JumpBlock extends AbstractBlock {
     super(x, y, width, height, source, caption);
   }
 
+  @Override
   protected void paintBlock(Graphics g) {
     g.setColor(Color.YELLOW);
     g.fillOval(this.myX, this.myY, this.myWidth, this.myHeight);

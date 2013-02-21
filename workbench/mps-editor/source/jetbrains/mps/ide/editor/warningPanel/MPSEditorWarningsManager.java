@@ -69,25 +69,30 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
   }
 
+  @Override
   public void projectOpened() {
     myFileEditorManager.addFileEditorManagerListener(myFileEditorManagerListener);
   }
 
+  @Override
   public void projectClosed() {
     myFileEditorManager.removeFileEditorManagerListener(myFileEditorManagerListener);
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS Editor Warnings Manager";
   }
 
+  @Override
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
   }
 
+  @Override
   public void disposeComponent() {
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
@@ -95,8 +100,10 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   private void updateWarnings(@NotNull final MPSFileNodeEditor editor) {
     DumbService.getInstance(myProject).smartInvokeLater(new Runnable() {
+      @Override
       public void run() {
         final Runnable task = new Runnable() {
+          @Override
           public void run() {
             doUpdateWarnings(editor);
           }
@@ -177,6 +184,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private class MyFileEditorManagerListener implements FileEditorManagerListener {
+    @Override
     public void fileOpened(FileEditorManager source, VirtualFile file) {
       if (file instanceof MPSNodeVirtualFile) {
         for (FileEditor fe : myFileEditorManager.getEditors(file)) {
@@ -187,18 +195,22 @@ public class MPSEditorWarningsManager implements ProjectComponent {
       }
     }
 
+    @Override
     public void fileClosed(FileEditorManager source, VirtualFile file) {
       myWarnings.keySet().retainAll(Arrays.asList(source.getAllEditors()));
     }
 
+    @Override
     public void selectionChanged(FileEditorManagerEvent event) {
       updateAllWarnings();
     }
   }
 
   private class MyReloadListener extends ReloadAdapter {
+    @Override
     public void onAfterReload() {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
+        @Override
         public void run() {
           if (myProject.isDisposed()) return;
           updateAllWarnings();

@@ -47,6 +47,7 @@ public class HidingByNameScope extends Scope {
     }
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(scope.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
@@ -67,6 +68,7 @@ public class HidingByNameScope extends Scope {
   }
 
   @Nullable
+  @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     // todo: recheck this code 
     return (SetSequence.fromSet(names).contains(refText) ?
@@ -76,6 +78,7 @@ public class HidingByNameScope extends Scope {
   }
 
   @Nullable
+  @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     return node.getName();
   }

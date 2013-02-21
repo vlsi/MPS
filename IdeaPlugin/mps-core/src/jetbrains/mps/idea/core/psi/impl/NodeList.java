@@ -74,72 +74,49 @@ import org.jetbrains.annotations.NotNull;
   }
 
   void addFirst (@NotNull MPSPsiNodeBase node) {
-    Entry newHead = new Entry(node);
+    assert node.getEntry() == null;
 
+    Entry newHead = new Entry(node);
     if (head == null) {
       head = newHead;
       head.next = head.prev = head;
     }
     else {
-      Entry oldHead = head;
+      insertBetween(newHead, head.prev, head);
       head = newHead;
-      head.next = oldHead;
-      head.prev = oldHead.prev;
-      oldHead.prev = head;
-      if (oldHead.next == oldHead) {
-        oldHead.next = newHead;
-      }
     }
     size++;
   }
 
   void addLast (@NotNull MPSPsiNodeBase node) {
-    Entry newTail = new Entry(node);
+    assert node.getEntry() == null;
 
+    Entry newTail = new Entry(node);
     if (head == null) {
       head = newTail;
       head.next = head.prev = head;
     }
     else {
-      Entry oldTail = head.prev;
-      head.prev = newTail;
-      head.prev.prev = oldTail;
-      head.prev.next = oldTail.next;
-      oldTail.next = newTail;
-      if (oldTail.prev == oldTail) {
-        oldTail.prev = newTail;
-      }
+      insertBetween(newTail, head.prev, head);
     }
     size++;
   }
 
   void insertAfter(@NotNull MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
-    assert anchor.getEntry() != null && anchor.getEntry().list() == this;
+    assert anchor != null && anchor.getEntry() != null && anchor.getEntry().list() == this;
+    assert node.getEntry() == null;
 
     Entry toInsert = new Entry(node);
-
-    Entry prev = anchor.getEntry();
-    toInsert.next = prev.next;
-    toInsert.prev = prev;
-    prev.next = toInsert;
-    if (prev.prev == prev) {
-      prev.prev = toInsert;
-    }
+    insertBetween(toInsert, anchor.getEntry(), anchor.getEntry().next);
     size++;
   }
 
   void insertBefore(@NotNull MPSPsiNodeBase anchor, @NotNull MPSPsiNodeBase node) {
     assert anchor.getEntry() != null && anchor.getEntry().list() == this;
+    assert node.getEntry() == null;
 
     Entry toInsert = new Entry(node);
-
-    Entry next = anchor.getEntry();
-    toInsert.next = next;
-    toInsert.prev = next.prev;
-    next.prev = toInsert;
-    if (next.next == next) {
-      next.next = toInsert;
-    }
+    insertBetween(toInsert, anchor.getEntry().prev, anchor.getEntry());
     size++;
   }
 
@@ -171,6 +148,14 @@ import org.jetbrains.annotations.NotNull;
     Entry entry = old.getEntry();
     old.setEntry(null);
     replacement.setEntry(entry);
+    entry.node = replacement;
+  }
+
+  private void insertBetween(Entry toInsert, Entry after, Entry before) {
+    toInsert.prev = after;
+    toInsert.next = before;
+    after.next = toInsert;
+    before.prev = toInsert;
   }
 
   void clear () {

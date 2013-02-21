@@ -45,6 +45,7 @@ public class ConceptProperty_Constraints extends BaseConstraintsDescriptor {
             SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
             final boolean isConcept = SNodeOperations.isInstanceOf(enclosingConcept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
             return (List<SNode>) new ConceptAndSuperConceptsScope(enclosingConcept).getNodes(new Condition<SNode>() {
+              @Override
               public boolean met(SNode node) {
                 return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration") && (isConcept || SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"), "inheritable"));
               }

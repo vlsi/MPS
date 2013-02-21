@@ -26,6 +26,7 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
     setTitle(REFACTORING_NAME + " " + "node");
   }
 
+  @Override
   protected void doRefactoringAction() {
     final Object selectedObject = myChooser.getSelectedObject();
     if (!(selectedObject instanceof SNode)) {
@@ -51,6 +52,7 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

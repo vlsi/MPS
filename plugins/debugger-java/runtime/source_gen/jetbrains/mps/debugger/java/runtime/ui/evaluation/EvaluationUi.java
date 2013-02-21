@@ -100,6 +100,7 @@ public abstract class EvaluationUi extends JPanel {
 
   private void setSuccess(@NotNull final JavaValue evaluatedValue, final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
+      @Override
       public void run() {
         myTree.setResultValue(evaluatedValue, model);
         myTree.rebuildEvaluationTreeNowIfNotDisposed();
@@ -109,6 +110,7 @@ public abstract class EvaluationUi extends JPanel {
 
   private void setEvaluating(final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
+      @Override
       public void run() {
         myTree.setEvaluating(model);
         myTree.rebuildEvaluationTreeNowIfNotDisposed();
@@ -118,6 +120,7 @@ public abstract class EvaluationUi extends JPanel {
 
   private void setFailure(@Nullable final Throwable error, @Nullable final String message, final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
+      @Override
       public void run() {
         if (error != null) {
           myTree.setError(error, model);
@@ -164,6 +167,7 @@ public abstract class EvaluationUi extends JPanel {
           myTree.updateLocation(unitName, uiState.getThread().getThread());
         }
         ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
           public void run() {
             setErrorText("");
             update();
@@ -179,6 +183,7 @@ public abstract class EvaluationUi extends JPanel {
     public void stateChanged(AbstractDebugSession session) {
       if (myDebugSession == session) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
           public void run() {
             update();
           }
@@ -190,6 +195,7 @@ public abstract class EvaluationUi extends JPanel {
     public void resumed(AbstractDebugSession session) {
       if (myDebugSession == session) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
           public void run() {
             myTree.rebuildEvaluationTreeNowIfNotDisposed();
           }

@@ -37,10 +37,12 @@ public class MayBeInitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSe
     }
   }
 
+  @Override
   public VarSet initial(Program p) {
     return new VarSet(p, false);
   }
 
+  @Override
   public VarSet merge(Program p, List<VarSet> input) {
     if (input.isEmpty()) {
       return initial(p);
@@ -53,6 +55,7 @@ public class MayBeInitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSe
     return result;
   }
 
+  @Override
   public VarSet fun(VarSet input, ProgramState s) {
     Instruction instruction = s.getInstruction();
     VarSet result = input;
@@ -69,6 +72,7 @@ public class MayBeInitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSe
     return result;
   }
 
+  @Override
   public AnalysisDirection getDirection() {
     return AnalysisDirection.FORWARD;
   }

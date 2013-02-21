@@ -24,25 +24,30 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Comparator;
 
 public class AspectSorter implements Sorter {
+  @Override
   public Comparator getComparator() {
     return new EditorTabComparator();
   }
 
+  @Override
   public boolean isVisible() {
     return false;
   }
 
+  @Override
   @NotNull
   public ActionPresentation getPresentation() {
     return new ActionPresentationData("Sort Aspects", "", null);
   }
 
+  @Override
   @NotNull
   public String getName() {
     return "AspectSorter";
   }
 
   private static class EditorTabComparator implements Comparator{
+    @Override
     public int compare(Object o1, Object o2) {
       if (!(o1 instanceof AspectGroup || o2 instanceof AspectGroup)) return 0;
 

@@ -27,6 +27,7 @@ public class DateRange implements Comparable {
     return myStart;
   }
 
+  @Override
   public String toString() {
     if (isEmpty()) {
       return "Empty Date Range";
@@ -42,6 +43,7 @@ public class DateRange implements Comparable {
     return !(arg.before(myStart)) && !(arg.after(myEnd));
   }
 
+  @Override
   public boolean equals(Object arg) {
     if (!((arg instanceof DateRange))) {
       return false;
@@ -50,6 +52,7 @@ public class DateRange implements Comparable {
     return myStart.equals(other.myStart) && myEnd.equals(other.myEnd);
   }
 
+  @Override
   public int hashCode() {
     return myStart.hashCode();
   }
@@ -78,6 +81,7 @@ public class DateRange implements Comparable {
     return new DateRange(lower.myEnd.addDays(1), higher.myStart.addDays(-1));
   }
 
+  @Override
   public int compareTo(Object arg) {
     DateRange other = (DateRange) arg;
     if (!(myStart.equals(other.myStart))) {

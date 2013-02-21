@@ -12,6 +12,7 @@ import jetbrains.mps.util.FileUtil;
   }
 
   @Nullable
+  @Override
   public Tuples._2<Integer, byte[]> mergeContents(byte[] baseContent, byte[] localContent, byte[] latestContent) {
     String baseAsString = contentAsString(baseContent);
     String localAsString = contentAsString(localContent);

@@ -23,10 +23,12 @@ import jetbrains.mps.lang.dataFlow.framework.ProgramState;
 import java.util.List;
 
 public class ReachabilityAnalyzer implements DataFlowAnalyzer<Boolean> {
+  @Override
   public Boolean initial(Program p) {
     return false;
   }
 
+  @Override
   public Boolean merge(Program p, List<Boolean> input) {
     for (Boolean value : input) {
       if (value) {
@@ -36,6 +38,7 @@ public class ReachabilityAnalyzer implements DataFlowAnalyzer<Boolean> {
     return false;
   }
 
+  @Override
   public Boolean fun(Boolean input, ProgramState s) {
     if (s.isStart()) {
       return true;
@@ -43,6 +46,7 @@ public class ReachabilityAnalyzer implements DataFlowAnalyzer<Boolean> {
     return input;
   }
 
+  @Override
   public AnalysisDirection getDirection() {
     return AnalysisDirection.FORWARD;
   }

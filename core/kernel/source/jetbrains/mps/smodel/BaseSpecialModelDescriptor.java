@@ -26,6 +26,7 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
     super(modelReference, new NullDataSource());
   }
 
+  @Override
   public final synchronized SModel getSModel() {
     if (mySModel == null) {
       mySModel = createModel();
@@ -35,6 +36,10 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
     return mySModel;
   }
 
+  @Override
+  public boolean isReadOnly() {
+    return true;
+  }
 
   @Override
   public boolean isLoaded() {

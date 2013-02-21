@@ -17,6 +17,7 @@ import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
@@ -107,13 +108,13 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
       FileUtil.delete(tmp);
       return zipfile;
     } catch (IOException e) {
-      LOG.error("Cannot create backup during resolving disk-memory conflict for " + inMemory.getLongName(), e);
+      LOG.error("Cannot create backup during resolving disk-memory conflict for " + SNodeOperations.getModelLongName(inMemory), e);
       throw new RuntimeException(e);
     }
   }
 
   private static void openDiffDialog(IFile modelFile, SModel inMemory) {
-    SModel onDisk = new SModel(inMemory.getSModelReference());
+    SModel onDisk = new SModel(inMemory.getReference());
     try {
       onDisk = ModelPersistence.readModel(modelFile, false);
     } catch (ModelReadException e) {
@@ -139,6 +140,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
       mySuffix = suffix;
     }
 
+    @Override
     public String getSuffix() {
       return mySuffix;
     }

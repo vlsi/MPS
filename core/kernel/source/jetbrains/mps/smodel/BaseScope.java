@@ -63,7 +63,7 @@ public abstract class BaseScope implements IScope {
     // todo: like module resolve!
     for (SModel model : getModels()) {
       if (reference.getModelId() != null) {
-        if (model.getModelReference().equals(reference)) {
+        if (model.getReference().equals(reference)) {
           return model;
         }
       } else {
