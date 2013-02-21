@@ -31,14 +31,16 @@ public final class CopyUtil {
   }
 
   public static void copyModelContent(SModel from, SModel to) {
-    for (SNode root : from.roots()) {
-      to.addRoot(copy(root));
+
+    for (SNode root : from.getRootNodes()) {
+      to.addRootNode(copy(root));
     }
   }
 
   public static void copyModelContentAndPreserveIds(SModel from, SModel to) {
-    for (SNode root : from.roots()) {
-      to.addRoot(copyAndPreserveId(root, true));
+
+    for (SNode root : from.getRootNodes()) {
+      to.addRootNode(copyAndPreserveId(root, true));
     }
   }
 

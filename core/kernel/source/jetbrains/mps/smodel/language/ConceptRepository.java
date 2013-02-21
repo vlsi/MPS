@@ -60,7 +60,8 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
           }
 
           SModel sm = smd.getSModel();
-          for (SNode root : sm.roots()) {
+
+          for (SNode root : sm.getRootNodes()) {
             //do not change existing concept descriptor (required for == correctness)
             if (myConcepts.get(id) != null) continue;
 

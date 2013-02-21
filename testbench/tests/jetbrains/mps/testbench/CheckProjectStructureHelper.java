@@ -51,6 +51,7 @@ import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.*;
@@ -296,7 +297,7 @@ public class CheckProjectStructureHelper {
   }
 
   private static void checkModelNodes(@NotNull jetbrains.mps.smodel.SModel model, @NotNull final List<String> result) {
-    for (final SNode node : model.nodes()) {
+    for (final SNode node : new NodesIterable(model)) {
       final SConcept concept = node.getConcept();
       if (concept == null) {
         result.add("unknown concept of node: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
@@ -347,7 +348,7 @@ public class CheckProjectStructureHelper {
                 SNode node = reporter.getSNode();
                 if (!CheckProjectStructureUtil.filterIssue(node)) continue;
                 myErrors++;
-                errors.add("Error message: " + reporter.reportError() + "   model: " + node.getModel().getLongName() + " root: " + node.getContainingRoot() + " node: " + node);
+                errors.add("Error message: " + reporter.reportError() + "   model: " + jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()) + " root: " + node.getContainingRoot() + " node: " + node);
               }
               if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
                 myWarnings++;
@@ -378,7 +379,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : ((SModelDescriptor) sm).getSModel().nodes()) {
+    for (SNode node : new NodesIterable(((SModelDescriptor) sm).getSModel())) {
       Testbench.LOG.debug("Checking node " + node);
       if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
@@ -387,7 +388,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : ((SModelDescriptor) sm).getSModel().nodes()) {
+    for (SNode node : new NodesIterable(((SModelDescriptor) sm).getSModel())) {
       for (SReference ref : node.getReferences()) {
         if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;
@@ -396,7 +397,7 @@ public class CheckProjectStructureHelper {
         if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
           errorMessages.
             append("Broken reference in model {").
-            append(node.getModel().getLongName()).
+            append(jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel())).
             append("}").
             append(" node ").
             append(node.getNodeId().toString()).
