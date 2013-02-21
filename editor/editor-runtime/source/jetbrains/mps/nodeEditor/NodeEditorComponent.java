@@ -95,7 +95,7 @@ public class NodeEditorComponent extends EditorComponent {
           return;
         }
 
-        if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode) || selectedNode.getModel().isDisposed()) return;
+        if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode) || jetbrains.mps.util.SNodeOperations.isModelDisposed(selectedNode.getModel())) return;
 
         assert getOperationContext() == null || getOperationContext().getModule() != null : "No module for: " + getOperationContext() + ", but model was not disposed: " + selectedNode.getModel();
         inspect(selectedNode);
@@ -120,7 +120,7 @@ public class NodeEditorComponent extends EditorComponent {
     SNode node = getEditedNode();
     if (node == null) return false;
     SModel model = node.getModel();
-    if (model != null && model.isDisposed()) return false;
+    if (model != null && jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) return false;
     return true;
   }
 

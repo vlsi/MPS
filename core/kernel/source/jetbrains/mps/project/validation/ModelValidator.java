@@ -40,7 +40,7 @@ public class ModelValidator {
     if (myModel instanceof TransientSModel) {
       return errors;
     }
-    if (myModel.isDisposed()) {
+    if (jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) {
       return errors;
     }
     if (myModel instanceof InvalidSModel) {

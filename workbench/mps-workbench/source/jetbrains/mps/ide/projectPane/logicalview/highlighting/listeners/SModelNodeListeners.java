@@ -147,7 +147,7 @@ public class SModelNodeListeners implements NodeListeners {
     public boolean isValid() {
       if (!super.isValid()) return false;
       if (!(myModel.isLoaded())) return true;
-      return !myModel.getSModel().isDisposed();
+      return !jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel.getSModel());
     }
   }
 

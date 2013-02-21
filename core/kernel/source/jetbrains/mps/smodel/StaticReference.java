@@ -81,7 +81,7 @@ public final class StaticReference extends SReferenceBase {
     SModel targetModel = getTargetSModel();
     if (targetModel == null) return null;
 
-    if (targetModel.isDisposed()) {
+    if (jetbrains.mps.util.SNodeOperations.isModelDisposed(targetModel)) {
       Logger log = Logger.getLogger(this.getClass());
       StringBuilder sb = new StringBuilder();
       sb.append("target model ");
