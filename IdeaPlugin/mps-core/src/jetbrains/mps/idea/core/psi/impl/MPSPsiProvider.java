@@ -26,6 +26,8 @@ import com.intellij.psi.PsiElement;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
+import com.intellij.psi.impl.PsiModificationTrackerImpl;
+import com.intellij.psi.util.PsiModificationTracker;
 import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.file.impl.FileManager;
@@ -58,6 +60,7 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
 
   // TODO softReference..
   ConcurrentMap<SModelReference, MPSPsiModel> models = new ConcurrentHashMap<SModelReference, MPSPsiModel>();
+  private final PsiModificationTrackerImpl myModificationTracker;
 
   public static MPSPsiProvider getInstance(@NotNull Project project) {
     return project.getComponent(MPSPsiProvider.class);
@@ -68,6 +71,7 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
   private SModelCommandListener myListener = new SModelCommandListener() {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       myEventProcessor.process(events);
+      myModificationTracker.incCounter();
 
       // TODO PsiModificationTrackerImpl.incCounter/incOutOfCodeBlockModificationCounter (see JavaCodeBlockModificationListener)
       // TODO notify ANY_PSI_CHANGE_TOPIC
@@ -79,6 +83,8 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
   protected MPSPsiProvider(Project project) {
     super(project);
     myEventProcessor = createEventProcessor();
+    PsiManager psiManager = PsiManagerEx.getInstance(project);
+    this.myModificationTracker = (PsiModificationTrackerImpl) psiManager.getModificationTracker();
   }
 
   public void initComponent() {
