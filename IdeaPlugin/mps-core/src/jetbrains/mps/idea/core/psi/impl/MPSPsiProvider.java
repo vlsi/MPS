@@ -120,7 +120,7 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
   public MPSPsiModel getPsi(SModel model) {
     // TODO check GlobalSearchScope.projectScope(myProject).contains(modelFile)
 
-    final SModelReference modelRef = model.getModelReference();
+    final SModelReference modelRef = model.getReference();
     MPSPsiModel cached = models.get(modelRef);
     if (cached != null) return cached;
 

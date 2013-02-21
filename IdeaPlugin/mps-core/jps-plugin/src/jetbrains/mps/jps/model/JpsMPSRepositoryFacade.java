@@ -287,7 +287,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
           context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Debug output: module " + m.getModuleReference().toString()));
 
           for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors(m)) {
-            context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Debug output: model " + d.getLongName() + " / " + d.getModelReference().toString()));
+            context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Debug output: model " + d.getLongName() + " / " + d.getReference().toString()));
             // It makes model loading non-lazy and kills the whole thing if stubs are built for everything (like SDK, libs, etc)
   //          for (SNode n : d.getRootNodes()) {
   //            context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "node: " + n.getName() + " id: " + n.getSNodeId().toString()));
