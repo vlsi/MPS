@@ -3840,7 +3840,7 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.IntegerConceptProperty" typeId="tpce.1105725498741" id="1225271221396">
-      <property name="value" nameId="tpce.1105725713309" value="0" />
+      <property name="value" nameId="tpce.1105725713309" value="7" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1166617629900" resolveInfo="priority" />
     </node>
   </root>
@@ -3854,7 +3854,7 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.IntegerConceptProperty" typeId="tpce.1105725498741" id="1225271283262">
-      <property name="value" nameId="tpce.1105725713309" value="0" />
+      <property name="value" nameId="tpce.1105725713309" value="7" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1166617629900" resolveInfo="priority" />
     </node>
   </root>
