@@ -85,7 +85,7 @@ public class PrecedenceUtil {
 
   private static PrecedenceUtil.Precedence getPriority(SNode expression) {
     if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-      switch (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) expression))), "virtual_getPriority_1262430001741497858", new Object[]{})) {
+      switch (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.castConcept(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))), "virtual_getPriority_1262430001741497858", new Object[]{})) {
         case 2:
           // || 
           return PrecedenceUtil.Precedence.J_13;

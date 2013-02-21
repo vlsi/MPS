@@ -15251,21 +15251,6 @@
                   <property name="value" nameId="tpee.1068580320021" value="10" />
                 </node>
               </node>
-              <node role="expression" roleId="tpee.1163670766145" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1302191354693961091">
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="8425917838863637248">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1262430001741497858" resolveInfo="getPriority" />
-                </node>
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="1302191354693961147">
-                  <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="1302191354693961149">
-                    <node role="type" roleId="tpee.1070534934091" type="tp25.SConceptType" typeId="tp25.1172420572800" id="1302191354693961150">
-                      <link role="conceptDeclaraton" roleId="tp25.1180481110358" targetNodeId="tpee.1081773326031" resolveInfo="BinaryOperation" />
-                    </node>
-                    <node role="expression" roleId="tpee.1070534934092" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1302191354693961151">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1302191354693905839" resolveInfo="expression" />
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node role="defaultBlock" roleId="tpee.1163670592366" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473682" />
               <node role="case" roleId="tpee.1163670772911" type="tpee.SwitchCase" typeId="tpee.1163670641947" id="8425917838863473683">
                 <node role="body" roleId="tpee.1163670683720" type="tpee.StatementList" typeId="tpee.1068580123136" id="8425917838863473684">
@@ -15283,6 +15268,17 @@
                 </node>
                 <node role="expression" roleId="tpee.1163670677455" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="6611143953833872738">
                   <property name="value" nameId="tpee.1068580320021" value="11" />
+                </node>
+              </node>
+              <node role="expression" roleId="tpee.1163670766145" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5160624142075082477">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="5160624142075117477">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1262430001741497858" resolveInfo="getPriority" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="5160624142075105947">
+                  <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1081773326031" resolveInfo="BinaryOperation" />
+                  <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.VariableReference" typeId="tpee.1068498886296" id="5160624142075065411">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1302191354693905839" resolveInfo="expression" />
+                  </node>
                 </node>
               </node>
             </node>
