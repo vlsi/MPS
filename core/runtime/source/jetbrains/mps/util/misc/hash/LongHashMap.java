@@ -65,6 +65,7 @@ public class LongHashMap<V> extends AbstractHashMap<Long, V> implements Map<Long
     return null;
   }
 
+  @Override
   public V put(final Long key, final V value) {
     return put(key.longValue(), value);
   }
@@ -97,14 +98,17 @@ public class LongHashMap<V> extends AbstractHashMap<Long, V> implements Map<Long
     return e.value;
   }
 
+  @Override
   public V remove(Object key) {
     return remove(((Long) key).longValue());
   }
 
+  @Override
   protected Map.Entry<Long, V> getEntry(Object key) {
     return getEntry(((Long) key).longValue());
   }
 
+  @Override
   protected void init(int capacity) {
     if (capacity < HashUtil.MIN_CAPACITY) {
       capacity = HashUtil.MIN_CAPACITY;
@@ -114,6 +118,7 @@ public class LongHashMap<V> extends AbstractHashMap<Long, V> implements Map<Long
     size = 0;
   }
 
+  @Override
   protected HashMapIterator hashIterator() {
     return new HashIterator();
   }
@@ -167,14 +172,17 @@ public class LongHashMap<V> extends AbstractHashMap<Long, V> implements Map<Long
       this.value = value;
     }
 
+    @Override
     public Long getKey() {
       return key;
     }
 
+    @Override
     public V getValue() {
       return value;
     }
 
+    @Override
     public V setValue(final V value) {
       final V result = this.value;
       this.value = value;
@@ -193,10 +201,12 @@ public class LongHashMap<V> extends AbstractHashMap<Long, V> implements Map<Long
       initNextEntry();
     }
 
+    @Override
     public boolean hasNext() {
       return e != null;
     }
 
+    @Override
     public void remove() {
       if (last == null) {
         throw new IllegalStateException();
@@ -205,6 +215,7 @@ public class LongHashMap<V> extends AbstractHashMap<Long, V> implements Map<Long
       last = null;
     }
 
+    @Override
     protected Entry<V> nextEntry() {
       final Entry<V> result = last = e;
       initNextEntry();

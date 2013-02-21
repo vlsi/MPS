@@ -30,38 +30,47 @@ public class ChooseModelComponent implements IChooseComponent<SModel> {
     myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(operationContext, null, true, false, true);
   }
 
+  @Override
   public SModel submit() throws InvalidInputValueException {
     return (SModel) myChooseNodeOrModelComponent.submit();
   }
 
+  @Override
   public String getPropertyName() {
     return myChooseNodeOrModelComponent.getPropertyName();
   }
 
+  @Override
   public void setPropertyName(String propertyName) {
     myChooseNodeOrModelComponent.setPropertyName(propertyName);
   }
 
+  @Override
   public void setInitialValue(SModel initialValue) {
     myChooseNodeOrModelComponent.setInitialValue(initialValue);
   }
 
+  @Override
   public void setCondition(Condition<SModel> condition) {
     myChooseNodeOrModelComponent.setCondition((Condition) condition);
   }
 
+  @Override
   public JComponent getComponentToFocus() {
     return myChooseNodeOrModelComponent.getComponentToFocus();
   }
 
+  @Override
   public JComponent getMainComponent() {
     return myChooseNodeOrModelComponent;
   }
 
+  @Override
   public void setCaption(String caption) {
     myChooseNodeOrModelComponent.setCaption(caption);
   }
 
+  @Override
   public void initComponent() {
     myChooseNodeOrModelComponent.initComponent();
   }

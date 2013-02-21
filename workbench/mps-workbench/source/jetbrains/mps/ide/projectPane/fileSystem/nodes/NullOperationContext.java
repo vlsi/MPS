@@ -32,23 +32,28 @@ class NullOperationContext implements IOperationContext {
     return null;
   }
 
+  @Override
   public IModule getModule() {
     return null;
   }
 
+  @Override
   @NotNull
   public IScope getScope() {
     return GlobalScope.getInstance();
   }
 
+  @Override
   public boolean isValid() {
     return true;
   }
 
+  @Override
   public boolean isTestMode() {
     return false;
   }
 
+  @Override
   public <T> T getComponent(Class<T> clazz) {
     return null;
   }

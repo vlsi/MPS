@@ -47,6 +47,7 @@ import java.util.List;
 public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   private ProjectPane myProjectPane;
   private KeyAdapter myKeyListener = new KeyAdapter() {
+    @Override
     public void keyPressed(KeyEvent e) {
       if (e.getModifiers() != 0) return;
       if (!(e.getKeyCode() == KeyEvent.VK_ENTER)) return;
@@ -74,21 +75,25 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
     new DropTarget(this, new ProjectPaneDnDListener(this, new MyTransferable(null).getTransferDataFlavors()[0]));
   }
 
+  @Override
   public void dispose() {
     myHighlighter.dispose();
     removeKeyListener(myKeyListener);
     super.dispose();
   }
 
+  @Override
   public Comparator<Object> getChildrenComparator() {
     return myProjectPane.getTreeChildrenComparator();
   }
 
+  @Override
   public void editNode(final SNode node, IOperationContext context, boolean focus) {
     ModelAccess.assertLegalWrite();
     myProjectPane.editNode(node, context, focus);
   }
 
+  @Override
   public boolean isAutoOpen() {
     return myProjectPane.getProjectView().isAutoscrollToSource(myProjectPane.getId());
   }
@@ -101,6 +106,7 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
       myObject = o;
     }
 
+    @Override
     public DataFlavor[] getTransferDataFlavors() {
       Class aClass = MyTransferable.class;
       DataFlavor dataFlavor = null;
@@ -112,27 +118,32 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
       return new DataFlavor[]{dataFlavor};
     }
 
+    @Override
     public boolean isDataFlavorSupported(DataFlavor flavor) {
       DataFlavor[] flavors = getTransferDataFlavors();
       return ArrayUtil.find(flavors, flavor) != -1;
     }
 
+    @Override
     public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
       return myObject;
     }
   }
 
   private class MyDragSourceListener extends DragSourceAdapter {
+    @Override
     public void dragEnter(DragSourceDragEvent dsde) {
       dsde.getDragSourceContext().setCursor(null);
     }
 
+    @Override
     public void dropActionChanged(DragSourceDragEvent dsde) {
       dsde.getDragSourceContext().setCursor(null);
     }
   }
 
   private class MyDragGestureListener implements DragGestureListener {
+    @Override
     public void dragGestureRecognized(final DragGestureEvent dge) {
       if ((dge.getDragAction() & DnDConstants.ACTION_COPY_OR_MOVE) == 0) return;
       ProjectView projectView = ProjectView.getInstance(myProjectPane.getProject());
@@ -143,6 +154,7 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
       final List<Pair<SNodeReference, String>> result = new ArrayList<Pair<SNodeReference, String>>();
 
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           for (SNode node : myProjectPane.getSelectedSNodes()) {
             result.add(new Pair(new jetbrains.mps.smodel.SNodePointer(node), ""));

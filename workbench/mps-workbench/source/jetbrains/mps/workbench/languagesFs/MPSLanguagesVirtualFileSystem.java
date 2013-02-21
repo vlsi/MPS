@@ -49,26 +49,32 @@ public class MPSLanguagesVirtualFileSystem extends DeprecatedVirtualFileSystem i
     return vf;
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS Languages File System";
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
+  @Override
   @NonNls
   public String getProtocol() {
     return "mpslang";
   }
 
+  @Override
   @Nullable
   public VirtualFile findFileByPath(final @NotNull @NonNls String path) {
     return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+      @Override
       public VirtualFile compute() {
         IModule language = MPSModuleRepository.getInstance().getModuleByFqName(path);
         if (language instanceof Language) {
@@ -79,34 +85,42 @@ public class MPSLanguagesVirtualFileSystem extends DeprecatedVirtualFileSystem i
     });
   }
 
+  @Override
   public void refresh(boolean asynchronous) {
   }
 
+  @Override
   @Nullable
   public VirtualFile refreshAndFindFileByPath(String path) {
     return null;
   }
 
+  @Override
   protected void deleteFile(Object requestor, VirtualFile vFile) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   protected void moveFile(Object requestor, VirtualFile vFile, VirtualFile newParent) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   protected void renameFile(Object requestor, VirtualFile vFile, String newName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   protected VirtualFile createChildFile(Object requestor, VirtualFile vDir, String fileName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   protected VirtualFile createChildDirectory(Object requestor, VirtualFile vDir, String dirName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   protected VirtualFile copyFile(Object requestor, VirtualFile virtualFile, VirtualFile newParent, String copyName) throws IOException {
     throw new UnsupportedOperationException();
   }

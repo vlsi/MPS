@@ -33,6 +33,7 @@ public class MPSPatchBaseDirectoryDetector extends PatchBaseDirectoryDetector {
     myProject = project;
   }
 
+  @Override
   @Nullable
   public Result detectBaseDirectory(final String patchFileName) {
     String[] nameComponents = patchFileName.split("/");
@@ -57,6 +58,7 @@ public class MPSPatchBaseDirectoryDetector extends PatchBaseDirectoryDetector {
     return null;
   }
 
+  @Override
   public Collection<VirtualFile> findFiles(final String fileName) {
     // MPS Patch Start
     return FilenameIndex.getVirtualFilesByName(myProject, fileName, GlobalSearchScope.allScope(myProject));

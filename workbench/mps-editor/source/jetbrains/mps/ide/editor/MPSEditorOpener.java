@@ -71,6 +71,7 @@ public class MPSEditorOpener {
   public void openNode(final SNode node) {
     if (node == null) return;
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
         if (modelDescriptor == null) return;

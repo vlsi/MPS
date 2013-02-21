@@ -263,10 +263,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return new SNodeTreeNode(node, role, operationContext, condition);
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_MODEL_ACTIONS);
   }
 
+  @Override
   public CreateRootNodeGroup getQuickCreateGroup(boolean plain) {
     return new CreateRootNodeGroup(plain);
   }
@@ -297,6 +299,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     updatePresentation();
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
@@ -346,11 +349,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return result;
   }
 
+  @Override
   protected void doUpdate() {
     myInitialized = false;
     this.removeAllChildren();
   }
 
+  @Override
   protected void doInit() {
     try {
       myInitializing = true;
@@ -410,6 +415,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return stringBuilder.toString();
   }
 
+  @Override
   protected final boolean canBeOpened() {
     return false;
   }
@@ -427,6 +433,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
     List<SNode> added = new ArrayList<SNode>(addedRoots);
     Collections.sort(added, new Comparator<SNode>() {
+      @Override
       public int compare(SNode o1, SNode o2) {
         return new Integer(allRoots.indexOf(o1)).compareTo(allRoots.indexOf(o2));
       }

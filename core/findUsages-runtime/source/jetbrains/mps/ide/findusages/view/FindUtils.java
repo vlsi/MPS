@@ -76,6 +76,7 @@ public class FindUtils {
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IResultProvider provider) {
     final SearchResults[] results = new SearchResults[1];
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         results[0] = provider.getResults(query, monitor);
       }

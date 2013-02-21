@@ -29,16 +29,19 @@ public class MPSFileTypesManager implements ApplicationComponent {
     return ApplicationManager.getApplication().getComponent(MPSFileTypesManager.class);
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS File Types Component";
   }
 
+  @Override
   public void initComponent() {
 
   }
 
+  @Override
   public void disposeComponent() {
 
   }

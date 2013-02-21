@@ -109,6 +109,7 @@ public class DelayedChanges {
       myReductionContext = reductionContext;
     }
 
+    @Override
     public void doChange() {
       try {
         SNode child = mapNode();
@@ -202,10 +203,12 @@ public class DelayedChanges {
       myMapSrcMacro = mapSrcMacro;
     }
 
+    @Override
     protected SNode getMapSrcMacro() {
       return myMapSrcMacro;
     }
 
+    @Override
     protected SNode mapNode() throws GenerationFailureException {
       return myReductionContext.getQueryExecutor().executeMapSrcNodeMacro(myContext.getInput(), getMapSrcMacro(), myChildToReplace.getParent(), myContext);
     }
@@ -226,6 +229,7 @@ public class DelayedChanges {
       myProcessor = processor;
     }
 
+    @Override
     protected SNode getMapSrcMacro() {
       SNodeReference templateNode = myMapper.getTemplateNode();
       if(templateNode != null) {
@@ -234,6 +238,7 @@ public class DelayedChanges {
       return null;
     }
 
+    @Override
     protected SNode mapNode() throws GenerationFailureException {
       return myReductionContext.getQueryExecutor().executeInContext(myChildToReplace, myContext, myMapper);
     }
@@ -259,6 +264,7 @@ public class DelayedChanges {
       myReductionContext = reductionContext;
     }
 
+    @Override
     public void doChange() {
       try {
         myReductionContext.getQueryExecutor().executeMapSrcNodeMacro_PostProc(myContext.getInput(), myMapSrcMacro, myOutputChild, myContext);
@@ -282,6 +288,7 @@ public class DelayedChanges {
       myReductionContext = reductionContext;
     }
 
+    @Override
     public void doChange() {
       try {
         myReductionContext.getQueryExecutor().executeInContext(myOutputChild, myContext, myProcessor);

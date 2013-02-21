@@ -31,16 +31,19 @@ public class ModuleNodeListeners implements NodeListeners {
     myNode = node;
   }
 
+  @Override
   public void startListening() {
     myChecker.visitNode(myNode);
     ClassLoaderManager.getInstance().addReloadHandler(myHandler);
   }
 
+  @Override
   public void stopListening() {
     ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
   }
 
   private class MyReloadAdapter extends ReloadAdapter {
+    @Override
     public void onAfterReload() {
       myChecker.visitNode(myNode);
     }

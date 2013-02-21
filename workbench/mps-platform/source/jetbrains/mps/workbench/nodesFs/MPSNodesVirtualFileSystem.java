@@ -58,6 +58,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   public MPSNodeVirtualFile getFileFor(@NotNull final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<MPSNodeVirtualFile>() {
+      @Override
       public MPSNodeVirtualFile compute() {
         SNodeReference nodePointer = new jetbrains.mps.smodel.SNodePointer(node);
         return getFileFor(nodePointer);
@@ -73,12 +74,14 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return vf;
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS File System";
   }
 
+  @Override
   public void initComponent() {
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(myCommandListener);
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myModelListener);
@@ -86,6 +89,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
   }
 
+  @Override
   public void disposeComponent() {
     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
 
@@ -94,15 +98,18 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     myDisposed = true;
   }
 
+  @Override
   @NotNull
   @NonNls
   public String getProtocol() {
     return "mps";
   }
 
+  @Override
   @Nullable
   public VirtualFile findFileByPath(final @NotNull @NonNls String path) {
     return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+      @Override
       public VirtualFile compute() {
         Pattern p = Pattern.compile("(.*)/(.*)");
         Matcher m = p.matcher(path);
@@ -114,6 +121,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         if (sm == null) return null;
 
         Condition<SNode> cond = new Condition<SNode>() {
+          @Override
           public boolean met(SNode node) {
             return node.getPresentation().equals(name);
           }
@@ -125,10 +133,12 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     });
   }
 
+  @Override
   public void refresh(boolean asynchronous) {
 
   }
 
+  @Override
   @Nullable
   public VirtualFile refreshAndFindFileByPath(@NotNull String path) {
     return null;
@@ -138,27 +148,33 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     return myVirtualFiles.containsKey(nodePointer);
   }
 
+  @Override
   protected void deleteFile(Object requestor, @NotNull VirtualFile vFile) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   protected void moveFile(Object requestor, @NotNull VirtualFile vFile, @NotNull VirtualFile newParent) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   protected void renameFile(Object requestor, @NotNull VirtualFile vFile, @NotNull String newName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   protected VirtualFile createChildFile(Object requestor, @NotNull VirtualFile vDir, @NotNull String fileName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   @NotNull
   protected VirtualFile createChildDirectory(Object requestor, @NotNull VirtualFile vDir, @NotNull String dirName) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   protected VirtualFile copyFile(Object requestor, @NotNull VirtualFile virtualFile, @NotNull VirtualFile newParent, @NotNull String copyName) throws IOException {
     throw new UnsupportedOperationException();
   }
@@ -173,6 +189,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   private class MyCommandListener implements SModelCommandListener {
+    @Override
     public void eventsHappenedInCommand(final List<SModelEvent> events) {
       MyModelEventVisitor visitor = new MyModelEventVisitor();
       for (SModelEvent e : events) {
@@ -185,6 +202,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         }
 
         SwingUtilities.invokeLater(new Runnable() {
+          @Override
           public void run() {
             ModelAccess.instance().runWriteActionInCommand(vfsNotifier);
           }
@@ -198,6 +216,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     private Collection<MPSNodeVirtualFile> myDeletedFiles = new ArrayList<MPSNodeVirtualFile>();
     private Collection<Pair<MPSNodeVirtualFile, String>> myRenamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
 
+    @Override
     public void visitRootEvent(SModelRootEvent event) {
       if (!event.isRemoved()) return;
 
@@ -209,6 +228,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       }
     }
 
+    @Override
     public void visitPropertyEvent(final SModelPropertyEvent event) {
       if (jetbrains.mps.util.SNodeOperations.isDisposed(event.getNode())) return;
 
@@ -223,6 +243,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
+    @Override
     public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
       if (!(modelDescriptor.isLoaded())) return;
 
@@ -240,6 +261,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       }
     }
 
+    @Override
     public void modelsReplaced(final Set<SModelDescriptor> descriptors) {
       for (SModelDescriptor sModelDescriptor : descriptors) {
 
@@ -280,6 +302,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   private class MyModelListener extends SModelAdapter {
+    @Override
     public void eventFired(SModelEvent event) {
       SNode root = event.getAffectedRoot();
       if (root == null) return;

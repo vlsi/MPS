@@ -31,16 +31,19 @@ public class NodesIterator implements Iterator<SNode> {
     myCurrent = getIterForNextRoot(roots);
   }
 
+  @Override
   public boolean hasNext() {
     moveToNextRootIfNeeded();
     return myCurrent.hasNext();
   }
 
+  @Override
   public SNode next() {
     moveToNextRootIfNeeded();
     return myCurrent.next();
   }
 
+  @Override
   public void remove() {
     throw new UnsupportedOperationException();
   }

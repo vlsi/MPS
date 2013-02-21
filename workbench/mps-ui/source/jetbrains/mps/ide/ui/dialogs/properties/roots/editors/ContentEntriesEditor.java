@@ -126,6 +126,7 @@ public class ContentEntriesEditor {
             @Override
             public PopupStep onChosen(final AddContentEntryAction selectedValue, final boolean finalChoice) {
               return doFinalStep(new Runnable() {
+                @Override
                 public void run() {
                   selectedValue.actionPerformed(null);
                 }
@@ -256,6 +257,7 @@ public class ContentEntriesEditor {
       myType = type;
     }
 
+    @Override
     public void actionPerformed(AnActionEvent e) {
       ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(modelRoot);

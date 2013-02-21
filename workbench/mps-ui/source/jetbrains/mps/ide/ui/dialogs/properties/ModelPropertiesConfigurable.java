@@ -161,6 +161,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       final IResultProvider[] provider = new IResultProvider[1];
       final IScope scope = new ModelsOnlyScope(myModelDescriptor);
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           if (value instanceof SModelReference) {
             query[0] = new SearchQuery(
@@ -338,6 +339,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       final IResultProvider[] provider = new IResultProvider[1];
       final IScope scope = new ModelsOnlyScope(myModelDescriptor);
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           query[0] = new SearchQuery(
             MPSModuleRepository.getInstance().getModuleByFqName(((ModuleReference) value).getModuleFqName()), scope);
@@ -384,6 +386,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     private String getInfoText() {
       final StringBuilder messageText = new StringBuilder();
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           int references = 0;
           int properties = 0;

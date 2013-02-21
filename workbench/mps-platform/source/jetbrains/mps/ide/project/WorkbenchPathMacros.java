@@ -80,9 +80,11 @@ public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProv
   @Override
   public void report(String message, String macro) {
     Notifications.Bus.notify(new Notification(Notifications.SYSTEM_MESSAGES_GROUP_ID, "Undefined macro", macro + " <html><a href=''>fix...</a></html>", NotificationType.ERROR, new NotificationListener() {
+      @Override
       public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent event) {
         if (event.getEventType() != EventType.ACTIVATED) return;
         DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Handler<DataContext>() {
+          @Override
           public void run(DataContext dataContext) {
             Project project = PlatformDataKeys.PROJECT.getData(dataContext);
 

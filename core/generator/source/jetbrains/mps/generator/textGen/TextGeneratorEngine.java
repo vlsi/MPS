@@ -153,6 +153,7 @@ public class TextGeneratorEngine {
       namePrefix = "textgen-thread-";
     }
 
+    @Override
     @NotNull
     public Thread newThread(@NotNull final Runnable original) {
       Thread t = new Thread(group, original, namePrefix + threadNumber.getAndIncrement());

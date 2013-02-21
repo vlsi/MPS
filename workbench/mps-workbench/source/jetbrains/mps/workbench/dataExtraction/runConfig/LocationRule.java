@@ -29,6 +29,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 
 public class LocationRule implements GetDataRule {
+  @Override
   @Nullable
   public Object getData(DataProvider dataProvider) {
     Project project = (Project) dataProvider.getData(MPSDataKeys.PROJECT.getName());

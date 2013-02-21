@@ -39,15 +39,18 @@ public class SNodeDescriptorPresentation extends BasePresentation {
     return SModelRepository.getInstance().getModelDescriptor(mr).getLongName();
   }
 
+  @Override
   @NotNull
   public String doGetPresentableText() {
     return myNodeResult.getName();
   }
 
+  @Override
   public String doGetLocationString() {
     return "(" + getModelName() + ")";
   }
 
+  @Override
   public Icon doGetIcon() {
     String conceptFqName = myNodeResult.getConcept().getId();
 

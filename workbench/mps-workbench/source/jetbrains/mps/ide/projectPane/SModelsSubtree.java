@@ -185,10 +185,12 @@ public class SModelsSubtree {
       setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
     }
 
+    @Override
     public String getStereotype() {
       return SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
     }
 
+    @Override
     public boolean isStrict() {
       return true;
     }
@@ -202,10 +204,12 @@ public class SModelsSubtree {
       setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);
     }
 
+    @Override
     public String getStereotype() {
       return SModelStereotype.TESTS;
     }
 
+    @Override
     public boolean isStrict() {
       return true;
     }

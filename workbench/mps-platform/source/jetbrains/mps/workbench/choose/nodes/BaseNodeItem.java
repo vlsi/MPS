@@ -38,10 +38,12 @@ public abstract class BaseNodeItem implements NavigationItem {
     return myNode;
   }
 
+  @Override
   public String getName() {
     return null;
   }
 
+  @Override
   @Nullable
   public ItemPresentation getPresentation() {
     return new NodePresentation(myNode);
@@ -52,10 +54,12 @@ public abstract class BaseNodeItem implements NavigationItem {
     return FileStatus.NOT_CHANGED;
   }
 
+  @Override
   public boolean canNavigate() {
     return true;
   }
 
+  @Override
   public boolean canNavigateToSource() {
     return true;
   }

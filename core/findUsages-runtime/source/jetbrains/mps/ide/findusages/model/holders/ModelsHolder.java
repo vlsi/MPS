@@ -37,6 +37,7 @@ public class ModelsHolder implements IHolder<List<SModelDescriptor>> {
     myOperationContext = operationContext;
   }
 
+  @Override
   public List<SModelDescriptor> getObject() {
     return Collections.unmodifiableList(myModelDescriptors);
   }
@@ -45,15 +46,18 @@ public class ModelsHolder implements IHolder<List<SModelDescriptor>> {
     return myOperationContext;
   }
 
+  @Override
   @NotNull
   public String getCaption() {
     return NameUtil.formatNumericalString(myModelDescriptors.size(), "model");
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     throw new UnsupportedOperationException();
   }

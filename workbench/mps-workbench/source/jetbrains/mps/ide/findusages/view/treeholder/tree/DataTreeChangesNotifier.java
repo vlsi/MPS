@@ -84,6 +84,7 @@ public class DataTreeChangesNotifier {
   }
 
   private class MyModelCommandListener implements SModelCommandListener {
+    @Override
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
         if (event.getModelDescriptor() == null) continue;
@@ -109,6 +110,7 @@ public class DataTreeChangesNotifier {
   }
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
+    @Override
     public void modelDeleted(SModelDescriptor modelDescriptor) {
       if (!myModels.contains(modelDescriptor.getSModelReference())) return;
       myChanged = true;
@@ -116,6 +118,7 @@ public class DataTreeChangesNotifier {
   }
 
   private class MyCommandListener extends ModelAccessAdapter {
+    @Override
     public void commandFinished() {
       if (!myChanged) return;
       myChanged = false;
@@ -124,6 +127,7 @@ public class DataTreeChangesNotifier {
   }
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+    @Override
     public void moduleRemoved(IModule module) {
       if (!myModules.contains(module.getModuleReference())) return;
       myChanged = true;

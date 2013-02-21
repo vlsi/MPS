@@ -63,6 +63,7 @@ public abstract class ModelListener {
   //------listeners------
 
   private class RootRemovedAdapter extends SModelAdapter {
+    @Override
     public void rootRemoved(SModelRootEvent event) {
       SNode root = event.getRoot();
       SModelReference modelRef = (SModelReference) event.getModel().getReference();
@@ -76,6 +77,7 @@ public abstract class ModelListener {
   }
 
   private class ModelRemovedAdapter extends SModelRepositoryAdapter {
+    @Override
     public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
       SModelReference ref = modelDescriptor.getSModelReference();
       if (!myImportantNodes.containsKey(ref)) return;

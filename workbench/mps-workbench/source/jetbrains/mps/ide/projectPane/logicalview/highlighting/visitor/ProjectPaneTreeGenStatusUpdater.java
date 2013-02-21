@@ -81,6 +81,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
     }
 
     GenerationStatus modelStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
+      @Override
       public GenerationStatus compute() {
         // extra check before read action
         if (modelNode.getModel().getModule() == null) {
@@ -99,6 +100,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   private void updateModuleStatus(final ProjectModuleTreeNode moduleNode) {
     if (moduleNode == null) return;
     GenerationStatus moduleStatus = ModelAccess.instance().runReadAction(new Computable<GenerationStatus>() {
+      @Override
       public GenerationStatus compute() {
         return generationRequired(moduleNode);
       }

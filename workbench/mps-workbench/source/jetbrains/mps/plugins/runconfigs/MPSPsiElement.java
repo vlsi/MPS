@@ -32,6 +32,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
   public MPSPsiElement(List<SNode> nodes) {
     LOG.assertCanRead();
     myItem = map(nodes, new Mapper<SNode, SNodeReference>() {
+      @Override
       public SNodeReference value(SNode key) {
         return new jetbrains.mps.smodel.SNodePointer(key);
       }
@@ -62,6 +63,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
       return ((SNodeReference) myItem).resolve(MPSModuleRepository.getInstance());
     } else if (myItem instanceof List) {
       return map((List<SNodeReference>) myItem, new Mapper<SNodeReference, SNode>() {
+        @Override
         public SNode value(SNodeReference key) {
           return key.resolve(MPSModuleRepository.getInstance());
         }
@@ -84,11 +86,13 @@ public class MPSPsiElement<T> extends FakePsiElement {
     ));
   }
 
+  @Override
   public PsiElement getParent() {
     if (!((myItem instanceof SNodeReference))) {
       return null;
     }
     return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
+      @Override
       public PsiElement compute() {
         SNodeReference pointer = (SNodeReference) myItem;
         SNode node = pointer.resolve(MPSModuleRepository.getInstance());

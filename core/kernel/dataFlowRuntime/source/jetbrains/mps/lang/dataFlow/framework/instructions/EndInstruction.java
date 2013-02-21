@@ -24,10 +24,12 @@ public class EndInstruction extends Instruction {
   private Set<RetInstruction> myReturns = new HashSet<RetInstruction>();
   private Set<TryFinallyInfo> myRootTryFinallies = new HashSet<TryFinallyInfo>();
 
+  @Override
   public String commandPresentation() {
     return "end";
   }
 
+  @Override
   public void buildCaches() {
     super.buildCaches();
     for (Instruction i : getProgram().getInstructions()) {
@@ -42,6 +44,7 @@ public class EndInstruction extends Instruction {
     }
   }
 
+  @Override
   public List<ProgramState> pred(ProgramState s) {
     List<ProgramState> result = new ArrayList<ProgramState>();
     if (s.isReturnMode()) {
@@ -59,6 +62,7 @@ public class EndInstruction extends Instruction {
     return result;
   }
 
+  @Override
   public List<ProgramState> succ(ProgramState s) {
     return new ArrayList<ProgramState>();
   }

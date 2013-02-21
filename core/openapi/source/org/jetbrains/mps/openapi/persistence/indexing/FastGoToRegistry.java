@@ -12,6 +12,7 @@ public class FastGoToRegistry implements CoreComponent {
     return INSTANCE;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -20,6 +21,7 @@ public class FastGoToRegistry implements CoreComponent {
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
   }

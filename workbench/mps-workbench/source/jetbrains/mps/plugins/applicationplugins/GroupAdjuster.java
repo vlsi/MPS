@@ -100,6 +100,7 @@ public class GroupAdjuster {
   public static void refreshCustomizations() {
     if (!IdeMain.getTestMode().equals(TestMode.NO_TEST)) return;
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         CustomActionsSchema schema = CustomActionsSchema.getInstance();
         schema.resetMainActionGroups();

@@ -73,23 +73,28 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     myHighlighter = highlighter;
   }
 
+  @Override
   public void projectOpened() {
   }
 
+  @Override
   public void projectClosed() {
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return getClass().getName();
   }
 
+  @Override
   public void initComponent() {
     myChecker = new BookmarksHighlighter(this);
     myHighlighter.addChecker(myChecker);
   }
 
+  @Override
   public void disposeComponent() {
     myHighlighter.removeChecker(myChecker);
     myChecker.dispose();
@@ -270,6 +275,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     }
   }
 
+  @Override
   public MyState getState() {
     MyState state = new MyState();
     for (int i = 0; i < myBookmarks.length; i++) {
@@ -292,6 +298,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     return state;
   }
 
+  @Override
   public void loadState(MyState state) {
     for (int i = 0; i < state.myBookmarkInfos.length; i++) {
       BookmarkInfo bookmarkInfo = state.myBookmarkInfos[i];

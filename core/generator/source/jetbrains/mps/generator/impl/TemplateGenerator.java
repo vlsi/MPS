@@ -377,6 +377,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return false;
   }
 
+  @Override
   public boolean isDirty(SNode node) {
     RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(node);
     if (builder != null && builder.isUnchanged()) {
@@ -702,10 +703,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myIsStrict ? myAreMappingsReady : true;
   }
 
+  @Override
   public GenerationSessionContext getGeneratorSessionContext() {
     return (GenerationSessionContext) getOperationContext();
   }
 
+  @Override
   public boolean isStrict() {
     return myIsStrict;
   }

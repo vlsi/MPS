@@ -57,6 +57,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   private Map<String, Library> myCustomBuiltInLibraries = new HashMap<String, Library>();
   private Set<Library> myLibs = createLibs();
 
+  @Override
   public void initComponent() {
     myCustomBuiltInLibraries = BuiltInLibrariesIO.readBuiltInLibraries();
     super.initComponent();
@@ -66,6 +67,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
   public void disposeComponent() {
   }
 
+  @Override
   public Set<Library> getUILibraries() {
     Set<Library> result = new HashSet<Library>(super.getUILibraries());
     result.addAll(myLibs);
@@ -77,6 +79,7 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     Set<Library> result = new HashSet<Library>();
     if (InternalFlag.isInternalMode()) {
       result.add(new Library("mps.workbench") {
+        @Override
         @NotNull
         public String getPath() {
           return WorkbenchPathManager.getWorkbenchPath();
@@ -88,11 +91,13 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
 
   //---------------------
 
+  @Override
   @Nls
   public String getDisplayName() {
     return "Global Libraries";
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return LibraryManager.class.getSimpleName();

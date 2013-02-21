@@ -36,10 +36,12 @@ public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
     super(project, id, number, icon, anchor, canCloseContent);
   }
 
+  @Override
   public void init(Project project) {
 
   }
 
+  @Override
   public void dispose() {
     getContentManager().removeAllContents(true);
   }
@@ -53,6 +55,7 @@ public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
   public <T extends JComponent> void addTab(final T tabComponent, @NotNull String title, Icon icon,
                                             final IComponentDisposer<T> tabDisposer) {
     IDisposableTab tab = new IDisposableTab() {
+      @Override
       public void disposeTab() {
         if (tabDisposer == null) {
           return;
@@ -60,6 +63,7 @@ public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
         tabDisposer.disposeComponent(tabComponent);
       }
 
+      @Override
       public JComponent getComponent() {
         return tabComponent;
       }

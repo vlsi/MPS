@@ -47,10 +47,12 @@ public class BookmarksTree extends MPSTree {
     myProject = project;
 
     myBookmarkManager.addBookmarkListener(new BookmarkListener() {
+      @Override
       public void bookmarkAdded(int number, SNode node) {
         rebuildBookmarksTree();
       }
 
+      @Override
       public void bookmarkRemoved(int number, SNode node) {
         rebuildBookmarksTree();
       }
@@ -59,16 +61,20 @@ public class BookmarksTree extends MPSTree {
 
   private void rebuildBookmarksTree() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         BookmarksTree.this.rebuildNow();
       }
     });
   }
 
+  @Override
   protected MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("no bookmarks") {
+      @Override
       public ActionGroup getActionGroup() {
         BaseAction hierarchyAction = new BaseAction("Remove All Bookmarks") {
+          @Override
           protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
             myBookmarkManager.clearBookmarks();
           }
@@ -150,16 +156,20 @@ public class BookmarksTree extends MPSTree {
       setNodeIdentifier("bookmark" + i);
     }
 
+    @Override
     public void removeBookmark() {
       myBookmarkManager.removeBookmark(myNumber);
     }
 
+    @Override
     public void navigateToBookmark() {
       myBookmarkManager.navigateToBookmark(myNumber);
     }
 
+    @Override
     public ActionGroup getActionGroup() {
       BaseAction action = new BaseAction("Remove Bookmark") {
+        @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           removeBookmark();
         }
@@ -177,6 +187,7 @@ public class BookmarksTree extends MPSTree {
       setNodeIdentifier("bookmark_" + node.getNodeId().toString());
     }
 
+    @Override
     public void removeBookmark() {
       myBookmarkManager.removeUnnumberedBookmark(myNodePointer);
     }
@@ -187,6 +198,7 @@ public class BookmarksTree extends MPSTree {
       setNodeIdentifier("bookmark_" +nodePointer.toString());
     }
 
+    @Override
     public void navigateToBookmark() {
       SNode targetNode = myNodePointer.resolve(MPSModuleRepository.getInstance());
       if (targetNode != null) {
@@ -194,8 +206,10 @@ public class BookmarksTree extends MPSTree {
       }
     }
 
+    @Override
     public ActionGroup getActionGroup() {
       BaseAction action = new BaseAction("Remove Bookmark") {
+        @Override
         protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
           removeBookmark();
         }
@@ -209,6 +223,7 @@ public class BookmarksTree extends MPSTree {
       super(node, role, operationContext);
     }
 
+    @Override
     public void doubleClick() {
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
@@ -220,10 +235,12 @@ public class BookmarksTree extends MPSTree {
       });
     }
 
+    @Override
     public ActionGroup getActionGroup() {
       return null;
     }
 
+    @Override
     protected SNodeTreeNode createChildTreeNode(SNode childNode, String role, IOperationContext operationContext) {
       return new MySNodeTreeNode(childNode, role, operationContext);
     }

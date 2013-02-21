@@ -40,10 +40,12 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo_TemplateBase {
     myTemplateTargetNode = templateReference.getTargetNode();
   }
 
+  @Override
   public SNode getInputTargetNode() {
     return myTemplateTargetNode;
   }
 
+  @Override
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
     // try to find for the same inputNode
     SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
@@ -83,14 +85,17 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo_TemplateBase {
     return null;
   }
 
+  @Override
   public SNode doResolve_Tricky(TemplateGenerator generator) {
     return null;
   }
 
+  @Override
   public String getResolveInfoForDynamicResolve() {
     return jetbrains.mps.util.SNodeOperations.getResolveInfo(myTemplateTargetNode);
   }
 
+  @Override
   public String getResolveInfoForNothing() {
     return jetbrains.mps.util.SNodeOperations.getResolveInfo(myTemplateTargetNode);
   }

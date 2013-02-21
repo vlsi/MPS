@@ -151,6 +151,7 @@ public class GenerationPartitioningUtil {
       list.add(new Pair(rule, text));
     }
     Collections.sort(list, new Comparator<Pair<MappingPriorityRule, String>>() {
+      @Override
       public int compare(Pair<MappingPriorityRule, String> o1, Pair<MappingPriorityRule, String> o2) {
         return o1.o2.compareTo(o2.o2);
       }

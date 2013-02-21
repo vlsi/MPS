@@ -33,6 +33,7 @@ public final class HyperlinkUtil {
     editorPane.setText("<a href=\"" + url + "\">" + url + "</a>");
     editorPane.setEditable(false);
     editorPane.addHyperlinkListener(new HyperlinkListener() {
+      @Override
       public void hyperlinkUpdate(HyperlinkEvent e) {
         if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
           BrowserUtil.launchBrowser(url);

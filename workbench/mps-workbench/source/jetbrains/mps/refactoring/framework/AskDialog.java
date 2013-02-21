@@ -63,10 +63,12 @@ public class AskDialog extends BaseDialog {
     }
   }
 
+  @Override
   public DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensions(200, 200, 800, 600);
   }
 
+  @Override
   protected JComponent getMainComponent() {
     return myInnerPanel;
   }

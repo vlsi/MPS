@@ -170,6 +170,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     nextStepToOriginalMap.put(outputRoot, originalRoot);
   }
 
+  @Override
   public void rootReplaced(SNode oldOutputRoot, SNode newOutputRoot) {
     if (nextStepToOriginalMap != null && nextStepToOriginalMap.containsKey(oldOutputRoot)) {
       SNode original = nextStepToOriginalMap.remove(oldOutputRoot);
@@ -202,6 +203,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     currentOutputModel = null;
   }
 
+  @Override
   public void setOutputModel(SModel model, int majorStep, int minorStep) {
     currentOutputModel = model;
     myMajorStep = majorStep;
@@ -209,6 +211,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     myCachedModel = null;
   }
 
+  @Override
   public SNode getOriginalForOutput(SNode outputNode) {
     if (nextStepToOriginalMap == null) {
       return null;

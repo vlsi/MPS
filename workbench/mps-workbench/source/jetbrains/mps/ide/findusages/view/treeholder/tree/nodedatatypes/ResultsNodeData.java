@@ -44,6 +44,7 @@ public class ResultsNodeData extends BaseNodeData {
     read(element, project);
   }
 
+  @Override
   public Object getIdObject() {
     return CATEGORY_NAME;
   }
@@ -57,6 +58,7 @@ public class ResultsNodeData extends BaseNodeData {
     }
   }
 
+  @Override
   public String getText(TextOptions options) {
     if (myNodeRepresentator == null) {
       return "<b>" + sizeRepresentation(options.mySubresultsCount) + " found" + "</b>";

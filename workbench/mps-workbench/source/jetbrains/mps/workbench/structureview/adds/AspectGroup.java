@@ -33,6 +33,7 @@ class AspectGroup implements Group {
     myTab = tab;
   }
 
+  @Override
   public ItemPresentation getPresentation() {
     return new TabPresentationAdapter(myTab);
   }
@@ -41,6 +42,7 @@ class AspectGroup implements Group {
     return myTab;
   }
 
+  @Override
   public Collection<TreeElement> getChildren() {
     return myChildren;
   }
@@ -52,14 +54,17 @@ class AspectGroup implements Group {
       myTab = tab;
     }
 
+    @Override
     public String getPresentableText() {
       return myTab.getTitle();
     }
 
+    @Override
     public String getLocationString() {
       return null;
     }
 
+    @Override
     public Icon getIcon(boolean open) {
       return myTab.getIcon();
     }

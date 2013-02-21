@@ -29,6 +29,7 @@ import java.util.*;
 public class ApplicationPluginManager extends BaseApplicationPluginManager implements ApplicationComponent, IRegistryManager {
   private static final Logger LOG = Logger.getLogger(ApplicationPluginManager.class);
 
+  @Override
   public void loadPlugins() {
     mySortedPlugins = createPlugins();
 
@@ -48,6 +49,7 @@ public class ApplicationPluginManager extends BaseApplicationPluginManager imple
     GroupAdjuster.refreshCustomizations();
   }
 
+  @Override
   protected List<BaseApplicationPlugin> createPlugins() {
     List<BaseApplicationPlugin> result = new ArrayList<BaseApplicationPlugin>();
 
@@ -60,6 +62,7 @@ public class ApplicationPluginManager extends BaseApplicationPluginManager imple
     return result;
   }
 
+  @Override
   public void disposePlugins() {
     Collections.reverse(mySortedPlugins);
     for (BaseApplicationPlugin plugin : mySortedPlugins) {
@@ -74,16 +77,19 @@ public class ApplicationPluginManager extends BaseApplicationPluginManager imple
 
   //----------------COMPONENT STUFF---------------------
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "ApplicationPluginManager";
   }
 
+  @Override
   public void initComponent() {
 
   }
 
+  @Override
   public void disposeComponent() {
 
   }

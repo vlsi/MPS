@@ -58,6 +58,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -67,6 +68,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     SModelRepository.getInstance().addModelRepositoryListener(mySmodelReloadListener);
   }
 
+  @Override
   public void dispose() {
     SModelRepository.getInstance().removeModelRepositoryListener(mySmodelReloadListener);
     INSTANCE = null;

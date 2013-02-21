@@ -84,6 +84,7 @@ public abstract class BaseStep extends StepAdapter {
         JLabel aLabel = new JLabel("<html><a href=\"\">Read&nbsp;more</a></html>");
         aLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         aLabel.addMouseListener(new MouseAdapter() {
+          @Override
           public void mouseClicked(MouseEvent e) {
             launchBrowserAction(url, "");
           }
@@ -139,6 +140,7 @@ public abstract class BaseStep extends StepAdapter {
     }
   }
 
+  @Override
   public final JComponent getComponent() {
     return myComponent;
   }
@@ -165,6 +167,7 @@ public abstract class BaseStep extends StepAdapter {
     return null;
   }
 
+  @Override
   @Nullable
   public Icon getIcon() {
     return null;

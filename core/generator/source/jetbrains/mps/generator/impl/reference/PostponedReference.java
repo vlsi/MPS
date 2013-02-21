@@ -42,11 +42,13 @@ public class PostponedReference extends SReference {
     myGenerator = generator;
   }
 
+  @Override
   @Deprecated
   public boolean isExternal() {
     return false;
   }
 
+  @Override
   @Nullable
   public synchronized SModelReference getTargetSModelReference() {
     if (myReferenceInfo != null) {
@@ -59,6 +61,7 @@ public class PostponedReference extends SReference {
     return null;
   }
 
+  @Override
   @Deprecated
   /**
    * Use method in SReferenceBase class, as when you change ref, you know what ref it is
@@ -68,10 +71,12 @@ public class PostponedReference extends SReference {
     throw new RuntimeException("not supported");
   }
 
+  @Override
   public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
     return SModelRepository.getInstance().getModelDescriptor(getTargetSModelReference());
   }
 
+  @Override
   protected SNode getTargetNode_internal() {
     SReference ref = getReplacementReference();
     if (ref == null) return null;

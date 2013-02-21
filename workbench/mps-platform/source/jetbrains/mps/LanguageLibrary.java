@@ -26,6 +26,7 @@ public class LanguageLibrary extends AbstractExtensionPointBean {
   @Attribute("dir")
   public String dir;
 
+  @Override
   public PluginDescriptor getPluginDescriptor() {
     return myPluginDescriptor;
   }

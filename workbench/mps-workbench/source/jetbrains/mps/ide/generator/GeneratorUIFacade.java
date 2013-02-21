@@ -127,6 +127,7 @@ public class GeneratorUIFacade {
       try {
         final Set<SModel> requirements = new LinkedHashSet<SModel>();
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             for (SModel inputModel : inputModels) {
               requirements.addAll(getModelsToGenerateBeforeGeneration(inputModel, project));
@@ -170,6 +171,7 @@ public class GeneratorUIFacade {
     }
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         SModelRepository.getInstance().saveAll();
       }
@@ -181,6 +183,7 @@ public class GeneratorUIFacade {
     final boolean[] result = new boolean[]{false};
 
     ModelAccess.instance().runWriteActionWithProgressSynchronously(new RunnableWithProgress() {
+      @Override
       public void run(@NotNull ProgressMonitor monitor) {
         if (!saveTransientModels) {
           IGenerationTracer component = ideaProject.getComponent(IGenerationTracer.class);

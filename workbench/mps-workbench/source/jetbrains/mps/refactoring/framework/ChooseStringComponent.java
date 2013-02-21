@@ -36,6 +36,7 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
     // initComponent();
   }
 
+  @Override
   public void initComponent() {
     myTextField = new JTextField();
     GridBagLayout gridBagLayout = new GridBagLayout();
@@ -60,10 +61,12 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
     add(myTextField);
   }
 
+  @Override
   public void setCaption(String caption) {
     myCaption = caption;
   }
 
+  @Override
   public JComponent getComponentToFocus() {
     return myTextField;
   }
@@ -73,6 +76,7 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
     myCondition = condition;
   }
 
+  @Override
   public String submit() throws InvalidInputValueException {
     String input = myTextField.getText();
     if (myCondition.met(input)) {
@@ -82,22 +86,27 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
     }
   }
 
+  @Override
   public String getPropertyName() {
     return myPropertyName;
   }
 
+  @Override
   public void setPropertyName(String propertyName) {
     myPropertyName = propertyName;
   }
 
+  @Override
   public void setInitialValue(String initialValue) {
     myTextField.setText(initialValue);
   }
 
+  @Override
   public void setCondition(Condition<String> condition) {
     myCondition = condition;
   }
 
+  @Override
   public JComponent getMainComponent() {
     return this;
   }

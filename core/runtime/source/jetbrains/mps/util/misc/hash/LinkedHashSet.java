@@ -45,10 +45,12 @@ public class LinkedHashSet<E> extends AbstractSet<E> implements Set<E> {
     init(capacity);
   }
 
+  @Override
   public int size() {
     return size;
   }
 
+  @Override
   public boolean contains(final Object key) {
     if (key == null) {
       return holdsNull;
@@ -68,6 +70,7 @@ public class LinkedHashSet<E> extends AbstractSet<E> implements Set<E> {
     return false;
   }
 
+  @Override
   public boolean add(E key) {
     if (key == null) {
       final boolean wasHoldingNull = holdsNull;
@@ -108,6 +111,7 @@ public class LinkedHashSet<E> extends AbstractSet<E> implements Set<E> {
     return true;
   }
 
+  @Override
   public boolean remove(Object key) {
     if (key == null) {
       final boolean wasHoldingNull = holdsNull;
@@ -144,8 +148,10 @@ public class LinkedHashSet<E> extends AbstractSet<E> implements Set<E> {
     return true;
   }
 
+  @Override
   public Iterator<E> iterator() {
     return new LinkedHashIterator<E>() {
+      @Override
       public E next() {
         return nextEntry().key;
       }
@@ -235,10 +241,12 @@ public class LinkedHashSet<E> extends AbstractSet<E> implements Set<E> {
       }
     }
 
+    @Override
     public boolean hasNext() {
       return e != null;
     }
 
+    @Override
     public void remove() {
       if (last == null) {
         throw new IllegalStateException();

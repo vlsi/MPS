@@ -634,6 +634,7 @@ class GenerationSession {
   public ILoggingHandler getLoggingHandler() {
     if (myLoggingHandler == null) {
       myLoggingHandler = new LoggingHandlerAdapter() {
+        @Override
         public void addLogEntry(LogEntry e) {
           if (mySessionContext == null) return;
           Object o = e.getHintObject();

@@ -72,6 +72,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
     myOutputModelRefToRoots.put((SModelReference) outputModel.getReference(), roots);
 
     Condition<SNode> cond = new Condition<SNode>() {
+      @Override
       public boolean met(SNode node) {
         return node.getName() != null;
       }

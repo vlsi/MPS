@@ -118,6 +118,7 @@ public class IdeaFileSystemProvider implements FileSystemProvider {
   @Override
   public boolean runWriteTransaction(final Runnable r) {
     return ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().requireWrite(r);
       }

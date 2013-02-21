@@ -61,6 +61,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myOperationContext;
   }
 
+  @Override
   public IScope getScope() {
     if (myOperationContext != null) {
       return myOperationContext.getScope();
@@ -68,6 +69,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return null;
   }
 
+  @Override
   public ProgressMonitor getProgressMonitor() {
     return myProgressMonitor;
   }
@@ -88,10 +90,12 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     }
   }
 
+  @Override
   public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
     showErrorMessage(inputNode, templateNode, null, message);
   }
 
+  @Override
   public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
     if (ruleNode != null && !myFailedRules.add(ruleNode)) {
       // do not show duplicating messages
@@ -104,10 +108,12 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       GeneratorUtil.describeIfExists(templateNode, "template"));
   }
 
+  @Override
   public IGeneratorLogger getLogger() {
     return myLogger;
   }
 
+  @Override
   public SModel getInputModel() {
     return myInputModel;
   }
@@ -115,10 +121,12 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   /**
    * @deprecated
    */
+  @Override
   public SModel getSourceModel() {
     return myInputModel;
   }
 
+  @Override
   public SModel getOutputModel() {
     return myOutputModel;
   }
@@ -126,6 +134,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   /**
    * @deprecated
    */
+  @Override
   public SModel getTargetModel() {
     return myOutputModel;
   }
@@ -134,6 +143,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myMappings;
   }
 
+  @Override
   public void registerMappingLabel(SNode inputNode, String mappingName, SNode outputNode) {
     myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
   }

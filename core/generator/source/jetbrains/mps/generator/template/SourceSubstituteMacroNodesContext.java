@@ -40,6 +40,7 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithM
     myRulePointer = ruleNode;
   }
 
+  @Override
   public SNode getRuleNodeForLogging() {
     return myRule != null ? myRule :
       myRulePointer != null ? myRulePointer.resolve(MPSModuleRepository.getInstance()) : null;

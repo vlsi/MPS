@@ -123,14 +123,17 @@ public class DeleteModelHelper {
   }
 
   private static class SafeDeleteModel_Target implements IRefactoringTarget {
+    @Override
     public IRefactoringTarget.TargetType getTarget() {
       return TargetType.MODEL;
     }
 
+    @Override
     public boolean allowMultipleTargets() {
       return false;
     }
 
+    @Override
     public boolean isApplicable(final Object entity) {
       return true;
     }

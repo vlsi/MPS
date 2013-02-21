@@ -77,6 +77,7 @@ public class IntLinkedHashMap<V> extends AbstractHashMap<Integer, V> implements 
     return null;
   }
 
+  @Override
   public V put(final Integer key, final V value) {
     return put(key.intValue(), value);
   }
@@ -110,6 +111,7 @@ public class IntLinkedHashMap<V> extends AbstractHashMap<Integer, V> implements 
     return e.value;
   }
 
+  @Override
   public V remove(Object key) {
     return remove(((Integer) key).intValue());
   }
@@ -119,10 +121,12 @@ public class IntLinkedHashMap<V> extends AbstractHashMap<Integer, V> implements 
     return false;
   }
 
+  @Override
   protected Map.Entry<Integer, V> getEntry(Object key) {
     return getEntry(((Integer) key).intValue());
   }
 
+  @Override
   protected void init(int capacity) {
     if (capacity < HashUtil.MIN_CAPACITY) {
       capacity = HashUtil.MIN_CAPACITY;
@@ -133,6 +137,7 @@ public class IntLinkedHashMap<V> extends AbstractHashMap<Integer, V> implements 
     size = 0;
   }
 
+  @Override
   protected HashMapIterator hashIterator() {
     return new HashIterator();
   }
@@ -220,14 +225,17 @@ public class IntLinkedHashMap<V> extends AbstractHashMap<Integer, V> implements 
       this.value = value;
     }
 
+    @Override
     public Integer getKey() {
       return key;
     }
 
+    @Override
     public V getValue() {
       return value;
     }
 
+    @Override
     public V setValue(final V value) {
       final V result = this.value;
       this.value = value;
@@ -240,10 +248,12 @@ public class IntLinkedHashMap<V> extends AbstractHashMap<Integer, V> implements 
     private Entry<V> e = top;
     private Entry<V> last;
 
+    @Override
     public boolean hasNext() {
       return e != null;
     }
 
+    @Override
     public void remove() {
       if (last == null) {
         throw new IllegalStateException();
@@ -252,6 +262,7 @@ public class IntLinkedHashMap<V> extends AbstractHashMap<Integer, V> implements 
       last = null;
     }
 
+    @Override
     protected Entry<V> nextEntry() {
       final Entry<V> result = last = e;
       e = result.next;

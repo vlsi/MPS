@@ -40,14 +40,17 @@ public class PackageNode extends SNodeGroupTreeNode {
     }
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_PACKAGE_ACTIONS);
   }
 
+  @Override
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return new CreateRootNodeGroup(plain);
   }
 
+  @Override
   public IOperationContext getOperationContext() {
     return myModelNode.getOperationContext();
   }

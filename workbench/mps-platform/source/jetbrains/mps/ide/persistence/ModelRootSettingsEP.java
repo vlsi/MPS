@@ -36,11 +36,13 @@ public class ModelRootSettingsEP extends AbstractExtensionPointBean implements K
   }
 
   private final LazyInstance<ModelRootSettingsEditorProvider> myProvider = new LazyInstance<ModelRootSettingsEditorProvider>() {
+    @Override
     protected Class<ModelRootSettingsEditorProvider> getInstanceClass() throws ClassNotFoundException {
       return findClass(className);
     }
   };
 
+  @Override
   public ModelRootSettingsEditorProvider getInstance() {
     return myProvider.getValue();
   }

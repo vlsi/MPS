@@ -33,15 +33,18 @@ import org.jetbrains.mps.openapi.module.SModule;
  */
 public class NavigationSupportImpl extends NavigationSupport implements ApplicationComponent {
 
+  @Override
   @NotNull
   public String getComponentName() {
     return "Navigation Support";
   }
 
+  @Override
   public void initComponent() {
     init();
   }
 
+  @Override
   public void disposeComponent() {
     dispose();
   }

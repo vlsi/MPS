@@ -26,11 +26,13 @@ public class ConceptMatchingPattern implements IMatchingPattern {
     myConceptFQName = conceptFQName;
   }
 
+  @Override
   public boolean match(SNode nodeToMatch) {
     if (nodeToMatch == null) return false;
     return SNodeUtil.isInstanceOf(nodeToMatch, SNodeOperations.getConcept(myConceptFQName));
   }
 
+  @Override
   public String getConceptFQName() {
     return myConceptFQName;
   }

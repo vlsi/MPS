@@ -34,20 +34,24 @@ public class StringHolder implements IHolder<String> {
     myString = string;
   }
 
+  @Override
   public String getObject() {
     return myString;
   }
 
+  @Override
   @NotNull
   public String getCaption() {
     return myString;
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     myString = element.getAttributeValue(VALUE);
     if (myString == null) throw new CantLoadSomethingException("string value is not present");
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     element.setAttribute(VALUE, myString);
   }

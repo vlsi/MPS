@@ -31,36 +31,43 @@ import javax.swing.Icon;
 public class ClassFileType implements FileType {
   public static final Icon CLASS_ICON = Nodes.Class;
 
+  @Override
   @NotNull
   @NonNls
   public String getName() {
     return "Class";
   }
 
+  @Override
   @NotNull
   public String getDescription() {
     return "Java Class File";
   }
 
+  @Override
   @NotNull
   @NonNls
   public String getDefaultExtension() {
     return MPSExtentions.CLASSFILE;
   }
 
+  @Override
   @Nullable
   public Icon getIcon() {
     return CLASS_ICON;
   }
 
+  @Override
   public boolean isBinary() {
     return true;
   }
 
+  @Override
   public boolean isReadOnly() {
     return true;
   }
 
+  @Override
   @Nullable
   @NonNls
   public String getCharset(@NotNull VirtualFile file, final byte[] content) {

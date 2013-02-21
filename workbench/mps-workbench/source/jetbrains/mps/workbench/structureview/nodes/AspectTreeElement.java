@@ -45,6 +45,7 @@ public class AspectTreeElement extends NodeTreeElement {
     return myIsBijectional;
   }
 
+  @Override
   public TreeElement[] getChildren() {
     return new TreeElement[0];
   }
@@ -53,6 +54,7 @@ public class AspectTreeElement extends NodeTreeElement {
   public ItemPresentation getPresentation() {
     //todo use SNodeReference here, get rid of read action
     return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
+      @Override
       public ItemPresentation compute() {
         return new NodeTreeElementPresentation() {
           @Override

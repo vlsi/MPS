@@ -25,6 +25,7 @@ public class BaseOrder implements Comparator<RelationDescriptor> {
     myOrderedIds = orderedIds;
   }
 
+  @Override
   public int compare(RelationDescriptor d1, RelationDescriptor d2) {
     String id1 = d1.getTitle();
     String id2 = d2.getTitle();

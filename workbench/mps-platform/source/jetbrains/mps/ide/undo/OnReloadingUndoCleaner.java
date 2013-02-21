@@ -41,11 +41,13 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
     myProjectManager = projectManager;
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return "Undo Cleaner";
   }
 
+  @Override
   public void initComponent() {
 
     SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
@@ -60,6 +62,7 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
             assert file.hasValidMPSNode() : "invalid file returned by MPS VFS for following model root: " + root;
             for (final Project p : myProjectManager.getOpenProjects()) {
               ApplicationManager.getApplication().invokeLater(new Runnable() {
+                @Override
                 public void run() {
                   if (!p.isDisposed() && file.isValid()) {
                     ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
@@ -73,6 +76,7 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
     });
   }
 
+  @Override
   public void disposeComponent() {
   }
 }

@@ -126,6 +126,7 @@ public class ShowImplementationComponent extends JPanel {
     }
     if (mySelectedIndex == index) return;
     ModelAccess.instance().runCommandInEDT(new Runnable() {
+      @Override
       public void run() {
         myLocationLabel.setText(myModuleLabels.get(index));
         myLocationLabel.setIcon(myModuleIcons.get(index));

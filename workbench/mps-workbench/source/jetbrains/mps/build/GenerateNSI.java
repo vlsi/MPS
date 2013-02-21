@@ -49,6 +49,7 @@ public class GenerateNSI {
   }
 
   private static class FileComparator implements Comparator<File> {
+    @Override
     public int compare(File file1, File file2) {
       return file1.getAbsolutePath().compareTo(file2.getAbsolutePath());
     }

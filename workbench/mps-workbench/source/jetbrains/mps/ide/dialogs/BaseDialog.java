@@ -72,6 +72,7 @@ public abstract class BaseDialog extends JDialog {
     }
   }
 
+  @Override
   public void dispose() {
     Disposer.dispose(myDisposableParent);
     super.dispose();
@@ -84,6 +85,7 @@ public abstract class BaseDialog extends JDialog {
     setLocationRelativeTo(mainFrame);
 
     this.addWindowListener(new WindowAdapter() {
+      @Override
       public void windowClosed(WindowEvent e) {
         saveMyDimensionSettings();
       }
@@ -205,6 +207,7 @@ public abstract class BaseDialog extends JDialog {
     add(panel1, BorderLayout.CENTER);
 
     ((JComponent) getContentPane()).registerKeyboardAction(new AbstractAction("Dispose dialog") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         dispose();
       }
@@ -267,6 +270,7 @@ public abstract class BaseDialog extends JDialog {
           }
         }
 
+        @Override
         public void actionPerformed(ActionEvent e) {
           try {
             m.setAccessible(true);
@@ -332,6 +336,7 @@ public abstract class BaseDialog extends JDialog {
   }
 
   private class MyDisposable implements Disposable {
+    @Override
     public void dispose() {
 
     }

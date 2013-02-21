@@ -59,6 +59,7 @@ public class OutputViewTool extends BaseProjectTool {
         putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("control F"));
       }
 
+      @Override
       public void actionPerformed(ActionEvent e) {
         String pattern = JOptionPane.showInputDialog(WindowManager.getInstance().getFrame(getProject()), "Enter pattern to find", myLastSearchPattern);
         if (pattern == null) return;
@@ -70,6 +71,7 @@ public class OutputViewTool extends BaseProjectTool {
         putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("F3"));
       }
 
+      @Override
       public void actionPerformed(ActionEvent e) {
         if (myLastSearchPattern != null) {
           find(myLastSearchPattern);
@@ -82,10 +84,12 @@ public class OutputViewTool extends BaseProjectTool {
     updateComponent();
 
     myTextArea.addMouseListener(new MouseAdapter() {
+      @Override
       public void mouseReleased(MouseEvent e) {
         processMouseEvent(e);
       }
 
+      @Override
       public void mousePressed(MouseEvent e) {
         processMouseEvent(e);
       }
@@ -94,6 +98,7 @@ public class OutputViewTool extends BaseProjectTool {
         if (e.isPopupTrigger()) {
           JPopupMenu menu = new JPopupMenu();
           menu.add(new AbstractAction("Clear", Actions.GC) {
+            @Override
             public void actionPerformed(ActionEvent event) {
               clear();
             }
@@ -115,6 +120,7 @@ public class OutputViewTool extends BaseProjectTool {
     myComponent.add(panel, BorderLayout.CENTER);
 
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         DefaultActionGroup group = ActionUtils.groupFromActions(createCloseAction());
         JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
@@ -154,12 +160,14 @@ public class OutputViewTool extends BaseProjectTool {
 
   public void clear() {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      @Override
       public void run() {
         myTextArea.setText("");
       }
     });
   }
 
+  @Override
   public JComponent getComponent() {
     return myComponent;
   }

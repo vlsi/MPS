@@ -102,6 +102,7 @@ public abstract class BaseTool {
    */
   public void openToolLater(final boolean setActive) {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         openTool(setActive);
       }
@@ -120,6 +121,7 @@ public abstract class BaseTool {
    */
   public void closeLater() {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         close();
       }
@@ -150,6 +152,7 @@ public abstract class BaseTool {
    */
   public void makeAvailableLater() {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         makeAvailable();
       }
@@ -165,6 +168,7 @@ public abstract class BaseTool {
    */
   public void makeUnavailableLater() {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         makeUnavailable();
       }
@@ -192,6 +196,7 @@ public abstract class BaseTool {
 
   public void registerLater() {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         register();
       }
@@ -262,6 +267,7 @@ public abstract class BaseTool {
 
   public void unregisterLater() {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         unregister();
       }

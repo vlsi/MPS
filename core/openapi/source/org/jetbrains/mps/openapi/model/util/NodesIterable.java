@@ -27,6 +27,7 @@ public class NodesIterable implements Iterable<SNode> {
     mySModel = sModel;
   }
 
+  @Override
   public Iterator<SNode> iterator() {
     return new NodesIterator(mySModel.getRootNodes().iterator());
   }

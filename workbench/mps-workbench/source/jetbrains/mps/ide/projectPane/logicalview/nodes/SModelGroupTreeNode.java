@@ -25,20 +25,24 @@ public class SModelGroupTreeNode extends NamespaceTextNode implements Stereotype
     super("util models", context);
   }
 
+  @Override
   public String getNamespace() {
     if (getParent() == null || !(getParent() instanceof ProjectLanguageTreeNode)) return "";
     ProjectLanguageTreeNode parent = (ProjectLanguageTreeNode) getParent();
     return parent.getModule().getModuleName();
   }
 
+  @Override
   public boolean isFinalName() {
     return true;
   }
 
+  @Override
   public String getStereotype() {
     return SModelStereotype.NONE;
   }
 
+  @Override
   public boolean isStrict() {
     return false;
   }

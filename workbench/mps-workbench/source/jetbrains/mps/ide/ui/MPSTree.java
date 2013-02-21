@@ -115,6 +115,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       }
 
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           node.init();
         }
@@ -179,6 +180,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     //workaround for context acquiers
     focusManager.doWhenFocusSettlesDown(new Runnable() {
+      @Override
       public void run() {
         TreePath path = getClosestPathForLocation(e.getX(), e.getY());
         if (path == null) return;
@@ -220,6 +222,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     myAutoOpen = autoOpen;
   }
 
+  @Override
   public String getToolTipText(MouseEvent event) {
     TreePath path = getPathForLocation(event.getX(), event.getY());
     if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
@@ -235,6 +238,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   protected JPopupMenu createPopupMenu(final MPSTreeNode node) {
     return ModelAccess.instance().runReadAction(new Computable<JPopupMenu>() {
+      @Override
       public JPopupMenu compute() {
         ActionManager manager = ActionManager.getInstance();
         ActionGroup actionGroup = node.getActionGroup();
@@ -354,12 +358,14 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     myLoadingDisabled = true;
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           final List<String> expansion = getExpandedPaths();
           final List<String> selection = getSelectedPaths();
           rebuildAction.run();
           if (saveExpansion) {
             runWithoutExpansion(new Runnable() {
+              @Override
               public void run() {
                 expandPaths(expansion);
                 selectPaths(selection);
@@ -376,6 +382,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
   public void rebuildTreeLater(final Runnable rebuildAction, final boolean saveExpansion) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         runRebuildAction(rebuildAction, saveExpansion);
       }
@@ -387,6 +394,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       @Override
       public void run() {
         ModelAccess.instance().runReadInEDT(new Runnable() {
+          @Override
           public void run() {
             if (MPSTree.this.isDisposed()) return;
             rebuildNow();
@@ -403,6 +411,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     assert !isDisposed():"Trying to reconstruct disposed tree. Try finding \"later\" in stacktrace";
 
     runRebuildAction(new Runnable() {
+      @Override
       public void run() {
         setAnchorSelectionPath(null);
         setLeadSelectionPath(null);
@@ -583,6 +592,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     expandPaths(state.myExpansion);
   }
 
+  @Override
   public int getToggleClickCount() {
     TreePath selection = getSelectionPath();
     if (selection == null) return -1;
@@ -597,6 +607,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     return myDisposed;
   }
 
+  @Override
   public void dispose() {
     assert !myDisposed;
 
@@ -630,6 +641,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   private class MyTreeWillExpandListener implements TreeWillExpandListener {
+    @Override
     public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
       TreePath path = event.getPath();
       Object node = path.getLastPathComponent();
@@ -639,11 +651,13 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       }
     }
 
+    @Override
     public void treeWillCollapse(TreeExpansionEvent event) throws ExpandVetoException {
     }
   }
 
   private class MyTreeExpansionListener implements TreeExpansionListener {
+    @Override
     public void treeExpanded(TreeExpansionEvent event) {
       if (!myAutoExpandEnabled) return;
 
@@ -664,11 +678,13 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       }
     }
 
+    @Override
     public void treeCollapsed(TreeExpansionEvent event) {
     }
   }
 
   private class MyMouseAdapter extends MouseAdapter {
+    @Override
     public void mousePressed(MouseEvent e) {
       //this is a workaround for handling context menu button
       if (e.getButton() == 0) {
@@ -683,21 +699,25 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       }
     }
 
+    @Override
     public void mouseReleased(MouseEvent e) {
       myMouseReleased(e);
     }
 
+    @Override
     public void mouseEntered(MouseEvent e) {
       myTooltipManagerRecentInitialDelay = ToolTipManager.sharedInstance().getInitialDelay();
       ToolTipManager.sharedInstance().setInitialDelay(10);
     }
 
+    @Override
     public void mouseExited(MouseEvent e) {
       ToolTipManager.sharedInstance().setInitialDelay(myTooltipManagerRecentInitialDelay);
     }
   }
 
   private class MyOpenNodeAction extends AbstractAction {
+    @Override
     public void actionPerformed(ActionEvent e) {
       TreePath selPath = getSelectionPath();
       if (selPath == null) return;
@@ -707,6 +727,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   private class MyRefreshAction extends AbstractAction {
+    @Override
     public void actionPerformed(ActionEvent e) {
       long start = System.currentTimeMillis();
       rebuildNow();

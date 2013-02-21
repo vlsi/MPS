@@ -22,6 +22,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class MPSRoundButtonUI extends BasicButtonUI {
+  @Override
   public void paint(Graphics g, JComponent c) {
 
     JButton b = (JButton) c;

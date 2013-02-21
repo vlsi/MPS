@@ -31,6 +31,7 @@ public class CompositeItemProvider implements ChooseByNameItemProvider {
     myProviders = providers;
   }
 
+  @Override
   public List<String> filterNames(ChooseByNameBase base, String[] names, String pattern) {
     List<String> res = new ArrayList<String>();
     for (ChooseByNameItemProvider matcher : myProviders) {
@@ -39,6 +40,7 @@ public class CompositeItemProvider implements ChooseByNameItemProvider {
     return res;
   }
 
+  @Override
   public boolean filterElements(@NotNull ChooseByNameBase base, @NotNull String pattern, boolean everywhere, @NotNull ProgressIndicator cancelled, @NotNull Processor<Object> consumer) {
     boolean result = true;
     for (ChooseByNameItemProvider matcher : myProviders) {

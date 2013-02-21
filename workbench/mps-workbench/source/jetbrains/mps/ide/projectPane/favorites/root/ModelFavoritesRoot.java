@@ -30,17 +30,20 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
     super(value);
   }
 
+  @Override
   public MPSTreeNode getTreeNode(IOperationContext context) {
     SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(getValue());
     if (md == null) return null;
     return new SModelTreeNode(md, null, new ModuleContext(md.getModule(), context.getProject()));
   }
 
+  @Override
   public List<SNode> getAvaliableNodes() {
     List<SNode> result = new ArrayList<SNode>();
     final SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(getValue());
     if (md == null) return result;
     SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+      @Override
       public SModel compute() {
         return md.getSModel();
       }

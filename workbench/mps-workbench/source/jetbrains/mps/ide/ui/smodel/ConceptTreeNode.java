@@ -44,6 +44,7 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
     }
   }
 
+  @Override
   public SNode getSNode() {
     return myNode;
   }
@@ -52,22 +53,27 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
     return ((jetbrains.mps.smodel.SNode) myNode).getConceptDeclarationNode();
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   protected void doInit() {
     super.doInit();
     myInitialized = true;
   }
 
+  @Override
   protected void doUpdate() {
     super.doUpdate();
     myInitialized = false;
   }
 
+  @Override
   public void doubleClick() {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         SNode concept = getSNode();
         if (concept == null || jetbrains.mps.util.SNodeOperations.isDisposed(concept) || concept.getModel() == null || concept.getModel().getModelDescriptor() == null) {

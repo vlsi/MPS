@@ -122,6 +122,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
 
     myContextModules.add(context.getModule());
     Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.getRootNodes(), new Condition<SNode>() {
+      @Override
       public boolean met(SNode node) {
         return node.getName() != null;
       }

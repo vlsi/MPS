@@ -52,10 +52,12 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     myKeepModelsWithWarnings = logger.myKeepModelsWithWarnings;
   }
 
+  @Override
   public boolean needsInfo() {
     return myHandleInfo;
   }
 
+  @Override
   public boolean needsWarnings() {
     return myHandleWarnings;
   }
@@ -64,6 +66,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     myOperationContext = operationContext;
   }
 
+  @Override
   public void info(SNode node, String message) {
     if (!myHandleInfo) {
       return;
@@ -71,6 +74,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.INFORMATION, message, node);
   }
 
+  @Override
   public void info(String message) {
     if (!myHandleInfo) {
       return;
@@ -78,6 +82,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.INFORMATION, message, (SNode) null);
   }
 
+  @Override
   public void warning(String message) {
     if (!myHandleWarnings) {
       return;
@@ -86,6 +91,7 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.WARNING, message, (SNode) null);
   }
 
+  @Override
   public void warning(SNode node, String message, ProblemDescription... descriptions) {
     if (!myHandleWarnings) {
       return;
@@ -105,11 +111,13 @@ public class GenerationSessionLogger implements IGeneratorLogger {
     report(MessageKind.ERROR, message, moduleReference);
   }
 
+  @Override
   public void error(String message) {
     myErrorsCount++;
     report(MessageKind.ERROR, message, (SNode) null);
   }
 
+  @Override
   public void handleException(Throwable t) {
     String text = t.getMessage();
     if(text == null) {

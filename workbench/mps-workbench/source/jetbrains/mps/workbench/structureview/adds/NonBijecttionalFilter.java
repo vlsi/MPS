@@ -24,21 +24,25 @@ import jetbrains.mps.workbench.structureview.nodes.AspectTreeElement;
 import org.jetbrains.annotations.NotNull;
 
 public class NonBijecttionalFilter implements Filter {
+  @Override
   public boolean isVisible(TreeElement element) {
     if (!(element instanceof AspectTreeElement)) return true;
     AspectTreeElement ate = (AspectTreeElement) element;
     return ate.isBijectional();
   }
 
+  @Override
   public boolean isReverted() {
     return true;
   }
 
+  @Override
   @NotNull
   public ActionPresentation getPresentation() {
     return new ActionPresentationData("Show Indirect","", Icons.OUTPUT);
   }
 
+  @Override
   @NotNull
   public String getName() {
     return NonBijecttionalFilter.class.getSimpleName();

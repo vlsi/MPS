@@ -32,6 +32,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
     super(value);
   }
 
+  @Override
   public MPSTreeNode getTreeNode(IOperationContext context) {
     IModule module = MPSModuleRepository.getInstance().getModule(getValue());
     if (module == null) return null;
@@ -41,12 +42,14 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
     return moduleTreeNode;
   }
 
+  @Override
   public List<SNode> getAvaliableNodes() {
     List<SNode> result = new ArrayList<SNode>();
     IModule module = MPSModuleRepository.getInstance().getModule(getValue());
     if (module == null) return result;
     for (final SModelDescriptor md : module.getOwnModelDescriptors()) {
       SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+        @Override
         public SModel compute() {
           return md.getSModel();
         }

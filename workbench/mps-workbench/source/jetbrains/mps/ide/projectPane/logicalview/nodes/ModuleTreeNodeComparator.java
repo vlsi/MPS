@@ -44,6 +44,7 @@ public class ModuleTreeNodeComparator implements Comparator<MPSTreeNode> {
     return null;
   }
 
+  @Override
   public int compare(MPSTreeNode o1, MPSTreeNode o2) {
     SModule module1 = getModule(o1);
     SModule module2 = getModule(o2);

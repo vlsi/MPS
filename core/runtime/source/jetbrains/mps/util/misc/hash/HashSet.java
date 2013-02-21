@@ -42,6 +42,7 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E> {
     init(capacity);
   }
 
+  @Override
   public boolean contains(Object key) {
     if (key == null) {
       return holdsNull;
@@ -61,6 +62,7 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E> {
     return false;
   }
 
+  @Override
   public boolean add(E key) {
     if (key == null) {
       final boolean wasHoldingNull = holdsNull;
@@ -93,6 +95,7 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E> {
     return true;
   }
 
+  @Override
   public boolean remove(Object key) {
     if (key == null) {
       final boolean wasHoldingNull = holdsNull;
@@ -128,14 +131,17 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E> {
     return true;
   }
 
+  @Override
   public Iterator<E> iterator() {
     return new HashSetIterator<E>() {
+      @Override
       public E next() {
         return nextEntry().key;
       }
     };
   }
 
+  @Override
   public int size() {
     return size;
   }
@@ -161,6 +167,7 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E> {
     this.capacity = capacity;
     if (length != table.length) {
       final Iterator<Entry<E>> entries = new HashSetIterator<Entry<E>>() {
+        @Override
         public Entry<E> next() {
           return nextEntry();
         }
@@ -207,10 +214,12 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E> {
       initNextEntry();
     }
 
+    @Override
     public boolean hasNext() {
       return e != null;
     }
 
+    @Override
     public void remove() {
       if (last == null) {
         throw new IllegalStateException();

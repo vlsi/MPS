@@ -39,10 +39,12 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
     mySelectRoot = selectRoot;
   }
 
+  @Override
   public boolean canSelect(SelectInContext context) {
     return getNode(context) != null || getModel(context)!=null || getModule(context)!=null;
   }
 
+  @Override
   protected void doSelectIn(SelectInContext context, boolean requestFocus) {
     if (getNode(context) != null) {
       ProjectPane.getInstance(myProject).selectNode(getNode(context), requestFocus);

@@ -57,6 +57,7 @@ public class TransientModelsModule extends ClassLoadingModule {
     setModuleReference(reference);
   }
 
+  @Override
   public Class getClass(String fqName) {
     // todo: TransientModelsModule? seriously?
     if (!(myOriginalModule instanceof IClassLoadingModule)) {
@@ -190,15 +191,18 @@ public class TransientModelsModule extends ClassLoadingModule {
     return getModuleFqName();
   }
 
+  @Override
   public List<SModelDescriptor> getOwnModelDescriptors() {
     return new ArrayList<SModelDescriptor>(myModels.values());
   }
 
+  @Override
   protected ModuleScope createScope() {
     return new TransientModuleScope();
   }
 
   public class TransientModuleScope extends ModuleScope {
+    @Override
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(TransientModelsModule.this);
@@ -206,6 +210,7 @@ public class TransientModelsModule extends ClassLoadingModule {
       return result;
     }
 
+    @Override
     protected Set<Language> getInitialUsedLanguages() {
       return new HashSet<Language>(new GlobalModuleDependenciesManager(myOriginalModule).getUsedLanguages());
     }
@@ -220,6 +225,7 @@ public class TransientModelsModule extends ClassLoadingModule {
       myLongName = longName;
     }
 
+    @Override
     protected SModel createModel() {
       if (wasUnloaded) {
         LOG.debug("Re-loading " + getSModelReference());
@@ -265,6 +271,7 @@ public class TransientModelsModule extends ClassLoadingModule {
       return TransientModelsModule.this;
     }
 
+    @Override
     public boolean isReadOnly() {
       return true;
     }

@@ -65,6 +65,7 @@ public class IntHashMap<V> extends AbstractHashMap<Integer, V> implements Map<In
     return null;
   }
 
+  @Override
   public V put(final Integer key, final V value) {
     return put(key.intValue(), value);
   }
@@ -97,14 +98,17 @@ public class IntHashMap<V> extends AbstractHashMap<Integer, V> implements Map<In
     return e.value;
   }
 
+  @Override
   public V remove(Object key) {
     return remove(((Integer) key).intValue());
   }
 
+  @Override
   protected Map.Entry<Integer, V> getEntry(final Object key) {
     return getEntry(((Integer) key).intValue());
   }
 
+  @Override
   protected void init(int capacity) {
     if (capacity < HashUtil.MIN_CAPACITY) {
       capacity = HashUtil.MIN_CAPACITY;
@@ -114,6 +118,7 @@ public class IntHashMap<V> extends AbstractHashMap<Integer, V> implements Map<In
     size = 0;
   }
 
+  @Override
   protected HashMapIterator hashIterator() {
     return new HashIterator();
   }
@@ -167,14 +172,17 @@ public class IntHashMap<V> extends AbstractHashMap<Integer, V> implements Map<In
       this.value = value;
     }
 
+    @Override
     public Integer getKey() {
       return key;
     }
 
+    @Override
     public V getValue() {
       return value;
     }
 
+    @Override
     public V setValue(final V value) {
       final V result = this.value;
       this.value = value;
@@ -193,10 +201,12 @@ public class IntHashMap<V> extends AbstractHashMap<Integer, V> implements Map<In
       initNextEntry();
     }
 
+    @Override
     public boolean hasNext() {
       return e != null;
     }
 
+    @Override
     public void remove() {
       if (last == null) {
         throw new IllegalStateException();
@@ -205,6 +215,7 @@ public class IntHashMap<V> extends AbstractHashMap<Integer, V> implements Map<In
       last = null;
     }
 
+    @Override
     protected Entry<V> nextEntry() {
       final Entry<V> result = last = e;
       initNextEntry();

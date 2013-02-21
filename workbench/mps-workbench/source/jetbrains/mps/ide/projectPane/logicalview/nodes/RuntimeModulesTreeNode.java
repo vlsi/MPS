@@ -25,6 +25,7 @@ public class RuntimeModulesTreeNode extends TextTreeNode {
     super("runtime");
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_RUNTIME_FOLDER_ACTIONS);
   }

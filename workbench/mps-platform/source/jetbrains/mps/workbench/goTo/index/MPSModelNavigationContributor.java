@@ -51,6 +51,7 @@ import java.util.Set;
  * @see RootNodeNameIndex
  */
 public class MPSModelNavigationContributor implements NodeNavigationContributor, ApplicationComponent {
+  @Override
   public Collection<NodeDescriptor> getNodeDescriptors(Collection<SModel> models, Project p) {
     RootNodeNameIndex index = new RootNodeNameIndex();
     final ID<Integer, List<SNodeDescriptor>> indexName = index.getName();

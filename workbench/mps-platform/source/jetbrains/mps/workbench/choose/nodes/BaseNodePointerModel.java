@@ -36,12 +36,14 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
     super(project, entityName);
   }
 
+  @Override
   public String doGetFullName(Object element) {
     NodePointerPresentation presentation = (NodePointerPresentation) ((NavigationItem) element).getPresentation();
     assert presentation != null;
     return presentation.getModelName() + "." + presentation.getPresentableText();
   }
 
+  @Override
   public String doGetObjectName(final SNodeReference nodePointer) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
@@ -56,12 +58,15 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
     });
   }
 
+  @Override
   public NavigationItem doGetNavigationItem(SNodeReference node) {
     return new BaseNodePointerItem(node) {
       private Project myProject = getProject();
 
+      @Override
       public void navigate(boolean requestFocus) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             SNode node = getNode();
             if (
@@ -79,6 +84,7 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
     };
   }
 
+  @Override
   protected String doGetCheckBoxName() {
     return "Include &non-&&project models";
   }

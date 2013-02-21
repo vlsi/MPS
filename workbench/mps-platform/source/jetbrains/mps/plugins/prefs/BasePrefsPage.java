@@ -37,6 +37,7 @@ public abstract class BasePrefsPage extends ConfigurableEP<Configurable> impleme
     return this;
   }
 
+  @Override
   public Project getProject() {
     return myProject;
   }
@@ -45,6 +46,7 @@ public abstract class BasePrefsPage extends ConfigurableEP<Configurable> impleme
     return myPrefsComponent;
   }
 
+  @Override
   @Nullable
   @NonNls
   public String getHelpTopic() {

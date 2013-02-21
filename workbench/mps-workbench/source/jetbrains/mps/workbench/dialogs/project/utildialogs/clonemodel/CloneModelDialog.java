@@ -48,6 +48,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     super("Clone Model " + modelDescriptor.getLongName(), operationContext);
 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myCloningModel = modelDescriptor.getSModel();
       }
@@ -147,6 +148,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     return null;
   }
 
+  @Override
   protected boolean doSaveChanges() {
     String errorString = getErrorString();
     if (errorString != null) {
@@ -174,8 +176,10 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     final ModelRoot modelRoot = ModuleUtil.findModelRoot(module, reference.getPath());
     final SModelDescriptor modelDescriptor = ModelAccess.instance().runWriteActionInCommand(
       new Computable<SModelDescriptor>() {
+        @Override
         public SModelDescriptor compute() {
           return module.createModel(modelName, modelRoot, new ModelAdjuster() {
+            @Override
             public void adjust(SModelDescriptor model) {
               for (SModelReference ref : myModelProperties.getImportedModels()) {
                 model.getSModel().addModelImport(ref, false);
@@ -209,6 +213,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     final ProjectPane pane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(project));
     assert pane != null;
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         pane.rebuildTree();
         pane.selectModel(modelDescriptor, false);

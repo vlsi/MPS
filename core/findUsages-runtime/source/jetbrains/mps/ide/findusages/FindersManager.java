@@ -50,6 +50,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
     myLanguageRegistry = languageRegistry;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -59,6 +60,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
     myLanguageRegistry.addRegistryListener(this);
   }
 
+  @Override
   public void dispose() {
     myLanguageRegistry.removeRegistryListener(this);
     INSTANCE = null;
@@ -68,6 +70,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
     checkLoaded();
     return
       ModelAccess.instance().runReadAction(new Computable<Set<ReloadableFinder>>() {
+        @Override
         public Set<ReloadableFinder> compute() {
           Set<ReloadableFinder> result = new HashSet<ReloadableFinder>();
 
@@ -150,6 +153,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
 
   private void clear() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myFinders.clear();
         myNodesByFinder.clear();

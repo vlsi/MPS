@@ -53,6 +53,7 @@ public class IntHashSet extends AbstractSet<Integer> implements Set<Integer> {
     return false;
   }
 
+  @Override
   public boolean contains(final Object key) {
     return contains(((Integer) key).intValue());
   }
@@ -78,6 +79,7 @@ public class IntHashSet extends AbstractSet<Integer> implements Set<Integer> {
     return true;
   }
 
+  @Override
   public boolean add(Integer key) {
     return add(key.intValue());
   }
@@ -106,18 +108,22 @@ public class IntHashSet extends AbstractSet<Integer> implements Set<Integer> {
     return true;
   }
 
+  @Override
   public boolean remove(Object key) {
     return remove(((Integer) key).intValue());
   }
 
+  @Override
   public Iterator<Integer> iterator() {
     return new HashSetIterator<Integer>() {
+      @Override
       public Integer next() {
         return nextEntry().key;
       }
     };
   }
 
+  @Override
   public int size() {
     return size;
   }
@@ -142,6 +148,7 @@ public class IntHashSet extends AbstractSet<Integer> implements Set<Integer> {
     this.capacity = capacity;
     if (length != table.length) {
       final Iterator<Entry> entries = new HashSetIterator<Entry>() {
+        @Override
         public Entry next() {
           return nextEntry();
         }
@@ -180,10 +187,12 @@ public class IntHashSet extends AbstractSet<Integer> implements Set<Integer> {
       initNextEntry();
     }
 
+    @Override
     public boolean hasNext() {
       return e != null;
     }
 
+    @Override
     public void remove() {
       if (last == null) {
         throw new IllegalStateException();

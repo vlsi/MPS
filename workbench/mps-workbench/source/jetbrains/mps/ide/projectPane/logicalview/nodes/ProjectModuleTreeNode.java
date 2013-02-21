@@ -51,6 +51,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     setUserObject(operationContext.getModule().getModuleName());
   }
 
+  @Override
   protected void doUpdatePresentation() {
     setText(getModulePresentation());
   }
@@ -59,6 +60,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
   public abstract SModule getModule();
 
+  @Override
   protected final boolean canBeOpened() {
     return false;
   }

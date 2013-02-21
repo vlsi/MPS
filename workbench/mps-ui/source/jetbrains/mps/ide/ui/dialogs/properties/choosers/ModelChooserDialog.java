@@ -47,8 +47,10 @@ class ModelChooserDialog extends BaseReferenceChooserDialog<SModelReference> {
   @Override
   protected BaseMPSChooseModel<SModelReference> getMPSChooseModel(Project project, String entityString) {
     return new BaseModelModel(project) {
+      @Override
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new BaseModelItem(modelReference) {
+          @Override
           public void navigate(boolean requestFocus) {
           }
         };
@@ -63,6 +65,7 @@ class ModelChooserDialog extends BaseReferenceChooserDialog<SModelReference> {
         }
       }
 
+      @Override
       public SModelReference[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }

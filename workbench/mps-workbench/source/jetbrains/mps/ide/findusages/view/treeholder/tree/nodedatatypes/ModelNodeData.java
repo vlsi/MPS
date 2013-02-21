@@ -59,6 +59,7 @@ public class ModelNodeData extends BaseNodeData {
     read(element, project);
   }
 
+  @Override
   public Icon getIcon() {
     SModelDescriptor modelDescriptor = getModelDescriptor();
     if (modelDescriptor != null) {
@@ -67,6 +68,7 @@ public class ModelNodeData extends BaseNodeData {
     return jetbrains.mps.ide.projectPane.Icons.MODEL_ICON;
   }
 
+  @Override
   public Object getIdObject() {
     return isResultNode() ? (getModelReference().toString() + "/" + getPlainText()) : getModel();
   }
@@ -85,6 +87,7 @@ public class ModelNodeData extends BaseNodeData {
     return myModelReference;
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     Element modelXML = new Element(MODEL);
@@ -92,12 +95,14 @@ public class ModelNodeData extends BaseNodeData {
     element.addContent(modelXML);
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     Element modelXML = element.getChild(MODEL);
     myModelReference = SModelReference.fromString(modelXML.getAttributeValue(UID));
   }
 
+  @Override
   public String getText(TextOptions options) {
     boolean showCounter = options.myCounters && isResultsSection();
     String counter = showCounter ? " " + sizeRepresentation(options.mySubresultsCount) : "";

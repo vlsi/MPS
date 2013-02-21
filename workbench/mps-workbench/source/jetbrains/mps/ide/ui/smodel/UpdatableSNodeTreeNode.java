@@ -70,16 +70,19 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     myTreeUpdater = null;
   }
 
+  @Override
   protected void onRemove() {
     super.onRemove();
     removeListeners();
   }
 
+  @Override
   protected void onAdd() {
     super.onAdd();
     if (myEventsListener != null) return;
     myEventsListener = new MyEventsListener(getModelDescriptor());
     mySNodeModelListener = new SimpleModelListener(this) {
+      @Override
       public boolean isValid() {
         return super.isValid() && !jetbrains.mps.util.SNodeOperations.isDisposed(getSNode());
       }
@@ -89,6 +92,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
       public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
         if (replacedModels.contains(getModelDescriptor())) {
           ModelAccess.instance().runReadInEDT(new Runnable() {
+            @Override
             public void run() {
               if (mySNodeModelListener.isValid()) {
                 UpdatableSNodeTreeNode.this.updatePresentation(true, true);
@@ -140,14 +144,17 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
       return nodesInThisRoot;
     }
 
+    @Override
     public SModelDescriptor getSModelDescriptor() {
       return myTreeNode.getSNode().getModel().getModelDescriptor();
     }
 
+    @Override
     public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
       // empty
     }
 
+    @Override
     public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
       if (getTree() == null) return;
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
@@ -158,11 +165,13 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
       }
     }
 
+    @Override
     public void updateChangedPresentations(Set<SNode> nodesWithChangedPresentations) {
       Set<SNode> nodeInThisRoot = getNodesInThisRoot(nodesWithChangedPresentations);
       super.updateChangedPresentations(nodeInThisRoot);
     }
 
+    @Override
     public void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
       Set<SNode> nodeInThisRoot = getNodesInThisRoot(nodesWithChangedRefs);
       super.updateChangedRefs(nodeInThisRoot);

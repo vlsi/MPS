@@ -31,6 +31,7 @@ import java.beans.PropertyChangeListener;
 public class HeaderWrapper extends JPanel {
   private JComponent myComponent;
   private JLabel myLabel = new JLabel("", JLabel.LEFT) {
+    @Override
     public Dimension getMinimumSize() {
       return new Dimension(0, 0);
     }
@@ -40,6 +41,7 @@ public class HeaderWrapper extends JPanel {
   private JButton myCloseButton;
   private JButton myMinimizeButton;
   private PropertyChangeListener myFocusListener = new PropertyChangeListener() {
+    @Override
     public void propertyChange(PropertyChangeEvent evt) {
       updateLabel();
     }
@@ -61,6 +63,7 @@ public class HeaderWrapper extends JPanel {
     myLabel.setOpaque(true);
     myLabel.setBorder(BorderFactory.createEmptyBorder(1, 3, 1, 3));
     myLabel.addMouseListener(new MouseAdapter() {
+      @Override
       public void mousePressed(MouseEvent e) {
         myComponent.requestFocus();
       }
@@ -71,10 +74,12 @@ public class HeaderWrapper extends JPanel {
 
       if (showMinimizeButton) {
         myMinimizeButton = new JButton(new AbstractAction("", Icons.MINIMIZE_ICON) {
+          @Override
           public void actionPerformed(ActionEvent e) {
             doMinimize();
           }
         }) {
+          @Override
           public void updateUI() {
             setUI(new MPSRoundButtonUI());
           }
@@ -85,10 +90,12 @@ public class HeaderWrapper extends JPanel {
 
       if (showCloseButton) {
         myCloseButton = new JButton(new AbstractAction("", Icons.CLOSE_ICON) {
+          @Override
           public void actionPerformed(ActionEvent e) {
             doClose();
           }
         }) {
+          @Override
           public void updateUI() {
             setUI(new MPSRoundButtonUI());
           }
@@ -112,12 +119,14 @@ public class HeaderWrapper extends JPanel {
   }
 
 
+  @Override
   public void addNotify() {
     super.addNotify();
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener(myFocusListener);
   }
 
 
+  @Override
   public void removeNotify() {
     KeyboardFocusManager.getCurrentKeyboardFocusManager().removePropertyChangeListener(myFocusListener);
     super.removeNotify();

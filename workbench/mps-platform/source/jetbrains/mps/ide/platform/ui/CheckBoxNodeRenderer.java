@@ -43,6 +43,7 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
     return myPanel.myCheckBox.isSelected();
   }
 
+  @Override
   public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, final boolean expanded, boolean leaf, int row, boolean hasFocus) {
     String text = tree.convertValueToText(value, selected, expanded, leaf, row, hasFocus);
     Object userObject = ((DefaultMutableTreeNode) value).getUserObject();
@@ -78,6 +79,7 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
       myCheckBox.setEnabled(enabled);
 
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           if (userObject instanceof NodeData) {
             NodeData data = (NodeData) userObject;
@@ -138,12 +140,14 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
       myRenderer = new CheckBoxNodeRenderer(isCheckboxLeft);
     }
 
+    @Override
     public Object getCellEditorValue() {
       return createNodeData(myRenderer.isSelected());
     }
 
     protected abstract N createNodeData(boolean selected);
 
+    @Override
     public Component getTreeCellEditorComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row) {
       Component editor = myRenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
 
@@ -151,6 +155,7 @@ public class CheckBoxNodeRenderer implements TreeCellRenderer {
       myObject = (N) node.getUserObject();
 
       ItemListener itemListener = new ItemListener() {
+        @Override
         public void itemStateChanged(ItemEvent itemEvent) {
           if (stopCellEditing()) {
             fireEditingStopped();

@@ -39,6 +39,7 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
     init(capacity);
   }
 
+  @Override
   public V put(final K key, final V value) {
     final Entry<K, V>[] table = this.table;
     final int hash = key.hashCode();
@@ -62,6 +63,7 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
     return null;
   }
 
+  @Override
   public V remove(final Object key) {
     final Entry<K, V>[] table = this.table;
     final int hash = key.hashCode();
@@ -88,6 +90,7 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
     return e.value;
   }
 
+  @Override
   protected Map.Entry<K, V> getEntry(final Object key) {
     final Entry<K, V>[] table = this.table;
     final int hash = key.hashCode();
@@ -103,6 +106,7 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
     return null;
   }
 
+  @Override
   protected void init(int capacity) {
     if (capacity < HashUtil.MIN_CAPACITY) {
       capacity = HashUtil.MIN_CAPACITY;
@@ -112,6 +116,7 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
     size = 0;
   }
 
+  @Override
   protected HashMapIterator hashIterator() {
     return new HashIterator();
   }
@@ -154,14 +159,17 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
       this.value = value;
     }
 
+    @Override
     public K getKey() {
       return key;
     }
 
+    @Override
     public V getValue() {
       return value;
     }
 
+    @Override
     public V setValue(final V value) {
       final V result = this.value;
       this.value = value;
@@ -180,10 +188,12 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
       initNextEntry();
     }
 
+    @Override
     protected boolean hasNext() {
       return e != null;
     }
 
+    @Override
     protected void remove() {
       if (last == null) {
         throw new IllegalStateException();
@@ -192,6 +202,7 @@ public class HashMap<K, V> extends AbstractHashMap<K, V> implements Map<K, V> {
       last = null;
     }
 
+    @Override
     protected Entry<K, V> nextEntry() {
       final Entry<K, V> result = last = e;
       initNextEntry();

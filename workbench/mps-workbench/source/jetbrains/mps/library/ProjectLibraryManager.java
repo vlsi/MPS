@@ -54,6 +54,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
     myProject = project;
   }
 
+  @Override
   @Nls
   public String getDisplayName() {
     return "Project Libraries";
@@ -75,12 +76,14 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
       return;
     }
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         LibraryInitializer.getInstance().update();
       }
     });
   }
 
+  @Override
   public void projectOpened() {
     final MPSProjectMigrationState migrationState = myProject.getComponent(MPSProjectMigrationState.class);
     if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
@@ -101,6 +104,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
     }
   }
 
+  @Override
   public void projectClosed() {
 
   }
@@ -124,10 +128,12 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
     }
   }
 
+  @Override
   protected String addMacros(String path) {
     return MacrosFactory.forProjectFile(getAnchorIFile()).shrinkPath(path);
   }
 
+  @Override
   protected String removeMacros(String path) {
     return MacrosFactory.forProjectFile(getAnchorIFile()).expandPath(path);
   }
