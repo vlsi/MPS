@@ -17,7 +17,7 @@
     <nodeInfo nodeId="7447844298216784152" fileName="MethodDeclarationsFixer.java" startLine="89" startPosition="65" endLine="90" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2235828751986250738" fileName="MethodDeclarationsFixer.java" startLine="96" startPosition="19" endLine="97" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2235828751986250742" fileName="MethodDeclarationsFixer.java" startLine="98" startPosition="5" endLine="99" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2235828751986250766" fileName="MethodDeclarationsFixer.java" startLine="100" startPosition="103" endLine="101" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2235828751986250766" fileName="MethodDeclarationsFixer.java" startLine="100" startPosition="142" endLine="101" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2235828751986250771" fileName="MethodDeclarationsFixer.java" startLine="102" startPosition="5" endLine="103" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2235828751986250950" fileName="MethodDeclarationsFixer.java" startLine="105" startPosition="148" endLine="106" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2235828751986250785" fileName="MethodDeclarationsFixer.java" startLine="108" startPosition="12" endLine="109" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -229,7 +229,7 @@
     <scopeInfo nodeId="2235828751986250704" fileName="MethodDeclarationsFixer.java" startLine="75" startPosition="22" endLine="76" endPosition="86" />
     <scopeInfo nodeId="7447844298215483842" fileName="MethodDeclarationsFixer.java" startLine="89" startPosition="65" endLine="90" endPosition="81" />
     <scopeInfo nodeId="2235828751986250737" fileName="MethodDeclarationsFixer.java" startLine="96" startPosition="19" endLine="97" endPosition="42" />
-    <scopeInfo nodeId="2235828751986250765" fileName="MethodDeclarationsFixer.java" startLine="100" startPosition="103" endLine="101" endPosition="43" />
+    <scopeInfo nodeId="2235828751986250765" fileName="MethodDeclarationsFixer.java" startLine="100" startPosition="142" endLine="101" endPosition="43" />
     <scopeInfo nodeId="2235828751986250949" fileName="MethodDeclarationsFixer.java" startLine="105" startPosition="148" endLine="106" endPosition="60" />
     <scopeInfo nodeId="2235828751986250834" fileName="MethodDeclarationsFixer.java" startLine="118" startPosition="32" endLine="119" endPosition="48" />
     <scopeInfo nodeId="2235828751986250826" fileName="MethodDeclarationsFixer.java" startLine="120" startPosition="18" endLine="121" endPosition="87" />

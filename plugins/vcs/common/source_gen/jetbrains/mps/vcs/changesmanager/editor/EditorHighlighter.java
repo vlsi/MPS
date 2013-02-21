@@ -123,7 +123,7 @@ public class EditorHighlighter implements EditorMessageOwner {
             return;
           }
           model = editedNode.getModel();
-          if (model == null || model.isDisposed()) {
+          if (model == null || SNodeOperations.isModelDisposed(model)) {
             return;
           }
           messages.value = ChangeEditorMessageFactory.createMessages(model, change, EditorHighlighter.this, null, false);

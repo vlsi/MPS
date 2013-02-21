@@ -137,7 +137,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 SModelDescriptor modelDescriptor = null;
-                if (!(SNodeOperations.isDisposed(root) || jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root).isDisposed())) {
+                if (!(SNodeOperations.isDisposed(root) || SNodeOperations.isModelDisposed(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root)))) {
                   modelDescriptor = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root).getModelDescriptor();
                 }
                 if (modelDescriptor instanceof DefaultSModelDescriptor) {

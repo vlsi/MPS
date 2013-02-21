@@ -393,7 +393,7 @@
     <nodeInfo nodeId="2183214647889840019" fileName="RefactoringFacade.java" startLine="298" startPosition="39" endLine="299" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2183214647889840024" fileName="RefactoringFacade.java" startLine="299" startPosition="49" endLine="300" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2183214647889840029" fileName="RefactoringFacade.java" startLine="300" startPosition="45" endLine="301" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2183214647889840037" fileName="RefactoringFacade.java" startLine="303" startPosition="34" endLine="304" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889840037" fileName="RefactoringFacade.java" startLine="303" startPosition="54" endLine="304" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8325325470383904267" fileName="RefactoringFacade.java" startLine="306" startPosition="5" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2183214647889840044" fileName="RefactoringFacade.java" startLine="307" startPosition="0" endLine="308" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2183214647889840078" fileName="RefactoringFacade.java" startLine="312" startPosition="13" endLine="313" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -530,7 +530,7 @@
     <scopeInfo nodeId="2183214647889839956" fileName="RefactoringFacade.java" startLine="282" startPosition="62" endLine="283" endPosition="87" />
     <scopeInfo nodeId="8221899801935911894" fileName="RefactoringFacade.java" startLine="286" startPosition="42" endLine="287" endPosition="48" />
     <scopeInfo nodeId="2183214647889839988" fileName="RefactoringFacade.java" startLine="292" startPosition="33" endLine="293" endPosition="13" />
-    <scopeInfo nodeId="7270959305824000769" fileName="RefactoringFacade.java" startLine="303" startPosition="34" endLine="304" endPosition="52" />
+    <scopeInfo nodeId="7270959305824000769" fileName="RefactoringFacade.java" startLine="303" startPosition="54" endLine="304" endPosition="52" />
     <scopeInfo nodeId="2183214647889840066" fileName="RefactoringFacade.java" startLine="321" startPosition="0" endLine="322" endPosition="30">
       <varInfo nodeId="2183214647889840072" varName="e" />
     </scopeInfo>

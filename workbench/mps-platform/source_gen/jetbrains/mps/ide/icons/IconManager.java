@@ -116,7 +116,7 @@ public class IconManager {
           }
         }
         SModel model = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node);
-        if (model == null || model.isDisposed()) {
+        if (model == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
           return mainIcon;
         }
         if (!(SModelStereotype.isUserModel(model)) || model.getModelDescriptor() instanceof EditableSModel && ((EditableSModel) model.getModelDescriptor()).isReadOnly()) {

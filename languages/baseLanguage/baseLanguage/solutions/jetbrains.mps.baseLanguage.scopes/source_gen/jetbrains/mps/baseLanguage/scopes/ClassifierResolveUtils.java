@@ -209,7 +209,7 @@ public class ClassifierResolveUtils {
   }
 
   private static Iterable<SNode> getClassifiersInModel(SModel model) {
-    Iterable<SNode> classifiers = model.getFastNodeFinder().getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true);
+    Iterable<SNode> classifiers = jetbrains.mps.util.SNodeOperations.getModelFastFinder(model).getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true);
     return (Iterable<SNode>) Sequence.fromIterable(classifiers).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));

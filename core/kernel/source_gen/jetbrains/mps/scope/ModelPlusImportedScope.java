@@ -66,7 +66,7 @@ public class ModelPlusImportedScope extends Scope {
         nodes = model.getSModel().getRootNodes();
         conceptToCheck = myTargetConcept;
       } else if (myTargetConcept != null) {
-        nodes = model.getSModel().getFastNodeFinder().getNodes(myTargetConcept, true);
+        nodes = SNodeOperations.getModelFastFinder(model.getSModel()).getNodes(myTargetConcept, true);
         conceptToCheck = null;
       } else {
         nodes = ((Iterable) new NodesIterable(model.getSModel()));
@@ -108,7 +108,7 @@ public class ModelPlusImportedScope extends Scope {
         nodes = model.getSModel().getRootNodes();
         conceptToCheck = myTargetConcept;
       } else if (myTargetConcept != null) {
-        nodes = model.getSModel().getFastNodeFinder().getNodes(myTargetConcept, true);
+        nodes = SNodeOperations.getModelFastFinder(model.getSModel()).getNodes(myTargetConcept, true);
         conceptToCheck = null;
       } else {
         nodes = ((Iterable) new NodesIterable(model.getSModel()));
