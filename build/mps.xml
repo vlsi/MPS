@@ -25,6 +25,7 @@
   <property name="artifacts.mpsDebuggerPlugin" location="${build.dir}/artifacts/mpsDebuggerPlugin" />
   <property name="artifacts.mpsExecutionPlugin" location="${build.dir}/artifacts/mpsExecutionPlugin" />
   <property name="artifacts.mpsObsolete" location="${build.dir}/artifacts/mpsObsolete" />
+  <property name="artifacts.mpsDeprecatedBuildlanguage" location="${build.dir}/artifacts/mpsDeprecatedBuildlanguage" />
   <property name="artifacts.mpsTesting" location="${build.dir}/artifacts/mpsTesting" />
   <property file="${artifacts.mpsBuild}/build.properties" prefix="import.mpsBuild" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBuild.mpsBootstrapCore.version}" />
@@ -128,6 +129,10 @@
     <mkdir dir="${build.layout}/plugins/mps-obsolete" />
     <copy todir="${build.layout}/plugins/mps-obsolete">
       <fileset dir="${artifacts.mpsObsolete}/mps-obsolete" />
+    </copy>
+    <mkdir dir="${build.layout}/plugins/mps-build-deprecated" />
+    <copy todir="${build.layout}/plugins/mps-build-deprecated">
+      <fileset dir="${artifacts.mpsDeprecatedBuildlanguage}/mps-build-deprecated" />
     </copy>
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.mpsPlugins}" />

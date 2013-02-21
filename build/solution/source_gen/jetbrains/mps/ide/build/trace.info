@@ -19,10 +19,10 @@
     <unitInfo nodeId="4061567211001166715" fileName="mpsDates.xml" startLine="1" startPosition="0" endLine="388" endPosition="10" unitName="jetbrains.mps.ide.build.mpsDates" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/4197214709894135186">
-    <unitInfo nodeId="4197214709894135186" fileName="mpsObsolete.xml" startLine="1" startPosition="0" endLine="985" endPosition="10" unitName="jetbrains.mps.ide.build.mpsObsolete" />
+    <unitInfo nodeId="4197214709894135186" fileName="mpsObsolete.xml" startLine="1" startPosition="0" endLine="980" endPosition="10" unitName="jetbrains.mps.ide.build.mpsObsolete" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/4301118715654192646">
-    <unitInfo nodeId="4301118715654192646" fileName="mps.xml" startLine="1" startPosition="0" endLine="280" endPosition="10" unitName="jetbrains.mps.ide.build.mps" />
+    <unitInfo nodeId="4301118715654192646" fileName="mps.xml" startLine="1" startPosition="0" endLine="285" endPosition="10" unitName="jetbrains.mps.ide.build.mps" />
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/4301118715654497533">
     <unitInfo nodeId="4301118715654497533" fileName="mpsDistribution.xml" startLine="1" startPosition="0" endLine="282" endPosition="10" unitName="jetbrains.mps.ide.build.mpsDistribution" />
