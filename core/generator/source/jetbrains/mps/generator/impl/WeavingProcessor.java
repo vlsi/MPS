@@ -40,7 +40,7 @@ public class WeavingProcessor {
   public WeavingProcessor(TemplateGenerator generator) {
     myGenerator = generator;
     myGenerationTracer = myGenerator.getGenerationTracer();
-    myFastNodeFinder = myGenerator.getInputModel().getFastNodeFinder();
+    myFastNodeFinder = ((ABCDE) myGenerator.getInputModel()).getFastNodeFinder();
   }
 
   public void apply(TemplateWeavingRule rule)

@@ -54,7 +54,7 @@ public class GenerationFacade {
     List<SModelDescriptor> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();
     for (SModelDescriptor templateModel : list) {
-      List<SNode> nodes = templateModel.getSModel().getFastNodeFinder().getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true);
+      List<SNode> nodes = ((ABCDE) templateModel.getSModel()).getFastNodeFinder().getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true);
       mappings.addAll(nodes);
     }
     return mappings;

@@ -18,7 +18,6 @@ package jetbrains.mps.findUsages;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -26,7 +25,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.indexing.FastFindSupport;
-import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -76,7 +74,7 @@ class InstancesSearchType extends SearchType<SNode, SConcept> {
       if (model == null) continue;
 
       for (SConcept concept : e.getValue()) {
-        result.addAll(((SModelDescriptor) model).getSModel().getFastNodeFinder().getNodes(concept.getId(), !myExact));
+        result.addAll(((ABCDE) ((SModelDescriptor) model).getSModel()).getFastNodeFinder().getNodes(concept.getId(), !myExact));
       }
 
       if (callback != null && !callback.compute()) break;

@@ -23,7 +23,14 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelDevKitEvent;
+import jetbrains.mps.smodel.event.SModelImportEvent;
+import jetbrains.mps.smodel.event.SModelLanguageEvent;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
@@ -46,7 +53,13 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 import java.io.IOException;
 import java.security.SecureRandom;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class SModel implements org.jetbrains.mps.openapi.model.SModel {

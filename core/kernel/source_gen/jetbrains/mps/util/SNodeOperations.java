@@ -334,7 +334,7 @@ public class SNodeOperations {
   }
 
   public static FastNodeFinder getModelFastFinder(org.jetbrains.mps.openapi.model.SModel model) {
-    return ((SModel) model).getFastNodeFinder();
+    return ((ABCDE) ((SModel) model)).getFastNodeFinder();
   }
 
   public static int nodesCount(org.jetbrains.mps.openapi.model.SModel model) {

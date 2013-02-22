@@ -342,7 +342,7 @@ class GenerationSession {
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
-      currentInputModel.disposeFastNodeFinder();
+      ((ABCDE) currentInputModel).disposeFastNodeFinder();
 
       SModel transientModel = createTransientModel();
       if (myLogger.needsInfo()) {
@@ -558,7 +558,7 @@ class GenerationSession {
     SModelDescriptor md = model.getModelDescriptor();
     if (model instanceof TransientSModel) {
       ttrace.push("recycling", false);
-      model.disposeFastNodeFinder();
+      ((ABCDE) model).disposeFastNodeFinder();
       if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
         mySessionContext.getModule().removeModel(md);
       }

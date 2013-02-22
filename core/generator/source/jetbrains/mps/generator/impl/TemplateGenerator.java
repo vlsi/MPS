@@ -233,7 +233,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return;
     }
     boolean includeInheritors = rule.applyToInheritors();
-    Iterable<SNode> inputNodes = myInputModel.getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+    Iterable<SNode> inputNodes = ((ABCDE) myInputModel).getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode inputNode : inputNodes) {
       // do not apply root mapping if root node has been copied from input model on previous micro-step
       // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
