@@ -794,7 +794,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //aspects / additional
 
-  public List<ImportElement> getAdditionalModelVersions() {
+  private List<ImportElement> getAdditionalModelVersions() {
     return Collections.unmodifiableList(myImplicitImports);
   }
 
@@ -1013,7 +1013,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   protected void copyPropertiesTo(SModel to) {
-    for (ImportElement ie : getAdditionalModelVersions()) {
+    for (ImportElement ie : ((ABCDE) this).getAdditionalModelVersions()) {
       to.addAdditionalModelVersion(ie.copy());
     }
     for (ImportElement ie : ((ABCDE) this).importedModels()) {

@@ -171,7 +171,7 @@ public class ModelReader4 implements IModelReader {
         }
       }
       if (aspectModelUID != null) {
-        model.addAdditionalModelVersion(SModelReference.fromString(aspectModelUID), version);
+        ((ABCDE) model).addAdditionalModelVersion(SModelReference.fromString(aspectModelUID), version);
       }
     }
   }

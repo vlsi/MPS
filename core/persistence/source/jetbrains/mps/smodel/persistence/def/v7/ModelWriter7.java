@@ -95,7 +95,7 @@ public class ModelWriter7 implements IModelWriter {
       elem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
       rootElement.addContent(elem);
     }
-    for (ImportElement importElement : sourceModel.getAdditionalModelVersions()) {
+    for (ImportElement importElement : ((ABCDE) sourceModel).getAdditionalModelVersions()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);

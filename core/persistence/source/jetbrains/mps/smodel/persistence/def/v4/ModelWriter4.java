@@ -57,7 +57,7 @@ public class ModelWriter4 implements IModelWriter {
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
-    for (ImportElement aspectElement : sourceModel.getAdditionalModelVersions()) {
+    for (ImportElement aspectElement : ((ABCDE) sourceModel).getAdditionalModelVersions()) {
       SModelReference modelReference = aspectElement.getModelReference();
       if (modelReference == null) continue;
       if (!writtenAspects.contains(modelReference.toString())) {

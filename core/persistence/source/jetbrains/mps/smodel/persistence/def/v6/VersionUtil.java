@@ -48,7 +48,7 @@ public class VersionUtil {
     for (ImportElement elem : ((ABCDE) model).importedModels()) {
       myImports.put(elem.getModelReference(), elem);
     }
-    for (ImportElement elem : model.getAdditionalModelVersions()) {
+    for (ImportElement elem : ((ABCDE) model).getAdditionalModelVersions()) {
       myImports.put(elem.getModelReference(), elem);
     }
   }
@@ -59,13 +59,13 @@ public class VersionUtil {
     for (ImportElement elem : ((ABCDE) model).importedModels()) {
       maxImport = Math.max(elem.getReferenceID(), maxImport);
     }
-    for (ImportElement elem : model.getAdditionalModelVersions()) {
+    for (ImportElement elem : ((ABCDE) model).getAdditionalModelVersions()) {
       maxImport = Math.max(elem.getReferenceID(), maxImport);
     }
     for (ImportElement elem : ((ABCDE) model).importedModels()) {
       if (elem.getReferenceID() < 0) elem.setReferenceID(++maxImport);
     }
-    for (ImportElement elem : model.getAdditionalModelVersions()) {
+    for (ImportElement elem : ((ABCDE) model).getAdditionalModelVersions()) {
       if (elem.getReferenceID() < 0) elem.setReferenceID(++maxImport);
     }
   }

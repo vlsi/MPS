@@ -206,7 +206,7 @@ public class SModelOperations {
   public static List<ImportElement> getAllImportElements(SModel model) {
     List<ImportElement> result = new ArrayList<ImportElement>();
     result.addAll(((ABCDE) model).importedModels());
-    result.addAll(model.getAdditionalModelVersions());
+    result.addAll(((ABCDE) model).getAdditionalModelVersions());
     return result;
   }
 
@@ -280,7 +280,7 @@ public class SModelOperations {
 
   @Nullable
   public static ImportElement getAdditionalModelElement(SModel sModel, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-    for (ImportElement importElement : sModel.getAdditionalModelVersions()) {
+    for (ImportElement importElement : ((ABCDE) sModel).getAdditionalModelVersions()) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
       }

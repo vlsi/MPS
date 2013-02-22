@@ -45,7 +45,7 @@ public final class CopyUtil {
   }
 
   public static void clearModelProperties(SModel model) {
-    for (ImportElement ie : new ArrayList<ImportElement>(model.getAdditionalModelVersions())) {
+    for (ImportElement ie : new ArrayList<ImportElement>(((ABCDE) model).getAdditionalModelVersions())) {
       ((ABCDE) model).deleteModelImport(ie.getModelReference());
     }
     for (ImportElement ie : new ArrayList<ImportElement>(((ABCDE) model).importedModels())) {

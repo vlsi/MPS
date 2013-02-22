@@ -37,7 +37,7 @@ public class ReadHelper {
     SModelReference modelRef = SModelReference.fromString(modelUID);
     SModel.ImportElement elem = new SModel.ImportElement(modelRef, ++myMaxImportIndex, version);
     if (implicit) {
-      model.addAdditionalModelVersion(elem);
+      ((ABCDE) model).addAdditionalModelVersion(elem);
     } else {
       ((ABCDE) model).addModelImport(elem);
     }

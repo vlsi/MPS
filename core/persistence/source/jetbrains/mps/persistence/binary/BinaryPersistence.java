@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
@@ -139,7 +140,7 @@ public class BinaryPersistence {
     for (ModuleReference ref : loadModuleRefList(is)) ((ABCDE) model).addDevKit(ref);
 
     for (ImportElement imp : loadImports(is)) ((ABCDE) model).addModelImport(imp);
-    for (ImportElement imp : loadImports(is)) model.addAdditionalModelVersion(imp);
+    for (ImportElement imp : loadImports(is)) ((ABCDE) model).addAdditionalModelVersion(imp);
 
     if (is.readInt() != 0xbaba) {
       throw new IOException("bad stream, no sync token");
@@ -184,7 +185,7 @@ public class BinaryPersistence {
 
     // imports
     saveImports(((ABCDE) model).importedModels(), os);
-    saveImports(model.getAdditionalModelVersions(), os);
+    saveImports(((ABCDE) model).getAdditionalModelVersions(), os);
 
     os.writeInt(0xbaba);
   }
