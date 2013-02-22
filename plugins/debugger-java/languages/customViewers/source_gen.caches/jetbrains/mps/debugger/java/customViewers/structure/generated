@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9zd2ezdmkii3vjyncfhs6b0ntebo637">
+<dependencies version="2" modelHash="1hf3b0pspkqiox3q83nu95hvcjh74ky">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-4tjwq9l9b3kzyundqj18rqrmzzagj7k" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="ccqs5x54cu7t8soip6rcirxvko9t92c" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="6bxwr5zbs5p6ibrarra41j86i1lpp0o" dependsOnNodes="true">
     <dep root="1842653058274900914" />
@@ -29,25 +29,25 @@
   <source id="5117350825036234483" name="CustomWatchable" hash="6p0gp1tiy1iyqqyo4mkct5wfx41xqdp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5117350825036256317" name="CustomWatchablesContainer" hash="6ouv8mimwz4gbxy81nnytu1daw0amx">
+  <source id="5117350825036256317" name="CustomWatchablesContainer" hash="-4qkf2uql3h2p6nu6zssyjp3az8rtx53">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5117350825036256333" name="WatchableType" hash="cyymrsqbnsolmovfjosr9u84xywadks">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="680105146889009728" name="HighLevelCustomViewer" hash="1vdwaimyui05b5ejza64v5kqyuxn41f">
+  <source id="680105146889009728" name="HighLevelCustomViewer" hash="-bigudek2ratupipijzvqqnvdp88nn70">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="43370322128194514" name="GetHighLevelValuePresentation_ConceptFunction" hash="-asnitgte2rb3c3jsriiqjqin6ajeju6">
+  <source id="43370322128194514" name="GetHighLevelValuePresentation_ConceptFunction" hash="4mbqz9nm837lkii8vwsya8ey398gspv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="43370322128194518" name="GetHighLevelWatchablesBlock_ConceptFunction" hash="ch41q0ua74z1iksrdix92osqnfow39i">
+  <source id="43370322128194518" name="GetHighLevelWatchablesBlock_ConceptFunction" hash="82sk90fhdy0t4vcxh2ycumrxioel36r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="43370322128194523" name="CanWrapHighLevelValue_ConceptFunction" hash="u5dokgx922uim2amal5bmyjxgnlmlb">
+  <source id="43370322128194523" name="CanWrapHighLevelValue_ConceptFunction" hash="-b2qut6k7uloslhohvbirlenoqjc1j8v">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="43370322128272301" name="HighLevelValue_ConceptFunctionParameter" hash="-ay6k7jrkvccnn0v2f2enb8t4ib2onyz">
+  <source id="43370322128272301" name="HighLevelValue_ConceptFunctionParameter" hash="-5z311dgb4g0lqt6z6updavz68v04twl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="43370322128285902" name="HighLevelWatchableCreator" hash="9cckf8ddxg9zh0x83t7056go5uq63e7">

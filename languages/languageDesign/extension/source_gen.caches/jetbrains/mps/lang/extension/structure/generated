@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b574bibqxp9vjfctjm60a3bateoy744">
+<dependencies version="2" modelHash="az4xqu87dlnukriqm8d0q39wowxq1g5">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="8n3bsezxlrqznew9vfvottea202m737" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-4tjwq9l9b3kzyundqj18rqrmzzagj7k" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="ccqs5x54cu7t8soip6rcirxvko9t92c" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="8okncy7wdyr1wx3kls5cszqm9xa7w4n">
     <dep root="3175313036448544056" />
@@ -29,25 +29,25 @@
   <source id="3729007189729192406" name="ExtensionPointDeclaration" hash="-eu4oll0mki1wfc09blzllmm83wtt9ee">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8029776554053043557" name="ExtensionObjectGetter" hash="-a5dcelat9jzkp175pxk8px84i1a673h">
+  <source id="8029776554053043557" name="ExtensionObjectGetter" hash="-1eeog3bstperwrt491rpscrk7i4rajy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6626851894249711936" name="ExtensionPointExpression" hash="5du6k41jlqbjpqdcrqm0mbydu412b1w">
+  <source id="6626851894249711936" name="ExtensionPointExpression" hash="8zw0m0xe5nocpuxvi1uukycdmfs0emv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7036359038356050927" name="ExtensionFunction" hash="-d2xnd41ge0m4rp70z9jczvgbf8ovrdq">
+  <source id="7036359038356050927" name="ExtensionFunction" hash="-9yu9kp2d78916kww8ik1pchugr4xqqg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7036359038356115097" name="ExtensionFieldDeclaration" hash="b07j09xlj11oe7f2o6p7ugdi279o64f">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7036359038356115102" name="ExtensionFieldReference" hash="5hm01b7up1f3jub93h2jxniq85mvt7w">
+  <source id="7036359038356115102" name="ExtensionFieldReference" hash="-57y4hs4hvnmpknxags9cupnpjdwiln0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3175313036448544056" name="ExtensionPointType" hash="dofvtgmq8h8k5xmyxnbrm9o9lk8pcmu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3175313036448560967" name="GetExtensionObjectsOperation" hash="7rmoinjahlljrbmvop75hdio60nd4y7">
+  <source id="3175313036448560967" name="GetExtensionObjectsOperation" hash="-d6jfgothom3sxdonp8mk9pmk472uyh9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>
