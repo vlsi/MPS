@@ -12,6 +12,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8381258131358446225">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="UIObjectStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="create" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
@@ -135,6 +136,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8923564134257084377">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CompartmentProviderStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="in compartment" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
@@ -145,6 +147,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4981225789808356843">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IterateContentsStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="foreach in contents" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1154032098014" resolveInfo="AbstractLoopStatement" />
@@ -156,6 +159,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4981225789808644361">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="RemoveUIObjectStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="remove" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
@@ -167,6 +171,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4981225789808986371">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ClearCompartmentStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="clear" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
@@ -174,6 +179,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4981225789809472779">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="AppendUIObjectStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="append" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8381258131358446225" resolveInfo="UIObjectStatement" />
@@ -181,6 +187,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3091159734392454211">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="InsertUIObjectStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="insert before" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8381258131358446225" resolveInfo="UIObjectStatement" />
@@ -188,6 +195,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6653319296676631683">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ForceLayoutStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="force layout" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
@@ -195,6 +203,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3546006303814984631">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="UIObjectProviderStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="in context" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />

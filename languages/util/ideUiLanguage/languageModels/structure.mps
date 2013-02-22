@@ -50,6 +50,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3734045384532546729">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ReportErrorStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="IDEDialog" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="reportError" />
@@ -58,6 +59,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3734045384532546800">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="DisposeDialogStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="IDEDialog" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="disposeDialog" />

@@ -14,6 +14,7 @@
   <import index="q9ra" modelUID="r:308041c6-80bc-4e26-b4b1-473fd45c9339(jetbrains.mps.make.script.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7077360340906447917">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ResultStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
@@ -34,6 +35,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2360002718792622184">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="OutputResources" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="output" />
@@ -132,6 +134,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3668957831723333672">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ReportFeedbackStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="report" />
@@ -153,6 +156,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="187226666892683652">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="AdvanceWorkStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="advance" />
@@ -161,6 +165,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="187226666892683655">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="FinishWorkStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="job.progress" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="finish" />

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="577a736w2jiogru4pdd6x10tnglxqim">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
+<dependencies version="2" modelHash="dhos9wk4sxv02ddvq3rdi3x59t9royk">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3b9uwh1r9i2smq77zmq9p3qrq6vqn8i" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
-  <dep model="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" hash="6q6nn8kl7siomxu7sm5r58kecvcy7re" />
+  <dep model="r:ba1d89ed-800e-4d0a-ad09-221b1011fbd1(jetbrains.mps.ui.modeling.structure)" hash="-4o18t4ad7hy8r4194v2xgpzpimku4na" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-e7uzkjwvbjeelbpt00ln6eha6bs44qf">
     <dep root="1776013523070374914" />
@@ -28,25 +28,25 @@
     <file name="Internal_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="4818101245579876200" name="ContextBindingWrapper" hash="8r865yddyzfijnpi9plyln7cks4pr76">
+  <source id="4818101245579876200" name="ContextBindingWrapper" hash="2zv3ttz9to66u7nx9mgr34fvztbfy0a">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8173290311767412491" name="ContextWrapper" hash="z5gcvhhh6o2xitlmvhdadhew9qe5fk">
+  <source id="8173290311767412491" name="ContextWrapper" hash="6mfe88m85omx7v7qu2wgugvdcw2jqhu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8173290311768364230" name="ContextViewWrapper" hash="-bkydxa1abymom2h0ufu7du9faxitl1o">
+  <source id="8173290311768364230" name="ContextViewWrapper" hash="6ntsn4wjmdgh2n6ol6igowi2d8zpmuu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1776013523070374914" name="ContextCompartmentWrapper" hash="-5k213929snk92kb8omcx8g5q14fau1g">
+  <source id="1776013523070374914" name="ContextCompartmentWrapper" hash="erlgtgouygftakp8vk23vt3coodeeai">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8760983568970120603" name="ContextControllerWrapper" hash="-atjs91zxpnkhqptc5ibwyhzufca6i1s">
+  <source id="8760983568970120603" name="ContextControllerWrapper" hash="cnmtrznkp4fcv0uc74l4xwy1c4owjlj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1890792421275691239" name="AuxObjectHandler" hash="9bm3x59w0bs7ekqus19hq3lylg09iim">
+  <source id="1890792421275691239" name="AuxObjectHandler" hash="3gfg17csqbjs2rvrs69u9o8mzpumegt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6653319296676637790" name="GeometryHandler" hash="-vvohfpuxsi3aj422gum0xoccfsnr5o">
+  <source id="6653319296676637790" name="GeometryHandler" hash="-bs248e93dvn53m7k43oodx190492ei1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6410919744913443206" name="IContextWrapper" hash="-2az6t07tn6dprv3czwy44s3evquqcsv">
@@ -61,7 +61,7 @@
   <source id="4587250023234473480" name="ExpressionStub" hash="-7u6bnkqfklzplg2t970rrs4wky6s88s">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4587250023234487369" name="StatementStub" hash="-eevud778emdwrcyrk1ubpduqp7rcb5d">
+  <source id="4587250023234487369" name="StatementStub" hash="-bemnp3qs3f5nn4w4f4zf7x1h7xzzw68">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

@@ -206,6 +206,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1180023776692">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SwitchNodeKindStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="switch" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="switch node kind" />
@@ -214,6 +215,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1180024940230">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="VisitNodesStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecated.treeOperation.visit" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="visit" />

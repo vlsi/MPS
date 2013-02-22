@@ -9,11 +9,13 @@
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348170">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="BaseExecuteCommandStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348172">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="BaseExecuteCommandStatementSync" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8974276187400348170" resolveInfo="BaseExecuteCommandStatement" />
@@ -26,6 +28,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348174">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteCommandInEDTStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="execute command in EDT" />
@@ -34,6 +37,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348177">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteCommandStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="command" />
@@ -42,6 +46,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348179">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteEDTCommandStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="execute in EDT" />
@@ -50,6 +55,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348181">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteLightweightCommandStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="read action" />
@@ -58,6 +64,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348183">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteWriteActionStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="write action" />

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3n23wl01olrwa7w84kscot1xjrwtyrc">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="b8n4gewa62tz50b8mlzkxyh09i0n99z" />
+<dependencies version="2" modelHash="a99dtqlouetdpkrpase4vmuiinm5wt6">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-45arjhe2p2477jk2gpv6olrk1ieqc75" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="7lsvs8iu2lacya158h4835le2lignlu" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3b9uwh1r9i2smq77zmq9p3qrq6vqn8i" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
-  <dep model="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" hash="-drhwcihxex0hliokfrsurwo7b840c83" />
+  <dep model="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" hash="axl349k9yhtw68g8rak0qlt4v2vgcdj" />
   <dep model="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.execution.common.structure)" hash="-ehfnr7lw5nxnyni82ijt9acutyy4j3a" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-31r5bsk984eb32wrscnbprlb4a7h7t3">
@@ -50,10 +50,10 @@
     <file name="Configurations_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="2401501559171345993" name="RunConfiguration" hash="-81alkng8gvdi1u6ugfvnn19kzzq1q5q">
+  <source id="2401501559171345993" name="RunConfiguration" hash="-66aph1105219c2k7neemfri7maowfqp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2401501559171345994" name="RunConfigurationKind" hash="6di4oxtmjcpqyx2ysh3fnsrdyzb84k5">
+  <source id="2401501559171345994" name="RunConfigurationKind" hash="-21sq0bv6pur6r8vvhsjabtdx4dupoda">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2401501559171392633" name="AbstractRunConfigurationExecutor" hash="-yi94pxhu3h7qj7hmh8hvfd3t1bugl4">
@@ -65,7 +65,7 @@
   <source id="7684700299064179245" name="Project_Parameter" hash="-5tb4jjra99rov2yqm0krapwgjebmjeb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7806358006983614956" name="RunConfigurationExecutor" hash="7b0beeawyjzejxd2utis4m7knzpt13r">
+  <source id="7806358006983614956" name="RunConfigurationExecutor" hash="-2zcg9flbt0mpa2fad1mfryi3gidej5q">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7806358006983738927" name="ConfigurationFromExecutorReference" hash="93jk3ejq2t74voym7ev4n5qvohi1a5a">
@@ -74,10 +74,10 @@
   <source id="4816403309550879744" name="DebuggerSettings_Parameter" hash="-bb56dzaw09tcimyk3bd04rbr78djh9m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156870353" name="StartProcessHandlerStatement" hash="-7akkef6jd40aiwhc4c7fqsrhyh63bi9">
+  <source id="946964771156870353" name="StartProcessHandlerStatement" hash="-2tsv0yxd149h9559bj77lb0rmt26mqa">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4366236229294105349" name="RunConfigurationProducer" hash="-dtv9j8xiio7q0490mzk2azzsvd9yofl">
+  <source id="4366236229294105349" name="RunConfigurationProducer" hash="-41ecijomb7s660zxffk7b5jwqhm8h8s">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4366236229294141334" name="RunConfigurationSource" hash="-7saajyqadkvmk5bdq0trwk8x2mz8jdq">
@@ -110,7 +110,7 @@
   <source id="7301162575811126385" name="NodeSource" hash="-e46fvcmi66trl0ev0zi7jy3tvkw7438">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7037083547576022975" name="BeforeTask" hash="1ft5pbz5pm5k1g8lli1x4aegy6edzdi">
+  <source id="7037083547576022975" name="BeforeTask" hash="6k0nihigj1gh7sa2c8umad0tn8d5v3r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2454261876037468744" name="ExecuteBeforeTask_ConceptFunction" hash="1sn8vlrsnoqec2bslwde10xvnyfvsmk">

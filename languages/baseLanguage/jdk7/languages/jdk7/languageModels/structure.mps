@@ -9,6 +9,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="400642802549924137">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="StringSwitchStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="switch" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1163670490218" resolveInfo="SwitchStatement" />

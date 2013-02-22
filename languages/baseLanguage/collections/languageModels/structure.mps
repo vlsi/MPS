@@ -48,6 +48,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="foreach &lt;e&gt; in &lt;sequence&gt;" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ForEachStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="foreach" />
@@ -478,6 +479,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="skip to next element in input sequence" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SkipStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="sequence.closures" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="skip" />
@@ -487,6 +489,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="stop iterating input sequence" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="StopStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="sequence.closures" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="stop" />
@@ -1234,6 +1237,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="foreach loop over multiple variables" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MultiForEachStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="foreach" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="foreach" />
