@@ -31,14 +31,7 @@ import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
