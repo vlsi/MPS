@@ -5311,9 +5311,9 @@
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="68nn.TestBlockList" typeId="68nn.3702466984434609595" id="5633355289409998034">
       <node role="statement" roleId="68nn.3702466984434609602" type="68nn.NonEmptyProperty" typeId="68nn.5633355289409839142" id="5633355289410070947">
         <property name="value" nameId="68nn.5633355289409839143" value="p" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6268328477151507213">
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3978290265347130474">
           <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="property_value_1" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
           <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
           <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
           <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
