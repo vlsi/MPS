@@ -104,7 +104,7 @@ public class TransientModelsModule extends ClassLoadingModule {
     }
   }
 
-  public boolean addModelToKeep(jetbrains.mps.smodel.SModel model, boolean force) {
+  public boolean addModelToKeep(SModel model, boolean force) {
     assert model instanceof TransientSModel;
     String modelRef = model.getReference().toString();
     if (force) {
@@ -124,7 +124,7 @@ public class TransientModelsModule extends ClassLoadingModule {
     return true;
   }
 
-  public boolean isModelToKeep(jetbrains.mps.smodel.SModel model) {
+  public boolean isModelToKeep(SModel model) {
     assert model instanceof TransientSModel;
     return myModelsToKeep.contains(model.getReference().toString());
   }

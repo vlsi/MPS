@@ -170,7 +170,7 @@ public class TemplateProcessor {
 
       if (reference instanceof StaticReference) {
         SModelReference targetModelReference = reference.getTargetSModelReference();
-        if (targetModelReference != null && !(templateModel.getSModelReference().equals(targetModelReference))) {
+        if (targetModelReference != null && !(templateModel.getReference().equals(targetModelReference))) {
           // optimization for external static references (do not resolve them)
           SReference newReference = new StaticReference(
             reference.getRole(),

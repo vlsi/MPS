@@ -1489,7 +1489,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public SReference[] getReferencesArray() {
-    List<SReference> refs = jetbrains.mps.util.SNodeOperations.getReferences(this);
+    List<SReference> refs = ((List) jetbrains.mps.util.SNodeOperations.getReferences(this));
     return refs.toArray(new SReference[refs.size()]);
   }
 
@@ -1499,7 +1499,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public Collection<SReference> getReferencesIterable() {
-    return jetbrains.mps.util.SNodeOperations.getReferences(this);
+    return ((List) jetbrains.mps.util.SNodeOperations.getReferences(this));
   }
 
   @Deprecated

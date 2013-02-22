@@ -20,6 +20,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -58,7 +60,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
       SModelDescriptor smd = lang.getStructureModelDescriptor();
       if (smd != null) {
         SModel sm = smd.getSModel();
-        String modelFqName = sm.getLongName();
+        String modelFqName = SNodeOperations.getModelLongName(sm);
         // optimization - loading all concepts from this model into myConcepts cache
         for (SNode root : sm.getRootNodes()) {
           String conceptFQName = modelFqName + "." + root.getProperty(SNodeUtil.property_INamedConcept_name);
