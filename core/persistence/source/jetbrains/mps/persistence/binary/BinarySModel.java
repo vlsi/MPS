@@ -45,7 +45,7 @@ public class BinarySModel extends SModel {
   }
 
   @Override
-  public int getVersion() {
+  public int getVersion2() {
     return header.getVersion();
   }
 

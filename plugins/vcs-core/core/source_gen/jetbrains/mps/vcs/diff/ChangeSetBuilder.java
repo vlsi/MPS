@@ -253,7 +253,7 @@ public class ChangeSetBuilder {
         ListSequence.fromList(myNewChanges).addElement(new DoNotGenerateOptionChange(myChangeSet));
       }
     }
-    if (myNewModel.getVersion() != myOldModel.getVersion()) {
+    if (((ABCDE) myNewModel).getVersion() != ((ABCDE) myOldModel).getVersion()) {
       ListSequence.fromList(myNewChanges).addElement(new ModelVersionChange(myChangeSet));
     }
   }

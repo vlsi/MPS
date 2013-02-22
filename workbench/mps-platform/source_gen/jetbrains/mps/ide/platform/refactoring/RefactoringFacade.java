@@ -280,7 +280,7 @@ public class RefactoringFacade {
     if (!(context.isLocal())) {
       Map<SModelReference, Integer> dependencies = context.getStructureModification().getDependencies();
       for (SModelReference modelRef : dependencies.keySet()) {
-        model.updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
+        ((ABCDE) model).updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
       }
     }
     if (model instanceof EditableSModel) {

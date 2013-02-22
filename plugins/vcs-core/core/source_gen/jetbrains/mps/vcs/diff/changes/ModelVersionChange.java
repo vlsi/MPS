@@ -13,7 +13,7 @@ public class ModelVersionChange extends MetadataChange {
 
   @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
-    model.setVersion(getChangeSet().getNewModel().getVersion());
+    ((ABCDE) model).setVersion(((ABCDE) getChangeSet().getNewModel()).getVersion());
   }
 
   @NotNull

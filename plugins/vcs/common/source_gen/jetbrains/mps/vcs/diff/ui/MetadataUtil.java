@@ -41,7 +41,7 @@ public class MetadataUtil {
     SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
     SPropertyOperations.set(root, "longname", SNodeOperations.getModelLongName(model));
     SPropertyOperations.set(root, "uuid", model.getModelId() + "");
-    SPropertyOperations.set(root, "version", "" + (model.getVersion()));
+    SPropertyOperations.set(root, "version", "" + (((ABCDE) model).getVersion()));
     if (model instanceof DefaultSModel) {
       SPropertyOperations.set(root, "donotgenerate", "" + (check_ca1g54_a0a0e0c(((DefaultSModel) model).getSModelHeader())));
     }
@@ -82,7 +82,7 @@ public class MetadataUtil {
 
   public static void applyMetadataChanges(final SModel model, SModel metadataModel) {
     SNode root = ListSequence.fromList(SModelOperations.getRoots(metadataModel, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model")).first();
-    model.setVersion(SPropertyOperations.getInteger(root, "version"));
+    ((ABCDE) model).setVersion(SPropertyOperations.getInteger(root, "version"));
     if (model instanceof DefaultSModel) {
       check_ca1g54_a0a2a5(((DefaultSModel) model).getSModelHeader(), root);
     }

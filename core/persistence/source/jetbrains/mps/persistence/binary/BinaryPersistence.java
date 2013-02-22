@@ -16,7 +16,6 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
@@ -175,7 +174,7 @@ public class BinaryPersistence {
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
     os.writeModelReference((SModelReference) model.getReference());
-    os.writeInt(model.getVersion());
+    os.writeInt(((ABCDE) model).getVersion());
     os.writeBoolean(model instanceof BinarySModel && ((BinarySModel) model).getHeader().isDoNotGenerate());
     os.writeInt(0xabab);
 

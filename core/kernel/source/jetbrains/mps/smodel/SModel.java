@@ -884,7 +884,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //---------refactorings--------
 
-  public int getVersion() {
+  private int getVersion() {
     return -1;
   }
 
@@ -1028,7 +1028,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     for (ModuleReference mr : ((ABCDE) this).engagedOnGenerationLanguages()) {
       ((ABCDE) to).addEngagedOnGenerationLanguage(mr);
     }
-    to.setVersion(getVersion());
+    ((ABCDE) to).setVersion(((ABCDE) this).getVersion());
   }
 
 

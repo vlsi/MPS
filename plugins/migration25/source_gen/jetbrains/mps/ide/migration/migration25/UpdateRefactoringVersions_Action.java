@@ -102,11 +102,11 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
       }
       if (importElement.getUsedVersion() < usedModel.getVersion()) {
         LOG.info(model + ": updating used version of " + importElement.getModelReference() + " from " + importElement.getUsedVersion() + " to " + usedModel.getVersion());
-        m.updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
+        ((ABCDE) m).updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
         model.setChanged(true);
       } else if (importElement.getUsedVersion() > usedModel.getVersion()) {
         LOG.error(model + ": used version of " + importElement.getModelReference() + " is greater than model version: " + importElement.getUsedVersion() + ">" + usedModel.getVersion());
-        m.updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
+        ((ABCDE) m).updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
         model.setChanged(true);
       }
     }

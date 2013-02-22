@@ -67,7 +67,7 @@ public class DefaultSModel extends SModel {
   }
 
   @Override
-  public int getVersion() {
+  public int getVersion2() {
     return myHeader.getVersion();
   }
 

@@ -39,7 +39,7 @@ public class ReferenceUpdater {
       if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
 
       SModel model = sm.getSModel();
-      if ((model.updateSModelReferences() | model.updateModuleReferences()) && (sm instanceof EditableSModel)) {
+      if ((((ABCDE) model).updateSModelReferences() | ((ABCDE) model).updateModuleReferences()) && (sm instanceof EditableSModel)) {
         ((EditableSModel) sm).setChanged(true);
       }
     }

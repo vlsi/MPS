@@ -37,7 +37,7 @@ public class StructureModificationProcessor {
     boolean result = data.apply(myModelMap);
     for (IMapping<SModelReference, Integer> entry : MapSequence.fromMap(data.getDependencies())) {
       // also adds implicit import if necessary 
-      myModel.updateImportedModelUsedVersion(entry.key(), entry.value() + 1);
+      ((ABCDE) myModel).updateImportedModelUsedVersion(entry.key(), entry.value() + 1);
     }
     return result;
   }
