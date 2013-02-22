@@ -31,6 +31,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1088761943574">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ReferenceMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049745" resolveInfo="LinkAttribute" />
@@ -72,6 +73,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="template switch macro" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SwitchMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$SWITCH$" />
@@ -84,6 +86,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="copy source node macro" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CopySrcNodeMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$COPY_SRC$" />
@@ -93,6 +96,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="copy list of nodes from source" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CopySrcListMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$COPY_SRCL$" />
@@ -102,6 +106,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="conditional macro" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IfMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$IF$" />
@@ -111,6 +116,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="loop macro" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="LoopMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$LOOP$" />
@@ -120,6 +126,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="map source node macro" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MapSrcNodeMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$MAP_SRC$" />
@@ -129,6 +136,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="map nodes form source list macro" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MapSrcListMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$MAP_SRCL$" />
@@ -248,6 +256,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1167951328751">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SourceSubstituteMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1087833466690" resolveInfo="NodeMacro" />
@@ -383,6 +392,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="include template macro" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IncludeMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$INCLUDE$" />
@@ -551,6 +561,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="call template macro" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="TemplateCallMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$CALL$" />
@@ -600,6 +611,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="attach label to output node" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="LabelMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$LABEL$" />
@@ -609,6 +621,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="create an arbitrary node in output model" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="InsertMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$INSERT$" />
@@ -627,6 +640,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="weave additional children" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="WeaveMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$WEAVE$" />
@@ -654,6 +668,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="specify input for the attributed node for tracing purposes" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="TraceMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="$TRACE$" />

@@ -85,6 +85,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="946964771156066336" resolveInfo="PersistentConfiguration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="946964771156066582">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PersistentConfigurationTemplateInitializer" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="template" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1145552809883" resolveInfo="AbstractCreator" />
