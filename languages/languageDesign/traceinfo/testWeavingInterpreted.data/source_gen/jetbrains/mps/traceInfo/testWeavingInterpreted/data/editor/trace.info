@@ -23,23 +23,23 @@
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="40" startPosition="81" endLine="41" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="40" startPosition="81" endLine="41" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="41" startPosition="83" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="45" startPosition="88" endLine="46" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="46" startPosition="82" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="47" startPosition="29" endLine="48" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="48" startPosition="42" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="49" startPosition="26" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="50" startPosition="58" endLine="51" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="51" startPosition="42" endLine="52" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="52" startPosition="73" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="53" startPosition="57" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="55" startPosition="35" endLine="56" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="56" startPosition="72" endLine="57" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="57" startPosition="78" endLine="58" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="59" startPosition="10" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="63" startPosition="88" endLine="64" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="64" startPosition="91" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="65" startPosition="47" endLine="66" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="66" startPosition="34" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="45" startPosition="88" endLine="46" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="46" startPosition="82" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="47" startPosition="29" endLine="48" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="48" startPosition="42" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="49" startPosition="26" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="50" startPosition="58" endLine="51" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="51" startPosition="42" endLine="52" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="52" startPosition="73" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="53" startPosition="57" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="55" startPosition="35" endLine="56" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="56" startPosition="72" endLine="57" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="57" startPosition="78" endLine="58" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="59" startPosition="10" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008329129" fileName="RootConcept_Editor.java" startLine="63" startPosition="88" endLine="64" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008329129" fileName="RootConcept_Editor.java" startLine="64" startPosition="91" endLine="65" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008329129" fileName="RootConcept_Editor.java" startLine="65" startPosition="47" endLine="66" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008329129" fileName="RootConcept_Editor.java" startLine="66" startPosition="34" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="70" startPosition="90" endLine="71" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="71" startPosition="99" endLine="72" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="72" startPosition="49" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -47,8 +47,8 @@
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="73" startPosition="84" endLine="74" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="73" startPosition="84" endLine="74" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="74" startPosition="85" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="78" startPosition="91" endLine="79" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="79" startPosition="74" endLine="80" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008486068" fileName="RootConcept_Editor.java" startLine="78" startPosition="91" endLine="79" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008486068" fileName="RootConcept_Editor.java" startLine="79" startPosition="74" endLine="80" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="83" startPosition="92" endLine="84" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="84" startPosition="119" endLine="85" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="85" startPosition="108" endLine="86" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -67,10 +67,10 @@
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="115" startPosition="96" endLine="116" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="117" startPosition="34" endLine="118" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="120" startPosition="131" endLine="121" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="127" startPosition="88" endLine="128" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="128" startPosition="96" endLine="129" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="129" startPosition="47" endLine="130" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="130" startPosition="34" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008329135" fileName="RootConcept_Editor.java" startLine="127" startPosition="88" endLine="128" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008329135" fileName="RootConcept_Editor.java" startLine="128" startPosition="96" endLine="129" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008329135" fileName="RootConcept_Editor.java" startLine="129" startPosition="47" endLine="130" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008329135" fileName="RootConcept_Editor.java" startLine="130" startPosition="34" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="134" startPosition="90" endLine="135" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="135" startPosition="99" endLine="136" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="136" startPosition="49" endLine="137" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -78,8 +78,8 @@
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="137" startPosition="84" endLine="138" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="137" startPosition="84" endLine="138" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="138" startPosition="85" endLine="139" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="142" startPosition="91" endLine="143" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="143" startPosition="74" endLine="144" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008486072" fileName="RootConcept_Editor.java" startLine="142" startPosition="91" endLine="143" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008486072" fileName="RootConcept_Editor.java" startLine="143" startPosition="74" endLine="144" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="147" startPosition="92" endLine="148" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="148" startPosition="127" endLine="149" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="149" startPosition="108" endLine="150" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -98,10 +98,10 @@
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="179" startPosition="96" endLine="180" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="181" startPosition="34" endLine="182" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="184" startPosition="131" endLine="185" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="191" startPosition="88" endLine="192" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="192" startPosition="96" endLine="193" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="193" startPosition="47" endLine="194" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="194" startPosition="34" endLine="195" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008537271" fileName="RootConcept_Editor.java" startLine="191" startPosition="88" endLine="192" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008537271" fileName="RootConcept_Editor.java" startLine="192" startPosition="96" endLine="193" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008537271" fileName="RootConcept_Editor.java" startLine="193" startPosition="47" endLine="194" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008537271" fileName="RootConcept_Editor.java" startLine="194" startPosition="34" endLine="195" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="198" startPosition="90" endLine="199" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="199" startPosition="99" endLine="200" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="200" startPosition="49" endLine="201" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -109,8 +109,8 @@
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="201" startPosition="84" endLine="202" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="201" startPosition="84" endLine="202" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="202" startPosition="85" endLine="203" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="206" startPosition="91" endLine="207" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="207" startPosition="74" endLine="208" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008537262" fileName="RootConcept_Editor.java" startLine="206" startPosition="91" endLine="207" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008537262" fileName="RootConcept_Editor.java" startLine="207" startPosition="74" endLine="208" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="211" startPosition="92" endLine="212" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="212" startPosition="127" endLine="213" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="213" startPosition="108" endLine="214" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -129,10 +129,10 @@
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="243" startPosition="96" endLine="244" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="245" startPosition="34" endLine="246" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="248" startPosition="131" endLine="249" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="255" startPosition="88" endLine="256" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="256" startPosition="101" endLine="257" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="257" startPosition="47" endLine="258" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="258" startPosition="34" endLine="259" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008537273" fileName="RootConcept_Editor.java" startLine="255" startPosition="88" endLine="256" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008537273" fileName="RootConcept_Editor.java" startLine="256" startPosition="101" endLine="257" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008537273" fileName="RootConcept_Editor.java" startLine="257" startPosition="47" endLine="258" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008537273" fileName="RootConcept_Editor.java" startLine="258" startPosition="34" endLine="259" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="262" startPosition="90" endLine="263" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="263" startPosition="99" endLine="264" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="264" startPosition="49" endLine="265" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -140,8 +140,8 @@
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="265" startPosition="84" endLine="266" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="265" startPosition="84" endLine="266" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="266" startPosition="85" endLine="267" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="270" startPosition="91" endLine="271" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="271" startPosition="74" endLine="272" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008537267" fileName="RootConcept_Editor.java" startLine="270" startPosition="91" endLine="271" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008537267" fileName="RootConcept_Editor.java" startLine="271" startPosition="74" endLine="272" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="275" startPosition="92" endLine="276" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="276" startPosition="135" endLine="277" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="277" startPosition="108" endLine="278" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -173,26 +173,26 @@
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="284" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="weaveEachManyListHandler_aw3qer_b8a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="308" startPosition="134" endLine="311" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="311" startPosition="9" endLine="314" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_aw3qer_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008486068" fileName="RootConcept_Editor.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_aw3qer_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_aw3qer_a4a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008486072" fileName="RootConcept_Editor.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_aw3qer_a4a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="206" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_aw3qer_a6a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008537262" fileName="RootConcept_Editor.java" startLine="206" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_aw3qer_a6a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="224" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="270" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_aw3qer_a8a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008537267" fileName="RootConcept_Editor.java" startLine="270" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_aw3qer_a8a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="288" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="101" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="165" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="229" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="293" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="54" startPosition="59" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_aw3qer_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="54" startPosition="59" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6186432342008329129" fileName="RootConcept_Editor.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_aw3qer_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="107" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="127" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_aw3qer_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008329135" fileName="RootConcept_Editor.java" startLine="127" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_aw3qer_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="171" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="191" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_aw3qer_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008537271" fileName="RootConcept_Editor.java" startLine="191" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_aw3qer_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="235" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="255" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_aw3qer_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008537273" fileName="RootConcept_Editor.java" startLine="255" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_aw3qer_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="299" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="70" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_aw3qer_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_aw3qer_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
@@ -211,7 +211,7 @@
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="242" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="306" startPosition="0" endLine="317" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="30" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_aw3qer_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_aw3qer_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_aw3qer_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" />
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="32" startPosition="48" endLine="33" endPosition="81" />
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="33" startPosition="81" endLine="34" endPosition="81" />
@@ -242,26 +242,26 @@
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="284" startPosition="106" endLine="285" endPosition="50" />
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="309" startPosition="34" endLine="310" endPosition="95" />
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="312" startPosition="131" endLine="313" endPosition="139" />
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="78" startPosition="91" endLine="80" endPosition="18">
-      <varInfo nodeId="6186432342008329120" varName="result" />
+    <scopeInfo nodeId="6186432342008486068" fileName="RootConcept_Editor.java" startLine="78" startPosition="91" endLine="80" endPosition="18">
+      <varInfo nodeId="6186432342008486068" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="96" startPosition="66" endLine="98" endPosition="93">
       <varInfo nodeId="6186432342008329120" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="142" startPosition="91" endLine="144" endPosition="18">
-      <varInfo nodeId="6186432342008329120" varName="result" />
+    <scopeInfo nodeId="6186432342008486072" fileName="RootConcept_Editor.java" startLine="142" startPosition="91" endLine="144" endPosition="18">
+      <varInfo nodeId="6186432342008486072" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="160" startPosition="66" endLine="162" endPosition="93">
       <varInfo nodeId="6186432342008329120" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="206" startPosition="91" endLine="208" endPosition="18">
-      <varInfo nodeId="6186432342008329120" varName="result" />
+    <scopeInfo nodeId="6186432342008537262" fileName="RootConcept_Editor.java" startLine="206" startPosition="91" endLine="208" endPosition="18">
+      <varInfo nodeId="6186432342008537262" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="224" startPosition="66" endLine="226" endPosition="93">
       <varInfo nodeId="6186432342008329120" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="270" startPosition="91" endLine="272" endPosition="18">
-      <varInfo nodeId="6186432342008329120" varName="result" />
+    <scopeInfo nodeId="6186432342008537267" fileName="RootConcept_Editor.java" startLine="270" startPosition="91" endLine="272" endPosition="18">
+      <varInfo nodeId="6186432342008537267" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="288" startPosition="66" endLine="290" endPosition="93">
       <varInfo nodeId="6186432342008329120" varName="listOwner" />
@@ -270,9 +270,9 @@
       <varInfo nodeId="6186432342008329120" varName="editorContext" />
       <varInfo nodeId="6186432342008329120" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="55" startPosition="35" endLine="58" endPosition="105">
-      <varInfo nodeId="6186432342008329120" varName="manager" />
-      <varInfo nodeId="6186432342008329120" varName="opContext" />
+    <scopeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="55" startPosition="35" endLine="58" endPosition="105">
+      <varInfo nodeId="6186432342008329125" varName="manager" />
+      <varInfo nodeId="6186432342008329125" varName="opContext" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="92" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="6186432342008329120" varName="childRole" />
@@ -306,12 +306,12 @@
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="293" startPosition="86" endLine="296" endPosition="25">
       <varInfo nodeId="6186432342008329120" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="63" startPosition="88" endLine="67" endPosition="22">
-      <varInfo nodeId="6186432342008329120" varName="editorCell" />
+    <scopeInfo nodeId="6186432342008329129" fileName="RootConcept_Editor.java" startLine="63" startPosition="88" endLine="67" endPosition="22">
+      <varInfo nodeId="6186432342008329129" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="6186432342008329120" varName="editorContext" />
-      <varInfo nodeId="6186432342008329120" varName="node" />
+    <scopeInfo nodeId="6186432342008486068" fileName="RootConcept_Editor.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="6186432342008486068" varName="editorContext" />
+      <varInfo nodeId="6186432342008486068" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="6186432342008329120" varName="editorContext" />
@@ -319,12 +319,12 @@
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="107" startPosition="68" endLine="111" endPosition="23">
       <varInfo nodeId="6186432342008329120" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="127" startPosition="88" endLine="131" endPosition="22">
-      <varInfo nodeId="6186432342008329120" varName="editorCell" />
+    <scopeInfo nodeId="6186432342008329135" fileName="RootConcept_Editor.java" startLine="127" startPosition="88" endLine="131" endPosition="22">
+      <varInfo nodeId="6186432342008329135" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="142" startPosition="0" endLine="146" endPosition="0">
-      <varInfo nodeId="6186432342008329120" varName="editorContext" />
-      <varInfo nodeId="6186432342008329120" varName="node" />
+    <scopeInfo nodeId="6186432342008486072" fileName="RootConcept_Editor.java" startLine="142" startPosition="0" endLine="146" endPosition="0">
+      <varInfo nodeId="6186432342008486072" varName="editorContext" />
+      <varInfo nodeId="6186432342008486072" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="160" startPosition="0" endLine="164" endPosition="0">
       <varInfo nodeId="6186432342008329120" varName="editorContext" />
@@ -332,12 +332,12 @@
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="171" startPosition="68" endLine="175" endPosition="23">
       <varInfo nodeId="6186432342008329120" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="191" startPosition="88" endLine="195" endPosition="22">
-      <varInfo nodeId="6186432342008329120" varName="editorCell" />
+    <scopeInfo nodeId="6186432342008537271" fileName="RootConcept_Editor.java" startLine="191" startPosition="88" endLine="195" endPosition="22">
+      <varInfo nodeId="6186432342008537271" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="206" startPosition="0" endLine="210" endPosition="0">
-      <varInfo nodeId="6186432342008329120" varName="editorContext" />
-      <varInfo nodeId="6186432342008329120" varName="node" />
+    <scopeInfo nodeId="6186432342008537262" fileName="RootConcept_Editor.java" startLine="206" startPosition="0" endLine="210" endPosition="0">
+      <varInfo nodeId="6186432342008537262" varName="editorContext" />
+      <varInfo nodeId="6186432342008537262" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="224" startPosition="0" endLine="228" endPosition="0">
       <varInfo nodeId="6186432342008329120" varName="editorContext" />
@@ -345,12 +345,12 @@
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="235" startPosition="68" endLine="239" endPosition="23">
       <varInfo nodeId="6186432342008329120" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="255" startPosition="88" endLine="259" endPosition="22">
-      <varInfo nodeId="6186432342008329120" varName="editorCell" />
+    <scopeInfo nodeId="6186432342008537273" fileName="RootConcept_Editor.java" startLine="255" startPosition="88" endLine="259" endPosition="22">
+      <varInfo nodeId="6186432342008537273" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="270" startPosition="0" endLine="274" endPosition="0">
-      <varInfo nodeId="6186432342008329120" varName="editorContext" />
-      <varInfo nodeId="6186432342008329120" varName="node" />
+    <scopeInfo nodeId="6186432342008537267" fileName="RootConcept_Editor.java" startLine="270" startPosition="0" endLine="274" endPosition="0">
+      <varInfo nodeId="6186432342008537267" varName="editorContext" />
+      <varInfo nodeId="6186432342008537267" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="288" startPosition="0" endLine="292" endPosition="0">
       <varInfo nodeId="6186432342008329120" varName="editorContext" />
@@ -402,30 +402,30 @@
       <varInfo nodeId="6186432342008329120" varName="editorContext" />
       <varInfo nodeId="6186432342008329120" varName="elementNode" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="6186432342008329120" varName="editorContext" />
-      <varInfo nodeId="6186432342008329120" varName="node" />
+    <scopeInfo nodeId="6186432342008329129" fileName="RootConcept_Editor.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="6186432342008329129" varName="editorContext" />
+      <varInfo nodeId="6186432342008329129" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="107" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="6186432342008329120" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="127" startPosition="0" endLine="133" endPosition="0">
-      <varInfo nodeId="6186432342008329120" varName="editorContext" />
-      <varInfo nodeId="6186432342008329120" varName="node" />
+    <scopeInfo nodeId="6186432342008329135" fileName="RootConcept_Editor.java" startLine="127" startPosition="0" endLine="133" endPosition="0">
+      <varInfo nodeId="6186432342008329135" varName="editorContext" />
+      <varInfo nodeId="6186432342008329135" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="171" startPosition="0" endLine="177" endPosition="0">
       <varInfo nodeId="6186432342008329120" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="191" startPosition="0" endLine="197" endPosition="0">
-      <varInfo nodeId="6186432342008329120" varName="editorContext" />
-      <varInfo nodeId="6186432342008329120" varName="node" />
+    <scopeInfo nodeId="6186432342008537271" fileName="RootConcept_Editor.java" startLine="191" startPosition="0" endLine="197" endPosition="0">
+      <varInfo nodeId="6186432342008537271" varName="editorContext" />
+      <varInfo nodeId="6186432342008537271" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="235" startPosition="0" endLine="241" endPosition="0">
       <varInfo nodeId="6186432342008329120" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="255" startPosition="0" endLine="261" endPosition="0">
-      <varInfo nodeId="6186432342008329120" varName="editorContext" />
-      <varInfo nodeId="6186432342008329120" varName="node" />
+    <scopeInfo nodeId="6186432342008537273" fileName="RootConcept_Editor.java" startLine="255" startPosition="0" endLine="261" endPosition="0">
+      <varInfo nodeId="6186432342008537273" varName="editorContext" />
+      <varInfo nodeId="6186432342008537273" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="299" startPosition="0" endLine="305" endPosition="0">
       <varInfo nodeId="6186432342008329120" varName="editorContext" />
@@ -501,15 +501,15 @@
       <varInfo nodeId="6186432342008329120" varName="editorContext" />
       <varInfo nodeId="6186432342008329120" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="45" startPosition="88" endLine="60" endPosition="22">
-      <varInfo nodeId="6186432342008329120" varName="attributeConcept" />
-      <varInfo nodeId="6186432342008329120" varName="attributeKind" />
-      <varInfo nodeId="6186432342008329120" varName="editorCell" />
-      <varInfo nodeId="6186432342008329120" varName="provider" />
+    <scopeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="45" startPosition="88" endLine="60" endPosition="22">
+      <varInfo nodeId="6186432342008329125" varName="attributeConcept" />
+      <varInfo nodeId="6186432342008329125" varName="attributeKind" />
+      <varInfo nodeId="6186432342008329125" varName="editorCell" />
+      <varInfo nodeId="6186432342008329125" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="6186432342008329120" varName="editorContext" />
-      <varInfo nodeId="6186432342008329120" varName="node" />
+    <scopeInfo nodeId="6186432342008329125" fileName="RootConcept_Editor.java" startLine="45" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="6186432342008329125" varName="editorContext" />
+      <varInfo nodeId="6186432342008329125" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="91" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor.RootConcept_Editor$weaveListHandler_aw3qer_b2a" />
     <unitInfo nodeId="6186432342008329120" fileName="RootConcept_Editor.java" startLine="155" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor.RootConcept_Editor$weaveEachListHandler_aw3qer_b4a" />
@@ -526,28 +526,28 @@
     <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="25" startPosition="81" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="31" startPosition="47" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="32" startPosition="34" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="36" startPosition="88" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="37" startPosition="82" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="38" startPosition="29" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="39" startPosition="42" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="40" startPosition="26" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="41" startPosition="58" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="43" startPosition="73" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="44" startPosition="57" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="46" startPosition="35" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="47" startPosition="72" endLine="48" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="48" startPosition="78" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="50" startPosition="10" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008485038" fileName="ChildConceptWeaveEach_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485038" fileName="ChildConceptWeaveEach_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485038" fileName="ChildConceptWeaveEach_Editor.java" startLine="31" startPosition="47" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485038" fileName="ChildConceptWeaveEach_Editor.java" startLine="32" startPosition="34" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="36" startPosition="88" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="37" startPosition="82" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="38" startPosition="29" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="39" startPosition="42" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="40" startPosition="26" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="41" startPosition="58" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="43" startPosition="73" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="44" startPosition="57" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="46" startPosition="35" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="47" startPosition="72" endLine="48" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="48" startPosition="78" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="50" startPosition="10" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pdyq96_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6186432342008485038" fileName="ChildConceptWeaveEach_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pdyq96_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_pdyq96_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_pdyq96_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_pdyq96_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" />
     <scopeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="23" startPosition="48" endLine="24" endPosition="81" />
     <scopeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" />
@@ -555,33 +555,33 @@
       <varInfo nodeId="6186432342008485033" varName="editorContext" />
       <varInfo nodeId="6186432342008485033" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="46" startPosition="35" endLine="49" endPosition="105">
-      <varInfo nodeId="6186432342008485033" varName="manager" />
-      <varInfo nodeId="6186432342008485033" varName="opContext" />
+    <scopeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="46" startPosition="35" endLine="49" endPosition="105">
+      <varInfo nodeId="6186432342008485040" varName="manager" />
+      <varInfo nodeId="6186432342008485040" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="29" startPosition="88" endLine="33" endPosition="22">
-      <varInfo nodeId="6186432342008485033" varName="editorCell" />
+    <scopeInfo nodeId="6186432342008485038" fileName="ChildConceptWeaveEach_Editor.java" startLine="29" startPosition="88" endLine="33" endPosition="22">
+      <varInfo nodeId="6186432342008485038" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="21" startPosition="89" endLine="26" endPosition="22">
       <varInfo nodeId="6186432342008485033" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="6186432342008485033" varName="editorContext" />
-      <varInfo nodeId="6186432342008485033" varName="node" />
+    <scopeInfo nodeId="6186432342008485038" fileName="ChildConceptWeaveEach_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="6186432342008485038" varName="editorContext" />
+      <varInfo nodeId="6186432342008485038" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="6186432342008485033" varName="editorContext" />
       <varInfo nodeId="6186432342008485033" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="36" startPosition="88" endLine="51" endPosition="22">
-      <varInfo nodeId="6186432342008485033" varName="attributeConcept" />
-      <varInfo nodeId="6186432342008485033" varName="attributeKind" />
-      <varInfo nodeId="6186432342008485033" varName="editorCell" />
-      <varInfo nodeId="6186432342008485033" varName="provider" />
+    <scopeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="36" startPosition="88" endLine="51" endPosition="22">
+      <varInfo nodeId="6186432342008485040" varName="attributeConcept" />
+      <varInfo nodeId="6186432342008485040" varName="attributeKind" />
+      <varInfo nodeId="6186432342008485040" varName="editorCell" />
+      <varInfo nodeId="6186432342008485040" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="6186432342008485033" varName="editorContext" />
-      <varInfo nodeId="6186432342008485033" varName="node" />
+    <scopeInfo nodeId="6186432342008485040" fileName="ChildConceptWeaveEach_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="6186432342008485040" varName="editorContext" />
+      <varInfo nodeId="6186432342008485040" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="6186432342008485033" fileName="ChildConceptWeaveEach_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor.ChildConceptWeaveEach_Editor" />
   </root>
@@ -594,28 +594,28 @@
     <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="25" startPosition="81" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="30" startPosition="91" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="31" startPosition="47" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="32" startPosition="34" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="36" startPosition="88" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="37" startPosition="82" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="38" startPosition="29" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="39" startPosition="42" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="40" startPosition="26" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="41" startPosition="58" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="43" startPosition="73" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="44" startPosition="57" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="46" startPosition="35" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="47" startPosition="72" endLine="48" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="48" startPosition="78" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="50" startPosition="10" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008485046" fileName="ChildConceptWeave_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485046" fileName="ChildConceptWeave_Editor.java" startLine="30" startPosition="91" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485046" fileName="ChildConceptWeave_Editor.java" startLine="31" startPosition="47" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485046" fileName="ChildConceptWeave_Editor.java" startLine="32" startPosition="34" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="36" startPosition="88" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="37" startPosition="82" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="38" startPosition="29" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="39" startPosition="42" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="40" startPosition="26" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="41" startPosition="58" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="43" startPosition="73" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="44" startPosition="57" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="46" startPosition="35" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="47" startPosition="72" endLine="48" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="48" startPosition="78" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="50" startPosition="10" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pj940b_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6186432342008485046" fileName="ChildConceptWeave_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_pj940b_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_pj940b_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_pj940b_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_pj940b_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" />
     <scopeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="23" startPosition="48" endLine="24" endPosition="81" />
     <scopeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" />
@@ -623,33 +623,33 @@
       <varInfo nodeId="6186432342008485041" varName="editorContext" />
       <varInfo nodeId="6186432342008485041" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="46" startPosition="35" endLine="49" endPosition="105">
-      <varInfo nodeId="6186432342008485041" varName="manager" />
-      <varInfo nodeId="6186432342008485041" varName="opContext" />
+    <scopeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="46" startPosition="35" endLine="49" endPosition="105">
+      <varInfo nodeId="6186432342008485048" varName="manager" />
+      <varInfo nodeId="6186432342008485048" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="29" startPosition="88" endLine="33" endPosition="22">
-      <varInfo nodeId="6186432342008485041" varName="editorCell" />
+    <scopeInfo nodeId="6186432342008485046" fileName="ChildConceptWeave_Editor.java" startLine="29" startPosition="88" endLine="33" endPosition="22">
+      <varInfo nodeId="6186432342008485046" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="21" startPosition="89" endLine="26" endPosition="22">
       <varInfo nodeId="6186432342008485041" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="6186432342008485041" varName="editorContext" />
-      <varInfo nodeId="6186432342008485041" varName="node" />
+    <scopeInfo nodeId="6186432342008485046" fileName="ChildConceptWeave_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="6186432342008485046" varName="editorContext" />
+      <varInfo nodeId="6186432342008485046" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="6186432342008485041" varName="editorContext" />
       <varInfo nodeId="6186432342008485041" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="36" startPosition="88" endLine="51" endPosition="22">
-      <varInfo nodeId="6186432342008485041" varName="attributeConcept" />
-      <varInfo nodeId="6186432342008485041" varName="attributeKind" />
-      <varInfo nodeId="6186432342008485041" varName="editorCell" />
-      <varInfo nodeId="6186432342008485041" varName="provider" />
+    <scopeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="36" startPosition="88" endLine="51" endPosition="22">
+      <varInfo nodeId="6186432342008485048" varName="attributeConcept" />
+      <varInfo nodeId="6186432342008485048" varName="attributeKind" />
+      <varInfo nodeId="6186432342008485048" varName="editorCell" />
+      <varInfo nodeId="6186432342008485048" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="6186432342008485041" varName="editorContext" />
-      <varInfo nodeId="6186432342008485041" varName="node" />
+    <scopeInfo nodeId="6186432342008485048" fileName="ChildConceptWeave_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="6186432342008485048" varName="editorContext" />
+      <varInfo nodeId="6186432342008485048" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="6186432342008485041" fileName="ChildConceptWeave_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor.ChildConceptWeave_Editor" />
   </root>
@@ -662,28 +662,28 @@
     <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="25" startPosition="81" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="31" startPosition="47" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="32" startPosition="34" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="36" startPosition="88" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="37" startPosition="82" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="38" startPosition="29" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="39" startPosition="42" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="40" startPosition="26" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="41" startPosition="58" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="43" startPosition="73" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="44" startPosition="57" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="46" startPosition="35" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="47" startPosition="72" endLine="48" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="48" startPosition="78" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="50" startPosition="10" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008533344" fileName="ChildConceptWeaveMany_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533344" fileName="ChildConceptWeaveMany_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533344" fileName="ChildConceptWeaveMany_Editor.java" startLine="31" startPosition="47" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533344" fileName="ChildConceptWeaveMany_Editor.java" startLine="32" startPosition="34" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="36" startPosition="88" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="37" startPosition="82" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="38" startPosition="29" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="39" startPosition="42" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="40" startPosition="26" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="41" startPosition="58" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="43" startPosition="73" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="44" startPosition="57" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="46" startPosition="35" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="47" startPosition="72" endLine="48" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="48" startPosition="78" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="50" startPosition="10" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mma1qz_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6186432342008533344" fileName="ChildConceptWeaveMany_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_mma1qz_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_mma1qz_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_mma1qz_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_mma1qz_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" />
     <scopeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="23" startPosition="48" endLine="24" endPosition="81" />
     <scopeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" />
@@ -691,33 +691,33 @@
       <varInfo nodeId="6186432342008533339" varName="editorContext" />
       <varInfo nodeId="6186432342008533339" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="46" startPosition="35" endLine="49" endPosition="105">
-      <varInfo nodeId="6186432342008533339" varName="manager" />
-      <varInfo nodeId="6186432342008533339" varName="opContext" />
+    <scopeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="46" startPosition="35" endLine="49" endPosition="105">
+      <varInfo nodeId="6186432342008533346" varName="manager" />
+      <varInfo nodeId="6186432342008533346" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="29" startPosition="88" endLine="33" endPosition="22">
-      <varInfo nodeId="6186432342008533339" varName="editorCell" />
+    <scopeInfo nodeId="6186432342008533344" fileName="ChildConceptWeaveMany_Editor.java" startLine="29" startPosition="88" endLine="33" endPosition="22">
+      <varInfo nodeId="6186432342008533344" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="21" startPosition="89" endLine="26" endPosition="22">
       <varInfo nodeId="6186432342008533339" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="6186432342008533339" varName="editorContext" />
-      <varInfo nodeId="6186432342008533339" varName="node" />
+    <scopeInfo nodeId="6186432342008533344" fileName="ChildConceptWeaveMany_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="6186432342008533344" varName="editorContext" />
+      <varInfo nodeId="6186432342008533344" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="6186432342008533339" varName="editorContext" />
       <varInfo nodeId="6186432342008533339" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="36" startPosition="88" endLine="51" endPosition="22">
-      <varInfo nodeId="6186432342008533339" varName="attributeConcept" />
-      <varInfo nodeId="6186432342008533339" varName="attributeKind" />
-      <varInfo nodeId="6186432342008533339" varName="editorCell" />
-      <varInfo nodeId="6186432342008533339" varName="provider" />
+    <scopeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="36" startPosition="88" endLine="51" endPosition="22">
+      <varInfo nodeId="6186432342008533346" varName="attributeConcept" />
+      <varInfo nodeId="6186432342008533346" varName="attributeKind" />
+      <varInfo nodeId="6186432342008533346" varName="editorCell" />
+      <varInfo nodeId="6186432342008533346" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="6186432342008533339" varName="editorContext" />
-      <varInfo nodeId="6186432342008533339" varName="node" />
+    <scopeInfo nodeId="6186432342008533346" fileName="ChildConceptWeaveMany_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="6186432342008533346" varName="editorContext" />
+      <varInfo nodeId="6186432342008533346" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="6186432342008533339" fileName="ChildConceptWeaveMany_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor.ChildConceptWeaveMany_Editor" />
   </root>
@@ -730,28 +730,28 @@
     <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="25" startPosition="81" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="30" startPosition="101" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="31" startPosition="47" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="32" startPosition="34" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="36" startPosition="88" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="37" startPosition="82" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="38" startPosition="29" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="39" startPosition="42" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="40" startPosition="26" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="41" startPosition="58" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="43" startPosition="73" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="44" startPosition="57" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="46" startPosition="35" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="47" startPosition="72" endLine="48" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="48" startPosition="78" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="50" startPosition="10" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008533355" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533355" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="30" startPosition="101" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533355" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="31" startPosition="47" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533355" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="32" startPosition="34" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="36" startPosition="88" endLine="37" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="37" startPosition="82" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="38" startPosition="29" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="39" startPosition="42" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="40" startPosition="26" endLine="41" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="41" startPosition="58" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="42" startPosition="42" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="43" startPosition="73" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="44" startPosition="57" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="46" startPosition="35" endLine="47" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="47" startPosition="72" endLine="48" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="48" startPosition="78" endLine="49" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="50" startPosition="10" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qo6263_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6186432342008533355" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_qo6263_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="45" startPosition="59" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_qo6263_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_qo6263_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_qo6263_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" />
     <scopeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="23" startPosition="48" endLine="24" endPosition="81" />
     <scopeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="81" />
@@ -759,33 +759,33 @@
       <varInfo nodeId="6186432342008533349" varName="editorContext" />
       <varInfo nodeId="6186432342008533349" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="46" startPosition="35" endLine="49" endPosition="105">
-      <varInfo nodeId="6186432342008533349" varName="manager" />
-      <varInfo nodeId="6186432342008533349" varName="opContext" />
+    <scopeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="46" startPosition="35" endLine="49" endPosition="105">
+      <varInfo nodeId="6186432342008533357" varName="manager" />
+      <varInfo nodeId="6186432342008533357" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="29" startPosition="88" endLine="33" endPosition="22">
-      <varInfo nodeId="6186432342008533349" varName="editorCell" />
+    <scopeInfo nodeId="6186432342008533355" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="29" startPosition="88" endLine="33" endPosition="22">
+      <varInfo nodeId="6186432342008533355" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="21" startPosition="89" endLine="26" endPosition="22">
       <varInfo nodeId="6186432342008533349" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="6186432342008533349" varName="editorContext" />
-      <varInfo nodeId="6186432342008533349" varName="node" />
+    <scopeInfo nodeId="6186432342008533355" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="6186432342008533355" varName="editorContext" />
+      <varInfo nodeId="6186432342008533355" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="6186432342008533349" varName="editorContext" />
       <varInfo nodeId="6186432342008533349" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="36" startPosition="88" endLine="51" endPosition="22">
-      <varInfo nodeId="6186432342008533349" varName="attributeConcept" />
-      <varInfo nodeId="6186432342008533349" varName="attributeKind" />
-      <varInfo nodeId="6186432342008533349" varName="editorCell" />
-      <varInfo nodeId="6186432342008533349" varName="provider" />
+    <scopeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="36" startPosition="88" endLine="51" endPosition="22">
+      <varInfo nodeId="6186432342008533357" varName="attributeConcept" />
+      <varInfo nodeId="6186432342008533357" varName="attributeKind" />
+      <varInfo nodeId="6186432342008533357" varName="editorCell" />
+      <varInfo nodeId="6186432342008533357" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="6186432342008533349" varName="editorContext" />
-      <varInfo nodeId="6186432342008533349" varName="node" />
+    <scopeInfo nodeId="6186432342008533357" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="36" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="6186432342008533357" varName="editorContext" />
+      <varInfo nodeId="6186432342008533357" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="6186432342008533349" fileName="ChildConceptWeaveEachMany_Editor.java" startLine="16" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingInterpreted.data.editor.ChildConceptWeaveEachMany_Editor" />
   </root>
