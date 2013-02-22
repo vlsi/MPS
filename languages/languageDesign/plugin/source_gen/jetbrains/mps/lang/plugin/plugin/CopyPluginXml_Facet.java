@@ -109,6 +109,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                           ThreadUtils.runInUIThreadAndWait(new Runnable() {
                             public void run() {
                               ModelAccess.instance().requireWrite(new Runnable() {
+                                @Override
                                 public void run() {
                                   if (!(metaInf.exists())) {
                                     metaInf.mkdirs();

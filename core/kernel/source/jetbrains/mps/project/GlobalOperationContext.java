@@ -25,10 +25,12 @@ public class GlobalOperationContext extends StandaloneMPSContext {
     return null;
   }
 
+  @Override
   public IModule getModule() {
     return null;
   }
 
+  @Override
   @NotNull
   public IScope getScope() {
     return GlobalScope.getInstance();

@@ -19,33 +19,41 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
     myProject = project;
   }
 
+  @Override
   public void projectOpened() {
     new Thread(new Runnable() {
+      @Override
       public void run() {
         IdeaJavaCompilerImpl.this.myIdeaProjectHandler = getIdeaProjectHandler();
       }
     }).start();
   }
 
+  @Override
   public void projectClosed() {
     myIdeaProjectHandler = null;
   }
 
   @NotNull
+  @Override
   public String getComponentName() {
     return "IDEA Java Compiler";
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
+  @Override
   public boolean isValid() {
     return !(MPSCore.getInstance().isTestMode()) && myIdeaProjectHandler != null;
   }
 
+  @Override
   public MPSCompilationResult compileModules(IModule[] modules) {
     if (!(isValid())) {
       return null;

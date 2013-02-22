@@ -165,6 +165,7 @@ public class FullASTConverter extends ASTConverter {
 
 
 
+  @Override
   protected SNode convertEnumConst(FieldDeclaration x) throws JavaParseException {
     SNode constr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
     // TODO 
@@ -215,6 +216,7 @@ public class FullASTConverter extends ASTConverter {
     return result;
   }
 
+  @Override
   public SNode convertExpression(Expression x) throws JavaParseException {
     if (x instanceof AllocationExpression) {
       return convertExpression((AllocationExpression) x);

@@ -17,6 +17,7 @@ public class GWTModulePathItem extends PathItem {
     return res != null && res.endsWith(SUFFIX);
   }
 
+  @Override
   public String baseName(String res) {
     if (res == null) {
       return null;

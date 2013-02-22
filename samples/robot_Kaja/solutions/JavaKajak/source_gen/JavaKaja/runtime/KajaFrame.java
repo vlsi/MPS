@@ -290,6 +290,7 @@ public abstract class KajaFrame {
         final boolean isStopped = stopped;
         try {
           SwingUtilities.invokeAndWait(new Runnable() {
+            @Override
             public void run() {
               if (isStopped) {
                 frame.setTitle("Robot Kaja - STOPPED");

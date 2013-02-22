@@ -46,6 +46,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
     this.setIcon(IdeIcons.DEFAULT_ICON);
   }
 
+  @Override
   public void doUpdatePresentation() {
     super.doUpdatePresentation();
     if (getUserObject() instanceof AbstractOperation) {

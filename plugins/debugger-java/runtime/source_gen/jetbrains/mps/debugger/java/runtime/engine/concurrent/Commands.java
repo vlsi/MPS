@@ -10,6 +10,7 @@ public class Commands {
 
   public static IManagerCommand fromClosure(final _FunctionTypes._void_P0_E0 command) {
     return new Commands.ManagerCommand() {
+      @Override
       public void invoke() {
         command.invoke();
       }
@@ -18,6 +19,7 @@ public class Commands {
 
   public static IManagerCommand fromClosure(final _FunctionTypes._void_P0_E0 command, final _FunctionTypes._void_P0_E0 cancel) {
     return new Commands.ManagerCommand() {
+      @Override
       public void invoke() {
         command.invoke();
       }

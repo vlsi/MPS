@@ -38,6 +38,7 @@ public class StatisticsTableModel implements TableModel {
       }
     });
     myState.addListener(new TestStateListener() {
+      @Override
       public void onTestStart(TestEvent event) {
         TestMethodRow row = findRowForEvent(event);
         if (row != null) {
@@ -52,6 +53,7 @@ public class StatisticsTableModel implements TableModel {
         return getRow(event.getTestCaseName(), event.getTestMethodName());
       }
 
+      @Override
       public void onTestEnd(TestEvent event) {
         TestMethodRow row = findRowForEvent(event);
         if (row != null) {
@@ -64,6 +66,7 @@ public class StatisticsTableModel implements TableModel {
         }
       }
 
+      @Override
       public void onTestError(TestEvent event) {
         TestMethodRow row = findRowForEvent(event);
         if (row != null) {
@@ -72,6 +75,7 @@ public class StatisticsTableModel implements TableModel {
         }
       }
 
+      @Override
       public void onTestFailure(TestEvent event) {
         TestMethodRow row = findRowForEvent(event);
         if (row != null) {
@@ -80,6 +84,7 @@ public class StatisticsTableModel implements TableModel {
         }
       }
 
+      @Override
       public void onLooseTest(String className, String methodName) {
         TestMethodRow row = getRow(className, methodName);
         if (row != null) {
@@ -116,6 +121,7 @@ public class StatisticsTableModel implements TableModel {
 
   private void fireTableChanged() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
+      @Override
       public void run() {
         for (TableModelListener listener : ListSequence.fromList(myListeners)) {
           listener.tableChanged(new TableModelEvent(StatisticsTableModel.this));
@@ -124,10 +130,12 @@ public class StatisticsTableModel implements TableModel {
     });
   }
 
+  @Override
   public int getRowCount() {
     return ListSequence.fromList(myFilteredRows).count();
   }
 
+  @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
     return ListSequence.fromList(myFilteredRows).getElement(rowIndex);
   }
@@ -147,29 +155,36 @@ public class StatisticsTableModel implements TableModel {
     fireTableChanged();
   }
 
+  @Override
   public int getColumnCount() {
     return ListSequence.fromList(TEST_COLUMNS).count();
   }
 
+  @Override
   public String getColumnName(int columnIndex) {
     return ListSequence.fromList(TEST_COLUMNS).getElement(columnIndex);
   }
 
+  @Override
   public Class<?> getColumnClass(int columnIndex) {
     return TestStatisticsRow.class;
   }
 
+  @Override
   public boolean isCellEditable(int rowIndex, int columnIndex) {
     return false;
   }
 
+  @Override
   public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
   }
 
+  @Override
   public void addTableModelListener(TableModelListener listener) {
     ListSequence.fromList(myListeners).addElement(listener);
   }
 
+  @Override
   public void removeTableModelListener(TableModelListener listener) {
     ListSequence.fromList(myListeners).removeElement(listener);
   }

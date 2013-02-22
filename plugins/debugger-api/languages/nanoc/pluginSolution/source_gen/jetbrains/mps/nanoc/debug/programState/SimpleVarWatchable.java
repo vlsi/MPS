@@ -18,22 +18,27 @@ public class SimpleVarWatchable implements IWatchable {
     myValue = new SimpleValue(value);
   }
 
+  @Override
   public String getName() {
     return myVarName;
   }
 
+  @Override
   public IValue getValue() {
     return myValue;
   }
 
+  @Override
   public WatchablesCategory getCategory() {
     return VARIABLES_CATEGORY;
   }
 
+  @Override
   public Icon getPresentationIcon() {
     return null;
   }
 
+  @Override
   public SNode getNode() {
     return null;
   }

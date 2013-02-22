@@ -17,24 +17,11 @@ package jetbrains.mps.smodel.descriptor;
 
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
 
+/**
+ *  use EditableSModel
+ */
+@Deprecated
 public interface EditableSModelDescriptor extends SModelDescriptor, EditableSModel {
 
-  boolean isChanged();
-
-  void setChanged(boolean changed);
-
-  @Override
-  void save();
-
-  void rename(SModelFqName newModelFqName, boolean changeFile);
-
-  boolean isReadOnly();
-
-  void updateDiskTimestamp();
-
-  boolean needsReloading();
-
-  void reloadFromDisk();
 }

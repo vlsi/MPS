@@ -69,6 +69,7 @@ public class DataNode implements IExternalizeable {
 
   public List<DataNode> getDescendantsByDataClass(final Class dataClass) {
     return getDescendantsWithCondition(new Condition<BaseNodeData>() {
+      @Override
       public boolean met(BaseNodeData data) {
         return dataClass.isInstance(data);
       }
@@ -96,6 +97,7 @@ public class DataNode implements IExternalizeable {
 
   public List<SModelDescriptor> getAllModels() {
     List<DataNode> modelNodes = getDescendantsWithCondition(new Condition<BaseNodeData>() {
+      @Override
       public boolean met(BaseNodeData nodeData) {
         return nodeData instanceof ModelNodeData;
       }
@@ -124,6 +126,7 @@ public class DataNode implements IExternalizeable {
 
   public List<SNodeReference> getAllResultNodes() {
     List<DataNode> nodeNodes = getDescendantsWithCondition(new Condition<BaseNodeData>() {
+      @Override
       public boolean met(BaseNodeData nodeData) {
         return nodeData instanceof NodeNodeData && nodeData.isResultNode();
       }
@@ -148,6 +151,7 @@ public class DataNode implements IExternalizeable {
 
   //-------PERSISTENCE--------
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     Element dataXML = element.getChild(DATA);
     String dataClass = dataXML.getAttributeValue(DATA_CLASS);
@@ -177,6 +181,7 @@ public class DataNode implements IExternalizeable {
     }
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     Element dataXML = new Element(DATA);
     dataXML.setAttribute(DATA_CLASS, myData.getClass().getName());

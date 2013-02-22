@@ -17,12 +17,11 @@ package jetbrains.mps.newTypesystem.state.blocks;
 
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.State;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.misc.hash.HashSet;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -44,7 +43,7 @@ public class MultipleWhenConcreteBlock extends WhenConcreteBlock {
     for (SNode arg : myArguments) {
       result.add(new Pair<SNode, ConditionKind>(arg, myConditionKind));
     }
-    return  result;
+    return result;
   }
 
   @Override
@@ -64,7 +63,7 @@ public class MultipleWhenConcreteBlock extends WhenConcreteBlock {
   }
 
 
-    @Override
+  @Override
   public String getPresentation() {
     return "when concrete (" + myArguments + ") " + myConditionKind.getPresentation();
   }

@@ -12,10 +12,12 @@ public class OldLoggableRefactoringAdapter extends OldRefactoringAdapter impleme
     super(oldRefactoring);
   }
 
+  @Override
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
     return myOldRefactoring.getAffectedNodes(refactoringContext);
   }
 
+  @Override
   public void updateModel(SModel model, RefactoringContext refactoringContext) {
     myOldRefactoring.updateModel(model, refactoringContext);
   }

@@ -106,8 +106,10 @@ class ButtonEditorTab {
             myNode = node;
         }
 
+        @Override
         public void actionPerformed(AnActionEvent e) {
             ModelAccess.instance().runReadAction(new Runnable() {
+                @Override
                 public void run() {
                     myCallback.changeNode(myNode);
                 }
@@ -204,12 +206,15 @@ class ButtonEditorTab {
             myIcon = createCompositeTabIcon();
         }
 
+        @Override
         public boolean displayTextInToolbar() {
             return true;
         }
 
+        @Override
         public boolean isSelected(AnActionEvent e) {
             return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+                @Override
                 public Boolean compute() {
                     return myTabComponent.isCurrent(ButtonEditorTab.this);
                 }
@@ -222,8 +227,10 @@ class ButtonEditorTab {
             e.getPresentation().setIcon(myIcon);
         }
 
+        @Override
         public void setSelected(AnActionEvent e, boolean state) {
             ModelAccess.instance().runReadAction(new Runnable() {
+                @Override
                 public void run() {
                   List<SNode> nodes = myDescriptor.getNodes(myBaseNode.resolve(MPSModuleRepository.getInstance()));
                     if (nodes.size() == 1) {

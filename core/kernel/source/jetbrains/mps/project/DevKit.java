@@ -45,10 +45,12 @@ public class DevKit extends AbstractModule {
     setModuleReference(descriptor.getModuleReference());
   }
 
+  @Override
   public DevkitDescriptor getModuleDescriptor() {
     return myDescriptor;
   }
 
+  @Override
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     setDevKitDescriptor((DevkitDescriptor) moduleDescriptor, reloadClasses);
   }
@@ -165,6 +167,7 @@ public class DevKit extends AbstractModule {
     return result;
   }
 
+  @Override
   public void save() {
     super.save();
     DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());

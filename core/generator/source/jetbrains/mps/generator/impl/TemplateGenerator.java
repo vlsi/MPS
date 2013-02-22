@@ -133,7 +133,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     // publish roots
     for (SNode outputRoot : myOutputRoots) {
-      myOutputModel.addRoot(outputRoot);
+      myOutputModel.addRootNode(outputRoot);
     }
 
     // reload "required" roots from cache
@@ -188,7 +188,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // root mapping rules
     ttrace.push("root mappings", false);
     ArrayList<SNode> rootsToCopy = new ArrayList<SNode>();
-    for (SNode root : myInputModel.roots()) {
+    for (SNode root : myInputModel.getRootNodes()) {
       rootsToCopy.add(root);
     }
     for (TemplateRootMappingRule rule : myRuleManager.getRoot_MappingRules()) {
@@ -377,6 +377,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return false;
   }
 
+  @Override
   public boolean isDirty(SNode node) {
     RootDependenciesBuilder builder = myDependenciesBuilder.getRootBuilder(node);
     if (builder != null && builder.isUnchanged()) {
@@ -552,12 +553,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         boolean external = true;
         if (inputReference instanceof PostponedReference){
           external = false;
-        } else if (inputNode.getModel().getSModelReference().equals(inputReference.getTargetSModelReference())){
+        } else if (inputNode.getModel().getReference().equals(inputReference.getTargetSModelReference())){
           external = false;
         }
         if (inputReference instanceof DynamicReference || external) {
           // dynamic & external references don't need validation => replace input model with output
-          SModelReference targetModelReference = external ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
+          SModelReference targetModelReference = external ? inputReference.getTargetSModelReference() : (SModelReference) myOutputModel.getReference();
           if (inputReference instanceof StaticReference) {
             if (targetModelReference == null) {
               myLogger.error(inputNode, "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode) + " (target model is null)",
@@ -645,7 +646,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   private void revalidateAllReferences() throws GenerationCanceledException {
     // replace all postponed references
-    for (SNode root : myOutputModel.roots()) {
+    for (SNode root : myOutputModel.getRootNodes()) {
       checkMonitorCanceled();
       revalidateAllReferences(root);
     }
@@ -702,10 +703,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myIsStrict ? myAreMappingsReady : true;
   }
 
+  @Override
   public GenerationSessionContext getGeneratorSessionContext() {
     return (GenerationSessionContext) getOperationContext();
   }
 
+  @Override
   public boolean isStrict() {
     return myIsStrict;
   }

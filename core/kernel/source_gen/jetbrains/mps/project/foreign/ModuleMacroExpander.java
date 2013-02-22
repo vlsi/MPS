@@ -16,10 +16,12 @@ public class ModuleMacroExpander implements MacroHelper {
     this.myModuleFile = moduleFile;
   }
 
+  @Override
   public String shrinkPath(@Nullable String string) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public String expandPath(@Nullable String path) {
     if (path == null) {
       return null;

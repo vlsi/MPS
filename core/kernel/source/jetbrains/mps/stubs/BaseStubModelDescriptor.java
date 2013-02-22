@@ -34,6 +34,11 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   @Override
+  public boolean isReadOnly() {
+    return true;
+  }
+
+  @Override
   @NotNull
   public StubModelDataSource getSource() {
     return (StubModelDataSource) super.getSource();
@@ -92,6 +97,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
     final SModel result = getSource().loadSModel((IModule) myModule, this);
     updateDiskTimestamp();
     replaceModel(new Runnable() {
+      @Override
       public void run() {
         mySModel = result;
       }

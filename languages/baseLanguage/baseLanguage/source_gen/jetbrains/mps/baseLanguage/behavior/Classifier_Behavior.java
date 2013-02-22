@@ -225,7 +225,7 @@ public class Classifier_Behavior {
     }
     // ignore model defferences for java_stub models 
     String javastub = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    if (javastub.equals(SNodeOperations.getModel(thisNode).getStereotype()) && javastub.equals(SNodeOperations.getModel(that).getStereotype())) {
+    if (javastub.equals(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(thisNode))) && javastub.equals(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(that)))) {
       return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{}).equals(BehaviorReflection.invokeVirtual(String.class, that, "virtual_getFqName_1213877404258", new Object[]{}));
     }
     return thisNode == that;

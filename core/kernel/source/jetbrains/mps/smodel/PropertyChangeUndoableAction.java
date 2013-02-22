@@ -29,10 +29,12 @@ class PropertyChangeUndoableAction extends SNodeUndoableAction {
     myNewValue = newValue;
   }
 
+  @Override
   protected void doUndo() {
     SNodeAccessUtil.setProperty(getAffectedNode(), myProperty, myOldValue);
   }
 
+  @Override
   protected void doRedo() {
     SNodeAccessUtil.setProperty(getAffectedNode(), myProperty, myNewValue);
   }

@@ -55,6 +55,7 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     this.myName.setEditable(true);
     result.add(this.myName, c);
     this.myName.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         IntroduceVariableDialog.this.getRefactoring().setName(((String) IntroduceVariableDialog.this.myName.getSelectedItem()));
       }
@@ -64,6 +65,7 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     textField.setSelectionStart(0);
     textField.setSelectionEnd(ListSequence.fromList(expectedNames).first().length());
     textField.addKeyListener(new KeyAdapter() {
+      @Override
       public void keyPressed(KeyEvent p0) {
         if (p0.getKeyCode() == KeyEvent.VK_ENTER && !(IntroduceVariableDialog.this.myName.isPopupVisible())) {
           doRefactoringAction();
@@ -128,6 +130,7 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
    * This method will be called on pressing "Refactor" button in dialog.
    * 
    */
+  @Override
   protected void doRefactoringAction() {
     String name = (String) this.myName.getEditor().getItem();
     IntroduceVariableDialog.this.getRefactoring().setName(name);

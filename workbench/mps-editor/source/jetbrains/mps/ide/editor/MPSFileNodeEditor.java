@@ -20,32 +20,25 @@ import com.intellij.ide.structureView.StructureViewBuilder;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.fileEditor.DocumentsEditor;
-import com.intellij.openapi.fileEditor.FileEditorDataProviderManager;
-import com.intellij.openapi.fileEditor.FileEditorLocation;
-import com.intellij.openapi.fileEditor.FileEditorManager;
-import com.intellij.openapi.fileEditor.FileEditorState;
-import com.intellij.openapi.fileEditor.FileEditorStateLevel;
-import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
+import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.UserDataHolderBase;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.beans.PropertyChangeListener;
 import java.util.List;
 
@@ -74,6 +67,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     assert context == null || context.getModule() != null;
 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         recreateEditor();
       }
@@ -89,31 +83,37 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     return myNodeEditor;
   }
 
+  @Override
   @NotNull
   public JComponent getComponent() {
     return myComponent;
   }
 
+  @Override
   @Nullable
   public JComponent getPreferredFocusedComponent() {
     return isDisposed() ? null : (JComponent) myNodeEditor.getCurrentEditorComponent();
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getName() {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         return myFile.getNode().getName();
       }
     });
   }
 
+  @Override
   @NotNull
   public FileEditorState getState(@NotNull final FileEditorStateLevel level) {
     final MPSEditorStateWrapper state = new MPSEditorStateWrapper();
     if (!isDisposed()) {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           state.setEditorState(myNodeEditor.saveState(level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL));
         }
@@ -123,6 +123,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     return state;
   }
 
+  @Override
   public void setState(final @NotNull FileEditorState state) {
     if (!(state instanceof MPSEditorStateWrapper)) return;
     final MPSEditorStateWrapper wrapper = (MPSEditorStateWrapper) state;
@@ -130,6 +131,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     if (wrapper.getLevel() == FileEditorStateLevel.UNDO) {
       //we need it here since undo might need to flush events which requires write action
       ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
         public void run() {
           myNodeEditor.loadState(wrapper.getEditorState());
         }
@@ -139,42 +141,51 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     }
   }
 
+  @Override
   public boolean isModified() {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         SModelDescriptor md = myFile.getNode().getModel().getModelDescriptor();
-        if (!(md instanceof EditableSModelDescriptor)) return false;
-        return ((EditableSModelDescriptor) md).isChanged();
+        return md instanceof EditableSModel && ((EditableSModel) md).isChanged();
       }
     });
   }
 
+  @Override
   public boolean isValid() {
     return myFile.isValid() && myIsValid && !myDisposed;
   }
 
+  @Override
   public void selectNotify() {
   }
 
+  @Override
   public void deselectNotify() {
   }
 
+  @Override
   public void addPropertyChangeListener(@NotNull PropertyChangeListener listener) {
   }
 
+  @Override
   public void removePropertyChangeListener(@NotNull PropertyChangeListener listener) {
   }
 
+  @Override
   @Nullable
   public BackgroundEditorHighlighter getBackgroundHighlighter() {
     return null;
   }
 
+  @Override
   @Nullable
   public FileEditorLocation getCurrentLocation() {
     return null;
   }
 
+  @Override
   @Nullable
   public StructureViewBuilder getStructureViewBuilder() {
     return ModelAccess.instance().runReadAction(new Computable<StructureViewBuilder>() {
@@ -189,6 +200,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     });
   }
 
+  @Override
   public void dispose() {
     myNodeEditor.dispose();
     myComponent.removeAll();
@@ -240,6 +252,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     return result;
   }
 
+  @Override
   public Document[] getDocuments() {
     if (!isDisposed()) {
       List<Document> result = ((BaseNodeEditor) myNodeEditor).getAllEditedDocuments();
@@ -262,8 +275,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
         if (dataId.equals(PlatformDataKeys.PROJECT.getName())) {
           return myProject;
         }
-      }
-      else {
+      } else {
         if (!myProject.isDisposed()) {
           final Object data = FileEditorDataProviderManager.getInstance(myProject).getData(dataId, MPSFileNodeEditor.this, myFile);
           if (data != null) return data;

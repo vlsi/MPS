@@ -87,6 +87,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
     return myCycles;
   }
 
+  @Override
   protected MPSTreeNode rebuild() {
     SetSequence.fromSet(myCycles).clear();
     if (myModules == null || ListSequence.fromList(myModules).isEmpty()) {
@@ -117,6 +118,7 @@ public class DependencyTree extends MPSTree implements DataProvider {
   }
 
   @Nullable
+  @Override
   public Object getData(@NonNls String id) {
     ModuleDependencyNode current = as_he3vmc_a0a0a91(getCurrentNode(), ModuleDependencyNode.class);
     if (id.equals(MPSDataKeys.LOGICAL_VIEW_NODE.getName())) {

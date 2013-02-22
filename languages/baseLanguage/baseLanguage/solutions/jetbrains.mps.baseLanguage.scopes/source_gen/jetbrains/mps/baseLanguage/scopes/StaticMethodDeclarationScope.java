@@ -18,11 +18,13 @@ public class StaticMethodDeclarationScope extends BaseMethodsScope {
     super(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), classNode, extendedClassifiers);
   }
 
+  @Override
   public String getSignatureForOverriding(SNode method, SNode contextClassifier) {
     return SPropertyOperations.getString(method, "name") + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(method) + ")";
   }
 
   @Nullable
+  @Override
   public SNode resolveMethod(SNode contextNode, @NotNull String refText, List<SNode> actualArguments, List<SNode> methods) {
     Map<SNode, SNode> typeByTypeVar = ClassifierScopeUtils.resolveClassifierTypeVars(classifier);
     return MethodResolveUtil.chooseByParameterType(methods, actualArguments, typeByTypeVar);

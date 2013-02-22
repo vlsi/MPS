@@ -20,6 +20,7 @@ import javax.swing.JComponent;
 public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTargetChooser {
   private ProjectTree myTree;
   private ProjectTreeFindHelper myHelper = new ProjectTreeFindHelper() {
+    @Override
     protected ProjectTree getTree() {
       return ModelOrNodeChooser.this.myTree;
     }
@@ -50,6 +51,7 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
     });
   }
 
+  @Override
   public Object getSelectedObject() {
     final Object selection = myTree.getSelectionPath().getLastPathComponent();
     final Wrappers._T<Object> result = new Wrappers._T<Object>(null);
@@ -65,6 +67,7 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
     return result.value;
   }
 
+  @Override
   public JComponent getComponent() {
     return this;
   }

@@ -19,6 +19,7 @@ public abstract class SModelMethodMigration extends SimpleMigration {
     this.smodelFunctionConcept = smodelFunctionConcept;
   }
 
+  @Override
   public String getName() {
     String functionAlias = SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(smodelFunctionConcept, "conceptProperty", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

@@ -13,6 +13,7 @@ public class ValidationError extends Message {
     this.object = context;
   }
 
+  @Override
   public String getText() {
     return "Validation failed: " + super.getText() + ((object != null ?
       " in " + object.toString() :

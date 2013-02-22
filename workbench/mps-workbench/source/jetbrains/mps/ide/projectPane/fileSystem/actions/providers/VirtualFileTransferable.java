@@ -28,14 +28,17 @@ class VirtualFileTransferable implements Transferable {
     myData = data;
   }
 
+  @Override
   public DataFlavor[] getTransferDataFlavors() {
     return new DataFlavor[]{VIRTUAL_FILE_DATA_FLAVOR};
   }
 
+  @Override
   public boolean isDataFlavorSupported(DataFlavor flavor) {
     return VIRTUAL_FILE_DATA_FLAVOR.equals(flavor);
   }
 
+  @Override
   public Object getTransferData(DataFlavor flavor) throws UnsupportedFlavorException, IOException {
     if (VIRTUAL_FILE_DATA_FLAVOR.equals(flavor)) {
       return myData.getPresentation();

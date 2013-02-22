@@ -39,6 +39,7 @@ public class StateUtil {
     SModelDescriptor model;
     if (scope != null) {
       model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
+        @Override
         public SModelDescriptor compute() {
           return scope.getModelDescriptor(modelReference);
         }

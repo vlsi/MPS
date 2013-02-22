@@ -39,6 +39,7 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
   private static final Color CONSOLE_BACKGROUND = EditorColorsManager.getInstance().getGlobalScheme().getColor(ConsoleViewContentType.CONSOLE_BACKGROUND_KEY);
 
 
+  @Override
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
     JLabel component = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
@@ -55,6 +56,7 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
 
 
     NavStatus ns = ModelAccess.instance().runReadAction(new Computable<NavStatus>() {
+      @Override
       public NavStatus compute() {
         return canNavigate(message);
       }

@@ -99,16 +99,19 @@ public class CreateGroupsBuilder {
       myCallback = callback;
     }
 
+    @Override
     public void actionPerformed(AnActionEvent e) {
       final SNode[] created = new SNode[1];
 
       final Runnable r1 = new Runnable() {
+        @Override
         public void run() {
           created[0] = myDescriptor.createNode(myBaseNode.resolve(MPSModuleRepository.getInstance()), myConcept);
         }
       };
 
       final Runnable r2 = new Runnable() {
+        @Override
         public void run() {
           String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(MPSModuleRepository.getInstance()), jetbrains.mps.smodel.SNode.PACK);
           SNodeAccessUtil.setProperty(created[0], jetbrains.mps.smodel.SNode.PACK, mainPack);
@@ -118,6 +121,7 @@ public class CreateGroupsBuilder {
 
       if (myDescriptor.commandOnCreate()) {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          @Override
           public void run() {
             r1.run();
           }

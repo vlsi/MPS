@@ -17,6 +17,7 @@ public class NamedObject {
     return myName;
   }
 
+  @Override
   public String toString() {
     return myName;
   }

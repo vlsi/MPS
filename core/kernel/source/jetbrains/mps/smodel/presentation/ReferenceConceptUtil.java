@@ -49,6 +49,7 @@ public class ReferenceConceptUtil {
    */
   public static SNode getCharacteristicReference(final SNode concept) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      @Override
       public SNode compute() {
         String expectedReferentRole = null;
         String alias = SPropertyOperations.getString(concept, "conceptAlias");

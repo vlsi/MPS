@@ -80,6 +80,7 @@ public class NodeByConceptChooser extends AbstractMainNodeChooser {
     myAcceptor = acceptor;
   }
 
+  @Override
   protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor) {
     SConcept concept = SConceptRepository.getInstance().getConcept(myTargetConcept);
     Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
@@ -94,10 +95,12 @@ public class NodeByConceptChooser extends AbstractMainNodeChooser {
     }
   }
 
+  @Override
   protected Iterable<SModel> getModels(String model) {
     return ScopeOperations.getModelsByName(myScope, model);
   }
 
+  @Override
   protected Iterable<SNode> findNodes(jetbrains.mps.smodel.SModel model, final String fqName) {
     return ListSequence.fromList(SModelOperations.getNodes(((jetbrains.mps.smodel.SModel) model), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

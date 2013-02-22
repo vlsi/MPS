@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.Nullable;
 
 public class ScopeRule implements GetDataRule {
+  @Override
   @Nullable
   public Object getData(DataProvider dataProvider) {
     IOperationContext context = (IOperationContext) dataProvider.getData(MPSCommonDataKeys.OPERATION_CONTEXT.getName());

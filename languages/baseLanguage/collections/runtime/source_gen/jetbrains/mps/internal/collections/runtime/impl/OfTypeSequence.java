@@ -14,6 +14,7 @@ public class OfTypeSequence<U, V> extends AbstractChainedSequence<U, V> implemen
     requestedType = reqType;
   }
 
+  @Override
   public Iterator<V> iterator() {
     return new OfTypeSequence.OfTypeIterator();
   }
@@ -37,6 +38,7 @@ public class OfTypeSequence<U, V> extends AbstractChainedSequence<U, V> implemen
     private OfTypeIterator() {
     }
 
+    @Override
     public boolean hasNext() {
       if (inputIterator == null) {
         init();
@@ -47,6 +49,7 @@ public class OfTypeSequence<U, V> extends AbstractChainedSequence<U, V> implemen
       return hasNext.hasNext();
     }
 
+    @Override
     public V next() {
       if (inputIterator == null) {
         init();
@@ -60,6 +63,7 @@ public class OfTypeSequence<U, V> extends AbstractChainedSequence<U, V> implemen
       return clearNext();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

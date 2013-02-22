@@ -15,7 +15,9 @@ public abstract class JavaUiState extends AbstractUiState {
 
   public abstract ObjectReference getThisObject();
 
+  @Override
   public abstract JavaStackFrame getStackFrame();
 
+  @Override
   public abstract JavaThread getThread();
 }

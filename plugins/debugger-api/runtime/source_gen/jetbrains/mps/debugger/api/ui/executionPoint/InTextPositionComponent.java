@@ -45,12 +45,15 @@ public class InTextPositionComponent implements ProjectComponent {
     myEditorManager = fileEditorManager;
   }
 
+  @Override
   public void projectOpened() {
   }
 
+  @Override
   public void projectClosed() {
   }
 
+  @Override
   public void initComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.addDebugSessionListener(myCurrentDebugSessionListener);
@@ -68,6 +71,7 @@ public class InTextPositionComponent implements ProjectComponent {
     });
   }
 
+  @Override
   public void disposeComponent() {
     myConnection.disconnect();
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
@@ -76,6 +80,7 @@ public class InTextPositionComponent implements ProjectComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Text Position Component";
   }
@@ -93,6 +98,7 @@ public class InTextPositionComponent implements ProjectComponent {
     final _FunctionTypes._void_P0_E0 attach = attachPainterRunnable(session);
     if (detach != null || attach != null) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
+        @Override
         public void run() {
           check_uzwzqp_a0a0a0a0a0a2a41(detach);
           check_uzwzqp_a1a0a0a0a0a2a41(attach);
@@ -107,6 +113,7 @@ public class InTextPositionComponent implements ProjectComponent {
     final _FunctionTypes._void_P0_E0 attach = attachPainterRunnable(session, open);
     if (detach != null || attach != null) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
+        @Override
         public void run() {
           check_uzwzqp_a0a0a0a0a0a2a51(detach);
           check_uzwzqp_a1a0a0a0a0a2a51(attach);
@@ -147,6 +154,7 @@ public class InTextPositionComponent implements ProjectComponent {
       return;
     }
     ApplicationManager.getApplication().invokeLater(new Runnable() {
+      @Override
       public void run() {
         runnable.invoke();
       }

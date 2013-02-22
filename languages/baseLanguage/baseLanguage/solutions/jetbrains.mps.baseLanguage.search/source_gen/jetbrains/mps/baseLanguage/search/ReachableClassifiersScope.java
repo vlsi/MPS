@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.search.ModelAndImportedModelsScope;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,16 +14,17 @@ import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelStereotype;
 import java.util.Collection;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.logging.Logger;
 
 @Deprecated
@@ -49,10 +49,11 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getClassifiers() {
-    List<SModelDescriptor> models = new ModelAndImportedModelsScope(this.myModel, false, this.myScope).getModels();
+    List<? extends org.jetbrains.mps.openapi.model.SModel> models = new ModelAndImportedModelsScope(this.myModel, false, this.myScope).getModels();
     List<SNode> result = new ArrayList<SNode>();
-    for (SModelDescriptor model : models) {
+    for (org.jetbrains.mps.openapi.model.SModel model : models) {
       List<SNode> classifiers = ClassifiersCache.getInstance(model).getClassifiers();
       ListSequence.fromList(result).addSequence(ListSequence.fromList(classifiers));
     }
@@ -76,6 +77,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       this.myScope = scope;
     }
 
+    @Override
     public SNode resolve(String referenceInfo, @Nullable SModelReference targetModelReference) {
       String classname = referenceInfo;
       int dotIndex = classname.lastIndexOf(".");
@@ -96,37 +98,40 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       }
 
       if (targetModelReference == null) {
-        targetModelReference = myModel.getSModelReference();
+        targetModelReference = myModel.getReference();
       }
       if (targetModelReference.getSModelId() != null) {
-        SModelDescriptor targetModel = this.myScope.getModelDescriptor(targetModelReference);
+        org.jetbrains.mps.openapi.model.SModel targetModel = this.myScope.getModelDescriptor(targetModelReference);
         if (targetModel == null) {
           return null;
         }
         return ListSequence.fromList(ClassifiersCache.getInstance(targetModel).getClassifiersByRefName(classname)).first();
       }
-      SModelFqName modelname = targetModelReference.getSModelFqName();
-      return resolveClass(modelname.getLongName(), modelname.getStereotype(), classname);
+      String modelName = targetModelReference.getModelName();
+      return resolveClass(SModelStereotype.withoutStereotype(modelName), SModelStereotype.getStereotype(modelName), classname);
     }
 
-    public SNode resolveClass(String modelname, String stereotype, String nestedClassName) {
-      Collection<IModule> visibleModules = IterableUtil.asCollection(myScope.getVisibleModules());
+    public SNode resolveClass(String longName, String stereotype, String nestedClassName) {
+      Collection<SModule> visibleModules = IterableUtil.<SModule>asCollection(myScope.getVisibleModules());
+      String modelName = (stereotype != null ?
+        longName + "@" + stereotype :
+        longName
+      );
 
       List<SNode> classifiers = new ArrayList<SNode>();
-      for (SModelDescriptor model : Sequence.fromIterable(((Iterable<IModule>) visibleModules)).translate(new ITranslator2<IModule, SModelDescriptor>() {
-        public Iterable<SModelDescriptor> translate(IModule it) {
-          return it.getOwnModelDescriptors();
+      for (org.jetbrains.mps.openapi.model.SModel m : Sequence.fromIterable(((Iterable<SModule>) visibleModules)).translate(new ITranslator2<SModule, org.jetbrains.mps.openapi.model.SModel>() {
+        public Iterable<org.jetbrains.mps.openapi.model.SModel> translate(SModule it) {
+          return it.getModels();
         }
       }).distinct()) {
-        SModelFqName modelFqName = model.getSModelReference().getSModelFqName();
-        if (!(modelFqName.getLongName().equals(modelname))) {
+        String name = m.getModelName();
+        if (stereotype == null) {
+          name = SModelStereotype.withoutStereotype(name);
+        }
+        if (!(name.equals(modelName))) {
           continue;
         }
-        if (stereotype != null && !(modelFqName.getStereotype().equals(stereotype))) {
-          continue;
-        }
-
-        ListSequence.fromList(classifiers).addSequence(ListSequence.fromList(ClassifiersCache.getInstance(model).getClassifiersByRefName(nestedClassName)));
+        ListSequence.fromList(classifiers).addSequence(ListSequence.fromList(ClassifiersCache.getInstance(m).getClassifiersByRefName(nestedClassName)));
       }
 
       if (ListSequence.fromList(classifiers).isEmpty()) {
@@ -137,7 +142,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
           if (SNodeOperations.getModel(cls) == myModel) {
             return cls;
           }
-          if (check_x9ho2v_a0b0a0g0e7_0(check_x9ho2v_a0a1a0a6a4h_0(myModel)) == check_x9ho2v_a0b0a0g0e7(check_x9ho2v_a0a1a0a6a4h(SNodeOperations.getModel(cls)))) {
+          if (check_x9ho2v_a0b0a0h0e7_0(check_x9ho2v_a0a1a0a7a4h_0(myModel)) == check_x9ho2v_a0b0a0h0e7(check_x9ho2v_a0a1a0a7a4h(SNodeOperations.getModel(cls)))) {
             return cls;
           }
         }
@@ -154,11 +159,11 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
         warning.append("reference can't be resolved: ");
         warning.append(nestedClassName);
         warning.append(" in ");
-        warning.append(myModel.getLongName());
+        warning.append(jetbrains.mps.util.SNodeOperations.getModelLongName(myModel));
         warning.append(" can reference nodes from models: ");
         ListSequence.fromList(classifiers).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            warning.append(SNodeOperations.getModel(it).getSModelReference()).append("; ");
+            warning.append(SNodeOperations.getModel(it).getReference()).append("; ");
           }
         });
 
@@ -168,28 +173,28 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       return ListSequence.fromList(classifiers).getElement(0);
     }
 
-    private static IModule check_x9ho2v_a0b0a0g0e7(SModelDescriptor checkedDotOperand) {
+    private static IModule check_x9ho2v_a0b0a0h0e7(SModelDescriptor checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
       }
       return null;
     }
 
-    private static SModelDescriptor check_x9ho2v_a0a1a0a6a4h(SModel checkedDotOperand) {
+    private static SModelDescriptor check_x9ho2v_a0a1a0a7a4h(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModelDescriptor();
       }
       return null;
     }
 
-    private static IModule check_x9ho2v_a0b0a0g0e7_0(SModelDescriptor checkedDotOperand) {
+    private static IModule check_x9ho2v_a0b0a0h0e7_0(SModelDescriptor checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
       }
       return null;
     }
 
-    private static SModelDescriptor check_x9ho2v_a0a1a0a6a4h_0(SModel checkedDotOperand) {
+    private static SModelDescriptor check_x9ho2v_a0a1a0a7a4h_0(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModelDescriptor();
       }

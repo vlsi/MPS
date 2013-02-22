@@ -200,7 +200,7 @@ public class ClassConcept_Behavior {
     if (index <= 0) {
       return fqName;
     }
-    int length = SNodeOperations.getModel(thisNode).getLongName().length();
+    int length = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(thisNode)).length();
     return fqName.substring(0, length) + "." + fqName.substring(length + 1).replace(".", "$");
   }
 

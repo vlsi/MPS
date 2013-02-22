@@ -13,6 +13,7 @@ public class FinalClosureParameter_Test extends TestCase {
     this.acceptFunction(new _FunctionTypes._void_P1_E0<String>() {
       public void invoke(final String s) {
         Runnable r = new Runnable() {
+          @Override
           public void run() {
             foo.value = s;
           }

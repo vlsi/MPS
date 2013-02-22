@@ -31,14 +31,19 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -64,8 +69,8 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               SModelDescriptor descr = SModelFileTracker.getInstance().findModel(childModelFile);
-              if(descr != null)
-                modifiedChildren.add(new MPSProjectViewModelPsiFile((PsiFileNode)node, descr));
+              if (descr != null)
+                modifiedChildren.add(new MPSProjectViewModelPsiFile((PsiFileNode) node, descr));
             }
           });
           continue;

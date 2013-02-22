@@ -92,6 +92,7 @@ public class PerformanceTracer implements IPerformanceTracer {
     return t;
   }
   
+  @Override
   public void addText(String s) {
     externalText.add(s);
   }

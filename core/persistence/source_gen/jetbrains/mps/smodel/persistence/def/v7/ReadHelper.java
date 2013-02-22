@@ -12,6 +12,7 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.logging.Logger;
 
 public class ReadHelper {
@@ -35,7 +36,6 @@ public class ReadHelper {
     }
     SModelReference modelRef = SModelReference.fromString(modelUID);
     SModel.ImportElement elem = new SModel.ImportElement(modelRef, ++myMaxImportIndex, version);
-    model.setMaxImportIndex(myMaxImportIndex);
     if (implicit) {
       model.addAdditionalModelVersion(elem);
     } else {
@@ -44,7 +44,7 @@ public class ReadHelper {
     addModelRef(index, modelRef);
   }
 
-  public SModelReference getSModelReference(@NotNull String ix) {
+  public org.jetbrains.mps.openapi.model.SModelReference getSModelReference(@NotNull String ix) {
     return ((ix == null || ix.length() == 0) ?
       myModelRef :
       MapSequence.fromMap(myModelByIx).get(ix)
@@ -66,7 +66,7 @@ public class ReadHelper {
       i1
     )));
     result.o1 = WriteHelper.DYNAMIC_REFERENCE_ID.equals(text);
-    SModelReference modelRef = getSModelReference((i0 < 0 ?
+    org.jetbrains.mps.openapi.model.SModelReference modelRef = getSModelReference((i0 < 0 ?
       "" :
       src.substring(0, i0)
     ));
@@ -90,12 +90,12 @@ public class ReadHelper {
       LOG.error("Broken reference to type=" + s + " in model " + myModelRef);
       return s.substring(ix + 1);
     }
-    SModelReference modelRef = getSModelReference(s.substring(0, ix));
+    org.jetbrains.mps.openapi.model.SModelReference modelRef = getSModelReference(s.substring(0, ix));
     if (modelRef == null) {
       LOG.error("couldn't create node '" + s.substring(ix + 1) + "' : import for index [" + s.substring(0, ix) + "] not found");
       return s.substring(ix + 1);
     } else {
-      return modelRef.getSModelFqName().getLongName() + "." + s.substring(ix + 1);
+      return SModelStereotype.withoutStereotype(modelRef.getModelName()) + "." + s.substring(ix + 1);
     }
   }
 

@@ -10,6 +10,7 @@ public class DoubleConstant implements Function<Double> {
     myDouble = d;
   }
 
+  @Override
   public Double compute(Object parm) {
     return myDouble;
   }

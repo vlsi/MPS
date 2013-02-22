@@ -53,6 +53,7 @@ public class MPSVcsManager implements ProjectComponent {
   private final ChangeListManager myChangeListManager;
   private volatile boolean myChangeListManagerInitialized = false;
   private final ChangeListAdapter myChangeListUpdateListener = new ChangeListAdapter() {
+    @Override
     public void changeListUpdateDone() {
       myChangeListManagerInitialized = true;
     }
@@ -86,6 +87,7 @@ public class MPSVcsManager implements ProjectComponent {
     return builder.isInConflict();
   }
 
+  @Override
   public void projectOpened() {
     DiskMemoryConflictResolver.setResolver(new DiskMemoryConflictResolverImpl());
     if (ApplicationManager.getApplication().isUnitTestMode() || myProject.isDefault()) {
@@ -106,6 +108,7 @@ public class MPSVcsManager implements ProjectComponent {
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
   }
 
+  @Override
   public void projectClosed() {
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     check_2eqssr_a1a21(myMessageBusConnection);
@@ -113,6 +116,7 @@ public class MPSVcsManager implements ProjectComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "VCS Manager";
   }
@@ -121,10 +125,12 @@ public class MPSVcsManager implements ProjectComponent {
     return myChangeListManagerInitialized;
   }
 
+  @Override
   public void initComponent() {
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
   }
 
+  @Override
   public void disposeComponent() {
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
   }
@@ -154,42 +160,53 @@ public class MPSVcsManager implements ProjectComponent {
     public StubChangeListManagerGate() {
     }
 
+    @Override
     public FileStatus getStatus(File file) {
       return null;
     }
 
+    @Override
     public void setDefaultChangeList(@NotNull String string) {
     }
 
+    @Override
     public List<LocalChangeList> getListsCopy() {
       return null;
     }
 
     @Nullable
+    @Override
     public LocalChangeList findChangeList(String name) {
       return null;
     }
 
+    @Override
     public LocalChangeList addChangeList(String name, String comment) {
       return null;
     }
 
+    @Override
     public LocalChangeList findOrCreateList(String name, String comment) {
       return null;
     }
 
+    @Override
     public void editComment(String name, String comment) {
     }
 
+    @Override
     public void editName(String oldName, String newName) {
     }
 
+    @Override
     public void moveChanges(String toList, Collection<Change> changes) {
     }
 
+    @Override
     public void setListsToDisappear(Collection<String> names) {
     }
 
+    @Override
     public FileStatus getStatus(VirtualFile virtualFile) {
       return FileStatus.NOT_CHANGED;
     }
@@ -203,14 +220,17 @@ public class MPSVcsManager implements ProjectComponent {
       myVirtualFile = vfile;
     }
 
+    @Override
     public void processChangeInList(Change change, @Nullable ChangeList changeList, VcsKey vcsKey) {
       processChange(change, vcsKey);
     }
 
+    @Override
     public void processChangeInList(Change change, String changeListName, VcsKey vcsKey) {
       processChange(change, vcsKey);
     }
 
+    @Override
     public void processChange(Change change, VcsKey vcsKey) {
       if (change.getFileStatus().equals(FileStatus.MERGED_WITH_CONFLICTS)) {
         ContentRevision contentRevision = change.getAfterRevision();
@@ -231,10 +251,12 @@ public class MPSVcsManager implements ProjectComponent {
     private MyFileStatusListener() {
     }
 
+    @Override
     public void fileStatusesChanged() {
       checkIfProjectIsConflicting();
     }
 
+    @Override
     public void fileStatusChanged(@NotNull VirtualFile file) {
       if (file.equals(myProject.getProjectFile())) {
         checkIfProjectIsConflicting();

@@ -17,6 +17,7 @@ public class NodeListChildrenSearchScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     ArrayList<SNode> result = new ArrayList<SNode>();
     for (SNode node : myNodes) {

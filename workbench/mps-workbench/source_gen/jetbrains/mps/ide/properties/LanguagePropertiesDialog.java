@@ -17,6 +17,7 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
   public Language myLanguage;
   public LanguageProperties myProperties;
   public Disposable myDisposable = new Disposable() {
+    @Override
     public void dispose() {
     }
   };
@@ -32,11 +33,13 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
     myProperties.loadFrom(myLanguage.getModuleDescriptor());
   }
 
+  @Override
   protected boolean doSaveChanges() {
     if (!(checkValidity())) {
       return false;
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         myProperties.saveTo(myLanguage.getModuleDescriptor());
         myLanguage.setLanguageDescriptor(myLanguage.getModuleDescriptor(), true);
@@ -45,6 +48,7 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
       }
     }, getOperationContext().getProject());
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      @Override
       public void run() {
         Project project = LanguagePropertiesDialog.this.getOperationContext().getProject();
         ProjectPane.getInstance(ProjectHelper.toIdeaProject(project)).selectModule(myLanguage, false);
@@ -53,6 +57,7 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
     return true;
   }
 
+  @Override
   public void dispose() {
     super.dispose();
     Disposer.dispose(myDisposable);

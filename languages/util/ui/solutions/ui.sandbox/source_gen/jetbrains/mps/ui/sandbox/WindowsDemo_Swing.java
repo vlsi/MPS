@@ -36,6 +36,7 @@ public class WindowsDemo_Swing {
     widget_ucaale_a0a0c.setText("Dialog");
     widget_ucaale_a0a0c.setActionCommand("dialog");
     widget_ucaale_a0a0c.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -66,6 +67,7 @@ public class WindowsDemo_Swing {
     final JButton widget_ucaale_a0a0a0b0b0d = new JButton();
     widget_ucaale_a0a0a0b0b0d.setText("Dialog");
     widget_ucaale_a0a0a0b0b0d.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -82,6 +84,7 @@ public class WindowsDemo_Swing {
     final JButton widget_ucaale_a0a1a0b0b0d = new JButton();
     widget_ucaale_a0a1a0b0b0d.setText("Form");
     widget_ucaale_a0a1a0b0b0d.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -110,6 +113,7 @@ public class WindowsDemo_Swing {
     final JButton widget_ucaale_a0a0a1a4 = new JButton();
     widget_ucaale_a0a0a1a4.setText("FOO");
     widget_ucaale_a0a0a1a4.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -164,6 +168,7 @@ public class WindowsDemo_Swing {
     final JButton widget_ucaale_c0a0a1a5 = new JButton();
     widget_ucaale_c0a0a1a5.setText("<-  / <->");
     widget_ucaale_c0a0a1a5.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -188,6 +193,7 @@ public class WindowsDemo_Swing {
     final JButton widget_ucaale_d0a0a1a5 = new JButton();
     widget_ucaale_d0a0a1a5.setText(" -> / <->");
     widget_ucaale_d0a0a1a5.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -212,6 +218,7 @@ public class WindowsDemo_Swing {
     final JButton widget_ucaale_e0a0a1a5 = new JButton();
     widget_ucaale_e0a0a1a5.setText(" -  / <->");
     widget_ucaale_e0a0a1a5.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {

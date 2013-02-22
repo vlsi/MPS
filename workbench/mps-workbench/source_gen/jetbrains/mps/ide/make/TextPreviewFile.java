@@ -137,6 +137,7 @@ public class TextPreviewFile extends StubVirtualFile {
     }
 
     @Nullable
+    @Override
     public FileAttributes getAttributes(@NotNull VirtualFile file) {
       if (file instanceof TextPreviewFile) {
         TextPreviewFile previewFile = (TextPreviewFile) file;
@@ -200,88 +201,109 @@ public class TextPreviewFile extends StubVirtualFile {
       return string;
     }
 
+    @Override
     public void renameFile(Object object, @NotNull VirtualFile file, @NotNull String string) throws IOException {
     }
 
+    @Override
     public void moveFile(Object object, @NotNull VirtualFile file, @NotNull VirtualFile file1) throws IOException {
     }
 
+    @Override
     public void deleteFile(Object object, @NotNull VirtualFile file) throws IOException {
     }
 
+    @Override
     public VirtualFile createChildFile(Object object, @NotNull VirtualFile file, @NotNull String string) throws IOException {
       return null;
     }
 
     @NotNull
+    @Override
     public VirtualFile createChildDirectory(Object object, @NotNull VirtualFile file, @NotNull String string) throws IOException {
       return null;
     }
 
+    @Override
     public VirtualFile copyFile(Object object, @NotNull VirtualFile file, @NotNull VirtualFile file1, @NotNull String string) throws IOException {
       return null;
     }
 
+    @Override
     public int getRank() {
       return 0;
     }
 
+    @Override
     protected String extractRootPath(@NotNull String string) {
       return "/";
     }
 
+    @Override
     public boolean isCaseSensitive() {
       return false;
     }
 
+    @Override
     public long getLength(VirtualFile file) {
       return 0L;
     }
 
     @NotNull
+    @Override
     public OutputStream getOutputStream(VirtualFile file, Object object, long l, long l1) throws IOException {
       return null;
     }
 
     @NotNull
+    @Override
     public InputStream getInputStream(VirtualFile file) throws IOException {
       return null;
     }
 
     @NotNull
+    @Override
     public byte[] contentsToByteArray(VirtualFile file) throws IOException {
       return null;
     }
 
+    @Override
     public void setWritable(VirtualFile file, boolean b) throws IOException {
     }
 
+    @Override
     public boolean isWritable(VirtualFile file) {
       return false;
     }
 
+    @Override
     public void setTimeStamp(VirtualFile file, long l) throws IOException {
     }
 
+    @Override
     public long getTimeStamp(VirtualFile file) {
       return 0L;
     }
 
+    @Override
     public boolean isDirectory(VirtualFile file) {
       return false;
     }
 
     @NotNull
+    @Override
     public String[] list(VirtualFile file) {
       return ArrayUtil.EMPTY_STRING_ARRAY;
     }
 
     @NonNls
     @NotNull
+    @Override
     public String getProtocol() {
       return PROTOCOL;
     }
 
+    @Override
     public boolean exists(VirtualFile file) {
       return false;
     }

@@ -133,6 +133,7 @@ public abstract class Project implements MPSModuleOwner {
   }
 
   public class ProjectScope extends DefaultScope {
+    @Override
     protected Set<IModule> getInitialModules() {
       Project[] openProjects = ProjectManager.getInstance().getOpenProjects();
       assert Arrays.asList(openProjects).contains(Project.this) : "trying to get scope on a not-yet-loaded project";

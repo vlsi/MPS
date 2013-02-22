@@ -59,6 +59,7 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     INSTANCE = this;
     super.init();
     CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
+      @Override
       public void performCleanup() {
         cleanup();
       }
@@ -71,6 +72,7 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     INSTANCE = null;
   }
 
+  @Override
   @NotNull
   public String getCacheFileName() {
     return "generated";
@@ -84,6 +86,7 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     myCachePathRedirects.remove(cdl);
   }
 
+  @Override
   protected Element toXml(GenerationDependencies dependencies) {
     return dependencies.toXml();
   }
@@ -100,10 +103,12 @@ public class GenerationDependenciesCache extends XmlBasedModelCache<GenerationDe
     }
   }
 
+  @Override
   protected GenerationDependencies fromXml(Element e) {
     return GenerationDependencies.fromXml(e);
   }
 
+  @Override
   protected GenerationDependencies generateCache(GenerationStatus status) {
     return status.getDependencies();
   }

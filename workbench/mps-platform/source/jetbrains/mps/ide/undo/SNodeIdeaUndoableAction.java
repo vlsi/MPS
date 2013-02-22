@@ -58,8 +58,10 @@ class SNodeIdeaUndoableAction implements UndoableAction {
     myAffectedDocuments = affected.toArray(new DocumentReference[affected.size()]);
   }
 
+  @Override
   public final void undo() throws UnexpectedUndoException {
     ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+      @Override
       public void run() {
         List<SNodeUndoableAction> rev = new LinkedList<SNodeUndoableAction>(myWrapped);
         Collections.reverse(rev);
@@ -70,8 +72,10 @@ class SNodeIdeaUndoableAction implements UndoableAction {
     }, null);
   }
 
+  @Override
   public final void redo() throws UnexpectedUndoException {
     ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+      @Override
       public void run() {
         for (SNodeUndoableAction a : myWrapped) {
           a.redo();
@@ -80,10 +84,12 @@ class SNodeIdeaUndoableAction implements UndoableAction {
     }, null);
   }
 
+  @Override
   public DocumentReference[] getAffectedDocuments() {
     return myAffectedDocuments;
   }
 
+  @Override
   public boolean isGlobal() {
     return myIsGlobal;
   }

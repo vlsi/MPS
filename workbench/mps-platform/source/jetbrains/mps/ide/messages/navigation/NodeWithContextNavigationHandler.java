@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 class NodeWithContextNavigationHandler implements INavigationHandler<NodeWithContext> {
+  @Override
   public boolean canNavigate(NodeWithContext object) {
     IOperationContext context = object.getContext();
     if (context == null) return false;
@@ -29,6 +30,7 @@ class NodeWithContextNavigationHandler implements INavigationHandler<NodeWithCon
     return NodePointerNavigationHandler.isCorrectNode(object.getNode());
   }
 
+  @Override
   public void navigate(NodeWithContext object, Project project, boolean focus, boolean select) {
     NavigationSupport.getInstance().openNode(object.getContext(), object.getNode().resolve(MPSModuleRepository.getInstance()), focus, select);
   }

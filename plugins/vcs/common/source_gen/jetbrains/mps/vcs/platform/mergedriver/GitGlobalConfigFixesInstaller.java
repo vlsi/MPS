@@ -21,6 +21,7 @@ import jetbrains.mps.logging.Logger;
   }
 
   @NotNull
+  @Override
   protected AbstractInstaller.State install(boolean dryRun) {
     if (!(PluginUtil.isGitPluginEnabled())) {
       return AbstractInstaller.State.NOT_ENABLED;
@@ -51,6 +52,7 @@ import jetbrains.mps.logging.Logger;
     }
   }
 
+  @Override
   public String getActionTitle() {
     return "Git global autocrlf setting (~/.gitconfig)";
   }
@@ -60,6 +62,7 @@ import jetbrains.mps.logging.Logger;
     return "Set core.autocrlf to input";
   }
 
+  @Override
   public String getAffectedVcsName() {
     return "Git";
   }

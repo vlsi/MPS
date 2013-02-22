@@ -67,7 +67,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1183017316762(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (_context.getInputModel().getLongName().endsWith(".actions")) {
+    if (jetbrains.mps.util.SNodeOperations.getModelLongName(_context.getInputModel()).endsWith(".actions")) {
       return "QueriesGenerated";
     } else {
       return "ActionsQueriesGenerated";

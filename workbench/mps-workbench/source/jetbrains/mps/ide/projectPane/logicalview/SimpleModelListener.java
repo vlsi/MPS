@@ -28,6 +28,7 @@ public abstract class SimpleModelListener extends SModelAdapter {
 
   protected void updateNodePresentation(final boolean reloadSubTree, final boolean updateAncestors) {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         if (isValid()) {
           myTreeNode.updatePresentation(reloadSubTree, updateAncestors);
@@ -36,10 +37,12 @@ public abstract class SimpleModelListener extends SModelAdapter {
     });
   }
 
+  @Override
   public void modelSaved(SModelDescriptor sm) {
     updateNodePresentation(false, true);
   }
 
+  @Override
   public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
     updateNodePresentation(false, false);
   }

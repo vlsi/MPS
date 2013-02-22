@@ -40,6 +40,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
 
   private final ConcurrentMap<String, SConcept> myConcepts = new ConcurrentHashMap<String, SConcept>();
 
+  @Override
   public SConcept getConcept(String id) {
     SConcept sConcept = myConcepts.get(id);
     if (sConcept == null) {
@@ -59,7 +60,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
         SModel sm = smd.getSModel();
         String modelFqName = sm.getLongName();
         // optimization - loading all concepts from this model into myConcepts cache
-        for (SNode root : sm.roots()) {
+        for (SNode root : sm.getRootNodes()) {
           String conceptFQName = modelFqName + "." + root.getProperty(SNodeUtil.property_INamedConcept_name);
           myConcepts.putIfAbsent(conceptFQName, new SConceptNodeAdapter(conceptFQName));
         }

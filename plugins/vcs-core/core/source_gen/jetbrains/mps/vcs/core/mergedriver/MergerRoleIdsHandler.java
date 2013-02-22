@@ -30,42 +30,52 @@ public class MergerRoleIdsHandler implements RoleIdsComponent.RoleIdsHandler {
     }
   }
 
+  @Override
   public void conceptRead(String conceptFqName, SNodeReference conceptPointer) {
     storeAndCheckConsistency(myConceptsToPointers, conceptFqName, conceptPointer);
   }
 
+  @Override
   public void nodeRoleRead(String conceptFqName, String linkRole, SNodeReference linkPointer) {
     storeAndCheckConsistency(myNodeRolesToPointers, MultiTuple.<String,String>from(conceptFqName, linkRole), linkPointer);
   }
 
+  @Override
   public void referenceRoleRead(String conceptFqName, String referenceLinkRole, SNodeReference linkPointer) {
     storeAndCheckConsistency(myReferenceRolesToPointers, MultiTuple.<String,String>from(conceptFqName, referenceLinkRole), linkPointer);
   }
 
+  @Override
   public void propertyNameRead(String conceptFqName, String propertyName, SNodeReference namePointer) {
     storeAndCheckConsistency(myPropertyNamesToPointers, MultiTuple.<String,String>from(conceptFqName, propertyName), namePointer);
   }
 
+  @Override
   public void modelVersionRead(SModelReference reference, int i) {
     storeAndCheckConsistency(myModelVersions, reference, i);
   }
 
+  @Override
   public SNodeReference getConceptPointer(String conceptFqName) {
     return MapSequence.fromMap(myConceptsToPointers).get(conceptFqName);
   }
 
+  @Override
   public SNodeReference getNodeRolePointer(String conceptFqName, String linkRole) {
     return MapSequence.fromMap(myNodeRolesToPointers).get(MultiTuple.<String,String>from(conceptFqName, linkRole));
   }
 
+  @Override
   public SNodeReference getReferenceRolePointer(String conceptFqName, String referenceLinkRole) {
     return MapSequence.fromMap(myReferenceRolesToPointers).get(MultiTuple.<String,String>from(conceptFqName, referenceLinkRole));
   }
 
+  @Override
   public SNodeReference getPropertyNamePointer(String conceptFqName, String propertyName) {
     return MapSequence.fromMap(myPropertyNamesToPointers).get(MultiTuple.<String,String>from(conceptFqName, propertyName));
   }
 
+  @Override
   public int getModelVersion(SModelReference reference) {
     return MapSequence.fromMap(myModelVersions).get(reference);
   }

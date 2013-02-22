@@ -25,8 +25,11 @@ import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.*;
 import java.awt.*;
@@ -62,7 +65,7 @@ public class ShowImplementationComponent extends JPanel {
       myNodeLabels.add(node.getPresentation());
       myModuleIcons.add(IconManager.getIconFor(node.getModel().getModelDescriptor().getModule()));
       myModuleLabels.add(node.getModel().getModelDescriptor().getModule().getModuleFqName());
-      myOriginalNodePointers.add(new jetbrains.mps.smodel.SNodePointer(node));
+      myOriginalNodePointers.add(node.getReference());
     }
 
     myEditor = new EmbeddableEditor(context, myModelOwner, myNodes.get(0), false);
@@ -123,6 +126,7 @@ public class ShowImplementationComponent extends JPanel {
     }
     if (mySelectedIndex == index) return;
     ModelAccess.instance().runCommandInEDT(new Runnable() {
+      @Override
       public void run() {
         myLocationLabel.setText(myModuleLabels.get(index));
         myLocationLabel.setIcon(myModuleIcons.get(index));

@@ -29,7 +29,10 @@ import jetbrains.mps.fileTypes.MPSLanguage;
 import jetbrains.mps.idea.core.psi.impl.NodeList.Entry;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 /**
  * evgeny, 1/25/13
@@ -142,11 +145,52 @@ public abstract class MPSPsiNodeBase extends LightElement {
   }
 
   @Override
+  public String getText() {
+    return "MPSPsiNodeBase.getText()";
+  }
+
+  @Override
+  public int getTextOffset() {
+    return 0;
+  }
+
+  @Override
   public TextRange getTextRange() {
     // TODO should probably be a sub-class of TextRange, specific for MPS
-    return new TextRange(0, 1);
+    return new TextRange(0, 2);
   }
-  
+
+  protected final Iterable<MPSPsiNodeBase> children () {
+    return new Iterable<MPSPsiNodeBase>() {
+      @Override
+      public Iterator<MPSPsiNodeBase> iterator() {
+        return new Iterator<MPSPsiNodeBase>() {
+          MPSPsiNodeBase node = null;
+          @Override
+          public boolean hasNext() {
+            return (node == null && children.first() != null) ||
+                   (node != null && node != children.last());
+          }
+
+          @Override
+          public MPSPsiNodeBase next() {
+            if (!hasNext()) throw new NoSuchElementException();
+            if (node == null) {
+              return (node = children.first());
+            } else {
+              return (node = children.next(node));
+            }
+          }
+
+          @Override
+          public void remove() {
+            throw new UnsupportedOperationException();
+          }
+        };
+      }
+    };
+  }
+
   protected final void addChildFirst (@NotNull MPSPsiNodeBase node) {
     children.addFirst(node);
   }
@@ -175,6 +219,10 @@ public abstract class MPSPsiNodeBase extends LightElement {
 
   protected final void removeChild(@NotNull MPSPsiNodeBase node) {
     children.remove(node);
+  }
+
+  protected final void replaceChild(@NotNull MPSPsiNodeBase oldNode, @NotNull MPSPsiNodeBase replacementNode) {
+    children.replace(oldNode, replacementNode);
   }
 
   /*package*/ void setEntry (Entry newEntry) {

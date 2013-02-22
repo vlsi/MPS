@@ -64,10 +64,12 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
     return myPreferencesPage;
   }
 
+  @Override
   public boolean isDisableCheckOpenAPI() {
     return myDisableCheckOpenAPI;
   }
 
+  @Override
   public boolean isDisableTypeWasNotCalculated() {
     return myDisableTypeWasNotCalculated;
   }
@@ -76,15 +78,18 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
     return ApplicationManager.getApplication().getComponent(ModelValidationSettings.class);
   }
 
+  @Override
   @NotNull
   public String getId() {
     return "mps.modelValidation.settings";
   }
 
+  @Override
   public Runnable enableSearch(String option) {
     return null;
   }
 
+  @Override
   @Nls
   public String getDisplayName() {
     return "Model Validation";
@@ -95,16 +100,19 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
     return null;
   }
 
+  @Override
   @Nullable
   @NonNls
   public String getHelpTopic() {
     return null;
   }
 
+  @Override
   public void apply() throws ConfigurationException {
     getPreferencesPage().commit();
   }
 
+  @Override
   public void reset() {
     getPreferencesPage().reset();
   }
@@ -114,6 +122,7 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
     return getPreferencesPage().isModified();
   }
 
+  @Override
   public void disposeUIResources() {
     myPreferencesPage = null;
   }

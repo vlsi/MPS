@@ -9,6 +9,7 @@ package jetbrains.mps.baseLanguage.collections.unittest.generics_test;
   /*package*/ BooleanSequence() {
   }
 
+  @Override
   /*package*/ Boolean getNext() {
     if (this.myCount < 5) {
       this.myCount = this.myCount + 1;

@@ -14,14 +14,17 @@ public interface IWritableGenericParameterizedFeatureDesign<T> extends IGenericP
     public Stub() {
     }
 
+    @Override
     public SNode insertStatement(SNode srcExpr, E param, SNode range, SNode insertExpr, ITemplateGenerator generator) {
       return null;
     }
 
+    @Override
     public SNode removeStatement(SNode srcExpr, E param, SNode range, ITemplateGenerator generator) {
       return null;
     }
 
+    @Override
     public SNode replaceStatement(SNode srcExpr, E param, SNode range, SNode replaceExpr, ITemplateGenerator generator) {
       return null;
     }

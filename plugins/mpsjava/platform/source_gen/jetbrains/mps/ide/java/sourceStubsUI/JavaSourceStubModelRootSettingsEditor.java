@@ -21,19 +21,23 @@ public class JavaSourceStubModelRootSettingsEditor implements ModelRootSettingsE
   public JavaSourceStubModelRootSettingsEditor() {
   }
 
+  @Override
   public void reset(Project project, ModelRoot root) {
     assert root instanceof JavaSourceStubModelRoot;
     this.myProject = project;
     this.myPath = ((JavaSourceStubModelRoot) root).getPath();
   }
 
+  @Override
   public void apply(ModelRoot root) {
     assert root instanceof JavaSourceStubModelRoot;
     ((JavaSourceStubModelRoot) root).setPath(myPath);
   }
 
+  @Override
   public JComponent getComponent() {
     return new JButton(new AbstractAction("path") {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         TreeFileChooser chooser = new TreeFileChooser();
         chooser.setInitialFile(FileSystem.getInstance().getFileByPath(myPath));

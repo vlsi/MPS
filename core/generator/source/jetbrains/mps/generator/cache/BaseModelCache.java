@@ -66,10 +66,12 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     return myCacheGenerator;
   }
 
+  @Override
   public void init() {
     myModelRepository.addModelRepositoryListener(myModelRepositoryListener);
   }
 
+  @Override
   public void dispose() {
     myModelRepository.removeModelRepositoryListener(myModelRepositoryListener);
   }

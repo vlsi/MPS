@@ -37,22 +37,27 @@ public class Vertex implements IVertex {
     this(x, y, "?");
   }
 
+  @Override
   public double getX() {
     return myX;
   }
 
+  @Override
   public double getY() {
     return myY;
   }
 
+  @Override
   public int getWidth() {
     return 0;
   }
 
+  @Override
   public int getHeight() {
     return 0;
   }
 
+  @Override
   public String getName() {
     return myName;
   }
@@ -61,40 +66,49 @@ public class Vertex implements IVertex {
     return myName + "(" + myX + "," + myY + ")";
   }
 
+  @Override
   public List<IEdge> getStar() {
     return new ArrayList<IEdge>(myStar);
   }
 
+  @Override
   public int getStarSize() {
     return myStar.size();
   }
 
+  @Override
   public void addEdge(IEdge e) {
     myStar.add(e);
   }
 
+  @Override
   public void trySetCoords(double newx, double newy) {
     myX = newx;
     myY = newy;
   }
 
+  @Override
   public void setCoords(double newx, double newy) {
     trySetCoords(newx, newy);
     confirmCoords();
   }
 
+  @Override
   public void confirmCoords() {
 
   }
 
+  @Override
   public Object getUserObject(Object key) {
     return myUserObjects.get(key);
   }
 
+  @Override
   public void putUserObject(Object key, Object value) {
     myUserObjects.put(key, value);
   }
 
+  @Override
   public void removeUserObject(Object key) {
     myUserObjects.remove(key);
   }

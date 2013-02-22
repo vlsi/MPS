@@ -16,7 +16,9 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
@@ -84,30 +86,35 @@ public class ReferencePersister4 implements IReferencePersister {
     return referenceTargetDescriptor;
   }
 
+  @Override
   public SNode getSourceNode() {
     return mySourceNode;
   }
 
 
+  @Override
   public String getRole() {
     return myRole;
   }
 
+  @Override
   public String getTargetId() {
     return myTargetId;
   }
 
+  @Override
   public String getResolveInfo() {
     return myResolveInfo;
   }
 
+  @Override
   public String getExtResolveInfo() {
     return null;
   }
 
   // -- create reference
   private SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
-    SModelReference importedModelReference = model.getSModelReference();
+    SModelReference importedModelReference = (SModelReference) model.getReference();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
         importedModelReference = SModelReference.fromString(myImportedModelInfo);
@@ -144,6 +151,7 @@ public class ReferencePersister4 implements IReferencePersister {
       this.getResolveInfo());
   }
 
+  @Override
   public void createReferenceInModel(SModel model, VisibleModelElements visibleModelElements) {
     SReference reference = createReferenceInModelDoNotAddToSourceNode(model, visibleModelElements);
     if (reference != null) this.getSourceNode().setReference(reference.getRole(), reference);
@@ -151,6 +159,7 @@ public class ReferencePersister4 implements IReferencePersister {
 
   //-- save reference
 
+  @Override
   public void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
     assert useUIDs || visibleModelElements != null;
     SNode node = reference.getSourceNode();
@@ -159,7 +168,7 @@ public class ReferencePersister4 implements IReferencePersister {
     linkElement.setAttribute(ModelPersistence.ROLE, VersionUtil.formVersionedString(reference.getRole(), VersionUtil.getNodeLanguageVersion(node)));
 
     String targetModelInfo = "";
-    if (!((reference instanceof StaticReference) &&(node.getModel().getSModelReference().equals(reference.getTargetSModelReference())))) {
+    if (!((reference instanceof StaticReference) &&(node.getModel().getReference().equals(reference.getTargetSModelReference())))) {
       if (useUIDs) {
         targetModelInfo = reference.getTargetSModelReference().toString() + "#";
       } else {
@@ -195,6 +204,7 @@ public class ReferencePersister4 implements IReferencePersister {
     if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
   }
 
+  @Override
   public int getImportIndex() {
     try {
       return Integer.parseInt(myImportedModelInfo);

@@ -27,11 +27,13 @@ import jetbrains.mps.ide.messages.FileWithLogicalPosition;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 
 class FileWithLogicalPositionNavigationHandler implements INavigationHandler<FileWithLogicalPosition> {
+  @Override
   public boolean canNavigate(FileWithLogicalPosition pos) {
     VirtualFile vf = VirtualFileUtils.getVirtualFile(pos.getFile());
     return vf != null;
   }
 
+  @Override
   public void navigate(FileWithLogicalPosition pos, Project project, boolean focus, boolean select) {
     VirtualFile vf = VirtualFileUtils.getVirtualFile(pos.getFile());
     if (vf == null) return;

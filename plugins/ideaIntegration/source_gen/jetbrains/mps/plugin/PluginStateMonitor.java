@@ -22,16 +22,20 @@ public class PluginStateMonitor implements ProjectComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return PluginStateMonitor.class.getSimpleName();
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
+  @Override
   public void projectOpened() {
     myStatusBar = getStatusBar();
     if (myStatusBar == null) {
@@ -42,6 +46,7 @@ public class PluginStateMonitor implements ProjectComponent {
     myStatusBar.addWidget(this.myWidget);
   }
 
+  @Override
   public void projectClosed() {
     if (myStatusBar == null) {
       return;

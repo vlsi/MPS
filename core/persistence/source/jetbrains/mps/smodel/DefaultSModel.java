@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
@@ -74,6 +74,20 @@ public class DefaultSModel extends SModel {
   @Override
   public void setVersion(int version) {
     myHeader.setVersion(version);
+  }
+
+  @Override
+  protected SModel createEmptyCopy() {
+    return new DefaultSModel(((SModelReference) getReference()));
+  }
+
+  @Override
+  protected void copyPropertiesTo(SModel to) {
+    super.copyPropertiesTo(to);
+    if (to instanceof DefaultSModel) {
+      DefaultSModel dto = (DefaultSModel) to;
+      dto.setPersistenceVersion(getPersistenceVersion());
+    }
   }
 
   /**

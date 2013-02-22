@@ -19,6 +19,7 @@ public class ExpandController {
 
   public ExpandController(final ExpandBar eb) {
     eb.addExpandListener(new ExpandListener() {
+      @Override
       public void itemCollapsed(ExpandEvent event) {
         ExpandItem ei = ((ExpandItem) event.item);
         if (ExpandController.this.vetoCollapse(ei)) {
@@ -29,6 +30,7 @@ public class ExpandController {
         }
       }
 
+      @Override
       public void itemExpanded(ExpandEvent event) {
         if (ExpandController.this.items_trans.isEmpty()) {
           final ExpandItem expanded = ((ExpandItem) event.item);
@@ -42,6 +44,7 @@ public class ExpandController {
           }
           final int expHeight = height - expanded.getHeaderHeight() - eb.getSpacing();
           Display.getCurrent().asyncExec(new Runnable() {
+            @Override
             public void run() {
               ExpandController.this.doCollapse();
               expanded.setHeight(expHeight);
@@ -51,9 +54,11 @@ public class ExpandController {
       }
     });
     eb.addControlListener(new ControlListener() {
+      @Override
       public void controlMoved(ControlEvent e) {
       }
 
+      @Override
       public void controlResized(ControlEvent e) {
         Rectangle carea = eb.getClientArea();
         int height = carea.height - carea.y - eb.getSpacing();
@@ -69,6 +74,7 @@ public class ExpandController {
           final ExpandItem expande = exp;
           final int expHeight = height - exp.getHeaderHeight() - eb.getSpacing();
           Display.getCurrent().asyncExec(new Runnable() {
+            @Override
             public void run() {
               expande.setHeight(expHeight);
             }

@@ -42,14 +42,17 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
     } while (!(founded));
   }
 
+  @Override
   public boolean hasNextOccurence() {
     return hasAvailableOccurence(true);
   }
 
+  @Override
   public boolean hasPreviousOccurence() {
     return hasAvailableOccurence(false);
   }
 
+  @Override
   public OccurenceNavigator.OccurenceInfo goNextOccurence() {
     setNewSelectedIndex(true);
     BaseTestOccurenceNavigator.TestNavigator navigator = new BaseTestOccurenceNavigator.TestNavigator();
@@ -57,6 +60,7 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
     return new OccurenceNavigator.OccurenceInfo(navigator, mySelected, myCount);
   }
 
+  @Override
   public OccurenceNavigator.OccurenceInfo goPreviousOccurence() {
     setNewSelectedIndex(false);
     BaseTestOccurenceNavigator.TestNavigator navigator = new BaseTestOccurenceNavigator.TestNavigator();
@@ -64,14 +68,17 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
     return new OccurenceNavigator.OccurenceInfo(navigator, mySelected, myCount);
   }
 
+  @Override
   public String getNextOccurenceActionName() {
     return "Next test";
   }
 
+  @Override
   public String getPreviousOccurenceActionName() {
     return "Previous test";
   }
 
+  @Override
   public void valueChanged(TreeSelectionEvent p0) {
     if (myTestTree == null) {
       return;
@@ -87,14 +94,17 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
     public TestNavigator() {
     }
 
+    @Override
     public void navigate(boolean p0) {
       myTestTree.setSelectionRows(new int[]{mySelected});
     }
 
+    @Override
     public boolean canNavigate() {
       return true;
     }
 
+    @Override
     public boolean canNavigateToSource() {
       return true;
     }

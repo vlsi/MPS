@@ -26,12 +26,14 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     myProject = project;
   }
 
+  @Override
   public <T> T getComponent(@NotNull Class<T> clazz) {
     T component = myProject.getComponent(clazz);
     if (component != null) return component;
     return super.getComponent(clazz);
   }
 
+  @Override
   @Nullable
   public IModule getModule() {
     return null;
@@ -42,6 +44,7 @@ public class ProjectOperationContext extends StandaloneMPSContext {
     return myProject;
   }
 
+  @Override
   @NotNull
   public IScope getScope() {
     return getProject().getScope();

@@ -27,6 +27,7 @@
     <classNode dependClassName="java.awt.RenderingHints" />
     <classNode dependClassName="java.awt.image.BufferedImage" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="javax.imageio.ImageIO" />
@@ -55,6 +56,7 @@
     <classNode dependClassName="java.io.OutputStream" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.net.URL" />
@@ -73,6 +75,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.util.VisibleModules" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -87,6 +90,7 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.openapi.navigation.NavigationSupport" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
@@ -108,7 +112,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.ReadUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
@@ -119,6 +122,7 @@
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorUtil" file="BuildGeneratorUtil.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -144,6 +148,7 @@
     <classNode dependClassName="java.awt.FlowLayout" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JTree" />
@@ -157,6 +162,7 @@
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxNode" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxNode" file="CheckBoxNode.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.NodeData" />
@@ -169,6 +175,7 @@
     <classNode dependClassName="java.awt.event.MouseAdapter" />
     <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.JTree" />
@@ -223,6 +230,7 @@
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildWizard" file="GenerateBuildWizard.java">
     <classNode dependClassName="com.intellij.ide.wizard.Step" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
@@ -342,12 +350,12 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.IErrorHandler" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.EditableSModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -357,6 +365,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.ModuleData" file="ModuleData.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -370,6 +379,7 @@
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.NodeData" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.ModulesListData" file="ModulesListData.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.List" />
@@ -381,6 +391,7 @@
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.NodeData" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.NamespaceData" file="NamespaceData.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -433,6 +444,7 @@
     <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />

@@ -18,23 +18,28 @@ public class EnumeratorIterator<T> implements IEnumerator.Iterator<T> {
     delegate = iterator;
   }
 
+  @Override
   public boolean hasNext() {
     return delegate.hasNext();
   }
 
+  @Override
   public T next() {
     primMoveNext();
     return primCurrent();
   }
 
+  @Override
   public void remove() {
     delegate.remove();
   }
 
+  @Override
   public T current() {
     return primCurrent();
   }
 
+  @Override
   public boolean moveNext() {
     return primMoveNext();
   }
@@ -73,22 +78,27 @@ public class EnumeratorIterator<T> implements IEnumerator.Iterator<T> {
     protected Empty() {
     }
 
+    @Override
     public U current() {
       throw new NoSuchElementException();
     }
 
+    @Override
     public boolean hasNext() {
       return false;
     }
 
+    @Override
     public boolean moveNext() {
       return false;
     }
 
+    @Override
     public U next() {
       throw new NoSuchElementException();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

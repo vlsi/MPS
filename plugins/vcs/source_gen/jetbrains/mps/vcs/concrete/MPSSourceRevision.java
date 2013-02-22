@@ -24,6 +24,7 @@ public class MPSSourceRevision extends SourceRevision {
   }
 
   @Nullable
+  @Override
   public String get() {
     if (!(PluginUtil.isGitPluginEnabled())) {
       return null;

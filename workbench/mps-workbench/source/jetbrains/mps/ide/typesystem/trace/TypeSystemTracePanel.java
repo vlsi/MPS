@@ -51,7 +51,8 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     myButtons = new JPanel(new BorderLayout());
     this.setMinimumSize(new Dimension(700, 700));
     SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
+      @Override
+    public void run() {
         JComponent buttonsPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), true).getComponent();
         myButtons.add(buttonsPanel, BorderLayout.WEST);
       }
@@ -59,6 +60,7 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     myTool = tool;
   }
 
+  @Override
   public Color getBackground() {
     return Color.WHITE;
   }
@@ -111,6 +113,7 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     myStateTree.updateState(state);
   }
 
+  @Override
   public void dispose() {
     cleanUp();
   }
@@ -134,11 +137,13 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     ToggleAction showApplyRuleAction = new ToggleAction("Show Apply Rule", "Show apply rule operations in trace", Nodes.Rule) {
       private boolean mySelected = TraceSettings.isShowApplyRuleOperations();
 
-      public boolean isSelected(AnActionEvent e) {
+      @Override
+    public boolean isSelected(AnActionEvent e) {
         return mySelected;
       }
 
-      public void setSelected(AnActionEvent e, boolean state) {
+      @Override
+    public void setSelected(AnActionEvent e, boolean state) {
         mySelected = state;
         TraceSettings.setShowApplyRuleOperations(state);
         myTraceTree.rebuildNow();
@@ -148,11 +153,13 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     ToggleAction showGenerationModeAction = new ToggleAction("Generation Mode", "Show trace in generation mode", Nodes.Generator) {
       private boolean mySelected = TraceSettings.isGenerationMode();
 
-      public boolean isSelected(AnActionEvent e) {
+      @Override
+    public boolean isSelected(AnActionEvent e) {
         return mySelected;
       }
 
-      public void setSelected(AnActionEvent e, boolean state) {
+      @Override
+    public void setSelected(AnActionEvent e, boolean state) {
         mySelected = state;
         TraceSettings.setGenerationMode(state);
         myTraceTree.rebuildNow();
@@ -162,11 +169,13 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     ToggleAction showTypesExpansion = new ToggleAction("Show types expansion", "Show types expansion", AllIcons.Nodes.Folder) {
       private boolean mySelected = TraceSettings.isShowTypesExpansion();
 
-      public boolean isSelected(AnActionEvent e) {
+      @Override
+    public boolean isSelected(AnActionEvent e) {
         return mySelected;
       }
 
-      public void setSelected(AnActionEvent e, boolean state) {
+      @Override
+    public void setSelected(AnActionEvent e, boolean state) {
         mySelected = state;
         TraceSettings.setShowTypesExpansion(state);
         myTraceTree.rebuildNow();
@@ -176,11 +185,13 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     ToggleAction showTraceForSelectedNode = new ToggleAction("Trace for Selected Node", "Show trace for selected node", Nodes.Node) {
       private boolean mySelected = TraceSettings.isTraceForSelectedNode();
 
-      public boolean isSelected(AnActionEvent e) {
+      @Override
+    public boolean isSelected(AnActionEvent e) {
         return mySelected;
       }
 
-      public void setSelected(AnActionEvent e, boolean state) {
+      @Override
+    public void setSelected(AnActionEvent e, boolean state) {
         mySelected = state;
         TraceSettings.setTraceForSelectedNode(state);
         refresh(false);
@@ -189,11 +200,13 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     ToggleAction showBlockDependencies = new ToggleAction("Show block dependencies", "Show block dependencies in trace", MPSIcons.General.Block) {
       private boolean mySelected = TraceSettings.isShowBlockDependencies();
 
-      public boolean isSelected(AnActionEvent e) {
+      @Override
+    public boolean isSelected(AnActionEvent e) {
         return mySelected;
       }
 
-      public void setSelected(AnActionEvent e, boolean state) {
+      @Override
+    public void setSelected(AnActionEvent e, boolean state) {
         mySelected = state;
         TraceSettings.setShowBlockDependencies(state);
         myTraceTree.rebuildNow();
@@ -202,17 +215,20 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     };
 
     BaseAction refreshAction = new BaseAction("Refresh", "Refresh", Actions.Refresh) {
-      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+      @Override
+    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         refresh(true);
       }
     };
     BaseAction nextErrorAction = new BaseAction("Next error", "Navigate to next error in trace", AllIcons.General.Error) {
-      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+      @Override
+    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myTraceTree.goToNextError();
       }
     };
     BaseAction closeAction = new BaseAction("Close", "Close type system trace tool", Actions.Cancel) {
-      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
+      @Override
+    protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myTool.setAvailable(false);
       }
     };
@@ -229,7 +245,8 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
       return;
     }
     ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
+      @Override
+    public void run() {
         showTraceForNode((IncrementalTypecheckingContext) myEditorComponent.getTypeCheckingContext(), myEditorComponent.getOperationContext(), selectedNode, myEditorComponent, checkRoot);
       }
     });

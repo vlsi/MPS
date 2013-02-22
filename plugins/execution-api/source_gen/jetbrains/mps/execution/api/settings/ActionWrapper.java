@@ -21,6 +21,7 @@ public class ActionWrapper extends AbstractAction {
     setEnabled(action.isEnabled());
     myAction = action;
     myAction.addPropertyChangeListener(new PropertyChangeListener() {
+      @Override
       public void propertyChange(PropertyChangeEvent event) {
         putValue(event.getPropertyName(), event.getNewValue());
       }
@@ -28,6 +29,7 @@ public class ActionWrapper extends AbstractAction {
     myCallback = callback;
   }
 
+  @Override
   public void actionPerformed(ActionEvent event) {
     myAction.actionPerformed(event);
     myCallback.invoke(event);

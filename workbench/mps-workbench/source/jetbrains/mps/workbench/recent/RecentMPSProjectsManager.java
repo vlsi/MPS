@@ -41,11 +41,13 @@ public class RecentMPSProjectsManager extends RecentProjectsManagerBase {
     super(projectManager, messageBus);
   }
 
+  @Override
   @Nullable
   protected String getProjectPath(Project project) {
     return project.getPresentableUrl();
   }
 
+  @Override
   protected void doOpenProject(String projectPath, Project projectToClose, boolean forceNewFrame) {
     final VirtualFile projectFile = LocalFileSystem.getInstance().findFileByPath(FileUtil.toSystemIndependentName(projectPath));
     if (projectFile != null) {

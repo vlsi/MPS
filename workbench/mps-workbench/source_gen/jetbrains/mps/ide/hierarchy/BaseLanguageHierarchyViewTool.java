@@ -19,6 +19,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
     super(project, "Class Hierarchy", -1, IconContainer.ICON_d0a0);
   }
 
+  @Override
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {
     BaseLanguageHierarchyViewTool.BaseLanguageHierarchyTree tree = new BaseLanguageHierarchyViewTool.BaseLanguageHierarchyTree(this, "jetbrains.mps.baseLanguage.structure.Classifier", isParentHierarchy);
     TreeHighlighterExtension.attachHighlighters(tree, getProject());
@@ -30,6 +31,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
       super(abstractHierarchyView, aClass, isParentHierarchy);
     }
 
+    @Override
     protected Set<SNode> getParents(SNode node, Set<SNode> visited) {
       HashSet<SNode> result = new HashSet<SNode>();
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
@@ -60,10 +62,12 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
       return result;
     }
 
+    @Override
     protected String noNodeString() {
       return "(no classifier)";
     }
 
+    @Override
     protected SNode getParent(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
@@ -82,6 +86,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
       return null;
     }
 
+    @Override
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
       Set<SReference> usages = ((Set) myUsagesManager.findUsages(Collections.<SNode>singleton(node), SearchType.USAGES, GlobalScopeMinusTransient.getInstance(), null));
       Set<SNode> result = new HashSet<SNode>();

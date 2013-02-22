@@ -84,10 +84,12 @@ public class JavaStaticContext extends JavaWatchable implements IWatchable {
       return result;
     }
 
+    @Override
     public List<IWatchable> getSubvalues() {
       return mySubvalues;
     }
 
+    @Override
     public void initSubvalues() {
       mySubvalues = calculateSubvalues();
     }

@@ -32,10 +32,12 @@ public abstract class BaseModuleItem implements NavigationItem {
     return myModuleReference;
   }
 
+  @Override
   public String getName() {
     return myModuleReference.getModuleName();
   }
 
+  @Override
   @Nullable
   public ItemPresentation getPresentation() {
     return new ModulePresentation(myModuleReference);
@@ -46,10 +48,12 @@ public abstract class BaseModuleItem implements NavigationItem {
     return FileStatus.NOT_CHANGED;
   }
 
+  @Override
   public boolean canNavigate() {
     return true;
   }
 
+  @Override
   public boolean canNavigateToSource() {
     return false;
   }

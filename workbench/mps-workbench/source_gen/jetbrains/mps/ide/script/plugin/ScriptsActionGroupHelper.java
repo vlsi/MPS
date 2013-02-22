@@ -36,6 +36,7 @@ public class ScriptsActionGroupHelper {
 
   public static void sortScripts(List<SNode> scripts) {
     Collections.sort(scripts, new Comparator<SNode>() {
+      @Override
       public int compare(SNode s1, SNode s2) {
         String cat1 = SPropertyOperations.getString_def(s1, "type", "enhancement");
         String cat2 = SPropertyOperations.getString_def(s2, "type", "enhancement");
@@ -82,6 +83,7 @@ public class ScriptsActionGroupHelper {
     };
     Map<String, List<SNode>> byCategory = groupBy(migrationScripts, getCategoryClosure);
     Set<String> sorted = new TreeSet<String>(new Comparator<String>() {
+      @Override
       public int compare(String o1, String o2) {
         if ("<uncategorized>".equals(o1)) {
           return 1;
@@ -129,6 +131,7 @@ public class ScriptsActionGroupHelper {
 
   private static void addActions(BaseGroup group, List<SNode> scripts, boolean applyToSelection) {
     Collections.sort(scripts, new Comparator<SNode>() {
+      @Override
       public int compare(SNode node1, SNode node2) {
         String name1 = ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(node1, "title"), null).toLowerCase();
         String name2 = ScriptsActionGroupHelper.makeScriptActionName(null, SPropertyOperations.getString(node2, "title"), null).toLowerCase();

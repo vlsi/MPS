@@ -102,10 +102,12 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     element.setAttribute(PositionInfo.END_POSITION, Integer.toString(myEndPosition));
   }
 
+  @Override
   public String toString() {
     return myFileName + "(" + myStartLine + ":" + myStartPosition + " " + myEndLine + ":" + myEndPosition + ")";
   }
 
+  @Override
   public int compareTo(PositionInfo p) {
     if (myFileName == null) {
       if (p.myFileName != null) {

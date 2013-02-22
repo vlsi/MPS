@@ -6,8 +6,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nls;
-import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -29,6 +27,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -51,9 +50,7 @@ public class TestUtils {
       return null;
     }
     String[] split = pointerString.split(POINTER_SEPARATOR);
-    SModelReference smodelId = SModelReference.fromString(split[0]);
-    SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(split[1]);
-    return new SNodePointer(smodelId, id);
+    return new SNodePointer(split[0], split[1]);
   }
 
   public static String pointerToString(@NotNull final SNodeReference pointer) {

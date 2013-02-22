@@ -122,6 +122,7 @@ class GenerationSettingsPreferencesPage {
       optionsPanel.add(myDebugIncrementalDependencies, c);
     }
     final ChangeListener listener = new ChangeListener() {
+      @Override
       public void stateChanged(ChangeEvent e) {
         myIncremental.setEnabled(myStrictMode.isSelected());
         myIncrementalCache.setEnabled(myStrictMode.isSelected() && myIncremental.isSelected());
@@ -149,6 +150,7 @@ class GenerationSettingsPreferencesPage {
     c.gridy = 0;
     parallelGen.add(myUseNewGenerator, c);
     final ChangeListener listener = new ChangeListener() {
+      @Override
       public void stateChanged(ChangeEvent e) {
         myUseNewGenerator.setEnabled(myStrictMode.isSelected());
         myNumberOfParallelThreads.setEditable(myUseNewGenerator.isSelected() && myStrictMode.isSelected());
@@ -182,6 +184,7 @@ class GenerationSettingsPreferencesPage {
     panel.add(myShowBadChildWarnings, c);
     c.insets.left = 0;
     final ChangeListener listener = new ChangeListener() {
+      @Override
       public void stateChanged(ChangeEvent e) {
         myKeepModelsWithWarnings.setEnabled(myShowWarnings.isSelected());
         myShowBadChildWarnings.setEnabled(myShowWarnings.isSelected());
@@ -200,6 +203,7 @@ class GenerationSettingsPreferencesPage {
     c.gridy = 0;
     group.add(myLimitNumberOfModels, c);
     final ChangeListener listener = new ChangeListener() {
+      @Override
       public void stateChanged(ChangeEvent e) {
         myNumberOfModelsToKeep.setEditable(myLimitNumberOfModels.isSelected());
       }

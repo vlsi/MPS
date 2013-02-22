@@ -61,10 +61,12 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     myHierarchyTree.dispose();
   }
 
+  @Override
   protected void createTool() {
     myHierarchyTree = createHierarchyTree(false);
     myOccurenceNavigator = new OccurenceNavigatorSupport(myHierarchyTree) {
       @Nullable
+      @Override
       protected Navigatable createDescriptorForNode(DefaultMutableTreeNode node) {
         if (!(node instanceof HierarchyTreeNode)) {
           return null;
@@ -72,6 +74,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         final HierarchyTreeNode treeNode = (HierarchyTreeNode) node;
 
         SNodeReference ptr = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+          @Override
           public SNodeReference compute() {
             SNode node = treeNode.getNode();
             if (node == null || SNodeOperations.isDisposed(node)) {
@@ -93,10 +96,12 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         );
       }
 
+      @Override
       public String getPreviousOccurenceActionName() {
         return UsageViewBundle.message("action.previous.occurrence");
       }
 
+      @Override
       public String getNextOccurenceActionName() {
         return UsageViewBundle.message("action.next.occurrence");
       }
@@ -109,6 +114,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     myComponent.add(myScrollPane, BorderLayout.CENTER);
     showItemInHierarchy(null, null);
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         JComponent buttonsPanel = ActionManager.getInstance().createActionToolbar(ActionPlaces.TYPE_HIERARCHY_VIEW_TOOLBAR, createButtonsGroup(), true).getComponent();
         panel.add(buttonsPanel, BorderLayout.WEST);
@@ -124,12 +130,14 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
 
   protected DefaultActionGroup createButtonsGroup() {
     GroupedToggleAction childrenAction = new GroupedToggleAction("Children Hierarchy", "Show children hierarchy", Icons.CHILDREN_ICON, true) {
+      @Override
       public void select() {
         myHierarchyTree.setParentHierarchy(false);
         myHierarchyTree.rebuildNow();
       }
     };
     GroupedToggleAction parentAction = new GroupedToggleAction("Parent Hierarchy", "Show parent hierarchy", Icons.PARENT_ICON, false) {
+      @Override
       public void select() {
         myHierarchyTree.setParentHierarchy(true);
         myHierarchyTree.rebuildNow();
@@ -141,10 +149,12 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     ToggleAction thisModelAction = new ToggleAction("Only This Model", "Show hierarchy only for model", Icons.THIS_MODEL_ICON) {
       private boolean mySelected = false;
 
+      @Override
       public boolean isSelected(AnActionEvent e) {
         return mySelected;
       }
 
+      @Override
       public void setSelected(AnActionEvent e, boolean state) {
         mySelected = state;
         myHierarchyTree.setIsOnlyInOneModel(mySelected);
@@ -153,26 +163,31 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     ToggleAction generatorModelsAction = new ToggleAction("Show Generator Classes", "Show classes from generator models in hierarchy", Icons.GENERATOR_ICON) {
       private boolean mySelected = false;
 
+      @Override
       public boolean isSelected(AnActionEvent e) {
         return mySelected;
       }
 
+      @Override
       public void setSelected(AnActionEvent e, boolean state) {
         mySelected = state;
         myHierarchyTree.setShowGeneratorModels(mySelected);
       }
     };
     BaseAction expandAllAction = new BaseAction("Expand all", "Expand all nodes", AllIcons.Actions.Expandall) {
+      @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myHierarchyTree.expandAll();
       }
     };
     BaseAction collapseAllAction = new BaseAction("Collapse all", "Collapse all nodes", AllIcons.Actions.Collapseall) {
+      @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myHierarchyTree.collapseAll();
       }
     };
     BaseAction refreshAction = new BaseAction("Refresh", "Refresh", AllIcons.Actions.Refresh) {
+      @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myHierarchyTree.rebuildNow();
       }
@@ -185,6 +200,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     myContext = _context;
     myHierarchyTree.myHierarchyNode = node;
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         Project project = getProject();
         if (project == null || project.isDisposed()) {
@@ -205,6 +221,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     return false;
   }
 
+  @Override
   public JComponent getComponent() {
     return myComponent;
   }
@@ -214,6 +231,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       super(new BorderLayout());
     }
 
+    @Override
     public String getPreviousOccurenceActionName() {
       return (myOccurenceNavigator != null ?
         myOccurenceNavigator.getPreviousOccurenceActionName() :
@@ -221,6 +239,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       );
     }
 
+    @Override
     public String getNextOccurenceActionName() {
       return (myOccurenceNavigator != null ?
         myOccurenceNavigator.getNextOccurenceActionName() :
@@ -228,6 +247,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       );
     }
 
+    @Override
     public OccurenceNavigator.OccurenceInfo goPreviousOccurence() {
       return (myOccurenceNavigator != null ?
         myOccurenceNavigator.goPreviousOccurence() :
@@ -235,6 +255,7 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       );
     }
 
+    @Override
     public OccurenceNavigator.OccurenceInfo goNextOccurence() {
       return (myOccurenceNavigator != null ?
         myOccurenceNavigator.goNextOccurence() :
@@ -242,10 +263,12 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       );
     }
 
+    @Override
     public boolean hasPreviousOccurence() {
       return myOccurenceNavigator != null && myOccurenceNavigator.hasPreviousOccurence();
     }
 
+    @Override
     public boolean hasNextOccurence() {
       return myOccurenceNavigator != null && myOccurenceNavigator.hasNextOccurence();
     }

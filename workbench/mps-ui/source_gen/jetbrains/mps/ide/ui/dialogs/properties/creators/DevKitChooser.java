@@ -17,6 +17,7 @@ public class DevKitChooser implements Computable<List<ModuleReference>> {
   public DevKitChooser() {
   }
 
+  @Override
   public List<ModuleReference> compute() {
     final Wrappers._T<List<ModuleReference>> dkRefs = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {

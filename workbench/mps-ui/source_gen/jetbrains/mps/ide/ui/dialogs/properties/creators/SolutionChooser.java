@@ -18,6 +18,7 @@ public class SolutionChooser implements Computable<List<ModuleReference>> {
   public SolutionChooser() {
   }
 
+  @Override
   public List<ModuleReference> compute() {
     final Wrappers._T<List<ModuleReference>> solRefs = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {

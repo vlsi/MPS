@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -37,16 +37,16 @@ public class BaseEditorComponent_Behavior {
       }
     }
 
-    Iterable<SNode> editorComponents = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, EditableSModelDescriptor>() {
-      public EditableSModelDescriptor select(Language it) {
-        return LanguageAspect.EDITOR.get(it);
+    Iterable<SNode> editorComponents = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModel>() {
+      public SModel select(Language it) {
+        return (SModel) LanguageAspect.EDITOR.get(it);
       }
-    }).where(new IWhereFilter<EditableSModelDescriptor>() {
-      public boolean accept(EditableSModelDescriptor it) {
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
         return it != null;
       }
-    }).translate(new ITranslator2<EditableSModelDescriptor, SNode>() {
-      public Iterable<SNode> translate(EditableSModelDescriptor it) {
+    }).translate(new ITranslator2<SModel, SNode>() {
+      public Iterable<SNode> translate(SModel it) {
         return (Iterable<SNode>) it.getRootNodes();
       }
     }).where(new IWhereFilter<SNode>() {

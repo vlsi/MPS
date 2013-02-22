@@ -39,10 +39,12 @@ import java.util.List;
 
 public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAware {
 
+  @Override
   public String[] getNames(Project project, boolean includeNonProjectItems) {
     return FilenameIndex.getAllFilenames(project);
   }
 
+  @Override
   public NavigationItem[] getItemsByName(String name, final String pattern, final Project project, boolean includeNonProjectItems) {
     GlobalSearchScope scope = new AllScope();
 
@@ -64,6 +66,7 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
       myProject = project;
     }
 
+    @Override
     public String getName() {
       return myFile.getName();
     }
@@ -72,22 +75,27 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
       return myFile.getName();
     }
 
+    @Override
     public ItemPresentation getPresentation() {
       return new ItemPresentation() {
+        @Override
         public String getPresentableText() {
           return myFile.getName();
         }
 
+        @Override
         public String getLocationString() {
           return myFile.getParent().getPath();
         }
 
+        @Override
         public Icon getIcon(boolean open) {
           return FileTypeManager.getInstance().getFileTypeByFile(myFile).getIcon();
         }
       };
     }
 
+    @Override
     public void navigate(boolean requestFocus) {
       OpenFileDescriptor descriptor = new OpenFileDescriptor(myProject, getVirtualFile(), -1);
       if (descriptor.canNavigate()) {
@@ -95,10 +103,12 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
       }
     }
 
+    @Override
     public boolean canNavigate() {
       return true;
     }
 
+    @Override
     public boolean canNavigateToSource() {
       return false;
     }
@@ -109,18 +119,22 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
   }
 
   private static class AllScope extends GlobalSearchScope {
+    @Override
     public boolean contains(VirtualFile file) {
       return true;
     }
 
+    @Override
     public int compare(VirtualFile file1, VirtualFile file2) {
       return 0;
     }
 
+    @Override
     public boolean isSearchInModuleContent(@NotNull Module aModule) {
       return false;
     }
 
+    @Override
     public boolean isSearchInLibraries() {
       return false;
     }

@@ -37,6 +37,7 @@ public abstract class DependencyAwareCache<K, V> {
       return result;
     }
     myRecorder.rebuild(key, new Runnable() {
+      @Override
       public void run() {
         myCache.put(key, calculate(key));
       }
@@ -51,23 +52,28 @@ public abstract class DependencyAwareCache<K, V> {
   }
 
   private class MySModelCommandListener implements SModelCommandListener {
+    @Override
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       final List<SNode> changedNodes = new ArrayList<SNode>();
       for (SModelEvent e : events) {
         e.accept(new SModelEventVisitor() {
+          @Override
           public void visitRootEvent(SModelRootEvent event) {
             changedNodes.add(event.getRoot());
           }
 
+          @Override
           public void visitChildEvent(SModelChildEvent event) {
             changedNodes.add(event.getParent());
             changedNodes.add(event.getChild());
           }
 
+          @Override
           public void visitPropertyEvent(SModelPropertyEvent event) {
             changedNodes.add(event.getNode());
           }
 
+          @Override
           public void visitReferenceEvent(SModelReferenceEvent event) {
             changedNodes.add(event.getReference().getSourceNode());
           }

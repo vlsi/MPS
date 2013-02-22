@@ -40,10 +40,12 @@ public abstract class BaseNodePointerItem implements NavigationItem {
     return myNode.resolve(MPSModuleRepository.getInstance());
   }
 
+  @Override
   public String getName() {
     return null;
   }
 
+  @Override
   @Nullable
   public ItemPresentation getPresentation() {
     return myNodePointerPresentation;
@@ -54,10 +56,12 @@ public abstract class BaseNodePointerItem implements NavigationItem {
     return FileStatus.NOT_CHANGED;
   }
 
+  @Override
   public boolean canNavigate() {
     return true;
   }
 
+  @Override
   public boolean canNavigateToSource() {
     return true;
   }

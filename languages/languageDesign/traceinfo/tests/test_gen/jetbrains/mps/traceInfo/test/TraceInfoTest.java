@@ -157,6 +157,7 @@ public class TraceInfoTest {
   private void cleanup(final Project p) {
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
       public void run() {
         p.dispose();
         IdeEventQueue.getInstance().flushQueue();

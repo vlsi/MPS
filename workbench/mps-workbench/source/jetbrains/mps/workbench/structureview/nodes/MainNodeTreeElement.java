@@ -41,10 +41,12 @@ public class MainNodeTreeElement extends NodeTreeElement {
     return new jetbrains.mps.smodel.SNodePointer(null);
   }
 
+  @Override
   public TreeElement[] getChildren() {
     final List<TreeElement> result = new ArrayList<TreeElement>();
 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SNode node = myNode.resolve(MPSModuleRepository.getInstance());
         for (RelationDescriptor tab : ProjectPluginManager.getApplicableTabs(myProject, node)) {

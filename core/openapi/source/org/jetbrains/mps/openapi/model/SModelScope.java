@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;
+package org.jetbrains.mps.openapi.model;
 
-import java.util.Iterator;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
-public class NodesIterable implements Iterable<SNode> {
-  private SModel mySModel;
+public interface SModelScope {
+  Iterable<? extends SModel> getModels();
 
-  public NodesIterable(SModel sModel) {
-    mySModel = sModel;
-  }
-
-  public Iterator<SNode> iterator() {
-    return ((Iterator) mySModel.nodesIterator());
-  }
+  Iterable<SLanguage> getLanguages();
 }

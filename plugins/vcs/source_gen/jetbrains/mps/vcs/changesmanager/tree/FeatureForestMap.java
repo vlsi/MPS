@@ -147,10 +147,12 @@ public class FeatureForestMap<V> {
     public MyCounterMapHandler() {
     }
 
+    @Override
     public void counterZero(@NotNull Feature feature) {
       fireFeatureStateChanged(feature);
     }
 
+    @Override
     public void counterNonZero(@NotNull Feature feature) {
       fireFeatureStateChanged(feature);
     }

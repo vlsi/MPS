@@ -110,7 +110,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
               LOG.error("cannot read " + oldFile, ex);
               continue;
             }
-            DefaultSModelDescriptor modelDescriptor = (DefaultSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(rmodel.getSModelReference());
+            DefaultSModelDescriptor modelDescriptor = (DefaultSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(rmodel.getReference());
             if (modelDescriptor == null) {
               continue;
             }

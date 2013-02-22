@@ -86,6 +86,7 @@ public class ListPanel extends JPanel {
     this.myListModel = new ListPanel.MyAbstractListModel();
     this.myListComponent = new JBList(this.myListModel);
     AnAction add = new ListAddAction(this.myListComponent) {
+      @Override
       protected int doAdd(AnActionEvent p0) {
         List<SNodeReference> nodesList = getCandidates();
 
@@ -115,6 +116,7 @@ public class ListPanel extends JPanel {
       }
     };
     AnAction remove = new ListRemoveAction(this.myListComponent) {
+      @Override
       protected void doRemove(AnActionEvent p0) {
         for (Object value : ListPanel.this.myListComponent.getSelectedValues()) {
           for (final ITestNodeWrapper node : ListPanel.this.myValues) {
@@ -163,6 +165,7 @@ public class ListPanel extends JPanel {
 
     if (needsUpdate) {
       ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+        @Override
         public void run() {
           final List<SNode> nodesList = new ArrayList<SNode>();
           ModelAccess.instance().runReadAction(new Runnable() {
@@ -230,10 +233,12 @@ public class ListPanel extends JPanel {
     public MyAbstractListModel() {
     }
 
+    @Override
     public Object getElementAt(int p0) {
       return ListSequence.fromList(ListPanel.this.myValues).getElement(p0).getCachedFqName();
     }
 
+    @Override
     public int getSize() {
       return ListSequence.fromList(ListPanel.this.myValues).count();
     }

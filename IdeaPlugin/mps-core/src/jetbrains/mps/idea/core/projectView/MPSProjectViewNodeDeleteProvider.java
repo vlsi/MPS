@@ -19,58 +19,58 @@ package jetbrains.mps.idea.core.projectView;
 import com.intellij.ide.DeleteProvider;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.misc.hash.HashSet;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class MPSProjectViewNodeDeleteProvider implements DeleteProvider {
-    private List<MPSProjectViewNode> myProjectViewNodes;
+  private List<MPSProjectViewNode> myProjectViewNodes;
 
-    public MPSProjectViewNodeDeleteProvider(List<MPSProjectViewNode> projectViewNodes) {
-        myProjectViewNodes = projectViewNodes;
+  public MPSProjectViewNodeDeleteProvider(List<MPSProjectViewNode> projectViewNodes) {
+    myProjectViewNodes = projectViewNodes;
+  }
+
+  @Override
+  public void deleteElement(DataContext dataContext) {
+    Project mpsProject = getMPSProject(dataContext);
+    if (mpsProject == null) {
+      return;
     }
-
-    @Override
-    public void deleteElement(DataContext dataContext) {
-        Project mpsProject = getMPSProject(dataContext);
-        if (mpsProject == null) {
-            return;
-        }
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
-            @Override
-            public void run() {
-                Set<EditableSModelDescriptor> modelsToSave = new HashSet<EditableSModelDescriptor>();
-                for (MPSProjectViewNode myProjectViewNode : myProjectViewNodes) {
-                    SNode nodeToDelete = myProjectViewNode.getValue().resolve(MPSModuleRepository.getInstance());
-                    if (nodeToDelete != null) {
-                        SModelDescriptor modelDescriptor = nodeToDelete.getModel().getModelDescriptor();
-                        if (modelDescriptor instanceof EditableSModelDescriptor) {
-                            nodeToDelete.delete();
-                            modelsToSave.add((EditableSModelDescriptor) modelDescriptor);
-                        }
-                    }
-                }
-                for (EditableSModelDescriptor sModelDescriptor : modelsToSave) {
-                    sModelDescriptor.save();
-                }
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
+      @Override
+      public void run() {
+        Set<EditableSModel> modelsToSave = new HashSet<EditableSModel>();
+        for (MPSProjectViewNode myProjectViewNode : myProjectViewNodes) {
+          SNode nodeToDelete = myProjectViewNode.getValue().resolve(MPSModuleRepository.getInstance());
+          if (nodeToDelete != null) {
+            SModelDescriptor modelDescriptor = nodeToDelete.getModel().getModelDescriptor();
+            if (modelDescriptor instanceof EditableSModel) {
+              nodeToDelete.delete();
+              modelsToSave.add((EditableSModel) modelDescriptor);
             }
-        }, mpsProject);
-    }
+          }
+        }
+        for (EditableSModel sModelDescriptor : modelsToSave) {
+          sModelDescriptor.save();
+        }
+      }
+    }, mpsProject);
+  }
 
-    @Override
-    public boolean canDeleteElement(DataContext dataContext) {
-        return getMPSProject(dataContext) != null && !myProjectViewNodes.isEmpty();
-    }
+  @Override
+  public boolean canDeleteElement(DataContext dataContext) {
+    return getMPSProject(dataContext) != null && !myProjectViewNodes.isEmpty();
+  }
 
-    private Project getMPSProject(DataContext dataContext) {
-        return ProjectHelper.toMPSProject(PlatformDataKeys.PROJECT.getData(dataContext));
-    }
+  private Project getMPSProject(DataContext dataContext) {
+    return ProjectHelper.toMPSProject(PlatformDataKeys.PROJECT.getData(dataContext));
+  }
 }

@@ -208,7 +208,6 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     }
   }
 
-  @Override
   public boolean isReadOnly() {
     return true;
   }

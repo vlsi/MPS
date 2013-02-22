@@ -47,11 +47,13 @@ public class AccessoriesModelTreeNode extends TextTreeNode {
     return errors;
   }
 
+  @Override
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
     setErrorState(validate().isEmpty() ? ErrorState.NONE : ErrorState.ERROR);
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_ACCESSORIES_ACTIONS);
   }

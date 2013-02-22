@@ -12,6 +12,7 @@ public class ReferenceDifferense extends DifferanceItem {
     myInternal = internal;
   }
 
+  @Override
   public String toString() {
     if (myInternal) {
       return "Different internal reference of role: " + myRole;
@@ -19,6 +20,7 @@ public class ReferenceDifferense extends DifferanceItem {
     return "Different external reference of role: " + myRole;
   }
 
+  @Override
   public boolean equals(Object obj) {
     if (obj == null) {
       return false;

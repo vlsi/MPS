@@ -18,7 +18,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.StaticReference;
@@ -165,7 +165,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldmodel = new DefaultSModel(SModelReference.fromString(attrs.getValue("modelUID")));
       fieldmodel.setPersistenceVersion(7);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
-      fieldhelper = new ReadHelper(fieldmodel.getSModelReference());
+      fieldhelper = new ReadHelper(fieldmodel.getReference());
       fieldlinkMap = new ModelLinkMap(fieldmodel);
       return new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
     }
@@ -390,7 +390,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
         if (child != null) {
-          fieldmodel.addRoot(child);
+          fieldmodel.addRootNode(child);
         }
         return;
       }
@@ -406,7 +406,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      return fieldmodel.getNodeById(attrs.getValue("id"));
+      return fieldmodel.getNode(SNodeId.fromString(attrs.getValue("id")));
     }
 
     @Override
@@ -481,7 +481,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       if ("id".equals(name)) {
-        SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(value);
+        org.jetbrains.mps.openapi.model.SNodeId id = SNodeId.fromString(value);
         if (id == null) {
           throw new SAXParseException("bad node ID", null);
         }

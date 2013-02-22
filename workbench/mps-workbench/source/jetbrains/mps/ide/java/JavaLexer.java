@@ -159,6 +159,7 @@ public class JavaLexer extends LexerBase {
   private final static HashTable ourTableWithAssertAndJDK15 = new HashTable(true, true);
   private final static HashTable ourTableWithJDK15 = new HashTable(false, true);
 
+  @Override
   public final void start(CharSequence buffer, int startOffset, int endOffset, int initialState) {
     myBuffer = buffer;
     myBufferArray = CharArrayUtil.fromSequenceWithoutCopying(buffer);
@@ -173,26 +174,31 @@ public class JavaLexer extends LexerBase {
     start(new CharArrayCharSequence(buffer), startOffset, endOffset, initialState);
   }
 
+  @Override
   public int getState() {
     return 0;
   }
 
+  @Override
   public final IElementType getTokenType() {
     locateToken();
 
     return myTokenType;
   }
 
+  @Override
   public final int getTokenStart() {
     return myBufferIndex;
   }
 
+  @Override
   public final int getTokenEnd() {
     locateToken();
     return myTokenEndOffset;
   }
 
 
+  @Override
   public final void advance() {
     locateToken();
     myTokenType = null;
@@ -430,10 +436,12 @@ public class JavaLexer extends LexerBase {
     return myBufferArray != null ? myBufferArray : CharArrayUtil.fromSequence(myBuffer);
   }
 
+  @Override
   public CharSequence getBufferSequence() {
     return myBuffer;
   }
 
+  @Override
   public final int getBufferEnd() {
     return myBufferEndOffset;
   }

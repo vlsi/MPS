@@ -19,37 +19,45 @@ public class GeneratedTextPreviewEditorProvider implements FileEditorProvider {
   }
 
   @NotNull
+  @Override
   public FileEditorPolicy getPolicy() {
     return FileEditorPolicy.NONE;
   }
 
   @NotNull
   @NonNls
+  @Override
   public String getEditorTypeId() {
     return "GeneratedTextPreview";
   }
 
+  @Override
   public void writeState(@NotNull FileEditorState state, @NotNull Project project, @NotNull Element element) {
   }
 
   @NotNull
+  @Override
   public FileEditorState readState(@NotNull Element element, @NotNull Project project, @NotNull VirtualFile file) {
     return new FileEditorState() {
+      @Override
       public boolean canBeMergedWith(FileEditorState p0, FileEditorStateLevel p1) {
         return false;
       }
     };
   }
 
+  @Override
   public void disposeEditor(@NotNull FileEditor editor) {
     Disposer.dispose(editor);
   }
 
   @NotNull
+  @Override
   public FileEditor createEditor(@NotNull Project project, @NotNull VirtualFile file) {
     return new GeneratedTextPreviewEditor(project, (TextPreviewFile) file);
   }
 
+  @Override
   public boolean accept(@NotNull Project project, @NotNull VirtualFile file) {
     return file instanceof TextPreviewFile;
   }

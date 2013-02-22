@@ -39,15 +39,18 @@ public class MPSLanguageVirtualFile extends VirtualFile {
     myName = myLanguage.getModuleFqName();
   }
 
+  @Override
   public String getPath() {
     return myPath;
   }
 
+  @Override
   @NotNull
   public VirtualFileSystem getFileSystem() {
     return MPSLanguagesVirtualFileSystem.getInstance();
   }
 
+  @Override
   @NotNull
   @NonNls
   public String getName() {
@@ -56,57 +59,70 @@ public class MPSLanguageVirtualFile extends VirtualFile {
     return myName + " (language) ";
   }
 
+  @Override
   public boolean isDirectory() {
     return false;
   }
 
+  @Override
   public long getLength() {
     return 0;
   }
 
+  @Override
   public InputStream getInputStream() throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public OutputStream getOutputStream(Object requestor, long newModificationStamp, long newTimeStamp) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public byte[] contentsToByteArray() throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   @Nullable
   public VirtualFile getParent() {
     return null;
   }
 
+  @Override
   public VirtualFile[] getChildren() {
     return null;
   }
 
+  @Override
   public void refresh(boolean asynchronous, boolean recursive, Runnable postRunnable) {
     if (postRunnable != null) {
       postRunnable.run();
     }
   }
 
+  @Override
   public boolean isWritable() {
     return true;
   }
 
+  @Override
   public boolean isValid() {
     return true;
   }
 
+  @Override
   public long getTimeStamp() {
     return ModelAccess.instance().runReadAction(new Computable<Long>() {
+      @Override
       public Long compute() {
         return System.currentTimeMillis();
       }
     });
   }
 
+  @Override
   public long getModificationStamp() {
     return getTimeStamp();
   }

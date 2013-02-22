@@ -20,6 +20,7 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
   }
 
   @Nullable
+  @Override
   public NodeSourcePosition getPosition(@Nullable ILocation location) {
     if (location == null || location instanceof NullLocation) {
       return null;
@@ -32,6 +33,7 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
   }
 
   @Nullable
+  @Override
   public NodeSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
     SNodeReference node = getSNodePointer(unitName, fileName, lineNumber);
     if (node != null) {
@@ -51,6 +53,7 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
   @Nullable
   public SNodeReference getSNodePointer(@NonNls final String unitName, @NonNls final String fileName, final int position) {
     return ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+      @Override
       public SNodeReference compute() {
         SNode node = getNode(unitName, fileName, position);
         if (node == null) {
@@ -74,6 +77,7 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
     return TraceInfoUtil.getNode(unitName, fileName, position);
   }
 
+  @Override
   public boolean accepts(AbstractDebugSession session) {
     return true;
   }

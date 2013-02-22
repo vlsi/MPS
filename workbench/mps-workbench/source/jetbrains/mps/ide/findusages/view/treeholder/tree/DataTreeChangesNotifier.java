@@ -20,7 +20,8 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNod
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -83,6 +84,7 @@ public class DataTreeChangesNotifier {
   }
 
   private class MyModelCommandListener implements SModelCommandListener {
+    @Override
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
         if (event.getModelDescriptor() == null) continue;
@@ -97,7 +99,7 @@ public class DataTreeChangesNotifier {
           }
         } else if (event instanceof SModelChildEvent) {
           SModelChildEvent modelChildEvent = (SModelChildEvent) event;
-          SNodeReference childPointer = new jetbrains.mps.smodel.SNodePointer(modelChildEvent.getModel().getSModelReference(), modelChildEvent.getChild().getNodeId());
+          SNodeReference childPointer = new jetbrains.mps.smodel.SNodePointer((SModelReference) modelChildEvent.getModel().getReference(), modelChildEvent.getChild().getNodeId());
           if (modelChildEvent.isRemoved() && myNodes.contains(childPointer)) {
             myChanged = true;
             return;
@@ -108,6 +110,7 @@ public class DataTreeChangesNotifier {
   }
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
+    @Override
     public void modelDeleted(SModelDescriptor modelDescriptor) {
       if (!myModels.contains(modelDescriptor.getSModelReference())) return;
       myChanged = true;
@@ -115,6 +118,7 @@ public class DataTreeChangesNotifier {
   }
 
   private class MyCommandListener extends ModelAccessAdapter {
+    @Override
     public void commandFinished() {
       if (!myChanged) return;
       myChanged = false;
@@ -123,6 +127,7 @@ public class DataTreeChangesNotifier {
   }
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+    @Override
     public void moduleRemoved(IModule module) {
       if (!myModules.contains(module.getModuleReference())) return;
       myChanged = true;

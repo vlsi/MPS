@@ -62,10 +62,12 @@ public class FinderNode extends BaseLeaf {
     return "finder";
   }
 
+  @Override
   public SearchResults doGetResults(final SearchQuery query, @NotNull final ProgressMonitor monitor) {
     monitor.start(getTaskName(), myFinder instanceof GeneratedFinder ? 2 : 1);
     try {
       return ModelAccess.instance().runReadAction(new Computable<SearchResults>() {
+        @Override
         public SearchResults compute() {
           try {
             SearchResults results = myFinder.find(query, monitor.subTask(1));
@@ -87,10 +89,12 @@ public class FinderNode extends BaseLeaf {
     }
   }
 
+  @Override
   public long getEstimatedTime(IScope scope) {
     return 1;
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
 
@@ -108,6 +112,7 @@ public class FinderNode extends BaseLeaf {
     element.addContent(finderXML);
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     if (element.getChild(FINDER) != null) {

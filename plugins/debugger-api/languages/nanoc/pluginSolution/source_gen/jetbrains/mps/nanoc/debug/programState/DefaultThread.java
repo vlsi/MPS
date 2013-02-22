@@ -36,22 +36,27 @@ public abstract class DefaultThread implements IThread {
     }
   }
 
+  @Override
   public List<IStackFrame> getFrames() {
     return new ArrayList<IStackFrame>(myFrames);
   }
 
+  @Override
   public int getFramesCount() {
     return myFrames.size();
   }
 
+  @Override
   public String getName() {
     return "DEFAULT";
   }
 
+  @Override
   public String getPresentation() {
     return "Default";
   }
 
+  @Override
   public Icon getPresentationIcon() {
     return null;
   }
@@ -65,10 +70,12 @@ public abstract class DefaultThread implements IThread {
       myLevel = level;
     }
 
+    @Override
     public String createRequestString() {
       return "-stack-select-frame " + myLevel;
     }
 
+    @Override
     public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
       myDebugSession.getGDBRequestManager().createRequest(new DefaultThread.MyRequestor2(myLevel));
     }
@@ -81,10 +88,12 @@ public abstract class DefaultThread implements IThread {
       myLevel = level;
     }
 
+    @Override
     public String createRequestString() {
       return "-stack-list-locals 2";
     }
 
+    @Override
     public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
       myFrames.get(myLevel).fillLocals(answer);
       if (myLevel + 1 < myFrames.size()) {

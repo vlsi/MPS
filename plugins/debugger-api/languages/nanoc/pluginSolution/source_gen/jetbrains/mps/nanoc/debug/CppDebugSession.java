@@ -37,12 +37,15 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
     mySourceGen = sourceGen;
   }
 
+  @Override
   protected CppUiState createUiState() {
     return new CppUiStateImpl(this);
   }
 
+  @Override
   public void resume() {
     myRequestManager.createRequest(new ResumeRequest() {
+      @Override
       public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
         myExecutionState = AbstractDebugSession.ExecutionState.Running;
         setState(getUiState(), new CppUiStateImpl(CppDebugSession.this));
@@ -50,33 +53,41 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
     });
   }
 
+  @Override
   public void pause() {
     myRequestManager.createRequest(new PauseRequest() {
+      @Override
       public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
       }
     });
   }
 
+  @Override
   public void stop(boolean terminateTargetProcess) {
   }
 
+  @Override
   public void stepOver() {
     myExecutionState = AbstractDebugSession.ExecutionState.Running;
     myRequestManager.createRequest(new StepRequest() {
+      @Override
       public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
       }
     });
   }
 
+  @Override
   public void stepInto() {
   }
 
+  @Override
   public void stepOut() {
   }
 
   public void showEvaluationDialog(IOperationContext operationContext) {
   }
 
+  @Override
   public void setProcessHandler(ProcessHandler processHandler) {
     super.setProcessHandler(processHandler);
     myEventsHandler = new GDBEventsHandler(processHandler);
@@ -85,8 +96,10 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
 
   /*package*/ void setupBreakpointListener() {
     myEventsHandler.addEventListener(new GDBEventsAdapter() {
+      @Override
       public void paused(AsyncAnswer answer, ProcessHandler gdbProcess) {
         StackInfoRequest request = new StackInfoRequest() {
+          @Override
           public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
             doPause(answer);
           }
@@ -94,10 +107,12 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
         myRequestManager.createRequest(request);
       }
 
+      @Override
       public void processTerminated(ProcessHandler gdbProcess) {
         doTerminateProcess();
       }
 
+      @Override
       public void gdbProcessTerminated(ProcessHandler processHandler) {
         doTerminateProcess();
       }
@@ -108,6 +123,7 @@ public class CppDebugSession extends AbstractDebugSession<CppUiState> {
   private void doPause(ResultAnswer resultAnswer) {
     myExecutionState = AbstractDebugSession.ExecutionState.Paused;
     new DefaultThread(resultAnswer, mySourceGen, this) {
+      @Override
       public void whenCreated() {
         CppUiState state = getUiState();
         setState(state, new CppUiStateImpl(CppDebugSession.this, this));

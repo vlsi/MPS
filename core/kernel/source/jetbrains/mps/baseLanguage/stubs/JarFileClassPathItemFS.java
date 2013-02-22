@@ -49,6 +49,7 @@ public class JarFileClassPathItemFS extends RealClassPathItemFS {
     }
   }
 
+  @Override
   public IFile getBaseFile() {
     return myFile;
   }
@@ -65,6 +66,7 @@ public class JarFileClassPathItemFS extends RealClassPathItemFS {
     return myFile;
   }
 
+  @Override
   public URL getResource(String name) {
     checkValidity();
     try {
@@ -75,6 +77,7 @@ public class JarFileClassPathItemFS extends RealClassPathItemFS {
     }
   }
 
+  @Override
   public synchronized Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
 
@@ -90,6 +93,7 @@ public class JarFileClassPathItemFS extends RealClassPathItemFS {
       result.add(InternUtil.intern(className));
     }
     Condition<String> cond = new Condition<String>() {
+      @Override
       public boolean met(String className) {
         return !isAnonymous(className);
       }
@@ -97,6 +101,7 @@ public class JarFileClassPathItemFS extends RealClassPathItemFS {
     return new ConditionalIterable<String>(result, cond);
   }
 
+  @Override
   public synchronized Iterable<String> getSubpackages(String namespace) {
     checkValidity();
 
@@ -117,6 +122,7 @@ public class JarFileClassPathItemFS extends RealClassPathItemFS {
     return result;
   }
 
+  @Override
   public long getClassesTimestamp(String namespace) {
     checkValidity();
     long timestamp = 0;
@@ -126,6 +132,7 @@ public class JarFileClassPathItemFS extends RealClassPathItemFS {
     return timestamp;
   }
 
+  @Override
   public long getTimestamp() {
     checkValidity();
     return myFile.lastModified();

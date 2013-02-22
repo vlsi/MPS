@@ -15,30 +15,37 @@ public class SortedMapSequence<U, V> extends MapSequence<U, V> implements ISorte
     super(map);
   }
 
+  @Override
   public Comparator<? super U> comparator() {
     return getMap().comparator();
   }
 
+  @Override
   public U firstKey() {
     return getMap().firstKey();
   }
 
+  @Override
   public ISortedMapSequence<U, V> headMap(U toKey) {
     return SortedMapSequence.fromMap(getMap().headMap(toKey));
   }
 
+  @Override
   public U lastKey() {
     return getMap().lastKey();
   }
 
+  @Override
   public ISortedMapSequence<U, V> subMap(U fromKey, U toKey) {
     return SortedMapSequence.fromMap(getMap().subMap(fromKey, toKey));
   }
 
+  @Override
   public ISortedMapSequence<U, V> tailMap(U fromKey) {
     return SortedMapSequence.fromMap(getMap().tailMap(fromKey));
   }
 
+  @Override
   protected SortedMap<U, V> getMap() {
     return (SortedMap<U, V>) super.getMap();
   }
@@ -89,6 +96,7 @@ public class SortedMapSequence<U, V> extends MapSequence<U, V> implements ISorte
       super(mapSeq, keys);
     }
 
+    @Override
     public ISortedMapSequence<P, Q> withValues(Q... values) {
       return (ISortedMapSequence<P, Q>) super.withValues(values);
     }

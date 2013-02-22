@@ -57,6 +57,7 @@ public class ProgramStateMap<V> extends AbstractMap<ProgramState, V> {
     return myValues.length;
   }
 
+  @Override
   public Set<Entry<ProgramState, V>> entrySet() {
     Set<Entry<ProgramState, V>> result = new HashSet<Entry<ProgramState, V>>();
     for (int i = 0; i < myValues.length; i++) {
@@ -72,14 +73,17 @@ public class ProgramStateMap<V> extends AbstractMap<ProgramState, V> {
       myIndex = index;
     }
 
+    @Override
     public ProgramState getKey() {
       return myProgram.getState(myIndex);
     }
 
+    @Override
     public V getValue() {
       return (V) myValues[myIndex];
     }
 
+    @Override
     public V setValue(V value) {
       Object oldValue = myValues[myIndex];
       myValues[myIndex] = value;

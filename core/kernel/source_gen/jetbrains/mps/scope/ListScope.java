@@ -17,6 +17,7 @@ public abstract class ListScope extends Scope {
     this.elements = elements;
   }
 
+  @Override
   public SNode resolve(SNode contextNode, String refText) {
     SNode result = null;
     for (SNode n : elements) {
@@ -32,6 +33,7 @@ public abstract class ListScope extends Scope {
     return result;
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode n : elements) {
@@ -43,6 +45,7 @@ public abstract class ListScope extends Scope {
     return result;
   }
 
+  @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     if (node == null) {
       return null;
@@ -66,6 +69,7 @@ public abstract class ListScope extends Scope {
 
   public static ListScope forNamedElements(Iterable<SNode> elements) {
     return new ListScope(elements) {
+      @Override
       public String getName(SNode child) {
         return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }

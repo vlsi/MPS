@@ -36,5 +36,6 @@ public interface SRepositoryListener {
    *
    * @deprecated To remove in 3.0 since modules can now only have one owner
    */
+  @Deprecated
   void repositoryChanged();
 }

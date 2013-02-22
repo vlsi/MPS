@@ -38,6 +38,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     item.addInvalidationAction(myInvalidationListener);
   }
 
+  @Override
   public boolean hasClass(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
@@ -47,6 +48,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return false;
   }
 
+  @Override
   public byte[] getClass(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
@@ -56,6 +58,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return null;
   }
 
+  @Override
   public ClassifierKind getClassifierKind(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
@@ -65,6 +68,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return null;
   }
 
+  @Override
   public URL getResource(String name) {
     checkValidity();
     for (IClassPathItem item : myChildren) {
@@ -73,6 +77,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return null;
   }
 
+  @Override
   public Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     FlattenIterable<String> result = new FlattenIterable<String>();
@@ -83,6 +88,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
+  @Override
   public Iterable<String> getSubpackages(String namespace) {
     checkValidity();
     FlattenIterable<String> result = new FlattenIterable<String>();
@@ -93,6 +99,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
+  @Override
   public long getClassesTimestamp(String namespace) {
     checkValidity();
     long result = 0;
@@ -102,6 +109,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
+  @Override
   public long getTimestamp() {
     checkValidity();
     long result = 0;
@@ -116,6 +124,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return new ArrayList<IClassPathItem>(myChildren);
   }
 
+  @Override
   public List<RealClassPathItem> flatten() {
     checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
@@ -127,6 +136,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
+  @Override
   public CompositeClassPathItem optimize() {
     checkValidity();
     List<RealClassPathItem> flattenedItems = flatten();
@@ -185,6 +195,7 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   }
 
   private final Runnable myInvalidationListener = new Runnable() {
+    @Override
     public void run() {
       callInvalidationListeners();
     }

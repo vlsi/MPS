@@ -18,6 +18,7 @@ import java.io.IOException;
   }
 
   @Nullable
+  @Override
   public Tuples._2<Integer, byte[]> mergeContents(byte[] baseContent, byte[] localContent, byte[] latestContent) {
     SVNDiffOptions diffOptions = null;
     FSMergerBySequence merger = new FSMergerBySequence(myConflictStart, mySeparator, myConflictEnd);

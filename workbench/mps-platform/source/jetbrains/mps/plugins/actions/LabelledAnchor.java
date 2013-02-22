@@ -32,11 +32,13 @@ public class LabelledAnchor extends BaseAction {
     return myId;
   }
 
+  @Override
   protected void doUpdate(AnActionEvent e, Map<String, Object> _params) {
     e.getPresentation().setEnabled(false);
     e.getPresentation().setVisible(false);
   }
 
+  @Override
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
 
   }

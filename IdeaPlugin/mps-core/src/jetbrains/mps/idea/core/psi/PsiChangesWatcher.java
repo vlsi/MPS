@@ -25,8 +25,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.idea.core.psi.PsiListener.PsiEvent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;

@@ -15,6 +15,7 @@ public class Descendant extends TestClass {
     return 5;
   }
 
+  @Override
   public int hello(Double x, String aaa) {
     return 6;
   }
@@ -34,6 +35,7 @@ public class Descendant extends TestClass {
 
   }
 
+  @Override
   public String arg(Arg2 x) {
     if (x instanceof Arg4) {
       return arg((Arg4) x);
@@ -52,6 +54,7 @@ public class Descendant extends TestClass {
 
   }
 
+  @Override
   public void newDisp(Number a) {
     if (a instanceof Integer) {
       newDisp((Integer) a);

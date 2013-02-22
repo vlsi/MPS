@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
@@ -27,20 +27,9 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.RepositoryAccess;
-import org.jetbrains.mps.openapi.module.SModelAccess;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryListener;
+import org.jetbrains.mps.openapi.module.*;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -48,6 +37,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
   private ClassLoaderManager myClm;
   private ReloadAdapter myHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       invalidateCaches();
     }
@@ -67,10 +57,12 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     myClm = clm;
   }
 
+  @Override
   public void init() {
     myClm.addReloadHandler(myHandler);
   }
 
+  @Override
   public void dispose() {
     myClm.removeReloadHandler(myHandler);
   }
@@ -180,7 +172,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   //---------------get by-----------------------------
 
   @Override
-  public SModelAccess getModelAccess() {
+  public ModelAccess getModelAccess() {
     return ModelAccess.instance();
   }
 
@@ -208,6 +200,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     return myFqNameToModulesMap.get(fqName);
   }
 
+  @Override
   public SModule getModule(SModuleId id) {
     assertCanRead();
 
@@ -215,8 +208,9 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     return myIdToModuleMap.get(id);
   }
 
+  @Override
   public Iterable<SModule> getModules() {
-    return (Set)getAllModules();
+    return (Set) getAllModules();
   }
 
   @Override
@@ -258,6 +252,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
 
   public void invalidateCaches() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         for (Project p : ProjectManager.getInstance().getOpenProjects()) {
           p.getScope().invalidateCaches();

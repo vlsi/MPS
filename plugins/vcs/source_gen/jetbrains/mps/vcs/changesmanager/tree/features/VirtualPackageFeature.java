@@ -15,11 +15,13 @@ public class VirtualPackageFeature extends Feature {
   }
 
   @NotNull
+  @Override
   public String toString() {
     return "Virtual Package {" + getModelReference().toString() + "|" + myVirtualPackage + "}";
   }
 
   @Nullable
+  @Override
   public Feature getParent() {
     int lastIndexOf = myVirtualPackage.lastIndexOf('.');
     if (lastIndexOf == -1) {

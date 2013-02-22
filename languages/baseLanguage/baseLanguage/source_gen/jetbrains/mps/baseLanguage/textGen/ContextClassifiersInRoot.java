@@ -20,11 +20,13 @@ public class ContextClassifiersInRoot {
 
   public ContextClassifiersInRoot(SNode rootNode) {
     contextClassifiersCache = new SimpleCache<Tuples._2<SNode, String>, Map<String, String>>() {
+      @Override
       protected Map<String, String> innerGet(Tuples._2<SNode, String> key) {
         return getContextClassifiers(key._0(), key._1());
       }
     };
     nestedClassifiersCache = new SimpleCache<SNode, Map<String, String>>() {
+      @Override
       protected Map<String, String> innerGet(SNode key) {
         return getNestedClassifiers(key);
       }

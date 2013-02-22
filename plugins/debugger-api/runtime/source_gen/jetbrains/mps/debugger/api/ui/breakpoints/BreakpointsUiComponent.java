@@ -103,6 +103,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
   }
 
   @NotNull
+  @Override
   protected Set<ILocationBreakpoint> getBreakpointsForComponent(@NotNull final EditorComponent editorComponent) {
     final SNode editedNode = editorComponent.getEditedNode();
     if (editedNode == null) {
@@ -150,6 +151,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     return result;
   }
 
+  @Override
   protected EditorCell findDebuggableOrTraceableCell(EditorCell foundCell) {
     EditorCell cell = findDebuggableCell(foundCell);
     if (cell == null) {
@@ -173,6 +175,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     return null;
   }
 
+  @Override
   protected void toggleBreakpoint(@NotNull SNode node) {
     SNode root = node.getContainingRoot();
     IBreakpoint breakpoint = null;
@@ -221,10 +224,12 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     return Collections.emptyList();
   }
 
+  @Override
   protected BreakpointIconRenderrerEx<ILocationBreakpoint> createRenderrer(ILocationBreakpoint breakpoint, EditorComponent component) {
     return new BreakpointIconRenderer(breakpoint, component);
   }
 
+  @Override
   protected BreakpointPainterEx<ILocationBreakpoint> createPainter(ILocationBreakpoint breakpoint) {
     return new BreakpointPainter(breakpoint);
   }
@@ -288,6 +293,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     @Override
     public void breakpointAdded(@NotNull final IBreakpoint breakpoint) {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           if (breakpoint instanceof ILocationBreakpoint) {
             SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
@@ -303,6 +309,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     @Override
     public void breakpointRemoved(@NotNull final IBreakpoint breakpoint) {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           if (breakpoint instanceof ILocationBreakpoint) {
             SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();

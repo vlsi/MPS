@@ -25,6 +25,7 @@ public interface IChooserSettings<T> extends Condition<T> {
   @Nullable
   T getInitialValue();
 
+  @Override
   boolean met(T entity);
 
   public abstract class BaseChooserSettings<T> implements IChooserSettings<T> {
@@ -34,14 +35,17 @@ public interface IChooserSettings<T> extends Condition<T> {
       myTitle = title;
     }
 
+    @Override
     public final String getTitle() {
       return myTitle;
     }
 
+    @Override
     public T getInitialValue() {
       return null;
     }
 
+    @Override
     public boolean met(T entity) {
       return true;
     }

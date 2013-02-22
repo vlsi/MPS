@@ -16,6 +16,7 @@ public class GraphCreator implements IGraphCreator<InstructionWrapper> {
   public GraphCreator() {
   }
 
+  @Override
   public IBlock createBlock(InstructionWrapper wrapper, int x, int y, int width, int height) {
     Instruction instruction = wrapper.getInstruction();
     SNodeReference pointer;

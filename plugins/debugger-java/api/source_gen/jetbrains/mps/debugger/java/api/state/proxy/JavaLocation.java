@@ -22,18 +22,22 @@ public class JavaLocation implements ILocation {
     myLineNumber = location.lineNumber();
   }
 
+  @Override
   public String getFileName() {
     return myFileName;
   }
 
+  @Override
   public String getUnitName() {
     return myUnitName;
   }
 
+  @Override
   public String getRoutineName() {
     return myRoutineName;
   }
 
+  @Override
   public int getLineNumber() {
     return myLineNumber;
   }

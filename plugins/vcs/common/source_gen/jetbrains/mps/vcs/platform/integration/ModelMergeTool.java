@@ -30,6 +30,7 @@ public class ModelMergeTool extends MergeTool {
   public ModelMergeTool() {
   }
 
+  @Override
   public void show(final DiffRequest request) {
     MergeRequestImpl mrequest = (MergeRequestImpl) request;
     try {
@@ -71,6 +72,7 @@ public class ModelMergeTool extends MergeTool {
     }
   }
 
+  @Override
   public boolean canShow(DiffRequest request) {
     return super.canShow(request) && request.getContents()[MergeConstants.ORIGINAL].getContentType() == MPSFileTypeFactory.MODEL_FILE_TYPE;
   }

@@ -25,6 +25,7 @@ public class InstanceMethodDeclarationScope extends BaseMethodsScope {
     super(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), classifierNode, extendedClassifiers);
   }
 
+  @Override
   public String getSignatureForOverriding(SNode method, SNode contextClassifier) {
     return ClassifierScopeUtils.getMethodSignatureForOverriding(contextClassifier, method);
   }

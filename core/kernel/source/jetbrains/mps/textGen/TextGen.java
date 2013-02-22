@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.textGen;
 
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.smodel.runtime.impl.DefaultTextGenDescriptor;
@@ -64,7 +64,7 @@ public class TextGen {
     } else if (failIfNoTextgen) {
       String error = "Can't generate text from " + node;
       Message m = new Message(MessageKind.ERROR, error);
-      if (node != null && node.getModel() != null && !node.getModel().isTransient()) {
+      if (node != null && node.getModel() != null && !(node.getModel() instanceof TransientSModel)) {
         m.setHintObject(new jetbrains.mps.smodel.SNodePointer(node));
       }
       return new TextGenerationResult(node, NO_TEXTGEN, true, Collections.<IMessage>singleton(m), null, null, null, null);
@@ -75,7 +75,7 @@ public class TextGen {
 
   public static TextGenerationResult generateText(SNode node, boolean withDebugInfo, @Nullable StringBuilder[] buffers) {
     TextGenBuffer buffer = new TextGenBuffer(withDebugInfo, buffers);
-    buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
+    buffer.putUserObject(PACKAGE_NAME, jetbrains.mps.util.SNodeOperations.getModelLongName(node.getModel()));
     buffer.putUserObject(ROOT_NODE, node);
     appendNodeText(buffer, node, null);
     String topBufferText = buffer.getTopBufferText();

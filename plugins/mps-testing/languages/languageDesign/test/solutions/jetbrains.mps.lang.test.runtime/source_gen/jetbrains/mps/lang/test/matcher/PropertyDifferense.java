@@ -14,10 +14,12 @@ public class PropertyDifferense extends DifferanceItem {
     super();
   }
 
+  @Override
   public String toString() {
     return "Different property: " + myProperty;
   }
 
+  @Override
   public boolean equals(Object obj) {
     if (obj == null) {
       return false;

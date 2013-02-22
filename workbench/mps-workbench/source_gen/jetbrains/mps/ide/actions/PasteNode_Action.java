@@ -10,7 +10,7 @@ import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -48,7 +48,7 @@ public class PasteNode_Action extends BaseAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     boolean searchPanelInactive = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null || !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible());
-    return searchPanelInactive && ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.canPasteNodes(_params);
+    return searchPanelInactive && ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModel && PasteNode_Action.this.canPasteNodes(_params);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -85,7 +85,7 @@ public class PasteNode_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("contextModel") == null) {
       return false;
     }
-    if (!(MapSequence.fromMap(_params).get("contextModel") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).isReadOnly()) {
+    if (!(MapSequence.fromMap(_params).get("contextModel") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("contextModel")).isReadOnly()) {
       return false;
     }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));

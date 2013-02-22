@@ -22,52 +22,65 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
     this.myMpsProject = this.myProject.getComponent(MPSProject.class);
   }
 
+  @Override
   public String getDescription() {
     return "Select a solution to create a new build script.";
   }
 
+  @Override
   protected void setChecked(boolean checked) {
     this.myGenerator.setCreateSolution(checked);
   }
 
+  @Override
   protected boolean getChecked() {
     return this.myGenerator.getCreateSolution();
   }
 
+  @Override
   protected String getComboBoxName() {
     return "Use existing solution:";
   }
 
+  @Override
   protected String getVariantName(final IModule module) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         return module.toString();
       }
     });
   }
 
+  @Override
   protected String getTextFieldText() {
     return this.myGenerator.getNewSolutionName();
   }
 
+  @Override
   protected void setTextFieldText(String text) {
     this.myGenerator.setNewSolutionName(text);
   }
 
+  @Override
   protected String getCheckBoxName() {
     return "Create new solution";
   }
 
+  @Override
   protected void setVariant(IModule m) {
     this.myGenerator.setSolution((Solution) m);
   }
 
+  @Override
   protected String getTextFieldName() {
     return "New solution name:";
   }
 
+  @Override
   protected IModule[] getVariants() {
     List<IModule> solutionsList = CollectionUtil.filter(this.myMpsProject.getModules(), new Condition<IModule>() {
+      @Override
       public boolean met(IModule module) {
         return module instanceof Solution;
       }
@@ -75,14 +88,17 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
     return ListSequence.fromList(solutionsList).toGenericArray(IModule.class);
   }
 
+  @Override
   protected boolean isCheckBoxEnabled() {
     return true;
   }
 
+  @Override
   protected boolean isValid(String text) {
     return this.myGenerator.isValidSolutionName(text);
   }
 
+  @Override
   protected String getWarningText(String text) {
     if (text.equals("")) {
       return "Empty solution name not allowed.";

@@ -59,6 +59,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   private volatile boolean myRebuilding = false;
 
   private final Disposable myJbTabsDisposable = new Disposable() {
+    @Override
     public void dispose() {
     }
   };
@@ -80,11 +81,13 @@ public class PlainTabsComponent extends BaseTabsComponent {
     updateTabs();
 
     myJbTabs.addChangeListener(new ChangeListener() {
+      @Override
       public void stateChanged(ChangeEvent e) {
         if (myDisposed) return;
         if (myRebuilding) return;
 
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             onTabIndexChange();
           }
@@ -114,6 +117,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   }
 
+  @Override
   public synchronized RelationDescriptor getCurrentTabAspect() {
     if (myDisposed) return null;
 
@@ -121,6 +125,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     return myRealTabs.get(myJbTabs.getSelectedIndex()).getTab();
   }
 
+  @Override
   public void setLastNode(SNodeReference node) {
     if (myDisposed) return;
 
@@ -132,12 +137,14 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   //this is synchronized because we change myJbTabs here (while disposing)
+  @Override
   public synchronized void dispose() {
     myDisposed = true;
     Disposer.dispose(myJbTabsDisposable);
     super.dispose();
   }
 
+  @Override
   protected synchronized void updateTabColors() {
     if (myDisposed) return;
 
@@ -156,6 +163,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   }
 
+  @Override
   protected synchronized void updateTabs() {
     if (myDisposed) return;
 
@@ -239,6 +247,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   }
 
+  @Override
   public synchronized void nextTab() {
     if (myDisposed) return;
 
@@ -248,6 +257,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   }
 
+  @Override
   public synchronized void prevTab() {
     if (myDisposed) return;
 
@@ -257,6 +267,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     }
   }
 
+  @Override
   protected boolean isTabUpdateNeeded(SNodeReference node) {
     return !myDisposed && isOwn(node);
   }

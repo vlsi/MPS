@@ -40,6 +40,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
     mySourceElement = sourceElement;
   }
 
+  @Override
   public PsiElement getSourceElement() {
     return mySourceElement;
   }
@@ -49,6 +50,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
     return myContext;
   }
 
+  @Override
   protected RunnerAndConfigurationSettings createConfigurationByElement(Location location, ConfigurationContext context) {
     myContext = context;
     if (!((location instanceof MPSLocation))) {
@@ -57,6 +59,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
     MPSLocation mpsLocation = (MPSLocation) location;
     final MPSPsiElement psiElement = mpsLocation.getPsiElement();
     RunConfiguration config = ModelAccess.instance().runReadAction(new Computable<RunConfiguration>() {
+      @Override
       public RunConfiguration compute() {
         Object mpsItem = psiElement.getMPSItem();
         if (mpsItem == null) {
@@ -78,10 +81,12 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
 
   protected abstract boolean isApplicable(Object element);
 
+  @Override
   public int compareTo(Object o) {
     return RuntimeConfigurationProducer.PREFERED;
   }
 
+  @Override
   public int hashCode() {
     return ((myContext == null ?
       0 :
@@ -92,6 +97,7 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
     )) + 20 * getClass().getName().hashCode();
   }
 
+  @Override
   public boolean equals(Object obj) {
     if (obj == null || !((obj instanceof BaseConfigCreator))) {
       return false;

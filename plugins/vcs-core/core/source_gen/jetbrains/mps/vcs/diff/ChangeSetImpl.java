@@ -35,6 +35,7 @@ public class ChangeSetImpl implements ModelChangeSet {
   }
 
   @NotNull
+  @Override
   public List<ModelChange> getModelChanges() {
     return Collections.unmodifiableList(myModelChanges);
   }
@@ -44,6 +45,7 @@ public class ChangeSetImpl implements ModelChangeSet {
   }
 
   @NotNull
+  @Override
   public <C extends ModelChange> Iterable<C> getModelChanges(final Class<C> changeClass) {
     return ListSequence.fromList(myModelChanges).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
@@ -57,16 +59,19 @@ public class ChangeSetImpl implements ModelChangeSet {
   }
 
   @NotNull
+  @Override
   public SModel getOldModel() {
     return myOldModel;
   }
 
   @NotNull
+  @Override
   public SModel getNewModel() {
     return myNewModel;
   }
 
   @NotNull
+  @Override
   public ChangeSet getOppositeChangeSet() {
     if (myOppositeChangeSet == null) {
       throw new IllegalStateException("opposite chage set is not built");
@@ -136,6 +141,7 @@ public class ChangeSetImpl implements ModelChangeSet {
     }
   }
 
+  @Override
   public Iterable<ModelChange> getChangesForRoot(@Nullable SNodeId rootId) {
     return (rootId == null ?
       myMetadataChanges :
@@ -143,6 +149,7 @@ public class ChangeSetImpl implements ModelChangeSet {
     );
   }
 
+  @Override
   public Iterable<SNodeId> getAffectedRoots() {
     return (ListSequence.fromList(myMetadataChanges).isEmpty() ?
       MapSequence.fromMap(myRootToChanges).keySet() :

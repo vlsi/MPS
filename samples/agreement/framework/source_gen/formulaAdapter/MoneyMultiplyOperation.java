@@ -14,6 +14,7 @@ public class MoneyMultiplyOperation implements Function<Money> {
     myRightOperand = rightOperand;
   }
 
+  @Override
   public Money compute(Object parm) {
     return myLeftOperand.compute(parm).multiply(myRightOperand.compute(parm));
   }

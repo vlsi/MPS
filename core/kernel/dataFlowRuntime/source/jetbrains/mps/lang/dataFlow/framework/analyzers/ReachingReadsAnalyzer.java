@@ -28,10 +28,12 @@ import java.util.HashSet;
 import java.util.List;
 
 public class ReachingReadsAnalyzer implements DataFlowAnalyzer<Set<ReadInstruction>> {
+  @Override
   public Set<ReadInstruction> initial(Program p) {
     return new HashSet<ReadInstruction>();
   }
 
+  @Override
   public Set<ReadInstruction> merge(Program p, List<Set<ReadInstruction>> input) {
     Set<ReadInstruction> result = new HashSet<ReadInstruction>();
     for (Set<ReadInstruction> i : input) {
@@ -40,6 +42,7 @@ public class ReachingReadsAnalyzer implements DataFlowAnalyzer<Set<ReadInstructi
     return result;
   }
 
+  @Override
   public Set<ReadInstruction> fun(Set<ReadInstruction> input, ProgramState s) {
     Instruction instruction = s.getInstruction();
     Set<ReadInstruction> result = input;
@@ -62,6 +65,7 @@ public class ReachingReadsAnalyzer implements DataFlowAnalyzer<Set<ReadInstructi
     return result;
   }
 
+  @Override
   public AnalysisDirection getDirection() {
     return AnalysisDirection.BACKWARD;
   }

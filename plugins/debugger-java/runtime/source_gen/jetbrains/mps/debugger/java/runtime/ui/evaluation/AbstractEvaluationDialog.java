@@ -30,14 +30,17 @@ public abstract class AbstractEvaluationDialog extends DialogWrapper {
     myEvaluationPanel = new EvaluationPanel(ProjectHelper.toIdeaProject(context.getProject()), debugSession, model, false);
     myEvaluationPanel.setMinimumSize(new Dimension(500, 500));
     myEvaluationPanel.setErrorTextListener(new EvaluationUi.IErrorTextListener() {
+      @Override
       public void updateErrorText(String text) {
         setErrorText(text);
       }
     });
 
     mySessionStopDisposer = new SessionStopDisposer(debugSession) {
+      @Override
       public void doDispose() {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
           public void run() {
             dispose();
           }
@@ -53,6 +56,7 @@ public abstract class AbstractEvaluationDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myEvaluationPanel;
   }

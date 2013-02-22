@@ -23,6 +23,7 @@ public class DataFlowManager implements CoreComponent {
   private Map<String, DataFlowBuilder> myBuilders = new HashMap<String, DataFlowBuilder>();
   private boolean myLoaded = false;
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       DataFlowManager.this.clear();
     }
@@ -32,6 +33,7 @@ public class DataFlowManager implements CoreComponent {
     this.myClassLoaderManager = classLoaderManager;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -40,6 +42,7 @@ public class DataFlowManager implements CoreComponent {
     this.myClassLoaderManager.addReloadHandler(this.myReloadHandler);
   }
 
+  @Override
   public void dispose() {
     this.myClassLoaderManager.removeReloadHandler(this.myReloadHandler);
     INSTANCE = null;
@@ -75,7 +78,7 @@ public class DataFlowManager implements CoreComponent {
   private void load() {
     for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       SModelDescriptor dfaModel = LanguageAspect.DATA_FLOW.get(l);
-      if (dfaModel != null && !(dfaModel.getSModel().rootsCount() == 0)) {
+      if (dfaModel != null && dfaModel.getSModel().getRootNodes().iterator().hasNext()) {
         String dfaBuildersClassName = dfaModel.getLongName() + ".DFABuilders";
         Class<? extends DataFlowBuilders> buildersClass = l.getClass(dfaBuildersClassName);
         if (buildersClass != null) {

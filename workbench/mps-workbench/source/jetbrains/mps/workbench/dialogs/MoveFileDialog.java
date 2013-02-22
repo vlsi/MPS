@@ -43,8 +43,10 @@ public class MoveFileDialog extends DialogWrapper {
     setTitle("Move");
     myDirectoryField.setText(initialText);
     myDirectoryField.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         SwingUtilities.invokeLater(new Runnable() {
+          @Override
           public void run() {
             FileChooserDescriptor chooser = new FileChooserDescriptor(false, true, false, false, false, false);
             FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(chooser, getOwner());

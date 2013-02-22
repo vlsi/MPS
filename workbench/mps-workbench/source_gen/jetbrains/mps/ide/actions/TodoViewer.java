@@ -49,6 +49,7 @@ public class TodoViewer extends JPanel {
     final JLabel label = new JLabel("Click to find TODOs", SwingConstants.CENTER);
     add(label, BorderLayout.CENTER);
     addMouseListener(new MouseAdapter() {
+      @Override
       public void mouseClicked(MouseEvent e) {
         removeMouseListener(this);
         remove(label);
@@ -77,6 +78,7 @@ public class TodoViewer extends JPanel {
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
     com.intellij.openapi.project.Project project = ProjectHelper.toIdeaProject(getProject());
     myUsagesView = new UsagesView(project, viewOptions) {
+      @Override
       public void close() {
         getTool().makeUnavailableLater();
       }
@@ -85,6 +87,7 @@ public class TodoViewer extends JPanel {
     myUsagesView.setRunOptions(FindUtils.makeProvider(new TodoFinder()), new SearchQuery(myProject.getScope()), new UsagesView.ButtonConfiguration(true), new SearchResults());
     myUsagesView.setCustomNodeRepresentator(new TodoViewer.MyNodeRepresentator());
     ProgressManager.getInstance().run(new Task.Modal(project, "Searching", true) {
+      @Override
       public void run(@NotNull final ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         myUsagesView.run(indicator);
@@ -98,18 +101,22 @@ public class TodoViewer extends JPanel {
     }
 
     @NotNull
+    @Override
     public String getPresentation(SNode node) {
       return "<font color=blue>" + SNodeAccessUtil.getProperty(node, "text") + "</font>";
     }
 
+    @Override
     public String getResultsText(TextOptions options) {
       return "<strong>" + NameUtil.formatNumericalString(options.mySubresultsCount, "TODO item") + " found</strong>";
     }
 
+    @Override
     public Icon getResultsIcon() {
       return TodoViewer.TODO_ICON;
     }
 
+    @Override
     public String getCategoryText(TextOptions options, String category, boolean isResultsSection) {
       String counter = "";
       if (options.myCounters && isResultsSection) {
@@ -119,17 +126,21 @@ public class TodoViewer extends JPanel {
       return "<strong>TODO items" + counter + "</strong>";
     }
 
+    @Override
     public Icon getCategoryIcon(String category) {
       return IdeIcons.CLOSED_FOLDER;
     }
 
+    @Override
     public List<CategoryKind> getCategoryKinds() {
       return Arrays.asList(CategoryKind.DEFAULT_CATEGORY_KIND);
     }
 
+    @Override
     public void read(Element element, Project project) throws CantLoadSomethingException {
     }
 
+    @Override
     public void write(Element element, Project project) throws CantSaveSomethingException {
     }
   }

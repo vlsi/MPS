@@ -25,9 +25,8 @@ import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -131,12 +130,8 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   }
 
   private static SNode[] getRoots(SModel model) {
-    SNode[] result = new SNode[model.rootsCount()];
-    Iterator<SNode> iter = model.rootsIterator();
-    for (int i = 0; i < result.length; i++) {
-      result[i] = iter.next();
-    }
-    return result;
+    Collection<SNode> collection = IterableUtil.asCollection(model.getRootNodes());
+    return collection.toArray(new SNode[collection.size()]);
   }
 
   @Override
@@ -146,7 +141,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
       oldidsToOriginal.put(entry.getKey().getNodeId(), entry.getValue());
     }
     currentToOriginalMap = new HashMap<SNode, SNode>();
-    for (SNode root : newmodel.roots()) {
+    for (SNode root : newmodel.getRootNodes()) {
       SNodeId id = root.getNodeId();
       SNode original = oldidsToOriginal.get(id);
       if (original == null) {
@@ -175,6 +170,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     nextStepToOriginalMap.put(outputRoot, originalRoot);
   }
 
+  @Override
   public void rootReplaced(SNode oldOutputRoot, SNode newOutputRoot) {
     if (nextStepToOriginalMap != null && nextStepToOriginalMap.containsKey(oldOutputRoot)) {
       SNode original = nextStepToOriginalMap.remove(oldOutputRoot);
@@ -207,6 +203,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     currentOutputModel = null;
   }
 
+  @Override
   public void setOutputModel(SModel model, int majorStep, int minorStep) {
     currentOutputModel = model;
     myMajorStep = majorStep;
@@ -214,6 +211,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     myCachedModel = null;
   }
 
+  @Override
   public SNode getOriginalForOutput(SNode outputNode) {
     if (nextStepToOriginalMap == null) {
       return null;
@@ -256,7 +254,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   private void loadCachedModel() throws BrokenCacheException {
     // TODO if(myMinorStep >= stepCount) copy from current input model
     int stepsCount = myCache.getMinorCount(myMajorStep);
-    TransientModelWithMetainfo model = myCache.load(myMajorStep, myMinorStep >= stepsCount ? stepsCount - 1 : myMinorStep, currentOutputModel.getSModelReference());
+    TransientModelWithMetainfo model = myCache.load(myMajorStep, myMinorStep >= stepsCount ? stepsCount - 1 : myMinorStep, (SModelReference) currentOutputModel.getReference());
     if (model == null) {
       throw new BrokenCacheException(currentOutputModel);
     }
@@ -296,7 +294,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     }
 
     for (SNode node : toCopy) {
-      currentOutputModel.addRoot(node);
+      currentOutputModel.addRootNode(node);
     }
     for (MappingsMemento val : toImport) {
       mappings.importPersisted(val, currentInputModel, currentOutputModel);

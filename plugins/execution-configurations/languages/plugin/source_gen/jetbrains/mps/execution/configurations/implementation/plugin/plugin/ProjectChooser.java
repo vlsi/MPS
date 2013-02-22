@@ -25,6 +25,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
     myOpenCurrentProject = new JCheckBox("Open Current Project");
     myOpenCurrentProject.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         myProjectPath.setEditable(!(myOpenCurrentProject.isSelected()));
       }

@@ -34,6 +34,7 @@ public class OverrideImplementMethodAction {
     final SNode contextClass = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     final SNode contextMethod = SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
     final SNodeReference[] methods = ModelAccess.instance().runReadAction(new Computable<SNodeReference[]>() {
+      @Override
       public SNodeReference[] compute() {
         List<SNode> methodsToOverride = (myIsOverride ?
           BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) :
@@ -60,6 +61,7 @@ public class OverrideImplementMethodAction {
       final Iterable<SNodeReference> selectedElements = (Iterable<SNodeReference>) dialog.getSelectedElements();
 
       ModelAccess.instance().runCommandInEDT(new Runnable() {
+        @Override
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
             public SNode select(SNodeReference it) {

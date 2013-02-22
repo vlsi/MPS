@@ -39,6 +39,7 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     setIcon(Icons.DEVKIT_ICON);
   }
 
+  @Override
   public DevKit getModule() {
     return myDevKit;
   }
@@ -47,10 +48,12 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     return myDevKit;
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   public void init() {
     populate();
     myInitialized = true;
@@ -62,10 +65,12 @@ public class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     return descriptorFile.getPath();
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_DEVKIT_ACTIONS);
   }
 
+  @Override
   protected String getModulePresentation() {
     String name = myDevKit.getModuleDescriptor().getNamespace();
 

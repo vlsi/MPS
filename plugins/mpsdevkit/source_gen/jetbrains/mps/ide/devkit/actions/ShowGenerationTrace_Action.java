@@ -44,7 +44,7 @@ public class ShowGenerationTrace_Action extends BaseAction {
         if (ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).isEmpty()) {
           event.getPresentation().setEnabled(false);
         } else {
-          boolean hasTraceInputData = tracer.hasTraceInputData(SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first()).getSModelReference());
+          boolean hasTraceInputData = tracer.hasTraceInputData(SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first()).getReference());
           event.getPresentation().setEnabled(hasTraceInputData);
         }
       }

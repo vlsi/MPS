@@ -11,6 +11,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -46,7 +47,7 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     if (structureModelDescriptor == null) {
       return false;
     }
-    if (structureModelDescriptor.getSModel().rootsCount() == 0) {
+    if (IterableUtil.asCollection(structureModelDescriptor.getSModel().getRootNodes()).size() == 0) {
       return false;
     }
     return true;

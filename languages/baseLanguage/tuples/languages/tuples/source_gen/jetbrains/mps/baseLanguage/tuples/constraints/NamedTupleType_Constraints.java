@@ -46,6 +46,7 @@ public class NamedTupleType_Constraints extends BaseConstraintsDescriptor {
               _context.getEnclosingNode() :
               _context.getReferenceNode()
             ), IClassifiersSearchScope.ANYTHING, operationContext.getScope()) {
+              @Override
               protected List<SNode> getNodesFormClassifiersList(List<SNode> classifiers, int constraint, Condition<SNode> condition) {
                 List<SNode> result = new ArrayList<SNode>();
                 for (SNode classifier : classifiers) {

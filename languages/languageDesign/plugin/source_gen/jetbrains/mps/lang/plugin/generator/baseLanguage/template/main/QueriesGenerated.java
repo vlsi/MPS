@@ -300,7 +300,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3575782568432656827(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false)).getLongName() + "." + PreferencesComponentDeclaration_Behavior.call_getClassName_1213877322095(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false));
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false))) + "." + PreferencesComponentDeclaration_Behavior.call_getClassName_1213877322095(SLinkOperations.getTarget(_context.getNode(), "componentDeclaration", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_7050292266500712660(final IOperationContext operationContext, final PropertyMacroContext _context) {

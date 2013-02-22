@@ -18,6 +18,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
   public IntroduceLocalVariableRefactoring() {
   }
 
+  @Override
   public SNode doRefactoring() {
     this.findDuplicates();
     SNode var = _quotation_createNode_nngwe4_a0b0b(this.getName(), this.getExpressionType(), this.getExpression());
@@ -51,6 +52,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     return result;
   }
 
+  @Override
   public void replaceNode(SNode node, SNode declaration) {
     SNode reference = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), declaration, "virtual_createReference_1213877517482", new Object[]{});
     SNodeOperations.replaceWithAnother(node, reference);

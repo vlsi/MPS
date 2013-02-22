@@ -44,6 +44,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
   public RuleOperandRenderer() {
   }
 
+  @Override
   public Component getTableCellRendererComponent(JTable table, final Object value, boolean isSelected, boolean hasFocus, int row, int column) {
     if (MapSequence.fromMap(myRenderersCache).containsKey(value)) {
       return MapSequence.fromMap(myRenderersCache).get(value);
@@ -77,6 +78,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
       ));
       tree.setForeground(table.getForeground());
       tree.setCellRenderer(new DefaultTreeCellRenderer() {
+        @Override
         public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
           setBackgroundNonSelectionColor(tree.getBackground());
           return super.getTreeCellRendererComponent(tree, value, selected, expanded, leaf, row, hasFocus);
@@ -113,6 +115,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
       } else {
         final SNodeReference p = new SNodePointer(refC.getModelUID(), refC.getNodeID());
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {
+          @Override
           public String compute() {
             SModelDescriptor model = ((SNodePointer) p).getModel();
             SNode node = ((SNodePointer) p).getNode();

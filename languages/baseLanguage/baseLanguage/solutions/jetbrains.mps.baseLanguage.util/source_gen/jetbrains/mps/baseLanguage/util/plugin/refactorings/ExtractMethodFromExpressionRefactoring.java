@@ -21,6 +21,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     this.myExpression = SNodeOperations.cast(ListSequence.fromList(params.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Expression");
   }
 
+  @Override
   protected SNode createMethodBody() {
     SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
     if (SNodeOperations.isInstanceOf(this.getMethodType(), "jetbrains.mps.baseLanguage.structure.VoidType")) {
@@ -35,6 +36,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     return body;
   }
 
+  @Override
   public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -44,6 +46,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
   }
 
   @NotNull
+  @Override
   public SNode getMethodType() {
     SNode typeOf = TypeChecker.getInstance().getTypeOf(this.myExpression);
     assert typeOf != null;

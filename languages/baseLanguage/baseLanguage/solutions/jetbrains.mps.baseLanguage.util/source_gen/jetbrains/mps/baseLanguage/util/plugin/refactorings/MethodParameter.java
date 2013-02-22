@@ -78,6 +78,7 @@ public class MethodParameter extends MethodParameterModel {
     this.setType(MapSequence.fromMap(this.myTypesMap).get(name));
   }
 
+  @Override
   public SNode getDeclaration() {
     return this.myDeclaration;
   }

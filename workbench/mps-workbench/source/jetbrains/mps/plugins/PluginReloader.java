@@ -103,17 +103,20 @@ public class PluginReloader implements ApplicationComponent {
 
   //----------------COMPONENT STUFF---------------------
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "PluginReloader";
   }
 
+  @Override
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
     ProjectManager.getInstance().addProjectManagerListener(myProjectListener);
   }
 
+  @Override
   public void disposeComponent() {
     ProjectManager.getInstance().removeProjectManagerListener(myProjectListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
@@ -132,9 +135,11 @@ public class PluginReloader implements ApplicationComponent {
   }
 
   private class MyProjectManagerAdapter extends ProjectManagerAdapter {
+    @Override
     public void projectClosing(Project project) {
       assert SwingUtilities.isEventDispatchThread();
       ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
         public void run() {
           disposePlugins();
         }
@@ -143,17 +148,21 @@ public class PluginReloader implements ApplicationComponent {
   }
 
   private class MyReloadAdapter extends ReloadAdapter {
+    @Override
     public void unload() {
       //write action is needed the because user can acquire write action inside of this [see MPS-9139]
       ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
         public void run() {
           disposePlugins();
         }
       });
     }
 
+    @Override
     public void onAfterReload() {
       Runnable runnable = new Runnable() {
+        @Override
         public void run() {
           //write action is needed the because user can acquire write action inside of this [see MPS-9139]
           if (!isDisposed()) loadPlugins();

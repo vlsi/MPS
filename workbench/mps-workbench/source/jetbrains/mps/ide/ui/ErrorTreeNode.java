@@ -25,10 +25,12 @@ public class ErrorTreeNode extends TextTreeNode {
     super(text);
   }
 
+  @Override
   public boolean isLeaf() {
     return true;
   }
 
+  @Override
   protected void updatePresentation() {
     super.updatePresentation();
     setColor(Color.RED);

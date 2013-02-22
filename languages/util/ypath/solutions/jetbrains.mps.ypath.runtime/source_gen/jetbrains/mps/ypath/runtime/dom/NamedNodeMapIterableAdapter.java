@@ -14,6 +14,7 @@ public class NamedNodeMapIterableAdapter implements Iterable<Node> {
     nodeMap = map;
   }
 
+  @Override
   public Iterator<Node> iterator() {
     return new NamedNodeMapIterableAdapter.NamedNodeMapIterator();
   }
@@ -24,10 +25,12 @@ public class NamedNodeMapIterableAdapter implements Iterable<Node> {
     private NamedNodeMapIterator() {
     }
 
+    @Override
     public boolean hasNext() {
       return index < nodeMap.getLength();
     }
 
+    @Override
     public Node next() {
       if (hasNext()) {
         return nodeMap.item(index++);
@@ -35,6 +38,7 @@ public class NamedNodeMapIterableAdapter implements Iterable<Node> {
       throw new NoSuchElementException();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

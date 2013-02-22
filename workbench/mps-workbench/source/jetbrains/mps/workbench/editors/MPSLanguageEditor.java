@@ -38,6 +38,7 @@ import java.beans.PropertyChangeListener;
 public class MPSLanguageEditor extends UserDataHolderBase implements FileEditor {
   public MPSLanguageEditor(final Project project, final MPSLanguageVirtualFile file) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myFile = file;
         myHierarchiesComponent = new LanguageHierarchiesComponent(myFile.getLanguage(), new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
@@ -50,70 +51,86 @@ public class MPSLanguageEditor extends UserDataHolderBase implements FileEditor 
   //  private LanguageDiagramComponent2 myHierarchiesComponent;
   private LanguageHierarchiesComponent myHierarchiesComponent;
 
+  @Override
   @NotNull
   public JComponent getComponent() {
     return myHierarchiesComponent.getExternalComponent();
   }
 
+  @Override
   @Nullable
   public JComponent getPreferredFocusedComponent() {
     return myHierarchiesComponent.getExternalComponent();
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getName() {
     return myFile.getName();
   }
 
+  @Override
   @NotNull
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
     return new FileEditorState() {
+      @Override
       public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
         return false;
       }
     };
   }
 
+  @Override
   public void setState(final @NotNull FileEditorState state) {
     //  myNodeEditor.loadState(state);
   }
 
+  @Override
   public boolean isModified() {
     return false;
   }
 
+  @Override
   public boolean isValid() {
     return true;
   }
 
+  @Override
   public void selectNotify() {
   }
 
+  @Override
   public void deselectNotify() {
   }
 
+  @Override
   public void addPropertyChangeListener(@NotNull PropertyChangeListener listener) {
   }
 
+  @Override
   public void removePropertyChangeListener(@NotNull PropertyChangeListener listener) {
   }
 
+  @Override
   @Nullable
   public BackgroundEditorHighlighter getBackgroundHighlighter() {
     return null;
   }
 
+  @Override
   @Nullable
   public FileEditorLocation getCurrentLocation() {
     return null;
   }
 
+  @Override
   @Nullable
   public StructureViewBuilder getStructureViewBuilder() {
     return null;
   }
 
+  @Override
   public void dispose() {
   }
 }

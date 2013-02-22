@@ -53,11 +53,13 @@ public class ProjectPaneTreeHighlighter {
   }
 
   private class MyDumbModeListener implements DumbModeListener {
+    @Override
     public void enteredDumbMode() {
       if (!ProjectPane.isShowGenStatus()) return;
       visit(myTree.getRootNode(), myGenStatusVisitor);
     }
 
+    @Override
     public void exitDumbMode() {
       if (!ProjectPane.isShowGenStatus()) return;
 
@@ -79,6 +81,7 @@ public class ProjectPaneTreeHighlighter {
   private class MyMPSTreeNodeListener implements MPSTreeNodeListener {
     private Map<MPSTreeNode, NodeListeners> myListeners = new HashMap<MPSTreeNode, NodeListeners>();
 
+    @Override
     public void treeNodeAdded(MPSTreeNode treeNode, MPSTree tree) {
       NodeListeners l = ListenersFactory.createListenersFor(treeNode);
       if (l == null) return;
@@ -86,12 +89,14 @@ public class ProjectPaneTreeHighlighter {
       l.startListening();
     }
 
+    @Override
     public void treeNodeRemoved(MPSTreeNode treeNode, MPSTree tree) {
       NodeListeners l = myListeners.remove(treeNode);
       if (l == null) return;
       l.stopListening();
     }
 
+    @Override
     public void treeNodeUpdated(MPSTreeNode treeNode, MPSTree tree) {
     }
 

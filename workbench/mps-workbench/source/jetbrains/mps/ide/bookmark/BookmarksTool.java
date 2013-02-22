@@ -56,6 +56,7 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
     myComponent = ScrollPaneFactory.createScrollPane(myTree);
     if (myTreeState != null) {
       ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
           myTree.rebuildNow();
           myTree.loadState(myTreeState);
@@ -64,10 +65,12 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
     }
   }
 
+  @Override
   public JComponent getComponent() {
     return myComponent;
   }
 
+  @Override
   public MyState getState() {
     if (myTree != null) {
       this.myTreeState = myTree.saveState();
@@ -75,6 +78,7 @@ public class BookmarksTool extends BaseProjectTool implements PersistentStateCom
     return new MyState(myTreeState);
   }
 
+  @Override
   public void loadState(final MyState state) {
     myTreeState = state.myTreeState;
   }

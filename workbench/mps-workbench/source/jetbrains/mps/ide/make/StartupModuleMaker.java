@@ -77,6 +77,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
     try {
       //todo eliminate read access as it can potentially lead to a deadlock
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           ClassLoaderManager.getInstance().updateClassPath();
           monitor.advance(1);
@@ -84,6 +85,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           final ModuleMaker maker = new ModuleMaker(new MessageHandler(), MessageKind.ERROR);
 
           myWatcher.executeUnderBlockedReload(new Computable<Object>() {
+            @Override
             public Object compute() {
               maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), monitor.subTask(9));
               return null;
@@ -99,6 +101,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
   private void reloadClasses(final ProgressIndicator indicator, boolean asPreStartup) {
     final Runnable reloadTask = new Runnable() {
+      @Override
       public void run() {
         ClassLoaderManager.getInstance().reloadAll(indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor());
       }
@@ -106,6 +109,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
     if (asPreStartup) {
       //the pre-startup activity is needed because all project components must be already instantiated when first class reload happens
       StartupManager.getInstance(myProject).registerPreStartupActivity(new Runnable() {
+        @Override
         public void run() {
           ModelAccess.instance().runWriteAction(reloadTask);
         }
@@ -127,10 +131,12 @@ public class StartupModuleMaker extends AbstractProjectComponent {
       this.mvt = myProject.getComponent(MessagesViewTool.class);
     }
 
+    @Override
     public void clear() {
       this.mvt.clear();
     }
 
+    @Override
     public void handle(IMessage message) {
       this.mvt.add(message);
     }

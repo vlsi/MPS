@@ -22,22 +22,27 @@ package jetbrains.mps.logging;
 public abstract class LoggingHandlerAdapter implements ILoggingHandler {
   public abstract void addLogEntry(LogEntry e);
 
+  @Override
   public final void info(LogEntry e) {
     addLogEntry(e);
   }
 
+  @Override
   public final void warning(LogEntry e) {
     addLogEntry(e);
   }
 
+  @Override
   public final void debug(LogEntry e) {
     addLogEntry(e);
   }
 
+  @Override
   public final void error(LogEntry e) {
     addLogEntry(e);
   }
 
+  @Override
   public final void fatal(LogEntry e) {
     addLogEntry(e);
   }

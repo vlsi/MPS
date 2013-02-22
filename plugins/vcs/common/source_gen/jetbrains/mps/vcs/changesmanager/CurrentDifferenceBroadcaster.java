@@ -49,6 +49,7 @@ import jetbrains.mps.logging.Logger;
     }
   }
 
+  @Override
   public void changeAdded(@NotNull final ModelChange change) {
     fireEvent("changeAdded", new _FunctionTypes._void_P1_E0<CurrentDifferenceListener>() {
       public void invoke(CurrentDifferenceListener listener) {
@@ -57,6 +58,7 @@ import jetbrains.mps.logging.Logger;
     });
   }
 
+  @Override
   public void changeRemoved(@NotNull final ModelChange change) {
     fireEvent("changeRemoved", new _FunctionTypes._void_P1_E0<CurrentDifferenceListener>() {
       public void invoke(CurrentDifferenceListener listener) {
@@ -65,6 +67,7 @@ import jetbrains.mps.logging.Logger;
     });
   }
 
+  @Override
   public void changeUpdateStarted() {
     fireEvent("changeUpdateStarted", new _FunctionTypes._void_P1_E0<CurrentDifferenceListener>() {
       public void invoke(CurrentDifferenceListener listener) {
@@ -73,6 +76,7 @@ import jetbrains.mps.logging.Logger;
     });
   }
 
+  @Override
   public void changeUpdateFinished() {
     fireEvent("changeUpdateFinished", new _FunctionTypes._void_P1_E0<CurrentDifferenceListener>() {
       public void invoke(CurrentDifferenceListener listener) {

@@ -40,10 +40,12 @@ public class MPSNodeChooser implements IChooser {
   private JScrollPane myScrollPane;
 
   private ProjectTreeFindHelper myFindHelper = new jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper() {
+    @Override
     protected jetbrains.mps.ide.projectPane.logicalview.ProjectTree getTree() {
       return myTree;
     }
 
+    @Override
     protected Project getProject() {
       return ProjectHelper.toIdeaProject(myContext.getSelectedProject());
     }
@@ -75,24 +77,29 @@ public class MPSNodeChooser implements IChooser {
     myTree = new ProjectTree(ProjectHelper.toIdeaProject(project));
     myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      @Override
       public void run() {
         myTree.rebuildNow();
       }
     });
   }
 
+  @Override
   public boolean isStretchable() {
     return true;
   }
 
+  @Override
   public JComponent getMainComponent() {
     return myScrollPane;
   }
 
+  @Override
   public JComponent getComponentToFocus() {
     return myTree;
   }
 
+  @Override
   public void commit() throws InvalidInputValueException {
     String title = mySettings.getTitle();
 
@@ -108,6 +115,7 @@ public class MPSNodeChooser implements IChooser {
     if (initialValue == null) return;
 
     myTree.runWithoutExpansion(new Runnable() {
+      @Override
       public void run() {
         MPSTreeNodeEx sNodeNode = myFindHelper.findMostSuitableSNodeTreeNode((SNode) initialValue);
         if (sNodeNode == null) return;
@@ -120,6 +128,7 @@ public class MPSNodeChooser implements IChooser {
   private SNode getSelectedObject() {
     final Object selection = this.myTree.getSelectionPath().getLastPathComponent();
     return ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      @Override
       public SNode compute() {
         if (!(selection instanceof SNodeTreeNode)) return null;
         return ((SNodeTreeNode) selection).getSNode();

@@ -17,6 +17,7 @@ public class ExecutableParametersEditor extends JPanel {
   private String myFileName;
   private JTextField myTextField = new JTextField();
   private JButton myButton = new JButton(new AbstractAction("OK") {
+    @Override
     public void actionPerformed(ActionEvent event) {
       JFileChooser fileChooser = new JFileChooser();
       int result = fileChooser.showDialog(ExecutableParametersEditor.this, "OK");

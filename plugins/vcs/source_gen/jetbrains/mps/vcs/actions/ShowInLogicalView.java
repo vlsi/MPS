@@ -21,6 +21,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
   public ShowInLogicalView() {
   }
 
+  @Override
   protected void actionPerformed(VcsContext e) {
     final Project project = e.getProject();
     final VirtualFile selectedFile = getSelectedFile(e);
@@ -31,6 +32,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
     ProjectPane projectPane = ProjectPane.getInstance(project);
     if (MPSFileTypesManager.instance().isModelFile(selectedFile)) {
       SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
+        @Override
         public SModelDescriptor compute() {
           return SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(selectedFile));
         }
@@ -41,6 +43,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
     } else
     if (MPSFileTypesManager.instance().isModuleFile(selectedFile)) {
       IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+        @Override
         public IModule compute() {
           return ModuleFileTracker.getInstance().getModuleByFile(VirtualFileUtils.toIFile(selectedFile));
         }
@@ -59,6 +62,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
     return selectedFiles[0];
   }
 
+  @Override
   protected void update(VcsContext vcsContext, Presentation presentation) {
     VirtualFile selectedFile = getSelectedFile(vcsContext);
     presentation.setEnabled(MPSFileTypesManager.instance().isModelFile(selectedFile) || MPSFileTypesManager.instance().isModuleFile(selectedFile));

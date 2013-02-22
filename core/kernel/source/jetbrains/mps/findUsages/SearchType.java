@@ -43,6 +43,7 @@ public abstract class SearchType<T, R> {
 
   protected MultiMap<FastFindSupport, SModel> groupModelByFastFindSupport(Iterable<? extends SModel> models) {
     return ModelGroupingUtil.groupModelsByRootMapping(models, new Mapper<String, FastFindSupport>() {
+      @Override
       public FastFindSupport value(String key) {
         return FastFindUsagesRegistry.getInstance().getFastFindSupport(key);
       }

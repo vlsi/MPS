@@ -71,16 +71,19 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
   static final int MAX_SIZE = 10000;
 
   private MyToggleAction myWarningsAction = new MyToggleAction("Show Warnings Messages", Icons.WARNING_ICON) {
+    @Override
     protected boolean isEnabled() {
       return hasWarnings();
     }
   };
   private MyToggleAction myInfoAction = new MyToggleAction("Show Information Messages", Icons.INFORMATION_ICON) {
+    @Override
     protected boolean isEnabled() {
       return hasInfo();
     }
   };
   private MyToggleAction myAutoscrollToSourceAction = new MyToggleAction("Autoscroll To Source", Icons.AUTOSCROLLS_ICON) {
+    @Override
     protected boolean isEnabled() {
       return hasHintObjects();
     }
@@ -126,10 +129,12 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
     getMessagesService().getContentManager().setSelectedContent(content);
   }
 
+  @Override
   public void clear() {
     if (MPSCore.getInstance().isTestMode()) return;
 
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         if (isDisposed()) {
           return;
@@ -147,6 +152,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
     });
   }
 
+  @Override
   public void add(IMessage message) {
     if (MPSCore.getInstance().isTestMode()) return;
 
@@ -277,6 +283,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
       ? KeyStroke.getKeyStroke("meta F")
       : KeyStroke.getKeyStroke("ctrl F");
     myComponent.registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         if (mySearchPanel == null) {
           mySearchPanel = new MessageToolSearchPanel(myList, MessageList.this);
@@ -290,24 +297,28 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
 
     myList.registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         openCurrentMessageIfPossible();
       }
     }, KeyStroke.getKeyStroke("F4"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myList.registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         openCurrentMessageIfPossible();
       }
     }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myList.registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         showHelpForCurrentMessage();
       }
     }, KeyStroke.getKeyStroke("F1"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myList.addMouseWheelListener(new MouseWheelListener() {
+      @Override
       public void mouseWheelMoved(MouseWheelEvent e) {
         myList.setAutoscrolls(false);
         scrollPane.dispatchEvent(e);
@@ -315,6 +326,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
     });
 
     myList.addMouseListener(new MouseAdapter() {
+      @Override
       public void mouseClicked(MouseEvent e) {
         boolean oneClickOpen = e.getClickCount() == 1 && e.getButton() == MouseEvent.BUTTON1 && myAutoscrollToSourceAction.isSelected(null);
         boolean twoClickOpen = e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1;
@@ -323,6 +335,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
         }
       }
 
+      @Override
       public void mousePressed(MouseEvent e) {
         //todo select element under mouse
         if (e.isPopupTrigger()) {
@@ -330,6 +343,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
         }
       }
 
+      @Override
       public void mouseReleased(MouseEvent e) {
         if (e.isPopupTrigger()) {
           showPopupMenu(e);
@@ -338,9 +352,11 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
     });
 
     myList.addMouseMotionListener(new MouseMotionListener() {
+      @Override
       public void mouseDragged(MouseEvent e) {
       }
 
+      @Override
       public void mouseMoved(MouseEvent e) {
         int index = myList.locationToIndex(e.getPoint());
 
@@ -351,6 +367,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
         }
 
         boolean canNavigate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
           public Boolean compute() {
             return MessagesListCellRenderer.canNavigate(message) == NavStatus.YES;
           }
@@ -368,6 +385,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
     /* temp hack: write action instead of read, TODO remove lock*/
     final Project project = getProject();
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         NavigationManager.getInstance().navigateTo(project, selectedMessage.getHintObject(), true, true);
       }
@@ -530,15 +548,18 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
       mySelected = true;
     }
 
+    @Override
     public boolean isSelected(AnActionEvent e) {
       return mySelected;
     }
 
+    @Override
     public void setSelected(AnActionEvent e, boolean state) {
       mySelected = state;
       rebuildModel();
     }
 
+    @Override
     public void update(AnActionEvent e) {
       super.update(e);
 
@@ -578,10 +599,12 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
       myEnd = 0;
     }
 
+    @Override
     public int getSize() {
       return mySize;
     }
 
+    @Override
     public Object getElementAt(int index) {
       return myItems[(myStart + index) % myItems.length];
     }
@@ -760,10 +783,12 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage, Dispos
       return null;
     }
 
+    @Override
     public String getNextOccurenceActionName() {
       return UsageViewBundle.message("action.next.occurrence");
     }
 
+    @Override
     public String getPreviousOccurenceActionName() {
       return UsageViewBundle.message("action.previous.occurrence");
     }

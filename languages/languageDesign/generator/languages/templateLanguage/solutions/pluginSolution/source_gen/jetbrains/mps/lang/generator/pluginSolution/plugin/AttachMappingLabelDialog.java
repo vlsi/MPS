@@ -58,6 +58,7 @@ public class AttachMappingLabelDialog extends DialogWrapper {
     nameCombo.setEditable(true);
     namePanel.add(nameCombo, c);
     nameCombo.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         AttachMappingLabelDialog.this.myResultLabelName = (String) nameCombo.getSelectedItem();
       }
@@ -72,6 +73,7 @@ public class AttachMappingLabelDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return this.myPanel;
   }
@@ -79,6 +81,7 @@ public class AttachMappingLabelDialog extends DialogWrapper {
   @Override
   protected Action[] createActions() {
     return new Action[]{new DialogWrapper.DialogWrapperAction("Attach label") {
+      @Override
       protected void doAction(ActionEvent p0) {
         doOKAction();
         doAttachMappingLabel();

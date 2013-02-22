@@ -132,6 +132,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     return myProgressLineComponent.getProcessListener();
   }
 
+  @Override
   public void dispose() {
     myOutputComponent.dispose();
     myTreeComponent.dispose();
@@ -197,6 +198,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     }
 
     splitter.addPropertyChangeListener(new PropertyChangeListener() {
+      @Override
       public void propertyChange(PropertyChangeEvent event) {
         if (event.getPropertyName().equals(Splitter.PROP_PROPORTION)) {
           propertiesComponent.setValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "." + id, String.valueOf(splitter.getProportion()));
@@ -223,6 +225,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     }
 
     @Nullable
+    @Override
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(Location.LOCATION)) {
         MPSTreeNode currentNode = myTreeComponent.getCurrentNode();

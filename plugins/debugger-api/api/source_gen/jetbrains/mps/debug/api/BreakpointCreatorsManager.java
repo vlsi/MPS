@@ -36,6 +36,7 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
   }
 
   @NotNull
+  @Override
   public String getComponentName() {
     return "Debug Info Manager";
   }
@@ -116,9 +117,11 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
     return null;
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 

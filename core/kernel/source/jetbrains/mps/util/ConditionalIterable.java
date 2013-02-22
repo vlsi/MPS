@@ -26,6 +26,7 @@ public class ConditionalIterable<T> implements Iterable<T> {
     myIter = iter;
   }
 
+  @Override
   public Iterator<T> iterator() {
     return new ConditionalIterator<T>(myIter.iterator(), myCondition);
   }

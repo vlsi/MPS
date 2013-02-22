@@ -23,21 +23,26 @@ public abstract class BaseRefactoring implements IRefactoring {
     return myTransientParameters;
   }
 
+  @Override
   public Class getOverridenRefactoringClass() {
     return null;
   }
 
+  @Override
   public boolean init(RefactoringContext refactoringContext) {
     return true;
   }
 
+  @Override
   public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
 
+  @Override
   public void doWhenDone(RefactoringContext refactoringContext) {
   }
 
+  @Override
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
     return new SearchResults();
   }

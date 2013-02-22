@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
@@ -40,7 +40,7 @@ public class ModelGroupingUtil {
         }
 
         for (SModel model : e.getValue()) {
-          if (model instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) model).isChanged()) {
+          if (model instanceof EditableSModel && ((EditableSModel) model).isChanged()) {
             res.putValue(null, model);
           } else {
             res.putValue(key, model);

@@ -29,6 +29,7 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
     myLeft = isLeft;
   }
 
+  @Override
   public Object getCellEditorValue() {
     return myOperand;
   }
@@ -49,9 +50,11 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
     return false;
   }
 
+  @Override
   public Component getTableCellEditorComponent(final JTable table, Object value, boolean isSelected, final int row, final int column) {
     myOperand = (MappingConfig_AbstractRef) value;
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         EditOperandDialog dialog = new EditOperandDialog(myGenerator, myDepGens, myOperand, myLeft);
         dialog.show();

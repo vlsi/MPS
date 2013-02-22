@@ -38,6 +38,7 @@ public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.
     }
   }
 
+  @Override
   public int compareTo(SNodeId id) {
     if (id instanceof Regular && this instanceof Regular) {
       Regular r1 = (Regular) this;

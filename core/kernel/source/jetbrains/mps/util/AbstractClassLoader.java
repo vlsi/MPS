@@ -31,6 +31,7 @@ public abstract class AbstractClassLoader extends ClassLoader {
 
   protected abstract boolean isExcluded(String name);
 
+  @Override
   protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     Class c = myCache.get(name);
 

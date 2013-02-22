@@ -24,6 +24,7 @@ public abstract class ListEditAction extends BaseValidatedAction {
     return myList.getSelectedIndices().length == 1;
   }
 
+  @Override
   public final void doPerform(AnActionEvent e) {
     doEdit();
   }

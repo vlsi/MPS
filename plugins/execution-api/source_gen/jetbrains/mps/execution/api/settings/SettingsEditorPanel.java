@@ -24,21 +24,25 @@ public class SettingsEditorPanel {
   private final JPanel myMainPanel;
   private final JLabel myErrorLabel;
   private final AbstractAction myOkAction = new AbstractAction("Ok") {
+    @Override
     public void actionPerformed(ActionEvent p0) {
       apply();
     }
   };
   private final AbstractAction myApplyAction = new AbstractAction("Apply") {
+    @Override
     public void actionPerformed(ActionEvent p0) {
       apply();
     }
   };
   private final AbstractAction myResetAction = new AbstractAction("Reset") {
+    @Override
     public void actionPerformed(ActionEvent p0) {
       reset();
     }
   };
   private final AbstractAction myCancelAction = new AbstractAction("Cancel") {
+    @Override
     public void actionPerformed(ActionEvent p0) {
       reset();
     }
@@ -48,6 +52,7 @@ public class SettingsEditorPanel {
     myConfiguration = configuration;
     myEditor = (SettingsEditorEx<ITemplatePersistentConfiguration>) myConfiguration.getEditorEx();
     myListener = new SettingsEditorListener() {
+      @Override
       public void stateChanged(SettingsEditor editor) {
         setModified(true);
       }

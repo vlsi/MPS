@@ -31,6 +31,7 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
     myAlarm = new Alarm();
   }
 
+  @Override
   public void run() {
     String methodName = myState.getCurrentMethod();
     if (methodName != null) {
@@ -61,6 +62,7 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
     cancelAlarm();
   }
 
+  @Override
   public void dispose() {
     cancelAlarm();
   }

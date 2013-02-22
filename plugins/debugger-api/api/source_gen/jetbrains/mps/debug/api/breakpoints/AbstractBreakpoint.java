@@ -17,6 +17,7 @@ public abstract class AbstractBreakpoint implements IBreakpoint {
     myProject = project;
   }
 
+  @Override
   public boolean isEnabled() {
     return myIsEnabled;
   }
@@ -25,6 +26,7 @@ public abstract class AbstractBreakpoint implements IBreakpoint {
     setEnabled(!(myIsEnabled));
   }
 
+  @Override
   public void setCreationTime(long time) {
     myCreationTime = time;
   }
@@ -39,10 +41,12 @@ public abstract class AbstractBreakpoint implements IBreakpoint {
     myListeners.remove(listener);
   }
 
+  @Override
   public long getCreationTime() {
     return myCreationTime;
   }
 
+  @Override
   public void setEnabled(final boolean enabled) {
     boolean toggled = setEnabledInternal(enabled);
     if (toggled) {
@@ -65,6 +69,7 @@ public abstract class AbstractBreakpoint implements IBreakpoint {
     return false;
   }
 
+  @Override
   public Project getProject() {
     return myProject;
   }

@@ -33,16 +33,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 /*package*/ final class ClassifierAndSuperClassifiersCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
   private static final AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache> CLASSIFIERS_CACHE_CREATOR = new AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache>() {
+    @Override
     public DataSet create(ClassifierAndSuperClassifiersCache ownerCache) {
       return new ClassifierAndSuperClassifiersCache.ClassifiersDataSet(ownerCache.myTopClassifier, ownerCache);
     }
   };
   private static final AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache> METHODS_CACHE_CREATOR = new AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache>() {
+    @Override
     public DataSet create(ClassifierAndSuperClassifiersCache ownerCache) {
       return new ClassifierAndSuperClassifiersCache.MethodsDataSet(ownerCache);
     }
   };
   private static final AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache> FIELDS_CACHE_CREATOR = new AbstractCache.DataSetCreator<ClassifierAndSuperClassifiersCache>() {
+    @Override
     public DataSet create(ClassifierAndSuperClassifiersCache ownerCache) {
       return new ClassifierAndSuperClassifiersCache.FieldsDataSet(ownerCache);
     }
@@ -117,6 +120,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     }
 
     return (ClassifierAndSuperClassifiersCache) CachesManager.getInstance().getCache(key, topClassifierNode, new CachesManager.CacheCreator<SNode>() {
+      @Override
       public AbstractCache create(Object key, SNode element) {
         return new ClassifierAndSuperClassifiersCache(key, element);
       }
@@ -139,6 +143,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       return this.myClassifiers;
     }
 
+    @Override
     public Set<SNode> getDependsOnNodes() {
       return this.myDependsOnNodes;
     }
@@ -147,6 +152,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       return this.myTypeByTypeVariable;
     }
 
+    @Override
     protected void init() {
       this.myTypeByTypeVariable = MapSequence.fromMap(new HashMap<SNode, SNode>());
       this.myClassifiers = ClassifierAndSuperClassifiersCache.ClassifiersDataSet.getImplementedAndExtended(this.myTopClassifier, this.myTypeByTypeVariable);
@@ -183,6 +189,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       }
     }
 
+    @Override
     public void childAdded(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         String role = event.getChildRole();
@@ -193,6 +200,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       super.childAdded(event);
     }
 
+    @Override
     public void childRemoved(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         String role = event.getChildRole();
@@ -203,6 +211,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       super.childRemoved(event);
     }
 
+    @Override
     public void propertyChanged(SModelPropertyEvent event) {
     }
 
@@ -305,10 +314,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       ));
     }
 
+    @Override
     public Set<SNode> getDependsOnNodes() {
       return this.myDependsOnNodes;
     }
 
+    @Override
     protected void init() {
       List<SNode> allMethods = new ArrayList<SNode>();
       List<SNode> classifiers = ((ClassifierAndSuperClassifiersCache) this.getOwnerCache()).getClassifiers();
@@ -396,6 +407,7 @@ forEachInAllMethods:
       return result.toString();
     }
 
+    @Override
     public void childAdded(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         if (!(SNodeOperations.isInstanceOf(((SNode) event.getChild()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
@@ -412,6 +424,7 @@ forEachInAllMethods:
       super.childAdded(event);
     }
 
+    @Override
     public void childRemoved(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         if (!(SNodeOperations.isInstanceOf(((SNode) event.getChild()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
@@ -427,6 +440,7 @@ forEachInAllMethods:
       super.childRemoved(event);
     }
 
+    @Override
     public void propertyChanged(SModelPropertyEvent event) {
       if ("name".equals(event.getPropertyName()) && SNodeOperations.isInstanceOf(((SNode) event.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         super.propertyChanged(event);
@@ -465,10 +479,12 @@ forEachInAllMethods:
       ));
     }
 
+    @Override
     public Set<SNode> getDependsOnNodes() {
       return this.myDependsOnNodes;
     }
 
+    @Override
     protected void init() {
       this.myFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
       this.myStaticFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
@@ -505,6 +521,7 @@ forEachInAllMethods:
       SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(allFields));
     }
 
+    @Override
     public void childAdded(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         SNode child = event.getChild();
@@ -518,6 +535,7 @@ forEachInAllMethods:
       super.childAdded(event);
     }
 
+    @Override
     public void childRemoved(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         SNode child = event.getChild();
@@ -531,6 +549,7 @@ forEachInAllMethods:
       super.childRemoved(event);
     }
 
+    @Override
     public void propertyChanged(SModelPropertyEvent event) {
       SNode node = event.getNode();
       if ("name".equals(event.getPropertyName()) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {

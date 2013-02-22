@@ -38,6 +38,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
     myModelRoot = root;
   }
 
+  @Override
   protected SModel getCurrentModelInternal() {
     return myModel;
   }
@@ -48,6 +49,12 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
     return (FolderSetDataSource) super.getSource();
   }
 
+  @Override
+  public boolean isReadOnly() {
+    return true;
+  }
+
+  @Override
   public synchronized SModel getSModel() {
     if (myModel == null) {
       myModel = createModel();
@@ -127,6 +134,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
     }
     final SModel result = createModel();
     super.replaceModel(new Runnable() {
+      @Override
       public void run() {
         myModel = result;
       }

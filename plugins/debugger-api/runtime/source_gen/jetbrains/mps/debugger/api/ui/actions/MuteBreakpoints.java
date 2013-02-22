@@ -15,6 +15,7 @@ public class MuteBreakpoints extends ToggleAction {
     super("Mute Breakpoints", "Mute Breakpoints", ICON);
   }
 
+  @Override
   public void setSelected(AnActionEvent event, boolean b) {
     AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
     if (debugSession == null) {
@@ -23,6 +24,7 @@ public class MuteBreakpoints extends ToggleAction {
     debugSession.muteBreakpoints(b);
   }
 
+  @Override
   public boolean isSelected(AnActionEvent event) {
     AbstractDebugSession debugSession = DebugActionsUtil.getDebugSession(event);
     return (debugSession != null) && debugSession.isMute();

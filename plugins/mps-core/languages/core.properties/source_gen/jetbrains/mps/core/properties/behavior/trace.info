@@ -6,18 +6,18 @@
   <unitInfo fileName="PropertiesFile_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.core.properties.behavior.PropertiesFile_BehaviorDescriptor" />
   <unitInfo fileName="PropertiesLine_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.properties.behavior.PropertiesLine_BehaviorDescriptor" />
   <root nodeRef="r:0364da67-5b81-45ab-a520-f89192cc0c88(jetbrains.mps.core.properties.behavior)/8783955359823292450">
-    <nodeInfo nodeId="8783955359823324447" fileName="PropertiesFile_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8783955359823292450" fileName="PropertiesFile_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8783955359823292450" fileName="PropertiesFile_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getUnitName_5067982036267369911#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="8783955359823292452" fileName="PropertiesFile_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="8783955359823292455" fileName="PropertiesFile_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="101" />
-    <scopeInfo nodeId="8783955359823292450" fileName="PropertiesFile_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="8783955359823324447" fileName="PropertiesFile_Behavior.java" startLine="13" startPosition="80" endLine="14" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8783955359823292450" fileName="PropertiesFile_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8783955359823292450" fileName="PropertiesFile_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getUnitName_5067982036267369911#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="8783955359823292452" fileName="PropertiesFile_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="8783955359823292455" fileName="PropertiesFile_Behavior.java" startLine="13" startPosition="80" endLine="14" endPosition="121" />
+    <scopeInfo nodeId="8783955359823292450" fileName="PropertiesFile_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="8783955359823292450" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8783955359823292450" fileName="PropertiesFile_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="8783955359823292450" fileName="PropertiesFile_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="8783955359823292450" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="8783955359823292450" fileName="PropertiesFile_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.properties.behavior.PropertiesFile_Behavior" />
+    <unitInfo nodeId="8783955359823292450" fileName="PropertiesFile_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.core.properties.behavior.PropertiesFile_Behavior" />
   </root>
 </debugInfo>
 

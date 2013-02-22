@@ -14,10 +14,12 @@ public class MPSProgramRunner extends DefaultProgramRunner {
   }
 
   @NotNull
+  @Override
   public String getRunnerId() {
     return "Default Runner";
   }
 
+  @Override
   public boolean canRun(@NotNull String executorId, @NotNull RunProfile profile) {
     try {
       return executorId.equals(DefaultRunExecutor.EXECUTOR_ID) && (!((profile instanceof BaseMpsRunConfiguration)) || ((BaseMpsRunConfiguration) profile).canExecute(executorId));

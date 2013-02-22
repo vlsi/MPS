@@ -67,14 +67,17 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myMainPanel;
   }
 
+  @Override
   public String getDimensionServiceKey() {
     return "#jetbrains.mps.vcs.mergedriver.MergeDriverOptionDialog";
   }
 
+  @Override
   protected void doOKAction() {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
@@ -93,6 +96,7 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
   }
 
   @NotNull
+  @Override
   protected Action[] createActions() {
     List<Action> actions = ListSequence.fromList(new ArrayList<Action>());
     ListSequence.fromList(actions).addElement(getOKAction());

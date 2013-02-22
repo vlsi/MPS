@@ -19,12 +19,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
-
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, 1/4/11
@@ -49,7 +48,7 @@ public class SNodeFactoryOperations {
 
   public static SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
     SNode newNode = NodeFactoryManager.createNode(conceptFqName, prototypeNode, null, model);
-    model.addRoot(newNode);
+    model.addRootNode(newNode);
     return newNode;
   }
 
@@ -102,8 +101,8 @@ public class SNodeFactoryOperations {
     SNode newChild = NodeFactoryManager.createNode(conceptFqName, oldChild, oldChildParent, model);
     if (newChild == null) return null;
     if (oldChildParent == null) {
-      model.addRoot(newChild);
-      model.removeRoot(oldChild);
+      model.addRootNode(newChild);
+      model.removeRootNode(oldChild);
     } else {
       SNodeUtil.replaceWithAnother(oldChild, newChild);
     }

@@ -9,10 +9,12 @@ public class ProjectMacroExpander implements MacroHelper {
   public ProjectMacroExpander() {
   }
 
+  @Override
   public String shrinkPath(@Nullable String string) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public String expandPath(@Nullable String path) {
     return path;
   }

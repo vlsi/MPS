@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.refactoring;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.InternUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -45,9 +46,10 @@ public class StructureModificationData {
     }
 
     public FullNodeId(SNode node) {
-      this(node.getNodeId(), node.getModel().getSModelReference());
+      this(node.getNodeId(), (SModelReference) node.getModel().getReference());
     }
 
+    @Override
     public int compareTo(FullNodeId o) {
       int i2 = myModelReference.getLongName().compareTo(o.myModelReference.getLongName());
       if (i2 != 0) return i2;
@@ -90,7 +92,7 @@ public class StructureModificationData {
       if (model == null) {
         return null;
       }
-      return model.getSModel().getNodeById(myNodeId);
+      return model.getSModel().getNode(myNodeId);
     }
 
     public SModelDescriptor getModel() {
@@ -118,6 +120,7 @@ public class StructureModificationData {
       myConceptFQName = InternUtil.intern(conceptFQName);
     }
 
+    @Override
     public int compareTo(ConceptFeature o) {
       int i1 = myConceptFQName.compareTo(o.myConceptFQName);
       int i2 = myConceptFeatureKind.compareTo(o.myConceptFeatureKind);

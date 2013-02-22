@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cmlc64r8cy9o8r5pl51g2vytixbtzr">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+<dependencies version="2" modelHash="-6d13j25lamtigrb15ntru8elmmm4xbo">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
   <common hash="78slikkme4zt6shjhbsaoamogf1w2cx" />
-  <source id="2295870045929265710" name="CompositeFilter" hash="-hkr2ezfb36f2fakg0u5sfowwdq2mt7">
+  <source id="2295870045929265710" name="CompositeFilter" hash="1yu9hd1dfaqa3sz0c2swj6z0ig2xxj3">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="CompositeFilter.java" />
   </source>
@@ -13,7 +13,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TraversalAxis.java" />
   </source>
-  <source id="2295870045929265511" name="IFeatureDescriptor" hash="-1q5trsm9neb7gjqv3o0ix8wqiyx1aay">
+  <source id="2295870045929265511" name="IFeatureDescriptor" hash="-2d94v6cijn4lrmfxetl12x8yt32gj6z">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="IFeatureDescriptor.java" />
   </source>
@@ -24,7 +24,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TreeTraversalFactory.java" />
   </source>
-  <source id="2295870045929265522" name="TreePath" hash="eocgkvtu7jvggd57886hanv9khanvzc">
+  <source id="2295870045929265522" name="TreePath" hash="sf5dqm4wl9ch6wbc1fmvncbspda93l">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TreePath.java" />
   </source>

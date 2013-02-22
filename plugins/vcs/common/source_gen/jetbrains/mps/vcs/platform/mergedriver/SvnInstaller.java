@@ -44,6 +44,7 @@ import java.io.IOException;
   }
 
   @NotNull
+  @Override
   protected AbstractInstaller.State install(boolean dryRun) {
     if (!(PluginUtil.isSvnPluginEnabled())) {
       return AbstractInstaller.State.NOT_ENABLED;
@@ -176,6 +177,7 @@ import java.io.IOException;
     }
   }
 
+  @Override
   public String getActionTitle() {
     return String.format("Subversion custom diff3 cmd (%s, %s)", (myUseIdeConfig ?
       "MPS config" :
@@ -183,6 +185,7 @@ import java.io.IOException;
     ), myConfigFile.getAbsolutePath());
   }
 
+  @Override
   public String getAffectedVcsName() {
     return "svn";
   }

@@ -37,6 +37,7 @@ public class ProjectTreeNode extends TextTreeNode {
     setIcon(Icons.PROJECT_ICON);
   }
 
+  @Override
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
     Project ideaProject = myProject.getProject();
@@ -52,14 +53,17 @@ public class ProjectTreeNode extends TextTreeNode {
     return myProject;
   }
 
+  @Override
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_NEW_ACTIONS);
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_PROJECT_ACTIONS);
   }
 
+  @Override
   public int getToggleClickCount() {
     return 2;
   }

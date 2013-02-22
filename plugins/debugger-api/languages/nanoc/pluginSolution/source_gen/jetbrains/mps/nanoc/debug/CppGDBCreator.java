@@ -23,6 +23,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
   public CppGDBCreator() {
   }
 
+  @Override
   public AbstractDebugSession getDebugSession() {
     return myDebugSession;
   }
@@ -39,6 +40,7 @@ public class CppGDBCreator extends AbstractDebugSessionCreator {
     myDebugSession = new CppDebugSession(project, ((GdbDebuggerSettings) settings).getSourceDir());
     myDebugSession.setProcessHandler(result.getProcessHandler());
     myDebugSession.getGDBEventsHandler().addEventListener(new GDBEventsAdapter() {
+      @Override
       public void processTerminated(ProcessHandler gdbProcess) {
         try {
           OutputStreamWriter outputStreamWriter = new OutputStreamWriter(gdbProcess.getProcessInput());

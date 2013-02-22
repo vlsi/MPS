@@ -13,7 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelScope;
+import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -24,9 +28,6 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -45,7 +46,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   protected SModelReference myModelReference;
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
-  private SModule myModule;
+  private volatile SModule myModule;
 
 
   protected BaseSModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource source) {
@@ -53,6 +54,17 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     mySource = source;
   }
 
+  @Override
+  public SModelScope getModelScope() {
+    return getSModel().getModelScope();
+  }
+
+  @Override
+  public boolean isRoot(org.jetbrains.mps.openapi.model.SNode node) {
+    return getSModel().isRoot(node);
+  }
+
+  @Override
   public void setModelRoot(ModelRoot modelRoot) {
 //    if (myModelRoot != null && modelRoot != null) {
 //      LOG.error("Duplicate model roots for model " + getLongName() + " in module " + modelRoot.getModule() + ": \n" +
@@ -63,6 +75,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myModelRoot = modelRoot;
   }
 
+  @Override
   public ModelRoot getModelRoot() {
     return myModelRoot;
   }
@@ -84,20 +97,20 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
-  public Iterable<? extends SNode> getRootNodes() {
-    return getSModel().roots();
+  public Iterable<SNode> getRootNodes() {
+    return getSModel().getRootNodes();
   }
 
   @Override
   public void addRootNode(@NotNull SNode node) {
     // TODO remove cast
-    getSModel().addRoot((jetbrains.mps.smodel.SNode) node);
+    getSModel().addRootNode((jetbrains.mps.smodel.SNode) node);
   }
 
   @Override
   public void removeRootNode(@NotNull SNode node) {
     // TODO remove cast
-    getSModel().removeRoot((jetbrains.mps.smodel.SNode) node);
+    getSModel().removeRootNode((jetbrains.mps.smodel.SNode) node);
   }
 
   @Override
@@ -126,12 +139,14 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   @Override
   public boolean isRegistered() {
-    return myModule != null && myModule.getRepository() != null;
+    // Note: can be called without read action
+    SModule copy = myModule;
+    return copy != null && copy.getRepository() != null;
   }
 
   @Override
   @NotNull
-  public SModelReference getModelReference() {
+  public SModelReference getReference() {
     return myModelReference;
   }
 
@@ -281,11 +296,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   public void forceLoad() {
     getSModel();
-  }
-
-  @Override
-  public void load() throws IOException {
-    // TODO implement
   }
 
   @Override

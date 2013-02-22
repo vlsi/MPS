@@ -30,10 +30,12 @@ public class VarSet extends IndexableObjectSet<Object> {
   }
 
 
+  @Override
   protected int getIndex(Object o) {
     return myProgram.getVariableIndex(o);
   }
 
+  @Override
   protected Object getObject(int index) {
     return myProgram.getVariable(index);
   }

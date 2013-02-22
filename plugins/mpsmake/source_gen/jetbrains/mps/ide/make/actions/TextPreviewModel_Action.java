@@ -17,7 +17,7 @@ import jetbrains.mps.ide.make.TextPreviewUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.logging.Logger;
 
 public class TextPreviewModel_Action extends BaseAction {
@@ -93,7 +93,7 @@ public class TextPreviewModel_Action extends BaseAction {
     if (!(SModelStereotype.isUserModel((SModelDescriptor) md))) {
       return false;
     }
-    return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isReadOnly());
+    return md instanceof EditableSModel && !(((EditableSModel) md).isReadOnly());
   }
 
   private static Logger LOG = Logger.getLogger(TextPreviewModel_Action.class);

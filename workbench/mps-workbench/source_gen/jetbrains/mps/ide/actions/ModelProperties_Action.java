@@ -79,6 +79,7 @@ public class ModelProperties_Action extends BaseAction {
       final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(((IOperationContext) MapSequence.fromMap(_params).get("context")).getProject()), configurable, "#MPSPropertiesConfigurable");
       configurable.setParentForCallBack(configurableEditor);
       SwingUtilities.invokeLater(new Runnable() {
+        @Override
         public void run() {
           configurableEditor.show();
         }

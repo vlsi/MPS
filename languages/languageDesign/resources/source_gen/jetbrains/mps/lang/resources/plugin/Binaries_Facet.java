@@ -158,6 +158,7 @@ public class Binaries_Facet extends IFacet.Stub {
                 ThreadUtils.runInUIThreadAndWait(new Runnable() {
                   public void run() {
                     ModelAccess.instance().requireWrite(new Runnable() {
+                      @Override
                       public void run() {
                         Sequence.fromIterable(filesToCopy).toListSequence().visitAll(new IVisitor<Tuples._2<IFile, IFile>>() {
                           public void visit(Tuples._2<IFile, IFile> ftc) {

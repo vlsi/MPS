@@ -16,11 +16,13 @@ public class StyledTextPrinterImpl implements StyledTextPrinter {
   public StyledTextPrinterImpl() {
   }
 
+  @Override
   public StyledTextPrinter setBold(boolean flag) {
     StyleConstants.setBold(this.myAttributeSet, flag);
     return this;
   }
 
+  @Override
   public StyledTextPrinter append(String text) {
     try {
       this.myDocument.insertString(this.myDocument.getLength(), text, this.myAttributeSet);

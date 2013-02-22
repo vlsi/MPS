@@ -17,6 +17,7 @@ public class AncestorsOrThisTreeTraversal<T> extends AbstractChainTreeTraversal<
     super(source, fd);
   }
 
+  @Override
   public Iterator<T> iterator() {
     return new AncestorsOrThisTreeTraversal.AncestorsOrThisIterator(getSourceTraversal().iterator());
   }
@@ -50,10 +51,12 @@ public class AncestorsOrThisTreeTraversal<T> extends AbstractChainTreeTraversal<
       }
     }
 
+    @Override
     public boolean hasNext() {
       return hasNextNode;
     }
 
+    @Override
     public T next() {
       if (!(hasNextNode)) {
         throw new NoSuchElementException();
@@ -63,6 +66,7 @@ public class AncestorsOrThisTreeTraversal<T> extends AbstractChainTreeTraversal<
       return tmp;
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

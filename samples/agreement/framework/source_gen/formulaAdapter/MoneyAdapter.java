@@ -15,6 +15,7 @@ public class MoneyAdapter implements Function<Money> {
     myCurrency = currency;
   }
 
+  @Override
   public Money compute(Object parm) {
     Double amount = myAmount.compute(parm);
     return new Money(amount, myCurrency);

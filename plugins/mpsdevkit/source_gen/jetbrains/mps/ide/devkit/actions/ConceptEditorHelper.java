@@ -87,6 +87,7 @@ public class ConceptEditorHelper {
       this.myAspect = aspect;
     }
 
+    @Override
     public boolean met(SModelDescriptor modelDescriptor) {
       return Language.getLanguageFor(modelDescriptor) == this.myLanguage && Language.getModelAspect(modelDescriptor) == this.myAspect;
     }
@@ -99,6 +100,7 @@ public class ConceptEditorHelper {
       this.myLanguage = language;
     }
 
+    @Override
     public boolean met(SModelDescriptor modelDescriptor) {
       for (Generator generator : CollectionSequence.fromCollection(this.myLanguage.getGenerators())) {
         if (generator.getOwnTemplateModels().contains(modelDescriptor)) {

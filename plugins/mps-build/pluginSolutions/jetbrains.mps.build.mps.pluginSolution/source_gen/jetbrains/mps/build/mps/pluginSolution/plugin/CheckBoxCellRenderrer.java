@@ -27,6 +27,7 @@ public class CheckBoxCellRenderrer extends JPanel implements TreeCellRenderer {
     this.add(this.myLabel);
   }
 
+  @Override
   public Component getTreeCellRendererComponent(JTree tree, Object value, boolean isSelected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
     CheckBoxNode node = ((CheckBoxNode) value);
     this.myLabel.setText(node.getNodeText());
@@ -35,12 +36,14 @@ public class CheckBoxCellRenderrer extends JPanel implements TreeCellRenderer {
     return this;
   }
 
+  @Override
   public Dimension getPreferredSize() {
     Dimension checkBoxDim = this.myCheckBox.getPreferredSize();
     Dimension labelDim = this.myLabel.getPreferredSize();
     return new Dimension(checkBoxDim.width + labelDim.width, Math.max(checkBoxDim.height, labelDim.height));
   }
 
+  @Override
   public void doLayout() {
     Dimension checkBoxDim = this.myCheckBox.getPreferredSize();
     Dimension labelDim = this.myLabel.getPreferredSize();

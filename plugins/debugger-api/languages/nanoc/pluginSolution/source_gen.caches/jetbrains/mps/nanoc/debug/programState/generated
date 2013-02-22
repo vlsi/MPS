@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8x83hfx23ifymwz0597h8lq3i649s4v">
+<dependencies version="2" modelHash="dz1xzymsxqgjw56bcmsby4wyqekop3z">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-22hsdy8hx47u1rwu32z4quczy3521b0" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
   <common hash="-7edjndi4ymjm04ro5shbmx30qf65cbm" />
-  <source id="3990508698139427312" name="GDBLocation" hash="b4c7abxqk6c7becrqfjgpnt7mem9nh2">
+  <source id="3990508698139427312" name="GDBLocation" hash="9xq5zuroh1lnsxe3ma1fux9lzfvqj32">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GDBLocation.java" />
   </source>
-  <source id="3990508698139428770" name="SimpleVarWatchable" hash="-cvyn6su0e5iagxku86kxf63tk1ivz09">
+  <source id="3990508698139428770" name="SimpleVarWatchable" hash="-2jx8chvjnw5hfidxzphfd0u5hhs8rwn">
     <file name="SimpleVarWatchable.java" />
   </source>
-  <source id="3990508698139428964" name="SimpleValue" hash="cwelb8p4eospovwbts3jsj0s9cawxhh">
+  <source id="3990508698139428964" name="SimpleValue" hash="9j8s4r0vyp1867g2rbect8b0t3pmkoj">
     <file name="SimpleValue.java" />
   </source>
-  <source id="3990508698139424671" name="DefaultThread" hash="-2gczy9ipnuu4plrai9uacnrg63juq55">
+  <source id="3990508698139424671" name="DefaultThread" hash="5x5ttmyjxlvz212c8e1hs61g3q32yi">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="DefaultThread.java" />
   </source>
-  <source id="3990508698139429870" name="GDBStackFrame" hash="bkixvaa40palm85ycaotvoir24iduu5">
+  <source id="3990508698139429870" name="GDBStackFrame" hash="-8skxbax8uimdeze3aygajb9g4opwq0v">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GDBStackFrame.java" />
   </source>

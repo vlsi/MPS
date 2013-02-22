@@ -32,10 +32,12 @@ public class Mockups {
     }
   };
   private static IResult DefaultResult = new IResult() {
+    @Override
     public boolean isSucessful() {
       return true;
     }
 
+    @Override
     public Iterable<IResource> output() {
       return null;
     }

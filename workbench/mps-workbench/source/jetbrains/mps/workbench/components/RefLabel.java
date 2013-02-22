@@ -36,6 +36,7 @@ public class RefLabel extends JLabel {
     myURL = url;
 
     addMouseListener(new MouseAdapter() {
+      @Override
       public void mouseClicked(MouseEvent e) {
         launchBrowserAction(myURL, "");
       }
@@ -51,6 +52,7 @@ public class RefLabel extends JLabel {
     }
   }
 
+  @Override
   public void setText(String text) {
     boolean isValid = (text != null && text.trim().length() > 0);
     String setVal = isValid ? HTML_PREFIX + text.trim() + HTML_SUFIX : "";

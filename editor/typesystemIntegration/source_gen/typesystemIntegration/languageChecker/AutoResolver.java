@@ -12,6 +12,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.IOperationContext;
@@ -29,12 +30,13 @@ public class AutoResolver extends EditorCheckerAdapter {
   public AutoResolver() {
   }
 
+  @Override
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
     if (SNodeOperations.getModel(rootNode) == null || SNodeOperations.getModel(rootNode).getModelDescriptor() == null) {
       return messages;
     }
-    if (SNodeOperations.getModel(rootNode).isTransient()) {
+    if (SNodeOperations.getModel(rootNode) instanceof TransientSModel) {
       return messages;
     }
     boolean autoresolve = !(hasUnresolvedImportedModels(SNodeOperations.getModel(rootNode), editorContext));
@@ -50,8 +52,10 @@ public class AutoResolver extends EditorCheckerAdapter {
       final IOperationContext operationContext = editorContext.getOperationContext();
       if (operationContext != null) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+              @Override
               public void run() {
                 // in case this becomes a performance bottleneck, consider reusing the editor's typechecking context  
                 ResolverComponent.getInstance().resolveScopesOnly(badReferences, operationContext);
@@ -95,6 +99,7 @@ public class AutoResolver extends EditorCheckerAdapter {
     }
   }
 
+  @Override
   public boolean isLaterThan(BaseEditorChecker editorChecker) {
     return editorChecker instanceof TypesEditorChecker;
   }

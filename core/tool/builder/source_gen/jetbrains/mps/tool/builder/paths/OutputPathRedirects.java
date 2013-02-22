@@ -18,6 +18,7 @@ public class OutputPathRedirects implements IRedirects {
     this.moduleOutputPaths = outputPaths;
   }
 
+  @Override
   public IFile getRedirect(String path) {
     if (useTransientOutput) {
       IFile outputRedirect = getOutputRedirect(path);

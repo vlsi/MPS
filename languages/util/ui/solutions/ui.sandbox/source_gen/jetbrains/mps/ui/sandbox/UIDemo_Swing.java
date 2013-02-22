@@ -224,6 +224,7 @@ public class UIDemo_Swing {
     widget_7o7rmj_a0a0a0a9.setText("kino");
     widget_7o7rmj_a0a0a0a9.setSelected(this.bo.isKino());
     widget_7o7rmj_a0a0a0a9.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent ae) {
         new _FunctionTypes._void_P1_E0<Boolean>() {
           public void invoke(Boolean value) {
@@ -237,6 +238,7 @@ public class UIDemo_Swing {
     widget_7o7rmj_b0a0a0a9.setText("vino");
     widget_7o7rmj_b0a0a0a9.setSelected(this.bo.isVino());
     widget_7o7rmj_b0a0a0a9.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent ae) {
         new _FunctionTypes._void_P1_E0<Boolean>() {
           public void invoke(Boolean value) {
@@ -250,6 +252,7 @@ public class UIDemo_Swing {
     widget_7o7rmj_c0a0a0a9.setText("domino");
     widget_7o7rmj_c0a0a0a9.setSelected(this.bo.isDomino());
     widget_7o7rmj_c0a0a0a9.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent ae) {
         new _FunctionTypes._void_P1_E0<Boolean>() {
           public void invoke(Boolean value) {

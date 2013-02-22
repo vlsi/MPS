@@ -106,6 +106,7 @@ public class ModuleGraph extends Graph<ModuleGraph.ModuleVertex> {
       myModule = module;
     }
 
+    @Override
     public Set<ModuleGraph.ModuleVertex> getNexts() {
       return myNext;
     }

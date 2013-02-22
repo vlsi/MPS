@@ -89,16 +89,16 @@
   <root nodeRef="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)/3531370237490043789">
     <nodeInfo nodeId="3531370237490043798" fileName="MergeVersion.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuffix" />
     <nodeInfo nodeId="3531370237490043807" fileName="MergeVersion.java" startLine="13" startPosition="31" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490043815" fileName="MergeVersion.java" startLine="17" startPosition="29" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531370237490043815" fileName="MergeVersion.java" startLine="18" startPosition="29" endLine="19" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3531370237490043801" fileName="MergeVersion.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeVersion#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3531370237490043811" fileName="MergeVersion.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3531370237490043811" fileName="MergeVersion.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />
     <scopeInfo nodeId="3531370237490043806" fileName="MergeVersion.java" startLine="13" startPosition="31" endLine="14" endPosition="22" />
-    <scopeInfo nodeId="3531370237490043814" fileName="MergeVersion.java" startLine="17" startPosition="29" endLine="18" endPosition="20" />
+    <scopeInfo nodeId="3531370237490043814" fileName="MergeVersion.java" startLine="18" startPosition="29" endLine="19" endPosition="20" />
     <scopeInfo nodeId="3531370237490043801" fileName="MergeVersion.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="3531370237490043804" varName="suffix" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490043811" fileName="MergeVersion.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="3531370237490043789" fileName="MergeVersion.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.vcs.util.MergeVersion" />
+    <scopeInfo nodeId="3531370237490043811" fileName="MergeVersion.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <unitInfo nodeId="3531370237490043789" fileName="MergeVersion.java" startLine="6" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.vcs.util.MergeVersion" />
   </root>
   <root nodeRef="r:d58d9938-2526-431c-a5fe-6bbbfeb64ac2(jetbrains.mps.vcs.util)/3531370237490043817">
     <nodeInfo nodeId="3531370237490043819" fileName="ModelVersion.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuffix#()Ljava/lang/String;" />

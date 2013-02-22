@@ -37,14 +37,17 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
     super(project, "Migration", -1, null, ToolWindowAnchor.BOTTOM, true);
   }
 
+  @Override
   protected UsagesView getUsagesView(int index) {
     return myViews.get(index).getUsagesView();
   }
 
+  @Override
   protected void onRemove(int index) {
     myViews.remove(index);
   }
 
+  @Override
   protected boolean forceCloseOnReload() {
     return true;
   }
@@ -58,8 +61,10 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
       myScripts.add(new SNodePointer(scriptNode));
     }
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         ProgressManager.getInstance().run(new Task.Modal(getProject(), "Searching", true) {
+          @Override
           public void run(@NotNull final ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             final MigrationScriptFinder finder = new MigrationScriptFinder(myScripts, context);
@@ -67,6 +72,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
             final SearchQuery query = new SearchQuery(scope);
             final SearchResults results = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
             SwingUtilities.invokeLater(new Runnable() {
+              @Override
               public void run() {
                 if (results.getSearchResults().isEmpty()) {
                   JOptionPane.showMessageDialog(getContentManager().getComponent(), "No applicable nodes found", "Migration Scripts", JOptionPane.INFORMATION_MESSAGE);
@@ -91,8 +97,10 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
       throw new IllegalStateException("Can't use this outside of EDT");
     }
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         MigrationScriptsView view = new MigrationScriptsView(finder, provider, query, MigrationScriptsTool.this, getProject()) {
+          @Override
           public void close() {
             int index = myViews.indexOf(this);
             closeTab(index);
@@ -110,6 +118,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
     return -1;
   }
 
+  @Override
   public Project getProject() {
     return super.getProject();
   }

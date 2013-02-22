@@ -33,6 +33,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     if (this.myLocalVariables == null) {
       this.myLocalVariables = new ArrayList<SNode>();
@@ -168,6 +169,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       return new IReferenceInfoResolver() {
+        @Override
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
           if (referenceInfo == null) {
             return null;

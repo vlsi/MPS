@@ -19,6 +19,7 @@ public class MappingConfig_RefAllLocal extends MappingConfig_AbstractRef {
 
   public static final int PERSISTENCE_ID = 0x55550001;
 
+  @Override
   public MappingConfig_AbstractRef getCopy() {
     return new MappingConfig_RefAllLocal();
   }

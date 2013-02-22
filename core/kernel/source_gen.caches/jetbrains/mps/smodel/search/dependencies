@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.smodel.search.AbstractSearchScope" file="AbstractSearchScope.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
@@ -34,6 +35,7 @@
     <classNode extendsClassName="jetbrains.mps.cache.AbstractCache" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" file="ConceptAndSuperConceptsScope.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
@@ -49,6 +51,7 @@
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.Datasets" file="Datasets.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
@@ -108,6 +111,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.search.Adapter" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.IsInstanceCondition" file="IsInstanceCondition.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
@@ -116,7 +120,7 @@
     <classNode extendsClassName="jetbrains.mps.util.Condition" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" file="ModelAndImportedModelsScope.java">
-    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -127,13 +131,15 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.search.IsInstanceCondition" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
-    <classNode dependClassName="jetbrains.mps.util.ConditionalIterable" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.util.NodesIterable" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.ModelNodesSearchScope" file="ModelNodesSearchScope.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
@@ -144,6 +150,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.NodeListChildrenSearchScope" file="NodeListChildrenSearchScope.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
@@ -154,6 +161,7 @@
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.SModelSearchUtil" file="SModelSearchUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -179,6 +187,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.SimpleSearchScope" file="SimpleSearchScope.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.LinkedHashSet" />
@@ -189,6 +198,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.SubnodesSearchScope" file="SubnodesSearchScope.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
@@ -198,6 +208,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.search.AbstractSearchScope" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.search.UndefinedSearchScope" file="UndefinedSearchScope.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />

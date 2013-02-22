@@ -42,6 +42,7 @@ public class FieldWatchpointValue extends JavaValue implements IValue {
     return true;
   }
 
+  @Override
   public List<IWatchable> calculateSubvalues() {
     List<IWatchable> result = new ArrayList<IWatchable>();
     result.add(new JavaWatchpointValueWatchable(myCurrentValue, true, myClassFQName, myThreadReference));

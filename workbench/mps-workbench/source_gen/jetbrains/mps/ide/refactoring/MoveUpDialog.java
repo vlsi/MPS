@@ -30,6 +30,7 @@ public class MoveUpDialog extends RefactoringDialog {
 
   }
 
+  @Override
   protected void doRefactoringAction() {
     final Object treeNode = this.myPanel.getSelectedObject();
     if (treeNode == null || !(treeNode instanceof ChildHierarchyTreeNode)) {
@@ -48,6 +49,7 @@ public class MoveUpDialog extends RefactoringDialog {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     this.myPanel = new NodeHierarchyChooser(this.myTarget);
     return myPanel;

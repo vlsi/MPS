@@ -23,26 +23,32 @@ public class ClonableList<T> extends AbstractList<T> implements Cloneable {
     this(ListSequence.fromListAndArray(new ArrayList<T>(), value));
   }
 
+  @Override
   public T get(int index) {
     return ListSequence.fromList(this.myData).getElement(index);
   }
 
+  @Override
   public int size() {
     return ListSequence.fromList(this.myData).count();
   }
 
+  @Override
   public T remove(int index) {
     return ListSequence.fromList(this.myData).removeElementAt(index);
   }
 
+  @Override
   public void add(int index, @NotNull T object) {
     ListSequence.fromList(this.myData).insertElement(index, object);
   }
 
+  @Override
   public T set(int index, @NotNull T object) {
     return ListSequence.fromList(this.myData).setElement(index, object);
   }
 
+  @Override
   public ClonableList<T> clone() throws CloneNotSupportedException {
     ClonableList<T> result = ((ClonableList<T>) super.clone());
     result.myData = ListSequence.fromListWithValues(new ArrayList<T>(), this.myData);

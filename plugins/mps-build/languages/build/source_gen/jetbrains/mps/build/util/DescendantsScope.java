@@ -28,6 +28,7 @@ public abstract class DescendantsScope extends Scope {
 
   public abstract String getName(SNode child);
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     Iterable<SNode> seq = ListSequence.fromList(SNodeOperations.getChildren(node, link)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
@@ -46,6 +47,7 @@ public abstract class DescendantsScope extends Scope {
   }
 
   @Nullable
+  @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     SNode result = null;
     for (SNode n : Sequence.fromIterable(getAvailableElements(null))) {
@@ -62,6 +64,7 @@ public abstract class DescendantsScope extends Scope {
   }
 
   @Nullable
+  @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept)))) {
       return null;
@@ -83,6 +86,7 @@ public abstract class DescendantsScope extends Scope {
 
   public static DescendantsScope forNamedElements(SNode node, SNode link, SNode concept) {
     return new DescendantsScope(node, link, concept) {
+      @Override
       public String getName(SNode child) {
         if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
           return child.getPresentation();

@@ -50,7 +50,7 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
       public String compute() {
         StringBuilder result = new StringBuilder();
 
-        result.append("model = ").append(node.getModel().getSModelReference()).append("\n");
+        result.append("model = ").append(node.getModel().getReference()).append("\n");
         result.append("concept = ").append(NameUtil.shortNameFromLongName(node.getConcept().getId())).append("\n");
         result.append("language = ").append(NameUtil.namespaceFromConceptFQName(node.getConcept().getId())).append("\n");
         result.append("ID = ").append(node.getNodeId().toString()).append("\n");
@@ -65,7 +65,7 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
               result.append("Target model = ").append(ref.getTargetSModelReference()).append("\n");
             }
           } else {
-            result.append("Model = ").append(target.getModel().getSModelReference()).append("\n");
+            result.append("Model = ").append(target.getModel().getReference()).append("\n");
             result.append("Node = ").append(NodePresentationUtil.getPathToRoot(target)).append("\n");
             result.append("ID = ").append(target.getNodeId().toString()).append("\n");
           }

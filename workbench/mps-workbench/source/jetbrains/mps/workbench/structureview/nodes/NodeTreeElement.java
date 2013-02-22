@@ -41,29 +41,36 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
     myNode = node;
   }
 
+  @Override
   public SNodeReference getValue() {
     return myNode;
   }
 
+  @Override
   public ItemPresentation getPresentation() {
     //todo use SNodeReference here, get rid of read action
     return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
+      @Override
       public ItemPresentation compute() {
         return new NodeTreeElementPresentation();
       }
     });
   }
 
+  @Override
   public boolean canNavigate() {
     return true;
   }
 
+  @Override
   public boolean canNavigateToSource() {
     return true;
   }
 
+  @Override
   public void navigate(boolean b) {
     DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Handler<DataContext>() {
+      @Override
       public void run(final DataContext dataContext) {
         final Project p = MPSDataKeys.PROJECT.getData(dataContext);
         if (p == null) return;
@@ -89,6 +96,7 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
       super(NodeTreeElement.this.myNode.resolve(MPSModuleRepository.getInstance()));
     }
 
+    @Override
     public String doGetLocationString() {
       return null;
     }

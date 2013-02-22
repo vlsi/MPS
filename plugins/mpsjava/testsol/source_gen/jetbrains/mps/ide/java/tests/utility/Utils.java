@@ -237,12 +237,12 @@ public class Utils {
 
     Map<String, SModel> leftModelMap = MapSequence.fromMap(new HashMap<String, SModel>());
     for (SModel m : Sequence.fromIterable(leftModels)) {
-      MapSequence.fromMap(leftModelMap).put(m.getLongName(), m);
+      MapSequence.fromMap(leftModelMap).put(jetbrains.mps.util.SNodeOperations.getModelLongName(m), m);
     }
 
     Map<String, SModel> rightModelMap = MapSequence.fromMap(new HashMap<String, SModel>());
     for (SModel m : Sequence.fromIterable(rightModels)) {
-      MapSequence.fromMap(rightModelMap).put(m.getLongName(), m);
+      MapSequence.fromMap(rightModelMap).put(jetbrains.mps.util.SNodeOperations.getModelLongName(m), m);
     }
 
     Assert.assertTrue(SetSequence.fromSet(MapSequence.fromMap(leftModelMap).keySet()).containsSequence(SetSequence.fromSet(MapSequence.fromMap(rightModelMap).keySet())) && SetSequence.fromSet(MapSequence.fromMap(rightModelMap).keySet()).containsSequence(SetSequence.fromSet(MapSequence.fromMap(leftModelMap).keySet())));

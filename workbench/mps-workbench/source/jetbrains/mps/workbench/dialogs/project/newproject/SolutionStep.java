@@ -51,10 +51,12 @@ public class SolutionStep extends BaseStep {
     myOptions = options;
   }
 
+  @Override
   public JComponent createControlComponent() {
     JPanel panel = new JPanel(new GridLayout(6, 1));
 
     myCreate = new JCheckBox(new AbstractAction("Create new solution") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         setCreateSolution(myCreate.isSelected());
       }
@@ -79,6 +81,7 @@ public class SolutionStep extends BaseStep {
     panel.add(myPath);
 
     myCreateModel = new JCheckBox(new AbstractAction("Create model in solution") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         setCreateModel(myCreateModel.isSelected());
       }
@@ -87,6 +90,7 @@ public class SolutionStep extends BaseStep {
     panel.add(myCreateModel);
 
     myNamespace.addCaretListener(new CaretListener() {
+      @Override
       public void caretUpdate(CaretEvent e) {
         updateSolutionPath();
       }
@@ -95,21 +99,25 @@ public class SolutionStep extends BaseStep {
     return panel;
   }
 
+  @Override
   public URL getImageURL() {
     return MPSApplicationInfo.getInstance().getDialogImageURL();
   }
 
+  @Override
   @NotNull
   public String getImageText() {
     return "New Solution";
   }
 
+  @Override
   public String getCommentString() {
     return
       "Solutions are used to store code written in MPS languages. " +
         "Each solution is a set of models with a name.";
   }
 
+  @Override
   @Nullable
   public String getURL() {
     return "http://confluence.jetbrains.com/display/MPSD2/MPS+project+structure#MPSprojectstructure-solutions";
@@ -123,6 +131,7 @@ public class SolutionStep extends BaseStep {
     }
   }
 
+  @Override
   public void _init() {
     super._init();
 
@@ -144,6 +153,7 @@ public class SolutionStep extends BaseStep {
     updateSolutionPath();
   }
 
+  @Override
   public void _check() throws CommitStepException {
     if (myOptions.getCreateNewSolution()) {
       if (myPath.getPath().length() == 0) {
@@ -172,6 +182,7 @@ public class SolutionStep extends BaseStep {
     }
   }
 
+  @Override
   public void _commit(boolean finishChosen) throws CommitStepException {
     super._commit(finishChosen);
 

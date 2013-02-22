@@ -49,6 +49,7 @@ public class TransientModelBallonDisplayer implements Disposable {
     ensureRegistered();
   }
 
+  @Override
   public void dispose() {
     IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
   }
@@ -96,6 +97,7 @@ public class TransientModelBallonDisplayer implements Disposable {
       return;
     }
     ApplicationManager.getApplication().invokeLater(new Runnable() {
+      @Override
       public void run() {
         showBaloonInternal();
       }
@@ -130,6 +132,7 @@ public class TransientModelBallonDisplayer implements Disposable {
     public MyMakeNotificationListener() {
     }
 
+    @Override
     public void handleNotification(MakeNotification notification) {
       if (notification.getKind() == MakeNotification.Kind.SESSION_OPENED) {
         mySessionJustOpened = true;
@@ -143,15 +146,19 @@ public class TransientModelBallonDisplayer implements Disposable {
       }
     }
 
+    @Override
     public void scriptAboutToStart(MakeNotification notification) {
     }
 
+    @Override
     public void scriptFinished(MakeNotification notification) {
     }
 
+    @Override
     public void sessionOpened(MakeNotification notification) {
     }
 
+    @Override
     public void sessionClosed(MakeNotification notification) {
     }
   }

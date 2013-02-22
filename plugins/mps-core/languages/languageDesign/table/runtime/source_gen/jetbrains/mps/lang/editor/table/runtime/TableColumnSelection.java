@@ -86,6 +86,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
 
 
 
+  @Override
   public boolean isSame(Selection another) {
     if (this == another) {
       return true;
@@ -100,6 +101,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     return myColumnNumber == that.myColumnNumber;
   }
 
+  @Override
   public SelectionInfo getSelectionInfo() throws SelectionStoreException {
     SelectionInfo selectionInto = new SelectionInfo(this.getClass().getName(), ModuleReference.fromString("258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)").getModuleFqName());
     selectionInto.setCellInfo(myTableCell.getCellInfo());

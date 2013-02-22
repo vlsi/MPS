@@ -16,7 +16,9 @@
 package jetbrains.mps;
 
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.junit.Assert;
 
@@ -32,7 +34,7 @@ public class ModelAssert {
     assertSameModelImports(expectedModel, actualModel);
     assertSameLanguageAspects(expectedModel, actualModel);
 
-    assertSameNodesCollections("root", expectedModel.roots(), actualModel.roots());
+    assertSameNodesCollections("root", expectedModel.getRootNodes(), actualModel.getRootNodes());
   }
 
   private static void assertSameNodesCollections(String objectName, Iterable<SNode> expected, Iterable<SNode> actual) {

@@ -11,10 +11,10 @@ import jetbrains.mps.baseLanguage.closures.helper.Values;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.helper.Flags;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralUtil;
@@ -136,11 +136,12 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1201093930999(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (!(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
+    SNode vdecl = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
+    if (!(SNodeOperations.getConceptDeclaration(vdecl) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       return false;
     }
 
-    return (SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false) != null) && Values.CLOSURE_DATA.get(_context, SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false)) != null;
+    return (vdecl != null) && Values.CLOSURE_DATA.get(_context, vdecl) != null;
   }
 
   public static boolean baseMappingRule_Condition_1207145700256(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -168,11 +169,12 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1219934617805(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
+    SNode vdecl = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
+    if (!(SNodeOperations.isInstanceOf(vdecl, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
       return false;
     }
 
-    return (SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false) != null) && Flags.WRAPPING_LOCAL_VARIABLE.isFlagged(_context, SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false)) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{}).startsWith("jetbrains.mps.baseLanguage.closures.runtime.Wrappers"));
+    return (vdecl != null) && Flags.WRAPPING_LOCAL_VARIABLE.isFlagged(_context, vdecl) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator") && BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{}).startsWith("jetbrains.mps.baseLanguage.closures.runtime.Wrappers"));
   }
 
   public static boolean baseMappingRule_Condition_1215452055499(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

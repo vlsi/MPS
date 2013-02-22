@@ -103,11 +103,13 @@ public class JavaFileHighlighter extends SyntaxHighlighterBase {
     }
   }
 
+  @Override
   @NotNull
   public Lexer getHighlightingLexer() {
     return new JavaHighlightingLexer();
   }
 
+  @Override
   @NotNull
   public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
     return pack(ourMap1.get(tokenType), ourMap2.get(tokenType));

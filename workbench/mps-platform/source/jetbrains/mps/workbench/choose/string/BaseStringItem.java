@@ -35,10 +35,12 @@ public abstract class BaseStringItem implements NavigationItem {
     return myString;
   }
 
+  @Override
   public String getName() {
     return myString;
   }
 
+  @Override
   @Nullable
   public ItemPresentation getPresentation() {
     return new BasePresentation() {
@@ -64,10 +66,12 @@ public abstract class BaseStringItem implements NavigationItem {
     return FileStatus.NOT_CHANGED;
   }
 
+  @Override
   public boolean canNavigate() {
     return false;
   }
 
+  @Override
   public boolean canNavigateToSource() {
     return false;
   }

@@ -36,10 +36,12 @@ public class SearchedNodesNodeData extends BaseNodeData {
     read(element, project);
   }
 
+  @Override
   public Icon getIcon() {
     return Actions.SearchedNodes;
   }
 
+  @Override
   public Object getIdObject() {
     return CATEGORY_NAME;
   }

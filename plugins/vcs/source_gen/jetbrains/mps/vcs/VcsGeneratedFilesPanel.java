@@ -24,14 +24,17 @@ public class VcsGeneratedFilesPanel extends JPanel implements ProjectPrefsExtraP
     add(generatedFilesPanel, BorderLayout.NORTH);
   }
 
+  @Override
   public boolean isModified() {
     return myIgnoreGeneratedFilesCheckBox.isSelected() != getConfiguration().isIgnoreGeneratedFiles();
   }
 
+  @Override
   public void apply() {
     getConfiguration().setIgnoreGeneratedFiles(myIgnoreGeneratedFilesCheckBox.isSelected());
   }
 
+  @Override
   public void reset() {
     myIgnoreGeneratedFilesCheckBox.setSelected(getConfiguration().isIgnoreGeneratedFiles());
   }
@@ -40,6 +43,7 @@ public class VcsGeneratedFilesPanel extends JPanel implements ProjectPrefsExtraP
     return myProject.getComponent(MPSVcsProjectConfiguration.class);
   }
 
+  @Override
   public JComponent getComponent() {
     return this;
   }

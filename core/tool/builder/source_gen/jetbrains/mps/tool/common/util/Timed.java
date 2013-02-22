@@ -65,6 +65,7 @@ import java.util.concurrent.TimeUnit;
   static {
     ScheduledExecutorService service = ConcurrencyUtil.newSingleScheduledThreadExecutor("timed reference disposer", Thread.MIN_PRIORITY + 1);
     service.scheduleWithFixedDelay(new Runnable() {
+      @Override
       public void run() {
         try {
           Timed.disposeTimed();

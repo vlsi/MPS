@@ -83,10 +83,12 @@ public class Solution extends ClassLoadingModule {
     setModuleReference(descriptor.getModuleReference());
   }
 
+  @Override
   public SolutionDescriptor getModuleDescriptor() {
     return mySolutionDescriptor;
   }
 
+  @Override
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     setSolutionDescriptor((SolutionDescriptor) moduleDescriptor, reloadClasses);
   }
@@ -122,6 +124,7 @@ public class Solution extends ClassLoadingModule {
     myUpdateBootstrapSolutions = b;
   }
 
+  @Override
   public void save() {
     super.save();
     //do not save stub solutions (otherwise build model generation fails)
@@ -189,10 +192,12 @@ public class Solution extends ClassLoadingModule {
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
   }
 
+  @Override
   public boolean canLoadFromSelf() {
     return getModuleDescriptor().getCompileInMPS();
   }
 
+  @Override
   public boolean canLoad() {
     return MPSCore.getInstance().isTestMode() || getModuleDescriptor().getKind() != SolutionKind.NONE;
   }

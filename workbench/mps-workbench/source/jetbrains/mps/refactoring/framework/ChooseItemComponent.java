@@ -70,6 +70,7 @@ abstract class ChooseItemComponent<Item> extends JPanel {
     myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     setListCellRenderer(new ChooseItemWindowCellRenderer<Item>(this));
     myList.addMouseListener(new MouseAdapter() {
+      @Override
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
           doComplete();
@@ -80,11 +81,13 @@ abstract class ChooseItemComponent<Item> extends JPanel {
 
 
     myMainPanel.registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         doComplete();
       }
     }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     myMainPanel.registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         for (String name : myNames) {
           if (name != null && name.startsWith(myTextField.getText())) {
@@ -95,6 +98,7 @@ abstract class ChooseItemComponent<Item> extends JPanel {
       }
     }, KeyStroke.getKeyStroke("ctrl SPACE"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     myMainPanel.registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         int index = myList.getSelectedIndex();
         if (index == -1) return;
@@ -103,6 +107,7 @@ abstract class ChooseItemComponent<Item> extends JPanel {
       }
     }, KeyStroke.getKeyStroke("UP"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     myMainPanel.registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         int index = myList.getSelectedIndex();
         if (index == -1) return;
@@ -112,14 +117,17 @@ abstract class ChooseItemComponent<Item> extends JPanel {
     }, KeyStroke.getKeyStroke("DOWN"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     myTextField.getDocument().addDocumentListener(new DocumentListener() {
+      @Override
       public void insertUpdate(DocumentEvent e) {
         updateState();
       }
 
+      @Override
       public void removeUpdate(DocumentEvent e) {
         updateState();
       }
 
+      @Override
       public void changedUpdate(DocumentEvent e) {
         updateState();
       }
@@ -131,6 +139,7 @@ abstract class ChooseItemComponent<Item> extends JPanel {
     final Item selectedItem = getSelectedItem();
     if (selectedItem == null) return;
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         doChoose(selectedItem);
       }

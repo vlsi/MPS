@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.lang.typesystem.dependencies.CheckingMethod" file="CheckingMethod.java" />
   <dependency className="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector" file="DependenciesCollector.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />

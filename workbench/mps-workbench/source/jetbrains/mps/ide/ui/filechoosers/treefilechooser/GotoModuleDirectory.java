@@ -29,16 +29,19 @@ import jetbrains.mps.workbench.MPSDataKeys;
 public final class GotoModuleDirectory extends FileChooserAction {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.fileChooser.actions.GotoModuleDirectory");
 
+  @Override
   protected void actionPerformed(final FileSystemTree fileSystemTree, AnActionEvent e) {
     final VirtualFile path = getModulePath(e);
     LOG.assertTrue(path != null);
     fileSystemTree.select(path, new Runnable() {
+      @Override
       public void run() {
         fileSystemTree.expand(path, null);
       }
     });
   }
 
+  @Override
   protected void update(FileSystemTree fileSystemTree, AnActionEvent e) {
     final Presentation presentation = e.getPresentation();
     final VirtualFile path = getModulePath(e);

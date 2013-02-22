@@ -29,6 +29,7 @@ public class ModuleChooser extends BaseChooserComponent {
   public ModuleChooser() {
     super();
     this.init(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         ModuleChooser.this.collectModules();
         StringBuilder result = new StringBuilder();

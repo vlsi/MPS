@@ -13,6 +13,7 @@ public class ModelRootRenderer extends DefaultListCellRenderer {
   public ModelRootRenderer() {
   }
 
+  @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     ModelRootDescriptor rootDescriptor = (ModelRootDescriptor) value;
     ModelRoot root = PersistenceFacade.getInstance().getModelRootFactory(rootDescriptor.getType()).create();

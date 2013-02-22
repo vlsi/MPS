@@ -226,6 +226,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     }
   }
 
+  @Override
   @NotNull
   //module reference is immutable, so we cn return original
   public ModuleReference getModuleReference() {
@@ -235,6 +236,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   //----save
 
   //todo move to EditableModule class
+  @Override
   public ModuleDescriptor getModuleDescriptor() {
     return null;
   }
@@ -245,10 +247,12 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     setChanged();
   }
 
+  @Override
   public void setChanged() {
     myChanged = true;
   }
 
+  @Override
   public void save() {
     myChanged = false;
   }
@@ -466,6 +470,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return getDescriptorFile() != null && FileSystem.getInstance().isPackaged(getDescriptorFile());
   }
 
+  @Override
   public List<SModelDescriptor> getOwnModelDescriptors() {
     return SModelRepository.getInstance().getModelDescriptors(this);
   }
@@ -475,10 +480,12 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return new ArrayList<SModel>(SModelRepository.getInstance().getModelDescriptors(this));
   }
 
+  @Override
   public IFile getDescriptorFile() {
     return myDescriptorFile;
   }
 
+  @Override
   @NotNull
   public IScope getScope() {
     return myScope;
@@ -536,6 +543,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
   }
 
+  @Override
   public List<String> getSourcePaths() {
     return new ArrayList<String>(SModuleOperations.getAllSourcePaths(this));
   }
@@ -605,6 +613,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
   }
 
+  @Override
   public IFile getBundleHome() {
     return FileSystem.getInstance().getBundleHome(getDescriptorFile());
   }
@@ -628,6 +637,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
       timestampString = descriptor.getTimestamp();
     } else {
       timestampString = ModelAccess.instance().runReadAction(new Computable<String>() {
+        @Override
         public String compute() {
           return descriptor.getTimestamp();
         }
@@ -669,6 +679,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     }
   }
 
+  @Override
   public void invalidateDependencies() {
     //do nothing by default
   }
@@ -681,6 +692,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return new ModuleScope();
   }
 
+  @Override
   public boolean isChanged() {
     return myChanged;
   }
@@ -710,12 +722,14 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
       return AbstractModule.this;
     }
 
+    @Override
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(AbstractModule.this);
       return result;
     }
 
+    @Override
     protected Set<Language> getInitialUsedLanguages() {
       HashSet<Language> result = new HashSet<Language>(ModuleUtil.refsToLanguages(getUsedLanguagesReferences()));
 

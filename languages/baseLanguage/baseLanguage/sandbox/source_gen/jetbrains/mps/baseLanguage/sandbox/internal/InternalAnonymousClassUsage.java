@@ -26,6 +26,7 @@ public class InternalAnonymousClassUsage {
   public void check1() {
     // default anonymous class 
     safeRun(new Runnable() {
+      @Override
       public void run() {
       }
     });
@@ -73,6 +74,7 @@ public class InternalAnonymousClassUsage {
     public ReadableImpl(String title) {
     }
 
+    @Override
     public int read(CharBuffer buffer) throws IOException {
       return 5;
     }

@@ -23,6 +23,7 @@ public class TransientModelsNotification implements ProjectComponent {
     myProject = project;
   }
 
+  @Override
   public void projectOpened() {
     myStatusBar = WindowManager.getInstance().getStatusBar(myProject);
     myWidget = new TransientModelsWidget(myStatusBar);
@@ -33,19 +34,23 @@ public class TransientModelsNotification implements ProjectComponent {
     myDisplayer.init();
   }
 
+  @Override
   public void projectClosed() {
     myStatusBar.removeWidget(myWidget.ID());
     Disposer.dispose(myDisplayer);
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Transient Models Notification";
   }

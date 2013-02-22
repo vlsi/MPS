@@ -15,6 +15,7 @@ public interface IConfigMonitor extends IJobMonitor {
       super(pro);
     }
 
+    @Override
     public <T extends IOption> T relayQuery(IQuery<T> query) {
       return null;
     }

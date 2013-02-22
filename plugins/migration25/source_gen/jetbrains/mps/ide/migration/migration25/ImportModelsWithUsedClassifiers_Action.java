@@ -131,7 +131,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
 
   private static SModelReference check_rft9c_a0b0e0d0e0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelReference();
+      return checkedDotOperand.getReference();
     }
     return null;
   }

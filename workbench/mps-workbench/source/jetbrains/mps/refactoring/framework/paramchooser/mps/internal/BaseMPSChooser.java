@@ -34,23 +34,28 @@ public class BaseMPSChooser<T> implements IChooser {
     myChooser = MpsPopupFactory.createPanelForPackage(type.createChooserModel(settings, context, paramName), false);
 
     myChooser.invoke(new Callback() {
+      @Override
       public void elementChosen(Object element) {
       }
     }, ModalityState.current(), false);
   }
 
+  @Override
   public boolean isStretchable() {
     return true;
   }
 
+  @Override
   public final JComponent getMainComponent() {
     return myChooser.getPanel();
   }
 
+  @Override
   public final JComponent getComponentToFocus() {
     return myChooser.getPreferredFocusedComponent();
   }
 
+  @Override
   public final void commit() throws InvalidInputValueException {
     NavigationItem entity = (NavigationItem) myChooser.getChosenElement();
     if (entity == null) throw new InvalidInputValueException("entity not specified"); //todo better message

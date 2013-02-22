@@ -14,6 +14,7 @@ public class IfFunction<T> implements Function<T> {
     myValueIfFalse = valueIfFalse;
   }
 
+  @Override
   public T compute(Object parm) {
     if (myLogicalTest.compute(parm)) {
       return myValueIfTrue.compute(parm);

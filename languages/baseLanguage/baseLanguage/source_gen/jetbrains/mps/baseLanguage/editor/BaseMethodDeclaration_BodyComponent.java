@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -35,6 +37,14 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_fao2ea_a0a0(EditorContext editorContext, SNode node) {
+    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
+  }
+
+  private static boolean _StyleParameter_QueryFunction_fao2ea_a0b0(EditorContext editorContext, SNode node) {
+    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
   }
 
   private EditorCell createCollection_fao2ea_a(EditorContext editorContext, SNode node) {
@@ -69,7 +79,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
   }
 
   private static boolean _StyleParameter_QueryFunction_fao2ea_a0a0(EditorContext editorContext, SNode node) {
-    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
+    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModelStereotype(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node))));
   }
 
   private EditorCell createRefNode_fao2ea_b0(EditorContext editorContext, SNode node) {
@@ -100,7 +110,7 @@ public class BaseMethodDeclaration_BodyComponent extends AbstractCellProvider {
   }
 
   private static boolean _StyleParameter_QueryFunction_fao2ea_a0b0(EditorContext editorContext, SNode node) {
-    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
+    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModelStereotype(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node))));
   }
 
   private EditorCell createConstant_fao2ea_c0(EditorContext editorContext, SNode node) {

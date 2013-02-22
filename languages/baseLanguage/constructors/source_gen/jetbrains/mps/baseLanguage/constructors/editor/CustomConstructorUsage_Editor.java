@@ -70,18 +70,22 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
+          @Override
           public EditorCell createEditorCell(EditorContext editorContext) {
             RefNodeListHandler handler = new RefNodeListHandler(node, "element", editorContext) {
+              @Override
               public SNode createNodeToInsert(EditorContext p0) {
                 return SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null);
               }
 
+              @Override
               public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
                 EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
                 this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
                 return elementCell;
               }
 
+              @Override
               public EditorCell createEmptyCell(EditorContext editorContext) {
                 EditorCell emptyCell = super.createEmptyCell(editorContext);
                 this.installElementCellActions(this.getOwner(), null, emptyCell, editorContext);

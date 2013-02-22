@@ -20,9 +20,11 @@ import com.intellij.ide.util.treeView.smartTree.Sorter;
     myModel = model;
   }
 
+  @Override
   public void setActionActive(String name, boolean state) {
   }
 
+  @Override
   public boolean isActionActive(String name) {
     for (final Sorter sorter : myModel.getSorters()) {
       if (sorter.getName().equals(name)) {

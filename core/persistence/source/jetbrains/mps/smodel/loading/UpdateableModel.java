@@ -67,8 +67,10 @@ public abstract class UpdateableModel {
     myStateChanging = true;
     try {
       ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
+        @Override
         public ModelLoadResult compute() {
           return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
+            @Override
             public ModelLoadResult compute() {
               return doLoad(state, myModel);
             }

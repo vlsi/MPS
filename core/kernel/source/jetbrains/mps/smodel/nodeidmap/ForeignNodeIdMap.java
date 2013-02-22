@@ -28,10 +28,12 @@ public class ForeignNodeIdMap implements INodeIdToNodeMap {
   private final THashMap<String,SNode> myForeignMap = new THashMap<String, SNode>();
   private final THashMap<SNodeId, SNode> myOtherMap = new THashMap<SNodeId, SNode>();
 
+  @Override
   public int size() {
     return myOtherMap.size() + myForeignMap.size();
   }
 
+  @Override
   public SNode get(SNodeId key) {
     if (key instanceof Foreign) {
       return myForeignMap.get(((Foreign) key).getId());
@@ -39,6 +41,7 @@ public class ForeignNodeIdMap implements INodeIdToNodeMap {
     return myOtherMap.get(key);
   }
 
+  @Override
   public SNode put(SNodeId key, SNode value) {
     if (key instanceof Foreign) {
       return myForeignMap.put(((Foreign) key).getId(), value);
@@ -46,6 +49,7 @@ public class ForeignNodeIdMap implements INodeIdToNodeMap {
     return myOtherMap.put(key, value);
   }
 
+  @Override
   public boolean containsKey(SNodeId key) {
     if (key instanceof Foreign) {
       return myForeignMap.containsKey(((Foreign) key).getId());
@@ -54,6 +58,7 @@ public class ForeignNodeIdMap implements INodeIdToNodeMap {
     return myOtherMap.containsKey(key);
   }
 
+  @Override
   public SNode remove(SNodeId key) {
     if (key instanceof Foreign) {
       return myForeignMap.remove(((Foreign) key).getId());
@@ -62,6 +67,7 @@ public class ForeignNodeIdMap implements INodeIdToNodeMap {
     return myOtherMap.remove(key);
   }
 
+  @Override
   public Iterable<SNode> values() {
     List<SNode> res = new ArrayList<SNode>();
     res.addAll(myOtherMap.values());

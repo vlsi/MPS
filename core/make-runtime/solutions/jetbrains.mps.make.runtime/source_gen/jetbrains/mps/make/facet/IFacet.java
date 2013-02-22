@@ -23,26 +23,32 @@ public interface IFacet {
     public Stub() {
     }
 
+    @Override
     public Iterable<ITarget> targets() {
       return null;
     }
 
+    @Override
     public Iterable<IFacet.Name> optional() {
       return null;
     }
 
+    @Override
     public Iterable<IFacet.Name> required() {
       return null;
     }
 
+    @Override
     public Iterable<IFacet.Name> extended() {
       return null;
     }
 
+    @Override
     public IFacet.Name getName() {
       return null;
     }
 
+    @Override
     public IPropertiesPersistence propertiesPersistence() {
       return null;
     }

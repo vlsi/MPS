@@ -49,6 +49,7 @@ public class StateMachine {
     }
   }
 
+  @Override
   public String toString() {
     if (null == start) {
       return "Null Start State";

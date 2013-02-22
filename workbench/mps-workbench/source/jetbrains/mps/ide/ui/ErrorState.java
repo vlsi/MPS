@@ -17,12 +17,14 @@ package jetbrains.mps.ide.ui;
 
 public enum ErrorState {
   NONE() {
+    @Override
     public ErrorState combine(ErrorState state) {
       return state;
     }
   },
 
   WARNING() {
+    @Override
     public ErrorState combine(ErrorState state) {
       if (state == ERROR) {
         return ERROR;
@@ -32,6 +34,7 @@ public enum ErrorState {
   },
 
   ERROR() {
+    @Override
     public ErrorState combine(ErrorState state) {
       return this;
     }

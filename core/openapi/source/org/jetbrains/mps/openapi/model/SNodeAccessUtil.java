@@ -127,6 +127,7 @@ public class SNodeAccessUtil {
   }
 
   private static class InProgressThreadLocal extends ThreadLocal<Set<Pair<SNode, String>>> {
+    @Override
     protected Set<Pair<SNode, String>> initialValue() {
       return new HashSet<Pair<SNode, String>>();
     }

@@ -83,6 +83,7 @@ public class DirParser {
     }
 
     ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+      @Override
       public void run() {
         for (SModel m : ListSequence.fromList(myAffectedModels)) {
           Iterable<SNode> roots = SModelOperations.getRoots(m, null);
@@ -140,6 +141,7 @@ public class DirParser {
     final String finalPkg = pkg;
     if (pkg != null && ListSequence.fromList(roots).count() > 0) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        @Override
         public void run() {
           SModel mdl = registerModelForPackage(finalPkg);
 

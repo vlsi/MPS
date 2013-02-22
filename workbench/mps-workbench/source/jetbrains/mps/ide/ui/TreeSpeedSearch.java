@@ -30,15 +30,18 @@ public class TreeSpeedSearch extends SpeedSearchBase {
     super(tree);
   }
 
+  @Override
   protected void selectElement(Object element, String selectedText) {
     TreeScrollingUtil.selectPath((JTree) myComponent, (TreePath) element);
   }
 
+  @Override
   protected int getSelectedIndex() {
     int[] selectionRows = ((JTree) myComponent).getSelectionRows();
     return selectionRows == null || selectionRows.length == 0 ? -1 : selectionRows[0];
   }
 
+  @Override
   protected Object[] getAllElements() {
     JTree tree = (JTree) myComponent;
     TreePath[] paths = new TreePath[tree.getRowCount()];
@@ -48,6 +51,7 @@ public class TreeSpeedSearch extends SpeedSearchBase {
     return paths;
   }
 
+  @Override
   protected String getElementText(Object element) {
     DefaultMutableTreeNode node = (DefaultMutableTreeNode) ((TreePath) element).getLastPathComponent();
     return node.toString();

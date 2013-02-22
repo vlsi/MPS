@@ -13,29 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+
+import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.ClassLoadingModule;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.ModelsAutoImportsManager;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
-import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -50,18 +46,11 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Language extends ClassLoadingModule implements MPSModuleOwner {
@@ -93,11 +82,13 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     setModuleReference(descriptor.getModuleReference());
   }
 
+  @Override
   protected void reloadAfterDescriptorChange() {
     super.reloadAfterDescriptorChange();
     revalidateGenerators();
   }
 
+  @Override
   public LanguageDependenciesManager getDependenciesManager() {
     return myLanguageDependenciesManager;
   }
@@ -121,6 +112,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return ModuleUtil.refsToLanguages(getExtendedLanguageRefs());
   }
 
+  @Override
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
     for (ModuleReference ref : getExtendedLanguageRefs()) {
@@ -143,6 +135,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return Collections.unmodifiableSet(descriptor.getRuntimeModules());
   }
 
+  @Override
   protected ModuleDescriptor loadDescriptor() {
     return ModulesMiner.getInstance().loadModuleDescriptor(getDescriptorFile());
   }
@@ -183,16 +176,19 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     }
   }
 
+  @Override
   public void dispose() {
     super.dispose();
     myLanguageDependenciesManager.dispose();
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
   }
 
+  @Override
   public LanguageDescriptor getModuleDescriptor() {
     return myLanguageDescriptor;
   }
 
+  @Override
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
   }
@@ -263,6 +259,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
+  @Override
   public void invalidateCaches() {
     super.invalidateCaches();
     myNameToConceptCache.clear();
@@ -288,7 +285,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
         //if not all the model is loaded, we try to look up the given concept only between root nodes first
         if (myNamesLoadingState.compareTo(ModelLoadingState.FULLY_LOADED) < 0) {
-          for (SNode root : structureModel.roots()) {
+          for (SNode root : structureModel.getRootNodes()) {
             String name = getConceptName(root);
             if (name == null) continue;
             myNameToConceptCache.putIfAbsent(name, root);
@@ -297,7 +294,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
         }
 
         //if we haven't found a root concept, then try to find in any node in the model
-        for (SNode node : structureModel.nodes()) {
+        for (SNode node : new NodesIterable(structureModel)) {
           String name = getConceptName(node);
           if (name == null) continue;
           myNameToConceptCache.putIfAbsent(name, node);
@@ -318,6 +315,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return node.getProperty(SNodeUtil.property_INamedConcept_name);
   }
 
+  @Override
   public void save() {
     super.save();
     if (isPackaged()) return;
@@ -342,11 +340,11 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return false;
   }
 
-  public void removeAccessoryModel(SModelDescriptor sm) {
+  public void removeAccessoryModel(org.jetbrains.mps.openapi.model.SModel sm) {
     Iterator<SModelReference> i = myLanguageDescriptor.getAccessoryModels().iterator();
     while (i.hasNext()) {
       SModelReference model = i.next();
-      if (model.equals(sm.getSModelReference())) {
+      if (model.equals(sm.getReference())) {
         i.remove();
       }
     }
@@ -385,7 +383,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     SModule modelOwner = SModelRepository.getInstance().getOwner(sm);
     if (modelOwner instanceof Language) {
       Language l = (Language) modelOwner;
-      if (l.isAccessoryModel(sm.getModelReference())) {
+      if (l.isAccessoryModel(sm.getReference())) {
         return true;
       }
     }
@@ -432,10 +430,12 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       super(SModelListenerPriority.PLATFORM);
     }
 
+    @Override
     public void modelChanged(SModel model) {
       invalidateCaches();
     }
 
+    @Override
     public void modelChangedDramatically(SModel model) {
       invalidateCaches();
     }
@@ -446,6 +446,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       super(Language.class.getClassLoader());
     }
 
+    @Override
     protected Class<?> findClass(String name) throws ClassNotFoundException {
       byte[] bytes = findClassBytes(name);
       if (bytes == null) return null;
@@ -465,7 +466,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return (Language) ModuleRepositoryFacade.createModule(handle, moduleOwner);
   }
 
-  private static class LanguageModelsAutoImports extends AutoImportsContributor<Language> {
+  private static class LanguageModelsAutoImports extends jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor<Language> {
     @Override
     public Class<Language> getApplicableSModuleClass() {
       return Language.class;

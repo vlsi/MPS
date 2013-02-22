@@ -59,46 +59,58 @@ public class GeneratedTextPreviewEditor extends UserDataHolderBase implements Fi
   }
 
   @Nullable
+  @Override
   public StructureViewBuilder getStructureViewBuilder() {
     return null;
   }
 
   @Nullable
+  @Override
   public FileEditorLocation getCurrentLocation() {
     return null;
   }
 
   @Nullable
+  @Override
   public BackgroundEditorHighlighter getBackgroundHighlighter() {
     return null;
   }
 
+  @Override
   public void removePropertyChangeListener(@NotNull PropertyChangeListener listener) {
   }
 
+  @Override
   public void addPropertyChangeListener(@NotNull PropertyChangeListener listener) {
   }
 
+  @Override
   public void deselectNotify() {
   }
 
+  @Override
   public void selectNotify() {
   }
 
+  @Override
   public boolean isValid() {
     return true;
   }
 
+  @Override
   public boolean isModified() {
     return false;
   }
 
+  @Override
   public void setState(@NotNull FileEditorState state) {
   }
 
   @NotNull
+  @Override
   public FileEditorState getState(@NotNull FileEditorStateLevel level) {
     return new FileEditorState() {
+      @Override
       public boolean canBeMergedWith(FileEditorState p0, FileEditorStateLevel p1) {
         return false;
       }
@@ -107,21 +119,25 @@ public class GeneratedTextPreviewEditor extends UserDataHolderBase implements Fi
 
   @NonNls
   @NotNull
+  @Override
   public String getName() {
     return file.getName();
   }
 
   @Nullable
+  @Override
   public JComponent getPreferredFocusedComponent() {
     return tabs.getSelectedComponent();
   }
 
+  @Override
   public void dispose() {
     panel.removeAll();
     panel = null;
   }
 
   @NotNull
+  @Override
   public JComponent getComponent() {
     return panel;
   }
@@ -147,6 +163,7 @@ public class GeneratedTextPreviewEditor extends UserDataHolderBase implements Fi
   private void decorate(JBTabs jbTabs) {
     jbTabs.getPresentation().setPaintBorder(0, 0, 0, 0).setTabSidePaintBorder(1).setGhostsAlwaysVisible(true).setUiDecorator(new UiDecorator() {
       @NotNull
+      @Override
       public UiDecorator.UiDecoration getDecoration() {
         return new UiDecorator.UiDecoration(null, new Insets(0, 8, 0, 8));
       }
@@ -215,6 +232,7 @@ public class GeneratedTextPreviewEditor extends UserDataHolderBase implements Fi
     }
 
     @Nullable
+    @Override
     public Object getData(@NonNls String dataId) {
       if (PlatformDataKeys.FILE_EDITOR.is(dataId)) {
         return GeneratedTextPreviewEditor.this;
@@ -233,6 +251,7 @@ public class GeneratedTextPreviewEditor extends UserDataHolderBase implements Fi
     public EditorStateStub() {
     }
 
+    @Override
     public boolean canBeMergedWith(FileEditorState state, FileEditorStateLevel level) {
       return false;
     }

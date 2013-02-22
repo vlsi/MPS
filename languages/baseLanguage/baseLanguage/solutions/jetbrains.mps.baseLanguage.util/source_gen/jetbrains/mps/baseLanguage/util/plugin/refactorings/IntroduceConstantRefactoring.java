@@ -16,6 +16,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
   public IntroduceConstantRefactoring() {
   }
 
+  @Override
   public SNode doRefactoring() {
     SNode newDeclaration = _quotation_createNode_2jj2z2_a0a0b(myVisibilityLevel.getNode(), SNodeOperations.copyNode(getExpressionType()), SNodeOperations.copyNode(getExpression()), getName());
     MemberInsertingUtils.insertClassifierMemberInBestPlace(SNodeOperations.cast(this.myContainer, "jetbrains.mps.baseLanguage.structure.ClassConcept"), newDeclaration);
@@ -29,6 +30,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     return newDeclaration;
   }
 
+  @Override
   protected SNode findContainer(SNode node) {
     SNode container = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     while ((SNodeOperations.getAncestor(container, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null)) {
@@ -37,6 +39,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     return container;
   }
 
+  @Override
   public void replaceNode(SNode node, SNode declaration) {
     if (Scope.getScope(Scope.parent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")).contains(declaration)) {
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_2jj2z2_a0a0a0a3(declaration));

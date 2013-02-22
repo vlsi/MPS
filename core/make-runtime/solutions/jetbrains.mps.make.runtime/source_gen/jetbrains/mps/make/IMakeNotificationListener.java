@@ -14,6 +14,7 @@ public interface IMakeNotificationListener {
     public Stub() {
     }
 
+    @Override
     public final void handleNotification(MakeNotification notification) {
       switch (notification.getKind()) {
         case SCRIPT_ABOUT_TO_START:
@@ -32,15 +33,19 @@ public interface IMakeNotificationListener {
       }
     }
 
+    @Override
     public void scriptAboutToStart(MakeNotification notification) {
     }
 
+    @Override
     public void scriptFinished(MakeNotification notification) {
     }
 
+    @Override
     public void sessionOpened(MakeNotification notification) {
     }
 
+    @Override
     public void sessionClosed(MakeNotification notification) {
     }
   }

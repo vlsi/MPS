@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.util.misc.hash.HashSet;
-
+import java.util.HashSet;
 import java.util.Set;
 
 /**

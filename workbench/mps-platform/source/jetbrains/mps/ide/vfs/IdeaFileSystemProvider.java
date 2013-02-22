@@ -25,7 +25,6 @@ import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.FileSystemProvider;
@@ -36,6 +35,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -118,6 +118,7 @@ public class IdeaFileSystemProvider implements FileSystemProvider {
   @Override
   public boolean runWriteTransaction(final Runnable r) {
     return ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().requireWrite(r);
       }

@@ -15,6 +15,7 @@ public class JavaTraceInfoResourceProvider implements TraceInfoCache.TraceInfoRe
   public JavaTraceInfoResourceProvider() {
   }
 
+  @Override
   public URL getResource(SModule module, String resourceName) {
     ModuleDescriptor descriptor = ((AbstractModule) module).getModuleDescriptor();
     if (SModuleOperations.isCompileInMps(module) || (descriptor != null && !(descriptor.getAdditionalJavaStubPaths().isEmpty()))) {

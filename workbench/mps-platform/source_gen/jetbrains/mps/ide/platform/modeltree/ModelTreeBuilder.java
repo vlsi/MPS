@@ -26,6 +26,7 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
     myTree.addTreeExpansionListener(this);
   }
 
+  @Override
   public void treeExpanded(TreeExpansionEvent event) {
     Object lastNode = event.getPath().getLastPathComponent();
     if (lastNode instanceof ModelTreeNode) {
@@ -37,6 +38,7 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
     }
   }
 
+  @Override
   public void treeCollapsed(TreeExpansionEvent event) {
   }
 

@@ -4957,77 +4957,77 @@
     <nodeInfo nodeId="3812443517665722928" fileName="YieldingIterator.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="yielded" />
     <nodeInfo nodeId="3812443517665722931" fileName="YieldingIterator.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="state" />
     <nodeInfo nodeId="3812443517665722935" fileName="YieldingIterator.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delayedEx" />
-    <nodeInfo nodeId="3812443517665722954" fileName="YieldingIterator.java" startLine="26" startPosition="37" endLine="27" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3812443517665722960" fileName="YieldingIterator.java" startLine="27" startPosition="51" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3812443517665722982" fileName="YieldingIterator.java" startLine="31" startPosition="28" endLine="32" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3812443517665722988" fileName="YieldingIterator.java" startLine="32" startPosition="44" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3812443517665722994" fileName="YieldingIterator.java" startLine="33" startPosition="28" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3812443517665722996" fileName="YieldingIterator.java" startLine="35" startPosition="5" endLine="36" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3812443517665723013" fileName="YieldingIterator.java" startLine="41" startPosition="18" endLine="42" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3812443517665723046" fileName="YieldingIterator.java" startLine="45" startPosition="37" endLine="46" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3812443517665723052" fileName="YieldingIterator.java" startLine="46" startPosition="55" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3812443517665723022" fileName="YieldingIterator.java" startLine="49" startPosition="39" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3812443517665723028" fileName="YieldingIterator.java" startLine="50" startPosition="30" endLine="51" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3812443517665723034" fileName="YieldingIterator.java" startLine="51" startPosition="53" endLine="52" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3812443517665723058" fileName="YieldingIterator.java" startLine="54" startPosition="20" endLine="55" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3812443517665723064" fileName="YieldingIterator.java" startLine="55" startPosition="29" endLine="56" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3812443517665723070" fileName="YieldingIterator.java" startLine="56" startPosition="28" endLine="57" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3812443517665723076" fileName="YieldingIterator.java" startLine="57" startPosition="52" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3812443517665723007" fileName="YieldingIterator.java" startLine="59" startPosition="14" endLine="60" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3812443517665723082" fileName="YieldingIterator.java" startLine="64" startPosition="24" endLine="65" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3812443517665723085" fileName="YieldingIterator.java" startLine="68" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="3812443517665723095" fileName="YieldingIterator.java" startLine="70" startPosition="29" endLine="71" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3812443517665722954" fileName="YieldingIterator.java" startLine="27" startPosition="37" endLine="28" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3812443517665722960" fileName="YieldingIterator.java" startLine="28" startPosition="51" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3812443517665722982" fileName="YieldingIterator.java" startLine="32" startPosition="28" endLine="33" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3812443517665722988" fileName="YieldingIterator.java" startLine="33" startPosition="44" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3812443517665722994" fileName="YieldingIterator.java" startLine="34" startPosition="28" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3812443517665722996" fileName="YieldingIterator.java" startLine="36" startPosition="5" endLine="37" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3812443517665723013" fileName="YieldingIterator.java" startLine="43" startPosition="18" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3812443517665723046" fileName="YieldingIterator.java" startLine="47" startPosition="37" endLine="48" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3812443517665723052" fileName="YieldingIterator.java" startLine="48" startPosition="55" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3812443517665723022" fileName="YieldingIterator.java" startLine="51" startPosition="39" endLine="52" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3812443517665723028" fileName="YieldingIterator.java" startLine="52" startPosition="30" endLine="53" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3812443517665723034" fileName="YieldingIterator.java" startLine="53" startPosition="53" endLine="54" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3812443517665723058" fileName="YieldingIterator.java" startLine="56" startPosition="20" endLine="57" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3812443517665723064" fileName="YieldingIterator.java" startLine="57" startPosition="29" endLine="58" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3812443517665723070" fileName="YieldingIterator.java" startLine="58" startPosition="28" endLine="59" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3812443517665723076" fileName="YieldingIterator.java" startLine="59" startPosition="52" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3812443517665723007" fileName="YieldingIterator.java" startLine="61" startPosition="14" endLine="62" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3812443517665723082" fileName="YieldingIterator.java" startLine="67" startPosition="24" endLine="68" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3812443517665723085" fileName="YieldingIterator.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="3812443517665723095" fileName="YieldingIterator.java" startLine="73" startPosition="29" endLine="74" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3812443517665722938" fileName="YieldingIterator.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="YieldingIterator#()V" />
-    <nodeInfo nodeId="3812443517665722925" fileName="YieldingIterator.java" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="State#()V" />
-    <nodeInfo nodeId="3812443517665723078" fileName="YieldingIterator.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
-    <nodeInfo nodeId="3812443517665723089" fileName="YieldingIterator.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="yield#(null)V" />
-    <nodeInfo nodeId="3812443517665722965" fileName="YieldingIterator.java" startLine="21" startPosition="11" endLine="25" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3812443517665723040" fileName="YieldingIterator.java" startLine="44" startPosition="13" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3812443517665722977" fileName="YieldingIterator.java" startLine="30" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3812443517665722951" fileName="YieldingIterator.java" startLine="20" startPosition="50" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3812443517665723019" fileName="YieldingIterator.java" startLine="43" startPosition="19" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3812443517665722946" fileName="YieldingIterator.java" startLine="19" startPosition="28" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3812443517665722942" fileName="YieldingIterator.java" startLine="19" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
-    <nodeInfo nodeId="3812443517665723004" fileName="YieldingIterator.java" startLine="39" startPosition="19" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="3812443517665723000" fileName="YieldingIterator.java" startLine="39" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
+    <nodeInfo nodeId="3812443517665722925" fileName="YieldingIterator.java" startLine="82" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="State#()V" />
+    <nodeInfo nodeId="3812443517665723089" fileName="YieldingIterator.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="yield#(null)V" />
+    <nodeInfo nodeId="3812443517665722965" fileName="YieldingIterator.java" startLine="22" startPosition="11" endLine="26" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3812443517665723040" fileName="YieldingIterator.java" startLine="46" startPosition="13" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3812443517665723078" fileName="YieldingIterator.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
+    <nodeInfo nodeId="3812443517665722977" fileName="YieldingIterator.java" startLine="31" startPosition="5" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3812443517665722951" fileName="YieldingIterator.java" startLine="21" startPosition="50" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3812443517665723019" fileName="YieldingIterator.java" startLine="45" startPosition="19" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3812443517665722946" fileName="YieldingIterator.java" startLine="20" startPosition="28" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3812443517665722942" fileName="YieldingIterator.java" startLine="19" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
+    <nodeInfo nodeId="3812443517665723004" fileName="YieldingIterator.java" startLine="41" startPosition="19" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="3812443517665723000" fileName="YieldingIterator.java" startLine="40" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
     <scopeInfo nodeId="3812443517665722941" fileName="YieldingIterator.java" startLine="16" startPosition="29" endLine="16" endPosition="29" />
-    <scopeInfo nodeId="3812443517665723104" fileName="YieldingIterator.java" startLine="79" startPosition="13" endLine="79" endPosition="13" />
-    <scopeInfo nodeId="3812443517665723012" fileName="YieldingIterator.java" startLine="41" startPosition="18" endLine="42" endPosition="43" />
-    <scopeInfo nodeId="3812443517665723006" fileName="YieldingIterator.java" startLine="59" startPosition="14" endLine="60" endPosition="42" />
-    <scopeInfo nodeId="3812443517665723081" fileName="YieldingIterator.java" startLine="64" startPosition="24" endLine="65" endPosition="46" />
-    <scopeInfo nodeId="3812443517665723085" fileName="YieldingIterator.java" startLine="68" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="3812443517665723094" fileName="YieldingIterator.java" startLine="70" startPosition="29" endLine="71" endPosition="21" />
+    <scopeInfo nodeId="3812443517665723104" fileName="YieldingIterator.java" startLine="82" startPosition="13" endLine="82" endPosition="13" />
+    <scopeInfo nodeId="3812443517665723012" fileName="YieldingIterator.java" startLine="43" startPosition="18" endLine="44" endPosition="43" />
+    <scopeInfo nodeId="3812443517665723006" fileName="YieldingIterator.java" startLine="61" startPosition="14" endLine="62" endPosition="42" />
+    <scopeInfo nodeId="3812443517665723081" fileName="YieldingIterator.java" startLine="67" startPosition="24" endLine="68" endPosition="46" />
+    <scopeInfo nodeId="3812443517665723085" fileName="YieldingIterator.java" startLine="71" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="3812443517665723094" fileName="YieldingIterator.java" startLine="73" startPosition="29" endLine="74" endPosition="21" />
     <scopeInfo nodeId="3812443517665722938" fileName="YieldingIterator.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="3812443517665722952" fileName="YieldingIterator.java" startLine="26" startPosition="0" endLine="28" endPosition="17">
+    <scopeInfo nodeId="3812443517665722952" fileName="YieldingIterator.java" startLine="27" startPosition="0" endLine="29" endPosition="17">
       <varInfo nodeId="3812443517665722962" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="3812443517665722953" fileName="YieldingIterator.java" startLine="26" startPosition="37" endLine="28" endPosition="17" />
-    <scopeInfo nodeId="3812443517665723045" fileName="YieldingIterator.java" startLine="45" startPosition="37" endLine="47" endPosition="47" />
-    <scopeInfo nodeId="3812443517665722925" fileName="YieldingIterator.java" startLine="79" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="3812443517665722981" fileName="YieldingIterator.java" startLine="31" startPosition="28" endLine="34" endPosition="16">
+    <scopeInfo nodeId="3812443517665722953" fileName="YieldingIterator.java" startLine="27" startPosition="37" endLine="29" endPosition="17" />
+    <scopeInfo nodeId="3812443517665723045" fileName="YieldingIterator.java" startLine="47" startPosition="37" endLine="49" endPosition="47" />
+    <scopeInfo nodeId="3812443517665722925" fileName="YieldingIterator.java" startLine="82" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="3812443517665722981" fileName="YieldingIterator.java" startLine="32" startPosition="28" endLine="35" endPosition="16">
       <varInfo nodeId="3812443517665722983" varName="tmp" />
     </scopeInfo>
-    <scopeInfo nodeId="3812443517665723020" fileName="YieldingIterator.java" startLine="49" startPosition="0" endLine="52" endPosition="45">
+    <scopeInfo nodeId="3812443517665723020" fileName="YieldingIterator.java" startLine="51" startPosition="0" endLine="54" endPosition="45">
       <varInfo nodeId="3812443517665723037" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="3812443517665723021" fileName="YieldingIterator.java" startLine="49" startPosition="39" endLine="52" endPosition="45" />
-    <scopeInfo nodeId="3812443517665723078" fileName="YieldingIterator.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="3812443517665723089" fileName="YieldingIterator.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="3812443517665723021" fileName="YieldingIterator.java" startLine="51" startPosition="39" endLine="54" endPosition="45" />
+    <scopeInfo nodeId="3812443517665723089" fileName="YieldingIterator.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="3812443517665723092" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="3812443517665722964" fileName="YieldingIterator.java" startLine="21" startPosition="11" endLine="25" endPosition="11" />
-    <scopeInfo nodeId="3812443517665723039" fileName="YieldingIterator.java" startLine="44" startPosition="13" endLine="48" endPosition="11" />
-    <scopeInfo nodeId="3812443517665723057" fileName="YieldingIterator.java" startLine="54" startPosition="20" endLine="58" endPosition="19">
+    <scopeInfo nodeId="3812443517665722964" fileName="YieldingIterator.java" startLine="22" startPosition="11" endLine="26" endPosition="11" />
+    <scopeInfo nodeId="3812443517665723039" fileName="YieldingIterator.java" startLine="46" startPosition="13" endLine="50" endPosition="11" />
+    <scopeInfo nodeId="3812443517665723057" fileName="YieldingIterator.java" startLine="56" startPosition="20" endLine="60" endPosition="19">
       <varInfo nodeId="3812443517665723059" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="3812443517665722950" fileName="YieldingIterator.java" startLine="20" startPosition="50" endLine="29" endPosition="7" />
-    <scopeInfo nodeId="3812443517665723018" fileName="YieldingIterator.java" startLine="43" startPosition="19" endLine="53" endPosition="9" />
-    <scopeInfo nodeId="3812443517665722945" fileName="YieldingIterator.java" startLine="19" startPosition="28" endLine="36" endPosition="52" />
-    <scopeInfo nodeId="3812443517665722942" fileName="YieldingIterator.java" startLine="19" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="3812443517665723003" fileName="YieldingIterator.java" startLine="39" startPosition="19" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="3812443517665723000" fileName="YieldingIterator.java" startLine="39" startPosition="0" endLine="63" endPosition="0" />
-    <unitInfo nodeId="3812443517665722102" fileName="YieldingIterator.java" startLine="74" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator$State" />
-    <unitInfo nodeId="3812443517665722916" fileName="YieldingIterator.java" startLine="8" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
+    <scopeInfo nodeId="3812443517665723078" fileName="YieldingIterator.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="3812443517665722950" fileName="YieldingIterator.java" startLine="21" startPosition="50" endLine="30" endPosition="7" />
+    <scopeInfo nodeId="3812443517665723018" fileName="YieldingIterator.java" startLine="45" startPosition="19" endLine="55" endPosition="9" />
+    <scopeInfo nodeId="3812443517665722945" fileName="YieldingIterator.java" startLine="20" startPosition="28" endLine="37" endPosition="52" />
+    <scopeInfo nodeId="3812443517665722942" fileName="YieldingIterator.java" startLine="19" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="3812443517665723003" fileName="YieldingIterator.java" startLine="41" startPosition="19" endLine="63" endPosition="5" />
+    <scopeInfo nodeId="3812443517665723000" fileName="YieldingIterator.java" startLine="40" startPosition="0" endLine="65" endPosition="0" />
+    <unitInfo nodeId="3812443517665722102" fileName="YieldingIterator.java" startLine="77" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator$State" />
+    <unitInfo nodeId="3812443517665722916" fileName="YieldingIterator.java" startLine="8" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
   </root>
   <root nodeRef="r:35e808a0-0758-4b03-9053-4675a7ced44c(jetbrains.mps.baseLanguage.closures.runtime)/4914003190800642467">
     <nodeInfo nodeId="4914003190800642483" fileName="Result.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RETURN_VOID" />

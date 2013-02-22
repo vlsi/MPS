@@ -37,6 +37,7 @@ public class LanguageTestWrapper extends AbstractTestWrapper<SNode> {
     super(test);
   }
 
+  @Override
   public boolean isTestCase() {
     return check_9og6tg_a0a1(getNode(), this);
   }

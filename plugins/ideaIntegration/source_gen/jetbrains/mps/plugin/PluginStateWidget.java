@@ -33,8 +33,10 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
   public PluginStateWidget(Project project) {
     myProject = project;
     myTimer = new PluginStateWidget.MyTimer(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+          @Override
           public void run() {
             tick();
           }
@@ -43,14 +45,17 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
     });
   }
 
+  @Override
   public void install(@NotNull StatusBar bar) {
     myStatusBar = bar;
     myTimer.start();
   }
 
   @Nullable
+  @Override
   public Consumer<MouseEvent> getClickConsumer() {
     return new Consumer<MouseEvent>() {
+      @Override
       public void consume(MouseEvent event) {
         if (myState == PluginStateWidget.State.DISCONNECTED) {
           setNewState(PluginStateWidget.State.TRYING_TO_CONNECT);
@@ -61,10 +66,12 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
   }
 
   @Nullable
+  @Override
   public StatusBarWidget.WidgetPresentation getPresentation(@NotNull StatusBarWidget.PlatformType type) {
     return this;
   }
 
+  @Override
   public void dispose() {
     if (myTimer.isRunning()) {
       myTimer.stop();
@@ -72,16 +79,19 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
   }
 
   @Nullable
+  @Override
   public String getTooltipText() {
     return myState.getHelpText();
   }
 
   @NotNull
+  @Override
   public Icon getIcon() {
     return myState.getIcon();
   }
 
   @NotNull
+  @Override
   public String ID() {
     return "MpsPluginStateMonitor";
   }
@@ -146,6 +156,7 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
     myState = state;
     myTimer.setNewDelay(state.getDefaultDelay());
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         myStatusBar.updateWidget(ID());
       }

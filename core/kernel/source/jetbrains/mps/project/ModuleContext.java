@@ -34,6 +34,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   public ModuleContext(@NotNull final SModule module, @NotNull final Project project) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myModuleReference = module.getModuleReference();
       }
@@ -85,6 +86,7 @@ public class ModuleContext extends StandaloneMPSContext {
   @Deprecated
   public static ModuleContext create(final SNode node, Project project) {
     SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
+      @Override
       public SModelDescriptor compute() {
         return node.getModel().getModelDescriptor();
       }
@@ -97,6 +99,7 @@ public class ModuleContext extends StandaloneMPSContext {
   public static ModuleContext create(@NotNull final SModelDescriptor model, Project project) {
 
     IModule owningModule = ModelAccess.instance().runReadAction(new Computable<IModule>() {
+      @Override
       public IModule compute() {
         return model.getModule();
       }

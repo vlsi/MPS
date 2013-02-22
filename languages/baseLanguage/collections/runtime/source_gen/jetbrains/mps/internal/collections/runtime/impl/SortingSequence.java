@@ -37,6 +37,7 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
     this.comparator = comparator;
   }
 
+  @Override
   public Iterator<U> iterator() {
     List<U> sortedInput = inputSortedWithSelector();
     return new SortingSequence.UnmodifiableIterator<U>(sortedInput.listIterator());
@@ -69,14 +70,17 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
       this.source = source;
     }
 
+    @Override
     public boolean hasNext() {
       return source.hasNext();
     }
 
+    @Override
     public U next() {
       return source.next();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }
@@ -89,6 +93,7 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
       this.primary = primary;
     }
 
+    @Override
     public int compare(T a, T b) {
       return -primary.compare(a, b);
     }
@@ -103,6 +108,7 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
       this.secondary = secondary;
     }
 
+    @Override
     public int compare(T a, T b) {
       int c = primary.compare(a, b);
       return (c == 0 ?

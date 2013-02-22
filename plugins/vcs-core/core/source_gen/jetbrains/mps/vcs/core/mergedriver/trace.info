@@ -204,16 +204,16 @@
     <nodeInfo nodeId="3342666646761697630" fileName="CompositeMerger.java" startLine="13" startPosition="36" endLine="14" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761697557" fileName="CompositeMerger.java" startLine="18" startPosition="92" endLine="19" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761697564" fileName="CompositeMerger.java" startLine="19" startPosition="76" endLine="20" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697589" fileName="CompositeMerger.java" startLine="24" startPosition="114" endLine="25" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761697603" fileName="CompositeMerger.java" startLine="26" startPosition="70" endLine="27" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761697621" fileName="CompositeMerger.java" startLine="28" startPosition="12" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761697619" fileName="CompositeMerger.java" startLine="28" startPosition="10" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3342666646761697589" fileName="CompositeMerger.java" startLine="25" startPosition="114" endLine="26" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761697603" fileName="CompositeMerger.java" startLine="27" startPosition="70" endLine="28" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761697621" fileName="CompositeMerger.java" startLine="29" startPosition="12" endLine="30" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761697619" fileName="CompositeMerger.java" startLine="29" startPosition="10" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3342666646761697623" fileName="CompositeMerger.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompositeMerger#(Ljetbrains/mps/vcs/core/mergedriver/AbstractContentMerger;Ljetbrains/mps/vcs/core/mergedriver/AbstractContentMerger;)V" />
     <nodeInfo nodeId="3342666646761697544" fileName="CompositeMerger.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setConflictMarks#([B[B[B)V" />
-    <nodeInfo nodeId="3342666646761697601" fileName="CompositeMerger.java" startLine="25" startPosition="119" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3342666646761697572" fileName="CompositeMerger.java" startLine="23" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContents#([B[B[B)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-    <scopeInfo nodeId="3342666646761697602" fileName="CompositeMerger.java" startLine="26" startPosition="70" endLine="27" endPosition="87" />
-    <scopeInfo nodeId="3342666646761697620" fileName="CompositeMerger.java" startLine="28" startPosition="12" endLine="29" endPosition="27" />
+    <nodeInfo nodeId="3342666646761697601" fileName="CompositeMerger.java" startLine="26" startPosition="119" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3342666646761697572" fileName="CompositeMerger.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContents#([B[B[B)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <scopeInfo nodeId="3342666646761697602" fileName="CompositeMerger.java" startLine="27" startPosition="70" endLine="28" endPosition="87" />
+    <scopeInfo nodeId="3342666646761697620" fileName="CompositeMerger.java" startLine="29" startPosition="12" endLine="30" endPosition="27" />
     <scopeInfo nodeId="3342666646761697625" fileName="CompositeMerger.java" startLine="12" startPosition="107" endLine="14" endPosition="40" />
     <scopeInfo nodeId="3342666646761697556" fileName="CompositeMerger.java" startLine="18" startPosition="92" endLine="20" endPosition="78" />
     <scopeInfo nodeId="3342666646761697623" fileName="CompositeMerger.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
@@ -225,136 +225,136 @@
       <varInfo nodeId="3342666646761697545" varName="conflictStart" />
       <varInfo nodeId="3342666646761697551" varName="separator" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697588" fileName="CompositeMerger.java" startLine="24" startPosition="114" endLine="30" endPosition="5">
+    <scopeInfo nodeId="3342666646761697588" fileName="CompositeMerger.java" startLine="25" startPosition="114" endLine="31" endPosition="5">
       <varInfo nodeId="3342666646761697590" varName="primaryResult" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697572" fileName="CompositeMerger.java" startLine="23" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="3342666646761697572" fileName="CompositeMerger.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="3342666646761697573" varName="baseContent" />
       <varInfo nodeId="3342666646761697579" varName="latestContent" />
       <varInfo nodeId="3342666646761697576" varName="localContent" />
     </scopeInfo>
-    <unitInfo nodeId="3342666646761697536" fileName="CompositeMerger.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.CompositeMerger" />
+    <unitInfo nodeId="3342666646761697536" fileName="CompositeMerger.java" startLine="8" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.CompositeMerger" />
   </root>
   <root nodeRef="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)/3342666646761697638">
-    <nodeInfo nodeId="3342666646761697660" fileName="EmptyMerger.java" startLine="14" startPosition="114" endLine="15" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761697660" fileName="EmptyMerger.java" startLine="15" startPosition="114" endLine="16" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3342666646761697639" fileName="EmptyMerger.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EmptyMerger#()V" />
-    <nodeInfo nodeId="3342666646761697643" fileName="EmptyMerger.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContents#([B[B[B)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="3342666646761697643" fileName="EmptyMerger.java" startLine="13" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContents#([B[B[B)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
     <scopeInfo nodeId="3342666646761697642" fileName="EmptyMerger.java" startLine="10" startPosition="24" endLine="10" endPosition="24" />
-    <scopeInfo nodeId="3342666646761697659" fileName="EmptyMerger.java" startLine="14" startPosition="114" endLine="15" endPosition="64" />
+    <scopeInfo nodeId="3342666646761697659" fileName="EmptyMerger.java" startLine="15" startPosition="114" endLine="16" endPosition="64" />
     <scopeInfo nodeId="3342666646761697639" fileName="EmptyMerger.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="3342666646761697643" fileName="EmptyMerger.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
+    <scopeInfo nodeId="3342666646761697643" fileName="EmptyMerger.java" startLine="13" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="3342666646761697649" varName="baseContent" />
       <varInfo nodeId="3342666646761697655" varName="latestContent" />
       <varInfo nodeId="3342666646761697652" varName="localContent" />
     </scopeInfo>
-    <unitInfo nodeId="3342666646761697638" fileName="EmptyMerger.java" startLine="9" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.EmptyMerger" />
+    <unitInfo nodeId="3342666646761697638" fileName="EmptyMerger.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.EmptyMerger" />
   </root>
   <root nodeRef="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)/3342666646761697669">
-    <nodeInfo nodeId="3342666646761697845" fileName="JavaDependenciesMerger.java" startLine="27" startPosition="9" endLine="28" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761697850" fileName="JavaDependenciesMerger.java" startLine="28" startPosition="69" endLine="29" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697855" fileName="JavaDependenciesMerger.java" startLine="29" startPosition="69" endLine="30" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697860" fileName="JavaDependenciesMerger.java" startLine="30" startPosition="70" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3342666646761697861" fileName="JavaDependenciesMerger.java" startLine="31" startPosition="0" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761697866" fileName="JavaDependenciesMerger.java" startLine="32" startPosition="62" endLine="33" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697870" fileName="JavaDependenciesMerger.java" startLine="33" startPosition="42" endLine="34" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761697880" fileName="JavaDependenciesMerger.java" startLine="35" startPosition="29" endLine="36" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697884" fileName="JavaDependenciesMerger.java" startLine="36" startPosition="26" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761697890" fileName="JavaDependenciesMerger.java" startLine="38" startPosition="31" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697894" fileName="JavaDependenciesMerger.java" startLine="39" startPosition="26" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761697900" fileName="JavaDependenciesMerger.java" startLine="41" startPosition="55" endLine="42" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697904" fileName="JavaDependenciesMerger.java" startLine="42" startPosition="26" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761697673" fileName="JavaDependenciesMerger.java" startLine="47" startPosition="103" endLine="48" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761697694" fileName="JavaDependenciesMerger.java" startLine="51" startPosition="101" endLine="52" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697717" fileName="JavaDependenciesMerger.java" startLine="56" startPosition="88" endLine="57" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761697728" fileName="JavaDependenciesMerger.java" startLine="58" startPosition="30" endLine="59" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697738" fileName="JavaDependenciesMerger.java" startLine="60" startPosition="14" endLine="61" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697752" fileName="JavaDependenciesMerger.java" startLine="67" startPosition="67" endLine="68" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3342666646761697773" fileName="JavaDependenciesMerger.java" startLine="69" startPosition="5" endLine="70" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761697780" fileName="JavaDependenciesMerger.java" startLine="70" startPosition="52" endLine="71" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697787" fileName="JavaDependenciesMerger.java" startLine="71" startPosition="93" endLine="72" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761697794" fileName="JavaDependenciesMerger.java" startLine="72" startPosition="48" endLine="73" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761697801" fileName="JavaDependenciesMerger.java" startLine="73" startPosition="89" endLine="74" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761697913" fileName="JavaDependenciesMerger.java" startLine="78" startPosition="40" endLine="79" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3342666646761697845" fileName="JavaDependenciesMerger.java" startLine="28" startPosition="9" endLine="29" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761697850" fileName="JavaDependenciesMerger.java" startLine="29" startPosition="69" endLine="30" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761697855" fileName="JavaDependenciesMerger.java" startLine="30" startPosition="69" endLine="31" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761697860" fileName="JavaDependenciesMerger.java" startLine="31" startPosition="70" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3342666646761697861" fileName="JavaDependenciesMerger.java" startLine="32" startPosition="0" endLine="33" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761697866" fileName="JavaDependenciesMerger.java" startLine="33" startPosition="62" endLine="34" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761697870" fileName="JavaDependenciesMerger.java" startLine="34" startPosition="42" endLine="35" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761697880" fileName="JavaDependenciesMerger.java" startLine="36" startPosition="29" endLine="37" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761697884" fileName="JavaDependenciesMerger.java" startLine="37" startPosition="26" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761697890" fileName="JavaDependenciesMerger.java" startLine="39" startPosition="31" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761697894" fileName="JavaDependenciesMerger.java" startLine="40" startPosition="26" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761697900" fileName="JavaDependenciesMerger.java" startLine="42" startPosition="55" endLine="43" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761697904" fileName="JavaDependenciesMerger.java" startLine="43" startPosition="26" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761697673" fileName="JavaDependenciesMerger.java" startLine="48" startPosition="103" endLine="49" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761697694" fileName="JavaDependenciesMerger.java" startLine="52" startPosition="101" endLine="53" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761697717" fileName="JavaDependenciesMerger.java" startLine="57" startPosition="88" endLine="58" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761697728" fileName="JavaDependenciesMerger.java" startLine="59" startPosition="30" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761697738" fileName="JavaDependenciesMerger.java" startLine="61" startPosition="14" endLine="62" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761697752" fileName="JavaDependenciesMerger.java" startLine="68" startPosition="67" endLine="69" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3342666646761697773" fileName="JavaDependenciesMerger.java" startLine="70" startPosition="5" endLine="71" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761697780" fileName="JavaDependenciesMerger.java" startLine="71" startPosition="52" endLine="72" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761697787" fileName="JavaDependenciesMerger.java" startLine="72" startPosition="93" endLine="73" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761697794" fileName="JavaDependenciesMerger.java" startLine="73" startPosition="48" endLine="74" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761697801" fileName="JavaDependenciesMerger.java" startLine="74" startPosition="89" endLine="75" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761697913" fileName="JavaDependenciesMerger.java" startLine="79" startPosition="40" endLine="80" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3342666646761697822" fileName="JavaDependenciesMerger.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaDependenciesMerger#()V" />
-    <nodeInfo nodeId="3342666646761697736" fileName="JavaDependenciesMerger.java" startLine="60" startPosition="12" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3342666646761697670" fileName="JavaDependenciesMerger.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadDependencies#([B)Ljetbrains/mps/make/java/ModelDependencies;" />
-    <nodeInfo nodeId="3342666646761697687" fileName="JavaDependenciesMerger.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="saveDependencies#(Ljetbrains/mps/make/java/ModelDependencies;Ljava/io/OutputStream;)V" />
-    <nodeInfo nodeId="3342666646761697750" fileName="JavaDependenciesMerger.java" startLine="66" startPosition="146" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3342666646761697909" fileName="JavaDependenciesMerger.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeException#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3342666646761697766" fileName="JavaDependenciesMerger.java" startLine="83" startPosition="63" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761697726" fileName="JavaDependenciesMerger.java" startLine="57" startPosition="79" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3342666646761697766" fileName="JavaDependenciesMerger.java" startLine="83" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_bqsatu_a0a0f#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="3342666646761697711" fileName="JavaDependenciesMerger.java" startLine="55" startPosition="131" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3342666646761697704" fileName="JavaDependenciesMerger.java" startLine="55" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="copyDependencies#(Ljetbrains/mps/make/java/ModelDependencies;Ljetbrains/mps/make/java/ModelDependencies;)V" />
-    <nodeInfo nodeId="3342666646761697747" fileName="JavaDependenciesMerger.java" startLine="66" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="mergeRootDependencies#(Ljetbrains/mps/make/java/RootDependencies;Ljetbrains/mps/make/java/RootDependencies;)Ljetbrains/mps/make/java/RootDependencies;" />
-    <nodeInfo nodeId="3342666646761697843" fileName="JavaDependenciesMerger.java" startLine="26" startPosition="114" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3342666646761697826" fileName="JavaDependenciesMerger.java" startLine="25" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContents#([B[B[B)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="3342666646761697736" fileName="JavaDependenciesMerger.java" startLine="61" startPosition="12" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3342666646761697670" fileName="JavaDependenciesMerger.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadDependencies#([B)Ljetbrains/mps/make/java/ModelDependencies;" />
+    <nodeInfo nodeId="3342666646761697687" fileName="JavaDependenciesMerger.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="saveDependencies#(Ljetbrains/mps/make/java/ModelDependencies;Ljava/io/OutputStream;)V" />
+    <nodeInfo nodeId="3342666646761697750" fileName="JavaDependenciesMerger.java" startLine="67" startPosition="146" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3342666646761697909" fileName="JavaDependenciesMerger.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergeException#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="3342666646761697766" fileName="JavaDependenciesMerger.java" startLine="84" startPosition="63" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761697726" fileName="JavaDependenciesMerger.java" startLine="58" startPosition="79" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3342666646761697766" fileName="JavaDependenciesMerger.java" startLine="84" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_bqsatu_a0a0f#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="3342666646761697711" fileName="JavaDependenciesMerger.java" startLine="56" startPosition="131" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3342666646761697704" fileName="JavaDependenciesMerger.java" startLine="56" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="copyDependencies#(Ljetbrains/mps/make/java/ModelDependencies;Ljetbrains/mps/make/java/ModelDependencies;)V" />
+    <nodeInfo nodeId="3342666646761697747" fileName="JavaDependenciesMerger.java" startLine="67" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="mergeRootDependencies#(Ljetbrains/mps/make/java/RootDependencies;Ljetbrains/mps/make/java/RootDependencies;)Ljetbrains/mps/make/java/RootDependencies;" />
+    <nodeInfo nodeId="3342666646761697843" fileName="JavaDependenciesMerger.java" startLine="27" startPosition="114" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3342666646761697826" fileName="JavaDependenciesMerger.java" startLine="25" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContents#([B[B[B)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
     <scopeInfo nodeId="3342666646761697824" fileName="JavaDependenciesMerger.java" startLine="22" startPosition="40" endLine="22" endPosition="40" />
-    <scopeInfo nodeId="3342666646761697672" fileName="JavaDependenciesMerger.java" startLine="47" startPosition="103" endLine="48" endPosition="112" />
-    <scopeInfo nodeId="3342666646761697693" fileName="JavaDependenciesMerger.java" startLine="51" startPosition="101" endLine="52" endPosition="60" />
-    <scopeInfo nodeId="3342666646761697727" fileName="JavaDependenciesMerger.java" startLine="58" startPosition="30" endLine="59" endPosition="40" />
-    <scopeInfo nodeId="3342666646761697737" fileName="JavaDependenciesMerger.java" startLine="60" startPosition="14" endLine="61" endPosition="70" />
-    <scopeInfo nodeId="3342666646761697751" fileName="JavaDependenciesMerger.java" startLine="67" startPosition="67" endLine="68" endPosition="133" />
-    <scopeInfo nodeId="3342666646761697912" fileName="JavaDependenciesMerger.java" startLine="78" startPosition="40" endLine="79" endPosition="17" />
+    <scopeInfo nodeId="3342666646761697672" fileName="JavaDependenciesMerger.java" startLine="48" startPosition="103" endLine="49" endPosition="112" />
+    <scopeInfo nodeId="3342666646761697693" fileName="JavaDependenciesMerger.java" startLine="52" startPosition="101" endLine="53" endPosition="60" />
+    <scopeInfo nodeId="3342666646761697727" fileName="JavaDependenciesMerger.java" startLine="59" startPosition="30" endLine="60" endPosition="40" />
+    <scopeInfo nodeId="3342666646761697737" fileName="JavaDependenciesMerger.java" startLine="61" startPosition="14" endLine="62" endPosition="70" />
+    <scopeInfo nodeId="3342666646761697751" fileName="JavaDependenciesMerger.java" startLine="68" startPosition="67" endLine="69" endPosition="133" />
+    <scopeInfo nodeId="3342666646761697912" fileName="JavaDependenciesMerger.java" startLine="79" startPosition="40" endLine="80" endPosition="17" />
     <scopeInfo nodeId="3342666646761697822" fileName="JavaDependenciesMerger.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="3342666646761697876" fileName="JavaDependenciesMerger.java" startLine="35" startPosition="0" endLine="37" endPosition="18">
+    <scopeInfo nodeId="3342666646761697876" fileName="JavaDependenciesMerger.java" startLine="36" startPosition="0" endLine="38" endPosition="18">
       <varInfo nodeId="3342666646761697877" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697879" fileName="JavaDependenciesMerger.java" startLine="35" startPosition="29" endLine="37" endPosition="18" />
-    <scopeInfo nodeId="3342666646761697886" fileName="JavaDependenciesMerger.java" startLine="38" startPosition="0" endLine="40" endPosition="18">
+    <scopeInfo nodeId="3342666646761697879" fileName="JavaDependenciesMerger.java" startLine="36" startPosition="29" endLine="38" endPosition="18" />
+    <scopeInfo nodeId="3342666646761697886" fileName="JavaDependenciesMerger.java" startLine="39" startPosition="0" endLine="41" endPosition="18">
       <varInfo nodeId="3342666646761697887" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697889" fileName="JavaDependenciesMerger.java" startLine="38" startPosition="31" endLine="40" endPosition="18" />
-    <scopeInfo nodeId="3342666646761697896" fileName="JavaDependenciesMerger.java" startLine="41" startPosition="0" endLine="43" endPosition="18">
+    <scopeInfo nodeId="3342666646761697889" fileName="JavaDependenciesMerger.java" startLine="39" startPosition="31" endLine="41" endPosition="18" />
+    <scopeInfo nodeId="3342666646761697896" fileName="JavaDependenciesMerger.java" startLine="42" startPosition="0" endLine="44" endPosition="18">
       <varInfo nodeId="3342666646761697897" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697899" fileName="JavaDependenciesMerger.java" startLine="41" startPosition="55" endLine="43" endPosition="18" />
-    <scopeInfo nodeId="3342666646761697670" fileName="JavaDependenciesMerger.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="3342666646761697899" fileName="JavaDependenciesMerger.java" startLine="42" startPosition="55" endLine="44" endPosition="18" />
+    <scopeInfo nodeId="3342666646761697670" fileName="JavaDependenciesMerger.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="3342666646761697682" varName="content" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697687" fileName="JavaDependenciesMerger.java" startLine="51" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="3342666646761697687" fileName="JavaDependenciesMerger.java" startLine="52" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="3342666646761697688" varName="deps" />
       <varInfo nodeId="3342666646761697690" varName="out" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697909" fileName="JavaDependenciesMerger.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="3342666646761697909" fileName="JavaDependenciesMerger.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="3342666646761697915" varName="msg" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697766" fileName="JavaDependenciesMerger.java" startLine="83" startPosition="63" endLine="87" endPosition="7" />
-    <scopeInfo nodeId="3342666646761697716" fileName="JavaDependenciesMerger.java" startLine="56" startPosition="88" endLine="62" endPosition="7">
+    <scopeInfo nodeId="3342666646761697766" fileName="JavaDependenciesMerger.java" startLine="84" startPosition="63" endLine="88" endPosition="7" />
+    <scopeInfo nodeId="3342666646761697716" fileName="JavaDependenciesMerger.java" startLine="57" startPosition="88" endLine="63" endPosition="7">
       <varInfo nodeId="3342666646761697718" varName="toRootDep" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697766" fileName="JavaDependenciesMerger.java" startLine="83" startPosition="0" endLine="89" endPosition="0">
+    <scopeInfo nodeId="3342666646761697766" fileName="JavaDependenciesMerger.java" startLine="84" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="3342666646761697766" varName="a" />
       <varInfo nodeId="3342666646761697766" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697844" fileName="JavaDependenciesMerger.java" startLine="27" startPosition="9" endLine="34" endPosition="72">
+    <scopeInfo nodeId="3342666646761697844" fileName="JavaDependenciesMerger.java" startLine="28" startPosition="9" endLine="35" endPosition="72">
       <varInfo nodeId="3342666646761697846" varName="dependencies" />
       <varInfo nodeId="3342666646761697862" varName="out" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697710" fileName="JavaDependenciesMerger.java" startLine="55" startPosition="131" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="3342666646761697711" fileName="JavaDependenciesMerger.java" startLine="55" startPosition="131" endLine="63" endPosition="5">
+    <scopeInfo nodeId="3342666646761697710" fileName="JavaDependenciesMerger.java" startLine="56" startPosition="131" endLine="64" endPosition="5" />
+    <scopeInfo nodeId="3342666646761697711" fileName="JavaDependenciesMerger.java" startLine="56" startPosition="131" endLine="64" endPosition="5">
       <varInfo nodeId="3342666646761697712" varName="fromRootDep" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697749" fileName="JavaDependenciesMerger.java" startLine="66" startPosition="146" endLine="74" endPosition="174">
+    <scopeInfo nodeId="3342666646761697749" fileName="JavaDependenciesMerger.java" startLine="67" startPosition="146" endLine="75" endPosition="174">
       <varInfo nodeId="3342666646761697774" varName="dependNodes" />
       <varInfo nodeId="3342666646761697788" varName="extendsNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697704" fileName="JavaDependenciesMerger.java" startLine="55" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="3342666646761697704" fileName="JavaDependenciesMerger.java" startLine="56" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="3342666646761697705" varName="from" />
       <varInfo nodeId="3342666646761697707" varName="to" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697747" fileName="JavaDependenciesMerger.java" startLine="66" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="3342666646761697747" fileName="JavaDependenciesMerger.java" startLine="67" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="3342666646761697817" varName="rd1" />
       <varInfo nodeId="3342666646761697819" varName="rd2" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761697842" fileName="JavaDependenciesMerger.java" startLine="26" startPosition="114" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="3342666646761697826" fileName="JavaDependenciesMerger.java" startLine="25" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="3342666646761697842" fileName="JavaDependenciesMerger.java" startLine="27" startPosition="114" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="3342666646761697826" fileName="JavaDependenciesMerger.java" startLine="25" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="3342666646761697832" varName="baseContent" />
       <varInfo nodeId="3342666646761697838" varName="latestContent" />
       <varInfo nodeId="3342666646761697835" varName="localContent" />
     </scopeInfo>
-    <unitInfo nodeId="3342666646761697906" fileName="JavaDependenciesMerger.java" startLine="77" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.JavaDependenciesMerger$MergeException" />
-    <unitInfo nodeId="3342666646761697669" fileName="JavaDependenciesMerger.java" startLine="21" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.JavaDependenciesMerger" />
+    <unitInfo nodeId="3342666646761697906" fileName="JavaDependenciesMerger.java" startLine="78" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.JavaDependenciesMerger$MergeException" />
+    <unitInfo nodeId="3342666646761697669" fileName="JavaDependenciesMerger.java" startLine="21" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.JavaDependenciesMerger" />
   </root>
   <root nodeRef="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)/3342666646761697917">
     <nodeInfo nodeId="3342666646761697919" fileName="MergerRoleIdsHandler.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConsistent" />
@@ -365,94 +365,94 @@
     <nodeInfo nodeId="3342666646761697971" fileName="MergerRoleIdsHandler.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelVersions" />
     <nodeInfo nodeId="3342666646761698002" fileName="MergerRoleIdsHandler.java" startLine="26" startPosition="55" endLine="27" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761698014" fileName="MergerRoleIdsHandler.java" startLine="28" startPosition="12" endLine="29" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761698031" fileName="MergerRoleIdsHandler.java" startLine="33" startPosition="80" endLine="34" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761698046" fileName="MergerRoleIdsHandler.java" startLine="37" startPosition="95" endLine="38" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761698063" fileName="MergerRoleIdsHandler.java" startLine="41" startPosition="109" endLine="42" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761698080" fileName="MergerRoleIdsHandler.java" startLine="45" startPosition="103" endLine="46" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761698095" fileName="MergerRoleIdsHandler.java" startLine="49" startPosition="66" endLine="50" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761698106" fileName="MergerRoleIdsHandler.java" startLine="53" startPosition="65" endLine="54" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761698118" fileName="MergerRoleIdsHandler.java" startLine="57" startPosition="83" endLine="58" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761698132" fileName="MergerRoleIdsHandler.java" startLine="61" startPosition="97" endLine="62" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761698146" fileName="MergerRoleIdsHandler.java" startLine="65" startPosition="91" endLine="66" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761698158" fileName="MergerRoleIdsHandler.java" startLine="69" startPosition="57" endLine="70" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761698165" fileName="MergerRoleIdsHandler.java" startLine="73" startPosition="38" endLine="74" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698031" fileName="MergerRoleIdsHandler.java" startLine="34" startPosition="80" endLine="35" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761698046" fileName="MergerRoleIdsHandler.java" startLine="39" startPosition="95" endLine="40" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761698063" fileName="MergerRoleIdsHandler.java" startLine="44" startPosition="109" endLine="45" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761698080" fileName="MergerRoleIdsHandler.java" startLine="49" startPosition="103" endLine="50" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761698095" fileName="MergerRoleIdsHandler.java" startLine="54" startPosition="66" endLine="55" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761698106" fileName="MergerRoleIdsHandler.java" startLine="59" startPosition="65" endLine="60" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698118" fileName="MergerRoleIdsHandler.java" startLine="64" startPosition="83" endLine="65" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698132" fileName="MergerRoleIdsHandler.java" startLine="69" startPosition="97" endLine="70" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698146" fileName="MergerRoleIdsHandler.java" startLine="74" startPosition="91" endLine="75" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698158" fileName="MergerRoleIdsHandler.java" startLine="79" startPosition="57" endLine="80" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698165" fileName="MergerRoleIdsHandler.java" startLine="83" startPosition="38" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3342666646761697980" fileName="MergerRoleIdsHandler.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MergerRoleIdsHandler#()V" />
     <nodeInfo nodeId="3342666646761698012" fileName="MergerRoleIdsHandler.java" startLine="28" startPosition="10" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3342666646761698023" fileName="MergerRoleIdsHandler.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="conceptRead#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-    <nodeInfo nodeId="3342666646761698036" fileName="MergerRoleIdsHandler.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeRoleRead#(Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-    <nodeInfo nodeId="3342666646761698053" fileName="MergerRoleIdsHandler.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceRoleRead#(Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-    <nodeInfo nodeId="3342666646761698070" fileName="MergerRoleIdsHandler.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertyNameRead#(Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-    <nodeInfo nodeId="3342666646761698087" fileName="MergerRoleIdsHandler.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelVersionRead#(Ljetbrains/mps/smodel/SModelReference;I)V" />
-    <nodeInfo nodeId="3342666646761698100" fileName="MergerRoleIdsHandler.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConceptPointer#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3342666646761698110" fileName="MergerRoleIdsHandler.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeRolePointer#(Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3342666646761698124" fileName="MergerRoleIdsHandler.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceRolePointer#(Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3342666646761698138" fileName="MergerRoleIdsHandler.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyNamePointer#(Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3342666646761698152" fileName="MergerRoleIdsHandler.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelVersion#(Ljetbrains/mps/smodel/SModelReference;)I" />
-    <nodeInfo nodeId="3342666646761698162" fileName="MergerRoleIdsHandler.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConsistent#()Z" />
-    <nodeInfo nodeId="3342666646761698006" fileName="MergerRoleIdsHandler.java" startLine="77" startPosition="66" endLine="81" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698162" fileName="MergerRoleIdsHandler.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isConsistent#()Z" />
+    <nodeInfo nodeId="3342666646761698023" fileName="MergerRoleIdsHandler.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="conceptRead#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+    <nodeInfo nodeId="3342666646761698036" fileName="MergerRoleIdsHandler.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="nodeRoleRead#(Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+    <nodeInfo nodeId="3342666646761698053" fileName="MergerRoleIdsHandler.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceRoleRead#(Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+    <nodeInfo nodeId="3342666646761698070" fileName="MergerRoleIdsHandler.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertyNameRead#(Ljava/lang/String;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+    <nodeInfo nodeId="3342666646761698087" fileName="MergerRoleIdsHandler.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelVersionRead#(Ljetbrains/mps/smodel/SModelReference;I)V" />
+    <nodeInfo nodeId="3342666646761698100" fileName="MergerRoleIdsHandler.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConceptPointer#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="3342666646761698110" fileName="MergerRoleIdsHandler.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeRolePointer#(Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="3342666646761698124" fileName="MergerRoleIdsHandler.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceRolePointer#(Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="3342666646761698138" fileName="MergerRoleIdsHandler.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropertyNamePointer#(Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+    <nodeInfo nodeId="3342666646761698152" fileName="MergerRoleIdsHandler.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelVersion#(Ljetbrains/mps/smodel/SModelReference;)I" />
+    <nodeInfo nodeId="3342666646761698006" fileName="MergerRoleIdsHandler.java" startLine="87" startPosition="66" endLine="91" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3342666646761697996" fileName="MergerRoleIdsHandler.java" startLine="25" startPosition="82" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3342666646761698006" fileName="MergerRoleIdsHandler.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_clnjnl_a0a0a0a0h#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="3342666646761698006" fileName="MergerRoleIdsHandler.java" startLine="87" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_clnjnl_a0a0a0a0h#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="3342666646761697985" fileName="MergerRoleIdsHandler.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeAndCheckConsistency#(Ljava/util/Map;nullnull)V" />
     <scopeInfo nodeId="3342666646761697983" fileName="MergerRoleIdsHandler.java" startLine="22" startPosition="33" endLine="22" endPosition="33" />
     <scopeInfo nodeId="3342666646761698001" fileName="MergerRoleIdsHandler.java" startLine="26" startPosition="55" endLine="27" endPosition="102" />
     <scopeInfo nodeId="3342666646761698013" fileName="MergerRoleIdsHandler.java" startLine="28" startPosition="12" endLine="29" endPosition="50" />
-    <scopeInfo nodeId="3342666646761698030" fileName="MergerRoleIdsHandler.java" startLine="33" startPosition="80" endLine="34" endPosition="82" />
-    <scopeInfo nodeId="3342666646761698045" fileName="MergerRoleIdsHandler.java" startLine="37" startPosition="95" endLine="38" endPosition="122" />
-    <scopeInfo nodeId="3342666646761698062" fileName="MergerRoleIdsHandler.java" startLine="41" startPosition="109" endLine="42" endPosition="136" />
-    <scopeInfo nodeId="3342666646761698079" fileName="MergerRoleIdsHandler.java" startLine="45" startPosition="103" endLine="46" endPosition="130" />
-    <scopeInfo nodeId="3342666646761698094" fileName="MergerRoleIdsHandler.java" startLine="49" startPosition="66" endLine="50" endPosition="60" />
-    <scopeInfo nodeId="3342666646761698105" fileName="MergerRoleIdsHandler.java" startLine="53" startPosition="65" endLine="54" endPosition="72" />
-    <scopeInfo nodeId="3342666646761698117" fileName="MergerRoleIdsHandler.java" startLine="57" startPosition="83" endLine="58" endPosition="115" />
-    <scopeInfo nodeId="3342666646761698131" fileName="MergerRoleIdsHandler.java" startLine="61" startPosition="97" endLine="62" endPosition="129" />
-    <scopeInfo nodeId="3342666646761698145" fileName="MergerRoleIdsHandler.java" startLine="65" startPosition="91" endLine="66" endPosition="123" />
-    <scopeInfo nodeId="3342666646761698157" fileName="MergerRoleIdsHandler.java" startLine="69" startPosition="57" endLine="70" endPosition="63" />
-    <scopeInfo nodeId="3342666646761698164" fileName="MergerRoleIdsHandler.java" startLine="73" startPosition="38" endLine="74" endPosition="24" />
+    <scopeInfo nodeId="3342666646761698030" fileName="MergerRoleIdsHandler.java" startLine="34" startPosition="80" endLine="35" endPosition="82" />
+    <scopeInfo nodeId="3342666646761698045" fileName="MergerRoleIdsHandler.java" startLine="39" startPosition="95" endLine="40" endPosition="122" />
+    <scopeInfo nodeId="3342666646761698062" fileName="MergerRoleIdsHandler.java" startLine="44" startPosition="109" endLine="45" endPosition="136" />
+    <scopeInfo nodeId="3342666646761698079" fileName="MergerRoleIdsHandler.java" startLine="49" startPosition="103" endLine="50" endPosition="130" />
+    <scopeInfo nodeId="3342666646761698094" fileName="MergerRoleIdsHandler.java" startLine="54" startPosition="66" endLine="55" endPosition="60" />
+    <scopeInfo nodeId="3342666646761698105" fileName="MergerRoleIdsHandler.java" startLine="59" startPosition="65" endLine="60" endPosition="72" />
+    <scopeInfo nodeId="3342666646761698117" fileName="MergerRoleIdsHandler.java" startLine="64" startPosition="83" endLine="65" endPosition="115" />
+    <scopeInfo nodeId="3342666646761698131" fileName="MergerRoleIdsHandler.java" startLine="69" startPosition="97" endLine="70" endPosition="129" />
+    <scopeInfo nodeId="3342666646761698145" fileName="MergerRoleIdsHandler.java" startLine="74" startPosition="91" endLine="75" endPosition="123" />
+    <scopeInfo nodeId="3342666646761698157" fileName="MergerRoleIdsHandler.java" startLine="79" startPosition="57" endLine="80" endPosition="63" />
+    <scopeInfo nodeId="3342666646761698164" fileName="MergerRoleIdsHandler.java" startLine="83" startPosition="38" endLine="84" endPosition="24" />
     <scopeInfo nodeId="3342666646761697980" fileName="MergerRoleIdsHandler.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="3342666646761698023" fileName="MergerRoleIdsHandler.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="3342666646761698162" fileName="MergerRoleIdsHandler.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="3342666646761698023" fileName="MergerRoleIdsHandler.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="3342666646761698026" varName="conceptFqName" />
       <varInfo nodeId="3342666646761698028" varName="conceptPointer" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698036" fileName="MergerRoleIdsHandler.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="3342666646761698036" fileName="MergerRoleIdsHandler.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="3342666646761698039" varName="conceptFqName" />
       <varInfo nodeId="3342666646761698043" varName="linkPointer" />
       <varInfo nodeId="3342666646761698041" varName="linkRole" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698053" fileName="MergerRoleIdsHandler.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="3342666646761698053" fileName="MergerRoleIdsHandler.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="3342666646761698056" varName="conceptFqName" />
       <varInfo nodeId="3342666646761698060" varName="linkPointer" />
       <varInfo nodeId="3342666646761698058" varName="referenceLinkRole" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698070" fileName="MergerRoleIdsHandler.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="3342666646761698070" fileName="MergerRoleIdsHandler.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="3342666646761698073" varName="conceptFqName" />
       <varInfo nodeId="3342666646761698077" varName="namePointer" />
       <varInfo nodeId="3342666646761698075" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698087" fileName="MergerRoleIdsHandler.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="3342666646761698087" fileName="MergerRoleIdsHandler.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="3342666646761698092" varName="i" />
       <varInfo nodeId="3342666646761698090" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698100" fileName="MergerRoleIdsHandler.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="3342666646761698100" fileName="MergerRoleIdsHandler.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="3342666646761698103" varName="conceptFqName" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698110" fileName="MergerRoleIdsHandler.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="3342666646761698110" fileName="MergerRoleIdsHandler.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="3342666646761698113" varName="conceptFqName" />
       <varInfo nodeId="3342666646761698115" varName="linkRole" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698124" fileName="MergerRoleIdsHandler.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="3342666646761698124" fileName="MergerRoleIdsHandler.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="3342666646761698127" varName="conceptFqName" />
       <varInfo nodeId="3342666646761698129" varName="referenceLinkRole" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698138" fileName="MergerRoleIdsHandler.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="3342666646761698138" fileName="MergerRoleIdsHandler.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="3342666646761698141" varName="conceptFqName" />
       <varInfo nodeId="3342666646761698143" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698152" fileName="MergerRoleIdsHandler.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="3342666646761698152" fileName="MergerRoleIdsHandler.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="3342666646761698155" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698162" fileName="MergerRoleIdsHandler.java" startLine="73" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="3342666646761698006" fileName="MergerRoleIdsHandler.java" startLine="77" startPosition="66" endLine="81" endPosition="6" />
+    <scopeInfo nodeId="3342666646761698006" fileName="MergerRoleIdsHandler.java" startLine="87" startPosition="66" endLine="91" endPosition="6" />
     <scopeInfo nodeId="3342666646761697995" fileName="MergerRoleIdsHandler.java" startLine="25" startPosition="82" endLine="30" endPosition="5" />
-    <scopeInfo nodeId="3342666646761698006" fileName="MergerRoleIdsHandler.java" startLine="77" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="3342666646761698006" fileName="MergerRoleIdsHandler.java" startLine="87" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="3342666646761698006" varName="a" />
       <varInfo nodeId="3342666646761698006" varName="b" />
     </scopeInfo>
@@ -461,7 +461,7 @@
       <varInfo nodeId="3342666646761697986" varName="theMap" />
       <varInfo nodeId="3342666646761697992" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="3342666646761697917" fileName="MergerRoleIdsHandler.java" startLine="14" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.MergerRoleIdsHandler" />
+    <unitInfo nodeId="3342666646761697917" fileName="MergerRoleIdsHandler.java" startLine="14" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.MergerRoleIdsHandler" />
   </root>
   <root nodeRef="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)/3342666646761698167">
     <nodeInfo nodeId="3342666646761698168" fileName="ModelMerger.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelFqName" />
@@ -475,8 +475,8 @@
     <nodeInfo nodeId="3342666646761698215" fileName="ModelMerger.java" startLine="41" startPosition="29" endLine="42" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3342666646761698220" fileName="ModelMerger.java" startLine="43" startPosition="9" endLine="44" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761698222" fileName="ModelMerger.java" startLine="44" startPosition="36" endLine="45" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761698231" fileName="ModelMerger.java" startLine="45" startPosition="103" endLine="46" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761698237" fileName="ModelMerger.java" startLine="46" startPosition="50" endLine="47" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761698231" fileName="ModelMerger.java" startLine="45" startPosition="103" endLine="46" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761698237" fileName="ModelMerger.java" startLine="46" startPosition="65" endLine="47" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761698246" fileName="ModelMerger.java" startLine="47" startPosition="105" endLine="48" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761698259" fileName="ModelMerger.java" startLine="49" startPosition="36" endLine="50" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761698262" fileName="ModelMerger.java" startLine="50" startPosition="53" endLine="51" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -490,8 +490,8 @@
     <nodeInfo nodeId="3342666646761698326" fileName="ModelMerger.java" startLine="63" startPosition="43" endLine="64" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761698330" fileName="ModelMerger.java" startLine="64" startPosition="99" endLine="65" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3342666646761698339" fileName="ModelMerger.java" startLine="66" startPosition="5" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3342666646761698342" fileName="ModelMerger.java" startLine="68" startPosition="9" endLine="69" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3342666646761698350" fileName="ModelMerger.java" startLine="69" startPosition="68" endLine="70" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761698342" fileName="ModelMerger.java" startLine="68" startPosition="9" endLine="69" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3342666646761698350" fileName="ModelMerger.java" startLine="69" startPosition="62" endLine="70" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3342666646761698369" fileName="ModelMerger.java" startLine="72" startPosition="46" endLine="73" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3342666646761698381" fileName="ModelMerger.java" startLine="76" startPosition="41" endLine="77" endPosition="328" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3342666646761698409" fileName="ModelMerger.java" startLine="79" startPosition="29" endLine="80" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -594,62 +594,62 @@
     <unitInfo nodeId="3342666646761698167" fileName="ModelMerger.java" startLine="26" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.ModelMerger" />
   </root>
   <root nodeRef="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)/3342666646761698548">
-    <nodeInfo nodeId="3342666646761698585" fileName="SimpleMerger.java" startLine="15" startPosition="114" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761698590" fileName="SimpleMerger.java" startLine="16" startPosition="55" endLine="17" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761698595" fileName="SimpleMerger.java" startLine="17" startPosition="57" endLine="18" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761698600" fileName="SimpleMerger.java" startLine="18" startPosition="59" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3342666646761698603" fileName="SimpleMerger.java" startLine="20" startPosition="45" endLine="21" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761698613" fileName="SimpleMerger.java" startLine="23" startPosition="86" endLine="24" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761698626" fileName="SimpleMerger.java" startLine="25" startPosition="5" endLine="26" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761698555" fileName="SimpleMerger.java" startLine="29" startPosition="55" endLine="30" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698585" fileName="SimpleMerger.java" startLine="16" startPosition="114" endLine="17" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761698590" fileName="SimpleMerger.java" startLine="17" startPosition="55" endLine="18" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761698595" fileName="SimpleMerger.java" startLine="18" startPosition="57" endLine="19" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761698600" fileName="SimpleMerger.java" startLine="19" startPosition="59" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3342666646761698603" fileName="SimpleMerger.java" startLine="21" startPosition="45" endLine="22" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698613" fileName="SimpleMerger.java" startLine="24" startPosition="86" endLine="25" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698626" fileName="SimpleMerger.java" startLine="26" startPosition="5" endLine="27" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698555" fileName="SimpleMerger.java" startLine="30" startPosition="55" endLine="31" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3342666646761698565" fileName="SimpleMerger.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SimpleMerger#()V" />
-    <nodeInfo nodeId="3342666646761698601" fileName="SimpleMerger.java" startLine="19" startPosition="0" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3342666646761698611" fileName="SimpleMerger.java" startLine="22" startPosition="5" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3342666646761698549" fileName="SimpleMerger.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="contentAsString#([B)Ljava/lang/String;" />
-    <nodeInfo nodeId="3342666646761698568" fileName="SimpleMerger.java" startLine="14" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContents#([B[B[B)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="3342666646761698601" fileName="SimpleMerger.java" startLine="20" startPosition="0" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3342666646761698611" fileName="SimpleMerger.java" startLine="23" startPosition="5" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3342666646761698549" fileName="SimpleMerger.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="contentAsString#([B)Ljava/lang/String;" />
+    <nodeInfo nodeId="3342666646761698568" fileName="SimpleMerger.java" startLine="14" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContents#([B[B[B)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
     <scopeInfo nodeId="3342666646761698567" fileName="SimpleMerger.java" startLine="11" startPosition="30" endLine="11" endPosition="30" />
-    <scopeInfo nodeId="3342666646761698602" fileName="SimpleMerger.java" startLine="20" startPosition="45" endLine="21" endPosition="68" />
-    <scopeInfo nodeId="3342666646761698612" fileName="SimpleMerger.java" startLine="23" startPosition="86" endLine="24" endPosition="67" />
-    <scopeInfo nodeId="3342666646761698554" fileName="SimpleMerger.java" startLine="29" startPosition="55" endLine="30" endPosition="77" />
+    <scopeInfo nodeId="3342666646761698602" fileName="SimpleMerger.java" startLine="21" startPosition="45" endLine="22" endPosition="68" />
+    <scopeInfo nodeId="3342666646761698612" fileName="SimpleMerger.java" startLine="24" startPosition="86" endLine="25" endPosition="67" />
+    <scopeInfo nodeId="3342666646761698554" fileName="SimpleMerger.java" startLine="30" startPosition="55" endLine="31" endPosition="77" />
     <scopeInfo nodeId="3342666646761698565" fileName="SimpleMerger.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="3342666646761698549" fileName="SimpleMerger.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="3342666646761698549" fileName="SimpleMerger.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="3342666646761698550" varName="bytes" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698584" fileName="SimpleMerger.java" startLine="15" startPosition="114" endLine="26" endPosition="68">
+    <scopeInfo nodeId="3342666646761698584" fileName="SimpleMerger.java" startLine="16" startPosition="114" endLine="27" endPosition="68">
       <varInfo nodeId="3342666646761698586" varName="baseAsString" />
       <varInfo nodeId="3342666646761698596" varName="latestAsString" />
       <varInfo nodeId="3342666646761698591" varName="localAsString" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698568" fileName="SimpleMerger.java" startLine="14" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="3342666646761698568" fileName="SimpleMerger.java" startLine="14" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="3342666646761698574" varName="baseContent" />
       <varInfo nodeId="3342666646761698580" varName="latestContent" />
       <varInfo nodeId="3342666646761698577" varName="localContent" />
     </scopeInfo>
-    <unitInfo nodeId="3342666646761698548" fileName="SimpleMerger.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.SimpleMerger" />
+    <unitInfo nodeId="3342666646761698548" fileName="SimpleMerger.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.SimpleMerger" />
   </root>
   <root nodeRef="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)/3342666646761698631">
-    <nodeInfo nodeId="3342666646761698649" fileName="TextMerger.java" startLine="21" startPosition="114" endLine="22" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761698653" fileName="TextMerger.java" startLine="22" startPosition="38" endLine="23" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761698661" fileName="TextMerger.java" startLine="23" startPosition="100" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761698667" fileName="TextMerger.java" startLine="24" startPosition="76" endLine="25" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761698673" fileName="TextMerger.java" startLine="25" startPosition="78" endLine="26" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761698679" fileName="TextMerger.java" startLine="26" startPosition="80" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761698686" fileName="TextMerger.java" startLine="28" startPosition="9" endLine="29" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3342666646761698713" fileName="TextMerger.java" startLine="34" startPosition="29" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698649" fileName="TextMerger.java" startLine="22" startPosition="114" endLine="23" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761698653" fileName="TextMerger.java" startLine="23" startPosition="38" endLine="24" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761698661" fileName="TextMerger.java" startLine="24" startPosition="100" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761698667" fileName="TextMerger.java" startLine="25" startPosition="76" endLine="26" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761698673" fileName="TextMerger.java" startLine="26" startPosition="78" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761698679" fileName="TextMerger.java" startLine="27" startPosition="80" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761698686" fileName="TextMerger.java" startLine="29" startPosition="9" endLine="30" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3342666646761698713" fileName="TextMerger.java" startLine="35" startPosition="29" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3342666646761698715" fileName="TextMerger.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextMerger#()V" />
-    <nodeInfo nodeId="3342666646761698698" fileName="TextMerger.java" startLine="29" startPosition="139" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3342666646761698684" fileName="TextMerger.java" startLine="27" startPosition="60" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3342666646761698632" fileName="TextMerger.java" startLine="20" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContents#([B[B[B)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <nodeInfo nodeId="3342666646761698698" fileName="TextMerger.java" startLine="30" startPosition="139" endLine="34" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3342666646761698684" fileName="TextMerger.java" startLine="28" startPosition="60" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3342666646761698632" fileName="TextMerger.java" startLine="20" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeContents#([B[B[B)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
     <scopeInfo nodeId="3342666646761698718" fileName="TextMerger.java" startLine="17" startPosition="23" endLine="17" endPosition="23" />
-    <scopeInfo nodeId="3342666646761698709" fileName="TextMerger.java" startLine="34" startPosition="0" endLine="35" endPosition="18">
+    <scopeInfo nodeId="3342666646761698709" fileName="TextMerger.java" startLine="35" startPosition="0" endLine="36" endPosition="18">
       <varInfo nodeId="3342666646761698710" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698712" fileName="TextMerger.java" startLine="34" startPosition="29" endLine="35" endPosition="18" />
+    <scopeInfo nodeId="3342666646761698712" fileName="TextMerger.java" startLine="35" startPosition="29" endLine="36" endPosition="18" />
     <scopeInfo nodeId="3342666646761698715" fileName="TextMerger.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="3342666646761698685" fileName="TextMerger.java" startLine="28" startPosition="9" endLine="33" endPosition="28">
+    <scopeInfo nodeId="3342666646761698685" fileName="TextMerger.java" startLine="29" startPosition="9" endLine="34" endPosition="28">
       <varInfo nodeId="3342666646761698687" varName="mergeResult" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698648" fileName="TextMerger.java" startLine="21" startPosition="114" endLine="36" endPosition="5">
+    <scopeInfo nodeId="3342666646761698648" fileName="TextMerger.java" startLine="22" startPosition="114" endLine="37" endPosition="5">
       <varInfo nodeId="3342666646761698662" varName="baseData" />
       <varInfo nodeId="3342666646761698650" varName="diffOptions" />
       <varInfo nodeId="3342666646761698674" varName="latestData" />
@@ -657,12 +657,12 @@
       <varInfo nodeId="3342666646761698654" varName="merger" />
       <varInfo nodeId="3342666646761698680" varName="out" />
     </scopeInfo>
-    <scopeInfo nodeId="3342666646761698632" fileName="TextMerger.java" startLine="20" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="3342666646761698632" fileName="TextMerger.java" startLine="20" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="3342666646761698638" varName="baseContent" />
       <varInfo nodeId="3342666646761698644" varName="latestContent" />
       <varInfo nodeId="3342666646761698641" varName="localContent" />
     </scopeInfo>
-    <unitInfo nodeId="3342666646761698631" fileName="TextMerger.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.TextMerger" />
+    <unitInfo nodeId="3342666646761698631" fileName="TextMerger.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.TextMerger" />
   </root>
   <root nodeRef="r:a178d3c3-970e-4352-b61c-4e55abc3bc24(jetbrains.mps.vcs.core.mergedriver)/3342666646761725292">
     <nodeInfo nodeId="3342666646761725316" fileName="FileMerger.java" startLine="19" startPosition="217" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

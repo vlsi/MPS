@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.DependencyChooser" file="DependencyChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -18,6 +19,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.DevKitChooser" file="DevKitChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.FilteredGlobalScope" />
@@ -32,6 +34,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.GeneratorChooser" file="GeneratorChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
@@ -46,6 +49,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.LDSChooser" file="LDSChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.FilteredGlobalScope" />
@@ -64,6 +68,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser" file="LanguageChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.FilteredGlobalScope" />
@@ -78,6 +83,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageOrDevKitChooser" file="LanguageOrDevKitChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.FilteredGlobalScope" />
@@ -93,11 +99,13 @@
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.MappingRuleCreator" file="MappingRuleCreator.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule" />
     <classNode extendsClassName="jetbrains.mps.util.Computable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser" file="ModelChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.FilteredGlobalScope" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers" />
@@ -110,6 +118,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionChooser" file="SolutionChooser.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.FilteredGlobalScope" />
@@ -125,6 +134,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser" file="StubRootChooser.java">
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />

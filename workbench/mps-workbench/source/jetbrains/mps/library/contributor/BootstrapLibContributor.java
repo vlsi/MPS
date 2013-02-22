@@ -31,6 +31,7 @@ public class BootstrapLibContributor implements LibraryContributor, ApplicationC
   }
 
   //not public
+  @Override
   public Set<LibDescriptor> getLibraries() {
     Set<LibDescriptor> res = new HashSet<LibDescriptor>();
     for (String path : PathManager.getBootstrapPaths()) {
@@ -40,19 +41,23 @@ public class BootstrapLibContributor implements LibraryContributor, ApplicationC
     return res;
   }
 
+  @Override
   public void initComponent() {
     LibraryInitializer.getInstance().addContributor(this);
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         LibraryInitializer.getInstance().update(true);
       }
     });
   }
 
+  @Override
   public void disposeComponent() {
 
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return BootstrapLibContributor.class.getSimpleName();

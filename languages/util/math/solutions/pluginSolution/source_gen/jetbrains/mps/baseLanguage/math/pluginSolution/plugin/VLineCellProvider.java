@@ -14,6 +14,7 @@ public class VLineCellProvider extends AbstractCellProvider {
     this.myNode = node;
   }
 
+  @Override
   public EditorCell createEditorCell(EditorContext p0) {
     return new EditorCell_VerticalLine(p0, this.myNode);
   }

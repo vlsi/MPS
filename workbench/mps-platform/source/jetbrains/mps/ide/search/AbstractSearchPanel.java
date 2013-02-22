@@ -91,6 +91,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
     myIsCaseSensitive.setMnemonic(KeyEvent.VK_M);
     myIsCaseSensitive.setFocusable(false);
     myIsCaseSensitive.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent event) {
         search();
       }
@@ -100,6 +101,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
     myIsRegex.setMnemonic(KeyEvent.VK_R);
     myIsRegex.setFocusable(false);
     myIsRegex.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent event) {
         myIsWordsOnly.setEnabled(!myIsWordsOnly.isEnabled());
       }
@@ -109,6 +111,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
     myIsWordsOnly.setMnemonic(KeyEvent.VK_O);
     myIsWordsOnly.setFocusable(false);
     myIsWordsOnly.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent event) {
         search();
       }
@@ -127,6 +130,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
     this.add(tailContainer, BorderLayout.CENTER);
 
     escapeLabel.addMouseListener(new MouseAdapter() {
+      @Override
       public void mouseClicked(MouseEvent e) {
         deactivate();
       }
@@ -138,14 +142,17 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
     setSmallerFontAndOpaque(myFindResult);
 
     myText.getDocument().addDocumentListener(new DocumentListener() {
+      @Override
       public void insertUpdate(DocumentEvent e) {
         search();
       }
 
+      @Override
       public void removeUpdate(DocumentEvent e) {
         search();
       }
 
+      @Override
       public void changedUpdate(DocumentEvent e) {
         search();
       }
@@ -155,12 +162,14 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
 
 
     registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         goToNext();
       }
     }, KeyStroke.getKeyStroke("DOWN"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         goToPrevious();
       }
@@ -169,6 +178,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
     setVisible(false);
 
     registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         deactivate();
       }
@@ -300,14 +310,17 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       }
     }
 
+    @Override
     protected boolean canShowPopupAutomatically() {
       return getText().length() == 0;
     }
 
+    @Override
     protected boolean isCanShowCompletionOnRemove() {
       return false;
     }
 
+    @Override
     public List<String> getProposals(String text) {
       return myPossibleValues;
     }
@@ -329,10 +342,12 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
         myText);
     }
 
+    @Override
     public void actionPerformed(AnActionEvent e) {
       myText.showCompletion();
     }
 
+    @Override
     public void update(final AnActionEvent e) {
       e.getPresentation().setEnabled(!myText.getProposals(null).isEmpty());
     }
@@ -359,6 +374,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       e.getPresentation().setEnabled(!myText.completionIsVisible() && myText.getText().length() > 0);
     }
 
+    @Override
     public void actionPerformed(final AnActionEvent e) {
       goToPrevious();
     }
@@ -385,6 +401,7 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       e.getPresentation().setEnabled(!myText.completionIsVisible() && myText.getText().length() > 0);
     }
 
+    @Override
     public void actionPerformed(final AnActionEvent e) {
       goToNext();
     }
@@ -401,11 +418,13 @@ public abstract class AbstractSearchPanel extends EditorHeaderComponent {
       }
     }
 
+    @Override
     public void update(AnActionEvent e) {
       super.update(e);
       e.getPresentation().setEnabled(canExportToFindTool());
     }
 
+    @Override
     public void actionPerformed(AnActionEvent e) {
       exportToFindTool();
     }

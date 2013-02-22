@@ -32,6 +32,7 @@ public class SimpleSearchScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> result = new ArrayList<SNode>(myNodes.size());
     for (SNode node : myNodes) {

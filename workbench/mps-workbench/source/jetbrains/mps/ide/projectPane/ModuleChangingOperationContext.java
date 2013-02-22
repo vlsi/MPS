@@ -31,14 +31,17 @@ public class ModuleChangingOperationContext implements IOperationContext {
     myOperationContext = operationContext;
   }
 
+  @Override
   public <T> T getComponent(Class<T> clazz) {
     return myOperationContext.getComponent(clazz);
   }
 
+  @Override
   public boolean isValid() {
     return true;
   }
 
+  @Override
   public IModule getModule() {
     return myModule;
   }
@@ -48,11 +51,13 @@ public class ModuleChangingOperationContext implements IOperationContext {
     return myOperationContext.getProject();
   }
 
+  @Override
   @NotNull
   public IScope getScope() {
     return myOperationContext.getScope();
   }
 
+  @Override
   public boolean isTestMode() {
     return myOperationContext.isTestMode();
   }

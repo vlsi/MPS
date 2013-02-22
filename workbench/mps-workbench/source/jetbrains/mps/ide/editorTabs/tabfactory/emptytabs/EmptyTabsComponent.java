@@ -32,26 +32,32 @@ public class EmptyTabsComponent implements TabsComponent {
     myNode = node;
   }
 
+  @Override
   public RelationDescriptor getCurrentTabAspect() {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public void dispose() {
 
   }
 
+  @Override
   public List<SNodeReference> getAllEditedNodes() {
     return Collections.singletonList(myNode);
   }
 
+  @Override
   public List<Document> getAllEditedDocuments() {
     return Collections.singletonList(MPSUndoUtil.getDoc(myNode));
   }
 
+  @Override
   public void setLastNode(SNodeReference sNodePointer) {
 
   }
 
+  @Override
   public JComponent getComponent() {
     return null;
   }

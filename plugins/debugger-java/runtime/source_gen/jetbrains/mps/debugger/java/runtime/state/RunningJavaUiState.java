@@ -21,31 +21,38 @@ public class RunningJavaUiState extends JavaUiStateImpl {
     super(session);
   }
 
+  @Override
   public ObjectReference getThisObject() {
     return null;
   }
 
+  @Override
   public JavaStackFrame getStackFrame() {
     return null;
   }
 
+  @Override
   public JavaThread getThread() {
     return null;
   }
 
   @NotNull
+  @Override
   public List<? extends IThread> getThreads() {
     return Collections.emptyList();
   }
 
+  @Override
   public boolean isPausedOnBreakpoint() {
     return false;
   }
 
+  @Override
   protected AbstractUiState selectThreadInternal(@Nullable IThread thread) {
     return this;
   }
 
+  @Override
   protected AbstractUiState selectFrameInternal(int frame) {
     return this;
   }
@@ -55,6 +62,7 @@ public class RunningJavaUiState extends JavaUiStateImpl {
     return NO_FRAME;
   }
 
+  @Override
   public Context getContext() {
     return null;
   }

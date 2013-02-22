@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners;
 
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -33,16 +34,10 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeGroupTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelRepositoryListener;
-import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.util.List;
@@ -76,13 +71,14 @@ public class SModelNodeListeners implements NodeListeners {
       }
     };
     myStatusListener = new MyGenerationStatusListener();
-    if (myModel instanceof EditableSModelDescriptor) {
+    if (myModel instanceof EditableSModel) {
       myTreeUpdater = new MySNodeTreeUpdater(modelNode.getOperationContext().getProject(), modelNode);
       myTreeUpdater.setDependencyRecorder(modelNode.getDependencyRecorder());
     }
     myEventsListener = new MySModelEventsListener();
   }
 
+  @Override
   public void startListening() {
     visitNode(myTreeNode);
 
@@ -96,6 +92,7 @@ public class SModelNodeListeners implements NodeListeners {
     }
   }
 
+  @Override
   public void stopListening() {
     if (!SModelStereotype.isStubModelStereotype(myModel.getStereotype())) {
       ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
@@ -129,16 +126,19 @@ public class SModelNodeListeners implements NodeListeners {
       myModelNode = modelNode;
     }
 
+    @Override
     public void modelChangedDramatically(SModel model) {
       updateNodePresentation(false, true);
       visitNode(myModelNode);
     }
 
+    @Override
     public void modelChanged(SModel model) {
       updateNodePresentation(false, true);
       visitNode(myModelNode);
     }
 
+    @Override
     public void modelSaved(SModelDescriptor sm) {
       visitNode(myModelNode);
     }
@@ -152,11 +152,13 @@ public class SModelNodeListeners implements NodeListeners {
   }
 
   private class MySModelEventsListener implements SModelEventsListener {
+    @Override
     @NotNull
     public SModelDescriptor getModelDescriptor() {
       return myModel;
     }
 
+    @Override
     public void eventsHappened(List<SModelEvent> events) {
       if (myTreeUpdater == null) return;
       myTreeUpdater.eventsHappenedInCommand(events);
@@ -168,6 +170,7 @@ public class SModelNodeListeners implements NodeListeners {
       super(project, treeNode);
     }
 
+    @Override
     public boolean showPropertiesAndReferences() {
       return showPropertiesAndReferences(myTreeNode);
     }
@@ -201,10 +204,12 @@ public class SModelNodeListeners implements NodeListeners {
       return null;
     }
 
+    @Override
     public SModelDescriptor getSModelDescriptor() {
       return myTreeNode.getSModelDescriptor();
     }
 
+    @Override
     public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       for (SNode root : removedRoots) {
@@ -221,6 +226,7 @@ public class SModelNodeListeners implements NodeListeners {
       myTreeNode.insertRoots(addedRoots);
     }
 
+    @Override
     public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 

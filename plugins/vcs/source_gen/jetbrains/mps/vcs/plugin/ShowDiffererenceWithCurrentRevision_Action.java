@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.logging.Logger;
 
 public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
@@ -84,7 +84,7 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      VcsActionsUtil.showRootDifference((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), null);
+      VcsActionsUtil.showRootDifference((EditableSModel) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), null);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);
     }

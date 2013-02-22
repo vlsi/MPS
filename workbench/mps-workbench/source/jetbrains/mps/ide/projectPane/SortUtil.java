@@ -28,6 +28,7 @@ public class SortUtil {
   public static List<SModelDescriptor> sortModels(List<SModelDescriptor> modelDescriptors) {
     List<SModelDescriptor> sortedModels = new ArrayList<SModelDescriptor>(modelDescriptors);
     Collections.sort(sortedModels, new Comparator<SModelDescriptor>() {
+      @Override
       public int compare(SModelDescriptor o, SModelDescriptor o1) {
         if (o == o1) return 0;
         int result = Comparing.compare(o.getLongName(), o1.getLongName());
@@ -53,6 +54,7 @@ public class SortUtil {
   public static List<IModule> sortModules(Collection<IModule> modules) {
     List<IModule> sortedModules = new ArrayList<IModule>(modules);
     Collections.sort(sortedModules, new Comparator() {
+      @Override
       public int compare(Object o1, Object o2) {
         if (o1 == o2) {
           return 0;
@@ -75,6 +77,7 @@ public class SortUtil {
   public static List<SNode> sortNodesByPresentation(List<SNode> nodes) {
     List<SNode> sortedNodes = new ArrayList<SNode>(nodes);
     Collections.sort(sortedNodes, new Comparator<SNode>() {
+      @Override
       public int compare(SNode o1, SNode o2) {
         if (o1 == null || o2 == null) return 0;
         return o1.getPresentation().compareTo(o2.getPresentation());

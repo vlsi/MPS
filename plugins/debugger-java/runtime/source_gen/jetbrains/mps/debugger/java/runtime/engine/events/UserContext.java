@@ -14,10 +14,12 @@ import com.sun.jdi.request.EventRequest;
   }
 
   @Nullable
+  @Override
   public ThreadReference getThread() {
     return null;
   }
 
+  @Override
   public int getSuspendPolicy() {
     return EventRequest.SUSPEND_ALL;
   }

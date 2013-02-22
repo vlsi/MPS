@@ -23,6 +23,7 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 
 public class ProjectFileRule implements GetDataRule {
+  @Override
   @Nullable
   public Object getData(DataProvider dataProvider) {
     MPSProject project = (MPSProject) dataProvider.getData(MPSCommonDataKeys.MPS_PROJECT.getName());

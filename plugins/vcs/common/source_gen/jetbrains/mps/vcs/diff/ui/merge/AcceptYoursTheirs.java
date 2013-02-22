@@ -22,6 +22,7 @@ public class AcceptYoursTheirs extends BaseAction implements DumbAware {
     setDisableOnNoProject(false);
   }
 
+  @Override
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     myMergeModelsDialog.acceptVersionForSelectedRoots(myAcceptMine);
   }

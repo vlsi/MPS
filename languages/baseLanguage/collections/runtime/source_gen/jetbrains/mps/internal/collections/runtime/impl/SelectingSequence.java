@@ -15,6 +15,7 @@ public class SelectingSequence<U, V> extends AbstractChainedSequence<U, V> imple
     this.selector = selector;
   }
 
+  @Override
   public Iterator<V> iterator() {
     return new SelectingSequence.SelectingIterator();
   }
@@ -27,6 +28,7 @@ public class SelectingSequence<U, V> extends AbstractChainedSequence<U, V> imple
     private SelectingIterator() {
     }
 
+    @Override
     public boolean hasNext() {
       if (inputIterator == null) {
         init();
@@ -37,6 +39,7 @@ public class SelectingSequence<U, V> extends AbstractChainedSequence<U, V> imple
       return hasNext.hasNext();
     }
 
+    @Override
     public V next() {
       if (inputIterator == null) {
         init();
@@ -50,6 +53,7 @@ public class SelectingSequence<U, V> extends AbstractChainedSequence<U, V> imple
       return clearNext();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

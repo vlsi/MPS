@@ -19,19 +19,14 @@ package jetbrains.mps.excluded;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.containers.MultiMap;
-import jetbrains.mps.util.misc.hash.HashSet;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 public class Generators {
   // gensources.iml constants

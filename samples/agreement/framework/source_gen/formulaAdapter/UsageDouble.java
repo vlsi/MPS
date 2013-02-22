@@ -9,6 +9,7 @@ public class UsageDouble implements Function<Double> {
   public UsageDouble() {
   }
 
+  @Override
   public Double compute(Object parm) {
     Usage usageEvent = (Usage) parm;
     return usageEvent.getAmount().getAmount();

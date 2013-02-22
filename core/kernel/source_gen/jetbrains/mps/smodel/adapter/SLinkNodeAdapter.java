@@ -20,24 +20,29 @@ public class SLinkNodeAdapter implements SLink {
     myNode = node;
   }
 
+  @Override
   public String getRole() {
     return SPropertyOperations.getString(myNode, "role");
   }
 
+  @Override
   public boolean isReference() {
     return SPropertyOperations.hasValue(myNode, "metaClass", "reference", "reference");
   }
 
+  @Override
   public boolean isMultiple() {
     SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myNode);
     return SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1..n", "0..1");
   }
 
+  @Override
   public boolean isOptional() {
     SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myNode);
     return SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..n", "0..1");
   }
 
+  @Override
   public SAbstractConcept getTargetConcept() {
     SNode t = SLinkOperations.getTarget(myNode, "target", false);
     return (SNodeOperations.isInstanceOf(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") ?

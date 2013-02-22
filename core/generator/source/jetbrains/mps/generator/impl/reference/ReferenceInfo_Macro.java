@@ -45,11 +45,13 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     myReductionContext = reductionContext;
   }
 
+  @Override
   public SModelReference getTargetModelReference(TemplateGenerator generator) {
     ensureMacroProcessed(generator);
     return myExternalTargetModelReference;
   }
 
+  @Override
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
     ensureMacroProcessed(generator);
     return myOutputTargetNode;
@@ -61,15 +63,18 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     expandReferenceMacro(generator);
   }
 
+  @Override
   public SNode doResolve_Tricky(TemplateGenerator generator) {
     // nothing
     return null;
   }
 
+  @Override
   public String getResolveInfoForDynamicResolve() {
     return myResolveInfoForDynamicResolve;
   }
 
+  @Override
   public String getResolveInfoForNothing() {
     SNode templateTargetNode = getInputTargetNode();
     if (templateTargetNode != null) {
@@ -78,6 +83,7 @@ public abstract class ReferenceInfo_Macro extends ReferenceInfo {
     return null;
   }
 
+  @Override
   public boolean isRequired() {
     String role = getReferenceRole();
     SConcept concept = getOutputSourceNode().getConcept();

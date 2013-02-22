@@ -19,6 +19,7 @@ public class NopInstruction extends Instruction {
   public NopInstruction() {
   }
 
+  @Override
   public String commandPresentation() {
     return "nop";
   }

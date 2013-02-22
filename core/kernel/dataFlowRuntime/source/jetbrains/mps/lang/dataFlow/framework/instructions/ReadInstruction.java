@@ -37,6 +37,7 @@ public class ReadInstruction extends Instruction {
     myIndex = getProgram().getVariableIndex(myVar);
   }
 
+  @Override
   public String commandPresentation() {
     return "read " + myVar;
   }

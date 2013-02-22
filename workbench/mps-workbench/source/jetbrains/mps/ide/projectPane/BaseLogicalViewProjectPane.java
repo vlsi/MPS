@@ -78,6 +78,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   protected boolean myDisposed;
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
+    @Override
     public void onAfterReload() {
       rebuild();
     }
@@ -103,6 +104,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   public abstract void selectNextModel(SModelDescriptor md);
 
+  @Override
   public Object getData(String dataId) {
     //MPSDK
     if (dataId.equals(MPSDataKeys.NODE.getName())) return getSelectedSNode();
@@ -156,6 +158,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     // unselect model if it was selected ?
   }
 
+  @Override
   public void dispose() {
     if (isComponentCreated()) {
       removeListeners();
@@ -201,6 +204,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     };
   }
 
+  @Override
   public void addToolbarActions(final DefaultActionGroup group) {
     group.add(new PropertiesAndReferencesToggleAction());
     group.addAction(new SortByTypeToggleAction()).setAsSecondary(true);
@@ -428,17 +432,20 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   private class MyCopyProvider implements CopyProvider {
     private CopyNode_Action myAction = new CopyNode_Action();
 
+    @Override
     public void performCopy(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       ActionUtils.updateAndPerformAction(myAction, event);
     }
 
+    @Override
     public boolean isCopyEnabled(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       myAction.update(event);
       return event.getPresentation().isEnabled();
     }
 
+    @Override
     public boolean isCopyVisible(DataContext dataContext) {
       return true;
     }
@@ -447,15 +454,18 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   private class MyPasteProvider implements PasteProvider {
     private PasteNode_Action myAction = new PasteNode_Action();
 
+    @Override
     public void performPaste(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       ActionUtils.updateAndPerformAction(myAction, event);
     }
 
+    @Override
     public boolean isPastePossible(DataContext dataContext) {
       return true;
     }
 
+    @Override
     public boolean isPasteEnabled(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       myAction.update(event);
@@ -466,37 +476,44 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   private class MyCutProvider implements CutProvider {
     private CutNode_Action myAction = new CutNode_Action();
 
+    @Override
     public void performCut(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       ActionUtils.updateAndPerformAction(myAction, event);
     }
 
+    @Override
     public boolean isCutEnabled(DataContext dataContext) {
       AnActionEvent event = createEvent(dataContext);
       myAction.update(event);
       return event.getPresentation().isEnabled();
     }
 
+    @Override
     public boolean isCutVisible(DataContext dataContext) {
       return true;
     }
   }
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+    @Override
     public void moduleAdded(IModule module) {
       myNeedRebuild = true;
     }
 
+    @Override
     public void moduleRemoved(IModule module) {
       myNeedRebuild = true;
     }
   }
 
   private class MyModelAccessListener extends ModelAccessAdapter {
+    @Override
     public void commandStarted() {
       myNeedRebuild = false;
     }
 
+    @Override
     public void commandFinished() {
       if (!myNeedRebuild) return;
       JTree tree = getTree();
@@ -510,12 +527,14 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   //----listeners----
 
   private class MyModelRepositoryAdapter extends SModelRepositoryAdapter {
+    @Override
     public void modelRepositoryChanged(SModelDescriptor modelDescriptor) {
       if (!SModelStereotype.INTERNAL.equals(modelDescriptor.getStereotype())) {
         myNeedRebuild = true;
       }
     }
 
+    @Override
     public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
       onBeforeModelWillBeDeleted(modelDescriptor);
     }
@@ -524,10 +543,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   //----copy-paste----
 
   private class RefreshListener implements VirtualFileManagerListener {
+    @Override
     public void beforeRefreshStart(boolean asynchonous) {
 
     }
 
+    @Override
     public void afterRefreshFinish(boolean asynchonous) {
       if (myNeedRebuild) {
         JTree tree = getTree();
@@ -544,10 +565,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       super("Show Properties and References", "Show properties and references", Icons.PROP_AND_REF);
     }
 
+    @Override
     public boolean isSelected(@Nullable AnActionEvent e) {
       return isShowPropertiesAndReferences();
     }
 
+    @Override
     public void setSelected(@Nullable AnActionEvent e, boolean state) {
       if (state != isShowPropertiesAndReferences()) {
         if (getProjectView() instanceof ProjectViewImpl) {
@@ -563,10 +586,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       super("Sort Roots by Concept", "Sort root nodes by concept", null);
     }
 
+    @Override
     public boolean isSelected(@Nullable AnActionEvent e) {
       return isSortByType();
     }
 
+    @Override
     public void setSelected(@Nullable AnActionEvent e, boolean state) {
       if (state != isSortByType()) {
         getProjectView().setSortByType(getId(), state);

@@ -24,10 +24,12 @@ public class ChildrenTableRow extends AbstractTableRow {
     myChildLinkDeclaration = childLinkDeclaration;
   }
 
+  @Override
   public void removeCell(int index) {
     SNodeOperations.deleteNode(ListSequence.fromList(getChildren()).getElement(index));
   }
 
+  @Override
   public void createNewCell(int index) {
     assert index <= ListSequence.fromList(getChildren()).count();
     SNode newCellNode = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myChildLinkDeclaration, "target", false)), null);
@@ -43,10 +45,12 @@ public class ChildrenTableRow extends AbstractTableRow {
     }
   }
 
+  @Override
   public int getColumnCount() {
     return ListSequence.fromList(getChildren()).count();
   }
 
+  @Override
   public SNode getCell(int index) {
     return ListSequence.fromList(getChildren()).getElement(index);
   }

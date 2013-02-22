@@ -25,6 +25,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
   public RenamePropertyRefactoringTester_Simple() {
   }
 
+  @Override
   public boolean testRefactoring(final Project project, final SModelDescriptor sandbox1, final SModelDescriptor sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
     final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -36,6 +37,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
     refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
     final String newPropertyName = "niceProperty";
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
         SModel model = structureModelDescriptor.getSModel();
@@ -50,8 +52,10 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
     new RefactoringTestFacade().doExecuteInTest(refactoringContext);
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             try {
               if (sandbox1.isLoaded()) {
@@ -60,7 +64,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              SNode root = sModel.rootsIterator().next();
+              SNode root = sModel.getRootNodes().iterator().next();
               SNode firstChild = root.getChildren("anotherGoodConcept").iterator().next();
               String propertyValue = SNodeAccessUtil.getProperty(firstChild, newPropertyName);
               result[0] = "cat".equals(propertyValue);

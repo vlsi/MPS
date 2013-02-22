@@ -42,22 +42,27 @@ import java.awt.Frame;
 public class BlameDialogComponent implements ApplicationComponent, PersistentStateComponent<BlameDialog.MyState> {
   private BlameDialog.MyState myDialogState = new MyState();
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Charisma Error Reporter";
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
+  @Override
   public MyState getState() {
     return myDialogState;
   }
 
+  @Override
   public void loadState(MyState state) {
     myDialogState = state;
   }

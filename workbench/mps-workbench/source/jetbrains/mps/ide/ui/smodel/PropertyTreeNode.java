@@ -43,6 +43,7 @@ public class PropertyTreeNode extends TextTreeNode {
     return ((ActionGroup) ActionManager.getInstance().getAction(PropertyNodeActions_ActionGroup.class.getName()));
   }
 
+  @Override
   public boolean isLeaf() {
     return true;
   }
