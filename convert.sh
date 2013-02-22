@@ -47,5 +47,6 @@ do
      -e 's/package jetbrains\.mps\.smodel;/package jetbrains\.mps\.smodel;import org\.jetbrains\.mps\.openapi\.model\.SModel;/g' \
      -e 's/new SModel(/new jetbrains\.mps\.smodel\.SModel(/g' \
      -e 's/\([^\.]\)SModel\.ImportElement/\1jetbrains\.mps\.smodel\.SModel\.ImportElement/g' \
+     -e 's/(ABCDE)/(jetbrains\.mps\.smodel\.SModel)/g' \
     $fl
 done
