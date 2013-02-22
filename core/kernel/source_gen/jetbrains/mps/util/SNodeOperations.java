@@ -330,7 +330,7 @@ public class SNodeOperations {
   }
 
   public static boolean isModelDisposed(org.jetbrains.mps.openapi.model.SModel model) {
-    return ((SModel) model).isDisposed();
+    return ((ABCDE) model).isDisposed();
   }
 
   public static FastNodeFinder getModelFastFinder(org.jetbrains.mps.openapi.model.SModel model) {

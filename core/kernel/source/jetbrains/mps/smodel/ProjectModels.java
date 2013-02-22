@@ -46,7 +46,7 @@ public class ProjectModels {
     protected SModel createModel() {
       return new SModel(this.getSModelReference()) {
         @Override
-        public boolean canFireEvent() {
+        public boolean canFireEvent2() {
           return myCanFireEvents;
         }
       };

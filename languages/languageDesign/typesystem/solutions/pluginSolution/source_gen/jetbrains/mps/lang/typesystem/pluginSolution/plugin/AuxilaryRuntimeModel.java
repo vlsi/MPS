@@ -39,7 +39,7 @@ public class AuxilaryRuntimeModel {
         }
 
         @Override
-        public boolean canFireEvent() {
+        public boolean canFireEvent2() {
           return false;
         }
       };

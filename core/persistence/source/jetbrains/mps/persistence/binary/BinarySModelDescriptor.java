@@ -62,7 +62,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   public synchronized BinarySModel getSModel() {
     if (myModel == null) {
       myModel = loadSModel();
-      myModel.setModelDescriptor(this);
+      ((ABCDE) myModel).setModelDescriptor(this);
       updateDiskTimestamp();
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }

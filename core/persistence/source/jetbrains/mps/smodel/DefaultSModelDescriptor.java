@@ -90,7 +90,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
       ModelLoadingState oldState = myModel.getState();
       SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion
-      res.setModelDescriptor(this);
+      ((ABCDE) res).setModelDescriptor(this);
       if (oldState != myModel.getState()) {
         fireModelStateChanged(oldState, myModel.getState());
       }

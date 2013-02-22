@@ -81,7 +81,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   public synchronized SModel getSModel() {
     if (myModel == null) {
       myModel = loadSModel();
-      myModel.setModelDescriptor(this);
+      ((ABCDE) myModel).setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
@@ -139,7 +139,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   private static void check_bp2jat_a5a31(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      checkedDotOperand.setModelDescriptor(null);
+      ((ABCDE) checkedDotOperand).setModelDescriptor(null);
     }
 
   }

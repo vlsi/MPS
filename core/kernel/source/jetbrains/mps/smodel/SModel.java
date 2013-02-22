@@ -273,8 +273,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return myModelDescriptor;
   }
 
-  //todo cast
-  public synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
+  private synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
   }
 
@@ -284,26 +283,25 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   private void fireModelNodesReadAccess() {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     NodeReadEventsCaster.fireModelNodesReadAccess(this);
   }
 
   protected void performUndoableAction(Computable<SNodeUndoableAction> action) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     if (!UndoHelper.getInstance().needRegisterUndo(this)) return;
     UndoHelper.getInstance().addUndoableAction(action.compute());
   }
 
-  //todo replace with isInRepository in public places
-  public boolean canFireEvent() {
+  private boolean canFireEvent() {
     return myModelDescriptor != null && myModelDescriptor.isRegistered() && !isUpdateMode();
   }
 
   protected boolean canFireReadEvent() {
-    return canFireEvent();
+    return ((ABCDE) this).canFireEvent();
   }
 
-  public void dispose() {
+  private void dispose() {
     ModelChange.assertLegalChange(this);
     if (myDisposed) return;
 
@@ -330,7 +328,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   //todo code in the following methods should be written w/o duplication
 
   private void fireDevKitAddedEvent(@NotNull ModuleReference ref) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.devkitAdded(new SModelDevKitEvent(this, ref, true));
@@ -341,7 +339,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   private void fireDevKitRemovedEvent(@NotNull ModuleReference ref) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.devkitRemoved(new SModelDevKitEvent(this, ref, false));
@@ -352,7 +350,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   private void fireLanguageAddedEvent(@NotNull ModuleReference ref) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.languageAdded(new SModelLanguageEvent(this, ref, true));
@@ -363,7 +361,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   private void fireLanguageRemovedEvent(@NotNull ModuleReference ref) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.languageRemoved(new SModelLanguageEvent(this, ref, false));
@@ -374,7 +372,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   private void fireImportAddedEvent(@NotNull SModelReference modelReference) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.importAdded(new SModelImportEvent(this, modelReference, true));
@@ -385,7 +383,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   private void fireImportRemovedEvent(@NotNull SModelReference modelReference) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.importAdded(new SModelImportEvent(this, modelReference, false));
@@ -396,7 +394,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   private void fireRootAddedEvent(@NotNull SNode root) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.rootAdded(new SModelRootEvent(this, root, true));
@@ -407,7 +405,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   private void fireRootRemovedEvent(@NotNull SNode root) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.rootRemoved(new SModelRootEvent(this, root, false));
@@ -418,7 +416,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   void firePropertyChangedEvent(@NotNull SNode node, @NotNull String property, @Nullable String oldValue, @Nullable String newValue) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.propertyChanged(new SModelPropertyEvent(this, property, node, oldValue, newValue));
@@ -429,7 +427,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -441,7 +439,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -453,7 +451,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -465,7 +463,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   void fireReferenceAddedEvent(@NotNull SReference reference) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.referenceAdded(new SModelReferenceEvent(this, reference, true));
@@ -476,7 +474,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   void fireReferenceRemovedEvent(@NotNull SReference reference) {
-    if (!canFireEvent()) return;
+    if (!((ABCDE) this).canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
         sModelListener.referenceRemoved(new SModelReferenceEvent(this, reference, false));
@@ -787,7 +785,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.add(ref);
       // don't send event but mark model as changed
-      if (canFireEvent()) {
+      if (((ABCDE) this).canFireEvent()) {
         SModelRepository.getInstance().markChanged(this);
       }
     }
@@ -799,7 +797,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.remove(ref);
       // don't send event but mark model as changed
-      if (canFireEvent()) {
+      if (((ABCDE) this).canFireEvent()) {
         SModelRepository.getInstance().markChanged(this);
       }
     }

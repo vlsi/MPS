@@ -109,7 +109,7 @@ public class DiffTemporaryModule extends AbstractModule {
     if (module == null) {
       module = new DiffTemporaryModule(model, version, project);
     }
-    model.setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, model, mergeResultModel));
+    ((ABCDE) model).setModelDescriptor(new DiffSModelDescriptor(module, model, mergeResultModel));
   }
 
   public static void setSModelId(SModel model, String version) {

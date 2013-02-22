@@ -191,7 +191,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     protected SModel createModel() {
       SModel model = new SModel(getSModelReference()) {
         @Override
-        public boolean canFireEvent() {
+        public boolean canFireEvent2() {
           return false;
         }
       };

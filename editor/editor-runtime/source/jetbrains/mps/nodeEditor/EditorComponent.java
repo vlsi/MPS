@@ -1323,7 +1323,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     StringBuilder sb = new StringBuilder("editor (" + this + ") is invalid");
     if (myNode != null) {
       sb.append(", myNode is disposed");
-      StackTraceElement[] modelDisposedTrace = model.getDisposedStacktrace();
+      StackTraceElement[] modelDisposedTrace = ((ABCDE) model).getDisposedStacktrace();
       if (modelDisposedTrace != null) {
         for (StackTraceElement element : modelDisposedTrace) {
           sb.append("\nat ");

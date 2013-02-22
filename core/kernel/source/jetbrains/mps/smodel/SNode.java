@@ -909,12 +909,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private void fireNodeUnclassifiedReadAccess() {
-    if (myModel == null || !myModel.canFireEvent()) return;
+    if (myModel == null || !((ABCDE) myModel).canFireEvent()) return;
     NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
   }
 
   private void fireNodeReadAccess() {
-    if (myModel == null || !myModel.canFireEvent()) return;
+    if (myModel == null || !((ABCDE) myModel).canFireEvent()) return;
     NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
@@ -934,7 +934,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private void firePropertyReadAccessInEditor(String propertyName, boolean propertyExistenceCheck) {
-    if (myModel == null || !myModel.canFireEvent()) return;
+    if (myModel == null || !((ABCDE) myModel).canFireEvent()) return;
     NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
   }
 

@@ -269,7 +269,7 @@ public class SModelRepository implements CoreComponent {
     ModelAccess.assertLegalWrite();
 
     if (mySModelRepositoryListeners.isEmpty()) {
-      oldSModel.dispose();
+      ((ABCDE) oldSModel).dispose();
       return;
     }
 
@@ -306,7 +306,7 @@ public class SModelRepository implements CoreComponent {
   private void disposeOldModels() {
     for (jetbrains.mps.smodel.SModel oldModel : myReloadingDescriptorMap.values()) {
       if (oldModel != null) {
-        oldModel.dispose();
+        ((ABCDE) oldModel).dispose();
       }
     }
   }

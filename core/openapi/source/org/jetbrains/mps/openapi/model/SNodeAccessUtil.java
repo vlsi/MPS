@@ -87,7 +87,7 @@ public class SNodeAccessUtil {
 
   public static void setReferenceTarget(SNode node, String role, @Nullable SNode target) {
     SModel model = node.getModel();
-    if (model == null || !model.canFireEvent()) {
+    if (model == null || !((ABCDE) model).canFireEvent()) {
       //todo[Mihail Muhin]: why?
       node.setReferenceTarget(role, target);
       return;

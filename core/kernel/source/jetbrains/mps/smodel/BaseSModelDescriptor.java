@@ -132,7 +132,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     SModel smodel = getCurrentModelInternal();
     if (smodel != null) {
       fireBeforeModelDisposed(smodel);
-      smodel.dispose();
+      ((ABCDE) smodel).dispose();
     }
     clearListeners();
   }

@@ -100,7 +100,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append("\ncurrent thread ");
       sb.append(canRead);
       sb.append("\nstack trace of model disposing is: ");
-      for (StackTraceElement ste : targetModel.getDisposedStacktrace()) {
+      for (StackTraceElement ste : ((ABCDE) targetModel).getDisposedStacktrace()) {
         sb.append(ste);
         sb.append("\n");
       }
