@@ -118,7 +118,7 @@ public class CloneModelProperties {
 
     myImportedLanguages.addAll(((ABCDE) model).importedLanguages());
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
-    myImportedDevkits.addAll(model.importedDevkits());
+    myImportedDevkits.addAll(((ABCDE) model).importedDevkits());
     myLanguagesInGeneration.addAll(model.engagedOnGenerationLanguages());
   }
 }

@@ -73,7 +73,7 @@ public class ModelValidator {
       }
     }
 
-    for (ModuleReference devKit : myModel.importedDevkits()) {
+    for (ModuleReference devKit : ((ABCDE) myModel).importedDevkits()) {
       if (scope.getDevKit(devKit) == null) {
         errors.add("Can't find devkit: " + devKit.getModuleFqName());
       }

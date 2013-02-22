@@ -43,8 +43,8 @@ public class CloneUtil {
     for (ModuleReference lang : ((ABCDE) inputModel).importedLanguages()) {
       ((ABCDE) outputModel).addLanguage(lang);
     }
-    for (ModuleReference devKit : inputModel.importedDevkits()) {
-      outputModel.addDevKit(devKit);
+    for (ModuleReference devKit : ((ABCDE) inputModel).importedDevkits()) {
+      ((ABCDE) outputModel).addDevKit(devKit);
     }
   }
 

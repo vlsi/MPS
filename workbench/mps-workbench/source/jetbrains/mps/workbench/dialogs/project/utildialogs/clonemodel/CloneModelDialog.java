@@ -188,7 +188,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
               }
 
               for (ModuleReference mr : myModelProperties.getImportedDevkits()) {
-                model.getSModel().addDevKit(mr);
+                ((ABCDE) model.getSModel()).addDevKit(mr);
               }
 
               for (ModuleReference mr : myModelProperties.getLanguagesInGeneration()) {

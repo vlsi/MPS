@@ -51,7 +51,7 @@ public class MetadataUtil {
     for (ModuleReference genlanguage : ListSequence.fromList(model.engagedOnGenerationLanguages())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "languageEngagedOnGeneration", true)).addElement(createModuleRefNode(genlanguage));
     }
-    for (ModuleReference devkit : ListSequence.fromList(model.importedDevkits())) {
+    for (ModuleReference devkit : ListSequence.fromList(((ABCDE) model).importedDevkits())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "devkit", true)).addElement(createModuleRefNode(devkit));
     }
     for (SModel.ImportElement impmodel : ListSequence.fromList(model.importedModels())) {
@@ -121,7 +121,7 @@ public class MetadataUtil {
       }
     });
 
-    Set<ModuleReference> oldDevkit = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), model.importedDevkits());
+    Set<ModuleReference> oldDevkit = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ((ABCDE) model).importedDevkits());
     Set<ModuleReference> devkit = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "devkit", true)).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode it) {
         return new ModuleReference(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "uuid"));
@@ -129,12 +129,12 @@ public class MetadataUtil {
     }));
     SetSequence.fromSet(oldDevkit).subtract(SetSequence.fromSet(devkit)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        model.deleteDevKit(it);
+        ((ABCDE) model).deleteDevKit(it);
       }
     });
     SetSequence.fromSet(devkit).subtract(SetSequence.fromSet(oldDevkit)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        model.addDevKit(it);
+        ((ABCDE) model).addDevKit(it);
       }
     });
 

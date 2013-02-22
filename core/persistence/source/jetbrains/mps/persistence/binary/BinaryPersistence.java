@@ -136,7 +136,7 @@ public class BinaryPersistence {
 
     for (ModuleReference ref : loadModuleRefList(is)) ((ABCDE) model).addLanguage(ref);
     for (ModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
-    for (ModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) ((ABCDE) model).addDevKit(ref);
 
     for (ImportElement imp : loadImports(is)) model.addModelImport(imp);
     for (ImportElement imp : loadImports(is)) model.addAdditionalModelVersion(imp);
@@ -180,7 +180,7 @@ public class BinaryPersistence {
 
     saveModuleRefList(((ABCDE) model).importedLanguages(), os);
     saveModuleRefList(model.engagedOnGenerationLanguages(), os);
-    saveModuleRefList(model.importedDevkits(), os);
+    saveModuleRefList(((ABCDE) model).importedDevkits(), os);
 
     // imports
     saveImports(model.importedModels(), os);

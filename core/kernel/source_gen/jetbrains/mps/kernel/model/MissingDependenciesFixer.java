@@ -81,7 +81,7 @@ public class MissingDependenciesFixer {
           md.getUsedLanguages().add(ref);
           wereChanges = true;
         }
-        for (ModuleReference devKitNamespace : myModelDescriptor.getSModel().importedDevkits()) {
+        for (ModuleReference devKitNamespace : ((ABCDE) myModelDescriptor.getSModel()).importedDevkits()) {
           if (ScopeOperations.resolveModule(moduleScope, devKitNamespace, DevKit.class) != null) {
             continue;
           }

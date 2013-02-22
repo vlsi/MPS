@@ -104,7 +104,7 @@ public class ModelsAutoImportsManager {
         if (!((AbstractModule) model.getModule()).getUsedDevkitReferences().contains(devKit.getModuleReference())) {
           ((AbstractModule) model.getModule()).addUsedDevkit(devKit.getModuleReference());
         }
-        ((SModelDescriptor) model).getSModel().addDevKit(devKit.getModuleReference());
+        ((ABCDE) ((SModelDescriptor) model).getSModel()).addDevKit(devKit.getModuleReference());
       }
     }
   }

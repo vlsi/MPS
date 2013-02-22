@@ -57,7 +57,7 @@ public class TemporaryModelOwner extends AbstractModule {
   public Collection<ModuleReference> getUsedDevkitReferences() {
     Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
     for (SModelDescriptor md : getOwnModelDescriptors()) {
-      result.addAll(md.getSModel().importedDevkits());
+      result.addAll(((ABCDE) md.getSModel()).importedDevkits());
     }
     return result;
   }

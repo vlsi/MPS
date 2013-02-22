@@ -79,7 +79,7 @@ public class ModelWriter7 implements IModelWriter {
     }
 
     //devkits
-    for (ModuleReference devkitNamespace : sourceModel.importedDevkits()) {
+    for (ModuleReference devkitNamespace : ((ABCDE) sourceModel).importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence.DEVKIT);
       devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);

@@ -129,7 +129,7 @@ public class OptimizeImportsHelper {
     }
 
     Set<ModuleReference> unusedDevkits = new HashSet<ModuleReference>();
-    for (ModuleReference devkitRef : modelDescriptor.getSModel().importedDevkits()) {
+    for (ModuleReference devkitRef : ((ABCDE) modelDescriptor.getSModel()).importedDevkits()) {
       DevKit dk = GlobalScope.getInstance().getDevKit(devkitRef);
       if (dk == null) return null;
       if (ModelsAutoImportsManager.getAutoImportedDevKits(modelDescriptor.getModule(), modelDescriptor).contains(dk)) {
@@ -248,7 +248,7 @@ public class OptimizeImportsHelper {
     }
 
     for (ModuleReference dkRef : unusedDevkits) {
-      modelDescriptor.getSModel().deleteDevKit(dkRef);
+      ((ABCDE) modelDescriptor.getSModel()).deleteDevKit(dkRef);
       report.append("Devkit ").append(dkRef.getModuleFqName()).append(" was removed from imports\n");
     }
 

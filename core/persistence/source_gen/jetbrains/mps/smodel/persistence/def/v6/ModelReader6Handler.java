@@ -222,7 +222,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("devkit".equals(tagName)) {
         String child = (String) value;
-        fieldmodel.addDevKit(ModuleReference.fromString(child));
+        ((ABCDE) fieldmodel).addDevKit(ModuleReference.fromString(child));
         return;
       }
       if ("import".equals(tagName)) {

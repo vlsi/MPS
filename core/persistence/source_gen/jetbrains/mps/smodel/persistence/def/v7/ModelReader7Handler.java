@@ -245,7 +245,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("devkit".equals(tagName)) {
         ModuleReference child = (ModuleReference) value;
-        fieldmodel.addDevKit(child);
+        ((ABCDE) fieldmodel).addDevKit(child);
         return;
       }
       if ("import".equals(tagName)) {

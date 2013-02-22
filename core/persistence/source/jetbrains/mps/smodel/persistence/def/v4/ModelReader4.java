@@ -89,7 +89,7 @@ public class ModelReader4 implements IModelReader {
     for (Object devkit : devkits) {
       Element element = (Element) devkit;
       String devkitNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addDevKit(ModuleReference.fromString(devkitNamespace));
+      ((ABCDE) model).addDevKit(ModuleReference.fromString(devkitNamespace));
     }
 
     // imports

@@ -73,7 +73,7 @@ public class ModelDependenciesManager {
         }
       }
 
-      for (ModuleReference dk : myModel.importedDevkits()) {
+      for (ModuleReference dk : ((ABCDE) myModel).importedDevkits()) {
         DevKit devkit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
         if (devkit == null) continue;
         myModuleWatcher.watchDevKit(devkit);

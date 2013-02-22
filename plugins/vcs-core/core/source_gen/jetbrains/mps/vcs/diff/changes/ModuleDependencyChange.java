@@ -61,11 +61,11 @@ public class ModuleDependencyChange extends DependencyChange {
     }),
     USED_DEVKIT("Used Devkit", new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.addDevKit(module);
+        ((ABCDE) model).addDevKit(module);
       }
     }, new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.deleteDevKit(module);
+        ((ABCDE) model).deleteDevKit(module);
       }
     }),
     LANG_ENGAGED_ON_GENERATION("Language Engaged on Generation", new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {

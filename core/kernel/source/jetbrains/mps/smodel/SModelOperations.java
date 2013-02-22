@@ -124,7 +124,7 @@ public class SModelOperations {
       }
     }
 
-    for (ModuleReference dk : model.importedDevkits()) {
+    for (ModuleReference dk : ((ABCDE) model).importedDevkits()) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
         for (Language l : devKit.getAllExportedLanguages()) {
@@ -142,7 +142,7 @@ public class SModelOperations {
   @NotNull
   public static Set<ModuleReference> getAllImportedLanguages(SModel model) {
     List<ModuleReference> langs = ((ABCDE) model).importedLanguages();
-    List<ModuleReference> devkits = model.importedDevkits();
+    List<ModuleReference> devkits = ((ABCDE) model).importedDevkits();
     Set<ModuleReference> result = new HashSet<ModuleReference>(langs.size() + devkits.size() * 8);
     result.addAll(langs);
     if (!MPSCore.getInstance().isMergeDriverMode()) {

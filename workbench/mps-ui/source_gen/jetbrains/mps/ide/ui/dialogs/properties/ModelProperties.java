@@ -43,7 +43,7 @@ public class ModelProperties {
     SModel model = myModelDescriptor.getSModel();
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
     myUsedLanguages.addAll(((ABCDE) model).importedLanguages());
-    myUsedDevKits.addAll(model.importedDevkits());
+    myUsedDevKits.addAll(((ABCDE) model).importedDevkits());
     myLanguagesEngagedOnGeneration.addAll(model.engagedOnGenerationLanguages());
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
     myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
@@ -55,7 +55,7 @@ public class ModelProperties {
     SModel model = myModelDescriptor.getSModel();
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
     myUsedLanguages.addAll(((ABCDE) model).importedLanguages());
-    myUsedDevKits.addAll(model.importedDevkits());
+    myUsedDevKits.addAll(((ABCDE) model).importedDevkits());
     myLanguagesEngagedOnGeneration.addAll(model.engagedOnGenerationLanguages());
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
     myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
@@ -134,23 +134,23 @@ public class ModelProperties {
   }
 
   private void addNewDevKits() {
-    Set<ModuleReference> devKitsInModel = new HashSet<ModuleReference>(myModelDescriptor.getSModel().importedDevkits());
+    Set<ModuleReference> devKitsInModel = new HashSet<ModuleReference>(((ABCDE) myModelDescriptor.getSModel()).importedDevkits());
     Set<ModuleReference> devKitsInProperties = new HashSet<ModuleReference>(getUsedDevKits());
     devKitsInProperties.removeAll(devKitsInModel);
     for (ModuleReference dk : devKitsInProperties) {
       DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
       assert devKit != null;
       SModel model = myModelDescriptor.getSModel();
-      model.addDevKit(dk);
+      ((ABCDE) model).addDevKit(dk);
     }
   }
 
   private void removeUnusedDevKits() {
     Set<ModuleReference> propsDevKits = new HashSet<ModuleReference>(getUsedDevKits());
-    List<ModuleReference> imported = new ArrayList<ModuleReference>(myModelDescriptor.getSModel().importedDevkits());
+    List<ModuleReference> imported = new ArrayList<ModuleReference>(((ABCDE) myModelDescriptor.getSModel()).importedDevkits());
     for (ModuleReference dk : imported) {
       if (!(propsDevKits.contains(dk))) {
-        myModelDescriptor.getSModel().deleteDevKit(dk);
+        ((ABCDE) myModelDescriptor.getSModel()).deleteDevKit(dk);
       }
     }
   }

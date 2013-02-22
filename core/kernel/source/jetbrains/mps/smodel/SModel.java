@@ -597,11 +597,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //devkit
 
-  public List<ModuleReference> importedDevkits() {
+  private List<ModuleReference> importedDevkits() {
     return Collections.unmodifiableList(myDevKits);
   }
 
-  public void addDevKit(@NotNull ModuleReference ref) {
+  private void addDevKit(ModuleReference ref) {
     ModelChange.assertLegalChange(this);
 
     if (!myDevKits.contains(ref)) {
@@ -1019,8 +1019,8 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     for (ImportElement ie : importedModels()) {
       to.addModelImport(ie.copy());
     }
-    for (ModuleReference mr : importedDevkits()) {
-      to.addDevKit(mr);
+    for (ModuleReference mr : ((ABCDE) this).importedDevkits()) {
+      ((ABCDE) to).addDevKit(mr);
     }
     for (ModuleReference mr : ((ABCDE) this).importedLanguages()) {
       ((ABCDE) to).addLanguage(mr);

@@ -209,8 +209,8 @@ public class CopyPasteUtil {
     for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
       newModel.addModelImport(importedModel, false);
     }
-    for (ModuleReference devKit : model.importedDevkits()) {
-      newModel.addDevKit(devKit);
+    for (ModuleReference devKit : ((ABCDE) model).importedDevkits()) {
+      ((ABCDE) newModel).addDevKit(devKit);
     }
     return newModel;
   }
