@@ -273,7 +273,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return myModelDescriptor;
   }
 
-  private synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
+  public synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
   }
 
@@ -293,7 +293,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     UndoHelper.getInstance().addUndoableAction(action.compute());
   }
 
-  private boolean canFireEvent() {
+  public boolean canFireEvent() {
     return myModelDescriptor != null && myModelDescriptor.isRegistered() && !isUpdateMode();
   }
 
@@ -301,7 +301,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return ((ABCDE) this).canFireEvent();
   }
 
-  private void dispose() {
+  public void dispose() {
     ModelChange.assertLegalChange(this);
     if (myDisposed) return;
 
@@ -580,7 +580,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //language
 
-  private List<ModuleReference> importedLanguages() {
+  public List<ModuleReference> importedLanguages() {
     return Collections.unmodifiableList(myLanguages);
   }
 
@@ -592,7 +592,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     fireLanguageRemovedEvent(ref);
   }
 
-  private void addLanguage(ModuleReference ref) {
+  public void addLanguage(ModuleReference ref) {
     ModelChange.assertLegalChange(this);
     if (SModelOperations.hasLanguage(this, ref)) return;
 
@@ -608,11 +608,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //devkit
 
-  private List<ModuleReference> importedDevkits() {
+  public List<ModuleReference> importedDevkits() {
     return Collections.unmodifiableList(myDevKits);
   }
 
-  private void addDevKit(ModuleReference ref) {
+  public void addDevKit(ModuleReference ref) {
     ModelChange.assertLegalChange(this);
 
     if (!myDevKits.contains(ref)) {
@@ -630,11 +630,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //model
 
-  private List<ImportElement> importedModels() {
+  public List<ImportElement> importedModels() {
     return Collections.unmodifiableList(myImports);
   }
 
-  private void addModelImport(SModelReference modelReference, boolean firstVersion) {
+  public void addModelImport(SModelReference modelReference, boolean firstVersion) {
     ModelChange.assertLegalChange(this);
 
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
@@ -659,7 +659,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     fireImportAddedEvent(importElement.getModelReference());
   }
 
-  private void deleteModelImport(SModelReference modelReference) {
+  public void deleteModelImport(SModelReference modelReference) {
     ModelChange.assertLegalChange(this);
 
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
@@ -671,7 +671,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   @NotNull
-  private static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
+  public static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
     for (org.jetbrains.mps.openapi.model.SNode n1 : model.nodes()) {
       SNode node = ((SNode) n1);
       if (RoleIdsComponent.isEnabled()) {
@@ -775,11 +775,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     myImplicitImports = implicitImports;
   }
 
-  private List<ModuleReference> engagedOnGenerationLanguages() {
+  public List<ModuleReference> engagedOnGenerationLanguages() {
     return myLanguagesEngagedOnGeneration;
   }
 
-  private void addEngagedOnGenerationLanguage(ModuleReference ref) {
+  public void addEngagedOnGenerationLanguage(ModuleReference ref) {
     ModelChange.assertLegalChange(this);
 
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
@@ -805,7 +805,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //aspects / additional
 
-  private List<ImportElement> getAdditionalModelVersions() {
+  public List<ImportElement> getAdditionalModelVersions() {
     return Collections.unmodifiableList(myImplicitImports);
   }
 
@@ -895,7 +895,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //---------refactorings--------
 
-  private int getVersion() {
+  public int getVersion() {
     return -1;
   }
 
@@ -995,7 +995,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     }
   }
 
-  private boolean updateRefs(List<ModuleReference> refs) {
+  public boolean updateRefs(List<ModuleReference> refs) {
     boolean changed = false;
     for (int i = 0; i < refs.size(); i++) {
       ModuleReference ref = refs.get(i);
