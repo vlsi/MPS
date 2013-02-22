@@ -78,8 +78,8 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_g27wod_a0a0a1a5a3a1a3a4a1a2);
                   environment.nodeCopied(context3, tnode6, "tpl/r:00000000-0000-4000-0000-011c8959034c/429601079676781343");
-                  tnode6.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelUtil_new.instantiateConceptDeclaration(java.lang.String,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope,boolean):jetbrains.mps.smodel.SNode")));
                   tnode6.setReference("classConcept", SReference.create("classConcept", tnode6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelUtil_new")));
+                  tnode6.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode6, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SModelUtil_new.instantiateConceptDeclaration(java.lang.String,org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.smodel.IScope,boolean):jetbrains.mps.smodel.SNode")));
 
                   {
                     final SNode tnode7 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
