@@ -62,7 +62,7 @@ public class TransientModelsProvider {
     myKeptModels = 0;
   }
 
-  public synchronized void publishAll() {
+  public void publishAll() {
     ModelAccess.instance().requireWrite(new Runnable() {
       @Override
       public void run() {
