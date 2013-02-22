@@ -27,6 +27,7 @@ import com.intellij.openapi.util.Computable;
 
   public void showComponent(RelativePoint point) {
     final JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(this, this).setRequestFocus(true).setMovable(true).setCancelCallback(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         onClose();
         return Boolean.TRUE;

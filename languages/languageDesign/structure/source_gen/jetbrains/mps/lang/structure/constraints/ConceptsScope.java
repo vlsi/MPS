@@ -61,6 +61,7 @@ public class ConceptsScope extends SimpleScope {
   }
 
   @Nullable
+  @Override
   public String getReferenceText(@NotNull SNode target) {
     return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{});
   }

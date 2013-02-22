@@ -17,17 +17,20 @@ public class MPSLocation extends Location {
   public MPSLocation(Project project, final Object item) {
     myProject = project;
     myPSIElement = ModelAccess.instance().runReadAction(new Computable<MPSPsiElement>() {
+      @Override
       public MPSPsiElement compute() {
         return MPSPsiElement.createFor(item);
       }
     });
   }
 
+  @Override
   @NotNull
   public MPSPsiElement getPsiElement() {
     return myPSIElement;
   }
 
+  @Override
   @NotNull
   public Project getProject() {
     return myProject;
@@ -38,6 +41,7 @@ public class MPSLocation extends Location {
     return null;
   }
 
+  @Override
   @NotNull
   public Iterator getAncestors(Class ancestorClass, boolean strict) {
     return new ArrayList().iterator();

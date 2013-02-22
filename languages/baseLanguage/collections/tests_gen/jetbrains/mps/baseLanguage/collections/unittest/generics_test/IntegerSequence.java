@@ -9,6 +9,7 @@ package jetbrains.mps.baseLanguage.collections.unittest.generics_test;
   /*package*/ IntegerSequence() {
   }
 
+  @Override
   /*package*/ Integer getNext() {
     if (this.myCount < 5) {
       this.myCount = this.myCount + 1;

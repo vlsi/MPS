@@ -20,6 +20,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     super(method);
   }
 
+  @Override
   public boolean isTestCase() {
     return false;
   }

@@ -51,6 +51,7 @@ public class DirectoryIndexExcludeUpdater extends AbstractProjectComponent {
   private boolean myInvalidated = false;
 
   private ApplicationListener myListener = new ApplicationAdapter() {
+    @Override
     public void writeActionFinished(Object action) {
       synchronized (LOCK) {
         if (!myInvalidated) return;

@@ -11,6 +11,10 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -26,10 +30,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.ui.modeling.behavior.UIObject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.EqualUtil;
@@ -40,7 +41,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IScope;
 
 public class UIObject_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -111,6 +111,11 @@ public class UIObject_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_c5f0a4_a3e0(SNode node, EditorContext editorContext, IScope scope) {
+    SNode mbt = UIObject_Behavior.call_mustBelongTo_1719339442171055203(node);
+    return (mbt != null) && ((SLinkOperations.getTarget(node, "belongsTo", false) == null) || !(Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(node, "belongsTo", false))).contains(mbt)));
   }
 
   private static class produceEventListHandler_c5f0a4_a2g0 extends RefNodeListHandler {
@@ -796,10 +801,5 @@ public class UIObject_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_c5f0a4_a3e0(SNode node, EditorContext editorContext, IScope scope) {
-    SNode mbt = UIObject_Behavior.call_mustBelongTo_1719339442171055203(node);
-    return (mbt != null) && ((SLinkOperations.getTarget(node, "belongsTo", false) == null) || !(Sequence.fromIterable(UIObject_Behavior.call_allExtends_8115675450774407592(SLinkOperations.getTarget(node, "belongsTo", false))).contains(mbt)));
   }
 }

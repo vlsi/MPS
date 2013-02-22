@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.openapi.editor.style;
 
-import jetbrains.mps.util.misc.hash.HashMap;
-
 import java.awt.Color;
+import java.util.HashMap;
 import java.util.Map;
 
 public abstract class StyleRegistry {

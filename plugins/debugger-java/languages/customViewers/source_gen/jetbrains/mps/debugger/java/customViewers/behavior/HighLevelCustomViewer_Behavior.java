@@ -20,6 +20,6 @@ public class HighLevelCustomViewer_Behavior {
   }
 
   public static String call_getClassFqName_7570572250661287362(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + HighLevelCustomViewer_Behavior.call_getClassName_7570572250661284600(thisNode);
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(thisNode)) + "." + HighLevelCustomViewer_Behavior.call_getClassName_7570572250661284600(thisNode);
   }
 }

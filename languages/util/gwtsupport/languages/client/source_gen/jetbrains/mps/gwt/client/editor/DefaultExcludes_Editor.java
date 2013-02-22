@@ -6,11 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -24,8 +24,12 @@ public class DefaultExcludes_Editor extends DefaultNodeEditor {
     return this.createCollection_bk11d5_a(editorContext, node);
   }
 
-  public static class DefaultExcludes_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Item {
-    public DefaultExcludes_generic_cellMenu_a0c0() {
+  private static boolean renderingCondition_bk11d5_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "value");
+  }
+
+  public static class DefaultExcludes_generic_cellMenu_bk11d5_a0c0 extends AbstractCellMenuPart_Generic_Item {
+    public DefaultExcludes_generic_cellMenu_bk11d5_a0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -37,8 +41,8 @@ public class DefaultExcludes_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class DefaultExcludes_generic_cellMenu_b0c0 extends AbstractCellMenuPart_Generic_Item {
-    public DefaultExcludes_generic_cellMenu_b0c0() {
+  public static class DefaultExcludes_generic_cellMenu_bk11d5_b0c0 extends AbstractCellMenuPart_Generic_Item {
+    public DefaultExcludes_generic_cellMenu_bk11d5_b0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -59,7 +63,7 @@ public class DefaultExcludes_Editor extends DefaultNodeEditor {
     } else {
       editorCell = this.createConstant_bk11d5_a2a_0(editorContext, node);
     }
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DefaultExcludes_Editor.DefaultExcludes_generic_cellMenu_a0c0(), new DefaultExcludes_Editor.DefaultExcludes_generic_cellMenu_b0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DefaultExcludes_Editor.DefaultExcludes_generic_cellMenu_bk11d5_a0c0(), new DefaultExcludes_Editor.DefaultExcludes_generic_cellMenu_bk11d5_b0c0()}));
     return editorCell;
   }
 
@@ -97,9 +101,5 @@ public class DefaultExcludes_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_bk11d5_a2a_0");
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-  private static boolean renderingCondition_bk11d5_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "value");
   }
 }

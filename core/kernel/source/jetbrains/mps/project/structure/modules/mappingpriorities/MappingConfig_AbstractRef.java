@@ -16,9 +16,9 @@
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfigRef;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.io.IOException;
 import java.util.List;

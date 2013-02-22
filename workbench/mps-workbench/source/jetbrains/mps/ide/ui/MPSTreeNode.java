@@ -78,17 +78,21 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return myOperationContext;
   }
 
+  @Override
   public Iterator<MPSTreeNode> iterator() {
     if (children == null) {
       return new Iterator<MPSTreeNode>() {
+        @Override
         public boolean hasNext() {
           return false;
         }
 
+        @Override
         public MPSTreeNode next() {
           throw new IllegalStateException();
         }
 
+        @Override
         public void remove() {
           throw new IllegalStateException();
         }
@@ -142,6 +146,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
 
     MPSTree tree = ModelAccess.instance().runReadAction(new Computable<MPSTree>() {
+      @Override
       public MPSTree compute() {
         doInit();
         return getTree();
@@ -158,6 +163,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public void updateSubTree() {
     getTree().runRebuildAction(new Runnable() {
+      @Override
       public void run() {
         update();
       }
@@ -172,6 +178,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   protected void doUpdate() {
   }
 
+  @Override
   public void remove(int childIndex) {
     if (myAdded && getTree() != null && !getTree().isDisposed()) {
       ((MPSTreeNode) getChildAt(childIndex)).removeThisAndChildren();
@@ -181,6 +188,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
 
+  @Override
   public void insert(MutableTreeNode newChild, int childIndex) {
     super.insert(newChild, childIndex);
     if (myAdded && getTree() != null && !getTree().isDisposed()) {
@@ -237,6 +245,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
   }
 
+  @Override
   public boolean isLeaf() {
     return false;
   }
@@ -340,8 +349,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private void treeMessagesChanged(boolean updatePresentation) {
     if (updatePresentation) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
+        @Override
         public void run() {
           ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
             public void run() {
               IOperationContext context = getOperationContext();
               if (context == null) return;

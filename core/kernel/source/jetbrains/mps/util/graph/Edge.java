@@ -30,18 +30,22 @@ public class Edge implements IEdge {
     second.addEdge(this);
   }
 
+  @Override
   public IVertex getFirst() {
     return myFirst;
   }
 
+  @Override
   public IVertex getSecond() {
     return mySecond;
   }
 
+  @Override
   public Object getUserObject(Object key) {
     return myUserObjects.get(key);
   }
 
+  @Override
   public void putUserObject(Object key, Object value) {
     myUserObjects.put(key, value);
   }

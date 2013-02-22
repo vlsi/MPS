@@ -38,6 +38,7 @@ public class TransientModelsComponent extends TransientModelsProvider implements
   public void projectClosed() {
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {

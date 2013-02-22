@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -15,12 +17,18 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_axvdb8_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_axvdb8_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
+  }
+
+  private static boolean renderingCondition_axvdb8_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
   }
 
   private EditorCell createAlternation_axvdb8_a0(EditorContext editorContext, SNode node) {
@@ -346,13 +354,5 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_axvdb8_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
-  }
-
-  private static boolean renderingCondition_axvdb8_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
   }
 }

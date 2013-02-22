@@ -48,6 +48,7 @@ public abstract class StructuralProgramBuilder<N> {
 
   public Position before(final N node) {
     return new Position() {
+      @Override
       public int getPosition() {
         return myProgram.getStart(node);
       }
@@ -56,6 +57,7 @@ public abstract class StructuralProgramBuilder<N> {
 
   public Position after(final N node) {
     return new Position() {
+      @Override
       public int getPosition() {
         return myProgram.getEnd(node);
       }
@@ -72,6 +74,7 @@ public abstract class StructuralProgramBuilder<N> {
 
   public Position label(final N node, final String label) {
     return new Position() {
+      @Override
       public int getPosition() {
         if (!myLabels.containsKey(node) || !myLabels.get(node).containsKey(label)) {
           throw new RuntimeException("Can't find a label " + label + " for node " + node);
@@ -146,6 +149,7 @@ public abstract class StructuralProgramBuilder<N> {
     onInstructionEmitted(instruction);
     myProgram.add(instruction);
     invokeLater(new Runnable() {
+      @Override
       public void run() {
         try{
           instruction.setJumpTo(position);
@@ -161,6 +165,7 @@ public abstract class StructuralProgramBuilder<N> {
     final IfJumpInstruction instruction = new IfJumpInstruction();
     onInstructionEmitted(instruction);
     invokeLater(new Runnable() {
+      @Override
       public void run() {
         try{
           instruction.setJumpTo(position);

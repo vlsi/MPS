@@ -12,6 +12,7 @@ public class ConceptAncestorsProvider implements IDescendantsProvider {
   public ConceptAncestorsProvider() {
   }
 
+  @Override
   public Set<SNode> getDescendants(SNode node) {
     Set<SNode> result = new HashSet<SNode>();
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {

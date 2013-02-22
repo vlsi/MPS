@@ -13,6 +13,7 @@ public class ParametersInformation<T> implements jetbrains.mps.editor.runtime.st
     // This class should be completely removed after MPS 3.0 
   }
 
+  @Override
   public Iterable<T> getMethods(SNode node, EditorContext editorContext) {
     return getMethods(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext);
   }
@@ -29,6 +30,7 @@ public class ParametersInformation<T> implements jetbrains.mps.editor.runtime.st
     return null;
   }
 
+  @Override
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, T method, StyledTextPrinter printer) {
     getStyledMethodPresentation(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext, method, (jetbrains.mps.editor.runtime.StyledTextPrinter) printer);
   }
@@ -40,6 +42,7 @@ public class ParametersInformation<T> implements jetbrains.mps.editor.runtime.st
     printer.append(text);
   }
 
+  @Override
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, T method) {
     return isMethodCurrent(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext, method);
   }

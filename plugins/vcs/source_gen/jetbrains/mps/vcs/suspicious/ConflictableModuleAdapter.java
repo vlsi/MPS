@@ -14,18 +14,22 @@ public class ConflictableModuleAdapter extends Conflictable {
     myIsConflictDetected = isConflictDetected;
   }
 
+  @Override
   public boolean isConflictDetected() {
     return myIsConflictDetected;
   }
 
+  @Override
   public IFile getFile() {
     return myModule.getDescriptorFile();
   }
 
+  @Override
   public void reloadFromDisk() {
     myModule.reloadFromDisk(true);
   }
 
+  @Override
   public boolean needReloading() {
     return myModule.needReloading();
   }

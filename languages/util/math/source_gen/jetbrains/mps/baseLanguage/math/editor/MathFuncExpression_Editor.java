@@ -29,8 +29,8 @@ public class MathFuncExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_957ayc_a(editorContext, node);
   }
 
-  public static class ReplaceWith_MathFuncExpression_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_MathFuncExpression_cellMenu_a0a0() {
+  public static class ReplaceWith_MathFuncExpression_cellMenu_957ayc_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_MathFuncExpression_cellMenu_957ayc_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -55,7 +55,7 @@ public class MathFuncExpression_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MathFuncExpression_Editor.ReplaceWith_MathFuncExpression_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MathFuncExpression_Editor.ReplaceWith_MathFuncExpression_cellMenu_957ayc_a0a0()}));
     return editorCell;
   }
 

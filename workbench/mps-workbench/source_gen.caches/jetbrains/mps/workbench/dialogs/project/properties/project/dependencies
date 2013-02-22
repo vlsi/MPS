@@ -70,6 +70,7 @@
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" file="ProjectPropertiesPrefsPage.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />

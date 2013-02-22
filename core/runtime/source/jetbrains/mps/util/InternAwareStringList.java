@@ -26,6 +26,7 @@ public class InternAwareStringList extends ArrayList<String> {
     super(initialCapacity);
   }
 
+  @Override
   public boolean add(String s) {
     return super.add(InternUtil.intern(s));
   }

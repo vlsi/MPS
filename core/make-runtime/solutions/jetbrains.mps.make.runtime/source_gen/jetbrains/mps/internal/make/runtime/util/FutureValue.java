@@ -14,22 +14,27 @@ public class FutureValue<T> implements Future<T> {
     this.value = value;
   }
 
+  @Override
   public T get(long l, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
     return value;
   }
 
+  @Override
   public T get() throws InterruptedException, ExecutionException {
     return value;
   }
 
+  @Override
   public boolean isDone() {
     return true;
   }
 
+  @Override
   public boolean isCancelled() {
     return false;
   }
 
+  @Override
   public boolean cancel(boolean b) {
     return false;
   }

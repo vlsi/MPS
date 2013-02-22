@@ -40,6 +40,7 @@ public class BenchmarkUtil {
     int ntimes = 100000;
 
     printMeasure("simple iteration", ntimes, new Runnable() {
+      @Override
       public void run() {
         for (String item : items) {
           item.toUpperCase();
@@ -48,6 +49,7 @@ public class BenchmarkUtil {
     });
 
     printMeasure("to array iteration", ntimes, new Runnable() {
+      @Override
       public void run() {
         for (String item : items.toArray(new String[items.size()])) {
           item.toUpperCase();
@@ -56,6 +58,7 @@ public class BenchmarkUtil {
     });
 
     printMeasure("to array with runnable", ntimes, new Runnable() {
+      @Override
       public void run() {
         abstract class Visitor {
           abstract void visit(String s);

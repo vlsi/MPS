@@ -17,9 +17,10 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -56,11 +57,14 @@ public class SideTransformUtil {
 
     Iterable<SNode> result = Sequence.fromIterable(Collections.<SNode>emptyList());
     for (Language language : ListSequence.fromList(SModelOperations.getLanguages(SNodeOperations.getModel(node), context.getScope()))) {
-      EditableSModelDescriptor actionsModelDescriptor = LanguageAspect.ACTIONS.get(language);
-      if (actionsModelDescriptor == null || actionsModelDescriptor.getSModel() == null) {
+      EditableSModel actionsModelDescriptor = LanguageAspect.ACTIONS.get(language);
+      if (actionsModelDescriptor == null) {
         continue;
       }
-      SModel model = actionsModelDescriptor.getSModel();
+      SModel model = ((SModelDescriptor) actionsModelDescriptor).getSModel();
+      if (model == null) {
+        continue;
+      }
       result = Sequence.fromIterable(result).concat(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(model, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions")).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SLinkOperations.getTargets(it, "actionsBuilder", true);

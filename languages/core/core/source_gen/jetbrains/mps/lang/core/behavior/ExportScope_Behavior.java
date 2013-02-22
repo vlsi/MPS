@@ -66,11 +66,11 @@ public class ExportScope_Behavior {
       return true;
     }
     // while problem with adapters is not solved 
-    if (SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()) && targetNamespace.startsWith("jetbrains.mps")) {
+    if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(node))) && targetNamespace.startsWith("jetbrains.mps")) {
       return namespace.startsWith("jetbrains.mps");
     }
     // stubs are module by default, all other are public now 
-    return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(node).getStereotype()));
+    return !(SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(node))));
   }
 
   public static boolean checkExport_2565736246230031479(boolean isConcept, SNode node, String namespace) {

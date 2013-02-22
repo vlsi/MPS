@@ -110,7 +110,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
   //just loads model, w/o changing state of SModelDescriptor
   private ModelLoadResult loadSModel(ModelLoadingState state) {
-    SModelReference dsmRef = getModelReference();
+    SModelReference dsmRef = getReference();
 
     IFile modelFile = getSource().getFile();
     if (!modelFile.isReadOnly() && !modelFile.exists()) {
@@ -137,10 +137,10 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
       }
     }
 
-    LOG.assertLog(model.getSModelReference().equals(dsmRef),
+    LOG.assertLog(model.getReference().equals(dsmRef),
       "\nError loading model from file: \"" + modelFile + "\"\n" +
         "expected model UID     : \"" + dsmRef + "\"\n" +
-        "but was UID            : \"" + model.getSModelReference() + "\"\n" +
+        "but was UID            : \"" + model.getReference() + "\"\n" +
         "the model will not be available.\n" +
         "Make sure that all project's roots and/or the model namespace is correct");
     return result;

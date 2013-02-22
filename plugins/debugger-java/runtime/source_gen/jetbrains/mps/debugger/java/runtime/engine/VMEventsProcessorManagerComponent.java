@@ -129,12 +129,14 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
       }
     }
 
+    @Override
     public void processAttached(@NotNull EventsProcessor process) {
       for (DebugProcessListener listener : getAllProcessListeners()) {
         listener.processAttached(process);
       }
     }
 
+    @Override
     public void processDetached(@NotNull EventsProcessor process, boolean closedByUser) {
       for (DebugProcessListener listener : getAllProcessListeners()) {
         listener.processDetached(process, closedByUser);
@@ -142,12 +144,14 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
       removeDebugProcess(process);
     }
 
+    @Override
     public void resumed(@NotNull Context suspendContext) {
       for (DebugProcessListener listener : getAllProcessListeners()) {
         listener.resumed(suspendContext);
       }
     }
 
+    @Override
     public void paused(@NotNull Context suspendContext) {
       for (DebugProcessListener listener : getAllProcessListeners()) {
         listener.paused(suspendContext);

@@ -78,6 +78,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     this.currentSessionStickyMark.set(new MakeSession(context, new WorkbenchMakeService.MessageHandler("Make", context), cleanMake), false);
   }
 
+  @Override
   public void initComponent() {
     INSTANCE = this;
     IMakeService.INSTANCE.set(this);
@@ -85,6 +86,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     GenerationSettingsProvider.getInstance().setGenerationSettings(GenerationSettings.getInstance());
   }
 
+  @Override
   public void disposeComponent() {
     GenerationSettingsProvider.getInstance().setGenerationSettings(null);
     watcher.setMakeService(null);
@@ -94,6 +96,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Workbench Make Service";
   }
@@ -102,29 +105,35 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     return this == INSTANCE;
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
     return make(session, resources, null, null, new EmptyProgressMonitor());
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
     return make(session, resources, script, null, new EmptyProgressMonitor());
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
     return make(session, resources, script, controller, new EmptyProgressMonitor());
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
     this.checkValidUsage();
     this.checkValidSession(session);
     return doMake(resources, script, controller, monitor);
   }
 
+  @Override
   public boolean isSessionActive() {
     this.checkValidUsage();
     return this.getSession() != null;
   }
 
+  @Override
   public boolean openNewSession(MakeSession session) {
     this.checkValidUsage();
     if (DumbService.getInstance(ProjectHelper.toIdeaProject(session.getContext().getProject())).isDumb()) {
@@ -138,6 +147,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     return true;
   }
 
+  @Override
   public void closeSession(MakeSession session) {
     this.checkValidUsage();
     this.checkValidSession(session);
@@ -154,11 +164,13 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     return currentSessionStickyMark.getReference();
   }
 
+  @Override
   public void addListener(IMakeNotificationListener listener) {
     checkValidUsage();
     ListSequence.fromList(listeners).addElement(listener);
   }
 
+  @Override
   public void removeListener(IMakeNotificationListener listener) {
     checkValidUsage();
     ListSequence.fromList(listeners).removeElement(listener);
@@ -457,10 +469,12 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       this.mvt = context.getProject().getComponent(MessagesViewTool.class);
     }
 
+    @Override
     public void clear() {
       this.mvt.clear(name);
     }
 
+    @Override
     public void handle(IMessage message) {
       this.mvt.add(message, name);
     }

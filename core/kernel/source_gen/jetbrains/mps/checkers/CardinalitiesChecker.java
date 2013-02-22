@@ -17,6 +17,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
   public CardinalitiesChecker() {
   }
 
+  @Override
   public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext, IScope scope) {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     component.addDependency(concept);

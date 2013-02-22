@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.impl.dependencies;
 
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -85,7 +86,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
   }
 
   private void addModelAccess(SModel model) {
-    if (model == null || model.isTransient() || model == myBuilder.currentInputModel || model == myBuilder.originalInputModel) {
+    if (model == null || model instanceof TransientSModel || model == myBuilder.currentInputModel || model == myBuilder.originalInputModel) {
       return;
     }
     final SModelDescriptor modelDescriptor = model.getModelDescriptor();

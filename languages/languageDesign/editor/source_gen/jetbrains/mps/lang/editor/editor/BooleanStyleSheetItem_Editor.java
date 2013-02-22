@@ -6,17 +6,18 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -32,24 +33,14 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_689p1d_a(editorContext, node);
   }
 
-  public static class BooleanStyleSheetItem_flag_cellMenu_a0c0 extends AbstractCellMenuPart_PropertyValues {
-    public BooleanStyleSheetItem_flag_cellMenu_a0c0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
-    }
-  }
-
-  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_1 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_StyleClassItem_cellMenu_a0a0_1() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_689p1d_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_689p1d_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -57,8 +48,21 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class BooleanStyleSheetItem_generic_cellMenu_b0c0 extends AbstractCellMenuPart_Generic_Item {
-    public BooleanStyleSheetItem_generic_cellMenu_b0c0() {
+  private static boolean renderingCondition_689p1d_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "query", true) == null);
+  }
+
+  public static class BooleanStyleSheetItem_flag_cellMenu_689p1d_a0c0 extends AbstractCellMenuPart_PropertyValues {
+    public BooleanStyleSheetItem_flag_cellMenu_689p1d_a0c0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return ListSequence.fromListAndArray(new ArrayList<String>(), "true", "false");
+    }
+  }
+
+  public static class BooleanStyleSheetItem_generic_cellMenu_689p1d_b0c0 extends AbstractCellMenuPart_Generic_Item {
+    public BooleanStyleSheetItem_generic_cellMenu_689p1d_b0c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -68,6 +72,10 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     public String getMatchingText() {
       return "query";
     }
+  }
+
+  private static boolean renderingCondition_689p1d_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "query", true) != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_useQuery_1223387362946", new Object[]{});
   }
 
   private EditorCell createCollection_689p1d_a(EditorContext editorContext, SNode node) {
@@ -90,7 +98,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.applyItem(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_1()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.ReplaceWith_StyleClassItem_cellMenu_689p1d_a0a0()}));
     return editorCell;
   }
 
@@ -131,7 +139,7 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_flag_cellMenu_a0c0(), new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_generic_cellMenu_b0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_flag_cellMenu_689p1d_a0c0(), new BooleanStyleSheetItem_Editor.BooleanStyleSheetItem_generic_cellMenu_689p1d_b0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -140,13 +148,5 @@ public class BooleanStyleSheetItem_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_689p1d_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "query", true) == null);
-  }
-
-  private static boolean renderingCondition_689p1d_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "query", true) != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_useQuery_1223387362946", new Object[]{});
   }
 }

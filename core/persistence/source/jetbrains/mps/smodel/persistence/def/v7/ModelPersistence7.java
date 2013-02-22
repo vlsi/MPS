@@ -32,26 +32,32 @@ import java.util.List;
 import java.util.Map;
 
 public class ModelPersistence7 extends ModelPersistence6 {
+  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter7();
   }
 
+  @Override
   public IModelReader getModelReader() {
     return new ModelReader7();
   }
 
+  @Override
   public IHashProvider getHashProvider() {
     return new HashProvider7();
   }
 
+  @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
     return new ModelReader7Handler(state, header);
   }
 
+  @Override
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader7Handler();
   }
 
+  @Override
   public Map<IndexEntry, Integer> index(char[] data) {
     int len = data.length;
     Map<IndexEntry, Integer> result = new HashMap<IndexEntry, Integer>();

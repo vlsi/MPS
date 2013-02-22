@@ -209,6 +209,7 @@
   <dependency className="jetbrains.mps.vcs.annotate.ShowAdditionalInfoAction" file="ShowAdditionalInfoAction.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationColumn" />
@@ -223,6 +224,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.history.VcsRevisionNumber" />
     <classNode dependClassName="com.intellij.util.Consumer" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -237,6 +239,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.ShowAnnotationColorsAction" />
     <classNode dependClassName="com.intellij.openapi.vcs.actions.ShowShortenNames" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.Map" />
@@ -247,6 +250,7 @@
   <dependency className="jetbrains.mps.vcs.annotate.ViewActionGroup" file="ViewActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationAspectSubcolumn" />
     <classNode dependClassName="jetbrains.mps.vcs.annotate.AnnotationColumn" />

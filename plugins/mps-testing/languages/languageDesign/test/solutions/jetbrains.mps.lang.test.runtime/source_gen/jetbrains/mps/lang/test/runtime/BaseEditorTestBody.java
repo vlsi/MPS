@@ -54,6 +54,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public Editor initEditor(final String before, final String after) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         try {
           BaseEditorTestBody.this.initEditor_internal(before, after);
@@ -123,6 +124,7 @@ public class BaseEditorTestBody extends BaseTestBody {
       this.checkAssertion();
     } finally {
       SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
         public void run() {
           BaseEditorTestBody.closeEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myBefore);
         }
@@ -135,6 +137,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static void invokeIntention(final String name, final Editor editor, final SNode node) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
@@ -169,6 +172,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static void typeString(final EditorComponent editorComponent, final String text) throws InterruptedException, InvocationTargetException {
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         for (char ch : text.toCharArray()) {
           editorComponent.processKeyTyped(new KeyEvent(editorComponent, KeyEvent.KEY_TYPED, 0, 0, 0, ch));
@@ -183,6 +187,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         for (String code : ListSequence.fromList(keyStrokes)) {
           KeyStroke stroke = KeyStroke.getKeyStroke(code);
@@ -199,6 +204,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
   public static void invokeAction(final EditorComponent editorComponent, final String actionId) throws InvocationTargetException, InterruptedException {
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         AnAction action = ActionManager.getInstance().getAction(actionId);
         AnActionEvent event = ActionUtils.createEvent(ActionPlaces.MAIN_MENU, BaseEditorTestBody.DATA_MANAGER.getDataContext(editorComponent));
@@ -211,6 +217,7 @@ public class BaseEditorTestBody extends BaseTestBody {
   protected static void flushEventQueueAfterAction() throws InvocationTargetException, InterruptedException {
     // flush queue 
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         // empty task 
       }
@@ -219,6 +226,7 @@ public class BaseEditorTestBody extends BaseTestBody {
 
     // some actions (Copy/Paste) are runing one more command later 
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         // empty task 
       }

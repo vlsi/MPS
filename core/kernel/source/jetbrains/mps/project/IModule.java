@@ -41,6 +41,7 @@ public interface IModule extends SModule {
   // SModule#getModuleReference
   // ask Misha about return type
   // oooor it doesn't matter here
+  @Override
   @NotNull
   ModuleReference getModuleReference();
 
@@ -135,6 +136,7 @@ public interface IModule extends SModule {
 
   // why we need it?
   // reasonable use: in build scripts, but in this case we have only files, and it's just check for jar file
+  @Override
   boolean isPackaged();
 
   // ?

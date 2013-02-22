@@ -141,8 +141,10 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     for (Pair<IntentionExecutable, SNode> pair : Sequence.fromIterable(availableIntentions)) {
       final Pair<IntentionExecutable, SNode> finalPair = pair;
       actionGroup.add(new AnAction(ShowSurroundWithIntentions_Action.this.getDescriptior(pair, _params)) {
+        @Override
         public void actionPerformed(AnActionEvent event) {
           ModelAccess.instance().runCommandInEDT(new Runnable() {
+            @Override
             public void run() {
               finalPair.o1.execute(finalPair.o2, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
             }
@@ -160,6 +162,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     query.setSurroundWith(true);
     query.setCurrentNodeOnly(true);
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent()).getTypecheckingContextOwner(), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().getEditedNode(), new ITypechecking.Computation<Iterable<Pair<IntentionExecutable, SNode>>>() {
+      @Override
       public Iterable<Pair<IntentionExecutable, SNode>> compute(TypeCheckingContext context) {
         return IntentionsManager.getInstance().getAvailableIntentions(query, ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
       }

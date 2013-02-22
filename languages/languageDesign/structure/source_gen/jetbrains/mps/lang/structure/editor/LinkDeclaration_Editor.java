@@ -6,24 +6,24 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -51,38 +51,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6h6dhy_a_0(editorContext, node);
-  }
-
-  public static class LinkDeclaration_sourceCardinality_cellMenu_a0c0 extends AbstractCellMenuPart_PropertyValues {
-    public LinkDeclaration_sourceCardinality_cellMenu_a0c0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
-      if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference")) {
-        for (SNode member : ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality")))) {
-          ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(member));
-        }
-      } else {
-        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "0..1")));
-        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "1")));
-      }
-      return result;
-    }
-  }
-
-  public static class LinkDeclaration_null_postfixCellMenu_a0b0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public LinkDeclaration_null_postfixCellMenu_a0b0() {
-    }
-
-    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
-      if ((SLinkOperations.getTarget(node, "target", false) != null)) {
-        String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "target", false), "name"));
-        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(NameUtil.splitByCamels(name)));
-      }
-      return postfixes;
-    }
   }
 
   public static class _Inline_6h6dhy_a0a extends InlineCellProvider {
@@ -121,6 +89,46 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
+  public static class LinkDeclaration_null_postfixCellMenu_6h6dhy_a0b0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public LinkDeclaration_null_postfixCellMenu_6h6dhy_a0b0() {
+    }
+
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
+      if ((SLinkOperations.getTarget(node, "target", false) != null)) {
+        String name = NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(node, "target", false), "name"));
+        ListSequence.fromList(postfixes).addSequence(ListSequence.fromList(NameUtil.splitByCamels(name)));
+      }
+      return postfixes;
+    }
+  }
+
+  private static boolean renderingCondition_6h6dhy_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "specializedLink", false) == null;
+  }
+
+  public static class LinkDeclaration_sourceCardinality_cellMenu_6h6dhy_a0c0 extends AbstractCellMenuPart_PropertyValues {
+    public LinkDeclaration_sourceCardinality_cellMenu_6h6dhy_a0c0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference")) {
+        for (SNode member : ListSequence.fromList(SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality")))) {
+          ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(member));
+        }
+      } else {
+        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "0..1")));
+        ListSequence.fromList(result).addElement(SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), "1")));
+      }
+      return result;
+    }
+  }
+
+  private static boolean renderingCondition_6h6dhy_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "specializedLink", false) != null;
+  }
+
   public static class _Inline_6h6dhy_a1e0 extends InlineCellProvider {
     public _Inline_6h6dhy_a1e0() {
       super();
@@ -152,6 +160,10 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_6h6dhy_a5a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "doNotGenerate");
   }
 
   private EditorCell createCollection_6h6dhy_a(EditorContext editorContext, SNode node) {
@@ -275,7 +287,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.DRAW_BORDER, true);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no role>");
-      editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_null_postfixCellMenu_a0b0()}));
+      editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_null_postfixCellMenu_6h6dhy_a0b0()}));
       editorCell.setCommitInCommand(false);
     }
     SNode attributeConcept = provider.getRoleAttribute();
@@ -341,7 +353,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyNumericLiteral(style, editorCell);
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_sourceCardinality_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new LinkDeclaration_Editor.LinkDeclaration_sourceCardinality_cellMenu_6h6dhy_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -368,17 +380,5 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_6h6dhy_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "specializedLink", false) == null;
-  }
-
-  private static boolean renderingCondition_6h6dhy_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "specializedLink", false) != null;
-  }
-
-  private static boolean renderingCondition_6h6dhy_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "doNotGenerate");
   }
 }

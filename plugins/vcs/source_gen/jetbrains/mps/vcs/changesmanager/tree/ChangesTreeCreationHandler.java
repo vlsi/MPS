@@ -12,6 +12,7 @@ public class ChangesTreeCreationHandler extends TreeHighlighterExtension {
     myTreesHighlighter = treesHighlighter;
   }
 
+  @Override
   protected void attach(MPSTree tree) {
     myTreesHighlighter.highlightTreeIfNeeded(tree);
   }

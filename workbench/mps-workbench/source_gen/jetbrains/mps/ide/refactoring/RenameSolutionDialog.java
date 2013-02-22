@@ -23,6 +23,7 @@ public class RenameSolutionDialog extends RenameDialog {
   @Override
   protected void doRefactoringAction() {
     boolean renamed = ModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         final String fqName = getCurrentValue();
         if (MPSModuleRepository.getInstance().getModuleByFqName(fqName) != null) {

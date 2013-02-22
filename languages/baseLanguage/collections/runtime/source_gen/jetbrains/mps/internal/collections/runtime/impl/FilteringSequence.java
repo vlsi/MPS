@@ -17,6 +17,7 @@ public class FilteringSequence<U> extends AbstractChainedSequence<U, U> implemen
     this.filter = filter;
   }
 
+  @Override
   public Iterator<U> iterator() {
     return new FilteringSequence.FilteringIterator();
   }
@@ -29,6 +30,7 @@ public class FilteringSequence<U> extends AbstractChainedSequence<U, U> implemen
     private FilteringIterator() {
     }
 
+    @Override
     public boolean hasNext() {
       if (inputIterator == null) {
         init();
@@ -39,6 +41,7 @@ public class FilteringSequence<U> extends AbstractChainedSequence<U, U> implemen
       return hasNext.hasNext();
     }
 
+    @Override
     public U next() {
       if (inputIterator == null) {
         init();
@@ -52,6 +55,7 @@ public class FilteringSequence<U> extends AbstractChainedSequence<U, U> implemen
       return clearNext();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

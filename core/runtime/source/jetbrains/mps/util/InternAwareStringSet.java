@@ -26,6 +26,7 @@ public class InternAwareStringSet extends THashSet<String> {
     super(initialCapacity, (float) 0.8);
   }
 
+  @Override
   public boolean add(String s) {
     return super.add(InternUtil.intern(s));
   }

@@ -15,6 +15,7 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
     super(parameters);
   }
 
+  @Override
   public SNode getMethodType() {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanType", null);
   }
@@ -36,6 +37,7 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
     });
   }
 
+  @Override
   protected void modifyPartToExtract() {
     SNode ret = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
     SNode constant = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);

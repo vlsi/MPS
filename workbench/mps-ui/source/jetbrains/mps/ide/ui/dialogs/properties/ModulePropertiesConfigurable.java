@@ -363,6 +363,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       final IResultProvider[] provider = new IResultProvider[1];
       final IScope scope = (IScope) myModule.getModuleScope();
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           if(value instanceof ModuleReference) {
             query[0] = new SearchQuery(
@@ -614,6 +615,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       final SearchQuery[] query = new SearchQuery[1];
       final IResultProvider[] provider = new IResultProvider[1];
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           if(value instanceof SModelReference) {
             query[0] = new SearchQuery(
@@ -1022,6 +1024,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     private class PathChooser implements Computable<String> {
 
+      @Override
       public String compute() {
         TreeFileChooser chooser = new TreeFileChooser();
         chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);

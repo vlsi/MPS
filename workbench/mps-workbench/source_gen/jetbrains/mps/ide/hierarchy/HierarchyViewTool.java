@@ -64,10 +64,12 @@ public class HierarchyViewTool extends AbstractHierarchyView {
     super.createTool();
     myModelListener = new HierarchyModelListener(this.myHierarchyTree);
     this.myCreationListener = new ModelCreationListener() {
+      @Override
       public boolean isApplicable(SModule module, SModel model) {
         return model.getModule() instanceof Language && LanguageAspect.STRUCTURE.equals(((Language) model.getModule()).getAspectForModel(model));
       }
 
+      @Override
       public void onCreate(SModule module, SModel model) {
         onCreateStructureModel((SModelDescriptor) model);
       }
@@ -75,18 +77,21 @@ public class HierarchyViewTool extends AbstractHierarchyView {
     AbstractModule.registerModelCreationListener(myCreationListener);
   }
 
+  @Override
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {
     ConceptHierarchyTree tree = new ConceptHierarchyTree(myCoreComponents.getLanguageHierarchyCache(), this, isParentHierarchy);
     TreeHighlighterExtension.attachHighlighters(tree, getProject());
     return tree;
   }
 
+  @Override
   protected void doRegister() {
     for (SModelDescriptor md : myStructureModels) {
       md.addModelListener(myModelListener);
     }
   }
 
+  @Override
   protected void doUnregister() {
     for (SModelDescriptor md : myStructureModels) {
       md.removeModelListener(myModelListener);

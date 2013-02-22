@@ -58,7 +58,7 @@ public class QueriesGenerated {
       return;
     }
     _context.putStepObject("run post-processing", new Object());
-    System.out.println("!!!test pre-mapping. model=" + _context.getModel().getLongName());
+    System.out.println("!!!test pre-mapping. model=" + jetbrains.mps.util.SNodeOperations.getModelLongName(_context.getModel()));
     SNode inputRoot = SModelOperations.createNewRootNode(_context.getModel(), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot", null);
     SPropertyOperations.set(inputRoot, "name", "Input Root created by pre-process script");
     SPropertyOperations.set(inputRoot, "useInTest", "test1");
@@ -70,7 +70,7 @@ public class QueriesGenerated {
     if (object == null) {
       return;
     }
-    System.out.println("!!!test post-mapping. model=" + _context.getModel().getLongName());
+    System.out.println("!!!test post-mapping. model=" + jetbrains.mps.util.SNodeOperations.getModelLongName(_context.getModel()));
     SNode outputRoot = SModelOperations.createNewRootNode(_context.getModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", null);
     SPropertyOperations.set(outputRoot, "name", "created by post-processing script");
   }

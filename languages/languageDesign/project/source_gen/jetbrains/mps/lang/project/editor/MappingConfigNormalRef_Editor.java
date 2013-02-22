@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -15,12 +17,14 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_x6ljyw_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_x6ljyw_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return neq_x6ljyw_a0a0b(SPropertyOperations.getString(node, "modelUID"), "*");
   }
 
   private EditorCell createCollection_x6ljyw_a(EditorContext editorContext, SNode node) {
@@ -87,11 +91,7 @@ public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_x6ljyw_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return neq_x6ljyw_a0a0g(SPropertyOperations.getString(node, "modelUID"), "*");
-  }
-
-  private static boolean neq_x6ljyw_a0a0g(Object a, Object b) {
+  private static boolean neq_x6ljyw_a0a0b(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

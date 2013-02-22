@@ -28,20 +28,22 @@ import org.jetbrains.annotations.NotNull;
 public class NodeHolder implements IHolder<SNode> {
   private static final String NODE = "node";
 
-  private SNodeReference myNodePointer = new jetbrains.mps.smodel.SNodePointer((SNode) null);
+  private SNodeReference myNodePointer;
 
   public NodeHolder(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
 
-  public NodeHolder(SNode node) {
-    myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
+  public NodeHolder(@NotNull SNode node) {
+    myNodePointer = node.getReference();
   }
 
+  @Override
   public SNode getObject() {
     return myNodePointer.resolve(MPSModuleRepository.getInstance());
   }
 
+  @Override
   @NotNull
   public String getCaption() {
     SNode node = getObject();
@@ -49,6 +51,7 @@ public class NodeHolder implements IHolder<SNode> {
     return node.toString();
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     Element nodeXML = element.getChild(NODE);
     if (nodeXML == null) {
@@ -58,9 +61,10 @@ public class NodeHolder implements IHolder<SNode> {
     if (node == null) {
       throw new CantLoadSomethingException("node is null");
     }
-    myNodePointer = new jetbrains.mps.smodel.SNodePointer(node);
+    myNodePointer = node.getReference();
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     if (myNodePointer.resolve(MPSModuleRepository.getInstance()) == null) {
       throw new CantSaveSomethingException("node is null");

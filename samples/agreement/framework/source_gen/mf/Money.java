@@ -52,6 +52,7 @@ public class Money implements Comparable {
     return myCurrency;
   }
 
+  @Override
   public int compareTo(Object arg) {
     throw new RuntimeException("??");
   }
@@ -61,6 +62,7 @@ public class Money implements Comparable {
     return myAmount.compareTo(arg.myAmount);
   }
 
+  @Override
   public boolean equals(Object arg) {
     if (!((arg instanceof Money))) {
       return false;
@@ -81,6 +83,7 @@ public class Money implements Comparable {
     return (this.compareTo(arg) == -1);
   }
 
+  @Override
   public int hashCode() {
     return myAmount.hashCode();
   }
@@ -105,6 +108,7 @@ public class Money implements Comparable {
     return new Money(amount() * arg, myCurrency);
   }
 
+  @Override
   public String toString() {
     return myCurrency.toString() + " " + amount();
   }

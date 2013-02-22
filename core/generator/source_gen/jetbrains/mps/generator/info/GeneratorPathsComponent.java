@@ -24,6 +24,7 @@ public class GeneratorPathsComponent implements CoreComponent {
   public GeneratorPathsComponent() {
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -31,6 +32,7 @@ public class GeneratorPathsComponent implements CoreComponent {
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
   }

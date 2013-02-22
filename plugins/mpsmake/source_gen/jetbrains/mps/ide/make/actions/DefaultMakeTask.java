@@ -31,6 +31,7 @@ public class DefaultMakeTask extends Task.Modal {
     SetSequence.fromSet(this.modules).addSequence(SetSequence.fromSet(modules));
   }
 
+  @Override
   public void run(@NotNull ProgressIndicator indicator) {
     final boolean[] reloadingNeeded = new boolean[1];
     final ProgressMonitor monitor = new ProgressMonitorAdapter(indicator);
@@ -69,10 +70,12 @@ public class DefaultMakeTask extends Task.Modal {
       this.mvt = getProject().getComponent(MessagesViewTool.class);
     }
 
+    @Override
     public void clear() {
       this.mvt.clear();
     }
 
+    @Override
     public void handle(IMessage message) {
       this.mvt.add(message);
     }

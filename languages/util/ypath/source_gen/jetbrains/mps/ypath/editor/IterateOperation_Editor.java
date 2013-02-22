@@ -6,6 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.ypath.actions.TraversalAxisUtil;
+import jetbrains.mps.ypath.runtime.TraversalAxis;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -19,6 +24,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -30,15 +36,9 @@ import jetbrains.mps.ypath.behavior.IterateOperation_Behavior;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.ypath.runtime.TraversalAxis;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ypath.actions.TraversalAxisUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IterateOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -49,34 +49,18 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_wgzfn3_a_0(editorContext, node);
   }
 
-  public static class IterateOperation_component_cellMenu_a0b1a implements SubstituteInfoPartExt {
-    private menu_SubstituteFeatureAndParameter myComponent;
-
-    public IterateOperation_component_cellMenu_a0b1a() {
-      this.myComponent = new menu_SubstituteFeatureAndParameter();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
+  private static boolean renderingCondition_wgzfn3_a0b0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(TraversalAxisUtil.isAbbreviated(TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS"))));
   }
 
-  public static class IterateOperation_component_cellMenu_a0c1a implements SubstituteInfoPartExt {
-    private menu_SubstituteFeatureAndParameter myComponent;
-
-    public IterateOperation_component_cellMenu_a0c1a() {
-      this.myComponent = new menu_SubstituteFeatureAndParameter();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
+  private static boolean renderingCondition_wgzfn3_a1b0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "usedFeature", false) == null);
   }
 
-  public static class IterateOperation_component_cellMenu_a0d1a implements SubstituteInfoPartExt {
+  public static class IterateOperation_component_cellMenu_wgzfn3_a0b1a implements SubstituteInfoPartExt {
     private menu_SubstituteFeatureAndParameter myComponent;
 
-    public IterateOperation_component_cellMenu_a0d1a() {
+    public IterateOperation_component_cellMenu_wgzfn3_a0b1a() {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
@@ -122,6 +106,38 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_wgzfn3_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+    return !((SLinkOperations.getTarget(node, "usedFeature", false) == null)) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature"));
+  }
+
+  public static class IterateOperation_component_cellMenu_wgzfn3_a0c1a implements SubstituteInfoPartExt {
+    private menu_SubstituteFeatureAndParameter myComponent;
+
+    public IterateOperation_component_cellMenu_wgzfn3_a0c1a() {
+      this.myComponent = new menu_SubstituteFeatureAndParameter();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  private static boolean renderingCondition_wgzfn3_a3b0(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature");
+  }
+
+  public static class IterateOperation_component_cellMenu_wgzfn3_a0d1a implements SubstituteInfoPartExt {
+    private menu_SubstituteFeatureAndParameter myComponent;
+
+    public IterateOperation_component_cellMenu_wgzfn3_a0d1a() {
+      this.myComponent = new menu_SubstituteFeatureAndParameter();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
   public static class _Inline_wgzfn3_a1b0 extends InlineCellProvider {
     public _Inline_wgzfn3_a1b0() {
       super();
@@ -156,6 +172,10 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_wgzfn3_a2b0_0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "paramObject", true) != null);
   }
 
   private EditorCell createCollection_wgzfn3_a(EditorContext editorContext, SNode node) {
@@ -250,7 +270,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0b1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_wgzfn3_a0b1a()}));
     return editorCell;
   }
 
@@ -324,7 +344,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new IterateOperation_Editor._Inline_wgzfn3_a2b0());
     editorCell = provider.createEditorCell(editorContext);
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0c1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_wgzfn3_a0c1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -364,7 +384,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
     editorCell.getStyle().putAll(style);
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_a0d1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_wgzfn3_a0d1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -390,25 +410,5 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_wgzfn3_a0b0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(TraversalAxisUtil.isAbbreviated(TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS"))));
-  }
-
-  private static boolean renderingCondition_wgzfn3_a1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "usedFeature", false) == null);
-  }
-
-  private static boolean renderingCondition_wgzfn3_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return !((SLinkOperations.getTarget(node, "usedFeature", false) == null)) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature"));
-  }
-
-  private static boolean renderingCondition_wgzfn3_a3b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature");
-  }
-
-  private static boolean renderingCondition_wgzfn3_a2b0_0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "paramObject", true) != null);
   }
 }

@@ -135,6 +135,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     final DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode();
     final Ref<Integer> count = new Ref<Integer>(0);
     final FactoryMap<Object, ParentNode> map = new FactoryMap<Object, ParentNode>() {
+      @Override
       protected ParentNode create(final Object key) {
         if (key instanceof SNodeReference) {
           SNode el = ((SNodeReference) key).resolve(MPSModuleRepository.getInstance());
@@ -195,6 +196,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
 
+  @Override
   protected Action[] createActions() {
     if (myAllowEmptySelection) {
       return new Action[]{getOKAction(), new SelectNoneAction(), getCancelAction()};
@@ -203,12 +205,14 @@ public class GroupedNodesChooser extends DialogWrapper {
     }
   }
 
+  @Override
   protected void doHelpAction() {
   }
 
   protected void customizeOptionsPanel() {
   }
 
+  @Override
   protected JComponent createSouthPanel() {
     JPanel panel = new JPanel(new GridBagLayout());
 
@@ -235,6 +239,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     return panel;
   }
 
+  @Override
   protected JComponent createCenterPanel() {
     JPanel panel = new JPanel(new BorderLayout());
 
@@ -266,6 +271,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     // Tree
 
     myTree.setCellRenderer(new ColoredTreeCellRenderer() {
+      @Override
       public void customizeCellRenderer(JTree tree, Object value, boolean selected, boolean expanded,
                                         boolean leaf, int row, boolean hasFocus) {
         if (value instanceof ElementNode) {
@@ -290,6 +296,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     }
     TreeUtil.expandAll(myTree);
     final TreeSpeedSearch treeSpeedSearch = new TreeSpeedSearch(myTree, new Convertor<TreePath, String>() {
+      @Override
       @Nullable
       public String convert(TreePath path) {
         final ElementNode lastPathComponent = (ElementNode) path.getLastPathComponent();
@@ -308,6 +315,7 @@ public class GroupedNodesChooser extends DialogWrapper {
 
     myTree.addMouseListener(
       new MouseAdapter() {
+        @Override
         public void mouseClicked(MouseEvent e) {
           if (e.getClickCount() == 2) {
             if (myTree.getPathForLocation(e.getX(), e.getY()) != null) {
@@ -337,10 +345,12 @@ public class GroupedNodesChooser extends DialogWrapper {
     group.add(showContainersAction);
   }
 
+  @Override
   protected String getDimensionServiceKey() {
     return "#jetbrains.mps.ide.util.NodesChooser";
   }
 
+  @Override
   public JComponent getPreferredFocusedComponent() {
     return myTree;
   }
@@ -504,6 +514,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     }
   }
 
+  @Override
   public void dispose() {
     PropertiesComponent instance = PropertiesComponent.getInstance();
     instance.setValue(PROP_SORTED, Boolean.toString(isSorted()));
@@ -519,6 +530,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   private class MyTreeSelectionListener implements TreeSelectionListener {
+    @Override
     public void valueChanged(TreeSelectionEvent e) {
       TreePath[] paths = e.getPaths();
       if (paths == null) return;
@@ -604,6 +616,7 @@ public class GroupedNodesChooser extends DialogWrapper {
       super(IdeBundle.message("action.select.none"));
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
       myTree.clearSelection();
       doOKAction();
@@ -611,6 +624,7 @@ public class GroupedNodesChooser extends DialogWrapper {
   }
 
   private class TreeKeyListener extends KeyAdapter {
+    @Override
     public void keyPressed(KeyEvent e) {
       TreePath path = myTree.getLeadSelectionPath();
       if (path == null) return;
@@ -645,10 +659,12 @@ public class GroupedNodesChooser extends DialogWrapper {
         IdeBundle.message("action.sort.alphabetically"), IconLoader.getIcon("/objectBrowser/sorted.png"));
     }
 
+    @Override
     public boolean isSelected(AnActionEvent event) {
       return isSorted();
     }
 
+    @Override
     public void setSelected(AnActionEvent event, boolean flag) {
       setSorted(flag);
     }
@@ -663,14 +679,17 @@ public class GroupedNodesChooser extends DialogWrapper {
       super(text, text, icon);
     }
 
+    @Override
     public boolean isSelected(AnActionEvent event) {
       return myShowContainers;
     }
 
+    @Override
     public void setSelected(AnActionEvent event, boolean flag) {
       setShowContainers(flag);
     }
 
+    @Override
     public void update(AnActionEvent e) {
       super.update(e);
       Presentation presentation = e.getPresentation();
@@ -684,6 +703,7 @@ public class GroupedNodesChooser extends DialogWrapper {
         IconLoader.getIcon("/actions/expandall.png"));
     }
 
+    @Override
     public void actionPerformed(AnActionEvent e) {
       TreeUtil.expandAll(myTree);
     }
@@ -695,18 +715,21 @@ public class GroupedNodesChooser extends DialogWrapper {
         IconLoader.getIcon("/actions/collapseall.png"));
     }
 
+    @Override
     public void actionPerformed(AnActionEvent e) {
       TreeUtil.collapseAll(myTree, 1);
     }
   }
 
   private static class AlphaComparator implements Comparator<ElementNode> {
+    @Override
     public int compare(ElementNode n1, ElementNode n2) {
       return n1.getText().compareToIgnoreCase(n2.getText());
     }
   }
 
   private static class OrderComparator implements Comparator<ElementNode> {
+    @Override
     public int compare(ElementNode n1, ElementNode n2) {
       return n1.getOrder() - n2.getOrder();
     }

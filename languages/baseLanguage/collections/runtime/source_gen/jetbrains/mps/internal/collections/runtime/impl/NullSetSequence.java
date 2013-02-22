@@ -14,76 +14,94 @@ public class NullSetSequence<T> extends NullCollectionSequence<T> implements ISe
   protected NullSetSequence() {
   }
 
+  @Override
   public boolean add(T e) {
     return false;
   }
 
+  @Override
   public boolean addAll(Collection<? extends T> c) {
     return false;
   }
 
+  @Override
   public void clear() {
   }
 
+  @Override
   public boolean contains(Object t) {
     return false;
   }
 
+  @Override
   public boolean containsAll(Collection<?> c) {
     return false;
   }
 
+  @Override
   public boolean remove(Object o) {
     return false;
   }
 
+  @Override
   public boolean removeAll(Collection<?> c) {
     return false;
   }
 
+  @Override
   public boolean retainAll(Collection<?> c) {
     return false;
   }
 
+  @Override
   public int size() {
     return 0;
   }
 
+  @Override
   public Object[] toArray() {
     return EMPTY_ARRAY;
   }
 
   @SuppressWarnings(value = "unchecked")
+  @Override
   public <U> U[] toArray(U[] a) {
     return (U[]) EMPTY_ARRAY;
   }
 
+  @Override
   public T addElement(T t) {
     return null;
   }
 
+  @Override
   public ISetSequence<T> addSequence(ISequence<? extends T> seq) {
     return this;
   }
 
+  @Override
   public T removeElement(T t) {
     return null;
   }
 
+  @Override
   public ISetSequence<T> removeSequence(ISequence<? extends T> seq) {
     return this;
   }
 
   @SuppressWarnings(value = "unchecked")
+  @Override
   public T[] toGenericArray() {
     return (T[]) EMPTY_ARRAY;
   }
 
   @SuppressWarnings(value = "unchecked")
+  @Override
   public T[] toGenericArray(Class<T> runtimeClass) {
     return (T[]) EMPTY_ARRAY;
   }
 
+  @Override
   public Set<T> toSet() {
     return this;
   }

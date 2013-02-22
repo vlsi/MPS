@@ -46,11 +46,13 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
   private final FileBasedIndexImpl myIndex;
   private Set<VirtualFile> myRootFiles = null;
   private ReloadListener myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       myRootFiles = null;
     }
   };
   private ProjectManagerAdapter myProjectListener = new ProjectManagerAdapter() {
+    @Override
     public void projectClosing(Project project) {
       myIndex.removeIndexableSet(MPSFileBasedIndexProjectHandler.this);
     }
@@ -68,6 +70,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     if (startupManager == null) return;
 
     startupManager.registerPreStartupActivity(new Runnable() {
+      @Override
       public void run() {
         startupManager.registerCacheUpdater(updater);
         myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this, myProject);
@@ -76,16 +79,19 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     });
   }
 
+  @Override
   public void initComponent() {
     ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);
     myProjectManager.addProjectManagerListener(myProject, myProjectListener);
   }
 
+  @Override
   public void disposeComponent() {
     myProjectManager.addProjectManagerListener(myProject, myProjectListener);
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
   }
 
+  @Override
   public boolean isInSet(VirtualFile file) {
     if (CacheUtil.isIgnored(file, myRootManager)) return false;
 
@@ -95,6 +101,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     return false;
   }
 
+  @Override
   public void iterateIndexableFilesIn(VirtualFile file, ContentIterator iterator) {
     if (!isInSet(file)) return;
     iterateIndexableFilesIn_internal(file, iterator);
@@ -115,6 +122,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
   private Set<VirtualFile> getRootFiles() {
     if (myRootFiles == null) {
       myRootFiles = ModelAccess.instance().runReadAction(new Computable<Set<VirtualFile>>() {
+        @Override
         public Set<VirtualFile> compute() {
           return CacheUtil.getIndexableRoots();
         }

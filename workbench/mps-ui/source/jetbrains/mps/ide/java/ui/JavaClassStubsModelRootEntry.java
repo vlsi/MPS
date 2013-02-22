@@ -47,10 +47,12 @@ public class JavaClassStubsModelRootEntry implements ModelRootEntry {
   private JavaClassStubsModelRoot myModelRoot;
   private EventDispatcher<ModelRootEntryListener> myEventDispatcher = EventDispatcher.create(ModelRootEntryListener.class);
 
+  @Override
   public ModelRoot getModelRoot() {
     return myModelRoot;
   }
 
+  @Override
   public void setModelRoot(ModelRoot root) {
     if (!(root instanceof JavaClassStubsModelRoot)) {
       throw new ClassCastException();
@@ -58,6 +60,7 @@ public class JavaClassStubsModelRootEntry implements ModelRootEntry {
     myModelRoot = (JavaClassStubsModelRoot) root;
   }
 
+  @Override
   public String getDetailsText() {
     final StringBuilder messageText = new StringBuilder();
     messageText.append("<html>");
@@ -78,6 +81,7 @@ public class JavaClassStubsModelRootEntry implements ModelRootEntry {
     return (new File(path)).exists();
   }
 
+  @Override
   public ModelRootEntryEditor getEditor() {
     return new JavaClassStubsModelRootEntryEditor();
   }
@@ -90,6 +94,7 @@ public class JavaClassStubsModelRootEntry implements ModelRootEntry {
   public class JavaClassStubsModelRootEntryEditor implements ModelRootEntryEditor {
     private JBPanel myTreePanel;
 
+    @Override
     public JComponent createComponent() {
       JBPanel panel = new JBPanel(new GridLayoutManager(1, 1));
 

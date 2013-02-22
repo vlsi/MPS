@@ -7,6 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -28,9 +31,6 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
   public ReplaceableAliasAndParms_Comp(SNode node) {
@@ -51,13 +51,17 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
-  public static class ReplaceWith_SNodeOperation_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SNodeOperation_cellMenu_a0a0_0() {
+  public static class ReplaceWith_SNodeOperation_cellMenu_n84rmm_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SNodeOperation_cellMenu_n84rmm_a0a0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
     }
+  }
+
+  private static boolean renderingCondition_n84rmm_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 
   private static class parameterListHandler_n84rmm_b1a extends RefNodeListHandler {
@@ -154,7 +158,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ReplaceableAliasAndParms_Comp.ReplaceWith_SNodeOperation_cellMenu_a0a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ReplaceableAliasAndParms_Comp.ReplaceWith_SNodeOperation_cellMenu_n84rmm_a0a0()}));
     return editorCell;
   }
 
@@ -192,9 +196,5 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
     editorCell.setCellId("refNodeList_parameter");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
-  }
-
-  private static boolean renderingCondition_n84rmm_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
 }

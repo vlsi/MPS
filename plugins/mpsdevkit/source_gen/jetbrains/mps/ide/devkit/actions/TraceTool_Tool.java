@@ -31,6 +31,7 @@ public class TraceTool_Tool extends GeneratedTool {
     super.init(project);
     TraceTool_Tool.this.myPanel = new TypeSystemTracePanel(TraceTool_Tool.this);
     ((ToolWindowImpl) TraceTool_Tool.this.getToolWindow()).addPropertyChangeListener(new PropertyChangeListener() {
+      @Override
       public void propertyChange(PropertyChangeEvent event) {
         if (ToolWindowEx.PROP_AVAILABLE.equals(event.getPropertyName()) && Boolean.FALSE.equals(event.getNewValue())) {
           TraceTool_Tool.this.myPanel.cleanUp();

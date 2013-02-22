@@ -21,6 +21,7 @@ public class RenameMethodDialog extends RenameDialog {
     return myIsOverriding;
   }
 
+  @Override
   protected JComponent createNorthPanel() {
     super.createNorthPanel();
     myOverridingCheckBox = new JCheckBox("Overriding methods");
@@ -33,6 +34,7 @@ public class RenameMethodDialog extends RenameDialog {
     return myPanel;
   }
 
+  @Override
   protected void doRefactoringAction() {
     myIsOverriding = myOverridingCheckBox.isSelected();
     super.doRefactoringAction();

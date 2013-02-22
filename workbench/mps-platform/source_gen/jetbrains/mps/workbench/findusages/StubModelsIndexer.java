@@ -21,14 +21,17 @@ public class StubModelsIndexer implements ApplicationComponent {
   public StubModelsIndexer() {
   }
 
+  @Override
   public void initComponent() {
     IdTableBuilding.registerIdIndexer(MPSPlatformFileTypeFactory.CLASS_FILE_TYPE, new StubModelsIndexer.MyFileTypeIdIndexer());
   }
 
+  @Override
   public void disposeComponent() {
   }
 
   @NotNull
+  @Override
   public String getComponentName() {
     return StubModelsIndexer.class.getSimpleName();
   }
@@ -38,6 +41,7 @@ public class StubModelsIndexer implements ApplicationComponent {
     }
 
     @NotNull
+    @Override
     public Map<IdIndexEntry, Integer> map(FileContent inputData) {
       byte[] bytes = inputData.getContent();
       if (bytes == null || bytes.length == 0) {

@@ -36,7 +36,7 @@ public class MoveRefactoringUtils {
     if (model == null || toImport == null) {
       return;
     }
-    SModelReference ref = toImport.getSModelReference();
+    SModelReference ref = toImport.getReference();
     if (model == toImport || SModelOperations.getImportedModelUIDs(model).contains(ref)) {
       return;
     }

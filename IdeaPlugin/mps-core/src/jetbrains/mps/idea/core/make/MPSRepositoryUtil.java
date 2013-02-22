@@ -101,7 +101,7 @@ public class MPSRepositoryUtil {
       }
       JavaClassStubModelDescriptor stubModel = (JavaClassStubModelDescriptor) model;
       FolderSetDataSource source = stubModel.getSource();
-      result.add(new CachedModelData(null, new JavaStubModelHeader(stubModel.getModelReference(), source.getPaths())));
+      result.add(new CachedModelData(null, new JavaStubModelHeader(stubModel.getReference(), source.getPaths())));
     }
     return result;
   }

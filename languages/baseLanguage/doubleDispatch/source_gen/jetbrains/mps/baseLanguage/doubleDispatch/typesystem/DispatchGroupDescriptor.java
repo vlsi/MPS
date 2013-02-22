@@ -31,6 +31,7 @@ public class DispatchGroupDescriptor {
     });
   }
 
+  @Override
   public boolean equals(Object o) {
     if (!(o instanceof DispatchGroupDescriptor)) {
       return false;
@@ -65,6 +66,7 @@ public class DispatchGroupDescriptor {
     return true;
   }
 
+  @Override
   public int hashCode() {
     return methodName.hashCode() + ((isStatic ?
       1 :

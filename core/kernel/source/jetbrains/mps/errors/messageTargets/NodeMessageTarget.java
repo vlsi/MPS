@@ -20,14 +20,17 @@ package jetbrains.mps.errors.messageTargets;
  * Cyril.Konopko, 18.02.2010
  */
 public class NodeMessageTarget implements MessageTarget {
+  @Override
   public MessageTargetEnum getTarget() {
     return MessageTargetEnum.NODE;
   }
 
+  @Override
   public String getRole() {
     return null;
   }
 
+  @Override
   public boolean sameAs(MessageTarget errorTarget) {
     return errorTarget instanceof NodeMessageTarget;
   }

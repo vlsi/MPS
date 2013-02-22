@@ -46,6 +46,7 @@ public interface IPerformanceTracer {
       return null;
     }
 
+    @Override
     public void addText(String s){
 
     }

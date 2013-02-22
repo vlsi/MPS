@@ -9,6 +9,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.RefreshQueue" />
     <classNode dependClassName="com.intellij.openapi.vfs.newvfs.RefreshSession" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />

@@ -31,10 +31,12 @@ public class NodeDifference extends DifferanceItem {
     return buff.toString();
   }
 
+  @Override
   public String toString() {
     return toString(0);
   }
 
+  @Override
   public boolean equals(Object obj) {
     if (obj == null) {
       return false;

@@ -42,10 +42,10 @@
     <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2017614408232613010" fileName="CleanProject_Action.java" startLine="71" startPosition="9" endLine="72" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2017614408232613017" fileName="CleanProject_Action.java" startLine="72" startPosition="92" endLine="73" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2017614408232613062" fileName="CleanProject_Action.java" startLine="77" startPosition="31" endLine="78" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2017614408232613067" fileName="CleanProject_Action.java" startLine="78" startPosition="52" endLine="79" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="84" startPosition="27" endLine="85" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="89" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="2017614408232613062" fileName="CleanProject_Action.java" startLine="78" startPosition="31" endLine="79" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2017614408232613067" fileName="CleanProject_Action.java" startLine="79" startPosition="52" endLine="80" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="85" startPosition="27" endLine="86" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="90" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="51" startPosition="95" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="55" startPosition="100" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="59" startPosition="93" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -54,31 +54,31 @@
     <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="54" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2017614408232613060" fileName="CleanProject_Action.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2017614408232613060" fileName="CleanProject_Action.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CleanProject_Action#()V" />
     <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="42" startPosition="89" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2017614408232613059" fileName="CleanProject_Action.java" startLine="75" startPosition="69" endLine="81" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2017614408232613059" fileName="CleanProject_Action.java" startLine="76" startPosition="69" endLine="82" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2017614408232613052" fileName="CleanProject_Action.java" startLine="75" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="2017614408232613044" fileName="CleanProject_Action.java" startLine="73" startPosition="170" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="70" startPosition="96" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2017614408232613052" fileName="CleanProject_Action.java" startLine="75" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="2017614408232613044" fileName="CleanProject_Action.java" startLine="73" startPosition="170" endLine="84" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="70" startPosition="96" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="51" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="70" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="70" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="38" startPosition="32" endLine="39" endPosition="16" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="43" startPosition="9" endLine="44" endPosition="43" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="52" startPosition="53" endLine="53" endPosition="19" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="56" startPosition="62" endLine="57" endPosition="19" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="60" startPosition="66" endLine="61" endPosition="19" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="64" startPosition="62" endLine="65" endPosition="19" />
-    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="84" startPosition="0" endLine="85" endPosition="84">
+    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="85" startPosition="0" endLine="86" endPosition="84">
       <varInfo nodeId="2017614408232613007" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="84" startPosition="27" endLine="85" endPosition="84" />
+    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="85" startPosition="27" endLine="86" endPosition="84" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="45" startPosition="0" endLine="47" endPosition="44">
       <varInfo nodeId="2017614408232613007" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="45" startPosition="27" endLine="47" endPosition="44" />
-    <scopeInfo nodeId="2017614408232613061" fileName="CleanProject_Action.java" startLine="77" startPosition="31" endLine="79" endPosition="81">
+    <scopeInfo nodeId="2017614408232613061" fileName="CleanProject_Action.java" startLine="78" startPosition="31" endLine="80" endPosition="81">
       <varInfo nodeId="2017614408232613063" varName="maker" />
     </scopeInfo>
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="31" startPosition="32" endLine="34" endPosition="40" />
@@ -86,33 +86,33 @@
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="54" startPosition="5" endLine="58" endPosition="5" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="2017614408232613060" fileName="CleanProject_Action.java" startLine="77" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="2017614408232613060" fileName="CleanProject_Action.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="42" startPosition="89" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="2017614408232613058" fileName="CleanProject_Action.java" startLine="75" startPosition="69" endLine="81" endPosition="13" />
+    <scopeInfo nodeId="2017614408232613058" fileName="CleanProject_Action.java" startLine="76" startPosition="69" endLine="82" endPosition="13" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="2017614408232613007" varName="_params" />
       <varInfo nodeId="2017614408232613007" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2017614408232613052" fileName="CleanProject_Action.java" startLine="75" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="2017614408232613052" fileName="CleanProject_Action.java" startLine="75" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="2017614408232613055" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="71" startPosition="9" endLine="83" endPosition="9">
+    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="71" startPosition="9" endLine="84" endPosition="9">
       <varInfo nodeId="2017614408232613011" varName="modulesToBuild" />
     </scopeInfo>
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="51" startPosition="95" endLine="67" endPosition="16" />
-    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="70" startPosition="96" endLine="86" endPosition="5" />
+    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="70" startPosition="96" endLine="87" endPosition="5" />
     <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="51" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="2017614408232613007" varName="_params" />
       <varInfo nodeId="2017614408232613007" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="70" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="70" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="2017614408232613007" varName="_params" />
       <varInfo nodeId="2017614408232613007" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="2017614408232613060" fileName="CleanProject_Action.java" startLine="76" startPosition="51" endLine="81" endPosition="11" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action$2" />
-    <unitInfo nodeId="2017614408232613050" fileName="CleanProject_Action.java" startLine="74" startPosition="44" endLine="83" endPosition="7" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action$1" />
-    <unitInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="28" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action" />
+    <unitInfo nodeId="2017614408232613060" fileName="CleanProject_Action.java" startLine="77" startPosition="51" endLine="82" endPosition="11" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action$2" />
+    <unitInfo nodeId="2017614408232613050" fileName="CleanProject_Action.java" startLine="74" startPosition="44" endLine="84" endPosition="7" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action$1" />
+    <unitInfo nodeId="2017614408232613007" fileName="CleanProject_Action.java" startLine="28" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CleanProject_Action" />
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/2017614408232613081">
     <nodeInfo nodeId="2017614408232613081" fileName="CompileProject_Action.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -810,87 +810,87 @@
     <nodeInfo nodeId="1819416201368234315" fileName="TransientModelsWidget.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="321200956998476204" fileName="TransientModelsWidget.java" startLine="27" startPosition="47" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1819416201368234318" fileName="TransientModelsWidget.java" startLine="28" startPosition="22" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="321200956998476226" fileName="TransientModelsWidget.java" startLine="37" startPosition="34" endLine="38" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="321200956998476229" fileName="TransientModelsWidget.java" startLine="39" startPosition="5" endLine="40" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="321200956998476248" fileName="TransientModelsWidget.java" startLine="47" startPosition="75" endLine="48" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="321200956998476254" fileName="TransientModelsWidget.java" startLine="48" startPosition="97" endLine="49" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005576522675274492" fileName="TransientModelsWidget.java" startLine="49" startPosition="90" endLine="50" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="821918482060593359" fileName="TransientModelsWidget.java" startLine="51" startPosition="79" endLine="52" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="821918482060638593" fileName="TransientModelsWidget.java" startLine="52" startPosition="64" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="821918482060638616" fileName="TransientModelsWidget.java" startLine="53" startPosition="57" endLine="54" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="821918482060638599" fileName="TransientModelsWidget.java" startLine="54" startPosition="40" endLine="55" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="821918482060594595" fileName="TransientModelsWidget.java" startLine="55" startPosition="83" endLine="56" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2624121685586288014" fileName="TransientModelsWidget.java" startLine="62" startPosition="24" endLine="63" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2624121685586288018" fileName="TransientModelsWidget.java" startLine="63" startPosition="25" endLine="64" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="321200956998476280" fileName="TransientModelsWidget.java" startLine="68" startPosition="105" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="321200956998476293" fileName="TransientModelsWidget.java" startLine="77" startPosition="34" endLine="78" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8389765655984609697" fileName="TransientModelsWidget.java" startLine="79" startPosition="5" endLine="80" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8389765655984488094" fileName="TransientModelsWidget.java" startLine="80" startPosition="69" endLine="81" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8389765655984608262" fileName="TransientModelsWidget.java" startLine="81" startPosition="14" endLine="82" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="321200956998476309" fileName="TransientModelsWidget.java" startLine="86" startPosition="22" endLine="87" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8401918447150650277" fileName="TransientModelsWidget.java" startLine="90" startPosition="42" endLine="91" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1819416201368234113" fileName="TransientModelsWidget.java" startLine="94" startPosition="36" endLine="95" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="321200956998476226" fileName="TransientModelsWidget.java" startLine="39" startPosition="34" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="321200956998476229" fileName="TransientModelsWidget.java" startLine="41" startPosition="5" endLine="42" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="321200956998476248" fileName="TransientModelsWidget.java" startLine="51" startPosition="75" endLine="52" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="321200956998476254" fileName="TransientModelsWidget.java" startLine="52" startPosition="97" endLine="53" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6005576522675274492" fileName="TransientModelsWidget.java" startLine="53" startPosition="90" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="821918482060593359" fileName="TransientModelsWidget.java" startLine="55" startPosition="79" endLine="56" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="821918482060638593" fileName="TransientModelsWidget.java" startLine="56" startPosition="64" endLine="57" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="821918482060638616" fileName="TransientModelsWidget.java" startLine="57" startPosition="57" endLine="58" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="821918482060638599" fileName="TransientModelsWidget.java" startLine="58" startPosition="40" endLine="59" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="821918482060594595" fileName="TransientModelsWidget.java" startLine="59" startPosition="83" endLine="60" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2624121685586288014" fileName="TransientModelsWidget.java" startLine="66" startPosition="24" endLine="67" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2624121685586288018" fileName="TransientModelsWidget.java" startLine="67" startPosition="25" endLine="68" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="321200956998476280" fileName="TransientModelsWidget.java" startLine="73" startPosition="105" endLine="74" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="321200956998476293" fileName="TransientModelsWidget.java" startLine="84" startPosition="34" endLine="85" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8389765655984609697" fileName="TransientModelsWidget.java" startLine="86" startPosition="5" endLine="87" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8389765655984488094" fileName="TransientModelsWidget.java" startLine="87" startPosition="69" endLine="88" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8389765655984608262" fileName="TransientModelsWidget.java" startLine="88" startPosition="14" endLine="89" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="321200956998476309" fileName="TransientModelsWidget.java" startLine="94" startPosition="22" endLine="95" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401918447150650277" fileName="TransientModelsWidget.java" startLine="98" startPosition="42" endLine="99" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1819416201368234113" fileName="TransientModelsWidget.java" startLine="103" startPosition="36" endLine="104" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="321200956998476186" fileName="TransientModelsWidget.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStatusBar" />
-    <nodeInfo nodeId="321200956998476212" fileName="TransientModelsWidget.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/wm/StatusBar;)V" />
-    <nodeInfo nodeId="321200956998476282" fileName="TransientModelsWidget.java" startLine="72" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="321200956998476224" fileName="TransientModelsWidget.java" startLine="36" startPosition="34" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="321200956998476291" fileName="TransientModelsWidget.java" startLine="76" startPosition="25" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8401918447150650272" fileName="TransientModelsWidget.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSaveTransientModels#()Z" />
-    <nodeInfo nodeId="1819416201368223017" fileName="TransientModelsWidget.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="321200956998476212" fileName="TransientModelsWidget.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="install#(Lcom/intellij/openapi/wm/StatusBar;)V" />
+    <nodeInfo nodeId="321200956998476224" fileName="TransientModelsWidget.java" startLine="38" startPosition="34" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="321200956998476282" fileName="TransientModelsWidget.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="321200956998476291" fileName="TransientModelsWidget.java" startLine="83" startPosition="25" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8401918447150650272" fileName="TransientModelsWidget.java" startLine="98" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSaveTransientModels#()Z" />
     <nodeInfo nodeId="321200956998476194" fileName="TransientModelsWidget.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransientModelsWidget#(Lcom/intellij/openapi/wm/StatusBar;)V" />
-    <nodeInfo nodeId="2624121685586288010" fileName="TransientModelsWidget.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#()V" />
-    <nodeInfo nodeId="321200956998476272" fileName="TransientModelsWidget.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Lcom/intellij/openapi/wm/StatusBarWidget/PlatformType;)Lcom/intellij/openapi/wm/StatusBarWidget/WidgetPresentation;" />
-    <nodeInfo nodeId="321200956998476304" fileName="TransientModelsWidget.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ID#()Ljava/lang/String;" />
-    <nodeInfo nodeId="321200956998476219" fileName="TransientModelsWidget.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTooltipText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="321200956998476286" fileName="TransientModelsWidget.java" startLine="75" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="1819416201368233187" fileName="TransientModelsWidget.java" startLine="46" startPosition="41" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="321200956998476242" fileName="TransientModelsWidget.java" startLine="46" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="consume#(Ljava/awt/event/MouseEvent;)V" />
-    <nodeInfo nodeId="321200956998476237" fileName="TransientModelsWidget.java" startLine="44" startPosition="50" endLine="59" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="321200956998476231" fileName="TransientModelsWidget.java" startLine="43" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickConsumer#()Lcom/intellij/util/Consumer;" />
-    <scopeInfo nodeId="321200956998476218" fileName="TransientModelsWidget.java" startLine="32" startPosition="47" endLine="32" endPosition="47" />
-    <scopeInfo nodeId="321200956998476285" fileName="TransientModelsWidget.java" startLine="72" startPosition="25" endLine="72" endPosition="25" />
-    <scopeInfo nodeId="321200956998476225" fileName="TransientModelsWidget.java" startLine="37" startPosition="34" endLine="38" endPosition="45" />
-    <scopeInfo nodeId="321200956998476279" fileName="TransientModelsWidget.java" startLine="68" startPosition="105" endLine="69" endPosition="16" />
-    <scopeInfo nodeId="321200956998476292" fileName="TransientModelsWidget.java" startLine="77" startPosition="34" endLine="78" endPosition="20" />
-    <scopeInfo nodeId="321200956998476308" fileName="TransientModelsWidget.java" startLine="86" startPosition="22" endLine="87" endPosition="21" />
-    <scopeInfo nodeId="8401918447150650275" fileName="TransientModelsWidget.java" startLine="90" startPosition="42" endLine="91" endPosition="68" />
-    <scopeInfo nodeId="1819416201368223020" fileName="TransientModelsWidget.java" startLine="94" startPosition="36" endLine="95" endPosition="28" />
+    <nodeInfo nodeId="2624121685586288010" fileName="TransientModelsWidget.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#()V" />
+    <nodeInfo nodeId="1819416201368223017" fileName="TransientModelsWidget.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="321200956998476272" fileName="TransientModelsWidget.java" startLine="71" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Lcom/intellij/openapi/wm/StatusBarWidget/PlatformType;)Lcom/intellij/openapi/wm/StatusBarWidget/WidgetPresentation;" />
+    <nodeInfo nodeId="321200956998476304" fileName="TransientModelsWidget.java" startLine="92" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ID#()Ljava/lang/String;" />
+    <nodeInfo nodeId="321200956998476219" fileName="TransientModelsWidget.java" startLine="36" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTooltipText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="321200956998476286" fileName="TransientModelsWidget.java" startLine="81" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="1819416201368233187" fileName="TransientModelsWidget.java" startLine="50" startPosition="41" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="321200956998476242" fileName="TransientModelsWidget.java" startLine="49" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="consume#(Ljava/awt/event/MouseEvent;)V" />
+    <nodeInfo nodeId="321200956998476237" fileName="TransientModelsWidget.java" startLine="47" startPosition="50" endLine="63" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="321200956998476231" fileName="TransientModelsWidget.java" startLine="45" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickConsumer#()Lcom/intellij/util/Consumer;" />
+    <scopeInfo nodeId="321200956998476218" fileName="TransientModelsWidget.java" startLine="33" startPosition="47" endLine="33" endPosition="47" />
+    <scopeInfo nodeId="321200956998476285" fileName="TransientModelsWidget.java" startLine="78" startPosition="25" endLine="78" endPosition="25" />
+    <scopeInfo nodeId="321200956998476225" fileName="TransientModelsWidget.java" startLine="39" startPosition="34" endLine="40" endPosition="45" />
+    <scopeInfo nodeId="321200956998476279" fileName="TransientModelsWidget.java" startLine="73" startPosition="105" endLine="74" endPosition="16" />
+    <scopeInfo nodeId="321200956998476292" fileName="TransientModelsWidget.java" startLine="84" startPosition="34" endLine="85" endPosition="20" />
+    <scopeInfo nodeId="321200956998476308" fileName="TransientModelsWidget.java" startLine="94" startPosition="22" endLine="95" endPosition="21" />
+    <scopeInfo nodeId="8401918447150650275" fileName="TransientModelsWidget.java" startLine="98" startPosition="42" endLine="99" endPosition="68" />
+    <scopeInfo nodeId="1819416201368223020" fileName="TransientModelsWidget.java" startLine="103" startPosition="36" endLine="104" endPosition="28" />
     <scopeInfo nodeId="321200956998476197" fileName="TransientModelsWidget.java" startLine="27" startPosition="47" endLine="29" endPosition="46" />
-    <scopeInfo nodeId="321200956998476212" fileName="TransientModelsWidget.java" startLine="32" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="2624121685586288013" fileName="TransientModelsWidget.java" startLine="66" startPosition="24" endLine="68" endPosition="35" />
+    <scopeInfo nodeId="321200956998476212" fileName="TransientModelsWidget.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="321200956998476215" varName="bar" />
     </scopeInfo>
-    <scopeInfo nodeId="2624121685586288013" fileName="TransientModelsWidget.java" startLine="62" startPosition="24" endLine="64" endPosition="35" />
-    <scopeInfo nodeId="321200956998476282" fileName="TransientModelsWidget.java" startLine="72" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1819416201368233202" fileName="TransientModelsWidget.java" startLine="47" startPosition="75" endLine="50" endPosition="54">
+    <scopeInfo nodeId="1819416201368233202" fileName="TransientModelsWidget.java" startLine="51" startPosition="75" endLine="54" endPosition="54">
       <varInfo nodeId="321200956998476249" varName="saveTransientModels" />
     </scopeInfo>
-    <scopeInfo nodeId="8401918447150650272" fileName="TransientModelsWidget.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1819416201368223017" fileName="TransientModelsWidget.java" startLine="94" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="321200956998476282" fileName="TransientModelsWidget.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="8401918447150650272" fileName="TransientModelsWidget.java" startLine="98" startPosition="0" endLine="101" endPosition="0" />
     <scopeInfo nodeId="321200956998476194" fileName="TransientModelsWidget.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="321200956998476208" varName="bar" />
     </scopeInfo>
-    <scopeInfo nodeId="321200956998476223" fileName="TransientModelsWidget.java" startLine="36" startPosition="34" endLine="40" endPosition="36" />
-    <scopeInfo nodeId="2624121685586288010" fileName="TransientModelsWidget.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="321200956998476272" fileName="TransientModelsWidget.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="321200956998476275" varName="type" />
-    </scopeInfo>
-    <scopeInfo nodeId="321200956998476304" fileName="TransientModelsWidget.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="821918482060593350" fileName="TransientModelsWidget.java" startLine="51" startPosition="79" endLine="56" endPosition="74">
+    <scopeInfo nodeId="321200956998476223" fileName="TransientModelsWidget.java" startLine="38" startPosition="34" endLine="42" endPosition="36" />
+    <scopeInfo nodeId="2624121685586288010" fileName="TransientModelsWidget.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1819416201368223017" fileName="TransientModelsWidget.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="821918482060593350" fileName="TransientModelsWidget.java" startLine="55" startPosition="79" endLine="60" endPosition="74">
       <varInfo nodeId="821918482060638594" varName="dimension" />
       <varInfo nodeId="821918482060593360" varName="panel" />
       <varInfo nodeId="821918482060638617" varName="point" />
     </scopeInfo>
-    <scopeInfo nodeId="321200956998476290" fileName="TransientModelsWidget.java" startLine="76" startPosition="25" endLine="82" endPosition="25" />
-    <scopeInfo nodeId="321200956998476219" fileName="TransientModelsWidget.java" startLine="35" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="321200956998476286" fileName="TransientModelsWidget.java" startLine="75" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="321200956998476247" fileName="TransientModelsWidget.java" startLine="46" startPosition="41" endLine="57" endPosition="9" />
-    <scopeInfo nodeId="321200956998476242" fileName="TransientModelsWidget.java" startLine="46" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="321200956998476272" fileName="TransientModelsWidget.java" startLine="71" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="321200956998476275" varName="type" />
+    </scopeInfo>
+    <scopeInfo nodeId="321200956998476304" fileName="TransientModelsWidget.java" startLine="92" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="321200956998476290" fileName="TransientModelsWidget.java" startLine="83" startPosition="25" endLine="89" endPosition="25" />
+    <scopeInfo nodeId="321200956998476219" fileName="TransientModelsWidget.java" startLine="36" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="321200956998476286" fileName="TransientModelsWidget.java" startLine="81" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="321200956998476247" fileName="TransientModelsWidget.java" startLine="50" startPosition="41" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="321200956998476242" fileName="TransientModelsWidget.java" startLine="49" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="321200956998476245" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="321200956998476236" fileName="TransientModelsWidget.java" startLine="44" startPosition="50" endLine="59" endPosition="6" />
-    <scopeInfo nodeId="321200956998476231" fileName="TransientModelsWidget.java" startLine="43" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="321200956998476240" fileName="TransientModelsWidget.java" startLine="45" startPosition="15" endLine="59" endPosition="5" unitName="jetbrains.mps.ide.make.actions.TransientModelsWidget$1" />
-    <unitInfo nodeId="321200956998476185" fileName="TransientModelsWidget.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelsWidget" />
+    <scopeInfo nodeId="321200956998476236" fileName="TransientModelsWidget.java" startLine="47" startPosition="50" endLine="63" endPosition="6" />
+    <scopeInfo nodeId="321200956998476231" fileName="TransientModelsWidget.java" startLine="45" startPosition="0" endLine="65" endPosition="0" />
+    <unitInfo nodeId="321200956998476240" fileName="TransientModelsWidget.java" startLine="48" startPosition="15" endLine="63" endPosition="5" unitName="jetbrains.mps.ide.make.actions.TransientModelsWidget$1" />
+    <unitInfo nodeId="321200956998476185" fileName="TransientModelsWidget.java" startLine="19" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelsWidget" />
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/3366942412399971107">
     <nodeInfo nodeId="3366942412399971107" fileName="Options_Action.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -979,7 +979,7 @@
     <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="69" startPosition="61" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="73" startPosition="60" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="76" startPosition="178" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="76" startPosition="158" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="78" startPosition="5" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3366942412399973398" fileName="ShowMappingsPartitioning_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="85" startPosition="27" endLine="86" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1013,7 +1013,7 @@
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="65" startPosition="60" endLine="66" endPosition="19" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="69" startPosition="61" endLine="70" endPosition="19" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="73" startPosition="60" endLine="74" endPosition="19" />
-    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="76" startPosition="178" endLine="77" endPosition="19" />
+    <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="76" startPosition="158" endLine="77" endPosition="19" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="284" />
     <scopeInfo nodeId="3366942412399973391" fileName="ShowMappingsPartitioning_Action.java" startLine="85" startPosition="0" endLine="86" endPosition="96">
       <varInfo nodeId="3366942412399973391" varName="t" />
@@ -1181,10 +1181,10 @@
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="64" startPosition="61" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4753172061859438812" fileName="CleanModule_Action.java" startLine="75" startPosition="31" endLine="76" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4753172061859438817" fileName="CleanModule_Action.java" startLine="76" startPosition="52" endLine="77" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="82" startPosition="27" endLine="83" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="87" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="4753172061859438812" fileName="CleanModule_Action.java" startLine="76" startPosition="31" endLine="77" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4753172061859438817" fileName="CleanModule_Action.java" startLine="77" startPosition="52" endLine="78" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="83" startPosition="27" endLine="84" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="88" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="55" startPosition="95" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="59" startPosition="89" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1193,25 +1193,25 @@
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="44" startPosition="9" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4753172061859438810" fileName="CleanModule_Action.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4753172061859438810" fileName="CleanModule_Action.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CleanModule_Action#()V" />
-    <nodeInfo nodeId="4753172061859438809" fileName="CleanModule_Action.java" startLine="73" startPosition="69" endLine="79" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4753172061859438802" fileName="CleanModule_Action.java" startLine="73" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="4753172061859438809" fileName="CleanModule_Action.java" startLine="74" startPosition="69" endLine="80" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="43" startPosition="89" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4753172061859438794" fileName="CleanModule_Action.java" startLine="71" startPosition="9" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4753172061859438802" fileName="CleanModule_Action.java" startLine="73" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="43" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4753172061859438794" fileName="CleanModule_Action.java" startLine="71" startPosition="9" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="55" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="70" startPosition="96" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="70" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="70" startPosition="96" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="70" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="35" startPosition="32" endLine="36" endPosition="16" />
     <scopeInfo nodeId="4753172061859438830" fileName="CleanModule_Action.java" startLine="39" startPosition="87" endLine="40" endPosition="100" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="56" startPosition="53" endLine="57" endPosition="19" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="60" startPosition="62" endLine="61" endPosition="19" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="64" startPosition="61" endLine="65" endPosition="19" />
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="82" startPosition="0" endLine="83" endPosition="83">
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="83" startPosition="0" endLine="84" endPosition="83">
       <varInfo nodeId="4753172061859438783" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="82" startPosition="27" endLine="83" endPosition="83" />
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="83" startPosition="27" endLine="84" endPosition="83" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="45" startPosition="7" endLine="47" endPosition="63">
       <varInfo nodeId="4753172061859438783" varName="enabled" />
     </scopeInfo>
@@ -1219,7 +1219,7 @@
       <varInfo nodeId="4753172061859438783" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="49" startPosition="27" endLine="51" endPosition="44" />
-    <scopeInfo nodeId="4753172061859438811" fileName="CleanModule_Action.java" startLine="75" startPosition="31" endLine="77" endPosition="141">
+    <scopeInfo nodeId="4753172061859438811" fileName="CleanModule_Action.java" startLine="76" startPosition="31" endLine="78" endPosition="141">
       <varInfo nodeId="4753172061859438813" varName="maker" />
     </scopeInfo>
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="28" startPosition="31" endLine="31" endPosition="40" />
@@ -1231,31 +1231,31 @@
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="44" startPosition="9" endLine="48" endPosition="7" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="4753172061859438810" fileName="CleanModule_Action.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="4753172061859438810" fileName="CleanModule_Action.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="4753172061859438808" fileName="CleanModule_Action.java" startLine="73" startPosition="69" endLine="79" endPosition="13" />
-    <scopeInfo nodeId="4753172061859438802" fileName="CleanModule_Action.java" startLine="73" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="4753172061859438808" fileName="CleanModule_Action.java" startLine="74" startPosition="69" endLine="80" endPosition="13" />
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="43" startPosition="89" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="4753172061859438802" fileName="CleanModule_Action.java" startLine="73" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="4753172061859438805" varName="indicator" />
     </scopeInfo>
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="43" startPosition="89" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="71" startPosition="9" endLine="81" endPosition="9" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="43" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="4753172061859438783" varName="_params" />
       <varInfo nodeId="4753172061859438783" varName="event" />
     </scopeInfo>
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="71" startPosition="9" endLine="82" endPosition="9" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="55" startPosition="95" endLine="67" endPosition="16" />
     <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="55" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="4753172061859438783" varName="_params" />
       <varInfo nodeId="4753172061859438783" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="70" startPosition="96" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="70" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="70" startPosition="96" endLine="85" endPosition="5" />
+    <scopeInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="70" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="4753172061859438783" varName="_params" />
       <varInfo nodeId="4753172061859438783" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="4753172061859438810" fileName="CleanModule_Action.java" startLine="74" startPosition="51" endLine="79" endPosition="11" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action$2" />
-    <unitInfo nodeId="4753172061859438800" fileName="CleanModule_Action.java" startLine="72" startPosition="44" endLine="81" endPosition="7" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action$1" />
-    <unitInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="25" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action" />
+    <unitInfo nodeId="4753172061859438810" fileName="CleanModule_Action.java" startLine="75" startPosition="51" endLine="80" endPosition="11" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action$2" />
+    <unitInfo nodeId="4753172061859438800" fileName="CleanModule_Action.java" startLine="72" startPosition="44" endLine="82" endPosition="7" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action$1" />
+    <unitInfo nodeId="4753172061859438783" fileName="CleanModule_Action.java" startLine="25" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.ide.make.actions.CleanModule_Action" />
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/4753172061859438849">
     <nodeInfo nodeId="4753172061859438849" fileName="RebuildModule_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -1425,43 +1425,43 @@
     <nodeInfo nodeId="4753172061859438931" fileName="DefaultMakeTask.java" startLine="28" startPosition="98" endLine="29" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4753172061859438935" fileName="DefaultMakeTask.java" startLine="29" startPosition="32" endLine="30" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4753172061859438941" fileName="DefaultMakeTask.java" startLine="30" startPosition="31" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6942777512604551093" fileName="DefaultMakeTask.java" startLine="34" startPosition="57" endLine="35" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1637160376125502138" fileName="DefaultMakeTask.java" startLine="35" startPosition="53" endLine="36" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1637160376125502135" fileName="DefaultMakeTask.java" startLine="36" startPosition="74" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1024532694476280359" fileName="DefaultMakeTask.java" startLine="44" startPosition="27" endLine="45" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4753172061859438975" fileName="DefaultMakeTask.java" startLine="46" startPosition="26" endLine="47" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4753172061859438982" fileName="DefaultMakeTask.java" startLine="48" startPosition="11" endLine="49" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6942777512604552501" fileName="DefaultMakeTask.java" startLine="49" startPosition="91" endLine="50" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4753172061859438992" fileName="DefaultMakeTask.java" startLine="55" startPosition="29" endLine="56" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1637160376125502151" fileName="DefaultMakeTask.java" startLine="60" startPosition="15" endLine="61" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3355360683623553350" fileName="DefaultMakeTask.java" startLine="66" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mvt" />
-    <nodeInfo nodeId="3355360683623553353" fileName="DefaultMakeTask.java" startLine="68" startPosition="29" endLine="69" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3355360683623543436" fileName="DefaultMakeTask.java" startLine="72" startPosition="25" endLine="73" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5227726560408573475" fileName="DefaultMakeTask.java" startLine="76" startPosition="42" endLine="77" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4753172061859438973" fileName="DefaultMakeTask.java" startLine="45" startPosition="103" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6942777512604597491" fileName="DefaultMakeTask.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5227726560408573457" fileName="DefaultMakeTask.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MessageHandler#()V" />
-    <nodeInfo nodeId="5227726560408573464" fileName="DefaultMakeTask.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="5227726560408573468" fileName="DefaultMakeTask.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/IMessage;)V" />
-    <nodeInfo nodeId="1637160376125502159" fileName="DefaultMakeTask.java" startLine="37" startPosition="0" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6942777512604551093" fileName="DefaultMakeTask.java" startLine="35" startPosition="57" endLine="36" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1637160376125502138" fileName="DefaultMakeTask.java" startLine="36" startPosition="53" endLine="37" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1637160376125502135" fileName="DefaultMakeTask.java" startLine="37" startPosition="74" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1024532694476280359" fileName="DefaultMakeTask.java" startLine="45" startPosition="27" endLine="46" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4753172061859438975" fileName="DefaultMakeTask.java" startLine="47" startPosition="26" endLine="48" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4753172061859438982" fileName="DefaultMakeTask.java" startLine="49" startPosition="11" endLine="50" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6942777512604552501" fileName="DefaultMakeTask.java" startLine="50" startPosition="91" endLine="51" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4753172061859438992" fileName="DefaultMakeTask.java" startLine="56" startPosition="29" endLine="57" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1637160376125502151" fileName="DefaultMakeTask.java" startLine="61" startPosition="15" endLine="62" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3355360683623553350" fileName="DefaultMakeTask.java" startLine="67" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mvt" />
+    <nodeInfo nodeId="3355360683623553353" fileName="DefaultMakeTask.java" startLine="69" startPosition="29" endLine="70" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3355360683623543436" fileName="DefaultMakeTask.java" startLine="74" startPosition="25" endLine="75" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5227726560408573475" fileName="DefaultMakeTask.java" startLine="79" startPosition="42" endLine="80" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4753172061859438973" fileName="DefaultMakeTask.java" startLine="46" startPosition="103" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6942777512604597491" fileName="DefaultMakeTask.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5227726560408573457" fileName="DefaultMakeTask.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MessageHandler#()V" />
+    <nodeInfo nodeId="1637160376125502159" fileName="DefaultMakeTask.java" startLine="38" startPosition="0" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5227726560408573464" fileName="DefaultMakeTask.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
+    <nodeInfo nodeId="5227726560408573468" fileName="DefaultMakeTask.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/IMessage;)V" />
     <nodeInfo nodeId="4753172061859438927" fileName="DefaultMakeTask.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultMakeTask#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljava/util/Set;Z)V" />
-    <nodeInfo nodeId="6942777512604597490" fileName="DefaultMakeTask.java" startLine="53" startPosition="31" endLine="58" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4753172061859438990" fileName="DefaultMakeTask.java" startLine="52" startPosition="9" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4753172061859438966" fileName="DefaultMakeTask.java" startLine="44" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4753172061859438965" fileName="DefaultMakeTask.java" startLine="42" startPosition="9" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1637160376125502147" fileName="DefaultMakeTask.java" startLine="41" startPosition="7" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4753172061859438958" fileName="DefaultMakeTask.java" startLine="34" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <scopeInfo nodeId="4753172061859438974" fileName="DefaultMakeTask.java" startLine="46" startPosition="26" endLine="47" endPosition="53" />
-    <scopeInfo nodeId="6942777512604597492" fileName="DefaultMakeTask.java" startLine="55" startPosition="29" endLine="56" endPosition="75" />
-    <scopeInfo nodeId="1637160376125502150" fileName="DefaultMakeTask.java" startLine="60" startPosition="15" endLine="61" endPosition="21" />
-    <scopeInfo nodeId="5227726560408573460" fileName="DefaultMakeTask.java" startLine="68" startPosition="29" endLine="69" endPosition="67" />
-    <scopeInfo nodeId="5227726560408573467" fileName="DefaultMakeTask.java" startLine="72" startPosition="25" endLine="73" endPosition="23" />
-    <scopeInfo nodeId="5227726560408573473" fileName="DefaultMakeTask.java" startLine="76" startPosition="42" endLine="77" endPosition="28" />
+    <nodeInfo nodeId="6942777512604597490" fileName="DefaultMakeTask.java" startLine="54" startPosition="31" endLine="59" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4753172061859438990" fileName="DefaultMakeTask.java" startLine="53" startPosition="9" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4753172061859438966" fileName="DefaultMakeTask.java" startLine="45" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4753172061859438965" fileName="DefaultMakeTask.java" startLine="43" startPosition="9" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1637160376125502147" fileName="DefaultMakeTask.java" startLine="42" startPosition="7" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4753172061859438958" fileName="DefaultMakeTask.java" startLine="34" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <scopeInfo nodeId="4753172061859438974" fileName="DefaultMakeTask.java" startLine="47" startPosition="26" endLine="48" endPosition="53" />
+    <scopeInfo nodeId="6942777512604597492" fileName="DefaultMakeTask.java" startLine="56" startPosition="29" endLine="57" endPosition="75" />
+    <scopeInfo nodeId="1637160376125502150" fileName="DefaultMakeTask.java" startLine="61" startPosition="15" endLine="62" endPosition="21" />
+    <scopeInfo nodeId="5227726560408573460" fileName="DefaultMakeTask.java" startLine="69" startPosition="29" endLine="70" endPosition="67" />
+    <scopeInfo nodeId="5227726560408573467" fileName="DefaultMakeTask.java" startLine="74" startPosition="25" endLine="75" endPosition="23" />
+    <scopeInfo nodeId="5227726560408573473" fileName="DefaultMakeTask.java" startLine="79" startPosition="42" endLine="80" endPosition="28" />
     <scopeInfo nodeId="4753172061859438930" fileName="DefaultMakeTask.java" startLine="28" startPosition="98" endLine="31" endPosition="80" />
-    <scopeInfo nodeId="6942777512604597491" fileName="DefaultMakeTask.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="5227726560408573457" fileName="DefaultMakeTask.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="5227726560408573464" fileName="DefaultMakeTask.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="5227726560408573468" fileName="DefaultMakeTask.java" startLine="76" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="6942777512604597491" fileName="DefaultMakeTask.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="5227726560408573457" fileName="DefaultMakeTask.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="5227726560408573464" fileName="DefaultMakeTask.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="5227726560408573468" fileName="DefaultMakeTask.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="5227726560408573471" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4753172061859438927" fileName="DefaultMakeTask.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
@@ -1470,58 +1470,58 @@
       <varInfo nodeId="4753172061859438948" varName="project" />
       <varInfo nodeId="4753172061859438950" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="4753172061859438991" fileName="DefaultMakeTask.java" startLine="53" startPosition="31" endLine="58" endPosition="11" />
-    <scopeInfo nodeId="4753172061859438967" fileName="DefaultMakeTask.java" startLine="44" startPosition="27" endLine="50" endPosition="69">
+    <scopeInfo nodeId="4753172061859438991" fileName="DefaultMakeTask.java" startLine="54" startPosition="31" endLine="59" endPosition="11" />
+    <scopeInfo nodeId="4753172061859438967" fileName="DefaultMakeTask.java" startLine="45" startPosition="27" endLine="51" endPosition="69">
       <varInfo nodeId="4753172061859438983" varName="compilationResult" />
       <varInfo nodeId="1024532694476280360" varName="maker" />
     </scopeInfo>
-    <scopeInfo nodeId="4753172061859438966" fileName="DefaultMakeTask.java" startLine="44" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="1637160376125502148" fileName="DefaultMakeTask.java" startLine="42" startPosition="9" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="4753172061859438964" fileName="DefaultMakeTask.java" startLine="34" startPosition="57" endLine="62" endPosition="5">
+    <scopeInfo nodeId="4753172061859438966" fileName="DefaultMakeTask.java" startLine="45" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1637160376125502148" fileName="DefaultMakeTask.java" startLine="43" startPosition="9" endLine="60" endPosition="7" />
+    <scopeInfo nodeId="4753172061859438964" fileName="DefaultMakeTask.java" startLine="35" startPosition="57" endLine="63" endPosition="5">
       <varInfo nodeId="1637160376125502139" varName="monitor" />
       <varInfo nodeId="6942777512604551094" varName="reloadingNeeded" />
     </scopeInfo>
-    <scopeInfo nodeId="4753172061859438958" fileName="DefaultMakeTask.java" startLine="34" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="4753172061859438958" fileName="DefaultMakeTask.java" startLine="34" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="4753172061859438961" varName="indicator" />
     </scopeInfo>
-    <unitInfo nodeId="6942777512604597491" fileName="DefaultMakeTask.java" startLine="54" startPosition="50" endLine="58" endPosition="9" unitName="jetbrains.mps.ide.make.actions.DefaultMakeTask$2" />
-    <unitInfo nodeId="4753172061859438966" fileName="DefaultMakeTask.java" startLine="43" startPosition="47" endLine="52" endPosition="7" unitName="jetbrains.mps.ide.make.actions.DefaultMakeTask$1" />
-    <unitInfo nodeId="5227726560408573455" fileName="DefaultMakeTask.java" startLine="65" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.make.actions.DefaultMakeTask$MessageHandler" />
-    <unitInfo nodeId="4753172061859438915" fileName="DefaultMakeTask.java" startLine="24" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.ide.make.actions.DefaultMakeTask" />
+    <unitInfo nodeId="6942777512604597491" fileName="DefaultMakeTask.java" startLine="55" startPosition="50" endLine="59" endPosition="9" unitName="jetbrains.mps.ide.make.actions.DefaultMakeTask$2" />
+    <unitInfo nodeId="4753172061859438966" fileName="DefaultMakeTask.java" startLine="44" startPosition="47" endLine="53" endPosition="7" unitName="jetbrains.mps.ide.make.actions.DefaultMakeTask$1" />
+    <unitInfo nodeId="5227726560408573455" fileName="DefaultMakeTask.java" startLine="66" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.ide.make.actions.DefaultMakeTask$MessageHandler" />
+    <unitInfo nodeId="4753172061859438915" fileName="DefaultMakeTask.java" startLine="24" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.ide.make.actions.DefaultMakeTask" />
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/5285710378702826195">
     <nodeInfo nodeId="5285710378702826202" fileName="SaveTransientModelsAction.java" startLine="12" startPosition="38" endLine="13" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5285710378702826210" fileName="SaveTransientModelsAction.java" startLine="16" startPosition="46" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5285710378702826220" fileName="SaveTransientModelsAction.java" startLine="20" startPosition="39" endLine="21" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5285710378702826223" fileName="SaveTransientModelsAction.java" startLine="21" startPosition="20" endLine="22" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5285710378702826252" fileName="SaveTransientModelsAction.java" startLine="23" startPosition="43" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5285710378702826244" fileName="SaveTransientModelsAction.java" startLine="25" startPosition="12" endLine="26" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5285710378702826267" fileName="SaveTransientModelsAction.java" startLine="30" startPosition="59" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005576522675274542" fileName="SaveTransientModelsAction.java" startLine="31" startPosition="67" endLine="32" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5285710378702826242" fileName="SaveTransientModelsAction.java" startLine="25" startPosition="10" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5285710378702826210" fileName="SaveTransientModelsAction.java" startLine="17" startPosition="46" endLine="18" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5285710378702826220" fileName="SaveTransientModelsAction.java" startLine="22" startPosition="39" endLine="23" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5285710378702826223" fileName="SaveTransientModelsAction.java" startLine="23" startPosition="20" endLine="24" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5285710378702826252" fileName="SaveTransientModelsAction.java" startLine="25" startPosition="43" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5285710378702826244" fileName="SaveTransientModelsAction.java" startLine="27" startPosition="12" endLine="28" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5285710378702826267" fileName="SaveTransientModelsAction.java" startLine="33" startPosition="59" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6005576522675274542" fileName="SaveTransientModelsAction.java" startLine="34" startPosition="67" endLine="35" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5285710378702826242" fileName="SaveTransientModelsAction.java" startLine="27" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5285710378702826198" fileName="SaveTransientModelsAction.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SaveTransientModelsAction#()V" />
-    <nodeInfo nodeId="5285710378702826204" fileName="SaveTransientModelsAction.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
-    <nodeInfo nodeId="5285710378702826259" fileName="SaveTransientModelsAction.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
-    <nodeInfo nodeId="5285710378702826235" fileName="SaveTransientModelsAction.java" startLine="22" startPosition="80" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5285710378702826214" fileName="SaveTransientModelsAction.java" startLine="20" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="5285710378702826204" fileName="SaveTransientModelsAction.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)Z" />
+    <nodeInfo nodeId="5285710378702826235" fileName="SaveTransientModelsAction.java" startLine="24" startPosition="80" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5285710378702826259" fileName="SaveTransientModelsAction.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSelected#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Z)V" />
+    <nodeInfo nodeId="5285710378702826214" fileName="SaveTransientModelsAction.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
     <scopeInfo nodeId="5285710378702826201" fileName="SaveTransientModelsAction.java" startLine="12" startPosition="38" endLine="13" endPosition="35" />
-    <scopeInfo nodeId="5285710378702826209" fileName="SaveTransientModelsAction.java" startLine="16" startPosition="46" endLine="17" endPosition="68" />
-    <scopeInfo nodeId="5285710378702826251" fileName="SaveTransientModelsAction.java" startLine="23" startPosition="43" endLine="24" endPosition="63" />
-    <scopeInfo nodeId="5285710378702826243" fileName="SaveTransientModelsAction.java" startLine="25" startPosition="12" endLine="26" endPosition="40" />
-    <scopeInfo nodeId="5285710378702826266" fileName="SaveTransientModelsAction.java" startLine="30" startPosition="59" endLine="32" endPosition="48" />
+    <scopeInfo nodeId="5285710378702826209" fileName="SaveTransientModelsAction.java" startLine="17" startPosition="46" endLine="18" endPosition="68" />
+    <scopeInfo nodeId="5285710378702826251" fileName="SaveTransientModelsAction.java" startLine="25" startPosition="43" endLine="26" endPosition="63" />
+    <scopeInfo nodeId="5285710378702826243" fileName="SaveTransientModelsAction.java" startLine="27" startPosition="12" endLine="28" endPosition="40" />
+    <scopeInfo nodeId="5285710378702826266" fileName="SaveTransientModelsAction.java" startLine="33" startPosition="59" endLine="35" endPosition="48" />
     <scopeInfo nodeId="5285710378702826198" fileName="SaveTransientModelsAction.java" startLine="12" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="5285710378702826204" fileName="SaveTransientModelsAction.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="5285710378702826204" fileName="SaveTransientModelsAction.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="5285710378702826207" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="5285710378702826259" fileName="SaveTransientModelsAction.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="5285710378702826259" fileName="SaveTransientModelsAction.java" startLine="32" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="5285710378702826262" varName="e" />
       <varInfo nodeId="5285710378702826264" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="5285710378702826219" fileName="SaveTransientModelsAction.java" startLine="20" startPosition="39" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="5285710378702826214" fileName="SaveTransientModelsAction.java" startLine="20" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="5285710378702826219" fileName="SaveTransientModelsAction.java" startLine="22" startPosition="39" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="5285710378702826214" fileName="SaveTransientModelsAction.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="5285710378702826217" varName="e" />
     </scopeInfo>
-    <unitInfo nodeId="5285710378702826195" fileName="SaveTransientModelsAction.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.ide.make.actions.SaveTransientModelsAction" />
+    <unitInfo nodeId="5285710378702826195" fileName="SaveTransientModelsAction.java" startLine="11" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.make.actions.SaveTransientModelsAction" />
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/5332171957773708940">
     <nodeInfo nodeId="5332171957773708940" fileName="CheckModelsBeforeGeneration_Action.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -1674,59 +1674,59 @@
     <nodeInfo nodeId="6005576522675273474" fileName="TransientModelsNotification.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStatusBar" />
     <nodeInfo nodeId="6005576522675273477" fileName="TransientModelsNotification.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWidget" />
     <nodeInfo nodeId="6005576522675224750" fileName="TransientModelsNotification.java" startLine="22" startPosition="55" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005576522675274271" fileName="TransientModelsNotification.java" startLine="26" startPosition="31" endLine="27" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005576522675274275" fileName="TransientModelsNotification.java" startLine="27" startPosition="70" endLine="28" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005576522675274414" fileName="TransientModelsNotification.java" startLine="28" startPosition="54" endLine="29" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005576522675274291" fileName="TransientModelsNotification.java" startLine="29" startPosition="36" endLine="30" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005576522675274267" fileName="TransientModelsNotification.java" startLine="30" startPosition="22" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6005576522675224841" fileName="TransientModelsNotification.java" startLine="31" startPosition="0" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235853420642763575" fileName="TransientModelsNotification.java" startLine="32" startPosition="73" endLine="33" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005576522675274428" fileName="TransientModelsNotification.java" startLine="36" startPosition="31" endLine="37" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005576522675224856" fileName="TransientModelsNotification.java" startLine="37" startPosition="44" endLine="38" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005576522675151290" fileName="TransientModelsNotification.java" startLine="49" startPosition="36" endLine="50" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6005576522675274336" fileName="TransientModelsNotification.java" startLine="55" startPosition="55" endLine="56" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6005576522675273558" fileName="TransientModelsNotification.java" startLine="58" startPosition="9" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005576522675273583" fileName="TransientModelsNotification.java" startLine="63" startPosition="74" endLine="64" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6005576522675148132" fileName="TransientModelsNotification.java" startLine="41" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="6005576522675148136" fileName="TransientModelsNotification.java" startLine="44" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="6005576522675274271" fileName="TransientModelsNotification.java" startLine="27" startPosition="31" endLine="28" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6005576522675274275" fileName="TransientModelsNotification.java" startLine="28" startPosition="70" endLine="29" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6005576522675274414" fileName="TransientModelsNotification.java" startLine="29" startPosition="54" endLine="30" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6005576522675274291" fileName="TransientModelsNotification.java" startLine="30" startPosition="36" endLine="31" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6005576522675274267" fileName="TransientModelsNotification.java" startLine="31" startPosition="22" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6005576522675224841" fileName="TransientModelsNotification.java" startLine="32" startPosition="0" endLine="33" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235853420642763575" fileName="TransientModelsNotification.java" startLine="33" startPosition="73" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6005576522675274428" fileName="TransientModelsNotification.java" startLine="38" startPosition="31" endLine="39" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6005576522675224856" fileName="TransientModelsNotification.java" startLine="39" startPosition="44" endLine="40" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6005576522675151290" fileName="TransientModelsNotification.java" startLine="54" startPosition="36" endLine="55" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6005576522675274336" fileName="TransientModelsNotification.java" startLine="60" startPosition="55" endLine="61" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6005576522675273558" fileName="TransientModelsNotification.java" startLine="63" startPosition="9" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6005576522675273583" fileName="TransientModelsNotification.java" startLine="68" startPosition="74" endLine="69" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6005576522675134789" fileName="TransientModelsNotification.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransientModelsNotification#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="6005576522675274380" fileName="TransientModelsNotification.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/ide/make/actions/TransientModelsWidget;" />
-    <nodeInfo nodeId="6005576522675273571" fileName="TransientModelsNotification.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/ide/make/actions/TransientModelsNotification;" />
-    <nodeInfo nodeId="6005576522675148128" fileName="TransientModelsNotification.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="6005576522675148140" fileName="TransientModelsNotification.java" startLine="47" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6005576522675273555" fileName="TransientModelsNotification.java" startLine="53" startPosition="38" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6005576522675148124" fileName="TransientModelsNotification.java" startLine="26" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="6005576522675273551" fileName="TransientModelsNotification.java" startLine="53" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="updateWidgets#()V" />
-    <scopeInfo nodeId="6005576522675148135" fileName="TransientModelsNotification.java" startLine="41" startPosition="31" endLine="41" endPosition="31" />
-    <scopeInfo nodeId="6005576522675148139" fileName="TransientModelsNotification.java" startLine="44" startPosition="34" endLine="44" endPosition="34" />
+    <nodeInfo nodeId="6005576522675148132" fileName="TransientModelsNotification.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="6005576522675148136" fileName="TransientModelsNotification.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="6005576522675274380" fileName="TransientModelsNotification.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/ide/make/actions/TransientModelsWidget;" />
+    <nodeInfo nodeId="6005576522675273571" fileName="TransientModelsNotification.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/ide/make/actions/TransientModelsNotification;" />
+    <nodeInfo nodeId="6005576522675148128" fileName="TransientModelsNotification.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
+    <nodeInfo nodeId="6005576522675148140" fileName="TransientModelsNotification.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6005576522675273555" fileName="TransientModelsNotification.java" startLine="58" startPosition="38" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6005576522675273551" fileName="TransientModelsNotification.java" startLine="58" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="updateWidgets#()V" />
+    <nodeInfo nodeId="6005576522675148124" fileName="TransientModelsNotification.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
+    <scopeInfo nodeId="6005576522675148135" fileName="TransientModelsNotification.java" startLine="44" startPosition="31" endLine="44" endPosition="31" />
+    <scopeInfo nodeId="6005576522675148139" fileName="TransientModelsNotification.java" startLine="48" startPosition="34" endLine="48" endPosition="34" />
     <scopeInfo nodeId="6005576522675134792" fileName="TransientModelsNotification.java" startLine="22" startPosition="55" endLine="23" endPosition="24" />
-    <scopeInfo nodeId="6005576522675148145" fileName="TransientModelsNotification.java" startLine="49" startPosition="36" endLine="50" endPosition="43" />
-    <scopeInfo nodeId="6005576522675274381" fileName="TransientModelsNotification.java" startLine="55" startPosition="55" endLine="56" endPosition="40" />
-    <scopeInfo nodeId="6005576522675273557" fileName="TransientModelsNotification.java" startLine="58" startPosition="9" endLine="59" endPosition="22" />
-    <scopeInfo nodeId="6005576522675273574" fileName="TransientModelsNotification.java" startLine="63" startPosition="74" endLine="64" endPosition="67" />
-    <scopeInfo nodeId="6005576522675148131" fileName="TransientModelsNotification.java" startLine="36" startPosition="31" endLine="38" endPosition="34" />
-    <scopeInfo nodeId="6005576522675148132" fileName="TransientModelsNotification.java" startLine="41" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6005576522675148136" fileName="TransientModelsNotification.java" startLine="44" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="6005576522675148145" fileName="TransientModelsNotification.java" startLine="54" startPosition="36" endLine="55" endPosition="43" />
+    <scopeInfo nodeId="6005576522675274381" fileName="TransientModelsNotification.java" startLine="60" startPosition="55" endLine="61" endPosition="40" />
+    <scopeInfo nodeId="6005576522675273557" fileName="TransientModelsNotification.java" startLine="63" startPosition="9" endLine="64" endPosition="22" />
+    <scopeInfo nodeId="6005576522675273574" fileName="TransientModelsNotification.java" startLine="68" startPosition="74" endLine="69" endPosition="67" />
+    <scopeInfo nodeId="6005576522675148131" fileName="TransientModelsNotification.java" startLine="38" startPosition="31" endLine="40" endPosition="34" />
     <scopeInfo nodeId="6005576522675134789" fileName="TransientModelsNotification.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="6005576522675224743" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6005576522675274380" fileName="TransientModelsNotification.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="6005576522675148132" fileName="TransientModelsNotification.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="6005576522675148136" fileName="TransientModelsNotification.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="6005576522675274380" fileName="TransientModelsNotification.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="6005576522675274380" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6005576522675273571" fileName="TransientModelsNotification.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="6005576522675273571" fileName="TransientModelsNotification.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="6005576522675273578" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6005576522675148128" fileName="TransientModelsNotification.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="6005576522675148140" fileName="TransientModelsNotification.java" startLine="47" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="6005576522675148127" fileName="TransientModelsNotification.java" startLine="26" startPosition="31" endLine="33" endPosition="23" />
-    <scopeInfo nodeId="6005576522675273554" fileName="TransientModelsNotification.java" startLine="53" startPosition="38" endLine="60" endPosition="5" />
-    <scopeInfo nodeId="6005576522675273555" fileName="TransientModelsNotification.java" startLine="53" startPosition="38" endLine="60" endPosition="5">
+    <scopeInfo nodeId="6005576522675148128" fileName="TransientModelsNotification.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="6005576522675148140" fileName="TransientModelsNotification.java" startLine="51" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="6005576522675148127" fileName="TransientModelsNotification.java" startLine="27" startPosition="31" endLine="34" endPosition="23" />
+    <scopeInfo nodeId="6005576522675273554" fileName="TransientModelsNotification.java" startLine="58" startPosition="38" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="6005576522675273555" fileName="TransientModelsNotification.java" startLine="58" startPosition="38" endLine="65" endPosition="5">
       <varInfo nodeId="6005576522675273556" varName="widget" />
     </scopeInfo>
-    <scopeInfo nodeId="6005576522675148124" fileName="TransientModelsNotification.java" startLine="26" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="6005576522675273551" fileName="TransientModelsNotification.java" startLine="53" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="6005576522675274380" fileName="TransientModelsNotification.java" startLine="54" startPosition="141" endLine="58" endPosition="5" unitName="jetbrains.mps.ide.make.actions.TransientModelsNotification$1" />
-    <unitInfo nodeId="6005576522675134787" fileName="TransientModelsNotification.java" startLine="16" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelsNotification" />
+    <scopeInfo nodeId="6005576522675273551" fileName="TransientModelsNotification.java" startLine="58" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="6005576522675148124" fileName="TransientModelsNotification.java" startLine="26" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="6005576522675274380" fileName="TransientModelsNotification.java" startLine="59" startPosition="141" endLine="63" endPosition="5" unitName="jetbrains.mps.ide.make.actions.TransientModelsNotification$1" />
+    <unitInfo nodeId="6005576522675134787" fileName="TransientModelsNotification.java" startLine="16" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelsNotification" />
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/6613699149169331484">
     <nodeInfo nodeId="6613699149169331632" fileName="CustomIconWrapper.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIcon" />
@@ -1957,173 +1957,173 @@
     <nodeInfo nodeId="6005576522675274256" fileName="TransientModelBallonDisplayer.java" startLine="43" startPosition="24" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8060841067251607702" fileName="TransientModelBallonDisplayer.java" startLine="47" startPosition="22" endLine="48" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1690477811494030627" fileName="TransientModelBallonDisplayer.java" startLine="48" startPosition="72" endLine="49" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="721478377485348917" fileName="TransientModelBallonDisplayer.java" startLine="52" startPosition="25" endLine="53" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1690477811494028829" fileName="TransientModelBallonDisplayer.java" startLine="57" startPosition="97" endLine="58" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7550858217961929329" fileName="TransientModelBallonDisplayer.java" startLine="62" startPosition="37" endLine="63" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="621016502014035560" fileName="TransientModelBallonDisplayer.java" startLine="63" startPosition="139" endLine="64" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4517385494359470564" fileName="TransientModelBallonDisplayer.java" startLine="64" startPosition="127" endLine="65" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4517385494359470595" fileName="TransientModelBallonDisplayer.java" startLine="66" startPosition="20" endLine="67" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7035395638377099138" fileName="TransientModelBallonDisplayer.java" startLine="68" startPosition="5" endLine="69" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7035395638377112092" fileName="TransientModelBallonDisplayer.java" startLine="69" startPosition="52" endLine="70" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4517385494359433625" fileName="TransientModelBallonDisplayer.java" startLine="70" startPosition="37" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="721478377485341717" fileName="TransientModelBallonDisplayer.java" startLine="71" startPosition="0" endLine="72" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7035395638377076128" fileName="TransientModelBallonDisplayer.java" startLine="72" startPosition="37" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="721478377485341620" fileName="TransientModelBallonDisplayer.java" startLine="73" startPosition="0" endLine="74" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6204683942016234925" fileName="TransientModelBallonDisplayer.java" startLine="75" startPosition="53" endLine="76" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2022241925975927783" fileName="TransientModelBallonDisplayer.java" startLine="77" startPosition="12" endLine="78" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6204683942016234949" fileName="TransientModelBallonDisplayer.java" startLine="79" startPosition="55" endLine="80" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2022241925975927719" fileName="TransientModelBallonDisplayer.java" startLine="81" startPosition="14" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2022241925975927733" fileName="TransientModelBallonDisplayer.java" startLine="83" startPosition="55" endLine="84" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2022241925975927739" fileName="TransientModelBallonDisplayer.java" startLine="84" startPosition="66" endLine="85" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2022241925975927745" fileName="TransientModelBallonDisplayer.java" startLine="85" startPosition="59" endLine="86" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2022241925975927754" fileName="TransientModelBallonDisplayer.java" startLine="86" startPosition="82" endLine="87" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2022241925975927764" fileName="TransientModelBallonDisplayer.java" startLine="87" startPosition="39" endLine="88" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8689724042318038810" fileName="TransientModelBallonDisplayer.java" startLine="95" startPosition="91" endLine="96" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8689724042318038831" fileName="TransientModelBallonDisplayer.java" startLine="99" startPosition="25" endLine="100" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6204683942016226528" fileName="TransientModelBallonDisplayer.java" startLine="105" startPosition="70" endLine="106" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6204683942016226535" fileName="TransientModelBallonDisplayer.java" startLine="106" startPosition="43" endLine="107" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6204683942016226549" fileName="TransientModelBallonDisplayer.java" startLine="107" startPosition="91" endLine="108" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="621016502014035531" fileName="TransientModelBallonDisplayer.java" startLine="112" startPosition="94" endLine="113" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="621016502014035541" fileName="TransientModelBallonDisplayer.java" startLine="114" startPosition="5" endLine="115" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="621016502014035547" fileName="TransientModelBallonDisplayer.java" startLine="115" startPosition="106" endLine="116" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9186796564629073673" fileName="TransientModelBallonDisplayer.java" startLine="119" startPosition="49" endLine="120" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2248862906532644433" fileName="TransientModelBallonDisplayer.java" startLine="128" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySessionJustOpened" />
-    <nodeInfo nodeId="2248862906532644437" fileName="TransientModelBallonDisplayer.java" startLine="134" startPosition="75" endLine="135" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8689724042318038886" fileName="TransientModelBallonDisplayer.java" startLine="137" startPosition="34" endLine="138" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2248862906532644464" fileName="TransientModelBallonDisplayer.java" startLine="138" startPosition="23" endLine="139" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2248862906532644484" fileName="TransientModelBallonDisplayer.java" startLine="141" startPosition="82" endLine="142" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="160" startPosition="36" endLine="161" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="162" startPosition="5" endLine="163" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="167" startPosition="36" endLine="168" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="169" startPosition="5" endLine="170" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1275835579956689896" fileName="TransientModelBallonDisplayer.java" startLine="130" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMakeNotificationListener#()V" />
-    <nodeInfo nodeId="1275835579956644908" fileName="TransientModelBallonDisplayer.java" startLine="146" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptAboutToStart#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="1275835579956644914" fileName="TransientModelBallonDisplayer.java" startLine="149" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptFinished#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="1275835579956644920" fileName="TransientModelBallonDisplayer.java" startLine="152" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="1275835579956644926" fileName="TransientModelBallonDisplayer.java" startLine="155" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="721478377485348913" fileName="TransientModelBallonDisplayer.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="1690477811494028827" fileName="TransientModelBallonDisplayer.java" startLine="56" startPosition="35" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4517385494359470588" fileName="TransientModelBallonDisplayer.java" startLine="65" startPosition="243" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8689724042318038808" fileName="TransientModelBallonDisplayer.java" startLine="94" startPosition="29" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8689724042318038827" fileName="TransientModelBallonDisplayer.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="621016502014035524" fileName="TransientModelBallonDisplayer.java" startLine="111" startPosition="40" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="159" startPosition="89" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="166" startPosition="81" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="721478377485348917" fileName="TransientModelBallonDisplayer.java" startLine="53" startPosition="25" endLine="54" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1690477811494028829" fileName="TransientModelBallonDisplayer.java" startLine="58" startPosition="97" endLine="59" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7550858217961929329" fileName="TransientModelBallonDisplayer.java" startLine="63" startPosition="37" endLine="64" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="621016502014035560" fileName="TransientModelBallonDisplayer.java" startLine="64" startPosition="139" endLine="65" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4517385494359470564" fileName="TransientModelBallonDisplayer.java" startLine="65" startPosition="127" endLine="66" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4517385494359470595" fileName="TransientModelBallonDisplayer.java" startLine="67" startPosition="20" endLine="68" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7035395638377099138" fileName="TransientModelBallonDisplayer.java" startLine="69" startPosition="5" endLine="70" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7035395638377112092" fileName="TransientModelBallonDisplayer.java" startLine="70" startPosition="52" endLine="71" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4517385494359433625" fileName="TransientModelBallonDisplayer.java" startLine="71" startPosition="37" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="721478377485341717" fileName="TransientModelBallonDisplayer.java" startLine="72" startPosition="0" endLine="73" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7035395638377076128" fileName="TransientModelBallonDisplayer.java" startLine="73" startPosition="37" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="721478377485341620" fileName="TransientModelBallonDisplayer.java" startLine="74" startPosition="0" endLine="75" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6204683942016234925" fileName="TransientModelBallonDisplayer.java" startLine="76" startPosition="53" endLine="77" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2022241925975927783" fileName="TransientModelBallonDisplayer.java" startLine="78" startPosition="12" endLine="79" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6204683942016234949" fileName="TransientModelBallonDisplayer.java" startLine="80" startPosition="55" endLine="81" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2022241925975927719" fileName="TransientModelBallonDisplayer.java" startLine="82" startPosition="14" endLine="83" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2022241925975927733" fileName="TransientModelBallonDisplayer.java" startLine="84" startPosition="55" endLine="85" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2022241925975927739" fileName="TransientModelBallonDisplayer.java" startLine="85" startPosition="66" endLine="86" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2022241925975927745" fileName="TransientModelBallonDisplayer.java" startLine="86" startPosition="59" endLine="87" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2022241925975927754" fileName="TransientModelBallonDisplayer.java" startLine="87" startPosition="82" endLine="88" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2022241925975927764" fileName="TransientModelBallonDisplayer.java" startLine="88" startPosition="39" endLine="89" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8689724042318038810" fileName="TransientModelBallonDisplayer.java" startLine="96" startPosition="91" endLine="97" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8689724042318038831" fileName="TransientModelBallonDisplayer.java" startLine="101" startPosition="25" endLine="102" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6204683942016226528" fileName="TransientModelBallonDisplayer.java" startLine="107" startPosition="70" endLine="108" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6204683942016226535" fileName="TransientModelBallonDisplayer.java" startLine="108" startPosition="43" endLine="109" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6204683942016226549" fileName="TransientModelBallonDisplayer.java" startLine="109" startPosition="91" endLine="110" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="621016502014035531" fileName="TransientModelBallonDisplayer.java" startLine="114" startPosition="94" endLine="115" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="621016502014035541" fileName="TransientModelBallonDisplayer.java" startLine="116" startPosition="5" endLine="117" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="621016502014035547" fileName="TransientModelBallonDisplayer.java" startLine="117" startPosition="106" endLine="118" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9186796564629073673" fileName="TransientModelBallonDisplayer.java" startLine="121" startPosition="49" endLine="122" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2248862906532644433" fileName="TransientModelBallonDisplayer.java" startLine="130" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySessionJustOpened" />
+    <nodeInfo nodeId="2248862906532644437" fileName="TransientModelBallonDisplayer.java" startLine="137" startPosition="75" endLine="138" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8689724042318038886" fileName="TransientModelBallonDisplayer.java" startLine="140" startPosition="34" endLine="141" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2248862906532644464" fileName="TransientModelBallonDisplayer.java" startLine="141" startPosition="23" endLine="142" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2248862906532644484" fileName="TransientModelBallonDisplayer.java" startLine="144" startPosition="82" endLine="145" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="167" startPosition="36" endLine="168" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="169" startPosition="5" endLine="170" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="174" startPosition="36" endLine="175" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="176" startPosition="5" endLine="177" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1275835579956689896" fileName="TransientModelBallonDisplayer.java" startLine="132" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyMakeNotificationListener#()V" />
+    <nodeInfo nodeId="1690477811494028827" fileName="TransientModelBallonDisplayer.java" startLine="57" startPosition="35" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4517385494359470588" fileName="TransientModelBallonDisplayer.java" startLine="66" startPosition="243" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8689724042318038808" fileName="TransientModelBallonDisplayer.java" startLine="95" startPosition="29" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="621016502014035524" fileName="TransientModelBallonDisplayer.java" startLine="113" startPosition="40" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1275835579956644908" fileName="TransientModelBallonDisplayer.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptAboutToStart#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="1275835579956644914" fileName="TransientModelBallonDisplayer.java" startLine="153" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scriptFinished#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="1275835579956644920" fileName="TransientModelBallonDisplayer.java" startLine="157" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="1275835579956644926" fileName="TransientModelBallonDisplayer.java" startLine="161" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="166" startPosition="89" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="173" startPosition="81" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="721478377485341573" fileName="TransientModelBallonDisplayer.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransientModelBallonDisplayer#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/make/actions/TransientModelsWidget;)V" />
     <nodeInfo nodeId="721478377485348908" fileName="TransientModelBallonDisplayer.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="9186796564629073680" fileName="TransientModelBallonDisplayer.java" startLine="120" startPosition="83" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2248862906532644458" fileName="TransientModelBallonDisplayer.java" startLine="136" startPosition="89" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1690477811494028815" fileName="TransientModelBallonDisplayer.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ensureRegistered#()V" />
-    <nodeInfo nodeId="8689724042318038819" fileName="TransientModelBallonDisplayer.java" startLine="97" startPosition="5" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6204683942016226520" fileName="TransientModelBallonDisplayer.java" startLine="105" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showForComponent#(Ljava/awt/Component;Lcom/intellij/openapi/ui/popup/Balloon;)V" />
-    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="159" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_45eojt_a0j0i#(Ljetbrains/mps/ide/make/actions/TransientModelsWidget;)Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="166" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_45eojt_a0a0a01a8#(Lcom/intellij/openapi/wm/StatusBar;)Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="2022241925975927724" fileName="TransientModelBallonDisplayer.java" startLine="82" startPosition="73" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9186796564629060105" fileName="TransientModelBallonDisplayer.java" startLine="111" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isPopupShown#()Z" />
-    <nodeInfo nodeId="9186796564629060696" fileName="TransientModelBallonDisplayer.java" startLine="119" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setShowPopup#(Z)V" />
-    <nodeInfo nodeId="6204683942016234954" fileName="TransientModelBallonDisplayer.java" startLine="81" startPosition="12" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8689724042318038804" fileName="TransientModelBallonDisplayer.java" startLine="94" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showBallon#()V" />
-    <nodeInfo nodeId="1275835579956644879" fileName="TransientModelBallonDisplayer.java" startLine="133" startPosition="67" endLine="143" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6204683942016234931" fileName="TransientModelBallonDisplayer.java" startLine="78" startPosition="94" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1275835579956644868" fileName="TransientModelBallonDisplayer.java" startLine="133" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleNotification#(Ljetbrains/mps/make/MakeNotification;)V" />
-    <nodeInfo nodeId="2022241925975927717" fileName="TransientModelBallonDisplayer.java" startLine="77" startPosition="10" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="721478377485341624" fileName="TransientModelBallonDisplayer.java" startLine="74" startPosition="55" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="721478377485341577" fileName="TransientModelBallonDisplayer.java" startLine="62" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showBaloonInternal#()V" />
-    <scopeInfo nodeId="1275835579956689897" fileName="TransientModelBallonDisplayer.java" startLine="130" startPosition="41" endLine="130" endPosition="41" />
-    <scopeInfo nodeId="1275835579956644913" fileName="TransientModelBallonDisplayer.java" startLine="146" startPosition="67" endLine="146" endPosition="67" />
-    <scopeInfo nodeId="1275835579956644919" fileName="TransientModelBallonDisplayer.java" startLine="149" startPosition="63" endLine="149" endPosition="63" />
-    <scopeInfo nodeId="1275835579956644925" fileName="TransientModelBallonDisplayer.java" startLine="152" startPosition="62" endLine="152" endPosition="62" />
-    <scopeInfo nodeId="1275835579956644931" fileName="TransientModelBallonDisplayer.java" startLine="155" startPosition="62" endLine="155" endPosition="62" />
-    <scopeInfo nodeId="721478377485348916" fileName="TransientModelBallonDisplayer.java" startLine="52" startPosition="25" endLine="53" endPosition="75" />
-    <scopeInfo nodeId="1690477811494028828" fileName="TransientModelBallonDisplayer.java" startLine="57" startPosition="97" endLine="58" endPosition="118" />
-    <scopeInfo nodeId="4517385494359470589" fileName="TransientModelBallonDisplayer.java" startLine="66" startPosition="20" endLine="67" endPosition="35" />
-    <scopeInfo nodeId="721478377485341684" fileName="TransientModelBallonDisplayer.java" startLine="75" startPosition="53" endLine="76" endPosition="43" />
-    <scopeInfo nodeId="6204683942016234932" fileName="TransientModelBallonDisplayer.java" startLine="79" startPosition="55" endLine="80" endPosition="45" />
-    <scopeInfo nodeId="8689724042318038809" fileName="TransientModelBallonDisplayer.java" startLine="95" startPosition="91" endLine="96" endPosition="13" />
-    <scopeInfo nodeId="8689724042318038830" fileName="TransientModelBallonDisplayer.java" startLine="99" startPosition="25" endLine="100" endPosition="29" />
-    <scopeInfo nodeId="621016502014035525" fileName="TransientModelBallonDisplayer.java" startLine="112" startPosition="94" endLine="113" endPosition="19" />
-    <scopeInfo nodeId="1275835579956644885" fileName="TransientModelBallonDisplayer.java" startLine="134" startPosition="75" endLine="135" endPosition="35" />
-    <scopeInfo nodeId="1757657583289670580" fileName="TransientModelBallonDisplayer.java" startLine="141" startPosition="82" endLine="142" endPosition="36" />
-    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="160" startPosition="36" endLine="161" endPosition="46" />
-    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="167" startPosition="36" endLine="168" endPosition="46" />
+    <nodeInfo nodeId="721478377485348913" fileName="TransientModelBallonDisplayer.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="8689724042318038827" fileName="TransientModelBallonDisplayer.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="9186796564629073680" fileName="TransientModelBallonDisplayer.java" startLine="122" startPosition="83" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2248862906532644458" fileName="TransientModelBallonDisplayer.java" startLine="139" startPosition="89" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1690477811494028815" fileName="TransientModelBallonDisplayer.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ensureRegistered#()V" />
+    <nodeInfo nodeId="6204683942016226520" fileName="TransientModelBallonDisplayer.java" startLine="107" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showForComponent#(Ljava/awt/Component;Lcom/intellij/openapi/ui/popup/Balloon;)V" />
+    <nodeInfo nodeId="8689724042318038819" fileName="TransientModelBallonDisplayer.java" startLine="98" startPosition="5" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="166" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_45eojt_a0j0i#(Ljetbrains/mps/ide/make/actions/TransientModelsWidget;)Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="173" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_45eojt_a0a0a01a8#(Lcom/intellij/openapi/wm/StatusBar;)Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="2022241925975927724" fileName="TransientModelBallonDisplayer.java" startLine="83" startPosition="73" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9186796564629060105" fileName="TransientModelBallonDisplayer.java" startLine="113" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isPopupShown#()Z" />
+    <nodeInfo nodeId="9186796564629060696" fileName="TransientModelBallonDisplayer.java" startLine="121" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setShowPopup#(Z)V" />
+    <nodeInfo nodeId="6204683942016234954" fileName="TransientModelBallonDisplayer.java" startLine="82" startPosition="12" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1275835579956644879" fileName="TransientModelBallonDisplayer.java" startLine="136" startPosition="67" endLine="146" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8689724042318038804" fileName="TransientModelBallonDisplayer.java" startLine="95" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showBallon#()V" />
+    <nodeInfo nodeId="6204683942016234931" fileName="TransientModelBallonDisplayer.java" startLine="79" startPosition="94" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1275835579956644868" fileName="TransientModelBallonDisplayer.java" startLine="135" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleNotification#(Ljetbrains/mps/make/MakeNotification;)V" />
+    <nodeInfo nodeId="2022241925975927717" fileName="TransientModelBallonDisplayer.java" startLine="78" startPosition="10" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="721478377485341624" fileName="TransientModelBallonDisplayer.java" startLine="75" startPosition="55" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="721478377485341577" fileName="TransientModelBallonDisplayer.java" startLine="63" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showBaloonInternal#()V" />
+    <scopeInfo nodeId="1275835579956689897" fileName="TransientModelBallonDisplayer.java" startLine="132" startPosition="41" endLine="132" endPosition="41" />
+    <scopeInfo nodeId="1275835579956644913" fileName="TransientModelBallonDisplayer.java" startLine="150" startPosition="67" endLine="150" endPosition="67" />
+    <scopeInfo nodeId="1275835579956644919" fileName="TransientModelBallonDisplayer.java" startLine="154" startPosition="63" endLine="154" endPosition="63" />
+    <scopeInfo nodeId="1275835579956644925" fileName="TransientModelBallonDisplayer.java" startLine="158" startPosition="62" endLine="158" endPosition="62" />
+    <scopeInfo nodeId="1275835579956644931" fileName="TransientModelBallonDisplayer.java" startLine="162" startPosition="62" endLine="162" endPosition="62" />
+    <scopeInfo nodeId="721478377485348916" fileName="TransientModelBallonDisplayer.java" startLine="53" startPosition="25" endLine="54" endPosition="75" />
+    <scopeInfo nodeId="1690477811494028828" fileName="TransientModelBallonDisplayer.java" startLine="58" startPosition="97" endLine="59" endPosition="118" />
+    <scopeInfo nodeId="4517385494359470589" fileName="TransientModelBallonDisplayer.java" startLine="67" startPosition="20" endLine="68" endPosition="35" />
+    <scopeInfo nodeId="721478377485341684" fileName="TransientModelBallonDisplayer.java" startLine="76" startPosition="53" endLine="77" endPosition="43" />
+    <scopeInfo nodeId="6204683942016234932" fileName="TransientModelBallonDisplayer.java" startLine="80" startPosition="55" endLine="81" endPosition="45" />
+    <scopeInfo nodeId="8689724042318038809" fileName="TransientModelBallonDisplayer.java" startLine="96" startPosition="91" endLine="97" endPosition="13" />
+    <scopeInfo nodeId="8689724042318038830" fileName="TransientModelBallonDisplayer.java" startLine="101" startPosition="25" endLine="102" endPosition="29" />
+    <scopeInfo nodeId="621016502014035525" fileName="TransientModelBallonDisplayer.java" startLine="114" startPosition="94" endLine="115" endPosition="19" />
+    <scopeInfo nodeId="1275835579956644885" fileName="TransientModelBallonDisplayer.java" startLine="137" startPosition="75" endLine="138" endPosition="35" />
+    <scopeInfo nodeId="1757657583289670580" fileName="TransientModelBallonDisplayer.java" startLine="144" startPosition="82" endLine="145" endPosition="36" />
+    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="167" startPosition="36" endLine="168" endPosition="46" />
+    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="174" startPosition="36" endLine="175" endPosition="46" />
     <scopeInfo nodeId="721478377485341576" fileName="TransientModelBallonDisplayer.java" startLine="42" startPosition="87" endLine="44" endPosition="22" />
     <scopeInfo nodeId="721478377485348911" fileName="TransientModelBallonDisplayer.java" startLine="47" startPosition="22" endLine="49" endPosition="23" />
-    <scopeInfo nodeId="1275835579956689896" fileName="TransientModelBallonDisplayer.java" startLine="130" startPosition="0" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="2248862906532644459" fileName="TransientModelBallonDisplayer.java" startLine="137" startPosition="34" endLine="139" endPosition="38" />
-    <scopeInfo nodeId="1275835579956644908" fileName="TransientModelBallonDisplayer.java" startLine="146" startPosition="0" endLine="148" endPosition="0">
-      <varInfo nodeId="1275835579956644909" varName="notification" />
-    </scopeInfo>
-    <scopeInfo nodeId="1275835579956644914" fileName="TransientModelBallonDisplayer.java" startLine="149" startPosition="0" endLine="151" endPosition="0">
-      <varInfo nodeId="1275835579956644915" varName="notification" />
-    </scopeInfo>
-    <scopeInfo nodeId="1275835579956644920" fileName="TransientModelBallonDisplayer.java" startLine="152" startPosition="0" endLine="154" endPosition="0">
-      <varInfo nodeId="1275835579956644923" varName="notification" />
-    </scopeInfo>
-    <scopeInfo nodeId="1275835579956644926" fileName="TransientModelBallonDisplayer.java" startLine="155" startPosition="0" endLine="157" endPosition="0">
-      <varInfo nodeId="1275835579956644929" varName="notification" />
-    </scopeInfo>
-    <scopeInfo nodeId="721478377485348913" fileName="TransientModelBallonDisplayer.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1690477811494028818" fileName="TransientModelBallonDisplayer.java" startLine="56" startPosition="35" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="8689724042318038827" fileName="TransientModelBallonDisplayer.java" startLine="99" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="6204683942016226524" fileName="TransientModelBallonDisplayer.java" startLine="105" startPosition="70" endLine="108" endPosition="77">
+    <scopeInfo nodeId="1275835579956689896" fileName="TransientModelBallonDisplayer.java" startLine="132" startPosition="0" endLine="134" endPosition="0" />
+    <scopeInfo nodeId="2248862906532644459" fileName="TransientModelBallonDisplayer.java" startLine="140" startPosition="34" endLine="142" endPosition="38" />
+    <scopeInfo nodeId="1690477811494028818" fileName="TransientModelBallonDisplayer.java" startLine="57" startPosition="35" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="6204683942016226524" fileName="TransientModelBallonDisplayer.java" startLine="107" startPosition="70" endLine="110" endPosition="77">
       <varInfo nodeId="6204683942016226517" varName="offset" />
       <varInfo nodeId="6204683942016226518" varName="point" />
+    </scopeInfo>
+    <scopeInfo nodeId="1275835579956644908" fileName="TransientModelBallonDisplayer.java" startLine="149" startPosition="0" endLine="152" endPosition="0">
+      <varInfo nodeId="1275835579956644909" varName="notification" />
+    </scopeInfo>
+    <scopeInfo nodeId="1275835579956644914" fileName="TransientModelBallonDisplayer.java" startLine="153" startPosition="0" endLine="156" endPosition="0">
+      <varInfo nodeId="1275835579956644915" varName="notification" />
+    </scopeInfo>
+    <scopeInfo nodeId="1275835579956644920" fileName="TransientModelBallonDisplayer.java" startLine="157" startPosition="0" endLine="160" endPosition="0">
+      <varInfo nodeId="1275835579956644923" varName="notification" />
+    </scopeInfo>
+    <scopeInfo nodeId="1275835579956644926" fileName="TransientModelBallonDisplayer.java" startLine="161" startPosition="0" endLine="164" endPosition="0">
+      <varInfo nodeId="1275835579956644929" varName="notification" />
     </scopeInfo>
     <scopeInfo nodeId="721478377485341573" fileName="TransientModelBallonDisplayer.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="2022241925975928747" varName="project" />
       <varInfo nodeId="6005576522675274252" varName="widget" />
     </scopeInfo>
     <scopeInfo nodeId="721478377485348908" fileName="TransientModelBallonDisplayer.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="2248862906532644445" fileName="TransientModelBallonDisplayer.java" startLine="136" startPosition="89" endLine="140" endPosition="9" />
-    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="159" startPosition="89" endLine="163" endPosition="16" />
-    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="166" startPosition="81" endLine="170" endPosition="16" />
-    <scopeInfo nodeId="1690477811494028815" fileName="TransientModelBallonDisplayer.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="2022241925975927732" fileName="TransientModelBallonDisplayer.java" startLine="83" startPosition="55" endLine="88" endPosition="87">
+    <scopeInfo nodeId="721478377485348913" fileName="TransientModelBallonDisplayer.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8689724042318038827" fileName="TransientModelBallonDisplayer.java" startLine="100" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="2248862906532644445" fileName="TransientModelBallonDisplayer.java" startLine="139" startPosition="89" endLine="143" endPosition="9" />
+    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="166" startPosition="89" endLine="170" endPosition="16" />
+    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="173" startPosition="81" endLine="177" endPosition="16" />
+    <scopeInfo nodeId="1690477811494028815" fileName="TransientModelBallonDisplayer.java" startLine="57" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="2022241925975927732" fileName="TransientModelBallonDisplayer.java" startLine="84" startPosition="55" endLine="89" endPosition="87">
       <varInfo nodeId="2022241925975927740" varName="bounds" />
       <varInfo nodeId="2022241925975927734" varName="contentPane" />
       <varInfo nodeId="2022241925975927746" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="6204683942016226520" fileName="TransientModelBallonDisplayer.java" startLine="105" startPosition="0" endLine="110" endPosition="0">
+    <scopeInfo nodeId="6204683942016226520" fileName="TransientModelBallonDisplayer.java" startLine="107" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="6204683942016226563" varName="ballon" />
       <varInfo nodeId="6204683942016226519" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="621016502014021342" fileName="TransientModelBallonDisplayer.java" startLine="111" startPosition="40" endLine="116" endPosition="115">
+    <scopeInfo nodeId="621016502014021342" fileName="TransientModelBallonDisplayer.java" startLine="113" startPosition="40" endLine="118" endPosition="115">
       <varInfo nodeId="621016502014035542" varName="displayType" />
     </scopeInfo>
-    <scopeInfo nodeId="9186796564629060698" fileName="TransientModelBallonDisplayer.java" startLine="119" startPosition="49" endLine="124" endPosition="7">
+    <scopeInfo nodeId="9186796564629060698" fileName="TransientModelBallonDisplayer.java" startLine="121" startPosition="49" endLine="126" endPosition="7">
       <varInfo nodeId="9186796564629073674" varName="settings" />
     </scopeInfo>
-    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="159" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="721478377485342361" fileName="TransientModelBallonDisplayer.java" startLine="166" startPosition="0" endLine="172" endPosition="0">
       <varInfo nodeId="721478377485342361" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="166" startPosition="0" endLine="172" endPosition="0">
+    <scopeInfo nodeId="2022241925975929623" fileName="TransientModelBallonDisplayer.java" startLine="173" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="2022241925975929623" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="9186796564629060105" fileName="TransientModelBallonDisplayer.java" startLine="111" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="9186796564629060696" fileName="TransientModelBallonDisplayer.java" startLine="119" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="9186796564629060105" fileName="TransientModelBallonDisplayer.java" startLine="113" startPosition="0" endLine="120" endPosition="0" />
+    <scopeInfo nodeId="9186796564629060696" fileName="TransientModelBallonDisplayer.java" startLine="121" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="9186796564629060723" varName="show" />
     </scopeInfo>
-    <scopeInfo nodeId="6204683942016234955" fileName="TransientModelBallonDisplayer.java" startLine="81" startPosition="14" endLine="89" endPosition="9">
+    <scopeInfo nodeId="6204683942016234955" fileName="TransientModelBallonDisplayer.java" startLine="82" startPosition="14" endLine="90" endPosition="9">
       <varInfo nodeId="2022241925975927720" varName="rootPane" />
     </scopeInfo>
-    <scopeInfo nodeId="8689724042318038807" fileName="TransientModelBallonDisplayer.java" startLine="94" startPosition="29" endLine="102" endPosition="7" />
-    <scopeInfo nodeId="8689724042318038804" fileName="TransientModelBallonDisplayer.java" startLine="94" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="1275835579956644873" fileName="TransientModelBallonDisplayer.java" startLine="133" startPosition="67" endLine="143" endPosition="7" />
-    <scopeInfo nodeId="1275835579956644868" fileName="TransientModelBallonDisplayer.java" startLine="133" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="8689724042318038807" fileName="TransientModelBallonDisplayer.java" startLine="95" startPosition="29" endLine="104" endPosition="7" />
+    <scopeInfo nodeId="1275835579956644873" fileName="TransientModelBallonDisplayer.java" startLine="136" startPosition="67" endLine="146" endPosition="7" />
+    <scopeInfo nodeId="8689724042318038804" fileName="TransientModelBallonDisplayer.java" startLine="95" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="2022241925975927718" fileName="TransientModelBallonDisplayer.java" startLine="78" startPosition="12" endLine="91" endPosition="7" />
+    <scopeInfo nodeId="1275835579956644868" fileName="TransientModelBallonDisplayer.java" startLine="135" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="1275835579956644869" varName="notification" />
     </scopeInfo>
-    <scopeInfo nodeId="2022241925975927718" fileName="TransientModelBallonDisplayer.java" startLine="77" startPosition="12" endLine="90" endPosition="7" />
-    <scopeInfo nodeId="721478377485341580" fileName="TransientModelBallonDisplayer.java" startLine="62" startPosition="37" endLine="91" endPosition="5">
+    <scopeInfo nodeId="721478377485341580" fileName="TransientModelBallonDisplayer.java" startLine="63" startPosition="37" endLine="92" endPosition="5">
       <varInfo nodeId="721478377485341582" varName="balloon" />
       <varInfo nodeId="4517385494359470565" varName="builder" />
       <varInfo nodeId="721478377485341621" varName="component" />
       <varInfo nodeId="7550858217961929330" varName="notification" />
       <varInfo nodeId="621016502014035561" varName="sticky" />
     </scopeInfo>
-    <scopeInfo nodeId="721478377485341577" fileName="TransientModelBallonDisplayer.java" startLine="62" startPosition="0" endLine="93" endPosition="0" />
-    <unitInfo nodeId="8689724042318038825" fileName="TransientModelBallonDisplayer.java" startLine="98" startPosition="56" endLine="102" endPosition="5" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer$1" />
-    <unitInfo nodeId="1275835579956689892" fileName="TransientModelBallonDisplayer.java" startLine="127" startPosition="0" endLine="158" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer$MyMakeNotificationListener" />
-    <unitInfo nodeId="721478377485341571" fileName="TransientModelBallonDisplayer.java" startLine="36" startPosition="0" endLine="173" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer" />
+    <scopeInfo nodeId="721478377485341577" fileName="TransientModelBallonDisplayer.java" startLine="63" startPosition="0" endLine="94" endPosition="0" />
+    <unitInfo nodeId="8689724042318038825" fileName="TransientModelBallonDisplayer.java" startLine="99" startPosition="56" endLine="104" endPosition="5" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer$1" />
+    <unitInfo nodeId="1275835579956689892" fileName="TransientModelBallonDisplayer.java" startLine="129" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer$MyMakeNotificationListener" />
+    <unitInfo nodeId="721478377485341571" fileName="TransientModelBallonDisplayer.java" startLine="36" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.ide.make.actions.TransientModelBallonDisplayer" />
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/821918482060440369">
     <nodeInfo nodeId="821918482060600845" fileName="WidgetSettingsPanel.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myShowPopupBox" />
@@ -2133,30 +2133,30 @@
     <nodeInfo nodeId="1884868727859640974" fileName="WidgetSettingsPanel.java" startLine="22" startPosition="58" endLine="23" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3354109888307413102" fileName="WidgetSettingsPanel.java" startLine="23" startPosition="112" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="821918482060587715" fileName="WidgetSettingsPanel.java" startLine="24" startPosition="0" endLine="25" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="821918482060600841" fileName="WidgetSettingsPanel.java" startLine="30" startPosition="32" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="821918482060600843" fileName="WidgetSettingsPanel.java" startLine="31" startPosition="18" endLine="32" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="821918482060600873" fileName="WidgetSettingsPanel.java" startLine="34" startPosition="21" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9186796564629073697" fileName="WidgetSettingsPanel.java" startLine="38" startPosition="26" endLine="39" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3353462584644996741" fileName="WidgetSettingsPanel.java" startLine="39" startPosition="76" endLine="40" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="821918482060600821" fileName="WidgetSettingsPanel.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="821918482060600854" fileName="WidgetSettingsPanel.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onClose#()V" />
-    <nodeInfo nodeId="821918482060594607" fileName="WidgetSettingsPanel.java" startLine="28" startPosition="50" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="821918482060600841" fileName="WidgetSettingsPanel.java" startLine="31" startPosition="32" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="821918482060600843" fileName="WidgetSettingsPanel.java" startLine="32" startPosition="18" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="821918482060600873" fileName="WidgetSettingsPanel.java" startLine="35" startPosition="21" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9186796564629073697" fileName="WidgetSettingsPanel.java" startLine="39" startPosition="26" endLine="40" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3353462584644996741" fileName="WidgetSettingsPanel.java" startLine="40" startPosition="76" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="821918482060600854" fileName="WidgetSettingsPanel.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onClose#()V" />
+    <nodeInfo nodeId="821918482060600821" fileName="WidgetSettingsPanel.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="821918482060594607" fileName="WidgetSettingsPanel.java" startLine="28" startPosition="50" endLine="35" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="821918482060440371" fileName="WidgetSettingsPanel.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WidgetSettingsPanel#()V" />
-    <nodeInfo nodeId="821918482060594601" fileName="WidgetSettingsPanel.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showComponent#(Lcom/intellij/ui/awt/RelativePoint;)V" />
-    <scopeInfo nodeId="821918482060600824" fileName="WidgetSettingsPanel.java" startLine="30" startPosition="32" endLine="32" endPosition="28" />
-    <scopeInfo nodeId="821918482060600857" fileName="WidgetSettingsPanel.java" startLine="38" startPosition="26" endLine="40" endPosition="48" />
-    <scopeInfo nodeId="821918482060600821" fileName="WidgetSettingsPanel.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="821918482060600854" fileName="WidgetSettingsPanel.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <nodeInfo nodeId="821918482060594601" fileName="WidgetSettingsPanel.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showComponent#(Lcom/intellij/ui/awt/RelativePoint;)V" />
+    <scopeInfo nodeId="821918482060600824" fileName="WidgetSettingsPanel.java" startLine="31" startPosition="32" endLine="33" endPosition="28" />
+    <scopeInfo nodeId="821918482060600857" fileName="WidgetSettingsPanel.java" startLine="39" startPosition="26" endLine="41" endPosition="48" />
+    <scopeInfo nodeId="821918482060600854" fileName="WidgetSettingsPanel.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="821918482060600821" fileName="WidgetSettingsPanel.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="821918482060440374" fileName="WidgetSettingsPanel.java" startLine="19" startPosition="32" endLine="25" endPosition="62" />
-    <scopeInfo nodeId="821918482060594604" fileName="WidgetSettingsPanel.java" startLine="28" startPosition="50" endLine="35" endPosition="22">
+    <scopeInfo nodeId="821918482060440371" fileName="WidgetSettingsPanel.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="821918482060594604" fileName="WidgetSettingsPanel.java" startLine="28" startPosition="50" endLine="36" endPosition="22">
       <varInfo nodeId="821918482060594608" varName="popup" />
     </scopeInfo>
-    <scopeInfo nodeId="821918482060440371" fileName="WidgetSettingsPanel.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="821918482060594601" fileName="WidgetSettingsPanel.java" startLine="28" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="821918482060594601" fileName="WidgetSettingsPanel.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="821918482060594605" varName="point" />
     </scopeInfo>
-    <unitInfo nodeId="821918482060600819" fileName="WidgetSettingsPanel.java" startLine="29" startPosition="156" endLine="34" endPosition="5" unitName="jetbrains.mps.ide.make.actions.WidgetSettingsPanel$1" />
-    <unitInfo nodeId="821918482060440369" fileName="WidgetSettingsPanel.java" startLine="16" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ide.make.actions.WidgetSettingsPanel" />
+    <unitInfo nodeId="821918482060600819" fileName="WidgetSettingsPanel.java" startLine="29" startPosition="156" endLine="35" endPosition="5" unitName="jetbrains.mps.ide.make.actions.WidgetSettingsPanel$1" />
+    <unitInfo nodeId="821918482060440369" fileName="WidgetSettingsPanel.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.ide.make.actions.WidgetSettingsPanel" />
   </root>
   <root nodeRef="r:cfccec82-df72-4483-9807-88776b4673ab(jetbrains.mps.ide.make.actions)/8610665572788514618">
     <nodeInfo nodeId="8610665572788514618" fileName="MakeSelectedModels_Action.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -3427,7 +3427,7 @@
     <nodeInfo nodeId="8610665572788515808" fileName="TextPreviewModel_Action.java" startLine="87" startPosition="5" endLine="88" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5551197716189850100" fileName="TextPreviewModel_Action.java" startLine="91" startPosition="85" endLine="92" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8610665572788515819" fileName="TextPreviewModel_Action.java" startLine="93" startPosition="65" endLine="94" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8610665572788515821" fileName="TextPreviewModel_Action.java" startLine="95" startPosition="5" endLine="96" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8610665572788515821" fileName="TextPreviewModel_Action.java" startLine="95" startPosition="5" endLine="96" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="99" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="9010458443787641484" fileName="TextPreviewModel_Action.java" startLine="37" startPosition="87" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="57" startPosition="95" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -3479,7 +3479,7 @@
     <scopeInfo nodeId="8610665572788515978" fileName="TextPreviewModel_Action.java" startLine="37" startPosition="87" endLine="42" endPosition="87">
       <varInfo nodeId="8610665572788515980" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="8610665572788515813" fileName="TextPreviewModel_Action.java" startLine="91" startPosition="85" endLine="96" endPosition="101" />
+    <scopeInfo nodeId="8610665572788515813" fileName="TextPreviewModel_Action.java" startLine="91" startPosition="85" endLine="96" endPosition="81" />
     <scopeInfo nodeId="8610665572788515769" fileName="TextPreviewModel_Action.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="8610665572788515769" varName="_params" />
       <varInfo nodeId="8610665572788515769" varName="event" />

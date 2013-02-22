@@ -114,18 +114,22 @@ public class GeneratorUtil {
     public MyIncrementalGenerationStrategy() {
     }
 
+    @Override
     public Map<String, String> getModelHashes(SModel p0, IOperationContext p1) {
       return Collections.emptyMap();
     }
 
+    @Override
     public GenerationCacheContainer getContainer() {
       return null;
     }
 
+    @Override
     public GenerationDependencies getDependencies(SModel p0) {
       return null;
     }
 
+    @Override
     public boolean isIncrementalEnabled() {
       return false;
     }
@@ -140,6 +144,7 @@ public class GeneratorUtil {
       myDeveloperMode = developerMode;
     }
 
+    @Override
     public void handle(IMessage message) {
       if (myDeveloperMode && message.getKind().equals(MessageKind.ERROR)) {
         System.err.println("[Generation error]" + message.getText());
@@ -147,6 +152,7 @@ public class GeneratorUtil {
       myInternalHandler.handle(message);
     }
 
+    @Override
     public void clear() {
       myInternalHandler.clear();
     }

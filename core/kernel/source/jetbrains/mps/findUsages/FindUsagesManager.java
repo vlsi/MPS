@@ -52,6 +52,7 @@ public class FindUsagesManager {
       myProgress = progress;
     }
 
+    @Override
     public Boolean compute() {
       myProgress.advance(1);
       return !myProgress.isCanceled();

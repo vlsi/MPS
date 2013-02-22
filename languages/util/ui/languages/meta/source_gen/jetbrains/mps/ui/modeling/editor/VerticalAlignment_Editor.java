@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -17,18 +19,20 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class VerticalAlignment_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cjpy1b_a(editorContext, node);
   }
 
-  public static class VerticalAlignment_component_cellMenu_a0a0a implements SubstituteInfoPartExt {
+  private static boolean renderingCondition_cjpy1b_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "TOP".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
+  }
+
+  public static class VerticalAlignment_component_cellMenu_cjpy1b_a0a0a implements SubstituteInfoPartExt {
     private VerticalAlignment_Chooser myComponent;
 
-    public VerticalAlignment_component_cellMenu_a0a0a() {
+    public VerticalAlignment_component_cellMenu_cjpy1b_a0a0a() {
       this.myComponent = new VerticalAlignment_Chooser();
     }
 
@@ -37,10 +41,14 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class VerticalAlignment_component_cellMenu_a0b0a implements SubstituteInfoPartExt {
+  private static boolean renderingCondition_cjpy1b_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "BOTTOM".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
+  }
+
+  public static class VerticalAlignment_component_cellMenu_cjpy1b_a0b0a implements SubstituteInfoPartExt {
     private VerticalAlignment_Chooser myComponent;
 
-    public VerticalAlignment_component_cellMenu_a0b0a() {
+    public VerticalAlignment_component_cellMenu_cjpy1b_a0b0a() {
       this.myComponent = new VerticalAlignment_Chooser();
     }
 
@@ -49,10 +57,14 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class VerticalAlignment_component_cellMenu_a0c0a implements SubstituteInfoPartExt {
+  private static boolean renderingCondition_cjpy1b_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "MIDDLE".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
+  }
+
+  public static class VerticalAlignment_component_cellMenu_cjpy1b_a0c0a implements SubstituteInfoPartExt {
     private VerticalAlignment_Chooser myComponent;
 
-    public VerticalAlignment_component_cellMenu_a0c0a() {
+    public VerticalAlignment_component_cellMenu_cjpy1b_a0c0a() {
       this.myComponent = new VerticalAlignment_Chooser();
     }
 
@@ -61,10 +73,14 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class VerticalAlignment_component_cellMenu_a0d0a implements SubstituteInfoPartExt {
+  private static boolean renderingCondition_cjpy1b_a3a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "FILL".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
+  }
+
+  public static class VerticalAlignment_component_cellMenu_cjpy1b_a0d0a implements SubstituteInfoPartExt {
     private VerticalAlignment_Chooser myComponent;
 
-    public VerticalAlignment_component_cellMenu_a0d0a() {
+    public VerticalAlignment_component_cellMenu_cjpy1b_a0d0a() {
       this.myComponent = new VerticalAlignment_Chooser();
     }
 
@@ -105,7 +121,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<-");
     editorCell.setCellId("Constant_cjpy1b_a0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0a0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_cjpy1b_a0a0a()}));
     return editorCell;
   }
 
@@ -113,7 +129,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ->");
     editorCell.setCellId("Constant_cjpy1b_b0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0b0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_cjpy1b_a0b0a()}));
     return editorCell;
   }
 
@@ -121,7 +137,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " - ");
     editorCell.setCellId("Constant_cjpy1b_c0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0c0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_cjpy1b_a0c0a()}));
     return editorCell;
   }
 
@@ -129,23 +145,7 @@ public class VerticalAlignment_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<->");
     editorCell.setCellId("Constant_cjpy1b_d0a");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_a0d0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new VerticalAlignment_Editor.VerticalAlignment_component_cellMenu_cjpy1b_a0d0a()}));
     return editorCell;
-  }
-
-  private static boolean renderingCondition_cjpy1b_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "TOP".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
-  }
-
-  private static boolean renderingCondition_cjpy1b_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "BOTTOM".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
-  }
-
-  private static boolean renderingCondition_cjpy1b_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "MIDDLE".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
-  }
-
-  private static boolean renderingCondition_cjpy1b_a3a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "FILL".equals(SPropertyOperations.getString_def(node, "value", "TOP"));
   }
 }

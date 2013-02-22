@@ -42,6 +42,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     myHistory = history;
   }
 
+  @Override
   public void goToPrevious() {
     if (myResults.isEmpty()) return;
     addToHistory();
@@ -57,6 +58,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     myList.setSelectedIndex(myResults.get(myResults.size() - 1));
   }
 
+  @Override
   public void goToNext() {
     if (myResults.isEmpty()) return;
     addToHistory();
@@ -77,6 +79,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     return myHistory;
   }
 
+  @Override
   protected void search() {
     myRenderer.search();
   }
@@ -88,6 +91,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     super.activate();
   }
 
+  @Override
   protected void deactivate() {
     setVisible(false);
     myFindResult.setText("");
@@ -136,11 +140,13 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
       myList.repaint();
     }
 
+    @Override
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
       myIndex = index;
       return super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
     }
 
+    @Override
     public void paint(Graphics g) {
       super.paint(g);
       if (myText.getText().length() == 0) {
@@ -150,6 +156,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
       }
     }
 
+    @Override
     public void paintComponent(Graphics g) {
       super.paintComponent(g);
       if (myResults.contains(myIndex)) {

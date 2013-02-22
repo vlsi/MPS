@@ -137,20 +137,20 @@
     <unitInfo nodeId="4888428037514503250" fileName="StringOperators.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.StringOperators" />
   </root>
   <root nodeRef="r:3ad93d2f-47fe-4070-8a77-383dab3a6def(jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test)/6517886960437939909">
-    <nodeInfo nodeId="6517886960437939964" fileName="Complex2.java" startLine="10" startPosition="23" endLine="11" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6517886960437940022" fileName="Complex2.java" startLine="12" startPosition="27" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6517886960437940007" fileName="Complex2.java" startLine="15" startPosition="28" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6517886960437939964" fileName="Complex2.java" startLine="11" startPosition="23" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6517886960437940022" fileName="Complex2.java" startLine="13" startPosition="27" endLine="14" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6517886960437940007" fileName="Complex2.java" startLine="16" startPosition="28" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6517886960437939911" fileName="Complex2.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Complex2#()V" />
-    <nodeInfo nodeId="6517886960437939952" fileName="Complex2.java" startLine="11" startPosition="35" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6517886960437939993" fileName="Complex2.java" startLine="14" startPosition="5" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6517886960437939916" fileName="Complex2.java" startLine="10" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#()V" />
+    <nodeInfo nodeId="6517886960437939952" fileName="Complex2.java" startLine="12" startPosition="35" endLine="15" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6517886960437939993" fileName="Complex2.java" startLine="15" startPosition="5" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6517886960437939916" fileName="Complex2.java" startLine="10" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#()V" />
     <scopeInfo nodeId="6517886960437939914" fileName="Complex2.java" startLine="7" startPosition="21" endLine="7" endPosition="21" />
-    <scopeInfo nodeId="6517886960437939953" fileName="Complex2.java" startLine="12" startPosition="27" endLine="13" endPosition="28" />
-    <scopeInfo nodeId="6517886960437939994" fileName="Complex2.java" startLine="15" startPosition="28" endLine="16" endPosition="45" />
+    <scopeInfo nodeId="6517886960437939953" fileName="Complex2.java" startLine="13" startPosition="27" endLine="14" endPosition="28" />
+    <scopeInfo nodeId="6517886960437939994" fileName="Complex2.java" startLine="16" startPosition="28" endLine="17" endPosition="45" />
     <scopeInfo nodeId="6517886960437939911" fileName="Complex2.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <scopeInfo nodeId="6517886960437939919" fileName="Complex2.java" startLine="10" startPosition="23" endLine="17" endPosition="5" />
-    <scopeInfo nodeId="6517886960437939916" fileName="Complex2.java" startLine="10" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="6517886960437939909" fileName="Complex2.java" startLine="6" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.Complex2" />
+    <scopeInfo nodeId="6517886960437939919" fileName="Complex2.java" startLine="11" startPosition="23" endLine="18" endPosition="5" />
+    <scopeInfo nodeId="6517886960437939916" fileName="Complex2.java" startLine="10" startPosition="0" endLine="20" endPosition="0" />
+    <unitInfo nodeId="6517886960437939909" fileName="Complex2.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.Complex2" />
   </root>
 </debugInfo>
 

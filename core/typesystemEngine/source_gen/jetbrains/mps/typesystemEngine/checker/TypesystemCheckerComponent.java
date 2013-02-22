@@ -14,10 +14,12 @@ public class TypesystemCheckerComponent implements CoreComponent {
     myChecker = new TypesystemChecker();
   }
 
+  @Override
   public void init() {
     myCheckersComponent.addChecker(myChecker);
   }
 
+  @Override
   public void dispose() {
     myCheckersComponent.removeChecker(myChecker);
   }

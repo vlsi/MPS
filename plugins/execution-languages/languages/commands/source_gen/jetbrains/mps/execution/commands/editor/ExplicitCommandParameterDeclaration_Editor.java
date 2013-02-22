@@ -6,6 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -20,9 +23,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -31,6 +31,14 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1nfcr6_a_0(editorContext, node);
+  }
+
+  private static boolean renderingCondition_1nfcr6_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "initializer", true) != null;
+  }
+
+  private static boolean renderingCondition_1nfcr6_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isRequired");
   }
 
   private EditorCell createCollection_1nfcr6_a(EditorContext editorContext, SNode node) {
@@ -152,13 +160,5 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_1nfcr6_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "initializer", true) != null;
-  }
-
-  private static boolean renderingCondition_1nfcr6_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isRequired");
   }
 }

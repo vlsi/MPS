@@ -69,6 +69,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
     viewOptions.myGroupSearchedNodes = false;
     viewOptions.mySearchedNodesButtonsVisible = false;
     myUsagesView = new UsagesView(project, viewOptions) {
+      @Override
       public void close() {
         MigrationScriptsView.this.close();
       }
@@ -78,6 +79,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
     myMainPanel.add(myUsagesView.getComponent(), BorderLayout.CENTER);
     myControlsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     myApplyButton = new JButton(new AbstractAction("Apply Migrations") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         applyMigrations();
       }
@@ -88,8 +90,10 @@ public abstract class MigrationScriptsView implements ResultsListener {
     myMainPanel.add(myControlsPanel, BorderLayout.SOUTH);
     this.myIndicator = new InlineProgressIndicator(true, createTaskInfo());
     this.myController = new MigrationScriptsController(myFinder) {
+      @Override
       public void runCommand(final Runnable cmd) {
         ModelAccess.instance().runCommandInEDT(new Runnable() {
+          @Override
           public void run() {
             cmd.run();
           }
@@ -106,8 +110,10 @@ public abstract class MigrationScriptsView implements ResultsListener {
     return myMainPanel;
   }
 
+  @Override
   public void resultsChanged(IFinder finder) {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         updateControls(true, new JLabel(""));
       }
@@ -119,23 +125,28 @@ public abstract class MigrationScriptsView implements ResultsListener {
   private TaskInfo createTaskInfo() {
     return new TaskInfo() {
       @NotNull
+      @Override
       public String getTitle() {
         return "Applying Migrations";
       }
 
+      @Override
       public String getCancelText() {
         return null;
       }
 
+      @Override
       public String getCancelTooltipText() {
         return null;
       }
 
+      @Override
       public boolean isCancellable() {
         return false;
       }
 
       @NonNls
+      @Override
       public String getProcessId() {
         return "migration";
       }
@@ -163,12 +174,14 @@ public abstract class MigrationScriptsView implements ResultsListener {
     final TaskInfo task = createTaskInfo();
     final Object cmd = ((CommandProcessorEx) CommandProcessor.getInstance()).startCommand(myProject, task.getTitle(), null, UndoConfirmationPolicy.REQUEST_CONFIRMATION);
     final Runnable finishCommand = new Runnable() {
+      @Override
       public void run() {
         ((CommandProcessorEx) CommandProcessor.getInstance()).finishCommand(myProject, cmd, null);
       }
     };
 
     Runnable process = new Runnable() {
+      @Override
       public void run() {
         myController.process(new ProgressMonitorAdapter(myIndicator), aliveIncludedResults);
         ModelAccess.instance().runCommandInEDT(finishCommand, getMPSProject());
@@ -182,8 +195,10 @@ public abstract class MigrationScriptsView implements ResultsListener {
   private void checkMigrationResults() {
     final MigrationScriptFinder newFinder = new MigrationScriptFinder(myFinder.getScripts(), myFinder.getOperationContext());
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         ProgressManager.getInstance().run(new Task.Modal(myTool.getProject(), "Searching", true) {
+          @Override
           public void run(@NotNull final ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
             IResultProvider provider = FindUtils.makeProvider(newFinder);
@@ -209,8 +224,10 @@ public abstract class MigrationScriptsView implements ResultsListener {
   private JButton createShowInNewTabButton(final MigrationScriptFinder finder, final IResultProvider provider, final SearchQuery query) {
     JButton button = new JButton("Show in New Tab");
     button.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         SwingUtilities.invokeLater(new Runnable() {
+          @Override
           public void run() {
             updateControls(false, new JLabel("done"));
             myTool.addTab(finder, provider, query);

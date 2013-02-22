@@ -14,11 +14,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class HorizontalAlignment_Chooser extends AbstractCellMenuComponent {
   public HorizontalAlignment_Chooser() {
-    super(new SubstituteInfoPartExt[]{new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_a0(), new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_b0(), new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_c0(), new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_d0()});
+    super(new SubstituteInfoPartExt[]{new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_78nii5_a0(), new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_78nii5_b0(), new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_78nii5_c0(), new HorizontalAlignment_Chooser.HorizontalAlignment_generic_cellMenu_78nii5_d0()});
   }
 
-  public static class HorizontalAlignment_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Item {
-    public HorizontalAlignment_generic_cellMenu_a0() {
+  public static class HorizontalAlignment_generic_cellMenu_78nii5_a0 extends AbstractCellMenuPart_Generic_Item {
+    public HorizontalAlignment_generic_cellMenu_78nii5_a0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -30,8 +30,8 @@ public class HorizontalAlignment_Chooser extends AbstractCellMenuComponent {
     }
   }
 
-  public static class HorizontalAlignment_generic_cellMenu_b0 extends AbstractCellMenuPart_Generic_Item {
-    public HorizontalAlignment_generic_cellMenu_b0() {
+  public static class HorizontalAlignment_generic_cellMenu_78nii5_b0 extends AbstractCellMenuPart_Generic_Item {
+    public HorizontalAlignment_generic_cellMenu_78nii5_b0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -43,8 +43,8 @@ public class HorizontalAlignment_Chooser extends AbstractCellMenuComponent {
     }
   }
 
-  public static class HorizontalAlignment_generic_cellMenu_c0 extends AbstractCellMenuPart_Generic_Item {
-    public HorizontalAlignment_generic_cellMenu_c0() {
+  public static class HorizontalAlignment_generic_cellMenu_78nii5_c0 extends AbstractCellMenuPart_Generic_Item {
+    public HorizontalAlignment_generic_cellMenu_78nii5_c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -56,8 +56,8 @@ public class HorizontalAlignment_Chooser extends AbstractCellMenuComponent {
     }
   }
 
-  public static class HorizontalAlignment_generic_cellMenu_d0 extends AbstractCellMenuPart_Generic_Item {
-    public HorizontalAlignment_generic_cellMenu_d0() {
+  public static class HorizontalAlignment_generic_cellMenu_78nii5_d0 extends AbstractCellMenuPart_Generic_Item {
+    public HorizontalAlignment_generic_cellMenu_78nii5_d0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

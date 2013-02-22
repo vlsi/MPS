@@ -44,23 +44,27 @@ public class ModelHolder implements IHolder<SModel> {
     return SModelRepository.getInstance().getModelDescriptor(myModelReference);
   }
 
+  @Override
   public SModel getObject() {
     SModelDescriptor modelDescriptor = getModelDescriptor();
     if (modelDescriptor == null) return null;
     return modelDescriptor.getSModel();
   }
 
+  @Override
   @NotNull
   public String getCaption() {
     return NameUtil.shortNameFromLongName(myModelReference.getLongName());
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     Element modelXML = new Element(MODEL);
     modelXML.setAttribute(UID, myModelReference.toString());
     element.addContent(modelXML);
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     Element modelXML = element.getChild(MODEL);
     myModelReference = SModelReference.fromString(modelXML.getAttributeValue(UID));

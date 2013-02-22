@@ -129,6 +129,7 @@ public class ModelRootEntryContainer implements ModelRootEntryListener {
     final IconActionComponent deleteIconComponent = new IconActionComponent(Modules.DeleteContentRoot,
       Modules.DeleteContentRootRollover,
       "Delete Model Root", new Runnable() {
+      @Override
       public void run() {
         myEventDispatcher.getMulticaster().delete(ModelRootEntryContainer.this);
       }

@@ -60,16 +60,19 @@ public class EditorsFinderManager implements ApplicationComponent {
     myClassLoaderManager = coreComponents.getClassLoaderManager();
   }
 
+  @Override
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
   }
 
+  @Override
   public void disposeComponent() {
     myClassLoaderManager.removeReloadHandler(myReloadListener);
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Editors Finder Manager";
   }
@@ -117,6 +120,7 @@ public class EditorsFinderManager implements ApplicationComponent {
 
   private INodeEditor findEditor(final SNode nodeToEdit) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<INodeEditor>() {
+      @Override
       public INodeEditor compute() {
         SNode nodeConcept = SNodeOperations.getConceptDeclaration(nodeToEdit);
         if (nodeConcept == null) {
@@ -205,10 +209,12 @@ public class EditorsFinderManager implements ApplicationComponent {
     public DefaultInterfaceEditor() {
     }
 
+    @Override
     public EditorCell createEditorCell(EditorContext context, SNode node) {
       return new EditorCell_Error(context, node, "    ");
     }
 
+    @Override
     public EditorCell createInspectedCell(EditorContext context, SNode node) {
       return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }

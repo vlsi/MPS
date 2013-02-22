@@ -23,44 +23,53 @@ public class GDBBreakpointsProvider implements IBreakpointsProvider<GDBBreakpoin
   }
 
   @Nullable
+  @Override
   public Icon getIcon(@NotNull GDBBreakpoint breakpoint, @Nullable AbstractDebugSession session) {
     return null;
   }
 
   @Nullable
+  @Override
   public Element saveToState(@NotNull GDBBreakpoint breakpoint) {
     return XmlSerializer.serialize(breakpoint.getState());
   }
 
   @Nullable
+  @Override
   public GDBBreakpoint loadFromState(Element element, GDBBreakpoint.GDBBreakpointKind kind, Project project) {
     return GDBBreakpoint.fromInfo(XmlSerializer.deserialize(element, BreakpointInfo.class), project);
   }
 
   @Nullable
+  @Override
   public IBreakpointPropertiesUi<GDBBreakpoint> createPropertiesEditor(@NotNull GDBBreakpoint.GDBBreakpointKind kind) {
     return null;
   }
 
   @Nullable
+  @Override
   public ILocationBreakpoint createFromNode(@NotNull SNode node, @NotNull GDBBreakpoint.GDBBreakpointKind kind, Project project) {
     return new GDBBreakpoint(new SNodePointer(node), project);
   }
 
   @Nullable
+  @Override
   public GDBBreakpoint createFromUi(@NotNull GDBBreakpoint.GDBBreakpointKind kind, Project project) {
     return null;
   }
 
+  @Override
   public boolean canCreateFromNode(@NotNull GDBBreakpoint.GDBBreakpointKind kind) {
     return true;
   }
 
+  @Override
   public boolean canCreateFromUi(@NotNull GDBBreakpoint.GDBBreakpointKind kind) {
     return false;
   }
 
   @NotNull
+  @Override
   public List<GDBBreakpoint.GDBBreakpointKind> getAllKinds() {
     return Arrays.asList(GDBBreakpoint.GDBBreakpointKind.values());
   }

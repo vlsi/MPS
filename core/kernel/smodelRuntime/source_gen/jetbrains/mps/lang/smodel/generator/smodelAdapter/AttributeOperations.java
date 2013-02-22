@@ -237,14 +237,17 @@ public class AttributeOperations {
       myAttributeDescriptor = descriptor;
     }
 
+    @Override
     protected void insertAfter(SNode node, SNode anchorNode) {
       AttributeOperations.insertAttribute(myReferenceContainer, anchorNode, myAttributeDescriptor, (SNode) node);
     }
 
+    @Override
     protected void doAddReference(SNode node) {
       AttributeOperations.addAttribute(myReferenceContainer, myAttributeDescriptor, (SNode) node);
     }
 
+    @Override
     protected void doRemoveReference(SNode node) {
       AttributeOperations.deleteAttribute(myReferenceContainer, myAttributeDescriptor, (SNode) node);
     }

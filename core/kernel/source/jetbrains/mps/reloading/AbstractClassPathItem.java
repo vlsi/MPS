@@ -26,17 +26,21 @@ import java.util.regex.Pattern;
 public abstract class AbstractClassPathItem implements IClassPathItem {
   private static final Pattern DIGITS = Pattern.compile("\\d+");
 
+  @Override
   public long getTimestamp() {
     return getTimestamp("");
   }
 
+  @Override
   public IClassPathItem optimize() {
     return this;
   }
 
   //todo can make it faster
+  @Override
   public Iterable<String> getRootClasses(String namespace) {
     return new ConditionalIterable<String>(getAvailableClasses(namespace), new Condition<String>() {
+      @Override
       public boolean met(String className) {
         return !(className.contains("$"));
       }
@@ -82,6 +86,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   private final List<Runnable> myInvalidationListeners  = new ArrayList<Runnable>();
 
+  @Override
   public synchronized void addInvalidationAction(Runnable action){
     myInvalidationListeners.add(action);
   }

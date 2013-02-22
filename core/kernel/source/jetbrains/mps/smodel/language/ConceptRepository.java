@@ -40,6 +40,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
 
   private final Map<String, SConcept> myConcepts = new HashMap<String, SConcept>();
 
+  @Override
   public SConcept getConcept(String id) {
     synchronized (myConcepts) {
       if (!myConcepts.containsKey(id)) {
@@ -59,7 +60,8 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
           }
 
           SModel sm = smd.getSModel();
-          for (SNode root : sm.roots()) {
+
+          for (SNode root : sm.getRootNodes()) {
             //do not change existing concept descriptor (required for == correctness)
             if (myConcepts.get(id) != null) continue;
 

@@ -19,13 +19,14 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -67,7 +68,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   public boolean isEditable() {
     SNode node = myNodeEditorComponent.getRootCell().getSNode();
-    return node != null && node.getModel() != null && !node.getModel().isNotEditable();
+    return node != null && node.getModel() != null && !node.getModel().isReadOnly();
   }
 
   public boolean isInspector() {

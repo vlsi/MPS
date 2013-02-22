@@ -22,10 +22,12 @@ public class PriorityRuleDescriptor extends VoidColumnDescriptor {
     myLeft = left;
   }
 
+  @Override
   public TableCellRenderer createRenderer() {
     return new RuleOperandRenderer();
   }
 
+  @Override
   public TableCellEditor createEditor() {
     return new RuleOperandEditor(myGenerator, myDepGenerators, myLeft);
   }

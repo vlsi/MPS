@@ -81,6 +81,7 @@ public class ReplaceDialog extends BaseDialog {
     this.setModal(false);
   }
 
+  @Override
   protected JComponent getMainComponent() {
     return this.myPanel;
   }
@@ -165,6 +166,7 @@ public class ReplaceDialog extends BaseDialog {
     }
     myDisposed = true;
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         myEditor.disposeEditor();
         myModelOwner.unregisterModelOwner();

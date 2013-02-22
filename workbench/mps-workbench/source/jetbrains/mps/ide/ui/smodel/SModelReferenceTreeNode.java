@@ -48,8 +48,10 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
     setIcon(icon);
   }
 
+  @Override
   public void doubleClick() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(myProject));
         projectPane.selectModel(myModelDescriptor, false);
@@ -57,6 +59,7 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
     });
   }
 
+  @Override
   public boolean isLeaf() {
     return true;
   }

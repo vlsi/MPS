@@ -35,6 +35,7 @@ public abstract class AbstractStep extends StepAdapter {
   public AbstractStep() {
   }
 
+  @Override
   public void _init() {
     this.createComponent();
   }
@@ -54,11 +55,13 @@ public abstract class AbstractStep extends StepAdapter {
 
   public abstract String getDescription();
 
+  @Override
   public JComponent getComponent() {
     this.createComponent();
     return this.myMainPanel;
   }
 
+  @Override
   public Icon getIcon() {
     return null;
   }

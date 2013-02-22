@@ -20,10 +20,10 @@ import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
@@ -151,6 +151,7 @@ public class GenerationPartitioningUtil {
       list.add(new Pair(rule, text));
     }
     Collections.sort(list, new Comparator<Pair<MappingPriorityRule, String>>() {
+      @Override
       public int compare(Pair<MappingPriorityRule, String> o1, Pair<MappingPriorityRule, String> o2) {
         return o1.o2.compareTo(o2.o2);
       }
@@ -192,7 +193,9 @@ public class GenerationPartitioningUtil {
       } else {
         SModelDescriptor refModel = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelUID));
         if (refModel != null) {
-          SNode mappingConfig = refModel.getSModel().getNodeById(nodeID);
+          jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(nodeID);
+          assert nodeId != null : "wrong node id string";
+          SNode mappingConfig = refModel.getSModel().getNode(nodeId);
           if (mappingConfig != null) {
             return s + mappingConfig.getName();
           }

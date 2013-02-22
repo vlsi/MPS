@@ -1924,6 +1924,7 @@
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.AbstractAction" />

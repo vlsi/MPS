@@ -24,10 +24,12 @@ import com.intellij.ide.util.PropertiesComponent;
     myColumn = column;
   }
 
+  @Override
   public boolean isSelected(AnActionEvent event) {
     return isSet(myKey);
   }
 
+  @Override
   public void setSelected(AnActionEvent event, boolean selected) {
     PropertiesComponent.getInstance().setValue(myKey, String.valueOf(selected));
     myColumn.invalidateLayout();

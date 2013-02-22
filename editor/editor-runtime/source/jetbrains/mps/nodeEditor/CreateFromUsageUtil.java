@@ -117,7 +117,7 @@ public final class CreateFromUsageUtil {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {
                   SNode result = NodeFactoryManager.createNode(concept, null, null, model, scope);
-                  model.addRoot(result);
+                  model.addRootNode(result);
                   if (newRootHandler != null) {
                     newRootHandler.set(result);
                   }

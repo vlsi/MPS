@@ -28,6 +28,7 @@
     <classNode extendsClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.changes.DependencyChange" file="DependencyChange.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ChangeType" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

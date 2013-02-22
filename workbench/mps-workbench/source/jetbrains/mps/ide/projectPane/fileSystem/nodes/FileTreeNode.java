@@ -28,10 +28,12 @@ public class FileTreeNode extends AbstractFileTreeNode {
     super(project, file);
   }
 
+  @Override
   public boolean isLeaf() {
     return true;
   }
 
+  @Override
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
     Icon icon = getIcon();
@@ -42,6 +44,7 @@ public class FileTreeNode extends AbstractFileTreeNode {
     return myFile.getFileType().getIcon();
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(FileActions_ActionGroup.ID);
   }

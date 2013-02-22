@@ -7,6 +7,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -29,8 +31,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CustomMapCreator_component extends AbstractCellProvider {
   public CustomMapCreator_component(SNode node) {
@@ -51,13 +51,37 @@ public class CustomMapCreator_component extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
-  public static class ReplaceWith_HashMapCreator_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_HashMapCreator_cellMenu_a0a0_0() {
+  public static class ReplaceWith_HashMapCreator_cellMenu_n2wc8f_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_HashMapCreator_cellMenu_n2wc8f_a0a0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator";
     }
+  }
+
+  private static boolean renderingCondition_n2wc8f_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "keyType", true) != null) || (SLinkOperations.getTarget(node, "valueType", true) != null);
+  }
+
+  private static boolean renderingCondition_n2wc8f_a1b0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "keyType", true) != null);
+  }
+
+  private static boolean renderingCondition_n2wc8f_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "keyType", true) != null) && (SLinkOperations.getTarget(node, "valueType", true) != null);
+  }
+
+  private static boolean renderingCondition_n2wc8f_a3b0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "valueType", true) != null);
+  }
+
+  private static boolean renderingCondition_n2wc8f_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "initializer", true) != null);
+  }
+
+  private static boolean renderingCondition_n2wc8f_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "initSize", true) != null);
   }
 
   private EditorCell createCollection_n2wc8f_a(EditorContext editorContext, SNode node) {
@@ -177,7 +201,7 @@ public class CustomMapCreator_component extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CustomMapCreator_component.ReplaceWith_HashMapCreator_cellMenu_a0a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CustomMapCreator_component.ReplaceWith_HashMapCreator_cellMenu_n2wc8f_a0a0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_n2wc8f_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
@@ -253,29 +277,5 @@ public class CustomMapCreator_component extends AbstractCellProvider {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_n2wc8f_a1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "keyType", true) != null);
-  }
-
-  private static boolean renderingCondition_n2wc8f_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "keyType", true) != null) && (SLinkOperations.getTarget(node, "valueType", true) != null);
-  }
-
-  private static boolean renderingCondition_n2wc8f_a3b0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "valueType", true) != null);
-  }
-
-  private static boolean renderingCondition_n2wc8f_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "keyType", true) != null) || (SLinkOperations.getTarget(node, "valueType", true) != null);
-  }
-
-  private static boolean renderingCondition_n2wc8f_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "initializer", true) != null);
-  }
-
-  private static boolean renderingCondition_n2wc8f_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "initSize", true) != null);
   }
 }

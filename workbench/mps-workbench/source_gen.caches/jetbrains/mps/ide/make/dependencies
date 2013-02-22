@@ -59,6 +59,7 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ide.make.GeneratedTextPreviewEditor" />
     <classNode dependClassName="jetbrains.mps.ide.make.TextPreviewFile" />
@@ -139,6 +140,7 @@
     <classNode dependClassName="com.intellij.openapi.fileEditor.OpenFileDescriptor" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.concurrent.ExecutionException" />
     <classNode dependClassName="java.util.concurrent.Future" />

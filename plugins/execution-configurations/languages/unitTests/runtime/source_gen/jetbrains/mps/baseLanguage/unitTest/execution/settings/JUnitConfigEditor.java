@@ -79,6 +79,7 @@ public class JUnitConfigEditor extends JPanel {
     myThis.setNodes(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     myThis.setMethods(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()));
     IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
+      @Override
       public void run() {
         myThis.setProject(myThis.findProjectFromContext());
         if (myThis.getProject() != null && myThis.getProject().getProject() != null) {
@@ -462,6 +463,7 @@ public class JUnitConfigEditor extends JPanel {
 
     // perform everything else outside 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      @Override
       public void run() {
         final ClonableList<String> testMethods = new ClonableList<String>();
         final ClonableList<String> testCases = new ClonableList<String>();

@@ -33,6 +33,7 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
 
 
 
+  @Override
   public Collection<NodeDescriptor> getNodeDescriptors(Collection<SModel> models, Project project) {
     Set<NodeDescriptor> res = new HashSet<NodeDescriptor>();
     for (SModel model : models) {
@@ -44,7 +45,7 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
           if (dir.indexOf("!") != -1) {
             cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));
           } else {
-            String name = ((SModelReference) model.getModelReference()).getLongName().replace('.', File.separatorChar);
+            String name = ((SModelReference) model.getReference()).getLongName().replace('.', File.separatorChar);
 
             // dirty hack for current problems with path separators 
             String dirCorrected = dir.replace('/', File.separatorChar);
@@ -79,16 +80,19 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
     }
   }
 
+  @Override
   public void initComponent() {
     FastGoToRegistry.getInstance().setNavigationContributor(PersistenceRegistry.JAVA_CLASSES_ROOT, this);
   }
 
+  @Override
   public void disposeComponent() {
     FastGoToRegistry.getInstance().setNavigationContributor(PersistenceRegistry.JAVA_CLASSES_ROOT, null);
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return JavaStubNavigationContributor.class.getSimpleName();
   }

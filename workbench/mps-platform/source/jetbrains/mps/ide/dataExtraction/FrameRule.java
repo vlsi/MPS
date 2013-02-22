@@ -25,6 +25,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.Nullable;
 
 public class FrameRule implements GetDataRule {
+  @Override
   @Nullable
   public Object getData(DataProvider dataProvider) {
     Project project = (Project) MPSCommonDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());

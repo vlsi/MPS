@@ -19,6 +19,7 @@ public class TranslatingSequence<U, V> extends AbstractChainedSequence<U, V> imp
     this.translator = translator;
   }
 
+  @Override
   public Iterator<V> iterator() {
     return new TranslatingSequence.TranslatingIterator();
   }
@@ -32,6 +33,7 @@ public class TranslatingSequence<U, V> extends AbstractChainedSequence<U, V> imp
     private TranslatingIterator() {
     }
 
+    @Override
     public boolean hasNext() {
       if (inputIt == null) {
         init();
@@ -42,6 +44,7 @@ public class TranslatingSequence<U, V> extends AbstractChainedSequence<U, V> imp
       return hasNext.hasNext();
     }
 
+    @Override
     public V next() {
       if (inputIt == null) {
         init();
@@ -55,6 +58,7 @@ public class TranslatingSequence<U, V> extends AbstractChainedSequence<U, V> imp
       return clearNext();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

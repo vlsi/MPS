@@ -83,9 +83,10 @@ public class GoToNodeById_Action extends BaseAction {
       }
       final String trimmedValue = value;
       ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
         public void run() {
           SNode node;
-          node = ((SModelDescriptor) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getSModel().getNodeById(id);
+          node = ((SModelDescriptor) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getSModel().getNode(id);
           if (node == null) {
             JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Can't find node with id " + trimmedValue);
             return;

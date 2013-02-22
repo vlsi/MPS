@@ -29,17 +29,21 @@ public interface IMatchModifier {
   public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2);
 
   public static final IMatchModifier DEFAULT = new IMatchModifier() {
+    @Override
     public boolean accept(SNode node1, SNode node2) {
       return false;
     }
 
+    @Override
     public boolean acceptList(List<SNode> nodes1, List<SNode> nodes2) {
       return false;
     }
 
+    @Override
     public void performAction(SNode node1, SNode node2) {
     }
 
+    @Override
     public void performGroupAction(List<SNode> nodes1, List<SNode> nodes2) {
     }
   };

@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -146,7 +147,7 @@ public class BinaryPersistence {
 
     List<Pair<String, SNode>> roots = new NodesReader(modelReference).readNodes(model, is);
     for (Pair<String, SNode> r : roots) {
-      model.addRoot(r.o2);
+      model.addRootNode(r.o2);
     }
 
     // ensure imports are back
@@ -160,18 +161,19 @@ public class BinaryPersistence {
   private static void saveModel(SModel model, ModelOutputStream os) throws IOException {
     saveModelProperties(model, os);
 
-    ArrayList<SNode> roots = new ArrayList<SNode>(model.rootsCount());
-    for (SNode root : model.roots()) {
+    ArrayList<SNode> roots = new ArrayList<SNode>(IterableUtil.asCollection(model.getRootNodes()).size());
+
+    for (SNode root : model.getRootNodes()) {
       roots.add(root);
     }
-    new NodesWriter(model.getSModelReference()).writeNodes(roots, os);
+    new NodesWriter(model.getReference()).writeNodes(roots, os);
   }
 
   public static void saveModelProperties(SModel model, ModelOutputStream os) throws IOException {
     // header
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
-    os.writeModelReference(model.getSModelReference());
+    os.writeModelReference((SModelReference) model.getReference());
     os.writeInt(model.getVersion());
     os.writeBoolean(model instanceof BinarySModel && ((BinarySModel) model).getHeader().isDoNotGenerate());
     os.writeInt(0xabab);
@@ -216,7 +218,7 @@ public class BinaryPersistence {
     List<ImportElement> result = new ArrayList<ImportElement>();
     for (int i = 0; i < size; i++) {
       SModelReference ref = is.readModelReference();
-      result.add(new ImportElement(ref, 0, is.readInt()));
+      result.add(new ImportElement(ref, -1, is.readInt()));
     }
     return result;
   }

@@ -35,16 +35,20 @@ public class GDBBreakpoint extends AbstractBreakpoint implements IBreakpoint, IL
     myLocation = new BreakpointLocation(nodePointer);
   }
 
+  @Override
   public void removeFromRunningSessions() {
     CppDebugSession.performAllSessionsAction(myProject, new CppDebugSession.DebugSessionAction() {
+      @Override
       public void run(CppDebugSession debugSession) {
         createRemoveBreakpointRequest(debugSession.getGDBRequestManager());
       }
     });
   }
 
+  @Override
   public void addToRunningSessions() {
     CppDebugSession.performAllSessionsAction(myProject, new CppDebugSession.DebugSessionAction() {
+      @Override
       public void run(CppDebugSession debugSession) {
         createBreakpointRequest(debugSession.getGDBRequestManager());
       }
@@ -53,6 +57,7 @@ public class GDBBreakpoint extends AbstractBreakpoint implements IBreakpoint, IL
 
   public void createBreakpointRequest(GDBRequestManager requestManager) {
     requestManager.createRequest(new BreakpointRequestor(getLocation().getFileName(), getLocation().getLineIndexInFile()) {
+      @Override
       public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
         myAdded = true;
         RecordValue bkptInfo = (RecordValue) answer.getResults().getPropertyValue(GDBBreakpoint.BKPT);
@@ -65,6 +70,7 @@ public class GDBBreakpoint extends AbstractBreakpoint implements IBreakpoint, IL
 
   public void createRemoveBreakpointRequest(GDBRequestManager requestManager) {
     requestManager.createRequest(new RemoveBreakpointRequestor(myInternalGDBNumber) {
+      @Override
       public void onRequestFulfilled(ResultAnswer answer, List<StreamAnswer> receivedStreamAnswers) {
         myAdded = false;
         myInternalGDBNumber = -1;
@@ -73,16 +79,19 @@ public class GDBBreakpoint extends AbstractBreakpoint implements IBreakpoint, IL
   }
 
   @NonNls
+  @Override
   public String getPresentation() {
     return myLocation.getPresentation();
   }
 
   @NotNull
+  @Override
   public GDBBreakpoint.GDBBreakpointKind getKind() {
     return GDBBreakpoint.GDBBreakpointKind.LINE_BREAKPOINT;
   }
 
   @NotNull
+  @Override
   public BreakpointLocation getLocation() {
     return myLocation;
   }
@@ -110,15 +119,18 @@ public class GDBBreakpoint extends AbstractBreakpoint implements IBreakpoint, IL
     }
 
     @NonNls
+    @Override
     public String getPresentation() {
       return "Cpp Line Breakpoint";
     }
 
     @NonNls
+    @Override
     public String getName() {
       return "CPP_LINE_BREAKPOINT";
     }
 
+    @Override
     public boolean supportsDisable() {
       return true;
     }

@@ -56,6 +56,7 @@ public class ReloadAll_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Reloading Classes", false) {
+        @Override
         public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {

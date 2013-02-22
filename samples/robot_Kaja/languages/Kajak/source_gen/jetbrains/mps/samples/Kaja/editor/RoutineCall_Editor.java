@@ -14,13 +14,13 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class RoutineCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -64,6 +64,10 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_wwx4md_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "definition", false), "jetbrains.mps.samples.Kaja.structure.Library", false, false) != null;
+  }
+
   private EditorCell createCollection_wwx4md_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wwx4md_a");
@@ -100,9 +104,5 @@ public class RoutineCall_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_wwx4md_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "definition", false), "jetbrains.mps.samples.Kaja.structure.Library", false, false) != null;
   }
 }

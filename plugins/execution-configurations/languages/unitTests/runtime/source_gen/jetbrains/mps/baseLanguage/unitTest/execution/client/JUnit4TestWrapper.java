@@ -22,6 +22,7 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
     super(clazz);
   }
 
+  @Override
   public boolean isTestCase() {
     return true;
   }

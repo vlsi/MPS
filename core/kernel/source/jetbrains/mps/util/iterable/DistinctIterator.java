@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.util.iterable;
 
-import jetbrains.mps.util.misc.hash.HashSet;
-
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 

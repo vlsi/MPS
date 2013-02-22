@@ -76,6 +76,7 @@ public class BaseFieldWithButtonComponent extends JPanel implements Disposable {
     this.myText = null;
   }
 
+  @Override
   public void dispose() {
     Disposable disposable = this.getDisposableComponent();
     if (disposable == null) {

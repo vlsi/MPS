@@ -37,8 +37,8 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_89tgy3_a(editorContext, node);
   }
 
-  public static class ReplaceWith_BaseAssignmentExpression_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BaseAssignmentExpression_cellMenu_a0b0() {
+  public static class ReplaceWith_BaseAssignmentExpression_cellMenu_89tgy3_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BaseAssignmentExpression_cellMenu_89tgy3_a0b0() {
     }
 
     public String getReplacementConceptName() {
@@ -46,8 +46,8 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class BaseAssignmentExpression_generic_cellMenu_b0b0 extends AbstractCellMenuPart_Generic_Group {
-    public BaseAssignmentExpression_generic_cellMenu_b0b0() {
+  public static class BaseAssignmentExpression_generic_cellMenu_89tgy3_b0b0 extends AbstractCellMenuPart_Generic_Group {
+    public BaseAssignmentExpression_generic_cellMenu_89tgy3_b0b0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -113,7 +113,7 @@ public class BaseAssignmentExpression_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyOperator(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BaseAssignmentExpression_Editor.ReplaceWith_BaseAssignmentExpression_cellMenu_a0b0(), new BaseAssignmentExpression_Editor.BaseAssignmentExpression_generic_cellMenu_b0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BaseAssignmentExpression_Editor.ReplaceWith_BaseAssignmentExpression_cellMenu_89tgy3_a0b0(), new BaseAssignmentExpression_Editor.BaseAssignmentExpression_generic_cellMenu_89tgy3_b0b0()}));
     return editorCell;
   }
 

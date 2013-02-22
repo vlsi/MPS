@@ -38,6 +38,7 @@ public class ShowCFGDialog extends DialogWrapper {
     graph.setComponent(myComponent);
     graph.relayout();
     this.myControlFlowGraph.addBlockListener(new IBlockListener() {
+      @Override
       public void mousePressed(MouseEvent event, final IBlock block) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
@@ -57,10 +58,12 @@ public class ShowCFGDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myScrollPane;
   }
 
+  @Override
   protected Action[] createActions() {
     return new Action[0];
   }
@@ -69,42 +72,51 @@ public class ShowCFGDialog extends DialogWrapper {
     public MyComponent() {
       this.setLayout(new BorderLayout());
       this.addMouseListener(new MouseAdapter() {
+        @Override
         public void mousePressed(MouseEvent e) {
           ShowCFGDialog.this.myControlFlowGraph.processMousePressed(e);
         }
       });
     }
 
+    @Override
     public Color getBackground() {
       return ShowCFGDialog.this.getBackground();
     }
 
+    @Override
     public void paint(Graphics g) {
       g.setColor(this.getBackground());
       g.fillRect(0, 0, this.getWidth(), this.getHeight());
       ShowCFGDialog.this.myControlFlowGraph.paint(g);
     }
 
+    @Override
     public Dimension getPreferredScrollableViewportSize() {
       return this.getPreferredSize();
     }
 
+    @Override
     public Dimension getPreferredSize() {
       return new Dimension(ShowCFGDialog.this.myControlFlowGraph.getWidth(), ShowCFGDialog.this.myControlFlowGraph.getHeight());
     }
 
+    @Override
     public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
       return 20;
     }
 
+    @Override
     public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
       return visibleRect.height;
     }
 
+    @Override
     public boolean getScrollableTracksViewportWidth() {
       return false;
     }
 
+    @Override
     public boolean getScrollableTracksViewportHeight() {
       return false;
     }

@@ -93,10 +93,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myOriginalInputModel;
   }
 
+  @Override
   public <T> T getComponent(@NotNull Class<T> clazz) {
     return myInvocationContext.getComponent(clazz);
   }
 
+  @Override
   @NotNull
   public TransientModelsModule getModule() {
     return myTransientModule;
@@ -107,6 +109,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return myInvocationContext.getProject();
   }
 
+  @Override
   @NotNull
   public IScope getScope() {
     return getModule().getScope();

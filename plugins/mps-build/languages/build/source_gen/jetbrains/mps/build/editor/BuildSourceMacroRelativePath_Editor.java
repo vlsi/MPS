@@ -14,6 +14,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -23,16 +25,14 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3is4rg_a(editorContext, node);
   }
 
-  public static class ReplaceWith_BuildSourceProjectRelativePath_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildSourceProjectRelativePath_cellMenu_a0a0() {
+  public static class ReplaceWith_BuildSourceProjectRelativePath_cellMenu_3is4rg_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildSourceProjectRelativePath_cellMenu_3is4rg_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -76,6 +76,10 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_3is4rg_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "compositePart", true) != null);
+  }
+
   private EditorCell createCollection_3is4rg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3is4rg_a");
@@ -107,7 +111,7 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSourceMacroRelativePath_Editor.ReplaceWith_BuildSourceProjectRelativePath_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSourceMacroRelativePath_Editor.ReplaceWith_BuildSourceProjectRelativePath_cellMenu_3is4rg_a0a0()}));
     return editorCell;
   }
 
@@ -165,9 +169,5 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_3is4rg_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "compositePart", true) != null);
   }
 }

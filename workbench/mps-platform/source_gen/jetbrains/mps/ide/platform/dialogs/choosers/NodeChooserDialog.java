@@ -34,6 +34,7 @@ public class NodeChooserDialog extends DialogWrapper {
       @Override
       public NavigationItem doGetNavigationItem(SNodeReference node) {
         return new BaseNodePointerItem(node) {
+          @Override
           public void navigate(boolean requestFocus) {
           }
         };
@@ -44,6 +45,7 @@ public class NodeChooserDialog extends DialogWrapper {
         return Sequence.fromIterable(nodes).toGenericArray(SNodeReference.class);
       }
 
+      @Override
       public SNodeReference[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
@@ -53,12 +55,14 @@ public class NodeChooserDialog extends DialogWrapper {
         return false;
       }
 
+      @Override
       public boolean willOpenEditor() {
         return false;
       }
     };
     myChooser = MpsPopupFactory.createPanelForNode(goToNodeModel, false);
     myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
+      @Override
       public void elementChosen(Object element) {
         doOKAction();
       }
@@ -76,6 +80,7 @@ public class NodeChooserDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     myChooser.getPanel().setPreferredSize(new Dimension(400, 500));
     return myChooser.getPanel();

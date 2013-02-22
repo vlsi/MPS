@@ -33,6 +33,7 @@ public class DependencyTree extends MPSTree {
     addTreeSelectionListener(new DependencyTree.MyTreeSelectionListener());
   }
 
+  @Override
   protected MPSTreeNode rebuild() {
     TextMPSTreeNode root = new TextMPSTreeNode("root", null);
     for (SModule module : myScope.getModules()) {
@@ -66,6 +67,7 @@ public class DependencyTree extends MPSTree {
     public MyTreeSelectionListener() {
     }
 
+    @Override
     public void valueChanged(TreeSelectionEvent event) {
       final TreePath[] paths = getSelectionPaths();
       if (paths == null || paths.length == 0) {

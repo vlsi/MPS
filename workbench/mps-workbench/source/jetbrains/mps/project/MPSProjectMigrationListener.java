@@ -33,12 +33,15 @@ public interface MPSProjectMigrationListener {
   void migrationAborted(Project project);
 
   class DEFAULT implements MPSProjectMigrationListener {
+    @Override
     public void migrationStarted(Project project) {
     }
 
+    @Override
     public void migrationFinished(Project mpsProject) {
     }
 
+    @Override
     public void migrationAborted(Project project) {
     }
   }

@@ -45,6 +45,7 @@ import jetbrains.mps.ide.ui.MPSTree;
     final IOperationContext context = getOperationContext();
     if (project != null && context != null) {
       ModelAccess.instance().executeCommand(new Runnable() {
+        @Override
         public void run() {
           NavigationSupport.getInstance().openNode(context, myNode, focus, select);
         }

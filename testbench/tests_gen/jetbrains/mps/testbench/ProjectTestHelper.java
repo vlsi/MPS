@@ -376,6 +376,7 @@ public class ProjectTestHelper {
     private MyMessageHandler() {
     }
 
+    @Override
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
@@ -409,6 +410,7 @@ public class ProjectTestHelper {
       myGenerationWarnings.clear();
     }
 
+    @Override
     public void clear() {
     }
   }

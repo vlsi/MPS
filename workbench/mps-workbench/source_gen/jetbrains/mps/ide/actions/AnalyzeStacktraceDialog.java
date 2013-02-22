@@ -48,6 +48,7 @@ public class AnalyzeStacktraceDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return this.myComponent;
   }

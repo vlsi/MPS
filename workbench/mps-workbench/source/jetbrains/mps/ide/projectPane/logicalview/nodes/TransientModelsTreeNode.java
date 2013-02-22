@@ -35,11 +35,13 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
     setNodeIdentifier(myTransientModule.getModuleReference().toString());
   }
 
+  @Override
   protected void doUpdatePresentation() {
     super.doUpdatePresentation();
     setIcon(Icons.TRANSIENT_MODELS_ICON);
   }
 
+  @Override
   protected String getModulePresentation() {
     String name = myTransientModule.getModuleFqName();
 
@@ -49,6 +51,7 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
     return "transient";
   }
 
+  @Override
   public TransientModelsModule getModule() {
     return myTransientModule;
   }
@@ -59,6 +62,7 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
     }
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS);
   }

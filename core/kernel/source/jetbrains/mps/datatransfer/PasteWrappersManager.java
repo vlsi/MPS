@@ -35,6 +35,7 @@ public class PasteWrappersManager implements CoreComponent {
 
   private ClassLoaderManager myClassLoaderManager;
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       clear();
     }
@@ -52,6 +53,7 @@ public class PasteWrappersManager implements CoreComponent {
     myClassLoaderManager = classLoaderManager;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -61,6 +63,7 @@ public class PasteWrappersManager implements CoreComponent {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
   }
 
+  @Override
   public void dispose() {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
     INSTANCE = null;

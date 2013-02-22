@@ -14,10 +14,12 @@ public class ChildrenCountDifference extends DifferanceItem {
     myCount2 = c2;
   }
 
+  @Override
   public String toString() {
     return "Different children count in role: " + myRole + " [" + myCount1 + ", " + myCount2 + "]";
   }
 
+  @Override
   public boolean equals(Object obj) {
     if (obj == null) {
       return false;

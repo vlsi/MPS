@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.OptimizeImportsHelper;
@@ -90,7 +90,7 @@ public class OptimizeImportsInProject_Action extends BaseAction {
                 if (!(SModelStereotype.isUserModel(model))) {
                   continue;
                 }
-                if (!(model instanceof EditableSModelDescriptor)) {
+                if (!(model instanceof EditableSModel)) {
                   continue;
                 }
 

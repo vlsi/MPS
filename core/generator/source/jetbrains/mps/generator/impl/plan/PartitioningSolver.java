@@ -160,6 +160,7 @@ public class PartitioningSolver {
     // sort mappings within each set: generation must be deterministic
     for (List<TemplateMappingConfiguration> mappingSet : mappingSets) {
       Collections.sort(mappingSet, new Comparator<TemplateMappingConfiguration>() {
+        @Override
         public int compare(TemplateMappingConfiguration o1, TemplateMappingConfiguration o2) {
           return jetbrains.mps.smodel.SNodePointer.serialize(o1.getMappingNode()).compareTo((jetbrains.mps.smodel.SNodePointer.serialize(o2.getMappingNode())));
         }

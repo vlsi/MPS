@@ -43,37 +43,46 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     this.messageHandler = messageHandler;
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
     return doMake(resources, script, controller, monitor);
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
     return make(session, resources, script, controller, new EmptyProgressMonitor());
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script) {
     return make(session, resources, script, null, new EmptyProgressMonitor());
   }
 
+  @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources) {
     return make(session, resources, null, null, new EmptyProgressMonitor());
   }
 
+  @Override
   public boolean isSessionActive() {
     return false;
   }
 
+  @Override
   public boolean openNewSession(MakeSession session) {
     return false;
   }
 
+  @Override
   public void closeSession(MakeSession session) {
   }
 
+  @Override
   public void addListener(IMakeNotificationListener listener) {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public void removeListener(IMakeNotificationListener listener) {
     throw new UnsupportedOperationException();
   }
@@ -97,6 +106,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
   private IScriptController completeController(final IScriptController ctl) {
     final Wrappers._T<IConfigMonitor> cmon2delegate = new Wrappers._T<IConfigMonitor>(null);
     final IConfigMonitor cmon = new IConfigMonitor.Stub() {
+      @Override
       public <T extends IOption> T relayQuery(IQuery<T> query) {
         T opt = null;
         if (cmon2delegate.value != null) {
@@ -116,6 +126,7 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
     };
 
     return new IScriptController.Stub() {
+      @Override
       public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
         if (ctl != null) {
           ctl.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
@@ -133,10 +144,12 @@ public class TestMakeService extends AbstractMakeService implements IMakeService
         }
       }
 
+      @Override
       public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
         code.invoke(jmon);
       }
 
+      @Override
       public void setup(IPropertiesPool pool) {
         Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) pool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
         vars._0(TestMakeService.this.context.getProject());

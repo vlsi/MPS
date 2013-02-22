@@ -8,6 +8,7 @@ public class TotalRow extends TestContainerRow {
     super("Total:", null);
   }
 
+  @Override
   public boolean matches(String testCase, String testMethod) {
     return true;
   }

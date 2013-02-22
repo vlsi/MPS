@@ -33,15 +33,19 @@ public class MessagesPoolClearer implements ApplicationComponent {
     myManager = coreComponents.getClassLoaderManager();
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return MessagesPoolClearer.class.getSimpleName();
   }
 
+  @Override
   public void initComponent() {
     myHandler = new ReloadAdapter() {
+      @Override
       public void unload() {
         SwingUtilities.invokeLater(new Runnable() {
+          @Override
           public void run() {
             MessagePool.getInstance().clearFatals();
           }
@@ -51,6 +55,7 @@ public class MessagesPoolClearer implements ApplicationComponent {
     myManager.addReloadHandler(myHandler);
   }
 
+  @Override
   public void disposeComponent() {
     myManager.removeReloadHandler(myHandler);
   }

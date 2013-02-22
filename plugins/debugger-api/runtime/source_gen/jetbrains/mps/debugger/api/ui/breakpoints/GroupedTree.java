@@ -165,6 +165,7 @@ import javax.swing.UIManager;
       return myGroup;
     }
 
+    @Override
     public void setSelected(boolean selected) {
       for (D d : myData) {
         d.setSelected(selected);

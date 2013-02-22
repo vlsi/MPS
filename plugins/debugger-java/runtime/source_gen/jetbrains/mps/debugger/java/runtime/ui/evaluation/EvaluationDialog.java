@@ -21,15 +21,18 @@ public class EvaluationDialog extends AbstractEvaluationDialog {
   @NotNull
   protected Action[] createActions() {
     return new Action[]{new DialogWrapper.DialogWrapperAction("Evaluate") {
+      @Override
       protected void doAction(ActionEvent p0) {
         myEvaluationPanel.evaluate();
       }
     }, new DialogWrapper.DialogWrapperAction("Watch") {
+      @Override
       protected void doAction(ActionEvent p0) {
         myProvider.addWatch(myEvaluationPanel.getEvaluationContainer());
         doOKAction();
       }
     }, new DialogWrapper.DialogWrapperAction("Close") {
+      @Override
       protected void doAction(ActionEvent p0) {
         doOKAction();
       }

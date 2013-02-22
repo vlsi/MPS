@@ -52,15 +52,18 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     init();
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   public void init() {
     populate();
     myInitialized = true;
   }
 
+  @Override
   public Language getModule() {
     return myLanguage;
   }
@@ -69,14 +72,17 @@ public class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     return myLanguage;
   }
 
+  @Override
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return ActionUtils.getGroup(ProjectPaneActionGroups.LANGUAGE_NEW_ACTIONS);
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_LANGUAGE_ACTIONS);
   }
 
+  @Override
   protected String getModulePresentation() {
     String languageUID = myLanguage.getModuleFqName();
 

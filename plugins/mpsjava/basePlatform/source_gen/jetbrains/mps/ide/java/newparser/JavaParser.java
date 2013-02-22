@@ -326,6 +326,7 @@ public class JavaParser {
         }
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          @Override
           public void run() {
             SNode theRightNode = subst.invoke();
             SNodeOperations.replaceWithAnother(unkNode, theRightNode);
@@ -366,7 +367,7 @@ public class JavaParser {
 
         SModel targetModel = target.getModel();
         if (targetModel != null) {
-          ourModel.addModelImport(targetModel.getSModelReference(), true);
+          ourModel.addModelImport(targetModel.getReference(), true);
         }
       }
     }

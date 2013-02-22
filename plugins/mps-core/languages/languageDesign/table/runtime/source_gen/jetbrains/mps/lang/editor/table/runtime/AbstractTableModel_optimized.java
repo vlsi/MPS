@@ -12,20 +12,24 @@ public abstract class AbstractTableModel_optimized implements TableModel_optimiz
     myKeepSameSizeRows = keepSameSizeRows;
   }
 
+  @Override
   public TableRow getRow(int index) {
     return ListSequence.fromList(getRows()).getElement(index);
   }
 
+  @Override
   public int getRowCount() {
     return ListSequence.fromList(getRows()).count();
   }
 
+  @Override
   public void removeColumn(int index) {
     for (TableRow row : ListSequence.fromList(getRows())) {
       row.removeCell(index);
     }
   }
 
+  @Override
   public void createNewColumn(final int index) {
     if (myKeepSameSizeRows) {
       ListSequence.fromList(getRows()).visitAll(new IVisitor<TableRow>() {
@@ -38,6 +42,7 @@ public abstract class AbstractTableModel_optimized implements TableModel_optimiz
     }
   }
 
+  @Override
   public int getColumnCount() {
     return getRow(0).getColumnCount();
   }

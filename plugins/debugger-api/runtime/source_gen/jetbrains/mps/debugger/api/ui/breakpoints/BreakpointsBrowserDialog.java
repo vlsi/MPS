@@ -357,6 +357,7 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
       return;
     }
     ModelAccess.instance().executeCommand(new Runnable() {
+      @Override
       public void run() {
         SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
         if (node == null) {
@@ -368,6 +369,7 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
 
     this.getWindow().addWindowListener(new WindowAdapter() {

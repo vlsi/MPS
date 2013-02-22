@@ -31,18 +31,22 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     myConceptName = conceptName;
   }
 
+  @Override
   public String getQualifiedName() {
     return myConceptName;
   }
 
+  @Override
   public String getName() {
     return NameUtil.shortNameFromLongName(myConceptName);
   }
 
+  @Override
   public String getConceptId() {
     return myConceptName;
   }
 
+  @Override
   public SLink findLink(String role) {
     SNode ld = new ConceptAndSuperConceptsScope(getConcept().resolve(MPSModuleRepository.getInstance())).getLinkDeclarationByRole(role);
     return (ld == null ?
@@ -51,6 +55,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     );
   }
 
+  @Override
   public Iterable<SLink> getLinks() {
     return ListSequence.fromList(SLinkOperations.getTargets(((SNode) getConcept().resolve(MPSModuleRepository.getInstance())), "linkDeclaration", true)).select(new ISelector<SNode, SLink>() {
       public SLink select(SNode it) {
@@ -59,6 +64,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     });
   }
 
+  @Override
   public SProperty findProperty(final String name) {
     SNode prop = ListSequence.fromList((List<SNode>) SModelSearchUtil.getPropertyDeclarations(getConcept().resolve(MPSModuleRepository.getInstance()))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -71,6 +77,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     );
   }
 
+  @Override
   public Iterable<SProperty> getProperties() {
     return ListSequence.fromList(SLinkOperations.getTargets(((SNode) getConcept().resolve(MPSModuleRepository.getInstance())), "propertyDeclaration", true)).select(new ISelector<SNode, SProperty>() {
       public SProperty select(SNode it) {
@@ -79,6 +86,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     });
   }
 
+  @Override
   public boolean isSubConceptOf(SAbstractConcept concept) {
     if (!(concept instanceof SConceptNodeAdapterBase)) {
       throw new IllegalArgumentException("not supported");
@@ -87,6 +95,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     return SModelUtil.isAssignableConcept(myConceptName, ((SConceptNodeAdapterBase) concept).myConceptName);
   }
 
+  @Override
   public SLanguage getLanguage() {
     return new SLanguageLanguageAdapter(((Language) jetbrains.mps.util.SNodeOperations.getModelFromNodeReference(getConcept()).getModule()));
   }
@@ -98,8 +107,13 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     return myConcept;
   }
 
+  @Override
   public String getId() {
     return myConceptName;
+  }
+
+  public void internalSetId(String id) {
+    myConceptName = id;
   }
 
   private static boolean eq_vein7o_a0a0a0a0a0a0a8(Object a, Object b) {

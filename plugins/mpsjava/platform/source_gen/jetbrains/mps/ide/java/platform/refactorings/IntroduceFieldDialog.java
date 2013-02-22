@@ -28,6 +28,7 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
     init();
   }
 
+  @Override
   public IntroduceVariableRefactoring getRefactoring() {
     return this.myRefactoring;
   }
@@ -58,6 +59,7 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
     result.add(button, c);
     group.add(button);
     button.addChangeListener(new ChangeListener() {
+      @Override
       public void stateChanged(ChangeEvent p0) {
         if (button.isSelected()) {
           IntroduceFieldDialog.this.myRefactoring.setFieldInitializationPlace(place);
@@ -68,6 +70,7 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     initPanel();
     int gridy = 1;

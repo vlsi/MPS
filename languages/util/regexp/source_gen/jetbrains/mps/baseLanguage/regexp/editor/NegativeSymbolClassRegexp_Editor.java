@@ -30,8 +30,8 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     return this.createCollection_wznzt8_a(editorContext, node);
   }
 
-  public static class ReplaceWith_SymbolClassRegexp_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SymbolClassRegexp_cellMenu_a0a0_0() {
+  public static class ReplaceWith_SymbolClassRegexp_cellMenu_wznzt8_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SymbolClassRegexp_cellMenu_wznzt8_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -93,7 +93,7 @@ public class NegativeSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new RegexpSequenceByEnter());
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NegativeSymbolClassRegexp_Editor.ReplaceWith_SymbolClassRegexp_cellMenu_a0a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NegativeSymbolClassRegexp_Editor.ReplaceWith_SymbolClassRegexp_cellMenu_wznzt8_a0a0()}));
     return editorCell;
   }
 

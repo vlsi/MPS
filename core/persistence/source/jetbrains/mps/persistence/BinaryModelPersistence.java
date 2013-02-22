@@ -98,11 +98,12 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
 
   private static Map<String, String> getDigestMap(BinarySModel model) {
     Map<String, String> result = new LinkedHashMap<String, String>();
-    for (SNode node : model.roots()) {
+
+    for (SNode node : model.getRootNodes()) {
       DigestBuilderOutputStream os = ModelDigestUtil.createDigestBuilderOutputStream();
       try {
         ModelOutputStream mos = new ModelOutputStream(os);
-        new NodesWriter(model.getSModelReference()).writeNode(node, mos);
+        new NodesWriter(model.getReference()).writeNode(node, mos);
         mos.flush();
       } catch (IOException ignored) {
         assert false;

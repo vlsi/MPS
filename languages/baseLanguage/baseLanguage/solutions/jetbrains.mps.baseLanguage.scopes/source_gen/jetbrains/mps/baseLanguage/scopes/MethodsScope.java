@@ -48,6 +48,7 @@ public class MethodsScope extends Scope {
     this(methods, Collections.<SNode,SNode>emptyMap());
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (String methodName : MapSequence.fromMap(nameToMethods).keySet()) {
@@ -59,6 +60,7 @@ public class MethodsScope extends Scope {
   }
 
   @Nullable
+  @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name");
   }
@@ -73,6 +75,7 @@ public class MethodsScope extends Scope {
   }
 
   @Nullable
+  @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     List<SNode> methods = (MapSequence.fromMap(nameToMethods).containsKey(refText) ?
       MapSequence.fromMap(nameToMethods).get(refText) :

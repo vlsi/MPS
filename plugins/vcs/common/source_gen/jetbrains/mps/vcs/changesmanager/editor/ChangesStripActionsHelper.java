@@ -131,7 +131,7 @@ public class ChangesStripActionsHelper {
     Iterable<SNode> baseNodes = ListSequence.fromList(changeGroup.getChanges()).translate(new ITranslator2<ModelChange, SNode>() {
       public Iterable<SNode> translate(ModelChange ch) {
         if (ch instanceof NodeChange) {
-          return Sequence.<SNode>singleton(oldModel.getNodeById(((NodeChange) ch).getAffectedNodeId()));
+          return Sequence.<SNode>singleton(oldModel.getNode(((NodeChange) ch).getAffectedNodeId()));
         } else if (ch instanceof NodeGroupChange) {
           NodeGroupChange ngc = (NodeGroupChange) ch;
           List<SNode> changeChildren = ((List) IterableUtil.asList(oldModel.getNode(ngc.getParentNodeId()).getChildren(ngc.getRole())));

@@ -9,13 +9,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.project.IModule;
 
 public class ModelsToResources {
   private Iterable<SModel> models;
@@ -34,7 +35,7 @@ public class ModelsToResources {
       }
     }, true);
     if (dirtyOnly) {
-      smds = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModelDescriptor>) GenerationFacade.getModifiedModels(Sequence.fromIterable(smds).select(new ISelector<SModel, SModelDescriptor>() {
+      smds = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) GenerationFacade.getModifiedModels(Sequence.fromIterable(smds).select(new ISelector<SModel, SModelDescriptor>() {
         public SModelDescriptor select(SModel it) {
           return (SModelDescriptor) it;
         }
@@ -44,8 +45,8 @@ public class ModelsToResources {
   }
 
   private Iterable<IResource> arrangeByModule(Iterable<SModel> smds) {
-    final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(null);
-    return (Iterable<IResource>) Sequence.fromIterable(smds).concat(Sequence.fromIterable(Sequence.<SModelDescriptor>singleton(null))).translate(new ITranslator2<SModel, MResource>() {
+    final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>(null);
+    return (Iterable<IResource>) Sequence.fromIterable(smds).concat(Sequence.fromIterable(Sequence.<SModel>singleton(null))).translate(new ITranslator2<SModel, MResource>() {
       public Iterable<MResource> translate(final SModel smd) {
         return new Iterable<MResource>() {
           public Iterator<MResource> iterator() {
@@ -97,11 +98,11 @@ __switch__:
                       break;
                     case 7:
                       this.__CP__ = 1;
-                      this.yield(new MResource(ListSequence.fromList(models.value).last().getModule(), models.value));
+                      this.yield(new MResource((IModule) ListSequence.fromList(models.value).last().getModule(), (Iterable<SModelDescriptor>) (Iterable) models.value));
                       return true;
                     case 16:
                       this.__CP__ = 17;
-                      this.yield(new MResource(ListSequence.fromList(models.value).last().getModule(), models.value));
+                      this.yield(new MResource((IModule) ListSequence.fromList(models.value).last().getModule(), (Iterable<SModelDescriptor>) (Iterable) models.value));
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -131,7 +132,7 @@ __switch__:
                       this.__CP__ = 11;
                       break;
                     case 18:
-                      models.value = ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), (SModelDescriptor) smd);
+                      models.value = ListSequence.fromListAndArray(new ArrayList<SModel>(), (SModelDescriptor) smd);
                       this.__CP__ = 1;
                       break;
                     default:

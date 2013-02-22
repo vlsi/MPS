@@ -81,23 +81,28 @@ public class PositionProvider implements ProjectComponent {
     return false;
   }
 
+  @Override
   public void projectOpened() {
   }
 
+  @Override
   public void projectClosed() {
   }
 
+  @Override
   public void initComponent() {
     addProvider(new NodePositionProvider(), NodeSourcePosition.class.getName());
     addProvider(new TextPositionProvider(myProject), TextSourcePosition.class.getName());
   }
 
+  @Override
   public void disposeComponent() {
     MapSequence.fromMap(myKeysToProviders).clear();
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Position Provider";
   }

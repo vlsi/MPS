@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.ModelAccess;
       }
       // generation switched off temporary 
       ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
         public void run() {
           executeSimple(refactoringContext);
         }
@@ -26,6 +27,7 @@ import jetbrains.mps.smodel.ModelAccess;
     }
   }
 
+  @Override
   public void execute(RefactoringContext context) {
     throw new UnsupportedOperationException();
   }

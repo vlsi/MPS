@@ -8,5 +8,6 @@ public abstract class ISequenceIterableAdapter<U> extends Sequence<U> implements
   public ISequenceIterableAdapter() {
   }
 
+  @Override
   public abstract Iterator<U> iterator();
 }

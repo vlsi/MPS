@@ -92,6 +92,7 @@ public abstract class UsagesView implements IExternalizeable {
 
     myPanel = new RootPanel();
     myTreeComponent = new UsagesTreeComponent(defaultOptions) {
+      @Override
       public Project getProject() {
         return myProject;
       }
@@ -209,6 +210,7 @@ public abstract class UsagesView implements IExternalizeable {
 
   //----SAVE/LOAD STUFF----
 
+  @Override
   public void read(Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
     assert !myIsInitialized;
     myIsInitialized = true;
@@ -233,6 +235,7 @@ public abstract class UsagesView implements IExternalizeable {
     myTreeComponent.read(treeWrapperXML, project);
   }
 
+  @Override
   public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
     Element optionsXML = new Element(BUTTONS);
     myButtonConfiguration.write(optionsXML, project);
@@ -289,12 +292,14 @@ public abstract class UsagesView implements IExternalizeable {
       return myShowCloseButton;
     }
 
+    @Override
     public void read(Element element, jetbrains.mps.project.Project project) {
       myShowRerunButton = Boolean.parseBoolean(element.getAttributeValue(RERUN));
       myShowRegenerateButton = Boolean.parseBoolean(element.getAttributeValue(REGENERATE));
       myShowCloseButton = Boolean.parseBoolean(element.getAttributeValue(CLOSE));
     }
 
+    @Override
     public void write(Element element, jetbrains.mps.project.Project project) {
       element.setAttribute(RERUN, Boolean.toString(myShowRerunButton));
       element.setAttribute(REGENERATE, Boolean.toString(myShowRegenerateButton));
@@ -307,26 +312,32 @@ public abstract class UsagesView implements IExternalizeable {
       super(new BorderLayout());
     }
 
+    @Override
     public boolean hasNextOccurence() {
       return myOccurenceNavigator != null && myOccurenceNavigator.hasNextOccurence();
     }
 
+    @Override
     public boolean hasPreviousOccurence() {
       return myOccurenceNavigator != null && myOccurenceNavigator.hasPreviousOccurence();
     }
 
+    @Override
     public OccurenceInfo goNextOccurence() {
       return myOccurenceNavigator != null ? myOccurenceNavigator.goNextOccurence() : null;
     }
 
+    @Override
     public OccurenceInfo goPreviousOccurence() {
       return myOccurenceNavigator != null ? myOccurenceNavigator.goPreviousOccurence() : null;
     }
 
+    @Override
     public String getNextOccurenceActionName() {
       return myOccurenceNavigator != null ? myOccurenceNavigator.getNextOccurenceActionName() : "";
     }
 
+    @Override
     public String getPreviousOccurenceActionName() {
       return myOccurenceNavigator != null ? myOccurenceNavigator.getPreviousOccurenceActionName() : "";
     }
@@ -342,6 +353,7 @@ public abstract class UsagesView implements IExternalizeable {
       DefaultActionGroup actionGroup = new DefaultActionGroup();
       if (buttonConfiguration.isShowRerunButton()) {
         actionGroup.addAction(new AnAction(getRerunSearchTooltip(), "", Actions.RefreshUsages) {
+          @Override
           public void actionPerformed(AnActionEvent e) {
             assert mySearchQuery != null;
             if (mySearchQuery.getScope() == null) return;
@@ -350,6 +362,7 @@ public abstract class UsagesView implements IExternalizeable {
               if (holder.getObject() == null) return; //object was deleted
             }
             ProgressManager.getInstance().run(new Modal(myProject, getSearchProgressTitle(), true) {
+              @Override
               public void run(@NotNull final ProgressIndicator indicator) {
                 indicator.setIndeterminate(true);
                 UsagesView.this.run(indicator);
@@ -360,6 +373,7 @@ public abstract class UsagesView implements IExternalizeable {
       }
       if (buttonConfiguration.isShowRegenerateButton()) {
         actionGroup.addAction(new AnAction("Rebuild models", "", Actions.Compile) {
+          @Override
           public void actionPerformed(AnActionEvent e) {
             regenerate();
           }
@@ -375,6 +389,7 @@ public abstract class UsagesView implements IExternalizeable {
 
       if (buttonConfiguration.isShowCloseButton()) {
         AnAction action = new AnAction("Close", "", Actions.Cancel) {
+          @Override
           public void actionPerformed(AnActionEvent e) {
             close();
           }

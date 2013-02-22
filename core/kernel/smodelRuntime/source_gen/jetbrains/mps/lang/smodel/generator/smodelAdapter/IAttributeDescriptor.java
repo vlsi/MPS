@@ -20,10 +20,12 @@ public interface IAttributeDescriptor {
       myAttributeDeclaration = attributeDeclaration;
     }
 
+    @Override
     public boolean match(@NotNull SNode attribute) {
       return myAttributeDeclaration == null || SNodeOperations.isInstanceOf(attribute, NameUtil.nodeFQName(myAttributeDeclaration));
     }
 
+    @Override
     public void update(@NotNull SNode attribute) {
     }
   }
@@ -48,10 +50,12 @@ public interface IAttributeDescriptor {
       myLinkRole = linkRole;
     }
 
+    @Override
     public boolean match(@NotNull SNode attribute) {
       return super.match(attribute) && (myLinkRole == null || myLinkRole.equals(SNodeAccessUtil.getProperty(attribute, "linkRole")));
     }
 
+    @Override
     public void update(@NotNull SNode attribute) {
       SNodeAccessUtil.setProperty(attribute, "linkRole", myLinkRole);
     }
@@ -65,10 +69,12 @@ public interface IAttributeDescriptor {
       myPropertyName = propertyName;
     }
 
+    @Override
     public boolean match(@NotNull SNode attribute) {
       return super.match(attribute) && (myPropertyName == null || myPropertyName.equals(SNodeAccessUtil.getProperty(attribute, "propertyName")));
     }
 
+    @Override
     public void update(@NotNull SNode attribute) {
       SNodeAccessUtil.setProperty(attribute, "propertyName", myPropertyName);
     }
@@ -81,10 +87,12 @@ public interface IAttributeDescriptor {
       myAttributeRole = attributeRole;
     }
 
+    @Override
     public boolean match(@NotNull SNode attribute) {
       return myAttributeRole == null || myAttributeRole.equals(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(attribute))), "virtual_getRole_1262430001741497900", new Object[]{}));
     }
 
+    @Override
     public void update(@NotNull SNode attribute) {
     }
   }
@@ -94,6 +102,7 @@ public interface IAttributeDescriptor {
       super(attributeRole);
     }
 
+    @Override
     public boolean match(@NotNull SNode attribute) {
       return SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.NodeAttribute") && super.match(attribute);
     }
@@ -107,11 +116,13 @@ public interface IAttributeDescriptor {
       myLinkRole = linkRole;
     }
 
+    @Override
     public boolean match(@NotNull SNode attribute) {
       SNode attr = SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute");
       return (attr != null) && super.match(attr) && (myLinkRole == null || myLinkRole.equals(SPropertyOperations.getString(attr, "linkRole")));
     }
 
+    @Override
     public void update(@NotNull SNode attribute) {
       SPropertyOperations.set(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"), "linkRole", myLinkRole);
     }
@@ -125,11 +136,13 @@ public interface IAttributeDescriptor {
       myPropertyName = propertyName;
     }
 
+    @Override
     public boolean match(@NotNull SNode attribute) {
       SNode attr = SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute");
       return (attr != null) && super.match(attr) && (myPropertyName == null || myPropertyName.equals(SPropertyOperations.getString(attr, "propertyName")));
     }
 
+    @Override
     public void update(@NotNull SNode attribute) {
       SPropertyOperations.set(SNodeOperations.as(attribute, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "propertyName", myPropertyName);
     }

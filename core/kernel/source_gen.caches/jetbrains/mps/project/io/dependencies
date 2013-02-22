@@ -27,6 +27,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.project.io.IdeaDescriptorIOProvider" file="IdeaDescriptorIOProvider.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.project.foreign.IdeaModuleSolutionDescriptorIO" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIO" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.DevkitDescriptor" />
@@ -36,6 +37,7 @@
     <classNode extendsClassName="jetbrains.mps.project.io.DescriptorIOProvider" />
   </dependency>
   <dependency className="jetbrains.mps.project.io.StandardDescriptorIOProvider" file="StandardDescriptorIOProvider.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOException" />
     <classNode dependClassName="jetbrains.mps.project.persistence.DevkitDescriptorPersistence" />

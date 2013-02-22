@@ -75,18 +75,22 @@ public class Table_Editor extends DefaultNodeEditor {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
         return new AbstractTableModel() {
+          @Override
           public SNode getValueAt(int row, int column) {
             return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).getElement(row), "cells", true)).getElement(column);
           }
 
+          @Override
           public int getRowCount() {
             return ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).count();
           }
 
+          @Override
           public int getColumnCount() {
             return ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).first(), "cells", true)).count();
           }
 
+          @Override
           public void deleteRow(int rowNumber) {
             ListSequence.fromList(SLinkOperations.getTargets(node, "rows", true)).removeElementAt(rowNumber);
           }

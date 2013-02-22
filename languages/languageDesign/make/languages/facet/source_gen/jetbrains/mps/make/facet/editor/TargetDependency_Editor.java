@@ -25,8 +25,8 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
     return this.createCollection_x08tk8_a(editorContext, node);
   }
 
-  public static class ReplaceWith_TargetDependency_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_TargetDependency_cellMenu_a0a0() {
+  public static class ReplaceWith_TargetDependency_cellMenu_x08tk8_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_TargetDependency_cellMenu_x08tk8_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -103,7 +103,7 @@ public class TargetDependency_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new TargetDependency_Editor.ReplaceWith_TargetDependency_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new TargetDependency_Editor.ReplaceWith_TargetDependency_cellMenu_x08tk8_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

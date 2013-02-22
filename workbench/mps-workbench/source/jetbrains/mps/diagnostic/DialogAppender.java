@@ -40,6 +40,7 @@ public class DialogAppender extends AppenderSkeleton {
   private ConcurrentLinkedQueue<LoggingEvent> myEventsQueue = new ConcurrentLinkedQueue<LoggingEvent>();
   private Object myUpdateIdentity = new Object();
 
+  @Override
   protected synchronized void append(final LoggingEvent event) {
     if (!event.level.isGreaterOrEqual(Priority.ERROR)) return;
     myEventsQueue.add(event);
@@ -98,6 +99,7 @@ public class DialogAppender extends AppenderSkeleton {
     }
 
     Runnable task = new Runnable() {
+      @Override
       public void run() {
         try {
           for (IdeaLoggingEvent ideaEvent : ideaEvents) {
@@ -127,10 +129,12 @@ public class DialogAppender extends AppenderSkeleton {
     }
   }
 
+  @Override
   public boolean requiresLayout() {
     return false;
   }
 
+  @Override
   public void close() {
   }
 }

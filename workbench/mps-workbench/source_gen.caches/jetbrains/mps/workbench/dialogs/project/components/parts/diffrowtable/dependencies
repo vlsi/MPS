@@ -8,6 +8,7 @@
     <classNode dependClassName="java.awt.Rectangle" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Enumeration" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.table.JTableHeader" />
@@ -25,6 +26,7 @@
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Enumeration" />
     <classNode dependClassName="javax.swing.event.ListSelectionEvent" />
     <classNode dependClassName="javax.swing.table.TableCellRenderer" />

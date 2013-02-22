@@ -63,6 +63,7 @@ public class GenerateBuildForProjectAction_Action extends BaseAction {
     try {
       final GenerateBuildWizard wizard = new GenerateBuildWizard("New Build Solution", ((Project) MapSequence.fromMap(_params).get("project")), new BuildGeneratorImpl(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext"))));
       ApplicationManager.getApplication().invokeLater(new Runnable() {
+        @Override
         public void run() {
           wizard.show();
         }

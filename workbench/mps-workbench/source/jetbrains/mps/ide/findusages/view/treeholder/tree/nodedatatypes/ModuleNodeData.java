@@ -68,6 +68,7 @@ public class ModuleNodeData extends BaseNodeData {
   }
 
 
+  @Override
   public Icon getIcon() {
     IModule module = getModule();
     if (module == null) return null;
@@ -82,20 +83,24 @@ public class ModuleNodeData extends BaseNodeData {
     return myModuleReference;
   }
 
+  @Override
   public Object getIdObject() {
     return isResultNode() ? (getModuleReference().toString() + "/" + getPlainText()) : getModule();
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     element.setAttribute(MODULE_REF, myModuleReference.toString());
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     myModuleReference = ModuleReference.fromString(element.getAttributeValue(MODULE_REF));
   }
 
+  @Override
   public String getText(TextOptions options) {
     boolean showCounter = options.myCounters && isResultsSection();
     String counter = showCounter ? " " + sizeRepresentation(options.mySubresultsCount) : "";

@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" file="GDBBreakpoint.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.debug.api.BreakpointInfo" />
@@ -26,6 +27,7 @@
   <dependency className="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpointsProvider" file="GDBBreakpointsProvider.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.util.xmlb.XmlSerializer" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Icon" />

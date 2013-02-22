@@ -24,16 +24,16 @@
     <nodeInfo nodeId="3432969378036016608" fileName="DebugConnectionSettings.java" startLine="59" startPosition="42" endLine="60" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036016616" fileName="DebugConnectionSettings.java" startLine="63" startPosition="66" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3432969378036016624" fileName="DebugConnectionSettings.java" startLine="67" startPosition="45" endLine="68" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036016633" fileName="DebugConnectionSettings.java" startLine="72" startPosition="53" endLine="73" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3432969378036016640" fileName="DebugConnectionSettings.java" startLine="74" startPosition="22" endLine="75" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3432969378036016645" fileName="DebugConnectionSettings.java" startLine="76" startPosition="5" endLine="77" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036016658" fileName="DebugConnectionSettings.java" startLine="81" startPosition="28" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036016665" fileName="DebugConnectionSettings.java" startLine="85" startPosition="30" endLine="86" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036016513" fileName="DebugConnectionSettings.java" startLine="109" startPosition="150" endLine="110" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036016542" fileName="DebugConnectionSettings.java" startLine="114" startPosition="21" endLine="115" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036016539" fileName="DebugConnectionSettings.java" startLine="116" startPosition="12" endLine="117" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036016633" fileName="DebugConnectionSettings.java" startLine="73" startPosition="53" endLine="74" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3432969378036016640" fileName="DebugConnectionSettings.java" startLine="75" startPosition="22" endLine="76" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3432969378036016645" fileName="DebugConnectionSettings.java" startLine="77" startPosition="5" endLine="78" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036016658" fileName="DebugConnectionSettings.java" startLine="82" startPosition="28" endLine="83" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036016665" fileName="DebugConnectionSettings.java" startLine="86" startPosition="30" endLine="87" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036016513" fileName="DebugConnectionSettings.java" startLine="110" startPosition="150" endLine="111" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036016542" fileName="DebugConnectionSettings.java" startLine="115" startPosition="21" endLine="116" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036016539" fileName="DebugConnectionSettings.java" startLine="117" startPosition="12" endLine="118" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3432969378036016399" fileName="DebugConnectionSettings.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugConnectionSettings#()V" />
-    <nodeInfo nodeId="3432969378036016537" fileName="DebugConnectionSettings.java" startLine="116" startPosition="10" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3432969378036016537" fileName="DebugConnectionSettings.java" startLine="117" startPosition="10" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3432969378036016556" fileName="DebugConnectionSettings.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isUseSockets#()Z" />
     <nodeInfo nodeId="3432969378036016562" fileName="DebugConnectionSettings.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setUseSockets#(Z)V" />
     <nodeInfo nodeId="3432969378036016572" fileName="DebugConnectionSettings.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHostName#()Ljava/lang/String;" />
@@ -43,19 +43,19 @@
     <nodeInfo nodeId="3432969378036016604" fileName="DebugConnectionSettings.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSharedMemoryAddress#()Ljava/lang/String;" />
     <nodeInfo nodeId="3432969378036016610" fileName="DebugConnectionSettings.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSharedMemoryAddress#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="3432969378036016620" fileName="DebugConnectionSettings.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicationCommandLine#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3432969378036016637" fileName="DebugConnectionSettings.java" startLine="73" startPosition="40" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3432969378036016661" fileName="DebugConnectionSettings.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddress#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3432969378036016497" fileName="DebugConnectionSettings.java" startLine="109" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCommandLine#(ZZZLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3432969378036016654" fileName="DebugConnectionSettings.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmpty#()Z" />
-    <nodeInfo nodeId="3432969378036016675" fileName="DebugConnectionSettings.java" startLine="89" startPosition="35" endLine="93" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036016535" fileName="DebugConnectionSettings.java" startLine="113" startPosition="95" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3432969378036016637" fileName="DebugConnectionSettings.java" startLine="74" startPosition="40" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3432969378036016661" fileName="DebugConnectionSettings.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddress#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3432969378036016497" fileName="DebugConnectionSettings.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCommandLine#(ZZZLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3432969378036016654" fileName="DebugConnectionSettings.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmpty#()Z" />
+    <nodeInfo nodeId="3432969378036016675" fileName="DebugConnectionSettings.java" startLine="90" startPosition="35" endLine="94" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036016535" fileName="DebugConnectionSettings.java" startLine="114" startPosition="95" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3432969378036016403" fileName="DebugConnectionSettings.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugConnectionSettings#(Ljava/lang/String;I)V" />
     <nodeInfo nodeId="3432969378036016427" fileName="DebugConnectionSettings.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugConnectionSettings#(ZLjava/lang/String;ILjava/lang/String;)V" />
-    <nodeInfo nodeId="3432969378036016671" fileName="DebugConnectionSettings.java" startLine="89" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3432969378036016523" fileName="DebugConnectionSettings.java" startLine="113" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAddress#(ZLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3432969378036016627" fileName="DebugConnectionSettings.java" startLine="71" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommandLine#(Z)Ljava/lang/String;" />
-    <nodeInfo nodeId="3432969378036016467" fileName="DebugConnectionSettings.java" startLine="96" startPosition="115" endLine="106" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036016455" fileName="DebugConnectionSettings.java" startLine="96" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCommandLine#(ZZZLjava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3432969378036016671" fileName="DebugConnectionSettings.java" startLine="90" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3432969378036016523" fileName="DebugConnectionSettings.java" startLine="114" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAddress#(ZLjava/lang/String;ILjava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3432969378036016627" fileName="DebugConnectionSettings.java" startLine="71" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCommandLine#(Z)Ljava/lang/String;" />
+    <nodeInfo nodeId="3432969378036016467" fileName="DebugConnectionSettings.java" startLine="97" startPosition="115" endLine="107" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3432969378036016455" fileName="DebugConnectionSettings.java" startLine="97" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getCommandLine#(ZZZLjava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="3432969378036016402" fileName="DebugConnectionSettings.java" startLine="14" startPosition="39" endLine="14" endPosition="39" />
     <scopeInfo nodeId="3432969378036016548" fileName="DebugConnectionSettings.java" startLine="31" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="3432969378036016552" fileName="DebugConnectionSettings.java" startLine="33" startPosition="0" endLine="34" endPosition="0" />
@@ -68,12 +68,12 @@
     <scopeInfo nodeId="3432969378036016607" fileName="DebugConnectionSettings.java" startLine="59" startPosition="42" endLine="60" endPosition="33" />
     <scopeInfo nodeId="3432969378036016615" fileName="DebugConnectionSettings.java" startLine="63" startPosition="66" endLine="64" endPosition="48" />
     <scopeInfo nodeId="3432969378036016623" fileName="DebugConnectionSettings.java" startLine="67" startPosition="45" endLine="68" endPosition="32" />
-    <scopeInfo nodeId="3432969378036016639" fileName="DebugConnectionSettings.java" startLine="74" startPosition="22" endLine="75" endPosition="33" />
-    <scopeInfo nodeId="3432969378036016657" fileName="DebugConnectionSettings.java" startLine="81" startPosition="28" endLine="82" endPosition="17" />
-    <scopeInfo nodeId="3432969378036016664" fileName="DebugConnectionSettings.java" startLine="85" startPosition="30" endLine="86" endPosition="103" />
-    <scopeInfo nodeId="3432969378036016512" fileName="DebugConnectionSettings.java" startLine="109" startPosition="150" endLine="110" endPosition="164" />
-    <scopeInfo nodeId="3432969378036016541" fileName="DebugConnectionSettings.java" startLine="114" startPosition="21" endLine="115" endPosition="31" />
-    <scopeInfo nodeId="3432969378036016538" fileName="DebugConnectionSettings.java" startLine="116" startPosition="12" endLine="117" endPosition="21" />
+    <scopeInfo nodeId="3432969378036016639" fileName="DebugConnectionSettings.java" startLine="75" startPosition="22" endLine="76" endPosition="33" />
+    <scopeInfo nodeId="3432969378036016657" fileName="DebugConnectionSettings.java" startLine="82" startPosition="28" endLine="83" endPosition="17" />
+    <scopeInfo nodeId="3432969378036016664" fileName="DebugConnectionSettings.java" startLine="86" startPosition="30" endLine="87" endPosition="103" />
+    <scopeInfo nodeId="3432969378036016512" fileName="DebugConnectionSettings.java" startLine="110" startPosition="150" endLine="111" endPosition="164" />
+    <scopeInfo nodeId="3432969378036016541" fileName="DebugConnectionSettings.java" startLine="115" startPosition="21" endLine="116" endPosition="31" />
+    <scopeInfo nodeId="3432969378036016538" fileName="DebugConnectionSettings.java" startLine="117" startPosition="12" endLine="118" endPosition="21" />
     <scopeInfo nodeId="3432969378036016399" fileName="DebugConnectionSettings.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="3432969378036016556" fileName="DebugConnectionSettings.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="3432969378036016562" fileName="DebugConnectionSettings.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
@@ -92,8 +92,8 @@
       <varInfo nodeId="3432969378036016613" varName="sharedMemoryAddress" />
     </scopeInfo>
     <scopeInfo nodeId="3432969378036016620" fileName="DebugConnectionSettings.java" startLine="67" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="3432969378036016661" fileName="DebugConnectionSettings.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="3432969378036016497" fileName="DebugConnectionSettings.java" startLine="109" startPosition="0" endLine="112" endPosition="0">
+    <scopeInfo nodeId="3432969378036016661" fileName="DebugConnectionSettings.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="3432969378036016497" fileName="DebugConnectionSettings.java" startLine="110" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="3432969378036016506" varName="host" />
       <varInfo nodeId="3432969378036016508" varName="port" />
       <varInfo nodeId="3432969378036016500" varName="serverMode" />
@@ -103,12 +103,12 @@
     </scopeInfo>
     <scopeInfo nodeId="3432969378036016410" fileName="DebugConnectionSettings.java" startLine="17" startPosition="64" endLine="21" endPosition="18" />
     <scopeInfo nodeId="3432969378036016438" fileName="DebugConnectionSettings.java" startLine="24" startPosition="112" endLine="28" endPosition="48" />
-    <scopeInfo nodeId="3432969378036016654" fileName="DebugConnectionSettings.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="3432969378036016674" fileName="DebugConnectionSettings.java" startLine="89" startPosition="35" endLine="93" endPosition="38" />
-    <scopeInfo nodeId="3432969378036016632" fileName="DebugConnectionSettings.java" startLine="72" startPosition="53" endLine="77" endPosition="132">
+    <scopeInfo nodeId="3432969378036016654" fileName="DebugConnectionSettings.java" startLine="81" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="3432969378036016674" fileName="DebugConnectionSettings.java" startLine="90" startPosition="35" endLine="94" endPosition="38" />
+    <scopeInfo nodeId="3432969378036016632" fileName="DebugConnectionSettings.java" startLine="73" startPosition="53" endLine="78" endPosition="132">
       <varInfo nodeId="3432969378036016634" varName="serverMode" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036016534" fileName="DebugConnectionSettings.java" startLine="113" startPosition="95" endLine="118" endPosition="5" />
+    <scopeInfo nodeId="3432969378036016534" fileName="DebugConnectionSettings.java" startLine="114" startPosition="95" endLine="119" endPosition="5" />
     <scopeInfo nodeId="3432969378036016403" fileName="DebugConnectionSettings.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="3432969378036016406" varName="hostName" />
       <varInfo nodeId="3432969378036016408" varName="port" />
@@ -119,24 +119,24 @@
       <varInfo nodeId="3432969378036016436" varName="sharedMemoryAddress" />
       <varInfo nodeId="3432969378036016430" varName="useSockets" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036016671" fileName="DebugConnectionSettings.java" startLine="89" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="3432969378036016523" fileName="DebugConnectionSettings.java" startLine="113" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="3432969378036016671" fileName="DebugConnectionSettings.java" startLine="90" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="3432969378036016523" fileName="DebugConnectionSettings.java" startLine="114" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="3432969378036016532" varName="address" />
       <varInfo nodeId="3432969378036016528" varName="host" />
       <varInfo nodeId="3432969378036016530" varName="port" />
       <varInfo nodeId="3432969378036016526" varName="useSockets" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036016627" fileName="DebugConnectionSettings.java" startLine="71" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="3432969378036016627" fileName="DebugConnectionSettings.java" startLine="71" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="3432969378036016630" varName="application" />
     </scopeInfo>
-    <scopeInfo nodeId="3432969378036016466" fileName="DebugConnectionSettings.java" startLine="96" startPosition="115" endLine="106" endPosition="32" />
-    <scopeInfo nodeId="3432969378036016455" fileName="DebugConnectionSettings.java" startLine="96" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="3432969378036016466" fileName="DebugConnectionSettings.java" startLine="97" startPosition="115" endLine="107" endPosition="32" />
+    <scopeInfo nodeId="3432969378036016455" fileName="DebugConnectionSettings.java" startLine="97" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="3432969378036016464" varName="address" />
       <varInfo nodeId="3432969378036016458" varName="serverMode" />
       <varInfo nodeId="3432969378036016462" varName="suspend" />
       <varInfo nodeId="3432969378036016460" varName="useSockets" />
     </scopeInfo>
-    <unitInfo nodeId="3432969378036013783" fileName="DebugConnectionSettings.java" startLine="8" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.debugger.java.api.settings.DebugConnectionSettings" />
+    <unitInfo nodeId="3432969378036013783" fileName="DebugConnectionSettings.java" startLine="8" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.debugger.java.api.settings.DebugConnectionSettings" />
   </root>
   <root nodeRef="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)/3432969378036013784">
     <nodeInfo nodeId="3432969378036013787" fileName="RemoteConnectionSettings.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuspend" />

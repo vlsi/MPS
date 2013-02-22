@@ -34,6 +34,7 @@ import java.awt.BorderLayout;
 public class MPSChooserFactory {
   public static IChooser createNodeChooser(final RefactoringContext context, final String paramName, final IChooserSettings<SNode> settings) {
     return ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      @Override
       public IChooser compute() {
         return new MPSNodeChooser(paramName, context, settings);
       }
@@ -42,6 +43,7 @@ public class MPSChooserFactory {
 
   public static IChooser createModelChooser(final RefactoringContext context, final String paramName, final IChooserSettings<SModelReference> settings) {
     return ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      @Override
       public IChooser compute() {
         return new BaseMPSChooser(context, paramName, new ModelChooserType(), settings);
       }
@@ -50,6 +52,7 @@ public class MPSChooserFactory {
 
   public static IChooser createModuleChooser(final RefactoringContext context, final String paramName, final IChooserSettings<IModule> settings) {
     return ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      @Override
       public IChooser compute() {
         return new BaseMPSChooser(context, paramName, new ModuleChooserType(), settings);
       }
@@ -58,6 +61,7 @@ public class MPSChooserFactory {
 
   public static IChooser createStringChooser(final RefactoringContext context, final String paramName, final IChooserSettings<String> settings) {
     return ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      @Override
       public IChooser compute() {
         return new StringChooser(context, paramName, settings);
       }
@@ -66,6 +70,7 @@ public class MPSChooserFactory {
 
   public static IChooser createBooleanChooser(final RefactoringContext context, final String paramName, final IChooserSettings<Boolean> settings) {
     return ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      @Override
       public IChooser compute() {
         return new BooleanChooser(context, paramName, settings);
       }
@@ -74,6 +79,7 @@ public class MPSChooserFactory {
 
   public static IChooser createIntChooser(final RefactoringContext context, final String paramName, final IChooserSettings<Integer> settings) {
     return ModelAccess.instance().runReadAction(new Computable<IChooser>() {
+      @Override
       public IChooser compute() {
         throw new IllegalStateException("NOT SUPPORTED");
       }
@@ -99,18 +105,22 @@ public class MPSChooserFactory {
       myPanel.add(myTextField, BorderLayout.CENTER);
     }
 
+    @Override
     public boolean isStretchable() {
       return false;
     }
 
+    @Override
     public JComponent getMainComponent() {
       return myPanel;
     }
 
+    @Override
     public JComponent getComponentToFocus() {
       return myTextField;
     }
 
+    @Override
     public void commit() throws InvalidInputValueException {
       String value = myTextField.getText();
       if (mySettings.met(value)) {
@@ -138,18 +148,22 @@ public class MPSChooserFactory {
       }
     }
 
+    @Override
     public boolean isStretchable() {
       return false;
     }
 
+    @Override
     public JComponent getMainComponent() {
       return myCheckBox;
     }
 
+    @Override
     public JComponent getComponentToFocus() {
       return myCheckBox;
     }
 
+    @Override
     public void commit() throws InvalidInputValueException {
       boolean value = myCheckBox.isSelected();
       if (mySettings.met(value)) {

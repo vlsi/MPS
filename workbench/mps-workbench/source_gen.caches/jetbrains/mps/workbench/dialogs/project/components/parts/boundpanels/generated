@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3sg8ub488l3jltgkaqn61cy09tpjgxd">
+<dependencies version="2" modelHash="b757yd3fen6916tg2tiqikyooe6cx8v">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.actionSystem(MPS.Platform/com.intellij.openapi.actionSystem@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
   <common hash="-b8duvaftf1m3tvlseovaxetp2p7eu97" />
-  <source id="1560298786499491521" name="ValidateableBoundPanel" hash="-5kytws5m8hkq25x6f8lkmboriqsh2uu">
+  <source id="1560298786499491521" name="ValidateableBoundPanel" hash="h07qrjs0mm3b29q7667qqs1wzswtv3">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -17,11 +17,11 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ValidateableBoundPanel.java" />
   </source>
-  <source id="1560298786499492437" name="BoundListPanel" hash="b64j4l0icfryhg6r16o8sjk9rj8ufsw">
+  <source id="1560298786499492437" name="BoundListPanel" hash="-uo2y4m8alm8m0wmrx61632hwqjrlbo">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BoundListPanel.java" />
   </source>
-  <source id="1560298786499497595" name="BoundTablePanel" hash="-b5931vf7wc9sl8304tcnrme0idgeqb6">
+  <source id="1560298786499497595" name="BoundTablePanel" hash="-9ehh5jxmfgzizyhmtsacg0lj6xswkn0">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BoundTablePanel.java" />

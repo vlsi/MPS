@@ -30,11 +30,11 @@ import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.util.misc.hash.HashMap;
-import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;

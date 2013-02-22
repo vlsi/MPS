@@ -15,6 +15,7 @@ public class BasicSequence<U> extends Sequence<U> implements Iterable<U> {
     this.input = input;
   }
 
+  @Override
   public Iterator<U> iterator() {
     return input.iterator();
   }

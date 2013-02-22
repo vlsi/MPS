@@ -40,6 +40,7 @@ public class TestEvent {
     myTime = time;
   }
 
+  @Override
   public String toString() {
     StringBuilder builder = new StringBuilder();
     builder.append(this.myToken);

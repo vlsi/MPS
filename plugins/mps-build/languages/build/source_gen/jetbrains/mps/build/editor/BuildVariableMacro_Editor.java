@@ -26,8 +26,8 @@ public class BuildVariableMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_cnoc6t_a(editorContext, node);
   }
 
-  public static class ReplaceWith_BuildMacro_cellMenu_a0a0_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildMacro_cellMenu_a0a0_0() {
+  public static class ReplaceWith_BuildMacro_cellMenu_cnoc6t_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildMacro_cellMenu_cnoc6t_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -53,7 +53,7 @@ public class BuildVariableMacro_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildVariableMacro_Editor.ReplaceWith_BuildMacro_cellMenu_a0a0_0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildVariableMacro_Editor.ReplaceWith_BuildMacro_cellMenu_cnoc6t_a0a0()}));
     return editorCell;
   }
 

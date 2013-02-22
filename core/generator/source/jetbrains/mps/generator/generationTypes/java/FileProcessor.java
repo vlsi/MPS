@@ -107,6 +107,7 @@ class FileProcessor {
       myContent = content;
     }
 
+    @Override
     public void saveToFile(IFile file) {
       if (file.exists() && isUnchanged(file)) {
         return;
@@ -159,6 +160,7 @@ class FileProcessor {
       myContent = content;
     }
 
+    @Override
     public void saveToFile(IFile file) {
       if (file.exists() && isUnchanged(file)) {
         return;

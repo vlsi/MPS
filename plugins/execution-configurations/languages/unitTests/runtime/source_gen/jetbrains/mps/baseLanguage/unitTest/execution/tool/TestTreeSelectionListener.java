@@ -18,6 +18,7 @@ public class TestTreeSelectionListener implements TreeSelectionListener {
     myOutputComponent = outputComponent;
   }
 
+  @Override
   public void valueChanged(TreeSelectionEvent event) {
     if (event.getNewLeadSelectionPath() == null) {
       return;

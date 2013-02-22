@@ -440,7 +440,7 @@
     <nodeInfo nodeId="5543290333466300505" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="57" startPosition="304" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5543290333466287408" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="58" startPosition="0" endLine="59" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5543290333466300344" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="63" startPosition="256" endLine="64" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5543290333466299909" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="66" startPosition="17" endLine="67" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5543290333466299909" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="66" startPosition="17" endLine="67" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5543290333466300507" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="69" startPosition="13" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6560218837114085015" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="70" startPosition="0" endLine="71" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="75" startPosition="63" endLine="76" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -465,7 +465,7 @@
     <nodeInfo nodeId="6560218837114085051" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="99" startPosition="30" endLine="101" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6560218837114085051" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="99" startPosition="30" endLine="101" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ActionDataParameterDeclaration_Constraints#()V" />
-    <nodeInfo nodeId="5543290333466300056" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="62" startPosition="70" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5543290333466300056" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="62" startPosition="77" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
     <nodeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
     <nodeInfo nodeId="5543290333466299995" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="61" startPosition="82" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
@@ -487,7 +487,7 @@
     <scopeInfo nodeId="6560218837114085040" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="92" startPosition="30" endLine="94" endPosition="285" />
     <scopeInfo nodeId="6560218837114085051" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="99" startPosition="30" endLine="101" endPosition="289" />
     <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="5543290333466299996" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="62" startPosition="70" endLine="65" endPosition="19" />
+    <scopeInfo nodeId="5543290333466299996" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="62" startPosition="77" endLine="65" endPosition="19" />
     <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="6560218837114085029" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="84" startPosition="66" endLine="88" endPosition="24">
@@ -502,7 +502,7 @@
     <scopeInfo nodeId="5543290333466299995" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="61" startPosition="82" endLine="66" endPosition="17">
       <varInfo nodeId="5543290333466299998" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="5543290333466292296" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="61" startPosition="82" endLine="67" endPosition="50" />
+    <scopeInfo nodeId="5543290333466292296" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="61" startPosition="82" endLine="67" endPosition="57" />
     <scopeInfo nodeId="6560218837114085029" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="84" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="6560218837114085040" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="91" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="6560218837114085051" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="98" startPosition="0" endLine="104" endPosition="0" />

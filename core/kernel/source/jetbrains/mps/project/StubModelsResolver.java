@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.project;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IterableUtil;
@@ -40,6 +41,7 @@ public class StubModelsResolver {
 
   private StubModelsResolver() {
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
+      @Override
       public void eventsHappenedInCommand(List<SModelEvent> events) {
         //make it more optimal
         myStubModulesCache.clear();
@@ -57,7 +59,7 @@ public class StubModelsResolver {
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SModelReference ref : models) {
       SModel m = SModelRepository.getInstance().getModelDescriptor(ref).getSModel();
-      if (m.getNodeById(nodeId) != null) {
+      if (m.getNode(nodeId) != null) {
         result.add(ref);
       }
     }

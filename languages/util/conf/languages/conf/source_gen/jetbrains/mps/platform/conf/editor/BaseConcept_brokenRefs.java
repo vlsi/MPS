@@ -6,13 +6,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -24,6 +17,13 @@ import javax.swing.JTextArea;
 import java.awt.Font;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import java.awt.Color;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 
 public class BaseConcept_brokenRefs extends AbstractCellProvider {
   public BaseConcept_brokenRefs(SNode node) {
@@ -42,6 +42,39 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
+  }
+
+  private static boolean renderingCondition_bx3ota_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return Sequence.fromIterable(((Iterable<SReference>) SNodeOperations.getReferences(node))).any(new IWhereFilter<SReference>() {
+      public boolean accept(SReference ref) {
+        return ref.getTargetNode() == null;
+      }
+    });
+  }
+
+  private static JComponent _QueryFunction_JComponent_bx3ota_a0b0a(final SNode node, final EditorContext editorContext) {
+    String txt = Sequence.fromIterable(((Iterable<SReference>) SNodeOperations.getReferences(node))).where(new IWhereFilter<SReference>() {
+      public boolean accept(SReference ref) {
+        return ref.getTargetNode() == null;
+      }
+    }).foldLeft(new StringBuffer(), new ILeftCombinator<SReference, StringBuffer>() {
+      public StringBuffer combine(StringBuffer sb, SReference ref) {
+        sb = sb.append(ref.getRole()).append("\n      model ref: ").append(ref.getTargetSModelReference().toString());
+        sb = sb.append("\n         nodeId: ").append(ref.getTargetNodeId());
+        sb = (((jetbrains.mps.smodel.SReference) ref).getResolveInfo() != null ?
+          sb.append("\n    resolveInfo: \"").append(((jetbrains.mps.smodel.SReference) ref).getResolveInfo()).append("\"\n") :
+          sb.append("\n no resolveInfo\n")
+        );
+        return sb;
+      }
+    }).toString();
+    JTextArea ta = new JTextArea(txt);
+    Font font = EditorSettings.getInstance().getDefaultEditorFont();
+    if (font != null) {
+      ta.setFont(font);
+    }
+    ta.setBackground(Color.PINK);
+    return ta;
   }
 
   private EditorCell createCollection_bx3ota_a(EditorContext editorContext, SNode node) {
@@ -98,38 +131,5 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, BaseConcept_brokenRefs._QueryFunction_JComponent_bx3ota_a0b0a(node, editorContext), "_bx3ota_a1a0");
     editorCell.setCellId("JComponent_bx3ota_a1a0");
     return editorCell;
-  }
-
-  private static boolean renderingCondition_bx3ota_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return Sequence.fromIterable(((Iterable<SReference>) SNodeOperations.getReferences(node))).any(new IWhereFilter<SReference>() {
-      public boolean accept(SReference ref) {
-        return ref.getTargetNode() == null;
-      }
-    });
-  }
-
-  private static JComponent _QueryFunction_JComponent_bx3ota_a0b0a(final SNode node, final EditorContext editorContext) {
-    String txt = Sequence.fromIterable(((Iterable<SReference>) SNodeOperations.getReferences(node))).where(new IWhereFilter<SReference>() {
-      public boolean accept(SReference ref) {
-        return ref.getTargetNode() == null;
-      }
-    }).foldLeft(new StringBuffer(), new ILeftCombinator<SReference, StringBuffer>() {
-      public StringBuffer combine(StringBuffer sb, SReference ref) {
-        sb = sb.append(ref.getRole()).append("\n      model ref: ").append(ref.getTargetSModelReference().toString());
-        sb = sb.append("\n         nodeId: ").append(ref.getTargetNodeId());
-        sb = (((jetbrains.mps.smodel.SReference) ref).getResolveInfo() != null ?
-          sb.append("\n    resolveInfo: \"").append(((jetbrains.mps.smodel.SReference) ref).getResolveInfo()).append("\"\n") :
-          sb.append("\n no resolveInfo\n")
-        );
-        return sb;
-      }
-    }).toString();
-    JTextArea ta = new JTextArea(txt);
-    Font font = EditorSettings.getInstance().getDefaultEditorFont();
-    if (font != null) {
-      ta.setFont(font);
-    }
-    ta.setBackground(Color.PINK);
-    return ta;
   }
 }

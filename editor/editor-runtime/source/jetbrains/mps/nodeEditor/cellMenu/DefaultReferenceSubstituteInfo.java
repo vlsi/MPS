@@ -46,7 +46,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     });
   }
 
-  public InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
+  protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     CopyUtil.copy(Arrays.asList(mySourceNode.getContainingRoot()), mapping).get(0);
     SNode nodeToEquatePeer = mySourceNode;

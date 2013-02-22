@@ -6,15 +6,20 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -34,27 +39,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TargetDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xfdsch_a(editorContext, node);
   }
 
-  public static class TargetDeclaration_component_cellMenu_a0b0b1h0 implements SubstituteInfoPartExt {
-    private TargetDeclaration_resourcesPolicy myComponent;
-
-    public TargetDeclaration_component_cellMenu_a0b0b1h0() {
-      this.myComponent = new TargetDeclaration_resourcesPolicy();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
+  private static boolean renderingCondition_xfdsch_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "optional");
   }
 
   public static class _Inline_xfdsch_a4a extends InlineCellProvider {
@@ -88,6 +80,50 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  public static class TargetDeclaration_component_cellMenu_xfdsch_a0b0b1h0 implements SubstituteInfoPartExt {
+    private TargetDeclaration_resourcesPolicy myComponent;
+
+    public TargetDeclaration_component_cellMenu_xfdsch_a0b0b1h0() {
+      this.myComponent = new TargetDeclaration_resourcesPolicy();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  private static boolean renderingCondition_xfdsch_a2a1b7a(SNode node, EditorContext editorContext, IScope scope) {
+    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "consume")).equals(SPropertyOperations.getString_def(node, "resourcesPolicy", "TRANSFORM")) || SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "transform")).equals(SPropertyOperations.getString_def(node, "resourcesPolicy", "TRANSFORM"));
+  }
+
+  private static boolean renderingCondition_xfdsch_a3a1b7a(SNode node, EditorContext editorContext, IScope scope) {
+    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "transform")).equals(SPropertyOperations.getString_def(node, "resourcesPolicy", "TRANSFORM"));
+  }
+
+  private static boolean renderingCondition_xfdsch_a4a1b7a(SNode node, EditorContext editorContext, IScope scope) {
+    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "produce")).equals(SPropertyOperations.getString_def(node, "resourcesPolicy", "TRANSFORM")) || SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "transform")).equals(SPropertyOperations.getString_def(node, "resourcesPolicy", "TRANSFORM"));
+  }
+
+  private static boolean renderingCondition_xfdsch_a1b1h0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_xfdsch_a0c1b7a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_xfdsch_a3b1h0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_xfdsch_a4b1h0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "parameters", true) != null);
+  }
+
+  private static boolean renderingCondition_xfdsch_a6b1h0(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "parameters", true) != null);
   }
 
   private static class dependencyListHandler_xfdsch_b2b1h0 extends RefNodeListHandler {
@@ -551,7 +587,7 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyStaticField(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new TargetDeclaration_Editor.TargetDeclaration_component_cellMenu_a0b0b1h0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new TargetDeclaration_Editor.TargetDeclaration_component_cellMenu_xfdsch_a0b0b1h0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -560,41 +596,5 @@ public class TargetDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_xfdsch_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "optional");
-  }
-
-  private static boolean renderingCondition_xfdsch_a2a1b7a(SNode node, EditorContext editorContext, IScope scope) {
-    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "consume")).equals(SPropertyOperations.getString_def(node, "resourcesPolicy", "TRANSFORM")) || SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "transform")).equals(SPropertyOperations.getString_def(node, "resourcesPolicy", "TRANSFORM"));
-  }
-
-  private static boolean renderingCondition_xfdsch_a3a1b7a(SNode node, EditorContext editorContext, IScope scope) {
-    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "transform")).equals(SPropertyOperations.getString_def(node, "resourcesPolicy", "TRANSFORM"));
-  }
-
-  private static boolean renderingCondition_xfdsch_a4a1b7a(SNode node, EditorContext editorContext, IScope scope) {
-    return SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "produce")).equals(SPropertyOperations.getString_def(node, "resourcesPolicy", "TRANSFORM")) || SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"), "transform")).equals(SPropertyOperations.getString_def(node, "resourcesPolicy", "TRANSFORM"));
-  }
-
-  private static boolean renderingCondition_xfdsch_a1b1h0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_xfdsch_a0c1b7a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_xfdsch_a3b1h0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_xfdsch_a4b1h0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "parameters", true) != null);
-  }
-
-  private static boolean renderingCondition_xfdsch_a6b1h0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "parameters", true) != null);
   }
 }

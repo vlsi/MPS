@@ -42,8 +42,10 @@ public class Gcc_Command {
     }
     final IFile executableFile = Gcc_Command.getExecutableFile(file);
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().requireWrite(new Runnable() {
+          @Override
           public void run() {
             executableFile.getParent().mkdirs();
           }
@@ -83,7 +85,7 @@ public class Gcc_Command {
       public void run() {
         module.value = SNodeOperations.getModel(file).getModelDescriptor().getModule();
         sourceName.value = TraceDown.anyUnitName(file);
-        packageName.value = SNodeOperations.getModel(file).getLongName().replace(".", "/");
+        packageName.value = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(file)).replace(".", "/");
       }
     });
     return module.value.getFacet(JavaModuleFacet.class).getClassesGen().getDescendant(packageName.value).getDescendant(sourceName.value + Gcc_Command.getOutputExtension());
@@ -97,7 +99,7 @@ public class Gcc_Command {
       public void run() {
         module.value = SNodeOperations.getModel(file).getModelDescriptor().getModule();
         sourceName.value = TraceInfoUtil.getUnitName(file);
-        packageName.value = SNodeOperations.getModel(file).getLongName().replace(".", "/");
+        packageName.value = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(file)).replace(".", "/");
       }
     });
     return FileSystem.getInstance().getFileByPath(module.value.getGeneratorOutputPath()).getDescendant(packageName.value).getDescendant(sourceName.value + Gcc_Command.getSourceExtension());

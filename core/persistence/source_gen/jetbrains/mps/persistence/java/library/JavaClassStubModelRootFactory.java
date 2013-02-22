@@ -9,6 +9,7 @@ public class JavaClassStubModelRootFactory implements ModelRootFactory {
   public JavaClassStubModelRootFactory() {
   }
 
+  @Override
   public ModelRoot create() {
     return new JavaClassStubsModelRoot();
   }

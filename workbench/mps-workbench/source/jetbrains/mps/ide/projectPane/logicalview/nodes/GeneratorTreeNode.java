@@ -36,10 +36,12 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
     init();
   }
 
+  @Override
   protected String getModulePresentation() {
     return calculateText();
   }
 
+  @Override
   public Generator getModule() {
     return getGenerator();
   }
@@ -48,19 +50,23 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
     return (Generator) getOperationContext().getModule();
   }
 
+  @Override
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return ActionUtils.getGroup(ProjectPaneActionGroups.GENERATOR_NEW_ACTIONS);
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_GENERATOR_ACTIONS);
   }
 
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   public void init() {
     populate();
     myInitialized = true;
@@ -83,10 +89,12 @@ public class GeneratorTreeNode extends ProjectModuleTreeNode implements Stereoty
     return generator.getModuleFqName();
   }
 
+  @Override
   public String getStereotype() {
     return SModelStereotype.GENERATOR;
   }
 
+  @Override
   public boolean isStrict() {
     return false;
   }

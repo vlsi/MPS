@@ -24,6 +24,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import org.jetbrains.annotations.Nullable;
 
 public class ContextRule implements GetDataRule {
+  @Override
   @Nullable
   public Object getData(DataProvider dataProvider) {
     Project project = (Project) dataProvider.getData(MPSCommonDataKeys.PROJECT.getName());

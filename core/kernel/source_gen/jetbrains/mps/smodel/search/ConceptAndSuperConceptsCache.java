@@ -25,6 +25,7 @@ import java.util.List;
   private static final KeyProducer keyProducer = new KeyProducer();
   private static final Logger LOG = Logger.getLogger(ConceptAndSuperConceptsCache.class);
   private static final CachesManager.CacheCreator<SNode> CREATOR = new CachesManager.CacheCreator<SNode>() {
+    @Override
     public AbstractCache create(Object key, SNode element) {
       return new ConceptAndSuperConceptsCache(key, element);
     }

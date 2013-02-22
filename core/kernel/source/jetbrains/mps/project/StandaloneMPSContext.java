@@ -20,14 +20,17 @@ import jetbrains.mps.smodel.IOperationContext;
 
 public abstract class StandaloneMPSContext implements IOperationContext {
 
+  @Override
   public boolean isTestMode() {
     return MPSCore.getInstance().isTestMode();
   }
 
+  @Override
   public <T> T getComponent(Class<T> clazz) {
     throw new UnsupportedOperationException("StandaloneContext.getComponent(" + clazz.getCanonicalName() + ".class) is not supported");
   }
 
+  @Override
   public boolean isValid() {
     return true;
   }

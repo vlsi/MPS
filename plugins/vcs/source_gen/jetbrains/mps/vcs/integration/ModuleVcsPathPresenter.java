@@ -23,11 +23,13 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
     myManager = manager;
   }
 
+  @Override
   public String getPresentableRelativePathFor(final VirtualFile file) {
     if (file == null) {
       return "";
     }
     return ApplicationManager.getApplication().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         VirtualFile baseDir = myProject.getBaseDir();
         if (baseDir != null) {
@@ -45,6 +47,7 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
     });
   }
 
+  @Override
   public String getPresentableRelativePath(final ContentRevision fromRevision, final ContentRevision toRevision) {
     return FileUtil.getRelativePath(toRevision.getFile().getIOFile(), fromRevision.getFile().getIOFile());
   }

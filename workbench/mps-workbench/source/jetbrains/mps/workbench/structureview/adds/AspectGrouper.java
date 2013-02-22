@@ -27,6 +27,7 @@ import java.util.Map.Entry;
 
 public class AspectGrouper implements Grouper {
 
+  @Override
   @NotNull
   public Collection<Group> group(AbstractTreeNode parent, final Collection<TreeElement> children) {
     final Object element = parent.getValue();
@@ -51,11 +52,13 @@ public class AspectGrouper implements Grouper {
     return result;
   }
 
+  @Override
   @NotNull
   public ActionPresentation getPresentation() {
     return new ActionPresentationData("Group by Aspect", "", jetbrains.mps.workbench.structureview.adds.icons.Icons.GROUP_ASPECTS_ICON);
   }
 
+  @Override
   @NotNull
   public String getName() {
     return "AspectGrouper";

@@ -24,6 +24,7 @@ public class TransformationTestRunner extends TestRunner {
     TestMain.PROJECT_CONTAINER.clear();
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
         public void run() {
           ((ApplicationImpl) ApplicationManager.getApplication()).exit(true);
         }

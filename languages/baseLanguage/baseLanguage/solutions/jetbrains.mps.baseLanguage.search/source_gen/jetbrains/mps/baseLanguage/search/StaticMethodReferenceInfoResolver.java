@@ -23,6 +23,7 @@ import java.util.Map;
     this.mySearchScope = searchScope;
   }
 
+  @Override
   public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
     if (referenceInfo == null) {
       return null;

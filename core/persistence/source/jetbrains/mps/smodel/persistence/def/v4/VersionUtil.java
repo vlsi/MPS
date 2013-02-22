@@ -16,9 +16,13 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelVersionsInfo;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class VersionUtil {
   private static final char VERSION_SEPARATOR_CHAR = ':';

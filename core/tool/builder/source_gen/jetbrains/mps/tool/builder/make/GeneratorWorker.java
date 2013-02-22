@@ -90,6 +90,7 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
+  @Override
   protected void showStatistic() {
     failBuild("generation");
   }
@@ -127,6 +128,7 @@ public class GeneratorWorker extends MpsWorker {
     ModelAccess.instance().flushEventQueue();
   }
 
+  @Override
   public void work() {
     setupEnvironment();
     final Wrappers._boolean doneSomething = new Wrappers._boolean(false);
@@ -260,6 +262,7 @@ public class GeneratorWorker extends MpsWorker {
     /*package*/ MyMessageHandler() {
     }
 
+    @Override
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
@@ -294,6 +297,7 @@ public class GeneratorWorker extends MpsWorker {
       myGenerationWarnings.clear();
     }
 
+    @Override
     public void clear() {
     }
   }

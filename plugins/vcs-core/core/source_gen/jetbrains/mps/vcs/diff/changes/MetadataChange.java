@@ -18,6 +18,7 @@ public abstract class MetadataChange extends ModelChange {
     return null;
   }
 
+  @Override
   public String getDescription() {
     return toString();
   }

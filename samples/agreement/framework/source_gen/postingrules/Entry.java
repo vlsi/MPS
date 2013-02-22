@@ -37,6 +37,7 @@ public class Entry {
     myAccount = arg;
   }
 
+  @Override
   public String toString() {
     return myAccount.toString() + ": " + myAmount.toString();
   }

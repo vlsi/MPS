@@ -15,25 +15,16 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.*;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.*;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -162,7 +153,7 @@ public class OptimizeImportsHelper {
     for (ModuleReference ref : modelDescriptor.getSModel().engagedOnGenerationLanguages()) {
       result.myUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(ref, Language.class));
     }
-    for (SNode node : modelDescriptor.getSModel().nodes()) {
+    for (SNode node : new NodesIterable(modelDescriptor.getSModel())) {
       result.myUsedLanguages.add(jetbrains.mps.util.SNodeOperations.getLanguage(node));
       for (SReference ref : node.getReferences()) {
         SModelReference mr = ref.getTargetSModelReference();
@@ -173,8 +164,8 @@ public class OptimizeImportsHelper {
     }
     // add auto imports as dependencies
     result.myUsedLanguages.addAll(ModelsAutoImportsManager.getAutoImportedLanguages(modelDescriptor.getModule(), modelDescriptor));
-    for (SModel model : ModelsAutoImportsManager.getAutoImportedModels(modelDescriptor.getModule(), modelDescriptor)) {
-      result.myUsedModels.add(model.getModelReference());
+    for (org.jetbrains.mps.openapi.model.SModel model : ModelsAutoImportsManager.getAutoImportedModels(modelDescriptor.getModule(), modelDescriptor)) {
+      result.myUsedModels.add(((SModelReference) model.getReference()));
     }
 
     return result;

@@ -57,6 +57,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
 
   //-------libraries
 
+  @Override
   public final Set<LibDescriptor> getLibraries() {
     Set<LibDescriptor> result = new HashSet<LibDescriptor>();
     for (Library l : getUILibraries()) {
@@ -128,28 +129,34 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
     return null;
   }
 
+  @Override
   @Nullable
   @NonNls
   public String getHelpTopic() {
     return null;
   }
 
+  @Override
   public JComponent createComponent() {
     return getPreferences().getComponent();
   }
 
+  @Override
   public boolean isModified() {
     return getPreferences().isModified();
   }
 
+  @Override
   public void apply() throws ConfigurationException {
     getPreferences().commit();
   }
 
+  @Override
   public void reset() {
     getPreferences().reset();
   }
 
+  @Override
   public void disposeUIResources() {
     myPreferences = null;
   }
@@ -160,18 +167,21 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
 
   protected void loadLibraries() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         LibraryInitializer.getInstance().update(true);
       }
     });
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "Library Manager";
   }
 
+  @Override
   public MyState getState() {
     MyState result = new MyState();
     for (Entry<String, Library> entry : myState.getLibraries().entrySet()) {
@@ -180,6 +190,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
     return result;
   }
 
+  @Override
   public void loadState(MyState state) {
     myState = removeMacros(state);
   }

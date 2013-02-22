@@ -8,6 +8,7 @@ import jetbrains.mps.execution.api.settings.SettingsEditorDialog;
 public class SettingsEditorDialogTest {
   public static void main(String[] args) {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         PersonEditor_Configuration personEditor = new PersonEditor_Configuration();
         SettingsEditorDialog dialog = new SettingsEditorDialog(personEditor);

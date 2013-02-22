@@ -24,8 +24,8 @@ public class InIntervalExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_34pshx_a(editorContext, node);
   }
 
-  public static class ReplaceWith_BinaryOperation_cellMenu_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BinaryOperation_cellMenu_a0b0() {
+  public static class ReplaceWith_BinaryOperation_cellMenu_34pshx_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BinaryOperation_cellMenu_34pshx_a0b0() {
     }
 
     public String getReplacementConceptName() {
@@ -46,7 +46,7 @@ public class InIntervalExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_34pshx_b0");
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InIntervalExpression_Editor.ReplaceWith_BinaryOperation_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InIntervalExpression_Editor.ReplaceWith_BinaryOperation_cellMenu_34pshx_a0b0()}));
     return editorCell;
   }
 

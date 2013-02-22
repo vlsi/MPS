@@ -27,8 +27,8 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     return this.createCollection_4ccleb_a(editorContext, node);
   }
 
-  public static class ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_a0a0() {
+  public static class ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_4ccleb_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_4ccleb_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -52,7 +52,7 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     Style style = new StyleImpl();
     Styles_StyleSheet.applyGenContext_operation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenerationContextOp_UserObjectAccessBase_Editor.ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenerationContextOp_UserObjectAccessBase_Editor.ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_4ccleb_a0a0()}));
     return editorCell;
   }
 

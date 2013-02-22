@@ -65,6 +65,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   private Map<String, List<NavigationItem>> getProjectNamesCache() {
     if (myObjectsInProjectScope == null) {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           myObjectsInProjectScope = find(false);
           myProjectNamesCache.clear();
@@ -84,6 +85,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   private Map<String, List<NavigationItem>> getGlobalNamesCache() {
     if (myObjectsInGlobalScope == null) {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           myObjectsInGlobalScope = find(true);
           myGlobalNamesCache.clear();
@@ -101,8 +103,10 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return myGlobalNamesCache;
   }
 
+  @Override
   public String[] getNames(final boolean checkBoxState) {
     return ModelAccess.instance().runReadAction(new Computable<String[]>() {
+      @Override
       public String[] compute() {
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? getGlobalNamesCache() : getProjectNamesCache();
         return namesMap.keySet().toArray(new String[namesMap.keySet().size()]);
@@ -110,8 +114,10 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     });
   }
 
+  @Override
   public NavigationItem[] getElementsByName(final String name, final boolean checkBoxState, final String pattern) {
     return ModelAccess.instance().runReadAction(new Computable<NavigationItem[]>() {
+      @Override
       public NavigationItem[] compute() {
         Map<String, List<NavigationItem>> namesMap = checkBoxState ? getGlobalNamesCache() : getProjectNamesCache();
         List<NavigationItem> navigationItems = namesMap.get(name);
@@ -124,16 +130,20 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     });
   }
 
+  @Override
   public String getFullName(final Object element) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         return doGetFullName(element);
       }
     });
   }
 
+  @Override
   public String getElementName(final Object element) {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         return ((NavigationItem) element).getName();
       }
@@ -156,6 +166,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
 
   //---------------------INTERFACE STUFF------------------------
 
+  @Override
   public final String getCheckBoxName() {
     String name = doGetCheckBoxName();
     if (name == null) return null;
@@ -166,40 +177,49 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
     return "Include &non-&&project " + NameUtil.pluralize(myEntityName);
   }
 
+  @Override
   public String getNotInMessage() {
     return "no " + NameUtil.pluralize(myEntityName) + " found in project";
   }
 
+  @Override
   public String getNotFoundMessage() {
     return "no mathches found";
   }
 
+  @Override
   @Nullable
   public String getPromptText() {
     return NameUtil.capitalize(myEntityName) + " name:";
   }
 
+  @Override
   @NotNull
   public String[] getSeparators() {
     return new String[]{SEPARATOR};
   }
 
   //this is deprecated and not used
+  @Override
   public final char getCheckBoxMnemonic() {
     return 'n';
   }
 
+  @Override
   public boolean loadInitialCheckBoxState() {
     return false;
   }
 
+  @Override
   public void saveInitialCheckBoxState(boolean state) {
   }
 
+  @Override
   public ListCellRenderer getListCellRenderer() {
     return new NavigationItemListCellRenderer();
   }
 
+  @Override
   public String getHelpId() {
     return null;
   }

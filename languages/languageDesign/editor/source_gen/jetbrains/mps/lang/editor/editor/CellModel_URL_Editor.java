@@ -14,16 +14,16 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import java.awt.Color;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
-import java.awt.Color;
 
 public class CellModel_URL_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -70,6 +70,30 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static Color _StyleParameter_QueryFunction_wgj6gq_a0c0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
+  }
+
+  private static Color _StyleParameter_QueryFunction_wgj6gq_a1c0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
+  }
+
+  private static Color _StyleParameter_QueryFunction_wgj6gq_a2c0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
+  }
+
+  private static int _StyleParameter_QueryFunction_wgj6gq_a3c0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_wgj6gq_a4c0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_wgj6gq_a5c0(EditorContext editorContext, SNode node) {
+    return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
+  }
+
   public static class _Inline_wgj6gq_a1a3a extends InlineCellProvider {
     public _Inline_wgj6gq_a1a3a() {
       super();
@@ -104,6 +128,14 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_wgj6gq_a1d0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "emptyNoTargetText"));
+  }
+
+  private static boolean renderingCondition_wgj6gq_a2d0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(node, "noTargetText") == null;
   }
 
   private EditorCell createCollection_wgj6gq_a(EditorContext editorContext, SNode node) {
@@ -444,37 +476,5 @@ public class CellModel_URL_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_wgj6gq_a1d0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "emptyNoTargetText"));
-  }
-
-  private static boolean renderingCondition_wgj6gq_a2d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "noTargetText") == null;
-  }
-
-  private static int _StyleParameter_QueryFunction_wgj6gq_a3c0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_getFontStyle_1221053923273(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_wgj6gq_a5c0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_isStrikeOut_1223390694337(node);
-  }
-
-  private static boolean _StyleParameter_QueryFunction_wgj6gq_a4c0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_isUnderlined_1221220594206(node);
-  }
-
-  private static Color _StyleParameter_QueryFunction_wgj6gq_a0c0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_getTextBackgroundColor_1220972190901(node);
-  }
-
-  private static Color _StyleParameter_QueryFunction_wgj6gq_a1c0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_getBackgroundColor_1220969182195(node);
-  }
-
-  private static Color _StyleParameter_QueryFunction_wgj6gq_a2c0(EditorContext editorContext, SNode node) {
-    return EditorCellModel_Behavior.call_getForegroundColor_1220960215403(node);
   }
 }

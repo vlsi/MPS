@@ -20,6 +20,7 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import java.util.Comparator;
 
 public class RelationComparator implements Comparator<RelationDescriptor> {
+  @Override
   public int compare(RelationDescriptor d1, RelationDescriptor d2) {
     int r1 = d1.compareTo(d2);
     int r2 = d2.compareTo(d1);

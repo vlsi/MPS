@@ -46,6 +46,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
     this.languagesUtilPath = PathManager.getHomePath() + "/languages/util/";
   }
 
+  @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
     String title = "Checking " + SModelOperations.getModelName(model) + " for wrong aspect dependencies...";

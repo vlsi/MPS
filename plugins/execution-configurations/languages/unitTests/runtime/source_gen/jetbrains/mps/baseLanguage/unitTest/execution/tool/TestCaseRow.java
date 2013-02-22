@@ -12,6 +12,7 @@ public class TestCaseRow extends TestContainerRow {
     myTestCaseName = testCase.getFqName();
   }
 
+  @Override
   public boolean matches(String testCase, String testMethod) {
     return testCase == null || eq_f4t6f0_a0a0a2(testCase, myTestCaseName);
   }

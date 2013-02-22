@@ -24,17 +24,20 @@ import com.intellij.openapi.fileEditor.FileEditorDataProviderManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
+import com.intellij.psi.impl.PsiModificationTrackerImpl;
+import com.intellij.psi.util.PsiModificationTracker;
 import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.file.impl.FileManager;
 import jetbrains.mps.idea.core.psi.MPSKeys;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
+import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ModelProvider;
+import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor;
+import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ReloadableModel;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -53,27 +56,35 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * evgeny, 1/25/13
  */
-public class MPSPsiProvider extends AbstractProjectComponent {
+public class MPSPsiProvider extends AbstractProjectComponent  {
 
   // TODO softReference..
   ConcurrentMap<SModelReference, MPSPsiModel> models = new ConcurrentHashMap<SModelReference, MPSPsiModel>();
+  private final PsiModificationTrackerImpl myModificationTracker;
 
   public static MPSPsiProvider getInstance(@NotNull Project project) {
     return project.getComponent(MPSPsiProvider.class);
   }
 
+  private SModelEventProcessor myEventProcessor;
+
   private SModelCommandListener myListener = new SModelCommandListener() {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
-      for (SModelEvent e : events) {
-        // ...
-      }
+      myEventProcessor.process(events);
+      myModificationTracker.incCounter();
+
       // TODO PsiModificationTrackerImpl.incCounter/incOutOfCodeBlockModificationCounter (see JavaCodeBlockModificationListener)
       // TODO notify ANY_PSI_CHANGE_TOPIC
     }
   };
 
+
+
   protected MPSPsiProvider(Project project) {
     super(project);
+    myEventProcessor = createEventProcessor();
+    PsiManager psiManager = PsiManagerEx.getInstance(project);
+    this.myModificationTracker = (PsiModificationTrackerImpl) psiManager.getModificationTracker();
   }
 
   public void initComponent() {
@@ -91,6 +102,12 @@ public class MPSPsiProvider extends AbstractProjectComponent {
     final SNode node = nodeRef.resolve(MPSModuleRepository.getInstance());
     if (node == null) return null;
 
+    return getPsi(node);
+  }
+
+  public PsiElement getPsi(SNode node) {
+    if (node == null) return null;
+
     // give chance to other to tell us what the PSI element is
     for (MPSNodePsiSourceFinder finder : MPSNodePsiSourceFinder.EP_NAME.getExtensions()) {
       PsiElement psiElement = finder.getPsiSource(node, myProject);
@@ -99,23 +116,17 @@ public class MPSPsiProvider extends AbstractProjectComponent {
       }
     }
 
-    return getPsi(node);
-  }
-
-  public MPSPsiNode getPsi(SNode node) {
-    if (node == null) return null;
-
     final SModel containingModel = node.getContainingModel();
     if (containingModel == null) return null;
 
     MPSPsiModel psiModel = getPsi(containingModel);
-    return psiModel.resolve(node.getNodeId());
+    return psiModel.lookupNode(node.getNodeId());
   }
 
   public MPSPsiModel getPsi(SModel model) {
     // TODO check GlobalSearchScope.projectScope(myProject).contains(modelFile)
 
-    final SModelReference modelRef = model.getModelReference();
+    final SModelReference modelRef = model.getReference();
     MPSPsiModel cached = models.get(modelRef);
     if (cached != null) return cached;
 
@@ -154,13 +165,26 @@ public class MPSPsiProvider extends AbstractProjectComponent {
     return result;
   }
 
-  /**
-   * Created with IntelliJ IDEA.
-   * User: fyodor
-   * Date: 2/1/13
-   * Time: 3:04 PM
-   * To change this template use File | Settings | File Templates.
-   */
+  private SModelEventProcessor createEventProcessor() {
+    return new SModelEventProcessor(new ModelProvider() {
+      @Override
+      public ReloadableModel lookupModel(SModelReference modelReference) {
+        final MPSPsiModel psiModel = models.get(modelReference);
+        return new ReloadableModel() {
+          @Override
+          public void reload(SNodeId sNodeId) {
+            psiModel.reload(sNodeId);
+          }
+
+          @Override
+          public void reloadAll() {
+            psiModel.reloadAll();
+          }
+        };
+      }
+    });
+  }
+
   private class PsiFileEditorDataProvider implements FileEditorDataProvider {
 
     @Nullable

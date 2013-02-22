@@ -47,11 +47,13 @@ public class FileClassPathItem extends RealClassPathItem {
     return getPath();
   }
 
+  @Override
   public String getPath() {
     checkValidity();
     return myClassPath;
   }
 
+  @Override
   public boolean hasClass(String name) {
     checkValidity();
     String namespace = NameUtil.namespaceFromLongName(name);
@@ -65,6 +67,7 @@ public class FileClassPathItem extends RealClassPathItem {
     return classes != null && classes.contains(shortname);
   }
 
+  @Override
   public synchronized byte[] getClass(String name) {
     checkValidity();
     String namespace = NameUtil.namespaceFromLongName(name);
@@ -99,6 +102,7 @@ public class FileClassPathItem extends RealClassPathItem {
     }
   }
 
+  @Override
   public ClassifierKind getClassifierKind(String name) {
     String path = myClassPath + File.separatorChar + NameUtil.pathFromNamespace(name) + MPSExtentions.DOT_CLASSFILE;
     try {
@@ -116,6 +120,7 @@ public class FileClassPathItem extends RealClassPathItem {
     }
   }
 
+  @Override
   public URL getResource(String name) {
     checkValidity();
     try {
@@ -127,6 +132,7 @@ public class FileClassPathItem extends RealClassPathItem {
     }
   }
 
+  @Override
   public synchronized Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     if (!myAvailableClassesCache.containsKey(namespace)) {
@@ -136,6 +142,7 @@ public class FileClassPathItem extends RealClassPathItem {
     Set<String> start = myAvailableClassesCache.get(namespace);
     if (start == null) return new EmptyIterable<String>();
     Condition<String> cond = new Condition<String>() {
+      @Override
       public boolean met(String className) {
         return !isAnonymous(className);
       }
@@ -143,6 +150,7 @@ public class FileClassPathItem extends RealClassPathItem {
     return new ConditionalIterable<String>(start, cond);
   }
 
+  @Override
   public synchronized Iterable<String> getSubpackages(String namespace) {
     checkValidity();
     if (!mySubpackagesCache.containsKey(namespace)) {
@@ -186,6 +194,7 @@ public class FileClassPathItem extends RealClassPathItem {
     myAvailableClassesCache.put(namespace, classes);
   }
 
+  @Override
   public long getClassesTimestamp(String namespace) {
     checkValidity();
     File dir = getModelDir(namespace);
@@ -200,6 +209,7 @@ public class FileClassPathItem extends RealClassPathItem {
     return result;
   }
 
+  @Override
   public List<RealClassPathItem> flatten() {
     checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
@@ -207,6 +217,7 @@ public class FileClassPathItem extends RealClassPathItem {
     return result;
   }
 
+  @Override
   public void accept(IClassPathItemVisitor visitor) {
     checkValidity();
     visitor.visit(this);

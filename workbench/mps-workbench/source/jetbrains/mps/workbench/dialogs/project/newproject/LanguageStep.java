@@ -49,10 +49,12 @@ public class LanguageStep extends BaseStep {
     myOptions = options;
   }
 
+  @Override
   public JComponent createControlComponent() {
     JPanel panel = new JPanel(new GridLayout(5, 1));
 
     myCreate = new JCheckBox(new AbstractAction("Create new language") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         setCreateLanguage(myCreate.isSelected());
       }
@@ -77,6 +79,7 @@ public class LanguageStep extends BaseStep {
     panel.add(myPath);
 
     myNamespace.addCaretListener(new CaretListener() {
+      @Override
       public void caretUpdate(CaretEvent e) {
         updateLanguagePath();
       }
@@ -85,15 +88,18 @@ public class LanguageStep extends BaseStep {
     return panel;
   }
 
+  @Override
   public URL getImageURL() {
     return MPSApplicationInfo.getInstance().getDialogImageURL();
   }
 
+  @Override
   @NotNull
   public String getImageText() {
     return "New Language";
   }
 
+  @Override
   public String getCommentString() {
     return
       "In MPS, you create new languages and then use them to write code " +
@@ -101,11 +107,13 @@ public class LanguageStep extends BaseStep {
         "new language.";
   }
 
+  @Override
   @Nullable
   public String getURL() {
     return "http://confluence.jetbrains.com/display/MPSD2/MPS+project+structure#MPSprojectstructure-languages";
   }
 
+  @Override
   public void _init() {
     super._init();
 
@@ -128,6 +136,7 @@ public class LanguageStep extends BaseStep {
     }
   }
 
+  @Override
   public void _check() throws CommitStepException {
     if (myOptions.getCreateNewLanguage()) {
       if (myPath.getPath().length() == 0) {
@@ -156,6 +165,7 @@ public class LanguageStep extends BaseStep {
     }
   }
 
+  @Override
   public void _commit(boolean finishChosen) throws CommitStepException {
     super._commit(finishChosen);
 

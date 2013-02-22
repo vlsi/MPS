@@ -27,15 +27,18 @@ public class RegularNodeIdMap implements INodeIdToNodeMap {
   private static Logger LOG = Logger.getLogger(RegularNodeIdMap.class);
   private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
 
+  @Override
   public int size() {
     return myRegularMap.size();
   }
 
+  @Override
   public SNode get(SNodeId key) {
     if (!(key instanceof Regular)) return null;
     return myRegularMap.get(((Regular) key).getId());
   }
 
+  @Override
   public SNode put(SNodeId key, SNode value) {
     if (!(key instanceof Regular)) {
       LOG.error("Trying to add node with id class "+key.getClass().getName()+" to a regular model");
@@ -44,11 +47,13 @@ public class RegularNodeIdMap implements INodeIdToNodeMap {
     return myRegularMap.put(((Regular) key).getId(), value);
   }
 
+  @Override
   public boolean containsKey(SNodeId key) {
     if (!(key instanceof Regular)) return false;
     return myRegularMap.containsKey(((Regular) key).getId());
   }
 
+  @Override
   public SNode remove(SNodeId key) {
     if (!(key instanceof Regular)){
       LOG.error("Trying to remove node with id class "+key.getClass().getName()+" from a regular model");
@@ -57,6 +62,7 @@ public class RegularNodeIdMap implements INodeIdToNodeMap {
     return myRegularMap.remove(((Regular) key).getId());
   }
 
+  @Override
   public Iterable<SNode> values() {
     return ((Iterable) Arrays.asList(myRegularMap.getValues()));
   }

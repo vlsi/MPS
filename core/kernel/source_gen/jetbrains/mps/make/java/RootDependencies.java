@@ -110,6 +110,7 @@ public class RootDependencies implements Comparable<RootDependencies> {
     );
   }
 
+  @Override
   public int compareTo(RootDependencies p0) {
     if (p0 == null || this.myClassName == null || p0.myClassName == null) {
       return 0;

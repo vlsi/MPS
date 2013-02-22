@@ -50,6 +50,7 @@ public class ProjectStep extends BaseStep {
     myOptions.setProjectName(getDefaultProjectName());
   }
 
+  @Override
   public JComponent createControlComponent() {
     JPanel panel = new JPanel(new GridLayout(4, 1));
 
@@ -70,6 +71,7 @@ public class ProjectStep extends BaseStep {
     panel.add(myProjectPath);
 
     myProjectName.addCaretListener(new CaretListener() {
+      @Override
       public void caretUpdate(CaretEvent e) {
         updateProjectPath();
       }
@@ -78,25 +80,30 @@ public class ProjectStep extends BaseStep {
     return panel;
   }
 
+  @Override
   public URL getImageURL() {
     return MPSApplicationInfo.getInstance().getDialogImageURL();
   }
 
+  @Override
   @NotNull
   public String getImageText() {
     return "New Project";
   }
 
+  @Override
   public String getCommentString() {
     return
       "A project is a set of languages and solutions with which you work.";
   }
 
+  @Override
   @Nullable
   public String getURL() {
     return "http://confluence.jetbrains.com/display/MPSD2/MPS+project+structure#MPSprojectstructure-projects";
   }
 
+  @Override
   public void _init() {
     super._init();
 
@@ -106,6 +113,7 @@ public class ProjectStep extends BaseStep {
     updateProjectPath();
   }
 
+  @Override
   public void _check() throws CommitStepException {
     if (myProjectPath.getPath() == null) {
       throw new CommitStepException("Project path should be specified");
@@ -122,6 +130,7 @@ public class ProjectStep extends BaseStep {
     }
   }
 
+  @Override
   public void _commit(boolean finishChosen) throws CommitStepException {
     super._commit(finishChosen);
 

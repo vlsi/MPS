@@ -19,10 +19,12 @@ public class SConceptNodeAdapter extends SConceptNodeAdapterBase implements SCon
     super(concept);
   }
 
+  @Override
   public SConcept getSuperConcept() {
     return SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SLinkOperations.getTarget(((SNode) (getConcept().resolve(MPSModuleRepository.getInstance()))), "extends", false)));
   }
 
+  @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
     return ListSequence.fromList(SLinkOperations.getTargets(((SNode) (getConcept().resolve(MPSModuleRepository.getInstance()))), "implements", true)).select(new ISelector<SNode, SInterfaceConcept>() {
       public SInterfaceConcept select(SNode it) {
@@ -31,6 +33,7 @@ public class SConceptNodeAdapter extends SConceptNodeAdapterBase implements SCon
     });
   }
 
+  @Override
   public SNodePointer getConcept() {
     return super.getConcept();
   }

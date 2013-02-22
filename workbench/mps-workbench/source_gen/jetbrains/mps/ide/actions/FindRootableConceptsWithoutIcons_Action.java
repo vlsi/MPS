@@ -69,6 +69,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Finding Usages", true) {
+        @Override
         public void run(@NotNull ProgressIndicator p0) {
           final Wrappers._T<SearchResults<SNode>> concepts = new Wrappers._T<SearchResults<SNode>>();
           final Wrappers._T<List<SearchResult<SNode>>> results = new Wrappers._T<List<SearchResult<SNode>>>();
@@ -92,6 +93,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
           SwingUtilities.invokeLater(new Runnable() {
             public void run() {
               RefactoringAccess.getInstance().showRefactoringView(((Project) MapSequence.fromMap(_params).get("project")), new RefactoringViewAction() {
+                @Override
                 public void performAction(RefactoringViewItem refactoringViewItem) {
                   refactoringViewItem.close();
                 }

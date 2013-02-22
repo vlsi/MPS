@@ -54,6 +54,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     //initComponent();
   }
 
+  @Override
   public void initComponent() {
     myHierarchyTree = new MyHierarchyTree(myDescendantsProvider);
     setLayout(new GridBagLayout());
@@ -75,6 +76,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     showHierarchy(myInitialNode, myOperationContext);
   }
 
+  @Override
   public void setCaption(String caption) {
     myCaption = caption;
   }
@@ -83,6 +85,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     myHierarchyTree.setOperationContext(operationContext);
     myHierarchyTree.setHierarchyNode(node);
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         myHierarchyTree.rebuildNow();
         // if (myTreeNode != null) myHierarchyTree.selectNode(myTreeNode);
@@ -90,26 +93,32 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     });
   }
 
+  @Override
   public JComponent getComponentToFocus() {
     return myHierarchyTree;
   }
 
+  @Override
   public void setCondition(Condition<SNode> condition) {
     //todo
   }
 
+  @Override
   public String getPropertyName() {
     return myPropertyName;
   }
 
+  @Override
   public void setPropertyName(String propertyName) {
     myPropertyName = propertyName;
   }
 
+  @Override
   public void setInitialValue(SNode initialValue) {
     myHierarchyTree.selectNode(myHierarchyTree.findNodeWith(initialValue));
   }
 
+  @Override
   public SNode submit() throws InvalidInputValueException {
     TreePath selectionPath = myHierarchyTree.getSelectionPath();
     if (selectionPath == null) throw new InvalidInputValueException("nothing is selected");
@@ -119,6 +128,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     }
     final HierarchyTreeNode selectedTreeNode = (HierarchyTreeNode) lastComponent;
     SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      @Override
       public SNode compute() {
         return selectedTreeNode.getNode();
       }
@@ -126,6 +136,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
     return node;
   }
 
+  @Override
   public JComponent getMainComponent() {
     return this;
   }
@@ -138,18 +149,22 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
       myDescendantsProvider = descendantsProvider;
     }
 
+    @Override
     protected String noNodeString() {
       return "no node";
     }
 
+    @Override
     protected SNode getParent(SNode node) {
       return null;
     }
 
+    @Override
     protected Set<SNode> getParents(SNode node, Set<SNode> visited) {
       return new HashSet<SNode>();
     }
 
+    @Override
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
       return myDescendantsProvider.getDescendants(node);
     }

@@ -25,14 +25,17 @@ public class ReferenceMessageTarget implements MessageTarget {
     myRole = role;
   }
 
+  @Override
   public MessageTargetEnum getTarget() {
     return MessageTargetEnum.REFERENCE;
   }
 
+  @Override
   public String getRole() {
     return myRole;
   }
 
+  @Override
   public boolean sameAs(MessageTarget errorTarget) {
     return errorTarget instanceof ReferenceMessageTarget
       && ((ReferenceMessageTarget) errorTarget).myRole.equals(myRole);

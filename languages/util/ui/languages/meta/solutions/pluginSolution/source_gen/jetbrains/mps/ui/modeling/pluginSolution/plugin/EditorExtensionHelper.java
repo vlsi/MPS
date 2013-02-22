@@ -32,6 +32,7 @@ public class EditorExtensionHelper {
       null
     );
     this.uiObjectTemplateProvider = new IObjectsProvider<SNode, SNode>() {
+      @Override
       public Iterable<SNode> getObjects() {
         return (widgetsModel != null ?
           SModelOperations.getNodes(widgetsModel, "jetbrains.mps.ui.modeling.structure.UIObjectTemplate") :
@@ -39,6 +40,7 @@ public class EditorExtensionHelper {
         );
       }
 
+      @Override
       public SNode create(final SNode context) {
         final Wrappers._T<SNode> tpl = new Wrappers._T<SNode>();
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -50,6 +52,7 @@ public class EditorExtensionHelper {
         return tpl.value;
       }
 
+      @Override
       public Object info() {
         return EditorExtensionHelper.this.templatesBase;
       }
@@ -60,6 +63,7 @@ public class EditorExtensionHelper {
       null
     );
     this.eventHandlerProvider = new IObjectsProvider<SNode, SNode>() {
+      @Override
       public Iterable<SNode> getObjects() {
         return (eventsModel != null ?
           SModelOperations.getNodes(eventsModel, "jetbrains.mps.ui.modeling.structure.EventHandlerTemplate") :
@@ -67,6 +71,7 @@ public class EditorExtensionHelper {
         );
       }
 
+      @Override
       public SNode create(final SNode context) {
         final Wrappers._T<SNode> eht = new Wrappers._T<SNode>();
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -78,6 +83,7 @@ public class EditorExtensionHelper {
         return eht.value;
       }
 
+      @Override
       public Object info() {
         return EditorExtensionHelper.this.templatesBase;
       }

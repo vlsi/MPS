@@ -60,6 +60,7 @@ public class EditorCell_Table extends EditorCell_Collection {
       rowCell.setCellId(rowId);
 
       CellAction selectRowAction = new AbstractCellAction() {
+        @Override
         public void execute(EditorContext editorContext) {
           assert !(myEmpty);
           EditorComponent editorComponent = getEditor();
@@ -89,16 +90,19 @@ public class EditorCell_Table extends EditorCell_Collection {
           if (value != null) {
             editorCell = (EditorCell) getContext().createNodeCell(value);
             editorCell.setAction(CellActionType.DELETE, new AbstractCellAction() {
+              @Override
               public void execute(EditorContext editorContext) {
                 myModel.deleteColumn(finalColumn);
               }
             });
             editorCell.setAction(CellActionType.INSERT, new AbstractCellAction() {
+              @Override
               public void execute(EditorContext editorContext) {
                 myModel.insertColumn(finalColumn + 1);
               }
             });
             editorCell.setAction(CellActionType.INSERT_BEFORE, new AbstractCellAction() {
+              @Override
               public void execute(EditorContext editorContext) {
                 myModel.insertColumn(finalColumn);
               }
@@ -106,6 +110,7 @@ public class EditorCell_Table extends EditorCell_Collection {
           } else {
             editorCell = new EditorCell_Constant(getContext(), getSNode(), "", true);
             editorCell.setAction(CellActionType.INSERT, new AbstractCellAction() {
+              @Override
               public void execute(EditorContext editorContext) {
                 myModel.createElement(finalRow, finalColumn);
               }
@@ -210,6 +215,7 @@ public class EditorCell_Table extends EditorCell_Collection {
     EditorCell_Collection rowCell = EditorCell_Collection.create(getContext(), getSNode(), new CellLayout_Horizontal(), null);
     rowCell.getStyle().set(StyleAttributes.TABLE_COMPONENT, TableComponent.HORIZONTAL_COLLECTION);
     rowCell.setAction(CellActionType.DELETE, new AbstractCellAction() {
+      @Override
       public void execute(EditorContext p0) {
         myModel.deleteRow(row);
       }
@@ -223,12 +229,14 @@ public class EditorCell_Table extends EditorCell_Collection {
       emptyCell.getStyle().set(StyleAttributes.LAST_POSITION_ALLOWED, false);
     } else {
       emptyCell.setAction(CellActionType.INSERT, new AbstractCellAction() {
+        @Override
         public void execute(EditorContext editorContext) {
           myModel.insertRow(rowNumber + 1);
         }
       });
     }
     emptyCell.setAction(CellActionType.INSERT_BEFORE, new AbstractCellAction() {
+      @Override
       public void execute(EditorContext editorContext) {
         myModel.insertRow(rowNumber);
       }
@@ -248,6 +256,7 @@ public class EditorCell_Table extends EditorCell_Collection {
 
   private void installEmptyRowCellActions(EditorCell emptyCell, final int rowNumber) {
     CellAction createFirstCellAction = new AbstractCellAction() {
+      @Override
       public void execute(EditorContext editorContext) {
         myModel.insertColumn(rowNumber);
       }
@@ -266,6 +275,7 @@ public class EditorCell_Table extends EditorCell_Collection {
 
   private void installEmptyTableCellActions(EditorCell emptyCell) {
     CellAction createFirstRowAction = new AbstractCellAction() {
+      @Override
       public void execute(EditorContext editorContext) {
         myModel.insertRow(0);
       }
@@ -291,6 +301,7 @@ public class EditorCell_Table extends EditorCell_Collection {
       myExistingAction = existingAction;
     }
 
+    @Override
     public void execute(EditorContext context) {
       if (myExistingAction != null && myExistingAction.canExecute(context)) {
         myExistingAction.execute(context);

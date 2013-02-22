@@ -106,7 +106,7 @@ public class ApiMigrationHelper {
     final Set<Tuples._2<SNode, SReference>> changedClassUsagesInTypes = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
     for (SReference ref : SetSequence.fromSet(usages)) {
       SNode rNode = ((SNode) ref.getSourceNode());
-      if (rNode.getModel().isNotEditable()) {
+      if (rNode.getModel().isReadOnly()) {
         continue;
       }
 
@@ -166,7 +166,7 @@ public class ApiMigrationHelper {
 
     for (SReference ref : SetSequence.fromSet(smusages)) {
       SNode rNode = ref.getSourceNode();
-      if (rNode.getModel().isNotEditable()) {
+      if (rNode.getModel().isReadOnly()) {
         continue;
       }
       SetSequence.fromSet(unknownUsages).addElement(rNode);
@@ -199,6 +199,7 @@ public class ApiMigrationHelper {
     }));
 
     ip.getComponent(RefactoringView.class).showRefactoringView(ip, new RefactoringViewAction() {
+      @Override
       public void performAction(RefactoringViewItem refactoringViewItem) {
         refactoringViewItem.close();
 
@@ -234,7 +235,7 @@ public class ApiMigrationHelper {
   }
 
   private boolean needMigration(SNode n) {
-    if (n.getModel().isNotEditable()) {
+    if (n.getModel().isReadOnly()) {
       return false;
     }
     if (eq_yke5lt_a0b0k(SModelOperations.getModelName(SNodeOperations.getModel(n)), SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", "")).getSModel()))) {
@@ -293,6 +294,7 @@ public class ApiMigrationHelper {
     }
 
     ip.getComponent(RefactoringView.class).showRefactoringView(ip, new RefactoringViewAction() {
+      @Override
       public void performAction(RefactoringViewItem refactoringViewItem) {
         final List<SNodeReference> included = ((RefactoringViewItemImpl) refactoringViewItem).getUsagesView().getIncludedResultNodes();
         refactoringViewItem.close();
@@ -301,6 +303,9 @@ public class ApiMigrationHelper {
             for (int i = 0; i < ListSequence.fromList(usages).count(); i++) {
               _FunctionTypes._void_P1_E0<? super SNode> transformer = ListSequence.fromList(transformations).getElement(i)._2();
               for (SNode known : SetSequence.fromSet(ListSequence.fromList(usages).getElement(i)._0())) {
+                if (known.getModel() == null) {
+                  continue;
+                }
                 SNodeReference np = new SNodePointer(known);
                 if (ListSequence.fromList(included).contains(np)) {
                   transformer.invoke(known);

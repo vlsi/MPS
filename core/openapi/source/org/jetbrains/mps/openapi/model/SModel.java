@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -40,7 +41,7 @@ public interface SModel {
   String getModelName();
 
   @NotNull
-  SModelReference getModelReference();
+  jetbrains.mps.smodel.SModelReference getReference();
 
   ModelRoot getModelRoot();
 
@@ -51,11 +52,15 @@ public interface SModel {
    */
   SModule getModule();
 
+  boolean isReadOnly();
+
   /**
    * Returns a collection of root nodes. Root nodes are all nodes added to model using addRootNode.
    * todo VP: should be immutable collection? Currently it isn't.
    */
-  Iterable<? extends SNode> getRootNodes();
+  Iterable<SNode> getRootNodes();
+
+  boolean isRoot(SNode node);
 
   /**
    * Adds a node and its descendants (the whole tree) to a model. After the operation each node in the underlying subtree will have getModel() set to return "this model".
@@ -66,20 +71,13 @@ public interface SModel {
 
   SNode getNode(SNodeId id);
 
+  SModelScope getModelScope();
+
   /**
    * The data source which this model was loaded from
    */
   @NotNull
   DataSource getSource();
-
-  boolean isLoaded();
-
-  /**
-   * When owning a read action lock, this method will load the model from the storage.
-   * Does nothing if already loaded.
-   * The load() method is called automatically on a not-loaded model whenever elements from it are being resolved.
-   */
-  void load() throws IOException;
 
   /**
    * When owning a write action lock, this method will save the model into the storage.

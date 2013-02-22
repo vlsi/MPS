@@ -57,14 +57,17 @@ public class NodesParetoFrontier {
       return last;
     }
 
+    @Override
     public Iterator<NodeBox> iterator() {
       return new Iterator<NodeBox>() {
         private NodeBox myCurrent = NodeBox.this;
 
+        @Override
         public boolean hasNext() {
           return myCurrent != null;
         }
 
+        @Override
         public NodeBox next() {
           if (!hasNext()) throw new NoSuchElementException();
           NodeBox result = myCurrent;
@@ -72,6 +75,7 @@ public class NodesParetoFrontier {
           return result;
         }
 
+        @Override
         public void remove() {
           throw new UnsupportedOperationException();
         }

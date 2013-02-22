@@ -33,6 +33,7 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
     myModule = module;
   }
 
+  @Override
   public Collection<Language> directlyUsedLanguages() {
     Set<Language> result = new HashSet<Language>();
     result.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
@@ -42,6 +43,7 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
     return result;
   }
 
+  @Override
   public Collection<IModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes) {
     HashSet<IModule> result = new HashSet<IModule>();
     for (Dependency dependency : myModule.getDependencies()) {

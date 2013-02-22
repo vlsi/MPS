@@ -31,16 +31,20 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return DefaultSearchOptionsComponent.class.getSimpleName();
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
+  @Override
   public Element getState() {
     if (myDefaultOptions == null) {
       return myState;
@@ -49,6 +53,7 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
     return myState;
   }
 
+  @Override
   public void loadState(Element state) {
     myState = (Element) state.clone();
     if (myDefaultOptions == null) {
@@ -57,8 +62,10 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
     myDefaultOptions.readOptions(myState, myProject.getComponent(MPSProject.class));
   }
 
+  @Override
   public void projectOpened() {
     StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
+      @Override
       public void run() {
         myDefaultOptions = new DefaultOptionsContainer();
         if (myState == null) {
@@ -69,6 +76,7 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
     });
   }
 
+  @Override
   public void projectClosed() {
   }
 }

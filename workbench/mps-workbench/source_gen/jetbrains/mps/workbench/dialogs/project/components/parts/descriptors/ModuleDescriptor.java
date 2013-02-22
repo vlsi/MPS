@@ -12,6 +12,7 @@ public class ModuleDescriptor extends VoidColumnDescriptor {
     super(name, header, width);
   }
 
+  @Override
   public TableCellRenderer createRenderer() {
     return new ListRendererAdapter(new ModuleRenderer(null, null));
   }

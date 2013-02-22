@@ -43,20 +43,24 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
   public RefreshableOnComponent getBeforeCheckinConfigurationPanel() {
     final JCheckBox checkModelCheckBox = new JCheckBox("Perform check for affected models");
     return new RefreshableOnComponent() {
+      @Override
       public JComponent getComponent() {
         JPanel panel = new JPanel(new GridLayout(1, 0));
         panel.add(checkModelCheckBox);
         return panel;
       }
 
+      @Override
       public void restoreState() {
         checkModelCheckBox.setSelected(ModelCheckerSettings.getInstance().isCheckBeforeCommit());
       }
 
+      @Override
       public void saveState() {
         ModelCheckerSettings.getInstance().setCheckBeforeCommit(checkModelCheckBox.isSelected());
       }
 
+      @Override
       public void refresh() {
       }
     };
@@ -89,6 +93,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
     }
 
     @NotNull
+    @Override
     public CheckinHandler createHandler(CheckinProjectPanel panel, CommitContext commitContext) {
       return new ModelCheckerCheckinHandler(panel.getProject(), panel);
     }

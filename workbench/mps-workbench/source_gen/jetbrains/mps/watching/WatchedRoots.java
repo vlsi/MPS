@@ -40,10 +40,12 @@ public class WatchedRoots implements ApplicationComponent {
   }
 
   @NotNull
+  @Override
   public String getComponentName() {
     return "Watched Roots";
   }
 
+  @Override
   public void initComponent() {
     myReloadHandler = new ReloadAdapter() {
       @Override
@@ -121,6 +123,7 @@ public class WatchedRoots implements ApplicationComponent {
     return result;
   }
 
+  @Override
   public void disposeComponent() {
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
     myProjectManager.removeProjectManagerListener(myProjectManagerListener);

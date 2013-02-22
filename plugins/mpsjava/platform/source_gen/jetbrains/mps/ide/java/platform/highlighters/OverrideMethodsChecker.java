@@ -44,6 +44,7 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
   public OverrideMethodsChecker() {
   }
 
+  @Override
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Iterable<SNode> classifiers = ListSequence.fromList(SNodeOperations.getDescendants(rootNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

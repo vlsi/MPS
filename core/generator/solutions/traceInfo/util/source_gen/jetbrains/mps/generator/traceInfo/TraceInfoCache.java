@@ -50,6 +50,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     }
     super.init();
     CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
+      @Override
       public void performCleanup() {
         cleanup();
       }
@@ -68,10 +69,12 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   @NotNull
+  @Override
   public String getCacheFileName() {
     return TRACE_FILE_NAME;
   }
 
+  @Override
   protected DebugInfo generateCache(GenerationStatus status) {
     return status.getDebugInfo();
   }

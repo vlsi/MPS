@@ -13,6 +13,7 @@ public class InstructionWrapper implements IInstruction<InstructionWrapper> {
     this.myInstruction = instruction;
   }
 
+  @Override
   public Set<InstructionWrapper> succ() {
     Set<InstructionWrapper> result = new HashSet<InstructionWrapper>();
     for (Instruction instruction : this.myInstruction.succ()) {
@@ -21,6 +22,7 @@ public class InstructionWrapper implements IInstruction<InstructionWrapper> {
     return result;
   }
 
+  @Override
   public Set<InstructionWrapper> pred() {
     Set<InstructionWrapper> result = new HashSet<InstructionWrapper>();
     for (Instruction instruction : this.myInstruction.pred()) {
@@ -33,14 +35,17 @@ public class InstructionWrapper implements IInstruction<InstructionWrapper> {
     return this.myInstruction;
   }
 
+  @Override
   public String toString() {
     return this.myInstruction.toString();
   }
 
+  @Override
   public int hashCode() {
     return this.myInstruction.hashCode();
   }
 
+  @Override
   public boolean equals(Object obj) {
     if (obj instanceof InstructionWrapper) {
       return (this.myInstruction.equals(((InstructionWrapper) obj).myInstruction));

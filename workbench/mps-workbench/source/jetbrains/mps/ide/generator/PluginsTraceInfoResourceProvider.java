@@ -36,6 +36,7 @@ public class PluginsTraceInfoResourceProvider implements TraceInfoResourceProvid
   public PluginsTraceInfoResourceProvider(MPSCoreComponents coreComponents) {
   }
 
+  @Override
   public URL getResource(SModule module, String resourceName) {
     if (InternalFlag.isInternalMode() && (SModuleOperations.isCompileInIdea(module))) {
       for (IdeaPluginDescriptor plugin : PluginManager.getPlugins()) {

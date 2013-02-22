@@ -23,17 +23,20 @@ public class AddRootChange extends ModelChange {
     return myNodeId;
   }
 
+  @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
-    SNode newNode = getChangeSet().getNewModel().getNodeById(myNodeId);
+    SNode newNode = getChangeSet().getNewModel().getNode(myNodeId);
     SModelOperations.addRootNode(model, nodeCopier.copyNode(newNode));
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
     return new DeleteRootChange(getChangeSet().getOppositeChangeSet(), myNodeId);
   }
 
   @NotNull
+  @Override
   public ChangeType getType() {
     return ChangeType.ADD;
   }
@@ -43,6 +46,7 @@ public class AddRootChange extends ModelChange {
     return "Add root " + myNodeId;
   }
 
+  @Override
   public String getDescription() {
     return "Added root #" + myNodeId;
   }

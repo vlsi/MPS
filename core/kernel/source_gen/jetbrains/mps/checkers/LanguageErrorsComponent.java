@@ -263,19 +263,23 @@ public class LanguageErrorsComponent {
     final Object[] result = new Object[1];
     try {
       AbstractNodesReadListener listener = new AbstractNodesReadListener() {
+        @Override
         public void nodeUnclassifiedReadAccess(SNode node) {
           SetSequence.fromSet(accessedNodes).addElement(node);
         }
 
+        @Override
         public void nodePropertyReadAccess(SNode node, String name, String value) {
           SetSequence.fromSet(accessedNodes).addElement(node);
         }
 
+        @Override
         public void nodeReferentReadAccess(SNode node, String role, SNode referent) {
           SetSequence.fromSet(accessedNodes).addElement(node);
           SetSequence.fromSet(accessedNodes).addElement(referent);
         }
 
+        @Override
         public void nodeChildReadAccess(SNode node, String role, SNode child) {
           SetSequence.fromSet(accessedNodes).addElement(node);
           SetSequence.fromSet(accessedNodes).addElement(child);
@@ -296,26 +300,32 @@ public class LanguageErrorsComponent {
     public MyModelListener() {
     }
 
+    @Override
     public void beforeModelDisposed(SModel model) {
       processBeforeModelDisposed(model);
     }
 
+    @Override
     public void referenceRemoved(SModelReferenceEvent event) {
       processEvent(event);
     }
 
+    @Override
     public void referenceAdded(SModelReferenceEvent event) {
       processEvent(event);
     }
 
+    @Override
     public void childRemoved(SModelChildEvent event) {
       processEvent(event);
     }
 
+    @Override
     public void childAdded(SModelChildEvent event) {
       processEvent(event);
     }
 
+    @Override
     public void propertyChanged(SModelPropertyEvent event) {
       processEvent(event);
     }
@@ -325,10 +335,12 @@ public class LanguageErrorsComponent {
     public MyModelRepositoryListener() {
     }
 
+    @Override
     public void modelRemoved(SModelDescriptor descriptor) {
       processModelRemoved(descriptor);
     }
 
+    @Override
     public void modelDeleted(SModelDescriptor descriptor) {
       processModelRemoved(descriptor);
     }

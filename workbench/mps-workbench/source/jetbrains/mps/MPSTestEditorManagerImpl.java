@@ -45,6 +45,7 @@ public class MPSTestEditorManagerImpl extends TestEditorManagerImpl {
     super(project);
   }
 
+  @Override
   @NotNull
   public void closeFile(@NotNull VirtualFile file) {
     super.closeFile(file);
@@ -56,11 +57,13 @@ public class MPSTestEditorManagerImpl extends TestEditorManagerImpl {
     }
   }
 
+  @Override
   @NotNull
   public FileEditor[] getAllEditors() {
     return new FileEditor[0];
   }
 
+  @Override
   @NotNull
   public FileEditor[] openFile(@NotNull final VirtualFile file, final boolean focusEditor) {
     // Open file

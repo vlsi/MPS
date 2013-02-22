@@ -31,25 +31,31 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Model Checker Settings";
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
+  @Override
   public ModelCheckerSettings.MyState getState() {
     return myState;
   }
 
+  @Override
   public void loadState(ModelCheckerSettings.MyState state) {
     myState = state;
   }
 
   @Nls
+  @Override
   public String getDisplayName() {
     return "Model Checker";
   }
@@ -61,33 +67,41 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
 
   @Nullable
   @NonNls
+  @Override
   public String getHelpTopic() {
     return "Model_Checker";
   }
 
+  @Override
   public JComponent createComponent() {
     return getPreferences().getComponent();
   }
 
+  @Override
   public boolean isModified() {
     return getPreferences().isModified();
   }
 
+  @Override
   public void apply() throws ConfigurationException {
     getPreferences().commit();
   }
 
+  @Override
   public void reset() {
   }
 
+  @Override
   public void disposeUIResources() {
     myPreferences = null;
   }
 
+  @Override
   public String getId() {
     return "model.checker";
   }
 
+  @Override
   public Runnable enableSearch(String option) {
     return null;
   }

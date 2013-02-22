@@ -31,6 +31,7 @@ import java.util.Set;
 public class PluginLibrariesContributor implements LibraryContributor, ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(PluginLibrariesContributor.class);
 
+  @Override
   public Set<LibDescriptor> getLibraries() {
     final LanguageLibrary[] libraries = LanguageLibrary.EP_LANGUAGE_LIBS.getExtensions();
     Set<LibDescriptor> result = new HashSet<LibDescriptor>();
@@ -52,24 +53,29 @@ public class PluginLibrariesContributor implements LibraryContributor, Applicati
     return result;
   }
 
+  @Override
   public void initComponent() {
     LibraryInitializer.getInstance().addContributor(this);
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         LibraryInitializer.getInstance().update(true);
       }
     });
   }
 
+  @Override
   public void disposeComponent() {
 
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return PluginLibrariesContributor.class.getSimpleName();
   }
 
+  @Override
   public boolean hiddenLanguages() {
     return false;
   }

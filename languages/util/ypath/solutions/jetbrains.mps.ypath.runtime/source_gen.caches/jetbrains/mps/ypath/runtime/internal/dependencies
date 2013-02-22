@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ypath.runtime.internal.AbstractChainTreeTraversal" file="AbstractChainTreeTraversal.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.IFeatureDescriptor" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.ITreePath" />
@@ -10,6 +11,7 @@
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.internal.AbstractTreeTraversal" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.runtime.internal.AbstractTreeTraversal" file="AbstractTreeTraversal.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.IFeatureDescriptor" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.IFilter" />
@@ -24,6 +26,7 @@
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.ITreeTraversal" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.runtime.internal.AncestorsOrThisTreeTraversal" file="AncestorsOrThisTreeTraversal.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="java.util.Stack" />
@@ -33,6 +36,7 @@
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.internal.AbstractChainTreeTraversal" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.runtime.internal.ChildrenTreeTraversal" file="ChildrenTreeTraversal.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.IFeatureDescriptor" />
@@ -41,6 +45,7 @@
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.internal.AbstractChainTreeTraversal" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.runtime.internal.DescedantsOrThisTreeTraversal" file="DescedantsOrThisTreeTraversal.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="java.util.Stack" />
@@ -50,6 +55,7 @@
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.internal.AbstractChainTreeTraversal" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.runtime.internal.FilteredTreeTraversal" file="FilteredTreeTraversal.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.IFilter" />
@@ -58,6 +64,7 @@
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.internal.AbstractChainTreeTraversal" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.runtime.internal.ParentTreeTraversal" file="ParentTreeTraversal.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.IFeatureDescriptor" />
@@ -66,6 +73,7 @@
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.internal.AbstractChainTreeTraversal" />
   </dependency>
   <dependency className="jetbrains.mps.ypath.runtime.internal.SiblingsTreeTraversal" file="SiblingsTreeTraversal.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.IFeatureDescriptor" />
@@ -76,6 +84,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ypath.runtime.internal.StartTreeTraversal" file="StartTreeTraversal.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.ITreePath" />

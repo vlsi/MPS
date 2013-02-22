@@ -69,6 +69,7 @@ public class MirrorUtilImpl extends MirrorUtil {
   }
 
   @NotNull
+  @Override
   public Object getJavaValue(@NotNull Value jdiValue) {
     if (jdiValue instanceof StringReference) {
       return ((StringReference) jdiValue).value();
@@ -112,12 +113,14 @@ public class MirrorUtilImpl extends MirrorUtil {
   }
 
   @NotNull
+  @Override
   public IValueProxy getValueProxyFromJava(@Nullable Object javaValue, VirtualMachine machine) {
     Value v = getJDIValueFromRaw(javaValue, machine);
     return getValueProxy(v);
   }
 
   @NotNull
+  @Override
   public IValueProxy getValueProxy(@Nullable Value value) {
     if (value == null) {
       return new NullValueProxy();
@@ -139,6 +142,7 @@ public class MirrorUtilImpl extends MirrorUtil {
   }
 
   @NotNull
+  @Override
   public List<Value> getValues(VirtualMachine machine, Object... args) {
     List<Value> argValues = new ArrayList<Value>();
     for (Object arg : args) {
@@ -153,12 +157,14 @@ public class MirrorUtilImpl extends MirrorUtil {
     return argValues;
   }
 
+  @Override
   public void dispose() {
     synchronized (LOCK) {
       INSTANCE = null;
     }
   }
 
+  @Override
   public void init() {
     synchronized (LOCK) {
       INSTANCE = this;

@@ -36,6 +36,7 @@ public class MethodCallChecker extends SpecificChecker {
   public MethodCallChecker() {
   }
 
+  @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, ProgressMonitor monitor, IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
     if (model == null || model.getModelDescriptor() == null || model.getModelDescriptor().getModule() == null) {

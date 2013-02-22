@@ -42,30 +42,37 @@ public class ProjectModels {
       myCanFireEvents = canFireEvents;
     }
 
+    @Override
     protected SModel createModel() {
       return new SModel(this.getSModelReference()) {
+        @Override
         public boolean canFireEvent() {
           return myCanFireEvents;
         }
       };
     }
 
+    @Override
     public boolean isChanged() {
       return false;
     }
 
+    @Override
     public void setChanged(boolean changed) {
 
     }
 
+    @Override
     public void save() {
 
     }
 
-    public void rename(SModelFqName newModelFqName, boolean changeFile) {
-
+    @Override
+    public void rename(String newModelName, boolean changeFile) {
+      throw new UnsupportedOperationException();
     }
 
+    @Override
     public boolean isReadOnly() {
       return false;
     }

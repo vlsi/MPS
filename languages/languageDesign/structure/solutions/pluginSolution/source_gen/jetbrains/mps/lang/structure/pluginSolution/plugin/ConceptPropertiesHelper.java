@@ -630,8 +630,10 @@ public class ConceptPropertiesHelper {
 
   private void showRefactoringView(final _FunctionTypes._void_P0_E0 refactor, SearchResults searchResults) {
     RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
+      @Override
       public void performAction(final RefactoringViewItem refactoringViewItem) {
         ModelAccess.instance().runCommandInEDT(new Runnable() {
+          @Override
           public void run() {
             refactoringViewItem.close();
             refactor.invoke();

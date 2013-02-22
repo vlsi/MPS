@@ -11,6 +11,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Long" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Short" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
@@ -63,6 +64,7 @@
     <classNode dependClassName="java.util.SortedSet" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.CompoundComparator" file="CompoundComparator.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="java.util.Comparator" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.DequeSequence" file="DequeSequence.java">
@@ -175,6 +177,7 @@
     <classNode extendsClassName="jetbrains.mps.baseLanguage.closures.runtime._return_P0_E0" />
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.ISequenceIterableAdapter" file="ISequenceIterableAdapter.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode extendsClassName="java.lang.Iterable" />
     <classNode extendsClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -318,6 +321,7 @@
   <dependency className="jetbrains.mps.internal.collections.runtime.SelectComparator" file="SelectComparator.java">
     <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.AdapterClass" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -383,6 +387,7 @@
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.SortedMapSequence" file="SortedMapSequence.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.TreeMap" />

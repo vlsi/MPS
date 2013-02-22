@@ -22,8 +22,10 @@ public class RootTemplateAnnotator implements CoreComponent {
   public RootTemplateAnnotator(GlobalSModelEventsManager dep) {
   }
 
+  @Override
   public void init() {
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(new SModelAdapter() {
+      @Override
       public void rootAdded(SModelRootEvent event) {
         SNode node = event.getRoot();
         if (SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))) {
@@ -37,6 +39,7 @@ public class RootTemplateAnnotator implements CoreComponent {
     });
   }
 
+  @Override
   public void dispose() {
   }
 

@@ -177,6 +177,7 @@ public abstract class BaseKeymapChanges {
         myShortcut = Arrays.asList(shortcut);
       }
 
+      @Override
       public List<Shortcut> getShortcutsFor(Object... params) {
         return myShortcut;
       }

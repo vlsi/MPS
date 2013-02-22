@@ -22,5 +22,6 @@ public abstract class BaseOptions implements IExternalizeable, Cloneable {
 
   }
 
+  @Override
   public abstract BaseOptions clone();
 }

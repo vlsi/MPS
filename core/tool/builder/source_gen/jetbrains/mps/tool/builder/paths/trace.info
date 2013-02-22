@@ -187,43 +187,43 @@
     <nodeInfo nodeId="1343659934891487739" fileName="OutputPathRedirects.java" startLine="15" startPosition="33" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1343659934891487745" fileName="OutputPathRedirects.java" startLine="16" startPosition="45" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1343659934891487751" fileName="OutputPathRedirects.java" startLine="17" startPosition="49" endLine="18" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1343659934891487765" fileName="OutputPathRedirects.java" startLine="22" startPosition="29" endLine="23" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1343659934891487772" fileName="OutputPathRedirects.java" startLine="24" startPosition="35" endLine="25" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1343659934891487778" fileName="OutputPathRedirects.java" startLine="27" startPosition="5" endLine="28" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1343659934891487780" fileName="OutputPathRedirects.java" startLine="28" startPosition="46" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1343659934891487787" fileName="OutputPathRedirects.java" startLine="30" startPosition="39" endLine="31" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1343659934891487792" fileName="OutputPathRedirects.java" startLine="32" startPosition="5" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1343659934891487793" fileName="OutputPathRedirects.java" startLine="33" startPosition="0" endLine="34" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1343659934891487795" fileName="OutputPathRedirects.java" startLine="34" startPosition="46" endLine="35" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1343659934891487808" fileName="OutputPathRedirects.java" startLine="39" startPosition="29" endLine="40" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1343659934891487817" fileName="OutputPathRedirects.java" startLine="41" startPosition="33" endLine="42" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1343659934891487831" fileName="OutputPathRedirects.java" startLine="44" startPosition="5" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1343659934891487841" fileName="OutputPathRedirects.java" startLine="49" startPosition="35" endLine="50" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1343659934891487850" fileName="OutputPathRedirects.java" startLine="51" startPosition="38" endLine="52" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1343659934891487864" fileName="OutputPathRedirects.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1343659934891487770" fileName="OutputPathRedirects.java" startLine="23" startPosition="53" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1343659934891487785" fileName="OutputPathRedirects.java" startLine="29" startPosition="63" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1343659934891487815" fileName="OutputPathRedirects.java" startLine="40" startPosition="64" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1343659934891487848" fileName="OutputPathRedirects.java" startLine="50" startPosition="74" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1343659934891487765" fileName="OutputPathRedirects.java" startLine="23" startPosition="29" endLine="24" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1343659934891487772" fileName="OutputPathRedirects.java" startLine="25" startPosition="35" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1343659934891487778" fileName="OutputPathRedirects.java" startLine="28" startPosition="5" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1343659934891487780" fileName="OutputPathRedirects.java" startLine="29" startPosition="46" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1343659934891487787" fileName="OutputPathRedirects.java" startLine="31" startPosition="39" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1343659934891487792" fileName="OutputPathRedirects.java" startLine="33" startPosition="5" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1343659934891487793" fileName="OutputPathRedirects.java" startLine="34" startPosition="0" endLine="35" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1343659934891487795" fileName="OutputPathRedirects.java" startLine="35" startPosition="46" endLine="36" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1343659934891487808" fileName="OutputPathRedirects.java" startLine="40" startPosition="29" endLine="41" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1343659934891487817" fileName="OutputPathRedirects.java" startLine="42" startPosition="33" endLine="43" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1343659934891487831" fileName="OutputPathRedirects.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1343659934891487841" fileName="OutputPathRedirects.java" startLine="50" startPosition="35" endLine="51" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1343659934891487850" fileName="OutputPathRedirects.java" startLine="52" startPosition="38" endLine="53" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1343659934891487864" fileName="OutputPathRedirects.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1343659934891487770" fileName="OutputPathRedirects.java" startLine="24" startPosition="53" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1343659934891487785" fileName="OutputPathRedirects.java" startLine="30" startPosition="63" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1343659934891487815" fileName="OutputPathRedirects.java" startLine="41" startPosition="64" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1343659934891487848" fileName="OutputPathRedirects.java" startLine="51" startPosition="74" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1343659934891487721" fileName="OutputPathRedirects.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OutputPathRedirects#(Ljetbrains/mps/tool/builder/paths/ModuleOutputPaths;Ljava/lang/String;Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="1343659934891487763" fileName="OutputPathRedirects.java" startLine="21" startPosition="41" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1343659934891487806" fileName="OutputPathRedirects.java" startLine="38" startPosition="47" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1343659934891487839" fileName="OutputPathRedirects.java" startLine="48" startPosition="53" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1343659934891487800" fileName="OutputPathRedirects.java" startLine="38" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOutputRedirect#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="1343659934891487833" fileName="OutputPathRedirects.java" startLine="48" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCachesOutputRedirect#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="1343659934891487757" fileName="OutputPathRedirects.java" startLine="21" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRedirect#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <scopeInfo nodeId="1343659934891487771" fileName="OutputPathRedirects.java" startLine="24" startPosition="35" endLine="25" endPosition="30" />
-    <scopeInfo nodeId="1343659934891487786" fileName="OutputPathRedirects.java" startLine="30" startPosition="39" endLine="31" endPosition="34" />
-    <scopeInfo nodeId="1343659934891487816" fileName="OutputPathRedirects.java" startLine="41" startPosition="33" endLine="42" endPosition="94" />
-    <scopeInfo nodeId="1343659934891487849" fileName="OutputPathRedirects.java" startLine="51" startPosition="38" endLine="52" endPosition="105" />
+    <nodeInfo nodeId="1343659934891487763" fileName="OutputPathRedirects.java" startLine="22" startPosition="41" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1343659934891487806" fileName="OutputPathRedirects.java" startLine="39" startPosition="47" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1343659934891487839" fileName="OutputPathRedirects.java" startLine="49" startPosition="53" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1343659934891487800" fileName="OutputPathRedirects.java" startLine="39" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOutputRedirect#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="1343659934891487833" fileName="OutputPathRedirects.java" startLine="49" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCachesOutputRedirect#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="1343659934891487757" fileName="OutputPathRedirects.java" startLine="21" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRedirect#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
+    <scopeInfo nodeId="1343659934891487771" fileName="OutputPathRedirects.java" startLine="25" startPosition="35" endLine="26" endPosition="30" />
+    <scopeInfo nodeId="1343659934891487786" fileName="OutputPathRedirects.java" startLine="31" startPosition="39" endLine="32" endPosition="34" />
+    <scopeInfo nodeId="1343659934891487816" fileName="OutputPathRedirects.java" startLine="42" startPosition="33" endLine="43" endPosition="94" />
+    <scopeInfo nodeId="1343659934891487849" fileName="OutputPathRedirects.java" startLine="52" startPosition="38" endLine="53" endPosition="105" />
     <scopeInfo nodeId="1343659934891487732" fileName="OutputPathRedirects.java" startLine="14" startPosition="133" endLine="18" endPosition="41" />
-    <scopeInfo nodeId="1343659934891487764" fileName="OutputPathRedirects.java" startLine="22" startPosition="29" endLine="26" endPosition="7">
+    <scopeInfo nodeId="1343659934891487764" fileName="OutputPathRedirects.java" startLine="23" startPosition="29" endLine="27" endPosition="7">
       <varInfo nodeId="1343659934891487766" varName="outputRedirect" />
     </scopeInfo>
-    <scopeInfo nodeId="1343659934891487807" fileName="OutputPathRedirects.java" startLine="39" startPosition="29" endLine="43" endPosition="7">
+    <scopeInfo nodeId="1343659934891487807" fileName="OutputPathRedirects.java" startLine="40" startPosition="29" endLine="44" endPosition="7">
       <varInfo nodeId="1343659934891487809" varName="localOutPath" />
     </scopeInfo>
-    <scopeInfo nodeId="1343659934891487840" fileName="OutputPathRedirects.java" startLine="49" startPosition="35" endLine="53" endPosition="7">
+    <scopeInfo nodeId="1343659934891487840" fileName="OutputPathRedirects.java" startLine="50" startPosition="35" endLine="54" endPosition="7">
       <varInfo nodeId="1343659934891487842" varName="localOutCachePath" />
     </scopeInfo>
     <scopeInfo nodeId="1343659934891487721" fileName="OutputPathRedirects.java" startLine="14" startPosition="0" endLine="20" endPosition="0">
@@ -232,21 +232,21 @@
       <varInfo nodeId="1343659934891487724" varName="outputRoot" />
       <varInfo nodeId="1343659934891487728" varName="useTransientOutput" />
     </scopeInfo>
-    <scopeInfo nodeId="1343659934891487805" fileName="OutputPathRedirects.java" startLine="38" startPosition="47" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="1343659934891487838" fileName="OutputPathRedirects.java" startLine="48" startPosition="53" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="1343659934891487800" fileName="OutputPathRedirects.java" startLine="38" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="1343659934891487805" fileName="OutputPathRedirects.java" startLine="39" startPosition="47" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="1343659934891487838" fileName="OutputPathRedirects.java" startLine="49" startPosition="53" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="1343659934891487800" fileName="OutputPathRedirects.java" startLine="39" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1343659934891487801" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1343659934891487833" fileName="OutputPathRedirects.java" startLine="48" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="1343659934891487833" fileName="OutputPathRedirects.java" startLine="49" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="1343659934891487834" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="1343659934891487762" fileName="OutputPathRedirects.java" startLine="21" startPosition="41" endLine="35" endPosition="56">
+    <scopeInfo nodeId="1343659934891487762" fileName="OutputPathRedirects.java" startLine="22" startPosition="41" endLine="36" endPosition="56">
       <varInfo nodeId="1343659934891487781" varName="cachesOutputRedirect" />
     </scopeInfo>
-    <scopeInfo nodeId="1343659934891487757" fileName="OutputPathRedirects.java" startLine="21" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1343659934891487757" fileName="OutputPathRedirects.java" startLine="21" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1343659934891487758" varName="path" />
     </scopeInfo>
-    <unitInfo nodeId="1343659934891487707" fileName="OutputPathRedirects.java" startLine="8" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.tool.builder.paths.OutputPathRedirects" />
+    <unitInfo nodeId="1343659934891487707" fileName="OutputPathRedirects.java" startLine="8" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.tool.builder.paths.OutputPathRedirects" />
   </root>
 </debugInfo>
 

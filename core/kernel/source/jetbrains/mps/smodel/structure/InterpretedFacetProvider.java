@@ -38,6 +38,7 @@ public class InterpretedFacetProvider extends DescriptorProvider<FacetDescriptor
         return null;
       }
 
+      @Override
       public IFacet lookup(Name fn) {
         return null;
       }

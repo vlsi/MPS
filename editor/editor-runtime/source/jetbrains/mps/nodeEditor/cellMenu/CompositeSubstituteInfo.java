@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.logging.Logger;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -56,24 +57,36 @@ public class CompositeSubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   protected List<INodeSubstituteAction> createActions() {
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
+    List<List<INodeSubstituteAction>> actionLists = new LinkedList<List<INodeSubstituteAction>>();
     if (myExtParts != null) {
       for (SubstituteInfoPartExt menuPart : myExtParts) {
         try {
-          actions.addAll(menuPart.createActions(myCellContext, getEditorContext()));
+          actionLists.add(menuPart.createActions(myCellContext, getEditorContext()));
         } catch (Throwable e) {
           LOG.error(e);
         }
       }
-      return actions;
+      return flatten(actionLists);
     }
     for (SubstituteInfoPart menuPart : myParts) {
       try {
-        actions.addAll(menuPart.createActions(myCellContext, (jetbrains.mps.nodeEditor.EditorContext) getEditorContext()));
+        actionLists.add(menuPart.createActions(myCellContext, (jetbrains.mps.nodeEditor.EditorContext) getEditorContext()));
       } catch (Throwable e) {
         LOG.error(e);
       }
     }
-    return actions;
+    return flatten(actionLists);
+  }
+
+  private List<INodeSubstituteAction> flatten(List<List<INodeSubstituteAction>> actionLists) {
+    int size = 0;
+    for (List<INodeSubstituteAction> actionList : actionLists) {
+      size += actionList.size();
+    }
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>(size);
+    for (List<INodeSubstituteAction> actionList : actionLists) {
+      result.addAll(actionList);
+    }
+    return result;
   }
 }

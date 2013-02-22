@@ -73,7 +73,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4484885613884807191(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
+    return _context.getOriginalInputModel().getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_4484885613884830953(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -89,7 +89,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1221570038189(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
+    return _context.getOriginalInputModel().getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1224603580889(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -137,7 +137,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1225991473951(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "intention", false)).getLongName() + "." + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "intention", false), "virtual_getGeneratedName_6263518417926802289", new Object[]{});
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "intention", false))) + "." + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "intention", false), "virtual_getGeneratedName_6263518417926802289", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1229198684556(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -153,7 +153,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1229198973269(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
+    return _context.getOriginalInputModel().getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1229198973287(final IOperationContext operationContext, final PropertyMacroContext _context) {

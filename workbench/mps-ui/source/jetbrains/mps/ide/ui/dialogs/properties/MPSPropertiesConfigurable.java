@@ -346,6 +346,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
 
       tableDepend.addMouseListener(new MouseAdapter() {
+        @Override
         public void mouseClicked(MouseEvent e) {
         }
       });
@@ -483,6 +484,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       usedLangsTable.getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
       usedLangsTable.addMouseListener(new MouseAdapter() {
+        @Override
         public void mouseClicked(MouseEvent e) {
         }
       });

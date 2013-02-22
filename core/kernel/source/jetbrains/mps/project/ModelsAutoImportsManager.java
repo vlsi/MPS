@@ -92,7 +92,7 @@ public class ModelsAutoImportsManager {
     public void onCreate(SModule module, SModel model) {
       for (SModel modelToImport : getAutoImportedModels(module, model)) {
         // todo: ! what's up with module? add model module to module dependencies?
-        ((SModelDescriptor) model).getSModel().addModelImport((SModelReference) modelToImport.getModelReference(), false);
+        ((SModelDescriptor) model).getSModel().addModelImport((SModelReference) modelToImport.getReference(), false);
       }
       for (Language language : getAutoImportedLanguages(module, model)) {
         if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(language)) {

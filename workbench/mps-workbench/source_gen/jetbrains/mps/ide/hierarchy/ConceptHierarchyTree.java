@@ -22,6 +22,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     myCache = cache;
   }
 
+  @Override
   protected Set<SNode> getParents(SNode node, Set<SNode> visited) throws CircularHierarchyException {
     if (visited.contains(node)) {
       throw new CircularHierarchyException(node, "circular concept hierarchy");
@@ -35,6 +36,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     return result;
   }
 
+  @Override
   protected SNode getParent(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       SNode concept = SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
@@ -48,6 +50,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     }
   }
 
+  @Override
   protected Set<SNode> getDescendants(SNode conceptDeclaration, Set<SNode> visited) throws CircularHierarchyException {
     if (visited.contains(conceptDeclaration)) {
       throw new CircularHierarchyException(conceptDeclaration, "circular concept hierarchy");
@@ -60,6 +63,7 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     return result;
   }
 
+  @Override
   protected String noNodeString() {
     return "(no concept)";
   }

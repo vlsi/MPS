@@ -46,6 +46,7 @@ public class SubtreeChecker {
     ITypeContextOwner owner = new DefaultTypecheckingContextOwner();
     SNode containingRoot = node.getContainingRoot();
     TypeContextManager.getInstance().runTypeCheckingAction(owner, containingRoot, new ITypechecking.Action() {
+      @Override
       public void run(TypeCheckingContext typeCheckingContext) {
         typeCheckingContext.checkIfNotChecked(node, true);
         for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {

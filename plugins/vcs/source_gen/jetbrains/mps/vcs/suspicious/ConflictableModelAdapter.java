@@ -14,18 +14,22 @@ public class ConflictableModelAdapter extends Conflictable {
     myIsConflictDetected = isConflictDetected;
   }
 
+  @Override
   public boolean isConflictDetected() {
     return myIsConflictDetected;
   }
 
+  @Override
   public IFile getFile() {
     return myModel.getSource().getFile();
   }
 
+  @Override
   public void reloadFromDisk() {
     myModel.reloadFromDisk();
   }
 
+  @Override
   public boolean needReloading() {
     return myModel.needsReloading();
   }

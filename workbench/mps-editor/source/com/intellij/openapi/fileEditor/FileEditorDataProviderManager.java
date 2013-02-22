@@ -42,6 +42,7 @@ public class FileEditorDataProviderManager {
     myDataProviders.add(dataProvider);
     if (parentDisposable != null) {
       Disposer.register(parentDisposable, new Disposable() {
+        @Override
         public void dispose() {
           myDataProviders.remove(dataProvider);
         }

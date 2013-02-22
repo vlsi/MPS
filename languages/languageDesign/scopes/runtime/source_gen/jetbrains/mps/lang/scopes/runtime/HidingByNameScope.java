@@ -27,11 +27,19 @@ public class HidingByNameScope extends Scope {
   private final Set<String> names;
 
   public HidingByNameScope(SNode hidingRoot, SNode kind, @NotNull Scope scope, @NotNull Scope parentScope) {
+    this(NameUtil.nodeFQName(hidingRoot), NameUtil.nodeFQName(kind), scope, parentScope);
+  }
+
+  public HidingByNameScope(String hidingRootConceptFQName, SNode kind, @NotNull Scope scope, @NotNull Scope parentScope) {
+    this(hidingRootConceptFQName, NameUtil.nodeFQName(kind), scope, parentScope);
+  }
+
+  public HidingByNameScope(String hidingRootConceptFQName, String kindConceptFQName, @NotNull Scope scope, @NotNull Scope parentScope) {
     // hiding root: all subconcepts of hidingRoot hide each other 
     this.scope = scope;
     this.parentScope = parentScope;
-    this.hidingRootConceptFqName = NameUtil.nodeFQName(hidingRoot);
-    this.kindConceptFqName = NameUtil.nodeFQName(kind);
+    this.hidingRootConceptFqName = hidingRootConceptFQName;
+    this.kindConceptFqName = kindConceptFQName;
     // todo: maybe lazy in getAvailableElements? 
     // todo: I need this micro optimizations? 
     Iterable<SNode> tmpResult = scope.getAvailableElements(null);
@@ -43,6 +51,7 @@ public class HidingByNameScope extends Scope {
     }
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(scope.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
@@ -63,6 +72,7 @@ public class HidingByNameScope extends Scope {
   }
 
   @Nullable
+  @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     // todo: recheck this code 
     return (SetSequence.fromSet(names).contains(refText) ?
@@ -72,6 +82,7 @@ public class HidingByNameScope extends Scope {
   }
 
   @Nullable
+  @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     return node.getName();
   }

@@ -36,7 +36,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -62,6 +62,7 @@ public class NewGeneratorDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myContenetPane;
   }
@@ -74,6 +75,7 @@ public class NewGeneratorDialog extends DialogWrapper {
 
     myTemplateModelsDir = new TextFieldWithBrowseButton();
     myTemplateModelsDir.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         String oldPath = myTemplateModelsDir.getText();
         TreeFileChooser chooser = new TreeFileChooser();
@@ -151,6 +153,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     super.doOKAction();
   }
 
+  @Override
   protected void dispose() {
     super.dispose();
     Disposer.dispose(myTemplateModelsDir);
@@ -190,8 +193,8 @@ public class NewGeneratorDialog extends DialogWrapper {
     if (alreadyOwnsTemplateModel) {
       return;
     }
-    EditableSModelDescriptor templateModelDescriptor = newGenerator.createModel(getTemplateModelPrefix(sourceLanguage) + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next(), null);
-    SModel templateModel = templateModelDescriptor.getSModel();
+    EditableSModel templateModelDescriptor = newGenerator.createModel(getTemplateModelPrefix(sourceLanguage) + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next(), null);
+    SModel templateModel = ((SModelDescriptor) templateModelDescriptor).getSModel();
     SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     SPropertyOperations.set(mappingConfiguration, "name", "main");
     SModelOperations.addRootNode(templateModel, mappingConfiguration);

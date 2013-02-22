@@ -65,14 +65,17 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
     }
     myPanel = new JPanel(new BorderLayout());
     myUsagesView = new UsagesView(project, new ViewOptions()) {
+      @Override
       public void close() {
         RefactoringViewItemImpl.this.close();
       }
 
+      @Override
       public String getCaption() {
         return "";
       }
 
+      @Override
       public Icon getIcon() {
         return null;
       }
@@ -87,6 +90,7 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
     };
     myButtonsPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
     myDoRefactorButton = new JButton(new AbstractAction("Do Refactor") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         doRefactor();
       }
@@ -101,6 +105,7 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
     });
     myButtonsPanel.add(myDoRefactorButton);
     myCancelButton = new JButton(new AbstractAction("Cancel") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         close();
       }
@@ -144,6 +149,7 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
   /*package*/ void initUsagesView() {
     // package 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myUsagesView.setRunOptions(FindUtils.makeProvider(new ConstantFinder()), new SearchQuery(new ConstantFinder.ConstantHolder(mySearchResults), GlobalScope.getInstance()), new UsagesView.ButtonConfiguration(false, false, true), mySearchResults);
       }
@@ -167,6 +173,7 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
     myRefactoringViewAction.performAction(this);
   }
 
+  @Override
   public abstract void close();
 
   public void dispose() {
@@ -175,6 +182,7 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
 
   public void requestFocus() {
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         myDoRefactorButton.requestFocus();
       }
@@ -188,22 +196,27 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
       myFtp = ftp;
     }
 
+    @Override
     public Component getComponentAfter(Container aContainer, Component aComponent) {
       return myFtp.getComponentAfter(aContainer, aComponent);
     }
 
+    @Override
     public Component getComponentBefore(Container aContainer, Component aComponent) {
       return myFtp.getComponentBefore(aContainer, aComponent);
     }
 
+    @Override
     public Component getFirstComponent(Container aContainer) {
       return myFtp.getFirstComponent(aContainer);
     }
 
+    @Override
     public Component getLastComponent(Container aContainer) {
       return myFtp.getLastComponent(aContainer);
     }
 
+    @Override
     public Component getDefaultComponent(Container aContainer) {
       return myDoRefactorButton;
     }

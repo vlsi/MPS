@@ -78,6 +78,7 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
     splitter.setSecondComponent(new JBScrollPane(myRightTree));
 
     myLeftTree.addTreeSelectionListener(new TreeSelectionListener() {
+      @Override
       public void valueChanged(TreeSelectionEvent e) {
         rebuildDependencies();
       }
@@ -235,10 +236,12 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
       mySetValue = setValue;
     }
 
+    @Override
     public void setSelected(AnActionEvent event, boolean b) {
       mySetValue.invoke(myValue = b);
     }
 
+    @Override
     public boolean isSelected(AnActionEvent event) {
       return myValue;
     }

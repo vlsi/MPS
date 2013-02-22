@@ -24,11 +24,13 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SModule;
 
 class ModuleReferenceNavigationHandler implements INavigationHandler<ModuleReference> {
+  @Override
   public boolean canNavigate(ModuleReference object) {
     SModule module = ModuleRepositoryFacade.getInstance().getModule(object);
     return module != null;
   }
 
+  @Override
   public void navigate(ModuleReference object, Project project, boolean focus, boolean select) {
     SModule module = ModuleRepositoryFacade.getInstance().getModule(object);
     if (module == null) return;

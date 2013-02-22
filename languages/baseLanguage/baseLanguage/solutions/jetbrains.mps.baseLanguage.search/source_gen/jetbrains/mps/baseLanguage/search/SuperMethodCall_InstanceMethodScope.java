@@ -20,6 +20,7 @@ public class SuperMethodCall_InstanceMethodScope extends ClassifierVisibleMember
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> nodes = super.getNodes(condition);
     List<SNode> result = new ArrayList<SNode>();

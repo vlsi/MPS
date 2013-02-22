@@ -36,53 +36,65 @@ public class NodeStructureViewBuilder extends TreeBasedStructureViewBuilder {
     myNode = node;
   }
 
+  @Override
   @NotNull
   public StructureViewModel createStructureViewModel() {
     return new StructureViewModel() {
+      @Override
       @Nullable
       public Object getCurrentEditorElement() {
         return null;
       }
 
+      @Override
       public void addEditorPositionListener(FileEditorPositionListener p0) {
 
       }
 
+      @Override
       public void removeEditorPositionListener(FileEditorPositionListener p0) {
 
       }
 
+      @Override
       public void addModelListener(ModelListener p0) {
 
       }
 
+      @Override
       public void removeModelListener(ModelListener p0) {
 
       }
 
+      @Override
       @NotNull
       public StructureViewTreeElement getRoot() {
         return new MainNodeTreeElement(myProject, myNode);
       }
 
+      @Override
       public void dispose() {
 
       }
 
+      @Override
       public boolean shouldEnterElement(Object p0) {
         return false;
       }
 
+      @Override
       @NotNull
       public Filter[] getFilters() {
         return new Filter[]{new NonBijecttionalFilter()};
       }
 
+      @Override
       @NotNull
       public Sorter[] getSorters() {
         return new Sorter[]{new AspectSorter(), new AspectNodeSorter()};
       }
 
+      @Override
       @NotNull
       public Grouper[] getGroupers() {
         return new Grouper[]{new AspectGrouper()};

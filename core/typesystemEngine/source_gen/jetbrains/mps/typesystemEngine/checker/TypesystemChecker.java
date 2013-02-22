@@ -19,13 +19,16 @@ public class TypesystemChecker extends DefaultTypecheckingContextOwner implement
   public TypesystemChecker() {
   }
 
+  @Override
   public String getCategory() {
     return "type system";
   }
 
+  @Override
   public Set<IErrorReporter> getErrors(SNode node, IOperationContext context) {
     final Set<IErrorReporter> result = new HashSet<IErrorReporter>();
     TypeContextManager.getInstance().runTypeCheckingAction(this, node, new ITypechecking.Action() {
+      @Override
       public void run(TypeCheckingContext typeCheckingContext) {
         Set<Pair<SNode, List<IErrorReporter>>> nodeWithErrors = typeCheckingContext.checkRootAndGetErrors(true);
         for (Pair<SNode, List<IErrorReporter>> pair : nodeWithErrors) {

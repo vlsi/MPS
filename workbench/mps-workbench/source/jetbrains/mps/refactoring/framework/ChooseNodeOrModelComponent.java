@@ -16,25 +16,25 @@
 package jetbrains.mps.refactoring.framework;
 
 import com.intellij.ui.ScrollPaneFactory;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
@@ -66,6 +66,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     myConceptFQName = conceptFQName;
   }
 
+  @Override
   public void initComponent() {
     setLayout(new GridBagLayout());
     GridBagConstraints constraints = new GridBagConstraints();
@@ -97,14 +98,17 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     myReturnLoadedModels = useLoadedModels;
   }
 
+  @Override
   public void setCaption(String caption) {
     myCaption = caption;
   }
 
+  @Override
   public JComponent getComponentToFocus() {
     return myChooseItemComponent.getTextField();
   }
 
+  @Override
   public void setCondition(Condition<Object> condition) {
     myCondition = condition;
     Condition modelCondition = Condition.TRUE_CONDITION;
@@ -116,17 +120,16 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     myChooseItemComponent.rebuild();
   }
 
-  private void updateModels(Condition modelCondition) {
-    Set<SModelDescriptor> models = getModelsFrom(myOperationContext, modelCondition);
-    myModels = models;
+  private void updateModels(Condition<Object> modelCondition) {
+    myModels = getModelsFrom(modelCondition);
   }
 
-  private Set<SModelDescriptor> getModelsFrom(IOperationContext context, Condition condition) {
+  private Set<SModelDescriptor> getModelsFrom(Condition<Object> condition) {
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(SModelRepository.getInstance().getModelDescriptors());
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
-      if (!(model instanceof EditableSModelDescriptor)) {
+      if (!(model instanceof EditableSModel)) {
         models.remove(model);
-      } else if (((EditableSModelDescriptor) model).isReadOnly()) {
+      } else if (((EditableSModel) model).isReadOnly()) {
         models.remove(model);
       } else if (myReturnLoadedModels && !condition.met(model.getSModel())) {
         models.remove(model);
@@ -142,10 +145,12 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       setShowsRootHandles(true);
     }
 
+    @Override
     public boolean isRootVisible() {
       return true;
     }
 
+    @Override
     protected MPSTreeNode rebuild() {
       MPSTreeNode root;
       if (myModel != null) {
@@ -163,6 +168,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     }
   }
 
+  @Override
   public Object submit() throws InvalidInputValueException {
     if (myTree.getSelectionPath() == null) {
 
@@ -198,14 +204,17 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     throw new InvalidInputValueException(myCaption + ": nothing is selected");
   }
 
+  @Override
   public String getPropertyName() {
     return myPropertyName;
   }
 
+  @Override
   public void setPropertyName(String propertyName) {
     myPropertyName = propertyName;
   }
 
+  @Override
   public void setInitialValue(Object initialValue) {
     if (myReturnLoadedModels && initialValue instanceof SModel) {
       initialValue = ((SModel) initialValue).getModelDescriptor();
@@ -216,6 +225,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     }
   }
 
+  @Override
   public JComponent getMainComponent() {
     return this;
   }
@@ -227,10 +237,12 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       setPreferredSize(new Dimension(400, 100));
     }
 
+    @Override
     protected String getItemPresentation(SModelDescriptor sm) {
       return sm.getSModelReference().getSModelFqName().toString();
     }
 
+    @Override
     public void doChoose(SModelDescriptor sModelDescriptor) {
       myModel = sModelDescriptor;
       myTree.rebuildNow();//selectNode(myTree.findNodeWith(sModelDescriptor));

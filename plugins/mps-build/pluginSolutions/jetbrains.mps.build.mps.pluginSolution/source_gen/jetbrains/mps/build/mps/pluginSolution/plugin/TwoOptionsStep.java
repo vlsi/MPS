@@ -64,6 +64,7 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
 
   protected abstract boolean isCheckBoxEnabled();
 
+  @Override
   public JComponent createMainComponent() {
     JPanel panel = new JPanel(new GridBagLayout());
     // 
@@ -79,6 +80,7 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
     return panel;
   }
 
+  @Override
   public void _init() {
     this.mySelectComboBox.setModel(this.updateComboBoxModel());
     this.myOptionsCheckBox.setSelected(this.getChecked());
@@ -87,6 +89,7 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
     this.setEnabledState(this.myOptionsCheckBox.isSelected());
   }
 
+  @Override
   public void _commit(boolean finish) {
     this.setChecked(this.myOptionsCheckBox.isSelected());
     this.setTextFieldText(this.myTextField.getText());
@@ -98,6 +101,7 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
 
   private JCheckBox createOptionsCheckBox() {
     return new JCheckBox(new AbstractAction(TwoOptionsStep.this.getCheckBoxName()) {
+      @Override
       public void actionPerformed(ActionEvent event) {
         boolean checkBoxSelected = TwoOptionsStep.this.myOptionsCheckBox.isSelected();
         TwoOptionsStep.this.setEnabledState(checkBoxSelected);
@@ -114,6 +118,7 @@ public abstract class TwoOptionsStep<M> extends AbstractStep {
     final JTextField textField = new JTextField();
     this.myDefaultTextFieldColor = textField.getForeground();
     textField.addCaretListener(new CaretListener() {
+      @Override
       public void caretUpdate(CaretEvent p0) {
         TwoOptionsStep.this.checkTextField(textField);
       }

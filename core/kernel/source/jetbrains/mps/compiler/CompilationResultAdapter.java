@@ -19,14 +19,17 @@ import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
 public class CompilationResultAdapter implements CompilationResultListener {
+  @Override
   public void onCompilationResult(CompilationResult r) {
 
   }
 
+  @Override
   public void onClass(ClassFile f) {
 
   }
 
+  @Override
   public void onFatalError(String error) {
 
   }

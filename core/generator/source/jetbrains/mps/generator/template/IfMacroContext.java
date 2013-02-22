@@ -33,6 +33,7 @@ public class IfMacroContext extends TemplateQueryContextWithMacro {
   /**
    * 'node' mapping
    */
+  @Override
   public SNode getNode() {
     return getInputNode();
   }

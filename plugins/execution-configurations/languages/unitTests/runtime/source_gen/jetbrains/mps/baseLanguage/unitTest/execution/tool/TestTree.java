@@ -57,6 +57,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     }
   }
 
+  @Override
   public void update() {
     if (myState.getAvailableText() != null) {
       return;
@@ -129,11 +130,13 @@ public class TestTree extends MPSTree implements TestView, Disposable {
     myAnimator.dispose();
   }
 
+  @Override
   public void init() {
     rebuildNow();
     expandAll();
   }
 
+  @Override
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
     setRootVisible(false);

@@ -45,10 +45,6 @@ import javax.swing.Icon;
 
 public class MPSPsiField extends MPSPsiNode implements PsiField {
 
-  class Z<T> {
-    T field;
-  }
-
   public MPSPsiField(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
     addChild(null, new MPSPsiMethodModifierList());
@@ -128,8 +124,8 @@ public class MPSPsiField extends MPSPsiNode implements PsiField {
   @Override
   public PsiClass getContainingClass() {
     PsiElement node = getParent();
-    if (node instanceof MPSPsiClass) {
-      return (MPSPsiClass) node;
+    if (node instanceof MPSPsiClassifier) {
+      return (MPSPsiClassifier) node;
     } else {
       return null;
     }

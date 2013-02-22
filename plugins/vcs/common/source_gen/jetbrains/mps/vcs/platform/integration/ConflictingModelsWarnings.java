@@ -25,6 +25,7 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
   }
 
   @Nullable
+  @Override
   public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull final Project project) {
     SModelDescriptor md = check_bmsafs_a0a0b(node.getModel());
     final VirtualFile modelFile = ConflictsUtil.getModelFileIfConflicting(md, project);

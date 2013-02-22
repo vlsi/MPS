@@ -25,6 +25,7 @@ public class CheckersComponent implements CoreComponent {
     return "Checkers";
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -34,6 +35,7 @@ public class CheckersComponent implements CoreComponent {
     ListSequence.fromList(myCheckers).addElement(myLanguageChecker);
   }
 
+  @Override
   public void dispose() {
     ListSequence.fromList(myCheckers).removeElement(myLanguageChecker);
     INSTANCE = null;

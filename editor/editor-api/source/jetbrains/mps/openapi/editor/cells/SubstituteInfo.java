@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;
+package jetbrains.mps.openapi.editor.cells;
 
-import java.util.Iterator;
+/**
+ * User: shatalin
+ * Date: 2/14/13
+ */
+public interface SubstituteInfo {
+  // TODO: check if this method should be in API
+  void invalidateActions();
 
-public class NodesIterable implements Iterable<SNode> {
-  private SModel mySModel;
+  void setOriginalText(String text);
 
-  public NodesIterable(SModel sModel) {
-    mySModel = sModel;
-  }
+  String getOriginalText();
 
-  public Iterator<SNode> iterator() {
-    return ((Iterator) mySModel.nodesIterator());
-  }
+  boolean hasExactlyNActions(String pattern, boolean strictMatching, int n);
 }

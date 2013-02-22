@@ -13,14 +13,14 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -63,6 +63,10 @@ public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_c5arh5_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "persistentConfiguration", false) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "persistentConfiguration", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) == null);
+  }
+
   public static class _Inline_c5arh5_a1a extends InlineCellProvider {
     public _Inline_c5arh5_a1a() {
       super();
@@ -97,6 +101,10 @@ public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_c5arh5_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "persistentConfiguration", false) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "persistentConfiguration", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
   }
 
   private EditorCell createCollection_c5arh5_a(EditorContext editorContext, SNode node) {
@@ -148,13 +156,5 @@ public class PersistentConfigurationType_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_c5arh5_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "persistentConfiguration", false) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "persistentConfiguration", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) == null);
-  }
-
-  private static boolean renderingCondition_c5arh5_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "persistentConfiguration", false) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "persistentConfiguration", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
   }
 }

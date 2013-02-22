@@ -55,14 +55,18 @@ public class GlobalSModelEventsManager implements CoreComponent {
     }
   }
 
+  @Override
   public void init() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
+          @Override
           public void modelAdded(SModelDescriptor modelDescriptor) {
             addListeners(modelDescriptor);
           }
 
+          @Override
           public void modelRemoved(SModelDescriptor modelDescriptor) {
             removeListeners(modelDescriptor);
           }
@@ -75,6 +79,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
     });
   }
 
+  @Override
   public void dispose() {
   }
 
@@ -117,6 +122,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
       getClass().getClassLoader(),
       new Class[]{SModelListener.class},
       new InvocationHandler() {
+        @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
           if (method.getName().equals("equals") && args.length == 1) {
             return proxy == args[0];
@@ -146,6 +152,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
   }
 
   private class MyEventsCollector extends EventsCollector {
+    @Override
     protected void eventsHappened(List<SModelEvent> events) {
       if (events.isEmpty()) return;
 

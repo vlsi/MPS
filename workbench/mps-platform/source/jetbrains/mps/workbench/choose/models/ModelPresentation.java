@@ -32,15 +32,18 @@ public class ModelPresentation extends BasePresentation {
     myModelReference = modelReference;
   }
 
+  @Override
   @NotNull
   public String doGetPresentableText() {
     return myModelReference.getSModelFqName().toString();
   }
 
+  @Override
   public String doGetLocationString() {
     return "(" + getModuleUID() + ")";
   }
 
+  @Override
   public Icon doGetIcon() {
     return IconManager.getIconFor(getModelDescriptor());
   }

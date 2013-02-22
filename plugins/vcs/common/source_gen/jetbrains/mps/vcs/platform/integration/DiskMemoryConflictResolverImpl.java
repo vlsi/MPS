@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.platform.integration;
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import java.io.File;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
@@ -17,6 +17,7 @@ import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
@@ -29,7 +30,8 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   public DiskMemoryConflictResolverImpl() {
   }
 
-  public void resolveDiskMemoryConflict(final IFile file, final SModel model, final EditableSModelDescriptor modelDescriptor) {
+  @Override
+  public void resolveDiskMemoryConflict(final IFile file, final SModel model, final EditableSModel modelDescriptor) {
     final File backupFile = doBackup(file, model);
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
@@ -106,13 +108,13 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
       FileUtil.delete(tmp);
       return zipfile;
     } catch (IOException e) {
-      LOG.error("Cannot create backup during resolving disk-memory conflict for " + inMemory.getLongName(), e);
+      LOG.error("Cannot create backup during resolving disk-memory conflict for " + SNodeOperations.getModelLongName(inMemory), e);
       throw new RuntimeException(e);
     }
   }
 
   private static void openDiffDialog(IFile modelFile, SModel inMemory) {
-    SModel onDisk = new SModel(inMemory.getSModelReference());
+    SModel onDisk = new SModel(inMemory.getReference());
     try {
       onDisk = ModelPersistence.readModel(modelFile, false);
     } catch (ModelReadException e) {
@@ -138,6 +140,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
       mySuffix = suffix;
     }
 
+    @Override
     public String getSuffix() {
       return mySuffix;
     }

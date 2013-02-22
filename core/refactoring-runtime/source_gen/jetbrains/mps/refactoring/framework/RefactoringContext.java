@@ -30,10 +30,12 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapterBase;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelFqName;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -213,7 +215,7 @@ public class RefactoringContext {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, mapping);
     for (SNode node : targetNodes) {
-      targetModel.addRoot(node);
+      targetModel.addRootNode(node);
     }
     for (SNode key : mapping.keySet()) {
       SNode target = mapping.get(key);
@@ -284,6 +286,7 @@ public class RefactoringContext {
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
           SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "name", newFeatureName);
+          ((SConceptNodeAdapterBase) SConceptRepository.getInstance().getConcept(oldFeatureName)).internalSetId(newFeatureName);
         }
       }
     }
@@ -305,16 +308,16 @@ public class RefactoringContext {
     }
   }
 
-  public void changeModelName(EditableSModelDescriptor model, String newName) {
+  public void changeModelName(EditableSModel model, String newName) {
     if (LanguageAspect.STRUCTURE.is(model)) {
-      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) model.getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) ((SModelDescriptor) model).getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         this.changeFeatureName(concept, NameUtil.longNameFromNamespaceAndShortName(newName, SPropertyOperations.getString(concept, "name")), SPropertyOperations.getString(concept, "name"));
       }
     }
 
-    SModelReference oldModelRef = model.getSModelReference();
-    model.rename(SModelFqName.fromString(newName), false);
-    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameModel(oldModelRef, model.getSModelReference()));
+    SModelReference oldModelRef = model.getReference();
+    model.rename(newName, false);
+    ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameModel(oldModelRef, model.getReference()));
   }
 
   public void updateByDefault(SModel model) {
@@ -350,7 +353,7 @@ public class RefactoringContext {
       computeCaches();
     }
 
-    for (SNode node : model.nodes()) {
+    for (SNode node : new NodesIterable(model)) {
       String conceptFQName = node.getConcept().getConceptId();
       Set<StructureModificationData.ConceptFeature> exactConceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
       if (exactConceptFeatures != null) {

@@ -14,14 +14,17 @@ public class ProgramWrapper implements IProgram<InstructionWrapper> {
     this.myProgram = program;
   }
 
+  @Override
   public IInstruction<InstructionWrapper> getStart() {
     return new InstructionWrapper(this.myProgram.getStart());
   }
 
+  @Override
   public IInstruction<InstructionWrapper> getEnd() {
     return new InstructionWrapper(this.myProgram.getEnd());
   }
 
+  @Override
   public List<IInstruction<InstructionWrapper>> getInstructions() {
     List<IInstruction<InstructionWrapper>> result = new ArrayList<IInstruction<InstructionWrapper>>();
     for (Instruction instruction : this.myProgram.getInstructions()) {

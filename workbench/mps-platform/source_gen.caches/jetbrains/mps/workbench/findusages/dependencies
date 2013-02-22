@@ -48,6 +48,7 @@
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndexEntry" />
     <classNode dependClassName="com.intellij.util.indexing.FileBasedIndex" />
     <classNode dependClassName="gnu.trove.THashSet" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashMap" />
@@ -86,6 +87,7 @@
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdTableBuilding" />
     <classNode dependClassName="com.intellij.util.indexing.FileContent" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Collections" />

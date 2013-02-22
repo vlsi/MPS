@@ -18,6 +18,7 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
     this.maxCardinality = maxCardinality;
   }
 
+  @Override
   public Iterator<U> iterator() {
     return new LimitedCardinalitySequence.LimitedCardinalityIterator();
   }
@@ -31,6 +32,7 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
     public LimitedCardinalityIterator() {
     }
 
+    @Override
     public boolean hasNext() {
       if (inputIt == null) {
         init();
@@ -41,6 +43,7 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
       return hasNext.hasNext();
     }
 
+    @Override
     public U next() {
       if (inputIt == null) {
         init();
@@ -54,6 +57,7 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
       return clearNext();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

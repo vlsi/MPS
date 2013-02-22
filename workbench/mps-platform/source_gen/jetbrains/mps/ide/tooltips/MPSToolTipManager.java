@@ -36,13 +36,16 @@ public class MPSToolTipManager implements ApplicationComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "MPSTooltipManager";
   }
 
+  @Override
   public void disposeComponent() {
   }
 
+  @Override
   public void initComponent() {
   }
 

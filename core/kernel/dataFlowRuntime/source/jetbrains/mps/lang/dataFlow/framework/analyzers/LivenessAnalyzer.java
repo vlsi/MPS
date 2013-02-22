@@ -23,10 +23,12 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import java.util.List;
 
 public class LivenessAnalyzer implements DataFlowAnalyzer<VarSet> {
+  @Override
   public VarSet initial(Program p) {
     return new VarSet(p);
   }
 
+  @Override
   public VarSet merge(Program p, List<VarSet> input) {
     VarSet result = new VarSet(p);
     for (VarSet inputSet : input) {
@@ -35,6 +37,7 @@ public class LivenessAnalyzer implements DataFlowAnalyzer<VarSet> {
     return result;
   }
 
+  @Override
   public VarSet fun(VarSet input, ProgramState s) {
     Instruction instruction = s.getInstruction();
     VarSet result = input;
@@ -52,6 +55,7 @@ public class LivenessAnalyzer implements DataFlowAnalyzer<VarSet> {
     return result;
   }
 
+  @Override
   public AnalysisDirection getDirection() {
     return AnalysisDirection.BACKWARD;
   }

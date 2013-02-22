@@ -61,11 +61,13 @@ public class MfDate implements Comparable {
     return getTime().before(arg.getTime());
   }
 
+  @Override
   public int compareTo(Object arg) {
     MfDate other = (MfDate) arg;
     return getTime().compareTo(other.getTime());
   }
 
+  @Override
   public boolean equals(Object arg) {
     if (!((arg instanceof MfDate))) {
       return false;
@@ -108,6 +110,7 @@ public class MfDate implements Comparable {
     return myBase.get(Calendar.YEAR);
   }
 
+  @Override
   public int hashCode() {
     return myBase.hashCode();
   }
@@ -116,6 +119,7 @@ public class MfDate implements Comparable {
     return myBase.getTime().toString();
   }
 
+  @Override
   public String toString() {
     return formattedString();
   }

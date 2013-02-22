@@ -14,18 +14,22 @@ public class MapPathMacrosProvider implements PathMacrosProvider {
     this.macros = macros;
   }
 
+  @Override
   public String getValue(String name) {
     return macros.get(name);
   }
 
+  @Override
   public Set<String> getUserNames() {
     return Collections.unmodifiableSet(macros.keySet());
   }
 
+  @Override
   public Set<String> getNames() {
     return Collections.unmodifiableSet(macros.keySet());
   }
 
+  @Override
   public void report(String message, String macro) {
     System.out.println("Undefined macro: " + macro + ". " + message);
   }

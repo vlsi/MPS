@@ -54,8 +54,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_7v1nzk_a_0(editorContext, node);
   }
 
-  public static class InterfaceConceptDeclaration_generic_cellMenu_a0f1c0 extends AbstractCellMenuPart_Generic_Item {
-    public InterfaceConceptDeclaration_generic_cellMenu_a0f1c0() {
+  public static class InterfaceConceptDeclaration_generic_cellMenu_7v1nzk_a0f1c0 extends AbstractCellMenuPart_Generic_Item {
+    public InterfaceConceptDeclaration_generic_cellMenu_7v1nzk_a0f1c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -69,8 +69,8 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class InterfaceConceptDeclaration_generic_cellMenu_a0i1c0 extends AbstractCellMenuPart_Generic_Item {
-    public InterfaceConceptDeclaration_generic_cellMenu_a0i1c0() {
+  public static class InterfaceConceptDeclaration_generic_cellMenu_7v1nzk_a0i1c0 extends AbstractCellMenuPart_Generic_Item {
+    public InterfaceConceptDeclaration_generic_cellMenu_7v1nzk_a0i1c0() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -202,7 +202,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_a0f1c0()}));
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_7v1nzk_a0f1c0()}));
       }
     }
 
@@ -246,7 +246,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_a0i1c0()}));
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new SubstituteInfoPartExt[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu_7v1nzk_a0i1c0()}));
       }
     }
 

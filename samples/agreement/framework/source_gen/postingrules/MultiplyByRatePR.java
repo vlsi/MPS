@@ -9,6 +9,7 @@ public class MultiplyByRatePR extends PostingRule {
     super(type, isTaxable);
   }
 
+  @Override
   protected Money calculateAmount(AccountingEvent evt) {
     Usage usageEvent = (Usage) evt;
     return Money.dollars(usageEvent.getAmount().getAmount() * (Double) usageEvent.getAgreement().getValue("BASE_RATE", usageEvent.getWhenOccurred()));

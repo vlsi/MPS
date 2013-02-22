@@ -4,6 +4,7 @@
     <classNode dependClassName="java.lang.System" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.Complex2" file="Complex2.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.System" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.Complex" />
   </dependency>

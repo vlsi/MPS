@@ -13,6 +13,7 @@ public abstract class BaseValidatedAction extends AnAction {
     super(text, description, icon);
   }
 
+  @Override
   public final void actionPerformed(AnActionEvent e) {
     doPerform(e);
     if (myValidator != null) {

@@ -12,6 +12,7 @@ public class ConfigurationChoosePanel extends ChildChoosePanel<SNode, SNode> {
     super("Configuration:");
   }
 
+  @Override
   public List<SNode> getChildrenNodes(SNode node) {
     return SLinkOperations.getTargets(node, "configuration", true);
   }

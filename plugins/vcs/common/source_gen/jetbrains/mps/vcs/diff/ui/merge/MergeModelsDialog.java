@@ -140,10 +140,12 @@ public class MergeModelsDialog extends DialogWrapper {
     init();
   }
 
+  @Override
   public String getDimensionServiceKey() {
     return getClass().getName();
   }
 
+  @Override
   protected void doOKAction() {
     MergeConfirmation.showMergeConfirmationAndTakeAction(this, myMergeSession, Sequence.fromIterable(myMergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
@@ -164,6 +166,7 @@ public class MergeModelsDialog extends DialogWrapper {
     });
   }
 
+  @Override
   protected Action[] createActions() {
     List<Action> actions = ListSequence.fromList(new ArrayList<Action>());
     ListSequence.fromList(actions).addElement(getOKAction());
@@ -412,6 +415,7 @@ public class MergeModelsDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myPanel;
   }
@@ -439,10 +443,12 @@ public class MergeModelsDialog extends DialogWrapper {
     }
 
     @Nullable
+    @Override
     protected SNodeId getCurrentNodeId() {
       return getCurrentRoot();
     }
 
+    @Override
     public void setCurrentNodeId(@Nullable SNodeId nodeId) {
       setCurrentRoot(nodeId);
     }
@@ -452,17 +458,20 @@ public class MergeModelsDialog extends DialogWrapper {
     private MergeModelsTree() {
       super(DiffTemporaryModule.getOperationContext(myProject, myMergeSession.getResultModel()));
       addTreeSelectionListener(new TreeSelectionListener() {
+        @Override
         public void valueChanged(TreeSelectionEvent event) {
           myToolbar.updateActionsImmediately();
         }
       });
     }
 
+    @Override
     protected Iterable<BaseAction> getRootActions() {
       MergeModelsDialog md = MergeModelsDialog.this;
       return Arrays.<BaseAction>asList(new InvokeMergeRootsAction(md), AcceptYoursTheirs.yoursInstance(md), AcceptYoursTheirs.theirsInstance(md));
     }
 
+    @Override
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       final MergeSession session = (rootTreeNode.getRootId() == null ?
         myMetadataMergeSession :
@@ -490,7 +499,7 @@ public class MergeModelsDialog extends DialogWrapper {
         rootTreeNode.setAdditionalText("with conflicts");
       } else {
         if (nonConflictedCount == 0) {
-          if (rootTreeNode.getRootId() != null && myMergeSession.getResultModel().getNodeById(rootTreeNode.getRootId()) == null) {
+          if (rootTreeNode.getRootId() != null && myMergeSession.getResultModel().getNode(rootTreeNode.getRootId()) == null) {
             rootTreeNode.setTextStyle(SimpleTextAttributes.STYLE_STRIKEOUT);
           }
         } else {
@@ -523,10 +532,12 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     }
 
+    @Override
     protected Iterable<SModel> getModels() {
       return Arrays.asList(myMergeSession.getBaseModel(), myMergeSession.getMyModel(), myMergeSession.getRepositoryModel());
     }
 
+    @Override
     protected Iterable<SNodeId> getAffectedRoots() {
       return myMergeSession.getAffectedRoots();
     }

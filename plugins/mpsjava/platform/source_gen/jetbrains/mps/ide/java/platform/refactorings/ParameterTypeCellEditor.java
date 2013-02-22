@@ -20,14 +20,17 @@ import java.awt.event.ActionEvent;
     this.myModel = params;
   }
 
+  @Override
   public Object getCellEditorValue() {
     return this.mySelected;
   }
 
+  @Override
   public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
     MethodParameter p = ListSequence.fromList(this.myModel.getParameters()).getElement(row);
     final JComboBox comboBox = new JComboBox(ListSequence.fromList(p.getAvailableTypes()).toGenericArray(String.class));
     comboBox.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         ParameterTypeCellEditor.this.mySelected = ((String) comboBox.getSelectedItem());
       }

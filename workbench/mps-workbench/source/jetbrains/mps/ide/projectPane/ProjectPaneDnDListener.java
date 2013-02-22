@@ -59,22 +59,27 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     myTree = tree;
   }
 
+  @Override
   public void dragEnter(DropTargetDragEvent dtde) {
     dtde.acceptDrag(dtde.getDropAction());
   }
 
+  @Override
   public void dragOver(DropTargetDragEvent dtde) {
     dtde.acceptDrag(dtde.getDropAction());
   }
 
+  @Override
   public void dropActionChanged(DropTargetDragEvent dtde) {
 
   }
 
+  @Override
   public void dragExit(DropTargetEvent dte) {
 
   }
 
+  @Override
   public void drop(final DropTargetDropEvent dtde) {
     Point point = dtde.getLocation();
     final TreePath treePath = myTree.getPathForLocation(point.x, point.y);
@@ -115,6 +120,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     if (result != JOptionPane.YES_OPTION) return;
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         SModelDescriptor targetModel = getTargetModel(treePath);
         if (targetModel == null) return;

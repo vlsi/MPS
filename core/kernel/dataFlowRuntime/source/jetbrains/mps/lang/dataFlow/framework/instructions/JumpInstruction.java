@@ -44,17 +44,20 @@ public class JumpInstruction extends Instruction {
     myJumpTo = position.getPosition();
   }
 
+  @Override
   public void buildCaches() {
     super.buildCaches();
     getProgram().get(myJumpTo).addJump(this);
   }
 
+  @Override
   public List<ProgramState> succ(ProgramState s) {
     List<ProgramState> result = new ArrayList<ProgramState>();
     result.add(new ProgramState(getProgram().get(myJumpTo), s.isReturnMode()));
     return result;
   }
 
+  @Override
   public String commandPresentation() {
     return "jump " + myJumpTo;
   }

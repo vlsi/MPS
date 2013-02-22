@@ -54,18 +54,22 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
   @Override
   protected abstract JComponent createCenterPanel();
 
+  @Override
   public final JComponent getMainComponent() {
     return createCenterPanel();
   }
 
+  @Override
   public IOperationContext getOperationContext() {
     return myOperationContext;
   }
 
+  @Override
   public IScope getModuleScope() {
     return getOperationContext().getScope();
   }
 
+  @Override
   public IScope getProjectScope() {
     return getOperationContext().getProject().getScope();
   }
@@ -96,6 +100,7 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
     }
   }
 
+  @Override
   final public void addBinding(AutoBinding binding) {
     myBindings.add(binding);
   }
@@ -110,22 +115,26 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
 
     //to save changes in all models before reload not to lose them
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         SModelRepository.getInstance().saveAll();
       }
     });
 
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
       public void run() {
         closeDialog[0] = doSaveChanges();
       }
     });
 
     ProgressManager.getInstance().run(new Modal(ProjectHelper.toIdeaProject(getOperationContext().getProject()), "Applying changes", false) {
+      @Override
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         try {
           ModelAccess.instance().runWriteAction(new Runnable() {
+            @Override
             public void run() {
               CleanupManager.getInstance().cleanup();
             }
@@ -166,6 +175,7 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
 
   public enum ConstraintsType {
     LABEL {
+      @Override
       public GridBagConstraints create(int x, int y) {
         GridBagConstraints c = LIST.create(x, y);
         c.weightx = 0;
@@ -173,12 +183,14 @@ public abstract class BaseBindedDialog extends DialogWrapper implements IBindedD
         return c;
       }},
     FIELD {
+      @Override
       public GridBagConstraints create(int x, int y) {
         GridBagConstraints c = LIST.create(x, y);
         c.weighty = 0;
         return c;
       }},
     LIST {
+      @Override
       public GridBagConstraints create(int x, int y) {
         return new GridBagConstraints(x, y, 1, 1, 1, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
       }};

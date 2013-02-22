@@ -32,6 +32,7 @@ public class MPSDebugRunner extends GenericProgramRunner {
   public MPSDebugRunner() {
   }
 
+  @Override
   public boolean canRun(@NotNull final String executorId, @NotNull final RunProfile profile) {
     try {
       return executorId.equals(DefaultDebugExecutor.EXECUTOR_ID) && (isOldRunConfiguration(profile) || isNewRunConfiguration(profile));
@@ -50,10 +51,12 @@ public class MPSDebugRunner extends GenericProgramRunner {
   }
 
   @NotNull
+  @Override
   public String getRunnerId() {
     return "Default Debug Runner";
   }
 
+  @Override
   protected RunContentDescriptor doExecute(final Project project, final Executor executor, final RunProfileState state, final RunContentDescriptor contentToReuse, final ExecutionEnvironment env) throws ExecutionException {
     //  FileDocumentManager.getInstance().saveAllDocuments(); 
     return createContentDescriptor(project, executor, state, contentToReuse, env);
@@ -80,6 +83,7 @@ public class MPSDebugRunner extends GenericProgramRunner {
     return contentBuilder.showRunContent(contentToReuse);
   }
 
+  @Override
   public SettingsEditor getSettingsEditor(final Executor executor, RunConfiguration configuration) {
     return null;
   }

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.plugin.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.checkedName.PropertyReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,7 +20,7 @@ public class EditorTab_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_3743831881070611787(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + EditorTab_Behavior.call_getGeneratedName_3743831881070611776(thisNode);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + EditorTab_Behavior.call_getGeneratedName_3743831881070611776(thisNode);
   }
 
   public static List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {

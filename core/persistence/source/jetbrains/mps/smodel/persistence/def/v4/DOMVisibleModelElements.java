@@ -50,6 +50,7 @@ class DOMVisibleModelElements implements VisibleModelElements {
     }
   }
 
+  @Override
   public int getVisibleModelIndex(SModelReference modelReference) {
     for (Map.Entry<Integer, SModelReference> entry : myVisibleModelElements.entrySet()) {
       if (modelReference.equals(entry.getValue())) {
@@ -69,6 +70,7 @@ class DOMVisibleModelElements implements VisibleModelElements {
     return myMaxVisibleModelIndex;
   }
 
+  @Override
   public SModelReference getModelUID(int index) {
     return myVisibleModelElements.get(index);
   }

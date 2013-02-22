@@ -18,24 +18,28 @@ public class ValueUtilImpl extends ValueUtil {
   public ValueUtilImpl() {
   }
 
+  @Override
   public void init() {
     synchronized (LOCK) {
       INSTANCE = this;
     }
   }
 
+  @Override
   public void dispose() {
     synchronized (LOCK) {
       INSTANCE = null;
     }
   }
 
+  @Override
   public JavaValue fromJDI(Value value, @NotNull String classFQname, ThreadReference threadReference) {
     //  could not we, like, get fqName from the value? 
     JavaValue javaValue = fromJDIRaw(value, classFQname, threadReference);
     return tryToWrap(classFQname, javaValue);
   }
 
+  @Override
   public JavaValue fromJDI(@Nullable Value value, ThreadReference threadReference) {
     if (value == null) {
       return fromJDIRaw(value, "java.lang.Object", threadReference);
@@ -52,6 +56,7 @@ public class ValueUtilImpl extends ValueUtil {
     return wrapper;
   }
 
+  @Override
   public JavaValue fromJDIRaw(Value value, String classFQname, ThreadReference threadReference) {
     if (value == null) {
       return new JavaPrimitiveValue(value, classFQname, threadReference);

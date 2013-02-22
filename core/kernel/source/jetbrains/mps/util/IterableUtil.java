@@ -36,17 +36,17 @@ public class IterableUtil {
     return new FlattenIterable<T>(Arrays.asList(its));
   }
 
-  public static <T> Collection<T> asCollection(Iterable<T> iter) {
+  public static <T> Collection<T> asCollection(Iterable<? extends T> iter) {
     if (iter instanceof Collection) return (Collection<T>) iter;
     return asList(iter);
   }
 
-  public static <T> List<T> asList(Iterable<T> iter) {
+  public static <T> List<T> asList(Iterable<? extends T> iter) {
     if (iter instanceof List) return (List<T>) iter;
     return copyToList(iter);
   }
 
-  public static <T> List<T> copyToList(Iterable<T> iter) {
+  public static <T> List<T> copyToList(Iterable<? extends T> iter) {
     List<T> result = new ArrayList<T>();
     for (T o : iter) {
       result.add(o);
@@ -56,6 +56,7 @@ public class IterableUtil {
 
   public static <T> Iterable<T> asIterable(final Iterator<T> i) {
     return new Iterable<T>() {
+      @Override
       public Iterator<T> iterator() {
         return i;
       }

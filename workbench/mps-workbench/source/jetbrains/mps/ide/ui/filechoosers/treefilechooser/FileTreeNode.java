@@ -77,6 +77,7 @@ public abstract class FileTreeNode extends MPSTreeNode {
     setIcon(icon);
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
@@ -89,6 +90,7 @@ public abstract class FileTreeNode extends MPSTreeNode {
     return getAssociatedFile().getName().equals("");
   }
 
+  @Override
   public boolean isLeaf() {
     return !getAssociatedFile().isDirectory();
   }
@@ -97,11 +99,13 @@ public abstract class FileTreeNode extends MPSTreeNode {
     setUserObject(file);
   }
 
+  @Override
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
   }
 
+  @Override
   protected void doInit() {
     if (getAssociatedFile().isDirectory()) {
       List<IFile> sortedFiles = new ArrayList<IFile>();
@@ -111,6 +115,7 @@ public abstract class FileTreeNode extends MPSTreeNode {
         }
       }
       Collections.sort(sortedFiles, new Comparator<IFile>() {
+        @Override
         public int compare(IFile f1, IFile f2) {
           if (f1.isDirectory() && !f2.isDirectory()) {
             return -1;
@@ -124,6 +129,7 @@ public abstract class FileTreeNode extends MPSTreeNode {
 
       for (IFile file : sortedFiles) {
         add(new FileTreeNode(file) {
+          @Override
           protected IFileFilter getFileFilter() {
             return FileTreeNode.this.getFileFilter();
           }

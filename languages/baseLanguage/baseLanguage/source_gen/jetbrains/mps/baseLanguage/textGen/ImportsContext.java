@@ -24,7 +24,7 @@ public class ImportsContext {
 
   private ImportsContext(TextGenBuffer buffer, SNode rootNode) {
     this.buffer = buffer;
-    this.packageName = SNodeOperations.getModel(rootNode).getSModelReference().getLongName();
+    this.packageName = SNodeOperations.getModel(rootNode).getReference().getLongName();
 
     contextClassifiers = new ContextClassifiersInRoot(rootNode);
 

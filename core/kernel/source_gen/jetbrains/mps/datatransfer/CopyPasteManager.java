@@ -31,6 +31,7 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
   public CopyPasteManager(ClassLoaderManager classLoaderManager) {
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -40,6 +41,7 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
     super.init();
   }
 
+  @Override
   public void dispose() {
     super.dispose();
     INSTANCE = null;
@@ -101,7 +103,7 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
       if (actionsModelDescriptor == null) {
         continue;
       }
-      Iterable<SNode> roots = new ConditionalIterable<SNode>(actionsModelDescriptor.getSModel().roots(), new Condition<SNode>() {
+      Iterable<SNode> roots = new ConditionalIterable<SNode>(actionsModelDescriptor.getSModel().getRootNodes(), new Condition<SNode>() {
         public boolean met(SNode node) {
           return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.actions.structure.CopyPasteHandlers");
         }
@@ -119,6 +121,7 @@ public class CopyPasteManager extends AbstractManager implements CoreComponent {
     myLoaded = true;
   }
 
+  @Override
   public void clearCaches() {
     myPostProcessors = null;
     myPreProcessors = null;

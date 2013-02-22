@@ -20,11 +20,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MacroReference_MenuComponent extends AbstractCellMenuComponent {
   public MacroReference_MenuComponent() {
-    super(new SubstituteInfoPartExt[]{new MacroReference_MenuComponent.MacroReference_generic_cellMenu_a0()});
+    super(new SubstituteInfoPartExt[]{new MacroReference_MenuComponent.MacroReference_generic_cellMenu_2yc6tb_a0()});
   }
 
-  public static class MacroReference_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Group {
-    public MacroReference_generic_cellMenu_a0() {
+  public static class MacroReference_generic_cellMenu_2yc6tb_a0 extends AbstractCellMenuPart_Generic_Group {
+    public MacroReference_generic_cellMenu_2yc6tb_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

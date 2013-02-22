@@ -16,6 +16,7 @@ public class ModulePathChooser implements Computable<Path> {
     myOwner = owner;
   }
 
+  @Override
   public Path compute() {
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setExtensionFileFilter(MPSExtentions.DOT_LANGUAGE, MPSExtentions.DOT_SOLUTION, MPSExtentions.DOT_LIBRARY, MPSExtentions.DOT_DEVKIT);

@@ -8,12 +8,13 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.selection.Selection;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
 
 public class Escape_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,8 +34,10 @@ public class Escape_Action extends BaseAction {
     if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog()) {
       return false;
     }
+    Selection selection = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection();
+    int selectionStackSize = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelectionStackSize();
+    return selectionStackSize > 1 || (selectionStackSize == 1 && selection != null && selection.canExecuteAction(CellActionType.CLEAR_SELECTION)) || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().hasMessages(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
 
-    return true;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -73,11 +76,13 @@ public class Escape_Action extends BaseAction {
         ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().clearForOwner(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
       }
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).onEscape();
+      SelectionManager selectionManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager();
+      int selectionStackSize = selectionManager.getSelectionStackSize();
 
-      if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelectionStackSize() > 1) {
-        ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().setSelection(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getDeepestSelection());
+      if (selectionStackSize > 1) {
+        selectionManager.setSelection(selectionManager.getDeepestSelection());
       } else {
-        check_h8krww_a0a0e0a(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection());
+        check_h8krww_a0a0g0a(selectionManager.getSelection());
       }
 
     } catch (Throwable t) {
@@ -87,7 +92,7 @@ public class Escape_Action extends BaseAction {
 
   private static Logger LOG = Logger.getLogger(Escape_Action.class);
 
-  private static void check_h8krww_a0a0e0a(Selection checkedDotOperand) {
+  private static void check_h8krww_a0a0g0a(Selection checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.executeAction(CellActionType.CLEAR_SELECTION);
     }

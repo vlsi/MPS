@@ -11,6 +11,7 @@ public class ReversingSequence<T> extends AbstractChainedSequence<T, T> {
     super(input);
   }
 
+  @Override
   public Iterator<T> iterator() {
     ArrayList<T> cache = new ArrayList<T>();
     for (T u : getInput()) {
@@ -26,14 +27,17 @@ public class ReversingSequence<T> extends AbstractChainedSequence<T, T> {
       this.listIterator = listIterator;
     }
 
+    @Override
     public boolean hasNext() {
       return listIterator.hasPrevious();
     }
 
+    @Override
     public U next() {
       return listIterator.previous();
     }
 
+    @Override
     public void remove() {
       listIterator.remove();
     }

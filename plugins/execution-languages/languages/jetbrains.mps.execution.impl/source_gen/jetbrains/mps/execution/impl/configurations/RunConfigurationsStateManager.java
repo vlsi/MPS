@@ -40,6 +40,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
   private final Project myProject;
   private final PluginReloader myPluginReloader;
   private final PluginReloadingListener myPluginReloadingListener = new PluginReloadingListener() {
+    @Override
     public void afterPluginsLoaded() {
       if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
         return;
@@ -47,6 +48,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
       initRunConfigurations();
     }
 
+    @Override
     public void beforePluginsDisposed() {
       if (IdeMain.getTestMode() != IdeMain.TestMode.NO_TEST) {
         return;
@@ -61,9 +63,11 @@ public class RunConfigurationsStateManager implements ProjectComponent {
     myPluginReloader = pluginReloader;
   }
 
+  @Override
   public void projectOpened() {
   }
 
+  @Override
   public void projectClosed() {
   }
 
@@ -89,6 +93,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
     final List<RunContentDescriptor> descriptors = collectDescriptorsToDispose();
 
     ApplicationManager.getApplication().invokeLater(new Runnable() {
+      @Override
       public void run() {
         {
           Iterator<RunContentDescriptor> d_it = ListSequence.fromList(descriptors).iterator();
@@ -155,14 +160,17 @@ public class RunConfigurationsStateManager implements ProjectComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "MPS Run Configs Manager";
   }
 
+  @Override
   public void initComponent() {
     myPluginReloader.addReloadingListener(myPluginReloadingListener);
   }
 
+  @Override
   public void disposeComponent() {
     myPluginReloader.removeReloadingListener(myPluginReloadingListener);
   }

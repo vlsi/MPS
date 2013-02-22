@@ -33,10 +33,12 @@ public class MemberContainerStructureModel extends NodeTreeModel implements Stru
     }).toGenericArray(SNodePointer.class);
   }
 
+  @Override
   public SNodeReference[] getRootNodes() {
     return new SNodeReference[]{container};
   }
 
+  @Override
   public SNodeReference[] getChildren(SNodeReference node) {
     if (((SNodePointer) node).equals(container)) {
       return members;
@@ -45,26 +47,33 @@ public class MemberContainerStructureModel extends NodeTreeModel implements Stru
     }
   }
 
+  @Override
   public boolean shouldEnterElement(Object object) {
     return false;
   }
 
+  @Override
   public void dispose() {
   }
 
+  @Override
   public void removeModelListener(ModelListener listener) {
   }
 
+  @Override
   public void addModelListener(ModelListener listener) {
   }
 
+  @Override
   public void removeEditorPositionListener(FileEditorPositionListener listener) {
   }
 
+  @Override
   public void addEditorPositionListener(FileEditorPositionListener listener) {
   }
 
   @Nullable
+  @Override
   public Object getCurrentEditorElement() {
     return null;
   }

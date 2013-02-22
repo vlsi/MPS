@@ -40,6 +40,7 @@ public class TreeFileChooser {
   public static final int MODE_FILES_AND_DIRECTORIES = 3;
 
   public static final IFileFilter ALL_FILES_FILTER = new IFileFilter() {
+    @Override
     public boolean accept(IFile file) {
       return true;
     }
@@ -64,6 +65,7 @@ public class TreeFileChooser {
 
   public void setExtensionFileFilter(final String... extension) {
     myFileFilter = new IFileFilter() {
+      @Override
       public boolean accept(IFile file) {
         if (file.isDirectory()) return true;
         for (String e : extension) {
@@ -122,6 +124,7 @@ public class TreeFileChooser {
     List<IFile> res = new ArrayList<IFile>();
 
     FileChooserDescriptor descriptor = new FileChooserDescriptor(myMode != MODE_DIRECTORIES, myMode != MODE_FILES, true, true, false, multipleSelection) {
+      @Override
       public boolean isFileVisible(VirtualFile file, boolean showHiddenFiles) {
         if (!super.isFileVisible(file, showHiddenFiles)) return false;
         if (file.isDirectory() && myDirectoriesAlwaysVisible) {
@@ -150,6 +153,7 @@ public class TreeFileChooser {
       myFileFilter = new IFileFilter() {
         IFileFilter myInnerFilter = myFileFilter;
 
+        @Override
         public boolean accept(IFile file) {
           if (!file.isDirectory()) return false;
           return myInnerFilter.accept(file);

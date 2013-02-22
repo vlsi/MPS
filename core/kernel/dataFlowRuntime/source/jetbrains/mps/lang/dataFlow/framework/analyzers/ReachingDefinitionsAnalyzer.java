@@ -27,10 +27,12 @@ import java.util.Set;
 import java.util.List;
 
 public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteInstruction>> {
+  @Override
   public Set<WriteInstruction> initial(Program p) {
     return new HashSet<WriteInstruction>();
   }
 
+  @Override
   public Set<WriteInstruction> merge(Program p, List<Set<WriteInstruction>> input) {
     Set<WriteInstruction> result = new HashSet<WriteInstruction>();
     for (Set<WriteInstruction> i : input) {
@@ -39,6 +41,7 @@ public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteIn
     return result;
   }
 
+  @Override
   public Set<WriteInstruction> fun(Set<WriteInstruction> input, ProgramState s) {
     Instruction instruction = s.getInstruction();
     Set<WriteInstruction> result = input;
@@ -57,6 +60,7 @@ public class ReachingDefinitionsAnalyzer implements DataFlowAnalyzer<Set<WriteIn
     return result;
   }
 
+  @Override
   public AnalysisDirection getDirection() {
     return AnalysisDirection.FORWARD;
   }

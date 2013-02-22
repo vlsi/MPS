@@ -65,10 +65,12 @@ public class AddToNewFavoritesList_Action extends BaseAction {
     try {
       MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);
       final String name = Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), "Input new favorites list name", "Add New Favorites List", Messages.getInformationIcon(), "Unnamed", new InputValidator() {
+        @Override
         public boolean checkInput(String p0) {
           return true;
         }
 
+        @Override
         public boolean canClose(String p0) {
           return true;
         }

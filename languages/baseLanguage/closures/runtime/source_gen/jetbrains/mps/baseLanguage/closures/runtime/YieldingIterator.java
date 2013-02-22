@@ -16,6 +16,7 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
   public YieldingIterator() {
   }
 
+  @Override
   public boolean hasNext() {
     if (state == YieldingIterator.State.UNKNOWN) {
       try {
@@ -36,6 +37,7 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
     return state == YieldingIterator.State.HAS_NEXT;
   }
 
+  @Override
   public T next() {
     switch (state) {
       case AT_END:
@@ -61,6 +63,7 @@ public abstract class YieldingIterator<T> implements Iterator<T> {
     }
   }
 
+  @Override
   public void remove() {
     throw new UnsupportedOperationException();
   }

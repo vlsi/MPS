@@ -16,11 +16,15 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class PropertyAccessor implements ModelAccessor {
   private SNode myNode;
@@ -33,18 +37,20 @@ public class PropertyAccessor implements ModelAccessor {
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
     myNode = node;
     myPropertyName = propertyName;
-    myReadOnly = readOnly || node.getModel().isNotEditable() || editorContext.getEditorComponent().isReadOnly();
+    myReadOnly = readOnly || node.getModel().isReadOnly() || editorContext.getEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
-    myPropertyDeclaration = new jetbrains.mps.smodel.SNodePointer(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName));
+    SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName);
+    myPropertyDeclaration = propertyDeclaration.getReference();
     myScope = editorContext.getScope();
   }
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, IOperationContext context) {
     myNode = node;
     myPropertyName = propertyName;
-    myReadOnly = readOnly || node.getModel().isNotEditable();
+    myReadOnly = readOnly || node.getModel().isReadOnly();
     myAllowEmptyText = allowEmptyText;
-    myPropertyDeclaration = new jetbrains.mps.smodel.SNodePointer(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName));
+    SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName);
+    myPropertyDeclaration = propertyDeclaration.getReference();
     myScope = context.getScope();
   }
 

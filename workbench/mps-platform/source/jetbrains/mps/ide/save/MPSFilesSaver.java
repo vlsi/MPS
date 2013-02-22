@@ -36,19 +36,23 @@ public class MPSFilesSaver implements ApplicationComponent {
   public MPSFilesSaver(MPSCoreComponents coreComponents) {
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return "Models Saver";
   }
 
+  @Override
   public void initComponent() {
     myMessageBusConnection = ApplicationManager.getApplication().getMessageBus().connect();
     myMessageBusConnection.subscribe(AppTopics.FILE_DOCUMENT_SYNC, new FileDocumentManagerAdapter() {
+      @Override
       public void beforeAllDocumentsSaving() {
         if (MPSCore.getInstance().isTestMode()) return;
         ThreadUtils.assertEDT();
 
         Runnable saveAllRunnable = new Runnable() {
+          @Override
           public void run() {
             SModelRepository.getInstance().saveAll();
             MPSModuleRepository.getInstance().saveAll();
@@ -64,6 +68,7 @@ public class MPSFilesSaver implements ApplicationComponent {
     });
   }
 
+  @Override
   public void disposeComponent() {
     myMessageBusConnection.disconnect();
   }

@@ -40,6 +40,7 @@ import jetbrains.mps.debugger.java.api.state.watchables.JavaField;
     return myPresentation;
   }
 
+  @Override
   public List<IWatchable> calculateSubvalues() {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
     ObjectReference ref = (ObjectReference) myValue;

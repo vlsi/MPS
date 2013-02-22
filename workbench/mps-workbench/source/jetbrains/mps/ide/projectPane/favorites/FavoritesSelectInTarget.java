@@ -64,6 +64,7 @@ public class FavoritesSelectInTarget extends AbstractProjectViewSelectInTarget {
     tree.selectNode(treeNode);
   }
 
+  @Override
   public boolean canSelect(SelectInContext context) {
     VirtualFile file = context.getVirtualFile();
     if (!(file instanceof MPSNodeVirtualFile)) return false;
@@ -88,6 +89,7 @@ public class FavoritesSelectInTarget extends AbstractProjectViewSelectInTarget {
     MPSNodeVirtualFile nodeVirtualFile = (MPSNodeVirtualFile) context.getVirtualFile();
     final SNode nodeToSelect = nodeVirtualFile.getNode();
     SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
+      @Override
       public SModelDescriptor compute() {
         return nodeToSelect.getModel().getModelDescriptor();
       }

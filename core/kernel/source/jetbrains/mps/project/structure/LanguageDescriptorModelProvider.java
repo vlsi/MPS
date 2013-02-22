@@ -74,6 +74,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   @Override
   public void init() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         refresh();
       }
@@ -132,6 +133,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
   public void clearAll() {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         removeAll();
         myModels.clear();
@@ -185,8 +187,10 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
       myHash = null;
     }
 
+    @Override
     protected SModel createModel() {
       SModel model = new SModel(getSModelReference()) {
+        @Override
         public boolean canFireEvent() {
           return false;
         }

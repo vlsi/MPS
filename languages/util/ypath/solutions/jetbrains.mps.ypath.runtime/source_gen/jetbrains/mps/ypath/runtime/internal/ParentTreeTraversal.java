@@ -16,6 +16,7 @@ public class ParentTreeTraversal<T> extends AbstractChainTreeTraversal<T> implem
     super(source, fd);
   }
 
+  @Override
   public Iterator<T> iterator() {
     return new ParentTreeTraversal.ParentsIterator(getSourceTraversal().iterator());
   }
@@ -45,10 +46,12 @@ public class ParentTreeTraversal<T> extends AbstractChainTreeTraversal<T> implem
       }
     }
 
+    @Override
     public boolean hasNext() {
       return hasNextNode;
     }
 
+    @Override
     public T next() {
       if (!(hasNextNode)) {
         throw new NoSuchElementException();
@@ -58,6 +61,7 @@ public class ParentTreeTraversal<T> extends AbstractChainTreeTraversal<T> implem
       return tmp;
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

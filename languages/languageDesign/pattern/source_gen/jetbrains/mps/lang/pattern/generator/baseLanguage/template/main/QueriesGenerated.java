@@ -612,7 +612,7 @@ public class QueriesGenerated {
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor");
       SNode referent = ((SNode) ref.getTargetNode());
       SPropertyOperations.set(referenceNode, "role", ref.getRole());
-      SPropertyOperations.set(referenceNode, "model", referent.getModel().getSModelReference().toString());
+      SPropertyOperations.set(referenceNode, "model", referent.getModel().getReference().toString());
       SPropertyOperations.set(referenceNode, "id", referent.getNodeId().toString());
       SLinkOperations.setTarget(referenceNode, "mainNode", _context.getNode(), false);
       ListSequence.fromList(result).addElement(referenceNode);

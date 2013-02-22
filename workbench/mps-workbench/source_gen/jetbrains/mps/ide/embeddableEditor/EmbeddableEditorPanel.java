@@ -25,6 +25,7 @@ import jetbrains.mps.workbench.MPSDataKeys;
   }
 
   @Nullable
+  @Override
   public Object getData(@NonNls String dataId) {
     if (dataId.equals(MPSDataKeys.FILE_EDITOR.getName())) {
       return myFileNodeEditor;

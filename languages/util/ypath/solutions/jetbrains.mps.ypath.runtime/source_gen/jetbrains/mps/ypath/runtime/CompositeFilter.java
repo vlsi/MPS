@@ -12,6 +12,7 @@ public class CompositeFilter<T> implements IFilter<T> {
     this.filters = Arrays.asList(filters);
   }
 
+  @Override
   public boolean accept(T t) {
     for (IFilter<T> filter : filters) {
       if (!(filter.accept(t))) {

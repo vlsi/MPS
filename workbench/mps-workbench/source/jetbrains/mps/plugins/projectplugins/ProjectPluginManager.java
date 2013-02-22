@@ -79,9 +79,11 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     myManager = manager;
   }
 
+  @Override
   public void projectOpened() {
   }
 
+  @Override
   public void projectClosed() {
 
   }
@@ -140,6 +142,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
     synchronized (myPluginsLock) {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           mySortedPlugins = new ArrayList<BaseProjectPlugin>();
 
@@ -181,6 +184,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       collectState(mySortedPlugins);
 
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           for (BaseProjectPlugin plugin : mySortedPlugins) {
             try {
@@ -202,27 +206,32 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   //----------------COMPONENT STUFF---------------------
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS Plugin Manager";
   }
 
+  @Override
   public void initComponent() {
 
   }
 
+  @Override
   public void disposeComponent() {
 
   }
 
   //----------------STATE STUFF------------------------
 
+  @Override
   public PluginsState getState() {
     collectState(mySortedPlugins);
     return myState;
   }
 
+  @Override
   public void loadState(PluginsState state) {
     myState = state;
   }
@@ -255,6 +264,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
 
   public void recreateTabbedEditors() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         editors:
         for (MPSFileNodeEditor editor : EditorsHelper.getAllEditors(myManager)) {
@@ -285,6 +295,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
   }
 
   private class TabsMPSEditorOpenHandler implements EditorOpenHandler {
+    @Override
     public SNode getBaseNode(IOperationContext context, SNode node) {
       for (RelationDescriptor d : getTabDescriptors()) {
         SNode baseNode = d.getBaseNode(node);
@@ -297,6 +308,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       return null;
     }
 
+    @Override
     public boolean canOpen(IOperationContext context, SNode node) {
       for (RelationDescriptor d : getTabDescriptors()) {
         if (!d.isApplicable(node)) continue;
@@ -305,6 +317,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
       return false;
     }
 
+    @Override
     public Editor open(IOperationContext context, final SNode node) {
       Set<RelationDescriptor> tabs = new HashSet<RelationDescriptor>();
 

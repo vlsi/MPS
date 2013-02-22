@@ -40,6 +40,7 @@ class InstancesSearchType extends SearchType<SNode, SConcept> {
     myExact = exact;
   }
 
+  @Override
   public MultiMap<SModel, SConcept> findMatchingModelsInCache(Set<SConcept> concepts, Iterable<SModel> models, @Nullable Computable<Boolean> callback) {
     Set<SConcept> queryConcepts = new HashSet<SConcept>();
     for (SConcept concept : concepts) {
@@ -67,6 +68,7 @@ class InstancesSearchType extends SearchType<SNode, SConcept> {
     return result;
   }
 
+  @Override
   public Set<SNode> findInModel(MultiMap<SModel, SConcept> models, @Nullable Computable<Boolean> callback) {
     Set<SNode> result = new HashSet<SNode>();
     for (Entry<SModel, Collection<SConcept>> e : models.entrySet()) {

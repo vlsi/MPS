@@ -23,6 +23,7 @@ import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.smodel.event.SModelEventVisitor;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -59,6 +60,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private Set<SNodeReference> myCurrentExpressionsWithChangedTypes = new HashSet<SNodeReference>();
   private final Object myRecalculatedTypesLock = new Object();
   private TypeRecalculatedListener myTypeRecalculatedListener = new TypeRecalculatedListener() {
+    @Override
     public void typeWillBeRecalculatedForTerm(SNode term) {
       synchronized (myRecalculatedTypesLock) {
         myCurrentExpressionsWithChangedTypes.add(new SNodePointer(term));
@@ -73,6 +75,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     TypeChecker.getInstance().addTypeRecalculatedListener(myTypeRecalculatedListener);
   }
 
+  @Override
   public void doDispose() {
     TypeChecker.getInstance().removeTypeRecalculatedListener(myTypeRecalculatedListener);
     super.doDispose();
@@ -81,6 +84,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   @Override
   protected Set<EditorMessage> createMessages(final SNode rootNode, final List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), rootNode, new ITypechecking.Computation<Set<EditorMessage>>() {
+      @Override
       public Set<EditorMessage> compute(TypeCheckingContext p0) {
         return doCreateMessages(rootNode, events, wasCheckedOnce, editorContext);
       }
@@ -92,7 +96,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       return new HashSet<EditorMessage>();
     }
     SModel model = SNodeOperations.getModel(rootNode);
-    if (model.getModelDescriptor() == null || model.isTransient() || model.isDisposed()) {
+    if (model.getModelDescriptor() == null || model instanceof TransientSModel || model.isDisposed()) {
       return new HashSet<EditorMessage>(0);
     }
     final Map<SNode, SNode> reResolvedTargets = new HashMap<SNode, SNode>();
@@ -107,6 +111,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         myCurrentExpressionsWithChangedTypes.clear();
       }
       SModelEventVisitor visitor = new SModelEventVisitorAdapter() {
+        @Override
         public void visitChildEvent(SModelChildEvent event) {
           SNode child = event.getChild();
           if (event.isAdded()) {
@@ -116,6 +121,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
           }
         }
 
+        @Override
         public void visitReferenceEvent(SModelReferenceEvent event) {
           SReference reference = event.getReference();
           SNode sourceNode = reference.getSourceNode();
@@ -124,6 +130,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
           }
         }
 
+        @Override
         public void visitPropertyEvent(SModelPropertyEvent event) {
           SNode node = event.getNode();
           SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
@@ -363,8 +370,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void nodeRemoved(SNode child, SNode formerParent, SModel m, Map<SNode, SNode> resolveTargets) {
-    if (myCheckedMethodCalls.contains(new SNodePointer(m.getSModelReference(), formerParent.getNodeId()))) {
-      myParametersToCheckedMethodCalls.remove(new SNodePointer(m.getSModelReference(), child.getNodeId()));
+    if (myCheckedMethodCalls.contains(new SNodePointer(m.getReference(), formerParent.getNodeId()))) {
+      myParametersToCheckedMethodCalls.remove(new SNodePointer(m.getReference(), child.getNodeId()));
       testAndFixMethodCall(SNodeOperations.cast(formerParent, "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
     }
     if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {
@@ -377,6 +384,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
   }
 
+  @Override
   public void clear(SNode node, EditorComponent editor) {
     clearCaches();
   }

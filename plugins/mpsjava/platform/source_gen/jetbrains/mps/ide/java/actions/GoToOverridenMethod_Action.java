@@ -108,6 +108,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
       final Wrappers._T<Set<Tuples._2<SNodeReference, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNodeReference, SNode>>>();
       final String[] methodName = new String[1];
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {
+        @Override
         public void run(@NotNull ProgressIndicator p0) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {

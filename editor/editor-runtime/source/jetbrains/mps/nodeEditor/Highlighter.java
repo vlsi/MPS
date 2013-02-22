@@ -39,11 +39,10 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.WeakSet;
@@ -110,7 +109,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         }
         for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
           SNode sNode = editorComponent.getEditedNode();
-          if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) && sNode.getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
+          if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) && sNode.getModel().getReference().equals(modelDescriptor.getSModelReference())) {
             myCheckedOnceEditors.remove(editorComponent);
           }
         }

@@ -24,6 +24,7 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
     this.length = length;
   }
 
+  @Override
   public Iterator<U> iterator() {
     return new PagingSequence.PagingIterator();
   }
@@ -48,6 +49,7 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
     private PagingIterator() {
     }
 
+    @Override
     public boolean hasNext() {
       if (inputIt == null) {
         init();
@@ -58,6 +60,7 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
       return hasNext.hasNext();
     }
 
+    @Override
     public U next() {
       if (inputIt == null) {
         init();
@@ -71,6 +74,7 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
       return clearNext();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

@@ -20,6 +20,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 
 public abstract class BaseStringModel extends BaseMPSChooseModel<String> {
+  @Override
   public boolean willOpenEditor() {
     return false;
   }
@@ -28,11 +29,13 @@ public abstract class BaseStringModel extends BaseMPSChooseModel<String> {
     super(project, "");
   }
 
+  @Override
   public String doGetFullName(Object element) {
     BaseStringItem navigationItem = (BaseStringItem) element;
     return navigationItem.getString();
   }
 
+  @Override
   public String doGetObjectName(String s) {
     return NameUtil.shortNameFromLongName(s);
   }

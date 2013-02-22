@@ -21,11 +21,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
@@ -113,7 +110,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
   public SelectionInfo getSelectionInfo() {
     SelectionInfo selectionInfo = new SelectionInfo(this.getClass().getName());
     selectionInfo.getPropertiesMap().put(ROLE_PROPERTY_NAME, myRole);
-    selectionInfo.getPropertiesMap().put(MODEL_ID_PROPERTY_NAME, myParentNode.getModel().getSModelReference().toString());
+    selectionInfo.getPropertiesMap().put(MODEL_ID_PROPERTY_NAME, myParentNode.getModel().getReference().toString());
     selectionInfo.getPropertiesMap().put(FIRST_NODE_ID_PROPERTY_NAME, myFirstNode.getNodeId().toString());
     selectionInfo.getPropertiesMap().put(LAST_NODE_ID_PROPERTY_NAME, myLastNode.getNodeId().toString());
     selectionInfo.getPropertiesMap().put(PARENT_NODE_ID_PROPERTY_NAME, myParentNode.getNodeId().toString());
@@ -145,6 +142,12 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     return true;
   }
 
+
+  @Override
+  public boolean canExecuteAction(CellActionType type) {
+    return type == CellActionType.BACKSPACE || type == CellActionType.DELETE || super.canExecuteAction(type);
+  }
+
   @Override
   public void executeAction(CellActionType type) {
     getEditorComponent().assertModelNotDisposed();
@@ -161,7 +164,9 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (sNodeId == null) {
       throw new SelectionStoreException("Required node Id property missed, propertyName = " + propertyName);
     }
-    SNode sNode = sModel.getNodeById(sNodeId);
+    jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(sNodeId);
+    assert nodeId != null : "wrong node id string";
+    SNode sNode = sModel.getNode(nodeId);
     if (sNode == null) {
       throw new SelectionRestoreException();
     }

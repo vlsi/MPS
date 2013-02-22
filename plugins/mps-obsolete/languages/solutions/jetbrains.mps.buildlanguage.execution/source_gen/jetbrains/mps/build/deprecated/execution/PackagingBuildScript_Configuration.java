@@ -18,6 +18,7 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import jetbrains.mps.smodel.SNodeId;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
@@ -109,7 +110,7 @@ public class PackagingBuildScript_Configuration extends BaseMpsRunConfiguration 
     final Wrappers._T<SNode> configuration = new Wrappers._T<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        configuration.value = SNodeOperations.cast(SNodeOperations.getModel(PackagingBuildScript_Configuration.this.getNode().getNode()).getNodeById(PackagingBuildScript_Configuration.this.getConfigurationId()), "jetbrains.mps.build.packaging.structure.Configuration");
+        configuration.value = SNodeOperations.cast(SNodeOperations.getModel(PackagingBuildScript_Configuration.this.getNode().getNode()).getNode(SNodeId.fromString(PackagingBuildScript_Configuration.this.getConfigurationId())), "jetbrains.mps.build.packaging.structure.Configuration");
       }
     });
     return configuration.value;

@@ -76,14 +76,17 @@ public abstract class ModelCheckerViewer extends JPanel {
     viewOptions.myCategories = new boolean[]{true, false};
 
     myUsagesView = new UsagesView(project, viewOptions) {
+      @Override
       public void close() {
         ModelCheckerViewer.this.close();
       }
 
+      @Override
       protected String getRerunSearchTooltip() {
         return "Recheck";
       }
 
+      @Override
       protected String getSearchProgressTitle() {
         return myCheckProgressTitle;
       }
@@ -95,6 +98,7 @@ public abstract class ModelCheckerViewer extends JPanel {
 
     myGenerateButton = new JButton("Generate");
     myGenerateButton.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent event) {
         assert myGenerateRunnable != null;
         myGenerateRunnable.run();
@@ -105,6 +109,7 @@ public abstract class ModelCheckerViewer extends JPanel {
     myFixButton = new JButton("Perform Quick Fixes");
     myFixButton.setToolTipText("Remove undeclared children and undeclared references, resolve links in included nodes");
     myFixButton.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent event) {
         performQuickFixes();
       }
@@ -175,6 +180,7 @@ public abstract class ModelCheckerViewer extends JPanel {
   private void runCheck() {
     try {
       ProgressManager.getInstance().run(new Task.Modal(myProject, myCheckProgressTitle, true) {
+        @Override
         public void run(@NotNull ProgressIndicator indicator) {
           myUsagesView.run(indicator);
         }
@@ -249,15 +255,18 @@ public abstract class ModelCheckerViewer extends JPanel {
     public MyNodeRepresentator() {
     }
 
+    @Override
     public String getResultsText(TextOptions options) {
       int size = options.mySubresultsCount;
       return "<strong>" + NameUtil.formatNumericalString(size, "issue") + " found</strong>";
     }
 
+    @Override
     public Icon getResultsIcon() {
       return IdeIcons.CLOSED_FOLDER;
     }
 
+    @Override
     public String getCategoryText(TextOptions options, String category, boolean isResultsSection) {
       String counter = "";
       if (options.myCounters && isResultsSection) {
@@ -266,6 +275,7 @@ public abstract class ModelCheckerViewer extends JPanel {
       return "<strong>" + category + counter + "</strong>";
     }
 
+    @Override
     public Icon getCategoryIcon(String category) {
       if ((category != null && category.length() > 0)) {
         if (category.startsWith(ModelChecker.SEVERITY_ERROR)) {
@@ -280,17 +290,21 @@ public abstract class ModelCheckerViewer extends JPanel {
     }
 
     @NotNull
+    @Override
     public String getPresentation(ModelCheckerIssue issue) {
       return StringUtil.escapeXml(issue.getMessage());
     }
 
+    @Override
     public List<CategoryKind> getCategoryKinds() {
       return Arrays.asList(ModelCheckerIssue.CATEGORY_KIND_SEVERITY, ModelCheckerIssue.CATEGORY_KIND_ISSUE_TYPE);
     }
 
+    @Override
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
     }
 
+    @Override
     public void read(Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
     }
   }

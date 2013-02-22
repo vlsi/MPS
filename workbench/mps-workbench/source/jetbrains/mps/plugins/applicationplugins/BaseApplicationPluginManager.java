@@ -112,16 +112,19 @@ public class BaseApplicationPluginManager implements ApplicationComponent, IRegi
 
   //----------------COMPONENT STUFF---------------------
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "BaseApplicationPluginManager";
   }
 
+  @Override
   public void initComponent() {
 
   }
 
+  @Override
   public void disposeComponent() {
 
   }

@@ -6,6 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bash.behavior.Command_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -15,13 +18,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bash.behavior.Command_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class HeadCommandList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vppg5t_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_vppg5t_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(Command_Behavior.call_isAbstractCommand_3905757829907341138(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "base", true), "command", true)));
   }
 
   private EditorCell createCollection_vppg5t_a(EditorContext editorContext, SNode node) {
@@ -79,9 +83,5 @@ public class HeadCommandList_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_vppg5t_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(Command_Behavior.call_isAbstractCommand_3905757829907341138(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "base", true), "command", true)));
   }
 }

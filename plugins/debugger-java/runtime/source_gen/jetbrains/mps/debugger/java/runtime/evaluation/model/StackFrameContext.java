@@ -57,6 +57,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
 
   @Nullable
+  @Override
   public SNode getLocationNode() {
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
     if (javaStackFrame != null) {
@@ -69,6 +70,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
 
   @NotNull
+  @Override
   public List<String> getClassPath() {
     IModule locationModule = getLocationModule();
     if (locationModule == null) {
@@ -83,6 +85,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
 
   @NotNull
+  @Override
   public Map<String, VariableDescription> getVariables(final _FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
     final Map<String, VariableDescription> result = MapSequence.fromMap(new LinkedHashMap<String, VariableDescription>(16, (float) 0.75, false));
 
@@ -149,6 +152,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
 
   @Nullable
+  @Override
   public SNode getStaticContextType(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
     final String unitType = getStaticContextTypeName();
     if (unitType == null) {
@@ -191,6 +195,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
 
   @Nullable
+  @Override
   public SNode getThisClassifierType(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
     IWatchable contextWatchable = myUiState.getStackFrame().getContextWatchable();
     // todo 
@@ -235,6 +240,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     return createClassifierType.invoke(type.name());
   }
 
+  @Override
   public boolean isVariableVisible(final String variableName, final SNode variableType) {
     final Wrappers._boolean visible = new Wrappers._boolean(false);
     foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, JavaLocalVariable>() {
@@ -256,6 +262,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     return visible.value;
   }
 
+  @Override
   public boolean isThisTypeValid(SNode thisType) {
     ObjectReference thisObject = myUiState.getThisObject();
     if (thisObject == null) {
@@ -264,6 +271,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     return eq_4zsmpx_a0c0m(thisObject.referenceType().signature(), TransformatorBuilder.getInstance().getJniSignatureFromType(thisType));
   }
 
+  @Override
   public boolean isStaticContextTypeValid(SNode staticContextType) {
     if (!(SNodeOperations.isInstanceOf(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       return false;

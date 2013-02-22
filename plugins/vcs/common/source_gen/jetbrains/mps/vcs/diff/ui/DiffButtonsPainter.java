@@ -25,6 +25,7 @@ public class DiffButtonsPainter extends ButtonsPainter {
     myDialog = dialog;
   }
 
+  @Override
   protected Iterable<FoldingAreaButton> createButtonsForChangeGroup(ChangeGroup changeGroup, int y) {
     FoldingAreaButton button = null;
     boolean allInsert = ListSequence.fromList(changeGroup.getChanges()).all(new IWhereFilter<ModelChange>() {
@@ -60,6 +61,7 @@ public class DiffButtonsPainter extends ButtonsPainter {
       super(changeGroup, x, y, name, icon);
     }
 
+    @Override
     public void performAction() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {

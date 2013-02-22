@@ -7,6 +7,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.TransientSModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -28,25 +35,31 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kr3er8_a(editorContext, node);
   }
 
-  public static class ReplaceWith_BuildProjectPart_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildProjectPart_cellMenu_a0a0() {
+  public static class ReplaceWith_BuildProjectPart_cellMenu_kr3er8_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildProjectPart_cellMenu_kr3er8_a0a0() {
     }
 
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildProjectPart";
     }
+  }
+
+  private static boolean renderingCondition_kr3er8_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+    if (SNodeOperations.getModel(node) instanceof TransientSModel || (SLinkOperations.getTarget(node, "options", true) != null)) {
+      return true;
+    }
+    SNode project = SNodeOperations.as(SNodeOperations.getContainingRoot(node), "jetbrains.mps.build.structure.BuildProject");
+    return ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions") && isNotEmpty_kr3er8_a0a0a0a0a0a2a2(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
+      }
+    });
   }
 
   private static class sourcesListHandler_kr3er8_c2a extends RefNodeListHandler {
@@ -185,7 +198,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSource_JavaModule_Editor.ReplaceWith_BuildProjectPart_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSource_JavaModule_Editor.ReplaceWith_BuildProjectPart_cellMenu_kr3er8_a0a0()}));
     return editorCell;
   }
 
@@ -285,19 +298,7 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_kr3er8_a1c0(SNode node, EditorContext editorContext, IScope scope) {
-    if (SNodeOperations.getModel(node).isTransient() || (SLinkOperations.getTarget(node, "options", true) != null)) {
-      return true;
-    }
-    SNode project = SNodeOperations.as(SNodeOperations.getContainingRoot(node), "jetbrains.mps.build.structure.BuildProject");
-    return ListSequence.fromList(SLinkOperations.getTargets(project, "parts", true)).any(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions") && isNotEmpty_kr3er8_a0a0a0a0a0a2a41(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
-      }
-    });
-  }
-
-  public static boolean isNotEmpty_kr3er8_a0a0a0a0a0a2a41(String str) {
+  public static boolean isNotEmpty_kr3er8_a0a0a0a0a0a2a2(String str) {
     return str != null && str.length() > 0;
   }
 }

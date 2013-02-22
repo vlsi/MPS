@@ -4,7 +4,7 @@ package jetbrains.mps.lang.plugin.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -20,7 +20,7 @@ public class PreferencesComponentDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_4911466715314111449(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + PreferencesComponentDeclaration_Behavior.call_getClassName_1213877322095(thisNode);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + PreferencesComponentDeclaration_Behavior.call_getClassName_1213877322095(thisNode);
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {

@@ -55,19 +55,23 @@ public abstract class ChooserType<T> {
     public ModelChooserType() {
     }
 
+    @Override
     public ChooseByNameModel createChooserModel(final IChooserSettings<SModelReference> settings, final RefactoringContext context, final String paramName) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
 
       return new BaseModelModel(project) {
+        @Override
         public NavigationItem doGetNavigationItem(final SModelReference ref) {
           return new BaseModelItem(ref) {
+            @Override
             public void navigate(boolean requestFocus) {
               context.setParameter(paramName, getModelReference());
             }
           };
         }
 
+        @Override
         public SModelReference[] find(boolean checkboxState) {
           List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
           List<SModelReference> modelReferencess = new ArrayList<SModelReference>(modelDescriptors.size());
@@ -76,14 +80,17 @@ public abstract class ChooserType<T> {
           return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
         }
 
+        @Override
         public SModelReference[] find(IScope scope) {
           throw new UnsupportedOperationException("must not be used");
         }
 
+        @Override
         public boolean loadInitialCheckBoxState() {
           return false;
         }
 
+        @Override
         public String getPromptText() {
           return settings.getTitle();
         }
@@ -96,6 +103,7 @@ public abstract class ChooserType<T> {
     public ModuleChooserType() {
     }
 
+    @Override
     public ChooseByNameModel createChooserModel(final IChooserSettings<IModule> settings, final RefactoringContext context, final String paramName) {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       final Project project = MPSDataKeys.PROJECT.getData(dataContext);
@@ -104,6 +112,7 @@ public abstract class ChooserType<T> {
         @Override
         public NavigationItem doGetNavigationItem(final SModuleReference module) {
           return new BaseModuleItem(module) {
+            @Override
             public void navigate(boolean requestFocus) {
               context.setParameter(paramName, ModuleRepositoryFacade.getInstance().getModule(module));
             }

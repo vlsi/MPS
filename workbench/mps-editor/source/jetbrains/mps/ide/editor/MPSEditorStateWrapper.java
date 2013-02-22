@@ -43,6 +43,7 @@ class MPSEditorStateWrapper implements FileEditorState {
     myLevel = level;
   }
 
+  @Override
   public boolean canBeMergedWith(FileEditorState otherState, FileEditorStateLevel level) {
     return false;
   }

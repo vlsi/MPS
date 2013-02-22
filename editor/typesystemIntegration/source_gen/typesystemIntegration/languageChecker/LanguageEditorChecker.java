@@ -49,6 +49,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   private Map<SNodeReference, LanguageErrorsComponent> myNodePointersToComponents = MapSequence.fromMap(new HashMap<SNodeReference, LanguageErrorsComponent>());
   private Set<EditorComponent> myEditorComponents = SetSequence.fromSet(new HashSet<EditorComponent>());
   private EditorComponent.EditorDisposeListener myDisposeListener = new EditorComponent.EditorDisposeListener() {
+    @Override
     public void editorWillBeDisposed(EditorComponent editorComponent) {
       SetSequence.fromSet(myEditorComponents).removeElement(editorComponent);
       SNodeReference sNodePointer = editorComponent.getEditedNodePointer();
@@ -58,17 +59,20 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
   };
   private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
+    @Override
     public void beforeModelRemoved(SModelDescriptor descriptor) {
       modelDescriptorRemoved(descriptor);
     }
 
+    @Override
     public void beforeModelDeleted(SModelDescriptor descriptor) {
       modelDescriptorRemoved(descriptor);
     }
   };
   private SModelListener myModelListener = new SModelAdapter() {
+    @Override
     public void beforeModelDisposed(SModel model) {
-      clearForModel(model.getSModelReference());
+      clearForModel(model.getReference());
     }
   };
   private Set<SModelDescriptor> myListenedModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());
@@ -82,6 +86,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     SModelRepository.getInstance().addModelRepositoryListener(this.myRepositoryListener);
   }
 
+  @Override
   public void doDispose() {
     for (LanguageErrorsComponent comp : MapSequence.fromMap(myNodePointersToComponents).values()) {
       comp.dispose();
@@ -132,10 +137,12 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
   }
 
+  @Override
   public boolean areMessagesChanged() {
     return myMessagesChanged;
   }
 
+  @Override
   public boolean isLaterThan(BaseEditorChecker checker) {
     if (checker instanceof TypesEditorChecker) {
       return true;
@@ -146,12 +153,15 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     return false;
   }
 
+  @Override
   public boolean hasDramaticalEvent(List<SModelEvent> list) {
     return true;
   }
 
+  @Override
   public Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
+      @Override
       public Set<EditorMessage> compute(TypeCheckingContext p0) {
         return doCreateMessages(node, list, wasCheckedOnce, editorContext);
       }
@@ -217,6 +227,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     return result;
   }
 
+  @Override
   public void clear(SNode node, EditorComponent component) {
     SNodeReference sNodePointer = component.getEditedNodePointer();
     if (sNodePointer == null) {

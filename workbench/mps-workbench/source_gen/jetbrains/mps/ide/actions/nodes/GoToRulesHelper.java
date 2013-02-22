@@ -11,8 +11,10 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -32,7 +34,6 @@ import javax.swing.Action;
 import jetbrains.mps.ide.icons.IconManager;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class GoToRulesHelper {
   public GoToRulesHelper() {
@@ -62,7 +63,11 @@ public class GoToRulesHelper {
     if (language == null) {
       return Collections.emptyList();
     }
-    SModel typesystemModel = check_l17hf5_a0c0c(LanguageAspect.TYPESYSTEM.get(language));
+    EditableSModel typesystem = LanguageAspect.TYPESYSTEM.get(language);
+    if (typesystem == null) {
+      return Collections.emptyList();
+    }
+    SModel typesystemModel = ((SModelDescriptor) typesystem).getSModel();
     if (typesystemModel == null) {
       return Collections.emptyList();
     }
@@ -157,8 +162,10 @@ public class GoToRulesHelper {
             putValue(Action.SMALL_ICON, IconManager.getIconFor(node));
           }
 
+          @Override
           public void actionPerformed(ActionEvent e) {
             ModelAccess.instance().runWriteInEDT(new Runnable() {
+              @Override
               public void run() {
                 if (SNodeOperations.isDisposed(node) || node.getModel() == null || node.getModel().getModelDescriptor() == null) {
                   return;
@@ -171,12 +178,5 @@ public class GoToRulesHelper {
         }).setBackground(Color.WHITE);
       }
     }
-  }
-
-  private static SModel check_l17hf5_a0c0c(EditableSModelDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModel();
-    }
-    return null;
   }
 }

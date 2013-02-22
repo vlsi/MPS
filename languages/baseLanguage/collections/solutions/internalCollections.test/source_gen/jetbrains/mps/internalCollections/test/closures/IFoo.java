@@ -10,6 +10,7 @@ public interface IFoo {
     public Foo() {
     }
 
+    @Override
     public Iterable<IBar.Bar> get() {
       return null;
     }

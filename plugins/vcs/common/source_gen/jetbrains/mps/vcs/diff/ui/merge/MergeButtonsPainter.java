@@ -24,6 +24,7 @@ public class MergeButtonsPainter extends ButtonsPainter {
     myDialog = dialog;
   }
 
+  @Override
   protected Iterable<FoldingAreaButton> createButtonsForChangeGroup(ChangeGroup changeGroup, int y) {
     int applyX = (isHighlightLeft() ?
       getX(0) :
@@ -64,6 +65,7 @@ public class MergeButtonsPainter extends ButtonsPainter {
       myAction = action;
     }
 
+    @Override
     public void performAction() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {

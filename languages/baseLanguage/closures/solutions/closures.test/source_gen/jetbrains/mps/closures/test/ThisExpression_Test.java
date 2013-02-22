@@ -11,6 +11,7 @@ public class ThisExpression_Test extends TestCase {
     Runnable run = new Runnable() {
       private Integer foo = 0;
 
+      @Override
       public void run() {
         new _FunctionTypes._return_P0_E0<Integer>() {
           public Integer invoke() {

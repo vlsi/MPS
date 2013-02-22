@@ -97,6 +97,7 @@ public class NewRuntimeModule_Action extends BaseAction {
         }
       });
       BaseModuleModel baseSolutionModel = new BaseModuleModel(((Project) MapSequence.fromMap(_params).get("project")), "runtime module") {
+        @Override
         public SModuleReference[] find(IScope p0) {
           return ListSequence.fromList(modules).select(new ISelector<IModule, ModuleReference>() {
             public ModuleReference select(IModule it) {
@@ -105,8 +106,10 @@ public class NewRuntimeModule_Action extends BaseAction {
           }).toGenericArray(ModuleReference.class);
         }
 
+        @Override
         public NavigationItem doGetNavigationItem(final SModuleReference module) {
           return new BaseModuleItem(module) {
+            @Override
             public void navigate(boolean p0) {
               if (module == null) {
                 return;
@@ -126,6 +129,7 @@ public class NewRuntimeModule_Action extends BaseAction {
       };
       ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(((Project) MapSequence.fromMap(_params).get("project")), baseSolutionModel, NewRuntimeModule_Action.this);
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
+        @Override
         public void elementChosen(Object p0) {
           ((NavigationItem) p0).navigate(true);
         }

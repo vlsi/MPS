@@ -27,6 +27,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.UnregisteredNodes;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -90,7 +91,7 @@ public class InternalActionsUtils {
             }
             SModel model = check_6btuvs_a0d0a0a2a4a2(SModelRepository.getInstance().getModelDescriptor(modelRef));
             if (model != null) {
-              for (SNode node : model.nodes()) {
+              for (SNode node : new NodesIterable(model)) {
                 try {
                   nodeCallback.invoke(node);
                 } catch (Throwable t) {
@@ -115,6 +116,7 @@ public class InternalActionsUtils {
       throw new IllegalStateException("Must be executed outside of write action");
     }
     ProgressManager.getInstance().run(new Task.Modal(project, actionName, true) {
+      @Override
       public void run(@NotNull ProgressIndicator indicator) {
         executeActionOnAllNodes(actionName, new ProgressMonitorAdapter(indicator), nodeCallback);
       }
@@ -123,6 +125,7 @@ public class InternalActionsUtils {
 
   public static void showUsagesViewForNodes(Project project, final List<SNodeReference> nodes) {
     IResultProvider provider = FindUtils.makeProvider(new IFinder() {
+      @Override
       public SearchResults find(SearchQuery query, ProgressMonitor progress) {
         SearchResults results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodeReference, SNode>() {

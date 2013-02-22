@@ -50,7 +50,7 @@ public interface SRepository {
 
   void removeRepositoryListener(SRepositoryListener listener);
 
-  SModelAccess getModelAccess();
+  ModelAccess getModelAccess();
 
   RepositoryAccess getRepositoryAccess();
 }

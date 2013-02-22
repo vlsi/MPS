@@ -110,6 +110,7 @@ public abstract class ProjectTreeFindHelper {
 
       currentTreeNode = findTreeNode(finalCurrentTreeNode,
         new Condition<MPSTreeNode>() {
+          @Override
           public boolean met(MPSTreeNode object) {
             if (object == finalCurrentTreeNode) return true;
             if (!(object instanceof PackageNode)) return false;
@@ -118,6 +119,7 @@ public abstract class ProjectTreeFindHelper {
             return vp != null && vp.startsWith(pack);
           }
         }, new Condition<MPSTreeNode>() {
+        @Override
         public boolean met(MPSTreeNode tNode) {
           return (tNode instanceof SNodeTreeNode) && (((SNodeTreeNode) tNode).getSNode() == anc);
         }
@@ -175,6 +177,7 @@ public abstract class ProjectTreeFindHelper {
   //----node find conditions----
 
   private static class ModuleInProjectCondition extends ModuleEverywhereCondition {
+    @Override
     public boolean met(MPSTreeNode object) {
       if (!super.met(object)) return false;
       return !(object instanceof jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModulesPoolTreeNode);
@@ -182,6 +185,7 @@ public abstract class ProjectTreeFindHelper {
   }
 
   private static class ModuleEverywhereCondition implements Condition<MPSTreeNode> {
+    @Override
     public boolean met(MPSTreeNode node) {
       if (node instanceof ProjectModuleTreeNode && !(node instanceof ProjectLanguageTreeNode)) return false;
       if (node instanceof SModelTreeNode) return false;
@@ -199,6 +203,7 @@ public abstract class ProjectTreeFindHelper {
       super(model);
     }
 
+    @Override
     public boolean met(MPSTreeNode node) {
       if (!super.met(node)) return false;
 
@@ -238,6 +243,7 @@ public abstract class ProjectTreeFindHelper {
       myModel = model;
     }
 
+    @Override
     public boolean met(MPSTreeNode node) {
       if (node instanceof SNodeTreeNode) return false;
       if (node instanceof SModelTreeNode) {
@@ -263,6 +269,7 @@ public abstract class ProjectTreeFindHelper {
       myModule = module;
     }
 
+    @Override
     public boolean met(MPSTreeNode treeNode) {
       if (!(treeNode instanceof ProjectModuleTreeNode)) return false;
       IOperationContext nodeContext = treeNode.getOperationContext();
@@ -277,6 +284,7 @@ public abstract class ProjectTreeFindHelper {
       myModel = model;
     }
 
+    @Override
     public boolean met(MPSTreeNode node) {
       if (!(node instanceof SModelTreeNode)) return false;
       SModelTreeNode modelNode = (SModelTreeNode) node;

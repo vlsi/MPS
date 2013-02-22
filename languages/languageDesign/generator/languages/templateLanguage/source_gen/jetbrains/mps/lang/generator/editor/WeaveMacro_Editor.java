@@ -37,10 +37,10 @@ public class WeaveMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_1n0h5d_a_0(editorContext, node);
   }
 
-  public static class WeaveMacro_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
+  public static class WeaveMacro_component_cellMenu_1n0h5d_a0a0 implements SubstituteInfoPartExt {
     private replace_node_macro myComponent;
 
-    public WeaveMacro_component_cellMenu_a0a0() {
+    public WeaveMacro_component_cellMenu_1n0h5d_a0a0() {
       this.myComponent = new replace_node_macro();
     }
 
@@ -188,7 +188,7 @@ public class WeaveMacro_Editor extends DefaultNodeEditor {
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new WeaveMacro_Editor.WeaveMacro_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new WeaveMacro_Editor.WeaveMacro_component_cellMenu_1n0h5d_a0a0()}));
     return editorCell;
   }
 

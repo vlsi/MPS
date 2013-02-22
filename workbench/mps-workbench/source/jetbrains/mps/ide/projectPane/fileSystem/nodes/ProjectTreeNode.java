@@ -72,6 +72,7 @@ public class ProjectTreeNode extends AbstractFileTreeNode {
   }
 
   private class MyNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder {
+    @Override
     protected String getNamespace(@NotNull MPSTreeNode node) {
       String folder = "";
       if (node instanceof ModuleTreeNode) {

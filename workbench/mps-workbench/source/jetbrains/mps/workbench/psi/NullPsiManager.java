@@ -51,10 +51,12 @@ class NullPsiManager extends PsiManagerEx {
     myProject = project;
   }
 
+  @Override
   public boolean isBatchFilesProcessingMode() {
     return false;
   }
 
+  @Override
   public boolean isAssertOnFileLoading(VirtualFile file) {
     return false;
   }
@@ -71,6 +73,7 @@ class NullPsiManager extends PsiManagerEx {
     return null;
   }
 
+  @Override
   public void registerRunnableToRunOnChange(Runnable runnable) {
 
   }
@@ -79,14 +82,17 @@ class NullPsiManager extends PsiManagerEx {
 
   }
 
+  @Override
   public void registerRunnableToRunOnAnyChange(Runnable runnable) {
 
   }
 
+  @Override
   public void registerRunnableToRunAfterAnyChange(Runnable runnable) {
 
   }
 
+  @Override
   public FileManager getFileManager() {
     if (myFileManager == null) {
       myFileManager = new NullFileManager();
@@ -103,10 +109,12 @@ class NullPsiManager extends PsiManagerEx {
 
   }
 
+  @Override
   public void beforeChildRemoval(PsiTreeChangeEventImpl event) {
 
   }
 
+  @Override
   public void beforeChildReplacement(@NotNull PsiTreeChangeEventImpl psiTreeChangeEvent) {
 
   }
@@ -130,41 +138,50 @@ class NullPsiManager extends PsiManagerEx {
     return new ArrayList<LanguageInjector>();
   }
 
+  @Override
   @NotNull
   public Project getProject() {
     return myProject;
   }
 
+  @Override
   @Nullable
   public PsiFile findFile(@NotNull VirtualFile file) {
     return null;
   }
 
+  @Override
   @Nullable
   public FileViewProvider findViewProvider(@NotNull VirtualFile file) {
     return null;
   }
 
+  @Override
   @Nullable
   public PsiDirectory findDirectory(@NotNull VirtualFile file) {
     return null;
   }
 
+  @Override
   public boolean areElementsEquivalent(@Nullable PsiElement element1, @Nullable PsiElement element2) {
     return false;
   }
 
+  @Override
   public void reloadFromDisk(@NotNull PsiFile file) {
   }
 
+  @Override
   public void addPsiTreeChangeListener(@NotNull PsiTreeChangeListener listener) {
 
   }
 
+  @Override
   public void addPsiTreeChangeListener(@NotNull PsiTreeChangeListener listener, Disposable parentDisposable) {
 
   }
 
+  @Override
   public void removePsiTreeChangeListener(@NotNull PsiTreeChangeListener listener) {
 
   }
@@ -179,6 +196,7 @@ class NullPsiManager extends PsiManagerEx {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   @NotNull
   public PsiModificationTracker getModificationTracker() {
     return new PsiModificationTrackerImpl(myProject) {
@@ -217,22 +235,27 @@ class NullPsiManager extends PsiManagerEx {
 
   }
 
+  @Override
   public void startBatchFilesProcessingMode() {
 
   }
 
+  @Override
   public void finishBatchFilesProcessingMode() {
 
   }
 
+  @Override
   public boolean isDisposed() {
     return false;
   }
 
+  @Override
   public void dropResolveCaches() {
 
   }
 
+  @Override
   public boolean isInProject(@NotNull PsiElement element) {
     return false;
   }

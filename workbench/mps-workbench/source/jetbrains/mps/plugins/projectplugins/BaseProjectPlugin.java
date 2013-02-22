@@ -133,6 +133,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
   }
   //----------------STATE STUFF------------------------
 
+  @Override
   public PluginState getState() {
     PluginState state = new PluginState();
     for (BaseProjectPrefsComponent component : myPrefsComponents) {
@@ -146,6 +147,7 @@ public abstract class BaseProjectPlugin implements PersistentStateComponent<Plug
     return state;
   }
 
+  @Override
   public void loadState(PluginState state) {
     HashMap<String, BaseProjectPrefsComponent> components = new HashMap<String, BaseProjectPrefsComponent>();
     for (BaseProjectPrefsComponent component : myPrefsComponents) {

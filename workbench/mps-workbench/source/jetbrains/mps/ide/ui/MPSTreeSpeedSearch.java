@@ -28,6 +28,7 @@ public class MPSTreeSpeedSearch extends TreeSpeedSearch {
     super(tree);
   }
 
+  @Override
   protected String getElementText(Object element) {
     TreePath path = (TreePath) element;
     MPSTreeNode last = (MPSTreeNode) path.getLastPathComponent();

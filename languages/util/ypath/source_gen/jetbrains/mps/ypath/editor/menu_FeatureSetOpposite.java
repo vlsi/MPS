@@ -22,11 +22,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
   public menu_FeatureSetOpposite() {
-    super(new SubstituteInfoPartExt[]{new menu_FeatureSetOpposite.IFeature_generic_cellMenu_a0()});
+    super(new SubstituteInfoPartExt[]{new menu_FeatureSetOpposite.IFeature_generic_cellMenu_atgo95_a0()});
   }
 
-  public static class IFeature_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Group {
-    public IFeature_generic_cellMenu_a0() {
+  public static class IFeature_generic_cellMenu_atgo95_a0 extends AbstractCellMenuPart_Generic_Group {
+    public IFeature_generic_cellMenu_atgo95_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

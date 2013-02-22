@@ -18,6 +18,7 @@ public class ListVarScope extends SearchScopeWithNode {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> result = new ArrayList<SNode>();
     SNode enclosingNode = getEnclosingNode();

@@ -567,6 +567,12 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.getBottomInset():int").equals(targetNodeId)) {
           return true;
         }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.setLeftGap(int):void").equals(targetNodeId)) {
+          return true;
+        }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.setRightGap(int):void").equals(targetNodeId)) {
+          return true;
+        }
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.moveTo(int,int):void").equals(targetNodeId)) {
           return true;
         }
@@ -619,6 +625,9 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.end():void").equals(targetNodeId)) {
+          return true;
+        }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.getRootParent():jetbrains.mps.openapi.editor.cells.EditorCell").equals(targetNodeId)) {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.findLeaf(int,int):jetbrains.mps.openapi.editor.cells.EditorCell").equals(targetNodeId)) {
@@ -699,6 +708,14 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
           SLinkOperations.setTarget(node, "baseMethodDeclaration", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)", "~EditorCell.getBottomInset():int"), false);
           return;
         }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.setLeftGap(int):void").equals(targetNodeId)) {
+          SLinkOperations.setTarget(node, "baseMethodDeclaration", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)", "~EditorCell.setLeftGap(int):void"), false);
+          return;
+        }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.setRightGap(int):void").equals(targetNodeId)) {
+          SLinkOperations.setTarget(node, "baseMethodDeclaration", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)", "~EditorCell.setRightGap(int):void"), false);
+          return;
+        }
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.moveTo(int,int):void").equals(targetNodeId)) {
           SLinkOperations.setTarget(node, "baseMethodDeclaration", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)", "~EditorCell.moveTo(int,int):void"), false);
           return;
@@ -769,6 +786,10 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.end():void").equals(targetNodeId)) {
           SLinkOperations.setTarget(node, "baseMethodDeclaration", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)", "~EditorCell.end():void"), false);
+          return;
+        }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.getRootParent():jetbrains.mps.openapi.editor.cells.EditorCell").equals(targetNodeId)) {
+          SLinkOperations.setTarget(node, "baseMethodDeclaration", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)", "~EditorCell.getRootParent():jetbrains.mps.openapi.editor.cells.EditorCell"), false);
           return;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.findLeaf(int,int):jetbrains.mps.openapi.editor.cells.EditorCell").equals(targetNodeId)) {
@@ -1173,6 +1194,12 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
           return true;
         }
         if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.getAvailableActions():java.util.Collection").equals(targetNodeId)) {
+          return true;
+        }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.setSubstituteInfo(jetbrains.mps.openapi.editor.cells.SubstituteInfo):void").equals(targetNodeId)) {
+          return true;
+        }
+        if (jetbrains.mps.smodel.SNodeId.fromString("~EditorCell.getSubstituteInfo():jetbrains.mps.openapi.editor.cells.SubstituteInfo").equals(targetNodeId)) {
           return true;
         }
         return false;

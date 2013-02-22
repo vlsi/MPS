@@ -31,10 +31,12 @@ public interface IFeedback {
     public Stub() {
     }
 
+    @Override
     public Throwable getException() {
       return null;
     }
 
+    @Override
     public Object getSource() {
       return null;
     }
@@ -47,10 +49,12 @@ public interface IFeedback {
       this.msg = message;
     }
 
+    @Override
     public String getMessage() {
       return msg.getText();
     }
 
+    @Override
     public IFeedback.Severity getSeverity() {
       switch (msg.getKind()) {
         case ERROR:
@@ -64,10 +68,12 @@ public interface IFeedback {
       }
     }
 
+    @Override
     public Object getSource() {
       return msg.getHintObject();
     }
 
+    @Override
     public Throwable getException() {
       return msg.getException();
     }
@@ -86,10 +92,12 @@ public interface IFeedback {
       this.throwable = throwable;
     }
 
+    @Override
     public IFeedback.Severity getSeverity() {
       return IFeedback.Severity.ERROR;
     }
 
+    @Override
     public String getMessage() {
       return message;
     }
@@ -118,6 +126,7 @@ public interface IFeedback {
       super(message, throwable);
     }
 
+    @Override
     public IFeedback.Severity getSeverity() {
       return IFeedback.Severity.ERROR;
     }
@@ -132,6 +141,7 @@ public interface IFeedback {
       super(message, throwable);
     }
 
+    @Override
     public IFeedback.Severity getSeverity() {
       return IFeedback.Severity.WARNING;
     }
@@ -146,6 +156,7 @@ public interface IFeedback {
       super(message, throwable);
     }
 
+    @Override
     public IFeedback.Severity getSeverity() {
       return IFeedback.Severity.INFO;
     }

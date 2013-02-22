@@ -28,6 +28,7 @@
   <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" file="Wrappers.java" />
   <dependency className="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" file="YieldingIterator.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="java.util.NoSuchElementException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.DelayedException" />

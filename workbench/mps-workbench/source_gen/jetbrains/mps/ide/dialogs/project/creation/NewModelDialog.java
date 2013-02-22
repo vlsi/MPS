@@ -42,7 +42,6 @@ import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.LanguageAspect;
 import javax.lang.model.SourceVersion;
 import org.jetbrains.annotations.Nullable;
@@ -89,7 +88,7 @@ public class NewModelDialog extends DialogWrapper {
     mainPanel.add(myModelRoots);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (ModelRoot root : myModule.getModelRoots()) {
-      if (!(root.isReadOnly())) {
+      if (!(root.canCreateModels())) {
         model.addElement(root);
       } else if (myModule instanceof Language && root instanceof FileBasedModelRoot) {
         // Can fix only FileBased model root (default for language) 
@@ -110,6 +109,7 @@ public class NewModelDialog extends DialogWrapper {
       }
     });
     myModelRoots.addItemListener(new ItemListener() {
+      @Override
       public void itemStateChanged(ItemEvent e) {
         check();
       }
@@ -123,6 +123,7 @@ public class NewModelDialog extends DialogWrapper {
     mainPanel.add(new JLabel("Model name:"));
     mainPanel.add(myModelName);
     myModelName.addKeyListener(new KeyAdapter() {
+      @Override
       public void keyReleased(KeyEvent event) {
         check();
       }
@@ -132,11 +133,13 @@ public class NewModelDialog extends DialogWrapper {
     myModelStereotype.setEditable(true);
     myModelStereotype.setModel(new DefaultComboBoxModel(SModelStereotype.values));
     myModelStereotype.addKeyListener(new KeyAdapter() {
+      @Override
       public void keyReleased(KeyEvent event) {
         check();
       }
     });
     myModelStereotype.addItemListener(new ItemListener() {
+      @Override
       public void itemStateChanged(ItemEvent p0) {
         check();
       }
@@ -152,7 +155,7 @@ public class NewModelDialog extends DialogWrapper {
       return;
     }
 
-    if (((ModelRoot) myModelRoots.getSelectedItem()).isReadOnly()) {
+    if (((ModelRoot) myModelRoots.getSelectedItem()).canCreateModels()) {
       final FileBasedModelRoot selectedModelRoot = (FileBasedModelRoot) myModelRoots.getSelectedItem();
 
       Memento memento = new MementoImpl();
@@ -169,6 +172,7 @@ public class NewModelDialog extends DialogWrapper {
       final ModelRootDescriptor newModelRootDescriptor = new ModelRootDescriptor(newModelRoot.getType(), memento);
 
       ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
         public void run() {
           final LanguageDescriptor languageDescriptor = (LanguageDescriptor) myModule.getModuleDescriptor();
           Iterator<ModelRootDescriptor> iterator = languageDescriptor.getModelRootDescriptors().iterator();
@@ -195,6 +199,7 @@ public class NewModelDialog extends DialogWrapper {
     }
 
     myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
+      @Override
       public SModelDescriptor compute() {
         String fqName = getFqName();
         ModelRoot mr = (ModelRoot) myModelRoots.getSelectedItem();
@@ -207,6 +212,7 @@ public class NewModelDialog extends DialogWrapper {
     MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(myResult, myContext);
     final SingleConfigurableEditor configurableEditor = new SingleConfigurableEditor(ProjectHelper.toIdeaProject(myContext.getProject()), configurable, "#MPSPropertiesConfigurable");
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         configurableEditor.show();
       }
@@ -242,11 +248,6 @@ public class NewModelDialog extends DialogWrapper {
     }
 
     SModelFqName modelUID = new SModelFqName(modelName, myModelStereotype.getSelectedItem().toString());
-    if (SModelRepository.getInstance().getModelDescriptor(modelUID) != null) {
-      setErrorText("Model with an uid " + modelName + " already exists");
-      return false;
-    }
-
     if (modelName.lastIndexOf(".") == modelName.length()) {
       setErrorText("Empty model short name isn't allowed");
       return false;
@@ -267,7 +268,7 @@ public class NewModelDialog extends DialogWrapper {
       return false;
     }
 
-    if (!(mr.isReadOnly()) && !(mr.canCreateModel(getFqName()))) {
+    if (!(mr.canCreateModels()) && !(mr.canCreateModel(getFqName()))) {
       setErrorText("Can't create a model with this name under this model root");
       return false;
     }
@@ -277,6 +278,7 @@ public class NewModelDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myContentPane;
   }

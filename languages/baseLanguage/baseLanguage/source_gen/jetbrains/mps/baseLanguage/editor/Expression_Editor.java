@@ -6,19 +6,23 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Expression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_1ltshm_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_1ltshm_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias") == null;
   }
 
   private EditorCell createAlternation_1ltshm_a(EditorContext editorContext, SNode node) {
@@ -43,6 +47,7 @@ public class Expression_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
+          @Override
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Error result = new EditorCell_Error(context, node, "<" + node.getRoleInParent() + ">");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
@@ -55,9 +60,5 @@ public class Expression_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_1ltshm_a0");
     return editorCell;
-  }
-
-  private static boolean renderingCondition_1ltshm_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias") == null;
   }
 }

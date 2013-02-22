@@ -16,7 +16,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,7 +38,7 @@ public class CreateRootNode_ActionGroup extends GeneratedActionGroup {
   public void doUpdate(AnActionEvent event) {
     try {
       List<SModelDescriptor> models = MPSDataKeys.MODELS.getData(event.getDataContext());
-      if ((int) ListSequence.fromList(models).count() == 1 && !(ListSequence.fromList(models).first() instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) ListSequence.fromList(models).first()).isReadOnly()))) {
+      if ((int) ListSequence.fromList(models).count() == 1 && !(ListSequence.fromList(models).first() instanceof EditableSModel && !(((EditableSModel) ListSequence.fromList(models).first()).isReadOnly()))) {
         event.getPresentation().setVisible(false);
         return;
       }

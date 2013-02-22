@@ -74,6 +74,7 @@ public class EditorUtil {
     );
     final JButton button = new JButton();
     button.setAction(new AbstractAction("...") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         Component root = SwingUtilities.getRoot(button);
         JFrame frame = (root instanceof JFrame ?
@@ -114,6 +115,7 @@ public class EditorUtil {
 
         final String pathToShow = shrinkPath.invoke(result.value.getPath());
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          @Override
           public void run() {
             SNodeAccessUtil.setProperty(sourceNode, propertyName, pathToShow);
           }

@@ -37,6 +37,7 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest4 {
       IOperationContext operationContext = editor.getCurrentEditorComponent().getOperationContext();
       EditorComponent inspector = operationContext.getComponent(InspectorTool.class).getInspector();
       EditorCell editorCell = inspector.getRootCell().getFirstLeaf(new Condition<EditorCell>() {
+        @Override
         public boolean met(EditorCell c) {
           return c instanceof EditorCell_Error;
         }

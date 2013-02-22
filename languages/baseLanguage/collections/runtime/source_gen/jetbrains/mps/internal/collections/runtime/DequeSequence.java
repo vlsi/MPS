@@ -20,79 +20,98 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
     super(deque);
   }
 
+  @Override
   public void addFirst(T t) {
     getDeque().addFirst(t);
   }
 
+  @Override
   public void addLast(T t) {
     getDeque().addLast(t);
   }
 
+  @Override
   public Iterator<T> descendingIterator() {
     return getDeque().descendingIterator();
   }
 
+  @Override
   public T getFirst() {
     return getDeque().getFirst();
   }
 
+  @Override
   public T getLast() {
     return getDeque().getLast();
   }
 
+  @Override
   public boolean offerFirst(T t) {
     return getDeque().offerFirst(t);
   }
 
+  @Override
   public boolean offerLast(T t) {
     return getDeque().offerLast(t);
   }
 
+  @Override
   public T peekFirst() {
     return getDeque().peekFirst();
   }
 
+  @Override
   public T peekLast() {
     return getDeque().peekLast();
   }
 
+  @Override
   public T pollFirst() {
     return getDeque().pollFirst();
   }
 
+  @Override
   public T pollLast() {
     return getDeque().pollLast();
   }
 
+  @Override
   public T pop() {
     return getDeque().pop();
   }
 
+  @Override
   public void push(T t) {
     getDeque().push(t);
   }
 
+  @Override
   public T removeFirst() {
     return getDeque().removeFirst();
   }
 
+  @Override
   public boolean removeFirstOccurrence(Object o) {
     return getDeque().removeFirstOccurrence(o);
   }
 
+  @Override
   public T removeLast() {
     return getDeque().removeLast();
   }
 
+  @Override
   public boolean removeLastOccurrence(Object o) {
     return getDeque().removeLastOccurrence(o);
   }
 
+  @Override
   public T addFirstElement(T t) {
     getDeque().addFirst(t);
     return t;
   }
 
+  @Override
   public T removeLastElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
       if (getDeque().isEmpty()) {
@@ -102,6 +121,7 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
     return getDeque().removeLast();
   }
 
+  @Override
   public T peekElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
       if (getDeque().isEmpty()) {
@@ -111,6 +131,7 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
     return getDeque().peek();
   }
 
+  @Override
   public T popElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
       if (getDeque().isEmpty()) {
@@ -120,6 +141,7 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
     return getDeque().pop();
   }
 
+  @Override
   public T pushElement(T t) {
     getDeque().push(t);
     return t;
@@ -150,6 +172,7 @@ public class DequeSequence<T> extends QueueSequence<T> implements Deque<T>, IDeq
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public Deque<T> toDeque() {
     return this;
   }

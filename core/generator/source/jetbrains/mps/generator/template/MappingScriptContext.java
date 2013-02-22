@@ -46,18 +46,22 @@ public class MappingScriptContext extends TemplateQueryContext {
     return myModel;
   }
 
+  @Override
   public SNode getInputNode() {
     return null;
   }
 
+  @Override
   public SModel getInputModel() {
     return myModel;
   }
 
+  @Override
   public SModel getOutputModel() {
     return myModel;
   }
 
+  @Override
   public SNode getTemplateNodeForLogging() {
     return myScript != null ? myScript :
       myScriptPointer != null ? myScriptPointer.resolve(MPSModuleRepository.getInstance()) : null;

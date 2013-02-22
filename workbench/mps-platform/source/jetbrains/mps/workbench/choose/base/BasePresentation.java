@@ -25,26 +25,32 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 
 public abstract class BasePresentation implements ItemPresentation {
+  @Override
   public String getPresentableText() {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         return doGetPresentableText();
       }
     });
   }
 
+  @Override
   @Nullable
   public String getLocationString() {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         return doGetLocationString();
       }
     });
   }
 
+  @Override
   @Nullable
   public Icon getIcon(boolean open) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+      @Override
       public Icon compute() {
         return doGetIcon();
       }

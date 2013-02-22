@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -15,12 +17,18 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlContent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_91idit_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_91idit_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_2133624044437631588", new Object[]{});
+  }
+
+  private static boolean renderingCondition_91idit_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
   }
 
   private EditorCell createAlternation_91idit_a0(EditorContext editorContext, SNode node) {
@@ -60,6 +68,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
+          @Override
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Error result = new EditorCell_Error(context, node, "<no content>");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
@@ -81,6 +90,7 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
+          @Override
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Error result = new EditorCell_Error(context, node, "<no content>");
             result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
@@ -93,13 +103,5 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     EditorCell editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("Custom_91idit_a0a_0");
     return editorCell;
-  }
-
-  private static boolean renderingCondition_91idit_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_2133624044437631588", new Object[]{});
-  }
-
-  private static boolean renderingCondition_91idit_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
   }
 }

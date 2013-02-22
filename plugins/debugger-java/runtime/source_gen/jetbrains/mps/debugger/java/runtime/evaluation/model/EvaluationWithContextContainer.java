@@ -245,6 +245,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     return !(myVariablesInitialized) || !(myIsInWatch);
   }
 
+  @Override
   public EvaluationWithContextContainer copy(final boolean isInWatch) {
     final SNodeReference reference = myNode;
     return new EvaluationWithContextContainer(myProject, myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>()), isInWatch) {
@@ -300,6 +301,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       myEvaluatorNode = evaluatorNode;
     }
 
+    @Override
     public SNode findVariable(final SReference variableReference) {
       SNode matchingVar = ListSequence.fromList(SLinkOperations.getTargets(myEvaluatorNode, "variables", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode variable) {
@@ -316,6 +318,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       return matchingVar;
     }
 
+    @Override
     public SNode createVariableReference(SNode variable) {
       SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", null);
       SLinkOperations.setTarget(newVariableReference, "baseVariableDeclaration", variable, false);

@@ -21,11 +21,11 @@ import jetbrains.mps.util.NameUtil;
 
 public class Quotation_quotedNode extends AbstractCellMenuComponent {
   public Quotation_quotedNode() {
-    super(new SubstituteInfoPartExt[]{new Quotation_quotedNode.Quotation_generic_cellMenu_a0()});
+    super(new SubstituteInfoPartExt[]{new Quotation_quotedNode.Quotation_generic_cellMenu_61vnku_a0()});
   }
 
-  public static class Quotation_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Group {
-    public Quotation_generic_cellMenu_a0() {
+  public static class Quotation_generic_cellMenu_61vnku_a0 extends AbstractCellMenuPart_Generic_Group {
+    public Quotation_generic_cellMenu_61vnku_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

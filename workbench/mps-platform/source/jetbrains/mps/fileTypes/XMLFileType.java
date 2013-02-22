@@ -35,21 +35,25 @@ public class XMLFileType extends LanguageFileType {
     myIcon = icon;
   }
 
+  @Override
   @NotNull
   public String getName() {
     return myName;
   }
 
+  @Override
   @NotNull
   public String getDescription() {
     return myDescription;
   }
 
+  @Override
   @NotNull
   public String getDefaultExtension() {
     return myDefaultExt;
   }
 
+  @Override
   public Icon getIcon() {
     return myIcon;
   }

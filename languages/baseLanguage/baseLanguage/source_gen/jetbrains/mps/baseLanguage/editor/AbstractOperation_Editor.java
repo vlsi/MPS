@@ -19,6 +19,7 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
+          @Override
           public EditorCell createEditorCell(EditorContext context) {
             return new EditorCell_Error(context, node, "<" + node.getRoleInParent() + ">");
           }

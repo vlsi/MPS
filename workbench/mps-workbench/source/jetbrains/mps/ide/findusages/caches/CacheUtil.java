@@ -32,6 +32,7 @@ class CacheUtil {
     final Set<VirtualFile> files = new HashSet<VirtualFile>();
 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         for (final SModule m : MPSModuleRepository.getInstance().getModules()) {
           for (String path : SModuleOperations.getIndexablePaths(m)) {

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.plugin.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.checkedName.PropertyReference;
@@ -27,7 +27,7 @@ public class ActionDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassFQName_1213877371952(SNode thisNode) {
-    return SNodeOperations.getModel(thisNode).getLongName() + "." + ActionDeclaration_Behavior.call_getGeneratedName_1213877371942(thisNode);
+    return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ActionDeclaration_Behavior.call_getGeneratedName_1213877371942(thisNode);
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
@@ -42,10 +42,10 @@ public class ActionDeclaration_Behavior {
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")) {
-      SNode baseActionType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)", "~BaseAction"), "virtual_getThisType_7405920559687254782", new Object[]{});
+      SNode baseActionType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNode("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)", "~BaseAction"), "virtual_getThisType_7405920559687254782", new Object[]{});
       Iterable<SNode> methods = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(baseActionType)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+          return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         }
       });
       return Scopes.forMethods(kind, new MethodsScope(baseActionType, methods), ScopeUtils.lazyParentScope(thisNode, kind));

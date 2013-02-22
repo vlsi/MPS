@@ -14,6 +14,7 @@ import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -28,7 +29,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Module_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -39,8 +39,8 @@ public class Module_Editor extends DefaultNodeEditor {
     return this.createCollection_iuuvkg_a_0(editorContext, node);
   }
 
-  public static class Module_generic_cellMenu_a0b0 extends AbstractCellMenuPart_Generic_Group {
-    public Module_generic_cellMenu_a0b0() {
+  public static class Module_generic_cellMenu_iuuvkg_a0b0 extends AbstractCellMenuPart_Generic_Group {
+    public Module_generic_cellMenu_iuuvkg_a0b0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -67,6 +67,10 @@ public class Module_Editor extends DefaultNodeEditor {
     public String getMatchingText_internal(IModule parameterObject) {
       return parameterObject.getModuleReference().getModuleFqName();
     }
+  }
+
+  private static boolean renderingCondition_iuuvkg_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "pluginXml", true) != null);
   }
 
   private EditorCell createCollection_iuuvkg_a(EditorContext editorContext, SNode node) {
@@ -337,7 +341,7 @@ public class Module_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new Module_Editor.Module_generic_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new Module_Editor.Module_generic_cellMenu_iuuvkg_a0b0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -420,9 +424,5 @@ public class Module_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_iuuvkg_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "pluginXml", true) != null);
   }
 }

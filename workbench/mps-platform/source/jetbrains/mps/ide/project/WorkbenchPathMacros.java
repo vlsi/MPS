@@ -33,11 +33,11 @@ import com.intellij.openapi.util.AsyncResult.Handler;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.PathMacrosProvider;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkEvent.EventType;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -80,9 +80,11 @@ public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProv
   @Override
   public void report(String message, String macro) {
     Notifications.Bus.notify(new Notification(Notifications.SYSTEM_MESSAGES_GROUP_ID, "Undefined macro", macro + " <html><a href=''>fix...</a></html>", NotificationType.ERROR, new NotificationListener() {
+      @Override
       public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent event) {
         if (event.getEventType() != EventType.ACTIVATED) return;
         DataManager.getInstance().getDataContextFromFocus().doWhenDone(new Handler<DataContext>() {
+          @Override
           public void run(DataContext dataContext) {
             Project project = PlatformDataKeys.PROJECT.getData(dataContext);
 

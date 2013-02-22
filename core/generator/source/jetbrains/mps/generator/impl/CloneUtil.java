@@ -49,9 +49,9 @@ public class CloneUtil {
   }
 
   public static void cloneModel(SModel inputModel, SModel outputModel, boolean originalInput) {
-    for (SNode node : inputModel.roots()) {
+    for (SNode node : inputModel.getRootNodes()) {
       SNode outputNode = clone(node, outputModel, originalInput);
-      outputModel.addRoot(outputNode);
+      outputModel.addRootNode(outputNode);
     }
   }
 
@@ -68,8 +68,8 @@ public class CloneUtil {
       TracingUtil.putInputNode(outputNode, inputNode);
     }
     for (SReference reference : inputNode.getReferences()) {
-      boolean ext = inputNode.getModel() == null || !inputNode.getModel().getSModelReference().equals(reference.getTargetSModelReference());
-      SModelReference targetModelReference = ext ? reference.getTargetSModelReference() : outputModel.getSModelReference();
+      boolean ext = inputNode.getModel() == null || !inputNode.getModel().getReference().equals(reference.getTargetSModelReference());
+      SModelReference targetModelReference = ext ? reference.getTargetSModelReference() : (SModelReference) outputModel.getReference();
       if (reference instanceof StaticReference) {
         if (targetModelReference == null) {
           LOG.warning("broken reference '" + reference.getRole() + "' in " + SNodeUtil.getDebugText(inputNode), inputNode);

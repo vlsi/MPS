@@ -13,22 +13,27 @@ public class NullQueueSequence<T> extends NullCollectionSequence<T> implements I
   protected NullQueueSequence() {
   }
 
+  @Override
   public T addLastElement(T t) {
     return null;
   }
 
+  @Override
   public T first() {
     return null;
   }
 
+  @Override
   public T removeFirstElement() {
     return null;
   }
 
+  @Override
   public IQueueSequence<T> addSequence(ISequence<? extends T> seq) {
     return this;
   }
 
+  @Override
   public IQueueSequence<T> removeSequence(ISequence<? extends T> seq) {
     return this;
   }
@@ -48,26 +53,32 @@ public class NullQueueSequence<T> extends NullCollectionSequence<T> implements I
     return this;
   }
 
+  @Override
   public Queue<T> toQueue() {
     return this;
   }
 
+  @Override
   public T element() {
     return null;
   }
 
+  @Override
   public boolean offer(T o) {
     return false;
   }
 
+  @Override
   public T peek() {
     return null;
   }
 
+  @Override
   public T poll() {
     return null;
   }
 
+  @Override
   public T remove() {
     return null;
   }

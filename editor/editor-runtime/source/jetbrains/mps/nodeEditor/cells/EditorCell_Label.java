@@ -887,6 +887,10 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
   private class ClearSelection extends AbstractCellAction {
 
+    @Override
+    public boolean canExecute(EditorContext context) {
+      return myTextLine.hasNonTrivialSelection();
+    }
 
     @Override
     public void execute(EditorContext context) {

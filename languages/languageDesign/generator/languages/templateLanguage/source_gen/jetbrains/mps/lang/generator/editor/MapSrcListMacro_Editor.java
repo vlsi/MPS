@@ -37,10 +37,10 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     return this.createCollection_pr8n4z_a(editorContext, node);
   }
 
-  public static class MapSrcListMacro_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
+  public static class MapSrcListMacro_component_cellMenu_pr8n4z_a0a0 implements SubstituteInfoPartExt {
     private replace_node_macro myComponent;
 
-    public MapSrcListMacro_component_cellMenu_a0a0() {
+    public MapSrcListMacro_component_cellMenu_pr8n4z_a0a0() {
       this.myComponent = new replace_node_macro();
     }
 
@@ -313,7 +313,7 @@ public class MapSrcListMacro_Editor extends DefaultNodeEditor {
     }
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MapSrcListMacro_Editor.MapSrcListMacro_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MapSrcListMacro_Editor.MapSrcListMacro_component_cellMenu_pr8n4z_a0a0()}));
     return editorCell;
   }
 

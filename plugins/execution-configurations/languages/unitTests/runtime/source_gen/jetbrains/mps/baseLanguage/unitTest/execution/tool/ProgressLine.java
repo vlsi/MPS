@@ -36,6 +36,7 @@ public class ProgressLine extends JPanel implements TestView {
     init();
   }
 
+  @Override
   public void update() {
     if (myState.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(myState.getKey())) {
       return;
@@ -52,6 +53,7 @@ public class ProgressLine extends JPanel implements TestView {
     });
   }
 
+  @Override
   public void init() {
   }
 
@@ -88,6 +90,7 @@ public class ProgressLine extends JPanel implements TestView {
       @Override
       public void processTerminated(ProcessEvent p0) {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
           public void run() {
             if (!(myTestsBuilt) && myProgressBar.getFraction() == 0.0) {
               myProgressBar.setColor(ColorProgressBar.RED);

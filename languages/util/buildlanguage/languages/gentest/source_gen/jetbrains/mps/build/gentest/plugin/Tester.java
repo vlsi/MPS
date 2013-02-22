@@ -25,6 +25,7 @@ public class Tester implements ITestResource {
     this.testClasses = testClasses;
   }
 
+  @Override
   public List<String> buildCommandLine() {
     List<String> cmdline = ListSequence.fromList(new ArrayList<String>());
     ListSequence.fromList(cmdline).addElement(JavaEnvUtils.getJreExecutable("java"));
@@ -54,10 +55,12 @@ public class Tester implements ITestResource {
     return (Set<String>) JavaModuleOperations.collectExecuteClasspath(Collections.<SModule>singleton(module));
   }
 
+  @Override
   public String describe() {
     return "Testing " + module.getModuleName();
   }
 
+  @Override
   public SModule getModule() {
     return module;
   }
