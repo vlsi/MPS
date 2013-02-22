@@ -6,15 +6,15 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bash.behavior.CommandList_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.editor.runtime.style.CaretPosition;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
@@ -23,14 +23,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class CommandList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_yxeg41_a(editorContext, node);
-  }
-
-  private static boolean renderingCondition_yxeg41_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (CommandList_Behavior.call_isBaseCommandExists_3905757829894475414(node) || (SLinkOperations.getTarget(node, "comment", true) == null));
-  }
-
-  private static boolean renderingCondition_yxeg41_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "comment", true) != null);
   }
 
   private EditorCell createCollection_yxeg41_a(EditorContext editorContext, SNode node) {
@@ -53,14 +45,8 @@ public class CommandList_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_yxeg41_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_yxeg41_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createRefNode_yxeg41_a1a(editorContext, node));
-    return editorCell;
+  private static boolean renderingCondition_yxeg41_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return (CommandList_Behavior.call_isBaseCommandExists_3905757829894475414(node) || (SLinkOperations.getTarget(node, "comment", true) == null));
   }
 
   private EditorCell createRefNode_yxeg41_a0a(EditorContext editorContext, SNode node) {
@@ -104,6 +90,20 @@ public class CommandList_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createCollection_yxeg41_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_yxeg41_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createRefNode_yxeg41_a1a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_yxeg41_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "comment", true) != null);
   }
 
   private EditorCell createRefNode_yxeg41_a1a(EditorContext editorContext, SNode node) {

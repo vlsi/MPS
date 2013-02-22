@@ -40,8 +40,8 @@ public class SModelEventProcessor {
 
   private ModelProvider myModelProvider;
 
-  public SModelEventProcessor(ModelProvider registry) {
-    myModelProvider = registry;
+  public SModelEventProcessor(ModelProvider modelProvider) {
+    myModelProvider = modelProvider;
   }
 
   public void process(Collection<? extends SModelEvent> events) {
@@ -57,15 +57,15 @@ public class SModelEventProcessor {
   }
 
   private void processAffected(SModelReference mref, Collection<NodePath> nodePaths) {
-    ReloadableModel psiModel = myModelProvider.lookupModel(mref);
-    if (psiModel == null) return;
+    ReloadableModel model = myModelProvider.lookupModel(mref);
+    if (model == null) return;
 
     for (NodePath nodePath : nodePaths) {
       if (nodePath.isEmpty()) {
-        psiModel.reloadAll();
+        model.reloadAll();
       } else {
         SNodeId nodeId = nodePath.leaf();
-        psiModel.reload(nodeId);
+        model.reload(nodeId);
       }
     }
   }
@@ -87,7 +87,10 @@ public class SModelEventProcessor {
     @Override
     protected void invalidateNode(SNode sNode) {
       NodePath affPath = NodePath.forSNode(sNode);
-      SModelReference mref = sNode.getContainingModel().getReference();
+      SModel containingModel = sNode.getContainingModel();
+      if (containingModel == null) return;
+
+      SModelReference mref = containingModel.getReference();
       List<NodePath> nodePaths = nodePaths(mref);
       ListIterator<NodePath> npathIt = nodePaths.listIterator();
       while (npathIt.hasNext()) {

@@ -717,23 +717,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = true;
   }
 
-  private void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
-    synchronized (this) {
-      registerInModel(outputRoot, inputNode, templateNode);
-      myNewToOldRoot.put(outputRoot, inputNode);
-      myDependenciesBuilder.registerRoot(outputRoot, inputNode);
-      if (isCopied) {
-        getGeneratorSessionContext().registerCopiedRoot(outputRoot);
-      }
+  protected void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
+    myOutputRoots.add(outputRoot);
+    myNewToOldRoot.put(outputRoot, inputNode);
+    myDependenciesBuilder.registerRoot(outputRoot, inputNode);
+    if (isCopied) {
+      getGeneratorSessionContext().registerCopiedRoot(outputRoot);
     }
   }
 
   void rootReplaced(SNode old, SNode new_) {
     myDependenciesBuilder.rootReplaced(old, new_);
-  }
-
-  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodeReference templateNode) {
-    myOutputRoots.add(outputRoot);
   }
 
   public SNode getOriginalRootByGenerated(SNode root) {

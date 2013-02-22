@@ -6,14 +6,19 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -22,11 +27,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -35,18 +35,6 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5rturt_a_0(editorContext, node);
-  }
-
-  private static boolean renderingCondition_5rturt_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "multiLine");
-  }
-
-  private static boolean renderingCondition_5rturt_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "dotAll");
-  }
-
-  private static boolean renderingCondition_5rturt_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "caseInsensitive");
   }
 
   private EditorCell createCollection_5rturt_a(EditorContext editorContext, SNode node) {
@@ -67,30 +55,6 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_5rturt_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_5rturt_a_0");
-    editorCell.addEditorCell(this.createConstant_5rturt_a0_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5rturt_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_d0_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_e0_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5rturt_f0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_g0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_h0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_i0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_j0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_5rturt_k0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_l0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_m0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_n0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_o0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_p0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5rturt_q0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_5rturt_r0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createConstant_5rturt_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_5rturt_a0");
@@ -99,6 +63,23 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_5rturt_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("regexp");
+    provider.setNoTargetText("<no regexp>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
@@ -125,6 +106,10 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_5rturt_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "multiLine");
+  }
+
   private EditorCell createConstant_5rturt_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "s");
     editorCell.setCellId("Constant_5rturt_e0");
@@ -137,6 +122,10 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_5rturt_a4a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "dotAll");
+  }
+
   private EditorCell createConstant_5rturt_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "i");
     editorCell.setCellId("Constant_5rturt_f0");
@@ -146,6 +135,34 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     InlineRegexpExpression_removeI.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_5rturt_a5a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "caseInsensitive");
+  }
+
+  private EditorCell createCollection_5rturt_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_5rturt_a_0");
+    editorCell.addEditorCell(this.createConstant_5rturt_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5rturt_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_d0_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_e0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5rturt_f0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_i0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_j0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_5rturt_k0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_l0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_m0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_n0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_o0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_p0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5rturt_q0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_5rturt_r0(editorContext, node));
     return editorCell;
   }
 
@@ -166,6 +183,27 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createProperty_5rturt_c0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("caseInsensitive");
+    provider.setNoTargetText("<no caseInsensitive>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_caseInsensitive");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private EditorCell createConstant_5rturt_d0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5rturt_d0_0");
@@ -180,6 +218,27 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Dot all (/s) : ");
     editorCell.setCellId("Constant_5rturt_e0_0");
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_5rturt_f0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("dotAll");
+    provider.setNoTargetText("<no dotAll>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_dotAll");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
@@ -218,6 +277,27 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Multiline mode (/m) : ");
     editorCell.setCellId("Constant_5rturt_j0");
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_5rturt_k0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("multiLine");
+    provider.setNoTargetText("<no multiLine>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_multiLine");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
@@ -298,86 +378,6 @@ public class InlineRegexpExpression_Editor extends DefaultNodeEditor {
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_5rturt_r0");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_5rturt_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("regexp");
-    provider.setNoTargetText("<no regexp>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_5rturt_c0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("caseInsensitive");
-    provider.setNoTargetText("<no caseInsensitive>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_caseInsensitive");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_5rturt_f0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("dotAll");
-    provider.setNoTargetText("<no dotAll>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_dotAll");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_5rturt_k0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("multiLine");
-    provider.setNoTargetText("<no multiLine>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_multiLine");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
     return editorCell;
   }
 }

@@ -101,7 +101,7 @@ public class MoveConcepts_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      if (!(this.init(_params))) {
+      if (!(MoveConcepts_Action.this.init(_params))) {
         return;
       }
       final SModelReference targetModel;

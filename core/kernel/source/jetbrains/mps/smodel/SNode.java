@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.SModelScope;
-import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -36,6 +34,7 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -230,7 +229,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
     for (SNode child = firstChild; child != null; child = child.nextSibling()) {
-      if (role.equals(child.getRoleInParent())) {
+      // Note: accessing through child.getRoleInParent() reports excess node read access
+      if (role.equals(child.myRoleInParent)) {
         result.add(child);
         child.fireNodeReadAccess();
         fireNodeChildReadAccess(role, child);
@@ -903,7 +903,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private void enforceModelLoad() {
-    if (myModel == null) return;
+    if (myModel == null || parent != null) return;
     if (!myModel.isRoot(this)) return;
     myModel.enforceFullLoad();
   }

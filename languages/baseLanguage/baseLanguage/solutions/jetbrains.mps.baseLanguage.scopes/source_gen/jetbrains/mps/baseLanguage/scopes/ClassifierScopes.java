@@ -100,7 +100,7 @@ public class ClassifierScopes {
 
   public static Scope getAnnotationClassifiersScope(@NotNull final SNode contextNode, @NotNull IScope scope) {
     SNode clas = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, false);
-    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.Annotation"));
+    return filterVisibleClassifiersScope(contextNode, new ClassifiersScope(SNodeOperations.getModel(contextNode), clas, "jetbrains.mps.baseLanguage.structure.Annotation", true, scope));
   }
 
   public static Scope getThrowablesScope(@NotNull SNode contextNode, @NotNull IScope scope) {

@@ -26,6 +26,10 @@ import com.intellij.psi.PsiElement;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
+import com.intellij.psi.impl.PsiManagerImpl;
+import com.intellij.psi.impl.PsiModificationTrackerImpl;
+import com.intellij.psi.impl.PsiTreeChangeEventImpl;
+import com.intellij.psi.util.PsiModificationTracker;
 import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.file.impl.FileManager;
@@ -58,6 +62,7 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
 
   // TODO softReference..
   ConcurrentMap<SModelReference, MPSPsiModel> models = new ConcurrentHashMap<SModelReference, MPSPsiModel>();
+  private final PsiModificationTrackerImpl myModificationTracker;
 
   public static MPSPsiProvider getInstance(@NotNull Project project) {
     return project.getComponent(MPSPsiProvider.class);
@@ -69,6 +74,7 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       myEventProcessor.process(events);
 
+
       // TODO PsiModificationTrackerImpl.incCounter/incOutOfCodeBlockModificationCounter (see JavaCodeBlockModificationListener)
       // TODO notify ANY_PSI_CHANGE_TOPIC
     }
@@ -79,6 +85,8 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
   protected MPSPsiProvider(Project project) {
     super(project);
     myEventProcessor = createEventProcessor();
+    PsiManager psiManager = PsiManagerEx.getInstance(project);
+    this.myModificationTracker = (PsiModificationTrackerImpl) psiManager.getModificationTracker();
   }
 
   public void initComponent() {
@@ -164,19 +172,42 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
       @Override
       public ReloadableModel lookupModel(SModelReference modelReference) {
         final MPSPsiModel psiModel = models.get(modelReference);
+        if (psiModel == null) return null;
+
         return new ReloadableModel() {
           @Override
           public void reload(SNodeId sNodeId) {
-            psiModel.reload(sNodeId);
+            MPSPsiNode psiNode = psiModel.reload(sNodeId);
+            notifyPsiChanged(psiModel, psiNode);
           }
 
           @Override
           public void reloadAll() {
             psiModel.reloadAll();
+            notifyPsiChanged(psiModel, null);
           }
         };
       }
     });
+  }
+
+  private void notifyPsiChanged(MPSPsiModel model, MPSPsiNodeBase node) {
+    PsiManager manager = model.getManager();
+    if (manager == null || !(manager instanceof PsiManagerImpl)) return;
+
+    PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
+    event.setParent(node != null ? node : model);
+    event.setFile(model);
+    event.setOffset(0);
+    event.setOldLength(0);
+    event.setGeneric(false);
+
+    // TODO: this is a dumb straightforward solution, better use beforeChage*. Or not?
+    manager.dropResolveCaches();
+
+    ((PsiManagerImpl)manager).childrenChanged(event);
+
+    myModificationTracker.incCounter();
   }
 
   private class PsiFileEditorDataProvider implements FileEditorDataProvider {

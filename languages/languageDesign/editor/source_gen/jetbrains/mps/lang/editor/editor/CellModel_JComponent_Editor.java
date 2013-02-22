@@ -6,10 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -24,6 +24,16 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
     return this.createCollection_vo2134_a(editorContext, node);
   }
 
+  private EditorCell createConstant_vo2134_a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$swing component$");
+    editorCell.setCellId("Constant_vo2134_a");
+    Style style = new StyleImpl();
+    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createCollection_vo2134_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_vo2134_a");
@@ -36,16 +46,6 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_vo2134_a0");
     editorCell.addEditorCell(this.createConstant_vo2134_a0a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_vo2134_b0a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_vo2134_a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$swing component$");
-    editorCell.setCellId("Constant_vo2134_a");
-    Style style = new StyleImpl();
-    Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 

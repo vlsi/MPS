@@ -6,18 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -26,15 +14,67 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class IndexedTupleType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kdtlb1_a(editorContext, node);
+  }
+
+  private EditorCell createCollection_kdtlb1_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_kdtlb1_a");
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_kdtlb1_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_kdtlb1_b0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_kdtlb1_c0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_kdtlb1_a0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getLeftBracket_1262430001741497978", new Object[]{});
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ReadOnlyModelAccessor_kdtlb1_a0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyLeftBracket(style, editorCell);
+    style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_kdtlb1_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new IndexedTupleType_Editor.componentTypeListHandler_kdtlb1_b0(node, "componentType", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_componentType");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
   }
 
   private static class componentTypeListHandler_kdtlb1_b0 extends RefNodeListHandler {
@@ -96,38 +136,6 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createCollection_kdtlb1_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_kdtlb1_a");
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_kdtlb1_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_kdtlb1_b0(editorContext, node));
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_kdtlb1_c0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createReadOnlyModelAccessor_kdtlb1_a0(final EditorContext editorContext, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-      public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getLeftBracket_1262430001741497978", new Object[]{});
-      }
-
-      public void setText(String s) {
-      }
-
-      public boolean isValidText(String s) {
-        return EqualUtil.equals(s, getText());
-      }
-    }, node);
-    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_kdtlb1_a0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftBracket(style, editorCell);
-    style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.DARK_BLUE);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-
   private EditorCell createReadOnlyModelAccessor_kdtlb1_c0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
@@ -148,14 +156,6 @@ public class IndexedTupleType_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.DARK_BLUE);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_kdtlb1_b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new IndexedTupleType_Editor.componentTypeListHandler_kdtlb1_b0(node, "componentType", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_componentType");
-    editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 }

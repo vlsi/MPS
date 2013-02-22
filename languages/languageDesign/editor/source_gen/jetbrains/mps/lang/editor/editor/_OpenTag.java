@@ -6,7 +6,6 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
@@ -16,6 +15,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import java.awt.Color;
 
 public class _OpenTag extends AbstractCellProvider {
   public _OpenTag(SNode node) {
@@ -34,10 +34,6 @@ public class _OpenTag extends AbstractCellProvider {
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
-  }
-
-  private static Color _StyleParameter_QueryFunction_mtiojs_a0a(EditorContext editorContext, SNode node) {
-    return _EditorUtil.grayIfNotSelectable(node);
   }
 
   private EditorCell createReadOnlyModelAccessor_mtiojs_a(final EditorContext editorContext, final SNode node) {
@@ -67,5 +63,9 @@ public class _OpenTag extends AbstractCellProvider {
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
+  }
+
+  private static Color _StyleParameter_QueryFunction_mtiojs_a0a(EditorContext editorContext, SNode node) {
+    return _EditorUtil.grayIfNotSelectable(node);
   }
 }

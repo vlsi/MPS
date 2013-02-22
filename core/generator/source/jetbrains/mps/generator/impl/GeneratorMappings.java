@@ -26,6 +26,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.*;
@@ -42,7 +44,7 @@ public class GeneratorMappings {
   private final ConcurrentMap<String, Map<SNode, Object>> myMappingNameAndInputNodeToOutputNodeMap = new ConcurrentHashMap<String, Map<SNode, Object>>();
 
   /* input -> output */
-  private final Map<SNode, Object> myCopiedOutputNodeForInputNode;
+  private final ConcurrentMap<SNode, Object> myCopiedOutputNodeForInputNode;
 
   /* Object means multiple nodes for the template */
   private final ConcurrentMap<SNode, Object> myTemplateNodeToOutputNodeMap = new ConcurrentHashMap<SNode, Object>();
@@ -57,20 +59,19 @@ public class GeneratorMappings {
   private final ConcurrentMap<Pair<String, SNode>, SNode> myTemplateNodeIdAndInputNodeToOutputNodeMap = new ConcurrentHashMap<Pair<String, SNode>, SNode>();
 
   public GeneratorMappings(int numberOfNodesInModel) {
-    /* we use non-default load factor to reduce memory usage */
-    myCopiedOutputNodeForInputNode = new ConcurrentHashMap<SNode, Object>(numberOfNodesInModel, 2);
+    myCopiedOutputNodeForInputNode = new ConcurrentHashMap<SNode, Object>(numberOfNodesInModel / 4);
   }
 
   // add methods
 
   void addOutputNodeByTemplateNode(SNode templateNode, @NotNull SNode outputNode) {
-    if(myTemplateNodeToOutputNodeMap.putIfAbsent(templateNode, outputNode) != null) {
+    if (myTemplateNodeToOutputNodeMap.putIfAbsent(templateNode, outputNode) != null) {
       myTemplateNodeToOutputNodeMap.put(templateNode, this);
     }
   }
 
   void addOutputNodeByTemplateNode(String templateNodeId, @NotNull SNode outputNode) {
-    if(myTemplateNodeIdToOutputNodeMap.putIfAbsent(templateNodeId, outputNode) != null) {
+    if (myTemplateNodeIdToOutputNodeMap.putIfAbsent(templateNodeId, outputNode) != null) {
       myTemplateNodeIdToOutputNodeMap.put(templateNodeId, this);
     }
   }
@@ -88,7 +89,7 @@ public class GeneratorMappings {
         currentMapping.put(inputNode, outputNode);
       } else if (o instanceof List) {
         ((List<SNode>) o).add(outputNode);
-      } else if(o != outputNode) {
+      } else if (o != outputNode) {
         List<SNode> list = new ArrayList<SNode>(4);
         list.add((SNode) o);
         list.add(outputNode);
@@ -103,19 +104,11 @@ public class GeneratorMappings {
     if (outputNode == null) {
       return;
     }
-    synchronized (inputNode) {
-      Object o = myCopiedOutputNodeForInputNode.get(inputNode);
-      if (o == null) {
-        myCopiedOutputNodeForInputNode.put(inputNode, outputNode);
-      } else if (o instanceof List) {
-        //((List<SNode>) o).add(outputNode);
-      } else {
-        //List<SNode> list = new ArrayList<SNode>(2);
-        //list.add((SNode) o);
-        //list.add(outputNode);
-        //myCopiedOutputNodeForInputNode.put(inputNode, list);
-        myCopiedOutputNodeForInputNode.put(inputNode, Collections.singletonList((SNode)o));
-      }
+
+    Object prev = myCopiedOutputNodeForInputNode.putIfAbsent(inputNode, outputNode);
+    if (prev != null && prev instanceof SNode) {
+      // ambiguity! store prev element (wrapped into Collection)
+      myCopiedOutputNodeForInputNode.put(inputNode, Collections.singletonList(prev));
     }
   }
 
@@ -134,7 +127,7 @@ public class GeneratorMappings {
     if (templateNodeId == null) return;
     myTemplateNodeIdAndInputNodeToOutputNodeMap.put(new Pair(templateNodeId, inputNode), outputNode);
   }
-  
+
   void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
@@ -220,7 +213,7 @@ public class GeneratorMappings {
   public void export(TransientModelWithMetainfo model, DependenciesBuilder builder) {
     for (Entry<String, Map<SNode, Object>> o : myMappingNameAndInputNodeToOutputNodeMap.entrySet()) {
       String label = o.getKey();
-      for(Entry<SNode, Object> i : o.getValue().entrySet()) {
+      for (Entry<SNode, Object> i : o.getValue().entrySet()) {
         SNode inputNode = i.getKey();
         SNode originalRoot = inputNode == null ? null : builder.getOriginalForInput(inputNode.getContainingRoot());
         MappingsMemento mappingsMemento = model.getMappingsMemento(originalRoot, true);
@@ -231,14 +224,14 @@ public class GeneratorMappings {
     for (Entry<SNode, Object> o : myCopiedOutputNodeForInputNode.entrySet()) {
       SNode inputNode = o.getKey();
       Object value = o.getValue();
-      if(value instanceof SNode) {
+      if (value instanceof SNode) {
         SNodeId targetId = ((SNode) value).getNodeId();
-        if(inputNode.getNodeId().equals(targetId)) {
+        if (inputNode.getNodeId().equals(targetId)) {
           continue; /* trivial */
         }
         MappingsMemento mappingsMemento = model.getMappingsMemento(builder.getOriginalForInput(inputNode.getContainingRoot()), true);
         mappingsMemento.addOutputNodeByInputNode(inputNode.getNodeId(), targetId, true);
-      } else if(value instanceof List) {
+      } else if (value instanceof List) {
         SNodeId targetId = ((List<SNode>) value).get(0).getNodeId();
         MappingsMemento mappingsMemento = model.getMappingsMemento(builder.getOriginalForInput(inputNode.getContainingRoot()), true);
         mappingsMemento.addOutputNodeByInputNode(inputNode.getNodeId(), targetId, false);
@@ -249,33 +242,33 @@ public class GeneratorMappings {
   public void importPersisted(MappingsMemento val, SModel inputModel, SModel outputModel) throws BrokenCacheException {
 
     // labels
-    for(Entry<String, Map<SNodeId, Object>> e : val.getMappingNameAndInputNodeToOutputNodeMap().entrySet()) {
+    for (Entry<String, Map<SNodeId, Object>> e : val.getMappingNameAndInputNodeToOutputNodeMap().entrySet()) {
       String mappingName = e.getKey();
       Map<SNode, Object> currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
       if (currentMapping == null) {
         myMappingNameAndInputNodeToOutputNodeMap.putIfAbsent(mappingName, new HashMap<SNode, Object>());
         currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
       }
-      for(Entry<SNodeId,Object> n : e.getValue().entrySet()) {
+      for (Entry<SNodeId, Object> n : e.getValue().entrySet()) {
         SNodeId key = n.getKey();
         SNode inputNode = null;
-        if(key != null) {
+        if (key != null) {
           inputNode = inputModel.getNode(key);
-          if(inputNode == null) {
+          if (inputNode == null) {
             continue;
           }
         }
         Object value = n.getValue();
-        if(value instanceof SNodeId) {
+        if (value instanceof SNodeId) {
           SNode outputNode = outputModel.getNode((SNodeId) value);
-          if(outputNode == null) {
+          if (outputNode == null) {
             continue;
           }
           addOutputNode(currentMapping, inputNode, outputNode);
-        } else if(value instanceof List) {
-          for(SNodeId id : (List<SNodeId>)value) {
+        } else if (value instanceof List) {
+          for (SNodeId id : (List<SNodeId>) value) {
             SNode outputNode = outputModel.getNode(id);
-            if(outputNode == null) {
+            if (outputNode == null) {
               continue;
             }
             addOutputNode(currentMapping, inputNode, outputNode);
@@ -285,21 +278,21 @@ public class GeneratorMappings {
     }
 
     // output for input
-    for(Entry<SNodeId, Object> e : val.getCopiedOutputNodeForInputNode().entrySet()) {
+    for (Entry<SNodeId, Object> e : val.getCopiedOutputNodeForInputNode().entrySet()) {
       SNode inputNode = inputModel.getNode(e.getKey());
-      if(inputNode == null) {
+      if (inputNode == null) {
         continue;
       }
       Object value = e.getValue();
-      if(value instanceof SNodeId) {
+      if (value instanceof SNodeId) {
         SNode outputNode = outputModel.getNode((SNodeId) value);
-        if(outputNode == null) {
+        if (outputNode == null) {
           continue;
         }
         myCopiedOutputNodeForInputNode.put(inputNode, outputNode);
-      } else if(value instanceof List) {
+      } else if (value instanceof List) {
         SNode outputNode = outputModel.getNode(((List<SNodeId>) value).get(0));
-        if(outputNode == null) {
+        if (outputNode == null) {
           continue;
         }
         myCopiedOutputNodeForInputNode.put(inputNode, Collections.singletonList(outputNode));
@@ -313,7 +306,7 @@ public class GeneratorMappings {
       currentMapping.put(inputNode, outputNode);
     } else if (o instanceof List) {
       ((List<SNode>) o).add(outputNode);
-    } else if(o != outputNode) {
+    } else if (o != outputNode) {
       List<SNode> list = new ArrayList<SNode>(4);
       list.add((SNode) o);
       list.add(outputNode);

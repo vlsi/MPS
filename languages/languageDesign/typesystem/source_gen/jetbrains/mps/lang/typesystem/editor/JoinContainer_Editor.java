@@ -35,17 +35,17 @@ public class JoinContainer_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_csx0sa_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_csx0sa_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createAttributedNodeCell_csx0sa_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
+    return editorCell;
+  }
+
+  private EditorCell createConstant_csx0sa_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    editorCell.setCellId("Constant_csx0sa_c0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 

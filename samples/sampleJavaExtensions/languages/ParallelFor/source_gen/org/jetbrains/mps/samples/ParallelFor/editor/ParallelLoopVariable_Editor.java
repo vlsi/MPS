@@ -6,29 +6,25 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent;
-import jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Initializer_Actions;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.baseLanguage.editor.VariableDeclaration_RemoveFinalOnDelete;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent;
+import jetbrains.mps.baseLanguage.editor.LocalVariableDeclaration_Initializer_Actions;
 
 public class ParallelLoopVariable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_d89sde_a(editorContext, node);
-  }
-
-  private static boolean renderingCondition_d89sde_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
   private EditorCell createCollection_d89sde_a(EditorContext editorContext, SNode node) {
@@ -42,13 +38,6 @@ public class ParallelLoopVariable_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_d89sde_c0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new VariableDeclaration_NameCellComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, editorContext);
-    return editorCell;
-  }
-
   private EditorCell createConstant_d89sde_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_d89sde_a0");
@@ -58,6 +47,10 @@ public class ParallelLoopVariable_Editor extends DefaultNodeEditor {
     VariableDeclaration_RemoveFinalOnDelete.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_d89sde_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isFinal");
   }
 
   private EditorCell createRefNode_d89sde_b0(EditorContext editorContext, SNode node) {
@@ -74,6 +67,13 @@ public class ParallelLoopVariable_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createComponent_d89sde_c0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new VariableDeclaration_NameCellComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    LocalVariableDeclaration_Initializer_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 }

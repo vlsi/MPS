@@ -6,38 +6,18 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 
 public class BinaryOperationReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_mfrs1f_a(editorContext, node);
-  }
-
-  public static class _Inline_mfrs1f_a0a extends InlineCellProvider {
-    public _Inline_mfrs1f_a0a() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createComponent_mfrs1f_a0a0(editorContext, node);
-    }
-
-    private EditorCell createComponent_mfrs1f_a0a0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new AliasEditorComponent(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
-      return editorCell;
-    }
   }
 
   private EditorCell createCollection_mfrs1f_a(EditorContext editorContext, SNode node) {
@@ -63,5 +43,25 @@ public class BinaryOperationReference_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  public static class _Inline_mfrs1f_a0a extends InlineCellProvider {
+    public _Inline_mfrs1f_a0a() {
+      super();
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createComponent_mfrs1f_a0a0(editorContext, node);
+    }
+
+    private EditorCell createComponent_mfrs1f_a0a0(EditorContext editorContext, SNode node) {
+      AbstractCellProvider provider = new AliasEditorComponent(node);
+      EditorCell editorCell = provider.createEditorCell(editorContext);
+      return editorCell;
+    }
   }
 }

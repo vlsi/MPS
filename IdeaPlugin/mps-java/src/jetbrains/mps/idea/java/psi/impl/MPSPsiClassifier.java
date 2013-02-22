@@ -47,8 +47,8 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
 
   public MPSPsiClassifier(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
-    addChild(null, new MPSPsiMethodModifierList());
-//    addChild(null, new MPSPsiTypeParamList());
+    addChildLast(new MPSPsiMethodModifierList());
+//    addChildLast(null, new MPSPsiTypeParamList());
   }
 
   @Nullable
@@ -63,17 +63,17 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
 
   @Override
   public boolean isInterface() {
-    return false;
+    return "jetbrains.mps.baseLanguage.structure.Interface".equals(getConcept());
   }
 
   @Override
   public boolean isAnnotationType() {
-    return false;
+    return "jetbrains.mps.baseLanguage.structure.Annotation".equals(getConcept());
   }
 
   @Override
   public boolean isEnum() {
-    return false;
+    return "jetbrains.mps.baseLanguage.structure.EnumClass".equals(getConcept());
   }
 
   @Override

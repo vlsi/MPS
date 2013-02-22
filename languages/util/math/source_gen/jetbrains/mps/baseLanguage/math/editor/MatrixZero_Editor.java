@@ -6,19 +6,19 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.editor.runtime.style.ScriptKind;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.ScriptKind;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class MatrixZero_Editor extends DefaultNodeEditor {
@@ -28,14 +28,6 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_d13tpt_a_0(editorContext, node);
-  }
-
-  private static boolean renderingCondition_d13tpt_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "square"));
-  }
-
-  private static boolean renderingCondition_d13tpt_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "square"));
   }
 
   private EditorCell createCollection_d13tpt_a(EditorContext editorContext, SNode node) {
@@ -52,56 +44,12 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_d13tpt_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_d13tpt_a_0");
-    editorCell.addEditorCell(this.createConstant_d13tpt_a0_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_d13tpt_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_d13tpt_c0_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_d13tpt_d0_0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_d13tpt_e0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_d13tpt_f0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createConstant_d13tpt_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "0");
     editorCell.setCellId("Constant_d13tpt_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_d13tpt_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x");
-    editorCell.setCellId("Constant_d13tpt_c0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_d13tpt_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "square");
-    editorCell.setCellId("Constant_d13tpt_a0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_d13tpt_c0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rows");
-    editorCell.setCellId("Constant_d13tpt_c0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_d13tpt_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "columns");
-    editorCell.setCellId("Constant_d13tpt_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -126,6 +74,21 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_d13tpt_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x");
+    editorCell.setCellId("Constant_d13tpt_c0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_d13tpt_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "square"));
+  }
+
   private EditorCell createRefNode_d13tpt_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("columns");
@@ -143,6 +106,57 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_d13tpt_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "square"));
+  }
+
+  private EditorCell createCollection_d13tpt_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_d13tpt_a_0");
+    editorCell.addEditorCell(this.createConstant_d13tpt_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_d13tpt_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_d13tpt_c0_0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_d13tpt_d0_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_d13tpt_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_d13tpt_f0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_d13tpt_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "square");
+    editorCell.setCellId("Constant_d13tpt_a0_0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_d13tpt_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("square");
+    provider.setNoTargetText("<no square>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_square");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_d13tpt_c0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rows");
+    editorCell.setCellId("Constant_d13tpt_c0_0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -166,33 +180,19 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_d13tpt_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "columns");
+    editorCell.setCellId("Constant_d13tpt_e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNode_d13tpt_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("columns");
     provider.setNoTargetText("<no columns>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_d13tpt_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("square");
-    provider.setNoTargetText("<no square>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_square");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

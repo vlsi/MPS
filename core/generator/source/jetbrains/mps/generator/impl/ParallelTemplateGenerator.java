@@ -49,7 +49,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   private IGenerationTaskPool myPool;
   private List<RootGenerationTask> myTasks;
-  private Map<Pair<SNode, SNode>, RootGenerationTask> myInputToTask;
+  private Map<Pair<SNode, SNodeReference>, RootGenerationTask> myInputToTask;
   private Map<SNode, RootBasedQueryExectionContext> myRootContext;
   private Map<QueryExecutionContext, CompositeGenerationTask> contextToTask = new HashMap<QueryExecutionContext, CompositeGenerationTask>();
 
@@ -59,7 +59,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
                                    DependenciesBuilder dependenciesBuilder, IPerformanceTracer performanceTracer) {
     super(operationContext, progressMonitor, logger, ruleManager, inputModel, outputModel, options, dependenciesBuilder, performanceTracer);
     myTasks = new ArrayList<RootGenerationTask>();
-    myInputToTask = new ConcurrentHashMap<Pair<SNode, SNode>, RootGenerationTask>();
+    myInputToTask = new ConcurrentHashMap<Pair<SNode, SNodeReference>, RootGenerationTask>();
     myPool = taskPoolProvider.getTaskPool();
   }
 
@@ -83,7 +83,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       public void run() throws GenerationCanceledException, GenerationFailureException {
         ParallelTemplateGenerator.super.createRootNodeByRule(rule, environment);
       }
-    }, new Pair(null, rule.getRuleNode()), environment.getReductionContext().getQueryExecutor());
+    }, new Pair<SNode, SNodeReference>(null, rule.getRuleNode()), environment.getReductionContext().getQueryExecutor());
   }
 
   @Override
@@ -93,7 +93,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       public void run() throws GenerationCanceledException, GenerationFailureException {
         ParallelTemplateGenerator.super.createRootNodeByRule(rule, inputNode, copyRootOnFailure, environment);
       }
-    }, new Pair(inputNode, rule.getRuleNode()), environment.getReductionContext().getQueryExecutor());
+    }, new Pair<SNode, SNodeReference>(inputNode, rule.getRuleNode()), environment.getReductionContext().getQueryExecutor());
   }
 
   @Override
@@ -103,7 +103,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       public void run() throws GenerationCanceledException, GenerationFailureException {
         ParallelTemplateGenerator.super.copyRootInputNode(inputRootNode, environment);
       }
-    }, new Pair(inputRootNode, null), environment.getReductionContext().getQueryExecutor());
+    }, new Pair<SNode, SNodeReference>(inputRootNode, null), environment.getReductionContext().getQueryExecutor());
   }
 
   @Override
@@ -131,7 +131,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
     return super.getDefaultExecutionContext(inputNode);
   }
 
-  private void pushTask(RootGenerationTask task, Pair<SNode, SNode> pair, QueryExecutionContext executionContext) {
+  private void pushTask(RootGenerationTask task, Pair<SNode, SNodeReference> pair, QueryExecutionContext executionContext) {
     myInputToTask.put(pair, task);
     myTasks.add(task);
     if (executionContext.isMultithreaded()) {
@@ -156,12 +156,12 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
   }
 
   @Override
-  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodeReference templateNode) {
-    RootGenerationTask task = myInputToTask.get(new Pair(inputNode, templateNode));
+  protected void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
+    RootGenerationTask task = myInputToTask.get(new Pair<SNode, SNodeReference>(inputNode, templateNode));
     if (task == null) {
       showErrorMessage(inputNode, templateNode.resolve(MPSModuleRepository.getInstance()), "internal: cannot find task for generated root");
     } else {
-      task.addGeneratedRoot(outputRoot);
+      task.addGeneratedRoot(new GeneratedRootDescriptor(outputRoot, inputNode, templateNode, isCopied));
     }
   }
 
@@ -178,21 +178,21 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
 
   public abstract class RootGenerationTask implements GenerationTask {
 
-    List<SNode> generated = null;
+    List<GeneratedRootDescriptor> generated = null;
 
     @Override
     public boolean requiresReadAccess() {
       return true;
     }
 
-    public void addGeneratedRoot(SNode root) {
+    public void addGeneratedRoot(GeneratedRootDescriptor descriptor) {
       if (generated == null) {
-        generated = Collections.singletonList(root);
+        generated = Collections.singletonList(descriptor);
       } else if (generated.size() == 1) {
-        generated = new ArrayList<SNode>(generated);
-        generated.add(root);
+        generated = new ArrayList<GeneratedRootDescriptor>(generated);
+        generated.add(descriptor);
       } else {
-        generated.add(root);
+        generated.add(descriptor);
       }
     }
 
@@ -200,9 +200,23 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       if (generated == null) {
         return;
       }
-      for (SNode root : generated) {
-        myOutputRoots.add(root);
+      for (GeneratedRootDescriptor descriptor : generated) {
+        ParallelTemplateGenerator.super.registerRoot(descriptor.myOutputRoot, descriptor.myRoot, descriptor.myTemplateNode, descriptor.myCopied);
       }
+    }
+  }
+
+  public static class GeneratedRootDescriptor {
+    SNode myOutputRoot;
+    SNode myRoot;
+    SNodeReference myTemplateNode;
+    boolean myCopied;
+
+    public GeneratedRootDescriptor(SNode outputRoot, SNode root, SNodeReference templateNode, boolean copied) {
+      myOutputRoot = outputRoot;
+      myRoot = root;
+      myTemplateNode = templateNode;
+      myCopied = copied;
     }
   }
 

@@ -6,16 +6,20 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.CellAlign;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.editor.runtime.style.ScriptKind;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -24,12 +28,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.editor.runtime.style.ScriptKind;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.editor.runtime.EditorCell_Empty;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.lang.core.editor.ShortDescriptionEditorComponent;
 
 public class MathSymbol_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -40,14 +40,6 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     return this.createCollection_b0ego6_a_0(editorContext, node);
   }
 
-  private static boolean renderingCondition_b0ego6_a0b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex");
-  }
-
-  private static boolean renderingCondition_b0ego6_a3b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "precondition", true) != null;
-  }
-
   private EditorCell createCollection_b0ego6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b0ego6_a");
@@ -55,6 +47,16 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_b0ego6_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_b0ego6_c0(editorContext, node));
     editorCell.addEditorCell(this.createEmpty_b0ego6_d0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createEmpty_b0ego6_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setCellId("Empty_b0ego6_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.BASE_LINE_CELL, true);
+    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 
@@ -83,32 +85,27 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_b0ego6_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
-    editorCell.setCellId("Collection_b0ego6_c1a");
-    editorCell.addEditorCell(this.createRefNode_b0ego6_a2b0(editorContext, node));
-    return editorCell;
+  private static boolean renderingCondition_b0ego6_a0b0(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex");
   }
 
-  private EditorCell createCollection_b0ego6_d1a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
-    editorCell.setCellId("Collection_b0ego6_d1a");
-    editorCell.addEditorCell(this.createRefNode_b0ego6_a3b0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_b0ego6_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_b0ego6_a_0");
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_b0ego6_a0(editorContext, node));
-    editorCell.addEditorCell(this.createComponent_b0ego6_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_b0ego6_c0_0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createComponent_b0ego6_b0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ShortDescriptionEditorComponent(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
+  private EditorCell createRefNode_b0ego6_a0b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("upperBound");
+    provider.setNoTargetText("<no upperBound>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 
@@ -136,41 +133,10 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createReadOnlyModelAccessor_b0ego6_a0(final EditorContext editorContext, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-      public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getOpName_1262430001741497894", new Object[]{});
-      }
-
-      public void setText(String s) {
-      }
-
-      public boolean isValidText(String s) {
-        return EqualUtil.equals(s, getText());
-      }
-    }, node);
-    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_b0ego6_a0");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_b0ego6_a0b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("upperBound");
-    provider.setNoTargetText("<no upperBound>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
+  private EditorCell createCollection_b0ego6_c1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
+    editorCell.setCellId("Collection_b0ego6_c1a");
+    editorCell.addEditorCell(this.createRefNode_b0ego6_a2b0(editorContext, node));
     return editorCell;
   }
 
@@ -192,6 +158,17 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createCollection_b0ego6_d1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
+    editorCell.setCellId("Collection_b0ego6_d1a");
+    editorCell.addEditorCell(this.createRefNode_b0ego6_a3b0(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_b0ego6_a3b0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "precondition", true) != null;
   }
 
   private EditorCell createRefNode_b0ego6_a3b0(EditorContext editorContext, SNode node) {
@@ -234,6 +211,49 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createEmpty_b0ego6_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setCellId("Empty_b0ego6_d0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.BASE_LINE_CELL, true);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+
+  private EditorCell createCollection_b0ego6_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_b0ego6_a_0");
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_b0ego6_a0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_b0ego6_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_b0ego6_c0_0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_b0ego6_a0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getOpName_1262430001741497894", new Object[]{});
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ReadOnlyModelAccessor_b0ego6_a0");
+    return editorCell;
+  }
+
+  private EditorCell createComponent_b0ego6_b0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ShortDescriptionEditorComponent(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
   private EditorCell createRefNode_b0ego6_c0_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("precondition");
@@ -248,26 +268,6 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
-    return editorCell;
-  }
-
-  private EditorCell createEmpty_b0ego6_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setCellId("Empty_b0ego6_a0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.BASE_LINE_CELL, true);
-    editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-
-  private EditorCell createEmpty_b0ego6_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
-    editorCell.setCellId("Empty_b0ego6_d0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.BASE_LINE_CELL, true);
-    editorCell.getStyle().putAll(style);
     return editorCell;
   }
 }

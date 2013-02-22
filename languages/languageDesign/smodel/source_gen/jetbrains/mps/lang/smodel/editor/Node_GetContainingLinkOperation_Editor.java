@@ -6,8 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -24,18 +24,18 @@ public class Node_GetContainingLinkOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_5d67ir_a(editorContext, node);
   }
 
+  private EditorCell createComponent_5d67ir_a(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new ReplaceableAlias_Comp(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
   private EditorCell createCollection_5d67ir_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5d67ir_a");
     editorCell.addEditorCell(this.createConstant_5d67ir_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5d67ir_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_5d67ir_c0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createComponent_5d67ir_a(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new ReplaceableAlias_Comp(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 

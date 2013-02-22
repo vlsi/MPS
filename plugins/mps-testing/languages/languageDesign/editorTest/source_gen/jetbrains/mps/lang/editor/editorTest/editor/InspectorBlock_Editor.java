@@ -34,19 +34,19 @@ public class InspectorBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_mb7jv_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_mb7jv_a_0");
-    editorCell.addEditorCell(this.createRefNode_mb7jv_a0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createComponent_mb7jv_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+
+  private EditorCell createCollection_mb7jv_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_mb7jv_a_0");
+    editorCell.addEditorCell(this.createRefNode_mb7jv_a0(editorContext, node));
     return editorCell;
   }
 

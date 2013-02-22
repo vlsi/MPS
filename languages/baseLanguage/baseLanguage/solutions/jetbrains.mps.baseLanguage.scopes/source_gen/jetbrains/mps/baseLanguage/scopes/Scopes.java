@@ -6,7 +6,6 @@ import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.scopes.runtime.HidingByNameScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 
 public class Scopes {
@@ -18,7 +17,7 @@ public class Scopes {
       return variablesScope;
     }
     // hiding for variables only name based. so I can use SimpleScope and HidingByNameScope 
-    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration"), kind, variablesScope, parentScope);
+    return new HidingByNameScope("jetbrains.mps.baseLanguage.structure.VariableDeclaration", kind, variablesScope, parentScope);
   }
 
   public static Scope forVariables(SNode kind, Iterable<SNode> variables, Scope parentScope) {
@@ -34,7 +33,7 @@ public class Scopes {
       return methodsScope;
     }
     // should be used for methods in getScope() 
-    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), kind, methodsScope, parentScope);
+    return new HidingByNameScope("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", kind, methodsScope, parentScope);
   }
 
   public static Scope defaultWithNameHiding(SNode kind, Scope scope, @Nullable Scope parentScope) {
@@ -42,12 +41,13 @@ public class Scopes {
       return scope;
     }
     // hide anything by name 
-    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), kind, scope, parentScope);
+    return new HidingByNameScope("jetbrains.mps.lang.core.structure.INamedConcept", kind, scope, parentScope);
   }
 
   public static Scope forLoopLabels(Iterable<SNode> labels, Scope parentScope) {
     // Hiding only other LoopLabels 
-    return new HidingByNameScope(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel"), new NamedElementsScope(labels), parentScope);
+    String loopLabelConcept = "jetbrains.mps.baseLanguage.structure.LoopLabel";
+    return new HidingByNameScope(loopLabelConcept, loopLabelConcept, new NamedElementsScope(labels), parentScope);
   }
 
   public static Scope forTypeVariables(Iterable<SNode> variables, Scope parentScope) {

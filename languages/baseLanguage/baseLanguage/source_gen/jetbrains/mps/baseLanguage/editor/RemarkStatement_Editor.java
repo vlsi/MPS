@@ -6,9 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.behavior.RemarkStatement_Behavior;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -19,26 +16,13 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.baseLanguage.behavior.RemarkStatement_Behavior;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import java.awt.Color;
 
 public class RemarkStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2kc2ry_a(editorContext, node);
-  }
-
-  private static int _StyleParameter_QueryFunction_2kc2ry_a0b0(EditorContext editorContext, SNode node) {
-    if (RemarkStatement_Behavior.call_isTodo_1213877427548(node)) {
-      return MPSFonts.BOLD_ITALIC;
-    } else {
-      return MPSFonts.ITALIC;
-    }
-  }
-
-  private static Color _StyleParameter_QueryFunction_2kc2ry_a1b0(EditorContext editorContext, SNode node) {
-    if (RemarkStatement_Behavior.call_isTodo_1213877427548(node)) {
-      return Color.BLUE;
-    } else {
-      return Color.GRAY;
-    }
   }
 
   private EditorCell createCollection_2kc2ry_a(EditorContext editorContext, SNode node) {
@@ -92,5 +76,21 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private static int _StyleParameter_QueryFunction_2kc2ry_a0b0(EditorContext editorContext, SNode node) {
+    if (RemarkStatement_Behavior.call_isTodo_1213877427548(node)) {
+      return MPSFonts.BOLD_ITALIC;
+    } else {
+      return MPSFonts.ITALIC;
+    }
+  }
+
+  private static Color _StyleParameter_QueryFunction_2kc2ry_a1b0(EditorContext editorContext, SNode node) {
+    if (RemarkStatement_Behavior.call_isTodo_1213877427548(node)) {
+      return Color.BLUE;
+    } else {
+      return Color.GRAY;
+    }
   }
 }

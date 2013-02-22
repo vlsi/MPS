@@ -40,6 +40,17 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     return editorCell;
   }
 
+  private EditorCell createConstant_nmnci2_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property postfix hints");
+    editorCell.setCellId("Constant_nmnci2_a0a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createCollection_nmnci2_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nmnci2_b0");
@@ -50,17 +61,6 @@ public class CellMenuPart_PropertyPostfixHints_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createConstant_nmnci2_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_nmnci2_c1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_nmnci2_d1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_nmnci2_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property postfix hints");
-    editorCell.setCellId("Constant_nmnci2_a0a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 

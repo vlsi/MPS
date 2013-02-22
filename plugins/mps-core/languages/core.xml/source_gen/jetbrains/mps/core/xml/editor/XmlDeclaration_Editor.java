@@ -6,13 +6,13 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -23,12 +23,13 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_axvdb8_a(editorContext, node);
   }
 
-  private static boolean renderingCondition_axvdb8_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
-  }
-
-  private static boolean renderingCondition_axvdb8_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
+  private EditorCell createCollection_axvdb8_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_axvdb8_a");
+    editorCell.addEditorCell(this.createAlternation_axvdb8_a0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_axvdb8_b0(editorContext, node));
+    editorCell.addEditorCell(this.createAlternation_axvdb8_c0(editorContext, node));
+    return editorCell;
   }
 
   private EditorCell createAlternation_axvdb8_a0(EditorContext editorContext, SNode node) {
@@ -43,77 +44,8 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createAlternation_axvdb8_c0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = XmlDeclaration_Editor.renderingCondition_axvdb8_a2a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_axvdb8_a2a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_axvdb8_a2a_0(editorContext, node);
-    }
-    return editorCell;
-  }
-
-  private EditorCell createCollection_axvdb8_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_axvdb8_a");
-    editorCell.addEditorCell(this.createAlternation_axvdb8_a0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_axvdb8_b0(editorContext, node));
-    editorCell.addEditorCell(this.createAlternation_axvdb8_c0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_axvdb8_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_axvdb8_b0");
-    editorCell.addEditorCell(this.createConstant_axvdb8_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_axvdb8_b1a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_axvdb8_c1a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_axvdb8_d1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_axvdb8_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_axvdb8_b1a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_axvdb8_a1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_axvdb8_b1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_axvdb8_c1b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_axvdb8_d1b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_axvdb8_e1b0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_axvdb8_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_axvdb8_c1a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_axvdb8_a2b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_axvdb8_b2b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_axvdb8_c2b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_axvdb8_d2b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_axvdb8_e2b0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_axvdb8_d1a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_axvdb8_d1a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_axvdb8_a3b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_axvdb8_b3b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_axvdb8_c3b0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_axvdb8_d3b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_axvdb8_e3b0(editorContext, node));
-    return editorCell;
+  private static boolean renderingCondition_axvdb8_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
   }
 
   private EditorCell createConstant_axvdb8_a0a(EditorContext editorContext, SNode node) {
@@ -141,6 +73,16 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_axvdb8_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_axvdb8_b0");
+    editorCell.addEditorCell(this.createConstant_axvdb8_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_axvdb8_b1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_axvdb8_c1a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_axvdb8_d1a(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_axvdb8_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "xml");
     editorCell.setCellId("Constant_axvdb8_a1a");
@@ -148,6 +90,20 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     XmlSS_StyleSheet.applyXmlTagName(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_axvdb8_b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_axvdb8_b1a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_axvdb8_a1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_b1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_c1b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_axvdb8_d1b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_e1b0(editorContext, node));
     return editorCell;
   }
 
@@ -179,6 +135,27 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createProperty_axvdb8_d1b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("version");
+    provider.setNoTargetText("<no version>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_version");
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private EditorCell createConstant_axvdb8_e1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_axvdb8_e1b0");
@@ -187,6 +164,20 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_axvdb8_c1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_axvdb8_c1a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_axvdb8_a2b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_b2b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_c2b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_axvdb8_d2b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_e2b0(editorContext, node));
     return editorCell;
   }
 
@@ -218,6 +209,28 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createProperty_axvdb8_d2b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("encoding");
+    provider.setNoTargetText("default");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_encoding");
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private EditorCell createConstant_axvdb8_e2b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_axvdb8_e2b0");
@@ -226,6 +239,20 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_axvdb8_d1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_axvdb8_d1a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_axvdb8_a3b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_b3b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_c3b0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_axvdb8_d3b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_axvdb8_e3b0(editorContext, node));
     return editorCell;
   }
 
@@ -257,6 +284,28 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createProperty_axvdb8_d3b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("standalone");
+    provider.setNoTargetText("default");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_standalone");
+    Style style = new StyleImpl();
+    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private EditorCell createConstant_axvdb8_e3b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_axvdb8_e3b0");
@@ -266,6 +315,22 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private EditorCell createAlternation_axvdb8_c0(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = XmlDeclaration_Editor.renderingCondition_axvdb8_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createConstant_axvdb8_a2a(editorContext, node);
+    } else {
+      editorCell = this.createConstant_axvdb8_a2a_0(editorContext, node);
+    }
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_axvdb8_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
   }
 
   private EditorCell createConstant_axvdb8_a2a(EditorContext editorContext, SNode node) {
@@ -288,71 +353,6 @@ public class XmlDeclaration_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.MATCHING_LABEL, "openTag");
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_axvdb8_d1b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("version");
-    provider.setNoTargetText("<no version>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_version");
-    Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_axvdb8_d2b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("encoding");
-    provider.setNoTargetText("default");
-    provider.setAllowsEmptyTarget(true);
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_encoding");
-    Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createProperty_axvdb8_d3b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("standalone");
-    provider.setNoTargetText("default");
-    provider.setAllowsEmptyTarget(true);
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_standalone");
-    Style style = new StyleImpl();
-    XmlSS_StyleSheet.applyXmlAttributeValue(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
     return editorCell;
   }
 }

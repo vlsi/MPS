@@ -6,10 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -23,14 +23,6 @@ public class CellModel_ReferencePresentation_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createComponent_jf7bj_a(editorContext, node);
-  }
-
-  private static boolean renderingCondition_jf7bj_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
-  }
-
-  private static boolean renderingCondition_jf7bj_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node).length() > 0;
   }
 
   private EditorCell createCollection_jf7bj_a(EditorContext editorContext, SNode node) {
@@ -52,6 +44,10 @@ public class CellModel_ReferencePresentation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_jf7bj_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
+  }
+
   private EditorCell createComponent_jf7bj_b0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
@@ -65,6 +61,10 @@ public class CellModel_ReferencePresentation_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new _CloseTag(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
+  }
+
+  private static boolean renderingCondition_jf7bj_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node).length() > 0;
   }
 
   private EditorCell createComponent_jf7bj_a(EditorContext editorContext, SNode node) {

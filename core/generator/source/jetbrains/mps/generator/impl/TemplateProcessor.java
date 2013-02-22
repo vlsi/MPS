@@ -22,7 +22,11 @@ import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.interpreted.TemplateWeavingRuleInterpreted;
-import jetbrains.mps.generator.impl.reference.*;
+import jetbrains.mps.generator.impl.reference.PostponedReference;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_MacroNode;
+import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateNode;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -38,7 +42,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -161,6 +167,22 @@ public class TemplateProcessor {
       if (AttributeOperations.getLinkAttribute(templateNode, "referenceMacro", reference.getRole()) != null) {
         continue;
       }
+
+      if (reference instanceof StaticReference) {
+        SModelReference targetModelReference = reference.getTargetSModelReference();
+        if (targetModelReference != null && !(templateModel.getSModelReference().equals(targetModelReference))) {
+          // optimization for external static references (do not resolve them)
+          SReference newReference = new StaticReference(
+            reference.getRole(),
+            outputNode,
+            targetModelReference,
+            reference.getTargetNodeId(),
+            ((StaticReference) reference).getResolveInfo());
+          outputNode.setReference(reference.getRole(), newReference);
+          continue;
+        }
+      }
+
       SNode templateReferentNode = reference.getTargetNode();
       if (templateReferentNode == null) {
         myGenerator.getLogger().error(templateNode, "cannot resolve reference in template model; role: " + reference.getRole() + " in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(templateNode));
@@ -177,7 +199,7 @@ public class TemplateProcessor {
         );
         outputNode.setReference(postponedReference.getRole(), postponedReference);
       } else {
-        SNodeAccessUtil.setReferenceTarget(outputNode, reference.getRole(), templateReferentNode);
+        outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
       }
     }
 

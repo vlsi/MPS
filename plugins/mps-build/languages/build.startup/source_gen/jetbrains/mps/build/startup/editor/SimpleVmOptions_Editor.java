@@ -6,10 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -24,10 +24,6 @@ public class SimpleVmOptions_Editor extends DefaultNodeEditor {
     return this.createCollection_6n3yp7_a_0(editorContext, node);
   }
 
-  private static boolean renderingCondition_6n3yp7_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "commented");
-  }
-
   private EditorCell createCollection_6n3yp7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6n3yp7_a");
@@ -38,14 +34,6 @@ public class SimpleVmOptions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_6n3yp7_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_6n3yp7_a_0");
-    editorCell.addEditorCell(this.createConstant_6n3yp7_a0_0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_6n3yp7_b0_0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createConstant_6n3yp7_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "#");
     editorCell.setCellId("Constant_6n3yp7_a0");
@@ -53,11 +41,8 @@ public class SimpleVmOptions_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_6n3yp7_a0_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "commented");
-    editorCell.setCellId("Constant_6n3yp7_a0_0");
-    editorCell.setDefaultText("");
-    return editorCell;
+  private static boolean renderingCondition_6n3yp7_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "commented");
   }
 
   private EditorCell createProperty_6n3yp7_b0(EditorContext editorContext, SNode node) {
@@ -75,6 +60,21 @@ public class SimpleVmOptions_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createCollection_6n3yp7_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_6n3yp7_a_0");
+    editorCell.addEditorCell(this.createConstant_6n3yp7_a0_0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6n3yp7_b0_0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6n3yp7_a0_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "commented");
+    editorCell.setCellId("Constant_6n3yp7_a0_0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
