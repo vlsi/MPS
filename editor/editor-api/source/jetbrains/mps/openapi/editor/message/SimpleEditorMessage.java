@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor;
+package jetbrains.mps.openapi.editor.message;
+
+import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.openapi.editor.EditorComponent;
 
 import java.awt.Color;
 
@@ -27,4 +30,6 @@ public interface SimpleEditorMessage {
   Color getColor();
 
   EditorMessageOwner getOwner();
+
+  MessageStatus getStatus();
 }

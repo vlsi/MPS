@@ -20,6 +20,8 @@ import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.ModelAccess;
@@ -138,12 +140,12 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
   }
 
-  public List<EditorMessage> getMessages(EditorCell cell) {
+  public List<SimpleEditorMessage> getMessages(EditorCell cell) {
     List<EditorMessage> result = getMessagesCache().get(cell);
     if (result != null) {
-      return new ArrayList<EditorMessage>(result);
+      return new ArrayList<SimpleEditorMessage>(result);
     }
-    return Collections.<EditorMessage>emptyList();
+    return Collections.<SimpleEditorMessage>emptyList();
   }
 
   /**

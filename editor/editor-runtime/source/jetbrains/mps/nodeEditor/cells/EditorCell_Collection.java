@@ -680,7 +680,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
     boolean hasMessages = false;
 
-    List<EditorMessage> messages = getMessages();
+    List<EditorMessage> messages = getMessages(EditorMessage.class);
     for (EditorMessage message : messages) {
       if (message != null && message.isBackground()) {
         message.paint(g, getEditor(), this);

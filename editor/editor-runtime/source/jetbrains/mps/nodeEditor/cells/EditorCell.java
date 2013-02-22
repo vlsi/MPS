@@ -20,12 +20,13 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -152,9 +153,8 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   void setFocusPolicy(FocusPolicy fp);
 
   // TODO: move to open API
-  List<EditorMessage> getMessages();
-  <T extends EditorMessage> List<T> getMessages(Class<T> clazz);
-  List<EditorMessage> getMessagesForOwner(EditorMessageOwner owner);
+  <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz);
+  List<SimpleEditorMessage> getMessagesForOwner(EditorMessageOwner owner);
   boolean hasErrorMessages();
 
   EditorCell_Label getSTHintCell();

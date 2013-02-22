@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
@@ -40,6 +40,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -665,7 +666,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       }
     }
     boolean hasMessages = false;
-    List<EditorMessage> messages = getMessages();
+    List<EditorMessage> messages = getMessages(EditorMessage.class);
     for (EditorMessage message : messages) {
       if (message != null && message.isBackground()) {
         message.paint(g, getEditor(), this);
@@ -712,7 +713,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       g.fillRect(myX + effectiveWidth - BRACKET_WIDTH + 1, myY + myHeight - 3, BRACKET_WIDTH - 3, 2);
     }
 
-    List<EditorMessage> messages = getMessages();
+    List<EditorMessage> messages = getMessages(EditorMessage.class);
     for (EditorMessage message : messages) {
       if (message != null && !message.isBackground()) {
         message.paint(g, getEditor(), this);
@@ -720,13 +721,13 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
-  public List<EditorMessage> getMessages() {
+  public List<SimpleEditorMessage> getMessages() {
     return getEditor().getHighlightManager().getMessages(this);
   }
 
-  public <T extends EditorMessage> List<T> getMessages(Class<T> clazz) {
+  public <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz) {
     List<T> result = new ArrayList<T>();
-    for (EditorMessage message : getMessages()) {
+    for (SimpleEditorMessage message : getMessages()) {
       if (clazz.isInstance(message)) {
         result.add((T) message);
       }
@@ -734,9 +735,9 @@ public abstract class EditorCell_Basic implements EditorCell {
     return result;
   }
 
-  public List<EditorMessage> getMessagesForOwner(EditorMessageOwner owner) {
-    ArrayList<EditorMessage> result = new ArrayList<EditorMessage>(1);
-    for (EditorMessage message : getMessages()) {
+  public List<SimpleEditorMessage> getMessagesForOwner(EditorMessageOwner owner) {
+    ArrayList<SimpleEditorMessage> result = new ArrayList<SimpleEditorMessage>(1);
+    for (SimpleEditorMessage message : getMessages()) {
       if (message.getOwner() == owner) {
         result.add(message);
       }
@@ -745,7 +746,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean hasErrorMessages() {
-    for (EditorMessage message : getMessages()) {
+    for (SimpleEditorMessage message : getMessages()) {
       if (message.getStatus() == MessageStatus.ERROR) {
         return true;
       }

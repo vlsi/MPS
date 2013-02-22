@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.nodeEditor.cellLayout.PunctuationUtil;

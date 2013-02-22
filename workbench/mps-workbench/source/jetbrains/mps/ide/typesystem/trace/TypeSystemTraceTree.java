@@ -4,6 +4,7 @@ package jetbrains.mps.ide.typesystem.trace;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
+import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -12,7 +13,7 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
-import jetbrains.mps.nodeEditor.EditorMessageOwner;
+
 import java.util.LinkedList;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;

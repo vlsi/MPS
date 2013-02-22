@@ -17,15 +17,18 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -144,19 +147,30 @@ public class APICellAdapter {
   }
 
   public static boolean hasErrorMessages(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).hasErrorMessages();
+    for (SimpleEditorMessage message : cell.getMessages()) {
+      if (message.getStatus() == MessageStatus.ERROR) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public static String getCellRole(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getCellRole();
   }
 
-  public static List<EditorMessage> getMessages(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getMessages();
+  public static List<SimpleEditorMessage> getMessages(EditorCell cell) {
+    return cell.getMessages();
   }
 
   public static <T extends EditorMessage> List<T> getMessages(EditorCell cell, Class<T> clazz) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getMessages(clazz);
+    List<T> result = new ArrayList<T>();
+    for (SimpleEditorMessage message : cell.getMessages()) {
+      if (clazz.isInstance(message)) {
+        result.add((T) message);
+      }
+    }
+    return result;
   }
 
   public static void synchronizeViewWithModel(EditorCell cell) {
