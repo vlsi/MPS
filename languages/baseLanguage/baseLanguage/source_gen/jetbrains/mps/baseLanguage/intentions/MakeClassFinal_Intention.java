@@ -56,7 +56,7 @@ public class MakeClassFinal_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
+    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass"));
   }
 
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {

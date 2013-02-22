@@ -87,7 +87,10 @@ public class SModelEventProcessor {
     @Override
     protected void invalidateNode(SNode sNode) {
       NodePath affPath = NodePath.forSNode(sNode);
-      SModelReference mref = sNode.getContainingModel().getReference();
+      SModel containingModel = sNode.getContainingModel();
+      if (containingModel == null) return;
+
+      SModelReference mref = containingModel.getReference();
       List<NodePath> nodePaths = nodePaths(mref);
       ListIterator<NodePath> npathIt = nodePaths.listIterator();
       while (npathIt.hasNext()) {
