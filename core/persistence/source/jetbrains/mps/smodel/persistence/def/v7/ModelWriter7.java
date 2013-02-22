@@ -86,7 +86,7 @@ public class ModelWriter7 implements IModelWriter {
     }
 
     // imports
-    for (ImportElement importElement : sourceModel.importedModels()) {
+    for (ImportElement importElement : ((ABCDE) sourceModel).importedModels()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);

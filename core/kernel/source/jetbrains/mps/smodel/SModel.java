@@ -619,11 +619,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //model
 
-  public List<ImportElement> importedModels() {
+  private List<ImportElement> importedModels() {
     return Collections.unmodifiableList(myImports);
   }
 
-  public void addModelImport(@NotNull SModelReference modelReference, boolean firstVersion) {
+  private void addModelImport(SModelReference modelReference, boolean firstVersion) {
     ModelChange.assertLegalChange(this);
 
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
@@ -648,7 +648,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     fireImportAddedEvent(importElement.getModelReference());
   }
 
-  public void deleteModelImport(@NotNull SModelReference modelReference) {
+  private void deleteModelImport(SModelReference modelReference) {
     ModelChange.assertLegalChange(this);
 
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
@@ -1016,8 +1016,8 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     for (ImportElement ie : getAdditionalModelVersions()) {
       to.addAdditionalModelVersion(ie.copy());
     }
-    for (ImportElement ie : importedModels()) {
-      to.addModelImport(ie.copy());
+    for (ImportElement ie : ((ABCDE) this).importedModels()) {
+      ((ABCDE) to).addModelImport(ie.copy());
     }
     for (ModuleReference mr : ((ABCDE) this).importedDevkits()) {
       ((ABCDE) to).addDevKit(mr);

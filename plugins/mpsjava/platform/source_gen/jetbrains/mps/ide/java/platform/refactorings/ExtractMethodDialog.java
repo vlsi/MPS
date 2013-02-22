@@ -368,7 +368,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
           myContext.select(result.value);
           if ((myRefactoringModel != null) && myExtractIntoOuterContainer) {
             SModelReference ref = SNodeOperations.getModel(myStaticTarget).getReference();
-            myRefactoringModel.addModelImport(ref, false);
+            ((ABCDE) myRefactoringModel).addModelImport(ref, false);
           }
         }
       });

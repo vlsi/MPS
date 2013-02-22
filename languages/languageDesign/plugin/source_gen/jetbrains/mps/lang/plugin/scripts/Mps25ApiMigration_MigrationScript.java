@@ -1125,7 +1125,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
         SModelReference[] modelRefs = new SModelReference[]{new SModelReference("jetbrains.mps.editor.runtime", ""), new SModelReference("jetbrains.mps.baseLanguage.util", ""), new SModelReference("jetbrains.mps.ide.editor.util", "")};
         IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
         for (SModelReference modelRef : modelRefs) {
-          SNodeOperations.getModel(node).addModelImport(modelRef, false);
+          ((ABCDE) SNodeOperations.getModel(node)).addModelImport(modelRef, false);
           ModuleReference moduleReference = SModelRepository.getInstance().getModelDescriptor(modelRef).getModule().getModuleReference();
           module.addDependency(moduleReference, false);
         }

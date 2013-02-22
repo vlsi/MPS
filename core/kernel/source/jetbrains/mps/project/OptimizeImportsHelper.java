@@ -253,7 +253,7 @@ public class OptimizeImportsHelper {
     }
 
     for (SModelReference model : unusedModels) {
-      modelDescriptor.getSModel().deleteModelImport((jetbrains.mps.smodel.SModelReference) model);
+      ((ABCDE) modelDescriptor.getSModel()).deleteModelImport((SModelReference) model);
       report.append("Model ").append(model.getModelName()).append(" was removed from imports\n");
     }
 

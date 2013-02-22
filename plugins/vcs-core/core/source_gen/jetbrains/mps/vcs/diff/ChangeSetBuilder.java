@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
+
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -204,7 +205,7 @@ public class ChangeSetBuilder {
   private void buildForImports() {
     _FunctionTypes._return_P1_E0<? extends Iterable<SModelReference>, ? super SModel> importedModelsExtractor = new _FunctionTypes._return_P1_E0<ISequence<SModelReference>, SModel>() {
       public ISequence<SModelReference> invoke(SModel model) {
-        return ListSequence.fromList(((List<SModel.ImportElement>) model.importedModels())).select(new ISelector<SModel.ImportElement, SModelReference>() {
+        return ListSequence.fromList(((List<SModel.ImportElement>) ((ABCDE) model).importedModels())).select(new ISelector<SModel.ImportElement, SModelReference>() {
           public SModelReference select(SModel.ImportElement ie) {
             return ie.getModelReference();
           }

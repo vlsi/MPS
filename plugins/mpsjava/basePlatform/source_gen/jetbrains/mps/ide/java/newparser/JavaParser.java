@@ -367,7 +367,7 @@ public class JavaParser {
 
         SModel targetModel = target.getModel();
         if (targetModel != null) {
-          ourModel.addModelImport(targetModel.getReference(), true);
+          ((ABCDE) ourModel).addModelImport(targetModel.getReference(), true);
         }
       }
     }

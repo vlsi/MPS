@@ -305,7 +305,7 @@ public class ImportHelper {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         @Override
         public void run() {
-          myModel.getSModel().addModelImport(getModelReference(), false);
+          ((ABCDE) myModel.getSModel()).addModelImport(getModelReference(), false);
         }
       });
     }

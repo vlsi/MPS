@@ -215,7 +215,7 @@ public class EmbeddableEditor {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModelReference ref = (SModelReference) language.getStructureModelDescriptor().getReference();
-        smodel().addModelImport(ref, false);
+        ((ABCDE) smodel()).addModelImport(ref, false);
       }
     });
   }
@@ -231,7 +231,7 @@ public class EmbeddableEditor {
   public void addModel(final SModelReference model) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        smodel().addModelImport(model, false);
+        ((ABCDE) smodel()).addModelImport(model, false);
       }
     });
   }

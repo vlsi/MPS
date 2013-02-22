@@ -207,7 +207,7 @@ public class CopyPasteUtil {
       ((ABCDE) newModel).addLanguage(language);
     }
     for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
-      newModel.addModelImport(importedModel, false);
+      ((ABCDE) newModel).addModelImport(importedModel, false);
     }
     for (ModuleReference devKit : ((ABCDE) model).importedDevkits()) {
       ((ABCDE) newModel).addDevKit(devKit);
@@ -369,7 +369,7 @@ public class CopyPasteUtil {
       public void run() {
         //  model properties 
         for (SModelReference imported : requiredImports) {
-          targetModel.addModelImport(imported, false);
+          ((ABCDE) targetModel).addModelImport(imported, false);
         }
         for (ModuleReference language : requiredLanguages) {
           ((ABCDE) targetModel).addLanguage(language);

@@ -207,7 +207,7 @@ public class ModelProperties {
     SModel smodel = myModelDescriptor.getSModel();
     modelsInProps.removeAll(SModelOperations.getImportedModelUIDs(smodel));
     for (SModelReference modelReference : modelsInProps) {
-      smodel.addModelImport(modelReference, false);
+      ((ABCDE) smodel).addModelImport(modelReference, false);
     }
   }
 
@@ -216,7 +216,7 @@ public class ModelProperties {
     Set<SModelReference> modelsInModel = new HashSet<SModelReference>(SModelOperations.getImportedModelUIDs(smodel));
     modelsInModel.removeAll(getImportedModels());
     for (SModelReference modelReference : modelsInModel) {
-      smodel.deleteModelImport(modelReference);
+      ((ABCDE) smodel).deleteModelImport(modelReference);
     }
   }
 

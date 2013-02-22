@@ -37,8 +37,8 @@ public class CloneUtil {
   public static void cloneModelWithImports(SModel inputModel, SModel outputModel, boolean originalInput) {
     //copy model with imports, used languages and devkits
     cloneModel(inputModel, outputModel, originalInput);
-    for (ImportElement model : inputModel.importedModels()) {
-      outputModel.addModelImport(model.getModelReference(), false);
+    for (ImportElement model : ((ABCDE) inputModel).importedModels()) {
+      ((ABCDE) outputModel).addModelImport(model.getModelReference(), false);
     }
     for (ModuleReference lang : ((ABCDE) inputModel).importedLanguages()) {
       ((ABCDE) outputModel).addLanguage(lang);

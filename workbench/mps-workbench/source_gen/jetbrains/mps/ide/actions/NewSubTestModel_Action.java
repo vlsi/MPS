@@ -92,9 +92,9 @@ public class NewSubTestModel_Action extends BaseAction {
           result.value = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule().createModel(newModelFqName.toString(), ModelRootUtil.getModelRoot(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
           SModel createdModel = result.value.getSModel();
           SModel sourceModel = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
-          createdModel.addModelImport(sourceModel.getReference(), false);
-          for (SModel.ImportElement importElement : sourceModel.importedModels()) {
-            createdModel.addModelImport(sourceModel.getReference(), false);
+          ((ABCDE) createdModel).addModelImport(sourceModel.getReference(), false);
+          for (SModel.ImportElement importElement : ((ABCDE) sourceModel).importedModels()) {
+            ((ABCDE) createdModel).addModelImport(sourceModel.getReference(), false);
           }
           for (ModuleReference importedLanguage : ((ABCDE) sourceModel).importedLanguages()) {
             ((ABCDE) createdModel).addLanguage(importedLanguage);

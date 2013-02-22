@@ -67,7 +67,7 @@ public class ModelWriter6 implements IModelWriter {
     }
 
     // imports
-    for (ImportElement importElement : sourceModel.importedModels()) {
+    for (ImportElement importElement : ((ABCDE) sourceModel).importedModels()) {
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
       importElem.setAttribute(ModelPersistence.MODEL_IMPORT_INDEX, "" + myHelper.genImportIndex(importElement));
       importElem.setAttribute(ModelPersistence.MODEL_UID, importElement.getModelReference().toString());

@@ -97,7 +97,7 @@ public class SModelOperations {
               module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
             }
           }
-          model.addModelImport(targetModelReference, firstVersion);
+          ((ABCDE) model).addModelImport(targetModelReference, firstVersion);
           importedModels.add(targetModelReference);
         }
       }
@@ -194,7 +194,7 @@ public class SModelOperations {
 
   @Nullable
   public static ImportElement getImportElement(SModel model, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-    for (ImportElement importElement : model.importedModels()) {
+    for (ImportElement importElement : ((ABCDE) model).importedModels()) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
       }
@@ -205,7 +205,7 @@ public class SModelOperations {
   @NotNull
   public static List<ImportElement> getAllImportElements(SModel model) {
     List<ImportElement> result = new ArrayList<ImportElement>();
-    result.addAll(model.importedModels());
+    result.addAll(((ABCDE) model).importedModels());
     result.addAll(model.getAdditionalModelVersions());
     return result;
   }
@@ -214,7 +214,7 @@ public class SModelOperations {
   @NotNull
   public static List<SModelReference> getImportedModelUIDs(SModel sModel) {
     List<SModelReference> references = new ArrayList<SModelReference>();
-    for (ImportElement importElement : sModel.importedModels()) {
+    for (ImportElement importElement : ((ABCDE) sModel).importedModels()) {
       references.add(importElement.getModelReference());
     }
     return Collections.unmodifiableList(references);
@@ -258,7 +258,7 @@ public class SModelOperations {
 
   @Nullable
   public static SModelReference getImportedModelUID(SModel sModel, int referenceID) {
-    for (ImportElement importElement : sModel.importedModels()) {
+    for (ImportElement importElement : ((ABCDE) sModel).importedModels()) {
       if (importElement.getReferenceID() == referenceID) {
         return importElement.getModelReference();
       }
@@ -292,7 +292,7 @@ public class SModelOperations {
   @NotNull
   private static List<SModelDescriptor> importedModels(SModel model, @NotNull IScope scope) {
     List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
-    for (ImportElement importElement : model.importedModels()) {
+    for (ImportElement importElement : ((ABCDE) model).importedModels()) {
       SModelReference modelReference = importElement.getModelReference();
       SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelReference);
 

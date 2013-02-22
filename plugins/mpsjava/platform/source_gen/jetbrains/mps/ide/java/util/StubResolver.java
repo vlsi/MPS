@@ -98,7 +98,7 @@ public class StubResolver {
     });
     Sequence.fromIterable(modelsToAdd).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
-        model.addModelImport(it, false);
+        ((ABCDE) model).addModelImport(it, false);
       }
     });
     if (Sequence.fromIterable(modelsToAdd).isNotEmpty()) {

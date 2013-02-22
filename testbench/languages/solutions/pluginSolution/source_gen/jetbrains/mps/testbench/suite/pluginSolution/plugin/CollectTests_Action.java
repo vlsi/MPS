@@ -165,7 +165,7 @@ public class CollectTests_Action extends BaseAction {
                         SPropertyOperations.set(sref, "moduleID", mref.getModuleId().toString());
                       }
                       ListSequence.fromList(SLinkOperations.getTargets(suite.value, "testRef", true)).addElement(tref.invoke());
-                      model.addModelImport(smd.getSModelReference(), false);
+                      ((ABCDE) model).addModelImport(smd.getSModelReference(), false);
                       ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getModule().addDependency(module.getModuleReference(), false);
                     }
                   }, ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class));

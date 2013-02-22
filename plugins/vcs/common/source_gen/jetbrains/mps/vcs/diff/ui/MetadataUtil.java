@@ -54,7 +54,7 @@ public class MetadataUtil {
     for (ModuleReference devkit : ListSequence.fromList(((ABCDE) model).importedDevkits())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "devkit", true)).addElement(createModuleRefNode(devkit));
     }
-    for (SModel.ImportElement impmodel : ListSequence.fromList(model.importedModels())) {
+    for (SModel.ImportElement impmodel : ListSequence.fromList(((ABCDE) model).importedModels())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "import", true)).addElement(createModelRefNode(impmodel));
     }
 
@@ -138,7 +138,7 @@ public class MetadataUtil {
       }
     });
 
-    Set<SModelReference> oldImports = SetSequence.fromSetWithValues(new LinkedHashSet<SModelReference>(), Sequence.fromIterable(((Iterable<SModel.ImportElement>) (model.importedModels()))).select(new ISelector<SModel.ImportElement, SModelReference>() {
+    Set<SModelReference> oldImports = SetSequence.fromSetWithValues(new LinkedHashSet<SModelReference>(), Sequence.fromIterable(((Iterable<SModel.ImportElement>) (((ABCDE) model).importedModels()))).select(new ISelector<SModel.ImportElement, SModelReference>() {
       public SModelReference select(SModel.ImportElement it) {
         return it.getModelReference();
       }
@@ -150,12 +150,12 @@ public class MetadataUtil {
     }));
     SetSequence.fromSet(oldImports).subtract(SetSequence.fromSet(imports)).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
-        model.deleteModelImport(it);
+        ((ABCDE) model).deleteModelImport(it);
       }
     });
     SetSequence.fromSet(imports).subtract(SetSequence.fromSet(oldImports)).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
-        model.addModelImport(it, false);
+        ((ABCDE) model).addModelImport(it, false);
       }
     });
   }

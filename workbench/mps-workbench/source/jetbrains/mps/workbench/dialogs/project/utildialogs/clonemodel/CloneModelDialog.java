@@ -180,7 +180,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
             @Override
             public void adjust(SModelDescriptor model) {
               for (SModelReference ref : myModelProperties.getImportedModels()) {
-                model.getSModel().addModelImport(ref, false);
+                ((ABCDE) model.getSModel()).addModelImport(ref, false);
               }
 
               for (ModuleReference mr : myModelProperties.getImportedLanguages()) {

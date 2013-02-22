@@ -4,6 +4,7 @@ package jetbrains.mps.refactoring;
 
 import jetbrains.mps.smodel.SModel;
 import java.util.Map;
+
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.smodel.StaticReference;
@@ -183,7 +184,7 @@ public class ModelLinkMap {
   public boolean updateModelReference(SModelReference model, final SModelReference newModel) {
     boolean res = false;
     // update imports 
-    for (SModel.ImportElement element : ListSequence.fromList(myModel.importedModels())) {
+    for (SModel.ImportElement element : ListSequence.fromList(((ABCDE) myModel).importedModels())) {
       if (model.equals(element.getModelReference())) {
         res = true;
         element.setModelReference((jetbrains.mps.smodel.SModelReference) newModel);

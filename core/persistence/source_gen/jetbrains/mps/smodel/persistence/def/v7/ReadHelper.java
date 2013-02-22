@@ -39,7 +39,7 @@ public class ReadHelper {
     if (implicit) {
       model.addAdditionalModelVersion(elem);
     } else {
-      model.addModelImport(elem);
+      ((ABCDE) model).addModelImport(elem);
     }
     addModelRef(index, modelRef);
   }

@@ -56,8 +56,8 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
           ((jetbrains.mps.smodel.SReference) ref).setTargetSModelReference(oldModelRef);
           continue;
         }
-        model.addModelImport(modelRef, false);
-        model.deleteModelImport(oldModelRef);
+        ((ABCDE) model).addModelImport(modelRef, false);
+        ((ABCDE) model).deleteModelImport(oldModelRef);
         SModelRepository.getInstance().markChanged(model);
         // update module dependencies 
         if (module != null && module.getModuleDescriptor() != null) {

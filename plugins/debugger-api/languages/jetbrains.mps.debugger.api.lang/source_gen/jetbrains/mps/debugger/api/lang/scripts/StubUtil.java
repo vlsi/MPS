@@ -64,7 +64,7 @@ public class StubUtil {
     for (SNode candidate : ListSequence.fromList(SModelOperations.getNodes(newModelDescriptor.getSModel(), conceptFqName))) {
       if (eq_g10q2g_a0a0d0d(getResolveInfo.invoke(candidate), ((jetbrains.mps.smodel.SReference) reference).getResolveInfo())) {
         SModelReference oldModelReference = reference.getTargetSModelReference();
-        SNodeOperations.getModel(targetNode).deleteModelImport(oldModelReference);
+        ((ABCDE) SNodeOperations.getModel(targetNode)).deleteModelImport(oldModelReference);
 
         SNodeAccessUtil.setReferenceTarget(targetNode, role, candidate);
         StubRefUtil.addRequiredImports(SNodeOperations.getModel(targetNode), candidate);
@@ -86,7 +86,7 @@ public class StubUtil {
     SNode candidate = scope.resolve(node, SLinkOperations.getResolveInfo(reference));
     if (candidate != null) {
       SModelReference oldModelReference = reference.getTargetSModelReference();
-      SNodeOperations.getModel(node).deleteModelImport(oldModelReference);
+      ((ABCDE) SNodeOperations.getModel(node)).deleteModelImport(oldModelReference);
 
       SNodeAccessUtil.setReferenceTarget(node, role, candidate);
       StubRefUtil.addRequiredImports(SNodeOperations.getModel(node), candidate);

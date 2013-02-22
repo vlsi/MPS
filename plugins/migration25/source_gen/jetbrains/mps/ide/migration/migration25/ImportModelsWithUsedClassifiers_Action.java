@@ -95,7 +95,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           }
           // add new dependencies to model 
           for (SModelReference modelToImport : SetSequence.fromSet(dependencies)) {
-            model.addModelImport(modelToImport, false);
+            ((ABCDE) model).addModelImport(modelToImport, false);
           }
         }
       }

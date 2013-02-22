@@ -105,7 +105,7 @@ public class StubRefUtil {
       }
     })) {
       SModelReference targetModelRef = ref.getTargetSModelReference();
-      model.addModelImport(targetModelRef, false);
+      ((ABCDE) model).addModelImport(targetModelRef, false);
 
       IModule sourceModule = check_4tnolf_a0d0a0o(model.getModelDescriptor());
       IModule targetModule = check_4tnolf_a0e0a0o(SModelRepository.getInstance().getModelDescriptor(targetModelRef));

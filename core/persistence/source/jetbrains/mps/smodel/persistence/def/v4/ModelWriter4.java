@@ -85,11 +85,11 @@ public class ModelWriter4 implements IModelWriter {
     rootElement.addContent(maxRefID);
 
     int maxImport = 0;
-    for (ImportElement importElement : sourceModel.importedModels()) {
+    for (ImportElement importElement : ((ABCDE) sourceModel).importedModels()) {
       maxImport = Math.max(maxImport, importElement.getReferenceID());
     }
 
-    for (ImportElement importElement : sourceModel.importedModels()) {
+    for (ImportElement importElement : ((ABCDE) sourceModel).importedModels()) {
       Element importElem = new Element(ModelPersistence.IMPORT_ELEMENT);
       if (importElement.getReferenceID() < 0) {
         importElement.setReferenceID(++maxImport);

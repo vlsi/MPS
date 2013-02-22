@@ -44,14 +44,14 @@ public class SReferenceCreator implements SReferenceHandler {
 
     if (SetSequence.fromSet(models).count() > 1) {
       for (SModelReference m : models) {
-        model.addModelImport(m, false);
+        ((ABCDE) model).addModelImport(m, false);
       }
       return new DynamicReference(role, source, new SModelReference(pack, SNodeOperations.getModelStereotype(model)), resolveInfo);
     }
 
     ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(SetSequence.fromSet(models).first()).getModule().getModuleReference();
     SModelReference ref = StubHelper.uidForPackageInStubs(new SModelFqName(pack, SNodeOperations.getModelStereotype(model)), moduleRef, false);
-    model.addModelImport(SetSequence.fromSet(models).first(), false);
+    ((ABCDE) model).addModelImport(SetSequence.fromSet(models).first(), false);
     return jetbrains.mps.smodel.SReference.create(role, source, ref, targetNodeId, resolveInfo);
   }
 
