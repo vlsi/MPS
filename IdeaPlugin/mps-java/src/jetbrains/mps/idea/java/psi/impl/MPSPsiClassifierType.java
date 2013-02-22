@@ -167,7 +167,8 @@ public class MPSPsiClassifierType extends MPSPsiNode implements ComputesPsiType<
 
       @Override
       public String getPresentableText() {
-        return getClassName();
+        String className = getClassName();
+        return className != null ? className : "<unresolved ref>";
       }
 
       @Override
