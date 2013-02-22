@@ -99,10 +99,14 @@ public class BuildMPSPlugin_Behavior {
   }
 
   public static Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
-    return Sequence.<SNode>singleton(SLinkOperations.getTarget(createBwfTaskLibraryDependency_6x52oe_a0a0a0d(), "target", false));
+    return Sequence.<SNode>singleton(BuildMPSPlugin_Behavior.getMpsLibrary_4101476690147447822());
   }
 
-  private static SNode createBwfTaskLibraryDependency_6x52oe_a0a0a0d() {
+  public static SNode getMpsLibrary_4101476690147447822() {
+    return SLinkOperations.getTarget(createBwfTaskLibraryDependency_6x52oe_a0a0a(), "target", false);
+  }
+
+  private static SNode createBwfTaskLibraryDependency_6x52oe_a0a0a() {
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", null, GlobalScope.getInstance(), false);
     n1.setReference("target", SReference.create("target", n1, SModelReference.fromString("r:4c16a3e9-db56-4447-9b0d-14adce23db0d(jetbrains.mps.build.mps.accessories)"), SNodeId.fromString("398731435597190701")));
     return n1;
