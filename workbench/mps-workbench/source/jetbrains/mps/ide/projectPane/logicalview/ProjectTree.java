@@ -52,6 +52,7 @@ public class ProjectTree extends MPSTree {
     scrollsOnExpand = false;
   }
 
+  @Override
   protected MPSTreeNode rebuild() {
     if (myProject == null || myProject.isDisposed()) {
       return new TextTreeNode("Empty");
@@ -121,6 +122,7 @@ public class ProjectTree extends MPSTree {
       myProject = (StandaloneMPSProject) project;
     }
 
+    @Override
     protected String getNamespace(MPSTreeNode node) {
       String folder = null;
 

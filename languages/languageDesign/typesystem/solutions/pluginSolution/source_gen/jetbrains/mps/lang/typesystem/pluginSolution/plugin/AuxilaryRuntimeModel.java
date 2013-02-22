@@ -32,11 +32,13 @@ public class AuxilaryRuntimeModel {
       super(new SModelReference(new SModelFqName("$AuxModel$", ""), SModelId.generate()));
     }
 
+    @Override
     protected SModel createModel() {
       return new SModel(getSModelReference()) {
         protected void performUndoableAction(SNodeUndoableAction action) {
         }
 
+        @Override
         public boolean canFireEvent() {
           return false;
         }

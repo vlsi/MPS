@@ -33,6 +33,7 @@ import jetbrains.mps.project.MPSProjectMigrationState;
  * To change this template use File | Settings | File Templates.
  */
 public class MPSProjectViewToolWindowFactory implements ToolWindowFactory, DumbAware {
+  @Override
   public void createToolWindowContent(final Project project, final ToolWindow toolWindow) {
     MPSProjectMigrationState migrationState = project.getComponent(MPSProjectMigrationState.class);
     if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {

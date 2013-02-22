@@ -29,18 +29,22 @@ import javax.swing.Icon;
 
 public class MPSIconProvider implements FileIconProvider, ApplicationComponent {
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS Language Icon Provider";
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 
+  @Override
   @Nullable
   public Icon getIcon(final VirtualFile file, int flags, final Project project) {
     if (file instanceof MPSLanguageVirtualFile) {

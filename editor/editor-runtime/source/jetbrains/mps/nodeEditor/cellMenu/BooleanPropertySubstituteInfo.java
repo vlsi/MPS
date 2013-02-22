@@ -17,11 +17,12 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.PropertySubstituteAction;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BooleanPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
 
@@ -35,9 +36,9 @@ public class BooleanPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
   }
 
   public List<INodeSubstituteAction> createActions() {
-    List<INodeSubstituteAction> list = new LinkedList<INodeSubstituteAction>();
+    List<INodeSubstituteAction> list = new ArrayList<INodeSubstituteAction>(2);
     list.add(new PropertySubstituteAction(myNode, myPropertyName, "true"));
     list.add(new PropertySubstituteAction(myNode, myPropertyName, null));
-    return (List) list;
+    return list;
   }
 }

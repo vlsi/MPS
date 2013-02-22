@@ -31,11 +31,13 @@ public class WatchableNode extends AbstractWatchableNode {
     setIcon(getNodeIcon());
   }
 
+  @Override
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
@@ -74,6 +76,7 @@ public class WatchableNode extends AbstractWatchableNode {
         public void invoke() {
           myWatchable.getValue().initSubvalues();
           ApplicationManager.getApplication().invokeLater(new Runnable() {
+            @Override
             public void run() {
               for (IWatchable watchable : ListSequence.fromList(getValue().getSubvalues())) {
                 add(new WatchableNode(watchable, myState));

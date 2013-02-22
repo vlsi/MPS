@@ -27,10 +27,12 @@ class InsertChildAtUndoableAction extends SNodeUndoableAction {
     myChild = child;
   }
 
+  @Override
   protected void doUndo() {
     getAffectedNode().removeChild(myChild);
   }
 
+  @Override
   protected void doRedo() {
     getAffectedNode().insertChild(myRole, myChild, myAnchor);
   }

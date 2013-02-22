@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -19,12 +21,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.nodeEditor.BlockCells;
 
 public class ReferenceContainer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_jpb8dn_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_jpb8dn_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
   }
 
   public static class _Inline_jpb8dn_a1a1b0 extends InlineCellProvider {
@@ -124,6 +128,10 @@ public class ReferenceContainer_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_jpb8dn_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
   }
 
   private EditorCell createCollection_jpb8dn_a(EditorContext editorContext, SNode node) {
@@ -315,13 +323,5 @@ public class ReferenceContainer_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_jpb8dn_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return BlockCells.useBraces();
-  }
-
-  private static boolean renderingCondition_jpb8dn_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return BlockCells.useBraces();
   }
 }

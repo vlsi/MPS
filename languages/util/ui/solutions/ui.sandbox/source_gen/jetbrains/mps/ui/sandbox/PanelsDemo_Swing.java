@@ -41,6 +41,7 @@ public class PanelsDemo_Swing {
     widget_wgtfc_a0a0c.setText("Vertical");
     widget_wgtfc_a0a0c.setActionCommand("vertical");
     widget_wgtfc_a0a0c.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -55,6 +56,7 @@ public class PanelsDemo_Swing {
     widget_wgtfc_b0a0c.setText("Horizontal");
     widget_wgtfc_b0a0c.setActionCommand("horizontal");
     widget_wgtfc_b0a0c.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -69,6 +71,7 @@ public class PanelsDemo_Swing {
     widget_wgtfc_c0a0c.setText("Dock");
     widget_wgtfc_c0a0c.setActionCommand("dock");
     widget_wgtfc_c0a0c.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -83,6 +86,7 @@ public class PanelsDemo_Swing {
     widget_wgtfc_d0a0c.setText("Flow");
     widget_wgtfc_d0a0c.setActionCommand("flow");
     widget_wgtfc_d0a0c.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -97,6 +101,7 @@ public class PanelsDemo_Swing {
     widget_wgtfc_e0a0c.setText("Layout");
     widget_wgtfc_e0a0c.setActionCommand("layout");
     widget_wgtfc_e0a0c.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -111,6 +116,7 @@ public class PanelsDemo_Swing {
     widget_wgtfc_f0a0c.setText("Grid");
     widget_wgtfc_f0a0c.setActionCommand("grid");
     widget_wgtfc_f0a0c.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -248,6 +254,7 @@ public class PanelsDemo_Swing {
     final JButton widget_wgtfc_b0a0a0b0b0f = new JButton();
     widget_wgtfc_b0a0a0b0b0f.setText("North");
     widget_wgtfc_b0a0a0b0b0f.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -265,6 +272,7 @@ public class PanelsDemo_Swing {
     final JButton widget_wgtfc_b0b0a0b0b0f = new JButton();
     widget_wgtfc_b0b0a0b0b0f.setText("South");
     widget_wgtfc_b0b0a0b0b0f.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -282,6 +290,7 @@ public class PanelsDemo_Swing {
     final JButton widget_wgtfc_b0c0a0b0b0f = new JButton();
     widget_wgtfc_b0c0a0b0b0f.setText("East");
     widget_wgtfc_b0c0a0b0b0f.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {
@@ -299,6 +308,7 @@ public class PanelsDemo_Swing {
     final JButton widget_wgtfc_b0d0a0b0b0f = new JButton();
     widget_wgtfc_b0d0a0b0b0f.setText("West");
     widget_wgtfc_b0d0a0b0b0f.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         _FunctionTypes._void_P1_E0<? super ActionEvent> h = new _FunctionTypes._void_P1_E0<ActionEvent>() {
           public void invoke(ActionEvent event) {

@@ -8,6 +8,7 @@
     <classNode dependClassName="com.google.gwt.user.client.ui.Widget" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />

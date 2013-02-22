@@ -69,7 +69,7 @@ public class EvaluationContainer implements IEvaluationContainer {
         BaseSModelDescriptor descriptor = ProjectModels.createDescriptorFor(true);
         SModule containerModule = myContainerModule.resolve(myDebuggerRepository);
         SModelRepository.getInstance().registerModelDescriptor(descriptor, containerModule);
-        myContainerModel = descriptor.getModelReference();
+        myContainerModel = descriptor.getReference();
         myContext = new ModuleContext(containerModule, ProjectHelper.toMPSProject(myProject));
       }
     });
@@ -86,20 +86,24 @@ public class EvaluationContainer implements IEvaluationContainer {
 
 
 
+  @Override
   public Class generateClass() throws EvaluationException {
     return GeneratorUtil.generateAndLoadEvaluatorClass(myProject, SModelRepository.getInstance().getModelDescriptor(myContainerModel), Properties.EVALUATOR_NAME, getContext(), Properties.IS_DEVELOPER_MODE, new TransformingGenerationHandler(false, true, myGenerationListeners), ((ClassLoadingModule) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cf8c9de5-1b4a-4dc8-8e6d-847159af31dd"))).getClassLoader());
   }
 
+  @Override
   public void addGenerationListener(_FunctionTypes._void_P1_E0<? super SNode> listener) {
     ListSequence.fromList(myGenerationListeners).addElement(listener);
   }
 
+  @Override
   public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException {
     return GeneratorUtil.createInstance(clazz, new Class[]{JavaUiState.class}, new Object[]{myUiState});
   }
 
 
 
+  @Override
   public IEvaluationContainer copy(boolean isWatch) {
     final SNodeReference reference = myNode;
     return new EvaluationContainer(myProject, myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>())) {
@@ -112,18 +116,22 @@ public class EvaluationContainer implements IEvaluationContainer {
 
 
 
+  @Override
   public String getPresentation() {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         return PresentationUtil.getPresentation(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(getNode(), "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), "virtual_getCode_317191294093624551", new Object[]{}));
       }
     });
   }
 
+  @Override
   public IOperationContext getContext() {
     return myContext;
   }
 
+  @Override
   public SNode getNode() {
     if (myNode == null) {
       return null;
@@ -133,6 +141,7 @@ public class EvaluationContainer implements IEvaluationContainer {
 
 
 
+  @Override
   public void updateState() {
     myUiState = myDebugSession.getUiState();
   }
@@ -162,10 +171,12 @@ public class EvaluationContainer implements IEvaluationContainer {
   }
 
   private class MyBaseLanguagesImportHelper extends BaseLanguagesImportHelper {
+    @Override
     public SNode findVariable(SReference variableReference) {
       return null;
     }
 
+    @Override
     public SNode createVariableReference(SNode variable) {
       return createInternalVariableReference_jbng3m_a0a1cb(variable.getName());
     }

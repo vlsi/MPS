@@ -17,10 +17,10 @@ package jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor;
 
 import com.intellij.icons.AllIcons.General;
 import com.intellij.ui.LayeredIcon;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.visitor.updates.IconNodeUpdate;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import javax.swing.*;
 
@@ -29,9 +29,9 @@ public class ProjectPaneModifiedMarker extends TreeNodeVisitor {
   protected void visitModelNode(final SModelTreeNode node) {
     SModelDescriptor md = node.getSModelDescriptor();
     if (!(md.isLoaded())) return;
-    if (!(md instanceof EditableSModelDescriptor)) return;
+    if (!(md instanceof EditableSModel)) return;
 
-    boolean changed = ((EditableSModelDescriptor) md).isChanged();
+    boolean changed = ((EditableSModel) md).isChanged();
 
     final Icon icon = changed ? new LayeredIcon(node.getDefaultIcon(), General.Modified) : node.getDefaultIcon();
     ourUpdater.addUpdate(node, new IconNodeUpdate(icon));

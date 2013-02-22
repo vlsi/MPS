@@ -37,18 +37,22 @@ import java.util.List;
 
 public class NamespaceTextNode extends TextTreeNode {
   private static final NamespaceNodeBuilder<NamespaceTextNode> BUILDER = new NamespaceNodeBuilder<NamespaceTextNode>() {
+    @Override
     public NamespaceTextNode createNamespaceNode(String text, IOperationContext context) {
       return new NamespaceTextNode(text, context);
     }
 
+    @Override
     public String getName(NamespaceTextNode node) {
       return node.getName();
     }
 
+    @Override
     public void setName(NamespaceTextNode node, String name) {
       node.setName(name);
     }
 
+    @Override
     public boolean isNamespaceNode(MPSTreeNode n) {
       return n instanceof NamespaceTextNode;
     }
@@ -70,10 +74,12 @@ public class NamespaceTextNode extends TextTreeNode {
     setText(newName);
   }
 
+  @Override
   protected boolean canBeOpened() {
     return false;
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_NAMESPACE_ACTIONS);
   }

@@ -456,6 +456,7 @@ public class JavaCompile_Facet extends IFacet.Stub {
               }
               pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(false);
               jc.addCompilationResultListener(new CompilationResultAdapter() {
+                @Override
                 public void onCompilationResult(CompilationResult cr) {
                   if (cr.hasErrors()) {
                     pa.global().properties(Target_compileToMemory.this.getName(), JavaCompile_Facet.Target_compileToMemory.Parameters.class).errors(true);

@@ -131,6 +131,7 @@ public class BlameDialog extends DialogWrapper {
     myExceptionContainer.setVisible(false);
 
     myAnonymousRadio.addChangeListener(new ChangeListener() {
+      @Override
       public void stateChanged(ChangeEvent e) {
         boolean enabled = !myAnonymousRadio.getModel().isSelected();
         myUsername.setEnabled(enabled);
@@ -140,6 +141,7 @@ public class BlameDialog extends DialogWrapper {
     });
 
     myTestLoginButton.setAction(new AbstractAction("Test Login") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         Poster poster = new Poster(myProject);
         Query query = createQuery();
@@ -168,6 +170,7 @@ public class BlameDialog extends DialogWrapper {
     init();
   }
 
+  @Override
   @NotNull
   protected String getDimensionServiceKey() {
     return getClass().getName();
@@ -222,6 +225,7 @@ public class BlameDialog extends DialogWrapper {
   }
 
 
+  @Override
   protected void doOKAction() {
     String title = getBuildString() + myTitleField.getText();
 
@@ -283,6 +287,7 @@ public class BlameDialog extends DialogWrapper {
   }
 
 
+  @Override
   public void doCancelAction() {
     myResult = null;
     myIsCancelled = true;

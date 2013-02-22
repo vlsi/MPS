@@ -38,7 +38,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -46,6 +45,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;

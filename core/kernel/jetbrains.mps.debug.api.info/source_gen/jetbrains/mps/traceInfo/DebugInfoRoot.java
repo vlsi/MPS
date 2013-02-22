@@ -12,8 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
 import java.util.Comparator;
 import org.jdom.DataConversionException;
@@ -78,7 +77,7 @@ public class DebugInfoRoot {
   }
 
   public SNode findNode(@NonNls String nodeId) {
-    return ((SNodePointer) new SNodePointer(((SModelReference) myNodeRef.getModelReference()), SNodeId.fromString(nodeId))).getNode();
+    return new SNodePointer(myNodeRef.getModelReference().toString(), nodeId).resolve(MPSModuleRepository.getInstance());
   }
 
   /*package*/ void toXml(Element container) {

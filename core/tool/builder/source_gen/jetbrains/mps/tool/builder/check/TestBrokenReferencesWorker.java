@@ -45,6 +45,7 @@ public class TestBrokenReferencesWorker extends MakeWorker {
     this.myUsedNonHeap = mmbean.getNonHeapMemoryUsage().getUsed();
   }
 
+  @Override
   public void work() {
     setupEnvironment();
 
@@ -69,6 +70,7 @@ public class TestBrokenReferencesWorker extends MakeWorker {
       extractModels(go.getModels(), m);
     }
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         for (SModel sm : go.getModels()) {
           if (!(SModelStereotype.isUserModel(sm))) {
@@ -94,6 +96,7 @@ public class TestBrokenReferencesWorker extends MakeWorker {
     final IScope scope = ((IModule) sm.getModule()).getScope();
     StringBuffer errorMessages = new StringBuffer();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+      @Override
       public List<String> compute() {
         return new ModelValidator(sm).validate(scope);
       }
@@ -127,6 +130,7 @@ public class TestBrokenReferencesWorker extends MakeWorker {
     return myBuildServerMessageFormat.escapeBuildMessage(errorMessages);
   }
 
+  @Override
   protected void showStatistic() {
     MemoryMXBean mmbean = ManagementFactory.getMemoryMXBean();
     output("Used heap: " + (mmbean.getHeapMemoryUsage().getUsed() - myUsedHeap));

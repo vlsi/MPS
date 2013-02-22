@@ -6,6 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -24,14 +28,42 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MethodDocComment_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ls0i5e_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_ls0i5e_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
+  }
+
+  private static boolean renderingCondition_ls0i5e_a1c0a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_ls0i5e_a2c0a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_ls0i5e_a3c0a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_ls0i5e_a4c0a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_ls0i5e_a5c0a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_ls0i5e_a6c0a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsTag", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_ls0i5e_a7c0a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "return", true) != null);
   }
 
   private static class bodyListHandler_ls0i5e_b0a extends RefNodeListHandler {
@@ -516,37 +548,5 @@ public class MethodDocComment_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_ls0i5e_a1c0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_ls0i5e_a2c0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "since", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_ls0i5e_a3c0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "version", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_ls0i5e_a4c0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "see", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_ls0i5e_a5c0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "param", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_ls0i5e_a6c0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsTag", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_ls0i5e_a7c0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "return", true) != null);
-  }
-
-  private static boolean renderingCondition_ls0i5e_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}));
   }
 }

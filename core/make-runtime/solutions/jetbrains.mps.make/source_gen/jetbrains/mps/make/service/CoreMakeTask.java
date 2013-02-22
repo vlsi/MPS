@@ -207,22 +207,27 @@ public class CoreMakeTask {
       Logger.removeLoggingHandler(this);
     }
 
+    @Override
     public void fatal(LogEntry entry) {
       handle(MessageKind.ERROR, entry);
     }
 
+    @Override
     public void error(LogEntry entry) {
       handle(MessageKind.ERROR, entry);
     }
 
+    @Override
     public void debug(LogEntry entry) {
       handle(MessageKind.INFORMATION, entry);
     }
 
+    @Override
     public void warning(LogEntry entry) {
       handle(MessageKind.WARNING, entry);
     }
 
+    @Override
     public void info(LogEntry entry) {
       handle(MessageKind.INFORMATION, entry);
     }

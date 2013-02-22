@@ -19,6 +19,7 @@
     <classNode dependClassName="git4idea.commands.GitCommand" />
     <classNode dependClassName="git4idea.commands.GitSimpleHandler" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.PluginUtil" />

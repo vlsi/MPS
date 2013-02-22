@@ -23,6 +23,7 @@ public abstract class AbstractCommandPart implements CommandPart {
   public AbstractCommandPart() {
   }
 
+  @Override
   public List<String> getCommandList() {
     return myCommand;
   }
@@ -39,6 +40,7 @@ public abstract class AbstractCommandPart implements CommandPart {
     addCommands(Sequence.fromArray(list));
   }
 
+  @Override
   public int getLength() {
     return IterableUtils.join(ListSequence.fromList(myCommand), " ").length();
   }

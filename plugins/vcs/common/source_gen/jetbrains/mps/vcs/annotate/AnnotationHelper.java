@@ -90,6 +90,7 @@ public class AnnotationHelper {
       private FileAnnotation myFileAnnotation;
       private VcsException myException;
 
+      @Override
       public void run(@NotNull ProgressIndicator indicator) {
         try {
           myFileAnnotation = annotationProvider.annotate(file);

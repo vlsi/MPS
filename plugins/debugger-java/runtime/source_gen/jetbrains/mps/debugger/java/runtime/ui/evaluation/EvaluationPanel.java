@@ -13,7 +13,7 @@ import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import javax.swing.JSplitPane;
 import com.intellij.ui.components.JBScrollPane;
 import javax.swing.AbstractAction;
@@ -46,7 +46,7 @@ public class EvaluationPanel extends EvaluationUi {
 
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        myEditor = new EmbeddableEditor(myEvaluationModel.getContext(), (EditableSModelDescriptor) myEvaluationModel.getNode().getModel().getModelDescriptor(), myEvaluationModel.getNode(), true);
+        myEditor = new EmbeddableEditor(myEvaluationModel.getContext(), (EditableSModel) myEvaluationModel.getNode().getModel().getModelDescriptor(), myEvaluationModel.getNode(), true);
       }
     });
 
@@ -68,6 +68,7 @@ public class EvaluationPanel extends EvaluationUi {
     }
 
     myEditor.getComponenet().registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent p0) {
         evaluate();
       }
@@ -80,6 +81,7 @@ public class EvaluationPanel extends EvaluationUi {
     return myEvaluationModel;
   }
 
+  @Override
   public void dispose() {
     ApplicationManager.getApplication().assertIsDispatchThread();
     if (myIsDisposed) {
@@ -91,17 +93,19 @@ public class EvaluationPanel extends EvaluationUi {
     myEditor.disposeEditor(false);
   }
 
+  @Override
   public void evaluate() {
     evaluate(myEvaluationModel);
   }
 
   private void updateGenerationResultTab(final SNode generatedResult) {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
+      @Override
       public void run() {
         if (EvaluationPanel.this.myResultEditor == null) {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              EvaluationPanel.this.myResultEditor = new EmbeddableEditor(myEvaluationModel.getContext(), (EditableSModelDescriptor) myEvaluationModel.getNode().getModel().getModelDescriptor(), generatedResult, false);
+              EvaluationPanel.this.myResultEditor = new EmbeddableEditor(myEvaluationModel.getContext(), (EditableSModel) myEvaluationModel.getNode().getModel().getModelDescriptor(), generatedResult, false);
             }
           });
           EvaluationPanel.this.myTabbedPane.add("Generated Result", EvaluationPanel.this.myResultEditor.getComponenet());
@@ -117,6 +121,7 @@ public class EvaluationPanel extends EvaluationUi {
     }, ModalityState.NON_MODAL);
   }
 
+  @Override
   protected void update() {
     myEvaluationModel.updateState();
   }

@@ -40,16 +40,19 @@ public class ViewOptions extends BaseOptions {
     myNewTab = newTab;
   }
 
+  @Override
   public ViewOptions clone() {
     return new ViewOptions(myShowOneResult, myNewTab);
   }
 
+  @Override
   public void read(Element element, Project project) {
     Element flagsXML = element.getChild(FLAGS);
     myShowOneResult = Boolean.parseBoolean(flagsXML.getAttribute(SHOW_ONE_RESULT).getValue());
     myNewTab = Boolean.parseBoolean(flagsXML.getAttribute(NEW_TAB).getValue());
   }
 
+  @Override
   public void write(Element element, Project project) {
     Element flagsXML = new Element(FLAGS);
     flagsXML.setAttribute(SHOW_ONE_RESULT, Boolean.toString(myShowOneResult));

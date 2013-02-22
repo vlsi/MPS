@@ -30,38 +30,47 @@ public class ChooseModelDescriptorComponent implements IChooseComponent<SModelDe
     myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(operationContext, null, true, false);
   }
 
+  @Override
   public SModelDescriptor submit() throws InvalidInputValueException {
     return (SModelDescriptor) myChooseNodeOrModelComponent.submit();
   }
 
+  @Override
   public String getPropertyName() {
     return myChooseNodeOrModelComponent.getPropertyName();
   }
 
+  @Override
   public void setPropertyName(String propertyName) {
     myChooseNodeOrModelComponent.setPropertyName(propertyName);
   }
 
+  @Override
   public void setInitialValue(SModelDescriptor initialValue) {
     myChooseNodeOrModelComponent.setInitialValue(initialValue);
   }
 
+  @Override
   public void setCondition(Condition<SModelDescriptor> condition) {
     myChooseNodeOrModelComponent.setCondition((Condition) condition);
   }
 
+  @Override
   public JComponent getComponentToFocus() {
     return myChooseNodeOrModelComponent.getComponentToFocus();
   }
 
+  @Override
   public JComponent getMainComponent() {
     return myChooseNodeOrModelComponent;
   }
 
+  @Override
   public void setCaption(String caption) {
     myChooseNodeOrModelComponent.setCaption(caption);
   }
 
+  @Override
   public void initComponent() {
     myChooseNodeOrModelComponent.initComponent();
   }

@@ -34,8 +34,10 @@ public class TreeNodeUpdater {
 
   public TreeNodeUpdater() {
     myTimer = new Timer("ProjectPane Tree Updater", 500) {
+      @Override
       protected void onTimer() throws InterruptedException {
         ModelAccess.instance().runReadInEDT(new Runnable() {
+          @Override
           public void run() {
             process();
           }

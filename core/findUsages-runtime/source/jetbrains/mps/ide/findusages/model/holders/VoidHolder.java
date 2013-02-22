@@ -40,10 +40,12 @@ public class VoidHolder implements IHolder {
 
   }
 
+  @Override
   public Object getObject() {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   @NotNull
   public String getCaption() {
     return myCaption;
@@ -53,10 +55,12 @@ public class VoidHolder implements IHolder {
     return myIcon;
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     throw new CantLoadSomethingException("VoidHolder is not loadable");
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     throw new CantSaveSomethingException("VoidHolder is not saveable");
   }

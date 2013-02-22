@@ -29,9 +29,9 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {

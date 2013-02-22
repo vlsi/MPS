@@ -39,6 +39,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -628,11 +629,13 @@ public abstract class EditorCell_Basic implements EditorCell {
     return new NodeSubstitutePatternEditor();
   }
 
+  @Override
+  public void setSubstituteInfo(SubstituteInfo info) {
+    //To change body of implemented methods use File | Settings | File Templates.
+  }
+
   public void setSubstituteInfo(NodeSubstituteInfo substituteInfo) {
     mySubstituteInfo = substituteInfo;
-    if (mySubstituteInfo != null) {
-      mySubstituteInfo.setOriginalNode(getSNode());
-    }
   }
 
   public NodeSubstituteInfo getSubstituteInfo() {

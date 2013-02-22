@@ -51,18 +51,22 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
     return myTable;
   }
 
+  @Override
   protected BaseValidatedAction createAddAction(final Computable<List<T>> chooser) {
     return new BoundTablePanel.MyTableAddAction(chooser);
   }
 
+  @Override
   protected BaseValidatedAction createRemoveAction() {
     return new BoundTablePanel.MyTableRemoveAction(myTable);
   }
 
+  @Override
   protected int[] getSelectedIndices() {
     return myTable.getSelectedRows();
   }
 
+  @Override
   protected JComponent initUIComponentAndBinding() {
     myTable = (myDiffRow ?
       new DiffRowTable() :
@@ -95,6 +99,7 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
         text.setOpaque(true);
         text.setEditable(false);
         column.setCellEditor(new DefaultCellEditor(text) {
+          @Override
           public boolean isCellEditable(EventObject anEvent) {
             return false;
           }
@@ -114,6 +119,7 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
       super(table);
     }
 
+    @Override
     protected void doRemove(AnActionEvent e) {
       String errorMessage = BoundTablePanel.this.removeSelectedWithCheck();
       if (errorMessage.length() != 0) {
@@ -130,6 +136,7 @@ public class BoundTablePanel<T> extends ValidateableBoundPanel<T> {
       myChooser = chooser;
     }
 
+    @Override
     protected int doAdd(AnActionEvent e) {
       List<T> chosen = myChooser.compute();
       if (chosen == null) {

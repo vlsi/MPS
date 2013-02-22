@@ -300,6 +300,7 @@ public class EventsProcessor {
     public EventProcessorRunnable() {
     }
 
+    @Override
     public void run() {
       try {
         EventQueue eventQueue = myVirtualMachine.eventQueue();

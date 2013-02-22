@@ -51,10 +51,12 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   }
 
   @NotNull
+  @Override
   protected EditorComponent getEditorComponent() {
     return super.getEditorComponent();
   }
 
+  @Override
   public int getWeight() {
     return 0;
   }

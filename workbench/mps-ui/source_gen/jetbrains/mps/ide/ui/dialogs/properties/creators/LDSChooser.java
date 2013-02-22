@@ -18,6 +18,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 
 public class LDSChooser implements Computable<List<ModuleReference>> {
+  @Override
   public List<ModuleReference> compute() {
     final Wrappers._T<List<ModuleReference>> ldsRefs = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {

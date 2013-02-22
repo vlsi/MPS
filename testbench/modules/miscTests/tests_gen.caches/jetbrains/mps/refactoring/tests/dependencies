@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.refactoring.tests.MoveConceptRefactoringTester" file="MoveConceptRefactoringTester.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
@@ -27,6 +28,7 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.tests.IRefactoringTester" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RefactoringTestFacade" file="RefactoringTestFacade.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
@@ -36,6 +38,7 @@
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester" file="RenameConceptRefactoringTester.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
@@ -60,6 +63,7 @@
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Hierarchy" file="RenameLinkRefactoringTester_Hierarchy.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
@@ -87,6 +91,7 @@
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RenameLinkRefactoringTester_Simple" file="RenameLinkRefactoringTester_Simple.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
@@ -113,6 +118,7 @@
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RenamePropertyRefactoringTester_Simple" file="RenamePropertyRefactoringTester_Simple.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />

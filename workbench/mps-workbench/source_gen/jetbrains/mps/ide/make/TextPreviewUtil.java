@@ -38,6 +38,7 @@ public class TextPreviewUtil {
     IScript scr = new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.lang.core.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory")).toScript();
 
     IScriptController ctl = new IScriptController.Stub(new IConfigMonitor.Stub() {
+      @Override
       public <T extends IOption> T relayQuery(IQuery<T> query) {
         return query.defaultOption();
       }
@@ -46,6 +47,7 @@ public class TextPreviewUtil {
     final Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(context, Sequence.<SModel>singleton(md)).resources(false), scr, ctl);
 
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      @Override
       public void run() {
         try {
           IResult result = future.get();

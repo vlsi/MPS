@@ -82,13 +82,9 @@
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <compileServer.plugin classpath="jps/mps-java-jps-plugin.jar;mps-java-common.jar"/>
-
     <java.elementFinder implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaClassFinder"/>
     <java.shortNamesCache implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaShortNamesCache"/>
-    <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaDirectInheritorsSearcher"/>
-    <lang.findUsagesProvider language="MPS" implementationClass="jetbrains.mps.idea.java.psi.impl.MPSFindUsagesProvider"/>
-    <methodReferencesSearch implementation="jetbrains.mps.idea.java.psi.impl.MPSMethodReferenceSearch"/>
-
+    <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.usages.MPSJavaDirectInheritorsSearcher"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">

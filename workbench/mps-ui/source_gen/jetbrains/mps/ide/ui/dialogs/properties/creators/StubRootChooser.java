@@ -26,6 +26,7 @@ public class StubRootChooser implements Computable<List<String>> {
     myJavaOnly = javaOnly;
   }
 
+  @Override
   public List<String> compute() {
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);

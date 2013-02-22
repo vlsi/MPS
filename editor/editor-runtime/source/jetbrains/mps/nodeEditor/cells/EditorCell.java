@@ -37,15 +37,6 @@ import java.util.Iterator;
 import java.util.List;
 
 public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell {
-  // TODO: Pulled up to jetbrains.mps.openapi.editor.cells.EditorCell. Remove it.
-//  EditorCell_Collection getParent();
-  EditorCell getRootParent();
-
-  // TODO: same as inset?
-  void setLeftGap(int gap);
-  void setRightGap(int gap);
-  // END of pull up
-
   void paint(Graphics g);
   void paint(Graphics g, ParentSettings parentSettings);
   void paintSelection(Graphics g, Color c, boolean drawBorder);

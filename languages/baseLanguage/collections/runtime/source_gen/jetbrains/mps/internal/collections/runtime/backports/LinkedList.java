@@ -12,20 +12,24 @@ public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, 
   public LinkedList() {
   }
 
+  @Override
   public Iterator<T> descendingIterator() {
     return new LinkedList.DescendingIterator<T>(listIterator(size()));
   }
 
+  @Override
   public boolean offerFirst(T t) {
     addFirst(t);
     return true;
   }
 
+  @Override
   public boolean offerLast(T t) {
     addLast(t);
     return true;
   }
 
+  @Override
   public T peekFirst() {
     if (isEmpty()) {
       return null;
@@ -33,6 +37,7 @@ public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, 
     return getFirst();
   }
 
+  @Override
   public T peekLast() {
     if (isEmpty()) {
       return null;
@@ -40,26 +45,32 @@ public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, 
     return getLast();
   }
 
+  @Override
   public T pollFirst() {
     return getFirst();
   }
 
+  @Override
   public T pollLast() {
     return getLast();
   }
 
+  @Override
   public T pop() {
     return removeFirst();
   }
 
+  @Override
   public void push(T t) {
     addFirst(t);
   }
 
+  @Override
   public boolean removeFirstOccurrence(Object o) {
     return remove(o);
   }
 
+  @Override
   public boolean removeLastOccurrence(Object o) {
     for (ListIterator li = listIterator(size()); li.hasPrevious();) {
       if (LinkedList.eq(o, li.previous())) {
@@ -84,14 +95,17 @@ public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, 
       this.listIterator = listIterator;
     }
 
+    @Override
     public boolean hasNext() {
       return listIterator.hasPrevious();
     }
 
+    @Override
     public U next() {
       return listIterator.previous();
     }
 
+    @Override
     public void remove() {
       listIterator.remove();
     }

@@ -14,6 +14,7 @@ public class EmptySearchScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     return new ArrayList<SNode>();
   }
@@ -21,6 +22,7 @@ public class EmptySearchScope extends AbstractSearchScope {
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     return new IReferenceInfoResolver() {
+      @Override
       public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
         return null;
       }

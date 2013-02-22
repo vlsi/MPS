@@ -42,24 +42,28 @@ class JarFileData extends AbstractJarFileData {
     super(file);
   }
 
+  @Override
   Set<String> getFiles(String dir) {
     ensureInitialized();
 
     return Collections.unmodifiableSet(myFiles.get(dir));
   }
 
+  @Override
   Set<String> getSubdirectories(String dir) {
     ensureInitialized();
 
     return Collections.unmodifiableSet(mySubDirectories.get(dir));
   }
 
+  @Override
   boolean exists(String path) {
     ensureInitialized();
 
     return (myEntries.get(path) != null) || (mySubDirectories.get(path) != null);
   }
 
+  @Override
   boolean isDirectory(String path) {
     ensureInitialized();
 

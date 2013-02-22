@@ -80,6 +80,7 @@ public class SModelUtil {
       return null;
     }
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
+      @Override
       public SNode compute() {
         String languageFqName = NameUtil.namespaceFromConceptFQName(conceptFQName);
         Language language = ModuleRepositoryFacade.getInstance().getModule(languageFqName, Language.class);
@@ -117,6 +118,7 @@ public class SModelUtil {
       return l;
     }
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Language>() {
+      @Override
       public Language compute() {
         String languageFqName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(concept));
         if (languageFqName == null) {

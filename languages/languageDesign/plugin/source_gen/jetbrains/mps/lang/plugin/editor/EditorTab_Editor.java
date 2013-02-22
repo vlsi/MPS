@@ -6,6 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.nodeEditor.BlockCells;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -19,7 +22,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -27,12 +29,18 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.nodeEditor.BlockCells;
 
 public class EditorTab_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gp0hv6_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_gp0hv6_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
+  }
+
+  private static boolean renderingCondition_gp0hv6_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
+    return isNotEmpty_gp0hv6_a0a0c(SPropertyOperations.getString(node, "shortcutChar"));
   }
 
   public static class _Inline_gp0hv6_a1e1b0 extends InlineCellProvider {
@@ -66,6 +74,10 @@ public class EditorTab_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_gp0hv6_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
   }
 
   private EditorCell createCollection_gp0hv6_a(EditorContext editorContext, SNode node) {
@@ -452,19 +464,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_gp0hv6_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return BlockCells.useBraces();
-  }
-
-  private static boolean renderingCondition_gp0hv6_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_gp0hv6_a0a0ib(SPropertyOperations.getString(node, "shortcutChar"));
-  }
-
-  private static boolean renderingCondition_gp0hv6_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return BlockCells.useBraces();
-  }
-
-  public static boolean isNotEmpty_gp0hv6_a0a0ib(String str) {
+  public static boolean isNotEmpty_gp0hv6_a0a0c(String str) {
     return str != null && str.length() > 0;
   }
 }

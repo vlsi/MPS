@@ -35,10 +35,6 @@ public class TransientSModel extends SModel {
     return new TransientModelNodeFinder(this);
   }
 
-  public boolean isTransient() {
-    return true;
-  }
-
   @Override
   protected boolean canFireReadEvent() {
     /* enables read access tracking for incremental generation */

@@ -6,6 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -24,13 +27,18 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BwfSubTask_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6puhak_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_6puhak_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "after", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_6puhak_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "before", true)).isNotEmpty();
   }
 
   private static class afterListHandler_6puhak_b2a extends RefNodeListHandler {
@@ -290,13 +298,5 @@ public class BwfSubTask_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_6puhak_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "after", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_6puhak_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "before", true)).isNotEmpty();
   }
 }

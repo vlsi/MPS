@@ -33,10 +33,10 @@ public class ListType_Editor extends DefaultNodeEditor {
     return this.createCollection_8617pm_a(editorContext, node);
   }
 
-  public static class ListType_component_cellMenu_a0a0 implements SubstituteInfoPartExt {
+  public static class ListType_component_cellMenu_8617pm_a0a0 implements SubstituteInfoPartExt {
     private replace_withAnotherSequenceType myComponent;
 
-    public ListType_component_cellMenu_a0a0() {
+    public ListType_component_cellMenu_8617pm_a0a0() {
       this.myComponent = new replace_withAnotherSequenceType();
     }
 
@@ -63,7 +63,7 @@ public class ListType_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ListType_Editor.ListType_component_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ListType_Editor.ListType_component_cellMenu_8617pm_a0a0()}));
     return editorCell;
   }
 

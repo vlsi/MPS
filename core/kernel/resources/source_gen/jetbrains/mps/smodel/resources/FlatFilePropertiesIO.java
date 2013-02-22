@@ -19,10 +19,12 @@ public class FlatFilePropertiesIO implements IPropertiesIO {
     this.descFile = descFile;
   }
 
+  @Override
   public void writeProperties(Map<String, String> store) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public Map<String, String> readProperties() throws IOException {
     if (descFile == null) {
       return null;
@@ -57,6 +59,7 @@ public class FlatFilePropertiesIO implements IPropertiesIO {
     ));
   }
 
+  @Override
   public Object getKey() {
     return (descFile != null ?
       descFile.getPath() :

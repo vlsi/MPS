@@ -12,6 +12,7 @@ public class ChildrenTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
     super(source, feature);
   }
 
+  @Override
   public Iterator<T> iterator() {
     return new ChildrenTreeTraversal.ChildrenIterator(getSourceTraversal().iterator());
   }
@@ -41,10 +42,12 @@ public class ChildrenTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
       }
     }
 
+    @Override
     public boolean hasNext() {
       return hasNextNode;
     }
 
+    @Override
     public T next() {
       if (!(hasNextNode)) {
         throw new NoSuchElementException();
@@ -54,6 +57,7 @@ public class ChildrenTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
       return tmp;
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

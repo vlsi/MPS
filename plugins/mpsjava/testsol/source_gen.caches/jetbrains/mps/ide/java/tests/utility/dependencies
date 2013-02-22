@@ -69,6 +69,7 @@
     <classNode dependClassName="jetbrains.mps.tool.builder.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

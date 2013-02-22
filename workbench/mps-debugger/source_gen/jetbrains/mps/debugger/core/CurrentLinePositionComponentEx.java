@@ -88,6 +88,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
   @Nullable
   protected Runnable attachPainterRunnable(final S debugSession) {
     final CurrentLinePainter newPainter = ModelAccess.instance().runReadAction(new Computable<CurrentLinePainter>() {
+      @Override
       public CurrentLinePainter compute() {
         SNode node = getNode(debugSession);
         if (node != null) {
@@ -172,6 +173,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
     final Runnable attachSession = attachPainterRunnable(session);
     if (detachSession != null || attachSession != null) {
       ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
         public void run() {
           if (detachSession != null) {
             detachSession.run();

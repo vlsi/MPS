@@ -9,6 +9,7 @@
   <generators />
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">9ded098b-ad6a-4657-bfd9-48636cfe8bc3(jetbrains.mps.lang.traceable)</dependency>
   </dependencies>
   <usedLanguages>

@@ -19,49 +19,49 @@
     <nodeInfo nodeId="3070226725409646626" fileName="ManagerThread.java" startLine="68" startPosition="23" endLine="69" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6460341978864345726" fileName="ManagerThread.java" startLine="72" startPosition="43" endLine="73" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6460341978864585134" fileName="ManagerThread.java" startLine="76" startPosition="45" endLine="77" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="6460341978864345637" fileName="ManagerThread.java" startLine="87" startPosition="44" endLine="88" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6460341978864345851" fileName="ManagerThread.java" startLine="89" startPosition="11" endLine="90" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520954994829105520" fileName="ManagerThread.java" startLine="91" startPosition="9" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6520954994829104656" fileName="ManagerThread.java" startLine="93" startPosition="23" endLine="94" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6520954994829104618" fileName="ManagerThread.java" startLine="94" startPosition="102" endLine="95" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520954994829104677" fileName="ManagerThread.java" startLine="97" startPosition="17" endLine="98" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520954994829104734" fileName="ManagerThread.java" startLine="99" startPosition="35" endLine="100" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="613652663728201784" fileName="ManagerThread.java" startLine="104" startPosition="45" endLine="105" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6460341978864345643" fileName="ManagerThread.java" startLine="106" startPosition="7" endLine="107" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520954994829104708" fileName="ManagerThread.java" startLine="112" startPosition="23" endLine="113" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864345837" fileName="ManagerThread.java" startLine="114" startPosition="16" endLine="115" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864345844" fileName="ManagerThread.java" startLine="117" startPosition="29" endLine="118" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6460341978864316851" fileName="ManagerThread.java" startLine="123" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6460341978864345637" fileName="ManagerThread.java" startLine="88" startPosition="44" endLine="89" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6460341978864345851" fileName="ManagerThread.java" startLine="90" startPosition="11" endLine="91" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520954994829105520" fileName="ManagerThread.java" startLine="92" startPosition="9" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6520954994829104656" fileName="ManagerThread.java" startLine="94" startPosition="23" endLine="95" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520954994829104618" fileName="ManagerThread.java" startLine="95" startPosition="102" endLine="96" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520954994829104677" fileName="ManagerThread.java" startLine="98" startPosition="17" endLine="99" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520954994829104734" fileName="ManagerThread.java" startLine="100" startPosition="35" endLine="101" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="613652663728201784" fileName="ManagerThread.java" startLine="105" startPosition="45" endLine="106" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6460341978864345643" fileName="ManagerThread.java" startLine="107" startPosition="7" endLine="108" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520954994829104708" fileName="ManagerThread.java" startLine="113" startPosition="23" endLine="114" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864345837" fileName="ManagerThread.java" startLine="115" startPosition="16" endLine="116" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864345844" fileName="ManagerThread.java" startLine="118" startPosition="29" endLine="119" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6460341978864316851" fileName="ManagerThread.java" startLine="124" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="6460341978864345908" fileName="ManagerThread.java" startLine="26" startPosition="10" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6520954994829104807" fileName="ManagerThread.java" startLine="63" startPosition="10" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6460341978864345565" fileName="ManagerThread.java" startLine="81" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WorkerThread#()V" />
-    <nodeInfo nodeId="6520954994829104732" fileName="ManagerThread.java" startLine="114" startPosition="14" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6520954994829104732" fileName="ManagerThread.java" startLine="115" startPosition="14" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6460341978864316853" fileName="ManagerThread.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ManagerThread#()V" />
     <nodeInfo nodeId="6460341978864393893" fileName="ManagerThread.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
     <nodeInfo nodeId="6460341978864585123" fileName="ManagerThread.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isManagerThread#()Z" />
     <nodeInfo nodeId="6460341978864585130" fileName="ManagerThread.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="assertIsMangerThread#()V" />
-    <nodeInfo nodeId="6460341978864345626" fileName="ManagerThread.java" startLine="86" startPosition="22" endLine="89" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864345626" fileName="ManagerThread.java" startLine="87" startPosition="22" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6460341978864346235" fileName="ManagerThread.java" startLine="52" startPosition="10" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="6460341978864345857" fileName="ManagerThread.java" startLine="23" startPosition="47" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3070226725409646894" fileName="ManagerThread.java" startLine="37" startPosition="30" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="6520954994829104578" fileName="ManagerThread.java" startLine="45" startPosition="30" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="6520954994829104778" fileName="ManagerThread.java" startLine="60" startPosition="49" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520954994829104670" fileName="ManagerThread.java" startLine="96" startPosition="78" endLine="101" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6520954994829104703" fileName="ManagerThread.java" startLine="111" startPosition="11" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460341978864345632" fileName="ManagerThread.java" startLine="85" startPosition="11" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="6520954994829104670" fileName="ManagerThread.java" startLine="97" startPosition="78" endLine="102" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6520954994829104703" fileName="ManagerThread.java" startLine="112" startPosition="11" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864345632" fileName="ManagerThread.java" startLine="86" startPosition="11" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="6460341978864345582" fileName="ManagerThread.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/debugger/java/runtime/engine/concurrent/IManagerCommand;)V" />
     <nodeInfo nodeId="3070226725409646873" fileName="ManagerThread.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="6520954994829104552" fileName="ManagerThread.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="6460341978864345896" fileName="ManagerThread.java" startLine="60" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="schedule#(Ljetbrains/mps/debugger/java/runtime/engine/concurrent/IManagerCommand;)V" />
-    <nodeInfo nodeId="6520954994829104665" fileName="ManagerThread.java" startLine="95" startPosition="46" endLine="102" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6460341978864345835" fileName="ManagerThread.java" startLine="110" startPosition="58" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6520954994829104613" fileName="ManagerThread.java" startLine="92" startPosition="0" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6460341978864345830" fileName="ManagerThread.java" startLine="110" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCommand#(Ljetbrains/mps/debugger/java/runtime/engine/concurrent/IManagerCommand;)V" />
+    <nodeInfo nodeId="6520954994829104665" fileName="ManagerThread.java" startLine="96" startPosition="46" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6460341978864345835" fileName="ManagerThread.java" startLine="111" startPosition="58" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6520954994829104613" fileName="ManagerThread.java" startLine="93" startPosition="0" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864345830" fileName="ManagerThread.java" startLine="111" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processCommand#(Ljetbrains/mps/debugger/java/runtime/engine/concurrent/IManagerCommand;)V" />
     <nodeInfo nodeId="3070226725409646871" fileName="ManagerThread.java" startLine="35" startPosition="61" endLine="52" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3070226725409667376" fileName="ManagerThread.java" startLine="84" startPosition="23" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3070226725409667376" fileName="ManagerThread.java" startLine="85" startPosition="23" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="6460341978864345903" fileName="ManagerThread.java" startLine="34" startPosition="10" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6460341978864345571" fileName="ManagerThread.java" startLine="84" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="6460341978864345876" fileName="ManagerThread.java" startLine="31" startPosition="60" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6460341978864345571" fileName="ManagerThread.java" startLine="84" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="6460341978864345599" fileName="ManagerThread.java" startLine="31" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeAndWait#(Ljetbrains/mps/debugger/java/runtime/engine/concurrent/IManagerCommand;)V" />
     <scopeInfo nodeId="6460341978864346238" fileName="ManagerThread.java" startLine="55" startPosition="0" endLine="55" endPosition="45">
       <varInfo nodeId="6460341978864346239" varName="ignore" />
@@ -82,34 +82,34 @@
     <scopeInfo nodeId="6460341978864393896" fileName="ManagerThread.java" startLine="68" startPosition="23" endLine="69" endPosition="20" />
     <scopeInfo nodeId="6460341978864345591" fileName="ManagerThread.java" startLine="72" startPosition="43" endLine="73" endPosition="72" />
     <scopeInfo nodeId="6460341978864585133" fileName="ManagerThread.java" startLine="76" startPosition="45" endLine="77" endPosition="29" />
-    <scopeInfo nodeId="6460341978864345628" fileName="ManagerThread.java" startLine="87" startPosition="44" endLine="88" endPosition="18" />
-    <scopeInfo nodeId="6520954994829104671" fileName="ManagerThread.java" startLine="97" startPosition="17" endLine="98" endPosition="31" />
-    <scopeInfo nodeId="6520954994829104672" fileName="ManagerThread.java" startLine="99" startPosition="0" endLine="100" endPosition="74">
+    <scopeInfo nodeId="6460341978864345628" fileName="ManagerThread.java" startLine="88" startPosition="44" endLine="89" endPosition="18" />
+    <scopeInfo nodeId="6520954994829104671" fileName="ManagerThread.java" startLine="98" startPosition="17" endLine="99" endPosition="31" />
+    <scopeInfo nodeId="6520954994829104672" fileName="ManagerThread.java" startLine="100" startPosition="0" endLine="101" endPosition="74">
       <varInfo nodeId="6520954994829104673" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6520954994829104675" fileName="ManagerThread.java" startLine="99" startPosition="35" endLine="100" endPosition="74" />
-    <scopeInfo nodeId="3070226725409667379" fileName="ManagerThread.java" startLine="104" startPosition="0" endLine="105" endPosition="20">
+    <scopeInfo nodeId="6520954994829104675" fileName="ManagerThread.java" startLine="100" startPosition="35" endLine="101" endPosition="74" />
+    <scopeInfo nodeId="3070226725409667379" fileName="ManagerThread.java" startLine="105" startPosition="0" endLine="106" endPosition="20">
       <varInfo nodeId="3070226725409667380" varName="ignore" />
     </scopeInfo>
-    <scopeInfo nodeId="3070226725409667382" fileName="ManagerThread.java" startLine="104" startPosition="45" endLine="105" endPosition="20" />
-    <scopeInfo nodeId="6520954994829104704" fileName="ManagerThread.java" startLine="112" startPosition="23" endLine="113" endPosition="27" />
-    <scopeInfo nodeId="6520954994829104733" fileName="ManagerThread.java" startLine="114" startPosition="16" endLine="115" endPosition="27" />
-    <scopeInfo nodeId="6460341978864345841" fileName="ManagerThread.java" startLine="117" startPosition="0" endLine="118" endPosition="68">
+    <scopeInfo nodeId="3070226725409667382" fileName="ManagerThread.java" startLine="105" startPosition="45" endLine="106" endPosition="20" />
+    <scopeInfo nodeId="6520954994829104704" fileName="ManagerThread.java" startLine="113" startPosition="23" endLine="114" endPosition="27" />
+    <scopeInfo nodeId="6520954994829104733" fileName="ManagerThread.java" startLine="115" startPosition="16" endLine="116" endPosition="27" />
+    <scopeInfo nodeId="6460341978864345841" fileName="ManagerThread.java" startLine="118" startPosition="0" endLine="119" endPosition="68">
       <varInfo nodeId="6460341978864345828" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864345843" fileName="ManagerThread.java" startLine="117" startPosition="29" endLine="118" endPosition="68" />
+    <scopeInfo nodeId="6460341978864345843" fileName="ManagerThread.java" startLine="118" startPosition="29" endLine="119" endPosition="68" />
     <scopeInfo nodeId="6460341978864345565" fileName="ManagerThread.java" startLine="81" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="6460341978864316853" fileName="ManagerThread.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="6460341978864393893" fileName="ManagerThread.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="6460341978864585123" fileName="ManagerThread.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="6460341978864585130" fileName="ManagerThread.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="6460341978864345634" fileName="ManagerThread.java" startLine="86" startPosition="22" endLine="90" endPosition="48" />
+    <scopeInfo nodeId="6460341978864345634" fileName="ManagerThread.java" startLine="87" startPosition="22" endLine="91" endPosition="48" />
     <scopeInfo nodeId="6460341978864345585" fileName="ManagerThread.java" startLine="23" startPosition="47" endLine="28" endPosition="5" />
     <scopeInfo nodeId="3070226725409646874" fileName="ManagerThread.java" startLine="37" startPosition="30" endLine="42" endPosition="11" />
     <scopeInfo nodeId="6520954994829104553" fileName="ManagerThread.java" startLine="45" startPosition="30" endLine="50" endPosition="11" />
     <scopeInfo nodeId="6460341978864345899" fileName="ManagerThread.java" startLine="60" startPosition="49" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="6520954994829104668" fileName="ManagerThread.java" startLine="96" startPosition="78" endLine="101" endPosition="13" />
-    <scopeInfo nodeId="6460341978864345836" fileName="ManagerThread.java" startLine="111" startPosition="11" endLine="116" endPosition="9" />
+    <scopeInfo nodeId="6520954994829104668" fileName="ManagerThread.java" startLine="97" startPosition="78" endLine="102" endPosition="13" />
+    <scopeInfo nodeId="6460341978864345836" fileName="ManagerThread.java" startLine="112" startPosition="11" endLine="117" endPosition="9" />
     <scopeInfo nodeId="6460341978864345582" fileName="ManagerThread.java" startLine="23" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="6520954994829104492" varName="command" />
     </scopeInfo>
@@ -118,30 +118,30 @@
     <scopeInfo nodeId="6460341978864345896" fileName="ManagerThread.java" startLine="60" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="6460341978864345901" varName="command" />
     </scopeInfo>
-    <scopeInfo nodeId="6520954994829104665" fileName="ManagerThread.java" startLine="95" startPosition="46" endLine="102" endPosition="11">
+    <scopeInfo nodeId="6520954994829104665" fileName="ManagerThread.java" startLine="96" startPosition="46" endLine="103" endPosition="11">
       <varInfo nodeId="6520954994829104666" varName="command" />
     </scopeInfo>
-    <scopeInfo nodeId="6520954994829104614" fileName="ManagerThread.java" startLine="93" startPosition="23" endLine="102" endPosition="11">
+    <scopeInfo nodeId="6520954994829104614" fileName="ManagerThread.java" startLine="94" startPosition="23" endLine="103" endPosition="11">
       <varInfo nodeId="6520954994829104657" varName="unprocessed" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864345834" fileName="ManagerThread.java" startLine="110" startPosition="58" endLine="119" endPosition="7" />
-    <scopeInfo nodeId="6460341978864345830" fileName="ManagerThread.java" startLine="110" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="6460341978864345834" fileName="ManagerThread.java" startLine="111" startPosition="58" endLine="120" endPosition="7" />
+    <scopeInfo nodeId="6460341978864345830" fileName="ManagerThread.java" startLine="111" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="6520954994829104495" varName="command" />
     </scopeInfo>
-    <scopeInfo nodeId="3070226725409667377" fileName="ManagerThread.java" startLine="85" startPosition="11" endLine="103" endPosition="9" />
+    <scopeInfo nodeId="3070226725409667377" fileName="ManagerThread.java" startLine="86" startPosition="11" endLine="104" endPosition="9" />
     <scopeInfo nodeId="6460341978864345904" fileName="ManagerThread.java" startLine="34" startPosition="12" endLine="56" endPosition="7">
       <varInfo nodeId="6460341978864346185" varName="countDown" />
     </scopeInfo>
-    <scopeInfo nodeId="6460341978864345574" fileName="ManagerThread.java" startLine="84" startPosition="23" endLine="107" endPosition="57" />
-    <scopeInfo nodeId="6460341978864345571" fileName="ManagerThread.java" startLine="84" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="6460341978864345574" fileName="ManagerThread.java" startLine="85" startPosition="23" endLine="108" endPosition="57" />
     <scopeInfo nodeId="6460341978864345602" fileName="ManagerThread.java" startLine="31" startPosition="60" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="6460341978864345571" fileName="ManagerThread.java" startLine="84" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="6460341978864345599" fileName="ManagerThread.java" startLine="31" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="6460341978864345603" varName="command" />
     </scopeInfo>
     <unitInfo nodeId="3070226725409646873" fileName="ManagerThread.java" startLine="36" startPosition="40" endLine="44" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread$1" />
     <unitInfo nodeId="6520954994829104552" fileName="ManagerThread.java" startLine="44" startPosition="13" endLine="52" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread$2" />
-    <unitInfo nodeId="6460341978864345563" fileName="ManagerThread.java" startLine="80" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread$WorkerThread" />
-    <unitInfo nodeId="6460341978864316851" fileName="ManagerThread.java" startLine="14" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread" />
+    <unitInfo nodeId="6460341978864345563" fileName="ManagerThread.java" startLine="80" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread$WorkerThread" />
+    <unitInfo nodeId="6460341978864316851" fileName="ManagerThread.java" startLine="14" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread" />
   </root>
   <root nodeRef="r:4abf334f-133f-4ef7-b458-4b8344e952fb(jetbrains.mps.debugger.java.runtime.engine.concurrent)/6520954994829104387">
     <nodeInfo nodeId="6520954994829104389" fileName="IManagerCommand.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
@@ -151,44 +151,44 @@
     <unitInfo nodeId="6520954994829104387" fileName="IManagerCommand.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.IManagerCommand" />
   </root>
   <root nodeRef="r:4abf334f-133f-4ef7-b458-4b8344e952fb(jetbrains.mps.debugger.java.runtime.engine.concurrent)/6520954994829104397">
-    <nodeInfo nodeId="6520954994829104436" fileName="Commands.java" startLine="13" startPosition="28" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520954994829104468" fileName="Commands.java" startLine="21" startPosition="28" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520954994829104487" fileName="Commands.java" startLine="26" startPosition="28" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520954994829104436" fileName="Commands.java" startLine="14" startPosition="28" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520954994829104468" fileName="Commands.java" startLine="23" startPosition="28" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520954994829104487" fileName="Commands.java" startLine="28" startPosition="28" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6520954994829104399" fileName="Commands.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Commands#()V" />
-    <nodeInfo nodeId="6520954994829104407" fileName="Commands.java" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ManagerCommand#()V" />
-    <nodeInfo nodeId="6520954994829104432" fileName="Commands.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="6520954994829104464" fileName="Commands.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="6520954994829104412" fileName="Commands.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cancel#()V" />
-    <nodeInfo nodeId="6520954994829104480" fileName="Commands.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cancel#()V" />
-    <nodeInfo nodeId="6520954994829104426" fileName="Commands.java" startLine="11" startPosition="87" endLine="16" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520954994829104417" fileName="Commands.java" startLine="11" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromClosure#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)Ljetbrains/mps/debugger/java/runtime/engine/concurrent/IManagerCommand;" />
-    <nodeInfo nodeId="6520954994829104459" fileName="Commands.java" startLine="19" startPosition="128" endLine="29" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520954994829104456" fileName="Commands.java" startLine="19" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromClosure#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)Ljetbrains/mps/debugger/java/runtime/engine/concurrent/IManagerCommand;" />
+    <nodeInfo nodeId="6520954994829104407" fileName="Commands.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ManagerCommand#()V" />
+    <nodeInfo nodeId="6520954994829104412" fileName="Commands.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cancel#()V" />
+    <nodeInfo nodeId="6520954994829104432" fileName="Commands.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="6520954994829104464" fileName="Commands.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="6520954994829104480" fileName="Commands.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cancel#()V" />
+    <nodeInfo nodeId="6520954994829104426" fileName="Commands.java" startLine="11" startPosition="87" endLine="17" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520954994829104417" fileName="Commands.java" startLine="11" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromClosure#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)Ljetbrains/mps/debugger/java/runtime/engine/concurrent/IManagerCommand;" />
+    <nodeInfo nodeId="6520954994829104459" fileName="Commands.java" startLine="20" startPosition="128" endLine="31" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520954994829104456" fileName="Commands.java" startLine="20" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromClosure#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)Ljetbrains/mps/debugger/java/runtime/engine/concurrent/IManagerCommand;" />
     <scopeInfo nodeId="6520954994829104402" fileName="Commands.java" startLine="8" startPosition="21" endLine="8" endPosition="21" />
-    <scopeInfo nodeId="6520954994829104410" fileName="Commands.java" startLine="33" startPosition="29" endLine="33" endPosition="29" />
-    <scopeInfo nodeId="6520954994829104415" fileName="Commands.java" startLine="37" startPosition="26" endLine="37" endPosition="26" />
-    <scopeInfo nodeId="6520954994829104435" fileName="Commands.java" startLine="13" startPosition="28" endLine="14" endPosition="25" />
-    <scopeInfo nodeId="6520954994829104467" fileName="Commands.java" startLine="21" startPosition="28" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="6520954994829104484" fileName="Commands.java" startLine="26" startPosition="28" endLine="27" endPosition="17" />
+    <scopeInfo nodeId="6520954994829104410" fileName="Commands.java" startLine="35" startPosition="29" endLine="35" endPosition="29" />
+    <scopeInfo nodeId="6520954994829104415" fileName="Commands.java" startLine="39" startPosition="26" endLine="39" endPosition="26" />
+    <scopeInfo nodeId="6520954994829104435" fileName="Commands.java" startLine="14" startPosition="28" endLine="15" endPosition="25" />
+    <scopeInfo nodeId="6520954994829104467" fileName="Commands.java" startLine="23" startPosition="28" endLine="24" endPosition="25" />
+    <scopeInfo nodeId="6520954994829104484" fileName="Commands.java" startLine="28" startPosition="28" endLine="29" endPosition="17" />
     <scopeInfo nodeId="6520954994829104399" fileName="Commands.java" startLine="8" startPosition="0" endLine="10" endPosition="0" />
-    <scopeInfo nodeId="6520954994829104407" fileName="Commands.java" startLine="33" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="6520954994829104432" fileName="Commands.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="6520954994829104464" fileName="Commands.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="6520954994829104412" fileName="Commands.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="6520954994829104480" fileName="Commands.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="6520954994829104420" fileName="Commands.java" startLine="11" startPosition="87" endLine="16" endPosition="6" />
-    <scopeInfo nodeId="6520954994829104417" fileName="Commands.java" startLine="11" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="6520954994829104407" fileName="Commands.java" startLine="35" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="6520954994829104412" fileName="Commands.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="6520954994829104432" fileName="Commands.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
+    <scopeInfo nodeId="6520954994829104464" fileName="Commands.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="6520954994829104480" fileName="Commands.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="6520954994829104420" fileName="Commands.java" startLine="11" startPosition="87" endLine="17" endPosition="6" />
+    <scopeInfo nodeId="6520954994829104417" fileName="Commands.java" startLine="11" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="6520954994829104422" varName="command" />
     </scopeInfo>
-    <scopeInfo nodeId="6520954994829104458" fileName="Commands.java" startLine="19" startPosition="128" endLine="29" endPosition="6" />
-    <scopeInfo nodeId="6520954994829104456" fileName="Commands.java" startLine="19" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="6520954994829104458" fileName="Commands.java" startLine="20" startPosition="128" endLine="31" endPosition="6" />
+    <scopeInfo nodeId="6520954994829104456" fileName="Commands.java" startLine="20" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="6520954994829104475" varName="cancel" />
       <varInfo nodeId="6520954994829104472" varName="command" />
     </scopeInfo>
-    <unitInfo nodeId="6520954994829104430" fileName="Commands.java" startLine="12" startPosition="15" endLine="16" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands$1" />
-    <unitInfo nodeId="6520954994829104405" fileName="Commands.java" startLine="32" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands$ManagerCommand" />
-    <unitInfo nodeId="6520954994829104462" fileName="Commands.java" startLine="20" startPosition="15" endLine="29" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands$2" />
-    <unitInfo nodeId="6520954994829104397" fileName="Commands.java" startLine="7" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands" />
+    <unitInfo nodeId="6520954994829104430" fileName="Commands.java" startLine="12" startPosition="15" endLine="17" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands$1" />
+    <unitInfo nodeId="6520954994829104405" fileName="Commands.java" startLine="34" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands$ManagerCommand" />
+    <unitInfo nodeId="6520954994829104462" fileName="Commands.java" startLine="21" startPosition="15" endLine="31" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands$2" />
+    <unitInfo nodeId="6520954994829104397" fileName="Commands.java" startLine="7" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands" />
   </root>
 </debugInfo>
 

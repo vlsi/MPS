@@ -16,7 +16,7 @@ public abstract class ChangeModel {
   }
 
   public void change(SModel model) {
-    this.myModel = new DefaultSModel(model.getSModelReference());
+    this.myModel = new DefaultSModel(model.getReference());
     CopyUtil.copyModelContentAndPreserveIds(model, myModel);
     CopyUtil.copyModelProperties(model, myModel);
   }

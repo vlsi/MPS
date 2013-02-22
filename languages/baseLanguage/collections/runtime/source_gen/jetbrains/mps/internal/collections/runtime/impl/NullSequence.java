@@ -48,6 +48,7 @@ public class NullSequence<T> extends Sequence<T> implements Iterable<T> {
     return this;
   }
 
+  @Override
   public Iterator<T> iterator() {
     return new NullSequence.EmptyIterator<T>();
   }
@@ -61,14 +62,17 @@ public class NullSequence<T> extends Sequence<T> implements Iterable<T> {
     protected EmptyIterator() {
     }
 
+    @Override
     public boolean hasNext() {
       return false;
     }
 
+    @Override
     public U next() {
       throw new NoSuchElementException();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

@@ -24,6 +24,7 @@ public class ScopeAdapter implements ISearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> result = Sequence.fromIterable(scope.getAvailableElements(null)).toListSequence();
     if (condition != null) {
@@ -38,20 +39,24 @@ public class ScopeAdapter implements ISearchScope {
     return result;
   }
 
+  @Override
   public boolean isInScope(SNode node) {
     return scope.contains(node);
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes() {
     return Sequence.fromIterable(scope.getAvailableElements(null)).toListSequence();
   }
 
+  @Override
   public IReferenceInfoResolver getReferenceInfoResolver(final SNode referenceNode, SNode targetConcept) {
     return new IReferenceInfoResolver() {
       /**
        * * Finds node by referenceInfo and optional targetModelReference.
        */
+      @Override
       public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
         return scope.resolve(referenceNode, referenceInfo);
       }

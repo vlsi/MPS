@@ -16,6 +16,7 @@ public class NodeFeature extends AbstractNodeFeature {
   }
 
   @Nullable
+  @Override
   public Feature getParent() {
     SNode node = ((SNodePointer) getNodePointer()).getNode();
     SNode parentNode = SNodeOperations.getParent(node);

@@ -33,7 +33,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   public BaseVersionEditorComponent(IOperationContext operationContext, ChangeGroup changeGroup) {
     super(operationContext);
     final SModel baseModel = ListSequence.fromList(changeGroup.getChanges()).first().getChangeSet().getOldModel();
-    SNode baseRoot = baseModel.getNodeById(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
+    SNode baseRoot = baseModel.getNode(ListSequence.fromList(changeGroup.getChanges()).first().getRootId());
     editNode(baseRoot);
 
     setBackground(CARET_ROW_COLOR);
@@ -71,6 +71,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     myScrollPane.getViewport().setViewPosition(viewRect.getLocation());
   }
 
+  @Override
   protected EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().getModel() == null) {
       EditorContext editorContext = getEditorContext();

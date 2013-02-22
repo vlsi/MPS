@@ -161,16 +161,19 @@ public class FileStructurePopup implements Disposable {
       myTreeModel = structureViewModel;
     }
     myTreeStructure = new SmartTreeStructure(project, myTreeModel) {
+      @Override
       public void rebuildTree() {
         if (ApplicationManager.getApplication().isUnitTestMode() || !(myPopup.isDisposed())) {
           super.rebuildTree();
         }
       }
 
+      @Override
       public boolean isToBuildChildrenInBackground(final Object element) {
         return getRootElement() == element;
       }
 
+      @Override
       protected TreeElementWrapper createTree() {
         return new StructureViewComponent.StructureViewTreeElementWrapper(myProject, myModel.getRoot(), myModel);
       }
@@ -272,6 +275,7 @@ public class FileStructurePopup implements Disposable {
       public void run() {
         myTreeHasBuilt.setDone();
         ApplicationManager.getApplication().invokeLater(new Runnable() {
+          @Override
           public void run() {
             myFilteringStructure.rebuild();
             myAbstractTreeBuilder.queueUpdate(true).doWhenDone(new Runnable() {
@@ -303,6 +307,7 @@ public class FileStructurePopup implements Disposable {
           if (!(filter.equals(prefix))) {
             filter = prefix;
             ApplicationManager.getApplication().invokeLater(new Runnable() {
+              @Override
               public void run() {
                 final AccessToken token = ApplicationManager.getApplication().acquireReadActionLock();
                 try {
@@ -376,6 +381,7 @@ public class FileStructurePopup implements Disposable {
     return null;
   }
 
+  @Override
   public void dispose() {
   }
 
@@ -417,6 +423,7 @@ public class FileStructurePopup implements Disposable {
     final Shortcut[] ENTER = CustomShortcutSet.fromString("ENTER").getShortcuts();
     final CustomShortcutSet shortcutSet = new CustomShortcutSet(ArrayUtil.mergeArrays(F4, ENTER));
     new AnAction() {
+      @Override
       public void actionPerformed(AnActionEvent e) {
         final boolean succeeded = navigateSelectedElement();
         if (succeeded) {
@@ -425,6 +432,7 @@ public class FileStructurePopup implements Disposable {
       }
     }.registerCustomShortcutSet(shortcutSet, panel);
     new AnAction() {
+      @Override
       public void actionPerformed(AnActionEvent e) {
         if (mySpeedSearch != null && mySpeedSearch.isPopupActive()) {
           mySpeedSearch.hidePopup();
@@ -497,6 +505,7 @@ public class FileStructurePopup implements Disposable {
     final Ref<Boolean> succeeded = new Ref<Boolean>();
     final CommandProcessor commandProcessor = CommandProcessor.getInstance();
     commandProcessor.executeCommand(myProject, new Runnable() {
+      @Override
       public void run() {
         final AbstractTreeNode selectedNode = getSelectedNode();
         if (selectedNode != null) {
@@ -520,6 +529,7 @@ public class FileStructurePopup implements Disposable {
     final JCheckBox checkBox = new JCheckBox(IdeBundle.message("checkbox.narrow.down.on.typing"));
     checkBox.setSelected(PropertiesComponent.getInstance().getBoolean(FileStructurePopup.narrowDownPropertyKey, true));
     checkBox.addChangeListener(new ChangeListener() {
+      @Override
       public void stateChanged(ChangeEvent e) {
         myShouldNarrowDown = checkBox.isSelected();
         PropertiesComponent.getInstance().setValue(FileStructurePopup.narrowDownPropertyKey, Boolean.toString(myShouldNarrowDown));
@@ -556,6 +566,7 @@ public class FileStructurePopup implements Disposable {
       selected
     ));
     chkFilter.addActionListener(new ActionListener() {
+      @Override
       public void actionPerformed(final ActionEvent e) {
         final boolean state = chkFilter.isSelected();
         FileStructurePopup.saveState(action, state);
@@ -573,6 +584,7 @@ public class FileStructurePopup implements Disposable {
         myFilteringStructure.rebuild();
         final Object sel = selection;
         final Runnable runnable = new Runnable() {
+          @Override
           public void run() {
             final AccessToken token = ApplicationManager.getApplication().acquireReadActionLock();
             try {
@@ -600,6 +612,7 @@ public class FileStructurePopup implements Disposable {
     if (shortcuts.length > 0) {
       text += " (" + KeymapUtil.getShortcutText(shortcuts[0]) + ")";
       new AnAction() {
+        @Override
         public void actionPerformed(final AnActionEvent e) {
           chkFilter.doClick();
         }
@@ -765,6 +778,7 @@ public class FileStructurePopup implements Disposable {
     public MyTreeSpeedSearch() {
       super(FileStructurePopup.this.myTree, new Convertor<TreePath, String>() {
         @Nullable
+        @Override
         public String convert(TreePath path) {
           final DefaultMutableTreeNode node = (DefaultMutableTreeNode) path.getLastPathComponent();
           final Object userObject = node.getUserObject();

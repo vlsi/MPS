@@ -21,4 +21,22 @@ import org.jetbrains.mps.openapi.model.SModel;
  * evgeny, 2/14/13
  */
 public interface EditableSModel extends SModel {
+
+  boolean isChanged();
+
+  void setChanged(boolean changed);
+
+  @Override
+  void save();
+
+  void rename(String newModelName, boolean changeFile);
+
+  @Override
+  boolean isReadOnly();
+
+  void updateDiskTimestamp();
+
+  boolean needsReloading();
+
+  void reloadFromDisk();
 }

@@ -23,12 +23,14 @@ public interface Condition<T> {
   public boolean met(T object);
 
   public static final Condition TRUE_CONDITION = new Condition() {
+    @Override
     public boolean met(Object object) {
       return true;
     }
   };
 
   public static final Condition FALSE_CONDITION = new Condition() {
+    @Override
     public boolean met(Object object) {
       return false;
     }

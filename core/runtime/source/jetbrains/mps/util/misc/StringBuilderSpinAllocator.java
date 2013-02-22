@@ -24,12 +24,14 @@ public class StringBuilderSpinAllocator {
   }
 
   private static class Creator implements SpinAllocator.ICreator<StringBuilder> {
+    @Override
     public StringBuilder createInstance() {
       return new StringBuilder();
     }
   }
 
   private static class Disposer implements SpinAllocator.IDisposer<StringBuilder> {
+    @Override
     public void disposeInstance(final StringBuilder instance) {
       instance.setLength(0);
       if (instance.capacity() > 1024) {

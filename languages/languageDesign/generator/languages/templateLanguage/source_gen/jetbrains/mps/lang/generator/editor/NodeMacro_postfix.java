@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -13,6 +14,8 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
@@ -25,9 +28,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NodeMacro_postfix extends AbstractCellProvider {
   public NodeMacro_postfix(SNode node) {
@@ -46,6 +46,12 @@ public class NodeMacro_postfix extends AbstractCellProvider {
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
+  }
+
+  private static boolean renderingCondition_crgygw_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    String actualRole = node.getRoleInParent();
+    String expectedRole = "smodelAttribute";
+    return !(actualRole.equals(expectedRole));
   }
 
   public static class _Inline_crgygw_a1a extends InlineCellProvider {
@@ -82,6 +88,14 @@ public class NodeMacro_postfix extends AbstractCellProvider {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_crgygw_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "mappingLabel", false) != null;
+  }
+
+  private static boolean renderingCondition_crgygw_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(node, "comment") != null;
   }
 
   private EditorCell createCollection_crgygw_a(EditorContext editorContext, SNode node) {
@@ -188,19 +202,5 @@ public class NodeMacro_postfix extends AbstractCellProvider {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_crgygw_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    String actualRole = node.getRoleInParent();
-    String expectedRole = "smodelAttribute";
-    return !(actualRole.equals(expectedRole));
-  }
-
-  private static boolean renderingCondition_crgygw_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "mappingLabel", false) != null;
-  }
-
-  private static boolean renderingCondition_crgygw_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "comment") != null;
   }
 }

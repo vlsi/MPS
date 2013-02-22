@@ -20,7 +20,8 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NonNls;
@@ -52,6 +53,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
 
   void updateFields() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SNode node = myNode.resolve(MPSModuleRepository.getInstance());
         if (node == null) {
@@ -60,7 +62,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
           myPath = myNode.getModelReference().getSModelFqName() + "/" + myName;
         } else {
           myName = "" + node.getPresentation();
-          myPath = node.getModel().getSModelFqName() + "/" + myName;
+          myPath = ((SModelReference) node.getModel().getReference()).getSModelFqName() + "/" + myName;
         }
       }
     });
@@ -74,46 +76,56 @@ public class MPSNodeVirtualFile extends VirtualFile {
     return myNode;
   }
 
+  @Override
   public String getPath() {
     return myPath;
   }
 
+  @Override
   @NotNull
   public VirtualFileSystem getFileSystem() {
     return MPSNodesVirtualFileSystem.getInstance();
   }
 
+  @Override
   @NotNull
   @NonNls
   public String getName() {
     return myName;
   }
 
+  @Override
   public boolean isDirectory() {
     return false;
   }
 
+  @Override
   public long getLength() {
     return 0;
   }
 
+  @Override
   public InputStream getInputStream() throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   @NotNull
   public OutputStream getOutputStream(Object requestor, long newModificationStamp, long newTimeStamp) throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   @NotNull
   public byte[] contentsToByteArray() throws IOException {
     return CONTENTS;
   }
 
+  @Override
   @Nullable
   public VirtualFile getParent() {
     return ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+      @Override
       public VirtualFile compute() {
         if (myNode == null) return null;
         SNode node = getNode();
@@ -125,20 +137,24 @@ public class MPSNodeVirtualFile extends VirtualFile {
     });
   }
 
+  @Override
   public VirtualFile[] getChildren() {
     return null;
   }
 
+  @Override
   public void refresh(boolean asynchronous, boolean recursive, Runnable postRunnable) {
     if (postRunnable != null) {
       postRunnable.run();
     }
   }
 
+  @Override
   public boolean isWritable() {
     return true;
   }
 
+  @Override
   public boolean isValid() {
     return myNode != null;
   }
@@ -151,6 +167,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
     return isValid() && MPSNodesVirtualFileSystem.getInstance().hasVirtualFileFor(myNode);
   }
 
+  @Override
   public long getTimeStamp() {
     return myTimeStamp;
   }
@@ -159,6 +176,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
     myTimeStamp = newTimeStamp;
   }
 
+  @Override
   public long getModificationStamp() {
     return myModificationStamp;
   }

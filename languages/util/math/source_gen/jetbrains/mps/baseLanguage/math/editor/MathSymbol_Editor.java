@@ -6,6 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -18,7 +21,6 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -28,8 +30,6 @@ import jetbrains.mps.editor.runtime.style.ScriptKind;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MathSymbol_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -38,6 +38,14 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_b0ego6_a_0(editorContext, node);
+  }
+
+  private static boolean renderingCondition_b0ego6_a0b0(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex");
+  }
+
+  private static boolean renderingCondition_b0ego6_a3b0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "precondition", true) != null;
   }
 
   private EditorCell createCollection_b0ego6_a(EditorContext editorContext, SNode node) {
@@ -261,13 +269,5 @@ public class MathSymbol_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.BASE_LINE_CELL, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
-  }
-
-  private static boolean renderingCondition_b0ego6_a0b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex");
-  }
-
-  private static boolean renderingCondition_b0ego6_a3b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "precondition", true) != null;
   }
 }

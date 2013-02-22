@@ -53,7 +53,6 @@ import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.mo
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;

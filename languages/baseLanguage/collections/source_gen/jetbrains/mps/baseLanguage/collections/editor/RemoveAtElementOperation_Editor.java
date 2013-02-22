@@ -28,8 +28,8 @@ public class RemoveAtElementOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_89g4zp_a(editorContext, node);
   }
 
-  public static class ReplaceWith_SequenceOperation_cellMenu_a0a0_14 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SequenceOperation_cellMenu_a0a0_14() {
+  public static class ReplaceWith_SequenceOperation_cellMenu_89g4zp_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SequenceOperation_cellMenu_89g4zp_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -54,7 +54,7 @@ public class RemoveAtElementOperation_Editor extends DefaultNodeEditor {
     Collections_Style_StyleSheet.applyOperation(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new RemoveAtElementOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_14()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new RemoveAtElementOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_89g4zp_a0a0()}));
     return editorCell;
   }
 

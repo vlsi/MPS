@@ -35,6 +35,7 @@ import java.util.Set;
 @Deprecated
 public class ChooseModuleDialog extends BaseDialog {
   private MPSTree myTree = new MPSTree() {
+    @Override
     protected MPSTreeNode rebuild() {
       return ChooseModuleDialog.this.rebuild();
     }
@@ -50,6 +51,7 @@ public class ChooseModuleDialog extends BaseDialog {
     myTree.rebuildNow();
   }
 
+  @Override
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
     return new DialogDimensionsSettings.DialogDimensions(200, 200, 400, 300);
   }
@@ -63,6 +65,7 @@ public class ChooseModuleDialog extends BaseDialog {
     return root;
   }
 
+  @Override
   protected JComponent getMainComponent() {
     return myComponent;
   }
@@ -99,6 +102,7 @@ public class ChooseModuleDialog extends BaseDialog {
       setIcon(IconManager.getIconFor(module));
     }
 
+    @Override
     public void doubleClick() {
       okButton();
     }
@@ -107,6 +111,7 @@ public class ChooseModuleDialog extends BaseDialog {
       return myModule;
     }
 
+    @Override
     public boolean isLeaf() {
       return true;
     }

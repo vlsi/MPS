@@ -54,7 +54,7 @@ public class TextGenerationHandler extends GenerationHandlerBase {
     if (outputModel == null) return true;
     boolean generatedOk = true;
     // generate files
-    for (SNode output : outputModel.roots()) {
+    for (SNode output : outputModel.getRootNodes()) {
       String fileName = output.getName() + "." + TextGenManager.instance().getExtension(output);
       TextGenerationResult result = TextGenerationUtil.generateText(ocontext, output);
       if (result.hasErrors()) {

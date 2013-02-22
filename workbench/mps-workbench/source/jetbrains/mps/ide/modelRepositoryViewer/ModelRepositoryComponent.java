@@ -21,6 +21,7 @@ import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.SortUtil;
@@ -29,8 +30,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -51,6 +51,7 @@ public class ModelRepositoryComponent {
 
   public void install() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         myTree.rebuildNow();
       }
@@ -70,21 +71,26 @@ public class ModelRepositoryComponent {
     private MyTree() {
     }
 
+    @Override
     protected MPSTreeNode rebuild() {
       final TextTreeNode[] root = new TextTreeNode[1];
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           root[0] = new TextTreeNode("Loaded Models") {
             {
               setIcon(Icons.PROJECT_MODELS_ICON);
             }
 
+            @Override
             protected boolean propogateErrorUpwards() {
               return false;
             }
 
+            @Override
             public ActionGroup getActionGroup() {
               BaseAction refreshAction = new BaseAction("Refresh") {
+                @Override
                 protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
                   myTree.rebuildNow();
                 }
@@ -118,10 +124,11 @@ public class ModelRepositoryComponent {
         }
       }
 
+      @Override
       protected void doUpdatePresentation() {
         setIcon(IconManager.getIconFor(myModelDescriptor));
-        if ((myModelDescriptor instanceof EditableSModelDescriptor) &&
-          ((EditableSModelDescriptor) myModelDescriptor).isChanged()) {
+        if ((myModelDescriptor instanceof EditableSModel) &&
+          ((EditableSModel) myModelDescriptor).isChanged()) {
           setFontStyle(getFontStyle() | Font.BOLD);
           //setColor(new Color(0x00, 0x00, 0x90));
         }
@@ -155,6 +162,7 @@ public class ModelRepositoryComponent {
         }
       }
 
+      @Override
       public boolean isLeaf() {
         return true;
       }
@@ -163,6 +171,7 @@ public class ModelRepositoryComponent {
 
   private void requestUpdate() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         synchronized (myLock) {
           if (!myUpdateNeeded) return;
@@ -175,18 +184,21 @@ public class ModelRepositoryComponent {
 
   private class DeferringEventHandler {
     private SModelRepositoryListener myRepoListener = new SModelRepositoryAdapter() {
+      @Override
       public void modelRepositoryChanged() {
         requestUpdate();
       }
     };
 
     private SModelListener myModelListener = new SModelAdapter() {
+      @Override
       public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
         requestUpdate();
       }
     };
 
     private ModelAccessListener myModelAccessListener = new ModelAccessAdapter() {
+      @Override
       public void commandFinished() {
         requestUpdate();
       }

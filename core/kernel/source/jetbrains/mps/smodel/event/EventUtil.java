@@ -25,18 +25,21 @@ public class EventUtil {
 
     for (SModelEvent e : events) {
       e.accept(new SModelEventVisitorAdapter() {
+        @Override
         public void visitChildEvent(SModelChildEvent event) {
           if (event.getParent().getModel() != null) {
             result[0] = false;
           }
         }
 
+        @Override
         public void visitPropertyEvent(SModelPropertyEvent event) {
           if (event.getNode().getModel() != null) {
             result[0] = false;
           }
         }
 
+        @Override
         public void visitReferenceEvent(SModelReferenceEvent event) {
           if (event.getReference().getSourceNode().getModel() != null) {
             result[0] = false;

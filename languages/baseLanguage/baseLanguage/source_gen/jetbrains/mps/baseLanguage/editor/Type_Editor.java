@@ -6,18 +6,22 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Type_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_a1nfgp_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_a1nfgp_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "abstract");
   }
 
   private EditorCell createAlternation_a1nfgp_a(EditorContext editorContext, SNode node) {
@@ -45,9 +49,5 @@ public class Type_Editor extends DefaultNodeEditor {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<type>");
     editorCell.setCellId("Error_a1nfgp_a0");
     return editorCell;
-  }
-
-  private static boolean renderingCondition_a1nfgp_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "abstract");
   }
 }

@@ -11,7 +11,7 @@ public class StyleSheet_Behavior {
   }
 
   public static String call_getClassFqName_1213877515585(SNode thisNode) {
-    String namespace = SNodeOperations.getModel(thisNode).getSModelReference().getLongName();
+    String namespace = SNodeOperations.getModel(thisNode).getReference().getLongName();
     if (namespace.length() > 0) {
       namespace = namespace + ".";
     }

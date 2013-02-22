@@ -58,11 +58,13 @@ public class FilterNode extends BaseNode {
     return "filter";
   }
 
+  @Override
   public SearchResults doGetResults(final SearchQuery query, @NotNull final ProgressMonitor monitor) {
     monitor.start(getTaskName() + " started", 5);
     try {
       final SearchResults[] results = new SearchResults[1];
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           SearchResults childRes = myChildren.get(0).getResults(query, monitor.subTask(4));
           monitor.advance(0);
@@ -81,10 +83,12 @@ public class FilterNode extends BaseNode {
     }
   }
 
+  @Override
   public long getEstimatedTime(IScope scope) {
     return 1;
   }
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     Element filterXML = new Element(FILTER);
@@ -92,6 +96,7 @@ public class FilterNode extends BaseNode {
     element.addContent(filterXML);
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     Element filterXML = element.getChild(FILTER);

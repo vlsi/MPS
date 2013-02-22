@@ -52,6 +52,7 @@ public class MappingSelectTree extends Tree {
       return myRenderer;
     }
 
+    @Override
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
       Color selectionForeground = UIManager.getColor("Tree.selectionForeground");
       Color selectionBackground = UIManager.getColor("Tree.selectionBackground");
@@ -68,6 +69,7 @@ public class MappingSelectTree extends Tree {
       final DefaultMutableTreeNode node = (DefaultMutableTreeNode) value;
       final String text = tree.convertValueToText(value, selected, expanded, leaf, row, hasFocus);
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           if (node.getUserObject() instanceof MappingSelectTree.NodeData) {
             MappingSelectTree.NodeData data = (MappingSelectTree.NodeData) node.getUserObject();
@@ -90,6 +92,7 @@ public class MappingSelectTree extends Tree {
     public CheckBoxNodeEditor() {
     }
 
+    @Override
     public Object getCellEditorValue() {
       JCheckBox checkbox = myRenderer.getRenderer();
       MappingSelectTree.NodeData data;
@@ -111,11 +114,13 @@ public class MappingSelectTree extends Tree {
       return data;
     }
 
+    @Override
     public Component getTreeCellEditorComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row) {
       Component editor = myRenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
       DefaultMutableTreeNode node = (DefaultMutableTreeNode) value;
       myObject = (MappingSelectTree.NodeData) node.getUserObject();
       ItemListener itemListener = new ItemListener() {
+        @Override
         public void itemStateChanged(ItemEvent itemEvent) {
           if (CheckBoxNodeEditor.this.stopCellEditing()) {
             CheckBoxNodeEditor.this.fireEditingStopped();
@@ -137,6 +142,7 @@ public class MappingSelectTree extends Tree {
       myText = text;
     }
 
+    @Override
     public String getText() {
       return myText;
     }
@@ -147,10 +153,12 @@ public class MappingSelectTree extends Tree {
       super(ref);
     }
 
+    @Override
     public ModuleReference getObject() {
       return (ModuleReference) super.getObject();
     }
 
+    @Override
     public String getText() {
       Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(getObject());
       if (generator == null) {
@@ -165,10 +173,12 @@ public class MappingSelectTree extends Tree {
       super(reference);
     }
 
+    @Override
     public SModelReference getObject() {
       return (SModelReference) super.getObject();
     }
 
+    @Override
     public String getText() {
       return NameUtil.shortNameFromLongName(getObject().getLongName());
     }
@@ -179,10 +189,12 @@ public class MappingSelectTree extends Tree {
       super(ref);
     }
 
+    @Override
     public SNodeReference getObject() {
       return (SNodePointer) super.getObject();
     }
 
+    @Override
     public String getText() {
       return getObject().resolve(MPSModuleRepository.getInstance()).getName();
     }

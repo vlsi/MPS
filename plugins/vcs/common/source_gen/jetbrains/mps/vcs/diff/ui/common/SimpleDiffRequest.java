@@ -30,15 +30,18 @@ public class SimpleDiffRequest extends DiffRequest {
     }
   }
 
+  @Override
   public String getWindowTitle() {
     return "Model difference";
   }
 
+  @Override
   public String[] getContentTitles() {
     return myContentTitles;
   }
 
   @NotNull
+  @Override
   public DiffContent[] getContents() {
     return myContents;
   }

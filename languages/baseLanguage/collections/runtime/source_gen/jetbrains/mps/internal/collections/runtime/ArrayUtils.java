@@ -102,6 +102,7 @@ public class ArrayUtils {
       }
     }
     return new Iterable<T>() {
+      @Override
       public Iterator<T> iterator() {
         return new ArrayUtils.ArrayIterator<T>(array);
       }
@@ -118,15 +119,18 @@ public class ArrayUtils {
       length = Array.getLength(array);
     }
 
+    @Override
     public boolean hasNext() {
       return idx < length;
     }
 
     @SuppressWarnings(value = "unchecked")
+    @Override
     public T next() {
       return (T) Array.get(array, idx++);
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

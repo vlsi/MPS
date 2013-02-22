@@ -15,7 +15,7 @@ public class PsiTestMain {
         node1.dump(sb);
         node3.dump(sb);
         try {
-            node3.newMethod();
+            node3.newMethod(null);
         } catch (IOException e) {
             // checking resolve of classes from libs
             // (MPSClassStubPsiSourceFinder)
@@ -30,6 +30,12 @@ public class PsiTestMain {
         Iterable<String> lines = node3;
         for (String line : node3) {
             System.out.println(line);
+        }
+
+        // enums
+        switch (node3.color) {
+            case BLACK: break;
+            case RED: break;
         }
     }
 }

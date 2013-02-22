@@ -42,10 +42,12 @@ public interface IGenerationTaskPool {
   public static class SimpleGenerationTaskPool implements IGenerationTaskPool {
     private Deque<GenerationTask> queue = new LinkedList<GenerationTask>();
 
+    @Override
     public void addTask(GenerationTask r) {
       queue.addFirst(r);
     }
 
+    @Override
     public void waitForCompletion() throws GenerationCanceledException, GenerationFailureException {
       GenerationTask next;
       try {

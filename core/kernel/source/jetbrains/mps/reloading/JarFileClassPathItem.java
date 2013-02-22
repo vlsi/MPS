@@ -59,6 +59,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
+  @Override
   public String getPath() {
     checkValidity();
     return myPath;
@@ -82,6 +83,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     return entry != null;
   }
 
+  @Override
   public synchronized byte[] getClass(String name) {
     checkValidity();
     ensureInitialized();
@@ -120,6 +122,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
+  @Override
   public synchronized ClassifierKind getClassifierKind(String name) {
     checkValidity();
     ensureInitialized();
@@ -152,6 +155,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
+  @Override
   public URL getResource(String name) {
     checkValidity();
     ZipFile zf = null;
@@ -176,11 +180,13 @@ public class JarFileClassPathItem extends RealClassPathItem {
     }
   }
 
+  @Override
   public synchronized Iterable<String> getAvailableClasses(String namespace) {
     checkValidity();
     ensureInitialized();
     Set<String> start = myCache.getClassesSetFor(namespace);
     Condition<String> cond = new Condition<String>() {
+      @Override
       public boolean met(String className) {
         return !isAnonymous(className);
       }
@@ -188,12 +194,14 @@ public class JarFileClassPathItem extends RealClassPathItem {
     return new ConditionalIterable<String>(start, cond);
   }
 
+  @Override
   public synchronized Iterable<String> getSubpackages(String namespace) {
     checkValidity();
     ensureInitialized();
     return myCache.getSubpackagesSetFor(namespace);
   }
 
+  @Override
   public long getClassesTimestamp(String namespace) {
     checkValidity();
     long timestamp = 0;
@@ -203,11 +211,13 @@ public class JarFileClassPathItem extends RealClassPathItem {
     return timestamp;
   }
 
+  @Override
   public long getTimestamp() {
     checkValidity();
     return myFile.lastModified();
   }
 
+  @Override
   public List<RealClassPathItem> flatten() {
     checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
@@ -215,6 +225,7 @@ public class JarFileClassPathItem extends RealClassPathItem {
     return result;
   }
 
+  @Override
   public void accept(IClassPathItemVisitor visitor) {
     checkValidity();
     visitor.visit(this);

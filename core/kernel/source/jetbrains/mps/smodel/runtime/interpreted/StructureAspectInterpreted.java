@@ -84,6 +84,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
     });
 
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
+      @Override
       public void eventsHappenedInCommand(List<SModelEvent> events) {
         for (SModelEvent e : events) {
           if (!LanguageAspect.STRUCTURE.is(e.getModelDescriptor())) continue;
@@ -123,6 +124,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
       final List<String> directReferences = new ArrayList<String>();
 
       NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+        @Override
         public void run() {
           SNode declaration = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
           if (declaration == null || !SNodeUtil.isInstanceOfAbstractConceptDeclaration(declaration)) {

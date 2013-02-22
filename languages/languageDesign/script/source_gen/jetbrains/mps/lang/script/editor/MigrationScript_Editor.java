@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -25,12 +27,14 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MigrationScript_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_th2ud5_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_th2ud5_a3a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "type", "migration", "enhancement");
   }
 
   private static class partListHandler_th2ud5_b4a extends RefNodeListHandler {
@@ -260,9 +264,5 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_th2ud5_a3a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "type", "migration", "enhancement");
   }
 }

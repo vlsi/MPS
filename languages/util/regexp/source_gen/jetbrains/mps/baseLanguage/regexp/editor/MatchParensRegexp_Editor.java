@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
@@ -16,7 +17,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -37,8 +37,17 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     return this.createCollection_cqz3y2_a(editorContext, node);
   }
 
-  public static class MatchParensRegexp_customReplace_cellMenu_b0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public MatchParensRegexp_customReplace_cellMenu_b0a0() {
+  public static class ReplaceWith_MatchParensRegexp_cellMenu_cqz3y2_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_MatchParensRegexp_cellMenu_cqz3y2_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp";
+    }
+  }
+
+  public static class MatchParensRegexp_customReplace_cellMenu_cqz3y2_b0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public MatchParensRegexp_customReplace_cellMenu_cqz3y2_b0a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -64,15 +73,6 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class ReplaceWith_MatchParensRegexp_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_MatchParensRegexp_cellMenu_a0a0() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp";
-    }
-  }
-
   private EditorCell createCollection_cqz3y2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cqz3y2_a");
@@ -92,7 +92,7 @@ public class MatchParensRegexp_Editor extends DefaultNodeEditor {
     RegexpStylesheet_StyleSheet.applyLeftRegexpBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MatchParensRegexp_Editor.ReplaceWith_MatchParensRegexp_cellMenu_a0a0(), new MatchParensRegexp_Editor.MatchParensRegexp_customReplace_cellMenu_b0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MatchParensRegexp_Editor.ReplaceWith_MatchParensRegexp_cellMenu_cqz3y2_a0a0(), new MatchParensRegexp_Editor.MatchParensRegexp_customReplace_cellMenu_cqz3y2_b0a0()}));
     return editorCell;
   }
 

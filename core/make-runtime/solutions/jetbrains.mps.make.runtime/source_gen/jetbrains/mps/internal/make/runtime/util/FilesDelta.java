@@ -64,6 +64,7 @@ public class FilesDelta implements IDelta {
     MapSequence.fromMap(files).put(file, FilesDelta.Status.DELETED);
   }
 
+  @Override
   public boolean reconcile() {
     return acceptVisitor(new FilesDelta.Visitor() {
       @Override
@@ -79,6 +80,7 @@ public class FilesDelta implements IDelta {
     });
   }
 
+  @Override
   public boolean acceptVisitor(IDeltaVisitor visitor) {
     if (!(visitor instanceof FilesDelta.Visitor)) {
       return true;
@@ -86,6 +88,7 @@ public class FilesDelta implements IDelta {
     return acceptFilesVisitor(((FilesDelta.Visitor) visitor));
   }
 
+  @Override
   public IDelta merge(IDelta toMerge) {
     if (!(toMerge instanceof FilesDelta)) {
       throw new IllegalArgumentException();
@@ -204,6 +207,7 @@ public class FilesDelta implements IDelta {
     return this;
   }
 
+  @Override
   public boolean contains(IDelta other) {
     if (!(other instanceof FilesDelta)) {
       return false;

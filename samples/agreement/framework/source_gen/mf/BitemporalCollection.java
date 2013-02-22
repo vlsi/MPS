@@ -10,6 +10,7 @@ public class BitemporalCollection implements TemporalCollection {
     myContents.put(MfDate.today(), new SingleTemporalCollection());
   }
 
+  @Override
   public Object get(MfDate when) {
     return currentValidHistory().get(when);
   }
@@ -26,19 +27,23 @@ public class BitemporalCollection implements TemporalCollection {
     return (TemporalCollection) myContents.get(transactionDate);
   }
 
+  @Override
   public void put(MfDate validDate, Object item) {
     myContents.put(MfDate.today(), currentValidHistory().copy());
     currentValidHistory().put(validDate, item);
   }
 
+  @Override
   public void put(Object item) {
     put(MfDate.today(), item);
   }
 
+  @Override
   public Object get() {
     return get(MfDate.today());
   }
 
+  @Override
   public Object get(int year, int month, int date) {
     return get(new MfDate(year, month, date));
   }

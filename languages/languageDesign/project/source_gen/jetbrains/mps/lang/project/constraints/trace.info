@@ -9,16 +9,16 @@
     <unitInfo nodeId="4198951972171377810" fileName="ModuleDependency_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ModuleDependency_Constraints" />
   </root>
   <root nodeRef="r:6b933bd4-3712-4b1d-8046-c244bf51a0fc(jetbrains.mps.lang.project.constraints)/4198951972171378598">
-    <nodeInfo nodeId="4198951972171382456" fileName="ModuleSearchScope.java" startLine="18" startPosition="59" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4198951972171382456" fileName="ModuleSearchScope.java" startLine="19" startPosition="59" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4198951972171378600" fileName="ModuleSearchScope.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleSearchScope#()V" />
-    <nodeInfo nodeId="4198951972171382430" fileName="ModuleSearchScope.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
+    <nodeInfo nodeId="4198951972171382430" fileName="ModuleSearchScope.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
     <scopeInfo nodeId="4198951972171378603" fileName="ModuleSearchScope.java" startLine="14" startPosition="30" endLine="14" endPosition="30" />
-    <scopeInfo nodeId="4198951972171382438" fileName="ModuleSearchScope.java" startLine="18" startPosition="59" endLine="19" endPosition="50" />
+    <scopeInfo nodeId="4198951972171382438" fileName="ModuleSearchScope.java" startLine="19" startPosition="59" endLine="20" endPosition="50" />
     <scopeInfo nodeId="4198951972171378600" fileName="ModuleSearchScope.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="4198951972171382430" fileName="ModuleSearchScope.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="4198951972171382430" fileName="ModuleSearchScope.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="4198951972171382434" varName="condition" />
     </scopeInfo>
-    <unitInfo nodeId="4198951972171378598" fileName="ModuleSearchScope.java" startLine="13" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ModuleSearchScope" />
+    <unitInfo nodeId="4198951972171378598" fileName="ModuleSearchScope.java" startLine="13" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.project.constraints.ModuleSearchScope" />
   </root>
   <root nodeRef="r:6b933bd4-3712-4b1d-8046-c244bf51a0fc(jetbrains.mps.lang.project.constraints)/6370754048397725622">
     <nodeInfo nodeId="6370754048397725622" fileName="Module_Constraints.java" startLine="15" startPosition="31" endLine="16" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

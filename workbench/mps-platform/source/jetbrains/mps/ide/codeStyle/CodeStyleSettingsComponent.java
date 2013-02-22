@@ -27,30 +27,37 @@ public class CodeStyleSettingsComponent implements PersistentStateComponent<Code
     myProject = project;
   }
 
+  @Override
   public CodeStyleSettings getState() {
     return myState;
   }
 
+  @Override
   public void loadState(CodeStyleSettings state) {
     myState = state;
   }
 
+  @Override
   public void projectOpened() {
     CodeStyleSettingsRegistry.registerSettings(ProjectHelper.toMPSProject(myProject), myState);
   }
 
+  @Override
   public void projectClosed() {
     CodeStyleSettingsRegistry.unregisterSettings(ProjectHelper.toMPSProject(myProject));
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return "Code Style Settings Configurable";
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 

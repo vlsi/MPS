@@ -37,6 +37,7 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
     return myPresentation;
   }
 
+  @Override
   public List<IWatchable> calculateSubvalues() {
     List<IWatchable> result = new ArrayList<IWatchable>();
     for (IWatchable watchable : getSubvaluesImpl()) {

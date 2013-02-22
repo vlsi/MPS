@@ -11,6 +11,7 @@
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -63,12 +64,14 @@
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" file="BaseTransformationTest4.java">
     <classNode dependClassName="com.intellij.idea.LoggerFactory" />
     <classNode dependClassName="com.intellij.openapi.diagnostic.Logger" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.generator.impl.CloneUtil" />
@@ -84,6 +87,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.CellReference" file="CellReference.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Void" />
@@ -108,6 +112,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.SubtreeChecker" file="SubtreeChecker.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -159,6 +164,7 @@
     <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.NoSuchMethodException" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />

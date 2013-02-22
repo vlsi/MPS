@@ -6,9 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceChild_Item;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -23,15 +24,18 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kqvvq_a(editorContext, node);
   }
 
-  public static class XmlDoctypeDeclaration_externalId_cellMenu_a0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
-    public XmlDoctypeDeclaration_externalId_cellMenu_a0c1a() {
+  private static boolean renderingCondition_kqvvq_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
+  }
+
+  public static class XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
+    public XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a() {
     }
 
     public String getMatchingText() {
@@ -49,8 +53,8 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     }
   }
 
-  public static class XmlDoctypeDeclaration_externalId_cellMenu_b0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
-    public XmlDoctypeDeclaration_externalId_cellMenu_b0c1a() {
+  public static class XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_b0c1a extends AbstractCellMenuPart_ReplaceChild_Item {
+    public XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_b0c1a() {
     }
 
     public String getMatchingText() {
@@ -66,6 +70,10 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
       SPropertyOperations.set(newId, "isPublic", "" + (false));
       return newId;
     }
+  }
+
+  private static boolean renderingCondition_kqvvq_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
   }
 
   private EditorCell createAlternation_kqvvq_a0(EditorContext editorContext, SNode node) {
@@ -176,7 +184,7 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
     provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_a0c1a(), new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_b0c1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_a0c1a(), new XmlDoctypeDeclaration_Editor.XmlDoctypeDeclaration_externalId_cellMenu_kqvvq_b0c1a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -206,13 +214,5 @@ public class XmlDoctypeDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_kqvvq_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{});
-  }
-
-  private static boolean renderingCondition_kqvvq_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{});
   }
 }

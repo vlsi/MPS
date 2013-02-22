@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -41,7 +41,7 @@ public class OptimizeModelImports_Action extends BaseAction {
     List<SModelDescriptor> m = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"));
     return ListSequence.fromList(m).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return it instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) it).isReadOnly());
+        return it instanceof EditableSModel && !(((EditableSModel) it).isReadOnly());
       }
     }).isNotEmpty();
   }

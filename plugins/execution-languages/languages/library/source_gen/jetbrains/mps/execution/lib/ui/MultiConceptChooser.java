@@ -72,6 +72,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
     myScope = new ModulesWithLanguagesScope(GlobalScope.getInstance(), modules);
   }
 
+  @Override
   protected List<SNode> findToChooseFromOnInit(final FindUsagesManager manager, final ProgressMonitor monitor) {
     return (List<SNode>) (ListSequence.fromList(myTargetConcepts).translate(new ITranslator2<Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, SNode>() {
       public Iterable<SNode> translate(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
@@ -92,10 +93,12 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
     }).toListSequence());
   }
 
+  @Override
   protected Iterable<SModel> getModels(String model) {
     return ScopeOperations.getModelsByName(myScope, model);
   }
 
+  @Override
   protected Iterable<SNode> findNodes(jetbrains.mps.smodel.SModel model, final String fqName) {
     return ListSequence.fromList(SModelOperations.getNodes(((jetbrains.mps.smodel.SModel) model), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(final SNode node) {

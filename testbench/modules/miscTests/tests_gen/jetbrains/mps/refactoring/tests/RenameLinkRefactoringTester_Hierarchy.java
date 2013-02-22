@@ -25,6 +25,7 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
   public RenameLinkRefactoringTester_Hierarchy() {
   }
 
+  @Override
   public boolean testRefactoring(final Project project, final SModelDescriptor sandbox1, final SModelDescriptor sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
     final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -36,6 +37,7 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
     refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
     final String newLinkName = "goodConcept";
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SModelDescriptor structureModelDescriptor = testRefactoringTargetLanguage.getStructureModelDescriptor();
         SModel model = structureModelDescriptor.getSModel();
@@ -50,8 +52,10 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
     new RefactoringTestFacade().doExecuteInTest(refactoringContext);
     final boolean[] result = new boolean[]{false};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             try {
               if (sandbox1.isLoaded()) {
@@ -60,7 +64,7 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
                 return;
               }
               SModel sModel = sandbox1.getSModel();
-              SNode root = sModel.rootsIterator().next();
+              SNode root = sModel.getRootNodes().iterator().next();
               result[0] = (IterableUtil.asCollection(root.getChildren(newLinkName)).size() == 4);
             } catch (Throwable t) {
               t.printStackTrace();

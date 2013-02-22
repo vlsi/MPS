@@ -162,6 +162,7 @@ public class PhysicalGraphLayouter {
   public void preliminaryLayout(IGraph graph, int baricenterx, int baricentery) {
     List<IVertex> vertices = new ArrayList<IVertex>(graph.getVertices());
     Collections.sort(vertices, new Comparator<IVertex>() {
+      @Override
       public int compare(IVertex o1, IVertex o2) {
         return o1.getStarSize() - o2.getStarSize();
       }

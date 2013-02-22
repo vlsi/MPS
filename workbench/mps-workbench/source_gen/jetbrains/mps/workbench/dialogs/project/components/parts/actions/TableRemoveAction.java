@@ -20,6 +20,7 @@ public abstract class TableRemoveAction extends BaseValidatedAction {
     e.getPresentation().setEnabled(myTable.getSelectedRowCount() != 0);
   }
 
+  @Override
   public final void doPerform(AnActionEvent e) {
     int index = myTable.getSelectedRow();
     for (int i : myTable.getSelectedRows()) {

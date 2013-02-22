@@ -22,6 +22,7 @@ import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.build.mps.util.MPSModulesPartitioner;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -430,7 +431,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_7259033139236507287(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode targetModule = SLinkOperations.getTarget(_context.getNode(), "targetModule", false);
-    return (SNodeOperations.getModel(targetModule).isTransient() ?
+    return (SNodeOperations.getModel(targetModule) instanceof TransientSModel ?
       _context.getCopiedOutputNodeForInputNode(targetModule) :
       targetModule
     );

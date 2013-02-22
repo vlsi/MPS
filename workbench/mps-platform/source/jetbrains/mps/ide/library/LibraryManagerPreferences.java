@@ -52,6 +52,7 @@ public class LibraryManagerPreferences {
     myMainPanel.add(ScrollPaneFactory.createScrollPane(myLibrariesList), BorderLayout.CENTER);
 
     myLibrariesList.setCellRenderer(new DefaultListCellRenderer() {
+      @Override
       public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
         super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
         Library library = (Library) value;
@@ -67,23 +68,27 @@ public class LibraryManagerPreferences {
     buttonsPanel.add(innerButtonsPanel, BorderLayout.WEST);
 
     innerButtonsPanel.add(new JButton(new AbstractAction("Add") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         add();
       }
     }));
     myRemoveButton = new JButton(new AbstractAction("Remove") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         remove();
       }
     });
     innerButtonsPanel.add(myRemoveButton);
     myEditButton = new JButton(new AbstractAction("Edit") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         edit();
       }
     });
     innerButtonsPanel.add(myEditButton);
     myLibrariesList.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+      @Override
       public void valueChanged(ListSelectionEvent e) {
         int index = myLibrariesList.getSelectedIndex();
         if (index < 0) return;
@@ -103,6 +108,7 @@ public class LibraryManagerPreferences {
 
   private void updateModel(final boolean updateManager) {
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         Library oldSelection = (Library) myLibrariesList.getSelectedValue();
         List<Library> libraries = new ArrayList<Library>(myManager.getUILibraries());

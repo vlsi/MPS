@@ -81,6 +81,7 @@ public abstract class BaseNode implements IResultProvider {
 
   //----SEARCH STUFF----
 
+  @Override
   public SearchResults getResults(SearchQuery query, @Nullable ProgressMonitor monitor) {
 //    assert !ThreadUtils.isEventDispatchThread();
 
@@ -115,6 +116,7 @@ public abstract class BaseNode implements IResultProvider {
 
   public abstract SearchResults doGetResults(SearchQuery query, @NotNull ProgressMonitor monitor);
 
+  @Override
   public long getEstimatedTime(IScope scope) {
     long sumTime = 0;
     for (BaseNode child : myChildren) {
@@ -125,6 +127,7 @@ public abstract class BaseNode implements IResultProvider {
 
   //----SAVE/LOAD STUFF----
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     Element childrenXML = new Element(CHILDREN);
     for (BaseNode child : myChildren) {
@@ -135,6 +138,7 @@ public abstract class BaseNode implements IResultProvider {
     element.addContent(childrenXML);
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     Element childrenXML = element.getChild(CHILDREN);
     for (Element childXML : (List<Element>) childrenXML.getChildren()) {

@@ -42,10 +42,12 @@ public class ReferenceInfo_Template extends ReferenceInfo_TemplateBase {
     myResolveInfo = resolveInfo;
   }
 
+  @Override
   public SNode getInputTargetNode() {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
     // try to find for the same inputNode
     SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
@@ -73,14 +75,17 @@ public class ReferenceInfo_Template extends ReferenceInfo_TemplateBase {
     return null;
   }
 
+  @Override
   public SNode doResolve_Tricky(TemplateGenerator generator) {
     return null;
   }
 
+  @Override
   public String getResolveInfoForDynamicResolve() {
     return myResolveInfo;
   }
 
+  @Override
   public String getResolveInfoForNothing() {
     return myResolveInfo;
   }

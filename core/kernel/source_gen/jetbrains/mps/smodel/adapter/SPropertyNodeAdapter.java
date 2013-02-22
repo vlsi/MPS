@@ -17,10 +17,12 @@ public class SPropertyNodeAdapter implements SProperty {
     this.myPNode = myPNode;
   }
 
+  @Override
   public String getName() {
     return SPropertyOperations.getString(myPNode, "name");
   }
 
+  @Override
   public SDataType getType() {
     SNode dataType = SLinkOperations.getTarget(myPNode, "dataType", false);
     if (SNodeOperations.isInstanceOf(dataType, "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration")) {
@@ -29,6 +31,7 @@ public class SPropertyNodeAdapter implements SProperty {
     return new SDataTypeAdapter(dataType);
   }
 
+  @Override
   public boolean isValid(String string) {
     return true;
   }

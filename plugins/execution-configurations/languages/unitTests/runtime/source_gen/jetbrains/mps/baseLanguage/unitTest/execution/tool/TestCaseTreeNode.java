@@ -41,6 +41,7 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
     return ActionUtils.getGroup("jetbrains.mps.ide.actions.JUnitTestCaseActions_ActionGroup");
   }
 
+  @Override
   public void doubleClick() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -49,6 +50,7 @@ public class TestCaseTreeNode extends BaseTestTreeNode {
     });
   }
 
+  @Override
   public int getToggleClickCount() {
     return -1;
   }

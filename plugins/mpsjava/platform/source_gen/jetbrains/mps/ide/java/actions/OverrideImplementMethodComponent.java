@@ -18,33 +18,40 @@ public class OverrideImplementMethodComponent implements ProjectComponent, Persi
   public OverrideImplementMethodComponent(Project project, MPSCoreComponents coreComponents) {
   }
 
+  @Override
   public void projectOpened() {
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "OverrideImplementMethodComponent";
   }
 
+  @Override
   public void disposeComponent() {
     myState = null;
   }
 
+  @Override
   public void initComponent() {
     if (myState == null) {
       myState = new OverrideImplementMethodComponent.State();
     }
   }
 
+  @Override
   public void loadState(OverrideImplementMethodComponent.State state) {
     myState = state;
   }
 
+  @Override
   public OverrideImplementMethodComponent.State getState() {
     return myState;
   }
 
+  @Override
   public void projectClosed() {
   }
 

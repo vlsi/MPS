@@ -44,6 +44,7 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     model.register(parentGroup, this);
   }
 
+  @Override
   protected void doUpdatePresentation() {
     if (hasErrors()) {
       setColor(Color.RED);
@@ -51,6 +52,7 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
   }
 
+  @Override
   public ActionGroup getQuickCreateGroup(boolean plain) {
     return getActionGroup();
   }

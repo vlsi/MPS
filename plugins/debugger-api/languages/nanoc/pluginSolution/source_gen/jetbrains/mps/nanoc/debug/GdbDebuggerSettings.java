@@ -12,11 +12,13 @@ public class GdbDebuggerSettings implements IDebuggerSettings {
     mySourceDir = sourceDir;
   }
 
+  @Override
   public boolean isEmpty() {
     return false;
   }
 
   @NotNull
+  @Override
   public String getCommandLine(boolean server) {
     return "-f " + mySourceDir;
   }

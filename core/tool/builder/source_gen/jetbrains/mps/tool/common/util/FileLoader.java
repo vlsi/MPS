@@ -30,6 +30,7 @@ import java.io.FileInputStream;
     }
   }
 
+  @Override
   /*package*/ void dispose() {
   }
 
@@ -64,6 +65,7 @@ import java.io.FileInputStream;
   }
 
   @Nullable
+  @Override
   /*package*/ Resource getResource(final String name, boolean flag) {
     try {
       final URL url = new URL(getBaseURL(), name);
@@ -80,6 +82,7 @@ import java.io.FileInputStream;
     return null;
   }
 
+  @Override
   /*package*/ void buildCache(final ClasspathCache cache) throws IOException {
     File index = new File(myRootDir, "classpath.index");
     if (index.exists()) {
@@ -103,6 +106,7 @@ import java.io.FileInputStream;
   }
 
   @NonNls
+  @Override
   public String toString() {
     return "FileLoader [" + myRootDir + "]";
   }
@@ -118,26 +122,32 @@ import java.io.FileInputStream;
       myFile = file;
     }
 
+    @Override
     public String getName() {
       return myName;
     }
 
+    @Override
     public URL getURL() {
       return myUrl;
     }
 
+    @Override
     public URL getCodeSourceURL() {
       return getBaseURL();
     }
 
+    @Override
     public InputStream getInputStream() throws IOException {
       return new BufferedInputStream(new FileInputStream(myFile));
     }
 
+    @Override
     public int getContentLength() throws IOException {
       return -1;
     }
 
+    @Override
     public String toString() {
       return myFile.getAbsolutePath();
     }

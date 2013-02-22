@@ -19,6 +19,7 @@ public class ConcatingSequence<U> extends Sequence<U> {
     this.right = right;
   }
 
+  @Override
   public Iterator<U> iterator() {
     return new ConcatingSequence.ConcatingIterator();
   }
@@ -32,6 +33,7 @@ public class ConcatingSequence<U> extends Sequence<U> {
     private ConcatingIterator() {
     }
 
+    @Override
     public boolean hasNext() {
       if (leftIt == null || rightIt == null) {
         init();
@@ -42,6 +44,7 @@ public class ConcatingSequence<U> extends Sequence<U> {
       return hasNext.hasNext();
     }
 
+    @Override
     public U next() {
       if (leftIt == null || rightIt == null) {
         init();
@@ -55,6 +58,7 @@ public class ConcatingSequence<U> extends Sequence<U> {
       return clearNext();
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

@@ -90,7 +90,7 @@
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/481983775135178933">
     <nodeInfo nodeId="481983775135178939" fileName="ProjectPluginDeclaration_Behavior.java" startLine="16" startPosition="81" endLine="17" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135178950" fileName="ProjectPluginDeclaration_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135178950" fileName="ProjectPluginDeclaration_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="481983775135178964" fileName="ProjectPluginDeclaration_Behavior.java" startLine="24" startPosition="72" endLine="25" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="481983775135178970" fileName="ProjectPluginDeclaration_Behavior.java" startLine="25" startPosition="124" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="481983775135178977" fileName="ProjectPluginDeclaration_Behavior.java" startLine="26" startPosition="63" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -100,7 +100,7 @@
     <nodeInfo nodeId="481983775135178933" fileName="ProjectPluginDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1213877527970#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="481983775135178935" fileName="ProjectPluginDeclaration_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="481983775135178938" fileName="ProjectPluginDeclaration_Behavior.java" startLine="16" startPosition="81" endLine="17" endPosition="112" />
-    <scopeInfo nodeId="481983775135178949" fileName="ProjectPluginDeclaration_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="153" />
+    <scopeInfo nodeId="481983775135178949" fileName="ProjectPluginDeclaration_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="223" />
     <scopeInfo nodeId="481983775135178933" fileName="ProjectPluginDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="481983775135178933" varName="thisNode" />
     </scopeInfo>
@@ -150,7 +150,7 @@
   </root>
   <root nodeRef="r:8512d48b-45ee-468c-82ad-a474345f4ea9(jetbrains.mps.lang.plugin.standalone.behavior)/481983775135179013">
     <nodeInfo nodeId="481983775135179017" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="16" startPosition="81" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="481983775135179028" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="481983775135179028" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="481983775135179042" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="24" startPosition="72" endLine="25" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="481983775135179048" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="25" startPosition="128" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="481983775135179055" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="26" startPosition="63" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -160,7 +160,7 @@
     <nodeInfo nodeId="481983775135179013" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1213877527970#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="481983775135179060" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
     <scopeInfo nodeId="481983775135179016" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="16" startPosition="81" endLine="17" endPosition="116" />
-    <scopeInfo nodeId="481983775135179027" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="157" />
+    <scopeInfo nodeId="481983775135179027" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="20" startPosition="88" endLine="21" endPosition="227" />
     <scopeInfo nodeId="481983775135179013" fileName="ApplicationPluginDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="481983775135179013" varName="thisNode" />
     </scopeInfo>

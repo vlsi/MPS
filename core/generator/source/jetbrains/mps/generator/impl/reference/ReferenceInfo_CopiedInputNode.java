@@ -42,26 +42,31 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     myInputTargetNode = inputTargetNode;
   }
 
+  @Override
   public SNode getInputTargetNode() {
     return myInputTargetNode;
   }
 
+  @Override
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
     // output target node might has been copied (reduced) from the input target node
     // here accept only one-to-one copying
     return myInputTargetNode == null ? null : generator.findCopiedOutputNodeForInputNode_unique(myInputTargetNode);
   }
 
+  @Override
   public SNode doResolve_Tricky(TemplateGenerator generator) {
     // if input was copied - return one of its copies
     // this can easy produce incorrect references
     return myInputTargetNode == null ? null : generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
   }
 
+  @Override
   public String getResolveInfoForDynamicResolve() {
     return myInputTargetNode == null ? null : jetbrains.mps.util.SNodeOperations.getResolveInfo(myInputTargetNode);
   }
 
+  @Override
   public String getResolveInfoForNothing() {
     return myInputTargetNode == null ? null : jetbrains.mps.util.SNodeOperations.getResolveInfo(myInputTargetNode);
   }

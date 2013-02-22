@@ -56,7 +56,7 @@ public abstract class ModelRootBase implements ModelRoot {
   public abstract Iterable<SModel> loadModels();
 
   @Override
-  public boolean isReadOnly() {
+  public boolean canCreateModels() {
     return getModule().isPackaged();
   }
 
@@ -93,7 +93,7 @@ public abstract class ModelRootBase implements ModelRoot {
 
   protected void register(SModel model) {
     SModelRepository modelRepository = SModelRepository.getInstance();
-    if (modelRepository.getModelDescriptor(model.getModelReference()) == null) {
+    if (modelRepository.getModelDescriptor(model.getReference()) == null) {
       modelRepository.registerModelDescriptor((SModelDescriptor) model, getModule());
       myModels.add(model);
     }
@@ -101,7 +101,7 @@ public abstract class ModelRootBase implements ModelRoot {
 
   protected void unregister(SModel model) {
     SModelRepository modelRepository = SModelRepository.getInstance();
-    if (modelRepository.getModelDescriptor(model.getModelReference()) != null) {
+    if (modelRepository.getModelDescriptor(model.getReference()) != null) {
       modelRepository.unRegisterModelDescriptor((SModelDescriptor) model, getModule());
       myModels.remove(model);
     }
@@ -113,13 +113,13 @@ public abstract class ModelRootBase implements ModelRoot {
     Set<org.jetbrains.mps.openapi.model.SModelReference> loaded = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
     SModelRepository modelRepository = SModelRepository.getInstance();
     for (SModel model : loadModels()) {
-      loaded.add(model.getModelReference());
+      loaded.add(model.getReference());
       register(model);
     }
     Iterator<SModel> it = myModels.iterator();
     while (it.hasNext()) {
       SModel model = it.next();
-      if (loaded.contains(model.getModelReference())) continue;
+      if (loaded.contains(model.getReference())) continue;
       modelRepository.unRegisterModelDescriptor((SModelDescriptor) model, getModule());
       it.remove();
     }

@@ -35,20 +35,24 @@ public class IoFile implements IFileEx {
     myFile = file.getAbsoluteFile();
   }
 
+  @Override
   public String getName() {
     return myFile.getName();
   }
 
+  @Override
   public IFile getParent() {
     File parentFile = myFile.getParentFile();
     if (parentFile == null) return null;
     return new IoFile(parentFile);
   }
 
+  @Override
   public boolean isDirectory() {
     return myFile.isDirectory();
   }
 
+  @Override
   public String getPath() {
     return myFile.getAbsolutePath();
   }
@@ -59,14 +63,17 @@ public class IoFile implements IFileEx {
     return getPath();
   }
 
+  @Override
   public long lastModified() {
     return myFile.lastModified();
   }
 
+  @Override
   public boolean exists() {
     return myFile.exists();
   }
 
+  @Override
   public boolean createNewFile() {
     try {
       File parentFile = myFile.getParentFile();
@@ -88,10 +95,12 @@ public class IoFile implements IFileEx {
     }
   }
 
+  @Override
   public boolean mkdirs() {
     return myFile.mkdirs();
   }
 
+  @Override
   public boolean delete() {
     for (IFile child : getChildren()) {
       child.delete();
@@ -118,6 +127,7 @@ public class IoFile implements IFileEx {
     return renameOrMove(new File(new File(newParent.getPath()), myFile.getName()));
   }
 
+  @Override
   public List<IFile> getChildren() {
     File[] files = myFile.listFiles();
     if (files == null) {
@@ -131,14 +141,17 @@ public class IoFile implements IFileEx {
     return result;
   }
 
+  @Override
   public IFile getDescendant(String suffix) {
     return new IoFile(new File(myFile, suffix));
   }
 
+  @Override
   public InputStream openInputStream() throws IOException {
     return new FileInputStream(myFile);
   }
 
+  @Override
   public OutputStream openOutputStream() throws IOException {
     if (myFile.exists() && myFile.isHidden()) {
       if (!myFile.delete()) {
@@ -150,10 +163,12 @@ public class IoFile implements IFileEx {
     return new FileOutputStream(myFile);
   }
 
+  @Override
   public boolean isReadOnly() {
     return false;
   }
 
+  @Override
   public long length() {
     return myFile.length();
   }

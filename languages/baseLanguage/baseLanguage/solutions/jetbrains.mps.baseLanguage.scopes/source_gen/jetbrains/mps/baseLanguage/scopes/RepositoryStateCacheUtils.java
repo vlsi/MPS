@@ -20,6 +20,7 @@ public class RepositoryStateCacheUtils {
       return v;
     }
     v = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<V>() {
+      @Override
       public V compute() {
         return creator.invoke();
       }

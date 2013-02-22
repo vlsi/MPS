@@ -23,10 +23,12 @@ import org.jdom.Element;
  * Evgeny Gryaznov, Aug 2, 2010
  */
 public class ModelWriter5 extends ModelWriter4 {
+  @Override
   protected int getModelPersistenceVersion() {
     return 5;
   }
 
+  @Override
   protected void saveRefactorings(Element rootElement, DefaultSModel sourceModel) {
     // refactorings are extracted into separate file in version 5
   }

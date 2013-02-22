@@ -46,6 +46,7 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
     return methodName.value;
   }
 
+  @Override
   public boolean isLeaf() {
     return true;
   }
@@ -55,8 +56,10 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
     return ActionUtils.getGroup("jetbrains.mps.ide.actions.JUnitTestMethodActions_ActionGroup");
   }
 
+  @Override
   public void doubleClick() {
     Runnable nav = new Runnable() {
+      @Override
       public void run() {
         NavigationSupport.getInstance().openNode(getOperationContext(), myTestMethod.getNode(), true, true);
       }

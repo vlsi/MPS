@@ -73,6 +73,7 @@
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.util.FutureValue" file="FutureValue.java">
     <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.concurrent.ExecutionException" />
     <classNode dependClassName="java.util.concurrent.TimeUnit" />
     <classNode dependClassName="java.util.concurrent.TimeoutException" />

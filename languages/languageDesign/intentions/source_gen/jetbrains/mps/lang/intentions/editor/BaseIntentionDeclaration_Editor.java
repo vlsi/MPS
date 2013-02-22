@@ -14,6 +14,9 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.nodeEditor.BlockCells;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -24,9 +27,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.nodeEditor.BlockCells;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -67,6 +67,18 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_2ji0fa_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
+  }
+
+  private static boolean renderingCondition_2ji0fa_a1b1b0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAvailableInChildNodes");
+  }
+
+  private static boolean renderingCondition_2ji0fa_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
   }
 
   private EditorCell createCollection_2ji0fa_a(EditorContext editorContext, SNode node) {
@@ -421,17 +433,5 @@ public class BaseIntentionDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_2ji0fa_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return BlockCells.useBraces();
-  }
-
-  private static boolean renderingCondition_2ji0fa_a1b1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAvailableInChildNodes");
-  }
-
-  private static boolean renderingCondition_2ji0fa_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return BlockCells.useBraces();
   }
 }

@@ -12,6 +12,7 @@ public class BusinessObject {
   public BusinessObject() {
   }
 
+  @Override
   public String toString() {
     return "[kino=" + this.kino + ", vino=" + this.vino + ", domino=" + this.domino + "]";
   }

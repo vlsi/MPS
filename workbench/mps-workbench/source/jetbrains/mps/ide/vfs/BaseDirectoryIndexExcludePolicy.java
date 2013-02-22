@@ -42,14 +42,17 @@ public abstract class BaseDirectoryIndexExcludePolicy implements DirectoryIndexE
   @NotNull
   protected abstract Set<VirtualFile> getAllExcludeRoots();
 
+  @Override
   public boolean isExcludeRoot(VirtualFile file) {
     return getAllExcludeRoots().contains(file);
   }
 
+  @Override
   public boolean isExcludeRootForModule(Module module, VirtualFile file) {
     return getAllExcludeRoots().contains(file);
   }
 
+  @Override
   public VirtualFile[] getExcludeRootsForProject() {
     if (myProject.isDisposed()) {
       return VirtualFile.EMPTY_ARRAY;
@@ -58,6 +61,7 @@ public abstract class BaseDirectoryIndexExcludePolicy implements DirectoryIndexE
     return roots.toArray(new VirtualFile[roots.size()]);
   }
 
+  @Override
   public VirtualFilePointer[] getExcludeRootsForModule(ModuleRootModel rootModel) {
     Set<VirtualFile> roots = getAllExcludeRoots();
     ArrayList<VirtualFilePointer> filePointers = new ArrayList<VirtualFilePointer>();

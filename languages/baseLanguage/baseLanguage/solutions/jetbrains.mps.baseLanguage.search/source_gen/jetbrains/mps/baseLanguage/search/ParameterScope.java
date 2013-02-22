@@ -38,6 +38,7 @@ public class ParameterScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : this.params) {

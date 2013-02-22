@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -18,8 +20,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -28,6 +28,14 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cv1jro_a_0(editorContext, node);
+  }
+
+  private static boolean renderingCondition_cv1jro_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(node, "comment") != null;
+  }
+
+  private static boolean renderingCondition_cv1jro_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getString(node, "build") != null;
   }
 
   private EditorCell createCollection_cv1jro_a(EditorContext editorContext, SNode node) {
@@ -270,13 +278,5 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_cv1jro_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "comment") != null;
-  }
-
-  private static boolean renderingCondition_cv1jro_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getString(node, "build") != null;
   }
 }

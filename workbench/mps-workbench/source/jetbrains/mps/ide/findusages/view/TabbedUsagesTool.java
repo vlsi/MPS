@@ -44,8 +44,10 @@ public abstract class TabbedUsagesTool extends BaseProjectTool {
 
   }
 
+  @Override
   public void doRegister() {
     myContentListener = new ContentManagerAdapter() {
+      @Override
       public void contentRemoved(ContentManagerEvent event) {
         int index = event.getIndex();
 
@@ -60,8 +62,10 @@ public abstract class TabbedUsagesTool extends BaseProjectTool {
 
     if (forceCloseOnReload()) {
       myReloadHandler = new ReloadAdapter() {
+        @Override
         public void unload() {
           SwingUtilities.invokeLater(new Runnable() {
+            @Override
             public void run() {
               if (getProject().isDisposed()) return;
               myContentManager.removeAllContents(true);
@@ -73,6 +77,7 @@ public abstract class TabbedUsagesTool extends BaseProjectTool {
     }
   }
 
+  @Override
   public void doUnregister() {
     //this is done automatically on content manager dispose, otherwise a dependency UVT->CM must be added
     //getContentManager().removeContentManagerListener(myContentListener);

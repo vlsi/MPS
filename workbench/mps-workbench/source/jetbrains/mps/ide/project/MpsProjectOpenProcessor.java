@@ -27,18 +27,22 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 
 public class MpsProjectOpenProcessor extends ProjectOpenProcessor {
+  @Override
   public String getName() {
     return "MPS Project";
   }
 
+  @Override
   public Icon getIcon() {
     return Icons.PROJECT_ICON;
   }
 
+  @Override
   public boolean canOpenProject(VirtualFile file) {
     return MPSFileTypeFactory.PROJECT_FILE_TYPE.equals(file.getFileType());
   }
 
+  @Override
   public Project doOpenProject(@NotNull VirtualFile virtualFile, Project projectToClose, boolean forceOpenInNewFrame) {
     String filePath = virtualFile.getPath();
     Project project = ProjectUtil.openProject(filePath, projectToClose, forceOpenInNewFrame);

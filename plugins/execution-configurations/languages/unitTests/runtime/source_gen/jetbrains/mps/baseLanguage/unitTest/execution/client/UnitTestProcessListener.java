@@ -41,6 +41,7 @@ public class UnitTestProcessListener extends ProcessAdapter {
     return false;
   }
 
+  @Override
   public void onTextAvailable(ProcessEvent event, Key k) {
     if (this.isTerminatedEvent()) {
       this.myDispatcher.onProcessTerminated(event.getText());

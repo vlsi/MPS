@@ -26,6 +26,7 @@ public class JavaStackTraceFilter implements Filter {
   }
 
   @Nullable
+  @Override
   public Filter.Result applyFilter(String line, int length) {
     return tryToParseLine(line, length - line.length(), myProject);
   }
@@ -76,6 +77,7 @@ public class JavaStackTraceFilter implements Filter {
     }
 
     final SNodeReference nodeToShow = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
+      @Override
       public SNodeReference compute() {
         SNode node = TraceInfoUtil.getJavaNode(unitName, fileName, lineNumber);
         if (node == null) {
@@ -87,6 +89,7 @@ public class JavaStackTraceFilter implements Filter {
 
     if (nodeToShow != null) {
       return new Filter.Result(start + parenIndex + 1 + offset, start + closingParenIndex + offset, new HyperlinkInfo() {
+        @Override
         public void navigate(Project project) {
           if (nodeToShow != null) {
             new NodeNavigatable(ProjectHelper.toMPSProject(project), nodeToShow).navigate(true);
@@ -101,6 +104,7 @@ public class JavaStackTraceFilter implements Filter {
         return null;
       }
       return new Filter.Result(start + parenIndex + 1 + offset, start + closingParenIndex + offset, new HyperlinkInfo() {
+        @Override
         public void navigate(Project project) {
           FileOpenUtil.openFile(project, virtualFile, lineNumber);
         }

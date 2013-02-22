@@ -20,21 +20,26 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 public class ModuleRepositoryAdapter implements ModuleRepositoryListener, SRepositoryListener {
+  @Override
   public void moduleAdded(IModule module) {
     repositoryChanged();
   }
 
+  @Override
   public void beforeModuleRemoved(IModule module) {
   }
 
+  @Override
   public void moduleRemoved(IModule module) {
     repositoryChanged();
   }
 
+  @Override
   public void moduleInitialized(IModule module) {
     repositoryChanged();
   }
 
+  @Override
   public void moduleChanged(IModule module) {
     repositoryChanged();
   }

@@ -66,8 +66,10 @@ public class GoToModel_Action extends BaseAction {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
       // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
       BaseModelModel goToModelModel = new BaseModelModel(project) {
+        @Override
         public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
           return new BaseModelItem(modelReference) {
+            @Override
             public void navigate(boolean requestFocus) {
               ProjectPane projectPane = ProjectPane.getInstance(project);
               SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelReference);
@@ -76,8 +78,10 @@ public class GoToModel_Action extends BaseAction {
           };
         }
 
+        @Override
         public SModelReference[] find(IScope scope) {
           Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
+            @Override
             public boolean met(SModelDescriptor modelDescriptor) {
               boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor) || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
               boolean hasModule = modelDescriptor.getModule() != null;

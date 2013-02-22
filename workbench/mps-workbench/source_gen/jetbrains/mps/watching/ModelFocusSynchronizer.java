@@ -30,9 +30,11 @@ import org.jetbrains.annotations.NotNull;
 public class ModelFocusSynchronizer implements ApplicationComponent {
   public ModelFocusSynchronizer(FrameStateManager frameStateManager) {
     frameStateManager.addListener(new FrameStateListener() {
+      @Override
       public void onFrameDeactivated() {
       }
 
+      @Override
       public void onFrameActivated() {
         ModelAccess.instance().runReadInEDT(new Runnable() {
           public void run() {
@@ -75,13 +77,16 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return getClass().getName();
   }
 
+  @Override
   public void initComponent() {
   }
 
+  @Override
   public void disposeComponent() {
   }
 }

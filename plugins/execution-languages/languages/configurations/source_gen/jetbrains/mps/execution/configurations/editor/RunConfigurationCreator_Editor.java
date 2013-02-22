@@ -14,16 +14,16 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -66,6 +66,10 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_nyg1sl_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "configuration", false) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "configuration", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) == null);
+  }
+
   public static class _Inline_nyg1sl_a1a extends InlineCellProvider {
     public _Inline_nyg1sl_a1a() {
       super();
@@ -100,6 +104,10 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_nyg1sl_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "configuration", false) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "configuration", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
   }
 
   private EditorCell createCollection_nyg1sl_a(EditorContext editorContext, SNode node) {
@@ -188,13 +196,5 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_nyg1sl_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "configuration", false) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "configuration", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) == null);
-  }
-
-  private static boolean renderingCondition_nyg1sl_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "configuration", false) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "configuration", false), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
   }
 }

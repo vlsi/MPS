@@ -196,15 +196,18 @@ public class TemplateUtil {
       this.length = Array.getLength(array);
     }
 
+    @Override
     public boolean hasNext() {
       return idx < length;
     }
 
+    @Override
     @SuppressWarnings(value = "unchecked")
     public T next() {
       return (T) Array.get(array, idx++);
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

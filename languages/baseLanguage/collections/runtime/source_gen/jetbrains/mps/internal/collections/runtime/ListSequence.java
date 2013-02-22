@@ -25,10 +25,12 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     setList(new ArrayList<T>(other.getList()));
   }
 
+  @Override
   public void add(int index, T element) {
     getList().add(index, element);
   }
 
+  @Override
   public boolean addAll(int index, Collection<? extends T> c) {
     return getList().addAll(index, c);
   }
@@ -43,30 +45,37 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     return getList().isEmpty();
   }
 
+  @Override
   public T get(int index) {
     return getList().get(index);
   }
 
+  @Override
   public int lastIndexOf(Object o) {
     return getList().lastIndexOf(o);
   }
 
+  @Override
   public ListIterator<T> listIterator() {
     return getList().listIterator();
   }
 
+  @Override
   public ListIterator<T> listIterator(int index) {
     return getList().listIterator(index);
   }
 
+  @Override
   public T remove(int index) {
     return getList().remove(index);
   }
 
+  @Override
   public T set(int index, T element) {
     return getList().set(index, element);
   }
 
+  @Override
   public List<T> subList(int fromIndex, int toIndex) {
     return getList().subList(fromIndex, toIndex);
   }
@@ -100,6 +109,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     return !((getList().isEmpty()));
   }
 
+  @Override
   public T removeElementAt(int idx) {
     if (Sequence.NULL_WHEN_EMPTY) {
       if (size() == 0 && (idx == 0 || idx == -1)) {
@@ -109,6 +119,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     return remove(idx);
   }
 
+  @Override
   public T removeLastElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
       if (size() == 0) {
@@ -118,6 +129,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     return remove(size() - 1);
   }
 
+  @Override
   public T insertElement(int idx, T t) {
     if (Sequence.IGNORE_NULL_VALUES) {
       if (t == null) {
@@ -128,6 +140,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     return t;
   }
 
+  @Override
   public T getElement(int idx) {
     if (Sequence.NULL_WHEN_EMPTY) {
       if (size() == 0 && (idx == 0 || idx == -1)) {
@@ -137,6 +150,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     return get(idx);
   }
 
+  @Override
   public T setElement(int idx, T t) {
     if (Sequence.IGNORE_NULL_VALUES) {
       if (t == null) {
@@ -167,20 +181,24 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
     return (IListSequence<T>) super.removeWhere(filter);
   }
 
+  @Override
   public IListSequence<T> reversedList() {
     ListSequence<T> reversed = new ListSequence<T>(this);
     reversed._reverse();
     return reversed;
   }
 
+  @Override
   public IListSequence<T> subListSequence(int fromIdx, int upToIdx) {
     return new ListSequence<T>(getList().subList(fromIdx, upToIdx));
   }
 
+  @Override
   public IListSequence<T> headListSequence(int upToIdx) {
     return new ListSequence<T>(getList().subList(0, upToIdx));
   }
 
+  @Override
   public IListSequence<T> tailListSequence(int fromIdx) {
     return new ListSequence<T>(getList().subList(fromIdx, getList().size()));
   }
@@ -196,16 +214,19 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
   }
 
   @SuppressWarnings(value = "unchecked")
+  @Override
   public T[] toGenericArray() {
     return (T[]) getList().toArray();
   }
 
   @SuppressWarnings(value = "unchecked")
+  @Override
   public T[] toGenericArray(Class<T> runtimeClass) {
     T[] arr = (T[]) ArrayUtils.newArrayInstance(runtimeClass, getList().size());
     return getList().toArray(arr);
   }
 
+  @Override
   public List<T> toList() {
     return this;
   }

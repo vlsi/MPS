@@ -14,6 +14,7 @@ public class AmountFormulaPR extends PostingRule {
     this.myFixedFee = fixedFee;
   }
 
+  @Override
   protected Money calculateAmount(AccountingEvent evt) {
     Money eventAmount = ((MonetaryEvent) evt).getAmount();
     return (Money) eventAmount.multiply(myMultiplier).add(myFixedFee);

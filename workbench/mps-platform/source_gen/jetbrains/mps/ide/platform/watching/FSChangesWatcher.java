@@ -53,10 +53,12 @@ public class FSChangesWatcher implements ApplicationComponent {
   private MergingUpdateQueue myQueue = new MergingUpdateQueue("Model Changes Watcher Queue", 500, true, null, null, null, true);
   private Object myUpdateId = new Object();
   private final VirtualFileManagerListener myVirtualFileManagerListener = new VirtualFileManagerListener() {
+    @Override
     public void beforeRefreshStart(boolean async) {
       suspendTasksProcessing();
     }
 
+    @Override
     public void afterRefreshFinish(boolean async) {
       tryToResumeTasksProcessing();
     }
@@ -64,10 +66,12 @@ public class FSChangesWatcher implements ApplicationComponent {
   private MessageBusConnection myConnection;
   private BulkFileListener myBusListener = new FSChangesWatcher.BulkFileChangesListener();
   private IMakeNotificationListener myMakeListener = new IMakeNotificationListener.Stub() {
+    @Override
     public void sessionOpened(MakeNotification notification) {
       suspendTasksProcessing();
     }
 
+    @Override
     public void sessionClosed(MakeNotification notification) {
       tryToResumeTasksProcessing();
     }
@@ -100,10 +104,12 @@ public class FSChangesWatcher implements ApplicationComponent {
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return "Model Changes Watcher";
   }
 
+  @Override
   public void initComponent() {
     initComponent(false);
   }
@@ -127,6 +133,7 @@ public class FSChangesWatcher implements ApplicationComponent {
     }
   }
 
+  @Override
   public void disposeComponent() {
     if (myConnection == null) {
       return;
@@ -151,6 +158,7 @@ public class FSChangesWatcher implements ApplicationComponent {
       }
 
       myQueue.queue(new Update(myUpdateId) {
+        @Override
         public void run() {
           for (Project project : myProjectManager.getOpenProjects()) {
             if (project.getComponent(ProjectLevelVcsManager.class).isBackgroundVcsOperationRunning()) {
@@ -170,6 +178,7 @@ public class FSChangesWatcher implements ApplicationComponent {
             myReloadSession = null;
           }
           ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
+            @Override
             public void run(@NotNull final ProgressIndicator progressIndicator) {
               session.doReload(new ProgressMonitorAdapter(progressIndicator));
             }
@@ -216,9 +225,11 @@ public class FSChangesWatcher implements ApplicationComponent {
     private BulkFileChangesListener() {
     }
 
+    @Override
     public void before(List<? extends VFileEvent> events) {
     }
 
+    @Override
     public void after(final List<? extends VFileEvent> events) {
       final Application application = ApplicationManager.getApplication();
       if (application.isDisposeInProgress() || application.isDisposed()) {

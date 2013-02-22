@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -21,11 +22,18 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 
 public class StatementList_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_u338ov_a(editorContext, node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_u338ov_a1a(EditorContext editorContext, SNode node) {
+    return !(StatementList_Behavior.call_isCompact_1237546596168(node));
+  }
+
+  private static boolean _StyleParameter_QueryFunction_u338ov_a1a0(EditorContext editorContext, SNode node) {
+    return !(StatementList_Behavior.call_isCompact_1237546596168(node));
   }
 
   private static class statementListHandler_u338ov_a0 extends RefNodeListHandler {
@@ -114,13 +122,5 @@ public class StatementList_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
-  }
-
-  private static boolean _StyleParameter_QueryFunction_u338ov_a1a0(EditorContext editorContext, SNode node) {
-    return !(StatementList_Behavior.call_isCompact_1237546596168(node));
-  }
-
-  private static boolean _StyleParameter_QueryFunction_u338ov_a1a(EditorContext editorContext, SNode node) {
-    return !(StatementList_Behavior.call_isCompact_1237546596168(node));
   }
 }

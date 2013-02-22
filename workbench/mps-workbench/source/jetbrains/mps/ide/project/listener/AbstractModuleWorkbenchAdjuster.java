@@ -25,17 +25,20 @@ import org.jetbrains.annotations.NotNull;
  * Evgeny Gryaznov, Aug 26, 2010
  */
 public class AbstractModuleWorkbenchAdjuster implements ApplicationComponent {
+  @Override
   @NotNull
   public String getComponentName() {
     // todo: why workbench adjuster?
     return "Abstract Module Workbench Adjuster";
   }
 
+  @Override
   public void initComponent() {
     ModelsAutoImportsManager.registerContributor(new TestsModelAutoImports());
     AbstractModule.registerModelCreationListener(new AutoImportsModelCreationListener());
   }
 
+  @Override
   public void disposeComponent() {
   }
 }

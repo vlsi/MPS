@@ -32,10 +32,12 @@ public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
 
   private final THashMap<SNodeId, SNode> myOtherMap = new THashMap<SNodeId, SNode>();
 
+  @Override
   public int size() {
     return myRegularMap.size() + myForeignMap.size() + myOtherMap.size();
   }
 
+  @Override
   public SNode get(SNodeId key) {
     if (key instanceof Regular) {
       return myRegularMap.get(((Regular) key).getId());
@@ -46,6 +48,7 @@ public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
     }
   }
 
+  @Override
   public SNode put(SNodeId key, SNode value) {
     if (key instanceof Regular) {
       return myRegularMap.put(((Regular) key).getId(), value);
@@ -56,6 +59,7 @@ public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
     }
   }
 
+  @Override
   public boolean containsKey(SNodeId key) {
     if (key instanceof Regular) {
       return myRegularMap.containsKey(((Regular) key).getId());
@@ -66,6 +70,7 @@ public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
     }
   }
 
+  @Override
   public SNode remove(SNodeId key) {
     if (key instanceof Regular) {
       return myRegularMap.remove(((Regular) key).getId());
@@ -76,6 +81,7 @@ public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
     }
   }
 
+  @Override
   public Iterable<SNode> values() {
     Iterator<SNode> regular = ((Iterable) Arrays.asList(myRegularMap.getValues())).iterator();
     Iterator<SNode> foreign = myForeignMap.values().iterator();

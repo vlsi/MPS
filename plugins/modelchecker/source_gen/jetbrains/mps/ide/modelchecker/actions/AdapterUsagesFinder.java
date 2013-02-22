@@ -33,6 +33,7 @@ public class AdapterUsagesFinder extends ModelCheckerIssueFinder {
     public AdapterUsagesChecker() {
     }
 
+    @Override
     public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, IOperationContext operationContext) {
       List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 

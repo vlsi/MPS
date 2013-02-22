@@ -34,18 +34,22 @@ public class SModelReferenceDialog extends RefactoringDialog {
     init();
   }
 
+  @Override
   protected void init() {
     setModal(true);
     setHorizontalStretch(2.5f);
     setVerticalStretch(2);
 
     BaseModelModel goToModelModel = new BaseModelModel(this.myProject) {
+      @Override
       public SModelReference[] find(IScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
 
+      @Override
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new BaseModelItem(modelReference) {
+          @Override
           public void navigate(boolean p0) {
           }
         };
@@ -56,12 +60,14 @@ public class SModelReferenceDialog extends RefactoringDialog {
         return ListSequence.fromList(myModels).toGenericArray(SModelReference.class);
       }
 
+      @Override
       public boolean loadInitialCheckBoxState() {
         return false;
       }
     };
     myChooser = MpsPopupFactory.createPanelForPackage(goToModelModel, false);
     myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
+      @Override
       public void elementChosen(Object p0) {
         doRefactoringAction();
       }
@@ -69,10 +75,12 @@ public class SModelReferenceDialog extends RefactoringDialog {
     super.init();
   }
 
+  @Override
   public JComponent getPreferredFocusedComponent() {
     return myChooser.getPreferredFocusedComponent();
   }
 
+  @Override
   protected void doRefactoringAction() {
     Object item = myChooser.getChosenElement();
     if (item instanceof BaseModelItem) {
@@ -82,6 +90,7 @@ public class SModelReferenceDialog extends RefactoringDialog {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myChooser.getPanel();
   }

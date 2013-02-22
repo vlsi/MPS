@@ -123,27 +123,33 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
     }
   }
 
+  @Override
   public void projectOpened() {
 
   }
 
+  @Override
   public void projectClosed() {
 
   }
 
+  @Override
   @NotNull
   public String getComponentName() {
     return "MPSFavoritesManager";
   }
 
+  @Override
   public void initComponent() {
 
   }
 
+  @Override
   public void disposeComponent() {
 
   }
 
+  @Override
   public void readExternal(Element element) throws InvalidDataException {
     myName2FavoritesRoots.clear();
     for (Object list : element.getChildren(ELEMENT_FAVORITES_LIST)) {
@@ -154,6 +160,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
     DefaultJDOMExternalizer.readExternal(this, element);
   }
 
+  @Override
   public void writeExternal(Element element) throws WriteExternalException {
     for (final String name : myName2FavoritesRoots.keySet()) {
       Element list = new Element(ELEMENT_FAVORITES_LIST);

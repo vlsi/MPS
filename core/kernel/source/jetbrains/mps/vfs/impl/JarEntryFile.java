@@ -40,6 +40,7 @@ public class JarEntryFile implements IFileEx {
     }
   }
 
+  @Override
   public String getName() {
     String result = myEntryPath;
 
@@ -53,6 +54,7 @@ public class JarEntryFile implements IFileEx {
     return result;
   }
 
+  @Override
   public IFile getParent() {
     if (myEntryPath.isEmpty()) {
       return null;
@@ -61,6 +63,7 @@ public class JarEntryFile implements IFileEx {
     }
   }
 
+  @Override
   public List<IFile> getChildren() {
     if (!isDirectory()) return Collections.emptyList();
 
@@ -75,15 +78,18 @@ public class JarEntryFile implements IFileEx {
     return result;
   }
 
+  @Override
   public IFile getDescendant(String suffix) {
     String path = myEntryPath.length() > 0 ? myEntryPath + "/" + suffix : suffix;
     return new JarEntryFile(myJarFileData, myJarFile, path);
   }
 
+  @Override
   public boolean isDirectory() {
     return myJarFileData != null && myJarFileData.isDirectory(myEntryPath);
   }
 
+  @Override
   public String getPath() {
     return myJarFile.getAbsolutePath() + "!/" + myEntryPath;
   }
@@ -94,22 +100,27 @@ public class JarEntryFile implements IFileEx {
     return getPath();
   }
 
+  @Override
   public long lastModified() {
     return myJarFile.lastModified();
   }
 
+  @Override
   public boolean exists() {
     return myJarFileData != null && myJarFileData.exists(myEntryPath);
   }
 
+  @Override
   public boolean createNewFile() {
     return false;
   }
 
+  @Override
   public boolean mkdirs() {
     return false;
   }
 
+  @Override
   public boolean delete() {
     return false;
   }
@@ -124,6 +135,7 @@ public class JarEntryFile implements IFileEx {
     return false;
   }
 
+  @Override
   public InputStream openInputStream() throws IOException {
     if (myJarFileData == null) {
       throw new IOException("File is not found " + getPath());
@@ -131,14 +143,17 @@ public class JarEntryFile implements IFileEx {
     return myJarFileData.openStream(myEntryPath);
   }
 
+  @Override
   public OutputStream openOutputStream() throws IOException {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public boolean isReadOnly() {
     return true;
   }
 
+  @Override
   public long length() {
     if (myJarFileData == null) {
       return -1;

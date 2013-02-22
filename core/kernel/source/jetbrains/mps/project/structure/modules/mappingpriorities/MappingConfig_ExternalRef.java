@@ -17,7 +17,7 @@ package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -49,6 +49,7 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
     myMappingConfig = ref;
   }
 
+  @Override
   public MappingConfig_ExternalRef getCopy() {
     MappingConfig_ExternalRef result = new MappingConfig_ExternalRef();
     result.myGenerator = myGenerator;

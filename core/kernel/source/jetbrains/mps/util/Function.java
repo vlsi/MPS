@@ -26,6 +26,7 @@ public interface Function<Param, Result> {
   Result fun(Param param);
 
   Function ID = new Function() {
+    @Override
     public Object fun(final Object o) {
       return o;
     }

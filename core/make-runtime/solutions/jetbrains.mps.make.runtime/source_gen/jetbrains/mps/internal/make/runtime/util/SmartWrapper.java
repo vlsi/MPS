@@ -20,6 +20,7 @@ public class SmartWrapper<T> {
     return towrap;
   }
 
+  @Override
   public String toString() {
     return this.getWrapperName() + "[" + towrap + "]";
   }

@@ -42,6 +42,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
     myManager = manager;
   }
 
+  @Override
   public int getNumberOfPendingUpdateJobs() {
     return myIndex.getNumberOfPendingInvalidations();
   }
@@ -51,6 +52,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
     final CollectingContentIterator finder = myIndex.createContentIterator(indicator);
 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         iterateIndexableFiles(finder);
       }
@@ -59,6 +61,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
     return files.toArray(new VirtualFile[files.size()]);
   }
 
+  @Override
   public void processFile(final FileContent fileContent) {
     myIndex.indexFileContent(null, fileContent);
     IndexingStamp.flushCache(fileContent.getVirtualFile());
@@ -100,10 +103,12 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
     }
   }
 
+  @Override
   public void updatingDone() {
 
   }
 
+  @Override
   public void canceled() {
 
   }

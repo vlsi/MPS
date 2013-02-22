@@ -50,6 +50,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   @Nullable
   private MPSModuleRepository myRepo;
   private ReloadAdapter myHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       reloadExtensionDescriptors();
     }

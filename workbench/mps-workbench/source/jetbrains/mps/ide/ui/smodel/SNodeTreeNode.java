@@ -67,9 +67,11 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
   }
 
+  @Override
   protected final void doUpdatePresentation() {
     if (getSModelModelTreeNode() != null) {
       getSModelModelTreeNode().getDependencyRecorder().rebuild(this, new Runnable() {
+        @Override
         public void run() {
           doUpdatePresentation_internal();
         }
@@ -79,6 +81,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
   }
 
+  @Override
   protected void onRemove() {
     super.onRemove();
     if (getSModelModelTreeNode() != null) {
@@ -131,27 +134,33 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return null;
   }
 
+  @Override
   public ActionGroup getActionGroup() {
     return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_NODE_ACTIONS);
   }
 
+  @Override
   public int getToggleClickCount() {
     return -1;
   }
 
+  @Override
   public SNode getSNode() {
     return myNode;
   }
 
+  @Override
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   protected void doInit() {
     this.removeAllChildren();
     SNode n = getSNode();
@@ -188,6 +197,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       ProjectPane.getInstance(ProjectHelper.toIdeaProject(project)).isShowPropertiesAndReferences();
   }
 
+  @Override
   public void doubleClick() {
     if (getTree() instanceof LogicalViewTree) {
       editNode((LogicalViewTree) getTree(), true);

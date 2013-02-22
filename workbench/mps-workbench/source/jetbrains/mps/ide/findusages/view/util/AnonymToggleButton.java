@@ -23,6 +23,7 @@ import java.awt.event.ActionEvent;
 public abstract class AnonymToggleButton extends JToggleButton {
   public AnonymToggleButton(Icon icon, String tooltip) {
     setAction(new AbstractAction("", icon) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         change();
         if (getModel().isSelected()) {

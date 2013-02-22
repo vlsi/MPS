@@ -24,7 +24,8 @@ import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -108,6 +109,7 @@ public class DelayedChanges {
       myReductionContext = reductionContext;
     }
 
+    @Override
     public void doChange() {
       try {
         SNode child = mapNode();
@@ -120,7 +122,7 @@ public class DelayedChanges {
               myLogger.error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
                 GeneratorUtil.describe(myContext.getInput(), "input"),
                 GeneratorUtil.describe(getMapSrcMacro(), "template"),
-                new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getSModelFqName() + "'"));
+                new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + ((SModelReference) myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference()).getSModelFqName() + "'"));
             }
           }
 
@@ -136,8 +138,8 @@ public class DelayedChanges {
           if (parent == null) {
             // root?
             if (myChildToReplace.getModel() != null && myChildToReplace.getModel().isRoot(myChildToReplace)) {
-              myChildToReplace.getModel().addRoot(child);
-              myChildToReplace.getModel().removeRoot(myChildToReplace);
+              myChildToReplace.getModel().addRootNode(child);
+              myChildToReplace.getModel().removeRootNode(myChildToReplace);
               myGenerator.rootReplaced(myChildToReplace, child);
             }
           } else {
@@ -172,7 +174,7 @@ public class DelayedChanges {
 
     private void validateReference(SReference reference) {
       // reference to input model - illegal
-      if (myGenerator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
+      if (myGenerator.getInputModel().getReference().equals(reference.getTargetSModelReference())) {
         // replace
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           reference.getRole(),
@@ -201,10 +203,12 @@ public class DelayedChanges {
       myMapSrcMacro = mapSrcMacro;
     }
 
+    @Override
     protected SNode getMapSrcMacro() {
       return myMapSrcMacro;
     }
 
+    @Override
     protected SNode mapNode() throws GenerationFailureException {
       return myReductionContext.getQueryExecutor().executeMapSrcNodeMacro(myContext.getInput(), getMapSrcMacro(), myChildToReplace.getParent(), myContext);
     }
@@ -225,6 +229,7 @@ public class DelayedChanges {
       myProcessor = processor;
     }
 
+    @Override
     protected SNode getMapSrcMacro() {
       SNodeReference templateNode = myMapper.getTemplateNode();
       if(templateNode != null) {
@@ -233,6 +238,7 @@ public class DelayedChanges {
       return null;
     }
 
+    @Override
     protected SNode mapNode() throws GenerationFailureException {
       return myReductionContext.getQueryExecutor().executeInContext(myChildToReplace, myContext, myMapper);
     }
@@ -258,6 +264,7 @@ public class DelayedChanges {
       myReductionContext = reductionContext;
     }
 
+    @Override
     public void doChange() {
       try {
         myReductionContext.getQueryExecutor().executeMapSrcNodeMacro_PostProc(myContext.getInput(), myMapSrcMacro, myOutputChild, myContext);
@@ -281,6 +288,7 @@ public class DelayedChanges {
       myReductionContext = reductionContext;
     }
 
+    @Override
     public void doChange() {
       try {
         myReductionContext.getQueryExecutor().executeInContext(myOutputChild, myContext, myProcessor);

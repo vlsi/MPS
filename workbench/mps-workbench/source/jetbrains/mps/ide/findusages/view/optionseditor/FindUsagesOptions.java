@@ -43,6 +43,7 @@ public class FindUsagesOptions implements Cloneable {
     }
   }
 
+  @Override
   public FindUsagesOptions clone() {
     List<BaseOptions> optionsCopy = new ArrayList<BaseOptions>(myOptions.size());
     for (BaseOptions option : myOptions.values()) {

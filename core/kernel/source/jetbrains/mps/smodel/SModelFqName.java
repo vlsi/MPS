@@ -108,6 +108,7 @@ public class SModelFqName implements Comparable<Object> {
     return new SModelFqName(myModuleFqName, myLongName, newStereo);
   }
 
+  @Override
   public int compareTo(Object o) {
     int compareStereotypes = this.getStereotype().compareTo(((SModelFqName) o).getStereotype());
     if (compareStereotypes != 0) return compareStereotypes;

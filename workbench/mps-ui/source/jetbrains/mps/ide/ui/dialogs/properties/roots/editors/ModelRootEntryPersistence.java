@@ -17,11 +17,11 @@ package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 

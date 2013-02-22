@@ -35,6 +35,7 @@ public class DispatchGroup {
     ListSequence.fromList(myGroupsByClass).last().addMethod(method);
   }
 
+  @Override
   public void finalize() {
     List<DispatchGroup.ClassMethodGroup> filtered = ListSequence.fromList(myGroupsByClass).where(new IWhereFilter<DispatchGroup.ClassMethodGroup>() {
       public boolean accept(DispatchGroup.ClassMethodGroup it) {

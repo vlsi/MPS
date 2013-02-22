@@ -34,6 +34,7 @@ public class MPSProject extends Project implements ProjectComponent {
     myProject = project;
   }
 
+  @Override
   @NotNull
   public List<IModule> getModules() {
     // TODO remove after 3.0, this method is a copy of Project.getModules() returning List<IModule>
@@ -71,17 +72,20 @@ public class MPSProject extends Project implements ProjectComponent {
     super.projectClosed();
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS Project";
   }
 
+  @Override
   public void initComponent() {
     String url = myProject.getPresentableUrl();
     myProjectFile = url == null ? null : new File(url);
   }
 
+  @Override
   public void disposeComponent() {
     dispose();
     myProjectFile = null;
@@ -111,6 +115,7 @@ public class MPSProject extends Project implements ProjectComponent {
     return Collections.emptyList();
   }
 
+  @Override
   @Deprecated
   // should be left for compatibility with generated plugins (editor openers)
   public <T> T getComponent(Class<T> clazz) {

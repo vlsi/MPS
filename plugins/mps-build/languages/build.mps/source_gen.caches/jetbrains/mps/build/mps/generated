@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="cqp79m8p2d4sd2c4h91mugqnut6nd85">
-  <dep model="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)" hash="-bl5s4ske75kvbfzlx9qqtu0m9phf78o" />
+  <dep model="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)" hash="eck6cl1bnn3oii9zns6ltmf4t24pc4e" />
   <common>
     <dep model="r:473be7a1-ec10-4475-89b9-397d2558ecb0(jetbrains.mps.build.mps.typesystem)" />
     <file name="Language.java" />

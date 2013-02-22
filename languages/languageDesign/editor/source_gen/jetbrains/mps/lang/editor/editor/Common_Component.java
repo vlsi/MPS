@@ -14,12 +14,12 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Common_Component extends AbstractCellProvider {
   public Common_Component(SNode node) {
@@ -110,6 +110,10 @@ public class Common_Component extends AbstractCellProvider {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_tf8r10_a4b0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 
   private EditorCell createCollection_tf8r10_a(EditorContext editorContext, SNode node) {
@@ -389,9 +393,5 @@ public class Common_Component extends AbstractCellProvider {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_tf8r10_a4b0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.hasValue(node, "attractsFocus", "0", "0"));
   }
 }

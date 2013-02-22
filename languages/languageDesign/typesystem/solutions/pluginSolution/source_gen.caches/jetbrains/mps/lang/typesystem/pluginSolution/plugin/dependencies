@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.AuxilaryRuntimeModel" file="AuxilaryRuntimeModel.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />

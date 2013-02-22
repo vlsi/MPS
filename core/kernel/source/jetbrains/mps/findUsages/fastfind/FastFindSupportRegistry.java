@@ -28,6 +28,7 @@ public class FastFindSupportRegistry implements CoreComponent {
     return INSTANCE;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -36,6 +37,7 @@ public class FastFindSupportRegistry implements CoreComponent {
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
   }

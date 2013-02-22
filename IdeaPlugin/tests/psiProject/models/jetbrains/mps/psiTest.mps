@@ -19,8 +19,26 @@
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3531520744714227820">
       <property name="name" nameId="tpck.1169194664001" value="MPSException" />
     </node>
+    <node type="tpee.Interface" typeId="tpee.1107796713796" id="5520680398870220348">
+      <property name="name" nameId="tpck.1169194664001" value="INode" />
+    </node>
   </roots>
   <root id="720127759386550219">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="7842743430739376607" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="7842743430739379285">
+      <property name="isTransient" nameId="tpee.8606350594693632173" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="color" />
+      <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="5822360194063042601">
+        <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="5451929196217530373" resolveInfo="RED" />
+        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="5451929196217501003" resolveInfo="ConcreteNode.NodeColor" />
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7842743430739378740" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5822360194063024922">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5451929196217501003" resolveInfo="ConcreteNode.NodeColor" />
+      </node>
+    </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="720127759386558260">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sik3.~AbstractNode" resolveInfo="AbstractNode" />
     </node>
@@ -99,10 +117,16 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5932393582666300117" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5932393582666300118" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5932393582666300119">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3636207570310556539">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="3636207570310556538">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4775026250680978108">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4775026250680978107">
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sik3.~AbstractNode%dabstractNodeMethod()" resolveInfo="abstractNodeMethod" />
           </node>
+        </node>
+      </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8812544384558636067">
+        <property name="name" nameId="tpck.1169194664001" value="arg" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8812544384558636066">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~CharSequence" resolveInfo="CharSequence" />
         </node>
       </node>
     </node>
@@ -174,6 +198,28 @@
         </node>
       </node>
     </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="5451929196217483187" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.EnumClass" typeId="tpee.1083245097125" id="5451929196217501003">
+      <property name="name" nameId="tpck.1169194664001" value="NodeColor" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="5451929196217530084">
+        <property name="name" nameId="tpck.1169194664001" value="BLACK" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5451929196217531243" resolveInfo="ConcreteNode.NodeColor" />
+      </node>
+      <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="5451929196217530373">
+        <property name="name" nameId="tpck.1169194664001" value="RED" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5451929196217531243" resolveInfo="ConcreteNode.NodeColor" />
+      </node>
+      <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="5451929196217530717">
+        <property name="name" nameId="tpck.1169194664001" value="GREEN" />
+        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5451929196217531243" resolveInfo="ConcreteNode.NodeColor" />
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5451929196217501004" />
+      <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5451929196217531243">
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5451929196217531244" />
+        <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5451929196217532083" />
+      </node>
+    </node>
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7210239783600410777">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Iterable" resolveInfo="Iterable" />
       <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7210239783600410828">
@@ -210,6 +256,21 @@
           <property name="text" nameId="m373.8970989240999019144" value="This a checked exception defined in an MPS model" />
         </node>
       </node>
+    </node>
+  </root>
+  <root id="5520680398870220348">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5520680398870220349" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5520680398870249540">
+      <property name="isAbstract" nameId="tpee.1178608670077" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="getChidlren" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5520680398870254672">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Iterable" resolveInfo="Iterable" />
+        <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5520680398870254682">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5520680398870220348" resolveInfo="INode" />
+        </node>
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5520680398870249542" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5520680398870249543" />
     </node>
   </root>
 </model>

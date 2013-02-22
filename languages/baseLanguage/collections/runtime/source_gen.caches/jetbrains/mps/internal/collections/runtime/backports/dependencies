@@ -7,6 +7,7 @@
   </dependency>
   <dependency className="jetbrains.mps.internal.collections.runtime.backports.LinkedList" file="LinkedList.java">
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.ListIterator" />
     <classNode extendsClassName="java.io.Serializable" />
     <classNode extendsClassName="java.util.Iterator" />

@@ -12,6 +12,10 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -24,10 +28,6 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -38,8 +38,8 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     return this.createCollection_gp4zyx_a_0(editorContext, node);
   }
 
-  public static class ReplaceWith_BuildLayout_Node_cellMenu_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_BuildLayout_Node_cellMenu_a0a0() {
+  public static class ReplaceWith_BuildLayout_Node_cellMenu_gp4zyx_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_BuildLayout_Node_cellMenu_gp4zyx_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -80,6 +80,14 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_gp4zyx_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "modelsOnly");
+  }
+
+  private static boolean renderingCondition_gp4zyx_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
+  }
+
   private EditorCell createCollection_gp4zyx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gp4zyx_a");
@@ -118,7 +126,7 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
     buildStyles_StyleSheet.applyOutputLayout(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMpsLayout_ModuleSources_Editor.ReplaceWith_BuildLayout_Node_cellMenu_a0a0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildMpsLayout_ModuleSources_Editor.ReplaceWith_BuildLayout_Node_cellMenu_gp4zyx_a0a0()}));
     return editorCell;
   }
 
@@ -177,13 +185,5 @@ public class BuildMpsLayout_ModuleSources_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_gp4zyx_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "modelsOnly");
-  }
-
-  private static boolean renderingCondition_gp4zyx_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
   }
 }

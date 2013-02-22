@@ -18,42 +18,42 @@
     <nodeInfo nodeId="8984393347190225682" fileName="NodeDifference.java" startLine="25" startPosition="43" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190225670" fileName="NodeDifference.java" startLine="27" startPosition="14" endLine="28" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190225695" fileName="NodeDifference.java" startLine="30" startPosition="5" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225703" fileName="NodeDifference.java" startLine="34" startPosition="28" endLine="35" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225717" fileName="NodeDifference.java" startLine="39" startPosition="22" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225726" fileName="NodeDifference.java" startLine="42" startPosition="45" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225728" fileName="NodeDifference.java" startLine="44" startPosition="5" endLine="45" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190225747" fileName="NodeDifference.java" startLine="46" startPosition="58" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225758" fileName="NodeDifference.java" startLine="49" startPosition="52" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225760" fileName="NodeDifference.java" startLine="51" startPosition="5" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190225703" fileName="NodeDifference.java" startLine="35" startPosition="28" endLine="36" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190225717" fileName="NodeDifference.java" startLine="41" startPosition="22" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190225726" fileName="NodeDifference.java" startLine="44" startPosition="45" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190225728" fileName="NodeDifference.java" startLine="46" startPosition="5" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8984393347190225747" fileName="NodeDifference.java" startLine="48" startPosition="58" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190225758" fileName="NodeDifference.java" startLine="51" startPosition="52" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190225760" fileName="NodeDifference.java" startLine="53" startPosition="5" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8984393347190225668" fileName="NodeDifference.java" startLine="27" startPosition="12" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8984393347190225629" fileName="NodeDifference.java" startLine="18" startPosition="21" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8984393347190225699" fileName="NodeDifference.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190225712" fileName="NodeDifference.java" startLine="38" startPosition="37" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190225719" fileName="NodeDifference.java" startLine="41" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190225734" fileName="NodeDifference.java" startLine="45" startPosition="47" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190225749" fileName="NodeDifference.java" startLine="48" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190225712" fileName="NodeDifference.java" startLine="40" startPosition="37" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190225719" fileName="NodeDifference.java" startLine="43" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190225734" fileName="NodeDifference.java" startLine="47" startPosition="47" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190225749" fileName="NodeDifference.java" startLine="50" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8984393347190225597" fileName="NodeDifference.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeDifference#(Ljava/lang/String;Ljava/util/List;)V" />
+    <nodeInfo nodeId="8984393347190225699" fileName="NodeDifference.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
     <nodeInfo nodeId="8984393347190225664" fileName="NodeDifference.java" startLine="24" startPosition="46" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8984393347190225659" fileName="NodeDifference.java" startLine="23" startPosition="49" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8984393347190225619" fileName="NodeDifference.java" startLine="17" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#(I)Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190225706" fileName="NodeDifference.java" startLine="38" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="8984393347190225706" fileName="NodeDifference.java" startLine="39" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="8984393347190225638" fileName="NodeDifference.java" startLine="19" startPosition="36" endLine="20" endPosition="19" />
     <scopeInfo nodeId="8984393347190225681" fileName="NodeDifference.java" startLine="25" startPosition="43" endLine="26" endPosition="64" />
     <scopeInfo nodeId="8984393347190225669" fileName="NodeDifference.java" startLine="27" startPosition="14" endLine="28" endPosition="47" />
-    <scopeInfo nodeId="8984393347190225702" fileName="NodeDifference.java" startLine="34" startPosition="28" endLine="35" endPosition="23" />
-    <scopeInfo nodeId="8984393347190225716" fileName="NodeDifference.java" startLine="39" startPosition="22" endLine="40" endPosition="19" />
-    <scopeInfo nodeId="8984393347190225725" fileName="NodeDifference.java" startLine="42" startPosition="45" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="8984393347190225746" fileName="NodeDifference.java" startLine="46" startPosition="58" endLine="47" endPosition="19" />
-    <scopeInfo nodeId="8984393347190225757" fileName="NodeDifference.java" startLine="49" startPosition="52" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="8984393347190225702" fileName="NodeDifference.java" startLine="35" startPosition="28" endLine="36" endPosition="23" />
+    <scopeInfo nodeId="8984393347190225716" fileName="NodeDifference.java" startLine="41" startPosition="22" endLine="42" endPosition="19" />
+    <scopeInfo nodeId="8984393347190225725" fileName="NodeDifference.java" startLine="44" startPosition="45" endLine="45" endPosition="19" />
+    <scopeInfo nodeId="8984393347190225746" fileName="NodeDifference.java" startLine="48" startPosition="58" endLine="49" endPosition="19" />
+    <scopeInfo nodeId="8984393347190225757" fileName="NodeDifference.java" startLine="51" startPosition="52" endLine="52" endPosition="19" />
     <scopeInfo nodeId="8984393347190225605" fileName="NodeDifference.java" startLine="12" startPosition="66" endLine="14" endPosition="56" />
     <scopeInfo nodeId="8984393347190225629" fileName="NodeDifference.java" startLine="18" startPosition="21" endLine="21" endPosition="5">
       <varInfo nodeId="8984393347190225633" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190225699" fileName="NodeDifference.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="8984393347190225597" fileName="NodeDifference.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="8984393347190225602" varName="diffs" />
       <varInfo nodeId="8984393347190225600" varName="name" />
     </scopeInfo>
+    <scopeInfo nodeId="8984393347190225699" fileName="NodeDifference.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="8984393347190225663" fileName="NodeDifference.java" startLine="24" startPosition="46" endLine="29" endPosition="7" />
     <scopeInfo nodeId="8984393347190225659" fileName="NodeDifference.java" startLine="23" startPosition="49" endLine="30" endPosition="5">
       <varInfo nodeId="8984393347190225661" varName="item" />
@@ -62,16 +62,16 @@
       <varInfo nodeId="8984393347190225644" varName="buff" />
       <varInfo nodeId="8984393347190225626" varName="pref" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190225711" fileName="NodeDifference.java" startLine="38" startPosition="37" endLine="52" endPosition="16">
+    <scopeInfo nodeId="8984393347190225711" fileName="NodeDifference.java" startLine="40" startPosition="37" endLine="54" endPosition="16">
       <varInfo nodeId="8984393347190225729" varName="diff" />
     </scopeInfo>
     <scopeInfo nodeId="8984393347190225619" fileName="NodeDifference.java" startLine="17" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="8984393347190225622" varName="deep" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190225706" fileName="NodeDifference.java" startLine="38" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="8984393347190225706" fileName="NodeDifference.java" startLine="39" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="8984393347190225709" varName="obj" />
     </scopeInfo>
-    <unitInfo nodeId="8984393347190225584" fileName="NodeDifference.java" startLine="8" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.NodeDifference" />
+    <unitInfo nodeId="8984393347190225584" fileName="NodeDifference.java" startLine="8" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.NodeDifference" />
   </root>
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190227556">
     <nodeInfo nodeId="8984393347190227570" fileName="NodesMatcher.java" startLine="19" startPosition="61" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -320,22 +320,22 @@
     <nodeInfo nodeId="8984393347190228270" fileName="PropertyDifferense.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperty" />
     <nodeInfo nodeId="8984393347190228279" fileName="PropertyDifferense.java" startLine="9" startPosition="46" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190228291" fileName="PropertyDifferense.java" startLine="13" startPosition="53" endLine="14" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8984393347190228296" fileName="PropertyDifferense.java" startLine="17" startPosition="28" endLine="18" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228311" fileName="PropertyDifferense.java" startLine="22" startPosition="22" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228320" fileName="PropertyDifferense.java" startLine="25" startPosition="49" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228322" fileName="PropertyDifferense.java" startLine="27" startPosition="5" endLine="28" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228328" fileName="PropertyDifferense.java" startLine="28" startPosition="55" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228296" fileName="PropertyDifferense.java" startLine="18" startPosition="28" endLine="19" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228311" fileName="PropertyDifferense.java" startLine="24" startPosition="22" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228320" fileName="PropertyDifferense.java" startLine="27" startPosition="49" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228322" fileName="PropertyDifferense.java" startLine="29" startPosition="5" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8984393347190228328" fileName="PropertyDifferense.java" startLine="30" startPosition="55" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8984393347190228273" fileName="PropertyDifferense.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyDifferense#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="8984393347190228283" fileName="PropertyDifferense.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyDifferense#(Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="8984393347190228292" fileName="PropertyDifferense.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190228306" fileName="PropertyDifferense.java" startLine="21" startPosition="37" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228313" fileName="PropertyDifferense.java" startLine="24" startPosition="5" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228300" fileName="PropertyDifferense.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="8984393347190228306" fileName="PropertyDifferense.java" startLine="23" startPosition="37" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190228313" fileName="PropertyDifferense.java" startLine="26" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190228292" fileName="PropertyDifferense.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8984393347190228300" fileName="PropertyDifferense.java" startLine="22" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
     <scopeInfo nodeId="8984393347190228278" fileName="PropertyDifferense.java" startLine="9" startPosition="46" endLine="10" endPosition="26" />
     <scopeInfo nodeId="8984393347190228290" fileName="PropertyDifferense.java" startLine="13" startPosition="53" endLine="14" endPosition="12" />
-    <scopeInfo nodeId="8984393347190228295" fileName="PropertyDifferense.java" startLine="17" startPosition="28" endLine="18" endPosition="47" />
-    <scopeInfo nodeId="8984393347190228310" fileName="PropertyDifferense.java" startLine="22" startPosition="22" endLine="23" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228319" fileName="PropertyDifferense.java" startLine="25" startPosition="49" endLine="26" endPosition="19" />
+    <scopeInfo nodeId="8984393347190228295" fileName="PropertyDifferense.java" startLine="18" startPosition="28" endLine="19" endPosition="47" />
+    <scopeInfo nodeId="8984393347190228310" fileName="PropertyDifferense.java" startLine="24" startPosition="22" endLine="25" endPosition="19" />
+    <scopeInfo nodeId="8984393347190228319" fileName="PropertyDifferense.java" startLine="27" startPosition="49" endLine="28" endPosition="19" />
     <scopeInfo nodeId="8984393347190228273" fileName="PropertyDifferense.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="8984393347190228276" varName="property" />
     </scopeInfo>
@@ -343,83 +343,83 @@
       <varInfo nodeId="8984393347190228288" varName="b" />
       <varInfo nodeId="8984393347190228286" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190228292" fileName="PropertyDifferense.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="8984393347190228305" fileName="PropertyDifferense.java" startLine="21" startPosition="37" endLine="29" endPosition="46">
+    <scopeInfo nodeId="8984393347190228292" fileName="PropertyDifferense.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="8984393347190228305" fileName="PropertyDifferense.java" startLine="23" startPosition="37" endLine="31" endPosition="46">
       <varInfo nodeId="8984393347190228323" varName="diff" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190228300" fileName="PropertyDifferense.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="8984393347190228300" fileName="PropertyDifferense.java" startLine="22" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="8984393347190228303" varName="obj" />
     </scopeInfo>
-    <unitInfo nodeId="8984393347190228267" fileName="PropertyDifferense.java" startLine="6" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.PropertyDifferense" />
+    <unitInfo nodeId="8984393347190228267" fileName="PropertyDifferense.java" startLine="6" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.PropertyDifferense" />
   </root>
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228335">
     <nodeInfo nodeId="8984393347190228338" fileName="ReferenceDifferense.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
     <nodeInfo nodeId="8984393347190228341" fileName="ReferenceDifferense.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInternal" />
     <nodeInfo nodeId="8984393347190228352" fileName="ReferenceDifferense.java" startLine="10" startPosition="61" endLine="11" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190228356" fileName="ReferenceDifferense.java" startLine="11" startPosition="18" endLine="12" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228367" fileName="ReferenceDifferense.java" startLine="16" startPosition="21" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228371" fileName="ReferenceDifferense.java" startLine="18" startPosition="5" endLine="19" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8984393347190228373" fileName="ReferenceDifferense.java" startLine="18" startPosition="5" endLine="19" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228388" fileName="ReferenceDifferense.java" startLine="23" startPosition="22" endLine="24" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228397" fileName="ReferenceDifferense.java" startLine="26" startPosition="50" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228399" fileName="ReferenceDifferense.java" startLine="28" startPosition="5" endLine="29" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228405" fileName="ReferenceDifferense.java" startLine="29" startPosition="57" endLine="30" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228364" fileName="ReferenceDifferense.java" startLine="15" startPosition="28" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228383" fileName="ReferenceDifferense.java" startLine="22" startPosition="37" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228390" fileName="ReferenceDifferense.java" startLine="25" startPosition="5" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190228367" fileName="ReferenceDifferense.java" startLine="17" startPosition="21" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228371" fileName="ReferenceDifferense.java" startLine="19" startPosition="5" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8984393347190228373" fileName="ReferenceDifferense.java" startLine="19" startPosition="5" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228388" fileName="ReferenceDifferense.java" startLine="25" startPosition="22" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228397" fileName="ReferenceDifferense.java" startLine="28" startPosition="50" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228399" fileName="ReferenceDifferense.java" startLine="30" startPosition="5" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8984393347190228405" fileName="ReferenceDifferense.java" startLine="31" startPosition="57" endLine="32" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228364" fileName="ReferenceDifferense.java" startLine="16" startPosition="28" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190228383" fileName="ReferenceDifferense.java" startLine="24" startPosition="37" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190228390" fileName="ReferenceDifferense.java" startLine="27" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8984393347190228344" fileName="ReferenceDifferense.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReferenceDifferense#(Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="8984393347190228360" fileName="ReferenceDifferense.java" startLine="15" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190228377" fileName="ReferenceDifferense.java" startLine="22" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="8984393347190228366" fileName="ReferenceDifferense.java" startLine="16" startPosition="21" endLine="17" endPosition="63" />
-    <scopeInfo nodeId="8984393347190228372" fileName="ReferenceDifferense.java" startLine="18" startPosition="5" endLine="19" endPosition="61" />
-    <scopeInfo nodeId="8984393347190228387" fileName="ReferenceDifferense.java" startLine="23" startPosition="22" endLine="24" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228396" fileName="ReferenceDifferense.java" startLine="26" startPosition="50" endLine="27" endPosition="19" />
+    <nodeInfo nodeId="8984393347190228360" fileName="ReferenceDifferense.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8984393347190228377" fileName="ReferenceDifferense.java" startLine="23" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <scopeInfo nodeId="8984393347190228366" fileName="ReferenceDifferense.java" startLine="17" startPosition="21" endLine="18" endPosition="63" />
+    <scopeInfo nodeId="8984393347190228372" fileName="ReferenceDifferense.java" startLine="19" startPosition="5" endLine="20" endPosition="61" />
+    <scopeInfo nodeId="8984393347190228387" fileName="ReferenceDifferense.java" startLine="25" startPosition="22" endLine="26" endPosition="19" />
+    <scopeInfo nodeId="8984393347190228396" fileName="ReferenceDifferense.java" startLine="28" startPosition="50" endLine="29" endPosition="19" />
     <scopeInfo nodeId="8984393347190228351" fileName="ReferenceDifferense.java" startLine="10" startPosition="61" endLine="12" endPosition="26" />
     <scopeInfo nodeId="8984393347190228344" fileName="ReferenceDifferense.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="8984393347190228349" varName="internal" />
       <varInfo nodeId="8984393347190228347" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190228363" fileName="ReferenceDifferense.java" startLine="15" startPosition="28" endLine="19" endPosition="61" />
-    <scopeInfo nodeId="8984393347190228360" fileName="ReferenceDifferense.java" startLine="15" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="8984393347190228382" fileName="ReferenceDifferense.java" startLine="22" startPosition="37" endLine="30" endPosition="71">
+    <scopeInfo nodeId="8984393347190228363" fileName="ReferenceDifferense.java" startLine="16" startPosition="28" endLine="20" endPosition="61" />
+    <scopeInfo nodeId="8984393347190228360" fileName="ReferenceDifferense.java" startLine="15" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8984393347190228382" fileName="ReferenceDifferense.java" startLine="24" startPosition="37" endLine="32" endPosition="71">
       <varInfo nodeId="8984393347190228400" varName="diff" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190228377" fileName="ReferenceDifferense.java" startLine="22" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="8984393347190228377" fileName="ReferenceDifferense.java" startLine="23" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="8984393347190228380" varName="obj" />
     </scopeInfo>
-    <unitInfo nodeId="8984393347190228335" fileName="ReferenceDifferense.java" startLine="6" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.ReferenceDifferense" />
+    <unitInfo nodeId="8984393347190228335" fileName="ReferenceDifferense.java" startLine="6" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.ReferenceDifferense" />
   </root>
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228418">
     <nodeInfo nodeId="8984393347190228421" fileName="ConceptDifference.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConcept1" />
     <nodeInfo nodeId="8984393347190228424" fileName="ConceptDifference.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConcept2" />
     <nodeInfo nodeId="8984393347190228435" fileName="ConceptDifference.java" startLine="10" startPosition="62" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190228439" fileName="ConceptDifference.java" startLine="11" startPosition="26" endLine="12" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228447" fileName="ConceptDifference.java" startLine="15" startPosition="28" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228466" fileName="ConceptDifference.java" startLine="20" startPosition="22" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228475" fileName="ConceptDifference.java" startLine="23" startPosition="48" endLine="24" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228477" fileName="ConceptDifference.java" startLine="25" startPosition="5" endLine="26" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228483" fileName="ConceptDifference.java" startLine="26" startPosition="53" endLine="27" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228443" fileName="ConceptDifference.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190228461" fileName="ConceptDifference.java" startLine="19" startPosition="37" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228468" fileName="ConceptDifference.java" startLine="22" startPosition="5" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190228447" fileName="ConceptDifference.java" startLine="16" startPosition="28" endLine="17" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228466" fileName="ConceptDifference.java" startLine="22" startPosition="22" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228475" fileName="ConceptDifference.java" startLine="25" startPosition="48" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228477" fileName="ConceptDifference.java" startLine="27" startPosition="5" endLine="28" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8984393347190228483" fileName="ConceptDifference.java" startLine="28" startPosition="53" endLine="29" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228461" fileName="ConceptDifference.java" startLine="21" startPosition="37" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190228468" fileName="ConceptDifference.java" startLine="24" startPosition="5" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8984393347190228427" fileName="ConceptDifference.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptDifference#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8984393347190228455" fileName="ConceptDifference.java" startLine="19" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="8984393347190228446" fileName="ConceptDifference.java" startLine="15" startPosition="28" endLine="16" endPosition="67" />
-    <scopeInfo nodeId="8984393347190228465" fileName="ConceptDifference.java" startLine="20" startPosition="22" endLine="21" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228474" fileName="ConceptDifference.java" startLine="23" startPosition="48" endLine="24" endPosition="19" />
+    <nodeInfo nodeId="8984393347190228443" fileName="ConceptDifference.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8984393347190228455" fileName="ConceptDifference.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <scopeInfo nodeId="8984393347190228446" fileName="ConceptDifference.java" startLine="16" startPosition="28" endLine="17" endPosition="67" />
+    <scopeInfo nodeId="8984393347190228465" fileName="ConceptDifference.java" startLine="22" startPosition="22" endLine="23" endPosition="19" />
+    <scopeInfo nodeId="8984393347190228474" fileName="ConceptDifference.java" startLine="25" startPosition="48" endLine="26" endPosition="19" />
     <scopeInfo nodeId="8984393347190228434" fileName="ConceptDifference.java" startLine="10" startPosition="62" endLine="12" endPosition="26" />
-    <scopeInfo nodeId="8984393347190228443" fileName="ConceptDifference.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="8984393347190228427" fileName="ConceptDifference.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="8984393347190228430" varName="concept1" />
       <varInfo nodeId="8984393347190228432" varName="concept2" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190228460" fileName="ConceptDifference.java" startLine="19" startPosition="37" endLine="27" endPosition="84">
+    <scopeInfo nodeId="8984393347190228443" fileName="ConceptDifference.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="8984393347190228460" fileName="ConceptDifference.java" startLine="21" startPosition="37" endLine="29" endPosition="84">
       <varInfo nodeId="8984393347190228478" varName="diff" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190228455" fileName="ConceptDifference.java" startLine="19" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="8984393347190228455" fileName="ConceptDifference.java" startLine="20" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="8984393347190228458" varName="obj" />
     </scopeInfo>
-    <unitInfo nodeId="8984393347190228418" fileName="ConceptDifference.java" startLine="6" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.ConceptDifference" />
+    <unitInfo nodeId="8984393347190228418" fileName="ConceptDifference.java" startLine="6" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.ConceptDifference" />
   </root>
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228497">
     <nodeInfo nodeId="8984393347190228500" fileName="ChildrenCountDifference.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
@@ -428,33 +428,33 @@
     <nodeInfo nodeId="8984393347190228519" fileName="ChildrenCountDifference.java" startLine="11" startPosition="63" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190228523" fileName="ChildrenCountDifference.java" startLine="12" startPosition="18" endLine="13" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8984393347190228527" fileName="ChildrenCountDifference.java" startLine="13" startPosition="18" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228535" fileName="ChildrenCountDifference.java" startLine="17" startPosition="28" endLine="18" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228560" fileName="ChildrenCountDifference.java" startLine="22" startPosition="22" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228569" fileName="ChildrenCountDifference.java" startLine="25" startPosition="54" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228571" fileName="ChildrenCountDifference.java" startLine="27" startPosition="5" endLine="28" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228577" fileName="ChildrenCountDifference.java" startLine="28" startPosition="65" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228531" fileName="ChildrenCountDifference.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190228555" fileName="ChildrenCountDifference.java" startLine="21" startPosition="37" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228562" fileName="ChildrenCountDifference.java" startLine="24" startPosition="5" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190228535" fileName="ChildrenCountDifference.java" startLine="18" startPosition="28" endLine="19" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228560" fileName="ChildrenCountDifference.java" startLine="24" startPosition="22" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228569" fileName="ChildrenCountDifference.java" startLine="27" startPosition="54" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228571" fileName="ChildrenCountDifference.java" startLine="29" startPosition="5" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8984393347190228577" fileName="ChildrenCountDifference.java" startLine="30" startPosition="65" endLine="31" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8984393347190228555" fileName="ChildrenCountDifference.java" startLine="23" startPosition="37" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190228562" fileName="ChildrenCountDifference.java" startLine="26" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8984393347190228531" fileName="ChildrenCountDifference.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
     <nodeInfo nodeId="8984393347190228509" fileName="ChildrenCountDifference.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChildrenCountDifference#(Ljava/lang/String;II)V" />
-    <nodeInfo nodeId="8984393347190228549" fileName="ChildrenCountDifference.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="8984393347190228534" fileName="ChildrenCountDifference.java" startLine="17" startPosition="28" endLine="18" endPosition="99" />
-    <scopeInfo nodeId="8984393347190228559" fileName="ChildrenCountDifference.java" startLine="22" startPosition="22" endLine="23" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228568" fileName="ChildrenCountDifference.java" startLine="25" startPosition="54" endLine="26" endPosition="19" />
+    <nodeInfo nodeId="8984393347190228549" fileName="ChildrenCountDifference.java" startLine="22" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
+    <scopeInfo nodeId="8984393347190228534" fileName="ChildrenCountDifference.java" startLine="18" startPosition="28" endLine="19" endPosition="99" />
+    <scopeInfo nodeId="8984393347190228559" fileName="ChildrenCountDifference.java" startLine="24" startPosition="22" endLine="25" endPosition="19" />
+    <scopeInfo nodeId="8984393347190228568" fileName="ChildrenCountDifference.java" startLine="27" startPosition="54" endLine="28" endPosition="19" />
     <scopeInfo nodeId="8984393347190228518" fileName="ChildrenCountDifference.java" startLine="11" startPosition="63" endLine="14" endPosition="18" />
-    <scopeInfo nodeId="8984393347190228531" fileName="ChildrenCountDifference.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="8984393347190228531" fileName="ChildrenCountDifference.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="8984393347190228509" fileName="ChildrenCountDifference.java" startLine="11" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="8984393347190228514" varName="c1" />
       <varInfo nodeId="8984393347190228516" varName="c2" />
       <varInfo nodeId="8984393347190228512" varName="role" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190228554" fileName="ChildrenCountDifference.java" startLine="21" startPosition="37" endLine="29" endPosition="96">
+    <scopeInfo nodeId="8984393347190228554" fileName="ChildrenCountDifference.java" startLine="23" startPosition="37" endLine="31" endPosition="96">
       <varInfo nodeId="8984393347190228572" varName="diff" />
     </scopeInfo>
-    <scopeInfo nodeId="8984393347190228549" fileName="ChildrenCountDifference.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="8984393347190228549" fileName="ChildrenCountDifference.java" startLine="22" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="8984393347190228552" varName="obj" />
     </scopeInfo>
-    <unitInfo nodeId="8984393347190228497" fileName="ChildrenCountDifference.java" startLine="6" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.ChildrenCountDifference" />
+    <unitInfo nodeId="8984393347190228497" fileName="ChildrenCountDifference.java" startLine="6" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.ChildrenCountDifference" />
   </root>
 </debugInfo>
 

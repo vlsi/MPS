@@ -5,6 +5,7 @@
     <classNode dependClassName="com.intellij.util.ui.Timer" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
@@ -15,11 +16,13 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.suspicious.ConflictableModelAdapter" file="ConflictableModelAdapter.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode extendsClassName="jetbrains.mps.vcs.suspicious.Conflictable" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.suspicious.ConflictableModuleAdapter" file="ConflictableModuleAdapter.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode extendsClassName="jetbrains.mps.vcs.suspicious.Conflictable" />
@@ -70,6 +73,7 @@
     <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
     <classNode extendsClassName="com.intellij.openapi.vfs.VirtualFileManagerListener" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.watching.IReloadListener" />

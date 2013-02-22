@@ -18,6 +18,7 @@ public class ApplyNonConflictsForRoot extends BaseAction implements DumbAware {
     setDisableOnNoProject(false);
   }
 
+  @Override
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     myDialog.getMergeSession().applyChanges(getChanges());
     myDialog.rehighlight();

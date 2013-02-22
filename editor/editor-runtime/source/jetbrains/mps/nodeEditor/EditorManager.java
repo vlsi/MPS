@@ -37,6 +37,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
@@ -96,7 +97,7 @@ public class EditorManager {
       } else if (event instanceof SModelPropertyEvent) {
         eventNode = ((SModelPropertyEvent) event).getNode();
       } else continue;
-      result.add(new Pair<SNode, SNodeReference>(eventNode, new jetbrains.mps.smodel.SNodePointer(event.getModel().getSModelReference(),eventNode.getNodeId()) {
+      result.add(new Pair<SNode, SNodeReference>(eventNode, new jetbrains.mps.smodel.SNodePointer((SModelReference) event.getModel().getReference(),eventNode.getNodeId()) {
         int myHashCode = -1;
         @Override
         public int hashCode() {
@@ -440,10 +441,10 @@ public class EditorManager {
     final String transformTag = (String) node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG);
     sideTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
       protected List<INodeSubstituteAction> createActions() {
-        List list = ModelActions.createRightTransformHintSubstituteActions(node, side, transformTag, context.getOperationContext());
-        List wrapperList = new LinkedList();
-        for (final Object action : list) {
-          wrapperList.add(new NodeSubstituteActionWrapper((INodeSubstituteAction) action) {
+        List<INodeSubstituteAction> list = ModelActions.createRightTransformHintSubstituteActions(node, side, transformTag, context.getOperationContext());
+        List<INodeSubstituteAction> wrapperList = new ArrayList<INodeSubstituteAction>(list.size());
+        for (final INodeSubstituteAction action : list) {
+          wrapperList.add(new NodeSubstituteActionWrapper(action) {
             public SNode substitute(@Nullable jetbrains.mps.openapi.editor.EditorContext context, String pattern) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
                 public void run() {

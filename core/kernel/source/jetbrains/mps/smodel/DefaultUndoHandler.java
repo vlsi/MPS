@@ -20,22 +20,27 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
 public class DefaultUndoHandler implements UndoHandler {
+  @Override
   public void addUndoableAction(SNodeUndoableAction action) {
 
   }
 
+  @Override
   public <T> T runNonUndoableAction(Computable<T> t) {
     return t.compute();
   }
 
+  @Override
   public boolean needRegisterUndo(@Nullable SModel model) {
     return false;
   }
 
+  @Override
   public boolean isInsideUndoableCommand() {
     return false;
   }
 
+  @Override
   public void flushCommand(Project p) {
 
   }

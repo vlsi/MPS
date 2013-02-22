@@ -182,9 +182,9 @@
     <nodeInfo nodeId="3187167456722650257" fileName="JavaMethodWatchable.java" startLine="67" startPosition="42" endLine="68" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3187167456722650274" fileName="JavaMethodWatchable.java" startLine="72" startPosition="39" endLine="73" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3187167456722650281" fileName="JavaMethodWatchable.java" startLine="77" startPosition="34" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3187167456722650289" fileName="JavaMethodWatchable.java" startLine="85" startPosition="44" endLine="86" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="948222233231488963" fileName="JavaMethodWatchable.java" startLine="81" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initSubvalues#()V" />
+    <nodeInfo nodeId="3187167456722650289" fileName="JavaMethodWatchable.java" startLine="86" startPosition="44" endLine="87" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3187167456722650249" fileName="JavaMethodWatchable.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaMethodValue#()V" />
+    <nodeInfo nodeId="948222233231488963" fileName="JavaMethodWatchable.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initSubvalues#()V" />
     <nodeInfo nodeId="3187167456722650325" fileName="JavaMethodWatchable.java" startLine="31" startPosition="27" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3187167456722650332" fileName="JavaMethodWatchable.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategory#()Ljetbrains/mps/debug/api/programState/WatchablesCategory;" />
     <nodeInfo nodeId="3187167456722650339" fileName="JavaMethodWatchable.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljetbrains/mps/debug/api/programState/IValue;" />
@@ -192,11 +192,11 @@
     <nodeInfo nodeId="3187167456722650253" fileName="JavaMethodWatchable.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValuePresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="3187167456722650270" fileName="JavaMethodWatchable.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
     <nodeInfo nodeId="3187167456722650277" fileName="JavaMethodWatchable.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStructure#()Z" />
-    <nodeInfo nodeId="3187167456722650284" fileName="JavaMethodWatchable.java" startLine="84" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvalues#()Ljava/util/List;" />
+    <nodeInfo nodeId="3187167456722650284" fileName="JavaMethodWatchable.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvalues#()Ljava/util/List;" />
     <nodeInfo nodeId="3187167456722650354" fileName="JavaMethodWatchable.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3187167456722650298" fileName="JavaMethodWatchable.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaMethodWatchable#(Lcom/sun/jdi/Method;ZLjava/lang/String;Lcom/sun/jdi/ThreadReference;)V" />
     <nodeInfo nodeId="3187167456722650321" fileName="JavaMethodWatchable.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <scopeInfo nodeId="948222233231488967" fileName="JavaMethodWatchable.java" startLine="81" startPosition="33" endLine="81" endPosition="33" />
+    <scopeInfo nodeId="948222233231488967" fileName="JavaMethodWatchable.java" startLine="82" startPosition="33" endLine="82" endPosition="33" />
     <scopeInfo nodeId="3187167456722650335" fileName="JavaMethodWatchable.java" startLine="39" startPosition="43" endLine="40" endPosition="41" />
     <scopeInfo nodeId="3187167456722650342" fileName="JavaMethodWatchable.java" startLine="44" startPosition="28" endLine="45" endPosition="19" />
     <scopeInfo nodeId="3187167456722650350" fileName="JavaMethodWatchable.java" startLine="49" startPosition="37" endLine="50" endPosition="35" />
@@ -204,10 +204,10 @@
     <scopeInfo nodeId="3187167456722650256" fileName="JavaMethodWatchable.java" startLine="67" startPosition="42" endLine="68" endPosition="28" />
     <scopeInfo nodeId="3187167456722650273" fileName="JavaMethodWatchable.java" startLine="72" startPosition="39" endLine="73" endPosition="37" />
     <scopeInfo nodeId="3187167456722650280" fileName="JavaMethodWatchable.java" startLine="77" startPosition="34" endLine="78" endPosition="19" />
-    <scopeInfo nodeId="3187167456722650288" fileName="JavaMethodWatchable.java" startLine="85" startPosition="44" endLine="86" endPosition="37" />
+    <scopeInfo nodeId="3187167456722650288" fileName="JavaMethodWatchable.java" startLine="86" startPosition="44" endLine="87" endPosition="37" />
     <scopeInfo nodeId="3187167456722650357" fileName="JavaMethodWatchable.java" startLine="54" startPosition="26" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="948222233231488963" fileName="JavaMethodWatchable.java" startLine="81" startPosition="0" endLine="83" endPosition="0" />
     <scopeInfo nodeId="3187167456722650249" fileName="JavaMethodWatchable.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="948222233231488963" fileName="JavaMethodWatchable.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="3187167456722650309" fileName="JavaMethodWatchable.java" startLine="23" startPosition="113" endLine="27" endPosition="56" />
     <scopeInfo nodeId="3187167456722650324" fileName="JavaMethodWatchable.java" startLine="31" startPosition="27" endLine="35" endPosition="7" />
     <scopeInfo nodeId="3187167456722650332" fileName="JavaMethodWatchable.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
@@ -216,7 +216,7 @@
     <scopeInfo nodeId="3187167456722650253" fileName="JavaMethodWatchable.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="3187167456722650270" fileName="JavaMethodWatchable.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="3187167456722650277" fileName="JavaMethodWatchable.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="3187167456722650284" fileName="JavaMethodWatchable.java" startLine="84" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="3187167456722650284" fileName="JavaMethodWatchable.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
     <scopeInfo nodeId="3187167456722650354" fileName="JavaMethodWatchable.java" startLine="53" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="3187167456722650298" fileName="JavaMethodWatchable.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="3187167456722650305" varName="classFQName" />
@@ -225,8 +225,8 @@
       <varInfo nodeId="3187167456722650307" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="3187167456722650321" fileName="JavaMethodWatchable.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="3187167456722650246" fileName="JavaMethodWatchable.java" startLine="59" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.watchables.JavaMethodWatchable$JavaMethodValue" />
-    <unitInfo nodeId="3187167456722650243" fileName="JavaMethodWatchable.java" startLine="18" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.watchables.JavaMethodWatchable" />
+    <unitInfo nodeId="3187167456722650246" fileName="JavaMethodWatchable.java" startLine="59" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.watchables.JavaMethodWatchable$JavaMethodValue" />
+    <unitInfo nodeId="3187167456722650243" fileName="JavaMethodWatchable.java" startLine="18" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.state.watchables.JavaMethodWatchable" />
   </root>
   <root nodeRef="r:50efd6f2-8d02-4682-b313-bd69c46e78df(jetbrains.mps.debugger.java.runtime.state.watchables)/3187167456722650363">
     <nodeInfo nodeId="3243898559544443279" fileName="JavaExceptionWatchable.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />

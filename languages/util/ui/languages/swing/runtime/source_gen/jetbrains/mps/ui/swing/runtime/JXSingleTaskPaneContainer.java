@@ -16,6 +16,7 @@ public class JXSingleTaskPaneContainer extends JXTaskPaneContainer {
   private List<JXTaskPane> myTpanes = new ArrayList<JXTaskPane>();
   private List<JXTaskPane> myTpanes_trans = new ArrayList<JXTaskPane>();
   private PropertyChangeListener myChangeListener = new PropertyChangeListener() {
+    @Override
     public void propertyChange(PropertyChangeEvent e) {
       if (JXSingleTaskPaneContainer.this.myTpanes_trans.isEmpty()) {
         final Boolean wascollapsed = (Boolean) e.getOldValue();
@@ -24,6 +25,7 @@ public class JXSingleTaskPaneContainer extends JXTaskPaneContainer {
           JXSingleTaskPaneContainer.this.myTpanes_trans.addAll(JXSingleTaskPaneContainer.this.myTpanes);
           JXSingleTaskPaneContainer.this.myTpanes_trans.remove(e.getSource());
           SwingUtilities.invokeLater(new Runnable() {
+            @Override
             public void run() {
               JXSingleTaskPaneContainer.this.setCollapsedTrans(!(collapsed));
             }
@@ -36,6 +38,7 @@ public class JXSingleTaskPaneContainer extends JXTaskPaneContainer {
   public JXSingleTaskPaneContainer() {
     super();
     this.setLayout(new VerticalStackLayout() {
+      @Override
       public boolean isSelected(Component c) {
         return !(((JXSingleTaskPane) c).isCollapsed());
       }

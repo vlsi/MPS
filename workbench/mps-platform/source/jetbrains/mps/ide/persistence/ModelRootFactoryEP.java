@@ -35,6 +35,7 @@ public class ModelRootFactoryEP extends AbstractExtensionPointBean {
 
 
   private final LazyInstance<ModelRootFactory> myFactory = new LazyInstance<ModelRootFactory>() {
+    @Override
     protected Class<ModelRootFactory> getInstanceClass() throws ClassNotFoundException {
       return findClass(className);
     }

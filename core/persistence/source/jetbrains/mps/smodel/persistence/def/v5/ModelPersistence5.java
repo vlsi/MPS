@@ -27,18 +27,22 @@ import jetbrains.mps.util.xml.XMLSAXHandler;
 import java.util.List;
 
 public class ModelPersistence5 extends ModelPersistence4 {
+  @Override
   public IModelWriter getModelWriter() {
     return new ModelWriter5();
   }
 
+  @Override
   public IModelReader getModelReader() {
     return new ModelReader5();
   }
 
+  @Override
   public XMLSAXHandler<ModelLoadResult> getModelReaderHandler(ModelLoadingState state, SModelHeader header) {
     return new ModelReader5Handler(header);
   }
 
+  @Override
   public XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler() {
     return new LineToContentMapReader5Handler();
   }

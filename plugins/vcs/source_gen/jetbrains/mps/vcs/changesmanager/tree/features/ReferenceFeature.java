@@ -20,6 +20,7 @@ public class ReferenceFeature extends AbstractNodeFeature {
   }
 
   @Nullable
+  @Override
   public Feature getParent() {
     return new ReferencesFeature(getNodePointer());
   }

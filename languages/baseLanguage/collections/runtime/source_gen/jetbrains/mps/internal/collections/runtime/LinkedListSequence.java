@@ -18,99 +18,123 @@ public class LinkedListSequence<T> extends ListSequence<T> implements ILinkedLis
     super(list);
   }
 
+  @Override
   public void addFirst(T t) {
     getList().addFirst(t);
   }
 
+  @Override
   public void addLast(T t) {
     getList().addLast(t);
   }
 
+  @Override
   public boolean offerFirst(T t) {
     return getList().offerFirst(t);
   }
 
+  @Override
   public boolean offerLast(T t) {
     return getList().offerLast(t);
   }
 
+  @Override
   public T removeFirst() {
     return getList().removeFirst();
   }
 
+  @Override
   public T removeLast() {
     return getList().removeLast();
   }
 
+  @Override
   public T pollLast() {
     return getList().pollLast();
   }
 
+  @Override
   public T getFirst() {
     return getList().getFirst();
   }
 
+  @Override
   public T getLast() {
     return getList().getLast();
   }
 
+  @Override
   public T peekFirst() {
     return getList().peekFirst();
   }
 
+  @Override
   public T peekLast() {
     return getList().peekLast();
   }
 
+  @Override
   public boolean removeFirstOccurrence(Object o) {
     return getList().removeFirstOccurrence(o);
   }
 
+  @Override
   public boolean offer(T t) {
     return getList().offer(t);
   }
 
+  @Override
   public T remove() {
     return getList().remove();
   }
 
+  @Override
   public T poll() {
     return getList().poll();
   }
 
+  @Override
   public T element() {
     return getList().element();
   }
 
+  @Override
   public T peek() {
     return getList().peek();
   }
 
+  @Override
   public void push(T t) {
     getList().push(t);
   }
 
+  @Override
   public T pop() {
     return getList().pop();
   }
 
+  @Override
   public Iterator<T> descendingIterator() {
     return null;
   }
 
+  @Override
   public T pollFirst() {
     return getList().pollFirst();
   }
 
+  @Override
   public boolean removeLastOccurrence(Object o) {
     return getList().removeLastOccurrence(o);
   }
 
+  @Override
   public T addLastElement(T t) {
     getList().addLast(t);
     return t;
   }
 
+  @Override
   public T removeFirstElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
       if (getList().isEmpty()) {
@@ -120,10 +144,12 @@ public class LinkedListSequence<T> extends ListSequence<T> implements ILinkedLis
     return getList().removeFirst();
   }
 
+  @Override
   public Queue<T> toQueue() {
     return getList();
   }
 
+  @Override
   public T addFirstElement(T t) {
     if (Sequence.IGNORE_NULL_VALUES) {
       if (t == null) {
@@ -134,6 +160,7 @@ public class LinkedListSequence<T> extends ListSequence<T> implements ILinkedLis
     return t;
   }
 
+  @Override
   public T peekElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
       if (getList().isEmpty()) {
@@ -143,6 +170,7 @@ public class LinkedListSequence<T> extends ListSequence<T> implements ILinkedLis
     return getList().peek();
   }
 
+  @Override
   public T popElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
       if (getList().isEmpty()) {
@@ -152,11 +180,13 @@ public class LinkedListSequence<T> extends ListSequence<T> implements ILinkedLis
     return getList().pop();
   }
 
+  @Override
   public T pushElement(T t) {
     getList().push(t);
     return t;
   }
 
+  @Override
   public Deque<T> toDeque() {
     return getList();
   }

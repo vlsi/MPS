@@ -49,8 +49,8 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     return this.createCollection_robprv_a_0(editorContext, node);
   }
 
-  public static class InferenceRule_name_cellMenu_a0b0a extends AbstractCellMenuPart_PropertyValues {
-    public InferenceRule_name_cellMenu_a0b0a() {
+  public static class InferenceRule_name_cellMenu_robprv_a0b0a extends AbstractCellMenuPart_PropertyValues {
+    public InferenceRule_name_cellMenu_robprv_a0b0a() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -64,6 +64,14 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       }
       return result;
     }
+  }
+
+  private static boolean renderingCondition_robprv_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_robprv_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
   }
 
   private static class dependencyListHandler_robprv_b0 extends RefNodeListHandler {
@@ -387,7 +395,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new InferenceRule_Editor.InferenceRule_name_cellMenu_a0b0a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new InferenceRule_Editor.InferenceRule_name_cellMenu_robprv_a0b0a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -414,13 +422,5 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_robprv_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_robprv_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "dependency", true)).isNotEmpty();
   }
 }

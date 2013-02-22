@@ -56,6 +56,7 @@
     <classNode dependClassName="com.sun.jdi.request.EventRequest" />
     <classNode dependClassName="com.sun.jdi.request.StepRequest" />
     <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.util.concurrent.atomic.AtomicInteger" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
@@ -81,6 +82,7 @@
   <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.UserContext" file="UserContext.java">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.request.EventRequest" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />

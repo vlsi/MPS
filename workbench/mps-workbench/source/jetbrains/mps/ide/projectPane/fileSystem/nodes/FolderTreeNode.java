@@ -42,15 +42,18 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     myProject = project;
   }
 
+  @Override
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   protected void doInit() {
     removeAllChildren();
 
@@ -58,6 +61,7 @@ public class FolderTreeNode extends AbstractFileTreeNode {
     ArrayList<VirtualFile> sortedFiles = new ArrayList<VirtualFile>();
     sortedFiles.addAll(Arrays.asList(files));
     Collections.sort(sortedFiles, new Comparator<VirtualFile>() {
+      @Override
       public int compare(VirtualFile o1, VirtualFile o2) {
         return o1.getPath().compareTo(o2.getPath());
       }

@@ -53,7 +53,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252323000(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
+    return _context.getOriginalInputModel().getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252323013(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -61,7 +61,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252358760(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
+    return _context.getOriginalInputModel().getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252358773(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -69,7 +69,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252358999(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
+    return _context.getOriginalInputModel().getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252359012(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -77,7 +77,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252398461(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
+    return _context.getOriginalInputModel().getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252398474(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -129,7 +129,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252434626(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
+    return _context.getOriginalInputModel().getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252434639(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -153,7 +153,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5934496548013422568(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalInputModel().getSModelReference().toString();
+    return _context.getOriginalInputModel().getReference().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_5934496548013422581(final IOperationContext operationContext, final PropertyMacroContext _context) {

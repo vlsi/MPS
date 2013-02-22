@@ -30,21 +30,26 @@ public class MessageViewLoggingHandler implements ILoggingHandler, ProjectCompon
     myMessagesView = messagesView;
   }
 
+  @Override
   public void info(LogEntry e) {
     add(MessageKind.INFORMATION, e);
   }
 
+  @Override
   public void warning(LogEntry e) {
     add(MessageKind.WARNING, e);
   }
 
+  @Override
   public void debug(LogEntry e) {
   }
 
+  @Override
   public void error(LogEntry e) {
     add(MessageKind.ERROR, e);
   }
 
+  @Override
   public void fatal(LogEntry e) {
     add(MessageKind.ERROR, e);
   }

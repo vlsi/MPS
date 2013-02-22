@@ -79,6 +79,7 @@ public class MoveStaticField_Action extends BaseAction {
     try {
       final SNode whereToMove;
       whereToMove = MoveNodeDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), new MoveNodeDialog.NodeFilter("Select class to move: refactoring can't be applied to selected node") {
+        @Override
         public boolean check(SNode selectedObject, SNode nodeToMove, SModelDescriptor modelOfSelectedObject) {
           return SNodeOperations.isInstanceOf(selectedObject, "jetbrains.mps.baseLanguage.structure.Classifier") && !(ListSequence.fromList(SNodeOperations.getAncestors(nodeToMove, null, false)).contains(selectedObject));
         }
@@ -89,6 +90,7 @@ public class MoveStaticField_Action extends BaseAction {
         return;
       }
       ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
           if (!(node.getModel() != null) || jetbrains.mps.util.SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {

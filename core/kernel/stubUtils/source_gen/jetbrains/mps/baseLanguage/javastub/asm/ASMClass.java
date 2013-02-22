@@ -31,8 +31,10 @@ public class ASMClass {
     if (myNode.signature != null) {
       SignatureReader signReader = new SignatureReader(myNode.signature);
       signReader.accept(new SignatureVisitorAdapter() {
+        @Override
         public SignatureVisitor visitSuperclass() {
           return new ASMClass.ClassifierSignatureVisitor() {
+            @Override
             public void visitEnd() {
               ASMClassType cls = new ASMClassType(myName);
               myGenericSuperclass = new ASMParameterizedType(cls, myParameters);
@@ -40,8 +42,10 @@ public class ASMClass {
           };
         }
 
+        @Override
         public SignatureVisitor visitInterface() {
           return new ASMClass.ClassifierSignatureVisitor() {
+            @Override
             public void visitEnd() {
               ASMClassType cls = new ASMClassType(myName);
               myGenericInterfaces.add(new ASMParameterizedType(cls, myParameters));
@@ -170,8 +174,10 @@ public class ASMClass {
       myParentVisitor = parentVisitor;
     }
 
+    @Override
     public SignatureVisitor visitTypeArgument(char wildcard) {
       return new ASMClass.ClassifierSignatureVisitor(this) {
+        @Override
         public void visitTypeVariable(String name) {
           if (myParentVisitor != null) {
             if (myParentVisitor.myParameters == null) {
@@ -181,6 +187,7 @@ public class ASMClass {
           }
         }
 
+        @Override
         public void visitEnd() {
           if (myParentVisitor != null) {
             ASMClassType cls = new ASMClassType(myName);
@@ -193,6 +200,7 @@ public class ASMClass {
       };
     }
 
+    @Override
     public void visitClassType(String name) {
       myName = name.replace('/', '.');
     }

@@ -39,8 +39,8 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     return this.createCollection_4z471d_a(editorContext, node);
   }
 
-  public static class BuildSourceArchiveRelativePath_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public BuildSourceArchiveRelativePath_generic_cellMenu_a0c0() {
+  public static class BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0 extends AbstractCellMenuPart_Generic_Group {
+    public BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -133,7 +133,7 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
     }
     BuildSourceArchiveRelativePath_Delete.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildSourceArchiveRelativePath_Editor.BuildSourceArchiveRelativePath_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildSourceArchiveRelativePath_Editor.BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.samples.agreementLanguage.generator.util.QueriesUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -100,7 +100,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1197662782219(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String prefix = NameUtil.capitalize(NameUtil.shortNameFromLongName(_context.getInputModel().getLongName()));
+    String prefix = NameUtil.capitalize(NameUtil.shortNameFromLongName(SNodeOperations.getModelLongName(_context.getInputModel())));
     return prefix + "RegistryBuilder";
   }
 
@@ -113,12 +113,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1197663461983(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode value = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty")), "jetbrains.mps.samples.agreementLanguage.structure.Value");
+    SNode value = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.QuantityTemporalProperty")), "jetbrains.mps.samples.agreementLanguage.structure.Value");
     return SPropertyOperations.getString(value, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1197663681552(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode event = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.Event", false, false);
+    SNode event = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.Event", false, false);
     return SPropertyOperations.getBoolean_def(event, "taxable", "true");
   }
 
@@ -167,7 +167,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1197659829378(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode event = SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty")), "jetbrains.mps.samples.agreementLanguage.structure.Event");
+    SNode event = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty")), "jetbrains.mps.samples.agreementLanguage.structure.Event");
     SNode eventType = SLinkOperations.getTarget(event, "type", false);
     if ("SERVICE CALL".equals(SPropertyOperations.getString(eventType, "name"))) {
       return SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0c0fb(), "variableDeclaration", false);
@@ -182,7 +182,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1197661270681(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode postingRule = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"), "value", true);
+    SNode postingRule = SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(_context.getNode(), "jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty"), "value", true);
     SNode accountType = SLinkOperations.getTarget(postingRule, "account", false);
     if ("base-usage".equals(SPropertyOperations.getString(accountType, "name"))) {
       return SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0c0gb(), "enumConstantDeclaration", false);

@@ -68,10 +68,12 @@ public class NewFile_Action extends BaseAction {
       );
       final VirtualFile[] result = new VirtualFile[1];
       InputValidator validator = new InputValidator() {
+        @Override
         public boolean checkInput(String p) {
           return true;
         }
 
+        @Override
         public boolean canClose(final String p) {
           if (p.length() == 0) {
             return false;

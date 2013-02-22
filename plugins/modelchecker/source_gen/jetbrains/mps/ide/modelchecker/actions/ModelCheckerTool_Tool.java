@@ -172,6 +172,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
 
   private ModelCheckerViewer createViewer(IOperationContext operationContext) {
     return new ModelCheckerViewer(ModelCheckerTool_Tool.this.myProject, operationContext) {
+      @Override
       protected void close() {
         ModelCheckerTool_Tool.this.closeTab(this);
       }

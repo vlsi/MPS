@@ -6,16 +6,16 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -29,27 +29,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5sxwue_a(editorContext, node);
-  }
-
-  public static class EnumValueOfExpression_customReplace_cellMenu_a0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public EnumValueOfExpression_customReplace_cellMenu_a0c0() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, "enumClass", false), node);
-    }
-
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "enumClass", false), parameterObject, node);
-    }
-
-    public boolean isReferentPresentation() {
-      return true;
-    }
   }
 
   public static class _Inline_5sxwue_a0a extends InlineCellProvider {
@@ -85,6 +64,27 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     }
   }
 
+  public static class EnumValueOfExpression_customReplace_cellMenu_5sxwue_a0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public EnumValueOfExpression_customReplace_cellMenu_5sxwue_a0c0() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, "enumClass", false), node);
+    }
+
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "enumClass", false), parameterObject, node);
+    }
+
+    public boolean isReferentPresentation() {
+      return true;
+    }
+  }
+
   private EditorCell createCollection_5sxwue_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5sxwue_a");
@@ -114,7 +114,7 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EnumValueOfExpression_Editor.EnumValueOfExpression_customReplace_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EnumValueOfExpression_Editor.EnumValueOfExpression_customReplace_cellMenu_5sxwue_a0c0()}));
     return editorCell;
   }
 

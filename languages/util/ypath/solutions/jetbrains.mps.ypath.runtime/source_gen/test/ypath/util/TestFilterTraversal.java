@@ -20,6 +20,7 @@ public class TestFilterTraversal {
   @Test
   public void testSampleData() {
     IFilter<YNode> nameStartsWithD = new IFilter<YNode>() {
+      @Override
       public boolean accept(YNode t) {
         return t.getName().startsWith("D");
       }

@@ -106,7 +106,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_7923290658387314641(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode behavior = ConceptMethodDeclaration_Behavior.call_getBehaviour_1225196403947(_context.getNode());
-    return SNodeOperations.getModel(behavior).getLongName() + "." + SPropertyOperations.getString(behavior, "name");
+    return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(behavior)) + "." + SPropertyOperations.getString(behavior, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_7923290658387314663(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -126,7 +126,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1144956008583745105(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String behaviorModel = SNodeOperations.getModel(_context.getNode()).getLongName();
+    String behaviorModel = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(_context.getNode()));
     behaviorModel = behaviorModel.substring(0, behaviorModel.length() - "structure".length()) + "behavior";
     return behaviorModel + "." + SPropertyOperations.getString(_context.getNode(), "name") + "_BehaviorDescriptor";
   }
@@ -145,7 +145,7 @@ public class QueriesGenerated {
       extendsNode = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
     }
 
-    String behaviorModel = SNodeOperations.getModel(extendsNode).getLongName();
+    String behaviorModel = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(extendsNode));
     behaviorModel = behaviorModel.substring(0, behaviorModel.length() - "structure".length()) + "behavior";
     return behaviorModel + "." + SPropertyOperations.getString(extendsNode, "name") + "_BehaviorDescriptor";
   }
@@ -159,7 +159,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1144956008583742122(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String behaviorModel = SNodeOperations.getModel(_context.getNode()).getLongName();
+    String behaviorModel = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(_context.getNode()));
     behaviorModel = behaviorModel.substring(0, behaviorModel.length() - "structure".length()) + "behavior";
     return behaviorModel + "." + SPropertyOperations.getString(_context.getNode(), "name") + "_BehaviorDescriptor";
   }

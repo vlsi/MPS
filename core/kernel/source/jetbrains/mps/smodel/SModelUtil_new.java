@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -40,11 +42,13 @@ public class SModelUtil_new implements CoreComponent {
   private ClassLoaderManager myClManager;
   private GlobalSModelEventsManager myMeManager;
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+    @Override
     public void unload() {
       SModelUtil.clearCaches();
     }
   };
   private SModelAdapter myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
+    @Override
     public void rootRemoved(SModelRootEvent p0) {
       if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
         return;
@@ -57,6 +61,7 @@ public class SModelUtil_new implements CoreComponent {
     }
 
 
+    @Override
     public void propertyChanged(SModelPropertyEvent p0) {
       if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
         return;
@@ -68,7 +73,7 @@ public class SModelUtil_new implements CoreComponent {
         return;
       }
 
-      String modelName = p0.getNode().getModel().getLongName();
+      String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(p0.getNode().getModel());
       String newName = modelName + "." + p0.getNewPropertyValue();
       String oldName = modelName + "." + p0.getOldPropertyValue();
       SModelUtil.conceptRenamed(oldName, newName);
@@ -95,12 +100,14 @@ public class SModelUtil_new implements CoreComponent {
     myMeManager = meManager;
   }
 
+  @Override
   public void init() {
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
     myClManager.addReloadHandler(myReloadHandler);
     myMeManager.addGlobalModelListener(myModelListener);
   }
 
+  @Override
   public void dispose() {
     myMeManager.removeGlobalModelListener(myModelListener);
     myClManager.removeReloadHandler(myReloadHandler);
@@ -136,7 +143,7 @@ public class SModelUtil_new implements CoreComponent {
   }
 
   public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId, IScope scope, boolean fullNodeStructure) {
-    boolean isNotProjectModel = model==null || !ProjectModels.isProjectModel(model.getSModelReference());
+    boolean isNotProjectModel = model==null || !ProjectModels.isProjectModel(model.getReference());
     if (isNotProjectModel) {
       String fqName = ModelConstraints.getDefaultConcreteConceptFqName(conceptFqName);
       if (fqName != null) {

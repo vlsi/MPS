@@ -11,6 +11,7 @@ public interface IConfig {
     public Stub() {
     }
 
+    @Override
     public boolean configure(IConfigMonitor cmon, IPropertiesAccessor pa) {
       throw new UnsupportedOperationException();
     }

@@ -1,6 +1,11 @@
 package jetbrains.mps.psiTest;
 
-public class ConcreteNodeEx extends ConcreteNode {
+public class ConcreteNodeEx extends ConcreteNode implements INode {
+
+    @Override
+    public String getText() {
+        return "ConcreteNodeEx";
+    }
 
     @Override
     public void dump(StringBuilder builder) {
@@ -10,12 +15,17 @@ public class ConcreteNodeEx extends ConcreteNode {
 
     public void justStatements() {
         ConcreteNode myVar = new ConcreteNode();
-        newMethod();
+        newMethod(null);
     }
 
     @Override
-    public void newMethod() {
+    public void newMethod(CharSequence arg) {
+        // used for findUsages
+//        abstractNodeMethod();
     }
 
-
+    @Override
+    public Iterable<INode> getChidlren() {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
 }

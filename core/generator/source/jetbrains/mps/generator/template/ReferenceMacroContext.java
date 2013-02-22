@@ -47,10 +47,12 @@ public class ReferenceMacroContext extends TemplateQueryContextWithMacro {
   /**
    * 'outputNode' mapping
    */
+  @Override
   public SNode getOutputNode() {
     return myOutputNode;
   }
 
+  @Override
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNodeScope(SNode inputNode, String label, IOperationContext operationContext) {
     List<SNode> outputNodes = this.getAllOutputNodesByInputNodeAndMappingLabel(inputNode, label);
     if(outputNodes == null) return null;

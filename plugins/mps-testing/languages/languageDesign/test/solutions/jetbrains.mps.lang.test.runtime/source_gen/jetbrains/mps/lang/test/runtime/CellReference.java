@@ -36,6 +36,7 @@ public class CellReference {
     return this.myNode;
   }
 
+  @Override
   public String toString() {
     final Wrappers._T<String> result = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {

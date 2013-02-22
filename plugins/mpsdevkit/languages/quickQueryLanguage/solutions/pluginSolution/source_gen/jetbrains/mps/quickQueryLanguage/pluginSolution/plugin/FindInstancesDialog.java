@@ -101,6 +101,7 @@ public class FindInstancesDialog extends BaseDialog {
     });
   }
 
+  @Override
   protected JComponent getMainComponent() {
     return this.myPanel;
   }
@@ -189,6 +190,7 @@ public class FindInstancesDialog extends BaseDialog {
     }
     myDisposed = true;
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         myEditor.disposeEditor();
         myModelOwner.unregisterModelOwner();

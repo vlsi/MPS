@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -17,8 +19,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AffectedNodesClauseInParent extends AbstractCellProvider {
   public AffectedNodesClauseInParent(SNode node) {
@@ -37,6 +37,10 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
+  }
+
+  private static boolean renderingCondition_33nozx_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "affectedNodesClause", true) != null;
   }
 
   private EditorCell createCollection_33nozx_a(EditorContext editorContext, SNode node) {
@@ -89,9 +93,5 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_33nozx_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "affectedNodesClause", true) != null;
   }
 }

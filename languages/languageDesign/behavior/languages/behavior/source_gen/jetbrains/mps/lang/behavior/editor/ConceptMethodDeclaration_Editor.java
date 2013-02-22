@@ -6,10 +6,13 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -43,9 +46,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -56,16 +56,32 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return this.createCollection_gmtuod_a_0(editorContext, node);
   }
 
-  public static class ConceptMethodDeclaration_component_cellMenu_a0f2a implements SubstituteInfoPartExt {
+  private static boolean renderingCondition_gmtuod_a1c0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isStatic");
+  }
+
+  private static boolean renderingCondition_gmtuod_a2c0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isVirtual");
+  }
+
+  private static boolean renderingCondition_gmtuod_a3c0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+
+  public static class ConceptMethodDeclaration_component_cellMenu_gmtuod_a0f2a implements SubstituteInfoPartExt {
     private ConceptMethodDeclaration_Menu myComponent;
 
-    public ConceptMethodDeclaration_component_cellMenu_a0f2a() {
+    public ConceptMethodDeclaration_component_cellMenu_gmtuod_a0f2a() {
       this.myComponent = new ConceptMethodDeclaration_Menu();
     }
 
     public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createActions(cellContext, editorContext);
     }
+  }
+
+  private static boolean renderingCondition_gmtuod_a9c0(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "overriddenMethod", false) != null;
   }
 
   public static class _Inline_gmtuod_a4j2a extends InlineCellProvider {
@@ -99,6 +115,26 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_gmtuod_a01c0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+
+  private static boolean renderingCondition_gmtuod_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isPrivate")) && SLinkOperations.getTarget(node, "overriddenMethod", false) == null && !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+
+  private static boolean renderingCondition_gmtuod_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isVirtual")) && (SLinkOperations.getTarget(node, "overriddenMethod", false) == null);
+  }
+
+  private static boolean renderingCondition_gmtuod_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isVirtual");
+  }
+
+  private static boolean renderingCondition_gmtuod_a4a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isVirtual")) && !(SPropertyOperations.getBoolean(node, "isPrivate"));
   }
 
   public static class _Inline_gmtuod_a1e0 extends InlineCellProvider {
@@ -654,7 +690,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyMethodName(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ConceptMethodDeclaration_Editor.ConceptMethodDeclaration_component_cellMenu_a0f2a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ConceptMethodDeclaration_Editor.ConceptMethodDeclaration_component_cellMenu_gmtuod_a0f2a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -735,41 +771,5 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_gmtuod_a1c0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isStatic");
-  }
-
-  private static boolean renderingCondition_gmtuod_a2c0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isVirtual");
-  }
-
-  private static boolean renderingCondition_gmtuod_a3c0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-
-  private static boolean renderingCondition_gmtuod_a9c0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "overriddenMethod", false) != null;
-  }
-
-  private static boolean renderingCondition_gmtuod_a01c0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-
-  private static boolean renderingCondition_gmtuod_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isPrivate")) && SLinkOperations.getTarget(node, "overriddenMethod", false) == null && !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-
-  private static boolean renderingCondition_gmtuod_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isVirtual")) && (SLinkOperations.getTarget(node, "overriddenMethod", false) == null);
-  }
-
-  private static boolean renderingCondition_gmtuod_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isVirtual");
-  }
-
-  private static boolean renderingCondition_gmtuod_a4a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isVirtual")) && !(SPropertyOperations.getBoolean(node, "isPrivate"));
   }
 }

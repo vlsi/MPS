@@ -33,6 +33,7 @@ public class ModuleOperationContext extends StandaloneMPSContext {
 
   public ModuleOperationContext(@NotNull final SModule module) {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         myModuleReference = module.getModuleReference();
       }
@@ -44,14 +45,17 @@ public class ModuleOperationContext extends StandaloneMPSContext {
     return null;
   }
 
+  @Override
   public IModule getModule() {
     return ModuleRepositoryFacade.getInstance().getModule(myModuleReference);
   }
 
+  @Override
   public boolean isValid() {
     return getModule() != null;
   }
 
+  @Override
   @NotNull
   public IScope getScope() {
     IModule module = getModule();

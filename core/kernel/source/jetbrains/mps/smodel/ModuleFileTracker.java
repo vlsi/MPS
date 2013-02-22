@@ -40,6 +40,7 @@ public class ModuleFileTracker implements CoreComponent {
     return INSTANCE;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -49,6 +50,7 @@ public class ModuleFileTracker implements CoreComponent {
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
     myRepo.removeModuleRepositoryListener(myListener);
@@ -89,6 +91,7 @@ public class ModuleFileTracker implements CoreComponent {
   }
 
   private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+    @Override
     public void beforeModuleRemoved(IModule module) {
       IFile file = module.getDescriptorFile();
       if (file == null) return;
@@ -96,6 +99,7 @@ public class ModuleFileTracker implements CoreComponent {
       removeModuleFile(ModulesMiner.getRealDescriptorFile(module));
     }
 
+    @Override
     public void moduleAdded(IModule module) {
       IFile file = module.getDescriptorFile();
       if (file == null) return;

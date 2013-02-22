@@ -120,6 +120,7 @@ public class NewModuleUtil {
         modelsDir.mkdirs();
       } else {
         ModelAccess.instance().writeFilesInEDT(new Runnable() {
+          @Override
           public void run() {
             modelsDir.mkdirs();
           }

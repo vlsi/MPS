@@ -39,8 +39,8 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     return this.createCollection_c6z1wa_a_0(editorContext, node);
   }
 
-  public static class ModuleReferenceExpression_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public ModuleReferenceExpression_generic_cellMenu_a0c0() {
+  public static class ModuleReferenceExpression_generic_cellMenu_c6z1wa_a0c0 extends AbstractCellMenuPart_Generic_Group {
+    public ModuleReferenceExpression_generic_cellMenu_c6z1wa_a0c0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -134,7 +134,7 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ModuleReferenceExpression_Editor.ModuleReferenceExpression_generic_cellMenu_a0c0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new ModuleReferenceExpression_Editor.ModuleReferenceExpression_generic_cellMenu_c6z1wa_a0c0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

@@ -34,11 +34,13 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
     super(project);
   }
 
+  @Override
   @NotNull
   protected Set<VirtualFile> getAllExcludeRoots() {
     final Set<VirtualFile> roots = new HashSet<VirtualFile>();
 
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         for (SModule module : MPSModuleRepository.getInstance().getModules()) {
           JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);

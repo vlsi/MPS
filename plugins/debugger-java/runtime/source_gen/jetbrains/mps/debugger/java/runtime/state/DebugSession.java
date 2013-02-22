@@ -29,10 +29,12 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
     eventsProcessor.addDebugProcessListener(new DebugSession.MyDebugProcessAdapter());
   }
 
+  @Override
   protected JavaUiStateImpl createUiState() {
     return new RunningJavaUiState(this);
   }
 
+  @Override
   public void resume() {
     Context context = getUiState().getContext();
     if (context == null) {
@@ -42,26 +44,32 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
     myEventsProcessor.resume(context);
   }
 
+  @Override
   public void pause() {
     myEventsProcessor.pause();
   }
 
+  @Override
   public void stop(boolean terminateTargetVM) {
     myEventsProcessor.stop(terminateTargetVM);
   }
 
+  @Override
   public void stepOver() {
     step(EventsProcessor.StepKind.Over);
   }
 
+  @Override
   public void stepInto() {
     step(EventsProcessor.StepKind.Into);
   }
 
+  @Override
   public void stepOut() {
     step(EventsProcessor.StepKind.Out);
   }
 
+  @Override
   public boolean canShowEvaluationDialog() {
     return true;
   }

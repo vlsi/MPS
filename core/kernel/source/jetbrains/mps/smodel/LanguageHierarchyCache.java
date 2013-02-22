@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -56,6 +58,7 @@ public class LanguageHierarchyCache implements CoreComponent {
     myModuleRepository = moduleRepository;
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -70,6 +73,7 @@ public class LanguageHierarchyCache implements CoreComponent {
     });
 
     GlobalSModelEventsManager.getInstance().addGlobalCommandListener(new SModelCommandListener() {
+      @Override
       public void eventsHappenedInCommand(List<SModelEvent> events) {
         for (SModelEvent e : events) {
           if (!LanguageAspect.STRUCTURE.is(e.getModelDescriptor())) continue;
@@ -79,6 +83,7 @@ public class LanguageHierarchyCache implements CoreComponent {
     });
   }
 
+  @Override
   public void dispose() {
     // TODO unregister listeners?
     myCacheChangeListeners.clear();
@@ -141,6 +146,7 @@ public class LanguageHierarchyCache implements CoreComponent {
       List<String> result = myParentsNamesMap.get(conceptFqName);
       if (result == null) {
         result = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<String>>() {
+          @Override
           public List<String> compute() {
             SNode declaration = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
             if (declaration == null) {
@@ -205,6 +211,7 @@ public class LanguageHierarchyCache implements CoreComponent {
     if (result != null) return result;
 
     InternAwareStringSet set = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<InternAwareStringSet>() {
+      @Override
       public InternAwareStringSet compute() {
         InternAwareStringSet res = new InternAwareStringSet();
         collectAncestorNames(conceptFqName, res);
@@ -258,6 +265,7 @@ public class LanguageHierarchyCache implements CoreComponent {
     synchronized (myDescendantsLock) {
       if (!myDescendantsCachesAreValid) {
         NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+          @Override
           public void run() {
             rebuildDescendantsCaches();
           }
@@ -294,13 +302,14 @@ public class LanguageHierarchyCache implements CoreComponent {
   private void rebuildDescendantsCaches() {
     myDirectDescendantsCache.clear();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         for (Language language : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
           SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
           if (structureDescriptor == null) continue;
           Iterable<SNode> iterable =
             new ConditionalIterable<SNode>(
-              structureDescriptor.getSModel().roots(),
+              structureDescriptor.getSModel().getRootNodes(),
               new IsInstanceCondition(SNodeUtil.concept_AbstractConceptDeclaration));
           for (SNode root : iterable) {
             addToCache(NameUtil.nodeFQName(root));

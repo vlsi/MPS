@@ -21,11 +21,11 @@ import jetbrains.mps.util.NameUtil;
 
 public class replace_node_macro extends AbstractCellMenuComponent {
   public replace_node_macro() {
-    super(new SubstituteInfoPartExt[]{new replace_node_macro.NodeMacro_generic_cellMenu_a0()});
+    super(new SubstituteInfoPartExt[]{new replace_node_macro.NodeMacro_generic_cellMenu_f12orh_a0()});
   }
 
-  public static class NodeMacro_generic_cellMenu_a0 extends AbstractCellMenuPart_Generic_Group {
-    public NodeMacro_generic_cellMenu_a0() {
+  public static class NodeMacro_generic_cellMenu_f12orh_a0 extends AbstractCellMenuPart_Generic_Group {
+    public NodeMacro_generic_cellMenu_f12orh_a0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {

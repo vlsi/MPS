@@ -33,6 +33,7 @@ public class GeneratorPropertiesDialog extends BasePropertiesDialog {
     return StandardComponents.createCheckboxPanel(this, list);
   }
 
+  @Override
   protected String getErrorString() {
     for (MappingPriorityRule rule : myProperties.getPriorityRules()) {
       if (rule.getLeft().isIncomplete() || rule.getRight().isIncomplete()) {
@@ -49,6 +50,7 @@ public class GeneratorPropertiesDialog extends BasePropertiesDialog {
     myProperties.loadFrom(myGenerator.getModuleDescriptor());
   }
 
+  @Override
   protected boolean doSaveChanges() {
     String errorString = getErrorString();
     if (errorString != null) {
@@ -56,6 +58,7 @@ public class GeneratorPropertiesDialog extends BasePropertiesDialog {
       return false;
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         myProperties.saveTo(myGenerator.getModuleDescriptor());
         myGenerator.setModuleDescriptor(myGenerator.getModuleDescriptor(), true);

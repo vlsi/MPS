@@ -54,6 +54,7 @@ public class ScopeOptions extends BaseOptions {
     myModule = module;
   }
 
+  @Override
   public ScopeOptions clone() {
     return new ScopeOptions(myScopeType, myModel, myModule);
   }
@@ -105,6 +106,7 @@ public class ScopeOptions extends BaseOptions {
     return new SearchQuery(node, getScope(context, modelDescriptor));
   }
 
+  @Override
   public void write(Element element, Project project) {
     Element scopeTypeXML = new Element(SCOPE_TYPE);
     scopeTypeXML.setAttribute(SCOPE_TYPE, myScopeType.name());
@@ -113,6 +115,7 @@ public class ScopeOptions extends BaseOptions {
     element.addContent(scopeTypeXML);
   }
 
+  @Override
   public void read(Element element, Project project) {
     Element scopeTypeXML = element.getChild(SCOPE_TYPE);
     myScopeType = ScopeType.valueOf(scopeTypeXML.getAttributeValue(SCOPE_TYPE));

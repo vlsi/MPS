@@ -32,6 +32,7 @@ public abstract class SimpleScope extends Scope {
     }
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     if (prefix == null) {
       // todo: copy nodes? immutable list? 
@@ -51,6 +52,7 @@ public abstract class SimpleScope extends Scope {
   }
 
   @Nullable
+  @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     // todo: maybe map name -> node? 
     SNode result = null;
@@ -71,6 +73,7 @@ public abstract class SimpleScope extends Scope {
   public abstract String getReferenceText(@NotNull SNode target);
 
   @Nullable
+  @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode target) {
     return getReferenceText(target);
   }

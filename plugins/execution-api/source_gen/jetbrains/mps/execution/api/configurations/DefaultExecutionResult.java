@@ -19,14 +19,17 @@ public class DefaultExecutionResult implements ExecutionResult {
     myConsole = console;
   }
 
+  @Override
   public ProcessHandler getProcessHandler() {
     return myProcessHandler;
   }
 
+  @Override
   public AnAction[] getActions() {
     return new AnAction[0];
   }
 
+  @Override
   public ExecutionConsole getExecutionConsole() {
     return myConsole;
   }

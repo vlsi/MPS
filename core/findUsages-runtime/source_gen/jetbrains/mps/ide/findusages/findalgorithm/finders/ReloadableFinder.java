@@ -39,6 +39,7 @@ public class ReloadableFinder implements IInterfacedFinder {
     return myFinder.get();
   }
 
+  @Override
   public String getConcept() {
     GeneratedFinder finder = getFinder();
     if (finder == null) {
@@ -47,6 +48,7 @@ public class ReloadableFinder implements IInterfacedFinder {
     return finder.getConcept();
   }
 
+  @Override
   public boolean isApplicable(SNode node) {
     GeneratedFinder finder = getFinder();
     if (finder == null) {
@@ -55,6 +57,7 @@ public class ReloadableFinder implements IInterfacedFinder {
     return finder.isApplicable(node);
   }
 
+  @Override
   public boolean isVisible(SNode node) {
     GeneratedFinder finder = getFinder();
     if (finder == null) {
@@ -63,6 +66,7 @@ public class ReloadableFinder implements IInterfacedFinder {
     return finder.isVisible(node);
   }
 
+  @Override
   public String getDescription() {
     GeneratedFinder finder = getFinder();
     if (finder == null) {
@@ -71,6 +75,7 @@ public class ReloadableFinder implements IInterfacedFinder {
     return finder.getDescription();
   }
 
+  @Override
   public String getLongDescription() {
     GeneratedFinder finder = getFinder();
     if (finder == null) {
@@ -79,6 +84,7 @@ public class ReloadableFinder implements IInterfacedFinder {
     return finder.getLongDescription();
   }
 
+  @Override
   public boolean canNavigate() {
     GeneratedFinder finder = getFinder();
     if (finder == null) {
@@ -87,6 +93,7 @@ public class ReloadableFinder implements IInterfacedFinder {
     return finder.canNavigate();
   }
 
+  @Override
   public SNode getNodeToNavigate() {
     GeneratedFinder finder = getFinder();
     if (finder == null) {
@@ -95,6 +102,7 @@ public class ReloadableFinder implements IInterfacedFinder {
     return finder.getNodeToNavigate();
   }
 
+  @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     GeneratedFinder finder = getFinder();
     if (finder == null) {

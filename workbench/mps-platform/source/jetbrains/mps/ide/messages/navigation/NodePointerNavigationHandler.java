@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 class NodePointerNavigationHandler implements INavigationHandler<SNodeReference> {
+  @Override
   public boolean canNavigate(SNodeReference object) {
     return isCorrectNode(object);
   }
@@ -45,6 +46,7 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodeReference>
     return true;
   }
 
+  @Override
   public void navigate(SNodeReference node, Project project, boolean focus, boolean select) {
     IModule module = node.resolve(MPSModuleRepository.getInstance()).getModel().getModelDescriptor().getModule();
     ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(project));

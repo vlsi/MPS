@@ -16,9 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.typesystem.inference.InequalitySystem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,36 +31,16 @@ public class NullSubstituteInfo implements NodeSubstituteInfo {
   }
 
   public void invalidateActions() {
-
-  }
-
-  public void setOriginalNode(SNode node) {
-
-  }
-
-  public SNode getOriginalNode() {
-    return null;
   }
 
   public void setOriginalText(String text) {
-
   }
 
   public String getOriginalText() {
     return null;
   }
 
-
   public boolean hasExactlyNActions(String pattern, boolean strictMatching, int n) {
-    if (n == 0) return true;
-    return false;
-  }
-
-  public boolean hasNoActionsWithPrefix(String pattern) {
-    return true;
-  }
-
-  public InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
-    return null;
+    return n == 0;
   }
 }

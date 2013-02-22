@@ -11,6 +11,7 @@ import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.Arrays;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -29,20 +30,23 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_nphvgz_a(editorContext, node);
   }
 
-  public static class BuildSource_JavaOptions_compiler_cellMenu_a0h2a extends AbstractCellMenuPart_PropertyValues {
-    public BuildSource_JavaOptions_compiler_cellMenu_a0h2a() {
+  public static class BuildSource_JavaOptions_compiler_cellMenu_nphvgz_a0h2a extends AbstractCellMenuPart_PropertyValues {
+    public BuildSource_JavaOptions_compiler_cellMenu_nphvgz_a0h2a() {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       return Arrays.asList(new String[]{"modern", "IntelliJ", "jikes", "gcj"});
     }
+  }
+
+  private static boolean renderingCondition_nphvgz_a01c0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "copyResources");
   }
 
   private static class resourceSelectorsListHandler_nphvgz_b01c0 extends RefNodeListHandler {
@@ -326,7 +330,7 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildSource_JavaOptions_Editor.BuildSource_JavaOptions_compiler_cellMenu_a0h2a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new BuildSource_JavaOptions_Editor.BuildSource_JavaOptions_compiler_cellMenu_nphvgz_a0h2a()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -356,9 +360,5 @@ public class BuildSource_JavaOptions_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_nphvgz_a01c0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "copyResources");
   }
 }

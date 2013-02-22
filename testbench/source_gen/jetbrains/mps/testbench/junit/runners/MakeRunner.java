@@ -25,9 +25,11 @@ public class MakeRunner extends Runner {
     myDescription = Description.createTestDescription(class_, "Making");
   }
 
+  @Override
   public void run(final RunNotifier notifier) {
     notifier.fireTestStarted(myDescription);
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         ModuleMaker maker = new ModuleMaker();
         MPSCompilationResult compilationResult = maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), new EmptyProgressMonitor());
@@ -43,6 +45,7 @@ public class MakeRunner extends Runner {
     // model repository had already been filled and obviosly it didn't have those stub models 
     // as there were no class files there at the moment yet. 
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         for (IModule mod : MPSModuleRepository.getInstance().getAllModules()) {
           if (!(mod instanceof AbstractModule)) {
@@ -55,8 +58,10 @@ public class MakeRunner extends Runner {
 
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
         public void run() {
           ModelAccess.instance().runWriteAction(new Runnable() {
+            @Override
             public void run() {
               LocalFileSystem.getInstance().refresh(false);
             }
@@ -71,6 +76,7 @@ public class MakeRunner extends Runner {
     notifier.fireTestFinished(myDescription);
   }
 
+  @Override
   public Description getDescription() {
     return myDescription;
   }

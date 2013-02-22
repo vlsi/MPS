@@ -51,19 +51,23 @@ public class NodeHierarchyChooser extends JBScrollPane {
       this.myHierarchyNode = node;
     }
 
+    @Override
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
       this.ancestorsProvider = new ConceptAncestorsProvider();
       return this.ancestorsProvider.getDescendants(node);
     }
 
+    @Override
     protected SNode getParent(SNode node) {
       return null;
     }
 
+    @Override
     protected Set<SNode> getParents(SNode node, Set<SNode> visited) {
       return new HashSet<SNode>();
     }
 
+    @Override
     protected String noNodeString() {
       return "no node";
     }

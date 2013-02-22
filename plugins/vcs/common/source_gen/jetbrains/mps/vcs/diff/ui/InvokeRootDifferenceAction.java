@@ -17,6 +17,7 @@ public class InvokeRootDifferenceAction extends BaseDiffModelTreeAction {
     copyShortcutFrom(getDefaultDiffAction());
   }
 
+  @Override
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     myModelDifferenceDialog.invokeRootDifference(getRootId(event));
   }

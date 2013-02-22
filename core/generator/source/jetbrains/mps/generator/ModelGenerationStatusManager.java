@@ -16,13 +16,13 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -58,6 +58,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -67,6 +68,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     SModelRepository.getInstance().addModelRepositoryListener(mySmodelReloadListener);
   }
 
+  @Override
   public void dispose() {
     SModelRepository.getInstance().removeModelRepositoryListener(mySmodelReloadListener);
     INSTANCE = null;
@@ -82,7 +84,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     if (!(md instanceof GeneratableSModel)) return false;
     GeneratableSModel sm = (GeneratableSModel) md;
     if (!sm.isGeneratable()) return false;
-    if (sm instanceof EditableSModelDescriptor && ((EditableSModelDescriptor) sm).isChanged()) return true;
+    if (sm instanceof EditableSModel && ((EditableSModel) sm).isChanged()) return true;
 
     String currentHash = sm.getModelHash();
     if (currentHash == null) return true;

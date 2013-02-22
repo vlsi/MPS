@@ -72,6 +72,7 @@ public class MakeFieldStatic_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModelAccess.instance().runReadInEDT(new Runnable() {
+        @Override
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
           if (!(node.getModel() != null) || SNodeOperations.isDisposed(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))))) {

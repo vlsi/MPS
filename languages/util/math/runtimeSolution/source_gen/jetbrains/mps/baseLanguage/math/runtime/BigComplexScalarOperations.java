@@ -16,6 +16,7 @@ public class BigComplexScalarOperations implements MatrixScalarOperations {
     myContext = context;
   }
 
+  @Override
   public BigComplex cast(Object o) {
     if (o instanceof BigComplex) {
       return (BigComplex) o;
@@ -35,6 +36,7 @@ public class BigComplexScalarOperations implements MatrixScalarOperations {
     throw new ClassCastException();
   }
 
+  @Override
   public BigComplex add(Object o1, Object o2) {
     if (myContext == null) {
       return cast(o1).add(cast(o2));
@@ -42,6 +44,7 @@ public class BigComplexScalarOperations implements MatrixScalarOperations {
     return cast(o1).add(cast(o2), myContext);
   }
 
+  @Override
   public BigComplex mul(Object i1, Object o2) {
     if (myContext == null) {
       return cast(i1).mul(cast(o2));
@@ -49,11 +52,13 @@ public class BigComplexScalarOperations implements MatrixScalarOperations {
     return cast(i1).mul(cast(o2), myContext);
   }
 
+  @Override
   public BigComplex neg(Object i) {
     BigComplex c = cast(i);
     return new BigComplex(c.re().negate(), c.im().negate());
   }
 
+  @Override
   public BigComplex inv(Object d) {
     if (myContext == null) {
       return cast(d).inv();
@@ -61,10 +66,12 @@ public class BigComplexScalarOperations implements MatrixScalarOperations {
     return cast(d).inv(myContext);
   }
 
+  @Override
   public BigComplex conj(Object o) {
     return cast(o).conj();
   }
 
+  @Override
   public Object abs(Object o) {
     return cast(o).abs(myContext);
   }

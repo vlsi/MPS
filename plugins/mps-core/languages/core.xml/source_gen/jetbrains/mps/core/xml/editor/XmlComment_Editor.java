@@ -6,6 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -19,14 +23,22 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class XmlComment_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5fx40y_a(editorContext, node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_5fx40y_a0a0(EditorContext editorContext, SNode node) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{}));
+  }
+
+  private static boolean renderingCondition_5fx40y_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "lines", true)).count() <= 1;
+  }
+
+  private static boolean _StyleParameter_QueryFunction_5fx40y_a0c0(EditorContext editorContext, SNode node) {
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{}));
   }
 
   private static class linesListHandler_5fx40y_a0b0 extends RefNodeListHandler {
@@ -205,17 +217,5 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
-  }
-
-  private static boolean renderingCondition_5fx40y_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "lines", true)).count() <= 1;
-  }
-
-  private static boolean _StyleParameter_QueryFunction_5fx40y_a0a0(EditorContext editorContext, SNode node) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{}));
-  }
-
-  private static boolean _StyleParameter_QueryFunction_5fx40y_a0c0(EditorContext editorContext, SNode node) {
-    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{}));
   }
 }

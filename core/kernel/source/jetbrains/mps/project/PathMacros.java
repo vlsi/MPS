@@ -37,6 +37,7 @@ public class PathMacros implements CoreComponent {
 
   }
 
+  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -45,6 +46,7 @@ public class PathMacros implements CoreComponent {
     INSTANCE = this;
   }
 
+  @Override
   public void dispose() {
     INSTANCE = null;
   }

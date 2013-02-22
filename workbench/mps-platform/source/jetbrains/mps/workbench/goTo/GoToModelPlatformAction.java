@@ -42,6 +42,7 @@ import java.util.List;
 import java.util.Map;
 
 public class GoToModelPlatformAction extends BaseAction implements DumbAware {
+  @Override
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
@@ -50,12 +51,15 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     BaseModelModel goToModelModel = new BaseModelModel(project) {
+      @Override
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new BaseModelItem(modelReference) {
+          @Override
           public void navigate(boolean requestFocus) {
             final SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelReference);
 
             VirtualFile modelFile = ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
+              @Override
               public VirtualFile compute() {
                 return ModelUtil.getFileByModel(md.getSModel());
               }
@@ -67,8 +71,10 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
         };
       }
 
+      @Override
       public SModelReference[] find(IScope scope) {
         Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
+          @Override
           public boolean met(SModelDescriptor modelDescriptor) {
             boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
               || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());

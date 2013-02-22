@@ -34,6 +34,7 @@ public class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
     add(myAdditionalTextLabel, BorderLayout.EAST);
   }
 
+  @Override
   public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
     Color foreground;
     Color additionalForeground;
@@ -93,6 +94,7 @@ public class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
     return this;
   }
 
+  @Override
   public void paint(Graphics g) {
     super.paint(g);
 

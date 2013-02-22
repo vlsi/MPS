@@ -15,11 +15,13 @@ public class CommandOutputStream extends FilterOutputStream {
     this.myPrintOut = out;
   }
 
+  @Override
   public void write(int b) throws IOException {
     this.myLastChar = b;
     this.out.write(b);
   }
 
+  @Override
   public void write(byte[] b) throws IOException {
     if (b.length > 0) {
       this.myLastChar = b[b.length - 1];
@@ -27,6 +29,7 @@ public class CommandOutputStream extends FilterOutputStream {
     this.out.write(b);
   }
 
+  @Override
   public void write(byte[] b, int off, int len) throws IOException {
     int lastIndex = off + len - 1;
     if (0 <= lastIndex && lastIndex < b.length) {

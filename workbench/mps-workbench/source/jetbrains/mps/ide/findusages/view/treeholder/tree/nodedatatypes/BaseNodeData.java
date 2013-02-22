@@ -116,6 +116,7 @@ public abstract class BaseNodeData implements IExternalizeable {
 
   //----SAVE/LOAD STUFF----
 
+  @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     element.setAttribute(CAPTION, myCaption);
     element.setAttribute(INFO, myAdditionalInfo);
@@ -129,6 +130,7 @@ public abstract class BaseNodeData implements IExternalizeable {
     element.addContent(roleXML);
   }
 
+  @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     myCaption = element.getAttributeValue(CAPTION);
     myAdditionalInfo = element.getAttributeValue(INFO);

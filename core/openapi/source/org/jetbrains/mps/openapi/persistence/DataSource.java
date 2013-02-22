@@ -20,7 +20,6 @@ package org.jetbrains.mps.openapi.persistence;
  * For implementation consider extending FileDataSource or DataSourceBase
  */
 public interface DataSource {
-
   /**
    * Registers listeners who need to be notified about changes in the underlying data source.
    * It is the responsibility of the DataSource to detect such updates and notify the listeners.

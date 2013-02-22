@@ -20,15 +20,18 @@ public class FindInstancesContext extends StandaloneMPSContext {
     this.myModule = oldContext.getModule();
   }
 
+  @Override
   public IModule getModule() {
     return this.myModule;
   }
 
   @NotNull
+  @Override
   public IScope getScope() {
     return GlobalScope.getInstance();
   }
 
+  @Override
   public <T> T getComponent(@NotNull Class<T> c) {
     T component = this.myProject.getComponent(c);
     if (component != null) {
@@ -37,6 +40,7 @@ public class FindInstancesContext extends StandaloneMPSContext {
     return super.getComponent(c);
   }
 
+  @Override
   public Project getProject() {
     return this.myProject.getComponent(MPSProject.class);
   }

@@ -31,11 +31,11 @@
     <nodeInfo nodeId="3715237098669773072" fileName="TraceInfoTest.java" startLine="151" startPosition="16" endLine="152" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3715237098669773074" fileName="TraceInfoTest.java" startLine="153" startPosition="5" endLine="154" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3715237098669794689" fileName="TraceInfoTest.java" startLine="157" startPosition="41" endLine="158" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715237098669794702" fileName="TraceInfoTest.java" startLine="160" startPosition="25" endLine="161" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715237098669794707" fileName="TraceInfoTest.java" startLine="161" startPosition="20" endLine="162" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715237098669794713" fileName="TraceInfoTest.java" startLine="162" startPosition="49" endLine="163" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715237098669793725" fileName="TraceInfoTest.java" startLine="169" startPosition="29" endLine="170" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715237098669793731" fileName="TraceInfoTest.java" startLine="170" startPosition="52" endLine="171" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3715237098669794702" fileName="TraceInfoTest.java" startLine="161" startPosition="25" endLine="162" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3715237098669794707" fileName="TraceInfoTest.java" startLine="162" startPosition="20" endLine="163" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3715237098669794713" fileName="TraceInfoTest.java" startLine="163" startPosition="49" endLine="164" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3715237098669793725" fileName="TraceInfoTest.java" startLine="170" startPosition="29" endLine="171" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3715237098669793731" fileName="TraceInfoTest.java" startLine="171" startPosition="52" endLine="172" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669772785" fileName="TraceInfoTest.java" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraceInfoTest#()V" />
     <nodeInfo nodeId="3715237098669909852" fileName="TraceInfoTest.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="3715237098669909871" fileName="TraceInfoTest.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
@@ -49,25 +49,25 @@
     <nodeInfo nodeId="3715237098669909867" fileName="TraceInfoTest.java" startLine="50" startPosition="28" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3715237098669909902" fileName="TraceInfoTest.java" startLine="64" startPosition="28" endLine="69" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3715237098669965857" fileName="TraceInfoTest.java" startLine="134" startPosition="9" endLine="139" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715237098669794698" fileName="TraceInfoTest.java" startLine="160" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3715237098669910024" fileName="TraceInfoTest.java" startLine="168" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="3715237098669910024" fileName="TraceInfoTest.java" startLine="169" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="3715237098669794698" fileName="TraceInfoTest.java" startLine="160" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="441885278109150218" fileName="TraceInfoTest.java" startLine="78" startPosition="28" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8217016972551063424" fileName="TraceInfoTest.java" startLine="93" startPosition="28" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3715237098669794693" fileName="TraceInfoTest.java" startLine="158" startPosition="45" endLine="165" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669909806" fileName="TraceInfoTest.java" startLine="36" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="3715237098669909865" fileName="TraceInfoTest.java" startLine="50" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="3715237098669909900" fileName="TraceInfoTest.java" startLine="64" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="3715237098669773035" fileName="TraceInfoTest.java" startLine="145" startPosition="69" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3715237098669794693" fileName="TraceInfoTest.java" startLine="158" startPosition="45" endLine="166" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="441885278109132720" fileName="TraceInfoTest.java" startLine="78" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="8217016972551063422" fileName="TraceInfoTest.java" startLine="93" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="3715237098669837855" fileName="TraceInfoTest.java" startLine="133" startPosition="134" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="3715237098669909804" fileName="TraceInfoTest.java" startLine="34" startPosition="24" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669909863" fileName="TraceInfoTest.java" startLine="48" startPosition="25" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669909898" fileName="TraceInfoTest.java" startLine="62" startPosition="36" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715237098669793739" fileName="TraceInfoTest.java" startLine="157" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cleanup#(Ljetbrains/mps/project/Project;)V" />
     <nodeInfo nodeId="441885278109132715" fileName="TraceInfoTest.java" startLine="76" startPosition="29" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8217016972551063420" fileName="TraceInfoTest.java" startLine="91" startPosition="38" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3715237098669773028" fileName="TraceInfoTest.java" startLine="145" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorLocation#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3715237098669793739" fileName="TraceInfoTest.java" startLine="157" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="cleanup#(Ljetbrains/mps/project/Project;)V" />
     <nodeInfo nodeId="3715237098669773016" fileName="TraceInfoTest.java" startLine="132" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeTest#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
     <nodeInfo nodeId="3715237098669909800" fileName="TraceInfoTest.java" startLine="33" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ifTest#()V" />
     <nodeInfo nodeId="3715237098669909859" fileName="TraceInfoTest.java" startLine="47" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="forTest#()V" />
@@ -92,7 +92,7 @@
     <scopeInfo nodeId="3715237098669837858" fileName="TraceInfoTest.java" startLine="140" startPosition="15" endLine="141" endPosition="23" />
     <scopeInfo nodeId="3715237098669773036" fileName="TraceInfoTest.java" startLine="146" startPosition="9" endLine="147" endPosition="22" />
     <scopeInfo nodeId="3715237098669772785" fileName="TraceInfoTest.java" startLine="30" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="3715237098669775548" fileName="TraceInfoTest.java" startLine="169" startPosition="29" endLine="171" endPosition="28" />
+    <scopeInfo nodeId="3715237098669775548" fileName="TraceInfoTest.java" startLine="170" startPosition="29" endLine="172" endPosition="28" />
     <scopeInfo nodeId="3715237098669909852" fileName="TraceInfoTest.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="3715237098669909871" fileName="TraceInfoTest.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="3715237098669909906" fileName="TraceInfoTest.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
@@ -123,7 +123,7 @@
       <varInfo nodeId="2112637535491845078" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="3715237098669965858" fileName="TraceInfoTest.java" startLine="136" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="3715237098669794701" fileName="TraceInfoTest.java" startLine="160" startPosition="25" endLine="163" endPosition="20" />
+    <scopeInfo nodeId="3715237098669794701" fileName="TraceInfoTest.java" startLine="161" startPosition="25" endLine="164" endPosition="20" />
     <scopeInfo nodeId="3715237098669773041" fileName="TraceInfoTest.java" startLine="148" startPosition="0" endLine="152" endPosition="18">
       <varInfo nodeId="3715237098669773042" varName="t" />
     </scopeInfo>
@@ -132,8 +132,7 @@
       <varInfo nodeId="3715237098669773046" varName="stackTraceElement" />
     </scopeInfo>
     <scopeInfo nodeId="3715237098669837856" fileName="TraceInfoTest.java" startLine="134" startPosition="9" endLine="139" endPosition="9" />
-    <scopeInfo nodeId="3715237098669794698" fileName="TraceInfoTest.java" startLine="160" startPosition="0" endLine="165" endPosition="0" />
-    <scopeInfo nodeId="3715237098669910024" fileName="TraceInfoTest.java" startLine="168" startPosition="0" endLine="173" endPosition="0" />
+    <scopeInfo nodeId="3715237098669910024" fileName="TraceInfoTest.java" startLine="169" startPosition="0" endLine="174" endPosition="0" />
     <scopeInfo nodeId="3715237098669909807" fileName="TraceInfoTest.java" startLine="36" startPosition="28" endLine="42" endPosition="219">
       <varInfo nodeId="3715237098669909810" varName="node" />
     </scopeInfo>
@@ -143,28 +142,29 @@
     <scopeInfo nodeId="3715237098669909901" fileName="TraceInfoTest.java" startLine="64" startPosition="28" endLine="70" endPosition="222">
       <varInfo nodeId="3715237098669909903" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="3715237098669794698" fileName="TraceInfoTest.java" startLine="160" startPosition="0" endLine="166" endPosition="0" />
     <scopeInfo nodeId="441885278109132721" fileName="TraceInfoTest.java" startLine="78" startPosition="28" endLine="85" endPosition="9" />
     <scopeInfo nodeId="8217016972551063423" fileName="TraceInfoTest.java" startLine="93" startPosition="28" endLine="100" endPosition="9" />
     <scopeInfo nodeId="3715237098669909806" fileName="TraceInfoTest.java" startLine="36" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="3715237098669909865" fileName="TraceInfoTest.java" startLine="50" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="3715237098669909900" fileName="TraceInfoTest.java" startLine="64" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="3715237098669793742" fileName="TraceInfoTest.java" startLine="157" startPosition="41" endLine="165" endPosition="7" />
     <scopeInfo nodeId="441885278109132720" fileName="TraceInfoTest.java" startLine="78" startPosition="0" endLine="87" endPosition="0" />
     <scopeInfo nodeId="8217016972551063422" fileName="TraceInfoTest.java" startLine="93" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="3715237098669773031" fileName="TraceInfoTest.java" startLine="145" startPosition="69" endLine="154" endPosition="16" />
+    <scopeInfo nodeId="3715237098669793742" fileName="TraceInfoTest.java" startLine="157" startPosition="41" endLine="166" endPosition="7" />
     <scopeInfo nodeId="3715237098669909803" fileName="TraceInfoTest.java" startLine="34" startPosition="24" endLine="44" endPosition="7" />
     <scopeInfo nodeId="3715237098669909862" fileName="TraceInfoTest.java" startLine="48" startPosition="25" endLine="58" endPosition="7" />
     <scopeInfo nodeId="3715237098669909897" fileName="TraceInfoTest.java" startLine="62" startPosition="36" endLine="72" endPosition="7" />
     <scopeInfo nodeId="3715237098669773019" fileName="TraceInfoTest.java" startLine="132" startPosition="66" endLine="142" endPosition="5">
       <varInfo nodeId="3715237098669837838" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="3715237098669793739" fileName="TraceInfoTest.java" startLine="157" startPosition="0" endLine="167" endPosition="0">
-      <varInfo nodeId="3715237098669793745" varName="p" />
-    </scopeInfo>
     <scopeInfo nodeId="441885278109132692" fileName="TraceInfoTest.java" startLine="76" startPosition="29" endLine="87" endPosition="7" />
     <scopeInfo nodeId="8217016972551063419" fileName="TraceInfoTest.java" startLine="91" startPosition="38" endLine="102" endPosition="7" />
     <scopeInfo nodeId="3715237098669773028" fileName="TraceInfoTest.java" startLine="145" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="3715237098669773076" varName="method" />
+    </scopeInfo>
+    <scopeInfo nodeId="3715237098669793739" fileName="TraceInfoTest.java" startLine="157" startPosition="0" endLine="168" endPosition="0">
+      <varInfo nodeId="3715237098669793745" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="3715237098669773016" fileName="TraceInfoTest.java" startLine="132" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="3715237098669837862" varName="test" />
@@ -189,14 +189,14 @@
     <unitInfo nodeId="2112637535491845079" fileName="TraceInfoTest.java" startLine="117" startPosition="22" endLine="121" endPosition="9" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />
     <unitInfo nodeId="2112637535491845078" fileName="TraceInfoTest.java" startLine="121" startPosition="25" endLine="125" endPosition="9" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />
     <unitInfo nodeId="3715237098669965858" fileName="TraceInfoTest.java" startLine="135" startPosition="47" endLine="139" endPosition="7" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$7" />
-    <unitInfo nodeId="3715237098669794697" fileName="TraceInfoTest.java" startLine="159" startPosition="41" endLine="165" endPosition="5" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$8" />
+    <unitInfo nodeId="3715237098669794697" fileName="TraceInfoTest.java" startLine="159" startPosition="41" endLine="166" endPosition="5" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$8" />
     <unitInfo nodeId="3715237098669909806" fileName="TraceInfoTest.java" startLine="35" startPosition="19" endLine="44" endPosition="5" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$1" />
     <unitInfo nodeId="3715237098669909865" fileName="TraceInfoTest.java" startLine="49" startPosition="19" endLine="58" endPosition="5" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$2" />
     <unitInfo nodeId="3715237098669909900" fileName="TraceInfoTest.java" startLine="63" startPosition="19" endLine="72" endPosition="5" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$3" />
     <unitInfo nodeId="441885278109132720" fileName="TraceInfoTest.java" startLine="77" startPosition="19" endLine="87" endPosition="5" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$4" />
     <unitInfo nodeId="8217016972551063422" fileName="TraceInfoTest.java" startLine="92" startPosition="19" endLine="102" endPosition="5" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$5" />
     <unitInfo nodeId="2112637535491637463" fileName="TraceInfoTest.java" startLine="107" startPosition="19" endLine="129" endPosition="5" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest$6" />
-    <unitInfo nodeId="3715237098669772783" fileName="TraceInfoTest.java" startLine="29" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest" />
+    <unitInfo nodeId="3715237098669772783" fileName="TraceInfoTest.java" startLine="29" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.traceInfo.test.TraceInfoTest" />
   </root>
   <root nodeRef="r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)/8529179251482782650">
     <nodeInfo nodeId="8529179251482782695" fileName="TestClass.java" startLine="11" startPosition="31" endLine="12" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

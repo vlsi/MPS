@@ -73,6 +73,7 @@ public class TransformationTestRunner {
       test.setProject(TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.getGlobal().expandPath(projectName)));
     }
     SwingUtilities.invokeAndWait(new Runnable() {
+      @Override
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
@@ -106,6 +107,7 @@ public class TransformationTestRunner {
     final Throwable[] exception = new Throwable[1];
     if (runInCommand) {
       SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
         public void run() {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
@@ -152,18 +154,22 @@ public class TransformationTestRunner {
       }
     }
     PathMacros.getInstance().addMacrosProvider(new PathMacrosProvider() {
+      @Override
       public Set<String> getNames() {
         return Collections.unmodifiableSet(MapSequence.fromMap(macros).keySet());
       }
 
+      @Override
       public Set<String> getUserNames() {
         return Collections.unmodifiableSet(MapSequence.fromMap(macros).keySet());
       }
 
+      @Override
       public String getValue(String p0) {
         return MapSequence.fromMap(macros).get(p0);
       }
 
+      @Override
       public void report(String macro, String message) {
         LOG.error("Undefined macro: " + macro + ". " + message);
       }

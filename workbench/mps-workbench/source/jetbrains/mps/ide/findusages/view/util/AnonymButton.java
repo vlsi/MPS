@@ -23,6 +23,7 @@ import java.awt.event.ActionEvent;
 public abstract class AnonymButton extends JButton {
   public AnonymButton(Icon icon, String tooltip) {
     setAction(new AbstractAction("", icon) {
+      @Override
       public void actionPerformed(ActionEvent e) {
         action();
       }

@@ -10,10 +10,9 @@ import org.junit.runners.model.RunnerBuilder;
 import org.junit.runners.model.InitializationError;
 import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -78,7 +77,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
   }
 
   private void initialize() {
-    IModule mod = MPSModuleRepository.getInstance().getModule(jetbrains.mps.project.structure.modules.ModuleReference.fromString(myModuleRef));
+    SModule mod = MPSModuleRepository.getInstance().getModule(jetbrains.mps.project.structure.modules.ModuleReference.fromString(myModuleRef));
     for (Runner child : myRunners) {
       ((ModuleSymbolicSuite.DelegatingRunner) child).init(mod, myBuilder);
     }
@@ -119,6 +118,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       this.myTests = tests;
     }
 
+    @Override
     public void run(RunNotifier notifier) {
       if (myTests == null) {
         runFailure(createTestDescription(ModuleSymbolicSuite.NO_TESTS), new IllegalStateException("no tests found in " + myClassName), notifier);
@@ -131,6 +131,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       }
     }
 
+    @Override
     public Description getDescription() {
       Description desc = Description.createSuiteDescription(myClassName);
       if (myTests == null) {
@@ -143,7 +144,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       return desc;
     }
 
-    private void init(IModule mod, RunnerBuilder builder) {
+    private void init(SModule mod, RunnerBuilder builder) {
       Class klass = getTestClass(mod, myClassName);
       if (klass != null) {
         this.myDelegate = builder.safeRunnerForClass(klass);
@@ -152,7 +153,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       }
     }
 
-    private static Class getTestClass(IModule module, String className) {
+    private static Class getTestClass(SModule module, String className) {
       if (module instanceof IClassLoadingModule && ((IClassLoadingModule) module).canLoad()) {
         return ((IClassLoadingModule) module).getClass(className);
       } else {

@@ -33,6 +33,7 @@ public class ExportThreadsDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myMainComponent;
   }

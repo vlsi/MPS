@@ -36,6 +36,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
   }
 
   @NotNull
+  @Override
   public List<SNode> getClassifiers() {
     if (this.myTopClassifier == null) {
       return new ArrayList<SNode>();
@@ -104,6 +105,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> list = super.getNodes(condition);
     if (SNodeOperations.isInstanceOf(myTopClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept") && (this.myOriginalConstraint & IClassifiersSearchScope.CONSTRUCTOR) == IClassifiersSearchScope.CONSTRUCTOR) {
@@ -158,6 +160,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"))) {
       return new IReferenceInfoResolver() {
+        @Override
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
           if (referenceInfo == null) {
             return null;
@@ -168,6 +171,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     }
     if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
       return new IReferenceInfoResolver() {
+        @Override
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
           if (referenceInfo == null) {
             return null;
@@ -178,6 +182,7 @@ public class ClassifierAndSuperClassifiersScope extends AbstractClassifiersScope
     }
     if (SModelUtil.isAssignableConcept(targetConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"))) {
       return new IReferenceInfoResolver() {
+        @Override
         public SNode resolve(String referenceInfo, SModelReference targetModelReference) {
           if (referenceInfo == null) {
             return null;

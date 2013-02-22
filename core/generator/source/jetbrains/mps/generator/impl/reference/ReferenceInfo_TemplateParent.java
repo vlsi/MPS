@@ -39,10 +39,12 @@ public class ReferenceInfo_TemplateParent extends ReferenceInfo {
     myResolveInfo = resolveInfo;
   }
 
+  @Override
   public SNode getInputTargetNode() {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
     // try to resolve if referent node is parent of source node.
     // this solves situation when reference node inside 'template fragment' refers to 'context node' (ancestor outside 'template fragment')
@@ -53,14 +55,17 @@ public class ReferenceInfo_TemplateParent extends ReferenceInfo {
     return current;
   }
 
+  @Override
   public SNode doResolve_Tricky(TemplateGenerator generator) {
     return null;
   }
 
+  @Override
   public String getResolveInfoForDynamicResolve() {
     return myResolveInfo;
   }
 
+  @Override
   public String getResolveInfoForNothing() {
     return myResolveInfo;
   }

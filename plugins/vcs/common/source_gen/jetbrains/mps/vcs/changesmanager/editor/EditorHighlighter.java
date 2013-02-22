@@ -220,12 +220,14 @@ public class EditorHighlighter implements EditorMessageOwner {
     public MyCurrentDifferenceListener() {
     }
 
+    @Override
     public void changeAdded(@NotNull ModelChange change) {
       List<ChangeEditorMessage> messages = createMessages(change);
       ListSequence.fromList(myRemovedMessages).removeSequence(ListSequence.fromList(messages));
       ListSequence.fromList(myAddedMessages).addSequence(ListSequence.fromList(messages));
     }
 
+    @Override
     public void changeRemoved(@NotNull ModelChange change) {
       List<ChangeEditorMessage> messages = removeMessages(change);
       ListSequence.fromList(myRemovedMessages).addSequence(ListSequence.fromList(messages));

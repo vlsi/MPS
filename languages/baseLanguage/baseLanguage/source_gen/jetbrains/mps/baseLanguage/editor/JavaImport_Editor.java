@@ -6,6 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -14,12 +16,14 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class JavaImport_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cbnorm_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_cbnorm_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "onDemand");
   }
 
   private EditorCell createAlternation_cbnorm_c0(EditorContext editorContext, SNode node) {
@@ -73,9 +77,5 @@ public class JavaImport_Editor extends DefaultNodeEditor {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setCellId("Empty_cbnorm_a2a");
     return editorCell;
-  }
-
-  private static boolean renderingCondition_cbnorm_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "onDemand");
   }
 }

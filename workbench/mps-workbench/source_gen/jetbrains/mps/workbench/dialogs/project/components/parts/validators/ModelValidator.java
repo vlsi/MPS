@@ -14,6 +14,7 @@ public class ModelValidator implements Validator {
     myModuleScope = moduleScope;
   }
 
+  @Override
   public boolean isBrokenValue(Object value) {
     if (!((value instanceof SModelReference))) {
       return true;
@@ -23,6 +24,7 @@ public class ModelValidator implements Validator {
       return true;
     }
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         return myModuleScope.getModelDescriptor(modelReference) == null;
       }

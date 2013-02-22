@@ -69,6 +69,7 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     if (myTopConcept == null) {
       return Collections.emptyList();

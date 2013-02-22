@@ -37,6 +37,7 @@ public class SModelChildEvent extends SModelEvent {
     myChildRole = role;
   }
 
+  @Override
   public SNode getAffectedRoot() {
     return myParent.getContainingRoot();
   }
@@ -65,6 +66,7 @@ public class SModelChildEvent extends SModelEvent {
     return myChildRole;
   }
 
+  @Override
   public void accept(SModelEventVisitor visitor) {
     visitor.visitChildEvent(this);
   }

@@ -59,6 +59,7 @@ public class RoutineCall_Constraints extends BaseConstraintsDescriptor {
                  * @param prefix (if not null) filters out elements whose reference text doesn't start with prefix
                  * @return list of nodes in the scope
                  */
+                @Override
                 public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
                   return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.Kaja.structure.Script", true, false), "body", true), "commands", true)).where(new IWhereFilter<SNode>() {
                     public boolean accept(SNode it) {
@@ -77,6 +78,7 @@ public class RoutineCall_Constraints extends BaseConstraintsDescriptor {
                  * @return resolved element when reference text unambiguously identifies element, null otherwise
                  */
                 @Nullable
+                @Override
                 public SNode resolve(SNode contextNode, @NotNull final String refText) {
                   return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.Kaja.structure.Script", true, false), "body", true), "commands", true)).where(new IWhereFilter<SNode>() {
                     public boolean accept(SNode it) {
@@ -100,6 +102,7 @@ public class RoutineCall_Constraints extends BaseConstraintsDescriptor {
                  * @return reference text for the node element in the current scope
                  */
                 @Nullable
+                @Override
                 public String getReferenceText(SNode contextNode, @NotNull SNode node) {
                   if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition")) {
                     return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition"), "name");

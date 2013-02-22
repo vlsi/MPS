@@ -26,6 +26,7 @@ public class GeneratorTemplatesChecker extends SpecificChecker {
   public GeneratorTemplatesChecker() {
   }
 
+  @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, final ProgressMonitor progressMonitor, IOperationContext operationContext) {
     if (!(SModelStereotype.isGeneratorModel(model))) {
       return Collections.emptyList();

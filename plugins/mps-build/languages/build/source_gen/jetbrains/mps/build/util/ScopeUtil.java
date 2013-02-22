@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.scope.DelegatingScope;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import java.util.List;
@@ -28,6 +29,7 @@ public class ScopeUtil {
 
   public static Scope simpleRoleScope(SNode node, SNode link) {
     return new SimpleRoleScope(node, link) {
+      @Override
       public String getName(SNode child) {
         if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.core.structure.INamedConcept"))) {
           return child.getPresentation();
@@ -79,7 +81,7 @@ public class ScopeUtil {
   }
 
   public static Scope getVisibleArtifactsScope(SNode project, boolean includeLayoutRoots) {
-    if (SNodeOperations.getModel(project).isTransient()) {
+    if (SNodeOperations.getModel(project) instanceof TransientSModel) {
       IModule transientModule = SNodeOperations.getModel(project).getModelDescriptor().getModule();
       return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, transientModule.getScope(), "jetbrains.mps.build.structure.BuildLayout_Node");
     }
@@ -87,7 +89,7 @@ public class ScopeUtil {
   }
 
   public static Scope getVisibleJarsScope(SNode project) {
-    if (SNodeOperations.getModel(project).isTransient()) {
+    if (SNodeOperations.getModel(project) instanceof TransientSModel) {
       IModule transientModule = SNodeOperations.getModel(project).getModelDescriptor().getModule();
       return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, transientModule.getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFile");
     }
@@ -95,7 +97,7 @@ public class ScopeUtil {
   }
 
   public static Scope getVisibleJarFoldersScope(SNode project) {
-    if (SNodeOperations.getModel(project).isTransient()) {
+    if (SNodeOperations.getModel(project) instanceof TransientSModel) {
       IModule transientModule = SNodeOperations.getModel(project).getModelDescriptor().getModule();
       return new ModelPlusImportedScope(SNodeOperations.getModel(project), false, transientModule.getScope(), "jetbrains.mps.build.structure.BuildSource_SingleFolder");
     }
@@ -123,6 +125,7 @@ public class ScopeUtil {
       return seq;
     }
 
+    @Override
     public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
       if ((prefix == null || prefix.length() == 0)) {
         return Sequence.fromIterable(getAllNodes()).toListSequence();
@@ -137,6 +140,7 @@ public class ScopeUtil {
       return result;
     }
 
+    @Override
     public SNode resolve(SNode contextNode, String refText) {
       SNode result = null;
       for (SNode n : getAllNodes()) {
@@ -152,6 +156,7 @@ public class ScopeUtil {
       return result;
     }
 
+    @Override
     public String getReferenceText(SNode contextNode, SNode node) {
       if (node == null || !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
         return null;
@@ -182,6 +187,7 @@ public class ScopeUtil {
       this.wrapped = wrapped;
     }
 
+    @Override
     public SNode resolve(SNode contextNode, String refText) {
       SNode resolve = wrapped.resolve(contextNode, refText);
       if (resolve == null) {
@@ -190,6 +196,7 @@ public class ScopeUtil {
       return unwrap(resolve);
     }
 
+    @Override
     public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
       return Sequence.fromIterable(wrapped.getAvailableElements(prefix)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
@@ -198,6 +205,7 @@ public class ScopeUtil {
       }).toListSequence();
     }
 
+    @Override
     public String getReferenceText(SNode contextNode, SNode node) {
       node = wrap(node);
       if (node == null) {
@@ -225,6 +233,7 @@ public class ScopeUtil {
       super(new ScopeUtil.VisibleArtifactsScope(artifacts, false));
     }
 
+    @Override
     public SNode wrap(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
         return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Node");
@@ -234,6 +243,7 @@ public class ScopeUtil {
       return null;
     }
 
+    @Override
     public SNode unwrap(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSource_SingleFolder")) {
         return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_SingleFolder");
@@ -252,6 +262,7 @@ public class ScopeUtil {
       super(new ScopeUtil.VisibleArtifactsScope(artifacts, false));
     }
 
+    @Override
     public SNode wrap(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
         return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Node");
@@ -261,6 +272,7 @@ public class ScopeUtil {
       return null;
     }
 
+    @Override
     public SNode unwrap(SNode node) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSource_SingleFile")) {
         return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_SingleFile");

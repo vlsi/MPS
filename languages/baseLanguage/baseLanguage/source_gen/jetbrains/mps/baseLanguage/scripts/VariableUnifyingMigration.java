@@ -35,6 +35,7 @@ public class VariableUnifyingMigration {
 
   public static MigrationConfig getMigrationConfig(SNode referenceConcept, SNode targetConcept) {
     return new MigrationConfig(referenceConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference")) {
+      @Override
       protected SNode createConditionInternal(SNode arg) {
         // <node> 
         return _quotation_createNode_u7t7ux_a1a0a0a0a2(arg, targetConcept);
@@ -45,6 +46,7 @@ public class VariableUnifyingMigration {
         return true;
       }
 
+      @Override
       public SNode migrateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(result, "variableDeclaration", SLinkOperations.getTarget(node, "variableDeclaration", false), false);

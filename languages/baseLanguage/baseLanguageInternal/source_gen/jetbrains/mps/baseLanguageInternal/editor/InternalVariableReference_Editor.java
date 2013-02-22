@@ -32,8 +32,8 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     return this.createCollection_7tajt9_a(editorContext, node);
   }
 
-  public static class InternalVariableReference_name_postfixCellMenu_a0d0 extends AbstractCellMenuPart_PropertyPostfixHints {
-    public InternalVariableReference_name_postfixCellMenu_a0d0() {
+  public static class InternalVariableReference_name_postfixCellMenu_7tajt9_a0d0 extends AbstractCellMenuPart_PropertyPostfixHints {
+    public InternalVariableReference_name_postfixCellMenu_7tajt9_a0d0() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -110,7 +110,7 @@ public class InternalVariableReference_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     StyleSheet_StyleSheet.applyInternalName(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new InternalVariableReference_Editor.InternalVariableReference_name_postfixCellMenu_a0d0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new InternalVariableReference_Editor.InternalVariableReference_name_postfixCellMenu_7tajt9_a0d0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {

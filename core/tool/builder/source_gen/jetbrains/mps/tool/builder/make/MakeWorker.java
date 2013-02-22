@@ -84,6 +84,7 @@ public class MakeWorker extends MpsWorker {
     failBuild("make");
   }
 
+  @Override
   public void work() {
     setupEnvironment();
     final Project project = createDummyProject();

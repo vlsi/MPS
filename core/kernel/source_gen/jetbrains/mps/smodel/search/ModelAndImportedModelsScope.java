@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ConditionalIterable;
+import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
 public class ModelAndImportedModelsScope extends AbstractSearchScope {
   private static final Logger LOG = Logger.getLogger(ModelAndImportedModelsScope.class);
@@ -41,29 +41,33 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
   }
 
   @NotNull
+  @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
-    List<SModelDescriptor> models = getModels();
+    List<? extends org.jetbrains.mps.openapi.model.SModel> models = getModels();
     List<SNode> result = new ArrayList<SNode>();
     if (myRootsOnly) {
-      for (SModelDescriptor model : models) {
-        Iterable<SNode> roots = new ConditionalIterable(model.getSModel().roots(), condition);
-        for (SNode root : roots) {
-          result.add(root);
+      for (org.jetbrains.mps.openapi.model.SModel model : models) {
+        for (SNode root : model.getRootNodes()) {
+          if (condition.met(root)) {
+            result.add(root);
+          }
         }
       }
     } else {
-      for (SModelDescriptor model : models) {
+      for (org.jetbrains.mps.openapi.model.SModel model : models) {
         try {
           if (model == null) {
             continue;
           }
+          SModel md = ((SModelDescriptor) model).getSModel();
           if (condition instanceof IsInstanceCondition) {
             IsInstanceCondition isInstance = (IsInstanceCondition) condition;
-            result.addAll(model.getSModel().getFastNodeFinder().getNodes(isInstance.getConceptFqName(), true));
+            result.addAll(md.getFastNodeFinder().getNodes(isInstance.getConceptFqName(), true));
           } else {
-            Iterable<SNode> iter = new ConditionalIterable(model.getSModel().nodes(), condition);
-            for (SNode node : iter) {
-              result.add(node);
+            for (SNode node : new NodesIterable(md)) {
+              if (condition.met(node)) {
+                result.add(node);
+              }
             }
           }
         } catch (Throwable t) {

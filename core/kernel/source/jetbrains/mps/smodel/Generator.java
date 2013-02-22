@@ -87,6 +87,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     throw new UnsupportedOperationException();
   }
 
+  @Override
   public String getPluginPath() {
     return getSourceLanguage().getPluginPath();
   }
@@ -138,6 +139,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return descriptorChanged;
   }
 
+  @Override
   public boolean isPackaged() {
     return getSourceLanguage().isPackaged();
   }
@@ -167,6 +169,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return templateModels;
   }
 
+  @Override
   public GeneratorDescriptor getModuleDescriptor() {
     return myGeneratorDescriptor;
   }
@@ -176,6 +179,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     //do nothing. reloaded by containing language
   }
 
+  @Override
   public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
     assert moduleDescriptor instanceof GeneratorDescriptor;
 
@@ -211,11 +215,13 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return getAlias();
   }
 
+  @Override
   public void save() {
     super.save();
     mySourceLanguage.save();
   }
 
+  @Override
   public List<Dependency> getDependencies() {
     List<Dependency> result = super.getDependencies();
     for (ModuleReference ref : getSourceLanguage().getRuntimeModulesReferences()) {
@@ -224,6 +230,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return result;
   }
 
+  @Override
   public ModuleDependenciesManager getDependenciesManager() {
     return new GeneratorDependenciesManager(this);
   }
@@ -243,11 +250,12 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return result;
   }
 
+  @Override
   public IFile getBundleHome() {
     return null;
   }
 
-  public boolean deleteReferenceFromPriorities(SModelReference ref) {
+  public boolean deleteReferenceFromPriorities(org.jetbrains.mps.openapi.model.SModelReference ref) {
     boolean[] descriptorChanged = new boolean[]{false};
     Iterator<MappingPriorityRule> it = myGeneratorDescriptor.getPriorityRules().iterator();
     while (it.hasNext()) {
@@ -276,6 +284,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   }
 
   // classloading part
+  @Override
   public Class getClass(String fqName) {
     return mySourceLanguage.getClass(fqName);
   }

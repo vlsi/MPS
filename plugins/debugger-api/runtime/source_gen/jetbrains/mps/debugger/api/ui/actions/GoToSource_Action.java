@@ -63,6 +63,7 @@ public class GoToSource_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModelAccess.instance().executeCommand(new Runnable() {
+        @Override
         public void run() {
           NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")), true, true);
         }

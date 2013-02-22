@@ -9,14 +9,17 @@ public class LoggingProgressStrategy extends AbstractProgressStrategy {
   private static String TOTAL = "\u221e";
   private String lastInfo = null;
   private LoggingProgressStrategy.Log logger = new LoggingProgressStrategy.Log() {
+    @Override
     public void error(String text) {
       LoggingProgressStrategy.LOG.error(text);
     }
 
+    @Override
     public void warning(String text) {
       LoggingProgressStrategy.LOG.warning(text);
     }
 
+    @Override
     public void info(String text) {
       LoggingProgressStrategy.LOG.info(text);
     }
@@ -34,6 +37,7 @@ public class LoggingProgressStrategy extends AbstractProgressStrategy {
     this.logger = log;
   }
 
+  @Override
   protected void begunWork(AbstractProgressStrategy.Work wrk) {
     if (lastInfo != null) {
       logger.info(lastInfo);
@@ -42,6 +46,7 @@ public class LoggingProgressStrategy extends AbstractProgressStrategy {
     logger.info(wrk.fullName() + " -- started");
   }
 
+  @Override
   protected void advancedWork(AbstractProgressStrategy.Work wrk) {
     if (lastInfo != null) {
       logger.info(lastInfo);
@@ -56,6 +61,7 @@ public class LoggingProgressStrategy extends AbstractProgressStrategy {
     }
   }
 
+  @Override
   protected void finishedWork(AbstractProgressStrategy.Work wrk) {
     if (lastInfo != null) {
       logger.info(lastInfo);

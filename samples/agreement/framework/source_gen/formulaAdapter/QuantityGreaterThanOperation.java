@@ -14,6 +14,7 @@ public class QuantityGreaterThanOperation<T extends Quantity> implements Functio
     myRightOperand = rightOperand;
   }
 
+  @Override
   public Boolean compute(Object parm) {
     return myLeftOperand.compute(parm).isGreaterThan(myRightOperand.compute(parm));
   }

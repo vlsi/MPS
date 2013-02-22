@@ -34,6 +34,7 @@ public class AdaptableClassifierTarget {
     }
     List<SNode> trgList = getOrCreateTargets(adaptable);
     if (!(ListSequence.fromList(trgList).any(new IWhereFilter<SNode>() {
+      @Override
       public boolean accept(SNode cr) {
         return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(target, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}).equals(BehaviorReflection.invokeVirtual(String.class, cr, "virtual_getFqName_1213877404258", new Object[]{}));
       }
@@ -78,6 +79,7 @@ public class AdaptableClassifierTarget {
     assert ntype != null;
     final String trgFQname = (String) Values.PREP_DATA.get(genContext, expr);
     SNode target = ListSequence.fromList(getTargets(SLinkOperations.getTarget(ntype, "classifier", false))).findFirst(new IWhereFilter<SNode>() {
+      @Override
       public boolean accept(SNode cr) {
         return trgFQname.equals(BehaviorReflection.invokeVirtual(String.class, cr, "virtual_getFqName_1213877404258", new Object[]{}));
       }

@@ -11,6 +11,9 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -19,9 +22,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -59,6 +59,10 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_bap4zq_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "1..n", "0..1");
   }
 
   private EditorCell createCollection_bap4zq_a(EditorContext editorContext, SNode node) {
@@ -163,9 +167,5 @@ public class ConceptClauseLinkInfo_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_bap4zq_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(SLinkOperations.getTarget(node, "linkDeclaration", false), "sourceCardinality", "1..n", "0..1");
   }
 }

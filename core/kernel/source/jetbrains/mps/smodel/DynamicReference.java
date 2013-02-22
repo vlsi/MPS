@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -43,7 +43,7 @@ public class DynamicReference extends SReferenceBase {
 
   // this is for tracking loops in dynref resolving, typically arising from interaction
   // between type system rules and scopes
-  private static final ThreadLocal<Set<DynamicReference>> currentlyResolved = new ThreadLocal<Set<DynamicReference>>(){
+  private static final ThreadLocal<Set<DynamicReference>> currentlyResolved = new ThreadLocal<Set<DynamicReference>>() {
     @Override
     protected Set<DynamicReference> initialValue() {
       return new HashSet<DynamicReference>();
@@ -74,11 +74,12 @@ public class DynamicReference extends SReferenceBase {
     return SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(SLinkOperations.findLinkDeclaration(node.getConcept().getId(), role), "target", false), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
+  @Override
   protected SNode getTargetNode_internal() {
     // seems like getTargetNode() doesn't make sense if target node is detached
     assert mySourceNode.getModel() != null;
 
-    Set<DynamicReference> currentRefs = currentlyResolved.get();
+    final Set<DynamicReference> currentRefs = currentlyResolved.get();
     if (currentRefs.contains(this)) {
       // loop detected!
       LOG.errorWithTrace("Loop detected in dynamic references (number of current dyn. refs: " + currentRefs.size() + ")");
@@ -86,11 +87,7 @@ public class DynamicReference extends SReferenceBase {
     }
 
     currentRefs.add(this);
-    boolean recordedOurselves = false;
     try {
-      currentlyResolved.set(currentRefs);
-      recordedOurselves = true;
-
       if (myImmatureTargetNode != null) {
         synchronized (this) {
           if (!makeIndirect()) {
@@ -126,10 +123,7 @@ public class DynamicReference extends SReferenceBase {
 
     } finally {
       // cleaning up our loop checking stuff
-      if (recordedOurselves) {
-        currentRefs.remove(this);
-        currentlyResolved.set(currentRefs);
-      }
+      currentRefs.remove(this);
     }
   }
 
@@ -161,10 +155,12 @@ public class DynamicReference extends SReferenceBase {
     return null;
   }
 
+  @Override
   public void makeDirect() {
 
   }
 
+  @Override
   protected synchronized void makeMature() {
 
   }

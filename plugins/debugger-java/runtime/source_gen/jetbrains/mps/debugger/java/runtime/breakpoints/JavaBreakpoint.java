@@ -61,6 +61,7 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
   protected abstract String getClassNameToPrepare();
 
   @NotNull
+  @Override
   public abstract JavaBreakpointKind getKind();
 
   @Override

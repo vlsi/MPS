@@ -25,14 +25,17 @@ public class PropertyMessageTarget implements MessageTarget {
     myPropertyName = propertyName;
   }
 
+  @Override
   public MessageTargetEnum getTarget() {
     return MessageTargetEnum.PROPERTY;
   }
 
+  @Override
   public String getRole() {
     return myPropertyName;
   }
 
+  @Override
   public boolean sameAs(MessageTarget errorTarget) {
     return errorTarget instanceof PropertyMessageTarget &&
       ((PropertyMessageTarget) errorTarget).myPropertyName.equals(myPropertyName);

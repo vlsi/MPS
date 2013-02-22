@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -24,11 +25,12 @@ public class NanocConfigRunPreparationUtil {
 
   public static File prepare(String nodeId, String modelRef) throws ExecutionException {
     SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelRef));
-    SNode node = descriptor.getSModel().getNodeById(nodeId);
+    SNode node = descriptor.getSModel().getNode(SNodeId.fromString(nodeId));
     final SNode sourceFileNode = SNodeOperations.cast(node, "jetbrains.mps.nanoc.structure.File");
     AbstractModule module = (AbstractModule) descriptor.getModule();
     final Wrappers._T<String> sourceFileName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         sourceFileName.value = SPropertyOperations.getString(sourceFileNode, "name");
       }

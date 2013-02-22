@@ -72,6 +72,7 @@ public class CleanProject_Action extends BaseAction {
       final Set<IModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<IModule>());
       SetSequence.fromSet(modulesToBuild).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(IModule.class)));
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Cleaning", true) {
+        @Override
         public void run(@NotNull final ProgressIndicator indicator) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {

@@ -25,6 +25,7 @@ public class ThreadSafeSample {
 
     // A consumer thread reading and printing values exchanged through the drop box 
     Thread thread = new Thread(new Runnable() {
+      @Override
       public void run() {
         try {
           while (true) {

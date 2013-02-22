@@ -17,6 +17,7 @@ public class GeneratorChooser implements Computable<List<ModuleReference>> {
   public GeneratorChooser() {
   }
 
+  @Override
   public List<ModuleReference> compute() {
     final Wrappers._T<List<ModuleReference>> genRefs = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {

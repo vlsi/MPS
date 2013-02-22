@@ -14,6 +14,7 @@ public class SourcePathChooser implements Computable {
     myOwner = owner;
   }
 
+  @Override
   public Object compute() {
     TreeFileChooser chooser = new TreeFileChooser();
     chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);

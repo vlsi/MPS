@@ -21,6 +21,7 @@ public class OldRefactoringAdapter implements IRefactoring {
     myOldRefactoring = oldRefactoring;
   }
 
+  @Override
   public String getUserFriendlyName() {
     return myOldRefactoring.getUserFriendlyName();
   }
@@ -29,23 +30,28 @@ public class OldRefactoringAdapter implements IRefactoring {
     return myOldRefactoring.getKeyStroke();
   }
 
+  @Override
   public Class getOverridenRefactoringClass() {
     return myOldRefactoring.getOverridenRefactoringClass();
   }
 
+  @Override
   public IRefactoringTarget getRefactoringTarget() {
     return new OldRefactoringAdapter.MyRefactoringTarget();
   }
 
+  @Override
   public boolean init(RefactoringContext refactoringContext) {
     return false;
   }
 
+  @Override
   public void refactor(final RefactoringContext refactoringContext) {
     myOldRefactoring.doRefactor(refactoringContext);
     myNodesToOpen = myOldRefactoring.getNodesToOpen(refactoringContext);
   }
 
+  @Override
   public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext) {
     Map<IModule, List<SModel>> modelsToGenerate = myOldRefactoring.getModelsToGenerate(refactoringContext);
     if (modelsToGenerate == null) {
@@ -58,9 +64,11 @@ public class OldRefactoringAdapter implements IRefactoring {
     return result;
   }
 
+  @Override
   public void doWhenDone(final RefactoringContext refactoringContext) {
   }
 
+  @Override
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
     return myOldRefactoring.getAffectedNodes(refactoringContext);
   }
@@ -87,6 +95,7 @@ public class OldRefactoringAdapter implements IRefactoring {
     private MyRefactoringTarget() {
     }
 
+    @Override
     public IRefactoringTarget.TargetType getTarget() {
       if (myTarget == RefactoringTarget.NODE) {
         return IRefactoringTarget.TargetType.NODE;
@@ -98,10 +107,12 @@ public class OldRefactoringAdapter implements IRefactoring {
       }
     }
 
+    @Override
     public boolean allowMultipleTargets() {
       return !(myOldRefactoring.isOneTargetOnly());
     }
 
+    @Override
     public boolean isApplicable(Object o) {
       if (myTarget == RefactoringTarget.NODE) {
         return myOldRefactoring.isApplicableWRTConcept((SNode) o);

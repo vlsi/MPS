@@ -20,6 +20,7 @@ public class SiblingsTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
     return siblingsFilter;
   }
 
+  @Override
   public Iterator<T> iterator() {
     return new SiblingsTreeTraversal.SiblingsIterator(getSourceTraversal().iterator());
   }
@@ -75,10 +76,12 @@ public class SiblingsTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
       } while (sourceIterator.hasNext());
     }
 
+    @Override
     public boolean hasNext() {
       return hasNextNode;
     }
 
+    @Override
     public T next() {
       if (!(hasNextNode)) {
         throw new NoSuchElementException();
@@ -88,6 +91,7 @@ public class SiblingsTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
       return tmp;
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

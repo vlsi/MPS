@@ -11,16 +11,19 @@ public class ModelVersionChange extends MetadataChange {
     super(changeSet);
   }
 
+  @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     model.setVersion(getChangeSet().getNewModel().getVersion());
   }
 
   @NotNull
+  @Override
   protected ModelChange createOppositeChange() {
     return new ModelVersionChange(getChangeSet().getOppositeChangeSet());
   }
 
   @NotNull
+  @Override
   public ChangeType getType() {
     return ChangeType.CHANGE;
   }

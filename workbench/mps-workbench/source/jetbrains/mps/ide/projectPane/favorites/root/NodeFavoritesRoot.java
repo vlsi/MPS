@@ -30,6 +30,7 @@ class NodeFavoritesRoot extends FavoritesRoot<SNodeReference> {
     super(value);
   }
 
+  @Override
   public MPSTreeNode getTreeNode(IOperationContext context) {
     SNode node = getValue().resolve(MPSModuleRepository.getInstance());
     if (node == null) return null;
@@ -37,6 +38,7 @@ class NodeFavoritesRoot extends FavoritesRoot<SNodeReference> {
     return nodeTreeNode;
   }
 
+  @Override
   public List<SNode> getAvaliableNodes() {
     return Collections.singletonList(getValue().resolve(MPSModuleRepository.getInstance()));
   }

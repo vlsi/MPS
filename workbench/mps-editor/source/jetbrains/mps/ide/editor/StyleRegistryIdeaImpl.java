@@ -26,9 +26,9 @@ import jetbrains.mps.editor.runtime.style.*;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.*;
 import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.awt.Color;
+import java.util.HashMap;
 import java.util.Map;
 
 public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColorsListener {

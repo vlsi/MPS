@@ -49,6 +49,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
     myDescriptor = new ModuleDescriptor();
   }
 
+  @Override
   public String toString() {
     return "Evaluation Module";
   }
@@ -80,6 +81,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
   }
 
   @NotNull
+  @Override
   public IScope getScope() {
     return GlobalScope.getInstance();
   }

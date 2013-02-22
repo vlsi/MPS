@@ -25,13 +25,16 @@ public interface IJobMonitor {
       this.pstub = new IProgress.Stub();
     }
 
+    @Override
     public IProgress currentProgress() {
       return pstub;
     }
 
+    @Override
     public void reportFeedback(IFeedback fdbk) {
     }
 
+    @Override
     public boolean stopRequested() {
       return false;
     }

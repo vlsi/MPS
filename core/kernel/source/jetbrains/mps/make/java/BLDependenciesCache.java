@@ -58,19 +58,23 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
     INSTANCE = null;
   }
 
+  @Override
   @NotNull
   public String getCacheFileName() {
     return "dependencies";
   }
 
+  @Override
   protected Element toXml(ModelDependencies modelDependencies) {
     return modelDependencies.toXml();
   }
 
+  @Override
   protected ModelDependencies fromXml(Element e) {
     return ModelDependencies.fromXml(e);
   }
 
+  @Override
   protected ModelDependencies generateCache(GenerationStatus status) {
     return status.getBLDependencies();
   }

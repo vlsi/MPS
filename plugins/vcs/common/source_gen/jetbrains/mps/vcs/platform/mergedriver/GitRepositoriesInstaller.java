@@ -29,6 +29,7 @@ import java.io.IOException;
   }
 
   @NotNull
+  @Override
   protected AbstractInstaller.State install(final boolean dryRun) {
     if (!(PluginUtil.isGitPluginEnabled())) {
       return AbstractInstaller.State.NOT_ENABLED;
@@ -106,10 +107,12 @@ import java.io.IOException;
     }
   }
 
+  @Override
   public String getActionTitle() {
     return "Git file attributes for " + NameUtil.formatNumericalString(getRootsToInstall(), "repository") + "  (.gitattributes)";
   }
 
+  @Override
   public String getAffectedVcsName() {
     return "Git";
   }

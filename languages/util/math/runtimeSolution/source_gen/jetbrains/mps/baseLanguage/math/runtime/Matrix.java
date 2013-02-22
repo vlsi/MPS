@@ -9,6 +9,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Matrix<T> {
   public static final MatrixScalarOperations<Byte> soByte = new MatrixScalarOperations<Byte>() {
+    @Override
     public Byte cast(Object o) {
       if (o instanceof Byte) {
         return ((Byte) o);
@@ -19,31 +20,38 @@ public class Matrix<T> {
       throw new ClassCastException();
     }
 
+    @Override
     public Byte add(Object o1, Object o2) {
       return (byte) (cast(o1) + cast(o2));
     }
 
+    @Override
     public Byte mul(Object i1, Object o2) {
       return (byte) (cast(i1) * cast(o2));
     }
 
+    @Override
     public Byte neg(Object i) {
       return (byte) -cast(i);
     }
 
+    @Override
     public Byte inv(Object d) {
       throw new ArithmeticException();
     }
 
+    @Override
     public Byte conj(Object o) {
       return cast(o);
     }
 
+    @Override
     public Object abs(Object o) {
       return Math.abs(cast(o));
     }
   };
   public static final MatrixScalarOperations<Short> soShort = new MatrixScalarOperations<Short>() {
+    @Override
     public Short cast(Object o) {
       if (o instanceof Short) {
         return ((Short) o);
@@ -54,31 +62,38 @@ public class Matrix<T> {
       throw new ClassCastException();
     }
 
+    @Override
     public Short add(Object o1, Object o2) {
       return (short) (cast(o1) + cast(o2));
     }
 
+    @Override
     public Short mul(Object i1, Object o2) {
       return (short) (cast(i1) * cast(o2));
     }
 
+    @Override
     public Short neg(Object i) {
       return (short) -cast(i);
     }
 
+    @Override
     public Short inv(Object d) {
       throw new ArithmeticException();
     }
 
+    @Override
     public Short conj(Object o) {
       return cast(o);
     }
 
+    @Override
     public Object abs(Object o) {
       return Math.abs(cast(o));
     }
   };
   public static final MatrixScalarOperations<Integer> soInt = new MatrixScalarOperations<Integer>() {
+    @Override
     public Integer cast(Object o) {
       if (o instanceof Integer) {
         return (Integer) o;
@@ -89,31 +104,38 @@ public class Matrix<T> {
       throw new ClassCastException();
     }
 
+    @Override
     public Integer add(Object o1, Object o2) {
       return cast(o1) + cast(o2);
     }
 
+    @Override
     public Integer mul(Object i1, Object o2) {
       return cast(i1) * cast(o2);
     }
 
+    @Override
     public Integer neg(Object i) {
       return -cast(i);
     }
 
+    @Override
     public Integer inv(Object d) {
       throw new ArithmeticException();
     }
 
+    @Override
     public Integer conj(Object o) {
       return cast(o);
     }
 
+    @Override
     public Object abs(Object o) {
       return Math.abs(cast(o));
     }
   };
   public static final MatrixScalarOperations<Long> soLong = new MatrixScalarOperations<Long>() {
+    @Override
     public Long cast(Object o) {
       if (o instanceof Long) {
         return ((Long) o);
@@ -124,31 +146,38 @@ public class Matrix<T> {
       throw new ClassCastException();
     }
 
+    @Override
     public Long add(Object o1, Object o2) {
       return cast(o1) + cast(o2);
     }
 
+    @Override
     public Long mul(Object i1, Object o2) {
       return cast(i1) * cast(o2);
     }
 
+    @Override
     public Long neg(Object i) {
       return -cast(i);
     }
 
+    @Override
     public Long inv(Object d) {
       throw new ArithmeticException();
     }
 
+    @Override
     public Long conj(Object o) {
       return cast(o);
     }
 
+    @Override
     public Object abs(Object o) {
       return Math.abs(cast(o));
     }
   };
   public static final MatrixScalarOperations<Float> soFloat = new MatrixScalarOperations<Float>() {
+    @Override
     public Float cast(Object o) {
       if (o instanceof Float) {
         return ((Float) o);
@@ -159,31 +188,38 @@ public class Matrix<T> {
       throw new ClassCastException();
     }
 
+    @Override
     public Float add(Object o1, Object o2) {
       return cast(o1) + cast(o2);
     }
 
+    @Override
     public Float mul(Object i1, Object o2) {
       return cast(i1) * cast(o2);
     }
 
+    @Override
     public Float neg(Object i) {
       return -cast(i);
     }
 
+    @Override
     public Float inv(Object d) {
       return (float) (1.0 / cast(d));
     }
 
+    @Override
     public Float conj(Object o) {
       return cast(o);
     }
 
+    @Override
     public Object abs(Object o) {
       return Math.abs(cast(o));
     }
   };
   public static final MatrixScalarOperations<Double> soDouble = new MatrixScalarOperations<Double>() {
+    @Override
     public Double cast(Object o) {
       if (o instanceof Double) {
         return ((Double) o);
@@ -194,31 +230,38 @@ public class Matrix<T> {
       throw new ClassCastException();
     }
 
+    @Override
     public Double add(Object o1, Object o2) {
       return cast(o1) + cast(o2);
     }
 
+    @Override
     public Double mul(Object i1, Object o2) {
       return cast(i1) * cast(o2);
     }
 
+    @Override
     public Double neg(Object i) {
       return -cast(i);
     }
 
+    @Override
     public Double inv(Object d) {
       return 1.0 / cast(d);
     }
 
+    @Override
     public Double conj(Object o) {
       return cast(o);
     }
 
+    @Override
     public Object abs(Object o) {
       return Math.abs(cast(o));
     }
   };
   public static final MatrixScalarOperations<BigInteger> soBigInteger = new MatrixScalarOperations<BigInteger>() {
+    @Override
     public BigInteger cast(Object o) {
       if (o instanceof BigInteger) {
         return (BigInteger) o;
@@ -229,31 +272,38 @@ public class Matrix<T> {
       throw new ClassCastException();
     }
 
+    @Override
     public BigInteger add(Object o1, Object o2) {
       return cast(o1).add(cast(o2));
     }
 
+    @Override
     public BigInteger mul(Object i1, Object o2) {
       return cast(i1).multiply(cast(o2));
     }
 
+    @Override
     public BigInteger neg(Object i) {
       return cast(i).negate();
     }
 
+    @Override
     public BigInteger inv(Object d) {
       throw new ArithmeticException();
     }
 
+    @Override
     public BigInteger conj(Object o) {
       return cast(o);
     }
 
+    @Override
     public Object abs(Object o) {
       return cast(o).abs();
     }
   };
   public static final MatrixScalarOperations<BigDecimal> soBigDecimal = new MatrixScalarOperations<BigDecimal>() {
+    @Override
     public BigDecimal cast(Object o) {
       if (o instanceof BigDecimal) {
         return (BigDecimal) o;
@@ -267,31 +317,38 @@ public class Matrix<T> {
       throw new ClassCastException();
     }
 
+    @Override
     public BigDecimal add(Object o1, Object o2) {
       return cast(o1).add(cast(o2));
     }
 
+    @Override
     public BigDecimal mul(Object i1, Object o2) {
       return cast(i1).multiply(cast(o2));
     }
 
+    @Override
     public BigDecimal neg(Object i) {
       return cast(i).negate();
     }
 
+    @Override
     public BigDecimal inv(Object d) {
       return BigDecimal.valueOf(1.0).divide(cast(d));
     }
 
+    @Override
     public BigDecimal conj(Object o) {
       return cast(o);
     }
 
+    @Override
     public Object abs(Object o) {
       return cast(o).abs();
     }
   };
   public static final MatrixScalarOperations<Complex> soComplex = new MatrixScalarOperations<Complex>() {
+    @Override
     public Complex cast(Object o) {
       if (o instanceof Complex) {
         return (Complex) o;
@@ -302,31 +359,38 @@ public class Matrix<T> {
       throw new ClassCastException();
     }
 
+    @Override
     public Complex add(Object o1, Object o2) {
       return cast(o1).add(cast(o2));
     }
 
+    @Override
     public Complex mul(Object i1, Object o2) {
       return cast(i1).mul(cast(o2));
     }
 
+    @Override
     public Complex neg(Object i) {
       return Complex.ZERO.sub(cast(i));
     }
 
+    @Override
     public Complex inv(Object d) {
       return cast(d).inv();
     }
 
+    @Override
     public Complex conj(Object o) {
       return cast(o).conj();
     }
 
+    @Override
     public Object abs(Object o) {
       return cast(o).abs();
     }
   };
   public static final MatrixScalarOperations<BigComplex> soBigComplex = new MatrixScalarOperations<BigComplex>() {
+    @Override
     public BigComplex cast(Object o) {
       if (o instanceof BigComplex) {
         return (BigComplex) o;
@@ -346,27 +410,33 @@ public class Matrix<T> {
       throw new ClassCastException();
     }
 
+    @Override
     public BigComplex add(Object o1, Object o2) {
       return cast(o1).add(cast(o2));
     }
 
+    @Override
     public BigComplex mul(Object i1, Object o2) {
       return cast(i1).mul(cast(o2));
     }
 
+    @Override
     public BigComplex neg(Object i) {
       BigComplex c = cast(i);
       return new BigComplex(c.re().negate(), c.im().negate());
     }
 
+    @Override
     public BigComplex inv(Object d) {
       return cast(d).inv();
     }
 
+    @Override
     public BigComplex conj(Object o) {
       return cast(o).conj();
     }
 
+    @Override
     public Object abs(Object o) {
       return cast(o).abs(MathContext.DECIMAL128);
     }
@@ -660,6 +730,7 @@ public class Matrix<T> {
     return myColumns;
   }
 
+  @Override
   public String toString() {
     String result = "";
     for (int i = 0; i < myRows; i++) {

@@ -21,10 +21,12 @@ public class SPrimitiveDataTypeAdapter implements SPrimitiveDataType {
     );
   }
 
+  @Override
   public int getType() {
     return this.type;
   }
 
+  @Override
   public Object fromString(String string) {
     switch (type) {
       case INT:
@@ -36,6 +38,7 @@ public class SPrimitiveDataTypeAdapter implements SPrimitiveDataType {
     return string;
   }
 
+  @Override
   public String toString(Object object) {
     return object.toString();
   }

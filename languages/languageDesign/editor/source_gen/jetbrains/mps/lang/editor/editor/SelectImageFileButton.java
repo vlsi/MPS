@@ -35,6 +35,7 @@ public class SelectImageFileButton extends JButton {
       new File(filename)
     );
     this.setAction(new AbstractAction(" ... ") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         Component root = SwingUtilities.getRoot(SelectImageFileButton.this);
         if (root instanceof Frame) {

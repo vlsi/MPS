@@ -20,6 +20,7 @@ public class ModelPropertiesChecker extends SpecificChecker {
   public ModelPropertiesChecker() {
   }
 
+  @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, IOperationContext operationContext) {
     monitor.start("Checking " + SModelOperations.getModelName(model) + " model properties...", 1);
 

@@ -23,6 +23,7 @@ public class GoToEditorDeclarationHelper {
 
   public static SNode getOrCreateEditorForConcept(final SModelDescriptor languageEditor, final SNode concept, final SNode node, final IScope scope) {
     SNode editorDeclaration = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      @Override
       public SNode compute() {
         return findEditorDeclaration(languageEditor.getSModel(), concept);
       }
@@ -31,6 +32,7 @@ public class GoToEditorDeclarationHelper {
       return editorDeclaration;
     }
     String message = ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
       public String compute() {
         return "Concept \"" + node.getConcept().getConceptId() + "\" has no editor.\n" + "Create new editor?";
       }
@@ -40,6 +42,7 @@ public class GoToEditorDeclarationHelper {
       return null;
     }
     return ModelAccess.instance().runWriteActionInCommand(new Computable<SNode>() {
+      @Override
       public SNode compute() {
         return GoToEditorDeclarationHelper.createEditorDeclaration(concept, languageEditor, scope);
       }
@@ -57,6 +60,7 @@ public class GoToEditorDeclarationHelper {
       return null;
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
         LanguageAspect.EDITOR.createNew(language);
         GoToEditorDeclarationHelper.createEditorDeclaration(concept, LanguageAspect.EDITOR.get(language), scope);

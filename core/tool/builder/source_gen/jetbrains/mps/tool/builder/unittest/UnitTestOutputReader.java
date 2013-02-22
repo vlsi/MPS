@@ -25,11 +25,13 @@ public class UnitTestOutputReader {
     myUnitTestProcess = unitTestProcess;
     myUnitTestListener = unitTestListener;
     myInputReader = new UnitTestOutputReader.BaseOutputReader(myUnitTestProcess.getInputStream()) {
+      @Override
       protected void addMessage(final String message) {
         parseMessage(message, false);
       }
     };
     myErrorReader = new UnitTestOutputReader.BaseOutputReader(myUnitTestProcess.getErrorStream()) {
+      @Override
       protected void addMessage(final String message) {
         parseMessage(message, true);
       }
@@ -100,6 +102,7 @@ public class UnitTestOutputReader {
       this.myIs = is;
     }
 
+    @Override
     public void run() {
       Scanner s = new Scanner(this.myIs);
       try {

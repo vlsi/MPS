@@ -16,10 +16,12 @@ public class CellAction_DeletePropertyOrNode extends AbstractCellAction {
     myPropertyName = propertyName;
   }
 
+  @Override
   public boolean canExecute(EditorContext context) {
     return true;
   }
 
+  @Override
   public void execute(EditorContext context) {
     if (SNodeAccessUtil.getProperty(mySemanticNode, myPropertyName) != null) {
       SNodeAccessUtil.setProperty(mySemanticNode, myPropertyName, null);

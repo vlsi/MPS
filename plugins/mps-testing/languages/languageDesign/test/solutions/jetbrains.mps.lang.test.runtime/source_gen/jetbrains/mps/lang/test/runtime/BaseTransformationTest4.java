@@ -32,10 +32,12 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
     myModel = modelDescriptor;
   }
 
+  @Override
   public void setTestRunner(TransformationTestRunner ttr) {
     this.myRunner = ttr;
   }
 
+  @Override
   public TransformationTestRunner getTestRunner() {
     return myRunner;
   }
@@ -52,6 +54,7 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
     myRunner.runTest(this, className, methodName, runInCommand);
   }
 
+  @Override
   public void init() {
     this.myModelOwner = new TemporaryModelOwner();
     this.myTransientModel = ProjectModels.createDescriptorFor(true);
@@ -60,26 +63,32 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
     SModelRepository.getInstance().registerModelDescriptor(this.myTransientModel, this.myModelOwner);
   }
 
+  @Override
   public SModelDescriptor getModelDescriptor() {
     return myModel;
   }
 
+  @Override
   public void setModelDescriptor(SModelDescriptor descriptor) {
     myModel = descriptor;
   }
 
+  @Override
   public SModelDescriptor getTransientModelDescriptor() {
     return myTransientModel;
   }
 
+  @Override
   public Project getProject() {
     return myProject;
   }
 
+  @Override
   public void setProject(Project project) {
     myProject = project;
   }
 
+  @Override
   public TemporaryModelOwner getModelOwner() {
     return myModelOwner;
   }

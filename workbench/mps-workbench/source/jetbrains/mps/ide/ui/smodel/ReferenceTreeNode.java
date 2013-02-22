@@ -35,8 +35,10 @@ public class ReferenceTreeNode extends TextTreeNode {
     setIcon(Icons.DEFAULT_ICON);
   }
 
+  @Override
   public void doubleClick() {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
         SNode target = myRef.getTargetNode();
         if (target == null) return;
@@ -54,6 +56,7 @@ public class ReferenceTreeNode extends TextTreeNode {
     return ((ActionGroup) ActionManager.getInstance().getAction(ReferenceNodeActions_ActionGroup.class.getName()));
   }
 
+  @Override
   public boolean isLeaf() {
     return true;
   }

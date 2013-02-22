@@ -182,6 +182,7 @@
     <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Sorter" />
     <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.TreeAction" />
     <classNode dependClassName="com.intellij.util.containers.HashSet" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Set" />
     <classNode extendsClassName="com.intellij.ide.structureView.newStructureView.TreeActionsOwner" />

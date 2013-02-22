@@ -35,11 +35,13 @@ public abstract class CompletionTextField extends JTextField {
   private PopupHint myHint = new PopupHint();
   private Window myContainerWindow;
   private ComponentListener myListener = new ComponentAdapter() {
+    @Override
     public void componentMoved(ComponentEvent e) {
       myHint.updateBounds();
     }
   };
   private MouseListener myMouseListener = new MouseAdapter() {
+    @Override
     public void mousePressed(MouseEvent e) {
       myHint.hide();
       e.consume();
@@ -53,10 +55,12 @@ public abstract class CompletionTextField extends JTextField {
     super(20);
 
     getDocument().addDocumentListener(new DocumentListener() {
+      @Override
       public void insertUpdate(DocumentEvent e) {
         updatePopup();
       }
 
+      @Override
       public void removeUpdate(DocumentEvent e) {
         if (isCanShowCompletionOnRemove()) {
           updatePopup();
@@ -64,6 +68,7 @@ public abstract class CompletionTextField extends JTextField {
         updateActions();
       }
 
+      @Override
       public void changedUpdate(DocumentEvent e) {
         updatePopup();
       }
@@ -77,6 +82,7 @@ public abstract class CompletionTextField extends JTextField {
     });
 
     addCaretListener(new CaretListener() {
+      @Override
       public void caretUpdate(CaretEvent e) {
         if (isFocusOwner() && myHint.isVisible()) {
           updateCompletion();
@@ -86,6 +92,7 @@ public abstract class CompletionTextField extends JTextField {
 
 
     addKeyListener(new KeyAdapter() {
+      @Override
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER && e.getModifiers() == 0 && myHint.isVisible()) {
           myHint.complete();
@@ -100,6 +107,7 @@ public abstract class CompletionTextField extends JTextField {
     registerKeyboardAction(myDownAction, KeyStroke.getKeyStroke("DOWN"), WHEN_FOCUSED);
 
     registerKeyboardAction(new AbstractAction() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         myHint.show();
         updateCompletion();
@@ -107,6 +115,7 @@ public abstract class CompletionTextField extends JTextField {
     }, KeyStroke.getKeyStroke("ctrl SPACE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     addKeyListener(new KeyAdapter() {
+      @Override
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE && myHint.isVisible()) {
           myHint.hide();
@@ -116,6 +125,7 @@ public abstract class CompletionTextField extends JTextField {
     });
 
     addFocusListener(new FocusAdapter() {
+      @Override
       public void focusLost(FocusEvent e) {
         myHint.hide();
       }
@@ -140,12 +150,14 @@ public abstract class CompletionTextField extends JTextField {
     }
   }
 
+  @Override
   public void addNotify() {
     super.addNotify();
     myContainerWindow = SwingUtilities.getWindowAncestor(this);
     myContainerWindow.addComponentListener(myListener);
   }
 
+  @Override
   public void removeNotify() {
     if (myContainerWindow != null) {
       myContainerWindow.removeComponentListener(myListener);
@@ -167,6 +179,7 @@ public abstract class CompletionTextField extends JTextField {
     }
   }
 
+  @Override
   public boolean isValid() {
     return true;
   }
@@ -239,6 +252,7 @@ public abstract class CompletionTextField extends JTextField {
       myScroller = ScrollPaneFactory.createScrollPane(myList);
 
       myList.addMouseListener(new MouseAdapter() {
+        @Override
         public void mouseClicked(MouseEvent e) {
           if (e.getClickCount() == 2 && myList.getSelectedValue() != null) {
             setText((String) myList.getSelectedValue());
@@ -327,6 +341,7 @@ public abstract class CompletionTextField extends JTextField {
   }
 
   private class DownAction extends AbstractAction {
+    @Override
     public void actionPerformed(ActionEvent e) {
       if (myHint.isVisible()) {
         myHint.down();
@@ -340,6 +355,7 @@ public abstract class CompletionTextField extends JTextField {
   }
 
   private class UpAction extends AbstractAction {
+    @Override
     public void actionPerformed(ActionEvent e) {
       if (myHint.isVisible()) {
         myHint.up();

@@ -24,8 +24,8 @@ public class DefaultBaseLine_Editor extends DefaultNodeEditor {
     return this.createCollection_4pywwz_a(editorContext, node);
   }
 
-  public static class ReplaceWith_StyleClassItem_cellMenu_a0a0_11 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_StyleClassItem_cellMenu_a0a0_11() {
+  public static class ReplaceWith_StyleClassItem_cellMenu_4pywwz_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_StyleClassItem_cellMenu_4pywwz_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -49,7 +49,7 @@ public class DefaultBaseLine_Editor extends DefaultNodeEditor {
     Styles_StyleSheet.applyItem(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DefaultBaseLine_Editor.ReplaceWith_StyleClassItem_cellMenu_a0a0_11()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DefaultBaseLine_Editor.ReplaceWith_StyleClassItem_cellMenu_4pywwz_a0a0()}));
     return editorCell;
   }
 

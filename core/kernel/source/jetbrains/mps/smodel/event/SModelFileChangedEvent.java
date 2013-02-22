@@ -37,10 +37,12 @@ public class SModelFileChangedEvent extends SModelEvent {
     return myNewFile;
   }
 
+  @Override
   public void accept(SModelEventVisitor visitor) {
 
   }
 
+  @Override
   public SNode getAffectedRoot() {
     return null;
   }

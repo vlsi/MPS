@@ -51,11 +51,13 @@ public class TestToolbarPanel extends JPanel {
         setSelected(null, UnitTestOptions.isHidePased());
       }
 
+      @Override
       public void setSelected(AnActionEvent event, boolean value) {
         UnitTestOptions.setHidePased(value);
         myTree.hidePassed(value);
       }
 
+      @Override
       public boolean isSelected(AnActionEvent p0) {
         return UnitTestOptions.isHidePased();
       }
@@ -68,10 +70,12 @@ public class TestToolbarPanel extends JPanel {
         setSelected(null, UnitTestOptions.isTrackRunning());
       }
 
+      @Override
       public void setSelected(AnActionEvent event, boolean trackRunning) {
         UnitTestOptions.setTrackRunning(trackRunning);
       }
 
+      @Override
       public boolean isSelected(AnActionEvent event) {
         return UnitTestOptions.isTrackRunning();
       }
@@ -84,6 +88,7 @@ public class TestToolbarPanel extends JPanel {
         registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_COLLAPSE_ALL)), myTree);
       }
 
+      @Override
       public void actionPerformed(AnActionEvent p0) {
         MPSTreeNode root = myTree.getRootNode();
         MPSTreeNode child = (MPSTreeNode) root.getFirstChild();
@@ -101,6 +106,7 @@ public class TestToolbarPanel extends JPanel {
         registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_EXPAND_ALL)), myTree);
       }
 
+      @Override
       public void actionPerformed(AnActionEvent p0) {
         myTree.expandAll();
       }
@@ -113,6 +119,7 @@ public class TestToolbarPanel extends JPanel {
         registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_NEXT_OCCURENCE)), myTree);
       }
 
+      @Override
       public void actionPerformed(AnActionEvent p0) {
         if (myNavigator.hasNextOccurence()) {
           myNavigator.goNextOccurence();
@@ -127,6 +134,7 @@ public class TestToolbarPanel extends JPanel {
         registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_PREVIOUS_OCCURENCE)), myTree);
       }
 
+      @Override
       public void actionPerformed(AnActionEvent p0) {
         if (myNavigator.hasPreviousOccurence()) {
           myNavigator.goPreviousOccurence();
@@ -141,10 +149,12 @@ public class TestToolbarPanel extends JPanel {
         setSelected(null, UnitTestOptions.isSelectFirstFailded());
       }
 
+      @Override
       public void setSelected(AnActionEvent event, boolean setectFirstFailed) {
         UnitTestOptions.setSelectFirstFailded(setectFirstFailed);
       }
 
+      @Override
       public boolean isSelected(AnActionEvent event) {
         return UnitTestOptions.isSelectFirstFailded();
       }
@@ -153,6 +163,7 @@ public class TestToolbarPanel extends JPanel {
 
   private AnAction createRerunFailedTestAction() {
     return new AnAction("Rerun Failed Tests", "Rerun only tests that failed/crached after last run", AllIcons.RunConfigurations.RerunFailedTests) {
+      @Override
       public void actionPerformed(AnActionEvent p0) {
         if (myTree.hasFailedTests()) {
           myTree.buildFailedTestTree();

@@ -42,7 +42,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   }
 
   private void initCache() {
-    for (SNode root : myModel.roots()) {
+    for (SNode root : myModel.getRootNodes()) {
       addToCache(root);
     }
     myInitialized = true;
@@ -51,7 +51,7 @@ public class TransientModelNodeFinder implements FastNodeFinder {
   @Override
   public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
     // notify 'model nodes read access'
-    myModel.rootsIterator();
+    myModel.getRootNodes().iterator();
 
     synchronized (myLock) {
       if (!myInitialized) {

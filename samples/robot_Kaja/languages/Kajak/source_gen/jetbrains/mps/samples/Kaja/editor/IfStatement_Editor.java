@@ -6,6 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -16,13 +19,22 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class IfStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_eb7h0d_a(editorContext, node);
+  }
+
+  private static boolean _StyleParameter_QueryFunction_eb7h0d_a0c0(EditorContext editorContext, SNode node) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "trueBranch", true), "commands", true)).isEmpty();
+  }
+
+  private static boolean _StyleParameter_QueryFunction_eb7h0d_a1c0(EditorContext editorContext, SNode node) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "trueBranch", true), "commands", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_eb7h0d_a5a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "falseBranch", true), "commands", true)).isNotEmpty();
   }
 
   private EditorCell createCollection_eb7h0d_a(EditorContext editorContext, SNode node) {
@@ -191,17 +203,5 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_eb7h0d_a5a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "falseBranch", true), "commands", true)).isNotEmpty();
-  }
-
-  private static boolean _StyleParameter_QueryFunction_eb7h0d_a0c0(EditorContext editorContext, SNode node) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "trueBranch", true), "commands", true)).isEmpty();
-  }
-
-  private static boolean _StyleParameter_QueryFunction_eb7h0d_a1c0(EditorContext editorContext, SNode node) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "trueBranch", true), "commands", true)).isNotEmpty();
   }
 }

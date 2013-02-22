@@ -30,6 +30,7 @@ public class DevkitValidator implements ModuleValidator {
     myModule = module;
   }
 
+  @Override
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>();
     Throwable loadException = myModule.getModuleDescriptor().getLoadException();
@@ -61,6 +62,7 @@ public class DevkitValidator implements ModuleValidator {
     return Collections.emptyList();
   }
 
+  @Override
   public final boolean isValid() {
     return getErrors().isEmpty();
   }

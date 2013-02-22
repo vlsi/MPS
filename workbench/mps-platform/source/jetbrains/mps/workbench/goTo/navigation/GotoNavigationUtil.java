@@ -31,6 +31,7 @@ import java.util.Map.Entry;
 public class GotoNavigationUtil {
   public static Collection<NodeDescriptor> getNodeElements(Iterable<? extends SModel> models, Project p) {
     MultiMap<NodeNavigationContributor, SModel> modelsByNNC = ModelGroupingUtil.groupModelsByRootMapping(models, new Mapper<String, NodeNavigationContributor>() {
+      @Override
       public NodeNavigationContributor value(String key) {
         return FastGoToRegistry.getInstance().getNavigationContributor(key);
       }

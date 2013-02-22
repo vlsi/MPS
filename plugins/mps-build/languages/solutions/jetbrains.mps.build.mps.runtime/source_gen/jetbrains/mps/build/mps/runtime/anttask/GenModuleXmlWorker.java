@@ -35,9 +35,11 @@ public class GenModuleXmlWorker extends MpsWorker {
     super(whatToDo, logger);
   }
 
+  @Override
   protected void executeTask(Project project, MpsWorker.ObjectsToProcess go) {
   }
 
+  @Override
   protected void showStatistic() {
   }
 

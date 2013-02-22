@@ -96,6 +96,7 @@ public class CollectionUtil {
     return new Iterator<T>() {
       public boolean myFirstActive = true;
 
+      @Override
       public boolean hasNext() {
         if (myFirstActive) {
           if (it1.hasNext()) {
@@ -109,6 +110,7 @@ public class CollectionUtil {
         }
       }
 
+      @Override
       public T next() {
         if (myFirstActive) {
           if (it1.hasNext()) {
@@ -122,6 +124,7 @@ public class CollectionUtil {
         }
       }
 
+      @Override
       public void remove() {
         throw new UnsupportedOperationException();
       }

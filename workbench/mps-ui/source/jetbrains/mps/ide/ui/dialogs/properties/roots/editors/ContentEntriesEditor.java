@@ -48,7 +48,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -67,6 +66,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -126,6 +126,7 @@ public class ContentEntriesEditor {
             @Override
             public PopupStep onChosen(final AddContentEntryAction selectedValue, final boolean finalChoice) {
               return doFinalStep(new Runnable() {
+                @Override
                 public void run() {
                   selectedValue.actionPerformed(null);
                 }
@@ -256,6 +257,7 @@ public class ContentEntriesEditor {
       myType = type;
     }
 
+    @Override
     public void actionPerformed(AnActionEvent e) {
       ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(modelRoot);

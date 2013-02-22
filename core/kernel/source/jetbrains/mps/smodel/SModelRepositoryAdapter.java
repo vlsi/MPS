@@ -18,29 +18,35 @@ package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;imp
 import java.util.Set;
 
 public abstract class SModelRepositoryAdapter implements SModelRepositoryListener {
+  @Override
   public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
 
   }
 
+  @Override
   public void modelDeleted(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
     modelRepositoryChanged(modelDescriptor);
   }
 
+  @Override
   public void modelRemoved(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
     modelRepositoryChanged(modelDescriptor);
   }
 
+  @Override
   public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
 
   }
 
+  @Override
   public void modelAdded(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
     modelRepositoryChanged(modelDescriptor);
   }
 
+  @Override
   public void modelRenamed(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
     modelRepositoryChanged(modelDescriptor);

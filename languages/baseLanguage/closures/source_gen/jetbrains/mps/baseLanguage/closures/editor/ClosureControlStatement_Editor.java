@@ -14,6 +14,9 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -28,9 +31,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ClosureControlStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -73,6 +73,10 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_2saq3j_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).count() > 0 || ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).count() > 0;
+  }
+
   public static class _Inline_2saq3j_a1b0 extends InlineCellProvider {
     public _Inline_2saq3j_a1b0() {
       super();
@@ -100,6 +104,14 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
       editorCell.setRole(handler.getElementRole());
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_2saq3j_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).count() > 0;
+  }
+
+  private static boolean renderingCondition_2saq3j_a0c1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).count() > 0;
   }
 
   private static class parameterListHandler_2saq3j_a0a1b0 extends RefNodeListHandler {
@@ -374,17 +386,5 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_2saq3j_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).count() > 0 || ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).count() > 0;
-  }
-
-  private static boolean renderingCondition_2saq3j_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).count() > 0;
-  }
-
-  private static boolean renderingCondition_2saq3j_a0c1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).count() > 0;
   }
 }

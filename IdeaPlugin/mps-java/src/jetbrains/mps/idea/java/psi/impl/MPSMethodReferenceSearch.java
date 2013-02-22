@@ -88,7 +88,9 @@ public class MPSMethodReferenceSearch extends QueryExecutorBase<PsiReference, Se
                 PsiElement targetPsiElement = JavaMPSPsiNodeFactory.getPsiSourceOf(targetNode);
 
                 if (targetPsiElement == targetMethod) {
-                  MPSPsiNode mpsPsiNode = psiProvider.getPsi(node);
+                  PsiElement mpsPsiElem = psiProvider.getPsi(node);
+                  if (!(mpsPsiElem instanceof MPSPsiNode)) continue;
+                  MPSPsiNode mpsPsiNode = (MPSPsiNode) mpsPsiElem;
                   MPSPsiRef[] refs = mpsPsiNode.getReferences("baseMethodDeclaration");
                   if (refs.length == 0) {
                     continue;

@@ -18,10 +18,12 @@ package jetbrains.mps.smodel.structure;
 import java.util.Collections;
 
 public class DefaultExtensionDescriptor implements ExtensionDescriptor {
+  @Override
   public Iterable<? extends ExtensionPoint> getExtensionPoints() {
       return Collections.emptyList();
   }
 
+  @Override
   public Iterable<? extends Extension> getExtensions() {
     return Collections.emptyList();
   }

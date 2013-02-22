@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ctvgzztximqx5n0jo8f4otlf8oi1uxm">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+<dependencies version="2" modelHash="-ix73z3nasggd8cn84cogb1q2gbuejh">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
   <common hash="cups25yxk3r5qywdn046im7j3ay33gv" />
-  <source id="6374450524837363737" name="ValueDouble" hash="-9kc4bfs7gpa2xvqh7x95obs473gfwc9">
+  <source id="6374450524837363737" name="ValueDouble" hash="-8emwsirv9hpx2aavwsgv4se7bqgj0a4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ValueDouble.java" />
   </source>
-  <source id="6374450524837363794" name="ValueQuantity" hash="7xw3rcm9r4infhvw76wigfr0v9atz8u">
+  <source id="6374450524837363794" name="ValueQuantity" hash="8bb8ewdli75a7j9696q4bk36q4nnzyc">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ValueQuantity.java" />
   </source>
-  <source id="6374450524837363835" name="PostingRule_Formula" hash="6icgrnz505mcthdcr6yrd5yo7r1h2cu">
+  <source id="6374450524837363835" name="PostingRule_Formula" hash="6lg0fni521x2g2g7rwrf3x8x0xiotdx">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PostingRule_Formula.java" />
   </source>
-  <source id="6374450524837363871" name="MoneyAdapter" hash="-b0scjns4y1qs7i5o4wsklphck1uyzyj">
+  <source id="6374450524837363871" name="MoneyAdapter" hash="1z7gkw01x79w5jq1o5txnifxl2cruxg">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MoneyAdapter.java" />
   </source>
-  <source id="6374450524837363917" name="MoneyAddOperation" hash="c36d9lpy2mi7p30y763z64aisngxegu">
+  <source id="6374450524837363917" name="MoneyAddOperation" hash="9hopso5thloxva0x0bm9xd9fqnbftbg">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MoneyAddOperation.java" />
   </source>
-  <source id="6374450524837363964" name="UsageDouble" hash="-evxb1e6xdu23gqgnn58qsjjcy57ihf0">
+  <source id="6374450524837363964" name="UsageDouble" hash="-2mkfeyh45763shy5pjruhiy8wsdbqup">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="UsageDouble.java" />
   </source>
-  <source id="6374450524837363990" name="MoneyConstant" hash="-80snbf7t2uo5u6onhk6rhd5x71wn5ce">
+  <source id="6374450524837363990" name="MoneyConstant" hash="1swi667jdpq8l2hikp80u2pz3n8v1np">
     <file name="MoneyConstant.java" />
   </source>
-  <source id="6374450524837364020" name="MoneyMultiplyOperation" hash="-290960fp3wadyba2nf9rfpkd2mmfcdp">
+  <source id="6374450524837364020" name="MoneyMultiplyOperation" hash="9ykgn1aovxt6y1fxu9f0t778dlrwh28">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="MoneyMultiplyOperation.java" />
   </source>
-  <source id="6374450524837364067" name="UsageQuantity" hash="-dpo6upyik2ezgfcpvxtdkdosg9oa2hm">
+  <source id="6374450524837364067" name="UsageQuantity" hash="ah42fepk6yrzt2yxbtlft7h96vf2xal">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="UsageQuantity.java" />
   </source>
-  <source id="6374450524837364091" name="QuantityConstant" hash="-awgy70ci8xqjlglxcpz3aojcyya2zvw">
+  <source id="6374450524837364091" name="QuantityConstant" hash="ebs71s94ozm50rcb04jwmazlu0hwktm">
     <file name="QuantityConstant.java" />
   </source>
-  <source id="6374450524837364131" name="QuantityGreaterThanOperation" hash="8eyfjbjvs7wo8wimm2opc6n5kdfxugn">
+  <source id="6374450524837364131" name="QuantityGreaterThanOperation" hash="elsa7lvm4kq70326h7whoksapf03kuj">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="QuantityGreaterThanOperation.java" />
   </source>
-  <source id="6374450524837364180" name="FeeMoney" hash="-aqm0h6k4snmraun3ty33m0bmf59goll">
+  <source id="6374450524837364180" name="FeeMoney" hash="6a1hrcroru3tcw1pegixiawt8nrblye">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="FeeMoney.java" />
   </source>

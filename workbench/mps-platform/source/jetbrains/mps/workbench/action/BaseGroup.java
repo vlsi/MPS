@@ -83,6 +83,7 @@ public class BaseGroup extends DefaultActionGroup implements DumbAware {
     else disable(p);
   }
 
+  @Override
   public void update(final AnActionEvent e) {
     super.update(e);
     if (myIsInternal && !InternalFlag.isInternalMode()) {
@@ -90,6 +91,7 @@ public class BaseGroup extends DefaultActionGroup implements DumbAware {
       e.getPresentation().setVisible(false);
     } else {
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           doUpdate(e);
         }

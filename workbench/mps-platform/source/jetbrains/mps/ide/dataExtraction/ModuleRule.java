@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.Nullable;
 
 public class ModuleRule implements GetDataRule {
+  @Override
   @Nullable
   public Object getData(DataProvider dataProvider) {
     IOperationContext context = (IOperationContext) dataProvider.getData(MPSCommonDataKeys.OPERATION_CONTEXT.getName());

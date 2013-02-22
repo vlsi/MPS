@@ -11,10 +11,13 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -29,9 +32,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OldRefactoring_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -71,6 +71,10 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
     }
   }
 
+  private static boolean renderingCondition_ivh5g9_a1b1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "refactoringTargetKind", null, null);
+  }
+
   public static class _Inline_ivh5g9_a2b1b0 extends InlineCellProvider {
     public _Inline_ivh5g9_a2b1b0() {
       super();
@@ -105,6 +109,14 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_ivh5g9_a2b1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "refactoringTargetKind", "model", null);
+  }
+
+  private static boolean renderingCondition_ivh5g9_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "overrides", false) == null);
   }
 
   private static class argumentsListHandler_ivh5g9_f0 extends RefNodeListHandler {
@@ -793,17 +805,5 @@ public class OldRefactoring_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_ivh5g9_a1b1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "refactoringTargetKind", null, null);
-  }
-
-  private static boolean renderingCondition_ivh5g9_a2b1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "refactoringTargetKind", "model", null);
-  }
-
-  private static boolean renderingCondition_ivh5g9_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "overrides", false) == null);
   }
 }

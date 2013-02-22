@@ -44,7 +44,7 @@ public class ProjectViewTests extends BaseProjectViewTestCase {
     getProjectTreeStructure().setProviders(new MPSTreeStructureProvider());
     myPrintInfo = new Queryable.PrintInfo();
     assertStructureEqual(getPackageDirectory(), "package1\n" +
-      " main.mps\n" +
+      " main\n" +
       "  ConcoleUtil\n" +
       "  MainClass\n" +
       "  ProjectKind\n" +

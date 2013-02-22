@@ -20,6 +20,7 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     ListSequence.fromList(this.myStatements).addSequence(ListSequence.fromList(((List<SNode>) params.getNodesToRefactor())));
   }
 
+  @Override
   protected SNode createMethodBody() {
     SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
     this.modifyPartToExtract();
@@ -27,6 +28,7 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     return body;
   }
 
+  @Override
   public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -45,6 +47,7 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
   protected void modifyPartToExtract() {
   }
 
+  @Override
   public SNode getMethodType() {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null);
   }

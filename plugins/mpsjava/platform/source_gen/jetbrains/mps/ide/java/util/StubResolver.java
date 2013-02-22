@@ -31,7 +31,7 @@ import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -55,7 +55,7 @@ public class StubResolver {
     // resolve only to models from sequence 
     myUsedModels = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
       public SModelReference select(SModel it) {
-        return it.getSModelReference();
+        return it.getReference();
       }
     }));
   }
@@ -123,7 +123,7 @@ public class StubResolver {
         continue;
       }
       for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
-        if (SModelStereotype.isUserModel(model) && model instanceof EditableSModelDescriptor) {
+        if (SModelStereotype.isUserModel(model) && model instanceof EditableSModel) {
           resolveInModel(model.getSModel(), context);
         }
       }
@@ -150,7 +150,7 @@ public class StubResolver {
           public IListSequence<SNode> compute() {
             return Sequence.fromIterable(refScope.getAvailableElements(null)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode n) {
-                return modelRef.equals(SNodeOperations.getModel(n).getSModelReference()) && resolveInfo.equals(jetbrains.mps.util.SNodeOperations.getResolveInfo(n));
+                return modelRef.equals(SNodeOperations.getModel(n).getReference()) && resolveInfo.equals(jetbrains.mps.util.SNodeOperations.getResolveInfo(n));
               }
             }).toListSequence();
           }

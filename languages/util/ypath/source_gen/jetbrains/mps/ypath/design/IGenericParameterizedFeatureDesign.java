@@ -13,10 +13,12 @@ public interface IGenericParameterizedFeatureDesign<T> extends IParameterizedFea
     public Stub() {
     }
 
+    @Override
     public SNode getterExpression(SNode srcExpr, E param, ITemplateGenerator generator) {
       return null;
     }
 
+    @Override
     public boolean isSingleTargetCardinality(E param) {
       return false;
     }

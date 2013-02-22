@@ -6,6 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -27,10 +31,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -39,6 +39,42 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_b42orx_a_0(editorContext, node);
+  }
+
+  private static boolean renderingCondition_b42orx_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isCompact");
+  }
+
+  private static boolean renderingCondition_b42orx_a3a(SNode node, EditorContext editorContext, IScope scope) {
+    return isNotEmpty_b42orx_a0a0d(SPropertyOperations.getString(node, "tagName"));
+  }
+
+  private static boolean renderingCondition_b42orx_a9a(SNode node, EditorContext editorContext, IScope scope) {
+    return ((SLinkOperations.getTarget(node, "creator", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty()) && !(SPropertyOperations.getBoolean(node, "isCompact"));
+  }
+
+  private static boolean renderingCondition_b42orx_a11a(SNode node, EditorContext editorContext, IScope scope) {
+    return (ListSequence.fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty()) && !(SPropertyOperations.getBoolean(node, "isCompact"));
+  }
+
+  private static boolean renderingCondition_b42orx_a21a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isCompact")) || ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty();
+  }
+
+  private static boolean renderingCondition_b42orx_a31a(SNode node, EditorContext editorContext, IScope scope) {
+    return (ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "text", true) != null)) && !(SPropertyOperations.getBoolean(node, "isCompact"));
+  }
+
+  private static boolean renderingCondition_b42orx_a41a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isCompact")) || (SLinkOperations.getTarget(node, "text", true) != null);
+  }
+
+  private static boolean renderingCondition_b42orx_a51a(SNode node, EditorContext editorContext, IScope scope) {
+    return ((SLinkOperations.getTarget(node, "validator", true) != null) || (SLinkOperations.getTarget(node, "text", true) != null)) && !(SPropertyOperations.getBoolean(node, "isCompact"));
+  }
+
+  private static boolean renderingCondition_b42orx_a61a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isCompact")) || (SLinkOperations.getTarget(node, "validator", true) != null);
   }
 
   private static class attrsListHandler_b42orx_k0 extends RefNodeListHandler {
@@ -538,43 +574,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static boolean renderingCondition_b42orx_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isCompact");
-  }
-
-  private static boolean renderingCondition_b42orx_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return isNotEmpty_b42orx_a0a0gb(SPropertyOperations.getString(node, "tagName"));
-  }
-
-  private static boolean renderingCondition_b42orx_a9a(SNode node, EditorContext editorContext, IScope scope) {
-    return ((SLinkOperations.getTarget(node, "creator", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty()) && !(SPropertyOperations.getBoolean(node, "isCompact"));
-  }
-
-  private static boolean renderingCondition_b42orx_a11a(SNode node, EditorContext editorContext, IScope scope) {
-    return (ListSequence.fromList(SLinkOperations.getTargets(node, "attrs", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty()) && !(SPropertyOperations.getBoolean(node, "isCompact"));
-  }
-
-  private static boolean renderingCondition_b42orx_a21a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isCompact")) || ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty();
-  }
-
-  private static boolean renderingCondition_b42orx_a31a(SNode node, EditorContext editorContext, IScope scope) {
-    return (ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "text", true) != null)) && !(SPropertyOperations.getBoolean(node, "isCompact"));
-  }
-
-  private static boolean renderingCondition_b42orx_a41a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isCompact")) || (SLinkOperations.getTarget(node, "text", true) != null);
-  }
-
-  private static boolean renderingCondition_b42orx_a51a(SNode node, EditorContext editorContext, IScope scope) {
-    return ((SLinkOperations.getTarget(node, "validator", true) != null) || (SLinkOperations.getTarget(node, "text", true) != null)) && !(SPropertyOperations.getBoolean(node, "isCompact"));
-  }
-
-  private static boolean renderingCondition_b42orx_a61a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isCompact")) || (SLinkOperations.getTarget(node, "validator", true) != null);
-  }
-
-  public static boolean isNotEmpty_b42orx_a0a0gb(String str) {
+  public static boolean isNotEmpty_b42orx_a0a0d(String str) {
     return str != null && str.length() > 0;
   }
 }

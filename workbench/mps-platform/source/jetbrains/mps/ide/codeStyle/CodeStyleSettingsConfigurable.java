@@ -41,26 +41,32 @@ public class CodeStyleSettingsConfigurable implements SearchableConfigurable {
     return myPage;
   }
 
+  @Override
   public JComponent createComponent() {
     return getPage().getComponent();
   }
 
+  @Override
   public boolean isModified() {
     return getPage().isModified();
   }
 
+  @Override
   public void apply() throws ConfigurationException {
     getPage().commit();
   }
 
+  @Override
   public void reset() {
     getPage().update();
   }
 
+  @Override
   public void disposeUIResources() {
     myPage = null;
   }
 
+  @Override
   @Nls
   public String getDisplayName() {
     return "Code Style";
@@ -70,14 +76,17 @@ public class CodeStyleSettingsConfigurable implements SearchableConfigurable {
     return null;
   }
 
+  @Override
   public String getHelpTopic() {
     return "reference.settingsdialog.IDE.globalcodestyle";
   }
 
+  @Override
   public String getId() {
     return "code.style";
   }
 
+  @Override
   public Runnable enableSearch(String option) {
     return null;
   }

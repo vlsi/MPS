@@ -13,7 +13,6 @@ import java.io.OutputStream;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.IOException;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.InputStream;
@@ -29,19 +28,23 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     updateDiskTimestamp();
   }
 
+  @Override
   protected void reloadFromDiskSafe() {
     reloadFromDisk();
   }
 
+  @Override
   public boolean isChanged() {
     return isChanged;
   }
 
+  @Override
   public void setChanged(boolean value) {
     isChanged = value;
     updateDiskTimestamp();
   }
 
+  @Override
   public void save() {
     SModel model = getSModel();
     for (SNode tf : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.samples.plainText.structure.TextFile"))) {
@@ -58,19 +61,23 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     updateDiskTimestamp();
   }
 
-  public void rename(SModelFqName name, boolean b) {
+  @Override
+  public void rename(String newModelName, boolean changeFile) {
     throw new UnsupportedOperationException();
   }
 
   @Deprecated
+  @Override
   public boolean isReadOnly() {
     return false;
   }
 
+  @Override
   protected SModel getCurrentModelInternal() {
     return myModel;
   }
 
+  @Override
   public synchronized SModel getSModel() {
     if (myModel == null) {
       myModel = loadSModel();
@@ -105,6 +112,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     return myModel != null;
   }
 
+  @Override
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 

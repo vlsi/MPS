@@ -51,6 +51,7 @@ public abstract class GoToNeighbourRootActions {
       myNext = next;
     }
 
+    @Override
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
       goToNeighbour(myNext);
     }

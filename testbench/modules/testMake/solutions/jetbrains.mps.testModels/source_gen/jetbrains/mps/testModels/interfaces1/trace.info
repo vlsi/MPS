@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:93a6ef2e-9f35-4228-b460-87597e0be7c4(jetbrains.mps.testModels.interfaces1)/2265759664131825325">
-    <nodeInfo nodeId="2265759664131825332" fileName="MyClass.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="bbb#()V" />
-    <scopeInfo nodeId="2265759664131825335" fileName="MyClass.java" startLine="8" startPosition="21" endLine="8" endPosition="21" />
-    <scopeInfo nodeId="2265759664131825332" fileName="MyClass.java" startLine="8" startPosition="0" endLine="10" endPosition="0" />
-    <unitInfo nodeId="2265759664131825325" fileName="MyClass.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.testModels.interfaces1.MyClass" />
+    <nodeInfo nodeId="2265759664131825332" fileName="MyClass.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="bbb#()V" />
+    <scopeInfo nodeId="2265759664131825335" fileName="MyClass.java" startLine="9" startPosition="21" endLine="9" endPosition="21" />
+    <scopeInfo nodeId="2265759664131825332" fileName="MyClass.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
+    <unitInfo nodeId="2265759664131825325" fileName="MyClass.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.testModels.interfaces1.MyClass" />
   </root>
 </debugInfo>
 

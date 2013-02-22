@@ -17,14 +17,17 @@ package jetbrains.mps.errors;
 
 public enum MessageStatus {
   OK {
+    @Override
     public String getPresentation() {
       return "info";
     }},
   WARNING {
+    @Override
     public String getPresentation() {
       return "warning";
     }},
   ERROR {
+    @Override
     public String getPresentation() {
       return "error";
     }};

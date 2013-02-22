@@ -6,7 +6,8 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -21,6 +22,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -28,7 +30,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -43,7 +44,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -59,13 +59,8 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     return this.createCollection_2ojjgh_a_0(editorContext, node);
   }
 
-  public static class ReplaceWith_NamedTupleType_cellMenu_a0a1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_NamedTupleType_cellMenu_a0a1a() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
-    }
+  private static boolean renderingCondition_2ojjgh_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"));
   }
 
   public static class _Inline_2ojjgh_a1a0 extends InlineCellProvider {
@@ -111,6 +106,23 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       editorCell.getStyle().putAll(style);
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_2ojjgh_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
+  }
+
+  public static class ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
+    }
+  }
+
+  private static boolean renderingCondition_2ojjgh_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
   }
 
   public static class _Inline_2ojjgh_a1a0_0 extends InlineCellProvider {
@@ -159,6 +171,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       return this.createCollection_2ojjgh_a0c0a(editorContext, node);
     }
 
+    private static boolean renderingCondition_2ojjgh_a0a0c0a(SNode node, EditorContext editorContext, IScope scope) {
+      return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
+    }
+
     private EditorCell createCollection_2ojjgh_a0c0a(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
       editorCell.setCellId("Collection_2ojjgh_a0c0a");
@@ -175,10 +191,6 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       AbstractCellProvider provider = new _GenericDeclaration_TypeVariables_Component(node);
       EditorCell editorCell = provider.createEditorCell(editorContext);
       return editorCell;
-    }
-
-    private static boolean renderingCondition_2ojjgh_a0a0c0a(SNode node, EditorContext editorContext, IScope scope) {
-      return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
     }
   }
 
@@ -451,7 +463,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NamedTupleType_Editor.ReplaceWith_NamedTupleType_cellMenu_a0a1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NamedTupleType_Editor.ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a()}));
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a1a");
     return editorCell;
   }
@@ -534,17 +546,5 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  private static boolean renderingCondition_2ojjgh_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration"));
-  }
-
-  private static boolean renderingCondition_2ojjgh_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration");
-  }
-
-  private static boolean renderingCondition_2ojjgh_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
   }
 }

@@ -35,16 +35,19 @@ public class ModelCacheReloader implements ApplicationComponent {
     ListSequence.fromList(myCaches).addElement(GenerationDependenciesCache.getInstance());
   }
 
+  @Override
   public void initComponent() {
     myVirtualFileManager.addVirtualFileListener(myFileListener);
   }
 
+  @Override
   public void disposeComponent() {
     myVirtualFileManager.removeVirtualFileListener(myFileListener);
   }
 
   @NonNls
   @NotNull
+  @Override
   public String getComponentName() {
     return getClass().getName();
   }

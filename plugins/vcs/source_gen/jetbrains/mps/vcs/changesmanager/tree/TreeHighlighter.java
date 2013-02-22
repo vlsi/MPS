@@ -213,6 +213,7 @@ public class TreeHighlighter implements TreeMessageOwner {
 
   private void rehighlightAllFeaturesLater() {
     myQueue.queue(new Update(myUpdateId) {
+      @Override
       public void run() {
         if (IMakeService.INSTANCE.isSessionActive()) {
           new Thread(new Runnable() {
@@ -299,17 +300,21 @@ public class TreeHighlighter implements TreeMessageOwner {
     public MyTreeNodeListener() {
     }
 
+    @Override
     public void treeNodeAdded(MPSTreeNode node, MPSTree tree) {
       registerNode(node);
     }
 
+    @Override
     public void treeNodeRemoved(MPSTreeNode node, MPSTree tree) {
       unregisterNode(node);
     }
 
+    @Override
     public void treeNodeUpdated(MPSTreeNode node, MPSTree tree) {
     }
 
+    @Override
     public void beforeTreeDisposed(MPSTree tree) {
       TreeHighlighterFactory.getInstance(myRegistry.getProject()).unhighlightTree(myTree);
     }
@@ -319,6 +324,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     public MyFeatureForestMapListener() {
     }
 
+    @Override
     public void featureStateChanged(Feature feature) {
       rehighlightFeatureAndDescendants(feature);
     }
@@ -328,6 +334,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     public MyFileStatusListener() {
     }
 
+    @Override
     public void fileStatusChanged(@NotNull VirtualFile file) {
       IFile ifile = VirtualFileUtils.toIFile(file);
       SModelDescriptor emd = SModelFileTracker.getInstance().findModel(ifile);
@@ -336,6 +343,7 @@ public class TreeHighlighter implements TreeMessageOwner {
       }
     }
 
+    @Override
     public void fileStatusesChanged() {
       rehighlightAllFeaturesLater();
     }
@@ -347,7 +355,7 @@ public class TreeHighlighter implements TreeMessageOwner {
 
     @Override
     public void beforeModelDisposed(SModel model) {
-      SModelReference modelRef = model.getSModelReference();
+      SModelReference modelRef = model.getReference();
       List<MPSTreeNode> obsoleteTreeNodes = ListSequence.fromList(new ArrayList<MPSTreeNode>());
       synchronized (myFeaturesHolder) {
         for (Feature f : ListSequence.fromList(myFeaturesHolder.getFeaturesByModelReference(modelRef))) {

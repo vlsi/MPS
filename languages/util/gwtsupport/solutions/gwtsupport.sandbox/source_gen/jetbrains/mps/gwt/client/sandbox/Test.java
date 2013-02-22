@@ -13,6 +13,7 @@ public class Test implements EntryPoint {
   public Test() {
   }
 
+  @Override
   public void onModuleLoad() {
     Widget cmp = this.createComponent();
     RootLayoutPanel.get().add(cmp);

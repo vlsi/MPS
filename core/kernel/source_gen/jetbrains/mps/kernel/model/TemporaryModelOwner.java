@@ -62,6 +62,7 @@ public class TemporaryModelOwner extends AbstractModule {
     return result;
   }
 
+  @Override
   public List<Dependency> getDependencies() {
     List<Dependency> result = new ArrayList<Dependency>();
     for (SModelDescriptor md : getOwnModelDescriptors()) {

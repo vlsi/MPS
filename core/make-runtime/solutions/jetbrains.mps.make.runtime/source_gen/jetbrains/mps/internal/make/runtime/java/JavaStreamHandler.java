@@ -39,6 +39,7 @@ public class JavaStreamHandler implements StreamHandler {
     this.myCachesFileDelta = new FilesDelta(myModelCacheOutputDir);
   }
 
+  @Override
   public void saveStream(String name, String content, boolean isCache) {
     IFile file = getFile(name, isCache);
     mySavedFiles.add(file);
@@ -49,6 +50,7 @@ public class JavaStreamHandler implements StreamHandler {
     }
   }
 
+  @Override
   public void saveStream(String name, Element content, boolean isCache) {
     IFile file = getFile(name, isCache);
     mySavedFiles.add(file);
@@ -59,6 +61,7 @@ public class JavaStreamHandler implements StreamHandler {
     }
   }
 
+  @Override
   public void saveStream(String name, byte[] content, boolean isCache) {
     IFile file = getFile(name, isCache);
     mySavedFiles.add(file);
@@ -69,6 +72,7 @@ public class JavaStreamHandler implements StreamHandler {
     }
   }
 
+  @Override
   public boolean touch(String name, boolean isCache) {
     IFile file = getFile(name, isCache);
     mySavedFiles.add(file);
@@ -84,6 +88,7 @@ public class JavaStreamHandler implements StreamHandler {
     return Sequence.fromArray(new IDelta[]{myOutputFileDelta, myCachesFileDelta});
   }
 
+  @Override
   public void dispose() {
     myProcessor.invalidateModel(myModel);
   }

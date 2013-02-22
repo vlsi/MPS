@@ -6,15 +6,19 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class UnknownConsCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bnhthl_a(editorContext, node);
+  }
+
+  private static boolean renderingCondition_bnhthl_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isSuper");
   }
 
   private EditorCell createAlternation_bnhthl_a0a(EditorContext editorContext, SNode node) {
@@ -62,9 +66,5 @@ public class UnknownConsCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_bnhthl_a0a0_0");
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-  private static boolean renderingCondition_bnhthl_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isSuper");
   }
 }

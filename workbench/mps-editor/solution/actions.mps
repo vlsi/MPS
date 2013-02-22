@@ -57,8 +57,8 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4362199797783336771">
       <property name="name" nameId="tpck.1169194664001" value="ExtractComponent" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Extract Component" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditMenuActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Extract Component" />
     </node>
     <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="4362199797783345371">
       <property name="isPluginXmlKeymap" nameId="tp4k.8646726056720906098" value="true" />
@@ -71,13 +71,13 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4362199797783345393">
       <property name="name" nameId="tpck.1169194664001" value="CopyThisDown" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Duplicate Node" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditMenuActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Duplicate Node" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3774693388238498747">
       <property name="name" nameId="tpck.1169194664001" value="DeleteLine" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Delete Line" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditMenuActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Delete Line" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="7791284463049069745">
       <property name="name" nameId="tpck.1169194664001" value="EditorActions" />
@@ -87,72 +87,72 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049069760">
       <property name="name" nameId="tpck.1169194664001" value="End" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Line End" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Line End" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049069771">
       <property name="name" nameId="tpck.1169194664001" value="Home" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Line Start" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Line Start" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049069782">
       <property name="name" nameId="tpck.1169194664001" value="Insert" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Insert New Element" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Insert New Element" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049069850">
       <property name="name" nameId="tpck.1169194664001" value="InsertBefore" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Insert New Element before Current" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Insert New Element before Current" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049069869">
       <property name="name" nameId="tpck.1169194664001" value="LocalEnd" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Next Word" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Next Word" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049069880">
       <property name="name" nameId="tpck.1169194664001" value="LocalHome" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Previous Word" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Previous Word" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049069891">
       <property name="name" nameId="tpck.1169194664001" value="RootEnd" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Text End" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Text End" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049069902">
       <property name="name" nameId="tpck.1169194664001" value="RootHome" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Text Start" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Text Start" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049069913">
       <property name="name" nameId="tpck.1169194664001" value="SelectDown" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Shrink Selection" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Shrink Selection" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049069924">
       <property name="name" nameId="tpck.1169194664001" value="SelectLocalEnd" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Next Word with Selection" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Next Word with Selection" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049070003">
       <property name="name" nameId="tpck.1169194664001" value="SelectLocalHome" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Previous Word with Selection" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Move Caret to Previous Word with Selection" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7791284463049070082">
       <property name="name" nameId="tpck.1169194664001" value="SelectUp" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Expand Selection" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Expand Selection" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7791284463049113795">
       <property name="name" nameId="tpck.1169194664001" value="EditorActionUtils" />
@@ -161,82 +161,82 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="991796682690297081">
       <property name="name" nameId="tpck.1169194664001" value="MoveLeft" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Left" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="991796682690297084">
       <property name="name" nameId="tpck.1169194664001" value="MoveRight" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Right" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="991796682690297087">
       <property name="name" nameId="tpck.1169194664001" value="MoveUp" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Up" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="991796682690297090">
       <property name="name" nameId="tpck.1169194664001" value="MoveDown" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Down" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6743831156946309831">
       <property name="name" nameId="tpck.1169194664001" value="Escape" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Escape" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2768238731211617618">
       <property name="name" nameId="tpck.1169194664001" value="MoveElementsUp" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Move Elements Up" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2768238731211621495">
       <property name="name" nameId="tpck.1169194664001" value="MoveElementsDown" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Move Elements Down" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4225699205371269974">
       <property name="name" nameId="tpck.1169194664001" value="SelectNext" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Select Next" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4225699205371269977">
       <property name="name" nameId="tpck.1169194664001" value="SelectPrevious" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Select Previous" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8896169282213320720">
       <property name="name" nameId="tpck.1169194664001" value="Delete" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Delete" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8896169282213957015">
       <property name="name" nameId="tpck.1169194664001" value="DeleteToWordEnd" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Delete to Word End" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8896169282214002721">
       <property name="name" nameId="tpck.1169194664001" value="Backspace" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Backspace" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8257980988067921114">
       <property name="name" nameId="tpck.1169194664001" value="SelectLeft" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Left with Selection" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8257980988067921117">
       <property name="name" nameId="tpck.1169194664001" value="SelectRight" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
       <property name="caption" nameId="tp4k.1205250923097" value="Right with Selection" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="EditorActions" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5495648829643707068">
       <property name="name" nameId="tpck.1169194664001" value="IDE_Edit" />
@@ -254,21 +254,21 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3228268613620327405">
       <property name="name" nameId="tpck.1169194664001" value="GoByCurrentReference" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Declaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Declaration" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="3228268613620327882">
       <property name="name" nameId="tpck.1169194664001" value="GoToEditorPopupAddition" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
       <property name="caption" nameId="tp4k.1204991940915" value="Go To" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
       <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
       <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5062223007361660572">
       <property name="mnemonic" nameId="tp4k.1205160812895" value="g" />
       <property name="name" nameId="tpck.1169194664001" value="Folding" />
-      <property name="caption" nameId="tp4k.1204991940915" value="Folding" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup" />
+      <property name="caption" nameId="tp4k.1204991940915" value="Folding" />
       <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
       <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     </node>
@@ -276,36 +276,36 @@
       <property name="mnemonic" nameId="tp4k.1215865999894" value="C" />
       <property name="name" nameId="tpck.1169194664001" value="Collapse" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Collapse" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions.Folding" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Collapse" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5062223007361662050">
       <property name="mnemonic" nameId="tp4k.1215865999894" value="A" />
       <property name="name" nameId="tpck.1169194664001" value="CollapseAll" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Collapse All" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions.Folding" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Collapse All" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5062223007361662084">
       <property name="mnemonic" nameId="tp4k.1215865999894" value="x" />
       <property name="name" nameId="tpck.1169194664001" value="Expand" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Expand" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions.Folding" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Expand" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5062223007361662120">
       <property name="mnemonic" nameId="tp4k.1215865999894" value="E" />
       <property name="name" nameId="tpck.1169194664001" value="ExpandAll" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Expand All" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions.Folding" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Expand All" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5062223007361662154">
       <property name="mnemonic" nameId="tp4k.1215865999894" value="S" />
       <property name="name" nameId="tpck.1169194664001" value="FoldSelection" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Fold Selection" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions.Folding" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Fold Selection" />
     </node>
     <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="6714826334259374451">
       <property name="name" nameId="tpck.1169194664001" value="RefactoringActions" />
@@ -319,8 +319,8 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6893431717880288043">
       <property name="name" nameId="tpck.1169194664001" value="DoNotSuppressErrors" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Do not Supress Errors" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorLeftHighlighter" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Do not Supress Errors" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6893431717880290404">
       <property name="name" nameId="tpck.1169194664001" value="SuppressErrorsGroup" />
@@ -341,15 +341,15 @@
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ShowGenerationActions" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Insert..." />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions.Intentions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Insert..." />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3207605520775490246">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ShowSurroundWithIntentions" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Surround with..." />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions.Intentions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Surround with..." />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="3207605520775490538">
       <property name="name" nameId="tpck.1169194664001" value="GenerationActions" />
@@ -358,18 +358,18 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3467203700125709751">
       <property name="name" nameId="tpck.1169194664001" value="AddLanguageImport" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Add Language Import" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditMenuActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Add Language Import" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3467203700125709779">
       <property name="name" nameId="tpck.1169194664001" value="AddModelImport" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Add Model Import" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditMenuActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Add Model Import" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3467203700125709807">
       <property name="name" nameId="tpck.1169194664001" value="AddModelImportByRoot" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Add Model Import by Root" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditMenuActions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Add Model Import by Root" />
     </node>
     <node type="tp4k.NonDumbAwareActions" typeId="tp4k.1512255007353869532" id="3824306434922117722">
       <property name="name" nameId="tpck.1169194664001" value="DefaultNonDumbAware" />
@@ -7146,6 +7146,9 @@
                                           </node>
                                           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4961254963656093502" />
                                           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4961254963656093501" />
+                                          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="3998760702358637441">
+                                            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
+                                          </node>
                                         </node>
                                       </node>
                                     </node>
@@ -7168,6 +7171,9 @@
                           </node>
                           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3207605520775490347" />
                           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3207605520775490346" />
+                          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="3998760702358651265">
+                            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
+                          </node>
                         </node>
                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3207605520775490344" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3207605520775490363">
@@ -7365,6 +7371,9 @@
                             </node>
                           </node>
                         </node>
+                      </node>
+                      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="3998760702359208866">
+                        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
                       </node>
                     </node>
                   </node>
@@ -7719,6 +7728,7 @@
       <property name="name" nameId="tpck.1169194664001" value="model" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dCONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="3467203700125709757" />
+      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.EditableModel" typeId="tp4k.5678361901872075170" id="1979649482473147567" />
     </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="3467203700125709758">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3467203700125709759">
@@ -7749,23 +7759,6 @@
         </node>
       </node>
     </node>
-    <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="3467203700125709771">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3467203700125709772">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3467203700125709773">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="3467203700125709774">
-            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3467203700125709775">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rhwp.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
-            </node>
-            <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3467203700125709776">
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="3467203700125709777" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="3467203700125709778">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="3467203700125709756" resolveInfo="model" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
   </root>
   <root id="3467203700125709779">
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="3467203700125709780">
@@ -7782,6 +7775,7 @@
       <property name="name" nameId="tpck.1169194664001" value="model" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dCONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="3467203700125709785" />
+      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.EditableModel" typeId="tp4k.5678361901872075170" id="1979649482473140605" />
     </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="3467203700125709786">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3467203700125709787">
@@ -7808,23 +7802,6 @@
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="9099776605837041636" />
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="3467203700125709799">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3467203700125709800">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3467203700125709801">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="3467203700125709802">
-            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3467203700125709803">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rhwp.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
-            </node>
-            <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3467203700125709804">
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="3467203700125709805" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="3467203700125709806">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="3467203700125709784" resolveInfo="model" />
-              </node>
-            </node>
           </node>
         </node>
       </node>
@@ -7952,6 +7929,7 @@
       <property name="name" nameId="tpck.1169194664001" value="model" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dCONTEXT_MODEL" resolveInfo="CONTEXT_MODEL" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="3467203700125709852" />
+      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.EditableModel" typeId="tp4k.5678361901872075170" id="1979649482473113234" />
     </node>
     <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="3467203700125709853">
       <property name="name" nameId="tpck.1169194664001" value="node" />
@@ -8224,7 +8202,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4958753532934746783" resolveInfo="substituteInfo" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4958753532934746818">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4ky7.~NodeSubstituteInfo%dsetOriginalText(java%dlang%dString)%cvoid" resolveInfo="setOriginalText" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8v.~SubstituteInfo%dsetOriginalText(java%dlang%dString)%cvoid" resolveInfo="setOriginalText" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4958753532934746819">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3467203700125709860" resolveInfo="initialText" />
                             </node>
@@ -8251,7 +8229,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4958753532934746783" resolveInfo="substituteInfo" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4958753532934746829">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4ky7.~NodeSubstituteInfo%dinvalidateActions()%cvoid" resolveInfo="invalidateActions" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="nu8v.~SubstituteInfo%dinvalidateActions()%cvoid" resolveInfo="invalidateActions" />
                     </node>
                   </node>
                 </node>
@@ -8316,23 +8294,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="3467203700125710012">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3467203700125710013">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3467203700125710014">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="3467203700125710015">
-            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3467203700125710016">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="rhwp.~EditableSModelDescriptor" resolveInfo="EditableSModelDescriptor" />
-            </node>
-            <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3467203700125710017">
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="3467203700125710018" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="3467203700125710019">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="3467203700125709851" resolveInfo="model" />
               </node>
             </node>
           </node>

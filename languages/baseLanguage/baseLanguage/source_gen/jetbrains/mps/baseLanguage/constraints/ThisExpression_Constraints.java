@@ -71,7 +71,7 @@ public class ThisExpression_Constraints extends BaseConstraintsDescriptor {
               @Nullable
               @Override
               public SNode resolve(SNode contextNode, @NotNull String refText) {
-                String packageName = SNodeOperations.getModel(contextNode).getLongName() + ".";
+                String packageName = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(contextNode)) + ".";
                 if (refText.startsWith(packageName)) {
                   refText = refText.substring(packageName.length());
                 }

@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.server.CommandOutputStream" file="CommandOutputStream.java">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.PrintStream" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="java.io.FilterOutputStream" />
   </dependency>
@@ -35,6 +36,7 @@
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.impl.ApplicationImpl" />
     <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />

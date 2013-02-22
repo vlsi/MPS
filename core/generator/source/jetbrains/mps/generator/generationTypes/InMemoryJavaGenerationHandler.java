@@ -28,10 +28,7 @@ import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.util.Condition;
@@ -124,7 +121,8 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     boolean wereErrors = false;
 
     myContextModules.add(context.getModule());
-    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.roots(), new Condition<SNode>() {
+    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.getRootNodes(), new Condition<SNode>() {
+      @Override
       public boolean met(SNode node) {
         return node.getName() != null;
       }
@@ -132,7 +130,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     for (SNode root : iterable) {
       TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
       wereErrors |= genResult.hasErrors();
-      String key = getKey(outputModel.getSModelReference(), root);
+      String key = getKey((SModelReference) outputModel.getReference(), root);
       Object result = genResult.getResult();
       if (result instanceof String) {
         mySources.put(key, (String) result);

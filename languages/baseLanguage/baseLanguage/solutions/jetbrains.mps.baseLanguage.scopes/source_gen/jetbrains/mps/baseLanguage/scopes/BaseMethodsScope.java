@@ -84,6 +84,7 @@ public abstract class BaseMethodsScope extends Scope {
     }
   }
 
+  @Override
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     if (allMethods != null) {
       return Sequence.fromIterable(Sequence.fromArray(allMethods)).where(new IWhereFilter<SNode>() {
@@ -147,6 +148,7 @@ public abstract class BaseMethodsScope extends Scope {
   }
 
   @Nullable
+  @Override
   public SNode resolve(SNode contextNode, @NotNull final String refText) {
     List<SNode> methods = Sequence.fromIterable(this.getAvailableElements(refText)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -183,6 +185,7 @@ public abstract class BaseMethodsScope extends Scope {
   }
 
   @Nullable
+  @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name");
   }

@@ -36,6 +36,7 @@ public class DefaultMessageHandler implements IMessageHandler {
   }
 
 
+  @Override
   public void handle(IMessage msg) {
     if (myMessagesViewTool != null) {
       //it might happen if we haven't opened IDE yet
@@ -43,6 +44,7 @@ public class DefaultMessageHandler implements IMessageHandler {
     }
   }
 
+  @Override
   public void clear() {
     myMessagesViewTool.clear();
   }

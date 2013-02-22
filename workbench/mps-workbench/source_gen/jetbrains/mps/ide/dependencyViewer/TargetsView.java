@@ -44,6 +44,7 @@ public class TargetsView extends UsagesView {
     usagesTree.setShowPopupMenu(false);
   }
 
+  @Override
   public void close() {
   }
 
@@ -84,6 +85,7 @@ public class TargetsView extends UsagesView {
       myDependenciesComponent = parent;
     }
 
+    @Override
     public void valueChanged(TreeSelectionEvent event) {
       final TreePath[] paths = myTree.getSelectionPaths();
       if (paths == null || paths.length == 0) {
@@ -118,22 +120,27 @@ public class TargetsView extends UsagesView {
     public MyNodeRepresentator() {
     }
 
+    @Override
     public List<CategoryKind> getCategoryKinds() {
       return Collections.emptyList();
     }
 
+    @Override
     public Icon getCategoryIcon(String string) {
       return null;
     }
 
+    @Override
     public String getCategoryText(TextOptions options, String string, boolean b) {
       return "Targets";
     }
 
+    @Override
     public Icon getResultsIcon() {
       return Icons.REFERENCE_ICON;
     }
 
+    @Override
     public String getResultsText(TextOptions options) {
       String presentation = myParent.getCurrentScope().getPresentation();
       if ((presentation == null || presentation.length() == 0)) {
@@ -147,13 +154,16 @@ public class TargetsView extends UsagesView {
     }
 
     @NotNull
+    @Override
     public String getPresentation(SNode node) {
       return node.getPresentation();
     }
 
+    @Override
     public void read(Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
     }
 
+    @Override
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
     }
   }

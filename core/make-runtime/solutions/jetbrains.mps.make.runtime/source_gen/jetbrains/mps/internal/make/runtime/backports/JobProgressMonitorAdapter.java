@@ -18,6 +18,7 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
     myJobMonitor = monitor;
   }
 
+  @Override
   protected void update(double frac) {
     if (myName != null) {
       double currFrac = 1. - (double) myJobMonitor.currentProgress().workLeft() / WORK_AMOUNT;
@@ -25,6 +26,7 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
     }
   }
 
+  @Override
   protected void setTitleInternal(String text) {
     if ((text == null || text.length() == 0)) {
       return;
@@ -36,6 +38,7 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
     myTitle = text;
   }
 
+  @Override
   protected void setStepInternal(String step) {
     myStep = step;
     if (myName != null) {
@@ -43,6 +46,7 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
     }
   }
 
+  @Override
   protected void startInternal(String text) {
     if ((text == null || text.length() == 0)) {
       return;
@@ -51,6 +55,7 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
     myJobMonitor.currentProgress().beginWork(text, WORK_AMOUNT, 0);
   }
 
+  @Override
   protected void doneInternal(String text) {
     if ((text == null || text.length() == 0)) {
       return;
@@ -86,10 +91,12 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
     super.done();
   }
 
+  @Override
   public boolean isCanceled() {
     return myJobMonitor.stopRequested();
   }
 
+  @Override
   public void cancel() {
   }
 

@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ypath.pluginSolution.plugin.DesignPartLoader" file="DesignPartLoader.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.lang.Throwable" />

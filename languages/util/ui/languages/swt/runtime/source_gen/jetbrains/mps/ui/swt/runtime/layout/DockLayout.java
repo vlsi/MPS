@@ -21,6 +21,7 @@ public class DockLayout extends Layout {
   public DockLayout() {
   }
 
+  @Override
   protected Point computeSize(Composite comp, int wHint, int hHint, boolean flushCache) {
     Control center = this.collectControls(comp);
     int width = this.size(this.west, flushCache).x + this.size(center, flushCache).x + this.size(this.east, flushCache).x;
@@ -31,6 +32,7 @@ public class DockLayout extends Layout {
     return new Point(Math.max(width, wHint), Math.max(height, hHint));
   }
 
+  @Override
   protected void layout(Composite comp, boolean flushCache) {
     Rectangle carea = comp.getClientArea();
     Rectangle insides = new Rectangle(carea.x, carea.y, carea.width, carea.height);

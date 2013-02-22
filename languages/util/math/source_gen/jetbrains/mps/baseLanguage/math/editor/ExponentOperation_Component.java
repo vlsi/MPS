@@ -58,8 +58,8 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
-  public static class ExponentialOperation_generic_cellMenu_a0b0 extends AbstractCellMenuPart_Generic_Group {
-    public ExponentialOperation_generic_cellMenu_a0b0() {
+  public static class ExponentialOperation_generic_cellMenu_spngij_a0b0 extends AbstractCellMenuPart_Generic_Group {
+    public ExponentialOperation_generic_cellMenu_spngij_a0b0() {
     }
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -124,7 +124,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu_a0b0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu_spngij_a0b0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_spngij_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);

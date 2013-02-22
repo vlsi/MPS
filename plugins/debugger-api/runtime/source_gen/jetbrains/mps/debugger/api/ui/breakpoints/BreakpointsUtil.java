@@ -21,6 +21,7 @@ public class BreakpointsUtil {
   public static void openNode(final IOperationContext context, final ILocationBreakpoint breakpoint, final boolean focus, final boolean select) {
     final Project project = context.getProject();
     ModelAccess.instance().executeCommand(new Runnable() {
+      @Override
       public void run() {
         SNode node = breakpoint.getLocation().getSNode();
         if (node == null) {

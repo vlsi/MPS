@@ -14,6 +14,7 @@ public class TranslatorAdapter<T, S> extends ITranslator<T, S> {
     this.translator2 = translator2;
   }
 
+  @Override
   public ISequence<S> translate(T t) {
     return Sequence.fromIterable(translator2.invoke(t));
   }

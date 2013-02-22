@@ -36,6 +36,7 @@ public class MapSrcMacroPostProcContext extends TemplateQueryContextWithMacro {
   /**
    * 'outputNode' mapping
    */
+  @Override
   public SNode getOutputNode() {
     return myOutputNode;
   }

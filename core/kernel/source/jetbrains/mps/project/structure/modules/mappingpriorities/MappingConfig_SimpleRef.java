@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
-import jetbrains.mps.smodel.SModelReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
 
@@ -40,6 +40,7 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
     myNodeID = nodeID;
   }
 
+  @Override
   public MappingConfig_SimpleRef getCopy() {
     MappingConfig_SimpleRef result = new MappingConfig_SimpleRef();
     result.myModelUID = myModelUID;
@@ -69,8 +70,8 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
     if (myModelUID.equals("*")) {
       return false;
     }
-    SModelReference ref = SModelReference.fromString(myModelUID);
-    SModelReference newRef = ref.update();
+    jetbrains.mps.smodel.SModelReference ref = jetbrains.mps.smodel.SModelReference.fromString(myModelUID);
+    jetbrains.mps.smodel.SModelReference newRef = ref.update();
     if (ref.differs(newRef)) {
       myModelUID = newRef.toString();
       return true;

@@ -38,6 +38,7 @@ public class ChooseByNamePanel extends ChooseByNamePopup {
     myCheckboxVisible = checkboxVisible;
   }
 
+  @Override
   protected void initUI(Callback callback, ModalityState modalityState, boolean allowMultipleSelection) {
     super.initUI(callback, modalityState, allowMultipleSelection);
 

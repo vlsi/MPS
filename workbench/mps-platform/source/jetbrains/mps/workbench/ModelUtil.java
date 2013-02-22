@@ -19,11 +19,11 @@ package jetbrains.mps.workbench;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ import java.util.Collections;
 import java.util.List;
 
 public abstract class ModelUtil {
-  public static Collection<VirtualFile> getVFilesByModelDescriptor(SModelDescriptor desc) {
+  public static Collection<VirtualFile> getVFilesByModelDescriptor(SModel desc) {
     DataSource source = desc.getSource();
     if (!(source instanceof FileSystemBasedDataSource)) return Collections.emptyList();
 
@@ -47,7 +47,7 @@ public abstract class ModelUtil {
   }
 
   @NotNull
-  public static Collection<IFile> getFilesByModelDescriptor(SModelDescriptor desc) {
+  public static Collection<IFile> getFilesByModelDescriptor(SModel desc) {
     DataSource source = desc.getSource();
     if (!(source instanceof FileSystemBasedDataSource)) return Collections.emptyList();
 
@@ -56,7 +56,7 @@ public abstract class ModelUtil {
     return res;
   }
 
-  public static VirtualFile getFileByModel(@Nullable SModel model) {
+  public static VirtualFile getFileByModel(@Nullable jetbrains.mps.smodel.SModel model) {
     if (model == null || model.isDisposed()) return null;
 
     SModelDescriptor desc = model.getModelDescriptor();

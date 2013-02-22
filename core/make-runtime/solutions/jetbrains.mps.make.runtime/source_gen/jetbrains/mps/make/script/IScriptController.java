@@ -30,21 +30,26 @@ public interface IScriptController {
       this.jmon = new IJobMonitor.Stub();
     }
 
+    @Override
     public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
       code.invoke(jmon);
     }
 
+    @Override
     public void runConfigWithMonitor(_FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
       code.invoke(cmon);
     }
 
+    @Override
     public void setup(IPropertiesPool ppool) {
     }
 
+    @Override
     public void setup(IPropertiesPool pp, Iterable<ITarget> toExecute, Iterable<? extends IResource> input) {
       setup(pp);
     }
 
+    @Override
     public void useMonitor(ProgressMonitor monitor) {
     }
   }

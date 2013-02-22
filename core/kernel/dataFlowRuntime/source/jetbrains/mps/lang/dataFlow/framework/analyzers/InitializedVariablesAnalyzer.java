@@ -30,10 +30,12 @@ public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSet> {
 
   }
 
+  @Override
   public VarSet initial(Program p) {
     return new VarSet(p, true);
   }
 
+  @Override
   public VarSet merge(Program p, List<VarSet> input) {
     if (input.isEmpty()) {
       return initial(p);
@@ -46,6 +48,7 @@ public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSet> {
     return result;
   }
 
+  @Override
   public VarSet fun(VarSet input, ProgramState s) {
     Instruction instruction = s.getInstruction();
     VarSet result = input;
@@ -62,6 +65,7 @@ public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSet> {
     return result;
   }
 
+  @Override
   public AnalysisDirection getDirection() {
     return AnalysisDirection.FORWARD;
   }

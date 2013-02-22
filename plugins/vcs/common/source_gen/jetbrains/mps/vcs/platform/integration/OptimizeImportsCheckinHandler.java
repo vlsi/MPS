@@ -26,7 +26,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.OptimizeImportsHelper;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.changes.CommitContext;
@@ -49,20 +49,24 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
   public RefreshableOnComponent getBeforeCheckinConfigurationPanel() {
     final JCheckBox optimizeImportsCheckBox = new JCheckBox("Optimize model imports");
     return new RefreshableOnComponent() {
+      @Override
       public JComponent getComponent() {
         JPanel panel = new JPanel(new GridLayout(1, 0));
         panel.add(optimizeImportsCheckBox);
         return panel;
       }
 
+      @Override
       public void restoreState() {
         optimizeImportsCheckBox.setSelected(getSettings().OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT);
       }
 
+      @Override
       public void saveState() {
         getSettings().OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT = optimizeImportsCheckBox.isSelected();
       }
 
+      @Override
       public void refresh() {
       }
     };
@@ -87,10 +91,11 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
         jetbrains.mps.project.Project project = operationContext.getProject();
         if (project != null) {
           ModelAccess.instance().runCommandInEDT(new Runnable() {
+            @Override
             public void run() {
               new OptimizeImportsHelper(operationContext).optimizeModelsImports(affectedModels);
               for (SModelDescriptor affectedModel : affectedModels) {
-                ((EditableSModelDescriptor) affectedModel).save();
+                ((EditableSModel) affectedModel).save();
               }
             }
           }, project);
@@ -107,6 +112,7 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
     }
 
     @NotNull
+    @Override
     public CheckinHandler createHandler(CheckinProjectPanel panel, CommitContext context) {
       return new OptimizeImportsCheckinHandler(panel.getProject(), panel);
     }

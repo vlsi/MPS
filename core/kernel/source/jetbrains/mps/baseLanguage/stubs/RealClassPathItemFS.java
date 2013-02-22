@@ -37,10 +37,12 @@ public abstract class RealClassPathItemFS extends AbstractClassPathItem {
 
   public abstract IFile getBaseFile();
 
+  @Override
   public void invalidate() {
     myValid = false;
   }
 
+  @Override
   protected void checkValidity() {
     if (myValid) return;
     if (myErrorShown) return;
@@ -48,16 +50,19 @@ public abstract class RealClassPathItemFS extends AbstractClassPathItem {
     LOG.error("Using outdated classpath: " + this, new Throwable());
   }
 
+  @Override
   public boolean hasClass(String name) {
     IFile base = getBaseFile();
     IFile classFile = base.getDescendant(name.replaceAll("\\.", "/") + MPSExtentions.DOT_CLASSFILE);
     return classFile.exists();
   }
 
+  @Override
   public synchronized byte[] getClass(String name) {
     checkValidity();
 
     byte[] res = doWithInputStreamForClass(getBaseFile(), name, new Callback<byte[], InputStream>() {
+      @Override
       public byte[] perform(InputStream param) throws IOException {
         return ReadUtil.read(param);
       }
@@ -65,11 +70,13 @@ public abstract class RealClassPathItemFS extends AbstractClassPathItem {
     return res;
   }
 
+  @Override
   public synchronized ClassifierKind getClassifierKind(String name) {
     checkValidity();
 
     //if (myNotFoundClasses.contains(name)) return null;
     return doWithInputStreamForClass(getBaseFile(), name, new Callback<ClassifierKind, InputStream>() {
+      @Override
       public ClassifierKind perform(InputStream param) {
         try {
           return ClassifierKind.getClassifierKind(param);
@@ -80,6 +87,7 @@ public abstract class RealClassPathItemFS extends AbstractClassPathItem {
     });
   }
 
+  @Override
   public List<RealClassPathItem> flatten(){
     checkValidity();
     List<RealClassPathItem> result = new ArrayList<RealClassPathItem>();
@@ -87,6 +95,7 @@ public abstract class RealClassPathItemFS extends AbstractClassPathItem {
     return result;
   }
 
+  @Override
   public void accept(IClassPathItemVisitor visitor) {
     throw new UnsupportedOperationException();
   }

@@ -23,6 +23,7 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
     super(new BorderLayout());
   }
 
+  @Override
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
     removeAll();
     String moduleName = null;
@@ -62,6 +63,7 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
 
   public Comparator<T> getComparator() {
     return new Comparator<T>() {
+      @Override
       public int compare(T o1, T o2) {
         return getText(o1).compareTo(getText(o2));
       }
@@ -84,6 +86,7 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
       myModuleName = moduleName;
     }
 
+    @Override
     protected void customizeCellRenderer(JList list, Object value, int index, boolean selected, boolean hasFocus) {
       T element = (T) value;
       String name = getElementText((T) element);

@@ -14,6 +14,7 @@ public class ChainedIterable<E> implements Iterable<E> {
     this.iterables = Arrays.asList(iterables);
   }
 
+  @Override
   public Iterator<E> iterator() {
     ArrayList<Iterator<E>> iterators = new ArrayList<Iterator<E>>();
     for (Iterable<E> it : iterables) {

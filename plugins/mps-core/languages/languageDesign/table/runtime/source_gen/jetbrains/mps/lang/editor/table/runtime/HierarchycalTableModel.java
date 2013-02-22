@@ -33,16 +33,19 @@ public class HierarchycalTableModel extends AbstractTableModel {
     }
   }
 
+  @Override
   public SNode getValueAt(int row, int column) {
     assert row >= 0;
     assert column >= 0;
     return ListSequence.fromList(getColumns(ListSequence.fromList(getRows()).getElement(row))).getElement(column);
   }
 
+  @Override
   public int getRowCount() {
     return myRowCount;
   }
 
+  @Override
   public int getColumnCount() {
     return myColumnCount;
   }

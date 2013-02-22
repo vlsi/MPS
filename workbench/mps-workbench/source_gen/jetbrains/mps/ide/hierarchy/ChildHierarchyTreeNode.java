@@ -26,17 +26,21 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
     setText(calculateText());
   }
 
+  @Override
   public boolean isInitialized() {
     return myInitialized;
   }
 
+  @Override
   protected void doInit() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         try {
           SNode node = (SNode) getUserObject();
           List<SNode> descendants = new ArrayList<SNode>(myHierarchyTree.getAbstractChildren(node, myVisited));
           Collections.sort(descendants, new Comparator<SNode>() {
+            @Override
             public int compare(SNode o1, SNode o2) {
               return ("" + o1.getPresentation()).compareTo(o2.getPresentation());
             }
@@ -78,6 +82,7 @@ public class ChildHierarchyTreeNode extends HierarchyTreeNode {
     return getChildCount() == 0;
   }
 
+  @Override
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;

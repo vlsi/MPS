@@ -27,8 +27,8 @@ public class TailSetOperation_Editor extends DefaultNodeEditor {
     return this.createCollection_u3j6wb_a(editorContext, node);
   }
 
-  public static class ReplaceWith_SequenceOperation_cellMenu_a0a0_16 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SequenceOperation_cellMenu_a0a0_16() {
+  public static class ReplaceWith_SequenceOperation_cellMenu_u3j6wb_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SequenceOperation_cellMenu_u3j6wb_a0a0() {
     }
 
     public String getReplacementConceptName() {
@@ -52,7 +52,7 @@ public class TailSetOperation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Collections_Style_StyleSheet.applyOperation(style, editorCell);
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TailSetOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_a0a0_16()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TailSetOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_u3j6wb_a0a0()}));
     return editorCell;
   }
 

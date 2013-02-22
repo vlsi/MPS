@@ -32,6 +32,7 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
   }
 
   @Nullable
+  @Override
   public Feature getFeature(@NotNull MPSTreeNode treeNode) {
     SNode node = null;
     if (treeNode instanceof MPSTreeNodeEx) {

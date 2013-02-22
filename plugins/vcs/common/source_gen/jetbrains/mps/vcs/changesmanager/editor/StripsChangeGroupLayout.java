@@ -21,24 +21,29 @@ import jetbrains.mps.vcs.diff.ChangeSet;
   }
 
   @NotNull
+  @Override
   public EditorComponent getLeftComponent() {
     return myEditorHighlighter.getEditorComponent();
   }
 
   @NotNull
+  @Override
   public EditorComponent getRightComponent() {
     return myEditorHighlighter.getEditorComponent();
   }
 
+  @Override
   protected List<ChangeEditorMessage> getLeftMessages(ModelChange change) {
     return myEditorHighlighter.getMessages(change);
   }
 
+  @Override
   protected List<ChangeEditorMessage> getRightMessages(ModelChange change) {
     return myEditorHighlighter.getMessages(change);
   }
 
   @Nullable
+  @Override
   protected ChangeSet getChangeSet() {
     return myEditorHighlighter.getChangeSet();
   }

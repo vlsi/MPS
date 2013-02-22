@@ -248,26 +248,33 @@ public class TestGenerationWorker extends MpsWorker {
       bms.make(ms, collectResources(context, go.getProjects(), go.getModules(), go.getModels()), null, ctl, new ProgressMonitorBase() {
         private String prevTitle;
 
+        @Override
         protected void update(double p0) {
         }
 
+        @Override
         protected void startInternal(String text) {
         }
 
+        @Override
         protected void doneInternal(String text) {
         }
 
+        @Override
         protected void setTitleInternal(String text) {
           prevTitle = text;
         }
 
+        @Override
         protected void setStepInternal(String p0) {
         }
 
+        @Override
         public boolean isCanceled() {
           return false;
         }
 
+        @Override
         public void cancel() {
         }
 
@@ -312,6 +319,7 @@ public class TestGenerationWorker extends MpsWorker {
     }
   }
 
+  @Override
   public void work() {
     setupEnvironment();
     myReporter.init();
@@ -531,6 +539,7 @@ public class TestGenerationWorker extends MpsWorker {
     public MyMessageHandler() {
     }
 
+    @Override
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
         case ERROR:
@@ -549,6 +558,7 @@ public class TestGenerationWorker extends MpsWorker {
       }
     }
 
+    @Override
     public void clear() {
     }
   }

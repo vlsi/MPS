@@ -76,7 +76,7 @@ public class CompareTransientModels_Action extends BaseAction {
           final SModel second = sortedModels.get(1).getSModel();
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
-              new ModelDifferenceDialog(first, second, ((Project) MapSequence.fromMap(_params).get("project")), first.getSModelReference().getSModelFqName().toString(), second.getSModelReference().getSModelFqName().toString()).show();
+              new ModelDifferenceDialog(first, second, ((Project) MapSequence.fromMap(_params).get("project")), first.getReference().getSModelFqName().toString(), second.getReference().getSModelFqName().toString()).show();
             }
           });
         }

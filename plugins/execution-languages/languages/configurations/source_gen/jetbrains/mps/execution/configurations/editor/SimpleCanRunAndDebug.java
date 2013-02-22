@@ -6,11 +6,11 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -42,8 +42,12 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
-  public static class RunConfigurationExecutor_generic_cellMenu_a0b1a extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0b1a() {
+  private static boolean renderingCondition_o92gz8_a1b0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "canRun");
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b1a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b1a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -55,8 +59,12 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     }
   }
 
-  public static class RunConfigurationExecutor_generic_cellMenu_a0c1a extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0c1a() {
+  private static boolean renderingCondition_o92gz8_a2b0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "canRun"));
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0c1a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0c1a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -68,8 +76,12 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     }
   }
 
-  public static class RunConfigurationExecutor_generic_cellMenu_a0a3a extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0a3a() {
+  private static boolean renderingCondition_o92gz8_a0d0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "canDebug");
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0a3a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0a3a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -81,8 +93,12 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     }
   }
 
-  public static class RunConfigurationExecutor_generic_cellMenu_a0b3a extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0b3a() {
+  private static boolean renderingCondition_o92gz8_a1d0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "canDebug"));
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b3a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b3a() {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
@@ -152,7 +168,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0b1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b1a()}));
     return editorCell;
   }
 
@@ -163,7 +179,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0c1a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_o92gz8_a0c1a()}));
     return editorCell;
   }
 
@@ -181,7 +197,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0a3a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_o92gz8_a0a3a()}));
     return editorCell;
   }
 
@@ -192,28 +208,12 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_a0b3a()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b3a()}));
     return editorCell;
   }
 
   private EditorCell createIndentCell_o92gz8_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
     return result;
-  }
-
-  private static boolean renderingCondition_o92gz8_a1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "canRun");
-  }
-
-  private static boolean renderingCondition_o92gz8_a2b0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "canRun"));
-  }
-
-  private static boolean renderingCondition_o92gz8_a0d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "canDebug");
-  }
-
-  private static boolean renderingCondition_o92gz8_a1d0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "canDebug"));
   }
 }

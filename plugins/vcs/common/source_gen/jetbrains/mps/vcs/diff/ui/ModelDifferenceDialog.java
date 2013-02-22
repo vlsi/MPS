@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -71,7 +71,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
     DiffTemporaryModule.createModuleForModel(newModel, "new", p);
     myContentTitles = diffRequest.getContentTitles();
     assert myContentTitles.length == 2;
-    myEditable = newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_vk52pz_a0a0h0j(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
+    myEditable = newModel.getModelDescriptor() instanceof EditableSModel && check_vk52pz_a0a0h0j(SModelRepository.getInstance().getModelDescriptor(newModel.getReference())) == newModel;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         setTitle("Difference for model: " + SModelOperations.getModelName(oldModel));
@@ -106,15 +106,18 @@ public class ModelDifferenceDialog extends DialogWrapper {
   }
 
   @Nullable
+  @Override
   protected JComponent createCenterPanel() {
     return myPanel;
   }
 
   @NotNull
+  @Override
   protected Action[] createActions() {
     return new Action[0];
   }
 
+  @Override
   public String getDimensionServiceKey() {
     return getClass().getName();
   }
@@ -214,10 +217,12 @@ public class ModelDifferenceDialog extends DialogWrapper {
     }
 
     @Nullable
+    @Override
     protected SNodeId getCurrentNodeId() {
       return getCurrentRoot();
     }
 
+    @Override
     public void setCurrentNodeId(@Nullable SNodeId nodeId) {
       setCurrentRoot(nodeId);
     }
@@ -228,6 +233,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
       super(DiffTemporaryModule.getOperationContext(myProject, myChangeSet.getNewModel()));
     }
 
+    @Override
     protected Iterable<BaseAction> getRootActions() {
       List<BaseAction> actions = ListSequence.fromList(new ArrayList<BaseAction>());
 
@@ -235,6 +241,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
 
       if (myEditable) {
         ListSequence.fromList(actions).addElement(new RevertRootsAction("roots") {
+          @Override
           protected Iterable<ModelChange> getChanges() {
             return Sequence.fromIterable(Sequence.fromArray(getSelectedNodes(DiffModelTree.RootTreeNode.class, null))).translate(new ITranslator2<DiffModelTree.RootTreeNode, ModelChange>() {
               public Iterable<ModelChange> translate(DiffModelTree.RootTreeNode r) {
@@ -243,6 +250,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
             });
           }
 
+          @Override
           protected void after() {
             rebuildChangeSets();
           }
@@ -273,6 +281,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
       return actions;
     }
 
+    @Override
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       ChangeType compositeChangeType = ChangeType.CHANGE;
       if (rootTreeNode.getRootId() != null) {
@@ -284,10 +293,12 @@ public class ModelDifferenceDialog extends DialogWrapper {
       rootTreeNode.setColor(ChangeColors.getForTree(compositeChangeType));
     }
 
+    @Override
     protected Iterable<SModel> getModels() {
       return Arrays.asList(myChangeSet.getNewModel(), myChangeSet.getOldModel());
     }
 
+    @Override
     protected Iterable<SNodeId> getAffectedRoots() {
       return myChangeSet.getAffectedRoots();
     }
