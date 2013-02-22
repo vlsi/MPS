@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import org.jetbrains.annotations.Nullable;
-import sun.reflect.generics.tree.ArrayTypeSignature;
 
 import java.util.*;
 

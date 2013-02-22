@@ -2403,6 +2403,220 @@
     <scopeInfo nodeId="1526939793344460684" fileName="CheckNamespace_ActionGroup.java" startLine="12" startPosition="0" endLine="22" endPosition="0" />
     <unitInfo nodeId="1526939793344460684" fileName="CheckNamespace_ActionGroup.java" startLine="8" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.CheckNamespace_ActionGroup" />
   </root>
+  <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1833497744616771108">
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="30" startPosition="52" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="31" startPosition="69" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="32" startPosition="35" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="37" startPosition="32" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="42" startPosition="9" endLine="43" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="42" startPosition="9" endLine="43" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="44" startPosition="27" endLine="45" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="45" startPosition="105" endLine="46" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="51" startPosition="53" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="53" startPosition="5" endLine="54" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="55" startPosition="62" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="57" startPosition="5" endLine="58" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="59" startPosition="71" endLine="60" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="61" startPosition="5" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9116864641331682406" fileName="FindReferencesToNonReferenceable_Action.java" startLine="68" startPosition="52" endLine="69" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1833497744616916816" fileName="FindReferencesToNonReferenceable_Action.java" startLine="71" startPosition="10" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1833497744616916837" fileName="FindReferencesToNonReferenceable_Action.java" startLine="75" startPosition="63" endLine="76" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="79" startPosition="27" endLine="80" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="84" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="50" startPosition="95" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="54" startPosition="89" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="58" startPosition="109" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9116864641331682404" fileName="FindReferencesToNonReferenceable_Action.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="53" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="57" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1833497744616916833" fileName="FindReferencesToNonReferenceable_Action.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSpecificCheckers#()Ljava/util/List;" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindReferencesToNonReferenceable_Action#()V" />
+    <nodeInfo nodeId="1833497744616916789" fileName="FindReferencesToNonReferenceable_Action.java" startLine="66" startPosition="9" endLine="71" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="41" startPosition="89" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1833497744616916817" fileName="FindReferencesToNonReferenceable_Action.java" startLine="72" startPosition="0" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="41" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="50" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="65" startPosition="96" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="65" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="37" startPosition="32" endLine="38" endPosition="16" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="42" startPosition="9" endLine="43" endPosition="43" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="51" startPosition="53" endLine="52" endPosition="19" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="55" startPosition="62" endLine="56" endPosition="19" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="59" startPosition="71" endLine="60" endPosition="19" />
+    <scopeInfo nodeId="9116864641331682405" fileName="FindReferencesToNonReferenceable_Action.java" startLine="68" startPosition="52" endLine="69" endPosition="50" />
+    <scopeInfo nodeId="1833497744616916836" fileName="FindReferencesToNonReferenceable_Action.java" startLine="75" startPosition="63" endLine="76" endPosition="117" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="79" startPosition="0" endLine="80" endPosition="104">
+      <varInfo nodeId="1833497744616771108" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="79" startPosition="27" endLine="80" endPosition="104" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="44" startPosition="0" endLine="46" endPosition="44">
+      <varInfo nodeId="1833497744616771108" varName="t" />
+    </scopeInfo>
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="44" startPosition="27" endLine="46" endPosition="44" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="30" startPosition="52" endLine="33" endPosition="40" />
+    <scopeInfo nodeId="9116864641331682404" fileName="FindReferencesToNonReferenceable_Action.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="9116864641331682404" varName="md" />
+    </scopeInfo>
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="53" startPosition="5" endLine="57" endPosition="5" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="57" startPosition="5" endLine="61" endPosition="5" />
+    <scopeInfo nodeId="1833497744616916833" fileName="FindReferencesToNonReferenceable_Action.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="41" startPosition="89" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="41" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1833497744616771108" varName="_params" />
+      <varInfo nodeId="1833497744616771108" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="50" startPosition="95" endLine="62" endPosition="16" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="66" startPosition="9" endLine="78" endPosition="9">
+      <varInfo nodeId="1833497744616916790" varName="modelDescriptors" />
+    </scopeInfo>
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="50" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1833497744616771108" varName="_params" />
+      <varInfo nodeId="1833497744616771108" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="65" startPosition="96" endLine="81" endPosition="5" />
+    <scopeInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="65" startPosition="0" endLine="83" endPosition="0">
+      <varInfo nodeId="1833497744616771108" varName="_params" />
+      <varInfo nodeId="1833497744616771108" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="9116864641331682404" fileName="FindReferencesToNonReferenceable_Action.java" startLine="67" startPosition="212" endLine="71" endPosition="7" unitName="jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action$1" />
+    <unitInfo nodeId="1833497744616916832" fileName="FindReferencesToNonReferenceable_Action.java" startLine="73" startPosition="256" endLine="78" endPosition="7" unitName="jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action$2" />
+    <unitInfo nodeId="1833497744616771108" fileName="FindReferencesToNonReferenceable_Action.java" startLine="27" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.FindReferencesToNonReferenceable_Action" />
+  </root>
+  <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/1833497744617099302">
+    <nodeInfo nodeId="1833497744617160700" fileName="ReferenceableConceptsChecker.java" startLine="32" startPosition="146" endLine="33" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9116864641331714155" fileName="ReferenceableConceptsChecker.java" startLine="34" startPosition="112" endLine="35" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9116864641331713785" fileName="ReferenceableConceptsChecker.java" startLine="36" startPosition="5" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1833497744617160709" fileName="ReferenceableConceptsChecker.java" startLine="37" startPosition="0" endLine="38" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1833497744617160724" fileName="ReferenceableConceptsChecker.java" startLine="39" startPosition="31" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1833497744617160726" fileName="ReferenceableConceptsChecker.java" startLine="41" startPosition="5" endLine="42" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744617160732" fileName="ReferenceableConceptsChecker.java" startLine="42" startPosition="28" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1833497744618170485" fileName="ReferenceableConceptsChecker.java" startLine="47" startPosition="43" endLine="48" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1833497744618408759" fileName="ReferenceableConceptsChecker.java" startLine="50" startPosition="13" endLine="51" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1833497744618635038" fileName="ReferenceableConceptsChecker.java" startLine="52" startPosition="114" endLine="53" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1833497744617160852" fileName="ReferenceableConceptsChecker.java" startLine="54" startPosition="88" endLine="55" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9116864641330887634" fileName="ReferenceableConceptsChecker.java" startLine="60" startPosition="5" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9116864641330940815" fileName="ReferenceableConceptsChecker.java" startLine="63" startPosition="33" endLine="64" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="9116864641330940819" fileName="ReferenceableConceptsChecker.java" startLine="65" startPosition="7" endLine="66" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9116864641330940838" fileName="ReferenceableConceptsChecker.java" startLine="68" startPosition="233" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="9116864641331076456" fileName="ReferenceableConceptsChecker.java" startLine="70" startPosition="9" endLine="71" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9116864641330940841" fileName="ReferenceableConceptsChecker.java" startLine="72" startPosition="29" endLine="73" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404391560346693210" fileName="ReferenceableConceptsChecker.java" startLine="73" startPosition="157" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8404391560346994903" fileName="ReferenceableConceptsChecker.java" startLine="75" startPosition="9" endLine="76" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8404391560346717755" fileName="ReferenceableConceptsChecker.java" startLine="76" startPosition="112" endLine="77" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404391560347352144" fileName="ReferenceableConceptsChecker.java" startLine="77" startPosition="60" endLine="78" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8404391560346969648" fileName="ReferenceableConceptsChecker.java" startLine="79" startPosition="34" endLine="80" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404391560347023157" fileName="ReferenceableConceptsChecker.java" startLine="80" startPosition="63" endLine="81" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744617160876" fileName="ReferenceableConceptsChecker.java" startLine="84" startPosition="5" endLine="85" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9116864641331521652" fileName="ReferenceableConceptsChecker.java" startLine="90" startPosition="137" endLine="91" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9116864641331761942" fileName="ReferenceableConceptsChecker.java" startLine="92" startPosition="30" endLine="93" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9116864641332324199" fileName="ReferenceableConceptsChecker.java" startLine="95" startPosition="113" endLine="96" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8404391560346837816" fileName="ReferenceableConceptsChecker.java" startLine="96" startPosition="114" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8404391560347216278" fileName="ReferenceableConceptsChecker.java" startLine="99" startPosition="84" endLine="100" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404391560347216307" fileName="ReferenceableConceptsChecker.java" startLine="101" startPosition="102" endLine="102" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8404391560346888529" fileName="ReferenceableConceptsChecker.java" startLine="103" startPosition="9" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9116864641332575241" fileName="ReferenceableConceptsChecker.java" startLine="106" startPosition="84" endLine="107" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9116864641332713778" fileName="ReferenceableConceptsChecker.java" startLine="108" startPosition="102" endLine="109" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9116864641332116184" fileName="ReferenceableConceptsChecker.java" startLine="112" startPosition="12" endLine="113" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1833497744617160069" fileName="ReferenceableConceptsChecker.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReferenceableConceptsChecker#()V" />
+    <nodeInfo nodeId="9116864641332106889" fileName="ReferenceableConceptsChecker.java" startLine="112" startPosition="10" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9116864641331714153" fileName="ReferenceableConceptsChecker.java" startLine="33" startPosition="130" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1833497744617160719" fileName="ReferenceableConceptsChecker.java" startLine="38" startPosition="97" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1833497744618166847" fileName="ReferenceableConceptsChecker.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1833497744618669099" fileName="ReferenceableConceptsChecker.java" startLine="53" startPosition="115" endLine="56" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9116864641330940813" fileName="ReferenceableConceptsChecker.java" startLine="62" startPosition="86" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9116864641330940826" fileName="ReferenceableConceptsChecker.java" startLine="67" startPosition="89" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9116864641331567102" fileName="ReferenceableConceptsChecker.java" startLine="91" startPosition="123" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9116864641330940839" fileName="ReferenceableConceptsChecker.java" startLine="71" startPosition="85" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8404391560346929328" fileName="ReferenceableConceptsChecker.java" startLine="78" startPosition="59" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="8404391560347216276" fileName="ReferenceableConceptsChecker.java" startLine="98" startPosition="23" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9116864641332345324" fileName="ReferenceableConceptsChecker.java" startLine="105" startPosition="14" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1833497744618435637" fileName="ReferenceableConceptsChecker.java" startLine="51" startPosition="73" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8404391560346897574" fileName="ReferenceableConceptsChecker.java" startLine="105" startPosition="12" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1833497744617856788" fileName="ReferenceableConceptsChecker.java" startLine="45" startPosition="154" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8404391560346888528" fileName="ReferenceableConceptsChecker.java" startLine="97" startPosition="0" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1833497744617789128" fileName="ReferenceableConceptsChecker.java" startLine="44" startPosition="45" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2019037713128002486" fileName="ReferenceableConceptsChecker.java" startLine="43" startPosition="0" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9116864641330940821" fileName="ReferenceableConceptsChecker.java" startLine="66" startPosition="41" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9116864641332055580" fileName="ReferenceableConceptsChecker.java" startLine="94" startPosition="5" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9116864641330940808" fileName="ReferenceableConceptsChecker.java" startLine="61" startPosition="0" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8404391560346666023" fileName="ReferenceableConceptsChecker.java" startLine="90" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkNode#(Ljava/util/List;Lorg/jetbrains/mps/openapi/model/SNode;ZZLorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1833497744617160687" fileName="ReferenceableConceptsChecker.java" startLine="31" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkModel#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/progress/ProgressMonitor;Ljetbrains/mps/smodel/IOperationContext;)Ljava/util/List;" />
+    <scopeInfo nodeId="1833497744617160073" fileName="ReferenceableConceptsChecker.java" startLine="28" startPosition="41" endLine="28" endPosition="41" />
+    <scopeInfo nodeId="9116864641331714154" fileName="ReferenceableConceptsChecker.java" startLine="34" startPosition="112" endLine="35" endPosition="21" />
+    <scopeInfo nodeId="1833497744617160723" fileName="ReferenceableConceptsChecker.java" startLine="39" startPosition="31" endLine="40" endPosition="21" />
+    <scopeInfo nodeId="1833497744618166848" fileName="ReferenceableConceptsChecker.java" startLine="47" startPosition="43" endLine="48" endPosition="91" />
+    <scopeInfo nodeId="1833497744618669101" fileName="ReferenceableConceptsChecker.java" startLine="54" startPosition="88" endLine="55" endPosition="216" />
+    <scopeInfo nodeId="9116864641330940814" fileName="ReferenceableConceptsChecker.java" startLine="63" startPosition="33" endLine="64" endPosition="14" />
+    <scopeInfo nodeId="9116864641330940837" fileName="ReferenceableConceptsChecker.java" startLine="68" startPosition="233" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="9116864641331567104" fileName="ReferenceableConceptsChecker.java" startLine="92" startPosition="30" endLine="93" endPosition="122" />
+    <scopeInfo nodeId="8404391560347216277" fileName="ReferenceableConceptsChecker.java" startLine="99" startPosition="84" endLine="100" endPosition="242" />
+    <scopeInfo nodeId="8404391560347216306" fileName="ReferenceableConceptsChecker.java" startLine="101" startPosition="102" endLine="102" endPosition="246" />
+    <scopeInfo nodeId="9116864641332345326" fileName="ReferenceableConceptsChecker.java" startLine="106" startPosition="84" endLine="107" endPosition="207" />
+    <scopeInfo nodeId="9116864641332359535" fileName="ReferenceableConceptsChecker.java" startLine="108" startPosition="102" endLine="109" endPosition="226" />
+    <scopeInfo nodeId="9116864641332106890" fileName="ReferenceableConceptsChecker.java" startLine="112" startPosition="12" endLine="113" endPosition="127" />
+    <scopeInfo nodeId="1833497744617160069" fileName="ReferenceableConceptsChecker.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="9116864641330940840" fileName="ReferenceableConceptsChecker.java" startLine="72" startPosition="29" endLine="74" endPosition="19" />
+    <scopeInfo nodeId="8404391560346929332" fileName="ReferenceableConceptsChecker.java" startLine="79" startPosition="34" endLine="81" endPosition="57" />
+    <scopeInfo nodeId="1833497744618166847" fileName="ReferenceableConceptsChecker.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1833497744618166847" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1833497744618435639" fileName="ReferenceableConceptsChecker.java" startLine="52" startPosition="114" endLine="56" endPosition="13">
+      <varInfo nodeId="1833497744618635041" varName="decl" />
+    </scopeInfo>
+    <scopeInfo nodeId="8404391560346897575" fileName="ReferenceableConceptsChecker.java" startLine="105" startPosition="14" endLine="110" endPosition="9" />
+    <scopeInfo nodeId="8404391560346888530" fileName="ReferenceableConceptsChecker.java" startLine="98" startPosition="23" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="1833497744617856794" fileName="ReferenceableConceptsChecker.java" startLine="50" startPosition="13" endLine="57" endPosition="11">
+      <varInfo nodeId="1833497744618408760" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="1833497744617789134" fileName="ReferenceableConceptsChecker.java" startLine="45" startPosition="154" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="1833497744617856788" fileName="ReferenceableConceptsChecker.java" startLine="45" startPosition="154" endLine="58" endPosition="9">
+      <varInfo nodeId="1833497744617856790" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="1833497744617789128" fileName="ReferenceableConceptsChecker.java" startLine="44" startPosition="45" endLine="59" endPosition="7">
+      <varInfo nodeId="1833497744617789130" varName="concept" />
+    </scopeInfo>
+    <scopeInfo nodeId="2019037713128002488" fileName="ReferenceableConceptsChecker.java" startLine="44" startPosition="45" endLine="59" endPosition="7" />
+    <scopeInfo nodeId="9116864641330940825" fileName="ReferenceableConceptsChecker.java" startLine="67" startPosition="89" endLine="82" endPosition="9">
+      <varInfo nodeId="8404391560347352147" varName="ancestor" />
+      <varInfo nodeId="8404391560346994904" varName="sameRoot" />
+      <varInfo nodeId="9116864641331076457" varName="target" />
+    </scopeInfo>
+    <scopeInfo nodeId="9116864641332055582" fileName="ReferenceableConceptsChecker.java" startLine="95" startPosition="113" endLine="111" endPosition="7">
+      <varInfo nodeId="9116864641332324200" varName="decl" />
+    </scopeInfo>
+    <scopeInfo nodeId="9116864641330940821" fileName="ReferenceableConceptsChecker.java" startLine="66" startPosition="41" endLine="83" endPosition="7">
+      <varInfo nodeId="9116864641330940976" varName="ref" />
+    </scopeInfo>
+    <scopeInfo nodeId="9116864641330940812" fileName="ReferenceableConceptsChecker.java" startLine="62" startPosition="86" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="9116864641330940808" fileName="ReferenceableConceptsChecker.java" startLine="61" startPosition="0" endLine="84" endPosition="5">
+      <varInfo nodeId="9116864641330940977" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8404391560346729489" fileName="ReferenceableConceptsChecker.java" startLine="90" startPosition="137" endLine="114" endPosition="5">
+      <varInfo nodeId="9116864641331521653" varName="conceptDecl" />
+    </scopeInfo>
+    <scopeInfo nodeId="8404391560346666023" fileName="ReferenceableConceptsChecker.java" startLine="90" startPosition="0" endLine="116" endPosition="0">
+      <varInfo nodeId="8404391560347321214" varName="anchor" />
+      <varInfo nodeId="8404391560346678346" varName="isAncestor" />
+      <varInfo nodeId="8404391560346667835" varName="node" />
+      <varInfo nodeId="8404391560346667551" varName="results" />
+      <varInfo nodeId="8404391560346677687" varName="sameRoot" />
+    </scopeInfo>
+    <scopeInfo nodeId="1833497744617160691" fileName="ReferenceableConceptsChecker.java" startLine="32" startPosition="146" endLine="85" endPosition="19">
+      <varInfo nodeId="1833497744617160701" varName="results" />
+      <varInfo nodeId="1833497744617160710" varName="title" />
+    </scopeInfo>
+    <scopeInfo nodeId="1833497744617160687" fileName="ReferenceableConceptsChecker.java" startLine="31" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1833497744617160689" varName="model" />
+      <varInfo nodeId="1833497744617160881" varName="monitor" />
+      <varInfo nodeId="1833497744617160883" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="1833497744618166847" fileName="ReferenceableConceptsChecker.java" startLine="46" startPosition="119" endLine="50" endPosition="9" unitName="jetbrains.mps.ide.modelchecker.actions.ReferenceableConceptsChecker$1" />
+    <unitInfo nodeId="1833497744617099302" fileName="ReferenceableConceptsChecker.java" startLine="27" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ReferenceableConceptsChecker" />
+  </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/2786701023156660698">
     <nodeInfo nodeId="2786701023156660699" fileName="SpecificModelChecker.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguageCheckers" />
     <nodeInfo nodeId="7736411024399746344" fileName="SpecificModelChecker.java" startLine="31" startPosition="33" endLine="32" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3122,17 +3336,18 @@
     <nodeInfo nodeId="603051750760797676" fileName="ToolsInternalEx_ActionGroup.java" startLine="17" startPosition="123" endLine="18" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6550340959293399133" fileName="ToolsInternalEx_ActionGroup.java" startLine="18" startPosition="126" endLine="19" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7224745844707401201" fileName="ToolsInternalEx_ActionGroup.java" startLine="19" startPosition="119" endLine="20" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="21" startPosition="27" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="15" startPosition="25" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="12" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ToolsInternalEx_ActionGroup#()V" />
-    <scopeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="21" startPosition="0" endLine="22" endPosition="39">
+    <nodeInfo nodeId="1833497744619757838" fileName="ToolsInternalEx_ActionGroup.java" startLine="20" startPosition="126" endLine="21" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="22" startPosition="27" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="15" startPosition="25" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="12" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ToolsInternalEx_ActionGroup#()V" />
+    <scopeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="22" startPosition="0" endLine="23" endPosition="39">
       <varInfo nodeId="5361317699454626937" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="21" startPosition="27" endLine="22" endPosition="39" />
-    <scopeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="16" startPosition="9" endLine="20" endPosition="126" />
-    <scopeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="12" startPosition="40" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="12" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup" />
+    <scopeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="22" startPosition="27" endLine="23" endPosition="39" />
+    <scopeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="16" startPosition="9" endLine="21" endPosition="131" />
+    <scopeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="12" startPosition="40" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="12" startPosition="0" endLine="26" endPosition="0" />
+    <unitInfo nodeId="5361317699454626937" fileName="ToolsInternalEx_ActionGroup.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup" />
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/6550340959293376935">
     <nodeInfo nodeId="6550340959293376935" fileName="FindAllAdapterUsages_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -3285,30 +3500,31 @@
     <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="32" startPosition="43" endLine="33" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="33" startPosition="41" endLine="34" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="34" startPosition="49" endLine="35" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="35" startPosition="56" endLine="36" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="36" startPosition="56" endLine="37" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="37" startPosition="53" endLine="38" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="38" startPosition="45" endLine="39" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="39" startPosition="14" endLine="40" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="40" startPosition="43" endLine="41" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="41" startPosition="44" endLine="42" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="42" startPosition="47" endLine="43" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="43" startPosition="45" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="44" startPosition="53" endLine="45" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="48" startPosition="37" endLine="49" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="49" startPosition="126" endLine="50" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="50" startPosition="130" endLine="51" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="51" startPosition="139" endLine="52" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="52" startPosition="124" endLine="53" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="53" startPosition="136" endLine="54" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="57" startPosition="48" endLine="58" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="58" startPosition="92" endLine="59" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="59" startPosition="71" endLine="60" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="35" startPosition="56" endLine="36" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="36" startPosition="61" endLine="37" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="37" startPosition="56" endLine="38" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="38" startPosition="53" endLine="39" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="39" startPosition="45" endLine="40" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="40" startPosition="14" endLine="41" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="41" startPosition="43" endLine="42" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="42" startPosition="44" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="43" startPosition="47" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="44" startPosition="45" endLine="45" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="45" startPosition="53" endLine="46" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="49" startPosition="37" endLine="50" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="50" startPosition="126" endLine="51" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="51" startPosition="130" endLine="52" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="52" startPosition="139" endLine="53" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="53" startPosition="124" endLine="54" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="54" startPosition="136" endLine="55" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="58" startPosition="48" endLine="59" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="59" startPosition="92" endLine="60" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="60" startPosition="71" endLine="61" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Modelchecker_ApplicationPlugin#()V" />
     <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initKeymaps#()Ljava/util/List;" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="48" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
-    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="28" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initKeymaps#()Ljava/util/List;" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="49" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
+    <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="28" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
     <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ProjectPlugin.java" startLine="16" startPosition="64" endLine="17" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ProjectPlugin.java" startLine="17" startPosition="94" endLine="18" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7162597690968047815" fileName="Modelchecker_ProjectPlugin.java" startLine="18" startPosition="80" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3318,14 +3534,14 @@
     <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="24" startPosition="27" endLine="25" endPosition="16" />
     <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="57" startPosition="48" endLine="60" endPosition="15">
+    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="58" startPosition="48" endLine="61" endPosition="15">
       <varInfo nodeId="7162597690968047815" varName="res" />
     </scopeInfo>
-    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="57" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="48" startPosition="37" endLine="54" endPosition="95" />
-    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="48" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="28" startPosition="30" endLine="45" endPosition="48" />
-    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="28" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="58" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="49" startPosition="37" endLine="55" endPosition="95" />
+    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="49" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="28" startPosition="30" endLine="46" endPosition="48" />
+    <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="28" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ProjectPlugin.java" startLine="13" startPosition="39" endLine="13" endPosition="39" />
     <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ProjectPlugin.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
     <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ProjectPlugin.java" startLine="16" startPosition="64" endLine="19" endPosition="17">
@@ -3334,7 +3550,7 @@
     <scopeInfo nodeId="7162597690968047815" fileName="Modelchecker_ProjectPlugin.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="7162597690968047815" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ApplicationPlugin" />
+    <unitInfo nodeId="7162597690968047815" fileName="Modelchecker_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ApplicationPlugin" />
     <unitInfo nodeId="7162597690968047815" fileName="Modelchecker_ProjectPlugin.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.Modelchecker_ProjectPlugin" />
   </root>
   <root nodeRef="r:e2c8c94a-404b-4b97-a3a4-c76946bd1913(jetbrains.mps.ide.modelchecker.actions)/7224745844707398031">
