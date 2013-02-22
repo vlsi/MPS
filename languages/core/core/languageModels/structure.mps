@@ -39,6 +39,7 @@
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1234971358450">
       <property name="name" nameId="1169194664001" value="IType" />
+      <property name="virtualPackage" nameId="1193676396447" value="types" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="201537367881071930">
       <property name="name" nameId="1169194664001" value="IMetaLevelChanger" />
@@ -108,15 +109,19 @@
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1047408822409601647">
       <property name="name" nameId="1169194664001" value="IAntisuppressErrors" />
+      <property name="virtualPackage" nameId="1193676396447" value="types" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3393165121846091586">
       <property name="name" nameId="1169194664001" value="ICanSuppressErrors" />
+      <property name="virtualPackage" nameId="1193676396447" value="types" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3393165121846091587">
       <property name="name" nameId="1169194664001" value="ISuppressErrors" />
+      <property name="virtualPackage" nameId="1193676396447" value="types" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4222318806802425298">
       <property name="name" nameId="1169194664001" value="SuppressErrorsAnnotation" />
+      <property name="virtualPackage" nameId="1193676396447" value="types" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1835621062190663819">
@@ -190,7 +195,9 @@
   <root id="1224608834445" />
   <root id="1233160296597" />
   <root id="1234971358450" />
-  <root id="201537367881071930" />
+  <root id="201537367881071930">
+    <node role="smodelAttribute" roleId="5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="8087047305080758029" />
+  </root>
   <root id="5425021671150136555" />
   <root id="2565736246230036150">
     <node role="smodelAttribute" roleId="5169995583184591170" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="4075196924244431954" />

@@ -61,12 +61,14 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="3393165121846091588">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpck.3393165121846091587" resolveInfo="ISuppressErrors" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1262430001741497903">
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpck.5169995583184591161" resolveInfo="Attribute" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="1262430001741646630">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpck.4222318806802425298" resolveInfo="SuppressErrorsAnnotation" />
     </node>
   </roots>
