@@ -240,7 +240,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         ModuleReference child = (ModuleReference) value;
-        fieldmodel.addEngagedOnGenerationLanguage(child);
+        ((ABCDE) fieldmodel).addEngagedOnGenerationLanguage(child);
         return;
       }
       if ("devkit".equals(tagName)) {

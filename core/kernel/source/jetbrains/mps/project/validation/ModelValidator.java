@@ -66,7 +66,7 @@ public class ModelValidator {
 
     List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
     langsToCheck.addAll(IterableUtil.asCollection(myModel.getModelDepsManager().getAllImportedLanguages()));
-    langsToCheck.addAll(myModel.engagedOnGenerationLanguages());
+    langsToCheck.addAll(((ABCDE) myModel).engagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
         errors.add("Can't find language: " + lang.getModuleFqName());

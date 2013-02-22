@@ -146,7 +146,7 @@ public class OptimizeImportsHelper {
   private Result collectModelDependencies(SModelDescriptor modelDescriptor) {
     Result result = new Result();
 
-    for (ModuleReference ref : modelDescriptor.getSModel().engagedOnGenerationLanguages()) {
+    for (ModuleReference ref : ((ABCDE) modelDescriptor.getSModel()).engagedOnGenerationLanguages()) {
       result.myUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(ref, Language.class));
     }
     for (SNode node : new NodesIterable(modelDescriptor.getSModel())) {

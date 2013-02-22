@@ -195,7 +195,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
           return false;
         }
       };
-      model.addEngagedOnGenerationLanguage(BootstrapLanguages.DESCRIPTOR);
+      ((ABCDE) model).addEngagedOnGenerationLanguage(BootstrapLanguages.DESCRIPTOR);
       return model;
     }
 

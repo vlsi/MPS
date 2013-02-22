@@ -297,7 +297,7 @@ public class ModelPersistence {
       modelPersistence = getCurrentModelPersistence();
     }
 
-    sourceModel.calculateImplicitImports();
+    ((ABCDE) sourceModel).calculateImplicitImports();
     return modelPersistence.getModelWriter().saveModel(sourceModel);
   }
 

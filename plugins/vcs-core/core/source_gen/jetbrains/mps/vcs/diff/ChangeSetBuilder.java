@@ -244,7 +244,7 @@ public class ChangeSetBuilder {
     });
     buildForDependencies(ModuleDependencyChange.DependencyType.LANG_ENGAGED_ON_GENERATION, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
       public List<ModuleReference> invoke(SModel model) {
-        return model.engagedOnGenerationLanguages();
+        return ((ABCDE) model).engagedOnGenerationLanguages();
       }
     });
 

@@ -57,10 +57,10 @@ public final class CopyUtil {
     for (ModuleReference mr : new ArrayList<ModuleReference>(((ABCDE) model).importedLanguages())) {
       ((ABCDE) model).deleteLanguage(mr);
     }
-    for (ModuleReference mr : new ArrayList<ModuleReference>(model.engagedOnGenerationLanguages())) {
-      model.removeEngagedOnGenerationLanguage(mr);
+    for (ModuleReference mr : new ArrayList<ModuleReference>(((ABCDE) model).engagedOnGenerationLanguages())) {
+      ((ABCDE) model).removeEngagedOnGenerationLanguage(mr);
     }
-    model.calculateImplicitImports();
+    ((ABCDE) model).calculateImplicitImports();
   }
 
   public static void copyModelProperties(SModel from, SModel to) {

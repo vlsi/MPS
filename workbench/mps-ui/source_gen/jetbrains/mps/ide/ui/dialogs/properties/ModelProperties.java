@@ -44,7 +44,7 @@ public class ModelProperties {
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
     myUsedLanguages.addAll(((ABCDE) model).importedLanguages());
     myUsedDevKits.addAll(((ABCDE) model).importedDevkits());
-    myLanguagesEngagedOnGeneration.addAll(model.engagedOnGenerationLanguages());
+    myLanguagesEngagedOnGeneration.addAll(((ABCDE) model).engagedOnGenerationLanguages());
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
     myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
   }
@@ -56,7 +56,7 @@ public class ModelProperties {
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
     myUsedLanguages.addAll(((ABCDE) model).importedLanguages());
     myUsedDevKits.addAll(((ABCDE) model).importedDevkits());
-    myLanguagesEngagedOnGeneration.addAll(model.engagedOnGenerationLanguages());
+    myLanguagesEngagedOnGeneration.addAll(((ABCDE) model).engagedOnGenerationLanguages());
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
     myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
   }
@@ -185,20 +185,20 @@ public class ModelProperties {
   }
 
   private void addNewEngagedOnGenerationLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(myModelDescriptor.getSModel().engagedOnGenerationLanguages());
+    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((ABCDE) myModelDescriptor.getSModel()).engagedOnGenerationLanguages());
     Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getLanguagesEngagedOnGeneration());
     languagesInProps.removeAll(languagesInModel);
     for (ModuleReference namespace : languagesInProps) {
-      myModelDescriptor.getSModel().addEngagedOnGenerationLanguage(namespace);
+      ((ABCDE) myModelDescriptor.getSModel()).addEngagedOnGenerationLanguage(namespace);
     }
   }
 
   private void removeUnusedEngagedOnGenerationLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(myModelDescriptor.getSModel().engagedOnGenerationLanguages());
+    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((ABCDE) myModelDescriptor.getSModel()).engagedOnGenerationLanguages());
     Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getLanguagesEngagedOnGeneration());
     languagesInModel.removeAll(languagesInProps);
     for (ModuleReference ref : languagesInModel) {
-      myModelDescriptor.getSModel().removeEngagedOnGenerationLanguage(ref);
+      ((ABCDE) myModelDescriptor.getSModel()).removeEngagedOnGenerationLanguage(ref);
     }
   }
 

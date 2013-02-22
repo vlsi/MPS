@@ -70,11 +70,11 @@ public class ModuleDependencyChange extends DependencyChange {
     }),
     LANG_ENGAGED_ON_GENERATION("Language Engaged on Generation", new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.addEngagedOnGenerationLanguage(module);
+        ((ABCDE) model).addEngagedOnGenerationLanguage(module);
       }
     }, new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.removeEngagedOnGenerationLanguage(module);
+        ((ABCDE) model).removeEngagedOnGenerationLanguage(module);
       }
     });
 

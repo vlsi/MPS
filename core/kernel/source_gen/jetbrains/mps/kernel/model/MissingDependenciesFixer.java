@@ -69,7 +69,7 @@ public class MissingDependenciesFixer {
           md.getDependencies().add(dep);
           wereChanges = true;
         }
-        for (ModuleReference namespace : CollectionUtil.union(((ABCDE) myModelDescriptor.getSModel()).importedLanguages(), myModelDescriptor.getSModel().engagedOnGenerationLanguages())) {
+        for (ModuleReference namespace : CollectionUtil.union(((ABCDE) myModelDescriptor.getSModel()).importedLanguages(), ((ABCDE) myModelDescriptor.getSModel()).engagedOnGenerationLanguages())) {
           if (ScopeOperations.resolveModule(moduleScope, namespace, Language.class) != null) {
             continue;
           }

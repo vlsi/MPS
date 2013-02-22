@@ -192,7 +192,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
               }
 
               for (ModuleReference mr : myModelProperties.getLanguagesInGeneration()) {
-                model.getSModel().addEngagedOnGenerationLanguage(mr);
+                ((ABCDE) model.getSModel()).addEngagedOnGenerationLanguage(mr);
               }
 
               SModel smodel = model.getSModel();

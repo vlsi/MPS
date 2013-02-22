@@ -16,7 +16,6 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.persistence.binary.BinarySModel.InvalidBinarySModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
@@ -136,7 +135,7 @@ public class BinaryPersistence {
     BinarySModel model = new BinarySModel(modelHeader);
 
     for (ModuleReference ref : loadModuleRefList(is)) ((ABCDE) model).addLanguage(ref);
-    for (ModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) ((ABCDE) model).addEngagedOnGenerationLanguage(ref);
     for (ModuleReference ref : loadModuleRefList(is)) ((ABCDE) model).addDevKit(ref);
 
     for (ImportElement imp : loadImports(is)) ((ABCDE) model).addModelImport(imp);
@@ -180,7 +179,7 @@ public class BinaryPersistence {
     os.writeInt(0xabab);
 
     saveModuleRefList(((ABCDE) model).importedLanguages(), os);
-    saveModuleRefList(model.engagedOnGenerationLanguages(), os);
+    saveModuleRefList(((ABCDE) model).engagedOnGenerationLanguages(), os);
     saveModuleRefList(((ABCDE) model).importedDevkits(), os);
 
     // imports

@@ -135,14 +135,14 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
       if (langToDep != null) {
         SNodeOperations.getModel(node).getModelDescriptor().getModule().addDependency(langToDep.getModuleReference(), false);
       }
-      for (ModuleReference eng : SNodeOperations.getModel(node).engagedOnGenerationLanguages()) {
+      for (ModuleReference eng : ((ABCDE) SNodeOperations.getModel(node)).engagedOnGenerationLanguages()) {
         if (eng.equals(langRefToEng)) {
           langRefToEng = null;
           break;
         }
       }
       if (langRefToEng != null) {
-        SNodeOperations.getModel(node).addEngagedOnGenerationLanguage(langRefToEng);
+        ((ABCDE) SNodeOperations.getModel(node)).addEngagedOnGenerationLanguage(langRefToEng);
       }
     }
 

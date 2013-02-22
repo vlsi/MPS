@@ -53,7 +53,7 @@ public class ModelWriter6 implements IModelWriter {
     }
 
     // languages engaged on generation
-    for (ModuleReference languageNamespace : sourceModel.engagedOnGenerationLanguages()) {
+    for (ModuleReference languageNamespace : ((ABCDE) sourceModel).engagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);

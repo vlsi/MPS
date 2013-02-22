@@ -764,11 +764,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     myImplicitImports = implicitImports;
   }
 
-  public List<ModuleReference> engagedOnGenerationLanguages() {
+  private List<ModuleReference> engagedOnGenerationLanguages() {
     return myLanguagesEngagedOnGeneration;
   }
 
-  public void addEngagedOnGenerationLanguage(ModuleReference ref) {
+  private void addEngagedOnGenerationLanguage(ModuleReference ref) {
     ModelChange.assertLegalChange(this);
 
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
@@ -1025,8 +1025,8 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     for (ModuleReference mr : ((ABCDE) this).importedLanguages()) {
       ((ABCDE) to).addLanguage(mr);
     }
-    for (ModuleReference mr : engagedOnGenerationLanguages()) {
-      to.addEngagedOnGenerationLanguage(mr);
+    for (ModuleReference mr : ((ABCDE) this).engagedOnGenerationLanguages()) {
+      ((ABCDE) to).addEngagedOnGenerationLanguage(mr);
     }
     to.setVersion(getVersion());
   }

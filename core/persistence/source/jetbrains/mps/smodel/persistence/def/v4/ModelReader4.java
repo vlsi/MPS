@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.persistence.def.v4;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
@@ -82,7 +81,7 @@ public class ModelReader4 implements IModelReader {
     for (Object languageEOG : languagesEOG) {
       Element element = (Element) languageEOG;
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addEngagedOnGenerationLanguage(ModuleReference.fromString(languageNamespace));
+      ((ABCDE) model).addEngagedOnGenerationLanguage(ModuleReference.fromString(languageNamespace));
     }
 
     //devkits

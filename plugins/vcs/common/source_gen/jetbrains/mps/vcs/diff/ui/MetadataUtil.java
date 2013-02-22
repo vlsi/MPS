@@ -48,7 +48,7 @@ public class MetadataUtil {
     for (ModuleReference language : ListSequence.fromList(((ABCDE) model).importedLanguages())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).addElement(createModuleRefNode(language));
     }
-    for (ModuleReference genlanguage : ListSequence.fromList(model.engagedOnGenerationLanguages())) {
+    for (ModuleReference genlanguage : ListSequence.fromList(((ABCDE) model).engagedOnGenerationLanguages())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "languageEngagedOnGeneration", true)).addElement(createModuleRefNode(genlanguage));
     }
     for (ModuleReference devkit : ListSequence.fromList(((ABCDE) model).importedDevkits())) {
@@ -104,7 +104,7 @@ public class MetadataUtil {
       }
     });
 
-    Set<ModuleReference> oldGenLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), model.engagedOnGenerationLanguages());
+    Set<ModuleReference> oldGenLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ((ABCDE) model).engagedOnGenerationLanguages());
     Set<ModuleReference> genLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "languageEngagedOnGeneration", true)).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode it) {
         return new ModuleReference(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "uuid"));
@@ -112,12 +112,12 @@ public class MetadataUtil {
     }));
     SetSequence.fromSet(oldGenLang).subtract(SetSequence.fromSet(genLang)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        model.removeEngagedOnGenerationLanguage(it);
+        ((ABCDE) model).removeEngagedOnGenerationLanguage(it);
       }
     });
     SetSequence.fromSet(genLang).subtract(SetSequence.fromSet(oldGenLang)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        model.addEngagedOnGenerationLanguage(it);
+        ((ABCDE) model).addEngagedOnGenerationLanguage(it);
       }
     });
 
