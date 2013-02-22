@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-acs1znq6d4zmq0jt0ai12tqya72tq9">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
+<dependencies version="2" modelHash="4t5ik1rudyz9l2glcaxvqr8l1zd5m4m">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-8soze5k0le3otyjy54eb4zpg3kkfopd">
     <dep root="1029302639053433191" />
@@ -36,7 +36,7 @@
   <source id="1205752174734" name="IClassifierPart" hash="ea6vw7w613otrjew2yf1g2km4q06gt4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1205752633985" name="ThisClassifierExpression" hash="-5ojflykj8zbsyc46d1ussck9jozi8wp">
+  <source id="1205752633985" name="ThisClassifierExpression" hash="-8g069f6xp7kop59qvmozr34x99inb4m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1205752813637" name="BaseClassifierType" hash="-8xt5a8wbhakdrx503oldyct3xhiw2ct">
@@ -60,7 +60,7 @@
   <source id="1213999117680" name="DefaultClassifierFieldAccessOperation" hash="-bixwv59lfaum0qqt211ot4q15v1vq83">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217433449852" name="SuperClassifierExpresson" hash="4wxjfcdms5yw99gxqcieb1sb92vjz6n">
+  <source id="1217433449852" name="SuperClassifierExpresson" hash="-ffuyumd7q2zh2jgyyw7b5sb8l5tgtf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1029302639053433191" name="DefaultClassifier" hash="92oejneepcnn9ipg7u7b2srik8t8ex9">

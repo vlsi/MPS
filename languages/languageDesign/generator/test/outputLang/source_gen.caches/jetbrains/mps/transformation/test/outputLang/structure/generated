@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-aaemc3ituorynogzrct1nbonfop8j76">
+<dependencies version="2" modelHash="-57gnxdckjhht3n9ib6matr5500syspf">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3b9uwh1r9i2smq77zmq9p3qrq6vqn8i" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="5imvitjqsi0fj5c1fh2ttxqfrnitrkb">
     <dep root="1195164668463" />
@@ -36,7 +36,7 @@
   <source id="2681305894288486346" name="CustomStatement" hash="-bfawo0vfiqhtdyuw3vlor1i1at10m64">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2163819695913378074" name="CustomStatementRef" hash="-ebovygk36gzqnhkb5adfg5f2eqmhd4i">
+  <source id="2163819695913378074" name="CustomStatementRef" hash="emy5g6wxpwu85rmbs82h53llu4fdiom">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6010543442198679048" name="TwoVarStatement" hash="-67bdeiv1gicgvv7kg3nwujw2zieekk">

@@ -21,6 +21,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8974276187400348170" resolveInfo="BaseExecuteCommandStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8974276187400348173">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CommandClosureLiteral" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Command" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp2c.1199569711397" resolveInfo="ClosureLiteral" />

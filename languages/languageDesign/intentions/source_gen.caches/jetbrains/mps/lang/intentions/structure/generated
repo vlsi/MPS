@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8ytuyctcmu2mkxg3flzbwv6f694owy5">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-33tlavyfw081dpoo7kr33x973l53rit" />
+<dependencies version="2" modelHash="-7d6rz9n9hroajm9e6gydedrwph1agkz">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-45arjhe2p2477jk2gpv6olrk1ieqc75" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
-  <dep model="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" hash="60b6ox1q136tykeqjkfgdkqt4lyz2i8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
+  <dep model="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" hash="-245f2ehq7rczm93ykkf5ajsmswcert" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="d27kpx5qz2l5bm3n3ezaw29l3awpqa6">
     <dep root="1192794744107" />
@@ -45,13 +45,13 @@
   <source id="1192795911897" name="ExecuteBlock" hash="-6xohi3ipxsntoxbuvc75fgp49bi0p1z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1192796902958" name="ConceptFunctionParameter_node" hash="edmp0q1nibet8zapl3glrhdt3ptsbmz">
+  <source id="1192796902958" name="ConceptFunctionParameter_node" hash="8x7zi4vdtln7kn3fljzyzvzon98wage">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1240316299033" name="QueryBlock" hash="cerwquvcsjujigxp2vbpjtlc2j11yjv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1240322627579" name="IntentionParameter" hash="bnuedcdjfgj9yyi8tkjb0mpd38h1bnv">
+  <source id="1240322627579" name="IntentionParameter" hash="an5mx2vu0ifjsq58iap2jac8bpmq2h5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1240395258925" name="ParameterizedIntentionDeclaration" hash="-c5jv6jckgspydtpd46tssqpu9d5qjp3">
@@ -63,7 +63,7 @@
   <source id="3618415754251190715" name="ChildFilterFunction" hash="-f5pdf6iv87p4ffv045cj3rgm65lhjr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3618415754251192144" name="ConceptFunctionParameter_childNode" hash="926c0ymapbbdkjl8eb40zpj35rp64kq">
+  <source id="3618415754251192144" name="ConceptFunctionParameter_childNode" hash="5lq35uztml6jmme5m7n4s1q6k4ry180">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2522969319638091381" name="BaseIntentionDeclaration" hash="vfe2ks8u2ci5ob1g63gvxjc24bnfhf">

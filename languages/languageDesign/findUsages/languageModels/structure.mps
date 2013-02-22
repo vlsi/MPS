@@ -37,6 +37,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="function parameter" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_node" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Methods" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
@@ -63,6 +64,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1206197741569">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteFinderExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Statements" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="execute" />
@@ -110,6 +112,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2005690715325995353">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ExecuteFindersGetSearchResults" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Statements" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="execute finders" />
@@ -122,6 +125,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6366407517031508177">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MakeResultProvider" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Statements" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="make result provider" />

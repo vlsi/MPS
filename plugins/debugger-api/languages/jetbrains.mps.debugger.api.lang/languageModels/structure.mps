@@ -15,8 +15,8 @@
   <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3157158168562217892">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BreakpointCreator" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints" />
@@ -36,6 +36,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1270798772176052876">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_Debug_Project" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.create" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="project" />
@@ -44,6 +45,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1270798772176052880">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_DebuggableNode" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.create" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="debuggableNode" />
@@ -65,6 +67,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1104094430779068753">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="DebuggerReference" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="debugger" />
@@ -102,6 +105,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8751745335399632077">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_Concept" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.isApplicable" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="concept" />

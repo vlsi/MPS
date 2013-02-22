@@ -35,6 +35,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1192796902958">
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="function parameter" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -47,6 +48,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1240322627579">
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="intention parameter" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IntentionParameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="parameterized" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="parameter" />
@@ -71,6 +73,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3618415754251192144">
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="function parameter" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptFunctionParameter_childNode" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="childNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />

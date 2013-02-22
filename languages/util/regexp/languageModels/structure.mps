@@ -89,6 +89,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174510540317">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="InlineRegexpExpression" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="/regexp/" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1174919147781" resolveInfo="RegexpExpression" />
@@ -200,6 +201,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1174482743037" resolveInfo="Regexp" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174565027678">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MatchVariableReference" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Expressions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -210,6 +212,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174655989549">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ReplaceWithRegexpExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Expressions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="replace with regexp" />
@@ -333,6 +336,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1174919147781">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="RegexpExpression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
@@ -367,6 +371,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="split with regexp" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SplitExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Expressions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="split with" />
@@ -384,6 +389,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1179357154354">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MatchRegexpExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Expressions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="matches" />
@@ -445,6 +451,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6129327962763158517">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="FindMatchExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Expressions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="=~" />

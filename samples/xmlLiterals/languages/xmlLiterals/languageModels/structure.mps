@@ -10,6 +10,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9152904044274328259">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="XmlLiteral" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="xml literal" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />

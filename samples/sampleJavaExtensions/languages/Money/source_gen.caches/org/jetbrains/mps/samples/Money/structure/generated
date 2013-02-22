@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1nsvsiprtozqc5fvys4ue2n9s06mzhr">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
+<dependencies version="2" modelHash="cxvpouv7uy7mmw53870b4xto0vaveq5">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <common hash="-5nbbui88n16xnzdr65hyo4zybcz08mx">
+  <common hash="3x8dkjn6dcfrdbj332g30xpv4vlad6k">
     <dep root="1790427706118304177" />
     <dep root="1790427706118381722" />
     <dep root="3607579524910560662" />
@@ -21,7 +21,7 @@
     <file name="Money_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="5447719361346490674" name="MoneyLiteral" hash="ep38axn6dzt0p1wfszvy8ugwnu1n814">
+  <source id="5447719361346490674" name="MoneyLiteral" hash="cw3or3ywqr07h0kd39y5yr9rrbfi6f5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5447719361346490730" name="MoneyType" hash="-ewzcmgf2i2p70dhbny408agcmhvyrc1">

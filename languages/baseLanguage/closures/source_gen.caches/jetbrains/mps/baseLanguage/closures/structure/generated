@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="daias02aat31n7gtwshkp9oxpkbyf2n">
+<dependencies version="2" modelHash="-as9vo0z1hw2p0ofzlx9h51db8s7kimh">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3b9uwh1r9i2smq77zmq9p3qrq6vqn8i" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="7tjazn7uqgdb7300n4e3b5qkxbvu7uy">
     <dep root="1199542442495" />
@@ -36,13 +36,13 @@
   <source id="1199542442495" name="FunctionType" hash="9aw2rboiwtg0u0bkgql7o1umdtoqiqu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1199547238293" name="InvokeFunctionExpression" hash="-cqjc5b3qd9k48b7b4lvwwh0ay117ztd">
+  <source id="1199547238293" name="InvokeFunctionExpression" hash="-7rngwnbx3v8ruiexnv62bunclfndnmj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1199569711397" name="ClosureLiteral" hash="-41u64p4vsos5s4fg54d1rqbl71ohi53">
+  <source id="1199569711397" name="ClosureLiteral" hash="-33atfe27i38luw53ow7qgx87cey17qq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1199711271002" name="InvokeExpression" hash="a1appzdd3kmugf1xlzrkjfi6zztwibz">
+  <source id="1199711271002" name="InvokeExpression" hash="-c9iq7bpppny5zfmpsotewqhiu6lnu2i">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1200830824066" name="YieldStatement" hash="-3p44xir7urubvsry7mtn419fkr97zm7">
@@ -63,13 +63,13 @@
   <source id="1228997946467" name="YieldAllStatement" hash="-7ak4hngb389gw8y31l69k1nazfktz9o">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1229598881739" name="UnrestrictedClosureLiteral" hash="d918lurb8w34z09rgqf7c9ce4we5opf">
+  <source id="1229598881739" name="UnrestrictedClosureLiteral" hash="-1q0whli2fwur40ibpb5ut4bddq7zs12">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1229599010201" name="ClosureControlStatement" hash="-28gih2zpec893489p693duy845c30ml">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1229599114269" name="ControlClosureLiteral" hash="detfnnr460q6jj1b8dielcbtkp4tu57">
+  <source id="1229599114269" name="ControlClosureLiteral" hash="-bdfyw7p2j31nh20fxd7vcz9ut2z74ep">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1229599750256" name="ControlAbstractionContainer" hash="8b8zkiu9zbr8yvu2k20qit7yjx32oi5">
@@ -81,7 +81,7 @@
   <source id="1229708828035" name="UnrestrictedFunctionType" hash="-9tij3vvg1eqhvgk2pl783v1byv4a99q">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1235746970280" name="CompactInvokeFunctionExpression" hash="ahqgc0iihpag2lwbz6jt3ete7w5fb52">
+  <source id="1235746970280" name="CompactInvokeFunctionExpression" hash="-1rtlfojsqid6hiz42fzhpqqnfpknwoj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4816492477345855364" name="FunctionMethodDeclaration" hash="-79jzg4vpx2h1thx08ljcccep12fs7vi">

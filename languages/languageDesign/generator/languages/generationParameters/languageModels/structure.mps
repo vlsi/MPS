@@ -17,8 +17,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8484425748929510072">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/parameters.png" />
       <property name="name" nameId="tpck.1169194664001" value="DefaultGeneratorParameterContainer" />
@@ -29,6 +29,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3064182000795631740">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="DefaultGenerationParameterId" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="parameter" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="genParameter&lt;..&gt;" />

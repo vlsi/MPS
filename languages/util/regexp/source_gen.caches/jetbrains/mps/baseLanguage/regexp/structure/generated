@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9h9os4iz3g032o7ok5j3ml6x7c1fcb0">
+<dependencies version="2" modelHash="51zru42q26chxi50wtrz4xvudhfv0u9">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3b9uwh1r9i2smq77zmq9p3qrq6vqn8i" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="5l7gn98t03h0yoyy47dk2a0v7ucgudd">
     <dep root="1174482743037" />
@@ -105,7 +105,7 @@
   <source id="1174491169200" name="ParensRegexp" hash="wylzh5mefa2n91mt7sfz7eravruscf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174510540317" name="InlineRegexpExpression" hash="-3p2skxcfozqm88jgp6lqrb37meprc3o">
+  <source id="1174510540317" name="InlineRegexpExpression" hash="119qzivc6xudd43pjsv7itxz1ch9cjt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1174512414484" name="MatchRegexpStatement" hash="4edcslj98thga8hkf7aqq8awjijdqmu">
@@ -150,13 +150,13 @@
   <source id="1174564062919" name="MatchParensRegexp" hash="-687hqvjti820cfnfq5mgybnfw79tgzz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174565027678" name="MatchVariableReference" hash="3w470b2rsjf9e2ah780zszj0uy50k5">
+  <source id="1174565027678" name="MatchVariableReference" hash="-erglb56j7aecesqs21tpi9ymfboc6xr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1174653354106" name="RegexpUsingConstruction" hash="-8bsbtzl1lwhsq3o53nyqd8l1y31dvpx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174655989549" name="ReplaceWithRegexpExpression" hash="c0ezjw95ik35ux38nk6afed0crglhcl">
+  <source id="1174655989549" name="ReplaceWithRegexpExpression" hash="-2n119rb5p6ac7my10l0lewp8x3j5una">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1174656254036" name="ReplaceBlock" hash="4kccs70jjr4q0x537qucwmm4hne3sue">
@@ -204,7 +204,7 @@
   <source id="1174909099093" name="MatchVariableReferenceRegexp" hash="b0rdb3e037phdvfugkcqa2sjzubwlk1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174919147781" name="RegexpExpression" hash="70x3uaa99xpmde8tfc71ehaczto6m">
+  <source id="1174919147781" name="RegexpExpression" hash="b6w436nnialq722giyxvslswflvkkfs">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1175154849582" name="ForEachMatchStatement" hash="25cwpib6o6rrrt1m074hmgpsddm4sf7">
@@ -216,13 +216,13 @@
   <source id="1175161300324" name="LineEndRegexp" hash="5c4z1vq76t4ral2cxoqs99hdic4qo1c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1175164405556" name="SplitExpression" hash="evmm7adkufsdgx5rnmzpabapr9etz1p">
+  <source id="1175164405556" name="SplitExpression" hash="-bv144d3bao9n41e5b2k05vshbphltw3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1175169009571" name="FindMatchStatement" hash="-eu6w3gays88yezx86dah6fffjv7s3y8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1179357154354" name="MatchRegexpExpression" hash="-d1tbgjnsezwno8zs3ax4bp5ibg9co9k">
+  <source id="1179357154354" name="MatchRegexpExpression" hash="62l59b5ic70t4v2lype9b5mb9vsc3qv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1203415418648" name="UnicodeCharacterRegexp" hash="-1zkebd5ky89wn8ln0um0w3q0r5qghod">
@@ -253,7 +253,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="_StringRegexp_PropertySupport.java" />
   </source>
-  <source id="6129327962763158517" name="FindMatchExpression" hash="-dtcgu64dw3sod3j2hb32eglbzjq4z7i">
+  <source id="6129327962763158517" name="FindMatchExpression" hash="64euuw3uuskp9nh6nq4lxr73imznddc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3796137614137086346" name="ReplaceRegexpOperation" hash="b2yc5k30vx15f0wrpfrzsk8tswkx6ox">

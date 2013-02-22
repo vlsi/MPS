@@ -27,6 +27,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="node to build DFA for" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="NodeParameter" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="BuilderBlock" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
@@ -210,6 +211,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2959643274329928484">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="GetCodeForExpression" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="get code for" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />

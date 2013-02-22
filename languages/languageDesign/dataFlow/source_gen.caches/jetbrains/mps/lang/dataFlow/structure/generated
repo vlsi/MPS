@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-durckn6liio02j0yda188lxoqrm3vhb">
+<dependencies version="2" modelHash="9ea4b34q1sf8zlk5gmwldzqr8xeswb1">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-45arjhe2p2477jk2gpv6olrk1ieqc75" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3b9uwh1r9i2smq77zmq9p3qrq6vqn8i" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-3sno2tk5pbm8ia9gmgfacafzm76a5v1">
     <dep root="1206442055221" />
@@ -54,7 +54,7 @@
   <source id="1206442659665" name="BuilderBlock" hash="-7e86fqhizfz74x9o3dsp8bhrqxsxpan">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1206442747519" name="NodeParameter" hash="c3pfz6txdngildy1re2h9lzk6kbhabe">
+  <source id="1206442747519" name="NodeParameter" hash="-rkcriqkfci74bzdydgxfds33v4mkjd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1206443583064" name="EmitStatement" hash="-7ta8ly9si3jh35bp29ut1m211adeza0">
@@ -120,7 +120,7 @@
   <source id="8486807419021026918" name="InsertPosition" hash="4dtp43mbdwdook6uyywrpi4zv4g6b5x">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2959643274329928484" name="GetCodeForExpression" hash="c8lpvo1lsz0jeopc6uno4rufmyttj2d">
+  <source id="2959643274329928484" name="GetCodeForExpression" hash="-csruff6ikl11jl845ylg39q9eyreq5n">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4969132436616196224" name="InstructionType" hash="-dv2g7r0d7b0pji6s6a901qa88o4zgj0">

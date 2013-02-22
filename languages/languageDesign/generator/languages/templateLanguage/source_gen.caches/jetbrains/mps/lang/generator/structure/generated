@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1btmsuay4m0oifxjqd0wk9bex9z4aer">
+<dependencies version="2" modelHash="-73ct2r3ual3mq3ssad45emk5norsbqn">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-33tlavyfw081dpoo7kr33x973l53rit" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-45arjhe2p2477jk2gpv6olrk1ieqc75" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
   <common hash="5l5e3eu63whmske1o7d90za85tpmww3">
     <dep root="1087833241328" />
     <dep root="1087833466690" />
@@ -107,16 +107,16 @@
   <source id="1088761943574" name="ReferenceMacro" hash="2lg88djstnuwh5ot70fo2actx5ztvll">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1092059087312" name="TemplateDeclaration" hash="92nzebtbefd1j2ge1hck0oszwsxhbdh">
+  <source id="1092059087312" name="TemplateDeclaration" hash="88ms24lnvjtr54r23k65q8svgodbdme">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1095416546421" name="MappingConfiguration" hash="-8dxuwhut3ckpmot4rpzmo38ki01mgvd">
+  <source id="1095416546421" name="MappingConfiguration" hash="aaduap5akdwy3gw1qlxgjimkeo47qh5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1095672379244" name="TemplateFragment" hash="2z04k0vkitc7wgpj3usijh7vjhkooj5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1112730859144" name="TemplateSwitch" hash="-7v43dsjtv7fwtu28ztg5l9r608ycngv">
+  <source id="1112730859144" name="TemplateSwitch" hash="-2zc6zkqc1rb2d4in30hpauc00q0ilqk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1112731569622" name="SwitchMacro" hash="-krhkticlvqy6ydq78lzn5mn1tn6xvw">
@@ -152,7 +152,7 @@
   <source id="1167168920554" name="BaseMappingRule_Condition" hash="dnqrjyyk6wu7iz6p1815seodwol4w3d">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1167169188348" name="TemplateFunctionParameter_sourceNode" hash="-cg8xjxmbzcb4w7xb6mjegiq5j0xbrwe">
+  <source id="1167169188348" name="TemplateFunctionParameter_sourceNode" hash="7bbnsaavhztjfao49ypljhuri3d5fa8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1167169308231" name="BaseMappingRule" hash="-6m22iu3pfcmhuultcly8fje0vgduz67">
@@ -170,13 +170,13 @@
   <source id="1167756080639" name="PropertyMacro_GetPropertyValue" hash="5vg28wya02d0y0hl1ractxcuzvyh89b">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1167756221419" name="TemplateFunctionParameter_templatePropertyValue" hash="87l1peb7m9jp7hg9orf3gj7kzs3tujm">
+  <source id="1167756221419" name="TemplateFunctionParameter_templatePropertyValue" hash="749nn6z9f700usjrni123vfnq0ej02g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1167770111131" name="ReferenceMacro_GetReferent" hash="-cg8yl2jhcm0jzos2dv6gm5lxyg99hki">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1167770229866" name="TemplateFunctionParameter_templateReferent" hash="-adibtefm8nhgr2z99dugz6fxlgct5kg">
+  <source id="1167770229866" name="TemplateFunctionParameter_templateReferent" hash="-3sjydnyfc0okmexdnb37zs9os7c5mox">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1167945743726" name="IfMacro_Condition" hash="buzuvchd1uxvbnsjmdrio5fwulkt4p2">
@@ -229,16 +229,16 @@
   <source id="1184373935793" name="TemplateFragment_ContextNodeQuery" hash="-eqknr5i39r4ghrbftt2lnrgrgo42cot">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1184374096829" name="TemplateFunctionParameter_mainContextNode" hash="-cwxkvyo4uu7eemocbac44185l4ecz2c">
+  <source id="1184374096829" name="TemplateFunctionParameter_mainContextNode" hash="14u8xh47lsejnf81v13zlecn16637dk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1184616041890" name="Weaving_MappingRule_ContextNodeQuery" hash="-443jub4i3i9b0z14j5cueihh6uefu2y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1184690432998" name="TemplateFunctionParameter_outputNode" hash="-dsqeq5pd0onjn86lxznfo0zi0ab4q3c">
+  <source id="1184690432998" name="TemplateFunctionParameter_outputNode" hash="2squ6nnfe1vgcljysutx1ezpd633aj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1184792613450" name="TemplateFunctionParameter_parentOutputNode" hash="-a477osvol9iydkrrbx928kwj86xmhjj">
+  <source id="1184792613450" name="TemplateFunctionParameter_parentOutputNode" hash="c7uwfvqcw7p5000wduhf1c2klpx9du3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1194565793557" name="IncludeMacro" hash="2omdr9gag0rvfpzak47ftnf2m259d5p">
@@ -250,7 +250,7 @@
   <source id="1195158388553" name="InlineSwitch_Case" hash="avpxqie2vukmr23kmlq4g43vf6s8yib">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1195499912406" name="MappingScript" hash="928rubl3ru72ohnoolqaw0og05ajssr">
+  <source id="1195499912406" name="MappingScript" hash="b8pojjrp9ml4g5reowr70fs678b2w6r">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1195500722856" name="MappingScript_CodeBlock" hash="awa7etzg1alkyiq888i680mwuuhpqz7">
@@ -300,25 +300,25 @@
   <source id="1722980698497626400" name="ITemplateCall" hash="4azrhhetycg9dwsqrdnolxjbkw23vav">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4035562641222585520" name="TemplateArgumentQueryExpression" hash="-rpddj0f1radsheo657yl0lefoiinun">
+  <source id="4035562641222585520" name="TemplateArgumentQueryExpression" hash="d5352kftko7p4aqp2avkz35l3dunm13">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4035562641222622437" name="TemplateArgumentQuery" hash="7bwuyd02c6o7an7biol4d7uvq88vsl0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4665309944889425032" name="TemplateArgumentPatternVarRefExpression" hash="ewechdhmytrwtffrtirl76uhfnb10r3">
+  <source id="4665309944889425032" name="TemplateArgumentPatternVarRefExpression" hash="-9eczzcw3z5x3bod4hfct3alyyclv7s7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3860274746541219069" name="ReductionRule" hash="bc7eyl6y2j17x6b8673gl9lwwzqk03b">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4816349095291127781" name="TemplateArgumentPatternRef" hash="-ab0abvdt40b84zs3udh86a8fs7f2rer">
+  <source id="4816349095291127781" name="TemplateArgumentPatternRef" hash="m2w69ozqihsb3z6zd2egh3ogfwg57y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4816349095291149799" name="TemplateArgumentPropertyPatternRefExpression" hash="-en6ojk3l7yxclbdvy9sjbmig0np8i58">
+  <source id="4816349095291149799" name="TemplateArgumentPropertyPatternRefExpression" hash="aurhnpu3ycxjmq6ekcu2arw4ixthjv0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4816349095291149800" name="TemplateArgumentLinkPatternRefExpression" hash="4gneqqgd03kiaylafwlz06o9geyqy51">
+  <source id="4816349095291149800" name="TemplateArgumentLinkPatternRefExpression" hash="-dvkz44yym472svubvx3fqbw0bqhk0nb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1510949579266781519" name="TemplateCallMacro" hash="2jmqkoudp85pe6ygkzw8buaiqaft2qb">
@@ -330,13 +330,13 @@
   <source id="650531548511609556" name="IGeneratorParameter" hash="a3czfkajek78qqf9g3x8e7avt31oald">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="650531548511911817" name="GeneratorDescriptor" hash="701ekuohgw7rqrlpu1bcig4pjkatfqs">
+  <source id="650531548511911817" name="GeneratorDescriptor" hash="-1qv4hhdh144wx7vkkqzowfvvr1z46aw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="650531548511911818" name="GeneratorParameterReference" hash="-12tyi1wfhrevqqrojc0dsq2xjfljd7j">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5005282049925926521" name="TemplateArgumentParameterExpression" hash="64ggmky1xmn1e5b9ov2to4xvh0rn3x0">
+  <source id="5005282049925926521" name="TemplateArgumentParameterExpression" hash="-92p1x7fxwp5xchgp7iyu5e1yn4cjgwa">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7830515785164762753" name="MappingConfiguration_Condition" hash="-5yaokgvtzof7kilax7v2r5onyt5h3w2">

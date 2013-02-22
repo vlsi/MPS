@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-eo0oiteip4mwry7tb8jgbbsyr69khsb">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
+<dependencies version="2" modelHash="2k7w3yjn4cwii424lnxqkoc5qkccdyx">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-ayq2mk1ce8udtpljradlrdaq6lw6ol1">
     <dep root="1569627462441399919" />
@@ -29,10 +29,10 @@
   <source id="483844232470139399" name="OverloadedOperatorContainer" hash="-egnyqnwmky8t247crwvufzq5h5pfnji">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="483844232470668960" name="LeftOperand" hash="-botcp8rdljs60epieh76jddjnr4ff1">
+  <source id="483844232470668960" name="LeftOperand" hash="-4an77fzmacng15bnzbcca7gr9syk598">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7789383629180756961" name="RightOperand" hash="6q57hyt6ht6y4zhogkcx98mo98xlhnh">
+  <source id="7789383629180756961" name="RightOperand" hash="-8xaqz2cyfm1cx3i13o1t0pkhmai2tcm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2838654975957036198" name="Operator" hash="10ljyuyxprqchkbfjcqfktv768nj15o">
@@ -44,7 +44,7 @@
   <source id="2838654975957402167" name="CustomOperator" hash="-ammj6zs0gn0spa5xnuzzm6zc5pteo3n">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1569627462441399919" name="CustomOperatorUsage" hash="-1km0uxxy19mf0k069bprmzv8q23os97">
+  <source id="1569627462441399919" name="CustomOperatorUsage" hash="-a810yby27kfj5lo9fvfm2n78tuv7y40">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1569627462442419521" name="CustomOperatorDeclaration" hash="-dezi7fbkw890w8o2wf86pdqb7uak468">

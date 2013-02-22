@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9lgrlt59unkpsuwwmukdawl9ujl1env">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
+<dependencies version="2" modelHash="-2le50upds9kz6ijusfncd707us73w3j">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" hash="-ajya8uu1lvtr2zs92qa4oasjvwre99q" />
   <common hash="vethjqzc9giqyunsam46qbf4fpb0qs">
@@ -20,7 +20,7 @@
     <file name="Calculator_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1241362555920" name="Calculator" hash="-en4cjipv7p0mj33uyosbgloiacvj13d">
+  <source id="1241362555920" name="Calculator" hash="-7713ck22zklilg95l0h47vwztvs1xfj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1241362608529" name="InputField" hash="asqxyuov9ecrprgy2gf9kr8fqg24p4a">
@@ -29,7 +29,7 @@
   <source id="1241362815640" name="OutputField" hash="8g3eebpv8htc9r9f9vlquipp5hcq5e5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1241363083334" name="InputFieldReference" hash="-28i61v1oydl8ajtzej2i9kurb2da77b">
+  <source id="1241363083334" name="InputFieldReference" hash="9bpy1sqiuclnnj9tn8v038udmolo9ws">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

@@ -15,10 +15,12 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1202948039474" resolveInfo="InstanceMethodCallOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4107550939057698505">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PrivateStaticFieldReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1070533707846" resolveInfo="StaticFieldReference" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3374946611454212811">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PrivateStaticMethodCall" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1081236700937" resolveInfo="StaticMethodCall" />
     </node>
