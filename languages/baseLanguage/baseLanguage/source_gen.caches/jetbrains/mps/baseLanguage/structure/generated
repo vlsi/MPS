@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z">
+<dependencies version="2" modelHash="8n3bsezxlrqznew9vfvottea202m737">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
@@ -648,7 +648,7 @@
   <source id="1197027803184" name="IOperation" hash="7dv1lo6ev5a4kygmaun7nsohek6mjua">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1197029447546" name="FieldReferenceOperation" hash="-etm47cusgwlks34g94cocu6d09obe86">
+  <source id="1197029447546" name="FieldReferenceOperation" hash="-afqs5nqarwfouh09gxhsymkblfc70cg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1199653749349" name="IStatementListContainer" hash="egl8d3udl788b9wpzc4s534mx6n2gbi">
@@ -671,7 +671,7 @@
   <source id="1201372606839" name="DefaultPropertyImplementation" hash="-amesc8ibvahk9dw0f26fucs47uywt5u">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1201385106094" name="PropertyReference" hash="-7y2ae473xgdea7emiml66128h6o9ac8">
+  <source id="1201385106094" name="PropertyReference" hash="7eljie5v0qykkpqrot7q3wrwpjimkt1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1201398722958" name="CustomPropertyImplementation" hash="2rmicz1s02shag4farmwtjkzohk5nkw">
@@ -692,7 +692,7 @@
   <source id="1202077725299" name="DefaultSetAccessor" hash="-e9dzepxitbmmu9hlh4rb9gobafvl100">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1202948039474" name="InstanceMethodCallOperation" hash="-4bzsrb4a9734q9v4e3i0uuaqm6qezqm">
+  <source id="1202948039474" name="InstanceMethodCallOperation" hash="-8vrv4tt83bvgaom83dm2a77zy2uygqm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1204053956946" name="IMethodCall" hash="-59v5ileokm9q9nr4wbrbkgyp9dj1qco">
@@ -713,10 +713,10 @@
   <source id="1207665819089" name="Closureoid" hash="d7w4sp15qvaczt6ym8wm7l8aos1z6vp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1208623485264" name="AbstractOperation" hash="-7551w274omwzm09q4ll8n6tw91k3nj7">
+  <source id="1208623485264" name="AbstractOperation" hash="5hcbavs5v15s29z4ozn6yp47hlvl493">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1208890769693" name="ArrayLengthOperation" hash="-cdc8tb6knvmlzjstqclbt5dtcuyngi5">
+  <source id="1208890769693" name="ArrayLengthOperation" hash="419ppz2ofl3arpl1xeemvtkbrm8xeeq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1212170275853" name="IValidIdentifier" hash="56ut3hcrpfn60ev98einthjkcyrzo21">
@@ -794,16 +794,16 @@
   <source id="1225271283259" name="NPEEqualsExpression" hash="6ci6dkpafhzuzycdt9q8hyxyyt50n13">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1225271315873" name="BaseStringOperation" hash="-4aho5nsnyoxrpjo6sg3erg2i8c8xggn">
+  <source id="1225271315873" name="BaseStringOperation" hash="4m5ef4sk14gbm3it6x2kwxs6j8byf77">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1225271369338" name="IsEmptyOperation" hash="-9rjiismzqlk6pabd4p6ywyzbkm4eic6">
+  <source id="1225271369338" name="IsEmptyOperation" hash="-5xhk91l3at6wiw72bf1zv5f8fouevh6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1225271408483" name="IsNotEmptyOperation" hash="-a09xoh7n7phhipcm0kmvfg5qgik4hrm">
+  <source id="1225271408483" name="IsNotEmptyOperation" hash="1rmd4tfw0aft4ilgx3i0nkfsof26koj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1225271443097" name="StringBooleanOperation" hash="-85ga5gefm2mq19c6kg1foy3buztsw71">
+  <source id="1225271443097" name="StringBooleanOperation" hash="ao2jvbej4dm8mpoc3y0kmkt4xog7iw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1225271484915" name="SubstringExpression" hash="dyx4hftq2v5ar0jccbf3gi0q1l1omos">
@@ -824,7 +824,7 @@
     <file name="TrimKind.java" />
     <file name="TrimKind_PropertySupport.java" />
   </source>
-  <source id="1225271546410" name="TrimOperation" hash="emd3g2y992wr8xk1cqm7l6uy2amd7fc">
+  <source id="1225271546410" name="TrimOperation" hash="-2hu0jes89yd82f75yil9e67zlwz4wf2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1225280593310" name="IParameter" hash="-15nkdg1mnhlak1yiapdg5qo7ngsdiiq">
@@ -950,7 +950,7 @@
   <source id="3262277503800813725" name="ILocalReference" hash="-r6en044elqvvayang4d8cadeqj2be7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5205855332950442198" name="ArrayCloneOperation" hash="-997g9u8klkzrezlyyyczl4y53af1gpa">
+  <source id="5205855332950442198" name="ArrayCloneOperation" hash="4szo3uewbdng7w75njeabddu9f22p4j">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2948164764175055168" name="UnresolvedNameReference" hash="-dy6fpfe4duaanmquxjugq2f9ezsrhv0">
@@ -968,7 +968,7 @@
   <source id="4609636120081351393" name="IWillBeClassifier" hash="141d13p2oumfspvtfw7s26446ocxs8p">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1461424660015405635" name="EscapeOperation" hash="-3rwikj4lb7ygpej4me0w39oin20fsrq">
+  <source id="1461424660015405635" name="EscapeOperation" hash="b28fy723p651rtwoiyxjv7h16n58l0k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4836112446988635817" name="UndefinedType" hash="-2r6mckg5y1famjf68nwmdd9dfokbzl7">

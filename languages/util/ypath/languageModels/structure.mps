@@ -56,6 +56,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1168468681335">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="TreePathOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="treeOperation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -64,6 +65,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="start tree traversal" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="FromOperation" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="from" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1168468681335" resolveInfo="TreePathOperation" />
@@ -72,6 +74,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="traverse the tree" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IterateOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="treeOperation.traverse" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="find" />
@@ -81,6 +84,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="filter the tree" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="WhereOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="treeOperation.filter" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="where" />
@@ -110,6 +114,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1172242735136">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MatchKindOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="treeOperation.filter" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1168468681335" resolveInfo="TreePathOperation" />
@@ -135,11 +140,13 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1175169769579">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MatchPropertyOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="treeOperation.filter" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1172242735136" resolveInfo="MatchKindOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1175879071372">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MatchDefaultPropertyOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="treeOperation.filter" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1168468681335" resolveInfo="TreePathOperation" />

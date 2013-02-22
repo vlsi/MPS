@@ -32,7 +32,7 @@ public class ForbidIncomingReferencesInSubconcepts_Intention implements Intentio
   }
 
   public String getConcept() {
-    return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
+    return "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   }
 
   public String getPresentation() {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="36cy2takpc3etag8clv1dnrd6j0dte1">
+<dependencies version="2" modelHash="-7yha8p73sduxkn92q7xmlxj84ha2h3p">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-45arjhe2p2477jk2gpv6olrk1ieqc75" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="8n3bsezxlrqznew9vfvottea202m737" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
-  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="4t5ik1rudyz9l2glcaxvqr8l1zd5m4m" />
+  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="cmodf4n66as2lfgukbp742ijlmoljlz" />
   <dep model="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.execution.common.structure)" hash="-ehfnr7lw5nxnyni82ijt9acutyy4j3a" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-8aege4edojnx99m3oj7k8svwc2pouae">
@@ -69,7 +69,7 @@
   <source id="856705193941281768" name="CommandDeclaration" hash="-51a1yu6w0njsmq44moqw9ckzy5xb6ot">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="856705193941281777" name="CommandDebuggerOperation" hash="-5s6n91khocdxizm0808nd6p6889sbfd">
+  <source id="856705193941281777" name="CommandDebuggerOperation" hash="8om5k71agwq3g8c2qjsyqs30wqujm5t">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="856705193941281780" name="CommandBuilderExpression" hash="-18rtxdyvgp38ausnqqcfe273u97z023">
@@ -108,7 +108,7 @@
   <source id="889694274152216058" name="ProcessBuilderCommandPartType" hash="-4zilb6wwi7gm6n3w4j0aytxtqb0vp41">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2459753140357918802" name="StartAndWaitOperation" hash="aaaneintosxsvx6j2t3le62d9t0bi9n">
+  <source id="2459753140357918802" name="StartAndWaitOperation" hash="-87gu9brr5vehs13g2m7bt89c0pk8ldg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="889694274152177535" name="KeyValueCommandPart" hash="bq40cubyarv2chp3izwqa1zvk5rd6e8">
@@ -123,13 +123,13 @@
   <source id="8234001627574071406" name="PropertyCommandPart" hash="amhlm11ak2i9f9jy1ojj8mru7bauti8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8234001627573935224" name="CommandPartToListOperation" hash="7ygzb2ozr9vciys2oplkwmp1kyoru5x">
+  <source id="8234001627573935224" name="CommandPartToListOperation" hash="-e37iyuqvr3cbwk4t0t695xzh4igtxno">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2343546112398330898" name="NewProcessBuilderExpression" hash="-wxwd7wpoch28jbxj0cdzn8jinv46t1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1616228152992023913" name="CommandPartLengthOperation" hash="-5c02ndj0ijl0hq9x0ktjirsyn1ajx0a">
+  <source id="1616228152992023913" name="CommandPartLengthOperation" hash="-bioz1hsjm1y8rzty7lq3lfstb35xmk6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

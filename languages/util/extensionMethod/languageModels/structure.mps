@@ -17,6 +17,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8022092943110829337" resolveInfo="BaseExtensionMethodContainer" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1550313277221324859">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ExtensionMethodCall" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>

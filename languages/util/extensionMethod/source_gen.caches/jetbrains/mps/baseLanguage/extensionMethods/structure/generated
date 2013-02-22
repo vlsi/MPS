@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5dmm2v5nbf8i1eauq5wnx8pefeoh9w1">
+<dependencies version="2" modelHash="-4terfnlyz4zcwsc9qfghevzfokh86kx">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="8n3bsezxlrqznew9vfvottea202m737" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-cdbnb7iuyznj5mxmynxv5z2p1ie8v8n">
@@ -26,7 +26,7 @@
   <source id="1894531970723270160" name="TypeExtension" hash="btvwglo5wvwy4ki4mt6xd5mteu0bmny">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1550313277221324859" name="ExtensionMethodCall" hash="an6e86dkfbkond60rerw841sdt1yc8z">
+  <source id="1550313277221324859" name="ExtensionMethodCall" hash="-2npva9vg3lzc7p0m6uztuzdp6x4cogu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1550313277222152185" name="ExtensionMethodDeclaration" hash="-3x5jc2vbb84boh6ocbx4cvbh3ksqv3n">

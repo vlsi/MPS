@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-as9vo0z1hw2p0ofzlx9h51db8s7kimh">
+<dependencies version="2" modelHash="c40c0axkaqpq1q2olgkatyttlk6fy2g">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="8n3bsezxlrqznew9vfvottea202m737" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="7tjazn7uqgdb7300n4e3b5qkxbvu7uy">
@@ -57,7 +57,7 @@
   <source id="1214952607239" name="StringPropertyHolder" hash="b8gv1vogqorbn3cmo93g6vfp37l1xt5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1225797177491" name="InvokeFunctionOperation" hash="alth5fnk1mhk82i0hv9pkg8kt5wd5dr">
+  <source id="1225797177491" name="InvokeFunctionOperation" hash="-1fixkzhbfp8dwxvaba1ksj3kp7hrh7y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1228997946467" name="YieldAllStatement" hash="-7ak4hngb389gw8y31l69k1nazfktz9o">

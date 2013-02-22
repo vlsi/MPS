@@ -696,6 +696,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="create new initialized node" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="NF_Concept_NewInstance" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="new initialized instance" />
@@ -704,6 +705,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5480835971642155304">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="NF_Model_CreateNewNodeOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="new initialized node" />
@@ -712,6 +714,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5480835971642160908">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="NF_Model_CreateNewRootNodeOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="new initialized root node" />
@@ -720,6 +723,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="767145758118872824">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="NF_Node_InsertNewNextSiblingOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="new initialized next-sibling" />
@@ -728,6 +732,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="767145758118872826">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="NF_Node_InsertNewPrevSiblingOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="new initialized prev-sibling" />
@@ -736,6 +741,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="767145758118872828">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="NF_Node_ReplaceWithNewOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="replace with new initialized" />
@@ -745,6 +751,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="set new initialized child" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="NF_Link_SetNewChildOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="set new initialized" />
@@ -754,6 +761,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="add new initialized child" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="NF_LinkList_AddNewChildOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="nodeFactories" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="add new initialized" />

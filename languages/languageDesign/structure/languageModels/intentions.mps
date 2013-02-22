@@ -56,7 +56,7 @@
     </node>
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="1957700446084421329">
       <property name="name" nameId="tpck.1169194664001" value="ForbidIncomingReferencesInSubconcepts" />
-      <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
+      <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
   </roots>
   <root id="1224245135252">

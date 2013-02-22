@@ -35,8 +35,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp4f.1205752813637" resolveInfo="BaseClassifierType" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="481983775135178834">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/projectPlugin.png" />
       <property name="name" nameId="tpck.1169194664001" value="ProjectPluginDeclaration" />
@@ -45,8 +45,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="481983775135178840">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/applicationPlugin.png" />
       <property name="name" nameId="tpck.1169194664001" value="ApplicationPluginDeclaration" />
@@ -81,6 +81,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="681855071694758165">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="GetToolInProjectOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tool" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="tool&lt;&lt;{tool}&gt;&gt;" />
@@ -89,6 +90,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="681855071694758168">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="GetPreferencesComponentInProjectOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Preference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="preferenceComponent&lt;&lt;{componentDeclaration}&gt;&gt;" />

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6gjfsw8gob8ah9nqg4w2ej3sjak58yb">
+<dependencies version="2" modelHash="-cqxvexg1whrl0n5ba6s0fqzdcwl0zrl">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-45arjhe2p2477jk2gpv6olrk1ieqc75" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="8n3bsezxlrqznew9vfvottea202m737" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3v0frjj38ykt2tv99jsk5r98jxmybso" />
-  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="4t5ik1rudyz9l2glcaxvqr8l1zd5m4m" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-cq4f0kondzw4q417w5ghikh1nk19obt" />
+  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="cmodf4n66as2lfgukbp742ijlmoljlz" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
   <common hash="30hhdt54hg5ioxknt0jrtiyntgk1dsv">
@@ -693,7 +693,7 @@
   <source id="1198489924438" name="CellModel_Block" hash="-6q2jzqba5wrrtse3uz48tatvyytn1m1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1201265905111" name="SelectOperation" hash="-d3bw0hodh1xj1xgx98nt1t5vese1htc">
+  <source id="1201265905111" name="SelectOperation" hash="1ooqtp76gwel603xj09btg2ytfxjc5z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1201266127262" name="SelectParameter" hash="-bmjvoe6a1wp9egp0enscvh8gg5d5rhe">
@@ -922,13 +922,13 @@
   <source id="4526149749187797167" name="ConceptFunctionParameter_StyledText" hash="bgb7v477eymu6ifopbgbfbc7cez42cl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="280151408461567367" name="AppendTextOperation" hash="-5x17msqlkif4j5mqoyc0qrq4hyalgzh">
+  <source id="280151408461567367" name="AppendTextOperation" hash="3hcizm4ix40vc5gdkaqs324pvwz9mlh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="280151408461909164" name="SetBoldOperation" hash="-bke96ma9hkyuaq8vpp4yubakdc151bg">
+  <source id="280151408461909164" name="SetBoldOperation" hash="-53x89z00164g37foqt19e021afntygq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4531786690998636238" name="AbstractStyledTextOperation" hash="duccvm5x72cs5glx6k2pq9cqkz8n3n1">
+  <source id="4531786690998636238" name="AbstractStyledTextOperation" hash="-673r5jqs8sbgwz0h726xi40hx4ndin5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3903367331818357915" name="StyledTextType" hash="-8lq755j2oxx715dy48v32bam0y3lcvs">

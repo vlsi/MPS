@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="51zru42q26chxi50wtrz4xvudhfv0u9">
+<dependencies version="2" modelHash="5s7or4rhkfg75ldko3qe5tpq1vyipea">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="8n3bsezxlrqznew9vfvottea202m737" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="5l7gn98t03h0yoyy47dk2a0v7ucgudd">
@@ -239,13 +239,13 @@
   <source id="1220356640633" name="SymbolClassRegexpAndPart" hash="6087sx25ipax1ic8fgzurmykfirwfvi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1222256539755" name="SplitOperation" hash="9ne4340s8vsf7bwbrs7b62c0yhhlarf">
+  <source id="1222256539755" name="SplitOperation" hash="-eq0sws5us8exgf0088itcq0nn7h12xc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1222260469397" name="MatchRegexpOperation" hash="-3tie49mh5e36t12i8rhr0emtxtr91b0">
+  <source id="1222260469397" name="MatchRegexpOperation" hash="9oyqrbgbajrudgcz76h5g44a1k80ob7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1222260556146" name="ReplaceWithRegexpOperation" hash="1sy4vs2i5tt1ed8q7csk04kqzed9t33">
+  <source id="1222260556146" name="ReplaceWithRegexpOperation" hash="-70228u5wh9proms8efz37cmwpt3z228">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7473568212391781030" name="_StringRegexp" hash="xzhfgza0q0u5qzjkdn6sveibd4xunt">
@@ -256,7 +256,7 @@
   <source id="6129327962763158517" name="FindMatchExpression" hash="64euuw3uuskp9nh6nq4lxr73imznddc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3796137614137086346" name="ReplaceRegexpOperation" hash="b2yc5k30vx15f0wrpfrzsk8tswkx6ox">
+  <source id="3796137614137086346" name="ReplaceRegexpOperation" hash="1l4j1bl1tp8wn3q8h6cl7632ul0s31a">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3796137614137538892" name="LiteralReplacement" hash="-3texjhkgxfhxqhrlzv562hc5ckfia7t">

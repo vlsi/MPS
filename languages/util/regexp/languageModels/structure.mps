@@ -425,6 +425,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="split with regexp" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SplitOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Operations" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="split with" />
@@ -432,6 +433,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1222260469397">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MatchRegexpOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Operations" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="matches" />
@@ -440,6 +442,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="replace with regexp" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ReplaceWithRegexpOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Operations" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="replace with" />
@@ -460,6 +463,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3796137614137086346">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ReplaceRegexpOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Operations" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="s/regexp/replacement/" />

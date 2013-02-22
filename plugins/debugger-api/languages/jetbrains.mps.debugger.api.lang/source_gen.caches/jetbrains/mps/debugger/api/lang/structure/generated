@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7kvx9pa3by1b58ffpo325epp0iwb6t8">
+<dependencies version="2" modelHash="-bwyd31xjgez3y0ebytoyia4wvj03urq">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="8n3bsezxlrqznew9vfvottea202m737" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-8l7cqv17907zysjtx467k7ils0pjy5k">
@@ -51,7 +51,7 @@
   <source id="1104094430779068753" name="DebuggerReference" hash="11af2housagdi8vp1x0hgda5welxtkn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2569394751387978473" name="CreateBreakpointOperation" hash="ijgw07cszci753fkcgi9blprvmdlv5">
+  <source id="2569394751387978473" name="CreateBreakpointOperation" hash="-7oj0rs95f9k4zp0nltk58oxgsgf8sme">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6720907903633266914" name="GetDebuggerSettings_Function" hash="34u41wmk57qc7febswv5pa88ac3afrl">

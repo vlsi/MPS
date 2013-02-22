@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-djmh4hlf4m3a9kf5qdp1lutijdexrpm">
+<dependencies version="2" modelHash="38czvoh36ou8ajwvilmi2jdmm1o1bxl">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="8n3bsezxlrqznew9vfvottea202m737" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3v0frjj38ykt2tv99jsk5r98jxmybso" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-cq4f0kondzw4q417w5ghikh1nk19obt" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-bi0zsdm5mx66dj5ipcmypxxdtlfiynw">
     <dep root="2603522263179374343" />
@@ -18,7 +18,7 @@
     <file name="Operations_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="6942529559415680891" name="Node_CopyWithTraceOperation" hash="-9z3fiey2jt9mpr696nm72z503owr597">
+  <source id="6942529559415680891" name="Node_CopyWithTraceOperation" hash="db5acpapil9u26j65nc4gr7i32bdfvp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2603522263179374343" name="NList_CopyWithTraceOperation" hash="bdei8r3u6i4ain0uizv8beja77qmkm8">

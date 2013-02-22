@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9253ppmo52csrf0dkw63nrotvnbcruk">
+<dependencies version="2" modelHash="-e65shjtp8a35u5pj26sk35oy7o5l0eh">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6ghs59slvbjoyiuw6bo1xdq7fqnsp8z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="8n3bsezxlrqznew9vfvottea202m737" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-73ct2r3ual3mq3ssad45emk5norsbqn" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="11ed3xs11tdrgztjx7z5p4sx6ph674c">
@@ -18,10 +18,10 @@
     <file name="PrivateMembers_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="6825241477451043705" name="PrivateFieldReferenceOperation" hash="-333fu8idj0j8o44rwj283e0ww29sv7c">
+  <source id="6825241477451043705" name="PrivateFieldReferenceOperation" hash="2yht5pjmrqf5b12t6p8oow643jtws0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6825241477451051014" name="PrivateInstanceMethodCallOperation" hash="dzoroxu59fbtea2pyivxk4fl6bddj7m">
+  <source id="6825241477451051014" name="PrivateInstanceMethodCallOperation" hash="-di8d1axm5eemispargxeond8cqslxla">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4107550939057698505" name="PrivateStaticFieldReference" hash="-8twznjcu20j0sp2m142o958nh7ihmce">
