@@ -68,7 +68,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
           return;
         }
         // logging error if concept was not in concept model
-        LOG.error("Creating a concept descriptor for a concept not yet loaded " + id, new Throwable());
+//        LOG.error("Creating a concept descriptor for a concept not yet loaded " + id, new Throwable());
       }
     }
     // adding
