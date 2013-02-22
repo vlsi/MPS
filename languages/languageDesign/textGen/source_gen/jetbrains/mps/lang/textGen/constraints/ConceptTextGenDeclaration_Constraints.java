@@ -59,7 +59,7 @@ public class ConceptTextGenDeclaration_Constraints extends BaseConstraintsDescri
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.TEXT_GEN.is(model) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.TEXT_GEN.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1233758188295");

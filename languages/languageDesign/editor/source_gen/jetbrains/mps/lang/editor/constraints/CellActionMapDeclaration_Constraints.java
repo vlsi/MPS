@@ -33,7 +33,7 @@ public class CellActionMapDeclaration_Constraints extends BaseConstraintsDescrip
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.EDITOR.is(model) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.EDITOR.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1227090163036");

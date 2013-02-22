@@ -59,7 +59,7 @@ public class InterfaceConceptDeclaration_Constraints extends BaseConstraintsDesc
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.STRUCTURE.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SNodePointer breakingNode_vsd8pt_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8857655676216493587");

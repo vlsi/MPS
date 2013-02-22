@@ -107,7 +107,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              if (!(LanguageAspect.CONSTRAINTS.is(_context.getModel()))) {
+              if (!(LanguageAspect.CONSTRAINTS.is(_context.getModel().getModelDescriptor()))) {
                 return new EmptyScope();
               }
 
@@ -159,7 +159,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.CONSTRAINTS.is(model) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.CONSTRAINTS.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SModel check_guz8cy_a0c0a0(SModelDescriptor checkedDotOperand) {

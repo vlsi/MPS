@@ -44,11 +44,11 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_2056529430201935245(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel());
+    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel().getModelDescriptor());
   }
 
   public static boolean createRootRule_Condition_7923290658387314702(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel());
+    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel().getModelDescriptor());
   }
 
   public static boolean baseMappingRule_Condition_1144956008583649232(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
