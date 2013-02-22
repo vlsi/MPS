@@ -236,7 +236,7 @@ public class EmbeddableEditor {
     });
   }
 
-  private final jetbrains.mps.smodel.SModel smodel() {
+  private SModel smodel() {
     return ((SModelDescriptor) myModel).getSModel();
   }
 

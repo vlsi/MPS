@@ -46,7 +46,7 @@ public class ProjectModels {
     protected SModel createModel() {
       return new jetbrains.mps.smodel.SModel(this.getSModelReference()) {
         @Override
-        public boolean canFireEvent2() {
+        public boolean canFireEvent() {
           return myCanFireEvents;
         }
       };

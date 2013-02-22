@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.TransientSModel;
@@ -713,14 +713,14 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
         if (concept == null) {
           LOG.error("concept not found for node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         } else {
-          result.add(concept.getModel().getSModelReference());
+          result.add(concept.getModel().getReference());
         }
         for (String propname : node.getPropertyNames()) {
           SNode decl = node.getPropertyDeclaration(propname);
           if (decl == null) {
             LOG.error("undeclared property: '" + propname + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
-            result.add(decl.getModel().getSModelReference());
+            result.add(decl.getModel().getReference());
           }
         }
         for (SReference ref : node.getReferences()) {
@@ -732,7 +732,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
           if (decl == null) {
             LOG.error("undeclared link role: '" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
-            result.add(decl.getModel().getSModelReference());
+            result.add(decl.getModel().getReference());
           }
         }
         for (SNode child : node.getChildren()) {
@@ -740,7 +740,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
           if (decl == null) {
             LOG.error("undeclared child role: '" + child.getRoleInParent() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
-            result.add(decl.getModel().getSModelReference());
+            result.add(decl.getModel().getReference());
           }
         }
       }

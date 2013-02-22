@@ -191,7 +191,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     protected SModel createModel() {
       SModel model = new jetbrains.mps.smodel.SModel(getSModelReference()) {
         @Override
-        public boolean canFireEvent2() {
+        public boolean canFireEvent() {
           return false;
         }
       };

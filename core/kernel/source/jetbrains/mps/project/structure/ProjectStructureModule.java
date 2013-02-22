@@ -347,13 +347,13 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
   }
 
-  public static class ProjectStructureSModel extends SModel {
+  public static class ProjectStructureSModel extends jetbrains.mps.smodel.SModel {
     public ProjectStructureSModel(@NotNull SModelReference modelReference) {
       super(modelReference, new ForeignNodeIdMap());
     }
 
     @Override
-    public boolean canFireEvent2() {
+    public boolean canFireEvent() {
       return false;
     }
 

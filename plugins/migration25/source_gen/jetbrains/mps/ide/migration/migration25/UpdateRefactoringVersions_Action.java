@@ -94,7 +94,7 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
   }
 
   /*package*/ void updateImportVersions(EditableSModel model, final Map<String, Object> _params) {
-    jetbrains.mps.smodel.SModel m = ((SModelDescriptor) model).getSModel();
+    SModel m = ((SModelDescriptor) model).getSModel();
     for (jetbrains.mps.smodel.SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(m))) {
       RefactorableSModelDescriptor usedModel = as_hexye9_a0a0a1a7(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), RefactorableSModelDescriptor.class);
       if (usedModel == null) {

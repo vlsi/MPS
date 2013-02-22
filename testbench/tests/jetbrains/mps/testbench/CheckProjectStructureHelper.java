@@ -296,7 +296,7 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private static void checkModelNodes(@NotNull jetbrains.mps.smodel.SModel model, @NotNull final List<String> result) {
+  private static void checkModelNodes(@NotNull SModel model, @NotNull final List<String> result) {
     for (final SNode node : new NodesIterable(model)) {
       final SConcept concept = node.getConcept();
       if (concept == null) {

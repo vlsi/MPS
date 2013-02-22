@@ -90,7 +90,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor) {
     info("handling output...");
 
-    jetbrains.mps.smodel.SModel outputModel = status.getOutputModel();
+    SModel outputModel = status.getOutputModel();
     if (outputModel != null) {
       boolean result = collectSources(module, inputModel, invocationContext, outputModel);
 
@@ -117,7 +117,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return 1;
   }
 
-  protected boolean collectSources(SModule module, SModel inputModel, IOperationContext context, jetbrains.mps.smodel.SModel outputModel) {
+  protected boolean collectSources(SModule module, SModel inputModel, IOperationContext context, SModel outputModel) {
     boolean wereErrors = false;
 
     myContextModules.add(context.getModule());

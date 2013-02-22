@@ -91,7 +91,7 @@ public class NodeBySeveralConceptChooser extends AbstractMainNodeChooser {
   }
 
   @Override
-  protected Iterable<SNode> findNodes(jetbrains.mps.smodel.SModel model, final String fqName) {
+  protected Iterable<SNode> findNodes(SModel model, final String fqName) {
     return ListSequence.fromList(SModelOperations.getNodes(((jetbrains.mps.smodel.SModel) model), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(final SNode node) {
         return ListSequence.fromList(myTargetConcepts).findFirst(new IWhereFilter<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {

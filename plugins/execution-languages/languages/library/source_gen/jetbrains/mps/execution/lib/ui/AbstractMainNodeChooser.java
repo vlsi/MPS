@@ -102,7 +102,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     });
   }
 
-  protected abstract Iterable<SNode> findNodes(jetbrains.mps.smodel.SModel model, String fqName);
+  protected abstract Iterable<SNode> findNodes(SModel model, String fqName);
 
   protected abstract Iterable<SModel> getModels(String model);
 

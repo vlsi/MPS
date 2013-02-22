@@ -168,7 +168,7 @@ public class ImportHelper {
           langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE, Language.class));
 
           for (Language l : langs) {
-            Collection<ModuleReference> impLangs = myModel.getSModel().getModelDepsManager().getAllImportedLanguages();
+            Collection<ModuleReference> impLangs = ((jetbrains.mps.smodel.SModel) myModel.getSModel()).getModelDepsManager().getAllImportedLanguages();
             if (impLangs.contains(l.getModuleReference())) continue;
             importCandidates.add(l.getModuleReference());
           }

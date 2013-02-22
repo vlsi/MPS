@@ -135,7 +135,7 @@ public class VersionUtil {
     myImports.put(modelRef, elem);
     myImportByIx.put(ix, elem);
     if (implicit)
-      model.addAdditionalModelVersion(elem);
+      ((jetbrains.mps.smodel.SModel) model).addAdditionalModelVersion(elem);
     else
       ((jetbrains.mps.smodel.SModel) model).addModelImport(elem);
   }

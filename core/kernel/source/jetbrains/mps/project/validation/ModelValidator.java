@@ -65,7 +65,7 @@ public class ModelValidator {
     }
 
     List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
-    langsToCheck.addAll(IterableUtil.asCollection(myModel.getModelDepsManager().getAllImportedLanguages()));
+    langsToCheck.addAll(IterableUtil.asCollection(((jetbrains.mps.smodel.SModel) myModel).getModelDepsManager().getAllImportedLanguages()));
     langsToCheck.addAll(((jetbrains.mps.smodel.SModel) myModel).engagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {

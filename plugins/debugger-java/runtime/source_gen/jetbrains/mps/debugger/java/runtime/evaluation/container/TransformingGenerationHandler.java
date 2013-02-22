@@ -54,7 +54,7 @@ public class TransformingGenerationHandler extends InMemoryJavaGenerationHandler
 
   @Override
   public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext context, ProgressMonitor monitor) {
-    jetbrains.mps.smodel.SModel model = status.getOutputModel();
+    SModel model = status.getOutputModel();
     if (model != null) {
       final SNode evaluator = SModelOperations.getRootByName(model, Properties.EVALUATOR_NAME);
       if (evaluator != null) {

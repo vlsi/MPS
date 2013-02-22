@@ -56,7 +56,7 @@ public abstract class ModelUtil {
     return res;
   }
 
-  public static VirtualFile getFileByModel(@Nullable jetbrains.mps.smodel.SModel model) {
+  public static VirtualFile getFileByModel(@Nullable SModel model) {
     if (model == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) return null;
 
     SModelDescriptor desc = model.getModelDescriptor();

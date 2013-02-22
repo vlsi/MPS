@@ -64,18 +64,18 @@ public final class CopyUtil {
   }
 
   public static void copyModelProperties(SModel from, SModel to) {
-    from.copyPropertiesTo(to);
+    ((jetbrains.mps.smodel.SModel) from).copyPropertiesTo(((jetbrains.mps.smodel.SModel) to));
   }
 
   public static SModel copyModel(SModel model) {
-    SModel copy = model.createEmptyCopy();
+    SModel copy = ((jetbrains.mps.smodel.SModel) model).createEmptyCopy();
     copyModelContentAndPreserveIds(model, copy);
     copyModelProperties(model, copy);
     return copy;
   }
 
   public static void changeModelReference(SModel model, SModelReference modelReference) {
-    model.changeModelReference(modelReference);
+    ((jetbrains.mps.smodel.SModel) model).changeModelReference(modelReference);
   }
 
   public static List<SNode> copy(List<SNode> nodes) {

@@ -314,7 +314,7 @@ public class GenerationTestBase {
     }
   }
 
-  private static Map<String, String> getHashes(jetbrains.mps.smodel.SModel model) {
+  private static Map<String, String> getHashes(SModel model) {
     Document m = ModelPersistence.saveModel(model);
     ByteArrayOutputStream os = new ByteArrayOutputStream();
     try {
