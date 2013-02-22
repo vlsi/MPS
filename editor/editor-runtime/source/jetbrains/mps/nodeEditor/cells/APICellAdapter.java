@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.FocusPolicy;
@@ -137,7 +139,8 @@ public class APICellAdapter {
   }
 
   public static boolean isPunctuationLayout(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isPunctuationLayout();
+    //return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isPunctuationLayout();
+    return LayoutConstraints.PUNCTUATION_LAYOUT_CONSTRAINT.equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT));
   }
 
   public static boolean hasErrorMessages(EditorCell cell) {
@@ -161,7 +164,8 @@ public class APICellAdapter {
   }
 
   public static boolean isBigCell(EditorCell cell) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isBigCell();
+    //??? EditorCell_Empty ???
+    return cell.getParent() == null || cell.getParent().getSNode() != cell.getSNode();
   }
 
   public static SNode getSNodeWRTReference(EditorCell cell) {

@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import java.util.List;
 import java.util.ArrayList;
 
-public class TextBuilder {
+public class TextBuilder implements jetbrains.mps.openapi.editor.TextBuilder{
   private static final Logger LOG = Logger.getLogger(TextBuilder.class);
 
   private int myX = 0;
