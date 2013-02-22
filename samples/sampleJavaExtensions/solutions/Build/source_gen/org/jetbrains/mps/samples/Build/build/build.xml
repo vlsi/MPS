@@ -239,6 +239,8 @@
     <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
+  <target name="buildDependents" />
+  
   <target name="prepareDependents" />
   
   <target name="prepare" depends="generate" />

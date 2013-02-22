@@ -41,6 +41,14 @@
     <echo file="${build.layout}/build.properties">buildCore.build.number=${build.number}${line.separator}buildCore.ver=${ver}${line.separator}buildCore.MPS=${MPS}</echo>
   </target>
   
+  <target name="buildDependents" />
+  
+  <target name="prepareDependents" />
+  
+  <target name="prepare" />
+  
+  <target name="fetchDependencies" />
+  
   <target name="build" depends="assemble, check" />
   
   <target name="clean">

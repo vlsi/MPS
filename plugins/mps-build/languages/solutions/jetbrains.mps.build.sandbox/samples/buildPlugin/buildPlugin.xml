@@ -49,6 +49,8 @@
     </ant>
   </target>
   
+  <target name="prepare" />
+  
   <target name="fetchDependencies">
     <mkdir dir="${build.tmp}/deps/buildCore/release.zip" />
     <unzip src="${artifacts.buildCore}/default/release.zip" dest="${build.tmp}/deps/buildCore/release.zip" />

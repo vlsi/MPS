@@ -25,6 +25,8 @@
     </ant>
   </target>
   
+  <target name="prepare" />
+  
   <target name="fetchDependencies">
     <mkdir dir="${build.tmp}/deps/buildY/AaLibs.zip" />
     <unzip src="${artifacts.buildZ}/Aa/AaLibs.zip" dest="${build.tmp}/deps/buildY/AaLibs.zip" />
