@@ -21,7 +21,7 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.smodel.event.SModelEventVisitor;

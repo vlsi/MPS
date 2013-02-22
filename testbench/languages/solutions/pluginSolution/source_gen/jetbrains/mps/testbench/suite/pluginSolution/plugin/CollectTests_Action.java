@@ -19,7 +19,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -57,7 +57,7 @@ public class CollectTests_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((ABCDE) ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getSModel()).importedLanguages().contains(ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
+    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getSModel()).importedLanguages().contains(ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -165,7 +165,7 @@ public class CollectTests_Action extends BaseAction {
                         SPropertyOperations.set(sref, "moduleID", mref.getModuleId().toString());
                       }
                       ListSequence.fromList(SLinkOperations.getTargets(suite.value, "testRef", true)).addElement(tref.invoke());
-                      ((ABCDE) model).addModelImport(smd.getSModelReference(), false);
+                      ((jetbrains.mps.smodel.SModel) model).addModelImport(smd.getSModelReference(), false);
                       ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getModule().addDependency(module.getModuleReference(), false);
                     }
                   }, ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class));

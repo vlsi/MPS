@@ -43,7 +43,7 @@ import com.intellij.openapi.util.DimensionService;
 import java.awt.Point;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IMapping;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import java.awt.GridBagConstraints;

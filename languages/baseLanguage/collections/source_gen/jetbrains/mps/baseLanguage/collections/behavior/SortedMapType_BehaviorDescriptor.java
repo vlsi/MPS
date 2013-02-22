@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class SortedMapType_BehaviorDescriptor extends MapType_BehaviorDescriptor {
   public SortedMapType_BehaviorDescriptor() {

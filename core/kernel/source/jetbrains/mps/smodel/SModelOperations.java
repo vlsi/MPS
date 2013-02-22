@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -81,7 +81,7 @@ public class SModelOperations {
         }
 
         usedLanguages.add(ref);
-        ((ABCDE) model).addLanguage(ref);
+        ((jetbrains.mps.smodel.SModel) model).addLanguage(ref);
       }
 
       for (SReference reference : node.getReferences()) {
@@ -97,7 +97,7 @@ public class SModelOperations {
               module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
             }
           }
-          ((ABCDE) model).addModelImport(targetModelReference, firstVersion);
+          ((jetbrains.mps.smodel.SModel) model).addModelImport(targetModelReference, firstVersion);
           importedModels.add(targetModelReference);
         }
       }
@@ -115,7 +115,7 @@ public class SModelOperations {
   public static List<Language> getLanguages(SModel model, @NotNull IScope scope) {
     Set<Language> languages = new LinkedHashSet<Language>();
 
-    for (ModuleReference lang : ((ABCDE) model).importedLanguages()) {
+    for (ModuleReference lang : ((jetbrains.mps.smodel.SModel) model).importedLanguages()) {
       Language language = scope.getLanguage(lang);
 
       if (language != null) {
@@ -124,7 +124,7 @@ public class SModelOperations {
       }
     }
 
-    for (ModuleReference dk : ((ABCDE) model).importedDevkits()) {
+    for (ModuleReference dk : ((jetbrains.mps.smodel.SModel) model).importedDevkits()) {
       DevKit devKit = scope.getDevKit(dk);
       if (devKit != null) {
         for (Language l : devKit.getAllExportedLanguages()) {
@@ -141,8 +141,8 @@ public class SModelOperations {
   //todo rewrite using iterators
   @NotNull
   public static Set<ModuleReference> getAllImportedLanguages(SModel model) {
-    List<ModuleReference> langs = ((ABCDE) model).importedLanguages();
-    List<ModuleReference> devkits = ((ABCDE) model).importedDevkits();
+    List<ModuleReference> langs = ((jetbrains.mps.smodel.SModel) model).importedLanguages();
+    List<ModuleReference> devkits = ((jetbrains.mps.smodel.SModel) model).importedDevkits();
     Set<ModuleReference> result = new HashSet<ModuleReference>(langs.size() + devkits.size() * 8);
     result.addAll(langs);
     if (!MPSCore.getInstance().isMergeDriverMode()) {
@@ -194,7 +194,7 @@ public class SModelOperations {
 
   @Nullable
   public static ImportElement getImportElement(SModel model, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-    for (ImportElement importElement : ((ABCDE) model).importedModels()) {
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) model).importedModels()) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
       }
@@ -205,8 +205,8 @@ public class SModelOperations {
   @NotNull
   public static List<ImportElement> getAllImportElements(SModel model) {
     List<ImportElement> result = new ArrayList<ImportElement>();
-    result.addAll(((ABCDE) model).importedModels());
-    result.addAll(((ABCDE) model).getAdditionalModelVersions());
+    result.addAll(((jetbrains.mps.smodel.SModel) model).importedModels());
+    result.addAll(((jetbrains.mps.smodel.SModel) model).getAdditionalModelVersions());
     return result;
   }
 
@@ -214,7 +214,7 @@ public class SModelOperations {
   @NotNull
   public static List<SModelReference> getImportedModelUIDs(SModel sModel) {
     List<SModelReference> references = new ArrayList<SModelReference>();
-    for (ImportElement importElement : ((ABCDE) sModel).importedModels()) {
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) sModel).importedModels()) {
       references.add(importElement.getModelReference());
     }
     return Collections.unmodifiableList(references);
@@ -258,7 +258,7 @@ public class SModelOperations {
 
   @Nullable
   public static SModelReference getImportedModelUID(SModel sModel, int referenceID) {
-    for (ImportElement importElement : ((ABCDE) sModel).importedModels()) {
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) sModel).importedModels()) {
       if (importElement.getReferenceID() == referenceID) {
         return importElement.getModelReference();
       }
@@ -280,7 +280,7 @@ public class SModelOperations {
 
   @Nullable
   public static ImportElement getAdditionalModelElement(SModel sModel, @NotNull org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-    for (ImportElement importElement : ((ABCDE) sModel).getAdditionalModelVersions()) {
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) sModel).getAdditionalModelVersions()) {
       if (importElement.getModelReference().equals(modelReference)) {
         return importElement;
       }
@@ -292,7 +292,7 @@ public class SModelOperations {
   @NotNull
   private static List<SModelDescriptor> importedModels(SModel model, @NotNull IScope scope) {
     List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
-    for (ImportElement importElement : ((ABCDE) model).importedModels()) {
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) model).importedModels()) {
       SModelReference modelReference = importElement.getModelReference();
       SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelReference);
 

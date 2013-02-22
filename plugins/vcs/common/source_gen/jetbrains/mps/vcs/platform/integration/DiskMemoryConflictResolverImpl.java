@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.platform.integration;
 
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.EditableSModel;
 import java.io.File;
 import com.intellij.openapi.application.ApplicationManager;
@@ -114,7 +114,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   }
 
   private static void openDiffDialog(IFile modelFile, SModel inMemory) {
-    SModel onDisk = new SModel(inMemory.getReference());
+    SModel onDisk = new jetbrains.mps.smodel.SModel(inMemory.getReference());
     try {
       onDisk = ModelPersistence.readModel(modelFile, false);
     } catch (ModelReadException e) {

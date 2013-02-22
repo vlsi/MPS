@@ -24,7 +24,7 @@ import jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavi
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.plugin.behavior.PreferencePage_Behavior;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.plugin.behavior.GroupAnchor_Behavior;
 import jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior;
 import jetbrains.mps.lang.plugin.behavior.KeymapChangesDeclaration_Behavior;

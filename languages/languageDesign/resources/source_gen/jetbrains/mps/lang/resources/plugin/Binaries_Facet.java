@@ -24,7 +24,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.lang.core.plugin.Make_Facet.Target_make.Parameters;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;

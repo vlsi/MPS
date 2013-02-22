@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.persistence.def.v6;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
@@ -45,10 +45,10 @@ public class VersionUtil {
     myModelRef = (SModelReference) model.getReference();
     myImports = new HashMap<SModelReference, ImportElement>();
     fillReferenceIDs(model);  // replace "-1" indice to valid values and advance maxImportIndex
-    for (ImportElement elem : ((ABCDE) model).importedModels()) {
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).importedModels()) {
       myImports.put(elem.getModelReference(), elem);
     }
-    for (ImportElement elem : ((ABCDE) model).getAdditionalModelVersions()) {
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).getAdditionalModelVersions()) {
       myImports.put(elem.getModelReference(), elem);
     }
   }
@@ -56,16 +56,16 @@ public class VersionUtil {
   // when upgrading to 6 persistence some of IDs can be -1 and need to be fixed
   static void fillReferenceIDs(SModel model) {
     int maxImport = 0;
-    for (ImportElement elem : ((ABCDE) model).importedModels()) {
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).importedModels()) {
       maxImport = Math.max(elem.getReferenceID(), maxImport);
     }
-    for (ImportElement elem : ((ABCDE) model).getAdditionalModelVersions()) {
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).getAdditionalModelVersions()) {
       maxImport = Math.max(elem.getReferenceID(), maxImport);
     }
-    for (ImportElement elem : ((ABCDE) model).importedModels()) {
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).importedModels()) {
       if (elem.getReferenceID() < 0) elem.setReferenceID(++maxImport);
     }
-    for (ImportElement elem : ((ABCDE) model).getAdditionalModelVersions()) {
+    for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).getAdditionalModelVersions()) {
       if (elem.getReferenceID() < 0) elem.setReferenceID(++maxImport);
     }
   }
@@ -137,7 +137,7 @@ public class VersionUtil {
     if (implicit)
       model.addAdditionalModelVersion(elem);
     else
-      ((ABCDE) model).addModelImport(elem);
+      ((jetbrains.mps.smodel.SModel) model).addModelImport(elem);
   }
 
   public SModelReference getSModelReference(int ix) {

@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import javax.swing.JScrollPane;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage;

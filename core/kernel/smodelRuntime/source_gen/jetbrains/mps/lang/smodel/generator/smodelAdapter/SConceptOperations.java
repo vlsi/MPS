@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;

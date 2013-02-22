@@ -25,7 +25,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -195,7 +195,7 @@ public class ImportHelper {
               myContextModule.addUsedLanguage((ModuleReference) ref);
               reload = true;
             }
-            ((ABCDE) myModel.getSModel()).addLanguage((ModuleReference) ref);
+            ((jetbrains.mps.smodel.SModel) myModel.getSModel()).addLanguage((ModuleReference) ref);
           }
           if (reload) {
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -305,7 +305,7 @@ public class ImportHelper {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         @Override
         public void run() {
-          ((ABCDE) myModel.getSModel()).addModelImport(getModelReference(), false);
+          ((jetbrains.mps.smodel.SModel) myModel.getSModel()).addModelImport(getModelReference(), false);
         }
       });
     }

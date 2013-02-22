@@ -18,7 +18,7 @@ package jetbrains.mps.generator.test;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Assert;
 import org.junit.Test;

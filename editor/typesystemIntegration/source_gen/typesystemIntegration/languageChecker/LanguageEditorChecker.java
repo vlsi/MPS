@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.CardinalitiesChecker;

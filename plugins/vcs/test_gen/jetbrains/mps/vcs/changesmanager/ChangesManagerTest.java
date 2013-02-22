@@ -44,7 +44,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -894,7 +894,7 @@ public class ChangesManagerTest {
     runCommandAndWait(new Runnable() {
       public void run() {
         SModel m = ((SModelDescriptor) md).getSModel();
-        ((ABCDE) m).addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        ((jetbrains.mps.smodel.SModel) m).addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
         createNewRoot(m);
       }
     });

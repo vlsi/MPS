@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.generator.TransientSModel;

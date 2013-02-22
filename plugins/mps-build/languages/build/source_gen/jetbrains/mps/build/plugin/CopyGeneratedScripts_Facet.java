@@ -36,7 +36,7 @@ import jetbrains.mps.smodel.SModelReference;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.util.GenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerator;

@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -56,8 +56,8 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
           ((jetbrains.mps.smodel.SReference) ref).setTargetSModelReference(oldModelRef);
           continue;
         }
-        ((ABCDE) model).addModelImport(modelRef, false);
-        ((ABCDE) model).deleteModelImport(oldModelRef);
+        ((jetbrains.mps.smodel.SModel) model).addModelImport(modelRef, false);
+        ((jetbrains.mps.smodel.SModel) model).deleteModelImport(oldModelRef);
         SModelRepository.getInstance().markChanged(model);
         // update module dependencies 
         if (module != null && module.getModuleDescriptor() != null) {

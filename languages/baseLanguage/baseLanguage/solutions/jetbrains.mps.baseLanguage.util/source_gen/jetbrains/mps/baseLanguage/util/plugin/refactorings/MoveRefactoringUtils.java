@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -40,7 +40,7 @@ public class MoveRefactoringUtils {
     if (model == toImport || SModelOperations.getImportedModelUIDs(model).contains(ref)) {
       return;
     }
-    ((ABCDE) model).addModelImport(ref, false);
+    ((jetbrains.mps.smodel.SModel) model).addModelImport(ref, false);
   }
 
   public static void addNodeModelImportIfNeed(SNode node, SNode toImport) {

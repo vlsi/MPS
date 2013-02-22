@@ -16,7 +16,7 @@
 package jetbrains.mps.newTypesystem.rules;
 
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 

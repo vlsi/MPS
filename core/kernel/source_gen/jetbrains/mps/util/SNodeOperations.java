@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.LinkedList;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -330,11 +330,11 @@ public class SNodeOperations {
   }
 
   public static boolean isModelDisposed(org.jetbrains.mps.openapi.model.SModel model) {
-    return ((ABCDE) model).isDisposed();
+    return ((jetbrains.mps.smodel.SModel) model).isDisposed();
   }
 
   public static FastNodeFinder getModelFastFinder(org.jetbrains.mps.openapi.model.SModel model) {
-    return ((ABCDE) ((SModel) model)).getFastNodeFinder();
+    return ((jetbrains.mps.smodel.SModel) ((SModel) model)).getFastNodeFinder();
   }
 
   public static int nodesCount(org.jetbrains.mps.openapi.model.SModel model) {

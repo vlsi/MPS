@@ -19,7 +19,7 @@ import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelRootUtil;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -116,9 +116,9 @@ public class CloneModelProperties {
       myRoot.setPath(((FolderModelRootBase)modelRoot).getPath());
     }
 
-    myImportedLanguages.addAll(((ABCDE) model).importedLanguages());
+    myImportedLanguages.addAll(((jetbrains.mps.smodel.SModel) model).importedLanguages());
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
-    myImportedDevkits.addAll(((ABCDE) model).importedDevkits());
-    myLanguagesInGeneration.addAll(((ABCDE) model).engagedOnGenerationLanguages());
+    myImportedDevkits.addAll(((jetbrains.mps.smodel.SModel) model).importedDevkits());
+    myLanguagesInGeneration.addAll(((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages());
   }
 }

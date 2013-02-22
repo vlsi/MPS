@@ -8,7 +8,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public abstract class ModelCheckerIssue {
   public static final CategoryKind CATEGORY_KIND_SEVERITY = new CategoryKind("Severity", Icons.ERROR_ICON, "Group by severity");

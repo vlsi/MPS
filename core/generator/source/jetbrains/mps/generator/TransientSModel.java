@@ -16,7 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
 import org.jetbrains.annotations.NotNull;

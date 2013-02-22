@@ -74,7 +74,7 @@ class InstancesSearchType extends SearchType<SNode, SConcept> {
       if (model == null) continue;
 
       for (SConcept concept : e.getValue()) {
-        result.addAll(((ABCDE) ((SModelDescriptor) model).getSModel()).getFastNodeFinder().getNodes(concept.getId(), !myExact));
+        result.addAll(((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).getFastNodeFinder().getNodes(concept.getId(), !myExact));
       }
 
       if (callback != null && !callback.compute()) break;

@@ -10,7 +10,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 import java.util.List;

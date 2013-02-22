@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -100,7 +100,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append("\ncurrent thread ");
       sb.append(canRead);
       sb.append("\nstack trace of model disposing is: ");
-      for (StackTraceElement ste : ((ABCDE) targetModel).getDisposedStacktrace()) {
+      for (StackTraceElement ste : ((jetbrains.mps.smodel.SModel) targetModel).getDisposedStacktrace()) {
         sb.append(ste);
         sb.append("\n");
       }

@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -202,15 +202,15 @@ public class CopyPasteUtil {
   private static SModel copyModelProperties(SModel model) {
     SModelReference modelReference = model.getReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
-    SModel newModel = new SModel(new SModelReference(fqName, SModelId.generate()));
-    for (ModuleReference language : ((ABCDE) model).importedLanguages()) {
-      ((ABCDE) newModel).addLanguage(language);
+    SModel newModel = new jetbrains.mps.smodel.SModel(new SModelReference(fqName, SModelId.generate()));
+    for (ModuleReference language : ((jetbrains.mps.smodel.SModel) model).importedLanguages()) {
+      ((jetbrains.mps.smodel.SModel) newModel).addLanguage(language);
     }
     for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
-      ((ABCDE) newModel).addModelImport(importedModel, false);
+      ((jetbrains.mps.smodel.SModel) newModel).addModelImport(importedModel, false);
     }
-    for (ModuleReference devKit : ((ABCDE) model).importedDevkits()) {
-      ((ABCDE) newModel).addDevKit(devKit);
+    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModel) model).importedDevkits()) {
+      ((jetbrains.mps.smodel.SModel) newModel).addDevKit(devKit);
     }
     return newModel;
   }
@@ -369,10 +369,10 @@ public class CopyPasteUtil {
       public void run() {
         //  model properties 
         for (SModelReference imported : requiredImports) {
-          ((ABCDE) targetModel).addModelImport(imported, false);
+          ((jetbrains.mps.smodel.SModel) targetModel).addModelImport(imported, false);
         }
         for (ModuleReference language : requiredLanguages) {
-          ((ABCDE) targetModel).addLanguage(language);
+          ((jetbrains.mps.smodel.SModel) targetModel).addLanguage(language);
         }
         //  model's module properties 
         IModule targetModule = targetModel.getModelDescriptor().getModule();

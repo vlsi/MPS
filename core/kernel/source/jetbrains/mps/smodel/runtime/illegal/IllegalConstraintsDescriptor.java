@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.runtime.illegal;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.*;
 import org.jetbrains.annotations.NotNull;

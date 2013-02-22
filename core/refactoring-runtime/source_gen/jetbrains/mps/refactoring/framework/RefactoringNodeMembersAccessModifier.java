@@ -9,7 +9,7 @@ import jetbrains.mps.util.Pair;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Collection;
 import org.jetbrains.annotations.NotNull;

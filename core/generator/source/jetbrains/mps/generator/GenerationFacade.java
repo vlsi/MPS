@@ -33,7 +33,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -54,7 +54,7 @@ public class GenerationFacade {
     List<SModelDescriptor> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();
     for (SModelDescriptor templateModel : list) {
-      List<SNode> nodes = ((ABCDE) templateModel.getSModel()).getFastNodeFinder().getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true);
+      List<SNode> nodes = ((jetbrains.mps.smodel.SModel) templateModel.getSModel()).getFastNodeFinder().getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true);
       mappings.addAll(nodes);
     }
     return mappings;

@@ -8,7 +8,7 @@ import java.util.Map;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
 import java.util.HashMap;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.io.File;
@@ -146,7 +146,7 @@ public class DirParser {
           SModel mdl = registerModelForPackage(finalPkg);
 
           if (mdl != null) {
-            ((ABCDE) mdl).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
+            ((jetbrains.mps.smodel.SModel) mdl).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
             for (SNode r : ListSequence.fromList(roots)) {
               SModelOperations.addRootNode(mdl, r);
             }

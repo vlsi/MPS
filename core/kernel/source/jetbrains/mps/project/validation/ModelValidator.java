@@ -19,7 +19,7 @@ import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IterableUtil;
 
 import java.util.ArrayList;
@@ -66,14 +66,14 @@ public class ModelValidator {
 
     List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
     langsToCheck.addAll(IterableUtil.asCollection(myModel.getModelDepsManager().getAllImportedLanguages()));
-    langsToCheck.addAll(((ABCDE) myModel).engagedOnGenerationLanguages());
+    langsToCheck.addAll(((jetbrains.mps.smodel.SModel) myModel).engagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
         errors.add("Can't find language: " + lang.getModuleFqName());
       }
     }
 
-    for (ModuleReference devKit : ((ABCDE) myModel).importedDevkits()) {
+    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModel) myModel).importedDevkits()) {
       if (scope.getDevKit(devKit) == null) {
         errors.add("Can't find devkit: " + devKit.getModuleFqName());
       }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -80,14 +80,14 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     final SModel oldSModel = getCurrentModelInternal();
 
     if (oldSModel != null) {
-      ((ABCDE) oldSModel).setModelDescriptor(null);
+      ((jetbrains.mps.smodel.SModel) oldSModel).setModelDescriptor(null);
     }
 
     replacer.run();
 
     SModel newModel = getCurrentModelInternal();
     if (newModel != null) {
-      ((ABCDE) newModel).setModelDescriptor(this);
+      ((jetbrains.mps.smodel.SModel) newModel).setModelDescriptor(this);
     }
 
     notifyModelReplaced(oldSModel);

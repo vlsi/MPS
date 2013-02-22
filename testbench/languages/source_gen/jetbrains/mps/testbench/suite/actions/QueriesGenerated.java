@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
@@ -115,7 +115,7 @@ public class QueriesGenerated {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "klass", (item), false);
                 model.getModelDescriptor().getModule().addDependency(SNodeOperations.getModel((item)).getModelDescriptor().getModule().getModuleReference(), false);
-                ((ABCDE) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
+                ((jetbrains.mps.smodel.SModel) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }
 
@@ -176,7 +176,7 @@ public class QueriesGenerated {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "klass", (item), false);
                 model.getModelDescriptor().getModule().addDependency(SNodeOperations.getModel((item)).getModelDescriptor().getModule().getModuleReference(), false);
-                ((ABCDE) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
+                ((jetbrains.mps.smodel.SModel) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }
 
@@ -219,7 +219,7 @@ public class QueriesGenerated {
                 SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.TestCaseRef", null);
                 SLinkOperations.setTarget(tref, "testCase", (item), false);
                 model.getModelDescriptor().getModule().addDependency(SNodeOperations.getModel((item)).getModelDescriptor().getModule().getModuleReference(), false);
-                ((ABCDE) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
+                ((jetbrains.mps.smodel.SModel) model).addModelImport(SNodeOperations.getModel((item)).getReference(), false);
                 return tref;
               }
 

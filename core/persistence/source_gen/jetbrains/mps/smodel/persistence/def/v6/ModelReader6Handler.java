@@ -212,17 +212,17 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("language".equals(tagName)) {
         String child = (String) value;
-        ((ABCDE) fieldmodel).addLanguage(ModuleReference.fromString(child));
+        ((jetbrains.mps.smodel.SModel) fieldmodel).addLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         String child = (String) value;
-        ((ABCDE) fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+        ((jetbrains.mps.smodel.SModel) fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("devkit".equals(tagName)) {
         String child = (String) value;
-        ((ABCDE) fieldmodel).addDevKit(ModuleReference.fromString(child));
+        ((jetbrains.mps.smodel.SModel) fieldmodel).addDevKit(ModuleReference.fromString(child));
         return;
       }
       if ("import".equals(tagName)) {

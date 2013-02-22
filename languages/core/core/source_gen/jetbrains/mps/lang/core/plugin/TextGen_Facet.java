@@ -24,7 +24,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.concurrent.atomic.AtomicLong;
 import jetbrains.mps.generator.textGen.TextGeneratorEngine;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.IterableUtil;
 import java.util.Map;
 import jetbrains.mps.make.delta.IDelta;

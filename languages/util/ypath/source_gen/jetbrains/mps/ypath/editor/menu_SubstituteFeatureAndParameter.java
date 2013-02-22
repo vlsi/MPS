@@ -23,7 +23,7 @@ import jetbrains.mps.ypath.behavior.TreePath_Behavior;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponent {
   public menu_SubstituteFeatureAndParameter() {

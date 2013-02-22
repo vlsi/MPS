@@ -30,7 +30,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.Condition;
 import com.intellij.ui.treeStructure.Tree;

@@ -19,7 +19,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 
 public class GoToTypeErrorRuleUtil {

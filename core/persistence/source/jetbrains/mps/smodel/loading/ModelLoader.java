@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.loading;
 
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.UnregisteredNodes;

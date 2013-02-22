@@ -29,7 +29,7 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.logging.Logger;

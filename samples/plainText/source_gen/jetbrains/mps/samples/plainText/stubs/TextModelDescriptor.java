@@ -4,7 +4,7 @@ package jetbrains.mps.samples.plainText.stubs;
 
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -81,14 +81,14 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   public synchronized SModel getSModel() {
     if (myModel == null) {
       myModel = loadSModel();
-      ((ABCDE) myModel).setModelDescriptor(this);
+      ((jetbrains.mps.smodel.SModel) myModel).setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
   }
 
   public SModel loadSModel() {
-    SModel m = new SModel(getSModelReference());
+    SModel m = new jetbrains.mps.smodel.SModel(getSModelReference());
     MultiStreamDataSource source = (MultiStreamDataSource) getSource();
     for (String child : Sequence.fromIterable(source.getAvailableStreams())) {
       SNode root = SModelOperations.createNewRootNode(m, "jetbrains.mps.samples.plainText.structure.TextFile", null);
@@ -139,7 +139,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   private static void check_bp2jat_a5a31(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      ((ABCDE) checkedDotOperand).setModelDescriptor(null);
+      ((jetbrains.mps.smodel.SModel) checkedDotOperand).setModelDescriptor(null);
     }
 
   }

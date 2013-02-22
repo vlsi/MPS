@@ -17,7 +17,7 @@
 package jetbrains.mps.idea.core.actions;
 
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;

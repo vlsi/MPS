@@ -7,7 +7,7 @@ import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.language.ConceptRegistry;

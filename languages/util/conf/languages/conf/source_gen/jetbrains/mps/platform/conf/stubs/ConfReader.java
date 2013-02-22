@@ -430,7 +430,7 @@ public class ConfReader {
     if (SNodeOperations.getModel(src).getReference().equals(trgsmref)) {
       src.setReference(new StaticReference(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName), null).getRole(), new StaticReference(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName), null));
     } else {
-      ((ABCDE) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
+      ((jetbrains.mps.smodel.SModel) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
       src.setReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName)).getRole(), SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName)));
     }
   }
@@ -448,14 +448,14 @@ public class ConfReader {
         }
       }
     } else {
-      ((ABCDE) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
+      ((jetbrains.mps.smodel.SModel) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
       src.setReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName)).getRole(), SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName)));
     }
   }
 
   private void addClassifierReference(SNode link, SNode src, String fqClassName) {
     SModelReference trgsmref = this.javastubResolver.stubModelReference(namespace(fqClassName));
-    ((ABCDE) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
+    ((jetbrains.mps.smodel.SModel) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
     src.setReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqClassName)).getRole(), SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqClassName)));
   }
 

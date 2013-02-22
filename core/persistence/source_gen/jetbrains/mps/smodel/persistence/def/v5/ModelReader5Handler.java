@@ -19,7 +19,7 @@ import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.util.InternUtil;
@@ -225,27 +225,27 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("languageAspect".equals(tagName)) {
         String[] child = (String[]) value;
         int version = Integer.parseInt(child[1]);
-        ((ABCDE) fieldmodel).addAdditionalModelVersion(SModelReference.fromString(child[0]), version);
+        ((jetbrains.mps.smodel.SModel) fieldmodel).addAdditionalModelVersion(SModelReference.fromString(child[0]), version);
         return;
       }
       if ("language".equals(tagName)) {
         String child = (String) value;
-        ((ABCDE) fieldmodel).addLanguage(ModuleReference.fromString(child));
+        ((jetbrains.mps.smodel.SModel) fieldmodel).addLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         String child = (String) value;
-        ((ABCDE) fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+        ((jetbrains.mps.smodel.SModel) fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("devkit".equals(tagName)) {
         String child = (String) value;
-        ((ABCDE) fieldmodel).addDevKit(ModuleReference.fromString(child));
+        ((jetbrains.mps.smodel.SModel) fieldmodel).addDevKit(ModuleReference.fromString(child));
         return;
       }
       if ("import".equals(tagName)) {
-        SModel.ImportElement child = (SModel.ImportElement) value;
-        ((ABCDE) fieldmodel).addModelImport(child);
+        jetbrains.mps.smodel.SModel.ImportElement child = (jetbrains.mps.smodel.SModel.ImportElement) value;
+        ((jetbrains.mps.smodel.SModel) fieldmodel).addModelImport(child);
         return;
       }
       if ("node".equals(tagName)) {
@@ -390,10 +390,10 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected SModel.ImportElement createObject(Attributes attrs) {
+    protected jetbrains.mps.smodel.SModel.ImportElement createObject(Attributes attrs) {
       int indexValue = Integer.parseInt(attrs.getValue("index"));
       int versionValue = Integer.parseInt(attrs.getValue("version"));
-      return new SModel.ImportElement(SModelReference.fromString(attrs.getValue("modelUID")), indexValue, versionValue);
+      return new jetbrains.mps.smodel.SModel.ImportElement(SModelReference.fromString(attrs.getValue("modelUID")), indexValue, versionValue);
     }
 
     @Override
@@ -403,7 +403,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      SModel.ImportElement result = (SModel.ImportElement) resultObject;
+      jetbrains.mps.smodel.SModel.ImportElement result = (jetbrains.mps.smodel.SModel.ImportElement) resultObject;
       if ("index".equals(name)) {
         return;
       }

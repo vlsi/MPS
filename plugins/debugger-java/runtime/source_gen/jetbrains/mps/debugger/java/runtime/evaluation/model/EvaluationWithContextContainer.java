@@ -39,7 +39,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.sun.jdi.InvalidStackFrameException;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -103,8 +103,8 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     });
     containerModule.updateModelsSet();
 
-    ((ABCDE) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
-    ((ABCDE) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
+    ((jetbrains.mps.smodel.SModel) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
+    ((jetbrains.mps.smodel.SModel) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
     containerModule.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
     containerModule.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
     containerModule.addDependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")).getModuleReference(), false);

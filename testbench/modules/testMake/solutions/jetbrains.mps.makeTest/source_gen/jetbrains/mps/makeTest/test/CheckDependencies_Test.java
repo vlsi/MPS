@@ -4,7 +4,7 @@ package jetbrains.mps.makeTest.test;
 
 import jetbrains.mps.MPSLaunch;
 import junit.framework.TestCase;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;

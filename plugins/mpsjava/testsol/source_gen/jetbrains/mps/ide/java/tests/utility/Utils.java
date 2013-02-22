@@ -13,7 +13,7 @@ import jetbrains.mps.tool.builder.FileMPSProject;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.ide.java.newparser.JavaParser;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.List;

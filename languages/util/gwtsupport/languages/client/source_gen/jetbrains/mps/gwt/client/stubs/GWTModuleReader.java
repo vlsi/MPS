@@ -164,7 +164,7 @@ public class GWTModuleReader {
 
   private void addClassifierReference(SNode link, SNode src, String fqClassName) {
     SModelReference trgsmref = this.javastubResolver.stubModelReference(namespace(fqClassName));
-    ((ABCDE) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
+    ((jetbrains.mps.smodel.SModel) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
     src.setReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqClassName)).getRole(), SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createId(fqClassName)));
   }
 

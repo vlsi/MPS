@@ -23,7 +23,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.util.NameUtil;
@@ -232,11 +232,11 @@ public class NewLanguageDialogContentPane extends JPanel {
         if (myThis.myNeedSandbox_hneum8_g0.isSelected()) {
           Solution sandbox = myThis.createSandboxSolution();
           SModel createdModel = sandbox.createModel(myThis.getLanguageNamespace() + ".sandbox", sandbox.getModelRoots().iterator().next(), null).getSModel();
-          ((ABCDE) createdModel).addLanguage(myThis.getResult().getModuleReference());
+          ((jetbrains.mps.smodel.SModel) createdModel).addLanguage(myThis.getResult().getModuleReference());
           for (ModuleReference extendedLanguage : myThis.getResult().getExtendedLanguageRefs()) {
-            ((ABCDE) createdModel).addLanguage(extendedLanguage);
+            ((jetbrains.mps.smodel.SModel) createdModel).addLanguage(extendedLanguage);
           }
-          for (ModuleReference addedLanguage : ((ABCDE) createdModel).importedLanguages()) {
+          for (ModuleReference addedLanguage : ((jetbrains.mps.smodel.SModel) createdModel).importedLanguages()) {
             if (ScopeOperations.resolveModule(sandbox.getScope(), addedLanguage, Language.class) == null) {
               sandbox.addUsedLanguage(addedLanguage);
             }

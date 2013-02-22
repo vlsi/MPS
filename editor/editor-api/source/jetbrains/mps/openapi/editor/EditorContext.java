@@ -18,7 +18,7 @@ package jetbrains.mps.openapi.editor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
 

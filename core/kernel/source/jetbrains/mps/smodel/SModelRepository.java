@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
@@ -269,7 +269,7 @@ public class SModelRepository implements CoreComponent {
     ModelAccess.assertLegalWrite();
 
     if (mySModelRepositoryListeners.isEmpty()) {
-      ((ABCDE) oldSModel).dispose();
+      ((jetbrains.mps.smodel.SModel) oldSModel).dispose();
       return;
     }
 
@@ -306,7 +306,7 @@ public class SModelRepository implements CoreComponent {
   private void disposeOldModels() {
     for (jetbrains.mps.smodel.SModel oldModel : myReloadingDescriptorMap.values()) {
       if (oldModel != null) {
-        ((ABCDE) oldModel).dispose();
+        ((jetbrains.mps.smodel.SModel) oldModel).dispose();
       }
     }
   }

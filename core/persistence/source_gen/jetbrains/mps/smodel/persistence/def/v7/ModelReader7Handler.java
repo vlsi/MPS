@@ -235,17 +235,17 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("language".equals(tagName)) {
         ModuleReference child = (ModuleReference) value;
-        ((ABCDE) fieldmodel).addLanguage(child);
+        ((jetbrains.mps.smodel.SModel) fieldmodel).addLanguage(child);
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         ModuleReference child = (ModuleReference) value;
-        ((ABCDE) fieldmodel).addEngagedOnGenerationLanguage(child);
+        ((jetbrains.mps.smodel.SModel) fieldmodel).addEngagedOnGenerationLanguage(child);
         return;
       }
       if ("devkit".equals(tagName)) {
         ModuleReference child = (ModuleReference) value;
-        ((ABCDE) fieldmodel).addDevKit(child);
+        ((jetbrains.mps.smodel.SModel) fieldmodel).addDevKit(child);
         return;
       }
       if ("import".equals(tagName)) {

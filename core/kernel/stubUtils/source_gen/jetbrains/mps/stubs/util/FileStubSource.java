@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
@@ -38,7 +38,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
 
   @Override
   public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
-    SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
+    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(getFile());
     new ProjectStructureBuilder(moduleDesc, getFile(), model) {
       @Override
@@ -52,7 +52,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
     }.convert();
 
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86ef8290-12bb-4ca7-947f-093788f263a9")).getModuleReference();
-    ((ABCDE) model).addLanguage(lang);
+    ((jetbrains.mps.smodel.SModel) model).addLanguage(lang);
     module.addUsedLanguage(lang);
     return model;
   }

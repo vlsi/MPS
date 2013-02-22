@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.javastub;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;

@@ -21,7 +21,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -297,7 +297,7 @@ public class ModelPersistence {
       modelPersistence = getCurrentModelPersistence();
     }
 
-    ((ABCDE) sourceModel).calculateImplicitImports();
+    ((jetbrains.mps.smodel.SModel) sourceModel).calculateImplicitImports();
     return modelPersistence.getModelWriter().saveModel(sourceModel);
   }
 

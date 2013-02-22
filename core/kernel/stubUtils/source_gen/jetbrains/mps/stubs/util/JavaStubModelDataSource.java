@@ -11,7 +11,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
@@ -44,9 +44,9 @@ public class JavaStubModelDataSource extends FolderSetDataSource implements Stub
 
   @Override
   public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
-    SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
+    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
-      ((ABCDE) model).addLanguage(l.getModuleReference());
+      ((jetbrains.mps.smodel.SModel) model).addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = this.createClassPath(descriptor);
     new ASMModelLoader(module, cp, model, skipPrivate).updateModel();

@@ -18,7 +18,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class ConflictingModelsWarnings implements EditorWarningsProvider {
   public ConflictingModelsWarnings() {

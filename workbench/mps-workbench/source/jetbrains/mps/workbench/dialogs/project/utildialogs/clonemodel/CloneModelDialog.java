@@ -25,7 +25,7 @@ import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
@@ -180,19 +180,19 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
             @Override
             public void adjust(SModelDescriptor model) {
               for (SModelReference ref : myModelProperties.getImportedModels()) {
-                ((ABCDE) model.getSModel()).addModelImport(ref, false);
+                ((jetbrains.mps.smodel.SModel) model.getSModel()).addModelImport(ref, false);
               }
 
               for (ModuleReference mr : myModelProperties.getImportedLanguages()) {
-                ((ABCDE) model.getSModel()).addLanguage(mr);
+                ((jetbrains.mps.smodel.SModel) model.getSModel()).addLanguage(mr);
               }
 
               for (ModuleReference mr : myModelProperties.getImportedDevkits()) {
-                ((ABCDE) model.getSModel()).addDevKit(mr);
+                ((jetbrains.mps.smodel.SModel) model.getSModel()).addDevKit(mr);
               }
 
               for (ModuleReference mr : myModelProperties.getLanguagesInGeneration()) {
-                ((ABCDE) model.getSModel()).addEngagedOnGenerationLanguage(mr);
+                ((jetbrains.mps.smodel.SModel) model.getSModel()).addEngagedOnGenerationLanguage(mr);
               }
 
               SModel smodel = model.getSModel();

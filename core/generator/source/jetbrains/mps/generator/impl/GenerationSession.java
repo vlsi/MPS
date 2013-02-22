@@ -34,7 +34,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -342,7 +342,7 @@ class GenerationSession {
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
-      ((ABCDE) currentInputModel).disposeFastNodeFinder();
+      ((jetbrains.mps.smodel.SModel) currentInputModel).disposeFastNodeFinder();
 
       SModel transientModel = createTransientModel();
       if (myLogger.needsInfo()) {
@@ -558,7 +558,7 @@ class GenerationSession {
     SModelDescriptor md = model.getModelDescriptor();
     if (model instanceof TransientSModel) {
       ttrace.push("recycling", false);
-      ((ABCDE) model).disposeFastNodeFinder();
+      ((jetbrains.mps.smodel.SModel) model).disposeFastNodeFinder();
       if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
         mySessionContext.getModule().removeModel(md);
       }

@@ -17,7 +17,7 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
@@ -50,7 +50,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   public synchronized SModel getSModel() {
     if (mySModel == null) {
       mySModel = createModel();
-      ((ABCDE) mySModel).setModelDescriptor(this);
+      ((jetbrains.mps.smodel.SModel) mySModel).setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return mySModel;

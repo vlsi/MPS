@@ -6,7 +6,7 @@ import jetbrains.mps.logging.Logger;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.ypath.design.IFeatureDesign;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.reloading.ClassLoaderManager;

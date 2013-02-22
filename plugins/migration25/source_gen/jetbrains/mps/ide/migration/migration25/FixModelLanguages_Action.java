@@ -76,8 +76,8 @@ public class FixModelLanguages_Action extends BaseAction {
           for (SNode node : SModelOperations.getNodes(m, null)) {
             Language l = ((Language) node.getConcept().getLanguage().getModule());
             ModuleReference lr = l.getModuleReference();
-            if (!(((ABCDE) m).importedLanguages().contains(lr))) {
-              ((ABCDE) m).addLanguage(lr);
+            if (!(((jetbrains.mps.smodel.SModel) m).importedLanguages().contains(lr))) {
+              ((jetbrains.mps.smodel.SModel) m).addLanguage(lr);
             }
           }
         }

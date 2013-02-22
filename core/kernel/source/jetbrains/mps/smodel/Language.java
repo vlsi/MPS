@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -237,7 +237,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   public List<SNode> getConceptDeclarations() {
     SModelDescriptor structureModel = getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptyList();
-    return ((ABCDE) structureModel.getSModel()).getFastNodeFinder().getNodes(SNodeUtil.concept_ConceptDeclaration, true);
+    return ((jetbrains.mps.smodel.SModel) structureModel.getSModel()).getFastNodeFinder().getNodes(SNodeUtil.concept_ConceptDeclaration, true);
   }
 
   public List<EditableSModelDescriptor> getUtilModels() {

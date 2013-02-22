@@ -106,7 +106,7 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -1323,7 +1323,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     StringBuilder sb = new StringBuilder("editor (" + this + ") is invalid");
     if (myNode != null) {
       sb.append(", myNode is disposed");
-      StackTraceElement[] modelDisposedTrace = ((ABCDE) model).getDisposedStacktrace();
+      StackTraceElement[] modelDisposedTrace = ((jetbrains.mps.smodel.SModel) model).getDisposedStacktrace();
       if (modelDisposedTrace != null) {
         for (StackTraceElement element : modelDisposedTrace) {
           sb.append("\nat ");

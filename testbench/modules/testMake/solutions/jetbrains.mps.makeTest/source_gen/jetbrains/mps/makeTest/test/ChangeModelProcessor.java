@@ -5,7 +5,7 @@ package jetbrains.mps.makeTest.test;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;

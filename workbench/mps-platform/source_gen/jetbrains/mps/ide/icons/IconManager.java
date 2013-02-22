@@ -17,7 +17,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.ui.LayeredIcon;

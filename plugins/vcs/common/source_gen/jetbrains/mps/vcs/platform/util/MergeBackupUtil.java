@@ -18,7 +18,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.util.ModelVersion;
 import jetbrains.mps.util.UnzipUtil;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;

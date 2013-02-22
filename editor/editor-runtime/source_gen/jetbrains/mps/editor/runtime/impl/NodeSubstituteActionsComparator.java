@@ -6,7 +6,7 @@ import java.util.Comparator;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class NodeSubstituteActionsComparator implements Comparator<INodeSubstituteAction> {
   private SNode myContainingRoot;

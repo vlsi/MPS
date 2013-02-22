@@ -30,7 +30,7 @@ import java.util.Collections;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.quickQueryLanguage.runtime.QueryExecutor;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;

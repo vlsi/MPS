@@ -17,7 +17,7 @@ package jetbrains.mps.ide.editor.warningPanel;
 
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;

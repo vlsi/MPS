@@ -7,7 +7,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import com.intellij.openapi.project.Project;
@@ -260,7 +260,7 @@ public class RefactoringFacade {
         continue;
       }
       //  we suppose that all models were saved before refactoring started => ImportElements are up to date 
-      for (SModel.ImportElement elem : ListSequence.fromList(SModelOperations.getAllImportElements(descr.getSModel()))) {
+      for (jetbrains.mps.smodel.SModel.ImportElement elem : ListSequence.fromList(SModelOperations.getAllImportElements(descr.getSModel()))) {
         if (MapSequence.fromMap(dependencies).containsKey(elem.getModelReference())) {
           SetSequence.fromSet(result).addElement(descr);
           break;
@@ -280,7 +280,7 @@ public class RefactoringFacade {
     if (!(context.isLocal())) {
       Map<SModelReference, Integer> dependencies = context.getStructureModification().getDependencies();
       for (SModelReference modelRef : dependencies.keySet()) {
-        ((ABCDE) model).updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
+        ((jetbrains.mps.smodel.SModel) model).updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
       }
     }
     if (model instanceof EditableSModel) {

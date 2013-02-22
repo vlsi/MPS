@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.generator.TransientSModel;
@@ -1020,7 +1020,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   protected SModel createEmptyCopy() {
-    return new SModel(((SModelReference) getReference()));
+    return new jetbrains.mps.smodel.SModel(((SModelReference) getReference()));
   }
 
   protected void copyPropertiesTo(SModel to) {

@@ -17,7 +17,7 @@ import java.util.Scanner;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
 import com.intellij.openapi.util.IconLoader;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;

@@ -92,19 +92,19 @@ public class ModelsAutoImportsManager {
     public void onCreate(SModule module, SModel model) {
       for (SModel modelToImport : getAutoImportedModels(module, model)) {
         // todo: ! what's up with module? add model module to module dependencies?
-        ((ABCDE) ((SModelDescriptor) model).getSModel()).addModelImport((SModelReference) modelToImport.getReference(), false);
+        ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addModelImport((SModelReference) modelToImport.getReference(), false);
       }
       for (Language language : getAutoImportedLanguages(module, model)) {
         if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(language)) {
           ((AbstractModule) model.getModule()).addUsedLanguage(language.getModuleReference());
         }
-        ((ABCDE) ((SModelDescriptor) model).getSModel()).addLanguage(language.getModuleReference());
+        ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addLanguage(language.getModuleReference());
       }
       for (DevKit devKit : getAutoImportedDevKits(module, model)) {
         if (!((AbstractModule) model.getModule()).getUsedDevkitReferences().contains(devKit.getModuleReference())) {
           ((AbstractModule) model.getModule()).addUsedDevkit(devKit.getModuleReference());
         }
-        ((ABCDE) ((SModelDescriptor) model).getSModel()).addDevKit(devKit.getModuleReference());
+        ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addDevKit(devKit.getModuleReference());
       }
     }
   }
