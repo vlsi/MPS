@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:22d2df5f-8d49-41a5-894e-4bb67ea2dfab(jetbrains.mps.build.sandbox.build3)/5253498789149585672">
-    <unitInfo nodeId="5253498789149585672" fileName="buildMpsA.xml" startLine="1" startPosition="0" endLine="120" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsA" />
+    <unitInfo nodeId="5253498789149585672" fileName="buildMpsA.xml" startLine="1" startPosition="0" endLine="111" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsA" />
   </root>
   <root nodeRef="r:22d2df5f-8d49-41a5-894e-4bb67ea2dfab(jetbrains.mps.build.sandbox.build3)/5610619299014495733">
-    <unitInfo nodeId="5610619299014495733" fileName="buildMpsC.xml" startLine="1" startPosition="0" endLine="51" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsC" />
+    <unitInfo nodeId="5610619299014495733" fileName="buildMpsC.xml" startLine="1" startPosition="0" endLine="47" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsC" />
   </root>
   <root nodeRef="r:22d2df5f-8d49-41a5-894e-4bb67ea2dfab(jetbrains.mps.build.sandbox.build3)/6859736767834635843">
-    <unitInfo nodeId="6859736767834635843" fileName="buildMpsB.xml" startLine="1" startPosition="0" endLine="40" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsB" />
+    <unitInfo nodeId="6859736767834635843" fileName="buildMpsB.xml" startLine="1" startPosition="0" endLine="36" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsB" />
   </root>
   <root nodeRef="r:22d2df5f-8d49-41a5-894e-4bb67ea2dfab(jetbrains.mps.build.sandbox.build3)/8775597636506171310">
-    <unitInfo nodeId="8775597636506171310" fileName="buildMpsD.xml" startLine="1" startPosition="0" endLine="57" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsD" />
+    <unitInfo nodeId="8775597636506171310" fileName="buildMpsD.xml" startLine="1" startPosition="0" endLine="48" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsD" />
   </root>
 </debugInfo>
 

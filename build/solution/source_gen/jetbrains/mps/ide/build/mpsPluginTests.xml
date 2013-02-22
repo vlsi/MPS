@@ -90,35 +90,6 @@
     <ant antfile="IdeaPlugin/mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
-  <target name="prepareDependents">
-    <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="prepare" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="prepare" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="prepare" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="prepare" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="prepare" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="IdeaPlugin/mpsPlugin.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="prepare" />
-      <target name="assemble" />
-    </ant>
-  </target>
-  
-  <target name="prepare" />
-  
   <target name="fetchDependencies" />
   
   <target name="build" depends="assemble, check" />

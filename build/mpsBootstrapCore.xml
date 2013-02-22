@@ -2628,10 +2628,6 @@
   
   <target name="buildDependents" />
   
-  <target name="prepareDependents" />
-  
-  <target name="prepare" depends="generate" />
-  
   <target name="fetchDependencies" />
   
   <target name="build" depends="assemble, check" />
@@ -2793,6 +2789,8 @@
     </copy>
     <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path" />
   </target>
+  
+  <target name="makeDependents" />
   
   <target name="java.compile.mps-tuples">
     <mkdir dir="${build.tmp}/java/out/mps-tuples" />

@@ -48,31 +48,6 @@
     <ant antfile="build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
-  <target name="prepareDependents">
-    <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="prepare" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="prepare" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="prepare" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="prepare" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="prepare" />
-      <target name="assemble" />
-    </ant>
-  </target>
-  
-  <target name="prepare" depends="generate" />
-  
   <target name="fetchDependencies" />
   
   <target name="build" depends="assemble, check" />
@@ -95,6 +70,8 @@
   <target name="generate" depends="declare-mps-tasks" />
   
   <target name="declare-mps-tasks" />
+  
+  <target name="makeDependents" />
   
   <target name="java.compile.mps-make" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-make" />

@@ -241,10 +241,6 @@
   
   <target name="buildDependents" />
   
-  <target name="prepareDependents" />
-  
-  <target name="prepare" depends="generate" />
-  
   <target name="fetchDependencies" />
   
   <target name="build" depends="assemble, check" />
@@ -264,7 +260,7 @@
   
   <target name="check" depends="test" />
   
-  <target name="generate" depends="declare-mps-tasks, fetchDependencies, prepareDependents">
+  <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate parallelMode="true" fork="true">
       <library file="${artifacts.mpsPlugin}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -337,6 +333,8 @@
   <target name="declare-mps-tasks">
     <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path" />
   </target>
+  
+  <target name="makeDependents" />
   
   <target name="java.compile.org.jetbrains.mps.samples.Constants" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/org.jetbrains.mps.samples.Constants" />
