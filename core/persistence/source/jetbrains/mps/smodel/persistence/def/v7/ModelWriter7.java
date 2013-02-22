@@ -65,7 +65,7 @@ public class ModelWriter7 implements IModelWriter {
     rootElement.addContent(persistenceElement);
 
     // languages
-    for (ModuleReference languageNamespace : sourceModel.importedLanguages()) {
+    for (ModuleReference languageNamespace : ((ABCDE) sourceModel).importedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);

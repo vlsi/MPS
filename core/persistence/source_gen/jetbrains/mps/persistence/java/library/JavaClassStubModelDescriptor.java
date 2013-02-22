@@ -72,7 +72,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   private SModel createModel() {
     SModel model = new SModel(getSModelReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
-      model.addLanguage(l.getModuleReference());
+      ((ABCDE) model).addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = createClassPath();
     new ASMModelLoader(((IModule) myModelRoot.getModule()), cp, model, false).updateModel();

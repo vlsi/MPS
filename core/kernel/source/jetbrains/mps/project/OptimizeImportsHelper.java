@@ -17,12 +17,8 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.*;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
@@ -127,7 +123,7 @@ public class OptimizeImportsHelper {
     }
 
     Set<ModuleReference> unusedLanguages = new HashSet<ModuleReference>();
-    for (ModuleReference languageRef : modelDescriptor.getSModel().importedLanguages()) {
+    for (ModuleReference languageRef : ((ABCDE) modelDescriptor.getSModel()).importedLanguages()) {
       ModuleReference ref = getUnusedLanguageRef(result, languageRef);
       if (ref != null) unusedLanguages.add(ref);
     }
@@ -247,7 +243,7 @@ public class OptimizeImportsHelper {
     StringBuilder report = new StringBuilder("Import for model " + modelDescriptor.getSModelReference() + " were optimized \n");
 
     for (ModuleReference langRef : unusedLanguages) {
-      modelDescriptor.getSModel().deleteLanguage(langRef);
+      ((ABCDE) modelDescriptor.getSModel()).deleteLanguage(langRef);
       report.append("Language ").append(langRef.getModuleFqName()).append(" was removed from imports\n");
     }
 

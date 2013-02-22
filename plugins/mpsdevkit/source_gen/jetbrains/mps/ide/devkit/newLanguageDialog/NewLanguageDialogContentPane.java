@@ -232,11 +232,11 @@ public class NewLanguageDialogContentPane extends JPanel {
         if (myThis.myNeedSandbox_hneum8_g0.isSelected()) {
           Solution sandbox = myThis.createSandboxSolution();
           SModel createdModel = sandbox.createModel(myThis.getLanguageNamespace() + ".sandbox", sandbox.getModelRoots().iterator().next(), null).getSModel();
-          createdModel.addLanguage(myThis.getResult().getModuleReference());
+          ((ABCDE) createdModel).addLanguage(myThis.getResult().getModuleReference());
           for (ModuleReference extendedLanguage : myThis.getResult().getExtendedLanguageRefs()) {
-            createdModel.addLanguage(extendedLanguage);
+            ((ABCDE) createdModel).addLanguage(extendedLanguage);
           }
-          for (ModuleReference addedLanguage : createdModel.importedLanguages()) {
+          for (ModuleReference addedLanguage : ((ABCDE) createdModel).importedLanguages()) {
             if (ScopeOperations.resolveModule(sandbox.getScope(), addedLanguage, Language.class) == null) {
               sandbox.addUsedLanguage(addedLanguage);
             }

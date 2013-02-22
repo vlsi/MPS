@@ -46,7 +46,7 @@ public class JavaStubModelDataSource extends FolderSetDataSource implements Stub
   public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
-      model.addLanguage(l.getModuleReference());
+      ((ABCDE) model).addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = this.createClassPath(descriptor);
     new ASMModelLoader(module, cp, model, skipPrivate).updateModel();

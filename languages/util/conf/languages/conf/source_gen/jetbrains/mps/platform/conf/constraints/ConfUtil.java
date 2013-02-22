@@ -28,7 +28,7 @@ public class ConfUtil {
       public boolean accept(SModelDescriptor smd) {
         return ((SModelStereotype.isStubModelStereotype(smd.getStereotype())) ?
           "conf_stub".equals(smd.getStereotype()) :
-          Sequence.fromIterable(((Iterable<ModuleReference>) smd.getSModel().importedLanguages())).contains(ConfUtil.CONF_LANG)
+          Sequence.fromIterable(((Iterable<ModuleReference>) ((ABCDE) smd.getSModel()).importedLanguages())).contains(ConfUtil.CONF_LANG)
         );
       }
     }).select(new ISelector<SModelDescriptor, SModel>() {

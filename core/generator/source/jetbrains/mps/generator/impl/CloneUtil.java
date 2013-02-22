@@ -40,8 +40,8 @@ public class CloneUtil {
     for (ImportElement model : inputModel.importedModels()) {
       outputModel.addModelImport(model.getModelReference(), false);
     }
-    for (ModuleReference lang : inputModel.importedLanguages()) {
-      outputModel.addLanguage(lang);
+    for (ModuleReference lang : ((ABCDE) inputModel).importedLanguages()) {
+      ((ABCDE) outputModel).addLanguage(lang);
     }
     for (ModuleReference devKit : inputModel.importedDevkits()) {
       outputModel.addDevKit(devKit);

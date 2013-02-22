@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNodeId;
+
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
@@ -30,8 +31,8 @@ public class MetadataUtil {
 
   public static SModel createMetadataModel(SModel model) {
     SModel metadataModel = new SModel(new SModelReference(new SModelFqName(SModelOperations.getModelName(model), "metadata"), SModelId.generate()));
-    metadataModel.addLanguage(ModuleReference.fromString("6df0089f-3288-4998-9d57-e698e7c8e145(jetbrains.mps.ide.vcs.modelmetadata)"));
-    metadataModel.addLanguage(ModuleReference.fromString("86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)"));
+    ((ABCDE) metadataModel).addLanguage(ModuleReference.fromString("6df0089f-3288-4998-9d57-e698e7c8e145(jetbrains.mps.ide.vcs.modelmetadata)"));
+    ((ABCDE) metadataModel).addLanguage(ModuleReference.fromString("86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)"));
     SModelOperations.addRootNode(metadataModel, createModelRoot(model));
     return metadataModel;
   }
@@ -44,7 +45,7 @@ public class MetadataUtil {
     if (model instanceof DefaultSModel) {
       SPropertyOperations.set(root, "donotgenerate", "" + (check_ca1g54_a0a0e0c(((DefaultSModel) model).getSModelHeader())));
     }
-    for (ModuleReference language : ListSequence.fromList(model.importedLanguages())) {
+    for (ModuleReference language : ListSequence.fromList(((ABCDE) model).importedLanguages())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).addElement(createModuleRefNode(language));
     }
     for (ModuleReference genlanguage : ListSequence.fromList(model.engagedOnGenerationLanguages())) {
@@ -86,7 +87,7 @@ public class MetadataUtil {
       check_ca1g54_a0a2a5(((DefaultSModel) model).getSModelHeader(), root);
     }
 
-    Set<ModuleReference> oldImpLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), model.importedLanguages());
+    Set<ModuleReference> oldImpLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ((ABCDE) model).importedLanguages());
     Set<ModuleReference> impLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode it) {
         return new ModuleReference(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "uuid"));
@@ -94,12 +95,12 @@ public class MetadataUtil {
     }));
     SetSequence.fromSet(oldImpLang).subtract(SetSequence.fromSet(impLang)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        model.deleteLanguage(it);
+        ((ABCDE) model).deleteLanguage(it);
       }
     });
     SetSequence.fromSet(impLang).subtract(SetSequence.fromSet(oldImpLang)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        model.addLanguage(it);
+        ((ABCDE) model).addLanguage(it);
       }
     });
 

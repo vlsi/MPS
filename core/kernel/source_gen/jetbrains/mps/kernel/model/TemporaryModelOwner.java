@@ -48,7 +48,7 @@ public class TemporaryModelOwner extends AbstractModule {
   public Collection<ModuleReference> getUsedLanguagesReferences() {
     Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
     for (SModelDescriptor md : getOwnModelDescriptors()) {
-      result.addAll(md.getSModel().importedLanguages());
+      result.addAll(((ABCDE) md.getSModel()).importedLanguages());
     }
     return result;
   }

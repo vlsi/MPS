@@ -26,8 +26,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
@@ -186,7 +184,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
               }
 
               for (ModuleReference mr : myModelProperties.getImportedLanguages()) {
-                model.getSModel().addLanguage(mr);
+                ((ABCDE) model.getSModel()).addLanguage(mr);
               }
 
               for (ModuleReference mr : myModelProperties.getImportedDevkits()) {

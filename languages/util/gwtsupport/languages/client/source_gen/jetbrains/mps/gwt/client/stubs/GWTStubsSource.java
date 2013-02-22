@@ -48,7 +48,7 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
   public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
-    model.addLanguage(lang);
+    ((ABCDE) model).addLanguage(lang);
 
     String pkg = model.getReference().getSModelFqName().getLongName();
     PathItem pi = GWTModulePathItem.getPathItem(path);

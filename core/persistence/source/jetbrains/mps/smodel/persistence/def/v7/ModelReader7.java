@@ -81,7 +81,7 @@ public class ModelReader7 implements IModelReader {
     // languages
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.LANGUAGE)) {
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      model.addLanguage(ModuleReference.fromString(languageNamespace));
+      ((ABCDE) model).addLanguage(ModuleReference.fromString(languageNamespace));
     }
 
     // languages engaged on generation

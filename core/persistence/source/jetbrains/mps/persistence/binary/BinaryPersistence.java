@@ -134,7 +134,7 @@ public class BinaryPersistence {
 
     BinarySModel model = new BinarySModel(modelHeader);
 
-    for (ModuleReference ref : loadModuleRefList(is)) model.addLanguage(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) ((ABCDE) model).addLanguage(ref);
     for (ModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
     for (ModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
 
@@ -178,7 +178,7 @@ public class BinaryPersistence {
     os.writeBoolean(model instanceof BinarySModel && ((BinarySModel) model).getHeader().isDoNotGenerate());
     os.writeInt(0xabab);
 
-    saveModuleRefList(model.importedLanguages(), os);
+    saveModuleRefList(((ABCDE) model).importedLanguages(), os);
     saveModuleRefList(model.engagedOnGenerationLanguages(), os);
     saveModuleRefList(model.importedDevkits(), os);
 

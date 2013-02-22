@@ -96,8 +96,8 @@ public class NewSubTestModel_Action extends BaseAction {
           for (SModel.ImportElement importElement : sourceModel.importedModels()) {
             createdModel.addModelImport(sourceModel.getReference(), false);
           }
-          for (ModuleReference importedLanguage : sourceModel.importedLanguages()) {
-            createdModel.addLanguage(importedLanguage);
+          for (ModuleReference importedLanguage : ((ABCDE) sourceModel).importedLanguages()) {
+            ((ABCDE) createdModel).addLanguage(importedLanguage);
           }
           for (ModuleReference devKit : sourceModel.importedDevkits()) {
             createdModel.addDevKit(devKit);

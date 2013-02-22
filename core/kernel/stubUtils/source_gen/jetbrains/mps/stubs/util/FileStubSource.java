@@ -52,7 +52,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
     }.convert();
 
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86ef8290-12bb-4ca7-947f-093788f263a9")).getModuleReference();
-    model.addLanguage(lang);
+    ((ABCDE) model).addLanguage(lang);
     module.addUsedLanguage(lang);
     return model;
   }

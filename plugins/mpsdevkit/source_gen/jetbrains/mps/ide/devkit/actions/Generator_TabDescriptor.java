@@ -99,7 +99,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
         }
       }
       if (isNeedRootTemplate) {
-        for (ModuleReference moduleRef : SNodeOperations.getModel(node).importedLanguages()) {
+        for (ModuleReference moduleRef : ((ABCDE) SNodeOperations.getModel(node)).importedLanguages()) {
           Language language = ModuleRepositoryFacade.getInstance().getModule(moduleRef, Language.class);
           if (language == null) {
             continue;

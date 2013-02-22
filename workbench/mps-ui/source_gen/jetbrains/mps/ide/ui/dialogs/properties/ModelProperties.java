@@ -42,7 +42,7 @@ public class ModelProperties {
     myModelDescriptor = modelDescriptor;
     SModel model = myModelDescriptor.getSModel();
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
-    myUsedLanguages.addAll(model.importedLanguages());
+    myUsedLanguages.addAll(((ABCDE) model).importedLanguages());
     myUsedDevKits.addAll(model.importedDevkits());
     myLanguagesEngagedOnGeneration.addAll(model.engagedOnGenerationLanguages());
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
@@ -54,7 +54,7 @@ public class ModelProperties {
     myModelDescriptor = modelDescriptor;
     SModel model = myModelDescriptor.getSModel();
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
-    myUsedLanguages.addAll(model.importedLanguages());
+    myUsedLanguages.addAll(((ABCDE) model).importedLanguages());
     myUsedDevKits.addAll(model.importedDevkits());
     myLanguagesEngagedOnGeneration.addAll(model.engagedOnGenerationLanguages());
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
@@ -160,7 +160,7 @@ public class ModelProperties {
   }
 
   private void addNewLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(myModelDescriptor.getSModel().importedLanguages());
+    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((ABCDE) myModelDescriptor.getSModel()).importedLanguages());
     Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getUsedLanguages());
     languagesInProps.removeAll(languagesInModel);
     for (ModuleReference ref : languagesInProps) {
@@ -171,16 +171,16 @@ public class ModelProperties {
       if (ScopeOperations.resolveModule(myModelDescriptor.getModule().getScope(), language.getModuleReference(), Language.class) == null) {
         myModelDescriptor.getModule().addUsedLanguage(language.getModuleReference());
       }
-      myModelDescriptor.getSModel().addLanguage(language.getModuleReference());
+      ((ABCDE) myModelDescriptor.getSModel()).addLanguage(language.getModuleReference());
     }
   }
 
   private void removeUnusedLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(myModelDescriptor.getSModel().importedLanguages());
+    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((ABCDE) myModelDescriptor.getSModel()).importedLanguages());
     Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getUsedLanguages());
     languagesInModel.removeAll(languagesInProps);
     for (ModuleReference namespace : languagesInModel) {
-      myModelDescriptor.getSModel().deleteLanguage(namespace);
+      ((ABCDE) myModelDescriptor.getSModel()).deleteLanguage(namespace);
     }
   }
 

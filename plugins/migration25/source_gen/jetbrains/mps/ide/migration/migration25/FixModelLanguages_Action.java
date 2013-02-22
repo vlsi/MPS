@@ -6,6 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -75,8 +76,8 @@ public class FixModelLanguages_Action extends BaseAction {
           for (SNode node : SModelOperations.getNodes(m, null)) {
             Language l = ((Language) node.getConcept().getLanguage().getModule());
             ModuleReference lr = l.getModuleReference();
-            if (!(m.importedLanguages().contains(lr))) {
-              m.addLanguage(lr);
+            if (!(((ABCDE) m).importedLanguages().contains(lr))) {
+              ((ABCDE) m).addLanguage(lr);
             }
           }
         }

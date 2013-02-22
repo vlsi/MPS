@@ -116,7 +116,7 @@ public class CloneModelProperties {
       myRoot.setPath(((FolderModelRootBase)modelRoot).getPath());
     }
 
-    myImportedLanguages.addAll(model.importedLanguages());
+    myImportedLanguages.addAll(((ABCDE) model).importedLanguages());
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
     myImportedDevkits.addAll(model.importedDevkits());
     myLanguagesInGeneration.addAll(model.engagedOnGenerationLanguages());

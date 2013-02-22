@@ -54,8 +54,8 @@ public final class CopyUtil {
     for (ModuleReference mr : new ArrayList<ModuleReference>(model.importedDevkits())) {
       model.deleteDevKit(mr);
     }
-    for (ModuleReference mr : new ArrayList<ModuleReference>(model.importedLanguages())) {
-      model.deleteLanguage(mr);
+    for (ModuleReference mr : new ArrayList<ModuleReference>(((ABCDE) model).importedLanguages())) {
+      ((ABCDE) model).deleteLanguage(mr);
     }
     for (ModuleReference mr : new ArrayList<ModuleReference>(model.engagedOnGenerationLanguages())) {
       model.removeEngagedOnGenerationLanguage(mr);

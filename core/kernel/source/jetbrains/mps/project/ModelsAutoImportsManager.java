@@ -98,7 +98,7 @@ public class ModelsAutoImportsManager {
         if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(language)) {
           ((AbstractModule) model.getModule()).addUsedLanguage(language.getModuleReference());
         }
-        ((SModelDescriptor) model).getSModel().addLanguage(language.getModuleReference());
+        ((ABCDE) ((SModelDescriptor) model).getSModel()).addLanguage(language.getModuleReference());
       }
       for (DevKit devKit : getAutoImportedDevKits(module, model)) {
         if (!((AbstractModule) model.getModule()).getUsedDevkitReferences().contains(devKit.getModuleReference())) {

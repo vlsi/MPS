@@ -81,7 +81,7 @@ public class SModelOperations {
         }
 
         usedLanguages.add(ref);
-        model.addLanguage(ref);
+        ((ABCDE) model).addLanguage(ref);
       }
 
       for (SReference reference : node.getReferences()) {
@@ -115,7 +115,7 @@ public class SModelOperations {
   public static List<Language> getLanguages(SModel model, @NotNull IScope scope) {
     Set<Language> languages = new LinkedHashSet<Language>();
 
-    for (ModuleReference lang : model.importedLanguages()) {
+    for (ModuleReference lang : ((ABCDE) model).importedLanguages()) {
       Language language = scope.getLanguage(lang);
 
       if (language != null) {
@@ -141,7 +141,7 @@ public class SModelOperations {
   //todo rewrite using iterators
   @NotNull
   public static Set<ModuleReference> getAllImportedLanguages(SModel model) {
-    List<ModuleReference> langs = model.importedLanguages();
+    List<ModuleReference> langs = ((ABCDE) model).importedLanguages();
     List<ModuleReference> devkits = model.importedDevkits();
     Set<ModuleReference> result = new HashSet<ModuleReference>(langs.size() + devkits.size() * 8);
     result.addAll(langs);

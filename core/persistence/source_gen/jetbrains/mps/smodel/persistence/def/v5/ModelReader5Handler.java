@@ -229,7 +229,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("language".equals(tagName)) {
         String child = (String) value;
-        fieldmodel.addLanguage(ModuleReference.fromString(child));
+        ((ABCDE) fieldmodel).addLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {

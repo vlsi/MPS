@@ -569,7 +569,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   //language
 
-  public List<ModuleReference> importedLanguages() {
+  private List<ModuleReference> importedLanguages() {
     return Collections.unmodifiableList(myLanguages);
   }
 
@@ -581,7 +581,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     fireLanguageRemovedEvent(ref);
   }
 
-  public void addLanguage(@NotNull ModuleReference ref) {
+  private void addLanguage(ModuleReference ref) {
     ModelChange.assertLegalChange(this);
     if (SModelOperations.hasLanguage(this, ref)) return;
 
@@ -1022,8 +1022,8 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     for (ModuleReference mr : importedDevkits()) {
       to.addDevKit(mr);
     }
-    for (ModuleReference mr : importedLanguages()) {
-      to.addLanguage(mr);
+    for (ModuleReference mr : ((ABCDE) this).importedLanguages()) {
+      ((ABCDE) to).addLanguage(mr);
     }
     for (ModuleReference mr : engagedOnGenerationLanguages()) {
       to.addEngagedOnGenerationLanguage(mr);

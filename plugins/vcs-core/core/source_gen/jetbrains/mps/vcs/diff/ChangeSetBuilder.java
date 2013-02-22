@@ -233,7 +233,7 @@ public class ChangeSetBuilder {
 
     buildForDependencies(ModuleDependencyChange.DependencyType.USED_LANG, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
       public List<ModuleReference> invoke(SModel model) {
-        return model.importedLanguages();
+        return ((ABCDE) model).importedLanguages();
       }
     });
     buildForDependencies(ModuleDependencyChange.DependencyType.USED_DEVKIT, new _FunctionTypes._return_P1_E0<List<ModuleReference>, SModel>() {
