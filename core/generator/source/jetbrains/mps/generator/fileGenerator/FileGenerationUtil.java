@@ -35,13 +35,8 @@ public class FileGenerationUtil {
     return FileSystem.getInstance().getFileByPath(outputDir.getPath() + CACHES_SUFFIX);
   }
 
-  public static IFile getDefaultOutputDir(org.jetbrains.mps.openapi.model.SModel inputModelDescriptor, @NotNull IFile outputRootDir) {
-    SModelReference reference = inputModelDescriptor.getReference();
-    return getDefaultOutputDir(reference, outputRootDir);
-  }
-
-  public static IFile getDefaultOutputDir(SModel inputModel, IFile outputRootDir) {
-    return getDefaultOutputDir(inputModel.getReference(), outputRootDir);
+  public static IFile getDefaultOutputDir(org.jetbrains.mps.openapi.model.SModel model, @NotNull IFile outputRootDir) {
+    return getDefaultOutputDir(model.getReference(), outputRootDir);
   }
 
   /**
