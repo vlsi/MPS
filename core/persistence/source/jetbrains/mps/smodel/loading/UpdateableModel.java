@@ -34,7 +34,6 @@ public abstract class UpdateableModel {
   private final SModelDescriptor myDescriptor;
 
   private volatile ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
-  private boolean myStateChanging = false;
   private volatile DefaultSModel myModel = null;
 
   public UpdateableModel(SModelDescriptor descriptor) {
@@ -50,10 +49,8 @@ public abstract class UpdateableModel {
   public final DefaultSModel getModel(@Nullable ModelLoadingState state) {
     if (state == null) return myModel;
     if (!ModelAccess.instance().canWrite()) {
-      if (state.ordinal() > myState.ordinal()) {
-        synchronized (this) {
-          ensureLoadedTo(state);
-        }
+      synchronized (this) {
+        ensureLoadedTo(state);
       }
     } else {
       ensureLoadedTo(state);
@@ -62,31 +59,27 @@ public abstract class UpdateableModel {
   }
 
   private void ensureLoadedTo(final ModelLoadingState state) {
-    if (state.ordinal() <= myState.ordinal() || myStateChanging) return;
-    //this is for elimination of infinite recursion
-    myStateChanging = true;
-    try {
-      ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
-        @Override
-        public ModelLoadResult compute() {
-          return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
-            @Override
-            public ModelLoadResult compute() {
-              return doLoad(state, myModel);
-            }
-          });
-        }
-      });
-      if (myModel != null) {
-        assert res.getModel() == myModel;
-      } else {
-        myModel = res.getModel();
-        myModel.setModelDescriptor(myDescriptor);
+    if (state.ordinal() <= myState.ordinal()) return;
+    myState = state;  //this is for elimination of infinite recursion
+
+    ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
+      @Override
+      public ModelLoadResult compute() {
+        return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
+          @Override
+          public ModelLoadResult compute() {
+            return doLoad(state, myModel);
+          }
+        });
       }
-      myState = res.getState();
-    } finally {
-      myStateChanging = false;
+    });
+    if (myModel != null) {
+      assert res.getModel() == myModel;
+    } else {
+      myModel = res.getModel();
+      myModel.setModelDescriptor(myDescriptor);
     }
+    myState = res.getState();
   }
 
   protected abstract ModelLoadResult doLoad(ModelLoadingState state, @Nullable DefaultSModel current);
