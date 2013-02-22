@@ -174,7 +174,7 @@
     <nodeInfo nodeId="4132059805486521569" fileName="ModelUsagesFinder.java" startLine="47" startPosition="61" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486521582" fileName="ModelUsagesFinder.java" startLine="51" startPosition="88" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486521588" fileName="ModelUsagesFinder.java" startLine="54" startPosition="13" endLine="57" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4132059805486521632" fileName="ModelUsagesFinder.java" startLine="63" startPosition="142" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4132059805486521632" fileName="ModelUsagesFinder.java" startLine="63" startPosition="110" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486521658" fileName="ModelUsagesFinder.java" startLine="68" startPosition="18" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486521676" fileName="ModelUsagesFinder.java" startLine="73" startPosition="61" endLine="76" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4132059805486521689" fileName="ModelUsagesFinder.java" startLine="77" startPosition="88" endLine="80" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -251,7 +251,7 @@
     <scopeInfo nodeId="4132059805486521532" fileName="ModelUsagesFinder.java" startLine="38" startPosition="54" endLine="60" endPosition="7">
       <varInfo nodeId="4132059805486521541" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4132059805486521631" fileName="ModelUsagesFinder.java" startLine="63" startPosition="142" endLine="85" endPosition="9">
+    <scopeInfo nodeId="4132059805486521631" fileName="ModelUsagesFinder.java" startLine="63" startPosition="110" endLine="85" endPosition="9">
       <varInfo nodeId="4132059805486521640" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="4132059805486521620" fileName="ModelUsagesFinder.java" startLine="62" startPosition="54" endLine="86" endPosition="7">

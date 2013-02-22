@@ -223,7 +223,7 @@ public class IconManager {
     return IdeIcons.MODEL_ICON;
   }
 
-  public static Icon getIconFor(org.jetbrains.mps.openapi.model.SModel model) {
+  public static Icon getIconFor(SModel model) {
     if (model instanceof SModelDescriptor) {
       SModelDescriptor modelDescriptor = (SModelDescriptor) model;
       LanguageAspect aspect = Language.getModelAspect(modelDescriptor);

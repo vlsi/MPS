@@ -51,6 +51,7 @@
     <classNode dependClassName="org.jdesktop.beansbinding.BeanProperty" />
     <classNode dependClassName="org.jdesktop.beansbinding.Bindings" />
     <classNode dependClassName="org.jdesktop.beansbinding.Property" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="javax.swing.JComponent" />
   </dependency>
 </dependenciesRoot>

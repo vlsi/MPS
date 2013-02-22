@@ -15,6 +15,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -235,17 +236,17 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("language".equals(tagName)) {
         ModuleReference child = (ModuleReference) value;
-        ((jetbrains.mps.smodel.SModel) fieldmodel).addLanguage(child);
+        ((SModel) fieldmodel).addLanguage(child);
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         ModuleReference child = (ModuleReference) value;
-        ((jetbrains.mps.smodel.SModel) fieldmodel).addEngagedOnGenerationLanguage(child);
+        ((SModel) fieldmodel).addEngagedOnGenerationLanguage(child);
         return;
       }
       if ("devkit".equals(tagName)) {
         ModuleReference child = (ModuleReference) value;
-        ((jetbrains.mps.smodel.SModel) fieldmodel).addDevKit(child);
+        ((SModel) fieldmodel).addDevKit(child);
         return;
       }
       if ("import".equals(tagName)) {

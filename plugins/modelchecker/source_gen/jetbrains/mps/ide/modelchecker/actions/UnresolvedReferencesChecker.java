@@ -61,12 +61,12 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
         if (uid == null) {
           continue;
         }
-        org.jetbrains.mps.openapi.model.SModel descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
+        SModel descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
         if (scope.getModelDescriptor(uid) == null && descriptor != null) {
           addIssue(results, node, "Target module " + descriptor.getModule() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new IModelCheckerFix() {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
-                org.jetbrains.mps.openapi.model.SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
+                SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
                 SModuleReference moduleReference = check_xiru3y_a0b0a0f0a0f0c0g0b(check_xiru3y_a0a1a0a5a0a5a2a6a1(sm));
                 if (moduleReference == null) {
                   return false;
@@ -95,7 +95,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     return null;
   }
 
-  private static SModule check_xiru3y_a0a1a0a5a0a5a2a6a1(org.jetbrains.mps.openapi.model.SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0a1a0a5a0a5a2a6a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

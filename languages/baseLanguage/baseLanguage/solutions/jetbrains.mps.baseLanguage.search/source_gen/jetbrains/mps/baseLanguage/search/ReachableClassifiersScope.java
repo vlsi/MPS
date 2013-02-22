@@ -51,9 +51,9 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
   @NotNull
   @Override
   public List<SNode> getClassifiers() {
-    List<? extends org.jetbrains.mps.openapi.model.SModel> models = new ModelAndImportedModelsScope(this.myModel, false, this.myScope).getModels();
+    List<? extends SModel> models = new ModelAndImportedModelsScope(this.myModel, false, this.myScope).getModels();
     List<SNode> result = new ArrayList<SNode>();
-    for (org.jetbrains.mps.openapi.model.SModel model : models) {
+    for (SModel model : models) {
       List<SNode> classifiers = ClassifiersCache.getInstance(model).getClassifiers();
       ListSequence.fromList(result).addSequence(ListSequence.fromList(classifiers));
     }
@@ -101,7 +101,7 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
         targetModelReference = myModel.getReference();
       }
       if (targetModelReference.getSModelId() != null) {
-        org.jetbrains.mps.openapi.model.SModel targetModel = this.myScope.getModelDescriptor(targetModelReference);
+        SModel targetModel = this.myScope.getModelDescriptor(targetModelReference);
         if (targetModel == null) {
           return null;
         }
@@ -119,8 +119,8 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       );
 
       List<SNode> classifiers = new ArrayList<SNode>();
-      for (org.jetbrains.mps.openapi.model.SModel m : Sequence.fromIterable(((Iterable<SModule>) visibleModules)).translate(new ITranslator2<SModule, org.jetbrains.mps.openapi.model.SModel>() {
-        public Iterable<org.jetbrains.mps.openapi.model.SModel> translate(SModule it) {
+      for (SModel m : Sequence.fromIterable(((Iterable<SModule>) visibleModules)).translate(new ITranslator2<SModule, SModel>() {
+        public Iterable<SModel> translate(SModule it) {
           return it.getModels();
         }
       }).distinct()) {

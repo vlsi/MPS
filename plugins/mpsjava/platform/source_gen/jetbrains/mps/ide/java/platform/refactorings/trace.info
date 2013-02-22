@@ -570,7 +570,7 @@
     <nodeInfo nodeId="4507335185602804318" fileName="ExtractMethodDialog.java" startLine="366" startPosition="27" endLine="367" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602804324" fileName="ExtractMethodDialog.java" startLine="367" startPosition="52" endLine="368" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602804337" fileName="ExtractMethodDialog.java" startLine="369" startPosition="76" endLine="370" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4507335185602804346" fileName="ExtractMethodDialog.java" startLine="370" startPosition="90" endLine="371" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4507335185602804346" fileName="ExtractMethodDialog.java" startLine="370" startPosition="90" endLine="371" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602804366" fileName="ExtractMethodDialog.java" startLine="375" startPosition="5" endLine="376" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602804370" fileName="ExtractMethodDialog.java" startLine="377" startPosition="33" endLine="378" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602802782" fileName="ExtractMethodDialog.java" startLine="383" startPosition="0" endLine="384" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMethod" />
@@ -711,7 +711,7 @@
     <scopeInfo nodeId="4507335185602804065" fileName="ExtractMethodDialog.java" startLine="290" startPosition="83" endLine="292" endPosition="33" />
     <scopeInfo nodeId="4507335185602804125" fileName="ExtractMethodDialog.java" startLine="310" startPosition="25" endLine="312" endPosition="62" />
     <scopeInfo nodeId="4507335185602804352" fileName="ExtractMethodDialog.java" startLine="351" startPosition="27" endLine="353" endPosition="13" />
-    <scopeInfo nodeId="4507335185602804336" fileName="ExtractMethodDialog.java" startLine="369" startPosition="76" endLine="371" endPosition="58">
+    <scopeInfo nodeId="4507335185602804336" fileName="ExtractMethodDialog.java" startLine="369" startPosition="76" endLine="371" endPosition="90">
       <varInfo nodeId="4507335185602804338" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602802789" fileName="ExtractMethodDialog.java" startLine="385" startPosition="77" endLine="387" endPosition="29" />

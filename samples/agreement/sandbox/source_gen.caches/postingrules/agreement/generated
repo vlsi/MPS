@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="acsnir9qbbvawmgxnged4fwkw36hbsc">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3l4d6vah7bipcwb415vkx7fy07t8dxg" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
   <dep model="r:00000000-0000-4000-0000-011c8959040a(jetbrains.mps.samples.agreementLanguage.structure)" hash="-cax57a9f0n4dzz9z3b1pimenrywa3ri" />
   <dep model="r:00000000-0000-4000-0000-011c8959040b(jetbrains.mps.samples.agreementLanguage.declarations)" />
-  <dep model="r:00000000-0000-4000-0000-011c8959040c(jetbrains.mps.samples.agreementLanguage.generator.baseLanguage@generator)" hash="-aeyybk72vy6vn29lcf6y344gjzv4bx8" />
+  <dep model="r:00000000-0000-4000-0000-011c8959040c(jetbrains.mps.samples.agreementLanguage.generator.baseLanguage@generator)" hash="4t5xkkc0ij7164l0ey7uz9ct6vgci0e" />
   <dep model="r:00000000-0000-4000-0000-011c8959043c(jetbrains.mps.samples.formulaLanguage.structure)" hash="1tfeh7xumljnogcjnq32tslenwglhfj" />
   <dep model="r:00000000-0000-4000-0000-011c8959043d(jetbrains.mps.samples.formulaLanguage.generator.baseLanguage@generator)" hash="-3e7i3uoq8ibffqyvafizc9ikb2zaq5o" />
-  <dep model="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" hash="22wbg0wjji1dufsd9qp40xa3gv54m41" />
-  <dep model="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)" hash="-6rszb0qkigldzmzqfl586lb70zkhisi" />
+  <dep model="r:3160b573-ccb2-45e9-9d2a-2b5104766730(mf)" hash="ekwrt5h8zw1jibugarmvy7a6deqm7mb" />
+  <dep model="r:54cc1fc5-5f96-4560-9408-18b968230021(postingrules)" hash="-3n68yjel3iv9ur4ze8a01dd0q37nfc8" />
   <common hash="74rakp9kbgeqzpq91l56xmk3rwyzrza">
     <dep root="1112303557868" />
     <dep root="1112304761925" />

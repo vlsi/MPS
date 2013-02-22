@@ -119,7 +119,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     SModel old = myModel;
     notifyModelReplaced(old);
 
-    check_bp2jat_a5a31(old);
+    check_bp2jat_a5a31(((jetbrains.mps.smodel.SModel) old));
 
     myModel = null;
     isChanged = false;
@@ -137,9 +137,9 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   }
 
-  private static void check_bp2jat_a5a31(SModel checkedDotOperand) {
+  private static void check_bp2jat_a5a31(jetbrains.mps.smodel.SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
-      ((jetbrains.mps.smodel.SModel) checkedDotOperand).setModelDescriptor(null);
+      checkedDotOperand.setModelDescriptor(null);
     }
 
   }

@@ -132,7 +132,7 @@ public class AnnotationHelper {
     return annotate(editorComponent, true);
   }
 
-  private static SModel check_19hp0u_a0d0c(SNode checkedDotOperand) {
+  private static jetbrains.mps.smodel.SModel check_19hp0u_a0d0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

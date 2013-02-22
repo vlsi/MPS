@@ -24,6 +24,7 @@ import jetbrains.mps.ui.pluginSolution.plugin.Variants;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -135,14 +136,14 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
       if (langToDep != null) {
         SNodeOperations.getModel(node).getModelDescriptor().getModule().addDependency(langToDep.getModuleReference(), false);
       }
-      for (ModuleReference eng : ((jetbrains.mps.smodel.SModel) SNodeOperations.getModel(node)).engagedOnGenerationLanguages()) {
+      for (ModuleReference eng : ((SModel) SNodeOperations.getModel(node)).engagedOnGenerationLanguages()) {
         if (eng.equals(langRefToEng)) {
           langRefToEng = null;
           break;
         }
       }
       if (langRefToEng != null) {
-        ((jetbrains.mps.smodel.SModel) SNodeOperations.getModel(node)).addEngagedOnGenerationLanguage(langRefToEng);
+        ((SModel) SNodeOperations.getModel(node)).addEngagedOnGenerationLanguage(langRefToEng);
       }
     }
 

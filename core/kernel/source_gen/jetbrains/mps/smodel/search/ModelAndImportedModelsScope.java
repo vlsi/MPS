@@ -44,10 +44,10 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
-    List<? extends org.jetbrains.mps.openapi.model.SModel> models = getModels();
+    List<? extends SModel> models = getModels();
     List<SNode> result = new ArrayList<SNode>();
     if (myRootsOnly) {
-      for (org.jetbrains.mps.openapi.model.SModel model : models) {
+      for (SModel model : models) {
         for (SNode root : model.getRootNodes()) {
           if (condition.met(root)) {
             result.add(root);
@@ -55,7 +55,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
         }
       }
     } else {
-      for (org.jetbrains.mps.openapi.model.SModel model : models) {
+      for (SModel model : models) {
         try {
           if (model == null) {
             continue;

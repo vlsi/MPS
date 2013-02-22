@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.logging.Logger;
 
@@ -93,9 +94,9 @@ public class AddGenerationSupportLanguages_Action extends BaseAction {
         }
       }).visitAll(new IVisitor<SModelDescriptor>() {
         public void visit(SModelDescriptor it) {
-          ((jetbrains.mps.smodel.SModel) it.getSModel()).addDevKit(genPurpose);
-          ((jetbrains.mps.smodel.SModel) it.getSModel()).addLanguage(generator);
-          ((jetbrains.mps.smodel.SModel) it.getSModel()).addLanguage(genContext);
+          ((SModel) it.getSModel()).addDevKit(genPurpose);
+          ((SModel) it.getSModel()).addLanguage(generator);
+          ((SModel) it.getSModel()).addLanguage(genContext);
         }
       });
 

@@ -15,6 +15,7 @@ import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -1125,7 +1126,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
         SModelReference[] modelRefs = new SModelReference[]{new SModelReference("jetbrains.mps.editor.runtime", ""), new SModelReference("jetbrains.mps.baseLanguage.util", ""), new SModelReference("jetbrains.mps.ide.editor.util", "")};
         IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
         for (SModelReference modelRef : modelRefs) {
-          ((jetbrains.mps.smodel.SModel) SNodeOperations.getModel(node)).addModelImport(modelRef, false);
+          ((SModel) SNodeOperations.getModel(node)).addModelImport(modelRef, false);
           ModuleReference moduleReference = SModelRepository.getInstance().getModelDescriptor(modelRef).getModule().getModuleReference();
           module.addDependency(moduleReference, false);
         }

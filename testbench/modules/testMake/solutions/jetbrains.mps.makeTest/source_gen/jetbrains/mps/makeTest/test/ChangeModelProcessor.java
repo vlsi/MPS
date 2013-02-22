@@ -111,7 +111,7 @@ public class ChangeModelProcessor {
     return results;
   }
 
-  public org.jetbrains.mps.openapi.model.SModel getModelDescriptorByName(String name) {
+  public SModel getModelDescriptorByName(String name) {
     String path = TEST_RESOURCES_PATH + name + ".mps";
     IFile file = FileSystem.getInstance().getFileByPath(path);
     return SModelFileTracker.getInstance().findModel(file);
@@ -125,7 +125,7 @@ public class ChangeModelProcessor {
     return this.getModel(this.myModelToChange);
   }
 
-  private SModel getModel(final org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
+  private SModel getModel(final SModel modelDescriptor) {
     final SModel[] model = new SModel[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

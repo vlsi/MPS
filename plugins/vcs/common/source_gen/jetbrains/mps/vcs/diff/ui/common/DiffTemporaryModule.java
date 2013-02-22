@@ -109,7 +109,7 @@ public class DiffTemporaryModule extends AbstractModule {
     if (module == null) {
       module = new DiffTemporaryModule(model, version, project);
     }
-    ((jetbrains.mps.smodel.SModel) model).setModelDescriptor(new DiffSModelDescriptor(module, model, mergeResultModel));
+    ((jetbrains.mps.smodel.SModel) model).setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, model, mergeResultModel));
   }
 
   public static void setSModelId(SModel model, String version) {
@@ -174,7 +174,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    public org.jetbrains.mps.openapi.model.SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
+    public SModel resolve(org.jetbrains.mps.openapi.model.SModelReference reference) {
       return findModel((SModelReference) reference);
     }
   }

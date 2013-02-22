@@ -60,7 +60,7 @@ public class ModelUsagesFinder implements IFinder {
       }
     } else if (false && query.getScope() instanceof ModulesOnlyScope) {
       // TODO: implement model search in Module Scope 
-      for (org.jetbrains.mps.openapi.model.SModel scopeModel : (as_s8v3jk_a0a0b0a6a1(query.getScope(), ModulesOnlyScope.class)).getModels()) {
+      for (SModel scopeModel : (as_s8v3jk_a0a0b0a6a1(query.getScope(), ModulesOnlyScope.class)).getModels()) {
         if (monitor.isCanceled()) {
           return searchResults;
         }

@@ -4,7 +4,6 @@ package jetbrains.mps.refactoring;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Map;
-
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.List;
 import jetbrains.mps.smodel.StaticReference;

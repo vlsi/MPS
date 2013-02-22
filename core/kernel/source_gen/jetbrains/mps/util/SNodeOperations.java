@@ -302,7 +302,7 @@ public class SNodeOperations {
     }
   }
 
-  public static String getModelStereotype(org.jetbrains.mps.openapi.model.SModel model) {
+  public static String getModelStereotype(SModel model) {
     String name = model.getModelName();
     int index = name.indexOf("@");
     return (index == -1 ?
@@ -311,7 +311,7 @@ public class SNodeOperations {
     );
   }
 
-  public static String getModelLongName(org.jetbrains.mps.openapi.model.SModel model) {
+  public static String getModelLongName(SModel model) {
     String name = model.getModelName();
     int index = name.indexOf("@");
     return (index == -1 ?
@@ -320,7 +320,7 @@ public class SNodeOperations {
     );
   }
 
-  public static List<ModuleReference> getUsedLanguages(org.jetbrains.mps.openapi.model.SModel model) {
+  public static List<ModuleReference> getUsedLanguages(SModel model) {
     Iterable<SLanguage> languages = model.getModelScope().getLanguages();
     return Sequence.fromIterable(languages).select(new ISelector<SLanguage, ModuleReference>() {
       public ModuleReference select(SLanguage it) {
@@ -329,15 +329,15 @@ public class SNodeOperations {
     }).toListSequence();
   }
 
-  public static boolean isModelDisposed(org.jetbrains.mps.openapi.model.SModel model) {
+  public static boolean isModelDisposed(SModel model) {
     return ((jetbrains.mps.smodel.SModel) model).isDisposed();
   }
 
-  public static FastNodeFinder getModelFastFinder(org.jetbrains.mps.openapi.model.SModel model) {
-    return ((jetbrains.mps.smodel.SModel) ((SModel) model)).getFastNodeFinder();
+  public static FastNodeFinder getModelFastFinder(SModel model) {
+    return ((jetbrains.mps.smodel.SModel) model).getFastNodeFinder();
   }
 
-  public static int nodesCount(org.jetbrains.mps.openapi.model.SModel model) {
+  public static int nodesCount(SModel model) {
     return IterableUtil.asCollection(new NodesIterable(model)).size();
   }
 }

@@ -230,7 +230,7 @@ public class ClassifierResolveUtils {
     //   if no, only then traverse all appropriate models 
 
     SModel oldModel = contextNode.getModel();
-    org.jetbrains.mps.openapi.model.SModel contextNodeModel = (oldModel == null ?
+    SModel contextNodeModel = (oldModel == null ?
       null :
       oldModel.getModelDescriptor()
     );
@@ -281,7 +281,7 @@ public class ClassifierResolveUtils {
       }
     }
 
-    Iterable<org.jetbrains.mps.openapi.model.SModel> models;
+    Iterable<SModel> models;
 
     SNode root = Sequence.fromIterable(getPathToRoot(contextNode)).last();
     SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
@@ -290,7 +290,7 @@ public class ClassifierResolveUtils {
       // This is probably too wide 
       // <node> 
       Collection<SModelDescriptor> parentScopeModels = modelsPlusImported.getModels();
-      List<org.jetbrains.mps.openapi.model.SModel> ms = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
+      List<SModel> ms = ListSequence.fromList(new ArrayList<SModel>());
       ListSequence.fromList(ms).addSequence(CollectionSequence.fromCollection(parentScopeModels));
       models = ms;
 
@@ -316,7 +316,7 @@ public class ClassifierResolveUtils {
       }
 
       // putting on-demand imports into model list 
-      List<org.jetbrains.mps.openapi.model.SModel> javaImportedModels = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
+      List<SModel> javaImportedModels = ListSequence.fromList(new ArrayList<SModel>());
       ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getSModel().getModelDescriptor());
       for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -342,9 +342,9 @@ public class ClassifierResolveUtils {
     // finally, let's go through all appropriate models and see if there is such a root 
 
     // adding contextNodeModel in the beginning of sequence 
-    models = Sequence.fromIterable(Sequence.<org.jetbrains.mps.openapi.model.SModel>singleton(contextNodeModel)).concat(Sequence.fromIterable(models));
+    models = Sequence.fromIterable(Sequence.<SModel>singleton(contextNodeModel)).concat(Sequence.fromIterable(models));
 
-    for (org.jetbrains.mps.openapi.model.SModel model : Sequence.fromIterable(models)) {
+    for (SModel model : Sequence.fromIterable(models)) {
       // FIXME will be unnecessary when transient models live in a separate repository 
       if (!(model.equals(contextNodeModel)) && model instanceof SModelDescriptor && ((SModelDescriptor) model).isTransient()) {
         continue;
@@ -479,7 +479,7 @@ public class ClassifierResolveUtils {
     return curr;
   }
 
-  public static SNode resolveFqName(String refText, SearchScope moduleScope, org.jetbrains.mps.openapi.model.SModel contextNodeModel) {
+  public static SNode resolveFqName(String refText, SearchScope moduleScope, SModel contextNodeModel) {
     // FIXME constant 20 
     int[] dotPositions = new int[20];
     int lastDot = -1;
@@ -495,13 +495,13 @@ public class ClassifierResolveUtils {
     for (int p = k - 1; p >= 0; p--) {
 
       String pkgName = refText.substring(0, dotPositions[p]);
-      Iterable<org.jetbrains.mps.openapi.model.SModel> models = getModelsByName(moduleScope, pkgName);
+      Iterable<SModel> models = getModelsByName(moduleScope, pkgName);
 
       if (Sequence.fromIterable(models).isEmpty()) {
         continue;
       }
 
-      for (org.jetbrains.mps.openapi.model.SModel m : Sequence.fromIterable(models)) {
+      for (SModel m : Sequence.fromIterable(models)) {
 
         // FIXME will be unnecessary when transient models live in a separate repository 
         if (!(m.equals(contextNodeModel)) && m instanceof SModelDescriptor && ((SModelDescriptor) m).isTransient()) {
@@ -535,12 +535,12 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  public static Iterable<org.jetbrains.mps.openapi.model.SModel> getModelsByName(SearchScope moduleScope, String name) {
-    List<org.jetbrains.mps.openapi.model.SModel> models = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
+  public static Iterable<SModel> getModelsByName(SearchScope moduleScope, String name) {
+    List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
 
     // THINK maybe we should put those models together, not use if-else 
 
-    org.jetbrains.mps.openapi.model.SModel model = moduleScope.resolve(SModelReference.fromString(name));
+    SModel model = moduleScope.resolve(SModelReference.fromString(name));
     if (model != null) {
       ListSequence.fromList(models).addElement(model);
     } else {

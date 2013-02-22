@@ -4,7 +4,6 @@ package jetbrains.mps.vcs.diff;
 
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
-
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;

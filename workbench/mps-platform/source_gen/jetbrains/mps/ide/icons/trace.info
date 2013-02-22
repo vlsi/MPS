@@ -178,7 +178,7 @@
     <nodeInfo nodeId="2434140849679604397" fileName="IconManager.java" startLine="60" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ICON" />
     <nodeInfo nodeId="2434140849679605156" fileName="IconManager.java" startLine="95" startPosition="118" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2434140849679604775" fileName="IconManager.java" startLine="246" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2434140849679604737" fileName="IconManager.java" startLine="226" startPosition="79" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2434140849679604737" fileName="IconManager.java" startLine="226" startPosition="47" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2434140849679604580" fileName="IconManager.java" startLine="169" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconForConceptFQName#(Ljava/lang/String;)Ljavax/swing/Icon;" />
     <nodeInfo nodeId="2434140849679604669" fileName="IconManager.java" startLine="190" startPosition="100" endLine="207" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2434140849679604731" fileName="IconManager.java" startLine="226" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIconFor#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljavax/swing/Icon;" />
@@ -360,7 +360,7 @@
     <scopeInfo nodeId="2434140849679604580" fileName="IconManager.java" startLine="169" startPosition="0" endLine="186" endPosition="0">
       <varInfo nodeId="2434140849679604583" varName="conceptFQName" />
     </scopeInfo>
-    <scopeInfo nodeId="2434140849679604736" fileName="IconManager.java" startLine="226" startPosition="79" endLine="243" endPosition="31" />
+    <scopeInfo nodeId="2434140849679604736" fileName="IconManager.java" startLine="226" startPosition="47" endLine="243" endPosition="31" />
     <scopeInfo nodeId="2434140849679604661" fileName="IconManager.java" startLine="189" startPosition="9" endLine="207" endPosition="7">
       <varInfo nodeId="2434140849679604663" varName="language" />
     </scopeInfo>

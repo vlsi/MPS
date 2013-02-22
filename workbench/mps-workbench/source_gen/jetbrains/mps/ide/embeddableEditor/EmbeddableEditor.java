@@ -8,6 +8,7 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ProjectModels;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -40,7 +41,6 @@ import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.resources.CResource;
 import javax.swing.SwingUtilities;
 import java.util.concurrent.ExecutionException;
@@ -72,8 +72,8 @@ public class EmbeddableEditor {
     myContext = context;
     myIsEditable = editable;
     myModel = ((EditableSModel) ProjectModels.createDescriptorFor(true));
-    ((jetbrains.mps.smodel.SModel) smodel()).addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
-    ((jetbrains.mps.smodel.SModel) smodel()).addLanguage(ModuleReference.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)"));
+    ((SModel) smodel()).addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+    ((SModel) smodel()).addLanguage(ModuleReference.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)"));
     SModelRepository.getInstance().registerModelDescriptor((SModelDescriptor) myModel, myOwner);
     setNode(node, true);
   }
@@ -161,7 +161,7 @@ public class EmbeddableEditor {
 
         MakeSession session = new MakeSession(myContext, null, true);
         if (IMakeService.INSTANCE.get().openNewSession(session)) {
-          Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myContext, Sequence.<SModel>singleton(myModel)).resources(false), scr, ctl);
+          Future<IResult> future = IMakeService.INSTANCE.get().make(session, new ModelsToResources(myContext, Sequence.<org.jetbrains.mps.openapi.model.SModel>singleton(myModel)).resources(false), scr, ctl);
           try {
             IResult result = future.get();
             if (result.isSucessful()) {
@@ -190,7 +190,7 @@ public class EmbeddableEditor {
     }
     InMemoryJavaGenerationHandler handler = new InMemoryJavaGenerationHandler(false, false) {
       @Override
-      public boolean canHandle(SModel inputModel) {
+      public boolean canHandle(org.jetbrains.mps.openapi.model.SModel inputModel) {
         return inputModel != null;
       }
 
@@ -203,7 +203,7 @@ public class EmbeddableEditor {
         return result;
       }
     };
-    boolean successful = GeneratorUIFacade.getInstance().generateModels(myContext, ListSequence.fromListAndArray(new ArrayList<SModel>(), myModel), handler, true, true);
+    boolean successful = GeneratorUIFacade.getInstance().generateModels(myContext, ListSequence.fromListAndArray(new ArrayList<org.jetbrains.mps.openapi.model.SModel>(), myModel), handler, true, true);
     return new GenerationResult(myNode, myContext, myModel, handler, successful);
   }
 
@@ -215,7 +215,7 @@ public class EmbeddableEditor {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModelReference ref = (SModelReference) language.getStructureModelDescriptor().getReference();
-        ((jetbrains.mps.smodel.SModel) smodel()).addModelImport(ref, false);
+        ((SModel) smodel()).addModelImport(ref, false);
       }
     });
   }
@@ -223,7 +223,7 @@ public class EmbeddableEditor {
   public void addLanguage(final Language language) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ((jetbrains.mps.smodel.SModel) smodel()).addLanguage(language.getModuleReference());
+        ((SModel) smodel()).addLanguage(language.getModuleReference());
       }
     });
   }
@@ -231,12 +231,12 @@ public class EmbeddableEditor {
   public void addModel(final SModelReference model) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ((jetbrains.mps.smodel.SModel) smodel()).addModelImport(model, false);
+        ((SModel) smodel()).addModelImport(model, false);
       }
     });
   }
 
-  private SModel smodel() {
+  private final org.jetbrains.mps.openapi.model.SModel smodel() {
     return ((SModelDescriptor) myModel).getSModel();
   }
 

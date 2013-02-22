@@ -79,7 +79,7 @@ public class MethodCallChecker extends SpecificChecker {
         if (uid == null) {
           continue;
         }
-        org.jetbrains.mps.openapi.model.SModel descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
+        SModel descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
         if (scope.resolve(uid) == null && descriptor != null) {
           addIssue(results, node, "Target module " + descriptor.getModule().getModuleName() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new IModelCheckerFix() {
             public boolean doFix() {

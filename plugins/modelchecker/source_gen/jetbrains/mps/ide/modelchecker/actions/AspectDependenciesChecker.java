@@ -192,7 +192,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
   }
 
   public static boolean findInModule(SModule module, String modelName, String rootName) {
-    for (org.jetbrains.mps.openapi.model.SModel d : module.getModels()) {
+    for (SModel d : module.getModels()) {
       if (d.getModelName().equals(modelName)) {
         for (SNode _n : d.getRootNodes()) {
           SNode n = (SNode) _n;
