@@ -3,6 +3,7 @@ package jetbrains.mps.psiTest;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 
+
 public class PsiTestMain {
 
     public static void main(String[] args) {
@@ -37,5 +38,10 @@ public class PsiTestMain {
             case BLACK: break;
             case RED: break;
         }
+
+        Container<String> container = new Container<String>();
+        String var = container.head;
+        container.add("item");
     }
+
 }

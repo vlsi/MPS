@@ -74,8 +74,8 @@ public class MPSJavaDirectInheritorsSearcher extends QueryExecutorBase<PsiClass,
         public void run() {
 
           for (SModelDescriptor model : SModelRepository.getInstance().getModelDescriptors(facetSolution)) {
-            for (SNode root: model.getRootNodes()) {
-              for (SNode claz: SNodeOperations.getAncestors(root, "jetbrains.mps.baseLanguage.structure.Classifier", true)) {
+            for (SNode root : model.getRootNodes()) {
+              for (SNode claz : SNodeOperations.getAncestors(root, "jetbrains.mps.baseLanguage.structure.Classifier", true)) {
                 PsiElement psiElem = MPSPsiProvider.getInstance(project).getPsi(claz);
                 // not our real project MPS node, probably stub
                 if (!(psiElem instanceof MPSPsiNode)) continue; // should skip all model
@@ -83,8 +83,14 @@ public class MPSJavaDirectInheritorsSearcher extends QueryExecutorBase<PsiClass,
 
                 PsiClass psiClas = (PsiClass) psiElem;
 
-                for (PsiClassType extended: psiClas.getExtendsListTypes()) {
+                for (PsiClassType extended : psiClas.getExtendsListTypes()) {
                   if (base.isEquivalentTo(extended.resolve())) {
+                    consumer.process(psiClas);
+                  }
+                }
+
+                for (PsiClassType implemented : psiClas.getImplementsListTypes()) {
+                  if (base.isEquivalentTo(implemented.resolve())) {
                     consumer.process(psiClas);
                   }
                 }
