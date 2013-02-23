@@ -31,6 +31,10 @@
   
   <target name="assemble" depends="classes" />
   
+  <target name="buildDependents" />
+  
+  <target name="fetchDependencies" />
+  
   <target name="build" depends="assemble, check">
     <mkdir asd="aaaa" />
     <javac asd="asd" ssdf="asd">
@@ -41,6 +45,8 @@
     </javac>
     <copy asda="asda" />
   </target>
+  
+  <target name="clean" />
   
   <target name="java.compile.java.modules.cycle.1">
     <mkdir dir="build/temp/temp/java.modules.cycle.1" />
