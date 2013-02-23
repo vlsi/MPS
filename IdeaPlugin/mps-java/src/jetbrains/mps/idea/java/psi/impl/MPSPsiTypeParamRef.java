@@ -16,8 +16,15 @@
 
 package jetbrains.mps.idea.java.psi.impl;
 
+import com.intellij.pom.java.LanguageLevel;
+import com.intellij.psi.PsiClass;
+import com.intellij.psi.PsiClassType;
+import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiSubstitutor;
 import com.intellij.psi.PsiType;
+import com.intellij.psi.PsiTypeParameter;
 import com.intellij.psi.PsiTypeVariable;
+import com.intellij.psi.PsiTypeVisitor;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import org.jetbrains.annotations.NonNls;
@@ -29,61 +36,141 @@ import org.jetbrains.mps.openapi.model.SNodeId;
  * danilla 2/11/13
  */
 
-public class MPSPsiTypeParamRef extends MPSPsiNode implements ComputesPsiType<PsiTypeVariable> {
+public class MPSPsiTypeParamRef extends MPSPsiNode implements ComputesPsiType<PsiClassType> {
   public MPSPsiTypeParamRef(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
   }
 
   @Override
-  public PsiTypeVariable getPsiType() {
-    // FIXME here will be another type, resolve will be involved somehow
-    // This method must return concrete type: e.g. Clas<T> { T  field; }, Clas<Integer> obj; obj.field is Integer, not T
-    return new PsiTypeVariable() {
-      @Override
-      public int getIndex() {
-        return 0;
+  public PsiClassType getPsiType() {
+    return new PsiClassType(LanguageLevel.JDK_1_6) {
+
+      private PsiTypeParameter resolved;
+
+      private void resolveRef() {
+        if (resolved == null) {
+          resolved = getReferenceTarget("typeVariableDeclaration", MPSPsiTypeParameter.class);
+        }
       }
 
       @Override
-      public boolean isValidInContext(PsiType type) {
-        return true;
-      }
-
-      @Override
-      public String getPresentableText() {
-        return "<MPS PSI type parameter ref.>";
-      }
-
-      @Override
-      public String getCanonicalText() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-      }
-
-      @Override
-      public String getInternalCanonicalText() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-      }
-
-      @Override
-      public boolean isValid() {
-        return true;
-      }
-
-      @Override
-      public boolean equalsToText(@NonNls String text) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+      public <A> A accept(@NotNull PsiTypeVisitor<A> visitor) {
+        return visitor.visitClassType(this);
       }
 
       @Nullable
       @Override
-      public GlobalSearchScope getResolveScope() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+      public PsiTypeParameter resolve() {
+        resolveRef();
+        return resolved;
+      }
+
+      @Override
+      public String getClassName() {
+        resolveRef();
+        if (resolved == null) return null;
+        return resolved.getName();
       }
 
       @NotNull
       @Override
-      public PsiType[] getSuperTypes() {
+      public PsiType[] getParameters() {
         return PsiType.EMPTY_ARRAY;
+      }
+
+      @NotNull
+      @Override
+      public ClassResolveResult resolveGenerics() {
+        final PsiTypeParameter typeParameter = resolve();
+
+        return new ClassResolveResult() {
+          @Override
+          public PsiClass getElement() {
+            return typeParameter;
+          }
+
+          @Override
+          public PsiSubstitutor getSubstitutor() {
+            return PsiSubstitutor.EMPTY;
+          }
+
+          @Override
+          public boolean isPackagePrefixPackageReference() {
+            return false;
+          }
+
+          @Override
+          public boolean isAccessible() {
+            return typeParameter != null;
+          }
+
+          @Override
+          public boolean isStaticsScopeCorrect() {
+            return true;
+          }
+
+          @Override
+          public PsiElement getCurrentFileResolveScope() {
+            return null;
+          }
+
+          @Override
+          public boolean isValidResult() {
+            return typeParameter != null;
+          }
+        };
+      }
+
+      @NotNull
+      @Override
+      public PsiClassType rawType() {
+        return this;
+      }
+
+      @Override
+      public String getPresentableText() {
+        return getClassName();
+      }
+
+      @Override
+      public String getCanonicalText() {
+        return getClassName();
+      }
+
+      @Override
+      public String getInternalCanonicalText() {
+        return "Type parameter " + getClassName();
+      }
+
+      @Override
+      public boolean isValid() {
+        resolveRef();
+        return resolved != null;
+      }
+
+      @Override
+      public boolean equalsToText(@NonNls String text) {
+        String name = getClassName();
+        return name == null ? false : name.equals(text);
+      }
+
+      @NotNull
+      @Override
+      public GlobalSearchScope getResolveScope() {
+        // if it matters, must be much more narrow
+        return GlobalSearchScope.allScope(getProject());
+      }
+
+      @NotNull
+      @Override
+      public LanguageLevel getLanguageLevel() {
+        return myLanguageLevel;
+      }
+
+      @NotNull
+      @Override
+      public PsiClassType setLanguageLevel(@NotNull LanguageLevel languageLevel) {
+        return this;
       }
     };
   }
