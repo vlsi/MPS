@@ -39,8 +39,9 @@ public class PsiTestMain {
             case RED: break;
         }
 
-        Container<String> container = new Container<String>();
+        Container<String> container = new Container<String>("first");
         String var = container.head;
+        var = container.getHead();
         container.add("item");
     }
 

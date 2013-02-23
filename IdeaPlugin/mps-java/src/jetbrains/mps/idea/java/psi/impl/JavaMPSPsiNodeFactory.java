@@ -68,17 +68,16 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPSNodePsiSourc
         return new MPSPsiClassifierType(id, concept, containingRole);
       }
     });
-    factories.put("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", new MPSPsiNodeFactory() {
+    factories.put("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", new MPSPsiNodeFactory() {
+      @Override
+      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
+        return new MPSPsiConstructor(id, concept, containingRole);
+      }
+    });
+    factories.put("jetbrains.mps.baseLanguage.structure.MethodDeclaration", new MPSPsiNodeFactory() {
       @Override
       public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
         return new MPSPsiMethod(id, concept, containingRole);
-      }
-    });
-    factories.put("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", new MPSPsiNodeFactory() {
-      @Override
-      public MPSPsiNode create(SNodeId id, String concept, String containingRole) {
-        MPSPsiMethod method = new MPSPsiMethod(id, concept, containingRole);
-        return method;
       }
     });
     factories.put("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", new MPSPsiNodeFactory() {
