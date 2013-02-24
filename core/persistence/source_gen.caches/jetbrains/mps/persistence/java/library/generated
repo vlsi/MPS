@@ -22,7 +22,6 @@
   <common hash="chy14hzqoxz90m26syshr43dkiipda3" />
   <source id="6619269785060746035" name="JavaClassStubConstants" hash="-a98slrv4qxj3fva7q4lsliki5vxxmz3">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.persistence(MPS.Core/jetbrains.mps.persistence@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaClassStubConstants.java" />
   </source>
   <source id="6619269785060746048" name="JavaClassStubModelDescriptor" hash="5bhbjpuvd0rp33xwt79gx2nl4mq7xyx">
