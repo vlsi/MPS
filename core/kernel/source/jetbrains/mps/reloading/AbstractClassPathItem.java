@@ -19,8 +19,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
@@ -72,7 +70,6 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
 
   public void invalidate() {
     myValid = false;
-    callInvalidationListeners();
   }
 
   protected void checkValidity() {
@@ -80,21 +77,5 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
     if (myErrorShown) return;
     myErrorShown = true;
     LOG.error("Using outdated classpath: " + this, new Throwable());
-  }
-
-  //-----------------------
-
-  private final List<Runnable> myInvalidationListeners  = new ArrayList<Runnable>();
-
-  @Override
-  public synchronized void addInvalidationAction(Runnable action){
-    myInvalidationListeners.add(action);
-  }
-
-  protected synchronized void callInvalidationListeners() {
-    for (Runnable action:myInvalidationListeners){
-      action.run();
-    }
-    myInvalidationListeners.clear();
   }
 }
