@@ -17,6 +17,7 @@ package jetbrains.mps.openapi.editor.message;
 
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.openapi.editor.EditorComponent;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 
@@ -32,4 +33,12 @@ public interface SimpleEditorMessage {
   EditorMessageOwner getOwner();
 
   MessageStatus getStatus();
+
+  SNode getNode();
+
+  boolean showInGutter();
+
+  int getPriority();
+
+  boolean sameAs(SimpleEditorMessage message);
 }

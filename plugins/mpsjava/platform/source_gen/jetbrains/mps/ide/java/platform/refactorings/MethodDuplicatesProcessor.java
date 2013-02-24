@@ -8,7 +8,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.ArrayList;
-
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
@@ -22,7 +21,7 @@ public abstract class MethodDuplicatesProcessor extends DuplicatesProcessor<Meth
   }
 
   protected List<EditorMessage> createEditorMessages(MethodMatch duplicate) {
-    List<EditorMessage> result = new ArrayList();
+    List<EditorMessage> result = new ArrayList<EditorMessage>();
     for (SNode node : ListSequence.fromList(duplicate.getNodes())) {
       result.add(new DefaultEditorMessage(node, Color.BLUE, null, this.myOwner));
     }

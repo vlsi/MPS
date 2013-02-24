@@ -1839,18 +1839,18 @@
   <root nodeRef="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)/4507335185602819654">
     <nodeInfo nodeId="4507335185602819663" fileName="MethodDuplicatesProcessor.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="4507335185602819659" fileName="MethodDuplicatesProcessor.java" startLine="19" startPosition="59" endLine="20" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4507335185602819680" fileName="MethodDuplicatesProcessor.java" startLine="23" startPosition="77" endLine="24" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4507335185602819680" fileName="MethodDuplicatesProcessor.java" startLine="23" startPosition="77" endLine="24" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4507335185602819692" fileName="MethodDuplicatesProcessor.java" startLine="25" startPosition="68" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602819704" fileName="MethodDuplicatesProcessor.java" startLine="27" startPosition="5" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4507335185602819655" fileName="MethodDuplicatesProcessor.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodDuplicatesProcessor#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4507335185602819686" fileName="MethodDuplicatesProcessor.java" startLine="24" startPosition="49" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4507335185602819686" fileName="MethodDuplicatesProcessor.java" startLine="24" startPosition="64" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4507335185602819673" fileName="MethodDuplicatesProcessor.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorMessages#(Ljetbrains/mps/baseLanguage/util/plugin/refactorings/MethodMatch;)Ljava/util/List;" />
     <scopeInfo nodeId="4507335185602819658" fileName="MethodDuplicatesProcessor.java" startLine="19" startPosition="59" endLine="20" endPosition="19" />
     <scopeInfo nodeId="4507335185602819691" fileName="MethodDuplicatesProcessor.java" startLine="25" startPosition="68" endLine="26" endPosition="81" />
     <scopeInfo nodeId="4507335185602819655" fileName="MethodDuplicatesProcessor.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="4507335185602819661" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602819686" fileName="MethodDuplicatesProcessor.java" startLine="24" startPosition="49" endLine="27" endPosition="5">
+    <scopeInfo nodeId="4507335185602819686" fileName="MethodDuplicatesProcessor.java" startLine="24" startPosition="64" endLine="27" endPosition="5">
       <varInfo nodeId="4507335185602819687" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602819679" fileName="MethodDuplicatesProcessor.java" startLine="23" startPosition="77" endLine="28" endPosition="18">

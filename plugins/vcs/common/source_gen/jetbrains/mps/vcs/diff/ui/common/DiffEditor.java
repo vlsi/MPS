@@ -6,7 +6,6 @@ import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import javax.swing.JPanel;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import java.util.Map;
-
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;

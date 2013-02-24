@@ -25,7 +25,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.message.EditorMessageOwner" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.ChangeStripsPainter" file="ChangeStripsPainter.java">
     <classNode dependClassName="java.awt.Color" />
@@ -141,7 +141,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
+    <classNode extendsClassName="jetbrains.mps.openapi.editor.message.EditorMessageOwner" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.editor.EditorHighlighterFactory" file="EditorHighlighterFactory.java">

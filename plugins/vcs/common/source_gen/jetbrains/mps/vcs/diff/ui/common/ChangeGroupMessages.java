@@ -9,7 +9,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.errors.MessageStatus;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ChangeGroupMessages {
   public static final EditorMessageOwner ourOwner = new EditorMessageOwner() {};
@@ -75,12 +77,36 @@ public class ChangeGroupMessages {
       return null;
     }
 
-    public int getStart(jetbrains.mps.openapi.editor.EditorComponent component) {
+    public int getStart(EditorComponent component) {
       return (int) myChangeGroup.getBounds(myLeft).start();
     }
 
-    public int getHeight(jetbrains.mps.openapi.editor.EditorComponent component) {
+    public int getHeight(EditorComponent component) {
       return myChangeGroup.getBounds(myLeft).length();
+    }
+
+
+
+
+
+    public MessageStatus getStatus() {
+      return MessageStatus.OK;
+    }
+
+    public SNode getNode() {
+      return null;
+    }
+
+    public boolean sameAs(SimpleEditorMessage message) {
+      return message instanceof ChangeGroupMessages && this.equals(message);
+    }
+
+    public int getPriority() {
+      return 0;
+    }
+
+    public boolean showInGutter() {
+      return false;
     }
   }
 }

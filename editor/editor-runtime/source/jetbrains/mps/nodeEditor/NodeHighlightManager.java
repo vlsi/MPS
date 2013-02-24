@@ -35,8 +35,8 @@ import java.util.Map.Entry;
 
 
 public class NodeHighlightManager implements EditorMessageOwner {
-  private static final Comparator<EditorMessage> EDITOR_MESSAGES_COMPARATOR = new Comparator<EditorMessage>() {
-    public int compare(EditorMessage m1, EditorMessage m2) {
+  private static final Comparator<SimpleEditorMessage> EDITOR_MESSAGES_COMPARATOR = new Comparator<SimpleEditorMessage>() {
+    public int compare(SimpleEditorMessage m1, SimpleEditorMessage m2) {
       return m1.getPriority() - m2.getPriority();
     }
   };
@@ -46,14 +46,14 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   @NotNull
   private EditorComponent myEditor;
-  private Set<EditorMessage> myMessages = new HashSet<EditorMessage>();
-  private Map<EditorMessageOwner, Set<EditorMessage>> myOwnerToMessages = new HashMap<EditorMessageOwner, Set<EditorMessage>>();
-  private ManyToManyMap<EditorMessage, SNode> myMessagesToNodes = new ManyToManyMap<EditorMessage, SNode>();
+  private Set<SimpleEditorMessage> myMessages = new HashSet<SimpleEditorMessage>();
+  private Map<EditorMessageOwner, Set<SimpleEditorMessage>> myOwnerToMessages = new HashMap<EditorMessageOwner, Set<SimpleEditorMessage>>();
+  private ManyToManyMap<SimpleEditorMessage, SNode> myMessagesToNodes = new ManyToManyMap<SimpleEditorMessage, SNode>();
 
   /**
    * all Caches are synchronized using myMessagesLock
    */
-  private Map<EditorCell, List<EditorMessage>> myMessagesCache = Collections.emptyMap();
+  private Map<EditorCell, List<SimpleEditorMessage>> myMessagesCache = Collections.emptyMap();
   private volatile boolean myRebuildMessagesCache = false;
   public ReloadAdapter myHandler = new ReloadAdapter() {
     public void unload() {
@@ -98,7 +98,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myRebuildIconRenderersCacheFlag = true;
   }
 
-  private Map<EditorCell, List<EditorMessage>> getMessagesCache() {
+  private Map<EditorCell, List<SimpleEditorMessage>> getMessagesCache() {
     synchronized (myMessagesLock) {
       return myMessagesCache;
     }
@@ -113,7 +113,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
         if (myMessages.isEmpty()) {
           myMessagesCache = Collections.emptyMap();
         } else {
-          myMessagesCache = new HashMap<EditorCell, List<EditorMessage>>();
+          myMessagesCache = new HashMap<EditorCell, List<SimpleEditorMessage>>();
           if (myEditor.getRootCell() != null && !myMessages.isEmpty()) {
             rebuildMessages(myEditor.getRootCell());
           }
@@ -127,7 +127,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
    * this method should be called inside synchronize(myMessagesLock) block only
    */
   private void rebuildMessages(EditorCell root) {
-    List<EditorMessage> messages = calculateMessages(root);
+    List<SimpleEditorMessage> messages = calculateMessages(root);
     if (!messages.isEmpty()) {
       myMessagesCache.put(root, messages);
     }
@@ -141,7 +141,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   }
 
   public List<SimpleEditorMessage> getMessages(EditorCell cell) {
-    List<EditorMessage> result = getMessagesCache().get(cell);
+    List<SimpleEditorMessage> result = getMessagesCache().get(cell);
     if (result != null) {
       return new ArrayList<SimpleEditorMessage>(result);
     }
@@ -152,13 +152,15 @@ public class NodeHighlightManager implements EditorMessageOwner {
    * part of myMessagesCache rebuild process
    * this method should be called inside synchronize(myMessagesLock) block only
    */
-  private List<EditorMessage> calculateMessages(EditorCell cell) {
+  private List<SimpleEditorMessage> calculateMessages(EditorCell cell) {
     final SNode node = cell.getSNode();
-    final List<EditorMessage> result = new SortedList<EditorMessage>(EDITOR_MESSAGES_COMPARATOR);
+    final List<SimpleEditorMessage> result = new SortedList<SimpleEditorMessage>(EDITOR_MESSAGES_COMPARATOR);
     if (node == null) return result;
-    Set<EditorMessage> messageSet = myMessagesToNodes.getBySecond(node);
-    for (EditorMessage message : messageSet) {
-      if (message.acceptCell(cell, myEditor)) {
+    Set<SimpleEditorMessage> messageSet = myMessagesToNodes.getBySecond(node);
+    for (SimpleEditorMessage message : messageSet) {
+
+      //TODO remove this cast
+      if (((EditorMessage) message).acceptCell(cell, myEditor)) {
         result.add(message);
       }
     }
@@ -178,7 +180,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     return result;
   }
 
-  private void getMessagesFromDescendants(SNode nodeWithoutCell, List<EditorMessage> messages) {
+  private void getMessagesFromDescendants(SNode nodeWithoutCell, List<SimpleEditorMessage> messages) {
     messages.addAll(myMessagesToNodes.getBySecond(nodeWithoutCell));
     for (SNode child : nodeWithoutCell.getChildren()) {
       EditorCell cellForChild = myEditor.findNodeCell(child);
@@ -188,14 +190,14 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
   }
 
-  private void addMessage(EditorMessage m) {
+  private void addMessage(SimpleEditorMessage m) {
     if (m.getNode() == null) {
       return;
     }
 
     EditorMessageOwner owner = m.getOwner();
     if (!myOwnerToMessages.containsKey(owner)) {
-      myOwnerToMessages.put(owner, new HashSet<EditorMessage>());
+      myOwnerToMessages.put(owner, new HashSet<SimpleEditorMessage>());
     }
     myOwnerToMessages.get(owner).add(m);
     myMessages.add(m);
@@ -203,12 +205,12 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myMessagesToNodes.addLink(m, m.getNode());
   }
 
-  private boolean removeMessage(EditorMessage m) {
+  private boolean removeMessage(SimpleEditorMessage m) {
     if (m == null) {
       return false;
     }
     EditorMessageOwner owner = m.getOwner();
-    Set<EditorMessage> messages = myOwnerToMessages.get(owner);
+    Set<SimpleEditorMessage> messages = myOwnerToMessages.get(owner);
     if (messages != null) {
       messages.remove(m);
       if (messages.isEmpty()) {
@@ -222,8 +224,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
     return true;
   }
 
-  public void mark(EditorMessage message) {
-    for (EditorMessage msg : getMessages()) {
+  public void mark(SimpleEditorMessage message) {
+    for (SimpleEditorMessage msg : getMessages()) {
       if (msg.sameAs(message)) return;
     }
 
@@ -236,7 +238,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
     }
   }
 
-  public void unmark(EditorMessage message) {
+  public void unmark(SimpleEditorMessage message) {
     synchronized (myMessagesLock) {
       if (removeMessage(message)) {
         invalidateMessagesCaches();
@@ -247,7 +249,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
   private void clear() {
     synchronized (myMessagesLock) {
       if (myMessages.isEmpty()) return;
-      for (EditorMessage m : new ArrayList<EditorMessage>(myMessages)) {
+      for (SimpleEditorMessage m : new ArrayList<SimpleEditorMessage>(myMessages)) {
         removeMessage(m);
       }
       invalidateMessagesCaches();
@@ -269,8 +271,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
     boolean result = myEditor.getMessagesGutter().removeMessages(owner);
     synchronized (myMessagesLock) {
       if (myOwnerToMessages.containsKey(owner)) {
-        ArrayList<EditorMessage> messages = new ArrayList<EditorMessage>(myOwnerToMessages.get(owner));
-        for (EditorMessage m : messages) {
+        ArrayList<SimpleEditorMessage> messages = new ArrayList<SimpleEditorMessage>(myOwnerToMessages.get(owner));
+        for (SimpleEditorMessage m : messages) {
           removeMessage(m);
         }
         invalidateMessagesCaches();
@@ -307,7 +309,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
       myRebuildIconRenderersCacheFlag = false;
       oldIconRenderers = myIconRenderersCache;
       newIconRenderers = myIconRenderersCache = new HashSet<EditorMessageIconRenderer>();
-      for (EditorMessage message : myMessages) {
+      for (SimpleEditorMessage message : myMessages) {
         if (message instanceof EditorMessageIconRenderer) {
           myIconRenderersCache.add((EditorMessageIconRenderer) message);
         }
@@ -322,47 +324,47 @@ public class NodeHighlightManager implements EditorMessageOwner {
     mark(new DefaultEditorMessage(node, color, messageText, owner));
   }
 
-  public void mark(List<EditorMessage> messages) {
-    for (int i = 0; i < messages.size(); i++) {
-      mark(messages.get(i));
+  public void mark(List<? extends SimpleEditorMessage> messages) {
+    for (SimpleEditorMessage message : messages) {
+      mark(message);
     }
     repaintAndRebuildEditorMessages();
   }
 
-  public void markSingleMessage(EditorMessage message) {
+  public void markSingleMessage(SimpleEditorMessage message) {
     mark(message);
     repaintAndRebuildEditorMessages();
   }
 
-  public Set<EditorMessage> getMessages() {
-    Set<EditorMessage> result = new HashSet<EditorMessage>();
+  public Set<SimpleEditorMessage> getMessages() {
+    Set<SimpleEditorMessage> result = new HashSet<SimpleEditorMessage>();
     synchronized (myMessagesLock) {
       result.addAll(myMessages);
     }
     return result;
   }
 
-  public EditorMessage getMessageFor(SNode node) {
+  public SimpleEditorMessage getMessageFor(SNode node) {
     synchronized (myMessagesLock) {
-      for (EditorMessage msg : myMessages) {
+      for (SimpleEditorMessage msg : myMessages) {
         if (msg.getNode() == node) return msg;
       }
     }
     return null;
   }
 
-  public List<EditorMessage> getMessagesFor(SNode node) {
-    List<EditorMessage> result = new ArrayList<EditorMessage>();
+  public List<SimpleEditorMessage> getMessagesFor(SNode node) {
+    List<SimpleEditorMessage> result = new ArrayList<SimpleEditorMessage>();
     synchronized (myMessagesLock) {
       result.addAll(myMessagesToNodes.getBySecond(node));
     }
     return result;
   }
 
-  public List<EditorMessage> getMessagesFor(SNode node, EditorMessageOwner owner) {
-    List<EditorMessage> result = new ArrayList<EditorMessage>();
+  public List<SimpleEditorMessage> getMessagesFor(SNode node, EditorMessageOwner owner) {
+    List<SimpleEditorMessage> result = new ArrayList<SimpleEditorMessage>();
     synchronized (myMessagesLock) {
-      for (EditorMessage message : myMessagesToNodes.getBySecond(node)) {
+      for (SimpleEditorMessage message : myMessagesToNodes.getBySecond(node)) {
         if (message.getOwner() == owner) {
           result.add(message);
         }
@@ -377,11 +379,11 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myEditor.removeRebuildListener(myRebuildListener);
   }
 
-  public EditorCell getCell(EditorMessage change) {
+  public EditorCell getCell(SimpleEditorMessage change) {
     if (ModelAccess.instance().canWrite() && ModelAccess.instance().isInEDT()) {
       refreshMessagesCache();
     }
-    for (Entry<EditorCell, List<EditorMessage>> e: getMessagesCache().entrySet()) {
+    for (Entry<EditorCell, List<SimpleEditorMessage>> e: getMessagesCache().entrySet()) {
       if (e.getValue().contains(change)) {
         return e.getKey();
       }

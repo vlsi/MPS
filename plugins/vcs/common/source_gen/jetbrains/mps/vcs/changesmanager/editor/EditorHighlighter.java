@@ -5,7 +5,6 @@ package jetbrains.mps.vcs.changesmanager.editor;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.Map;
-
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.List;
 import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage;

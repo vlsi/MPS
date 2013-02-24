@@ -5,6 +5,7 @@ package jetbrains.mps.ide.typesystem.trace;
 import jetbrains.mps.ide.ui.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -417,7 +418,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     }
 
     @Override
-    public boolean sameAs(EditorMessage that) {
+    public boolean sameAs(SimpleEditorMessage that) {
       return super.sameAs(that) && this.equals(that);
     }
 

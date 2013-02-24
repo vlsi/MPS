@@ -9,7 +9,7 @@ import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.EditorMessage;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import java.awt.Cursor;
 
 public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditorMessage implements EditorMessageIconRenderer {
@@ -30,7 +30,7 @@ public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditor
   }
 
   @Override
-  public boolean sameAs(EditorMessage message) {
+  public boolean sameAs(SimpleEditorMessage message) {
     if (message instanceof AbstractLeftEditorHighlighterMessage) {
       AbstractLeftEditorHighlighterMessage other = (AbstractLeftEditorHighlighterMessage) message;
       return super.sameAs(other) && other.getType() == getType() && other.getTooltipText().equals(getTooltipText());

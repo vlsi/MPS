@@ -110,6 +110,7 @@ public class APICellAdapter {
     return null;
   }
 
+  //condition
   public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
     jetbrains.mps.openapi.editor.cells.EditorCell current = getPrevLeaf(cell);
     while (current != null) {

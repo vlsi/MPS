@@ -5,7 +5,6 @@ package jetbrains.mps.vcs.changesmanager.editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import javax.swing.JScrollPane;
-
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroup;
 import jetbrains.mps.smodel.SModel;

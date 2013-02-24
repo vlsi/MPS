@@ -19,6 +19,7 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
@@ -56,7 +57,7 @@ public class DefaultEditorMessage implements EditorMessage {
     myStatus = status;
   }
 
-  public boolean sameAs(EditorMessage message) {
+  public boolean sameAs(SimpleEditorMessage message) {
     return message.getNode() == getNode() && getOwner() == message.getOwner() &&
       getStatus() == message.getStatus() && getMessage().equals(message.getMessage());
   }
@@ -92,6 +93,7 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   public int getStart(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+    //TODO remove this cast
     if (!(editorComponent instanceof  EditorComponent)) {
       return -1;
     }
@@ -103,6 +105,7 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   public int getHeight(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
+    //TODO remove this cast
     if (!(editorComponent instanceof  EditorComponent)) {
       return -1;
     }

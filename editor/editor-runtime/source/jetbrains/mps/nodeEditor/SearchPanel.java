@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
+import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.nodeEditor.cellLayout.PunctuationUtil;
@@ -280,7 +281,7 @@ public class SearchPanel extends AbstractSearchPanel {
   private List<SearchPanelEditorMessage> getMessages() {
     final List<SearchPanelEditorMessage> searchMessages = new ArrayList<SearchPanelEditorMessage>();
     if (myEditor == null) return searchMessages;
-    for (EditorMessage candidate : myEditor.getMessages()) {
+    for (SimpleEditorMessage candidate : myEditor.getMessages()) {
       if (candidate instanceof SearchPanelEditorMessage) {
         searchMessages.add((SearchPanelEditorMessage) candidate);
       }
@@ -401,7 +402,7 @@ public class SearchPanel extends AbstractSearchPanel {
     }
 
     @Override
-    public boolean sameAs(EditorMessage message) {
+    public boolean sameAs(SimpleEditorMessage message) {
       return super.sameAs(message) && this.equals(message);
     }
 
