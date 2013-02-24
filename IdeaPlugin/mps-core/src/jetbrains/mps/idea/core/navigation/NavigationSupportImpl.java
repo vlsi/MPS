@@ -28,6 +28,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
@@ -87,7 +88,7 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
     Project project = ProjectHelper.toIdeaProject(context.getProject());
     SModel targetModel = node.getModel();
 
-    if ("java_stub".equals(targetModel.getStereotype())) {
+    if ("java_stub".equals(SModelStereotype.getStereotype(targetModel))) {
       // jumping to code that has been loaded through java stubs, either binary or source
 
       // FIXME replace hard-coded strings
@@ -138,7 +139,7 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
 
   private PsiClass findClass(SNode classifier, Project project) {
     SModel targetModel = classifier.getModel();
-    SModelReference ref = targetModel.getSModelReference();
+    SModelReference ref = targetModel.getReference();
     // FIXME it seems to be wrong for nested classes
     String fqName = ref.getLongName() + "." + classifier.getName();
     final JavaPsiFacade javaPsi = JavaPsiFacade.getInstance(project);

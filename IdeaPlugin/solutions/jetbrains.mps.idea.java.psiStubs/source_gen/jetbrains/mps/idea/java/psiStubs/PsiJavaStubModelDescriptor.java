@@ -141,7 +141,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
 
           SNode node = converter.convertClass((PsiClass) e);
           SNodeId id = node.getNodeId();
-          SNode oldNode = ourModel.getNodeById(id);
+          SNode oldNode = ourModel.getNode(id);
 
           if ((oldNode != null)) {
             SNodeOperations.replaceWithAnother(oldNode, node);

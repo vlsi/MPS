@@ -65,7 +65,7 @@ public class CheckScopesAction extends AnAction {
         int notEqualMembersCount = 0;
 
         SModelDescriptor descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
-        for (SNode root : descriptor.getSModel().roots()) {
+        for (SNode root : descriptor.getSModel().getRootNodes()) {
           if (LanguageHierarchyCache.isAssignable(root.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
             PsiClass clazz = getPsiClass(myProject, root);
             if (clazz == null) {

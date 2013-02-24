@@ -219,7 +219,7 @@ public class NewModelAction extends AnAction {
         if (module.getScope().getLanguage(languageReference) == null) {
           module.addUsedLanguage(languageReference);
         }
-        smodel.addLanguage(languageReference);
+        ((jetbrains.mps.smodel.SModel) smodel).addLanguage(languageReference);
       }
     }
   }

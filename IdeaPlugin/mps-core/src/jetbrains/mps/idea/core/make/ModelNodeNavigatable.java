@@ -26,22 +26,16 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
-* Created with IntelliJ IDEA.
-* User: fyodor
-* Date: 1/9/13
-* Time: 4:02 PM
-* To change this template use File | Settings | File Templates.
-*/
 public class ModelNodeNavigatable implements Navigatable {
 
   private String modelName;
@@ -63,7 +57,7 @@ public class ModelNodeNavigatable implements Navigatable {
       public void run() {
         SModel model = lookupModel();
         if (model == null) return;
-        SNode node = model.getNodeById(nodeId);
+        SNode node = model.getNode(SNodeId.fromString(nodeId));
         if (node != null) {
           Project prj = project;
           if (prj == null) {

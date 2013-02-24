@@ -89,7 +89,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
         SModel model = descr.getSModel();
         if (model == null) return;
 
-        for (SNode root : model.roots()) {
+        for (SNode root : model.getRootNodes()) {
           newChildren.add(new MPSProjectViewNode(parent.getProject(), root, settings));
         }
       }

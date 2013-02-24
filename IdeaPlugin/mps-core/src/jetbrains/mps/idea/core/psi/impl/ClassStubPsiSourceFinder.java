@@ -7,6 +7,7 @@ import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -52,7 +53,7 @@ public class ClassStubPsiSourceFinder implements MPSNodePsiSourceFinder {
     // class file stubs
     if (!(modelDesc instanceof JavaClassStubModelDescriptor)) return null;
 
-    String classFQName = model.getLongName() + "." + node.getName();
+    String classFQName = SNodeOperations.getModelLongName(model) + "." + node.getName();
     return JavaPsiFacade.getInstance(project).findClass(classFQName, GlobalSearchScope.allScope(project));
   }
 }
