@@ -153,12 +153,6 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
 
   @NotNull
   @Override
-  public PsiMethod[] getConstructors() {
-    return new PsiMethod[0];
-  }
-
-  @NotNull
-  @Override
   public PsiClass[] getInnerClasses() {
     return new PsiClass[0];  //To change body of implemented methods use File | Settings | File Templates.
   }
