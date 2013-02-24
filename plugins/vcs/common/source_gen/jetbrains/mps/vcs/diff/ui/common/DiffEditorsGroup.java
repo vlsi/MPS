@@ -161,7 +161,7 @@ public class DiffEditorsGroup {
     return null;
   }
 
-  private static SNode check_s6qw4f_a0a0a0a1a0a0b6(jetbrains.mps.smodel.SModel checkedDotOperand, SNodeId selectionId) {
+  private static jetbrains.mps.smodel.SNode check_s6qw4f_a0a0a0a1a0a0b6(jetbrains.mps.smodel.SModel checkedDotOperand, SNodeId selectionId) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(selectionId);
     }
