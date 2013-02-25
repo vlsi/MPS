@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-vbnj9f5wss2nwz6kiar57v03god6bl">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6xoyysetm6oarfu3mu090t233rt6p2q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
+  <common hash="-3ccrdn7wmfe5gb0c0ndzhpqzf354x43">
+    <dep root="2264311582634140353" />
+    <dep root="2264311582634140361" />
+    <dep root="2264311582634140363" />
+    <dep root="2264311582634140367" />
+    <dep root="2264311582634140370" />
+    <dep root="2264311582634140373" />
+    <dep root="2264311582634140376" />
+    <dep root="2264311582634140381" />
+    <dep root="2264311582634140384" />
+    <dep root="2264311582634140387" />
+    <dep root="2264311582634140394" />
+    <dep root="2264311582634140397" />
+    <dep root="2264311582634140399" />
+    <dep root="2264311582634140402" />
+    <dep root="2264311582634140412" />
+    <dep root="2264311582634140417" />
+    <dep root="2264311582634140424" />
+    <dep root="2264311582634140432" />
+    <dep root="3465552206661906222" />
+    <dep root="3465552206661911172" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Sax_Language.java" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="2264311582634140353" name="XMLSAXAttributeHandler" hash="48blu6i2bi54my9m31uzuxyuwxuwh0e">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140361" name="XMLSAXAttributeReference" hash="cilrgnf15j28wb7bti03u90lpyyhykd">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140363" name="XMLSAXAttributeRule" hash="-aw0o5k0pvdqsjkngszsdu5swespnywv">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140367" name="XMLSAXBreakStatement" hash="-3fp74qgu8wsm04rg19simo09g38osb1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140370" name="XMLSAXChildHandler" hash="6ptqcw7zxkiuhknr0hbm82nh2ys20pw">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140373" name="XMLSAXChildHandler_childObject" hash="akuqdcxi0gqv4zinqqmwmr74192o5o7">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140376" name="XMLSAXChildRule" hash="-2zzm7t8lyj7er3mvcz10ajgc6tieira">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140381" name="XMLSAXFieldDeclaration" hash="-dikiz93a4z1zbn60yzkg6e8nxi3tti8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140384" name="XMLSAXFieldReference" hash="-a6o2bt2cqjsw1vmb4afcslcjw70oo1b">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140387" name="XMLSAXHandlerFunction" hash="-1udeswd9sdqw13yxreq4wm0g0eo542e">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140394" name="XMLSAXHandler_resultObject" hash="-8dj24h7qqefthj1rnhihkhdadylu881">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140397" name="XMLSAXLocatorExpression" hash="8v3992by9eym6q2z9nhwb4arv8mxa15">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140399" name="XMLSAXNodeCreator" hash="-8rrwd0y3twsaairz9okz1m2y2d79g55">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140402" name="XMLSAXNodeRule" hash="-9o7o9qlm1c1qu35q6nn46vh451vkfyw">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140412" name="XMLSAXNodeValidator" hash="2p43jlh7kbgb69tjowfy15qxvb6qc8j">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140417" name="XMLSAXParser" hash="-10q3m6cvwv95oeaiq5wk0ixqeltmux4">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140424" name="XMLSAXTextHandler" hash="-8zn2b891vznl0iq8r8hic7gkslw5wfj">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2264311582634140432" name="XMLSAXTextRule" hash="8af7k21k2nqtub1adb1embljlw358nw">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3465552206661906222" name="XMLSAXAttributeHandler_value" hash="bjqsro0hogj3z9pat7hcfs8tslj7z09">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3465552206661911172" name="XMLSAXTextHandler_value" hash="ab5sykli5li2p7p6zh74vb7d5yqgmvu">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+</dependencies>
+

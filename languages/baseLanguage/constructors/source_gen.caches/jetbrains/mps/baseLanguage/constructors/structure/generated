@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="7psqalctsa5y7tobeq5zgz8bv732e7r">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6xoyysetm6oarfu3mu090t233rt6p2q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
+  <common hash="io9gl682r64xvoz6w3s51c8rforoin">
+    <dep root="4739047193854255783" />
+    <dep root="4739047193854376699" />
+    <dep root="526936149311701953" />
+    <dep root="526936149311701954" />
+    <dep root="5379647004618176183" />
+    <dep root="5379647004618176185" />
+    <dep root="5379647004618176186" />
+    <dep root="5379647004618201113" />
+    <dep root="5379647004618378852" />
+    <dep root="6820702584719416486" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Constructors_Language.java" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="526936149311701953" name="CustomConstructorContainer" hash="-66x8vjgfmddpyxtv5nhm3s6xt3az5q2">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="526936149311701954" name="CustomConstructor" hash="bhtjox4aoz5o8e00kex42gsg9e9r2ku">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6820702584719416486" name="CustomConstructorUsage" hash="cl6obc1obiugdvn3thy9911o97rfwoi">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5379647004618176183" name="ArgumentClause" hash="-72yeo0y9sjwf0lk5gvvp1g5d64ruizy">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5379647004618176185" name="ListArgumentsClause" hash="dbeje1yb5lxnbnffotvpzmmn1tgniqt">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5379647004618176186" name="CustomArgumentClause" hash="-894dw6gr2jjnl7yowq1ql0binytdry6">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5379647004618201113" name="CustomConstructorParameter" hash="-dr90vtpg2px5zhpz4vszc1w554qszzr">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5379647004618378852" name="CustomConstructorParameterReference" hash="2at285i7csp8lqg7lh3rmjd103gvxry">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4739047193854255783" name="ListParameterReference" hash="-bmgxonaa04c7oa9gpnpu9u36wepp2qq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4739047193854376699" name="ListCustomParameter" hash="3psab1vbh1gx7hvolsce44l9wcsqz70">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+</dependencies>
+
