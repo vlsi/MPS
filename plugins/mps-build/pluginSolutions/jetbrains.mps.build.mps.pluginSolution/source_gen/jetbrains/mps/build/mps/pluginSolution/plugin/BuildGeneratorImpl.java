@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
@@ -173,11 +173,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   private void addRequiredImports(SModel smodel, ModuleDescriptor moduleDescriptor) {
     moduleDescriptor.getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
     moduleDescriptor.getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
-    smodel.addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
-    smodel.addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
+    ((jetbrains.mps.smodel.SModel) smodel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
+    ((jetbrains.mps.smodel.SModel) smodel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
 
     moduleDescriptor.getDependencies().add(new Dependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("422c2909-59d6-41a9-b318-40e6256b250f")).getModuleReference(), false));
-    smodel.addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getSModel().getModelDescriptor().getSModelReference(), false);
+    ((jetbrains.mps.smodel.SModel) smodel).addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getSModel().getModelDescriptor().getSModelReference(), false);
   }
 
   public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {

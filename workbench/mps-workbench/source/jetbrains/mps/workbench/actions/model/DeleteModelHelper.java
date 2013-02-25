@@ -33,7 +33,7 @@ import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -173,7 +173,7 @@ public class DeleteModelHelper {
       // delete imports from available models, helps if there are no references to deleted model
       for (SModelDescriptor md : SModelRepository.getInstance().getModelDescriptors()) {
         if (SModelStereotype.isUserModel(md) && new ModelFindOperations(md).hasImportedModel(modelDescriptor)) {
-          md.getSModel().deleteModelImport(modelDescriptor.getSModelReference());
+          ((jetbrains.mps.smodel.SModel) md.getSModel()).deleteModelImport(modelDescriptor.getSModelReference());
         }
       }
 

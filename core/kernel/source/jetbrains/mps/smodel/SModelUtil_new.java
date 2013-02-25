@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
@@ -50,7 +50,7 @@ public class SModelUtil_new implements CoreComponent {
   private SModelAdapter myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     @Override
     public void rootRemoved(SModelRootEvent p0) {
-      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
+      if (!LanguageAspect.STRUCTURE.is(p0.getModel().getModelDescriptor())) {
         return;
       }
       if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getRoot()))) {
@@ -63,7 +63,7 @@ public class SModelUtil_new implements CoreComponent {
 
     @Override
     public void propertyChanged(SModelPropertyEvent p0) {
-      if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
+      if (!LanguageAspect.STRUCTURE.is(p0.getModel().getModelDescriptor())) {
         return;
       }
       if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(p0.getNode()))) {

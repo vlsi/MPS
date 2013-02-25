@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.io.File;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;

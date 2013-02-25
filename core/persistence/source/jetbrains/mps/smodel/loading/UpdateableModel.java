@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.loading;
 
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 
@@ -77,7 +77,7 @@ public abstract class UpdateableModel {
       assert res.getModel() == myModel;
     } else {
       myModel = res.getModel();
-      myModel.setModelDescriptor(myDescriptor);
+      ((jetbrains.mps.smodel.SModel) myModel).setModelDescriptor(myDescriptor);
     }
     myState = res.getState();
   }

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.GlobalScope;

@@ -21,7 +21,7 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.smodel.event.SModelEventVisitor;
@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
@@ -96,7 +97,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       return new HashSet<EditorMessage>();
     }
     SModel model = SNodeOperations.getModel(rootNode);
-    if (model.getModelDescriptor() == null || model instanceof TransientSModel || model.isDisposed()) {
+    if (model.getModelDescriptor() == null || model instanceof TransientSModel || jetbrains.mps.util.SNodeOperations.isModelDisposed(model)) {
       return new HashSet<EditorMessage>(0);
     }
     final Map<SNode, SNode> reResolvedTargets = new HashMap<SNode, SNode>();
@@ -147,7 +148,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         event.accept(visitor);
       }
       for (SNodeReference expressionWithChangedType : expressionsWithChangedTypes) {
-        expressionTypeChanged(((SNodePointer) expressionWithChangedType).getNode(), reResolvedTargets);
+        expressionTypeChanged(((SNodePointer) expressionWithChangedType).resolve(MPSModuleRepository.getInstance()), reResolvedTargets);
       }
     }
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
@@ -318,7 +319,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       }
     }).select(new ISelector<SNodeReference, SNode>() {
       public SNode select(SNodeReference it) {
-        return SNodeOperations.cast(((SNodePointer) it).getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall");
+        return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.IMethodCall");
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -336,7 +337,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
   private void methodCallDeclarationChanged(SNode methodCall, Map<SNode, SNode> resolveTargets) {
     SNodeReference methodCallPointer = new SNodePointer(methodCall);
-    if (myCheckedMethodCalls.contains(methodCallPointer) && SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == ((SNodePointer) myMethodCallsToSetDecls.get(methodCallPointer)).getNode()) {
+    if (myCheckedMethodCalls.contains(methodCallPointer) && SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == ((SNodePointer) myMethodCallsToSetDecls.get(methodCallPointer)).resolve(MPSModuleRepository.getInstance())) {
       return;
     }
     testAndFixMethodCall(methodCall, resolveTargets);
@@ -345,7 +346,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private void expressionTypeChanged(SNode expression, Map<SNode, SNode> resolveTargets) {
     SNodeReference methodCallPointer = myParametersToCheckedMethodCalls.get(new SNodePointer(expression));
     if (methodCallPointer != null) {
-      SNode methodCall = SNodeOperations.cast(((SNodePointer) methodCallPointer).getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall");
+      SNode methodCall = SNodeOperations.cast(((SNodePointer) methodCallPointer).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.IMethodCall");
       if (methodCall != null) {
         testAndFixMethodCall(methodCall, resolveTargets);
       }

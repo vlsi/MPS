@@ -17,8 +17,8 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.util.InternUtil;
@@ -224,27 +224,27 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("languageAspect".equals(tagName)) {
         String[] child = (String[]) value;
         int version = Integer.parseInt(child[1]);
-        fieldmodel.addAdditionalModelVersion(SModelReference.fromString(child[0]), version);
+        ((SModel) fieldmodel).addAdditionalModelVersion(SModelReference.fromString(child[0]), version);
         return;
       }
       if ("language".equals(tagName)) {
         String child = (String) value;
-        fieldmodel.addLanguage(ModuleReference.fromString(child));
+        ((SModel) fieldmodel).addLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         String child = (String) value;
-        fieldmodel.addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+        ((SModel) fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("devkit".equals(tagName)) {
         String child = (String) value;
-        fieldmodel.addDevKit(ModuleReference.fromString(child));
+        ((SModel) fieldmodel).addDevKit(ModuleReference.fromString(child));
         return;
       }
       if ("import".equals(tagName)) {
         SModel.ImportElement child = (SModel.ImportElement) value;
-        fieldmodel.addModelImport(child);
+        ((SModel) fieldmodel).addModelImport(child);
         return;
       }
       if ("node".equals(tagName)) {

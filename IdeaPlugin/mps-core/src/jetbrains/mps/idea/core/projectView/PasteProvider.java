@@ -23,7 +23,8 @@ import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.resolve.ResolverComponent;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
@@ -85,7 +86,7 @@ public class PasteProvider implements com.intellij.ide.PasteProvider, Runnable {
     return new Runnable() {
       @Override
       public void run() {
-        if (myModel.isDisposed()) {
+        if (jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) {
           return;
         }
         List<SNode> nodesToPaste = nodeData.getNodes();

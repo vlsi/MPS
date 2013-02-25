@@ -10,11 +10,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class NonEmptyProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -35,31 +35,16 @@ public class NonEmptyProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_vbxoaj_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_vbxoaj_a_0");
-    editorCell.addEditorCell(this.createConstant_vbxoaj_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_vbxoaj_b0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createComponent_vbxoaj_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
-  private EditorCell createConstant_vbxoaj_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property");
-    editorCell.setCellId("Constant_vbxoaj_a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_vbxoaj_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createNonEmptyProperty_vbxoaj_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
-    provider.setNoTargetText("no value");
+    provider.setNoTargetText("<no value>");
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
@@ -75,10 +60,25 @@ public class NonEmptyProperty_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createNonEmptyProperty_vbxoaj_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_vbxoaj_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_vbxoaj_a_0");
+    editorCell.addEditorCell(this.createConstant_vbxoaj_a0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_vbxoaj_b0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_vbxoaj_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property");
+    editorCell.setCellId("Constant_vbxoaj_a0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_vbxoaj_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
-    provider.setNoTargetText("<no value>");
+    provider.setNoTargetText("no value");
     provider.setAllowsEmptyTarget(true);
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);

@@ -20,7 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
 import com.intellij.openapi.project.Project;

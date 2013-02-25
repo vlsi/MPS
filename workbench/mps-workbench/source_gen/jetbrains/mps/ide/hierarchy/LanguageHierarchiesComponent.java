@@ -33,7 +33,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -62,6 +62,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.awt.Graphics2D;
 import java.awt.Stroke;
 import java.awt.BasicStroke;
@@ -437,7 +438,7 @@ outer:
     }
 
     public SNode getNode() {
-      return SNodeOperations.cast(((SNodePointer) myNodePointer).getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+      return SNodeOperations.cast(((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
     }
 
     public void paint(Graphics graphics) {

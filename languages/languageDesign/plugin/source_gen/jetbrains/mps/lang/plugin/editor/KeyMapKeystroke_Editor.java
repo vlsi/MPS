@@ -6,13 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -24,33 +17,18 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 
 public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_paq7mh_a(editorContext, node);
-  }
-
-  public static class KeyMapKeystroke_modifiers_cellMenu_paq7mh_a0b0 extends AbstractCellMenuPart_PropertyValues {
-    public KeyMapKeystroke_modifiers_cellMenu_paq7mh_a0b0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(AWTKeymapHandler.getValidModifiers()));
-      return result;
-    }
-  }
-
-  public static class KeyMapKeystroke_keycode_cellMenu_paq7mh_a0f0 extends AbstractCellMenuPart_PropertyValues {
-    public KeyMapKeystroke_keycode_cellMenu_paq7mh_a0f0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      List<String> result = ListSequence.fromList(new ArrayList<String>());
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(AWTKeymapHandler.getValidKeyCodes()));
-      return result;
-    }
   }
 
   private EditorCell createCollection_paq7mh_a(EditorContext editorContext, SNode node) {
@@ -77,6 +55,39 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private EditorCell createProperty_paq7mh_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("modifiers");
+    provider.setNoTargetText("any");
+    provider.setAllowsEmptyTarget(true);
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_modifiers");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new KeyMapKeystroke_Editor.KeyMapKeystroke_modifiers_cellMenu_paq7mh_a0b0()}));
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  public static class KeyMapKeystroke_modifiers_cellMenu_paq7mh_a0b0 extends AbstractCellMenuPart_PropertyValues {
+    public KeyMapKeystroke_modifiers_cellMenu_paq7mh_a0b0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(AWTKeymapHandler.getValidModifiers()));
+      return result;
+    }
   }
 
   private EditorCell createConstant_paq7mh_c0(EditorContext editorContext, SNode node) {
@@ -117,41 +128,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_paq7mh_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_paq7mh_g0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.MATCHING_LABEL, "keycode");
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createProperty_paq7mh_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("modifiers");
-    provider.setNoTargetText("any");
-    provider.setAllowsEmptyTarget(true);
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_modifiers");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-    editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new KeyMapKeystroke_Editor.KeyMapKeystroke_modifiers_cellMenu_paq7mh_a0b0()}));
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
   private EditorCell createProperty_paq7mh_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("keycode");
@@ -170,6 +146,30 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  public static class KeyMapKeystroke_keycode_cellMenu_paq7mh_a0f0 extends AbstractCellMenuPart_PropertyValues {
+    public KeyMapKeystroke_keycode_cellMenu_paq7mh_a0f0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      List<String> result = ListSequence.fromList(new ArrayList<String>());
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(AWTKeymapHandler.getValidKeyCodes()));
+      return result;
+    }
+  }
+
+  private EditorCell createConstant_paq7mh_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    editorCell.setCellId("Constant_paq7mh_g0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightBrace(style, editorCell);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.MATCHING_LABEL, "keycode");
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }

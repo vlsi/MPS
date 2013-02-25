@@ -17,7 +17,7 @@ import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vcs.diff.ChangeSet;
@@ -123,7 +123,7 @@ public class EditorHighlighter implements EditorMessageOwner {
             return;
           }
           model = editedNode.getModel();
-          if (model == null || model.isDisposed()) {
+          if (model == null || SNodeOperations.isModelDisposed(model)) {
             return;
           }
           messages.value = ChangeEditorMessageFactory.createMessages(model, change, EditorHighlighter.this, null, false);

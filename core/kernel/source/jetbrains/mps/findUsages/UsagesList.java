@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Set;
 

@@ -37,17 +37,6 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_rsvjao_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_rsvjao_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_rsvjao_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_rsvjao_b1a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createConstant_rsvjao_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "primary choose referent menu");
     editorCell.setCellId("Constant_rsvjao_a0a");
@@ -56,6 +45,17 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_rsvjao_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_rsvjao_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_rsvjao_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_rsvjao_b1a(editorContext, node));
     return editorCell;
   }
 

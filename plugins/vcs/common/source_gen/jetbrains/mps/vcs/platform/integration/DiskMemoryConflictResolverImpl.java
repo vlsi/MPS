@@ -4,10 +4,11 @@ package jetbrains.mps.vcs.platform.integration;
 
 import jetbrains.mps.smodel.DiskMemoryConflictResolver;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.EditableSModel;
 import java.io.File;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModelAccess;
@@ -17,7 +18,6 @@ import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.IOException;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
@@ -40,7 +40,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
           backupFile.delete();
           return;
         }
-        assert model.isDisposed() == false;
+        assert SNodeOperations.isModelDisposed(model) == false;
 
         boolean needSave = FSChangesWatcher.instance().executeUnderBlockedReload(new Computable<Boolean>() {
           public Boolean compute() {
@@ -114,7 +114,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   }
 
   private static void openDiffDialog(IFile modelFile, SModel inMemory) {
-    SModel onDisk = new SModel(inMemory.getReference());
+    SModel onDisk = new jetbrains.mps.smodel.SModel(inMemory.getReference());
     try {
       onDisk = ModelPersistence.readModel(modelFile, false);
     } catch (ModelReadException e) {

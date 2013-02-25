@@ -11,7 +11,7 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactor
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
@@ -39,6 +39,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.SModelReference;
@@ -323,7 +324,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myStaticTarget = (dialog.getResult() != null ?
-          ((SNodePointer) dialog.getResult()).getNode() :
+          ((SNodePointer) dialog.getResult()).resolve(MPSModuleRepository.getInstance()) :
           null
         );
       }
@@ -367,7 +368,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
           myContext.select(result.value);
           if ((myRefactoringModel != null) && myExtractIntoOuterContainer) {
             SModelReference ref = SNodeOperations.getModel(myStaticTarget).getReference();
-            myRefactoringModel.addModelImport(ref, false);
+            ((jetbrains.mps.smodel.SModel) myRefactoringModel).addModelImport(ref, false);
           }
         }
       });

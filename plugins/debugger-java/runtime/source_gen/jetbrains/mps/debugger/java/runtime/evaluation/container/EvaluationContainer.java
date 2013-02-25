@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -160,8 +161,8 @@ public class EvaluationContainer implements IEvaluationContainer {
     new EvaluationContainer.MyBaseLanguagesImportHelper().tryToImport(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), evaluatorNode, "virtual_getCode_317191294093624551", new Object[]{}), nodesToImport);
 
     SModelOperations.validateLanguagesAndImports(containerModel.getSModel(), true, true);
-    containerModel.getSModel().addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
-    containerModel.getSModel().addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
+    ((SModel) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
+    ((SModel) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
   }
 
   protected SNode createEvaluatorNode() {

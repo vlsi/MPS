@@ -39,6 +39,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GoToHelper {
@@ -172,7 +173,7 @@ public class GoToHelper {
     }
 
     protected SNode getLabelNode(NodeNavigatable element) {
-      return ((SNodePointer) element.getNodePointer()).getNode();
+      return ((SNodePointer) element.getNodePointer()).resolve(MPSModuleRepository.getInstance());
     }
 
     protected SNode getContainerNode(NodeNavigatable element) {
@@ -202,7 +203,7 @@ public class GoToHelper {
 
     @Override
     protected SNode getLabelNode(NodeNavigatable element) {
-      SNode node = ((SNodePointer) element.getNodePointer()).getNode();
+      SNode node = ((SNodePointer) element.getNodePointer()).resolve(MPSModuleRepository.getInstance());
       if (node == null) {
         return null;
       }

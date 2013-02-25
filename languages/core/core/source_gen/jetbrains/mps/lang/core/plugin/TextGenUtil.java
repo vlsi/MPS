@@ -6,7 +6,7 @@ import jetbrains.mps.generator.textGen.TextGeneratorEngine;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Collections;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;

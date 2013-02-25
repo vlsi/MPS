@@ -6,8 +6,8 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionKind" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.generator.baseLanguage.util.DataTypeUtil" file="DataTypeUtil.java">
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

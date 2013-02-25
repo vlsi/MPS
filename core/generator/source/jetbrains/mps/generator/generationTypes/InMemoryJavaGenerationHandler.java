@@ -28,7 +28,7 @@ import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.util.Condition;
@@ -90,7 +90,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext invocationContext, ProgressMonitor progressMonitor) {
     info("handling output...");
 
-    jetbrains.mps.smodel.SModel outputModel = status.getOutputModel();
+    SModel outputModel = status.getOutputModel();
     if (outputModel != null) {
       boolean result = collectSources(module, inputModel, invocationContext, outputModel);
 
@@ -117,7 +117,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return 1;
   }
 
-  protected boolean collectSources(SModule module, SModel inputModel, IOperationContext context, jetbrains.mps.smodel.SModel outputModel) {
+  protected boolean collectSources(SModule module, SModel inputModel, IOperationContext context, SModel outputModel) {
     boolean wereErrors = false;
 
     myContextModules.add(context.getModule());

@@ -13,6 +13,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.logging.Logger;
 
 public class EditGivenNode_Action extends BaseAction {
@@ -59,7 +60,7 @@ public class EditGivenNode_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNodePointer) EditGivenNode_Action.this.targetNode).getNode(), true, true);
+      NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNodePointer) EditGivenNode_Action.this.targetNode).resolve(MPSModuleRepository.getInstance()), true, true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "EditGivenNode", t);
     }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
@@ -55,7 +55,7 @@ public class SModelRepository implements CoreComponent {
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
-  private final MultiMap<SModelDescriptor, jetbrains.mps.smodel.SModel> myReloadingDescriptorMap = new MultiMap<SModelDescriptor, jetbrains.mps.smodel.SModel>();
+  private final MultiMap<SModelDescriptor, SModel> myReloadingDescriptorMap = new MultiMap<SModelDescriptor, SModel>();
 
   private SModelListener myModelsListener = new ModelChangeListener();
 
@@ -265,11 +265,11 @@ public class SModelRepository implements CoreComponent {
   public void refreshModels() {
   }
 
-  void notifyModelReplaced(BaseSModelDescriptor modelDescriptor, jetbrains.mps.smodel.SModel oldSModel) {
+  void notifyModelReplaced(BaseSModelDescriptor modelDescriptor, SModel oldSModel) {
     ModelAccess.assertLegalWrite();
 
     if (mySModelRepositoryListeners.isEmpty()) {
-      oldSModel.dispose();
+      ((jetbrains.mps.smodel.SModel) oldSModel).dispose();
       return;
     }
 
@@ -281,10 +281,7 @@ public class SModelRepository implements CoreComponent {
       if (needToNotify) {
         notifyAfterReload();
       }
-
-
     }
-
   }
 
   private void notifyAfterReload() {
@@ -304,9 +301,9 @@ public class SModelRepository implements CoreComponent {
   }
 
   private void disposeOldModels() {
-    for (jetbrains.mps.smodel.SModel oldModel : myReloadingDescriptorMap.values()) {
+    for (SModel oldModel : myReloadingDescriptorMap.values()) {
       if (oldModel != null) {
-        oldModel.dispose();
+        ((jetbrains.mps.smodel.SModel) oldModel).dispose();
       }
     }
   }
@@ -410,7 +407,7 @@ public class SModelRepository implements CoreComponent {
   //-------todo: changed functionality - is better to be moved to SModelDescriptor fully
 
   @Deprecated
-  public void markChanged(jetbrains.mps.smodel.SModel model) {
+  public void markChanged(SModel model) {
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor instanceof EditableSModel) {
       ((EditableSModel) modelDescriptor).setChanged(true);
@@ -428,12 +425,12 @@ public class SModelRepository implements CoreComponent {
     }
 
     @Override
-    public void modelChanged(jetbrains.mps.smodel.SModel model) {
+    public void modelChanged(SModel model) {
       markChanged(model);
     }
 
     @Override
-    public void modelChangedDramatically(jetbrains.mps.smodel.SModel model) {
+    public void modelChangedDramatically(SModel model) {
       markChanged(model);
     }
 

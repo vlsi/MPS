@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import java.util.Map;
 import java.util.Set;
@@ -58,7 +58,7 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
   @Override
   protected SModel createModel() {
 
-    myModel = new SModel(myModelRef);
+    myModel = new jetbrains.mps.smodel.SModel(myModelRef);
 
     processStreams(myDataSource.getAvailableStreams());
 

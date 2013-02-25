@@ -53,13 +53,6 @@ public class Path_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_kwgg2r_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
-    editorCell.setCellId("Constant_kwgg2r_e0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createProperty_kwgg2r_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
@@ -78,6 +71,13 @@ public class Path_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_kwgg2r_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
+    editorCell.setCellId("Constant_kwgg2r_e0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }

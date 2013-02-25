@@ -4,7 +4,7 @@ package jetbrains.mps.lang.intentions.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -33,7 +33,7 @@ public class IntentionDeclaration_Constraints extends BaseConstraintsDescriptor 
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.INTENTIONS.is(model) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.INTENTIONS.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)", "1227089959348");

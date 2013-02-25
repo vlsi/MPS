@@ -6,10 +6,10 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -19,10 +19,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 public class ChildAspectDefinition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8y02r6_a(editorContext, node);
-  }
-
-  private static boolean renderingCondition_8y02r6_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "optional");
   }
 
   private EditorCell createCollection_8y02r6_a(EditorContext editorContext, SNode node) {
@@ -42,6 +38,10 @@ public class ChildAspectDefinition_Editor extends DefaultNodeEditor {
     ChildAspectDefinition_ActionMap.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private static boolean renderingCondition_8y02r6_a0a(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "optional");
   }
 
   private EditorCell createRefNode_8y02r6_b0(EditorContext editorContext, SNode node) {

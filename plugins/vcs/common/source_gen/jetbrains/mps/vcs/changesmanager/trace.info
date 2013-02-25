@@ -53,221 +53,221 @@
     <unitInfo nodeId="2253323551303625635" fileName="BaseVersionUtil.java" startLine="19" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.BaseVersionUtil" />
   </root>
   <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/2722286076674338162">
-    <nodeInfo nodeId="2722286076674338593" fileName="NodeFileStatusMapping.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRegistry" />
-    <nodeInfo nodeId="2722286076674338596" fileName="NodeFileStatusMapping.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusMap" />
-    <nodeInfo nodeId="2722286076674338605" fileName="NodeFileStatusMapping.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGlobalListener" />
-    <nodeInfo nodeId="2722286076674338616" fileName="NodeFileStatusMapping.java" startLine="42" startPosition="85" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2722286076674338618" fileName="NodeFileStatusMapping.java" startLine="43" startPosition="19" endLine="44" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338254" fileName="NodeFileStatusMapping.java" startLine="48" startPosition="31" endLine="49" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338264" fileName="NodeFileStatusMapping.java" startLine="53" startPosition="31" endLine="54" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338280" fileName="NodeFileStatusMapping.java" startLine="59" startPosition="25" endLine="60" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338285" fileName="NodeFileStatusMapping.java" startLine="60" startPosition="73" endLine="61" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338289" fileName="NodeFileStatusMapping.java" startLine="61" startPosition="81" endLine="62" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338297" fileName="NodeFileStatusMapping.java" startLine="63" startPosition="34" endLine="64" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338301" fileName="NodeFileStatusMapping.java" startLine="65" startPosition="9" endLine="66" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338316" fileName="NodeFileStatusMapping.java" startLine="71" startPosition="115" endLine="72" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338341" fileName="NodeFileStatusMapping.java" startLine="78" startPosition="38" endLine="79" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338361" fileName="NodeFileStatusMapping.java" startLine="87" startPosition="35" endLine="88" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338372" fileName="NodeFileStatusMapping.java" startLine="89" startPosition="65" endLine="90" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338380" fileName="NodeFileStatusMapping.java" startLine="91" startPosition="72" endLine="92" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338385" fileName="NodeFileStatusMapping.java" startLine="93" startPosition="11" endLine="94" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338392" fileName="NodeFileStatusMapping.java" startLine="94" startPosition="71" endLine="95" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338417" fileName="NodeFileStatusMapping.java" startLine="97" startPosition="51" endLine="98" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338431" fileName="NodeFileStatusMapping.java" startLine="102" startPosition="86" endLine="103" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338440" fileName="NodeFileStatusMapping.java" startLine="104" startPosition="31" endLine="105" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338450" fileName="NodeFileStatusMapping.java" startLine="106" startPosition="69" endLine="107" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338457" fileName="NodeFileStatusMapping.java" startLine="109" startPosition="15" endLine="110" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338464" fileName="NodeFileStatusMapping.java" startLine="111" startPosition="13" endLine="112" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338474" fileName="NodeFileStatusMapping.java" startLine="114" startPosition="9" endLine="115" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338480" fileName="NodeFileStatusMapping.java" startLine="119" startPosition="69" endLine="120" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338486" fileName="NodeFileStatusMapping.java" startLine="120" startPosition="63" endLine="121" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338495" fileName="NodeFileStatusMapping.java" startLine="122" startPosition="14" endLine="123" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338505" fileName="NodeFileStatusMapping.java" startLine="129" startPosition="58" endLine="130" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338511" fileName="NodeFileStatusMapping.java" startLine="132" startPosition="25" endLine="133" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338528" fileName="NodeFileStatusMapping.java" startLine="137" startPosition="33" endLine="138" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338534" fileName="NodeFileStatusMapping.java" startLine="139" startPosition="155" endLine="140" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338557" fileName="NodeFileStatusMapping.java" startLine="142" startPosition="73" endLine="143" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338573" fileName="NodeFileStatusMapping.java" startLine="151" startPosition="36" endLine="152" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338588" fileName="NodeFileStatusMapping.java" startLine="158" startPosition="36" endLine="159" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338164" fileName="NodeFileStatusMapping.java" startLine="164" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAffectedRoots" />
-    <nodeInfo nodeId="2722286076674338187" fileName="NodeFileStatusMapping.java" startLine="172" startPosition="46" endLine="173" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338192" fileName="NodeFileStatusMapping.java" startLine="175" startPosition="9" endLine="176" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338206" fileName="NodeFileStatusMapping.java" startLine="180" startPosition="39" endLine="181" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338235" fileName="NodeFileStatusMapping.java" startLine="186" startPosition="58" endLine="187" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338246" fileName="NodeFileStatusMapping.java" startLine="191" startPosition="60" endLine="192" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="197" startPosition="36" endLine="198" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="199" startPosition="5" endLine="200" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2722286076674338493" fileName="NodeFileStatusMapping.java" startLine="122" startPosition="12" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2722286076674338172" fileName="NodeFileStatusMapping.java" startLine="166" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyGlobalListener#()V" />
-    <nodeInfo nodeId="2722286076674338295" fileName="NodeFileStatusMapping.java" startLine="62" startPosition="67" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338306" fileName="NodeFileStatusMapping.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="statusChanged#(Lcom/intellij/openapi/vcs/FileStatusManager;Ljetbrains/mps/workbench/nodesFs/MPSNodesVirtualFileSystem;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-    <nodeInfo nodeId="2722286076674338339" fileName="NodeFileStatusMapping.java" startLine="77" startPosition="25" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338378" fileName="NodeFileStatusMapping.java" startLine="90" startPosition="81" endLine="93" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338415" fileName="NodeFileStatusMapping.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
-    <nodeInfo nodeId="2722286076674338448" fileName="NodeFileStatusMapping.java" startLine="105" startPosition="96" endLine="108" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338532" fileName="NodeFileStatusMapping.java" startLine="138" startPosition="56" endLine="141" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338555" fileName="NodeFileStatusMapping.java" startLine="141" startPosition="17" endLine="144" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338570" fileName="NodeFileStatusMapping.java" startLine="150" startPosition="7" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="2722286076674338585" fileName="NodeFileStatusMapping.java" startLine="157" startPosition="68" endLine="160" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="2722286076674338185" fileName="NodeFileStatusMapping.java" startLine="172" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-    <nodeInfo nodeId="2722286076674338204" fileName="NodeFileStatusMapping.java" startLine="179" startPosition="63" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="196" startPosition="92" endLine="199" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338612" fileName="NodeFileStatusMapping.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeFileStatusMapping#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;)V" />
-    <nodeInfo nodeId="2722286076674338250" fileName="NodeFileStatusMapping.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="2722286076674338260" fileName="NodeFileStatusMapping.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="2722286076674338228" fileName="NodeFileStatusMapping.java" startLine="185" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeAdded#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
-    <nodeInfo nodeId="2722286076674338239" fileName="NodeFileStatusMapping.java" startLine="190" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeRemoved#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
-    <nodeInfo nodeId="2722286076674338337" fileName="NodeFileStatusMapping.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2722286076674338407" fileName="NodeFileStatusMapping.java" startLine="95" startPosition="91" endLine="100" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338181" fileName="NodeFileStatusMapping.java" startLine="170" startPosition="40" endLine="175" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338197" fileName="NodeFileStatusMapping.java" startLine="179" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAffectedRoot#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
-    <nodeInfo nodeId="2722286076674338438" fileName="NodeFileStatusMapping.java" startLine="103" startPosition="89" endLine="109" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338478" fileName="NodeFileStatusMapping.java" startLine="118" startPosition="36" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338578" fileName="NodeFileStatusMapping.java" startLine="156" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatus#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Lcom/intellij/openapi/vcs/FileStatus;" />
-    <nodeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="196" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_onkh7z_a0d0b0a0a0a0j#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljava/util/List;" />
-    <nodeInfo nodeId="2722286076674338331" fileName="NodeFileStatusMapping.java" startLine="75" startPosition="76" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338476" fileName="NodeFileStatusMapping.java" startLine="117" startPosition="7" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="2722286076674338278" fileName="NodeFileStatusMapping.java" startLine="59" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2722286076674338324" fileName="NodeFileStatusMapping.java" startLine="75" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateNodeStatus#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-    <nodeInfo nodeId="2722286076674338526" fileName="NodeFileStatusMapping.java" startLine="137" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2722286076674338177" fileName="NodeFileStatusMapping.java" startLine="169" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateFinished#()V" />
-    <nodeInfo nodeId="2722286076674338429" fileName="NodeFileStatusMapping.java" startLine="101" startPosition="64" endLine="111" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338277" fileName="NodeFileStatusMapping.java" startLine="57" startPosition="73" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338525" fileName="NodeFileStatusMapping.java" startLine="135" startPosition="29" endLine="146" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338270" fileName="NodeFileStatusMapping.java" startLine="57" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="statusChanged#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-    <nodeInfo nodeId="2722286076674338427" fileName="NodeFileStatusMapping.java" startLine="100" startPosition="30" endLine="113" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338523" fileName="NodeFileStatusMapping.java" startLine="135" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2722286076674338517" fileName="NodeFileStatusMapping.java" startLine="133" startPosition="51" endLine="148" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338509" fileName="NodeFileStatusMapping.java" startLine="132" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2722286076674338508" fileName="NodeFileStatusMapping.java" startLine="130" startPosition="86" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2722286076674338370" fileName="NodeFileStatusMapping.java" startLine="88" startPosition="119" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2722286076674338498" fileName="NodeFileStatusMapping.java" startLine="128" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatus#(Lorg/jetbrains/mps/openapi/model/SNode;)Lcom/intellij/openapi/vcs/FileStatus;" />
-    <nodeInfo nodeId="2722286076674338359" fileName="NodeFileStatusMapping.java" startLine="87" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Lcom/intellij/openapi/vcs/FileStatus;" />
-    <nodeInfo nodeId="2722286076674338353" fileName="NodeFileStatusMapping.java" startLine="85" startPosition="66" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2722286076674338346" fileName="NodeFileStatusMapping.java" startLine="85" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calcStatus#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Z" />
-    <scopeInfo nodeId="2722286076674338175" fileName="NodeFileStatusMapping.java" startLine="166" startPosition="32" endLine="166" endPosition="32" />
-    <scopeInfo nodeId="2722286076674338253" fileName="NodeFileStatusMapping.java" startLine="48" startPosition="31" endLine="49" endPosition="61" />
-    <scopeInfo nodeId="2722286076674338263" fileName="NodeFileStatusMapping.java" startLine="53" startPosition="31" endLine="54" endPosition="64" />
-    <scopeInfo nodeId="2722286076674338296" fileName="NodeFileStatusMapping.java" startLine="63" startPosition="34" endLine="64" endPosition="17" />
-    <scopeInfo nodeId="2722286076674338315" fileName="NodeFileStatusMapping.java" startLine="71" startPosition="115" endLine="72" endPosition="56" />
-    <scopeInfo nodeId="2722286076674338340" fileName="NodeFileStatusMapping.java" startLine="78" startPosition="38" endLine="79" endPosition="37" />
-    <scopeInfo nodeId="2722286076674338379" fileName="NodeFileStatusMapping.java" startLine="91" startPosition="72" endLine="92" endPosition="52" />
-    <scopeInfo nodeId="2722286076674338416" fileName="NodeFileStatusMapping.java" startLine="97" startPosition="51" endLine="98" endPosition="78" />
-    <scopeInfo nodeId="2722286076674338449" fileName="NodeFileStatusMapping.java" startLine="106" startPosition="69" endLine="107" endPosition="37" />
-    <scopeInfo nodeId="2722286076674338494" fileName="NodeFileStatusMapping.java" startLine="122" startPosition="14" endLine="123" endPosition="21" />
-    <scopeInfo nodeId="2722286076674338533" fileName="NodeFileStatusMapping.java" startLine="139" startPosition="155" endLine="140" endPosition="138" />
-    <scopeInfo nodeId="2722286076674338556" fileName="NodeFileStatusMapping.java" startLine="142" startPosition="73" endLine="143" endPosition="110" />
-    <scopeInfo nodeId="2722286076674338572" fileName="NodeFileStatusMapping.java" startLine="151" startPosition="36" endLine="152" endPosition="73" />
-    <scopeInfo nodeId="2722286076674338587" fileName="NodeFileStatusMapping.java" startLine="158" startPosition="36" endLine="159" endPosition="67" />
-    <scopeInfo nodeId="2722286076674338186" fileName="NodeFileStatusMapping.java" startLine="172" startPosition="46" endLine="173" endPosition="31" />
-    <scopeInfo nodeId="2722286076674338205" fileName="NodeFileStatusMapping.java" startLine="180" startPosition="39" endLine="181" endPosition="148" />
-    <scopeInfo nodeId="2722286076674338234" fileName="NodeFileStatusMapping.java" startLine="186" startPosition="58" endLine="187" endPosition="30" />
-    <scopeInfo nodeId="2722286076674338245" fileName="NodeFileStatusMapping.java" startLine="191" startPosition="60" endLine="192" endPosition="30" />
-    <scopeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="197" startPosition="36" endLine="198" endPosition="49" />
-    <scopeInfo nodeId="2722286076674338615" fileName="NodeFileStatusMapping.java" startLine="42" startPosition="85" endLine="44" endPosition="26" />
-    <scopeInfo nodeId="2722286076674338479" fileName="NodeFileStatusMapping.java" startLine="119" startPosition="69" endLine="121" endPosition="20" />
-    <scopeInfo nodeId="2722286076674338172" fileName="NodeFileStatusMapping.java" startLine="166" startPosition="0" endLine="168" endPosition="0" />
-    <scopeInfo nodeId="2722286076674338306" fileName="NodeFileStatusMapping.java" startLine="71" startPosition="0" endLine="74" endPosition="0">
+    <nodeInfo nodeId="2722286076674338593" fileName="NodeFileStatusMapping.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRegistry" />
+    <nodeInfo nodeId="2722286076674338596" fileName="NodeFileStatusMapping.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusMap" />
+    <nodeInfo nodeId="2722286076674338605" fileName="NodeFileStatusMapping.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGlobalListener" />
+    <nodeInfo nodeId="2722286076674338616" fileName="NodeFileStatusMapping.java" startLine="43" startPosition="85" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2722286076674338618" fileName="NodeFileStatusMapping.java" startLine="44" startPosition="19" endLine="45" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338254" fileName="NodeFileStatusMapping.java" startLine="49" startPosition="31" endLine="50" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338264" fileName="NodeFileStatusMapping.java" startLine="54" startPosition="31" endLine="55" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338280" fileName="NodeFileStatusMapping.java" startLine="60" startPosition="25" endLine="61" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338285" fileName="NodeFileStatusMapping.java" startLine="61" startPosition="73" endLine="62" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338289" fileName="NodeFileStatusMapping.java" startLine="62" startPosition="81" endLine="63" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338297" fileName="NodeFileStatusMapping.java" startLine="64" startPosition="34" endLine="65" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338301" fileName="NodeFileStatusMapping.java" startLine="66" startPosition="9" endLine="67" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338316" fileName="NodeFileStatusMapping.java" startLine="72" startPosition="115" endLine="73" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338341" fileName="NodeFileStatusMapping.java" startLine="79" startPosition="38" endLine="80" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338361" fileName="NodeFileStatusMapping.java" startLine="88" startPosition="35" endLine="89" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338372" fileName="NodeFileStatusMapping.java" startLine="90" startPosition="65" endLine="91" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338380" fileName="NodeFileStatusMapping.java" startLine="92" startPosition="72" endLine="93" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338385" fileName="NodeFileStatusMapping.java" startLine="94" startPosition="11" endLine="95" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338392" fileName="NodeFileStatusMapping.java" startLine="95" startPosition="71" endLine="96" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338417" fileName="NodeFileStatusMapping.java" startLine="98" startPosition="51" endLine="99" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338431" fileName="NodeFileStatusMapping.java" startLine="103" startPosition="86" endLine="104" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338440" fileName="NodeFileStatusMapping.java" startLine="105" startPosition="31" endLine="106" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338450" fileName="NodeFileStatusMapping.java" startLine="107" startPosition="69" endLine="108" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338457" fileName="NodeFileStatusMapping.java" startLine="110" startPosition="15" endLine="111" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338464" fileName="NodeFileStatusMapping.java" startLine="112" startPosition="13" endLine="113" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338474" fileName="NodeFileStatusMapping.java" startLine="115" startPosition="9" endLine="116" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338480" fileName="NodeFileStatusMapping.java" startLine="120" startPosition="69" endLine="121" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338486" fileName="NodeFileStatusMapping.java" startLine="121" startPosition="63" endLine="122" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338495" fileName="NodeFileStatusMapping.java" startLine="123" startPosition="14" endLine="124" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338505" fileName="NodeFileStatusMapping.java" startLine="130" startPosition="58" endLine="131" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338511" fileName="NodeFileStatusMapping.java" startLine="133" startPosition="25" endLine="134" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338528" fileName="NodeFileStatusMapping.java" startLine="138" startPosition="33" endLine="139" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338534" fileName="NodeFileStatusMapping.java" startLine="140" startPosition="175" endLine="141" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338557" fileName="NodeFileStatusMapping.java" startLine="143" startPosition="73" endLine="144" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338573" fileName="NodeFileStatusMapping.java" startLine="152" startPosition="36" endLine="153" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338588" fileName="NodeFileStatusMapping.java" startLine="159" startPosition="36" endLine="160" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338164" fileName="NodeFileStatusMapping.java" startLine="165" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAffectedRoots" />
+    <nodeInfo nodeId="2722286076674338187" fileName="NodeFileStatusMapping.java" startLine="173" startPosition="46" endLine="174" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338192" fileName="NodeFileStatusMapping.java" startLine="176" startPosition="9" endLine="177" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338206" fileName="NodeFileStatusMapping.java" startLine="181" startPosition="39" endLine="182" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338235" fileName="NodeFileStatusMapping.java" startLine="187" startPosition="58" endLine="188" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338246" fileName="NodeFileStatusMapping.java" startLine="192" startPosition="60" endLine="193" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="198" startPosition="36" endLine="199" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="200" startPosition="5" endLine="201" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2722286076674338493" fileName="NodeFileStatusMapping.java" startLine="123" startPosition="12" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2722286076674338172" fileName="NodeFileStatusMapping.java" startLine="167" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyGlobalListener#()V" />
+    <nodeInfo nodeId="2722286076674338295" fileName="NodeFileStatusMapping.java" startLine="63" startPosition="100" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338306" fileName="NodeFileStatusMapping.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="statusChanged#(Lcom/intellij/openapi/vcs/FileStatusManager;Ljetbrains/mps/workbench/nodesFs/MPSNodesVirtualFileSystem;Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+    <nodeInfo nodeId="2722286076674338339" fileName="NodeFileStatusMapping.java" startLine="78" startPosition="25" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338378" fileName="NodeFileStatusMapping.java" startLine="91" startPosition="81" endLine="94" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338415" fileName="NodeFileStatusMapping.java" startLine="98" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Z" />
+    <nodeInfo nodeId="2722286076674338448" fileName="NodeFileStatusMapping.java" startLine="106" startPosition="96" endLine="109" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338532" fileName="NodeFileStatusMapping.java" startLine="139" startPosition="56" endLine="142" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338555" fileName="NodeFileStatusMapping.java" startLine="142" startPosition="17" endLine="145" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338570" fileName="NodeFileStatusMapping.java" startLine="151" startPosition="7" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="2722286076674338585" fileName="NodeFileStatusMapping.java" startLine="158" startPosition="68" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="2722286076674338185" fileName="NodeFileStatusMapping.java" startLine="173" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+    <nodeInfo nodeId="2722286076674338204" fileName="NodeFileStatusMapping.java" startLine="180" startPosition="63" endLine="183" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="197" startPosition="92" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338612" fileName="NodeFileStatusMapping.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeFileStatusMapping#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;)V" />
+    <nodeInfo nodeId="2722286076674338250" fileName="NodeFileStatusMapping.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
+    <nodeInfo nodeId="2722286076674338260" fileName="NodeFileStatusMapping.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
+    <nodeInfo nodeId="2722286076674338228" fileName="NodeFileStatusMapping.java" startLine="186" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeAdded#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="2722286076674338239" fileName="NodeFileStatusMapping.java" startLine="191" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeRemoved#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="2722286076674338337" fileName="NodeFileStatusMapping.java" startLine="78" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2722286076674338407" fileName="NodeFileStatusMapping.java" startLine="96" startPosition="91" endLine="101" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338181" fileName="NodeFileStatusMapping.java" startLine="171" startPosition="40" endLine="176" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338197" fileName="NodeFileStatusMapping.java" startLine="180" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addAffectedRoot#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)V" />
+    <nodeInfo nodeId="2722286076674338438" fileName="NodeFileStatusMapping.java" startLine="104" startPosition="89" endLine="110" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338478" fileName="NodeFileStatusMapping.java" startLine="119" startPosition="36" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338578" fileName="NodeFileStatusMapping.java" startLine="157" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatus#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Lcom/intellij/openapi/vcs/FileStatus;" />
+    <nodeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="197" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_onkh7z_a0d0b0a0a0a0j#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljava/util/List;" />
+    <nodeInfo nodeId="2722286076674338331" fileName="NodeFileStatusMapping.java" startLine="76" startPosition="76" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338476" fileName="NodeFileStatusMapping.java" startLine="118" startPosition="7" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="2722286076674338278" fileName="NodeFileStatusMapping.java" startLine="60" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2722286076674338324" fileName="NodeFileStatusMapping.java" startLine="76" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateNodeStatus#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+    <nodeInfo nodeId="2722286076674338526" fileName="NodeFileStatusMapping.java" startLine="138" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2722286076674338177" fileName="NodeFileStatusMapping.java" startLine="170" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeUpdateFinished#()V" />
+    <nodeInfo nodeId="2722286076674338429" fileName="NodeFileStatusMapping.java" startLine="102" startPosition="64" endLine="112" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338277" fileName="NodeFileStatusMapping.java" startLine="58" startPosition="73" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338525" fileName="NodeFileStatusMapping.java" startLine="136" startPosition="29" endLine="147" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338270" fileName="NodeFileStatusMapping.java" startLine="58" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="statusChanged#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+    <nodeInfo nodeId="2722286076674338427" fileName="NodeFileStatusMapping.java" startLine="101" startPosition="30" endLine="114" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338523" fileName="NodeFileStatusMapping.java" startLine="136" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2722286076674338517" fileName="NodeFileStatusMapping.java" startLine="134" startPosition="51" endLine="149" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338509" fileName="NodeFileStatusMapping.java" startLine="133" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2722286076674338508" fileName="NodeFileStatusMapping.java" startLine="131" startPosition="86" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2722286076674338370" fileName="NodeFileStatusMapping.java" startLine="89" startPosition="119" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2722286076674338498" fileName="NodeFileStatusMapping.java" startLine="129" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStatus#(Lorg/jetbrains/mps/openapi/model/SNode;)Lcom/intellij/openapi/vcs/FileStatus;" />
+    <nodeInfo nodeId="2722286076674338359" fileName="NodeFileStatusMapping.java" startLine="88" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Lcom/intellij/openapi/vcs/FileStatus;" />
+    <nodeInfo nodeId="2722286076674338353" fileName="NodeFileStatusMapping.java" startLine="86" startPosition="66" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2722286076674338346" fileName="NodeFileStatusMapping.java" startLine="86" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calcStatus#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Z" />
+    <scopeInfo nodeId="2722286076674338175" fileName="NodeFileStatusMapping.java" startLine="167" startPosition="32" endLine="167" endPosition="32" />
+    <scopeInfo nodeId="2722286076674338253" fileName="NodeFileStatusMapping.java" startLine="49" startPosition="31" endLine="50" endPosition="61" />
+    <scopeInfo nodeId="2722286076674338263" fileName="NodeFileStatusMapping.java" startLine="54" startPosition="31" endLine="55" endPosition="64" />
+    <scopeInfo nodeId="2722286076674338296" fileName="NodeFileStatusMapping.java" startLine="64" startPosition="34" endLine="65" endPosition="17" />
+    <scopeInfo nodeId="2722286076674338315" fileName="NodeFileStatusMapping.java" startLine="72" startPosition="115" endLine="73" endPosition="56" />
+    <scopeInfo nodeId="2722286076674338340" fileName="NodeFileStatusMapping.java" startLine="79" startPosition="38" endLine="80" endPosition="37" />
+    <scopeInfo nodeId="2722286076674338379" fileName="NodeFileStatusMapping.java" startLine="92" startPosition="72" endLine="93" endPosition="52" />
+    <scopeInfo nodeId="2722286076674338416" fileName="NodeFileStatusMapping.java" startLine="98" startPosition="51" endLine="99" endPosition="78" />
+    <scopeInfo nodeId="2722286076674338449" fileName="NodeFileStatusMapping.java" startLine="107" startPosition="69" endLine="108" endPosition="37" />
+    <scopeInfo nodeId="2722286076674338494" fileName="NodeFileStatusMapping.java" startLine="123" startPosition="14" endLine="124" endPosition="21" />
+    <scopeInfo nodeId="2722286076674338533" fileName="NodeFileStatusMapping.java" startLine="140" startPosition="175" endLine="141" endPosition="138" />
+    <scopeInfo nodeId="2722286076674338556" fileName="NodeFileStatusMapping.java" startLine="143" startPosition="73" endLine="144" endPosition="110" />
+    <scopeInfo nodeId="2722286076674338572" fileName="NodeFileStatusMapping.java" startLine="152" startPosition="36" endLine="153" endPosition="73" />
+    <scopeInfo nodeId="2722286076674338587" fileName="NodeFileStatusMapping.java" startLine="159" startPosition="36" endLine="160" endPosition="67" />
+    <scopeInfo nodeId="2722286076674338186" fileName="NodeFileStatusMapping.java" startLine="173" startPosition="46" endLine="174" endPosition="31" />
+    <scopeInfo nodeId="2722286076674338205" fileName="NodeFileStatusMapping.java" startLine="181" startPosition="39" endLine="182" endPosition="148" />
+    <scopeInfo nodeId="2722286076674338234" fileName="NodeFileStatusMapping.java" startLine="187" startPosition="58" endLine="188" endPosition="30" />
+    <scopeInfo nodeId="2722286076674338245" fileName="NodeFileStatusMapping.java" startLine="192" startPosition="60" endLine="193" endPosition="30" />
+    <scopeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="198" startPosition="36" endLine="199" endPosition="49" />
+    <scopeInfo nodeId="2722286076674338615" fileName="NodeFileStatusMapping.java" startLine="43" startPosition="85" endLine="45" endPosition="26" />
+    <scopeInfo nodeId="2722286076674338479" fileName="NodeFileStatusMapping.java" startLine="120" startPosition="69" endLine="122" endPosition="20" />
+    <scopeInfo nodeId="2722286076674338172" fileName="NodeFileStatusMapping.java" startLine="167" startPosition="0" endLine="169" endPosition="0" />
+    <scopeInfo nodeId="2722286076674338306" fileName="NodeFileStatusMapping.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="2722286076674338309" varName="fsm" />
       <varInfo nodeId="2722286076674338313" varName="nodePointer" />
       <varInfo nodeId="2722286076674338311" varName="nvfs" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338338" fileName="NodeFileStatusMapping.java" startLine="77" startPosition="25" endLine="80" endPosition="9" />
-    <scopeInfo nodeId="2722286076674338415" fileName="NodeFileStatusMapping.java" startLine="97" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="2722286076674338338" fileName="NodeFileStatusMapping.java" startLine="78" startPosition="25" endLine="81" endPosition="9" />
+    <scopeInfo nodeId="2722286076674338415" fileName="NodeFileStatusMapping.java" startLine="98" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="2722286076674338415" varName="ch" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338584" fileName="NodeFileStatusMapping.java" startLine="157" startPosition="68" endLine="160" endPosition="5" />
-    <scopeInfo nodeId="2722286076674338185" fileName="NodeFileStatusMapping.java" startLine="172" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="2722286076674338584" fileName="NodeFileStatusMapping.java" startLine="158" startPosition="68" endLine="161" endPosition="5" />
+    <scopeInfo nodeId="2722286076674338185" fileName="NodeFileStatusMapping.java" startLine="173" startPosition="0" endLine="176" endPosition="0">
       <varInfo nodeId="2722286076674338185" varName="np" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338203" fileName="NodeFileStatusMapping.java" startLine="179" startPosition="63" endLine="182" endPosition="7" />
-    <scopeInfo nodeId="2722286076674338612" fileName="NodeFileStatusMapping.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="2722286076674338203" fileName="NodeFileStatusMapping.java" startLine="180" startPosition="63" endLine="183" endPosition="7" />
+    <scopeInfo nodeId="2722286076674338612" fileName="NodeFileStatusMapping.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="2722286076674338622" varName="project" />
       <varInfo nodeId="2722286076674338624" varName="registry" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338250" fileName="NodeFileStatusMapping.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="2722286076674338260" fileName="NodeFileStatusMapping.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="2722286076674338439" fileName="NodeFileStatusMapping.java" startLine="104" startPosition="31" endLine="108" endPosition="17">
+    <scopeInfo nodeId="2722286076674338250" fileName="NodeFileStatusMapping.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="2722286076674338260" fileName="NodeFileStatusMapping.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="2722286076674338439" fileName="NodeFileStatusMapping.java" startLine="105" startPosition="31" endLine="109" endPosition="17">
       <varInfo nodeId="2722286076674338441" varName="modelStatus" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338228" fileName="NodeFileStatusMapping.java" startLine="185" startPosition="0" endLine="189" endPosition="0">
+    <scopeInfo nodeId="2722286076674338228" fileName="NodeFileStatusMapping.java" startLine="186" startPosition="0" endLine="190" endPosition="0">
       <varInfo nodeId="2722286076674338231" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338239" fileName="NodeFileStatusMapping.java" startLine="190" startPosition="0" endLine="194" endPosition="0">
+    <scopeInfo nodeId="2722286076674338239" fileName="NodeFileStatusMapping.java" startLine="191" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="2722286076674338242" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="196" startPosition="92" endLine="200" endPosition="16" />
-    <scopeInfo nodeId="2722286076674338337" fileName="NodeFileStatusMapping.java" startLine="77" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="2722286076674338197" fileName="NodeFileStatusMapping.java" startLine="179" startPosition="0" endLine="184" endPosition="0">
+    <scopeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="197" startPosition="92" endLine="201" endPosition="16" />
+    <scopeInfo nodeId="2722286076674338337" fileName="NodeFileStatusMapping.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="2722286076674338197" fileName="NodeFileStatusMapping.java" startLine="180" startPosition="0" endLine="185" endPosition="0">
       <varInfo nodeId="2722286076674338200" varName="change" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338477" fileName="NodeFileStatusMapping.java" startLine="118" startPosition="36" endLine="124" endPosition="7" />
-    <scopeInfo nodeId="2722286076674338578" fileName="NodeFileStatusMapping.java" startLine="156" startPosition="0" endLine="162" endPosition="0">
+    <scopeInfo nodeId="2722286076674338477" fileName="NodeFileStatusMapping.java" startLine="119" startPosition="36" endLine="125" endPosition="7" />
+    <scopeInfo nodeId="2722286076674338578" fileName="NodeFileStatusMapping.java" startLine="157" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="2722286076674338579" varName="nodePointer" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338180" fileName="NodeFileStatusMapping.java" startLine="170" startPosition="40" endLine="176" endPosition="53" />
-    <scopeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="196" startPosition="0" endLine="202" endPosition="0">
+    <scopeInfo nodeId="2722286076674338180" fileName="NodeFileStatusMapping.java" startLine="171" startPosition="40" endLine="177" endPosition="53" />
+    <scopeInfo nodeId="2722286076674338396" fileName="NodeFileStatusMapping.java" startLine="197" startPosition="0" endLine="203" endPosition="0">
       <varInfo nodeId="2722286076674338396" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338279" fileName="NodeFileStatusMapping.java" startLine="59" startPosition="25" endLine="66" endPosition="46">
+    <scopeInfo nodeId="2722286076674338279" fileName="NodeFileStatusMapping.java" startLine="60" startPosition="25" endLine="67" endPosition="46">
       <varInfo nodeId="2722286076674338290" varName="currentNode" />
       <varInfo nodeId="2722286076674338281" varName="fsm" />
       <varInfo nodeId="2722286076674338286" varName="nvfs" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338330" fileName="NodeFileStatusMapping.java" startLine="75" startPosition="76" endLine="82" endPosition="7" />
-    <scopeInfo nodeId="2722286076674338527" fileName="NodeFileStatusMapping.java" startLine="137" startPosition="33" endLine="144" endPosition="17">
+    <scopeInfo nodeId="2722286076674338330" fileName="NodeFileStatusMapping.java" startLine="76" startPosition="76" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="2722286076674338527" fileName="NodeFileStatusMapping.java" startLine="138" startPosition="33" endLine="145" endPosition="17">
       <varInfo nodeId="2722286076674338529" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338430" fileName="NodeFileStatusMapping.java" startLine="102" startPosition="86" endLine="110" endPosition="38">
+    <scopeInfo nodeId="2722286076674338430" fileName="NodeFileStatusMapping.java" startLine="103" startPosition="86" endLine="111" endPosition="38">
       <varInfo nodeId="2722286076674338432" varName="vf" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338278" fileName="NodeFileStatusMapping.java" startLine="59" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="2722286076674338324" fileName="NodeFileStatusMapping.java" startLine="75" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="2722286076674338278" fileName="NodeFileStatusMapping.java" startLine="60" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="2722286076674338324" fileName="NodeFileStatusMapping.java" startLine="76" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="2722286076674338325" varName="nodePointer" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338526" fileName="NodeFileStatusMapping.java" startLine="137" startPosition="0" endLine="146" endPosition="0" />
-    <scopeInfo nodeId="2722286076674338177" fileName="NodeFileStatusMapping.java" startLine="169" startPosition="0" endLine="178" endPosition="0" />
-    <scopeInfo nodeId="2722286076674338276" fileName="NodeFileStatusMapping.java" startLine="57" startPosition="73" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="2722286076674338428" fileName="NodeFileStatusMapping.java" startLine="101" startPosition="64" endLine="112" endPosition="39" />
-    <scopeInfo nodeId="2722286076674338524" fileName="NodeFileStatusMapping.java" startLine="135" startPosition="29" endLine="146" endPosition="15" />
-    <scopeInfo nodeId="2722286076674338270" fileName="NodeFileStatusMapping.java" startLine="57" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="2722286076674338526" fileName="NodeFileStatusMapping.java" startLine="138" startPosition="0" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="2722286076674338177" fileName="NodeFileStatusMapping.java" startLine="170" startPosition="0" endLine="179" endPosition="0" />
+    <scopeInfo nodeId="2722286076674338276" fileName="NodeFileStatusMapping.java" startLine="58" startPosition="73" endLine="69" endPosition="7" />
+    <scopeInfo nodeId="2722286076674338428" fileName="NodeFileStatusMapping.java" startLine="102" startPosition="64" endLine="113" endPosition="39" />
+    <scopeInfo nodeId="2722286076674338524" fileName="NodeFileStatusMapping.java" startLine="136" startPosition="29" endLine="147" endPosition="15" />
+    <scopeInfo nodeId="2722286076674338270" fileName="NodeFileStatusMapping.java" startLine="58" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="2722286076674338272" varName="nodePointer" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338523" fileName="NodeFileStatusMapping.java" startLine="135" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="2722286076674338510" fileName="NodeFileStatusMapping.java" startLine="132" startPosition="25" endLine="148" endPosition="11" />
-    <scopeInfo nodeId="2722286076674338509" fileName="NodeFileStatusMapping.java" startLine="132" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="2722286076674338371" fileName="NodeFileStatusMapping.java" startLine="89" startPosition="65" endLine="113" endPosition="11">
+    <scopeInfo nodeId="2722286076674338523" fileName="NodeFileStatusMapping.java" startLine="136" startPosition="0" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="2722286076674338510" fileName="NodeFileStatusMapping.java" startLine="133" startPosition="25" endLine="149" endPosition="11" />
+    <scopeInfo nodeId="2722286076674338509" fileName="NodeFileStatusMapping.java" startLine="133" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="2722286076674338371" fileName="NodeFileStatusMapping.java" startLine="90" startPosition="65" endLine="114" endPosition="11">
       <varInfo nodeId="2722286076674338386" varName="diff" />
       <varInfo nodeId="2722286076674338373" varName="md" />
       <varInfo nodeId="2722286076674338393" varName="modelChanges" />
       <varInfo nodeId="2722286076674338408" varName="rootChanges" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338504" fileName="NodeFileStatusMapping.java" startLine="129" startPosition="58" endLine="153" endPosition="5">
+    <scopeInfo nodeId="2722286076674338504" fileName="NodeFileStatusMapping.java" startLine="130" startPosition="58" endLine="154" endPosition="5">
       <varInfo nodeId="2722286076674338506" varName="nodePointer" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338498" fileName="NodeFileStatusMapping.java" startLine="128" startPosition="0" endLine="155" endPosition="0">
+    <scopeInfo nodeId="2722286076674338498" fileName="NodeFileStatusMapping.java" startLine="129" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="2722286076674338499" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338360" fileName="NodeFileStatusMapping.java" startLine="87" startPosition="35" endLine="115" endPosition="38">
+    <scopeInfo nodeId="2722286076674338360" fileName="NodeFileStatusMapping.java" startLine="88" startPosition="35" endLine="116" endPosition="38">
       <varInfo nodeId="2722286076674338362" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338359" fileName="NodeFileStatusMapping.java" startLine="87" startPosition="0" endLine="117" endPosition="0" />
-    <scopeInfo nodeId="2722286076674338352" fileName="NodeFileStatusMapping.java" startLine="85" startPosition="66" endLine="125" endPosition="5">
+    <scopeInfo nodeId="2722286076674338359" fileName="NodeFileStatusMapping.java" startLine="88" startPosition="0" endLine="118" endPosition="0" />
+    <scopeInfo nodeId="2722286076674338352" fileName="NodeFileStatusMapping.java" startLine="86" startPosition="66" endLine="126" endPosition="5">
       <varInfo nodeId="2722286076674338354" varName="status" />
     </scopeInfo>
-    <scopeInfo nodeId="2722286076674338346" fileName="NodeFileStatusMapping.java" startLine="85" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="2722286076674338346" fileName="NodeFileStatusMapping.java" startLine="86" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="2722286076674338347" varName="root" />
     </scopeInfo>
-    <unitInfo nodeId="2722286076674338415" fileName="NodeFileStatusMapping.java" startLine="96" startPosition="88" endLine="100" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$4" />
-    <unitInfo nodeId="2722286076674338185" fileName="NodeFileStatusMapping.java" startLine="171" startPosition="58" endLine="175" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$1" />
-    <unitInfo nodeId="2722286076674338337" fileName="NodeFileStatusMapping.java" startLine="76" startPosition="45" endLine="82" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$2" />
-    <unitInfo nodeId="2722286076674338278" fileName="NodeFileStatusMapping.java" startLine="58" startPosition="45" endLine="68" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$1" />
-    <unitInfo nodeId="2722286076674338526" fileName="NodeFileStatusMapping.java" startLine="136" startPosition="53" endLine="146" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$6" />
-    <unitInfo nodeId="2722286076674338523" fileName="NodeFileStatusMapping.java" startLine="134" startPosition="49" endLine="148" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$5" />
-    <unitInfo nodeId="2722286076674338509" fileName="NodeFileStatusMapping.java" startLine="131" startPosition="45" endLine="150" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$4" />
-    <unitInfo nodeId="2722286076674338359" fileName="NodeFileStatusMapping.java" startLine="86" startPosition="65" endLine="117" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$3" />
-    <unitInfo nodeId="2722286076674338163" fileName="NodeFileStatusMapping.java" startLine="163" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$MyGlobalListener" />
-    <unitInfo nodeId="2722286076674338162" fileName="NodeFileStatusMapping.java" startLine="37" startPosition="0" endLine="203" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping" />
+    <unitInfo nodeId="2722286076674338415" fileName="NodeFileStatusMapping.java" startLine="97" startPosition="88" endLine="101" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$4" />
+    <unitInfo nodeId="2722286076674338185" fileName="NodeFileStatusMapping.java" startLine="172" startPosition="58" endLine="176" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$1" />
+    <unitInfo nodeId="2722286076674338337" fileName="NodeFileStatusMapping.java" startLine="77" startPosition="45" endLine="83" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$2" />
+    <unitInfo nodeId="2722286076674338278" fileName="NodeFileStatusMapping.java" startLine="59" startPosition="45" endLine="69" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$1" />
+    <unitInfo nodeId="2722286076674338526" fileName="NodeFileStatusMapping.java" startLine="137" startPosition="53" endLine="147" endPosition="13" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$6" />
+    <unitInfo nodeId="2722286076674338523" fileName="NodeFileStatusMapping.java" startLine="135" startPosition="49" endLine="149" endPosition="9" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$5" />
+    <unitInfo nodeId="2722286076674338509" fileName="NodeFileStatusMapping.java" startLine="132" startPosition="45" endLine="151" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$4" />
+    <unitInfo nodeId="2722286076674338359" fileName="NodeFileStatusMapping.java" startLine="87" startPosition="65" endLine="118" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$3" />
+    <unitInfo nodeId="2722286076674338163" fileName="NodeFileStatusMapping.java" startLine="164" startPosition="0" endLine="196" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$MyGlobalListener" />
+    <unitInfo nodeId="2722286076674338162" fileName="NodeFileStatusMapping.java" startLine="38" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping" />
   </root>
   <root nodeRef="r:d634c129-ecb4-4acd-bd8c-5f057c144ffa(jetbrains.mps.vcs.changesmanager)/2722286076674338626">
     <nodeInfo nodeId="2722286076674338627" fileName="NodeFileStatusProvider.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
@@ -668,7 +668,7 @@
     <nodeInfo nodeId="6293182674526136295" fileName="ChangesTracking.java" startLine="182" startPosition="35" endLine="183" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4227770624049376581" fileName="ChangesTracking.java" startLine="184" startPosition="62" endLine="185" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6402272430681907736" fileName="ChangesTracking.java" startLine="186" startPosition="5" endLine="187" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6402272430681910424" fileName="ChangesTracking.java" startLine="188" startPosition="126" endLine="189" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6402272430681910424" fileName="ChangesTracking.java" startLine="188" startPosition="126" endLine="189" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161776655522687143" fileName="ChangesTracking.java" startLine="190" startPosition="12" endLine="191" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3161776655522687151" fileName="ChangesTracking.java" startLine="192" startPosition="64" endLine="193" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161776655522687168" fileName="ChangesTracking.java" startLine="195" startPosition="28" endLine="196" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -861,7 +861,7 @@
     <nodeInfo nodeId="6402272430681910414" fileName="ChangesTracking.java" startLine="197" startPosition="7" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3285276019551792921" fileName="ChangesTracking.java" startLine="479" startPosition="44" endLine="485" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3951871491765039092" fileName="ChangesTracking.java" startLine="561" startPosition="0" endLine="567" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="modelsReplaced#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="2722862962576140792" fileName="ChangesTracking.java" startLine="571" startPosition="0" endLine="577" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5iuzi5_a0a0a52#(Ljetbrains/mps/vcs/diff/ChangeSet;)Ljetbrains/mps/smodel/SModel;" />
+    <nodeInfo nodeId="2722862962576140792" fileName="ChangesTracking.java" startLine="571" startPosition="0" endLine="577" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_5iuzi5_a0a0a52#(Ljetbrains/mps/vcs/diff/ChangeSet;)Lorg/jetbrains/mps/openapi/model/SModel;" />
     <nodeInfo nodeId="2274405438583657679" fileName="ChangesTracking.java" startLine="578" startPosition="0" endLine="584" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_5iuzi5_a0a1a72#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="8473562513973655155" fileName="ChangesTracking.java" startLine="121" startPosition="5" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3161776655522682317" fileName="ChangesTracking.java" startLine="141" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="scheduleFullUpdate#()V" />
@@ -941,7 +941,7 @@
     <scopeInfo nodeId="1400081181930264423" fileName="ChangesTracking.java" startLine="172" startPosition="91" endLine="173" endPosition="32" />
     <scopeInfo nodeId="6293182674526136313" fileName="ChangesTracking.java" startLine="179" startPosition="60" endLine="180" endPosition="13" />
     <scopeInfo nodeId="3161776655522687123" fileName="ChangesTracking.java" startLine="184" startPosition="62" endLine="185" endPosition="13" />
-    <scopeInfo nodeId="3161776655522687132" fileName="ChangesTracking.java" startLine="188" startPosition="126" endLine="189" endPosition="82" />
+    <scopeInfo nodeId="3161776655522687132" fileName="ChangesTracking.java" startLine="188" startPosition="126" endLine="189" endPosition="103" />
     <scopeInfo nodeId="3161776655522687150" fileName="ChangesTracking.java" startLine="192" startPosition="64" endLine="193" endPosition="81" />
     <scopeInfo nodeId="3161776655522687167" fileName="ChangesTracking.java" startLine="195" startPosition="28" endLine="196" endPosition="15" />
     <scopeInfo nodeId="6402272430681910415" fileName="ChangesTracking.java" startLine="198" startPosition="11" endLine="199" endPosition="76" />

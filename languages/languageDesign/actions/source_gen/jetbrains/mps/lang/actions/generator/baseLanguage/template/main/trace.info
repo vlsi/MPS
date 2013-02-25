@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="34" startPosition="0" endLine="884" endPosition="0" unitName="jetbrains.mps.lang.actions.generator.baseLanguage.template.main.QueriesGenerated" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)/1154466410557">
-    <nodeInfo nodeId="3341893916018818226" fileName="QueriesGenerated.java" startLine="36" startPosition="70" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3341893916018818226" fileName="QueriesGenerated.java" startLine="36" startPosition="91" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3341893916018818310" fileName="QueriesGenerated.java" startLine="39" startPosition="1142" endLine="40" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3341893916018818230" fileName="QueriesGenerated.java" startLine="41" startPosition="5" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1203349259021" fileName="QueriesGenerated.java" startLine="65" startPosition="148" endLine="66" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -13,7 +13,7 @@
     <nodeInfo nodeId="3341893916018818233" fileName="QueriesGenerated.java" startLine="38" startPosition="5" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4315511589508288007" fileName="QueriesGenerated.java" startLine="484" startPosition="150" endLine="487" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4315511589508288026" fileName="QueriesGenerated.java" startLine="487" startPosition="5" endLine="490" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <scopeInfo nodeId="3341893916018743464" fileName="QueriesGenerated.java" startLine="36" startPosition="70" endLine="37" endPosition="18" />
+    <scopeInfo nodeId="3341893916018743464" fileName="QueriesGenerated.java" startLine="36" startPosition="91" endLine="37" endPosition="18" />
     <scopeInfo nodeId="3341893916018818234" fileName="QueriesGenerated.java" startLine="39" startPosition="1142" endLine="40" endPosition="18" />
     <scopeInfo nodeId="1203349256427" fileName="QueriesGenerated.java" startLine="65" startPosition="148" endLine="66" endPosition="126" />
     <scopeInfo nodeId="4315511589508288017" fileName="QueriesGenerated.java" startLine="485" startPosition="193" endLine="486" endPosition="188" />

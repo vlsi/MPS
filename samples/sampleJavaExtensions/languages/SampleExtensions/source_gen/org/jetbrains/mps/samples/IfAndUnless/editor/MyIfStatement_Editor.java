@@ -12,12 +12,12 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import java.awt.Color;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 
 public class MyIfStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -47,33 +47,6 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-
-  private EditorCell createConstant_a1fgw3_f0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "|");
-    editorCell.setCellId("Constant_a1fgw3_f0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createIndentCell_a1fgw3_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
-  }
-
-  private EditorCell createIndentCell_a1fgw3_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
-  }
-
-  private EditorCell createIndentCell_a1fgw3_g0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
-  }
-
-  private EditorCell createIndentCell_a1fgw3_h0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
   }
 
   private EditorCell createRefNode_a1fgw3_b0(EditorContext editorContext, SNode node) {
@@ -115,6 +88,33 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createIndentCell_a1fgw3_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    return result;
+  }
+
+  private EditorCell createIndentCell_a1fgw3_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    return result;
+  }
+
+  private EditorCell createConstant_a1fgw3_f0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "|");
+    editorCell.setCellId("Constant_a1fgw3_f0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createIndentCell_a1fgw3_g0(EditorContext editorContext, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    return result;
+  }
+
+  private EditorCell createIndentCell_a1fgw3_h0(EditorContext editorContext, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    return result;
   }
 
   private EditorCell createRefNode_a1fgw3_i0(EditorContext editorContext, SNode node) {

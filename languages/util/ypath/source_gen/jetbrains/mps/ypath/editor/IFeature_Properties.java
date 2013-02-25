@@ -55,6 +55,16 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
+  private EditorCell createConstant_dntgs2_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "properties");
+    editorCell.setCellId("Constant_dntgs2_a0a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createCollection_dntgs2_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dntgs2_b0");
@@ -63,6 +73,13 @@ public class IFeature_Properties extends AbstractCellProvider {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_dntgs2_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_dntgs2_b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_dntgs2_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
+    editorCell.setCellId("Constant_dntgs2_a1a");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -88,6 +105,16 @@ public class IFeature_Properties extends AbstractCellProvider {
     return editorCell;
   }
 
+  private EditorCell createConstant_dntgs2_a0b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ascending");
+    editorCell.setCellId("Constant_dntgs2_a0b1a");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createCollection_dntgs2_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_dntgs2_b1b0");
@@ -96,33 +123,6 @@ public class IFeature_Properties extends AbstractCellProvider {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_dntgs2_a1b1a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_dntgs2_b1b1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_dntgs2_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "properties");
-    editorCell.setCellId("Constant_dntgs2_a0a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_dntgs2_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
-    editorCell.setCellId("Constant_dntgs2_a1a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_dntgs2_a0b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ascending");
-    editorCell.setCellId("Constant_dntgs2_a0b1a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 

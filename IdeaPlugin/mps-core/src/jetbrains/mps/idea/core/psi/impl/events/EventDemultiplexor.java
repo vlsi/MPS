@@ -59,6 +59,9 @@ import org.jetbrains.mps.openapi.model.SNode;
   @Override
   public void visitReferenceEvent(SModelReferenceEvent event) {
     invalidateNode(event.getReference().getSourceNode());
-    invalidateNode(event.getReference().getTargetNode());
+    SNode targetNode = event.getReference().getTargetNode();
+    if (targetNode != null) {
+      invalidateNode(targetNode);
+    }
   }
 }

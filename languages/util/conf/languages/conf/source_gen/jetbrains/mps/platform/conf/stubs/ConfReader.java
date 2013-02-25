@@ -20,6 +20,7 @@ import org.jdom.filter.AbstractFilter;
 import org.jdom.filter.ElementFilter;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -430,7 +431,7 @@ public class ConfReader {
     if (SNodeOperations.getModel(src).getReference().equals(trgsmref)) {
       src.setReference(new StaticReference(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName), null).getRole(), new StaticReference(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName), null));
     } else {
-      SNodeOperations.getModel(src).addModelImport(trgsmref, false);
+      ((SModel) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
       src.setReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName)).getRole(), SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName)));
     }
   }
@@ -448,14 +449,14 @@ public class ConfReader {
         }
       }
     } else {
-      SNodeOperations.getModel(src).addModelImport(trgsmref, false);
+      ((SModel) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
       src.setReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName)).getRole(), SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqName)));
     }
   }
 
   private void addClassifierReference(SNode link, SNode src, String fqClassName) {
     SModelReference trgsmref = this.javastubResolver.stubModelReference(namespace(fqClassName));
-    SNodeOperations.getModel(src).addModelImport(trgsmref, false);
+    ((SModel) SNodeOperations.getModel(src)).addModelImport(trgsmref, false);
     src.setReference(SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqClassName)).getRole(), SReference.create(SPropertyOperations.getString(link, "role"), src, trgsmref, createForeignId(fqClassName)));
   }
 

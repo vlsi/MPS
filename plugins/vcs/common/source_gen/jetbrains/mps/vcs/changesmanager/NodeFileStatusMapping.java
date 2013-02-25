@@ -15,6 +15,7 @@ import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -59,7 +60,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       public void run() {
         FileStatusManager fsm = FileStatusManager.getInstance(myProject);
         MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
-        SNode currentNode = ((SNodePointer) nodePointer).getNode();
+        SNode currentNode = ((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance());
         if (currentNode == null) {
           return;
         }
@@ -136,7 +137,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 SModelDescriptor modelDescriptor = null;
-                if (!(SNodeOperations.isDisposed(root) || jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root).isDisposed())) {
+                if (!(SNodeOperations.isDisposed(root) || SNodeOperations.isModelDisposed(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root)))) {
                   modelDescriptor = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root).getModelDescriptor();
                 }
                 if (modelDescriptor instanceof DefaultSModelDescriptor) {

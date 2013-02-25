@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.scopes;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;

@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class CollectionType_BehaviorDescriptor extends AbstractContainerType_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
   public CollectionType_BehaviorDescriptor() {

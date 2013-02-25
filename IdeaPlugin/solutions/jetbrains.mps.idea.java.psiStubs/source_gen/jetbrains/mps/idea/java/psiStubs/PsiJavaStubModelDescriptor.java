@@ -15,7 +15,7 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -59,7 +59,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   @Override
   protected SModel createModel() {
 
-    SModel ourModel = new SModel(myModelRef);
+    SModel ourModel = new jetbrains.mps.smodel.SModel(myModelRef);
     myPsiSources = MapSequence.fromMap(new HashMap<SNodeId, PsiElement>());
 
     ASTConverter converter = new ASTConverter(myPsiSources);
@@ -141,7 +141,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
 
           SNode node = converter.convertClass((PsiClass) e);
           SNodeId id = node.getNodeId();
-          SNode oldNode = ourModel.getNodeById(id);
+          SNode oldNode = ourModel.getNode(id);
 
           if ((oldNode != null)) {
             SNodeOperations.replaceWithAnother(oldNode, node);

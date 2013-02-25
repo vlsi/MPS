@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface ReferenceConstraintsContext {

@@ -33,7 +33,7 @@ import jetbrains.mps.lang.structure.behavior.ConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -44,11 +44,11 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_2056529430201935245(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel());
+    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel().getModelDescriptor());
   }
 
   public static boolean createRootRule_Condition_7923290658387314702(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel());
+    return LanguageAspect.BEHAVIOR.is(_context.getOriginalInputModel().getModelDescriptor());
   }
 
   public static boolean baseMappingRule_Condition_1144956008583649232(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

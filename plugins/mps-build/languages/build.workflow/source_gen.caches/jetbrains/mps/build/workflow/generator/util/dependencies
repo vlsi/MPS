@@ -27,7 +27,7 @@
     <classNode dependClassName="jetbrains.mps.make.dependencies.graph.Graph" />
     <classNode dependClassName="jetbrains.mps.make.dependencies.graph.Graphs" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.make.dependencies.graph.IVertex" />
   </dependency>

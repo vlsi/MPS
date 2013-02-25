@@ -8,12 +8,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.script.util.ScriptNameUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.IModule;
@@ -44,7 +45,7 @@ public class MigrationScriptUtil {
   public static List<BaseMigrationScript> getScriptInstances(List<SNodeReference> scriptNodePointers, IOperationContext context) {
     List<BaseMigrationScript> scriptInstances = new ArrayList<BaseMigrationScript>();
     for (SNodeReference scriptNodePointer : scriptNodePointers) {
-      SNode scriptNode = ((SNodePointer) scriptNodePointer).getNode();
+      SNode scriptNode = ((SNodePointer) scriptNodePointer).resolve(MPSModuleRepository.getInstance());
       BaseMigrationScript script = MigrationScriptUtil.getBaseScriptForNode(context, scriptNode);
       if (script != null) {
         scriptInstances.add(script);

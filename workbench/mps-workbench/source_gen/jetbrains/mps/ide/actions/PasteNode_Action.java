@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PasteEnv;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -103,7 +104,7 @@ public class PasteNode_Action extends BaseAction {
       }
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
-          if (((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel().isDisposed()) {
+          if (SNodeOperations.isModelDisposed(((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel())) {
             return;
           }
           if (addImportsRunnable != null) {

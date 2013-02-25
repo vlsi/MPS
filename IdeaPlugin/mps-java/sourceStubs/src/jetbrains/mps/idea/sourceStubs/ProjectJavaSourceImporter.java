@@ -49,7 +49,7 @@ import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelRoot;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.util.Computable;

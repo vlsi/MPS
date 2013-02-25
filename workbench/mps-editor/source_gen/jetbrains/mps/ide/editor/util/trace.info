@@ -1,262 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/2808756344206283880">
-    <nodeInfo nodeId="457552532821321542" fileName="GoToHelper.java" startLine="49" startPosition="43" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="457552532821380832" fileName="GoToHelper.java" startLine="51" startPosition="5" endLine="52" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206284083" fileName="GoToHelper.java" startLine="55" startPosition="133" endLine="56" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284091" fileName="GoToHelper.java" startLine="56" startPosition="85" endLine="57" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284096" fileName="GoToHelper.java" startLine="57" startPosition="81" endLine="58" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206284116" fileName="GoToHelper.java" startLine="61" startPosition="132" endLine="62" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284124" fileName="GoToHelper.java" startLine="62" startPosition="64" endLine="63" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284129" fileName="GoToHelper.java" startLine="63" startPosition="81" endLine="64" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206284147" fileName="GoToHelper.java" startLine="67" startPosition="113" endLine="68" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284151" fileName="GoToHelper.java" startLine="68" startPosition="59" endLine="69" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284156" fileName="GoToHelper.java" startLine="69" startPosition="119" endLine="70" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206284183" fileName="GoToHelper.java" startLine="74" startPosition="49" endLine="75" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206284184" fileName="GoToHelper.java" startLine="76" startPosition="5" endLine="77" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284196" fileName="GoToHelper.java" startLine="78" startPosition="39" endLine="79" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206284204" fileName="GoToHelper.java" startLine="80" startPosition="5" endLine="81" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206284210" fileName="GoToHelper.java" startLine="81" startPosition="61" endLine="82" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3494221159223191604" fileName="GoToHelper.java" startLine="85" startPosition="128" endLine="86" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2808756344206284234" fileName="GoToHelper.java" startLine="87" startPosition="28" endLine="88" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206284323" fileName="GoToHelper.java" startLine="90" startPosition="30" endLine="91" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206284243" fileName="GoToHelper.java" startLine="92" startPosition="12" endLine="93" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284251" fileName="GoToHelper.java" startLine="93" startPosition="55" endLine="94" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206284277" fileName="GoToHelper.java" startLine="97" startPosition="27" endLine="98" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284295" fileName="GoToHelper.java" startLine="99" startPosition="47" endLine="100" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206284296" fileName="GoToHelper.java" startLine="101" startPosition="11" endLine="102" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284308" fileName="GoToHelper.java" startLine="103" startPosition="51" endLine="104" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284314" fileName="GoToHelper.java" startLine="104" startPosition="65" endLine="105" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206465636" fileName="GoToHelper.java" startLine="112" startPosition="81" endLine="113" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206270545" fileName="GoToHelper.java" startLine="116" startPosition="162" endLine="117" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206270557" fileName="GoToHelper.java" startLine="119" startPosition="25" endLine="120" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206465643" fileName="GoToHelper.java" startLine="120" startPosition="70" endLine="121" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2808756344206270592" fileName="GoToHelper.java" startLine="123" startPosition="7" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2808756344206270593" fileName="GoToHelper.java" startLine="124" startPosition="0" endLine="125" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206270622" fileName="GoToHelper.java" startLine="130" startPosition="29" endLine="131" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206463755" fileName="GoToHelper.java" startLine="133" startPosition="52" endLine="134" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206270692" fileName="GoToHelper.java" startLine="140" startPosition="7" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2808756344206270693" fileName="GoToHelper.java" startLine="141" startPosition="0" endLine="142" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206283908" fileName="GoToHelper.java" startLine="153" startPosition="33" endLine="154" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206283933" fileName="GoToHelper.java" startLine="163" startPosition="33" endLine="164" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206283944" fileName="GoToHelper.java" startLine="170" startPosition="53" endLine="171" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206283954" fileName="GoToHelper.java" startLine="174" startPosition="59" endLine="175" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206283966" fileName="GoToHelper.java" startLine="178" startPosition="63" endLine="179" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206283996" fileName="GoToHelper.java" startLine="191" startPosition="33" endLine="192" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284015" fileName="GoToHelper.java" startLine="194" startPosition="135" endLine="195" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206284031" fileName="GoToHelper.java" startLine="197" startPosition="11" endLine="198" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206284043" fileName="GoToHelper.java" startLine="204" startPosition="59" endLine="205" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284053" fileName="GoToHelper.java" startLine="206" startPosition="25" endLine="207" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206284058" fileName="GoToHelper.java" startLine="208" startPosition="7" endLine="209" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2808756344206284064" fileName="GoToHelper.java" startLine="209" startPosition="57" endLine="210" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206284066" fileName="GoToHelper.java" startLine="45" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GoToHelper#()V" />
-    <nodeInfo nodeId="2808756344206283886" fileName="GoToHelper.java" startLine="146" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultNodeNavigationItemCellRenderer#()V" />
-    <nodeInfo nodeId="2808756344206283974" fileName="GoToHelper.java" startLine="184" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodCellRenderer#()V" />
-    <nodeInfo nodeId="457552532821208940" fileName="GoToHelper.java" startLine="48" startPosition="96" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2808756344206284178" fileName="GoToHelper.java" startLine="73" startPosition="143" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2808756344206284191" fileName="GoToHelper.java" startLine="77" startPosition="74" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2808756344206284229" fileName="GoToHelper.java" startLine="86" startPosition="174" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2808756344206284284" fileName="GoToHelper.java" startLine="98" startPosition="48" endLine="101" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2808756344206463161" fileName="GoToHelper.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasApplicableFinder#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="2808756344206463753" fileName="GoToHelper.java" startLine="133" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="2808756344206283948" fileName="GoToHelper.java" startLine="174" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLabelNode#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2808756344206283960" fileName="GoToHelper.java" startLine="178" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainerNode#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2808756344206284007" fileName="GoToHelper.java" startLine="193" startPosition="120" endLine="196" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2808756344206284051" fileName="GoToHelper.java" startLine="205" startPosition="71" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2808756344206284303" fileName="GoToHelper.java" startLine="102" startPosition="63" endLine="106" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2808756344206270555" fileName="GoToHelper.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2808756344206283904" fileName="GoToHelper.java" startLine="152" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2808756344206283929" fileName="GoToHelper.java" startLine="162" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2808756344206283938" fileName="GoToHelper.java" startLine="169" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="2808756344206284070" fileName="GoToHelper.java" startLine="55" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showOverridingMethodsMenu#(Ljava/util/List;Lcom/intellij/ui/awt/RelativePoint;Ljetbrains/mps/project/Project;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2808756344206284103" fileName="GoToHelper.java" startLine="61" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showOverridenMethodsMenu#(Ljava/util/List;Lcom/intellij/ui/awt/RelativePoint;Ljetbrains/mps/project/Project;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2808756344206284136" fileName="GoToHelper.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showInheritedClassesMenu#(Ljava/util/List;Lcom/intellij/ui/awt/RelativePoint;Ljetbrains/mps/project/Project;)V" />
-    <nodeInfo nodeId="2808756344206270635" fileName="GoToHelper.java" startLine="131" startPosition="138" endLine="136" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206284001" fileName="GoToHelper.java" startLine="192" startPosition="50" endLine="197" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="457552532820394239" fileName="GoToHelper.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRelativePoint#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljava/awt/event/InputEvent;)Lcom/intellij/ui/awt/RelativePoint;" />
-    <nodeInfo nodeId="2808756344206270554" fileName="GoToHelper.java" startLine="117" startPosition="46" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206283896" fileName="GoToHelper.java" startLine="150" startPosition="65" endLine="156" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206283921" fileName="GoToHelper.java" startLine="160" startPosition="83" endLine="166" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206270616" fileName="GoToHelper.java" startLine="130" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2808756344206283890" fileName="GoToHelper.java" startLine="149" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementText#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2808756344206283913" fileName="GoToHelper.java" startLine="159" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainerText#(Ljetbrains/mps/ide/navigation/NodeNavigatable;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2808756344206284037" fileName="GoToHelper.java" startLine="203" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLabelNode#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2808756344206270615" fileName="GoToHelper.java" startLine="128" startPosition="59" endLine="138" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206283992" fileName="GoToHelper.java" startLine="190" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2808756344206284163" fileName="GoToHelper.java" startLine="73" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showMenu#(Lcom/intellij/ui/awt/RelativePoint;Ljetbrains/mps/project/Project;Ljava/lang/String;Ljava/util/List;Ljetbrains/mps/ide/editor/util/NodeListCellRenderer;)V" />
-    <nodeInfo nodeId="2808756344206284273" fileName="GoToHelper.java" startLine="96" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2808756344206283984" fileName="GoToHelper.java" startLine="188" startPosition="65" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2808756344206270608" fileName="GoToHelper.java" startLine="127" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="2808756344206284256" fileName="GoToHelper.java" startLine="94" startPosition="41" endLine="108" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206270600" fileName="GoToHelper.java" startLine="125" startPosition="89" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2808756344206283978" fileName="GoToHelper.java" startLine="187" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementText#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2808756344206284241" fileName="GoToHelper.java" startLine="92" startPosition="10" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2808756344206284235" fileName="GoToHelper.java" startLine="89" startPosition="5" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2808756344206284216" fileName="GoToHelper.java" startLine="85" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openTargets#(Lcom/intellij/ui/awt/RelativePoint;Ljava/util/List;Ljava/lang/String;Ljavax/swing/ListCellRenderer;)V" />
-    <nodeInfo nodeId="2808756344206463602" fileName="GoToHelper.java" startLine="116" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="executeFinders#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;Ljava/lang/String;Lcom/intellij/ui/awt/RelativePoint;)V" />
-    <scopeInfo nodeId="2808756344206284069" fileName="GoToHelper.java" startLine="45" startPosition="23" endLine="45" endPosition="23" />
-    <scopeInfo nodeId="2808756344206283889" fileName="GoToHelper.java" startLine="146" startPosition="52" endLine="146" endPosition="52" />
-    <scopeInfo nodeId="2808756344206283977" fileName="GoToHelper.java" startLine="184" startPosition="33" endLine="184" endPosition="33" />
-    <scopeInfo nodeId="457552532821208942" fileName="GoToHelper.java" startLine="49" startPosition="43" endLine="50" endPosition="58" />
-    <scopeInfo nodeId="2808756344206284182" fileName="GoToHelper.java" startLine="74" startPosition="49" endLine="75" endPosition="13" />
-    <scopeInfo nodeId="2808756344206284195" fileName="GoToHelper.java" startLine="78" startPosition="39" endLine="79" endPosition="59" />
-    <scopeInfo nodeId="2808756344206284233" fileName="GoToHelper.java" startLine="87" startPosition="28" endLine="88" endPosition="13" />
-    <scopeInfo nodeId="2808756344206284322" fileName="GoToHelper.java" startLine="90" startPosition="30" endLine="91" endPosition="36" />
-    <scopeInfo nodeId="2808756344206284294" fileName="GoToHelper.java" startLine="99" startPosition="47" endLine="100" endPosition="19" />
-    <scopeInfo nodeId="2808756344206463164" fileName="GoToHelper.java" startLine="112" startPosition="81" endLine="113" endPosition="78" />
-    <scopeInfo nodeId="2808756344206463754" fileName="GoToHelper.java" startLine="133" startPosition="52" endLine="134" endPosition="44" />
-    <scopeInfo nodeId="2808756344206283907" fileName="GoToHelper.java" startLine="153" startPosition="33" endLine="154" endPosition="57" />
-    <scopeInfo nodeId="2808756344206283932" fileName="GoToHelper.java" startLine="163" startPosition="33" endLine="164" endPosition="88" />
-    <scopeInfo nodeId="2808756344206283943" fileName="GoToHelper.java" startLine="170" startPosition="53" endLine="171" endPosition="59" />
-    <scopeInfo nodeId="2808756344206283953" fileName="GoToHelper.java" startLine="174" startPosition="59" endLine="175" endPosition="65" />
-    <scopeInfo nodeId="2808756344206283965" fileName="GoToHelper.java" startLine="178" startPosition="63" endLine="179" endPosition="55" />
-    <scopeInfo nodeId="2808756344206284014" fileName="GoToHelper.java" startLine="194" startPosition="135" endLine="195" endPosition="128" />
-    <scopeInfo nodeId="2808756344206284052" fileName="GoToHelper.java" startLine="206" startPosition="25" endLine="207" endPosition="20" />
-    <scopeInfo nodeId="2808756344206284066" fileName="GoToHelper.java" startLine="45" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="2808756344206284307" fileName="GoToHelper.java" startLine="103" startPosition="51" endLine="105" endPosition="36">
+    <nodeInfo nodeId="457552532821321542" fileName="GoToHelper.java" startLine="50" startPosition="43" endLine="51" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="457552532821380832" fileName="GoToHelper.java" startLine="52" startPosition="5" endLine="53" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206284083" fileName="GoToHelper.java" startLine="56" startPosition="133" endLine="57" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284091" fileName="GoToHelper.java" startLine="57" startPosition="85" endLine="58" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284096" fileName="GoToHelper.java" startLine="58" startPosition="81" endLine="59" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206284116" fileName="GoToHelper.java" startLine="62" startPosition="132" endLine="63" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284124" fileName="GoToHelper.java" startLine="63" startPosition="64" endLine="64" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284129" fileName="GoToHelper.java" startLine="64" startPosition="81" endLine="65" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206284147" fileName="GoToHelper.java" startLine="68" startPosition="113" endLine="69" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284151" fileName="GoToHelper.java" startLine="69" startPosition="59" endLine="70" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284156" fileName="GoToHelper.java" startLine="70" startPosition="119" endLine="71" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206284183" fileName="GoToHelper.java" startLine="75" startPosition="49" endLine="76" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206284184" fileName="GoToHelper.java" startLine="77" startPosition="5" endLine="78" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284196" fileName="GoToHelper.java" startLine="79" startPosition="39" endLine="80" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206284204" fileName="GoToHelper.java" startLine="81" startPosition="5" endLine="82" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206284210" fileName="GoToHelper.java" startLine="82" startPosition="61" endLine="83" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3494221159223191604" fileName="GoToHelper.java" startLine="86" startPosition="128" endLine="87" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2808756344206284234" fileName="GoToHelper.java" startLine="88" startPosition="28" endLine="89" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206284323" fileName="GoToHelper.java" startLine="91" startPosition="30" endLine="92" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206284243" fileName="GoToHelper.java" startLine="93" startPosition="12" endLine="94" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284251" fileName="GoToHelper.java" startLine="94" startPosition="55" endLine="95" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206284277" fileName="GoToHelper.java" startLine="98" startPosition="27" endLine="99" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284295" fileName="GoToHelper.java" startLine="100" startPosition="47" endLine="101" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206284296" fileName="GoToHelper.java" startLine="102" startPosition="11" endLine="103" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284308" fileName="GoToHelper.java" startLine="104" startPosition="51" endLine="105" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284314" fileName="GoToHelper.java" startLine="105" startPosition="65" endLine="106" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206465636" fileName="GoToHelper.java" startLine="113" startPosition="81" endLine="114" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206270545" fileName="GoToHelper.java" startLine="117" startPosition="162" endLine="118" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206270557" fileName="GoToHelper.java" startLine="120" startPosition="25" endLine="121" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206465643" fileName="GoToHelper.java" startLine="121" startPosition="70" endLine="122" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2808756344206270592" fileName="GoToHelper.java" startLine="124" startPosition="7" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2808756344206270593" fileName="GoToHelper.java" startLine="125" startPosition="0" endLine="126" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206270622" fileName="GoToHelper.java" startLine="131" startPosition="29" endLine="132" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206463755" fileName="GoToHelper.java" startLine="134" startPosition="52" endLine="135" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206270692" fileName="GoToHelper.java" startLine="141" startPosition="7" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2808756344206270693" fileName="GoToHelper.java" startLine="142" startPosition="0" endLine="143" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206283908" fileName="GoToHelper.java" startLine="154" startPosition="33" endLine="155" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206283933" fileName="GoToHelper.java" startLine="164" startPosition="33" endLine="165" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206283944" fileName="GoToHelper.java" startLine="171" startPosition="53" endLine="172" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206283954" fileName="GoToHelper.java" startLine="175" startPosition="59" endLine="176" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206283966" fileName="GoToHelper.java" startLine="179" startPosition="63" endLine="180" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206283996" fileName="GoToHelper.java" startLine="192" startPosition="33" endLine="193" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284015" fileName="GoToHelper.java" startLine="195" startPosition="135" endLine="196" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206284031" fileName="GoToHelper.java" startLine="198" startPosition="11" endLine="199" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206284043" fileName="GoToHelper.java" startLine="205" startPosition="59" endLine="206" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284053" fileName="GoToHelper.java" startLine="207" startPosition="25" endLine="208" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206284058" fileName="GoToHelper.java" startLine="209" startPosition="7" endLine="210" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2808756344206284064" fileName="GoToHelper.java" startLine="210" startPosition="57" endLine="211" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206284066" fileName="GoToHelper.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GoToHelper#()V" />
+    <nodeInfo nodeId="2808756344206283886" fileName="GoToHelper.java" startLine="147" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultNodeNavigationItemCellRenderer#()V" />
+    <nodeInfo nodeId="2808756344206283974" fileName="GoToHelper.java" startLine="185" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MethodCellRenderer#()V" />
+    <nodeInfo nodeId="457552532821208940" fileName="GoToHelper.java" startLine="49" startPosition="96" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2808756344206284178" fileName="GoToHelper.java" startLine="74" startPosition="143" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2808756344206284191" fileName="GoToHelper.java" startLine="78" startPosition="74" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2808756344206284229" fileName="GoToHelper.java" startLine="87" startPosition="174" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2808756344206284284" fileName="GoToHelper.java" startLine="99" startPosition="48" endLine="102" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2808756344206463161" fileName="GoToHelper.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasApplicableFinder#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2808756344206463753" fileName="GoToHelper.java" startLine="134" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="2808756344206283948" fileName="GoToHelper.java" startLine="175" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLabelNode#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2808756344206283960" fileName="GoToHelper.java" startLine="179" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainerNode#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2808756344206284007" fileName="GoToHelper.java" startLine="194" startPosition="120" endLine="197" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2808756344206284051" fileName="GoToHelper.java" startLine="206" startPosition="104" endLine="209" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2808756344206284303" fileName="GoToHelper.java" startLine="103" startPosition="63" endLine="107" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2808756344206270555" fileName="GoToHelper.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2808756344206283904" fileName="GoToHelper.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2808756344206283929" fileName="GoToHelper.java" startLine="163" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2808756344206283938" fileName="GoToHelper.java" startLine="170" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="2808756344206284070" fileName="GoToHelper.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showOverridingMethodsMenu#(Ljava/util/List;Lcom/intellij/ui/awt/RelativePoint;Ljetbrains/mps/project/Project;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2808756344206284103" fileName="GoToHelper.java" startLine="62" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showOverridenMethodsMenu#(Ljava/util/List;Lcom/intellij/ui/awt/RelativePoint;Ljetbrains/mps/project/Project;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="2808756344206284136" fileName="GoToHelper.java" startLine="68" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showInheritedClassesMenu#(Ljava/util/List;Lcom/intellij/ui/awt/RelativePoint;Ljetbrains/mps/project/Project;)V" />
+    <nodeInfo nodeId="2808756344206270635" fileName="GoToHelper.java" startLine="132" startPosition="138" endLine="137" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206284001" fileName="GoToHelper.java" startLine="193" startPosition="50" endLine="198" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="457552532820394239" fileName="GoToHelper.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRelativePoint#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljava/awt/event/InputEvent;)Lcom/intellij/ui/awt/RelativePoint;" />
+    <nodeInfo nodeId="2808756344206270554" fileName="GoToHelper.java" startLine="118" startPosition="46" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206283896" fileName="GoToHelper.java" startLine="151" startPosition="65" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206283921" fileName="GoToHelper.java" startLine="161" startPosition="83" endLine="167" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206270616" fileName="GoToHelper.java" startLine="131" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2808756344206283890" fileName="GoToHelper.java" startLine="150" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementText#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2808756344206283913" fileName="GoToHelper.java" startLine="160" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainerText#(Ljetbrains/mps/ide/navigation/NodeNavigatable;Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2808756344206284037" fileName="GoToHelper.java" startLine="204" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLabelNode#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2808756344206270615" fileName="GoToHelper.java" startLine="129" startPosition="59" endLine="139" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206283992" fileName="GoToHelper.java" startLine="191" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2808756344206284163" fileName="GoToHelper.java" startLine="74" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="showMenu#(Lcom/intellij/ui/awt/RelativePoint;Ljetbrains/mps/project/Project;Ljava/lang/String;Ljava/util/List;Ljetbrains/mps/ide/editor/util/NodeListCellRenderer;)V" />
+    <nodeInfo nodeId="2808756344206284273" fileName="GoToHelper.java" startLine="97" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2808756344206283984" fileName="GoToHelper.java" startLine="189" startPosition="65" endLine="201" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2808756344206270608" fileName="GoToHelper.java" startLine="128" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="2808756344206284256" fileName="GoToHelper.java" startLine="95" startPosition="41" endLine="109" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206270600" fileName="GoToHelper.java" startLine="126" startPosition="89" endLine="141" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2808756344206283978" fileName="GoToHelper.java" startLine="188" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementText#(Ljetbrains/mps/ide/navigation/NodeNavigatable;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2808756344206284241" fileName="GoToHelper.java" startLine="93" startPosition="10" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2808756344206284235" fileName="GoToHelper.java" startLine="90" startPosition="5" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2808756344206284216" fileName="GoToHelper.java" startLine="86" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="openTargets#(Lcom/intellij/ui/awt/RelativePoint;Ljava/util/List;Ljava/lang/String;Ljavax/swing/ListCellRenderer;)V" />
+    <nodeInfo nodeId="2808756344206463602" fileName="GoToHelper.java" startLine="117" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="executeFinders#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;Ljava/lang/String;Lcom/intellij/ui/awt/RelativePoint;)V" />
+    <scopeInfo nodeId="2808756344206284069" fileName="GoToHelper.java" startLine="46" startPosition="23" endLine="46" endPosition="23" />
+    <scopeInfo nodeId="2808756344206283889" fileName="GoToHelper.java" startLine="147" startPosition="52" endLine="147" endPosition="52" />
+    <scopeInfo nodeId="2808756344206283977" fileName="GoToHelper.java" startLine="185" startPosition="33" endLine="185" endPosition="33" />
+    <scopeInfo nodeId="457552532821208942" fileName="GoToHelper.java" startLine="50" startPosition="43" endLine="51" endPosition="58" />
+    <scopeInfo nodeId="2808756344206284182" fileName="GoToHelper.java" startLine="75" startPosition="49" endLine="76" endPosition="13" />
+    <scopeInfo nodeId="2808756344206284195" fileName="GoToHelper.java" startLine="79" startPosition="39" endLine="80" endPosition="59" />
+    <scopeInfo nodeId="2808756344206284233" fileName="GoToHelper.java" startLine="88" startPosition="28" endLine="89" endPosition="13" />
+    <scopeInfo nodeId="2808756344206284322" fileName="GoToHelper.java" startLine="91" startPosition="30" endLine="92" endPosition="36" />
+    <scopeInfo nodeId="2808756344206284294" fileName="GoToHelper.java" startLine="100" startPosition="47" endLine="101" endPosition="19" />
+    <scopeInfo nodeId="2808756344206463164" fileName="GoToHelper.java" startLine="113" startPosition="81" endLine="114" endPosition="78" />
+    <scopeInfo nodeId="2808756344206463754" fileName="GoToHelper.java" startLine="134" startPosition="52" endLine="135" endPosition="44" />
+    <scopeInfo nodeId="2808756344206283907" fileName="GoToHelper.java" startLine="154" startPosition="33" endLine="155" endPosition="57" />
+    <scopeInfo nodeId="2808756344206283932" fileName="GoToHelper.java" startLine="164" startPosition="33" endLine="165" endPosition="88" />
+    <scopeInfo nodeId="2808756344206283943" fileName="GoToHelper.java" startLine="171" startPosition="53" endLine="172" endPosition="59" />
+    <scopeInfo nodeId="2808756344206283953" fileName="GoToHelper.java" startLine="175" startPosition="59" endLine="176" endPosition="98" />
+    <scopeInfo nodeId="2808756344206283965" fileName="GoToHelper.java" startLine="179" startPosition="63" endLine="180" endPosition="55" />
+    <scopeInfo nodeId="2808756344206284014" fileName="GoToHelper.java" startLine="195" startPosition="135" endLine="196" endPosition="128" />
+    <scopeInfo nodeId="2808756344206284052" fileName="GoToHelper.java" startLine="207" startPosition="25" endLine="208" endPosition="20" />
+    <scopeInfo nodeId="2808756344206284066" fileName="GoToHelper.java" startLine="46" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="2808756344206284307" fileName="GoToHelper.java" startLine="104" startPosition="51" endLine="106" endPosition="36">
       <varInfo nodeId="2808756344206284309" varName="selected" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206270556" fileName="GoToHelper.java" startLine="119" startPosition="25" endLine="121" endPosition="84" />
-    <scopeInfo nodeId="2808756344206283886" fileName="GoToHelper.java" startLine="146" startPosition="0" endLine="148" endPosition="0" />
-    <scopeInfo nodeId="2808756344206283974" fileName="GoToHelper.java" startLine="184" startPosition="0" endLine="186" endPosition="0" />
-    <scopeInfo nodeId="2808756344206284082" fileName="GoToHelper.java" startLine="55" startPosition="133" endLine="58" endPosition="64">
+    <scopeInfo nodeId="2808756344206270556" fileName="GoToHelper.java" startLine="120" startPosition="25" endLine="122" endPosition="84" />
+    <scopeInfo nodeId="2808756344206283886" fileName="GoToHelper.java" startLine="147" startPosition="0" endLine="149" endPosition="0" />
+    <scopeInfo nodeId="2808756344206283974" fileName="GoToHelper.java" startLine="185" startPosition="0" endLine="187" endPosition="0" />
+    <scopeInfo nodeId="2808756344206284082" fileName="GoToHelper.java" startLine="56" startPosition="133" endLine="59" endPosition="64">
       <varInfo nodeId="2808756344206284092" varName="renderer" />
       <varInfo nodeId="2808756344206284084" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284115" fileName="GoToHelper.java" startLine="61" startPosition="132" endLine="64" endPosition="64">
+    <scopeInfo nodeId="2808756344206284115" fileName="GoToHelper.java" startLine="62" startPosition="132" endLine="65" endPosition="64">
       <varInfo nodeId="2808756344206284125" varName="renderer" />
       <varInfo nodeId="2808756344206284117" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284146" fileName="GoToHelper.java" startLine="67" startPosition="113" endLine="70" endPosition="64">
+    <scopeInfo nodeId="2808756344206284146" fileName="GoToHelper.java" startLine="68" startPosition="113" endLine="71" endPosition="64">
       <varInfo nodeId="2808756344206284152" varName="renderer" />
       <varInfo nodeId="2808756344206284148" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284191" fileName="GoToHelper.java" startLine="77" startPosition="74" endLine="80" endPosition="5">
+    <scopeInfo nodeId="2808756344206284191" fileName="GoToHelper.java" startLine="78" startPosition="74" endLine="81" endPosition="5">
       <varInfo nodeId="2808756344206284193" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206463161" fileName="GoToHelper.java" startLine="112" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="2808756344206463161" fileName="GoToHelper.java" startLine="113" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="2808756344206463204" varName="finderClassName" />
       <varInfo nodeId="2808756344206463585" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206463753" fileName="GoToHelper.java" startLine="133" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="2808756344206463753" fileName="GoToHelper.java" startLine="134" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="2808756344206463753" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206283948" fileName="GoToHelper.java" startLine="174" startPosition="0" endLine="177" endPosition="0">
+    <scopeInfo nodeId="2808756344206283948" fileName="GoToHelper.java" startLine="175" startPosition="0" endLine="178" endPosition="0">
       <varInfo nodeId="2808756344206283951" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206283960" fileName="GoToHelper.java" startLine="178" startPosition="0" endLine="181" endPosition="0">
+    <scopeInfo nodeId="2808756344206283960" fileName="GoToHelper.java" startLine="179" startPosition="0" endLine="182" endPosition="0">
       <varInfo nodeId="2808756344206283963" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284006" fileName="GoToHelper.java" startLine="193" startPosition="120" endLine="196" endPosition="13" />
-    <scopeInfo nodeId="457552532820394243" fileName="GoToHelper.java" startLine="48" startPosition="96" endLine="52" endPosition="108" />
-    <scopeInfo nodeId="2808756344206284303" fileName="GoToHelper.java" startLine="102" startPosition="63" endLine="106" endPosition="11">
+    <scopeInfo nodeId="2808756344206284006" fileName="GoToHelper.java" startLine="194" startPosition="120" endLine="197" endPosition="13" />
+    <scopeInfo nodeId="457552532820394243" fileName="GoToHelper.java" startLine="49" startPosition="96" endLine="53" endPosition="108" />
+    <scopeInfo nodeId="2808756344206284303" fileName="GoToHelper.java" startLine="103" startPosition="63" endLine="107" endPosition="11">
       <varInfo nodeId="2808756344206284305" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206270555" fileName="GoToHelper.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="2808756344206283904" fileName="GoToHelper.java" startLine="152" startPosition="0" endLine="156" endPosition="0" />
-    <scopeInfo nodeId="2808756344206283929" fileName="GoToHelper.java" startLine="162" startPosition="0" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="2808756344206283938" fileName="GoToHelper.java" startLine="169" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="2808756344206270555" fileName="GoToHelper.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="2808756344206283904" fileName="GoToHelper.java" startLine="153" startPosition="0" endLine="157" endPosition="0" />
+    <scopeInfo nodeId="2808756344206283929" fileName="GoToHelper.java" startLine="163" startPosition="0" endLine="167" endPosition="0" />
+    <scopeInfo nodeId="2808756344206283938" fileName="GoToHelper.java" startLine="170" startPosition="0" endLine="174" endPosition="0">
       <varInfo nodeId="2808756344206283941" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284070" fileName="GoToHelper.java" startLine="55" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="2808756344206284070" fileName="GoToHelper.java" startLine="56" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="2808756344206284080" varName="methodName" />
       <varInfo nodeId="2808756344206284073" varName="nodes" />
       <varInfo nodeId="2808756344206284076" varName="point" />
       <varInfo nodeId="2808756344206284078" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284103" fileName="GoToHelper.java" startLine="61" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="2808756344206284103" fileName="GoToHelper.java" startLine="62" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="2808756344206284113" varName="methodName" />
       <varInfo nodeId="2808756344206284106" varName="nodes" />
       <varInfo nodeId="2808756344206284109" varName="point" />
       <varInfo nodeId="2808756344206284111" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284136" fileName="GoToHelper.java" startLine="67" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="2808756344206284136" fileName="GoToHelper.java" startLine="68" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="2808756344206284139" varName="nodes" />
       <varInfo nodeId="2808756344206284142" varName="point" />
       <varInfo nodeId="2808756344206284144" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="457552532820394239" fileName="GoToHelper.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="457552532820394239" fileName="GoToHelper.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="457552532820682149" varName="inputEvent" />
       <varInfo nodeId="457552532820408942" varName="selectedCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206270617" fileName="GoToHelper.java" startLine="130" startPosition="29" endLine="136" endPosition="16">
+    <scopeInfo nodeId="2808756344206270617" fileName="GoToHelper.java" startLine="131" startPosition="29" endLine="137" endPosition="16">
       <varInfo nodeId="2808756344206270623" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206283895" fileName="GoToHelper.java" startLine="150" startPosition="65" endLine="156" endPosition="9" />
-    <scopeInfo nodeId="2808756344206283920" fileName="GoToHelper.java" startLine="160" startPosition="83" endLine="166" endPosition="9" />
-    <scopeInfo nodeId="2808756344206284042" fileName="GoToHelper.java" startLine="204" startPosition="59" endLine="210" endPosition="24">
+    <scopeInfo nodeId="2808756344206283895" fileName="GoToHelper.java" startLine="151" startPosition="65" endLine="157" endPosition="9" />
+    <scopeInfo nodeId="2808756344206283920" fileName="GoToHelper.java" startLine="161" startPosition="83" endLine="167" endPosition="9" />
+    <scopeInfo nodeId="2808756344206284042" fileName="GoToHelper.java" startLine="205" startPosition="59" endLine="211" endPosition="24">
       <varInfo nodeId="2808756344206284044" varName="node" />
       <varInfo nodeId="2808756344206284059" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206283995" fileName="GoToHelper.java" startLine="191" startPosition="33" endLine="198" endPosition="45">
+    <scopeInfo nodeId="2808756344206283995" fileName="GoToHelper.java" startLine="192" startPosition="33" endLine="199" endPosition="45">
       <varInfo nodeId="2808756344206283997" varName="labelNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206270616" fileName="GoToHelper.java" startLine="130" startPosition="0" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="2808756344206284177" fileName="GoToHelper.java" startLine="73" startPosition="143" endLine="82" endPosition="65">
+    <scopeInfo nodeId="2808756344206270616" fileName="GoToHelper.java" startLine="131" startPosition="0" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="2808756344206284177" fileName="GoToHelper.java" startLine="74" startPosition="143" endLine="83" endPosition="65">
       <varInfo nodeId="2808756344206284185" varName="navigatables" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284276" fileName="GoToHelper.java" startLine="97" startPosition="27" endLine="106" endPosition="11">
+    <scopeInfo nodeId="2808756344206284276" fileName="GoToHelper.java" startLine="98" startPosition="27" endLine="107" endPosition="11">
       <varInfo nodeId="2808756344206284278" varName="ids" />
       <varInfo nodeId="2808756344206284297" varName="selectedElements" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206283890" fileName="GoToHelper.java" startLine="149" startPosition="0" endLine="158" endPosition="0">
+    <scopeInfo nodeId="2808756344206283890" fileName="GoToHelper.java" startLine="150" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="2808756344206283893" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206283913" fileName="GoToHelper.java" startLine="159" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="2808756344206283913" fileName="GoToHelper.java" startLine="160" startPosition="0" endLine="169" endPosition="0">
       <varInfo nodeId="2808756344206283916" varName="element" />
       <varInfo nodeId="2808756344206283918" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284037" fileName="GoToHelper.java" startLine="203" startPosition="0" endLine="212" endPosition="0">
+    <scopeInfo nodeId="2808756344206284037" fileName="GoToHelper.java" startLine="204" startPosition="0" endLine="213" endPosition="0">
       <varInfo nodeId="2808756344206284040" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206270614" fileName="GoToHelper.java" startLine="128" startPosition="59" endLine="138" endPosition="11" />
-    <scopeInfo nodeId="2808756344206283992" fileName="GoToHelper.java" startLine="190" startPosition="0" endLine="200" endPosition="0" />
-    <scopeInfo nodeId="2808756344206284163" fileName="GoToHelper.java" startLine="73" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="2808756344206270614" fileName="GoToHelper.java" startLine="129" startPosition="59" endLine="139" endPosition="11" />
+    <scopeInfo nodeId="2808756344206283992" fileName="GoToHelper.java" startLine="191" startPosition="0" endLine="201" endPosition="0" />
+    <scopeInfo nodeId="2808756344206284163" fileName="GoToHelper.java" startLine="74" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="2808756344206284172" varName="nodes" />
       <varInfo nodeId="2808756344206284166" varName="point" />
       <varInfo nodeId="2808756344206284168" varName="project" />
       <varInfo nodeId="2808756344206284175" varName="renderer" />
       <varInfo nodeId="2808756344206284170" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284273" fileName="GoToHelper.java" startLine="96" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="2808756344206283983" fileName="GoToHelper.java" startLine="188" startPosition="65" endLine="200" endPosition="9" />
-    <scopeInfo nodeId="2808756344206270608" fileName="GoToHelper.java" startLine="127" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="2808756344206284273" fileName="GoToHelper.java" startLine="97" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="2808756344206283983" fileName="GoToHelper.java" startLine="189" startPosition="65" endLine="201" endPosition="9" />
+    <scopeInfo nodeId="2808756344206270608" fileName="GoToHelper.java" startLine="128" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="2808756344206270611" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206283978" fileName="GoToHelper.java" startLine="187" startPosition="0" endLine="202" endPosition="0">
+    <scopeInfo nodeId="2808756344206283978" fileName="GoToHelper.java" startLine="188" startPosition="0" endLine="203" endPosition="0">
       <varInfo nodeId="2808756344206283981" varName="element" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284242" fileName="GoToHelper.java" startLine="92" startPosition="12" endLine="108" endPosition="31">
+    <scopeInfo nodeId="2808756344206284242" fileName="GoToHelper.java" startLine="93" startPosition="12" endLine="109" endPosition="31">
       <varInfo nodeId="2808756344206284244" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206284228" fileName="GoToHelper.java" startLine="85" startPosition="128" endLine="109" endPosition="5" />
-    <scopeInfo nodeId="2808756344206284216" fileName="GoToHelper.java" startLine="85" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="2808756344206284228" fileName="GoToHelper.java" startLine="86" startPosition="128" endLine="110" endPosition="5" />
+    <scopeInfo nodeId="2808756344206284216" fileName="GoToHelper.java" startLine="86" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="2808756344206284226" varName="listRenderer" />
       <varInfo nodeId="2808756344206284219" varName="p" />
       <varInfo nodeId="2808756344206284221" varName="targets" />
       <varInfo nodeId="2808756344206284224" varName="title" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206463605" fileName="GoToHelper.java" startLine="116" startPosition="162" endLine="142" endPosition="153">
+    <scopeInfo nodeId="2808756344206463605" fileName="GoToHelper.java" startLine="117" startPosition="162" endLine="143" endPosition="153">
       <varInfo nodeId="2808756344206270546" varName="methodName" />
       <varInfo nodeId="2808756344206270594" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="2808756344206463602" fileName="GoToHelper.java" startLine="116" startPosition="0" endLine="144" endPosition="0">
+    <scopeInfo nodeId="2808756344206463602" fileName="GoToHelper.java" startLine="117" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="2808756344206463625" varName="finderClassName" />
       <varInfo nodeId="2808756344206463621" varName="method" />
       <varInfo nodeId="2808756344206463722" varName="project" />
       <varInfo nodeId="2808756344206465166" varName="relativePoint" />
     </scopeInfo>
-    <unitInfo nodeId="2808756344206463753" fileName="GoToHelper.java" startLine="132" startPosition="90" endLine="136" endPosition="13" unitName="jetbrains.mps.ide.editor.util.GoToHelper$5" />
-    <unitInfo nodeId="2808756344206270555" fileName="GoToHelper.java" startLine="118" startPosition="45" endLine="123" endPosition="5" unitName="jetbrains.mps.ide.editor.util.GoToHelper$2" />
-    <unitInfo nodeId="2808756344206283902" fileName="GoToHelper.java" startLine="151" startPosition="54" endLine="156" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$1" />
-    <unitInfo nodeId="2808756344206283927" fileName="GoToHelper.java" startLine="161" startPosition="54" endLine="166" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$2" />
-    <unitInfo nodeId="2808756344206270616" fileName="GoToHelper.java" startLine="129" startPosition="49" endLine="138" endPosition="9" unitName="jetbrains.mps.ide.editor.util.GoToHelper$4" />
-    <unitInfo nodeId="2808756344206283990" fileName="GoToHelper.java" startLine="189" startPosition="54" endLine="200" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$1" />
-    <unitInfo nodeId="2808756344206284272" fileName="GoToHelper.java" startLine="95" startPosition="96" endLine="108" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$1" />
-    <unitInfo nodeId="2808756344206270606" fileName="GoToHelper.java" startLine="126" startPosition="42" endLine="140" endPosition="5" unitName="jetbrains.mps.ide.editor.util.GoToHelper$3" />
-    <unitInfo nodeId="2808756344206283971" fileName="GoToHelper.java" startLine="183" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper$MethodCellRenderer" />
-    <unitInfo nodeId="2808756344206283882" fileName="GoToHelper.java" startLine="145" startPosition="0" endLine="182" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper$DefaultNodeNavigationItemCellRenderer" />
-    <unitInfo nodeId="2808756344206283880" fileName="GoToHelper.java" startLine="44" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper" />
+    <unitInfo nodeId="2808756344206463753" fileName="GoToHelper.java" startLine="133" startPosition="90" endLine="137" endPosition="13" unitName="jetbrains.mps.ide.editor.util.GoToHelper$5" />
+    <unitInfo nodeId="2808756344206270555" fileName="GoToHelper.java" startLine="119" startPosition="45" endLine="124" endPosition="5" unitName="jetbrains.mps.ide.editor.util.GoToHelper$2" />
+    <unitInfo nodeId="2808756344206283902" fileName="GoToHelper.java" startLine="152" startPosition="54" endLine="157" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$1" />
+    <unitInfo nodeId="2808756344206283927" fileName="GoToHelper.java" startLine="162" startPosition="54" endLine="167" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$2" />
+    <unitInfo nodeId="2808756344206270616" fileName="GoToHelper.java" startLine="130" startPosition="49" endLine="139" endPosition="9" unitName="jetbrains.mps.ide.editor.util.GoToHelper$4" />
+    <unitInfo nodeId="2808756344206283990" fileName="GoToHelper.java" startLine="190" startPosition="54" endLine="201" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$1" />
+    <unitInfo nodeId="2808756344206284272" fileName="GoToHelper.java" startLine="96" startPosition="96" endLine="109" endPosition="7" unitName="jetbrains.mps.ide.editor.util.GoToHelper$1" />
+    <unitInfo nodeId="2808756344206270606" fileName="GoToHelper.java" startLine="127" startPosition="42" endLine="141" endPosition="5" unitName="jetbrains.mps.ide.editor.util.GoToHelper$3" />
+    <unitInfo nodeId="2808756344206283971" fileName="GoToHelper.java" startLine="184" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper$MethodCellRenderer" />
+    <unitInfo nodeId="2808756344206283882" fileName="GoToHelper.java" startLine="146" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper$DefaultNodeNavigationItemCellRenderer" />
+    <unitInfo nodeId="2808756344206283880" fileName="GoToHelper.java" startLine="45" startPosition="0" endLine="215" endPosition="0" unitName="jetbrains.mps.ide.editor.util.GoToHelper" />
   </root>
   <root nodeRef="r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)/2808756344206284331">
     <nodeInfo nodeId="2808756344206284452" fileName="NodeListCellRenderer.java" startLine="22" startPosition="36" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

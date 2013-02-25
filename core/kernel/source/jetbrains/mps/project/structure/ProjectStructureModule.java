@@ -27,12 +27,11 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -318,7 +317,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       if (mySModel == null) return;
 
       final SModel oldModel = mySModel;
-      oldModel.setModelDescriptor(null);
+      ((jetbrains.mps.smodel.SModel) oldModel).setModelDescriptor(null);
       mySModel = null;
       if (ModelAccess.instance().canWrite()) {
         notifyModelReplaced(oldModel);
@@ -348,7 +347,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
   }
 
-  public static class ProjectStructureSModel extends SModel {
+  public static class ProjectStructureSModel extends jetbrains.mps.smodel.SModel {
     public ProjectStructureSModel(@NotNull SModelReference modelReference) {
       super(modelReference, new ForeignNodeIdMap());
     }

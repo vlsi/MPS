@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -15,7 +16,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
@@ -35,7 +35,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   @Nullable
   @Override
   public N getNode() {
-    return (N) ((SNodePointer) myNodePointer).getNode();
+    return (N) ((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance());
   }
 
   @NotNull

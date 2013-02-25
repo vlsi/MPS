@@ -30,7 +30,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -707,7 +707,7 @@ __switch__:
 
                 final Wrappers._T<SModel> beforeModel = new Wrappers._T<SModel>();
                 if (before == null) {
-                  beforeModel.value = new SModel(myModelDescriptor.getSModelReference());
+                  beforeModel.value = new jetbrains.mps.smodel.SModel(myModelDescriptor.getSModelReference());
                 } else {
                   beforeModel.value = ModelPersistence.readModel(before.getContent(), false);
                 }

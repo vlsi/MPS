@@ -16,7 +16,7 @@ import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.project.Project;

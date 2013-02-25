@@ -12,11 +12,11 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 
 public class CompartmentProviderStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -55,26 +55,10 @@ public class CompartmentProviderStatement_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_bdyu74_b0a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_bdyu74_b0a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createIndentCell_bdyu74_a1a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_bdyu74_b1a0(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createComponent_bdyu74_a0a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
-  }
-
-  private EditorCell createIndentCell_bdyu74_a1a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
   }
 
   private EditorCell createRefNode_bdyu74_b0a0(EditorContext editorContext, SNode node) {
@@ -92,6 +76,22 @@ public class CompartmentProviderStatement_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  private EditorCell createCollection_bdyu74_b0a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_bdyu74_b0a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createIndentCell_bdyu74_a1a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_bdyu74_b1a0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createIndentCell_bdyu74_a1a0(EditorContext editorContext, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    return result;
   }
 
   private EditorCell createRefNode_bdyu74_b1a0(EditorContext editorContext, SNode node) {

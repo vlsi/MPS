@@ -14,7 +14,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;

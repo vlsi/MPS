@@ -86,7 +86,7 @@ public class UpgradePersistence_Action extends BaseAction {
         }
         assert file != null;
         try {
-          jetbrains.mps.smodel.SModel model = (wasInitialized ?
+          SModel model = (wasInitialized ?
             modelDescriptor.getSModel() :
             ModelPersistence.readModel(file, false)
           );

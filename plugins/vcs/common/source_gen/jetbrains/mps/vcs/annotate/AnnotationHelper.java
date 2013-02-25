@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.leftHighlighter.AbstractLeftColumn;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
@@ -132,7 +132,7 @@ public class AnnotationHelper {
     return annotate(editorComponent, true);
   }
 
-  private static SModel check_19hp0u_a0d0c(SNode checkedDotOperand) {
+  private static jetbrains.mps.smodel.SModel check_19hp0u_a0d0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

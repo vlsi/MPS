@@ -23,7 +23,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNode
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;

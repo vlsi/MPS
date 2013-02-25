@@ -39,12 +39,6 @@ public class UnknownDotCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_hkcaw7_d0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new IMethodCall_actualArguments(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    return editorCell;
-  }
-
   private EditorCell createConstant_hkcaw7_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_hkcaw7_b0");
@@ -70,6 +64,12 @@ public class UnknownDotCall_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createComponent_hkcaw7_d0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IMethodCall_actualArguments(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 }

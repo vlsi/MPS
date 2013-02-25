@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
@@ -147,7 +147,7 @@ public class SetReferenceChange extends NodeChange {
     return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), getRole(), targetModel, check_mgdhcs_e0a6a41(ref), check_mgdhcs_f0a6a41(((jetbrains.mps.smodel.SReference) ref)));
   }
 
-  private static SReference check_mgdhcs_a0i0f(jetbrains.mps.smodel.SNode checkedDotOperand, String myRole, SetReferenceChange checkedDotThisExpression) {
+  private static SReference check_mgdhcs_a0i0f(SNode checkedDotOperand, String myRole, SetReferenceChange checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference(myRole);
     }

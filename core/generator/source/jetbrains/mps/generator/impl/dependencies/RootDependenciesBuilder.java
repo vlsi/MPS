@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.generator.TransientSModel;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;

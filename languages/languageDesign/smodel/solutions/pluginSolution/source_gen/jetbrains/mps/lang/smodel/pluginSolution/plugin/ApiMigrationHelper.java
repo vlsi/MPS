@@ -91,6 +91,12 @@ public class ApiMigrationHelper {
     migrate(oldNode, newNode);
   }
 
+  public void migrateSModel() {
+    SNode oldNode = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0j(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode newNode = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0b0j(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
+    migrate(oldNode, newNode);
+  }
+
   private void migrate(final SNode oldNode, final SNode newNode) {
 
     Set<SNode> unknownUsages = SetSequence.fromSet(new HashSet<SNode>());
@@ -174,15 +180,15 @@ public class ApiMigrationHelper {
 
     Iterable<SearchResult<SNode>> results = SetSequence.fromSet(changedClassUsages).select(new ISelector<SNode, SearchResult<SNode>>() {
       public SearchResult<SNode> select(SNode it) {
-        return new SearchResult<SNode>(it, "replaced SNode occurences");
+        return new SearchResult<SNode>(it, "replaced Clazz occurences");
       }
     }).union(SetSequence.fromSet(changedClassUsagesInTemplates).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
       public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
-        return new SearchResult<SNode>(it._0(), "replaced SNode in new XYZ<SNode,...>");
+        return new SearchResult<SNode>(it._0(), "replaced Clazz in new XYZ<Clazz,...>");
       }
     })).union(SetSequence.fromSet(changedClassUsagesInTypes).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
       public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
-        return new SearchResult<SNode>(it._0(), "replaced SNode in Type<SNode,...>");
+        return new SearchResult<SNode>(it._0(), "replaced Clazz in Type<Clazz,...>");
       }
     })).union(SetSequence.fromSet(changedMethodCalls).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
       public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
@@ -222,7 +228,7 @@ public class ApiMigrationHelper {
               if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), newNode)) {
                 continue;
               }
-              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0jb0j(oldNode, operand));
+              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0jb0k(oldNode, operand));
             }
           }
         });
@@ -238,10 +244,10 @@ public class ApiMigrationHelper {
     if (n.getModel().isReadOnly()) {
       return false;
     }
-    if (eq_yke5lt_a0b0k(SModelOperations.getModelName(SNodeOperations.getModel(n)), SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", "")).getSModel()))) {
+    if (eq_yke5lt_a0b0l(SModelOperations.getModelName(SNodeOperations.getModel(n)), SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.pluginSolution.plugin", "")).getSModel()))) {
       return false;
     }
-    if (eq_yke5lt_a0c0k(SModelOperations.getModelName(SNodeOperations.getModel(n)), SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.generator.smodelAdapter", "")).getSModel()))) {
+    if (eq_yke5lt_a0c0l(SModelOperations.getModelName(SNodeOperations.getModel(n)), SModelOperations.getModelName(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.lang.smodel.generator.smodelAdapter", "")).getSModel()))) {
       return false;
     }
     SNode root = SNodeOperations.getContainingRoot(n);
@@ -327,7 +333,7 @@ public class ApiMigrationHelper {
   }
 
   private SNode getNewMethod(SNode old, SNode newClass) {
-    for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(newClass))) {
+    for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(newClass)).union(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0a31(), "classifier", false))))) {
       if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(method, old)) {
         return method;
       }
@@ -405,7 +411,21 @@ public class ApiMigrationHelper {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0jb0j(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_yke5lt_a0a0a0j() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SModel")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_yke5lt_a0a0b0j() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SModel")));
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0jb0k(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -423,14 +443,21 @@ public class ApiMigrationHelper {
     return quotedNode_3;
   }
 
-  private static boolean eq_yke5lt_a0b0k(Object a, Object b) {
+  private static SNode _quotation_createNode_yke5lt_a0a0a0a31() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
+    return quotedNode_1;
+  }
+
+  private static boolean eq_yke5lt_a0b0l(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_yke5lt_a0c0k(Object a, Object b) {
+  private static boolean eq_yke5lt_a0c0l(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

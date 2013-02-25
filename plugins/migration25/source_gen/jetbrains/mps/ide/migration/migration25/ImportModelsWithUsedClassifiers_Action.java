@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -95,7 +95,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           }
           // add new dependencies to model 
           for (SModelReference modelToImport : SetSequence.fromSet(dependencies)) {
-            model.addModelImport(modelToImport, false);
+            ((jetbrains.mps.smodel.SModel) model).addModelImport(modelToImport, false);
           }
         }
       }

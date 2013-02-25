@@ -32,17 +32,17 @@ public class MockAnnotation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_judj49_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
-    editorCell.setCellId("Constant_judj49_c0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createAttributedNodeCell_judj49_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
+    return editorCell;
+  }
+
+  private EditorCell createConstant_judj49_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
+    editorCell.setCellId("Constant_judj49_c0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }

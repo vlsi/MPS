@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
 import jetbrains.mps.project.MPSProject;
@@ -87,7 +86,7 @@ public class MoveNodes_Action extends BaseAction {
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          targetModelDescriptor.value = ((SModel) SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first())).getModelDescriptor();
+          targetModelDescriptor.value = SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first()).getModelDescriptor();
         }
       });
       final Object newLocation = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), targetModelDescriptor.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {

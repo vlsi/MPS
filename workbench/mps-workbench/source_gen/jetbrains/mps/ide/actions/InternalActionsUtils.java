@@ -25,7 +25,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.UnregisteredNodes;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import com.intellij.openapi.project.Project;
@@ -130,7 +130,7 @@ public class InternalActionsUtils {
         SearchResults results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodeReference, SNode>() {
           public SNode select(SNodeReference it) {
-            return ((SNodePointer) it).getNode();
+            return ((SNodePointer) it).resolve(MPSModuleRepository.getInstance());
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

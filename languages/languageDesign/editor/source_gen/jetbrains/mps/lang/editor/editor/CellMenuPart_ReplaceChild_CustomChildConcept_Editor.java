@@ -40,6 +40,17 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     return editorCell;
   }
 
+  private EditorCell createConstant_h8lpox_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace child (custom child's concept)");
+    editorCell.setCellId("Constant_h8lpox_a0a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createCollection_h8lpox_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_h8lpox_b0");
@@ -50,17 +61,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
     editorCell.addEditorCell(this.createConstant_h8lpox_b1a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_h8lpox_c1a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_h8lpox_d1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_h8lpox_a0a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace child (custom child's concept)");
-    editorCell.setCellId("Constant_h8lpox_a0a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 

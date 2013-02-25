@@ -5,7 +5,7 @@ package jetbrains.mps.gwt.client.stubs;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
@@ -46,9 +46,9 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
 
   @Override
   public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
-    SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
+    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
-    model.addLanguage(lang);
+    ((jetbrains.mps.smodel.SModel) model).addLanguage(lang);
 
     String pkg = model.getReference().getSModelFqName().getLongName();
     PathItem pi = GWTModulePathItem.getPathItem(path);

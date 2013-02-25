@@ -4,7 +4,7 @@ package jetbrains.mps.generator.traceInfo;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;

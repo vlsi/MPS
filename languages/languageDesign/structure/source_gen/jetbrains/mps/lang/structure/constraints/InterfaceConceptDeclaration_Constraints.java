@@ -10,7 +10,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -59,7 +59,7 @@ public class InterfaceConceptDeclaration_Constraints extends BaseConstraintsDesc
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
+    return LanguageAspect.STRUCTURE.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
   }
 
   private static SNodePointer breakingNode_vsd8pt_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8857655676216493587");

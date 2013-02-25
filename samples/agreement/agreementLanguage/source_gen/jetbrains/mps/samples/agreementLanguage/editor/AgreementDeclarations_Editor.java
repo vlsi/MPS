@@ -6,27 +6,85 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 
 public class AgreementDeclarations_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5606pw_a(editorContext, node);
+  }
+
+  private EditorCell createCollection_5606pw_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_5606pw_a");
+    editorCell.addEditorCell(this.createConstant_5606pw_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5606pw_b0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5606pw_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5606pw_d0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_5606pw_e0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5606pw_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "agreement declarations");
+    editorCell.setCellId("Constant_5606pw_a0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5606pw_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_5606pw_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_5606pw_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_5606pw_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_5606pw_a2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_5606pw_b2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_5606pw_c2a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5606pw_a2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    account types: {");
+    editorCell.setCellId("Constant_5606pw_a2a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_5606pw_b2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new AgreementDeclarations_Editor.accountTypeListHandler_5606pw_b2a(node, "accountType", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
+    editorCell.setCellId("refNodeList_accountType");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
   }
 
   private static class accountTypeListHandler_5606pw_b2a extends RefNodeListHandler {
@@ -92,6 +150,56 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
     }
   }
 
+  private EditorCell createConstant_5606pw_c2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    editorCell.setCellId("Constant_5606pw_c2a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5606pw_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_5606pw_d0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createCollection_5606pw_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_5606pw_e0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_5606pw_a4a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_5606pw_b4a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_5606pw_a4a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    event types:");
+    editorCell.setCellId("Constant_5606pw_a4a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_5606pw_b4a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new AgreementDeclarations_Editor.eventTypeListHandler_5606pw_b4a(node, "eventType", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
+    editorCell.setCellId("refNodeList_eventType");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.setGridLayout(true);
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
+  }
+
   private static class eventTypeListHandler_5606pw_b4a extends RefNodeListHandler {
     public eventTypeListHandler_5606pw_b4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
@@ -141,113 +249,5 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("");
       return editorCell;
     }
-  }
-
-  private EditorCell createCollection_5606pw_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_5606pw_a");
-    editorCell.addEditorCell(this.createConstant_5606pw_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5606pw_b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5606pw_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5606pw_d0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_5606pw_e0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_5606pw_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5606pw_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_5606pw_a2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_5606pw_b2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_5606pw_c2a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_5606pw_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_5606pw_e0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_5606pw_a4a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_5606pw_b4a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5606pw_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "agreement declarations");
-    editorCell.setCellId("Constant_5606pw_a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5606pw_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5606pw_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5606pw_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    account types: {");
-    editorCell.setCellId("Constant_5606pw_a2a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5606pw_c2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_5606pw_c2a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5606pw_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_5606pw_d0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_5606pw_a4a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    event types:");
-    editorCell.setCellId("Constant_5606pw_a4a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_5606pw_b2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new AgreementDeclarations_Editor.accountTypeListHandler_5606pw_b2a(node, "accountType", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
-    editorCell.setCellId("refNodeList_accountType");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_5606pw_b4a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new AgreementDeclarations_Editor.eventTypeListHandler_5606pw_b4a(node, "eventType", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_eventType");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.setGridLayout(true);
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
   }
 }

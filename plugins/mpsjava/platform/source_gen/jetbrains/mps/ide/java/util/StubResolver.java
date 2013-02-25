@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -98,7 +98,7 @@ public class StubResolver {
     });
     Sequence.fromIterable(modelsToAdd).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
-        model.addModelImport(it, false);
+        ((jetbrains.mps.smodel.SModel) model).addModelImport(it, false);
       }
     });
     if (Sequence.fromIterable(modelsToAdd).isNotEmpty()) {

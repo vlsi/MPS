@@ -25,7 +25,7 @@ import jetbrains.mps.generator.runtime.TemplateWeavingRule;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
@@ -40,7 +40,7 @@ public class WeavingProcessor {
   public WeavingProcessor(TemplateGenerator generator) {
     myGenerator = generator;
     myGenerationTracer = myGenerator.getGenerationTracer();
-    myFastNodeFinder = myGenerator.getInputModel().getFastNodeFinder();
+    myFastNodeFinder = ((jetbrains.mps.smodel.SModel) myGenerator.getInputModel()).getFastNodeFinder();
   }
 
   public void apply(TemplateWeavingRule rule)

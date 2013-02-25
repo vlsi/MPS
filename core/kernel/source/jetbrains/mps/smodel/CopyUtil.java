@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -45,37 +45,37 @@ public final class CopyUtil {
   }
 
   public static void clearModelProperties(SModel model) {
-    for (ImportElement ie : new ArrayList<ImportElement>(model.getAdditionalModelVersions())) {
-      model.deleteModelImport(ie.getModelReference());
+    for (ImportElement ie : new ArrayList<ImportElement>(((jetbrains.mps.smodel.SModel) model).getAdditionalModelVersions())) {
+      ((jetbrains.mps.smodel.SModel) model).deleteModelImport(ie.getModelReference());
     }
-    for (ImportElement ie : new ArrayList<ImportElement>(model.importedModels())) {
-      model.deleteModelImport(ie.getModelReference());
+    for (ImportElement ie : new ArrayList<ImportElement>(((jetbrains.mps.smodel.SModel) model).importedModels())) {
+      ((jetbrains.mps.smodel.SModel) model).deleteModelImport(ie.getModelReference());
     }
-    for (ModuleReference mr : new ArrayList<ModuleReference>(model.importedDevkits())) {
-      model.deleteDevKit(mr);
+    for (ModuleReference mr : new ArrayList<ModuleReference>(((jetbrains.mps.smodel.SModel) model).importedDevkits())) {
+      ((jetbrains.mps.smodel.SModel) model).deleteDevKit(mr);
     }
-    for (ModuleReference mr : new ArrayList<ModuleReference>(model.importedLanguages())) {
-      model.deleteLanguage(mr);
+    for (ModuleReference mr : new ArrayList<ModuleReference>(((jetbrains.mps.smodel.SModel) model).importedLanguages())) {
+      ((jetbrains.mps.smodel.SModel) model).deleteLanguage(mr);
     }
-    for (ModuleReference mr : new ArrayList<ModuleReference>(model.engagedOnGenerationLanguages())) {
-      model.removeEngagedOnGenerationLanguage(mr);
+    for (ModuleReference mr : new ArrayList<ModuleReference>(((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages())) {
+      ((jetbrains.mps.smodel.SModel) model).removeEngagedOnGenerationLanguage(mr);
     }
-    model.calculateImplicitImports();
+    ((jetbrains.mps.smodel.SModel) model).calculateImplicitImports();
   }
 
   public static void copyModelProperties(SModel from, SModel to) {
-    from.copyPropertiesTo(to);
+    ((jetbrains.mps.smodel.SModel) from).copyPropertiesTo(((jetbrains.mps.smodel.SModel) to));
   }
 
   public static SModel copyModel(SModel model) {
-    SModel copy = model.createEmptyCopy();
+    SModel copy = ((jetbrains.mps.smodel.SModel) model).createEmptyCopy();
     copyModelContentAndPreserveIds(model, copy);
     copyModelProperties(model, copy);
     return copy;
   }
 
   public static void changeModelReference(SModel model, SModelReference modelReference) {
-    model.changeModelReference(modelReference);
+    ((jetbrains.mps.smodel.SModel) model).changeModelReference(modelReference);
   }
 
   public static List<SNode> copy(List<SNode> nodes) {

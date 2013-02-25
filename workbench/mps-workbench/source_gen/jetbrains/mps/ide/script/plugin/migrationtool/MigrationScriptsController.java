@@ -13,6 +13,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Collections;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
@@ -34,8 +35,8 @@ public abstract class MigrationScriptsController {
       public void run() {
         List<SNodeReference> includedNodes = includedResultNodes;
         for (SNodeReference includedNode : includedNodes) {
-          if (((SNodePointer) includedNode).getNode() != null) {
-            aliveIncludedNodes.add(((SNodePointer) includedNode).getNode());
+          if (((SNodePointer) includedNode).resolve(MPSModuleRepository.getInstance()) != null) {
+            aliveIncludedNodes.add(((SNodePointer) includedNode).resolve(MPSModuleRepository.getInstance()));
           }
         }
         List<SearchResult<SNode>> aliveResults = myFinder.getLastSearchResults().getAliveResults();

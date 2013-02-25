@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.ModuleContext;
 import org.jetbrains.annotations.NotNull;

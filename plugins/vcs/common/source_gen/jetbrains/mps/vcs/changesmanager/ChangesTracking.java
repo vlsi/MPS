@@ -31,7 +31,7 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vcs.diff.ChangeSet;
@@ -186,7 +186,7 @@ public class ChangesTracking {
     }
     final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);
     if (BaseVersionUtil.isAddedFileStatus(status) || ConflictsUtil.isModelOrModuleConflicting(myModelDescriptor, myProject)) {
-      baseVersionModel.value = new SModel(myModelDescriptor.getSModelReference());
+      baseVersionModel.value = new jetbrains.mps.smodel.SModel(myModelDescriptor.getSModelReference());
     } else {
       String content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
       if (content == null && status != FileStatus.NOT_CHANGED) {

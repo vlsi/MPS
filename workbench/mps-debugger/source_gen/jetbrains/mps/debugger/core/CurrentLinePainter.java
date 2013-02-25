@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.Rectangle;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
@@ -51,7 +52,7 @@ public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
 
   @Override
   protected SNode getSNode() {
-    return ((SNodePointer) getItem()).getNode();
+    return ((SNodePointer) getItem()).resolve(MPSModuleRepository.getInstance());
   }
 
   @Override

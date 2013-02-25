@@ -23,7 +23,7 @@ import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ypath.behavior.IParamFeature_Behavior;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuComponent {
   public menu_SubstituteIterateOperationAxis() {

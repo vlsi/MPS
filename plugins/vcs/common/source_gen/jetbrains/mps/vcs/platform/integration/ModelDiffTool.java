@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.platform.integration;
 import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffContent;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import com.intellij.openapi.diff.DiffManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;

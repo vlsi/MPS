@@ -19,7 +19,7 @@ import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IterableUtil;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class ModelValidator {
     if (myModel instanceof TransientSModel) {
       return errors;
     }
-    if (myModel.isDisposed()) {
+    if (jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) {
       return errors;
     }
     if (myModel instanceof InvalidSModel) {
@@ -65,15 +65,15 @@ public class ModelValidator {
     }
 
     List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
-    langsToCheck.addAll(IterableUtil.asCollection(myModel.getModelDepsManager().getAllImportedLanguages()));
-    langsToCheck.addAll(myModel.engagedOnGenerationLanguages());
+    langsToCheck.addAll(IterableUtil.asCollection(((jetbrains.mps.smodel.SModel) myModel).getModelDepsManager().getAllImportedLanguages()));
+    langsToCheck.addAll(((jetbrains.mps.smodel.SModel) myModel).engagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
         errors.add("Can't find language: " + lang.getModuleFqName());
       }
     }
 
-    for (ModuleReference devKit : myModel.importedDevkits()) {
+    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModel) myModel).importedDevkits()) {
       if (scope.getDevKit(devKit) == null) {
         errors.add("Can't find devkit: " + devKit.getModuleFqName());
       }

@@ -6,40 +6,24 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class Script_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_udqu28_a(editorContext, node);
-  }
-
-  private static boolean renderingCondition_udqu28_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "commands", true)).isNotEmpty();
-  }
-
-  private EditorCell createAlternation_udqu28_c0(EditorContext editorContext, SNode node) {
-    boolean alternationCondition = true;
-    alternationCondition = Script_Editor.renderingCondition_udqu28_a2a(node, editorContext, editorContext.getOperationContext().getScope());
-    EditorCell editorCell = null;
-    if (alternationCondition) {
-      editorCell = this.createConstant_udqu28_a2a(editorContext, node);
-    } else {
-      editorCell = this.createConstant_udqu28_a2a_0(editorContext, node);
-    }
-    return editorCell;
   }
 
   private EditorCell createCollection_udqu28_a(EditorContext editorContext, SNode node) {
@@ -61,6 +45,43 @@ public class Script_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
+  }
+
+  private EditorCell createProperty_udqu28_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("name");
+    provider.setNoTargetText("<no name>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_name");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createAlternation_udqu28_c0(EditorContext editorContext, SNode node) {
+    boolean alternationCondition = true;
+    alternationCondition = Script_Editor.renderingCondition_udqu28_a2a(node, editorContext, editorContext.getOperationContext().getScope());
+    EditorCell editorCell = null;
+    if (alternationCondition) {
+      editorCell = this.createConstant_udqu28_a2a(editorContext, node);
+    } else {
+      editorCell = this.createConstant_udqu28_a2a_0(editorContext, node);
+    }
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_udqu28_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "commands", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_udqu28_a2a(EditorContext editorContext, SNode node) {
@@ -87,18 +108,6 @@ public class Script_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_udqu28_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
-    editorCell.setCellId("Constant_udqu28_e0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    style.set(StyleAttributes.MATCHING_LABEL, "script_block");
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createRefNode_udqu28_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -119,24 +128,15 @@ public class Script_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_udqu28_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("name");
-    provider.setNoTargetText("<no name>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_name");
+  private EditorCell createConstant_udqu28_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
+    editorCell.setCellId("Constant_udqu28_e0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyClassName(style, editorCell);
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    style.set(StyleAttributes.MATCHING_LABEL, "script_block");
     editorCell.getStyle().putAll(style);
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }

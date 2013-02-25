@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.ModelRootUtil;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
@@ -92,15 +92,15 @@ public class NewSubTestModel_Action extends BaseAction {
           result.value = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule().createModel(newModelFqName.toString(), ModelRootUtil.getModelRoot(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
           SModel createdModel = result.value.getSModel();
           SModel sourceModel = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
-          createdModel.addModelImport(sourceModel.getReference(), false);
-          for (SModel.ImportElement importElement : sourceModel.importedModels()) {
-            createdModel.addModelImport(sourceModel.getReference(), false);
+          ((jetbrains.mps.smodel.SModel) createdModel).addModelImport(sourceModel.getReference(), false);
+          for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((jetbrains.mps.smodel.SModel) sourceModel).importedModels()) {
+            ((jetbrains.mps.smodel.SModel) createdModel).addModelImport(sourceModel.getReference(), false);
           }
-          for (ModuleReference importedLanguage : sourceModel.importedLanguages()) {
-            createdModel.addLanguage(importedLanguage);
+          for (ModuleReference importedLanguage : ((jetbrains.mps.smodel.SModel) sourceModel).importedLanguages()) {
+            ((jetbrains.mps.smodel.SModel) createdModel).addLanguage(importedLanguage);
           }
-          for (ModuleReference devKit : sourceModel.importedDevkits()) {
-            createdModel.addDevKit(devKit);
+          for (ModuleReference devKit : ((jetbrains.mps.smodel.SModel) sourceModel).importedDevkits()) {
+            ((jetbrains.mps.smodel.SModel) createdModel).addDevKit(devKit);
           }
         }
       });

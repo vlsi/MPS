@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 
 /**
  * Evgeny Gryaznov, Oct 1, 2010

@@ -5,7 +5,7 @@ package jetbrains.mps.refactoring.framework;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 

@@ -9,7 +9,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -18,6 +17,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class AliasComponent extends AbstractCellProvider {
@@ -39,19 +39,6 @@ public class AliasComponent extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
-  private static boolean renderingCondition_ezwpxy_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
-  }
-
-  public static class ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0() {
-    }
-
-    public String getReplacementConceptName() {
-      return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
-    }
-  }
-
   private EditorCell createAlternation_ezwpxy_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = AliasComponent.renderingCondition_ezwpxy_a0(node, editorContext, editorContext.getOperationContext().getScope());
@@ -64,6 +51,10 @@ public class AliasComponent extends AbstractCellProvider {
     return editorCell;
   }
 
+  private static boolean renderingCondition_ezwpxy_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.smodel.structure.SNodeOperation"));
+  }
+
   private EditorCell createComponent_ezwpxy_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
@@ -72,6 +63,15 @@ public class AliasComponent extends AbstractCellProvider {
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AliasComponent.ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0()}));
     return editorCell;
+  }
+
+  public static class ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_SNodeOperation_cellMenu_ezwpxy_a0a0() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.lang.smodel.structure.SNodeOperation";
+    }
   }
 
   private EditorCell createError_ezwpxy_a0(EditorContext editorContext, SNode node) {

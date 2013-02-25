@@ -23,7 +23,14 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.SLanguageLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.event.SModelChildEvent;
+import jetbrains.mps.smodel.event.SModelDevKitEvent;
+import jetbrains.mps.smodel.event.SModelImportEvent;
+import jetbrains.mps.smodel.event.SModelLanguageEvent;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelReferenceEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
@@ -46,7 +53,13 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 import java.io.IOException;
 import java.security.SecureRandom;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class SModel implements org.jetbrains.mps.openapi.model.SModel {
@@ -260,7 +273,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return myModelDescriptor;
   }
 
-  //todo cast
   public synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
   }
@@ -281,7 +293,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     UndoHelper.getInstance().addUndoableAction(action.compute());
   }
 
-  //todo replace with isInRepository in public places
   public boolean canFireEvent() {
     return myModelDescriptor != null && myModelDescriptor.isRegistered() && !isUpdateMode();
   }
@@ -581,7 +592,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     fireLanguageRemovedEvent(ref);
   }
 
-  public void addLanguage(@NotNull ModuleReference ref) {
+  public void addLanguage(ModuleReference ref) {
     ModelChange.assertLegalChange(this);
     if (SModelOperations.hasLanguage(this, ref)) return;
 
@@ -601,7 +612,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return Collections.unmodifiableList(myDevKits);
   }
 
-  public void addDevKit(@NotNull ModuleReference ref) {
+  public void addDevKit(ModuleReference ref) {
     ModelChange.assertLegalChange(this);
 
     if (!myDevKits.contains(ref)) {
@@ -623,7 +634,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return Collections.unmodifiableList(myImports);
   }
 
-  public void addModelImport(@NotNull SModelReference modelReference, boolean firstVersion) {
+  public void addModelImport(SModelReference modelReference, boolean firstVersion) {
     ModelChange.assertLegalChange(this);
 
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
@@ -648,7 +659,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     fireImportAddedEvent(importElement.getModelReference());
   }
 
-  public void deleteModelImport(@NotNull SModelReference modelReference) {
+  public void deleteModelImport(SModelReference modelReference) {
     ModelChange.assertLegalChange(this);
 
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
@@ -660,7 +671,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   @NotNull
-  private static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
+  public static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
     for (org.jetbrains.mps.openapi.model.SNode n1 : model.nodes()) {
       SNode node = ((SNode) n1);
       if (RoleIdsComponent.isEnabled()) {
@@ -702,14 +713,14 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
         if (concept == null) {
           LOG.error("concept not found for node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
         } else {
-          result.add(concept.getModel().getSModelReference());
+          result.add(concept.getModel().getReference());
         }
         for (String propname : node.getPropertyNames()) {
           SNode decl = node.getPropertyDeclaration(propname);
           if (decl == null) {
             LOG.error("undeclared property: '" + propname + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
-            result.add(decl.getModel().getSModelReference());
+            result.add(decl.getModel().getReference());
           }
         }
         for (SReference ref : node.getReferences()) {
@@ -721,7 +732,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
           if (decl == null) {
             LOG.error("undeclared link role: '" + ref.getRole() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
-            result.add(decl.getModel().getSModelReference());
+            result.add(decl.getModel().getReference());
           }
         }
         for (SNode child : node.getChildren()) {
@@ -729,7 +740,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
           if (decl == null) {
             LOG.error("undeclared child role: '" + child.getRoleInParent() + "' in node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node));
           } else {
-            result.add(decl.getModel().getSModelReference());
+            result.add(decl.getModel().getReference());
           }
         }
       }
@@ -984,7 +995,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     }
   }
 
-  private boolean updateRefs(List<ModuleReference> refs) {
+  public boolean updateRefs(List<ModuleReference> refs) {
     boolean changed = false;
     for (int i = 0; i < refs.size(); i++) {
       ModuleReference ref = refs.get(i);
@@ -1009,7 +1020,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   protected SModel createEmptyCopy() {
-    return new SModel(((SModelReference) getReference()));
+    return new jetbrains.mps.smodel.SModel(((SModelReference) getReference()));
   }
 
   protected void copyPropertiesTo(SModel to) {

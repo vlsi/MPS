@@ -6,27 +6,64 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 
 public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ow7a4w_a(editorContext, node);
+  }
+
+  private EditorCell createCollection_ow7a4w_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_ow7a4w_a");
+    Annotation_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.addEditorCell(this.createConstant_ow7a4w_a0(editorContext, node));
+    editorCell.addEditorCell(this.createAttributedNodeCell_ow7a4w_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ow7a4w_c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ow7a4w_d0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_ow7a4w_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<node");
+    editorCell.setCellId("Constant_ow7a4w_a0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    Annotation_Actions.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createAttributedNodeCell_ow7a4w_b0(EditorContext editorContext, SNode node) {
+    IOperationContext opContext = editorContext.getOperationContext();
+    EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+    EditorCell editorCell = manager.getCurrentAttributedNodeCell();
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_ow7a4w_c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new NodePropertiesContainer_Editor.propertiesListHandler_ow7a4w_c0(node, "properties", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
+    editorCell.setCellId("refNodeList_properties");
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
   }
 
   private static class propertiesListHandler_ow7a4w_c0 extends RefNodeListHandler {
@@ -91,28 +128,6 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     }
   }
 
-  private EditorCell createCollection_ow7a4w_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_ow7a4w_a");
-    Annotation_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.addEditorCell(this.createConstant_ow7a4w_a0(editorContext, node));
-    editorCell.addEditorCell(this.createAttributedNodeCell_ow7a4w_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ow7a4w_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ow7a4w_d0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_ow7a4w_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<node");
-    editorCell.setCellId("Constant_ow7a4w_a0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyAnnotation(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    Annotation_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   private EditorCell createConstant_ow7a4w_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_ow7a4w_d0");
@@ -122,21 +137,6 @@ public class NodePropertiesContainer_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createAttributedNodeCell_ow7a4w_b0(EditorContext editorContext, SNode node) {
-    IOperationContext opContext = editorContext.getOperationContext();
-    EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-    EditorCell editorCell = manager.getCurrentAttributedNodeCell();
-    return editorCell;
-  }
-
-  private EditorCell createRefNodeList_ow7a4w_c0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new NodePropertiesContainer_Editor.propertiesListHandler_ow7a4w_c0(node, "properties", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
-    editorCell.setCellId("refNodeList_properties");
-    editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
 }

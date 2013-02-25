@@ -15,6 +15,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class OverrideConceptMethodsAction {
@@ -64,7 +65,7 @@ public class OverrideConceptMethodsAction {
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
             public SNode select(SNodeReference it) {
-              return SNodeOperations.cast(((SNodePointer) it).getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+              return SNodeOperations.cast(((SNodePointer) it).resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
             }
           }).toListSequence();
 

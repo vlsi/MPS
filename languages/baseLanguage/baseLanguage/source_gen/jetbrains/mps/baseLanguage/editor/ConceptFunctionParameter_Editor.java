@@ -21,10 +21,6 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
     return this.createAlternation_q0ga01_a(editorContext, node);
   }
 
-  private static boolean renderingCondition_q0ga01_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.getConceptDeclaration(node), "virtual_isDeprecated_1224609060727", new Object[]{});
-  }
-
   private EditorCell createAlternation_q0ga01_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = ConceptFunctionParameter_Editor.renderingCondition_q0ga01_a0(node, editorContext, editorContext.getOperationContext().getScope());
@@ -35,6 +31,10 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
       editorCell = this.createComponent_q0ga01_a0_0(editorContext, node);
     }
     return editorCell;
+  }
+
+  private static boolean renderingCondition_q0ga01_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.getConceptDeclaration(node), "virtual_isDeprecated_1224609060727", new Object[]{});
   }
 
   private EditorCell createComponent_q0ga01_a0(EditorContext editorContext, SNode node) {

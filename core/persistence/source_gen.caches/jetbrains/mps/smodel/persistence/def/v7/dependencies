@@ -30,6 +30,7 @@
     <classNode dependClassName="jetbrains.mps.refactoring.ModelLinkMap" />
     <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationProcessor" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -66,6 +67,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v7.WriteHelper" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />

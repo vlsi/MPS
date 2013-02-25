@@ -19,9 +19,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -99,12 +99,12 @@ public class Generator_TabDescriptor extends RelationDescriptor {
         }
       }
       if (isNeedRootTemplate) {
-        for (ModuleReference moduleRef : SNodeOperations.getModel(node).importedLanguages()) {
+        for (ModuleReference moduleRef : ((SModel) SNodeOperations.getModel(node)).importedLanguages()) {
           Language language = ModuleRepositoryFacade.getInstance().getModule(moduleRef, Language.class);
           if (language == null) {
             continue;
           }
-          SModel structureModel = language.getStructureModelDescriptor().getSModel();
+          org.jetbrains.mps.openapi.model.SModel structureModel = language.getStructureModelDescriptor().getSModel();
           for (SNode nodeToAdd : SModelOperations.getRoots(structureModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
             SNode conceptToAdd = (SNode) nodeToAdd;
             if (SPropertyOperations.getBoolean(nodeToAdd, "rootable")) {
@@ -175,7 +175,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
       // generator is present - this means we don't have template models or mappings 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          SModel model = null;
+          org.jetbrains.mps.openapi.model.SModel model = null;
           for (Generator generator : genList) {
             if (generator.getOwnTemplateModels().isEmpty()) {
               continue;
@@ -203,7 +203,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     final Wrappers._T<SNode> result = new Wrappers._T<SNode>();
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        SModel model = SNodeOperations.getModel(mapping.value);
+        org.jetbrains.mps.openapi.model.SModel model = SNodeOperations.getModel(mapping.value);
         if (SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.lang.structure.structure.IConceptAspect")) {
           result.value = ConceptEditorHelper.createNewConceptAspectInstance(node, concept, model);
           BehaviorReflection.invokeNonVirtual(Void.class, mapping.value, "jetbrains.mps.lang.generator.structure.MappingConfiguration", "call_addMember_3166264919334415805", new Object[]{result.value});

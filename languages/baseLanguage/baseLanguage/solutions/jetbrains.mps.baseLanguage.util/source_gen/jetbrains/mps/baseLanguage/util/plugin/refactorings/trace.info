@@ -948,7 +948,7 @@
     <nodeInfo nodeId="4358493250249988887" fileName="MoveRefactoringUtils.java" startLine="36" startPosition="44" endLine="37" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7123761944774720200" fileName="MoveRefactoringUtils.java" startLine="38" startPosition="5" endLine="39" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4458227202731876784" fileName="MoveRefactoringUtils.java" startLine="40" startPosition="90" endLine="41" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6853886991699132817" fileName="MoveRefactoringUtils.java" startLine="42" startPosition="5" endLine="43" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6853886991699132817" fileName="MoveRefactoringUtils.java" startLine="42" startPosition="5" endLine="43" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1603057458588773043" fileName="MoveRefactoringUtils.java" startLine="46" startPosition="75" endLine="47" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1603057458589441370" fileName="MoveRefactoringUtils.java" startLine="52" startPosition="101" endLine="53" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1300615610528459012" fileName="MoveRefactoringUtils.java" startLine="58" startPosition="49" endLine="59" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -964,7 +964,7 @@
     <nodeInfo nodeId="1562123330898831067" fileName="MoveRefactoringUtils.java" startLine="25" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1603057458589413160" fileName="MoveRefactoringUtils.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fixImportsFromNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="1562123330898725563" fileName="MoveRefactoringUtils.java" startLine="22" startPosition="65" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4458227202731868586" fileName="MoveRefactoringUtils.java" startLine="35" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addImportIfNeed#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="4458227202731868586" fileName="MoveRefactoringUtils.java" startLine="35" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addImportIfNeed#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
     <nodeInfo nodeId="4909369320863190489" fileName="MoveRefactoringUtils.java" startLine="22" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addNodeAtLink#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1279276159889585469" fileName="MoveRefactoringUtils.java" startLine="19" startPosition="33" endLine="19" endPosition="33" />
     <scopeInfo nodeId="1562123330898725565" fileName="MoveRefactoringUtils.java" startLine="23" startPosition="196" endLine="24" endPosition="230" />
@@ -1000,7 +1000,7 @@
     <scopeInfo nodeId="1603057458589413160" fileName="MoveRefactoringUtils.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1603057458589441318" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4458227202731868589" fileName="MoveRefactoringUtils.java" startLine="35" startPosition="70" endLine="43" endPosition="37">
+    <scopeInfo nodeId="4458227202731868589" fileName="MoveRefactoringUtils.java" startLine="35" startPosition="70" endLine="43" endPosition="69">
       <varInfo nodeId="7123761944774720201" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="4909369320863190496" fileName="MoveRefactoringUtils.java" startLine="22" startPosition="65" endLine="32" endPosition="5" />

@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.TemplateModelScanner;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.Collection;
@@ -44,13 +44,13 @@ public class ModelContentUtil {
       TemplateModelScanner templateModelScanner = new TemplateModelScanner(model);
       templateModelScanner.scan();
       Set<String> namespaces = new HashSet<String>(templateModelScanner.getQueryLanguages());
-      for (ModuleReference ref : model.engagedOnGenerationLanguages()) {
+      for (ModuleReference ref : ((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages()) {
         namespaces.add(ref.getModuleFqName());
       }
       return namespaces;
     }
     Set<String> namespaces = new HashSet<String>();
-    for (ModuleReference ref : model.engagedOnGenerationLanguages()) {
+    for (ModuleReference ref : ((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages()) {
       namespaces.add(ref.getModuleFqName());
     }
     for (SNode root : model.getRootNodes()) {

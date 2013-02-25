@@ -6,6 +6,16 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.nodeEditor.EditorManager;
 import java.awt.Color;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.build.behavior.BuildCompositePath_Behavior;
@@ -13,27 +23,17 @@ import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 
 public class BuildCompositePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -44,30 +44,6 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     return this.createCollection_n78otj_a_0(editorContext, node);
   }
 
-  private static Color _StyleParameter_QueryFunction_n78otj_a0a0(EditorContext editorContext, SNode node) {
-    IFile f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
-    if (f == null) {
-      return Color.BLACK;
-    }
-    if (f.exists()) {
-      return new Color(0, 0, 0x80);
-    }
-    return Color.RED;
-  }
-
-  public static class BuildCompositePath_head_cellMenu_n78otj_a0a0 extends AbstractCellMenuPart_PropertyValues {
-    public BuildCompositePath_head_cellMenu_n78otj_a0a0() {
-    }
-
-    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return BuildCompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(node, "jetbrains.mps.build.structure.BuildRelativePath", false, false), "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
-    }
-  }
-
-  private static boolean renderingCondition_n78otj_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "tail", true) != null);
-  }
-
   private EditorCell createCollection_n78otj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n78otj_a");
@@ -75,82 +51,6 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     if (renderingCondition_n78otj_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_n78otj_b0(editorContext, node));
     }
-    return editorCell;
-  }
-
-  private EditorCell createCollection_n78otj_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_n78otj_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_n78otj_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_n78otj_b1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_n78otj_a_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_n78otj_a_0");
-    editorCell.addEditorCell(this.createReadOnlyModelAccessor_n78otj_a0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_n78otj_a1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
-    editorCell.setCellId("Constant_n78otj_a1a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createReadOnlyModelAccessor_n78otj_a0(final EditorContext editorContext, final SNode node) {
-    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-      public String getText() {
-        IFile f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
-        return (f != null ?
-          f.getPath() :
-          "unknown"
-        );
-      }
-
-      public void setText(String s) {
-      }
-
-      public boolean isValidText(String s) {
-        return EqualUtil.equals(s, getText());
-      }
-    }, node);
-    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ReadOnlyModelAccessor_n78otj_a0");
-    return editorCell;
-  }
-
-  private EditorCell createRefNode_n78otj_b1a(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("tail");
-    provider.setNoTargetText("<no tail>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    editorCell.getStyle().putAll(style);
-    if (true) {
-      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
-    }
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
     return editorCell;
   }
 
@@ -179,6 +79,106 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private static Color _StyleParameter_QueryFunction_n78otj_a0a0(EditorContext editorContext, SNode node) {
+    IFile f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
+    if (f == null) {
+      return Color.BLACK;
+    }
+    if (f.exists()) {
+      return new Color(0, 0, 0x80);
+    }
+    return Color.RED;
+  }
+
+  public static class BuildCompositePath_head_cellMenu_n78otj_a0a0 extends AbstractCellMenuPart_PropertyValues {
+    public BuildCompositePath_head_cellMenu_n78otj_a0a0() {
+    }
+
+    public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return BuildCompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(node, "jetbrains.mps.build.structure.BuildRelativePath", false, false), "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
+    }
+  }
+
+  private EditorCell createCollection_n78otj_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_n78otj_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_n78otj_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_n78otj_b1a(editorContext, node));
+    return editorCell;
+  }
+
+  private static boolean renderingCondition_n78otj_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "tail", true) != null);
+  }
+
+  private EditorCell createConstant_n78otj_a1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
+    editorCell.setCellId("Constant_n78otj_a1a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_n78otj_b1a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("tail");
+    provider.setNoTargetText("<no tail>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    editorCell.getStyle().putAll(style);
+    if (true) {
+      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_RECURSIVELY);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createCollection_n78otj_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_n78otj_a_0");
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_n78otj_a0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_n78otj_a0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        IFile f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
+        return (f != null ?
+          f.getPath() :
+          "unknown"
+        );
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ReadOnlyModelAccessor_n78otj_a0");
     return editorCell;
   }
 }

@@ -6,12 +6,6 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -19,74 +13,16 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 
 public class HorizontalAlignment_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1tjmxy_a(editorContext, node);
-  }
-
-  private static boolean renderingCondition_1tjmxy_a0a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "LEFT".equals(SPropertyOperations.getString_def(node, "value", "LEFT"));
-  }
-
-  public static class HorizontalAlignment_component_cellMenu_1tjmxy_a0a0a implements SubstituteInfoPartExt {
-    private HorizontalAlignment_Chooser myComponent;
-
-    public HorizontalAlignment_component_cellMenu_1tjmxy_a0a0a() {
-      this.myComponent = new HorizontalAlignment_Chooser();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  private static boolean renderingCondition_1tjmxy_a1a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "RIGHT".equals(SPropertyOperations.getString_def(node, "value", "LEFT"));
-  }
-
-  public static class HorizontalAlignment_component_cellMenu_1tjmxy_a0b0a implements SubstituteInfoPartExt {
-    private HorizontalAlignment_Chooser myComponent;
-
-    public HorizontalAlignment_component_cellMenu_1tjmxy_a0b0a() {
-      this.myComponent = new HorizontalAlignment_Chooser();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  private static boolean renderingCondition_1tjmxy_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "CENTER".equals(SPropertyOperations.getString_def(node, "value", "LEFT"));
-  }
-
-  public static class HorizontalAlignment_component_cellMenu_1tjmxy_a0c0a implements SubstituteInfoPartExt {
-    private HorizontalAlignment_Chooser myComponent;
-
-    public HorizontalAlignment_component_cellMenu_1tjmxy_a0c0a() {
-      this.myComponent = new HorizontalAlignment_Chooser();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  private static boolean renderingCondition_1tjmxy_a3a0(SNode node, EditorContext editorContext, IScope scope) {
-    return "FILL".equals(SPropertyOperations.getString_def(node, "value", "LEFT"));
-  }
-
-  public static class HorizontalAlignment_component_cellMenu_1tjmxy_a0d0a implements SubstituteInfoPartExt {
-    private HorizontalAlignment_Chooser myComponent;
-
-    public HorizontalAlignment_component_cellMenu_1tjmxy_a0d0a() {
-      this.myComponent = new HorizontalAlignment_Chooser();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
   }
 
   private EditorCell createCollection_1tjmxy_a(EditorContext editorContext, SNode node) {
@@ -125,12 +61,44 @@ public class HorizontalAlignment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_1tjmxy_a0a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "LEFT".equals(SPropertyOperations.getString_def(node, "value", "LEFT"));
+  }
+
+  public static class HorizontalAlignment_component_cellMenu_1tjmxy_a0a0a implements SubstituteInfoPartExt {
+    private HorizontalAlignment_Chooser myComponent;
+
+    public HorizontalAlignment_component_cellMenu_1tjmxy_a0a0a() {
+      this.myComponent = new HorizontalAlignment_Chooser();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
   private EditorCell createConstant_1tjmxy_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ->");
     editorCell.setCellId("Constant_1tjmxy_b0a");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new HorizontalAlignment_Editor.HorizontalAlignment_component_cellMenu_1tjmxy_a0b0a()}));
     return editorCell;
+  }
+
+  private static boolean renderingCondition_1tjmxy_a1a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "RIGHT".equals(SPropertyOperations.getString_def(node, "value", "LEFT"));
+  }
+
+  public static class HorizontalAlignment_component_cellMenu_1tjmxy_a0b0a implements SubstituteInfoPartExt {
+    private HorizontalAlignment_Chooser myComponent;
+
+    public HorizontalAlignment_component_cellMenu_1tjmxy_a0b0a() {
+      this.myComponent = new HorizontalAlignment_Chooser();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
   }
 
   private EditorCell createConstant_1tjmxy_c0a(EditorContext editorContext, SNode node) {
@@ -141,11 +109,43 @@ public class HorizontalAlignment_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_1tjmxy_a2a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "CENTER".equals(SPropertyOperations.getString_def(node, "value", "LEFT"));
+  }
+
+  public static class HorizontalAlignment_component_cellMenu_1tjmxy_a0c0a implements SubstituteInfoPartExt {
+    private HorizontalAlignment_Chooser myComponent;
+
+    public HorizontalAlignment_component_cellMenu_1tjmxy_a0c0a() {
+      this.myComponent = new HorizontalAlignment_Chooser();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
   private EditorCell createConstant_1tjmxy_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<->");
     editorCell.setCellId("Constant_1tjmxy_d0a");
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new HorizontalAlignment_Editor.HorizontalAlignment_component_cellMenu_1tjmxy_a0d0a()}));
     return editorCell;
+  }
+
+  private static boolean renderingCondition_1tjmxy_a3a0(SNode node, EditorContext editorContext, IScope scope) {
+    return "FILL".equals(SPropertyOperations.getString_def(node, "value", "LEFT"));
+  }
+
+  public static class HorizontalAlignment_component_cellMenu_1tjmxy_a0d0a implements SubstituteInfoPartExt {
+    private HorizontalAlignment_Chooser myComponent;
+
+    public HorizontalAlignment_component_cellMenu_1tjmxy_a0d0a() {
+      this.myComponent = new HorizontalAlignment_Chooser();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
   }
 }

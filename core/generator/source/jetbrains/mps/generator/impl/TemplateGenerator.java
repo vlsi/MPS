@@ -48,7 +48,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
@@ -233,7 +233,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       return;
     }
     boolean includeInheritors = rule.applyToInheritors();
-    Iterable<SNode> inputNodes = myInputModel.getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+    Iterable<SNode> inputNodes = ((jetbrains.mps.smodel.SModel) myInputModel).getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode inputNode : inputNodes) {
       // do not apply root mapping if root node has been copied from input model on previous micro-step
       // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
@@ -717,23 +717,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = true;
   }
 
-  private void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
-    synchronized (this) {
-      registerInModel(outputRoot, inputNode, templateNode);
-      myNewToOldRoot.put(outputRoot, inputNode);
-      myDependenciesBuilder.registerRoot(outputRoot, inputNode);
-      if (isCopied) {
-        getGeneratorSessionContext().registerCopiedRoot(outputRoot);
-      }
+  protected void registerRoot(@NotNull SNode outputRoot, SNode inputNode, SNodeReference templateNode, boolean isCopied) {
+    myOutputRoots.add(outputRoot);
+    myNewToOldRoot.put(outputRoot, inputNode);
+    myDependenciesBuilder.registerRoot(outputRoot, inputNode);
+    if (isCopied) {
+      getGeneratorSessionContext().registerCopiedRoot(outputRoot);
     }
   }
 
   void rootReplaced(SNode old, SNode new_) {
     myDependenciesBuilder.rootReplaced(old, new_);
-  }
-
-  protected void registerInModel(SNode outputRoot, SNode inputNode, SNodeReference templateNode) {
-    myOutputRoots.add(outputRoot);
   }
 
   public SNode getOriginalRootByGenerated(SNode root) {

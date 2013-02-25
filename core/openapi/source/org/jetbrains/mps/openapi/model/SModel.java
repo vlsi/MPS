@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -27,6 +27,9 @@ import java.io.IOException;
  * Represents a model. Models are loaded lazily when needed.
  */
 public interface SModel {
+
+  @Deprecated//todo migration only. REMOVE
+  SModelDescriptor getModelDescriptor() ;
 
   /**
    * Returns the id of the model valid within the containing module.

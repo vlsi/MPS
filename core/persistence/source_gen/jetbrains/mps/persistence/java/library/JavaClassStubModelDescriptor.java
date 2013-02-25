@@ -4,7 +4,7 @@ package jetbrains.mps.persistence.java.library;
 
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
@@ -58,7 +58,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   public synchronized SModel getSModel() {
     if (myModel == null) {
       myModel = createModel();
-      myModel.setModelDescriptor(this);
+      ((jetbrains.mps.smodel.SModel) myModel).setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
@@ -70,9 +70,9 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   }
 
   private SModel createModel() {
-    SModel model = new SModel(getSModelReference(), new ForeignNodeIdMap());
+    SModel model = new jetbrains.mps.smodel.SModel(getSModelReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
-      model.addLanguage(l.getModuleReference());
+      ((jetbrains.mps.smodel.SModel) model).addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = createClassPath();
     new ASMModelLoader(((IModule) myModelRoot.getModule()), cp, model, false).updateModel();
