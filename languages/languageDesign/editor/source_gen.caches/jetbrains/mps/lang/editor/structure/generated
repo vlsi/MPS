@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ds32xv0hizxqqti8v6z6q49mrd5pupq">
+<dependencies version="2" modelHash="-6qy8dy7f8l1q7xirsqdt557vmtu4czo">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-45arjhe2p2477jk2gpv6olrk1ieqc75" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6xoyysetm6oarfu3mu090t233rt6p2q" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="218o7x5eb1duxaoka4i5jiwvt82kds2" />
-  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="cmodf4n66as2lfgukbp742ijlmoljlz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="a7c2ku0s74knl0vk8tegekel7po2h4e" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="bj5uw6sh8mum5zzmnz7mfl9x74aq18d" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="-4fvfidnmdpmy797xrh0kkpl63nn1m9q" />
+  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="bd20chhlnh0zjiajm58qmlctnnmvnko" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
   <common hash="30hhdt54hg5ioxknt0jrtiyntgk1dsv">
@@ -315,16 +315,16 @@
   <source id="1103016434866" name="CellModel_JComponent" hash="-c2ye7bjyysoe8mka1emgc96dxvh662z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1106270491082" name="CellLayout" hash="bcu8d6c44yip30y2pmjsa4espgv6qpf">
+  <source id="1106270491082" name="CellLayout" hash="-1l50qaip5ibf0a7toa4ia1suaiysnaz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1106270549637" name="CellLayout_Horizontal" hash="5t7p5tj24wsmoe6h0l3ck54usoern2c">
+  <source id="1106270549637" name="CellLayout_Horizontal" hash="dh3j5xu4secxqnwu2el2pg9e2dk2h23">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1106270571710" name="CellLayout_Vertical" hash="-cobbteunfux5b7sxgtj6gr8otob2xg8">
+  <source id="1106270571710" name="CellLayout_Vertical" hash="2r8z5v57kdrngndqiqeg0iac7942pfk">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1106270637846" name="CellLayout_Flow" hash="4fo367o7hptddirhqp0o01nke36iwwi">
+  <source id="1106270637846" name="CellLayout_Flow" hash="5evmylp9qmd7nfdjh8cy5re2tzmwyer">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1130847686886" name="UnderlineStyle" hash="el4etkpwxig07tnr0iqbrrl3gj4yb9o">
@@ -775,7 +775,7 @@
   <source id="1216560327200" name="PositionChildrenStyleClassItem" hash="-gjk7oc07b6ipsm5fwxwny2tcpz7ycz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1216672142186" name="CellLayout_Indent_Old" hash="-eedyh1jyalck8y117jdsr3epzyo9agn">
+  <source id="1216672142186" name="CellLayout_Indent_Old" hash="-5v0kcb215w8hnoueme931tz65xobzha">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1219226236603" name="DrawBracketsStyleClassItem" hash="-5eoqqwwf66ir9kc3ujhygow9a71vngq">
@@ -872,7 +872,7 @@
   <source id="1236443640684" name="QueryFunction_String" hash="-3pg1oxnygt3vw6569ctkm9qyimq99h4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1237303669825" name="CellLayout_Indent" hash="-cm2qdnv9rgqk8mpmta2daqspsw4uhc">
+  <source id="1237303669825" name="CellLayout_Indent" hash="-1ow0omulkmulzb8m23xblv3v7bgn9kl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1237307900041" name="IndentLayoutIndentStyleClassItem" hash="-29uvio53nh1m5ep4j9tne6mwg8i7ooj">
@@ -892,7 +892,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="_FloatOrInteger_String_PropertySupport.java" />
   </source>
-  <source id="1239814640496" name="CellLayout_VerticalGrid" hash="8ie30i1pxkr7ynytqd24ivuxtwdbun8">
+  <source id="1239814640496" name="CellLayout_VerticalGrid" hash="bnqgcwcv7fewezu1szt9nqho6y0mt47">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1240253180846" name="IndentLayoutNoWrapClassItem" hash="-3goo0lnycj365h6t3z9s4ffjijmlhoi">
@@ -931,7 +931,7 @@
   <source id="4531786690998636238" name="AbstractStyledTextOperation" hash="1khu3t1j41tmgmfpzaiaj410n4y9yr4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3903367331818357915" name="StyledTextType" hash="-8lq755j2oxx715dy48v32bam0y3lcvs">
+  <source id="3903367331818357915" name="StyledTextType" hash="1dcffg5tydq3d2weehtppglw2kioe12">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7620205565664569937" name="DefaultBaseLine" hash="7xyxboqknboxvgo922nxlog3xvcelwg">
@@ -948,7 +948,7 @@
     <file name="DefaultBaseLineEnum.java" />
     <file name="DefaultBaseLineEnum_PropertySupport.java" />
   </source>
-  <source id="1886960078078641793" name="CellLayout_Superscript" hash="-jbw5sj0g05jdls1whu48dvdpe1dtr">
+  <source id="1886960078078641793" name="CellLayout_Superscript" hash="57kfz67lfvwvoup5lp3mri5agowatje">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="8255250703325730686" name="ScriptSwitchEnum" hash="-311zsgvf1rleydhvsct6s2qwfwy915j">
@@ -968,7 +968,7 @@
   <source id="4203201205844553978" name="ConceptFunctionParameter_selectedNode" hash="85cnzt1pdeya3go9lcl5wzx20hden26">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5949640294884234625" name="CellLayout_Table" hash="-8y7i9bqy45ehtoipwx0tjaetyl8mdzo">
+  <source id="5949640294884234625" name="CellLayout_Table" hash="-crqfqiypdxrfoaaz5zafsp63344977a">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6820251943131810951" name="TableComponentEnum" hash="-eaqyp0urkisc1stcc1z4rlpbv0wf0da">

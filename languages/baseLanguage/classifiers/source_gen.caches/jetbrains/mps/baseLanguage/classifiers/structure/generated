@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cmodf4n66as2lfgukbp742ijlmoljlz">
+<dependencies version="2" modelHash="bd20chhlnh0zjiajm58qmlctnnmvnko">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6xoyysetm6oarfu3mu090t233rt6p2q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="a7c2ku0s74knl0vk8tegekel7po2h4e" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-8soze5k0le3otyjy54eb4zpg3kkfopd">
@@ -36,13 +36,13 @@
   <source id="1205752174734" name="IClassifierPart" hash="ea6vw7w613otrjew2yf1g2km4q06gt4">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1205752633985" name="ThisClassifierExpression" hash="-8g069f6xp7kop59qvmozr34x99inb4m">
+  <source id="1205752633985" name="ThisClassifierExpression" hash="-cc8y8v22rdzw2ezto686iohmmcwz8gb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1205752813637" name="BaseClassifierType" hash="-8xt5a8wbhakdrx503oldyct3xhiw2ct">
+  <source id="1205752813637" name="BaseClassifierType" hash="-82lt1orsdryc2f6it1ewiu59sjzs0zl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1205752906494" name="DefaultClassifierType" hash="-6vq0nxgc2ystka4ckdp8zerab740icv">
+  <source id="1205752906494" name="DefaultClassifierType" hash="c6zqj3dy6hfd68fzsrnzcxeldfb8onf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1205756064662" name="IMemberOperation" hash="edc4apfo0uo8himfxv2m8fh0txvf9d">
@@ -51,16 +51,16 @@
   <source id="1205769003971" name="DefaultClassifierMethodDeclaration" hash="4fr4zupjwby25k5eabdkes32t8hc9lu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1205769149993" name="DefaultClassifierMethodCallOperation" hash="-2w8wxbjz3d04y36kwgw2idrc26z07ds">
+  <source id="1205769149993" name="DefaultClassifierMethodCallOperation" hash="9keavqk2vmi8d6jiw1qei2y294pwwrl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1213999088275" name="DefaultClassifierFieldDeclaration" hash="-acpf7ayo94rf40t1d595mpj812pb8pq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1213999117680" name="DefaultClassifierFieldAccessOperation" hash="-9m5m5ujdbjysu93r935xdyrl7bgytdl">
+  <source id="1213999117680" name="DefaultClassifierFieldAccessOperation" hash="ejcb2soa95rho3jd5nwne8gsn77qm60">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217433449852" name="SuperClassifierExpresson" hash="-ffuyumd7q2zh2jgyyw7b5sb8l5tgtf">
+  <source id="1217433449852" name="SuperClassifierExpresson" hash="31dp0xk5hjq0fpodx34zi0cr2dtpl00">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1029302639053433191" name="DefaultClassifier" hash="92oejneepcnn9ipg7u7b2srik8t8ex9">

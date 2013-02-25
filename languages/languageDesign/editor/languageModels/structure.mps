@@ -198,12 +198,14 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1106270491082">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CellLayout" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1106270549637">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CellLayout_Horizontal" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="horizontal" />
@@ -212,6 +214,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1106270571710">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CellLayout_Vertical" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="vertical" />
@@ -220,6 +223,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1106270637846">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CellLayout_Flow" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="flow" />
@@ -1190,6 +1194,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216672142186">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CellLayout_Indent_Old" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent_old" />
@@ -1401,6 +1406,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237303669825">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CellLayout_Indent" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent" />
@@ -1450,6 +1456,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1239814640496">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CellLayout_VerticalGrid" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="vertical grid" />
@@ -1557,6 +1564,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="StyledTextType" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="MethodParameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="styled text" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
@@ -1577,6 +1585,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1886960078078641793">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CellLayout_Superscript" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="superscript" />
@@ -1608,6 +1617,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5949640294884234625">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CellLayout_Table" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="table" />

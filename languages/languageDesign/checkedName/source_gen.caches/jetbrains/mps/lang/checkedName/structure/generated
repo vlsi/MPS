@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-245f2ehq7rczm93ykkf5ajsmswcert">
+<dependencies version="2" modelHash="-94rhq3rp5bjgebc0sxwwklvcfqogvog">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6xoyysetm6oarfu3mu090t233rt6p2q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="a7c2ku0s74knl0vk8tegekel7po2h4e" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="3o2a9fdn6c8v8th49g3jiay8vx6qov2">
@@ -20,10 +20,10 @@
   <source id="4844813484172611384" name="ICheckedNamePolicy" hash="-5pvhk1xpkbt9h4t7v3w8iwge2z56hdw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4844813484172611385" name="PropertyRefExpression" hash="671z5ei6j1ynwkj1bmfe5ovw65u8wfm">
+  <source id="4844813484172611385" name="PropertyRefExpression" hash="dyfcq3zp45rc7q3yqat03o8xzrpn4m3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4844813484172611390" name="PropertyRefType" hash="3mcyh6ot2eotl84sfkqzbj1bspeb1if">
+  <source id="4844813484172611390" name="PropertyRefType" hash="8vcn5kfqvzwko991uipob73cn2ec06v">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

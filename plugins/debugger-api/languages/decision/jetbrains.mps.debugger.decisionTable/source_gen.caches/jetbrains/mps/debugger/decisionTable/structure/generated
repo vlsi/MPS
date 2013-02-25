@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="jasnx9u2ukyjaym61ylkutpeq5iulp">
+<dependencies version="2" modelHash="b0ja2bv6y2h5p13clhjrkku2pty0k5n">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6xoyysetm6oarfu3mu090t233rt6p2q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="a7c2ku0s74knl0vk8tegekel7po2h4e" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-es5l5w8xqra45qq2a0s3jyeimzk4pzt">
@@ -20,10 +20,10 @@
     <file name="DecisionTable_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="6409088484822265794" name="DecisionTable" hash="aqezl8njr41spmj7nyp1qryoz0vvdvx">
+  <source id="6409088484822265794" name="DecisionTable" hash="5r2i7xo4eb5rkjajkjxu0g51czpg98y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6409088484822290058" name="DecisionTableType" hash="atye1abirftaluyjz806pdz96ipooke">
+  <source id="6409088484822290058" name="DecisionTableType" hash="5y6qlmj0n3ow7fcvyx1h98ehsmg0rlm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5202024118203914171" name="XVariableReference" hash="c60pqv20cpz4ovon4fyfv9aks4wc1ss">

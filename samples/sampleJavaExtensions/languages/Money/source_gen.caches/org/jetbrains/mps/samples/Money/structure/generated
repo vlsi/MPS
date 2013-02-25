@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5ryde9tqdpma8dbxaz0hz8txpg9jen">
+<dependencies version="2" modelHash="3rv5utbjsuqk8zm8a2s1cyba8u8llyh">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6xoyysetm6oarfu3mu090t233rt6p2q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="a7c2ku0s74knl0vk8tegekel7po2h4e" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="3x8dkjn6dcfrdbj332g30xpv4vlad6k">
@@ -21,19 +21,19 @@
     <file name="Money_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="5447719361346490674" name="MoneyLiteral" hash="cw3or3ywqr07h0kd39y5yr9rrbfi6f5">
+  <source id="5447719361346490674" name="MoneyLiteral" hash="-6usafakb9d6vr6s3dtgozjjpgvoo90a">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5447719361346490730" name="MoneyType" hash="-ewzcmgf2i2p70dhbny408agcmhvyrc1">
+  <source id="5447719361346490730" name="MoneyType" hash="-ewwxmx8bu580ug5ksxbsq4srfqec9b8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5447719361346519865" name="GetAmount" hash="-dq2kjwz2u3ry3by58j0p5nxlvfsvjfg">
+  <source id="5447719361346519865" name="GetAmount" hash="ead045drinkeu54vy9qan7astmalcoi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1790427706118304177" name="GetCurrency" hash="-5puyor1o9fnivyxb71ilulyht2fldfx">
+  <source id="1790427706118304177" name="GetCurrency" hash="-45132qa8gsirk9wk0rnupp663h6o3cl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1790427706118381722" name="ConvertTo" hash="78jtkilkj27jyr096ffetcpk8mbm87u">
+  <source id="1790427706118381722" name="ConvertTo" hash="ccvatmjfl9vs155i0gonjgup4zh04ek">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3607579524910560662" name="CurrencyDefTable" hash="6okbumy0epqbyqruyhb5o04kkz2ad7a">

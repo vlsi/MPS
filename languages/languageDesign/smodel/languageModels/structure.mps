@@ -15,43 +15,43 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="node type" />
-      <property name="name" nameId="tpck.1169194664001" value="SNodeType" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SNodeType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node&lt;&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1138056022639">
-      <property name="name" nameId="tpck.1169194664001" value="SPropertyAccess" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SPropertyAccess" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.featureAccess" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1138056143562">
-      <property name="name" nameId="tpck.1169194664001" value="SLinkAccess" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SLinkAccess" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.featureAccess" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1138056282393">
-      <property name="name" nameId="tpck.1169194664001" value="SLinkListAccess" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SLinkListAccess" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.featureAccess" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1138411891628">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="SNodeOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SNodeOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1138661924179">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Property_SetOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Property_SetOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.property" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="set" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -59,8 +59,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1138676077309">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="EnumMemberReference" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="EnumMemberReference" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.property" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="&lt;&lt;{enumMember}&gt;&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -69,8 +69,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="set new child" />
-      <property name="name" nameId="tpck.1169194664001" value="Link_SetNewChildOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Link_SetNewChildOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.link.child" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="set new" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -79,8 +79,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="add new child" />
-      <property name="name" nameId="tpck.1169194664001" value="LinkList_AddNewChildOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="LinkList_AddNewChildOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.linkList" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="add new" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -88,8 +88,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139613262185">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetParentOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetParentOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="parent" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -97,8 +97,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139621453865">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_IsInstanceOfOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_IsInstanceOfOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isInstanceOf" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -106,8 +106,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139858892567">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_InsertNewNextSiblingOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_InsertNewNextSiblingOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="new next-sibling" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -115,8 +115,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139867745658">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_ReplaceWithNewOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_ReplaceWithNewOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="replace with new" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -125,8 +125,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="add child" />
-      <property name="name" nameId="tpck.1169194664001" value="LinkList_AddChildOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="LinkList_AddChildOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.linkList" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="add" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -135,8 +135,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="insert child at first position" />
-      <property name="name" nameId="tpck.1169194664001" value="LinkList_InsertChildFirstOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="LinkList_InsertChildFirstOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.linkList" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="insert first" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -145,8 +145,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="remove child" />
-      <property name="name" nameId="tpck.1169194664001" value="Link_DeleteChildOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Link_DeleteChildOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.link.child" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="remove" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -154,8 +154,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1140131837776">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_ReplaceWithAnotherOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_ReplaceWithAnotherOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="replace with" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -164,8 +164,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="delete this node" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_DeleteOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_DeleteOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="delete" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -173,8 +173,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1140137987495">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="SNodeTypeCastExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SNodeTypeCastExpression" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value=":" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
@@ -182,8 +182,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="set child or referent" />
-      <property name="name" nameId="tpck.1169194664001" value="Link_SetTargetOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Link_SetTargetOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.link" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="set" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -191,8 +191,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1143221076066">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_InsertNewPrevSiblingOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_InsertNewPrevSiblingOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="new prev-sibling" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -200,8 +200,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1143224066846">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_InsertNextSiblingOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_InsertNextSiblingOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="add next-sibling" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -209,8 +209,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1143224127713">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_InsertPrevSiblingOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_InsertPrevSiblingOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="add prev-sibling" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -219,6 +219,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="model type" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SModelType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="model" />
@@ -227,8 +228,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1143234257716">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetModelOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetModelOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="model" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -236,8 +237,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1143235216708">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Model_CreateNewNodeOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Model_CreateNewNodeOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="new node" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -245,8 +246,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1143511969223">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetPrevSiblingOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetPrevSiblingOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="prev-sibling" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -254,8 +255,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1143512015885">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetNextSiblingOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetNextSiblingOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="next-sibling" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -296,8 +297,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="creates copy of this node" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_CopyOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_CopyOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="copy" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -306,8 +307,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="test role of the node" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_IsRoleOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_IsRoleOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="hasRole" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -316,6 +317,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="list of nodes" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SNodeListType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nlist&lt;&gt;" />
@@ -325,8 +327,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="downcast to lower semantic level" />
-      <property name="name" nameId="tpck.1169194664001" value="SemanticDowncastExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SemanticDowncastExpression" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="/" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
@@ -334,16 +336,16 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="list of (s)nodes" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SNodeListCreator" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nlist" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1145552809883" resolveInfo="AbstractCreator" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1145570846907">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetNextSiblingsOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetNextSiblingsOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="next-siblings" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -351,8 +353,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1145572800087">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetPrevSiblingsOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetPrevSiblingsOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="prev-siblings" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -360,15 +362,15 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1145573345940">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetAllSiblingsOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetAllSiblingsOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="siblings" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1145994841052">
-      <property name="name" nameId="tpck.1169194664001" value="SConceptPropertyAccess" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SConceptPropertyAccess" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.featureAccess" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
@@ -376,8 +378,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="check value of enum property" />
-      <property name="name" nameId="tpck.1169194664001" value="Property_HasValue_Enum" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Property_HasValue_Enum" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.property" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="is" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -386,8 +388,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="check value of property" />
-      <property name="name" nameId="tpck.1169194664001" value="Property_HasValue_Simple" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Property_HasValue_Simple" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.property" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="is" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -408,8 +410,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1166648550386">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Model_CreateNewRootNodeOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Model_CreateNewRootNodeOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="new root node" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1143235216708" resolveInfo="Model_CreateNewNodeOperation" />
@@ -417,8 +419,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171305280644">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetDescendantsOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetDescendantsOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="descendants" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -426,8 +428,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171310072040">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetContainingRootOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetContainingRootOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="containing root" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -435,8 +437,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171315804604">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Model_RootsOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Model_RootsOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="roots" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -444,8 +446,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171323947159">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Model_NodesOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Model_NodesOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nodes" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -453,8 +455,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171407110247">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetAncestorOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetAncestorOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ancestor" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -462,8 +464,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171500988903">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetChildrenOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetChildrenOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="children" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -471,8 +473,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171999116870">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_IsNullOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_IsNullOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isNull" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -480,8 +482,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1172008320231">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_IsNotNullOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_IsNotNullOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isNotNull" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -490,8 +492,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="add children" />
-      <property name="name" nameId="tpck.1169194664001" value="LinkList_AddAllOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="LinkList_AddAllOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.linkList" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="add all" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -500,8 +502,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="get node's concept declaration" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetConceptOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetConceptOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="concept" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -510,8 +512,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="concept declaration is exactly the same" />
-      <property name="name" nameId="tpck.1169194664001" value="Concept_IsExactlyOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Concept_IsExactlyOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.concept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isExactly" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -520,6 +522,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="concept type" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SConceptType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="concept&lt; &gt;" />
@@ -529,8 +532,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="concept reference" />
-      <property name="name" nameId="tpck.1169194664001" value="ConceptRefExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="ConceptRefExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="concept/&lt;name&gt;/" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -538,30 +541,30 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1173122760281">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetAncestorsOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetAncestorsOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ancestors" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1175618182947">
-      <property name="name" nameId="tpck.1169194664001" value="SConceptLinkAccess" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SConceptLinkAccess" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.featureAccess" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1176109685393">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Model_RootsIncludingImportedOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Model_RootsIncludingImportedOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="rootsIncludingImported" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177026924588">
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="RefConcept_Reference" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.parameter" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
@@ -569,8 +572,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="gets node's index in parent's collection" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetIndexInParentOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetIndexInParentOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="index" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -578,23 +581,23 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1179350041460">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Concept_GetDirectSuperConcepts" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Concept_GetDirectSuperConcepts" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.concept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="super-concepts/direct" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1179409122411">
-      <property name="name" nameId="tpck.1169194664001" value="Node_ConceptMethodCall" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_ConceptMethodCall" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1180028149140">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Concept_IsSuperConceptOfOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Concept_IsSuperConceptOfOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.concept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isSuperConceptOf" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -602,8 +605,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1180031783296">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Concept_IsSubConceptOfOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Concept_IsSubConceptOfOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.concept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isSubConceptOf" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -611,8 +614,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1180457458947">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Concept_GetAllSuperConcepts" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Concept_GetAllSuperConcepts" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.concept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="super-concepts/all" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -620,8 +623,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1180458444893">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Concept_GetHierarchy" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Concept_GetHierarchy" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.concept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="hierarchy" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -630,8 +633,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="create new node" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SNodeCreator" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node&lt;&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1145552809883" resolveInfo="AbstractCreator" />
     </node>
@@ -639,8 +642,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="create new node" />
-      <property name="name" nameId="tpck.1169194664001" value="Concept_NewInstance" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Concept_NewInstance" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.concept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="new instance" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -648,8 +651,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1181952871644">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Concept_GetAllSubConcepts" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Concept_GetAllSubConcepts" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.concept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="sub-concepts" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -657,8 +660,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1182279509750">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Concept_FindInstances" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Concept_FindInstances" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.concept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="find instances" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -666,8 +669,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1182511038748">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Model_NodesIncludingImportedOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Model_NodesIncludingImportedOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nodesIncludingImported" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -697,6 +700,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1204919674986">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="_LinkAccessT" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type_internal" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="link acc" />
@@ -705,8 +709,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1205861725686">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_IsAttributeOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_IsAttributeOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="isAttribute" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -714,16 +718,16 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1206019730951">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="StaticConceptMethodCall" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="StaticConceptMethodCall" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="&lt;static concept method call&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068499141036" resolveInfo="BaseMethodCall" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1206482823744">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Model_AddRootOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Model_AddRootOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="add root" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -735,8 +739,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1212008292747">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Model_GetLongNameOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Model_GetLongNameOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="name" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -745,8 +749,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="remove children" />
-      <property name="name" nameId="tpck.1169194664001" value="LinkList_RemoveAllChildrenOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="LinkList_RemoveAllChildrenOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.linkList" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="remove all" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -754,8 +758,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215467301810">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Property_RemoveOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Property_RemoveOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.property" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="remove" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -764,8 +768,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="named node reference" />
-      <property name="name" nameId="tpck.1169194664001" value="NodeRefExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="NodeRefExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node /&lt;name&gt;/" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -774,6 +778,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="search scope type" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SearchScopeType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="search scope" />
@@ -783,8 +788,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="obtain referent search scope" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetReferentSearchScopeOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetReferentSearchScopeOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="search scope" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -793,8 +798,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="test node visibility in scope" />
-      <property name="name" nameId="tpck.1169194664001" value="SearchScope_ContainsOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SearchScope_ContainsOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="contains" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -803,8 +808,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="link reference" />
-      <property name="name" nameId="tpck.1169194664001" value="LinkRefExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="LinkRefExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="link/&lt;role&gt;/" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -813,8 +818,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="nodes structural equality operation" />
-      <property name="name" nameId="tpck.1169194664001" value="EqualsStructurallyExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="EqualsStructurallyExpression" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="matches" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1081773326031" resolveInfo="BinaryOperation" />
     </node>
@@ -822,8 +827,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="removes from container" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_DetachOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_DetachOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="detach" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -832,6 +837,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="enum member type" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SEnumMemberType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="enummember&lt; &gt;" />
@@ -841,8 +847,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="enum member value" />
-      <property name="name" nameId="tpck.1169194664001" value="EnumMember_ValueOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="EnumMember_ValueOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="enum.enumoperation" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="value" />
     </node>
@@ -850,8 +856,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="enum member name" />
-      <property name="name" nameId="tpck.1169194664001" value="EnumMember_NameOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="EnumMember_NameOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="enum.enumoperation" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="name" />
     </node>
@@ -859,8 +865,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="enum operation" />
-      <property name="name" nameId="tpck.1169194664001" value="SEnumOperationInvocation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SEnumOperationInvocation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="enum" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="enum/&lt;name&gt;/.operation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -920,8 +926,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2648652578096473304">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="ConceptProperty_SetOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="ConceptProperty_SetOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.concept" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="set" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -930,16 +936,16 @@
       <property name="name" nameId="tpck.1169194664001" value="ILinkAccess" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3562215692195599741">
-      <property name="name" nameId="tpck.1169194664001" value="SLinkImplicitSelect" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SLinkImplicitSelect" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.featureAccess" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8758390115028452779">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetReferencesOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetReferencesOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="references" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -948,6 +954,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="reference type" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SReferenceType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="reference" />
@@ -956,8 +963,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4124388153790980106">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Reference_GetTargetOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Reference_GetTargetOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="target" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -965,8 +972,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1547759872598425067">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Reference_GetLinkDeclarationOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Reference_GetLinkDeclarationOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="linkDeclaration" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -978,8 +985,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5692182839349412519">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Reference_GetRoleOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Reference_GetRoleOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="role" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -987,8 +994,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5820409030208923287">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetContainingLinkOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetContainingLinkOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="containingLink" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -996,8 +1003,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1960721196051541146">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetContainingRoleOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetContainingRoleOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="containingRole" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -1005,8 +1012,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3609773094169249792">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Node_GetReferenceOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Node_GetReferenceOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="reference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -1026,15 +1033,15 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5708036808576088033">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Reference_GetResolveInfo" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Reference_GetResolveInfo" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="resolveInfo" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4357968816427488499">
-      <property name="name" nameId="tpck.1169194664001" value="CheckedModuleReference" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="CheckedModuleReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1540150895035667832">
@@ -1049,8 +1056,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8339862546319741524">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="ConceptFqNameRefExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="ConceptFqNameRefExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="concept qualified name/&lt;name&gt;/" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -1059,8 +1066,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="if a node is instance of concept" />
-      <property name="name" nameId="tpck.1169194664001" value="IfInstanceOfStatement" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="IfInstanceOfStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ifInstanceOf" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
@@ -1069,16 +1076,16 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.4972933694980447171" resolveInfo="BaseVariableDeclaration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1883223317721107059">
-      <property name="name" nameId="tpck.1169194664001" value="IfInstanceOfVarReference" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="IfInstanceOfVarReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.5497648299878491908" resolveInfo="BaseVariableReference" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5253134957341697434">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="name" />
-      <property name="name" nameId="tpck.1169194664001" value="LinkNameRefExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="LinkNameRefExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="link name/&lt;role&gt;/" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -1087,8 +1094,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="name" />
-      <property name="name" nameId="tpck.1169194664001" value="PropertyNameRefExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="PropertyNameRefExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="property name/&lt;role&gt;/" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -1097,8 +1104,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="attribute access" />
-      <property name="name" nameId="tpck.1169194664001" value="AttributeAccess" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="AttributeAccess" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="attributes" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="@" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -1155,8 +1162,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5897605856268838718">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="ConceptPropertyNameRefExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="ConceptPropertyNameRefExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="concept property name/&lt;name&gt;/" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -1164,8 +1171,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6995935425733782641">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="Model_GetModule" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="Model_GetModule" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="module" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
@@ -1173,8 +1180,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4040588429969021681">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="ModuleReferenceExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="ModuleReferenceExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference.module" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="module" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -1182,8 +1189,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4040588429969069898">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="LanguageReferenceExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="LanguageReferenceExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference.module" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="language" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="4040588429969021681" resolveInfo="ModuleReferenceExpression" />
@@ -1192,8 +1199,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="concept reference with built-in read action" />
-      <property name="name" nameId="tpck.1169194664001" value="ReadConceptReferenceExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="ReadConceptReferenceExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="read concept" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -1201,8 +1208,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="559557797393017698">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="ModelReferenceExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="ModelReferenceExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="model" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -1214,8 +1221,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5944356402132808749">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="name" nameId="tpck.1169194664001" value="ConceptSwitchStatement" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="ConceptSwitchStatement" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="concept switch" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
     </node>
@@ -1223,23 +1230,23 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="named node pointer" />
-      <property name="name" nameId="tpck.1169194664001" value="NodePointerExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="NodePointerExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nodePointer /&lt;name&gt;/" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8866923313515890008">
-      <property name="name" nameId="tpck.1169194664001" value="AsNodeOperation" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="AsNodeOperation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="asNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6973815483243445083">
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="value" />
-      <property name="name" nameId="tpck.1169194664001" value="EnumMemberValueRefExpression" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="EnumMemberValueRefExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="enum member value/&lt;name&gt;/" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -1411,8 +1418,8 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383037">
-      <property name="comment" nameId="tpce.1225118933224" value="this 'add' operation was replaced with nlist&lt;&gt; 'add' operation from collections laguage" />
       <property name="build" nameId="tpce.1225118929411" value="14333" />
+      <property name="comment" nameId="tpce.1225118933224" value="this 'add' operation was replaced with nlist&lt;&gt; 'add' operation from collections laguage" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741647243">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
@@ -1426,8 +1433,8 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383093">
-      <property name="comment" nameId="tpce.1225118933224" value="this 'insert first' operation was replaced with nlist&lt;&gt; 'addFirst' operation from collections laguage" />
       <property name="build" nameId="tpce.1225118929411" value="14333" />
+      <property name="comment" nameId="tpce.1225118933224" value="this 'insert first' operation was replaced with nlist&lt;&gt; 'addFirst' operation from collections laguage" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741703244">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
@@ -1435,8 +1442,8 @@
   </root>
   <root id="1140129518788">
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="1228342515854">
-      <property name="comment" nameId="tpce.1225118933224" value="this 'remove' operation has been replaced with 'detach' operation" />
       <property name="build" nameId="tpce.1225118929411" value="1193" />
+      <property name="comment" nameId="tpce.1225118933224" value="this 'remove' operation has been replaced with 'detach' operation" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741639264">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
@@ -1662,8 +1669,8 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564361193">
-      <property name="comment" nameId="tpce.1225118933224" value="this 'add all' operation was replaced with nlist&lt;&gt; 'addAll' operation from collections laguage" />
       <property name="build" nameId="tpce.1225118929411" value="14333" />
+      <property name="comment" nameId="tpce.1225118933224" value="this 'add all' operation was replaced with nlist&lt;&gt; 'addAll' operation from collections laguage" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741646707">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
@@ -1894,8 +1901,8 @@
   <root id="1212008292747" />
   <root id="1215103457144">
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383100">
-      <property name="comment" nameId="tpce.1225118933224" value="this 'remove all' operation was replaced with nlist&lt;&gt; 'clear' operation from collections laguage" />
       <property name="build" nameId="tpce.1225118929411" value="14333" />
+      <property name="comment" nameId="tpce.1225118933224" value="this 'remove all' operation was replaced with nlist&lt;&gt; 'clear' operation from collections laguage" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741703634">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />

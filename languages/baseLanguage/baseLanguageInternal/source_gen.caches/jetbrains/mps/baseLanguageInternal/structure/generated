@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="duj2oe7a2m9y9711wt9pzn3w80st9h4">
+<dependencies version="2" modelHash="dfcp249czvecq2pfk9fo1t8sxh32vaq">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6xoyysetm6oarfu3mu090t233rt6p2q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="a7c2ku0s74knl0vk8tegekel7po2h4e" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="dvc8v7k4e83fjnnk90ebw89fgwbmme2">
@@ -39,79 +39,79 @@
     <file name="BaseLanguageInternal_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1173990517731" name="InternalStaticMethodCall" hash="-7bzhowjmiwpxgo1viltom05f8p5xsdy">
+  <source id="1173990517731" name="InternalStaticMethodCall" hash="66ufjwj2xvbuv4chjr2fogk0871zzpj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1173995204289" name="InternalStaticFieldReference" hash="8omt4juat4iok5xj5ff325flmwg4ilv">
+  <source id="1173995204289" name="InternalStaticFieldReference" hash="16thj0hwcls2bsgtc08j7pi4w6qwzz3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1173996401517" name="InternalNewExpression" hash="-efql01s8nr58rtcjaafpn3ux6i1g4ri">
+  <source id="1173996401517" name="InternalNewExpression" hash="-d3aibygcx7bv173yqxx5o8jqvlleemc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174294166120" name="InternalPartialInstanceMethodCall" hash="-b17dt143jgyg10uriqpy2fluv7e73iy">
+  <source id="1174294166120" name="InternalPartialInstanceMethodCall" hash="7t5rc84nlx9nfx2u595vmk8muvwofbd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174478619261" name="InternalClassExpression" hash="ajczofue5u80in4e8ertxbyz2ro23e3">
+  <source id="1174478619261" name="InternalClassExpression" hash="-d953gca88gq2u33t9dhqwxvgj27oaca">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1174914042989" name="InternalClassifierType" hash="-7a7ozyuo5so8rje9qu7vikq9oj9s2lr">
+  <source id="1174914042989" name="InternalClassifierType" hash="-53r55dy0abxu6mxid8ledphljsssuwp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1176743162354" name="InternalVariableReference" hash="-b5jfmebgqjlxlnvqgsgktx34cp2vtgo">
+  <source id="1176743162354" name="InternalVariableReference" hash="-c6pd084vnhaku6etoszb4ltd3fi3g1w">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177590007607" name="InternalPartialFieldReference" hash="ad229ocwby8msmtae0uaz8ngovavl1g">
+  <source id="1177590007607" name="InternalPartialFieldReference" hash="2mhgdv09saygtspm4wj3btc5gq8l2ma">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1199964756070" name="TypeHintExpression" hash="-b52qaxwp5c3jiak5jun67eloj04i7k8">
+  <source id="1199964756070" name="TypeHintExpression" hash="-4tj2bdwklwmm7t2es79ocnhhg75kldi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1202838164916" name="InternalThisExpression" hash="cqmkuhg9ku1e2gibozynj50fp63m0ce">
+  <source id="1202838164916" name="InternalThisExpression" hash="-384zpegzy7kt6axpyh55jf57peg17xg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1238251434034" name="ExtractToConstantExpression" hash="6r21hxxjv3azriyfv2x5i8o5dxscesa">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3196918548952765095" name="ExtractStatementListExpression" hash="4n68k25po170fij4f6klbk8aqp20hq6">
+  <source id="3196918548952765095" name="ExtractStatementListExpression" hash="5pyir7vy6a8mypf4q11sp5ft9dimxoz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3196918548953109193" name="ExtractStatementListInnerExpression" hash="-dxrbf0hpnmvh1s3hbp91wf3lhs7qpzq">
+  <source id="3196918548953109193" name="ExtractStatementListInnerExpression" hash="abnolzgto0h7lsn8dfa4yqnjpxo57n6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3585982959253588676" name="ExtractStaticMethodExpression" hash="-37weh5fj8fgu2dhaqppemuvsq5wm1ho">
+  <source id="3585982959253588676" name="ExtractStaticMethodExpression" hash="5bnsekbp88powvfd2iiir30xvrno8wd">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3585982959253821850" name="ExtractStaticMethod_CallExpression" hash="dr4469gf3yzmip19ayh95cwk2tm92lw">
+  <source id="3585982959253821850" name="ExtractStaticMethod_CallExpression" hash="84wnpl3duvngf7g8dmx6cf6hbil3xq9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7738261905749564104" name="ExtractStaticInnerClassExpression" hash="8mpydwoc81qbll6qlrp63b4h7640s6u">
+  <source id="7738261905749564104" name="ExtractStaticInnerClassExpression" hash="-ax7kh7g89tcv5wp0auvfjeci93ytxg3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5822086619725599105" name="ExtractStaticInnerClassCreator" hash="51jr4hhj2rij3i7vsucjoupcm3o35zp">
+  <source id="5822086619725599105" name="ExtractStaticInnerClassCreator" hash="-4bqvnn2xgjalmirdi4vh2livuruokkh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="937236280924494202" name="ExtractStaticInnerClassConcept" hash="-9id2xxgcz17xfzphjh18xhvvgqniend">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="99767819676010097" name="ExtractToConstantRefExpression" hash="-a71wbdho512bbp7oz7y2dr7ply1zamq">
+  <source id="99767819676010097" name="ExtractToConstantRefExpression" hash="bnrfo70umzqqgelauqwto4omg5lmniy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8791205313600585946" name="WeakClassReference" hash="-eph9c3mhqcyhwys2413z4ptlose5nga">
+  <source id="8791205313600585946" name="WeakClassReference" hash="5bzsmm3w8tnk0vzf6331ejpf5hudpbp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3421461530438559752" name="InternalAnonymousClassCreator" hash="2hqf1v57o1d9gu9l5txzyrgifxi1s3m">
+  <source id="3421461530438559752" name="InternalAnonymousClassCreator" hash="33sqqe06n5whn4nxf5zo4qhk449qyon">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3421461530438559753" name="InternalAnonymousClass" hash="2k1g9mg1qc60urma50w2z2mi8layhny">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1585405235656310154" name="ConstantValue" hash="-3lpje9fuk2aak6nqgndhno9g3mz3fuh">
+  <source id="1585405235656310154" name="ConstantValue" hash="25hw7m6o29fi3c75cdyr0ajxbqwof3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3731567766880819155" name="InternalSuperMethodCallOperation" hash="-ok1h9t4pn0weo65uvqyx6e9g9vj2ej">
+  <source id="3731567766880819155" name="InternalSuperMethodCallOperation" hash="76eixrp4kb5mekpc1hbxx6vmrgizeqj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1100832983841311024" name="InternalClassCreator" hash="7xqdubzfijnk81afpjuh5rllsnwhv7h">
+  <source id="1100832983841311024" name="InternalClassCreator" hash="-396047x4v64fpvbbfk2g8i5u1fbwasu">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

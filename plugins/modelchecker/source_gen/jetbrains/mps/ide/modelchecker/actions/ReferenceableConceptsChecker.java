@@ -16,11 +16,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 
@@ -54,6 +54,12 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
             if (SPropertyOperations.hasValue(decl, "incomingRefs", "forbidden", null)) {
               addIssue(results, ref, "Reference to a non-referenceable concept found: " + SPropertyOperations.getString(target, "name"), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable concept", null);
             }
+          }
+        }
+        if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.hasValue(SNodeOperations.cast(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "incomingRefs", "forbidden", null)) {
+          SNode c = concept;
+          if (SConceptOperations.isSubConceptOf(c, "jetbrains.mps.lang.core.structure.INamedConcept")) {
+            addIssue(results, c, "INamedConcept inheritors are usually referenceable", ModelChecker.SEVERITY_WARNING, "non-referenceable named concept", null);
           }
         }
       }
