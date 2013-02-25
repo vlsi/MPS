@@ -714,8 +714,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (myModel == null) return;
 
     if (!myModel.isUpdateMode()) {
+      UnregisteredNodes.instance().put(this);
       for (SReference ref : myReferences) {
-        ((jetbrains.mps.smodel.SReference) ref).makeDirect();
+        ref.makeDirect();
       }
     }
 
@@ -740,8 +741,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myModel = model;
 
     for (SReference ref : myReferences) {
-      ((jetbrains.mps.smodel.SReference) ref).makeIndirect();
+      ref.makeIndirect();
     }
+
+    UnregisteredNodes.instance().remove(this);
 
     for (SNode child = first; child != null; child = child.next) {
       child.registerInModel(model);
