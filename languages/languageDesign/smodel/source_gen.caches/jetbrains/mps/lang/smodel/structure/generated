@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9nwcqv73qzhhhlkdpv9o6ywg277jqor">
+<dependencies version="2" modelHash="218o7x5eb1duxaoka4i5jiwvt82kds2">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-dgxncmve4m6at267d0kp587a0kyx7ne" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="er3tjfhagxbsf4vwfk92rxcjzwem2hs" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6xoyysetm6oarfu3mu090t233rt6p2q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="bx655vowo33ic759veixfmeb5lo4ds">
     <dep root="1138055754698" />
@@ -163,7 +163,7 @@
     <file name="Smodel_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1138055754698" name="SNodeType" hash="c9a9aj8fxkzpdwrp6hxrhyjnkmscxcy">
+  <source id="1138055754698" name="SNodeType" hash="7lagsvz599cnqathgmjmxgm8o5s76ix">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1138056022639" name="SPropertyAccess" hash="-5elolnjxafktg6utaf1hr6b6nyf4qk6">
@@ -349,7 +349,7 @@
   <source id="1176109685393" name="Model_RootsIncludingImportedOperation" hash="-4owtdfhfgvzagh9boouy2jmyknu1uto">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1177026924588" name="RefConcept_Reference" hash="-b4lw2jfpz5gaju8gogdnw3xx05sxgzq">
+  <source id="1177026924588" name="RefConcept_Reference" hash="bsqjawosin3max7x0kkp8dubecbmc9y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1179168000618" name="Node_GetIndexInParentOperation" hash="-c7gr7n5vleu4q7kw2w0xaob483zhg0n">

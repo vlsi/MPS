@@ -75,10 +75,13 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
         }
         boolean sameRoot = SNodeOperations.getContainingRoot(target) == SNodeOperations.getContainingRoot(node);
         checkNode(results, target, sameRoot, false, target);
-        SNode ancestor = SNodeOperations.getParent(target);
-        while (ancestor != null) {
-          checkNode(results, ancestor, sameRoot, true, target);
-          ancestor = SNodeOperations.getParent(ancestor);
+        SNode curr = target;
+        while (!(SNodeOperations.isAttribute(curr))) {
+          curr = SNodeOperations.getParent(curr);
+          if (curr == null) {
+            break;
+          }
+          checkNode(results, curr, sameRoot, true, target);
         }
       }
     }

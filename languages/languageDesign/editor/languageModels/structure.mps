@@ -37,6 +37,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="collection of cells" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="CellModel_Collection" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="collection" />
@@ -47,6 +48,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="text label" />
       <property name="name" nameId="tpck.1169194664001" value="CellModel_Constant" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="CellModel" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="constant" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1079353555532" resolveInfo="CellModel_AbstractLabel" />
@@ -842,6 +844,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186402475462">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="StyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -849,6 +852,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186403694788">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ColorStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
@@ -856,6 +860,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186403751766">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="FontStyleStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="font-style" />
@@ -864,6 +869,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186404549998">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ForegroundColorStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="text-foreground-color" />
@@ -872,6 +878,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186404574412">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="BackgroundColorStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="background-color" />
@@ -880,6 +887,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186413799158">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="BracketColorStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="bracket-color" />
@@ -888,6 +896,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414536763">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="BooleanStyleSheetItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
@@ -895,6 +904,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414928363">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SelectableStyleSheetItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="selectable" />
@@ -903,6 +913,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414949600">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="AutoDeletableStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="auto-deletable" />
@@ -911,6 +922,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414976055">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="DrawBorderStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="draw-border" />
@@ -919,6 +931,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414999511">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="UnderlinedStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="underlined" />
@@ -927,6 +940,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186415722038">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="FontSizeStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="font-size" />
@@ -935,6 +949,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1186414860679">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="EditableStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="editable" />
@@ -943,6 +958,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1187258617779">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ForegroundNullColorStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="text-foreground-null-color" />
@@ -1030,6 +1046,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1214317859050">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="LayoutConstraintStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="layout constraint" />
@@ -1038,6 +1055,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1214320119173">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="SideTransformAnchorTagStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="side-transform-anchor-tag" />
@@ -1046,6 +1064,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1214406454886">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="TextBackgroundColorStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="text-background-color" />
@@ -1054,6 +1073,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1214406466686">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="TextBackgroundColorSelectedStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="text-background-color-selected" />
@@ -1062,6 +1082,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1214472762472">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="DefaultCaretPositionStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="default-caret-position" />
@@ -1070,6 +1091,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215007762405">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="FloatStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
@@ -1077,6 +1099,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215007883204">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PaddingLeftStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="padding-left" />
@@ -1085,6 +1108,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215007897487">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PaddingRightStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="padding-right" />
@@ -1093,6 +1117,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215085112640">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="FirstPositionAllowedStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="first-position-allowed" />
@@ -1101,6 +1126,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1215085197271">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="LastPositionAllowedStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="last-position-allowed" />
@@ -1114,6 +1140,7 @@
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PositionStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="position" />
@@ -1154,6 +1181,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1216560327200">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PositionChildrenStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="position-children" />
@@ -1170,6 +1198,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1219226236603">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="DrawBracketsStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="draw-brackets" />
@@ -1218,6 +1247,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1223386653097">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="StrikeOutStyleSheet" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="strike-out" />
@@ -1261,6 +1291,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1226339751946">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PaddingTopStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="padding-top" />
@@ -1269,6 +1300,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1226339813308">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PaddingBottomStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="padding-bottom" />
@@ -1277,6 +1309,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1226339938453">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="AbstractPaddingStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1215007762405" resolveInfo="FloatStyleClassItem" />
@@ -1290,6 +1323,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1227861515039">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="NavigatableReferenceStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="navigatable-reference" />
@@ -1302,6 +1336,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233758997495">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PunctuationLeftStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="punctuation-left" />
@@ -1310,6 +1345,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233759184865">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PunctuationRightStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="punctuation-right" />
@@ -1318,6 +1354,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233823429331">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="HorizontalGapStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Paddings" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="horizontal-gap" />
@@ -1326,6 +1363,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1235728439575">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="BaseLineCell" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="base-line-cell" />
@@ -1334,6 +1372,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1235999440492">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="HorizontalAlign" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="horizontal-align" />
@@ -1347,6 +1386,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1236262245656">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MatchingLabelStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="matching-label" />
@@ -1369,6 +1409,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237307900041">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IndentLayoutIndentStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-indent" />
@@ -1377,6 +1418,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237308012275">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IndentLayoutNewLineStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-new-line" />
@@ -1385,6 +1427,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237375020029">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IndentLayoutNewLineChildrenStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-new-line-children" />
@@ -1393,6 +1436,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237385578942">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IndentLayoutOnNewLineStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-on-new-line" />
@@ -1414,6 +1458,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1240253180846">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IndentLayoutNoWrapClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-no-wrap" />
@@ -1430,6 +1475,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667276221847570194">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ParametersInformationStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="parameters-information" />
@@ -1518,6 +1564,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7620205565664569937">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="DefaultBaseLine" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="default-baseline" />
@@ -1542,6 +1589,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8255250703325731016">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ScriptKindClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="script-kind" />
@@ -1572,6 +1620,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6820251943131810950">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="TableComponentStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="table-component" />
@@ -1588,6 +1637,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7597241200646296617">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="NavigatableNodeStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="navigatable-node" />
@@ -1628,6 +1678,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7651593722933768974">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="MaxWidthStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.Layout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="max-width" />
@@ -1636,6 +1687,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667708318090877006">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IndentLayoutWrapAnchorStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-wrap-anchor" />
@@ -1644,6 +1696,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7667708318090725848">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="IndentLayoutIndentAnchorStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet.IndentLayout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent-layout-indent-anchor" />
@@ -1694,6 +1747,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4151393920404716535">
+      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PreDefinedStyleClassItem" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Stylesheet" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="pre-defined-style" />

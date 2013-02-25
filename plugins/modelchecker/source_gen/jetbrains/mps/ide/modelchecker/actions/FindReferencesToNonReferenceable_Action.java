@@ -22,6 +22,17 @@ import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.HashMap;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Arrays;
+import java.util.Comparator;
 import jetbrains.mps.logging.Logger;
 
 public class FindReferencesToNonReferenceable_Action extends BaseAction {
@@ -64,7 +75,7 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<SModel> modelDescriptors = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModelDescriptor>) SModelRepository.getInstance().getModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
+      final List<SModel> modelDescriptors = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModelDescriptor>) SModelRepository.getInstance().getModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor md) {
           return SModelStereotype.isUserModel(md);
         }
@@ -76,6 +87,47 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
           return ListSequence.fromListAndArray(new ArrayList<SpecificChecker>(), new ReferenceableConceptsChecker());
         }
       });
+
+      // extra debug 
+      final Wrappers._int total = new Wrappers._int();
+      final Wrappers._int referenceable = new Wrappers._int();
+      final Map<String, Integer> used = MapSequence.fromMap(new HashMap<String, Integer>());
+
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          ListSequence.fromList(modelDescriptors).visitAll(new IVisitor<SModel>() {
+            public void visit(SModel it) {
+              for (SNode n : it.getRootNodes()) {
+                for (SNode i : SNodeOperations.getDescendants(n, null, true, new String[]{})) {
+                  SNode ccp = SNodeOperations.as(((SNode) ((jetbrains.mps.smodel.SNode) i).getConceptDeclarationNode()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+                  if (ccp != null) {
+                    total.value++;
+                    if (!(SPropertyOperations.hasValue(ccp, "incomingRefs", "forbidden", null))) {
+                      referenceable.value++;
+                      String cname = BehaviorReflection.invokeVirtual(String.class, ccp, "virtual_getFqName_1213877404258", new Object[]{});
+                      if (MapSequence.fromMap(used).containsKey(cname)) {
+                        MapSequence.fromMap(used).put(cname, MapSequence.fromMap(used).get(cname) + 1);
+                      } else {
+                        MapSequence.fromMap(used).put(cname, 1);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          });
+        }
+      });
+      String[] usedNames = SetSequence.fromSet(MapSequence.fromMap(used).keySet()).toGenericArray(String.class);
+      Arrays.sort(usedNames, new Comparator<String>() {
+        public int compare(String a, String b) {
+          return new Integer(MapSequence.fromMap(used).get(a)).compareTo(MapSequence.fromMap(used).get(b));
+        }
+      });
+      System.out.println("" + referenceable.value + " out of " + total.value + " nodes are referenceable");
+      for (String s : usedNames) {
+        System.out.println(MapSequence.fromMap(used).get(s) + "  " + s);
+      }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "FindReferencesToNonReferenceable", t);
     }

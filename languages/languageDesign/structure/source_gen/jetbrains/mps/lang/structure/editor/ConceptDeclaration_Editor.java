@@ -16,11 +16,13 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -48,7 +50,6 @@ import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.nodeEditor.cells.TransactionalPropertyAccessor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -112,6 +113,14 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       } else
       return editorCell;
     }
+  }
+
+  private static boolean renderingCondition_ueqr71_a2b1c0(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(node)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SPropertyOperations.hasValue(it, "metaClass", "aggregation", "reference") && !(eq_ueqr71_a0a0a0a0a0a0a0a6(SPropertyOperations.getString(it, "role"), "smodelAttribute"));
+      }
+    }) || isNotEmpty_ueqr71_a0a0a6(SPropertyOperations.getString_def(node, "childrenRefs", null));
   }
 
   public static class ConceptDeclaration_generic_cellMenu_ueqr71_a0k1c0 extends AbstractCellMenuPart_Generic_Item {
@@ -617,9 +626,21 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_ueqr71_a1b2a(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ueqr71_b1b2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ueqr71_c1b2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_ueqr71_d1b2a(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_ueqr71_e1b2a(editorContext, node));
+    if (renderingCondition_ueqr71_a2b1c0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_ueqr71_c1b2a(editorContext, node));
+    }
+    return editorCell;
+  }
+
+  private EditorCell createCollection_ueqr71_c1b2a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_ueqr71_c1b2a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_ueqr71_a2b1c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ueqr71_b2b1c0(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_ueqr71_c2b1c0(editorContext, node));
     return editorCell;
   }
 
@@ -770,9 +791,9 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_ueqr71_c1b2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ueqr71_a2b1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
-    editorCell.setCellId("Constant_ueqr71_c1b2a");
+    editorCell.setCellId("Constant_ueqr71_a2b1c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -780,9 +801,9 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_ueqr71_d1b2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_ueqr71_b2b1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for children:");
-    editorCell.setCellId("Constant_ueqr71_d1b2a");
+    editorCell.setCellId("Constant_ueqr71_b2b1c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
@@ -1208,7 +1229,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createProperty_ueqr71_e1b2a(EditorContext editorContext, SNode node) {
+  private EditorCell createProperty_ueqr71_c2b1c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("childrenRefs");
     provider.setNoTargetText("<no childrenRefs>");
@@ -1311,5 +1332,16 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+
+  public static boolean isNotEmpty_ueqr71_a0a0a6(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  private static boolean eq_ueqr71_a0a0a0a0a0a0a0a6(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
