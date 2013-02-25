@@ -38,7 +38,11 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   void forceLoad();
 
-  // TODO remove
+  @Deprecated
+  /**
+   * Replace with SNodeOperations.isGeneratable in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   boolean isGeneratable();
 
   //------
