@@ -6,7 +6,7 @@ import jetbrains.mps.ide.modelchecker.actions.SpecificChecker;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.modelchecker.actions.ModelCheckerIssue;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -79,7 +79,7 @@ public class MethodCallChecker extends SpecificChecker {
         if (uid == null) {
           continue;
         }
-        org.jetbrains.mps.openapi.model.SModel descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
+        SModel descriptor = SModelRepository.getInstance().getModelDescriptor(uid);
         if (scope.resolve(uid) == null && descriptor != null) {
           addIssue(results, node, "Target module " + descriptor.getModule().getModuleName() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new IModelCheckerFix() {
             public boolean doFix() {

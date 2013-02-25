@@ -98,7 +98,6 @@ import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.cells.*;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.ActionHandler;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -107,7 +106,7 @@ import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -146,7 +145,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JComponent;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
@@ -155,9 +153,6 @@ import javax.swing.KeyStroke;
 import javax.swing.Scrollable;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
-import javax.swing.border.TitledBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.plaf.ScrollBarUI;
@@ -1318,7 +1313,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (myNode == null) return;
       SModel model = myNode.getModel();
       if (model == null) return;
-      assert !model.isDisposed() : getNodeDisposedMessage(model);
+      assert !jetbrains.mps.util.SNodeOperations.isModelDisposed(model) : getNodeDisposedMessage(model);
     } finally {
       ModelAccess.instance().setReadEnabledFlag(old);
     }
@@ -1328,7 +1323,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     StringBuilder sb = new StringBuilder("editor (" + this + ") is invalid");
     if (myNode != null) {
       sb.append(", myNode is disposed");
-      StackTraceElement[] modelDisposedTrace = model.getDisposedStacktrace();
+      StackTraceElement[] modelDisposedTrace = ((jetbrains.mps.smodel.SModel) model).getDisposedStacktrace();
       if (modelDisposedTrace != null) {
         for (StackTraceElement element : modelDisposedTrace) {
           sb.append("\nat ");
@@ -1369,7 +1364,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean isInvalid() {
     return isInvalidLightweight() ||
       getEditedNode().getModel() == null ||
-      getEditedNode().getModel().isDisposed() ||
+      jetbrains.mps.util.SNodeOperations.isModelDisposed(getEditedNode().getModel()) ||
       getEditedNode().getModel().getModelDescriptor() == null;
   }
 

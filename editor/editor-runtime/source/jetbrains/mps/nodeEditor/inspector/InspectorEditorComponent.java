@@ -69,7 +69,7 @@ public class InspectorEditorComponent extends EditorComponent {
         myNode = node;
         myNodePointer = myNode != null ? new jetbrains.mps.smodel.SNodePointer(myNode) : null;
         myRoot = myNode == null ? null : myNode.getContainingRoot();
-        setReadOnly(node == null || node.getModel() == null || node.getModel().isDisposed() || node.getModel().isReadOnly());
+        setReadOnly(node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isModelDisposed(node.getModel()) || node.getModel().isReadOnly());
         if (node == null) {
           setOperationContext(null);
         } else {

@@ -45,27 +45,6 @@ public class ForceLayoutCode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_owhuo5_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_owhuo5_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createIndentCell_owhuo5_a1a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_owhuo5_b1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_owhuo5_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_owhuo5_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_owhuo5_a2a(editorContext, node));
-    return editorCell;
-  }
-
   private EditorCell createConstant_owhuo5_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_owhuo5_a0a");
@@ -101,10 +80,14 @@ public class ForceLayoutCode_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_owhuo5_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_owhuo5_a2a");
-    editorCell.setDefaultText("");
+  private EditorCell createCollection_owhuo5_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_owhuo5_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createIndentCell_owhuo5_a1a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_owhuo5_b1a(editorContext, node));
     return editorCell;
   }
 
@@ -127,6 +110,23 @@ public class ForceLayoutCode_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createCollection_owhuo5_c0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_owhuo5_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_owhuo5_a2a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_owhuo5_a2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    editorCell.setCellId("Constant_owhuo5_a2a");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }

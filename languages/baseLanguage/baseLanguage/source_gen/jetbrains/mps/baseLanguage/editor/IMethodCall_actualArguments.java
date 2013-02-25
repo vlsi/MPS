@@ -6,25 +6,25 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class IMethodCall_actualArguments extends AbstractCellProvider {
   public IMethodCall_actualArguments(SNode node) {
@@ -45,15 +45,41 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     return createEditorCell((EditorContext) editorContext);
   }
 
-  private static boolean renderingCondition_arlg9k_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty();
+  private EditorCell createCollection_arlg9k_a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_arlg9k_a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createConstant_arlg9k_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_arlg9k_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_arlg9k_c0(editorContext, node));
+    return editorCell;
   }
 
-  private static boolean renderingCondition_arlg9k_a2a(SNode node, EditorContext editorContext, IScope scope) {
-    if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
-      return false;
+  private EditorCell createConstant_arlg9k_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
+    editorCell.setCellId("Constant_arlg9k_a0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createRefNodeList_arlg9k_b0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new IMethodCall_actualArguments.actualArgumentListHandler_arlg9k_b0(node, "actualArgument", editorContext);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
+    editorCell.setCellId("refNodeList_actualArgument");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQueryRestricted());
+    editorCell.getStyle().putAll(style);
+    if (renderingCondition_arlg9k_a1a(node, editorContext, editorContext.getScope())) {
+      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
+    editorCell.setRole(handler.getElementRole());
+    return editorCell;
   }
 
   private static class actualArgumentListHandler_arlg9k_b0 extends RefNodeListHandler {
@@ -120,27 +146,8 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     }
   }
 
-  private EditorCell createCollection_arlg9k_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_arlg9k_a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_arlg9k_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_arlg9k_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_arlg9k_c0(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createConstant_arlg9k_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_arlg9k_a0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
+  private static boolean renderingCondition_arlg9k_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty();
   }
 
   private EditorCell createConstant_arlg9k_c0(EditorContext editorContext, SNode node) {
@@ -159,17 +166,10 @@ public class IMethodCall_actualArguments extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_arlg9k_b0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new IMethodCall_actualArguments.actualArgumentListHandler_arlg9k_b0(node, "actualArgument", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
-    editorCell.setCellId("refNodeList_actualArgument");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQueryRestricted());
-    editorCell.getStyle().putAll(style);
-    if (renderingCondition_arlg9k_a1a(node, editorContext, editorContext.getScope())) {
-      editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
+  private static boolean renderingCondition_arlg9k_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    if (SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == null) {
+      return false;
     }
-    editorCell.setRole(handler.getElementRole());
-    return editorCell;
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true)).isEmpty();
   }
 }

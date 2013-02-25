@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.logging.Logger;
 
 public class ShowConceptInHierarchy_Action extends BaseAction {
@@ -108,7 +109,7 @@ public class ShowConceptInHierarchy_Action extends BaseAction {
       return null;
     }
     TabbedEditor tabbedEditor = (TabbedEditor) ((Editor) MapSequence.fromMap(_params).get("editor"));
-    SNode editedNode = ((SNodePointer) tabbedEditor.getCurrentlyEditedNode()).getNode();
+    SNode editedNode = ((SNodePointer) tabbedEditor.getCurrentlyEditedNode()).resolve(MPSModuleRepository.getInstance());
     if (!(SNodeOperations.isInstanceOf(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return null;
     }

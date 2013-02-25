@@ -25,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.tree.DefaultTreeModel;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.AnActionEvent;

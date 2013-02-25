@@ -32,7 +32,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -89,7 +89,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
         SModel model = descr.getSModel();
         if (model == null) return;
 
-        for (SNode root : model.roots()) {
+        for (SNode root : model.getRootNodes()) {
           newChildren.add(new MPSProjectViewNode(parent.getProject(), root, settings));
         }
       }

@@ -20,7 +20,8 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ModuleContext;
@@ -110,7 +111,7 @@ public abstract class NodeTreeModel implements TreeModel {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             @Override
             public void run() {
-              SNode node = ((SNodePointer) myNode).getNode();
+              SNode node = ((SNodePointer) myNode).resolve(MPSModuleRepository.getInstance());
               if (node == null) {
                 return;
               }
@@ -142,7 +143,7 @@ public abstract class NodeTreeModel implements TreeModel {
 
   protected static class NodeTreeElementPresentation extends NodePresentation {
     public NodeTreeElementPresentation(SNodeReference node) {
-      super(((SNodePointer) node).getNode());
+      super(((SNodePointer) node).resolve(MPSModuleRepository.getInstance()));
     }
 
     @Override

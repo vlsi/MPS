@@ -75,14 +75,15 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
     return reference;
   }
 
-  void reload(SNodeId sNodeId) {
+  MPSPsiNode reload(SNodeId sNodeId) {
     ModelAccess.assertLegalWrite();
     MPSPsiNode mpsPsiNode = lookupNode(sNodeId);
-    if (mpsPsiNode == null) return;
+    if (mpsPsiNode == null) return null;
 
     SNode sNode = mpsPsiNode.getNodeReference().resolve(MPSModuleRepository.getInstance());
     MPSPsiNode replacement = convert(sNode);
     ((MPSPsiNodeBase)mpsPsiNode.getParent()).replaceChild(mpsPsiNode, replacement);
+    return replacement;
   }
 
   void reloadAll() {

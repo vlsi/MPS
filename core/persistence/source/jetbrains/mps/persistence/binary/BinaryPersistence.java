@@ -17,7 +17,7 @@ package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
@@ -134,12 +134,12 @@ public class BinaryPersistence {
 
     BinarySModel model = new BinarySModel(modelHeader);
 
-    for (ModuleReference ref : loadModuleRefList(is)) model.addLanguage(ref);
-    for (ModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
-    for (ModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) ((jetbrains.mps.smodel.SModel) model).addLanguage(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) ((jetbrains.mps.smodel.SModel) model).addEngagedOnGenerationLanguage(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) ((jetbrains.mps.smodel.SModel) model).addDevKit(ref);
 
-    for (ImportElement imp : loadImports(is)) model.addModelImport(imp);
-    for (ImportElement imp : loadImports(is)) model.addAdditionalModelVersion(imp);
+    for (ImportElement imp : loadImports(is)) ((jetbrains.mps.smodel.SModel) model).addModelImport(imp);
+    for (ImportElement imp : loadImports(is)) ((jetbrains.mps.smodel.SModel) model).addAdditionalModelVersion(imp);
 
     if (is.readInt() != 0xbaba) {
       throw new IOException("bad stream, no sync token");
@@ -174,17 +174,17 @@ public class BinaryPersistence {
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
     os.writeModelReference((SModelReference) model.getReference());
-    os.writeInt(model.getVersion());
+    os.writeInt(((jetbrains.mps.smodel.SModel) model).getVersion());
     os.writeBoolean(model instanceof BinarySModel && ((BinarySModel) model).getHeader().isDoNotGenerate());
     os.writeInt(0xabab);
 
-    saveModuleRefList(model.importedLanguages(), os);
-    saveModuleRefList(model.engagedOnGenerationLanguages(), os);
-    saveModuleRefList(model.importedDevkits(), os);
+    saveModuleRefList(((jetbrains.mps.smodel.SModel) model).importedLanguages(), os);
+    saveModuleRefList(((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages(), os);
+    saveModuleRefList(((jetbrains.mps.smodel.SModel) model).importedDevkits(), os);
 
     // imports
-    saveImports(model.importedModels(), os);
-    saveImports(model.getAdditionalModelVersions(), os);
+    saveImports(((jetbrains.mps.smodel.SModel) model).importedModels(), os);
+    saveImports(((jetbrains.mps.smodel.SModel) model).getAdditionalModelVersions(), os);
 
     os.writeInt(0xbaba);
   }

@@ -11,7 +11,7 @@ import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -326,7 +326,7 @@ public class MergeSession {
     SModelReference ref = m.getReference();
     SModel copy = (m instanceof DefaultSModel ?
       new DefaultSModel(ref) :
-      new SModel(ref)
+      new jetbrains.mps.smodel.SModel(ref)
     );
     CopyUtil.copyModelContentAndPreserveIds(m, copy);
     CopyUtil.copyModelProperties(m, copy);

@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.runtime.evaluation.transform;
 
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

@@ -19,9 +19,9 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -53,12 +53,12 @@ public class Inherits_Constraints extends BaseConstraintsDescriptor {
               public boolean accept(SModelDescriptor smd) {
                 return ((SModelStereotype.isStubModelStereotype(smd.getStereotype())) ?
                   "gwt_stub".equals(smd.getStereotype()) :
-                  Sequence.fromIterable(((Iterable<ModuleReference>) smd.getSModel().importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
+                  Sequence.fromIterable(((Iterable<ModuleReference>) ((SModel) smd.getSModel()).importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
                 );
               }
             }).translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
-                return SModelOperations.getNodes((((SModel) smd.getSModel())), "jetbrains.mps.gwt.client.structure.GWTModule");
+                return SModelOperations.getNodes((((org.jetbrains.mps.openapi.model.SModel) smd.getSModel())), "jetbrains.mps.gwt.client.structure.GWTModule");
               }
             });
           }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -90,7 +90,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
       ModelLoadingState oldState = myModel.getState();
       SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion
-      res.setModelDescriptor(this);
+      ((jetbrains.mps.smodel.SModel) res).setModelDescriptor(this);
       if (oldState != myModel.getState()) {
         fireModelStateChanged(oldState, myModel.getState());
       }
@@ -130,7 +130,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
     SModel model = result.getModel();
     if (result.getState() == ModelLoadingState.FULLY_LOADED) {
-      boolean needToSave = model.updateSModelReferences() || model.updateModuleReferences();
+      boolean needToSave = ((jetbrains.mps.smodel.SModel) model).updateSModelReferences() || ((jetbrains.mps.smodel.SModel) model).updateModuleReferences();
 
       if (needToSave && !modelFile.isReadOnly()) {
         SModelRepository.getInstance().markChanged(model);
@@ -252,7 +252,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
-      loadedSModel.setVersion(latestVersion);
+      ((jetbrains.mps.smodel.SModel) loadedSModel).setVersion(latestVersion);
       LOG.error("Version for model " + getSModelReference().getSModelFqName() + " was not set.");
     }
   }

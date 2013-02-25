@@ -36,7 +36,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.*;
-import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -698,7 +697,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   in this case, isDisposed() can be replaced with false
    */
   public boolean isDisposed() {
-    return myModel != null && myModel.isDisposed();
+    return myModel != null && jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel);
   }
 
   public void setId(@Nullable org.jetbrains.mps.openapi.model.SNodeId id) {
@@ -893,7 +892,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private void assertDisposed() {
     //this is only while exceptions are not fixed
     //actually, detached models should not be distinguishable by some "disposed" property
-    if (myModel == null || !myModel.isDisposed()) return;
+    if (myModel == null || !jetbrains.mps.util.SNodeOperations.isModelDisposed(myModel)) return;
 
     String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(myModel);
     if (ourErroredModels.add(modelName)) {
@@ -910,12 +909,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private void fireNodeUnclassifiedReadAccess() {
-    if (myModel == null || !myModel.canFireEvent()) return;
+    if (myModel == null || !((jetbrains.mps.smodel.SModel) myModel).canFireEvent()) return;
     NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
   }
 
   private void fireNodeReadAccess() {
-    if (myModel == null || !myModel.canFireEvent()) return;
+    if (myModel == null || !((jetbrains.mps.smodel.SModel) myModel).canFireEvent()) return;
     NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
@@ -935,7 +934,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private void firePropertyReadAccessInEditor(String propertyName, boolean propertyExistenceCheck) {
-    if (myModel == null || !myModel.canFireEvent()) return;
+    if (myModel == null || !((jetbrains.mps.smodel.SModel) myModel).canFireEvent()) return;
     NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
   }
 
@@ -1490,7 +1489,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public SReference[] getReferencesArray() {
-    List<SReference> refs = jetbrains.mps.util.SNodeOperations.getReferences(this);
+    List<SReference> refs = ((List) jetbrains.mps.util.SNodeOperations.getReferences(this));
     return refs.toArray(new SReference[refs.size()]);
   }
 
@@ -1500,7 +1499,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public Collection<SReference> getReferencesIterable() {
-    return jetbrains.mps.util.SNodeOperations.getReferences(this);
+    return ((List) jetbrains.mps.util.SNodeOperations.getReferences(this));
   }
 
   @Deprecated
@@ -2015,6 +2014,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     public FakeModelDescriptor(@NotNull SModel md) {
       myModel = md;
+    }
+
+    @Override
+    public SModelDescriptor getModelDescriptor() {
+      throw new UnsupportedOperationException();
     }
 
     @Override

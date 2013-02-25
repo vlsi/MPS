@@ -6,13 +6,13 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -25,10 +25,6 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
     return this.createCollection_yg6waa_a(editorContext, node);
   }
 
-  private static boolean renderingCondition_yg6waa_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "comparator", true) != null);
-  }
-
   private EditorCell createCollection_yg6waa_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yg6waa_a");
@@ -36,6 +32,12 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
     if (renderingCondition_yg6waa_a1a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_yg6waa_b0(editorContext, node));
     }
+    return editorCell;
+  }
+
+  private EditorCell createComponent_yg6waa_a0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new AbstractContainerCreator_Component(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -51,10 +53,8 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createComponent_yg6waa_a0(EditorContext editorContext, SNode node) {
-    AbstractCellProvider provider = new AbstractContainerCreator_Component(node);
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    return editorCell;
+  private static boolean renderingCondition_yg6waa_a1a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "comparator", true) != null);
   }
 
   private EditorCell createConstant_yg6waa_a1a(EditorContext editorContext, SNode node) {
@@ -62,16 +62,6 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_yg6waa_a1a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyLeftParenAfterName(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_yg6waa_c1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_yg6waa_c1a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -91,6 +81,16 @@ public class TreeSetCreator_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createConstant_yg6waa_c1a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
+    editorCell.setCellId("Constant_yg6waa_c1a");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }

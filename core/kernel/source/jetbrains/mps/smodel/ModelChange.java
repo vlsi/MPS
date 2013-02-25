@@ -13,37 +13,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+
+import org.jetbrains.mps.openapi.model.SNode;
 
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 class ModelChange {
   static void assertLegalNodeChange(SModel model, SNode node) {
     if (model==null) return;
-    if (model.canFireEvent() && node.getModel() != null && !UndoHelper.getInstance().isInsideUndoableCommand()) {
+    if (((jetbrains.mps.smodel.SModel) model).canFireEvent() && node.getModel() != null && !UndoHelper.getInstance().isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("registered node can only be modified inside undoable command or in 'loading' model " + SNodeUtil.getDebugText(node));
     }
   }
 
   static void assertLegalNodeRegistration(SModel model, SNode node) {
-    if (model.canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
+    if (((jetbrains.mps.smodel.SModel) model).canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("node registration is only allowed inside undoable command  or in 'loading' model " + SNodeUtil.getDebugText(node));
     }
   }
 
   static void assertLegalNodeUnRegistration(SModel model, SNode node) {
-    if (model.canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
+    if (((jetbrains.mps.smodel.SModel) model).canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("node un-registration is only allowed inside undoable command or in 'loading' model" + SNodeUtil.getDebugText(node));
     }
   }
 
   static void assertLegalChange(SModel model) {
-    if (model.canFireEvent() && !ModelAccess.instance().canWrite()) {
+    if (((jetbrains.mps.smodel.SModel) model).canFireEvent() && !ModelAccess.instance().canWrite()) {
       throw new IllegalModelChangeError("You can change model only inside write actions");
     }
   }
 
   static boolean needFireEvents(SModel model, SNode node) {
-    return node.getModel() != null && model.canFireEvent();
+    return node.getModel() != null && ((jetbrains.mps.smodel.SModel) model).canFireEvent();
   }
 }

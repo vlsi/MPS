@@ -58,7 +58,7 @@ public class StyleSheetClass_Constraints extends BaseConstraintsDescriptor {
           }
         }).translate(new ITranslator2<SModel, SNode>() {
           public Iterable<SNode> translate(SModel it) {
-            return SModelOperations.getNodes(((jetbrains.mps.smodel.SModel) ((SModelDescriptor) it).getSModel()), "jetbrains.mps.lang.editor.structure.StyleSheetClass");
+            return SModelOperations.getNodes(((SModel) ((SModelDescriptor) it).getSModel()), "jetbrains.mps.lang.editor.structure.StyleSheetClass");
           }
         });
 

@@ -24,7 +24,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 

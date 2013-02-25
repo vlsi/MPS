@@ -18,7 +18,7 @@ package jetbrains.mps;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.junit.Assert;
 
@@ -61,8 +61,8 @@ public class ModelAssert {
   }
 
   private static void assertSameLanguageAspects(SModel expectedModel, SModel actualModel) {
-    List<ImportElement> expectedLanguageAspects = expectedModel.getAdditionalModelVersions();
-    List<ImportElement> actualLanguageAspects = actualModel.getAdditionalModelVersions();
+    List<ImportElement> expectedLanguageAspects = ((jetbrains.mps.smodel.SModel) expectedModel).getAdditionalModelVersions();
+    List<ImportElement> actualLanguageAspects = ((jetbrains.mps.smodel.SModel) actualModel).getAdditionalModelVersions();
 
     for (ImportElement expectedEl : expectedLanguageAspects) {
       boolean found = false;
@@ -100,8 +100,8 @@ public class ModelAssert {
   }
 
   private static void assertSameImports(SModel expectedModel, SModel actualModel) {
-    assertListsEqual(expectedModel.getAdditionalModelVersions(),
-      actualModel.getAdditionalModelVersions(), new Comparator<ImportElement>() {
+    assertListsEqual(((jetbrains.mps.smodel.SModel) expectedModel).getAdditionalModelVersions(),
+      ((jetbrains.mps.smodel.SModel) actualModel).getAdditionalModelVersions(), new Comparator<ImportElement>() {
         @Override
         public int compare(ImportElement import1, ImportElement import2) {
           if (import1.getModelReference().equals(import2.getModelReference())) {

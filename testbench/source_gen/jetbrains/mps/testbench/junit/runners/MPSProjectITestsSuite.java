@@ -68,7 +68,7 @@ public class MPSProjectITestsSuite extends Suite {
       @Override
       public void run() {
         for (SModel model : Sequence.fromIterable(modelDescriptors)) {
-          for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
+          for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((SModel) ((SModelDescriptor) model).getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
             ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,SModule>from(BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}), model.getModule()));
           }
         }

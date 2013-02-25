@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="mps.collections.runtime_auto" type="mps.solution.library">
+    <MPS_MODULE_XML>
+      <root url="jar://$mps.plugin.jetbrains.mps.core$/lib/mps-collections.jar!/modules/collections.runtime/collections.runtime.msd" />
+    </MPS_MODULE_XML>
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

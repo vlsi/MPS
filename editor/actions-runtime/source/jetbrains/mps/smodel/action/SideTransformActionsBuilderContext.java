@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.nodeEditor.CellSide;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SideTransformActionsBuilderContext {

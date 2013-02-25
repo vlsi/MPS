@@ -21,6 +21,7 @@ public class Migrations30_ActionGroup extends GeneratedActionGroup {
       Migrations30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToNewSNodeMethods_Action");
       Migrations30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToNewSNodeAccess_Action");
       Migrations30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSNodeOpenAPI_Action");
+      Migrations30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSModelOpenAPI_Action");
       Migrations30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSNodeIdOpenAPI_Action");
       Migrations30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSNodeReferenceOpenAPI_Action");
       Migrations30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToSReferenceOpenAPI_Action");

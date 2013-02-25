@@ -69,7 +69,7 @@ public class MissingDependenciesFixer {
           md.getDependencies().add(dep);
           wereChanges = true;
         }
-        for (ModuleReference namespace : CollectionUtil.union(myModelDescriptor.getSModel().importedLanguages(), myModelDescriptor.getSModel().engagedOnGenerationLanguages())) {
+        for (ModuleReference namespace : CollectionUtil.union(((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).importedLanguages(), ((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).engagedOnGenerationLanguages())) {
           if (ScopeOperations.resolveModule(moduleScope, namespace, Language.class) != null) {
             continue;
           }
@@ -81,7 +81,7 @@ public class MissingDependenciesFixer {
           md.getUsedLanguages().add(ref);
           wereChanges = true;
         }
-        for (ModuleReference devKitNamespace : myModelDescriptor.getSModel().importedDevkits()) {
+        for (ModuleReference devKitNamespace : ((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).importedDevkits()) {
           if (ScopeOperations.resolveModule(moduleScope, devKitNamespace, DevKit.class) != null) {
             continue;
           }

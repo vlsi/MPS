@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.persistence.def.v4;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.IReferencePersister;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
@@ -174,7 +174,7 @@ public class ReferencePersister4 implements IReferencePersister {
       } else {
         SModelReference targetModelReference = reference.getTargetSModelReference();
         if (targetModelReference != null) {
-          SModel.ImportElement importElement = SModelOperations.getImportElement(node.getModel(), targetModelReference);
+          jetbrains.mps.smodel.SModel.ImportElement importElement = SModelOperations.getImportElement(node.getModel(), targetModelReference);
           if (importElement != null) {
             int importIndex = importElement.getReferenceID();
             targetModelInfo = importIndex + ".";

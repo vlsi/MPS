@@ -383,7 +383,7 @@
   </root>
   <root nodeRef="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)/7991563320860101130">
     <nodeInfo nodeId="7991563320860101142" fileName="DefaultScope.java" startLine="9" startPosition="79" endLine="10" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7991563320860101137" fileName="DefaultScope.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultScope#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7991563320860101137" fileName="DefaultScope.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultScope#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljava/lang/String;)V" />
     <scopeInfo nodeId="7991563320860101141" fileName="DefaultScope.java" startLine="9" startPosition="79" endLine="10" endPosition="52" />
     <scopeInfo nodeId="7991563320860101137" fileName="DefaultScope.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="7991563320860101143" varName="model" />
@@ -735,8 +735,8 @@
     <nodeInfo nodeId="8401916545537554689" fileName="ModelPlusImportedScope.java" startLine="63" startPosition="28" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8401916545537554692" fileName="ModelPlusImportedScope.java" startLine="65" startPosition="24" endLine="66" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537554700" fileName="ModelPlusImportedScope.java" startLine="66" startPosition="49" endLine="67" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8401916545537554710" fileName="ModelPlusImportedScope.java" startLine="68" startPosition="43" endLine="69" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8401916545537554722" fileName="ModelPlusImportedScope.java" startLine="69" startPosition="86" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401916545537554710" fileName="ModelPlusImportedScope.java" startLine="68" startPosition="43" endLine="69" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401916545537554722" fileName="ModelPlusImportedScope.java" startLine="69" startPosition="102" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537554728" fileName="ModelPlusImportedScope.java" startLine="71" startPosition="14" endLine="72" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537554736" fileName="ModelPlusImportedScope.java" startLine="72" startPosition="66" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537554740" fileName="ModelPlusImportedScope.java" startLine="74" startPosition="7" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -756,8 +756,8 @@
     <nodeInfo nodeId="8401916545537551863" fileName="ModelPlusImportedScope.java" startLine="105" startPosition="28" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8401916545537551870" fileName="ModelPlusImportedScope.java" startLine="107" startPosition="24" endLine="108" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537554634" fileName="ModelPlusImportedScope.java" startLine="108" startPosition="49" endLine="109" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8401916545537551883" fileName="ModelPlusImportedScope.java" startLine="110" startPosition="43" endLine="111" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8401916545537554641" fileName="ModelPlusImportedScope.java" startLine="111" startPosition="86" endLine="112" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401916545537551883" fileName="ModelPlusImportedScope.java" startLine="110" startPosition="43" endLine="111" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8401916545537554641" fileName="ModelPlusImportedScope.java" startLine="111" startPosition="102" endLine="112" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537551909" fileName="ModelPlusImportedScope.java" startLine="113" startPosition="14" endLine="114" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537554648" fileName="ModelPlusImportedScope.java" startLine="114" startPosition="66" endLine="115" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537551850" fileName="ModelPlusImportedScope.java" startLine="116" startPosition="7" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -781,7 +781,7 @@
     <nodeInfo nodeId="8401916545537551791" fileName="ModelPlusImportedScope.java" startLine="123" startPosition="56" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8401916545537551754" fileName="ModelPlusImportedScope.java" startLine="136" startPosition="62" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2889239041433296775" fileName="ModelPlusImportedScope.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8401916545537551308" fileName="ModelPlusImportedScope.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelPlusImportedScope#(Ljetbrains/mps/smodel/SModel;ZLjetbrains/mps/smodel/IScope;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="8401916545537551308" fileName="ModelPlusImportedScope.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelPlusImportedScope#(Lorg/jetbrains/mps/openapi/model/SModel;ZLjetbrains/mps/smodel/IScope;Ljava/lang/String;)V" />
     <nodeInfo nodeId="8401916545537551380" fileName="ModelPlusImportedScope.java" startLine="37" startPosition="38" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8401916545537554802" fileName="ModelPlusImportedScope.java" startLine="84" startPosition="0" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8401916545537551678" fileName="ModelPlusImportedScope.java" startLine="121" startPosition="9" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />

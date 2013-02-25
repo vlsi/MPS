@@ -25,6 +25,11 @@ public class ConcreteNodeEx extends ConcreteNode implements INode {
     }
 
     @Override
+    public String text() {
+        return getText();
+    }
+
+    @Override
     public Iterable<INode> getChidlren() {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }

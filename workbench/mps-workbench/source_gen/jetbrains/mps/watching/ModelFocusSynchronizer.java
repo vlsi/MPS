@@ -7,7 +7,7 @@ import com.intellij.ide.FrameStateManager;
 import com.intellij.ide.FrameStateListener;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Set;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.project.Project;

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelScope;
@@ -52,6 +52,11 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   protected BaseSModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
     mySource = source;
+  }
+
+  @Override
+  public SModelDescriptor getModelDescriptor() {
+    return this;
   }
 
   @Override
@@ -127,7 +132,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     SModel smodel = getCurrentModelInternal();
     if (smodel != null) {
       fireBeforeModelDisposed(smodel);
-      smodel.dispose();
+      ((jetbrains.mps.smodel.SModel) smodel).dispose();
     }
     clearListeners();
   }

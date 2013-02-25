@@ -27,6 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
 import java.awt.Color;
 import javax.swing.UIManager;
@@ -248,7 +249,7 @@ import javax.swing.UIManager;
 
     @Override
     public Icon getIcon(SNodeReference group) {
-      return IconManager.getIconFor(((SNodePointer) group).getNode());
+      return IconManager.getIconFor(((SNodePointer) group).resolve(MPSModuleRepository.getInstance()));
     }
   }
 

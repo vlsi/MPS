@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -23,9 +23,6 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
-import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
-import jetbrains.mps.project.*;
-import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
 import jetbrains.mps.project.facets.TestsFacet;
@@ -240,7 +237,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   public List<SNode> getConceptDeclarations() {
     SModelDescriptor structureModel = getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptyList();
-    return structureModel.getSModel().getFastNodeFinder().getNodes(SNodeUtil.concept_ConceptDeclaration, true);
+    return ((jetbrains.mps.smodel.SModel) structureModel.getSModel()).getFastNodeFinder().getNodes(SNodeUtil.concept_ConceptDeclaration, true);
   }
 
   public List<EditableSModelDescriptor> getUtilModels() {

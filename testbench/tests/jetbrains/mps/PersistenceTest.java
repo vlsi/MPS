@@ -20,7 +20,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -79,7 +79,7 @@ public class PersistenceTest extends BaseMPSTest {
                   }
                   assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                   ModelAssert.assertDeepModelEquals(model, result.getModel());
-                  result.getModel().dispose();
+                  ((jetbrains.mps.smodel.SModel) result.getModel()).dispose();
                 }
               } catch (AssertionFailedError e) {
                 e.printStackTrace();
@@ -164,8 +164,8 @@ public class PersistenceTest extends BaseMPSTest {
 
                 ModelAccess.instance().runWriteAction(new Runnable() {
                   public void run() {
-                    resultFrom.getModel().dispose();
-                    resultTo.getModel().dispose();
+                    ((jetbrains.mps.smodel.SModel) resultFrom.getModel()).dispose();
+                    ((jetbrains.mps.smodel.SModel) resultTo.getModel()).dispose();
                   }
                 });
                 ModelAccess.instance().flushEventQueue();

@@ -64,7 +64,7 @@ class Memento {
   Memento(jetbrains.mps.openapi.editor.EditorContext context, boolean full) {
     EditorComponent nodeEditor = (EditorComponent) context.getEditorComponent();
     SNode editedNode = nodeEditor.getEditedNode();
-    if (editedNode == null || (!jetbrains.mps.util.SNodeOperations.isDisposed(editedNode) && editedNode.getModel() != null && !editedNode.getModel().isDisposed())) {
+    if (editedNode == null || (!jetbrains.mps.util.SNodeOperations.isDisposed(editedNode) && editedNode.getModel() != null && !jetbrains.mps.util.SNodeOperations.isModelDisposed(editedNode.getModel()))) {
       mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
       ArrayList<EditorCell> foldedCells = new ArrayList<EditorCell>(nodeEditor.getFoldedCells());
       Collections.sort(foldedCells, FOLDED_CELLS_COMPARATOR);

@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 

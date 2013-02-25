@@ -10,6 +10,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -22,7 +23,7 @@ public class NodeFileStatusMappingExt extends NodeFileStatusMapping {
   @Override
   protected void statusChanged(FileStatusManager fsm, MPSNodesVirtualFileSystem nvfs, SNodeReference nodePointer) {
     super.statusChanged(fsm, nvfs, nodePointer);
-    SNode currentNode = ((SNodePointer) nodePointer).getNode();
+    SNode currentNode = ((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance());
     for (RelationDescriptor d : ListSequence.fromList(myProject.getComponent(ProjectPluginManager.class).getTabDescriptors())) {
       SNode baseNode = d.getBaseNode(currentNode);
       if (baseNode != null && baseNode != currentNode) {

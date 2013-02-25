@@ -49,8 +49,8 @@ public class GenParameters {
     return (List) Collections.unmodifiableList(myModels);
   }
 
-  public List<jetbrains.mps.smodel.SModel> getSModels() {
-    List<jetbrains.mps.smodel.SModel> result = new ArrayList<jetbrains.mps.smodel.SModel>();
+  public List<SModel> getSModels() {
+    List<SModel> result = new ArrayList<SModel>();
     for (SModel sm : myModels) {
       result.add(((SModelDescriptor) sm).getSModel());
     }

@@ -20,7 +20,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModelId;
 
@@ -189,13 +189,13 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
     @Override
     protected SModel createModel() {
-      SModel model = new SModel(getSModelReference()) {
+      SModel model = new jetbrains.mps.smodel.SModel(getSModelReference()) {
         @Override
         public boolean canFireEvent() {
           return false;
         }
       };
-      model.addEngagedOnGenerationLanguage(BootstrapLanguages.DESCRIPTOR);
+      ((jetbrains.mps.smodel.SModel) model).addEngagedOnGenerationLanguage(BootstrapLanguages.DESCRIPTOR);
       return model;
     }
 

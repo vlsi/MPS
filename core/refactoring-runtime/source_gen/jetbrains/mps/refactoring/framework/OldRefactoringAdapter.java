@@ -4,7 +4,7 @@ package jetbrains.mps.refactoring.framework;
 
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.ArrayList;

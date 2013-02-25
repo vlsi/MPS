@@ -7,7 +7,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.checkedName.PropertyReference;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -25,7 +24,7 @@ public class FinderDeclaration_Behavior {
   }
 
   public static String call_getGeneratedClassLongName_1213877240120(SNode thisNode) {
-    return ((SModel) SNodeOperations.getModel(thisNode)).getModelDescriptor().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(thisNode);
+    return SNodeOperations.getModel(thisNode).getModelDescriptor().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(thisNode);
   }
 
   public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {

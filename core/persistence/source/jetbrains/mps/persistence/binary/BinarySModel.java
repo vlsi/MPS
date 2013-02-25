@@ -32,7 +32,6 @@ import java.util.Collections;
  * evgeny, 11/21/12
  */
 public class BinarySModel extends SModel {
-
   private final BinaryModelHeader header;
 
   public BinarySModel(@NotNull BinaryModelHeader header) {

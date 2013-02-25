@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +19,7 @@ public class NodeFeature extends AbstractNodeFeature {
   @Nullable
   @Override
   public Feature getParent() {
-    SNode node = ((SNodePointer) getNodePointer()).getNode();
+    SNode node = ((SNodePointer) getNodePointer()).resolve(MPSModuleRepository.getInstance());
     SNode parentNode = SNodeOperations.getParent(node);
     if (parentNode == null) {
       String virtualPackage = SPropertyOperations.getString(node, "virtualPackage");

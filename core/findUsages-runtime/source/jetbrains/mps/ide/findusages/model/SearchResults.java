@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.findusages.model;
 
 import jetbrains.mps.findUsages.UsagesList;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;

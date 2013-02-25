@@ -8,8 +8,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -37,12 +39,12 @@ public class BreakpointLocation {
 
   @Nullable
   public SNode getSNode() {
-    return ((SNodePointer) myNodePointer).getNode();
+    return ((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance());
   }
 
   @Nullable
   public TraceablePositionInfo getTargetCodePosition() {
-    SModel model = ((SNodePointer) myNodePointer).getModel();
+    SModel model = SNodeOperations.getModelFromNodeReference(((SNodePointer) myNodePointer));
     if (model == null) {
       return null;
     }
@@ -53,7 +55,7 @@ public class BreakpointLocation {
     final Wrappers._T<TraceablePositionInfo> positionForNode = new Wrappers._T<TraceablePositionInfo>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        positionForNode.value = debugInfo.getPositionForNode(((SNodePointer) myNodePointer).getNode());
+        positionForNode.value = debugInfo.getPositionForNode(((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance()));
       }
     });
     return positionForNode.value;
@@ -61,7 +63,7 @@ public class BreakpointLocation {
 
   @Nullable
   public String getTargetUnitName() {
-    return TraceInfoUtil.getUnitName(getTargetCodePosition(), ((SNodePointer) myNodePointer).getModel());
+    return TraceInfoUtil.getUnitName(getTargetCodePosition(), SNodeOperations.getModelFromNodeReference(((SNodePointer) myNodePointer)));
   }
 
   public boolean isValid() {
@@ -89,10 +91,10 @@ public class BreakpointLocation {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        SNode node = ((SNodePointer) myNodePointer).getNode();
+        SNode node = ((SNodePointer) myNodePointer).resolve(MPSModuleRepository.getInstance());
         if (node != null) {
           SNode root = node.getContainingRoot();
-          return node + " in " + root + " (" + ((SNodePointer) myNodePointer).getModel().getSModelReference().getSModelFqName() + ")";
+          return node + " in " + root + " (" + SNodeOperations.getModelFromNodeReference(((SNodePointer) myNodePointer)).getSModelReference().getSModelFqName() + ")";
         } else {
           return ((SNodePointer) myNodePointer).toString();
         }

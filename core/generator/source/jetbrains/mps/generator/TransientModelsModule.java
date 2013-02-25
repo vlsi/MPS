@@ -25,6 +25,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -103,7 +104,7 @@ public class TransientModelsModule extends ClassLoadingModule {
     }
   }
 
-  public boolean addModelToKeep(jetbrains.mps.smodel.SModel model, boolean force) {
+  public boolean addModelToKeep(SModel model, boolean force) {
     assert model instanceof TransientSModel;
     String modelRef = model.getReference().toString();
     if (force) {
@@ -123,7 +124,7 @@ public class TransientModelsModule extends ClassLoadingModule {
     return true;
   }
 
-  public boolean isModelToKeep(jetbrains.mps.smodel.SModel model) {
+  public boolean isModelToKeep(SModel model) {
     assert model instanceof TransientSModel;
     return myModelsToKeep.contains(model.getReference().toString());
   }
@@ -267,7 +268,7 @@ public class TransientModelsModule extends ClassLoadingModule {
     private void dropModel() {
       if (mySModel != null) {
         LOG.debug("Dropped " + getSModelReference());
-        mySModel.dispose();
+        ((jetbrains.mps.smodel.SModel) mySModel).dispose();
         mySModel = null;
       }
     }

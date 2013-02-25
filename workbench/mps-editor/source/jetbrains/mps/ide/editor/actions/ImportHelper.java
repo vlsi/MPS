@@ -25,7 +25,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -168,7 +168,7 @@ public class ImportHelper {
           langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE, Language.class));
 
           for (Language l : langs) {
-            Collection<ModuleReference> impLangs = myModel.getSModel().getModelDepsManager().getAllImportedLanguages();
+            Collection<ModuleReference> impLangs = ((jetbrains.mps.smodel.SModel) myModel.getSModel()).getModelDepsManager().getAllImportedLanguages();
             if (impLangs.contains(l.getModuleReference())) continue;
             importCandidates.add(l.getModuleReference());
           }
@@ -195,7 +195,7 @@ public class ImportHelper {
               myContextModule.addUsedLanguage((ModuleReference) ref);
               reload = true;
             }
-            myModel.getSModel().addLanguage((ModuleReference) ref);
+            ((jetbrains.mps.smodel.SModel) myModel.getSModel()).addLanguage((ModuleReference) ref);
           }
           if (reload) {
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
@@ -305,7 +305,7 @@ public class ImportHelper {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         @Override
         public void run() {
-          myModel.getSModel().addModelImport(getModelReference(), false);
+          ((jetbrains.mps.smodel.SModel) myModel.getSModel()).addModelImport(getModelReference(), false);
         }
       });
     }

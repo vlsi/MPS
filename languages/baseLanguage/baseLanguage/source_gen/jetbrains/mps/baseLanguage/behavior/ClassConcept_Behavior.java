@@ -375,6 +375,10 @@ public class ClassConcept_Behavior {
     });
   }
 
+  public static boolean call_canBeStatic_3190746170657193424(SNode thisNode) {
+    return Classifier_Behavior.call_isInner_521412098689998677(thisNode) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_7405920559687241224", new Object[]{})) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Interface"));
+  }
+
   public static SNode getContextClass_8008512149545173402(SNode expr) {
     SNode contextNode = expr;
     SNode parent = SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);

@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.logging.Logger;
 

@@ -13,7 +13,7 @@ import jetbrains.mps.tool.builder.FileMPSProject;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.ide.java.newparser.JavaParser;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
@@ -97,7 +97,7 @@ public class Utils {
     mr.setModule(ourModule);
     mr.setPath(path);
 
-    Iterator<org.jetbrains.mps.openapi.model.SModel> models = mr.loadModels().iterator();
+    Iterator<SModel> models = mr.loadModels().iterator();
     Assert.assertTrue("No models returned from model root", models.hasNext());
 
     Iterator<? extends SNode> roots = models.next().getRootNodes().iterator();
@@ -126,7 +126,7 @@ public class Utils {
     mr.setPath(dirPath);
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-    for (org.jetbrains.mps.openapi.model.SModel md : Sequence.fromIterable(mr.loadModels())) {
+    for (SModel md : Sequence.fromIterable(mr.loadModels())) {
       SModel m = ((SModelDescriptor) md).getSModel();
       ListSequence.fromList(models).addElement(m);
     }
@@ -208,14 +208,14 @@ public class Utils {
       }
     }
 
-    Iterable<org.jetbrains.mps.openapi.model.SModel> srcModels;
+    Iterable<SModel> srcModels;
     List<SModel> srcModelsX = ListSequence.fromList(new ArrayList<SModel>());
 
     src2.setModule(mod2);
     src2.setPath(sourcePath);
     srcModels = src2.loadModels();
 
-    for (org.jetbrains.mps.openapi.model.SModel m : Sequence.fromIterable(srcModels)) {
+    for (SModel m : Sequence.fromIterable(srcModels)) {
       // <node> 
 
       SModel zzz = ((SModelDescriptor) m).getSModel();

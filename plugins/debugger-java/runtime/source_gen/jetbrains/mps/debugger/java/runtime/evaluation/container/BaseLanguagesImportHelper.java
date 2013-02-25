@@ -10,10 +10,11 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.DynamicReference;
@@ -29,7 +30,7 @@ public abstract class BaseLanguagesImportHelper {
   public void tryToImport(SNode container, List<SNodeReference> nodesToImport) {
     List<SNode> nodes = CopyUtil.copy(ListSequence.fromList(nodesToImport).select(new ISelector<SNodeReference, SNode>() {
       public SNode select(SNodeReference it) {
-        return (SNode) ((SNodePointer) it).getNode();
+        return (SNode) ((SNodePointer) it).resolve(MPSModuleRepository.getInstance());
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

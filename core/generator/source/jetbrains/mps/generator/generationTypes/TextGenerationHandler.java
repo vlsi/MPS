@@ -50,7 +50,7 @@ public class TextGenerationHandler extends GenerationHandlerBase {
   @Override
   public boolean handleOutput(SModule module, SModel inputModel, GenerationStatus status, IOperationContext ocontext, ProgressMonitor progressMonitor) {
     String targetDir = ((IModule) module).getOutputFor(inputModel);
-    jetbrains.mps.smodel.SModel outputModel = status.getOutputModel();
+    SModel outputModel = status.getOutputModel();
     if (outputModel == null) return true;
     boolean generatedOk = true;
     // generate files

@@ -9,6 +9,7 @@ import java.util.Map;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -19,7 +20,6 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -57,7 +57,7 @@ public class CollectTests_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getSModel().importedLanguages().contains(ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
+    return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModel) ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getSModel()).importedLanguages().contains(ModuleReference.fromString("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -112,7 +112,7 @@ public class CollectTests_Action extends BaseAction {
 
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
     final Logger LOG = Logger.getLogger("jetbrains.mps.testbench.suite");
-    final SModel model = ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getSModel();
+    final org.jetbrains.mps.openapi.model.SModel model = ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getSModel();
     final Wrappers._T<List<ModuleReference>> solutions = new Wrappers._T<List<ModuleReference>>();
     final Wrappers._T<List<ModuleReference>> existing = new Wrappers._T<List<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -137,7 +137,7 @@ public class CollectTests_Action extends BaseAction {
             continue;
           }
 
-          final Wrappers._T<SModel> smodel = new Wrappers._T<SModel>();
+          final Wrappers._T<org.jetbrains.mps.openapi.model.SModel> smodel = new Wrappers._T<org.jetbrains.mps.openapi.model.SModel>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               try {
@@ -165,7 +165,7 @@ public class CollectTests_Action extends BaseAction {
                         SPropertyOperations.set(sref, "moduleID", mref.getModuleId().toString());
                       }
                       ListSequence.fromList(SLinkOperations.getTargets(suite.value, "testRef", true)).addElement(tref.invoke());
-                      model.addModelImport(smd.getSModelReference(), false);
+                      ((SModel) model).addModelImport(smd.getSModelReference(), false);
                       ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getModule().addDependency(module.getModuleReference(), false);
                     }
                   }, ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class));
@@ -209,7 +209,7 @@ public class CollectTests_Action extends BaseAction {
     }
   }
 
-  private List<ModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
+  private List<ModuleReference> existingSolutions(org.jetbrains.mps.openapi.model.SModel model, final Map<String, Object> _params) {
     return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode ms) {
         return BehaviorReflection.invokeVirtual(ModuleReference.class, SLinkOperations.getTarget(ms, "moduleRef", true), "virtual_moduleReference_1280144168199513544", new Object[]{});

@@ -2,22 +2,22 @@
 <debugInfo>
   <root nodeRef="r:7ed7a88c-17bf-40a5-be72-b50cea0614c7(jetbrains.mps.lang.descriptor.editor)/9020561928507175846">
     <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="22" startPosition="97" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="23" startPosition="48" endLine="24" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="23" startPosition="48" endLine="24" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="25" startPosition="83" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1698302279987270977" fileName="LanguageDescriptor_Editor.java" startLine="29" startPosition="90" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1698302279987270977" fileName="LanguageDescriptor_Editor.java" startLine="30" startPosition="96" endLine="31" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1698302279987270977" fileName="LanguageDescriptor_Editor.java" startLine="31" startPosition="49" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1698302279987270977" fileName="LanguageDescriptor_Editor.java" startLine="31" startPosition="49" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1698302279987270977" fileName="LanguageDescriptor_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="36" startPosition="88" endLine="37" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="37" startPosition="105" endLine="38" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="38" startPosition="47" endLine="39" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="39" startPosition="34" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="21" startPosition="89" endLine="22" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="22" startPosition="97" endLine="23" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="23" startPosition="48" endLine="24" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="23" startPosition="48" endLine="24" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="25" startPosition="83" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="29" startPosition="88" endLine="30" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="30" startPosition="105" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="31" startPosition="47" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="32" startPosition="34" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="36" startPosition="90" endLine="37" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="37" startPosition="96" endLine="38" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="38" startPosition="49" endLine="39" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="38" startPosition="49" endLine="39" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1698302279987270976" fileName="LanguageDescriptor_Editor.java" startLine="43" startPosition="88" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1698302279987270976" fileName="LanguageDescriptor_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1698302279987270976" fileName="LanguageDescriptor_Editor.java" startLine="45" startPosition="33" endLine="46" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -31,15 +31,15 @@
     <nodeInfo nodeId="1698302279987270976" fileName="LanguageDescriptor_Editor.java" startLine="54" startPosition="78" endLine="55" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1698302279987270976" fileName="LanguageDescriptor_Editor.java" startLine="56" startPosition="10" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1698302279987270977" fileName="LanguageDescriptor_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_jnz8pu_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_jnz8pu_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_jnz8pu_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_jnz8pu_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1698302279987270976" fileName="LanguageDescriptor_Editor.java" startLine="51" startPosition="59" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_jnz8pu_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_jnz8pu_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="1698302279987270976" fileName="LanguageDescriptor_Editor.java" startLine="43" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_jnz8pu_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" />
-    <scopeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="23" startPosition="48" endLine="24" endPosition="81" />
-    <scopeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="83" />
-    <scopeInfo nodeId="1698302279987270977" fileName="LanguageDescriptor_Editor.java" startLine="31" startPosition="49" endLine="32" endPosition="81" />
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="23" startPosition="48" endLine="24" endPosition="81" />
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="24" startPosition="81" endLine="25" endPosition="83" />
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="38" startPosition="49" endLine="39" endPosition="81" />
     <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="9020561928507175846" varName="editorContext" />
       <varInfo nodeId="9020561928507175846" varName="node" />
@@ -48,26 +48,26 @@
       <varInfo nodeId="1698302279987270976" varName="manager" />
       <varInfo nodeId="1698302279987270976" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1698302279987270977" fileName="LanguageDescriptor_Editor.java" startLine="29" startPosition="90" endLine="33" endPosition="22">
-      <varInfo nodeId="1698302279987270977" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="36" startPosition="88" endLine="40" endPosition="22">
+    <scopeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="29" startPosition="88" endLine="33" endPosition="22">
       <varInfo nodeId="1698302279987270974" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="21" startPosition="89" endLine="26" endPosition="22">
-      <varInfo nodeId="1698302279987270972" varName="editorCell" />
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="36" startPosition="90" endLine="40" endPosition="22">
+      <varInfo nodeId="9020561928507175846" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1698302279987270977" fileName="LanguageDescriptor_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="1698302279987270977" varName="editorContext" />
-      <varInfo nodeId="1698302279987270977" varName="node" />
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="21" startPosition="89" endLine="26" endPosition="22">
+      <varInfo nodeId="9020561928507175846" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="36" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1698302279987270974" fileName="LanguageDescriptor_Editor.java" startLine="29" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1698302279987270974" varName="editorContext" />
       <varInfo nodeId="1698302279987270974" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1698302279987270972" fileName="LanguageDescriptor_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="1698302279987270972" varName="editorContext" />
-      <varInfo nodeId="1698302279987270972" varName="node" />
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="36" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="9020561928507175846" varName="editorContext" />
+      <varInfo nodeId="9020561928507175846" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9020561928507175846" fileName="LanguageDescriptor_Editor.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="9020561928507175846" varName="editorContext" />
+      <varInfo nodeId="9020561928507175846" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1698302279987270976" fileName="LanguageDescriptor_Editor.java" startLine="43" startPosition="88" endLine="57" endPosition="22">
       <varInfo nodeId="1698302279987270976" varName="attributeConcept" />

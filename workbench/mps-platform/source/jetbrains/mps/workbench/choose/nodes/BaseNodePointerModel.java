@@ -72,7 +72,7 @@ public abstract class BaseNodePointerModel extends BaseMPSChooseModel<SNodeRefer
             if (
               node == null ||
                 node.getModel() == null ||
-                node.getModel().isDisposed() ||
+                jetbrains.mps.util.SNodeOperations.isModelDisposed(node.getModel()) ||
                 node.getModel().getModelDescriptor() == null) {
               return;
             }

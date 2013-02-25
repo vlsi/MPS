@@ -9,19 +9,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
 public class Type_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_a1nfgp_a(editorContext, node);
-  }
-
-  private static boolean renderingCondition_a1nfgp_a0(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "abstract");
   }
 
   private EditorCell createAlternation_a1nfgp_a(EditorContext editorContext, SNode node) {
@@ -36,18 +32,22 @@ public class Type_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private static boolean renderingCondition_a1nfgp_a0(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "abstract");
+  }
+
+  private EditorCell createError_a1nfgp_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<type>");
+    editorCell.setCellId("Error_a1nfgp_a0");
+    return editorCell;
+  }
+
   private EditorCell createComponent_a1nfgp_a0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     editorCell.getStyle().putAll(style);
-    return editorCell;
-  }
-
-  private EditorCell createError_a1nfgp_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<type>");
-    editorCell.setCellId("Error_a1nfgp_a0");
     return editorCell;
   }
 }

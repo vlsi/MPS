@@ -10,9 +10,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -48,6 +48,11 @@ public class EditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
+  private EditorCell createIndentCell_8q27zs_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
+    return result;
+  }
+
   private EditorCell createCollection_8q27zs_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_8q27zs_b0");
@@ -56,17 +61,6 @@ public class EditorComponent extends AbstractCellProvider {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_8q27zs_a1a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_8q27zs_b1a(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCollection_8q27zs_b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
-    editorCell.setCellId("Collection_8q27zs_b1a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createIndentCell_8q27zs_a1b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_8q27zs_b1b0(editorContext, node));
     return editorCell;
   }
 
@@ -80,9 +74,15 @@ public class EditorComponent extends AbstractCellProvider {
     return editorCell;
   }
 
-  private EditorCell createIndentCell_8q27zs_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent result = new EditorCell_Indent(editorContext, node);
-    return result;
+  private EditorCell createCollection_8q27zs_b1a(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_8q27zs_b1a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(this.createIndentCell_8q27zs_a1b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_8q27zs_b1b0(editorContext, node));
+    return editorCell;
   }
 
   private EditorCell createIndentCell_8q27zs_a1b0(EditorContext editorContext, SNode node) {

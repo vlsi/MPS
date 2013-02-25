@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.diff.changes;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class ModuleDependencyChange extends DependencyChange {
@@ -52,29 +52,29 @@ public class ModuleDependencyChange extends DependencyChange {
   public static   enum DependencyType {
     USED_LANG("Used Language", new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.addLanguage(module);
+        ((jetbrains.mps.smodel.SModel) model).addLanguage(module);
       }
     }, new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.deleteLanguage(module);
+        ((jetbrains.mps.smodel.SModel) model).deleteLanguage(module);
       }
     }),
     USED_DEVKIT("Used Devkit", new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.addDevKit(module);
+        ((jetbrains.mps.smodel.SModel) model).addDevKit(module);
       }
     }, new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.deleteDevKit(module);
+        ((jetbrains.mps.smodel.SModel) model).deleteDevKit(module);
       }
     }),
     LANG_ENGAGED_ON_GENERATION("Language Engaged on Generation", new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.addEngagedOnGenerationLanguage(module);
+        ((jetbrains.mps.smodel.SModel) model).addEngagedOnGenerationLanguage(module);
       }
     }, new _FunctionTypes._void_P2_E0<SModel, ModuleReference>() {
       public void invoke(SModel model, ModuleReference module) {
-        model.removeEngagedOnGenerationLanguage(module);
+        ((jetbrains.mps.smodel.SModel) model).removeEngagedOnGenerationLanguage(module);
       }
     });
 

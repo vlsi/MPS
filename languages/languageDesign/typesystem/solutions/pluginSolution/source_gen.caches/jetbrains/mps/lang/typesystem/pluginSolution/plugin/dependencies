@@ -8,6 +8,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelId" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeUndoableAction" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="jetbrains.mps.smodel.BaseSpecialModelDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.pluginSolution.plugin.Default_KeymapChanges" file="Default_KeymapChanges.java">

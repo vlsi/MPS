@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class ReplacementView {
   private UsagesView myUsagesView;
@@ -90,7 +91,7 @@ public class ReplacementView {
   public List<SNode> getExecuteResult(List<SNodeReference> nodes) {
     List<SNode> results = ListSequence.fromList(new ArrayList<SNode>());
     for (SNodeReference nodePointer : nodes) {
-      ListSequence.fromList(results).addElement(((SNodePointer) nodePointer).getNode());
+      ListSequence.fromList(results).addElement(((SNodePointer) nodePointer).resolve(MPSModuleRepository.getInstance()));
     }
     return results;
   }

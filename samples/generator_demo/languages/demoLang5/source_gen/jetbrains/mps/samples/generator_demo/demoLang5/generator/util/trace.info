@@ -11,7 +11,7 @@
     <nodeInfo nodeId="3978102045101783041" fileName="TextUtil.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="3978102045101784020" fileName="TextUtil.java" startLine="26" startPosition="7" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3978102045101783037" fileName="TextUtil.java" startLine="21" startPosition="27" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3978102045101718976" fileName="TextUtil.java" startLine="18" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fixText#(Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="3978102045101718976" fileName="TextUtil.java" startLine="18" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fixText#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
     <scopeInfo nodeId="3978102045101718905" fileName="TextUtil.java" startLine="15" startPosition="21" endLine="15" endPosition="21" />
     <scopeInfo nodeId="3978102045101783042" fileName="TextUtil.java" startLine="23" startPosition="39" endLine="24" endPosition="76" />
     <scopeInfo nodeId="3978102045101718902" fileName="TextUtil.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />

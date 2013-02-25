@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Point;
@@ -126,7 +126,7 @@ public class DiffEditorsGroup {
     return null;
   }
 
-  private static SModel check_s6qw4f_a0d0a1a5(SNode checkedDotOperand) {
+  private static jetbrains.mps.smodel.SModel check_s6qw4f_a0d0a1a5(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
@@ -161,14 +161,14 @@ public class DiffEditorsGroup {
     return null;
   }
 
-  private static jetbrains.mps.smodel.SNode check_s6qw4f_a0a0a0a1a0a0b6(SModel checkedDotOperand, SNodeId selectionId) {
+  private static jetbrains.mps.smodel.SNode check_s6qw4f_a0a0a0a1a0a0b6(jetbrains.mps.smodel.SModel checkedDotOperand, SNodeId selectionId) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode(selectionId);
     }
     return null;
   }
 
-  private static SModel check_s6qw4f_a0a0a0a0b0a0a1g(SNode checkedDotOperand) {
+  private static jetbrains.mps.smodel.SModel check_s6qw4f_a0a0a0a0b0a0a1g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

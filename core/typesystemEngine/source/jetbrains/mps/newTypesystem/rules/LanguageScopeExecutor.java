@@ -16,23 +16,16 @@
 package jetbrains.mps.newTypesystem.rules;
 
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 
-/**
- * Created with IntelliJ IDEA.
- * User: fyodor
- * Date: 9/27/12
- * Time: 2:18 PM
- * To change this template use File | Settings | File Templates.
- */
 public class LanguageScopeExecutor {
 
   public static <T> T execWithModelScope(SModel sModel, Computable<T> computable) {
     LanguageScope languageScope = sModel == null ? LanguageScope.getGlobal() :
       LanguageScopeFactory.getInstance().getLanguageScope(
-        sModel.getModelDepsManager().getAllImportedLanguages());
+        ((jetbrains.mps.smodel.SModel) sModel).getModelDepsManager().getAllImportedLanguages());
     try{
       LanguageScope.pushCurrent(languageScope, computable);
       return computable.compute();

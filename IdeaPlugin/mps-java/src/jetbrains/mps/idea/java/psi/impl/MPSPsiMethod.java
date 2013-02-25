@@ -76,8 +76,8 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
 
   public MPSPsiMethod(SNodeId id, String concept, String containingRole) {
     super(id, concept, containingRole);
-    addChild(null, new MPSPsiMethodModifierList());
-    addChild(null, new MPSPsiParameterList());
+    addChildLast(new MPSPsiMethodModifierList());
+    addChildLast(new MPSPsiParameterList());
   }
 
   @Nullable
@@ -117,7 +117,7 @@ public class MPSPsiMethod extends MPSPsiNode implements PsiMethod {
 
   @Override
   public boolean isConstructor() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return false;
   }
 
   @Override
