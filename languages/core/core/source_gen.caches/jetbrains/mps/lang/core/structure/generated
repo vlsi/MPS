@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-92tu7rxl21zsoz29xy7caobqrksdhqe">
+<dependencies version="2" modelHash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr">
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9bdhyw4fyjj9lptx5av16k73e6s932q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="d33pwg8term9707jkypdzl3kqv7gm9u" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-ba4e5p73t42agbvtgpfhd35wq3mw1tc">
@@ -13,6 +13,9 @@
     <dep root="1224608834445" />
     <dep root="1233160296597" />
     <dep root="1234971358450" />
+    <dep root="1319728274783077719" />
+    <dep root="1319728274783151479" />
+    <dep root="1319728274784973096" />
     <dep root="1835621062190663819" />
     <dep root="201537367881071930" />
     <dep root="2565736246230036150" />
@@ -111,6 +114,15 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3361475375157466558" name="ScopeFacade" hash="-3vore2lptghoma64ivfj1py3m95ybzp">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1319728274783077719" name="ImplementationPart" hash="e3iqb8yytadcu6335k0x0xec91tah78">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1319728274783151479" name="ImplementationContainer" hash="-dgpcm28pg605t6vd3347z17bagr24t6">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1319728274784973096" name="InterfacePart" hash="-8caxpdfpqq0lko07qa326sybtox7aew">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

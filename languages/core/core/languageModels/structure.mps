@@ -130,6 +130,15 @@
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3361475375157466558">
       <property name="name" nameId="1169194664001" value="ScopeFacade" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1319728274783077719">
+      <property name="name" nameId="1169194664001" value="ImplementationPart" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1319728274783151479">
+      <property name="name" nameId="1169194664001" value="ImplementationContainer" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1319728274784973096">
+      <property name="name" nameId="1169194664001" value="InterfacePart" />
+    </node>
   </roots>
   <root id="1082983041843" />
   <root id="1082983657062" />
@@ -265,5 +274,12 @@
   </root>
   <root id="1835621062190663819" />
   <root id="3361475375157466558" />
+  <root id="1319728274783077719">
+    <node role="extends" roleId="tpce.1169127546356" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1319728274783095066">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3361475375157466558" resolveInfo="ScopeFacade" />
+    </node>
+  </root>
+  <root id="1319728274783151479" />
+  <root id="1319728274784973096" />
 </model>
 
