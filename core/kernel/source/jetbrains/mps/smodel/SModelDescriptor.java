@@ -43,10 +43,25 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   //------
 
+  @Deprecated
+  /**
+   * Replace with getReference() in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   SModelReference getSModelReference();
 
+  @Deprecated
+  /**
+   * Replace with SNodeOperations.getModelLongName(m.getSModel()) in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   String getLongName();
 
+  @Deprecated
+  /**
+   * Replace with SModelStereotype.getStereotype(m.getSModel()) in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   String getStereotype();
 
   boolean isLoaded();
@@ -59,7 +74,11 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   //------
 
-  //not used, left for compatibility
+  @Deprecated
+  /**
+   * Replace with getModule() instanceof TransientModelsModule in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public boolean isTransient();
 
   //------
