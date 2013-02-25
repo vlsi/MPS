@@ -26,6 +26,7 @@ import jetbrains.mps.editor.runtime.style.*;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.*;
 import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.util.Pair;
 
 import java.awt.Color;
 import java.util.HashMap;
@@ -34,7 +35,12 @@ import java.util.Map;
 public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColorsListener {
   
   protected static EditorColorsScheme ourColorsScheme = EditorColorsManager.getInstance().getGlobalScheme();
-  protected final Map<String,String> IDEAStylesMapping = new HashMap<String, String>();
+  protected final static Map<String,String> IDEAStylesMapping = new HashMap<String, String>();
+  protected final static Map<Pair<Color, Color>,Color> colorsMapping = new HashMap<Pair<Color, Color>,Color>();
+
+  private final static int brightnessTH = 125;
+  private final static int colorTH = 500;
+
 
   public StyleRegistryIdeaImpl() {
     ourInstance = this;
@@ -127,6 +133,58 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
   }
 
   @Override
+  public Color getSimpleColor(Color color) {
+    return getSimpleColor(color, getEditorBackground());
+  }
+
+  @Override
+  public Color getSimpleColor(Color color, final Color bg) {
+    if(!EditorColorsManager.getInstance().getGlobalScheme().getName().contains("Darcula") || color == null || bg == null)
+        return color;
+
+    final Color original = color;
+    Pair<Color, Color> colorPair = new Pair<Color, Color>(original, bg);
+    if(colorsMapping.containsKey(colorPair))
+      return colorsMapping.get(colorPair);
+
+//    if(!isGoodContrastWithBG(color, getEditorBackground()))
+//      color = new Color(255 - color.getRed(), 255 - color.getGreen(), 255 - color.getBlue());
+
+    int counter = 0;
+    while (!isGoodContrastWithBG(color, bg) && counter < 10) {
+      int deltaR = Math.abs( bg.getRed() - color.getRed() );
+      int deltaG = Math.abs( bg.getGreen() - color.getGreen() );
+      int deltaB = Math.abs( bg.getBlue() - color.getBlue() );
+      int deltaMin = Math.min((Math.min(deltaR, deltaG)),deltaB);
+      if(deltaMin == deltaR) {
+        color = new Color( (color.getRed() + 50) % 256, color.getGreen(), color.getBlue() );
+      }
+      else if(deltaMin == deltaG) {
+        color = new Color( color.getRed(), (color.getGreen() + 50) % 256, color.getBlue() );
+      }
+      else if(deltaMin == deltaB) {
+        color = new Color( color.getRed(), color.getGreen(), (color.getBlue() + 50) % 256 );
+      }
+      counter++;
+    }
+
+    colorsMapping.put(colorPair, color);
+    return color;
+  }
+
+  private boolean isGoodContrastWithBG(Color color, final Color bg) {
+    int brightnessColor = ( 299 * color.getRed() + 587 * color.getGreen() + 114 * color.getBlue() )/1000;
+    int brightnessBG = ( 299 * bg.getRed() + 587 * bg.getGreen() + 114 * bg.getBlue() )/1000;
+
+    int brightnessDiff = brightnessBG - brightnessColor;
+    int colorDiff = Math.abs(color.getRed() - bg.getRed())
+      + Math.abs(color.getGreen() - bg.getGreen())
+      + Math.abs(color.getBlue() - bg.getBlue());
+
+    return Math.abs(brightnessDiff) >= brightnessTH || colorDiff >= colorTH;
+  }
+
+  @Override
   public void setAttributes(String key, StyleAttribute attributes) {
   }
 
@@ -143,7 +201,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
     Style style = super.getStyle(key);
 
     if(style == null) {
-      style = new StyleImpl();
+       style = new StyleImpl();
 
       TextAttributes textAttributes = ourColorsScheme.getAttributes(TextAttributesKey.find(key));
       style.set(StyleAttributes.TEXT_COLOR, textAttributes.getForegroundColor());
