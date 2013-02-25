@@ -41,7 +41,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
     }
     monitor.start(title, 1);
 
-    if (LanguageAspect.STRUCTURE.is(model)) {
+    if (LanguageAspect.STRUCTURE.is(model.getModelDescriptor())) {
       for (SNode concept : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

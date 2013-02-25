@@ -2607,7 +2607,7 @@
     <nodeInfo nodeId="8404391560346929328" fileName="ReferenceableConceptsChecker.java" startLine="78" startPosition="28" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1833497744617856788" fileName="ReferenceableConceptsChecker.java" startLine="45" startPosition="154" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8404391560346888528" fileName="ReferenceableConceptsChecker.java" startLine="100" startPosition="0" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1833497744617789128" fileName="ReferenceableConceptsChecker.java" startLine="44" startPosition="45" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1833497744617789128" fileName="ReferenceableConceptsChecker.java" startLine="44" startPosition="66" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2019037713128002486" fileName="ReferenceableConceptsChecker.java" startLine="43" startPosition="0" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9116864641330940821" fileName="ReferenceableConceptsChecker.java" startLine="66" startPosition="41" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9116864641332055580" fileName="ReferenceableConceptsChecker.java" startLine="97" startPosition="5" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2646,10 +2646,10 @@
     <scopeInfo nodeId="1833497744617856788" fileName="ReferenceableConceptsChecker.java" startLine="45" startPosition="154" endLine="58" endPosition="9">
       <varInfo nodeId="1833497744617856790" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="1833497744617789128" fileName="ReferenceableConceptsChecker.java" startLine="44" startPosition="45" endLine="59" endPosition="7">
+    <scopeInfo nodeId="1833497744617789128" fileName="ReferenceableConceptsChecker.java" startLine="44" startPosition="66" endLine="59" endPosition="7">
       <varInfo nodeId="1833497744617789130" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="2019037713128002488" fileName="ReferenceableConceptsChecker.java" startLine="44" startPosition="45" endLine="59" endPosition="7" />
+    <scopeInfo nodeId="2019037713128002488" fileName="ReferenceableConceptsChecker.java" startLine="44" startPosition="66" endLine="59" endPosition="7" />
     <scopeInfo nodeId="9116864641332055582" fileName="ReferenceableConceptsChecker.java" startLine="98" startPosition="113" endLine="114" endPosition="7">
       <varInfo nodeId="9116864641332324200" varName="decl" />
     </scopeInfo>
