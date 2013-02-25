@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bh256mencz4bf29vaon0nywf05oqa0q">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
+<dependencies version="2" modelHash="-950uofsvhyy9z1y1kmory9beq6onlmg">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-92tu7rxl21zsoz29xy7caobqrksdhqe" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="a7c2ku0s74knl0vk8tegekel7po2h4e" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
-  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-29vchxoozzcsk2pfchv2s2tc66wws5d" />
-  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="bd20chhlnh0zjiajm58qmlctnnmvnko" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9bdhyw4fyjj9lptx5av16k73e6s932q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
+  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="-1jcx7tamiw02w6as89ek19f5fsjg695" />
+  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-286yfilw30wq2oq3e4nqhxc1wwa35zb" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="66lnxdoypd04p98u6updzyllgp0mvr4">
     <dep root="481983775135178819" />
@@ -29,34 +29,34 @@
     <file name="Standalone_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="481983775135178819" name="ProjectPluginDisposeBlock" hash="cwae3jmt60qc5n60ol0mdhiiptu843d">
+  <source id="481983775135178819" name="ProjectPluginDisposeBlock" hash="-4jbaxwrb16h92pgfm77vrmu3svjcg59">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="481983775135178825" name="ProjectPluginInitBlock" hash="-eowkgy3suyfbimzkcjawx93k971ashc">
+  <source id="481983775135178825" name="ProjectPluginInitBlock" hash="-885zibov9qx67my1b0qx3ily2kv3qxx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="481983775135178831" name="ApplicationPluginType" hash="5f4toz9c1dslychlvch7crxehlkcgc3">
+  <source id="481983775135178831" name="ApplicationPluginType" hash="-ar5yxu6083oeuvqxnjzkp6sphi4b0b8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="481983775135178834" name="ProjectPluginDeclaration" hash="-emlmvc5dgw9r65gj3xyjczc9u5ofgvs">
+  <source id="481983775135178834" name="ProjectPluginDeclaration" hash="2c3vbtoqi66k93jqwx7nsc2b9av66zj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="481983775135178840" name="ApplicationPluginDeclaration" hash="-43mmbb1b0lx3ts0ndj2easz3zlyzmro">
+  <source id="481983775135178840" name="ApplicationPluginDeclaration" hash="254tb1wc3n6f99gflitw09781hj8yg5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="481983775135178846" name="ApplicationPluginDisposeBlock" hash="265p8sej1sq2v91b1hhq26puz9maj9k">
+  <source id="481983775135178846" name="ApplicationPluginDisposeBlock" hash="-2a2qnau7i1ganjuw4c7fzvlk9yfsox8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="481983775135178851" name="ApplicationPluginInitBlock" hash="2dstsk1zi8q14h1uaa81xze6n51wtpo">
+  <source id="481983775135178851" name="ApplicationPluginInitBlock" hash="-1mtnmc21vr9xxydrkzngk1ya7r6jenp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="481983775135178856" name="ProjectPluginType" hash="dat67q5bkj3p8mz0hsrzjyl5qb40b5m">
+  <source id="481983775135178856" name="ProjectPluginType" hash="-blzhewr3bbml31lbeboqwpj0n8qni9z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="681855071694758165" name="GetToolInProjectOperation" hash="7ftkmy8n6fcbs3swx4ucicudksilzns">
+  <source id="681855071694758165" name="GetToolInProjectOperation" hash="-7l2ufqsthwfm3k1eryxfqdxxhvert7t">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="681855071694758168" name="GetPreferencesComponentInProjectOperation" hash="c4fvo1dh3eupiz8fto65c79562bllb">
+  <source id="681855071694758168" name="GetPreferencesComponentInProjectOperation" hash="-6e6hlx62i8rd2zan2rcyey1ohpjmk2w">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7520713872864775836" name="StandalonePluginDescriptor" hash="b3lcst60zsmo86277me146w5ly1ajnv">

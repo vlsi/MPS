@@ -127,6 +127,9 @@
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="1835621062190663819">
       <property name="name" nameId="1169194664001" value="IDontSubstituteByDefault" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="3361475375157466558">
+      <property name="name" nameId="1169194664001" value="ScopeFacade" />
+    </node>
   </roots>
   <root id="1082983041843" />
   <root id="1082983657062" />
@@ -261,5 +264,6 @@
     </node>
   </root>
   <root id="1835621062190663819" />
+  <root id="3361475375157466558" />
 </model>
 

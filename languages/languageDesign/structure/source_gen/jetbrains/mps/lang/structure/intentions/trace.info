@@ -109,7 +109,7 @@
     <nodeInfo nodeId="1957700446084749961" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="95" startPosition="51" endLine="96" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1957700446084627370" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="98" startPosition="9" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1957700446085882312" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="101" startPosition="143" endLine="102" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1957700446085940217" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="103" startPosition="96" endLine="104" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1957700446085940217" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="103" startPosition="96" endLine="104" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="110" startPosition="48" endLine="111" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="31" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ForbidIncomingReferencesInSubconcepts_Intention#()V" />
     <nodeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
@@ -150,7 +150,7 @@
     <scopeInfo nodeId="1957700446084633526" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="87" startPosition="52" endLine="88" endPosition="50" />
     <scopeInfo nodeId="1957700446084633508" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="91" startPosition="52" endLine="92" endPosition="49" />
     <scopeInfo nodeId="1957700446084749298" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="95" startPosition="51" endLine="96" endPosition="32" />
-    <scopeInfo nodeId="1957700446084793833" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="103" startPosition="96" endLine="104" endPosition="69" />
+    <scopeInfo nodeId="1957700446084793833" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="103" startPosition="96" endLine="104" endPosition="63" />
     <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="110" startPosition="48" endLine="111" endPosition="66" />
     <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="31" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="1957700446084421329" fileName="ForbidIncomingReferencesInSubconcepts_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n">
+<dependencies version="2" modelHash="-92tu7rxl21zsoz29xy7caobqrksdhqe">
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="6xoyysetm6oarfu3mu090t233rt6p2q" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9bdhyw4fyjj9lptx5av16k73e6s932q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-ba4e5p73t42agbvtgpfhd35wq3mw1tc">
     <dep root="1047408822409601647" />
@@ -18,6 +18,7 @@
     <dep root="2565736246230036150" />
     <dep root="2565736246230036151" />
     <dep root="2565736246230036154" />
+    <dep root="3361475375157466558" />
     <dep root="3364660638048049745" />
     <dep root="3364660638048049748" />
     <dep root="3364660638048049750" />
@@ -107,6 +108,9 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1835621062190663819" name="IDontSubstituteByDefault" hash="-b9stbvtxzbtb0fenasj84y9i8njzbwv">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3361475375157466558" name="ScopeFacade" hash="-3vore2lptghoma64ivfj1py3m95ybzp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

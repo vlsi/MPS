@@ -892,12 +892,12 @@
                       <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1957700446085965391">
                         <node role="operation" roleId="tpee.1197027833540" type="tp25.Property_SetOperation" typeId="tp25.1138661924179" id="1957700446085979245">
                           <node role="value" roleId="tp25.1138662048170" type="tp25.EnumMemberReference" typeId="tp25.1138676077309" id="1957700446085979303">
-                            <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="tpce.8087047305080775416" />
+                            <link role="enumMember" roleId="tp25.1138676095763" targetNodeId="tpce.5404671619616246764" />
                           </node>
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1957700446085940651">
-                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="1957700446085956965">
-                            <link role="property" roleId="tp25.1138056395725" targetNodeId="tpce.3656905254337409260" resolveInfo="incomingRefs" />
+                          <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3361475375157368668">
+                            <link role="property" roleId="tp25.1138056395725" targetNodeId="tpce.5404671619616246344" resolveInfo="staticScope" />
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="1957700446085942720">
                             <link role="variable" roleId="tp2q.1153944258490" targetNodeId="1957700446084655443" resolveInfo="cd" />
