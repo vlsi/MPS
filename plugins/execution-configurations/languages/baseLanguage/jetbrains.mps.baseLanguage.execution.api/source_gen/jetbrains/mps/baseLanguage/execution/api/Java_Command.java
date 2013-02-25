@@ -32,12 +32,12 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -189,33 +189,27 @@ public class Java_Command {
     return isNotEmpty_kk96hj_a0a0v(Java_Command.getClassName(node));
   }
 
-  private static String getClassName(final SNode node) {
-    final Wrappers._T<String> className = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SModel model = SNodeOperations.getModel(node);
-        DebugInfo debugInfo = TraceInfoCache.getInstance().get(model.getModelDescriptor());
-        if (debugInfo == null) {
-          LOG.error("No trace.info found for model " + model + ". Check that model is generated.");
-          className.value = null;
-        } else {
-          Iterable<String> unitNames = (Iterable<String>) TraceDown.unitNames(node);
-          if (Sequence.fromIterable(unitNames).isEmpty()) {
-            LOG.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
-            className.value = null;
-          } else if ((int) Sequence.fromIterable(unitNames).count() == 1) {
-            className.value = Sequence.fromIterable(unitNames).first();
-          } else {
-            className.value = TraceDown.unitNameWithPosition(node, new _FunctionTypes._return_P1_E0<Boolean, TraceablePositionInfo>() {
-              public Boolean invoke(TraceablePositionInfo position) {
-                return (eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0w(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0w_0(position.getPropertyString(), BehaviorReflection.invokeVirtual(String.class, _quotation_createNode_yvpt_a0a0a0a1a0a0a1a0c0a1a1(), "virtual_getTraceableProperty_5067982036267369901", new Object[]{})));
-              }
-            });
+  private static String getClassName(SNode node) {
+    SModel model = SNodeOperations.getModel(node);
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model.getModelDescriptor());
+    if (debugInfo == null) {
+      LOG.error("No trace.info found for model " + model + ". Check that model is generated.");
+      return null;
+    } else {
+      Iterable<String> unitNames = (Iterable<String>) TraceDown.unitNames(node);
+      if (Sequence.fromIterable(unitNames).isEmpty()) {
+        LOG.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
+        return null;
+      } else if ((int) Sequence.fromIterable(unitNames).count() == 1) {
+        return Sequence.fromIterable(unitNames).first();
+      } else {
+        return TraceDown.unitNameWithPosition(node, new _FunctionTypes._return_P1_E0<Boolean, TraceablePositionInfo>() {
+          public Boolean invoke(TraceablePositionInfo position) {
+            return (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(position.getPropertyString(), BehaviorReflection.invokeVirtual(String.class, _quotation_createNode_yvpt_a0a0a0a1a0a0b0a2a1(), "virtual_getTraceableProperty_5067982036267369901", new Object[]{})));
           }
-        }
+        });
       }
-    });
-    return className.value;
+    }
   }
 
   private static String getClassName(final SNodeReference node) {
@@ -235,13 +229,8 @@ public class Java_Command {
     return 16384;
   }
 
-  public static List<String> getClasspath(final SNode node) {
-    // todo: node argument -> read action? 
-    return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
-      public List<String> compute() {
-        return Java_Command.getClasspath(SNodeOperations.getModel(node).getModelDescriptor().getModule());
-      }
-    });
+  public static List<String> getClasspath(SNode node) {
+    return Java_Command.getClasspath(SNodeOperations.getModel(node).getModelDescriptor().getModule());
   }
 
   public static List<String> getClasspath(final SModule module) {
@@ -409,7 +398,7 @@ public class Java_Command {
     return null;
   }
 
-  private static SNode _quotation_createNode_yvpt_a0a0a0a1a0a0a1a0c0a1a1() {
+  private static SNode _quotation_createNode_yvpt_a0a0a0a1a0a0b0a2a1() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -440,14 +429,14 @@ public class Java_Command {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0w(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0w_0(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

@@ -15,6 +15,11 @@ import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.util.DescendantsScope;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class BuildJavaPlugin_Behavior {
   public static void init(SNode thisNode) {
@@ -55,6 +60,16 @@ public class BuildJavaPlugin_Behavior {
     }
 
     return null;
+  }
+
+  public static Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
+    return Sequence.<SNode>singleton(SLinkOperations.getTarget(createBwfTaskLibraryDependency_bn484n_a0a0a0c(), "target", false));
+  }
+
+  private static SNode createBwfTaskLibraryDependency_bn484n_a0a0a0c() {
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", null, GlobalScope.getInstance(), false);
+    n1.setReference("target", SReference.create("target", n1, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), SNodeId.fromString("7306485738221408314")));
+    return n1;
   }
 
   public static boolean isNotEmpty_bn484n_a0a0a0a1a0a0a1(String str) {

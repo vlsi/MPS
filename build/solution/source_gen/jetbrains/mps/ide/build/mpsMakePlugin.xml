@@ -31,7 +31,7 @@
   
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
-  <target name="assemble" depends="classes">
+  <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}" />
     <jar destfile="${build.layout}/mps-make.jar">
       <fileset dir="${build.tmp}/java/out/mps-make" />
@@ -43,6 +43,7 @@
   <target name="buildDependents">
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
@@ -65,6 +66,12 @@
   <target name="test" depends="classes" />
   
   <target name="check" depends="test" />
+  
+  <target name="generate" depends="declare-mps-tasks" />
+  
+  <target name="declare-mps-tasks" />
+  
+  <target name="makeDependents" />
   
   <target name="java.compile.mps-make" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-make" />

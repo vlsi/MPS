@@ -1,38 +1,24 @@
 <project name="mps" default="build">
   <property name="mps.sign" location="sign"/>
 
-  <property name="idea_home" location=".." />
+  <property name="idea_home" location=".."/>
 
   <target name="platform">
-    <ant antfile="ideaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="ideaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true"/>
   </target>
 
-  <target name="build" depends="platform">
-    <ant antfile="mpsBootstrapCore.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsCore.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsTesting.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsJava.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsWorkbench.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsStandalone.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsDates.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsTroveCollections.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsDevKit.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsExperimental.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsBuild.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsPlugins.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsMakePlugin.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsVcs.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsDebuggerPlugin.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsExecutionPlugin.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsDeprecatedBuildlanguage.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsObsolete.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsBuildUI.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mps.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsExe.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="${mps.sign}/mpsDmg.xml" inheritAll="true" useNativeBasedir="true" />
+  <target name="build" depends="platform, base, signed"/>
+
+  <target name="base" depends="platform">
+    <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="buildDependents"/>
+    <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" target="assemble"/>
   </target>
-  
+
+  <target name="signed" depends="base">
+    <ant antfile="mpsExe.xml" inheritAll="true" useNativeBasedir="true"/>
+    <ant antfile="${mps.sign}/mpsDmg.xml" inheritAll="true" useNativeBasedir="true"/>
+  </target>
+
   <target name="clean">
     <delete dir="tmp"/>
     <delete dir="artifacts"/>

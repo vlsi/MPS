@@ -36,6 +36,10 @@
     <echo file="${build.layout}/build.properties">buildA.aver=${aver}</echo>
   </target>
   
+  <target name="buildDependents" />
+  
+  <target name="fetchDependencies" />
+  
   <target name="build" depends="assemble, check" />
   
   <target name="clean">

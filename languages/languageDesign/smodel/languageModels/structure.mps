@@ -8,7 +8,6 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="hypd" modelUID="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" version="-1" />
-  <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpeu" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1138055754698">
@@ -336,8 +335,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="list of (s)nodes" />
-      <property name="name" nameId="tpck.1169194664001" value="SNodeListCreator" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SNodeListCreator" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="nlist" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1145552809883" resolveInfo="AbstractCreator" />
     </node>
@@ -563,8 +562,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1177026924588">
-      <property name="name" nameId="tpck.1169194664001" value="RefConcept_Reference" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="RefConcept_Reference" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.parameter" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
@@ -633,8 +632,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="create new node" />
-      <property name="name" nameId="tpck.1169194664001" value="SNodeCreator" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="name" nameId="tpck.1169194664001" value="SNodeCreator" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node&lt;&gt;" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1145552809883" resolveInfo="AbstractCreator" />
     </node>
@@ -1198,7 +1197,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="448792706993295611">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="concept reference with built-in read action" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="concept reference" />
       <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ReadConceptReferenceExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />

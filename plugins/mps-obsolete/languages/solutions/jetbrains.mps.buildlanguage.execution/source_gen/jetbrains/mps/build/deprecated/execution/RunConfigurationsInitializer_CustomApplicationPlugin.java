@@ -10,9 +10,6 @@ import java.util.ArrayList;
 import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.openapi.extensions.ExtensionPoint;
 import com.intellij.openapi.extensions.Extensions;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.util.containers.ContainerUtil;
-import jetbrains.mps.logging.Logger;
 
 public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private List<ConfigurationType> myRegisteredKinds = ListSequence.fromList(new ArrayList<ConfigurationType>());
@@ -31,49 +28,8 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
     }
 
     // add foreign factories 
-    _FunctionTypes._return_P1_E0<? extends Class<ConfigurationType>, ? super String> getClassFunction = new _FunctionTypes._return_P1_E0<Class<ConfigurationType>, String>() {
-      public Class<ConfigurationType> invoke(String className) {
-        try {
-          return (Class<ConfigurationType>) getClass().getClassLoader().loadClass(className);
-        } catch (ClassNotFoundException cl) {
-          LOG.error("Can not find configuration type " + className + ". Check languages dependency.", cl);
-          return (Class<ConfigurationType>) null;
-        }
-      }
-    };
 
     // register creators 
-    ExtensionPoint<RuntimeConfigurationProducer> producerExtensionPoint = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
-    {
-      ConfigurationType configurationType = ContainerUtil.findInstance(configurationExtensionPoint.getExtensions(), getClassFunction.invoke("jetbrains.mps.build.deprecated.execution.Ant_Kind"));
-      if (configurationType != null) {
-        List<RuntimeConfigurationProducer> configurationProducers = PackagingBuildScript_Producer.getProducers(configurationType);
-        ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).addSequence(ListSequence.fromList(configurationProducers));
-        for (RuntimeConfigurationProducer producer : ListSequence.fromList(configurationProducers)) {
-          producerExtensionPoint.registerExtension(producer);
-        }
-      }
-    }
-    {
-      ConfigurationType configurationType = ContainerUtil.findInstance(configurationExtensionPoint.getExtensions(), getClassFunction.invoke("jetbrains.mps.build.deprecated.execution.Ant_Kind"));
-      if (configurationType != null) {
-        List<RuntimeConfigurationProducer> configurationProducers = BuildLanguageProject_Producer.getProducers(configurationType);
-        ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).addSequence(ListSequence.fromList(configurationProducers));
-        for (RuntimeConfigurationProducer producer : ListSequence.fromList(configurationProducers)) {
-          producerExtensionPoint.registerExtension(producer);
-        }
-      }
-    }
-    {
-      ConfigurationType configurationType = ContainerUtil.findInstance(configurationExtensionPoint.getExtensions(), getClassFunction.invoke("jetbrains.mps.build.deprecated.execution.Ant_Kind"));
-      if (configurationType != null) {
-        List<RuntimeConfigurationProducer> configurationProducers = CustomMPSApplication_Producer.getProducers(configurationType);
-        ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).addSequence(ListSequence.fromList(configurationProducers));
-        for (RuntimeConfigurationProducer producer : ListSequence.fromList(configurationProducers)) {
-          producerExtensionPoint.registerExtension(producer);
-        }
-      }
-    }
   }
 
   public void doDispose() {
@@ -89,6 +45,4 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
     }
     ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).clear();
   }
-
-  private static Logger LOG = Logger.getLogger(RunConfigurationsInitializer_CustomApplicationPlugin.class);
 }

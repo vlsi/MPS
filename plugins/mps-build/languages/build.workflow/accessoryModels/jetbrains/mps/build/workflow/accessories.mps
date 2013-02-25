@@ -59,9 +59,9 @@
   </root>
   <root id="7306485738221408315">
     <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfMacro" typeId="8xvf.6896005762093571400" id="7306485738221314459">
+      <property name="isLocation" nameId="8xvf.6896005762093571407" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="build.dir" />
       <property name="defaultValue" nameId="8xvf.6896005762093571402" value="build" />
-      <property name="isLocation" nameId="8xvf.6896005762093571407" value="true" />
     </node>
     <node role="parts" roleId="8xvf.7306485738221391508" type="8xvf.BwfTask" typeId="8xvf.2769948622284546675" id="4701820937132277082">
       <property name="name" nameId="tpck.1169194664001" value="assemble" />

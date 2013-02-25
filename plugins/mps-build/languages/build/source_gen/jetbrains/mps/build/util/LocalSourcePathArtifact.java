@@ -44,7 +44,7 @@ public class LocalSourcePathArtifact {
       return false;
     }
     if ((sourcePath != null ?
-      !(((Object) sourcePath).equals(that.sourcePath)) :
+      !((sourcePath).equals(that.sourcePath)) :
       that.sourcePath != null
     )) {
       return false;
