@@ -27,7 +27,7 @@ public class VisibleArtifacts {
   protected final Map<SNode, SNode> parentMap = new HashMap<SNode, SNode>();
   private final List<SNode> visibleArtifacts = new ArrayList<SNode>();
   private final List<SNode> visibleLayouts = new ArrayList<SNode>();
-  private DependenciesHelper dependenciesHelper;
+  protected DependenciesHelper dependenciesHelper;
 
   public VisibleArtifacts(SNode project, @Nullable TemplateQueryContext genContext) {
     this.project = project;
@@ -64,6 +64,12 @@ public class VisibleArtifacts {
 
       collectInProject(projectDependency, target);
     }
+    collectProjectArtifacts();
+  }
+
+  private void collectProjectArtifacts() {
+    SNode originalProject = SNodeOperations.cast(DependenciesHelper.getOriginalNode(project, genContext), "jetbrains.mps.build.structure.BuildProject");
+    collectInProject(SLinkOperations.getTarget(originalProject, "layout", true), originalProject);
   }
 
   protected void collectInProject(SNode parent, SNode target) {
@@ -99,7 +105,7 @@ public class VisibleArtifacts {
     }
   }
 
-  private void collectInLayout(SNode parent, SNode node) {
+  protected void collectInLayout(SNode parent, SNode node) {
     if (parentMap.containsKey(node)) {
       return;
     }

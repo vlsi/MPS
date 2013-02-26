@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.behavior.BuildLayout_EchoProperties_Behavior;
 import jetbrains.mps.build.behavior.BuildVariableMacroInitValue_Behavior;
+import jetbrains.mps.build.behavior.BuildSource_JavaContentFolder_Behavior;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.util.MacroHelper;
@@ -527,7 +528,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7926701909975671869(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"), "basePath", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)}) + "/" + SPropertyOperations.getString(_context.getNode(), "relativePath");
+    return BuildSource_JavaContentFolder_Behavior.call_getAntPath_2389279258816946193(_context.getNode(), Context.defaultContext(_context));
   }
 
   public static Object propertyMacro_GetPropertyValue_144710003695560915(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1786,7 +1787,7 @@ public class QueriesGenerated {
         final String relativePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(croot, "basePath", true), "virtual_getAntPath_8563603456895173701", new Object[]{Context.defaultContext(_context)});
         return ListSequence.fromList(SLinkOperations.getTargets(croot, "folders", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode ifolder) {
-            return SPropertyOperations.hasValue(ifolder, "kind", "source", null);
+            return SPropertyOperations.hasValue(ifolder, "kind", "source", null) || SPropertyOperations.hasValue(ifolder, "kind", "test", null);
           }
         }).select(new ISelector<SNode, String>() {
           public String select(SNode ifolder) {
@@ -1815,7 +1816,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_7926701909975671863(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "folders", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, "kind", "source", null);
+        return SPropertyOperations.hasValue(it, "kind", "source", null) || SPropertyOperations.hasValue(it, "kind", "test", null);
       }
     });
   }

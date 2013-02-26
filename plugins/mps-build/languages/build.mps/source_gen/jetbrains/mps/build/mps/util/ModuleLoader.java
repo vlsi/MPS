@@ -46,6 +46,10 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ProjectPathUtil;
+import jetbrains.mps.project.facets.TestsFacet;
+import jetbrains.mps.project.facets.TestsFacetImpl;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.IFileUtils;
@@ -840,6 +844,15 @@ public class ModuleLoader {
         res.add(genPath);
       }
     }
+    TestsFacet testsFacet = TestsFacetImpl.fromModuleDescriptor(myModuleDescriptor, myModuleFile);
+    boolean hasTests = (AttributeOperations.getAttribute(myModule, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_TestModuleAnnotation"))) != null);
+    String testPath = null;
+    if (testsFacet != null && hasTests) {
+      IFile testsPathFile = testsFacet.getTestsOutputPath();
+      if (testsPathFile != null) {
+        testPath = testsPathFile.getPath();
+      }
+    }
 
     boolean doNotCompile = myModuleDescriptor instanceof SolutionDescriptor && (!(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS()) || res.isEmpty());
     if (checkOnly && importOnly) {
@@ -864,6 +877,16 @@ public class ModuleLoader {
       SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(javaSource, "folder", true), "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", p, true);
       SPropertyOperations.set(javaSource, "isGenerated", "" + (path.equals(genPath)));
       ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(javaSource);
+    }
+
+    if (testPath != null) {
+      SNode p = ListSequence.fromList(convertPath(testPath, myOriginalModule)).first();
+      if (p != null) {
+        SNode testSource = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource", null);
+        SLinkOperations.setTarget(testSource, "folder", SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildInputSingleFolder", null), true);
+        SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(testSource, "folder", true), "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", p, true);
+        ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(testSource);
+      }
     }
   }
 

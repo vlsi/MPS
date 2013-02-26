@@ -41,8 +41,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848036997" resolveInfo="BuildLayout_Node" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848036984">
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="create a folder" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/layout.png" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="create a folder" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_Folder" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="folder" />
@@ -100,8 +100,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5248329904288265468" resolveInfo="BuildSource_JavaSources" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848136194">
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="defines folder macro with default value (for local build)" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/macro.png" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="defines folder macro with default value (for local build)" />
       <property name="name" nameId="tpck.1169194664001" value="BuildFolderMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="folder" />
@@ -177,8 +177,8 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8618885170173601777">
       <property name="name" nameId="tpck.1169194664001" value="BuildCompositePath" />
-      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7321017245476976379">
@@ -205,8 +205,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6647099934206689694" resolveInfo="BuildPlugin" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3767587139141066978">
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="defines variable macro" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/macro.png" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="defines variable macro" />
       <property name="name" nameId="tpck.1169194664001" value="BuildVariableMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="var" />
@@ -274,8 +274,8 @@
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="5248329904288265463">
       <property name="noValueText" nameId="tpce.1212087449254" value="&lt;no kind&gt;" />
       <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_internal_value" />
-      <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaContentFolderKind" />
+      <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Sources" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
@@ -593,8 +593,8 @@
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="4198392933254416814">
       <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_internal_value" />
-      <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyFilterEolStyle" />
+      <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="false" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Handlers" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>

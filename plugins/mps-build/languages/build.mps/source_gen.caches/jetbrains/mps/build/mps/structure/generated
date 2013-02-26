@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7fzkk7m1po5rmdlh2lhq8twdv9p0688">
+<dependencies version="2" modelHash="au0063uucuscm7hl55m4wsqmbwby196">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-b2l5iyygy2vjqkbekn4rvaubf6n8cmr" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3v74ubfhw87m42z14436qwtkyptdd6v" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
-  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="1zvjc0czcyhg6d03n0egdan21yh0fjl" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="-bricchreck563tsx606mvlr4w7b5s1k" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="7nm6dyddzlf5tj47jdtu7fm8mj6r0y1">
     <dep root="1265949165890536423" />
@@ -12,6 +12,7 @@
     <dep root="1500819558095907805" />
     <dep root="1692280246134781712" />
     <dep root="2105528055260548241" />
+    <dep root="2389279258782627672" />
     <dep root="3189788309731840247" />
     <dep root="3189788309731840248" />
     <dep root="3189788309731903991" />
@@ -31,6 +32,7 @@
     <dep root="4278635856200817744" />
     <dep root="4278635856200826393" />
     <dep root="4356762679305675652" />
+    <dep root="4560297596895912354" />
     <dep root="4964617264469340623" />
     <dep root="4964617264469340766" />
     <dep root="5253498789149381388" />
@@ -207,6 +209,12 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1330375798066754656" name="BuildLayout_ToBinaryCopyProcessor" hash="b1z191t1vx7eipdzr2yv7bpy2633x8y">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2389279258782627672" name="BuildMps_ModuleTestSource" hash="-3u5x75xfh11328nstfowx6nk2ii51xp">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4560297596895912354" name="BuildMps_TestModuleAnnotation" hash="-cnyt3pte1j1qe3t3d3vmu1qd8g0hare">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

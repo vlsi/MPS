@@ -28,7 +28,11 @@ public class BuildLayout_Behavior {
 
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);
-    String parentLocation = helper.contentLocations().get(parent);
-    helper.contentLocations().put(thisNode, parentLocation);
+    if (parent == null) {
+      helper.contentLocations().put(thisNode, "${build.layout}");
+    } else {
+      String parentLocation = helper.contentLocations().get(parent);
+      helper.contentLocations().put(thisNode, parentLocation);
+    }
   }
 }
