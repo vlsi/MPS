@@ -24,7 +24,7 @@ public class ModelChooser implements Computable<List<SModelReference>> {
         Iterable<SModelDescriptor> descriptors = new FilteredGlobalScope().getModelDescriptors();
         return Sequence.fromIterable(descriptors).select(new ISelector<SModelDescriptor, SModelReference>() {
           public SModelReference select(SModelDescriptor it) {
-            return it.getSModelReference();
+            return it.getReference();
           }
         }).toListSequence();
       }

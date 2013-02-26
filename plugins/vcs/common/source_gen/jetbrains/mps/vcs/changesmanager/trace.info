@@ -488,7 +488,7 @@
     <nodeInfo nodeId="3161776655522590020" fileName="CurrentDifferenceRegistry.java" startLine="138" startPosition="72" endLine="139" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1893726572739236111" fileName="CurrentDifferenceRegistry.java" startLine="147" startPosition="39" endLine="148" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7723078313139695275" fileName="CurrentDifferenceRegistry.java" startLine="152" startPosition="60" endLine="153" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3161776655522590555" fileName="CurrentDifferenceRegistry.java" startLine="163" startPosition="49" endLine="164" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3161776655522590555" fileName="CurrentDifferenceRegistry.java" startLine="163" startPosition="49" endLine="164" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1893726572739275522" fileName="CurrentDifferenceRegistry.java" startLine="143" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFileStatusListener#()V" />
     <nodeInfo nodeId="3161776655522590538" fileName="CurrentDifferenceRegistry.java" startLine="158" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MySModelRepositoryListener#()V" />
     <nodeInfo nodeId="3161776655522590513" fileName="CurrentDifferenceRegistry.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CurrentDifferenceRegistry#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/ProjectLevelVcsManager;Lcom/intellij/openapi/vcs/FileStatusManager;)V" />
@@ -539,7 +539,7 @@
     <scopeInfo nodeId="3161776655522590019" fileName="CurrentDifferenceRegistry.java" startLine="138" startPosition="72" endLine="139" endPosition="65" />
     <scopeInfo nodeId="7723078313139695267" fileName="CurrentDifferenceRegistry.java" startLine="147" startPosition="39" endLine="148" endPosition="27" />
     <scopeInfo nodeId="7723078313139695274" fileName="CurrentDifferenceRegistry.java" startLine="152" startPosition="60" endLine="153" endPosition="22" />
-    <scopeInfo nodeId="3161776655522590554" fileName="CurrentDifferenceRegistry.java" startLine="163" startPosition="49" endLine="164" endPosition="68" />
+    <scopeInfo nodeId="3161776655522590554" fileName="CurrentDifferenceRegistry.java" startLine="163" startPosition="49" endLine="164" endPosition="62" />
     <scopeInfo nodeId="3161776655522590602" fileName="CurrentDifferenceRegistry.java" startLine="69" startPosition="76" endLine="71" endPosition="15" />
     <scopeInfo nodeId="3161776655522590277" fileName="CurrentDifferenceRegistry.java" startLine="103" startPosition="82" endLine="105" endPosition="76" />
     <scopeInfo nodeId="1893726572739275522" fileName="CurrentDifferenceRegistry.java" startLine="143" startPosition="0" endLine="145" endPosition="0" />

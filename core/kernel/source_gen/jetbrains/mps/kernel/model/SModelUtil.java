@@ -11,10 +11,10 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
@@ -57,12 +57,12 @@ public class SModelUtil {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);
     for (SModelDescriptor descriptor : Sequence.fromIterable(scope.getModelDescriptors())) {
-      if (!(modelName.equals(descriptor.getLongName()))) {
+      if (!(modelName.equals(SNodeOperations.getModelLongName(descriptor)))) {
         continue;
       }
       SModel model = descriptor.getSModel();
       for (SNode root : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
-        if (name.equals(root.getName()) && SNodeOperations.isInstanceOf(root, NameUtil.nodeFQName(concept))) {
+        if (name.equals(root.getName()) && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(root, NameUtil.nodeFQName(concept))) {
           return root;
         }
       }
@@ -98,10 +98,10 @@ public class SModelUtil {
   }
 
   public static SNode getConceptLinkTarget(SNode link) {
-    if (SNodeOperations.isInstanceOf(link, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink")) {
-      return SLinkOperations.getTarget(SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false);
+    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(link, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink")) {
+      return SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false);
     }
-    return SLinkOperations.getTarget(SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.AggregationConceptLink"), "target", true);
+    return SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.AggregationConceptLink"), "target", true);
   }
 
   @NotNull
@@ -151,7 +151,7 @@ public class SModelUtil {
   public static List<SNode> getDirectSuperInterfacesAndTheirSupers(SNode concept) {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
-      if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
+      if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
         for (SNode node : ListSequence.fromList(new ConceptAndSuperConceptsScope(superConcept).getConcepts())) {
           SetSequence.fromSet(result).addElement((SNode) node);
         }
@@ -162,7 +162,7 @@ public class SModelUtil {
 
   public static List<SNode> getDirectSuperConcepts(SNode concept) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+    if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       SNode conceptDecl = (SNode) concept;
       SNode extended = SLinkOperations.getTarget(conceptDecl, "extends", false);
       if (extended != null) {

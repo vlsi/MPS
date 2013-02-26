@@ -160,7 +160,7 @@ public class PluginMoveHelper {
     List<SModelDescriptor> solModels = s.getOwnModelDescriptors();
     final Wrappers._T<SModelDescriptor> pluginModel = new Wrappers._T<SModelDescriptor>(ListSequence.fromList(solModels).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return it.getLongName().equals(modelName);
+        return jetbrains.mps.util.SNodeOperations.getModelLongName(it).equals(modelName);
       }
     }).first());
     if (pluginModel.value == null) {

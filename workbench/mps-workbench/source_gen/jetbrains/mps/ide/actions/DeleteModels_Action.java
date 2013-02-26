@@ -78,7 +78,7 @@ public class DeleteModels_Action extends BaseAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           for (SModelDescriptor model : ListSequence.fromList(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")))) {
-            if (SModelStereotype.isStubModelStereotype(model.getStereotype())) {
+            if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
               continue;
             }
             DeleteModelHelper.deleteModel(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("contextModule")), model, safeOption.selected, filesOption.selected);

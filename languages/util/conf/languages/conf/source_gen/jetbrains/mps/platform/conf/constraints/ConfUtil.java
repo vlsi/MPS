@@ -26,8 +26,8 @@ public class ConfUtil {
       }
     }).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor smd) {
-        return ((SModelStereotype.isStubModelStereotype(smd.getStereotype())) ?
-          "conf_stub".equals(smd.getStereotype()) :
+        return ((SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(smd))) ?
+          "conf_stub".equals(SModelStereotype.getStereotype(smd)) :
           Sequence.fromIterable(((Iterable<ModuleReference>) ((jetbrains.mps.smodel.SModel) smd.getSModel()).importedLanguages())).contains(ConfUtil.CONF_LANG)
         );
       }

@@ -7,15 +7,16 @@ import javax.swing.Icon;
 import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.projectPane.ProjectPane;
@@ -37,7 +38,7 @@ public class NewSubModel_Action extends BaseAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     boolean correctStereotype = false;
-    String stereotype = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getStereotype();
+    String stereotype = SModelStereotype.getStereotype(((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
     for (String availableStereotype : SModelStereotype.values) {
       if (stereotype.equals(availableStereotype)) {
         correctStereotype = true;
@@ -85,10 +86,10 @@ public class NewSubModel_Action extends BaseAction {
         ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule() :
         ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule()
       );
-      final String namespace = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getLongName();
+      final String namespace = SNodeOperations.getModelLongName(((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          String stereotype = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getStereotype();
+          String stereotype = SModelStereotype.getStereotype(((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
           dialog.value = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), localModule, namespace, ((IOperationContext) MapSequence.fromMap(_params).get("context")), stereotype, true);
         }
       });

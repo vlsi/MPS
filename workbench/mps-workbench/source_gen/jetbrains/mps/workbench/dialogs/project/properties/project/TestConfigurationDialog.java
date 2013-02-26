@@ -349,7 +349,7 @@ public class TestConfigurationDialog extends DialogWrapper {
             }
           }).toListSequence(), ListSequence.fromList(descrs).select(new ISelector<SModelDescriptor, SModelReference>() {
             public SModelReference select(SModelDescriptor it) {
-              return it.getSModelReference();
+              return it.getReference();
             }
           }).toListSequence());
           if (modelRef == null) {

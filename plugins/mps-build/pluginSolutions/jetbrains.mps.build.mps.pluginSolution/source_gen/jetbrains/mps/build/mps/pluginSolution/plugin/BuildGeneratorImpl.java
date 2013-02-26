@@ -177,7 +177,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     ((jetbrains.mps.smodel.SModel) smodel).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
 
     moduleDescriptor.getDependencies().add(new Dependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("422c2909-59d6-41a9-b318-40e6256b250f")).getModuleReference(), false));
-    ((jetbrains.mps.smodel.SModel) smodel).addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getSModel().getModelDescriptor().getSModelReference(), false);
+    ((jetbrains.mps.smodel.SModel) smodel).addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getSModel().getModelDescriptor().getReference(), false);
   }
 
   public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {

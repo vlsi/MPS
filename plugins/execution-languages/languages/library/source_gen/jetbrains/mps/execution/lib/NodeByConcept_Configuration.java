@@ -89,7 +89,7 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration, IT
       this.setModelId(null);
       this.setNodeId(null);
     } else {
-      this.setModelId(node.getModel().getModelDescriptor().getSModelReference().toString());
+      this.setModelId(node.getModel().getModelDescriptor().getReference().toString());
       this.setNodeId(node.getNodeId().toString());
     }
   }

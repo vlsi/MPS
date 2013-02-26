@@ -85,7 +85,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
             // a plugin solution 
 
             for (SModelDescriptor smd : SModelRepository.getInstance().getModelDescriptors(s)) {
-              if (smd.getLongName().endsWith(".stubManagers")) {
+              if (jetbrains.mps.util.SNodeOperations.getModelLongName(smd).endsWith(".stubManagers")) {
                 SModel m = smd.getSModel();
                 ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration")));
               }

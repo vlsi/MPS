@@ -27,7 +27,7 @@ public class ModelCheckerUtils {
       if (SModelStereotype.isUserModel(modelDescriptor)) {
         ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
       }
-      if (ModelCheckerSettings.getInstance().isCheckStubs() && SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) {
+      if (ModelCheckerSettings.getInstance().isCheckStubs() && SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
         ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);
       }
     }

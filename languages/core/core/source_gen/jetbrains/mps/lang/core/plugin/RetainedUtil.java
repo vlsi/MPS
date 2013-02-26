@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -36,7 +37,7 @@ public class RetainedUtil {
       MapSequence.fromMap(retainedModels).put(module, empty);
       Iterable<SModelDescriptor> modelsToRetain = Sequence.fromIterable(((Iterable<SModelDescriptor>) module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor it2) {
-          return it2.isGeneratable();
+          return SNodeOperations.isGeneratable(it2);
         }
       });
       if (module instanceof Language) {
@@ -44,7 +45,7 @@ public class RetainedUtil {
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
             MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it2) {
-                return it2.isGeneratable();
+                return SNodeOperations.isGeneratable(it2);
               }
             }));
           }
@@ -59,7 +60,7 @@ public class RetainedUtil {
         if (!(MapSequence.fromMap(retainedModels).containsKey(slang))) {
           MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModelDescriptor>) slang.getOwnModelDescriptors())).subtract(ListSequence.fromList(module.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
             public boolean accept(SModelDescriptor it3) {
-              return it3.isGeneratable();
+              return SNodeOperations.isGeneratable(it3);
             }
           }));
         }
@@ -70,7 +71,7 @@ public class RetainedUtil {
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
             MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModelDescriptor>) gen.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it2) {
-                return it2.isGeneratable();
+                return SNodeOperations.isGeneratable(it2);
               }
             }));
           }

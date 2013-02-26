@@ -335,7 +335,7 @@
     <nodeInfo nodeId="6001307866941575733" fileName="EditorsFinderManager.java" startLine="173" startPosition="27" endLine="174" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6001307866941575735" fileName="EditorsFinderManager.java" startLine="175" startPosition="5" endLine="176" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6001307866941575741" fileName="EditorsFinderManager.java" startLine="176" startPosition="81" endLine="177" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6001307866941575750" fileName="EditorsFinderManager.java" startLine="178" startPosition="40" endLine="179" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6001307866941575750" fileName="EditorsFinderManager.java" startLine="178" startPosition="40" endLine="179" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6001307866941575789" fileName="EditorsFinderManager.java" startLine="181" startPosition="9" endLine="182" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6001307866941575801" fileName="EditorsFinderManager.java" startLine="182" startPosition="119" endLine="183" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6001307866941575813" fileName="EditorsFinderManager.java" startLine="184" startPosition="32" endLine="185" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -417,7 +417,7 @@
     <scopeInfo nodeId="2116786884968856874" fileName="EditorsFinderManager.java" startLine="154" startPosition="43" endLine="155" endPosition="116" />
     <scopeInfo nodeId="2116786884968856902" fileName="EditorsFinderManager.java" startLine="160" startPosition="43" endLine="161" endPosition="116" />
     <scopeInfo nodeId="6001307866941575732" fileName="EditorsFinderManager.java" startLine="173" startPosition="27" endLine="174" endPosition="18" />
-    <scopeInfo nodeId="6001307866941575749" fileName="EditorsFinderManager.java" startLine="178" startPosition="40" endLine="179" endPosition="90" />
+    <scopeInfo nodeId="6001307866941575749" fileName="EditorsFinderManager.java" startLine="178" startPosition="40" endLine="179" endPosition="84" />
     <scopeInfo nodeId="6001307866941575812" fileName="EditorsFinderManager.java" startLine="184" startPosition="32" endLine="185" endPosition="20" />
     <scopeInfo nodeId="6001307866941575761" fileName="EditorsFinderManager.java" startLine="190" startPosition="0" endLine="191" endPosition="19">
       <varInfo nodeId="6001307866941575768" varName="e" />

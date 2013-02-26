@@ -21,7 +21,7 @@
     <nodeInfo nodeId="175734484443909636" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="70" startPosition="64" endLine="71" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="175734484443909644" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="6688182789575851566" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="74" startPosition="9" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6688182789575851690" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="77" startPosition="88" endLine="78" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6688182789575851690" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="77" startPosition="104" endLine="78" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="6688182789575851574" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="79" startPosition="11" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="175734484443909871" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="80" startPosition="0" endLine="81" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="175734484443909961" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="81" startPosition="53" endLine="82" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -30,8 +30,8 @@
     <nodeInfo nodeId="3748622964431012570" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="86" startPosition="31" endLine="87" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="3748622964431012571" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="88" startPosition="13" endLine="89" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="175734484443910301" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="90" startPosition="11" endLine="91" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6797218449692039936" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="91" startPosition="48" endLine="92" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="175734484443910496" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="93" startPosition="163" endLine="94" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6797218449692039936" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="91" startPosition="48" endLine="92" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="175734484443910496" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="93" startPosition="163" endLine="94" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="175734484443910558" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="95" startPosition="11" endLine="96" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="175734484443924902" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="97" startPosition="83" endLine="98" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="102" startPosition="27" endLine="103" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -50,7 +50,7 @@
     <nodeInfo nodeId="175734484443909642" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="71" startPosition="67" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6688182789575851575" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="76" startPosition="105" endLine="79" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3748622964431012565" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="85" startPosition="99" endLine="88" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="175734484443910305" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="92" startPosition="96" endLine="95" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="175734484443910305" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="92" startPosition="90" endLine="95" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="175734484443924897" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="96" startPosition="43" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3748622964431462940" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="107" startPosition="91" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3748622964431539622" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="110" startPosition="5" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -76,9 +76,9 @@
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" />
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="89" />
     <scopeInfo nodeId="175734484443909643" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="19" />
-    <scopeInfo nodeId="6688182789575851576" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="77" startPosition="88" endLine="78" endPosition="21" />
+    <scopeInfo nodeId="6688182789575851576" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="77" startPosition="104" endLine="78" endPosition="21" />
     <scopeInfo nodeId="3748622964431012569" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="86" startPosition="31" endLine="87" endPosition="23" />
-    <scopeInfo nodeId="175734484443910308" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="93" startPosition="163" endLine="94" endPosition="96" />
+    <scopeInfo nodeId="175734484443910308" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="93" startPosition="163" endLine="94" endPosition="90" />
     <scopeInfo nodeId="175734484443924900" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="97" startPosition="83" endLine="98" endPosition="87" />
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="102" startPosition="0" endLine="103" endPosition="103">
       <varInfo nodeId="175734484443895487" varName="t" />
@@ -96,7 +96,7 @@
     </scopeInfo>
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="50" startPosition="27" endLine="52" endPosition="44" />
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="36" startPosition="51" endLine="39" endPosition="41" />
-    <scopeInfo nodeId="175734484443910305" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="92" startPosition="96" endLine="95" endPosition="11">
+    <scopeInfo nodeId="175734484443910305" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="92" startPosition="90" endLine="95" endPosition="11">
       <varInfo nodeId="175734484443910306" varName="importedModel" />
     </scopeInfo>
     <scopeInfo nodeId="175734484443924897" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="96" startPosition="43" endLine="99" endPosition="11">
@@ -2027,7 +2027,7 @@
     <nodeInfo nodeId="8004978336433092337" fileName="PluginMoveHelper.java" startLine="157" startPosition="63" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8004978336433092327" fileName="PluginMoveHelper.java" startLine="158" startPosition="0" endLine="159" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8004978336433092177" fileName="PluginMoveHelper.java" startLine="159" startPosition="61" endLine="160" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3573713441992786735" fileName="PluginMoveHelper.java" startLine="162" startPosition="50" endLine="163" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3573713441992786735" fileName="PluginMoveHelper.java" startLine="162" startPosition="50" endLine="163" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8004978336433092157" fileName="PluginMoveHelper.java" startLine="166" startPosition="36" endLine="167" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8004978336433092340" fileName="PluginMoveHelper.java" startLine="168" startPosition="5" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="1855937925843953137" fileName="PluginMoveHelper.java" startLine="169" startPosition="0" endLine="170" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2104,7 +2104,7 @@
       <varInfo nodeId="4076419548984269383" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="4076419548984269385" fileName="PluginMoveHelper.java" startLine="143" startPosition="27" endLine="144" endPosition="19" />
-    <scopeInfo nodeId="3573713441992786731" fileName="PluginMoveHelper.java" startLine="162" startPosition="50" endLine="163" endPosition="50" />
+    <scopeInfo nodeId="3573713441992786731" fileName="PluginMoveHelper.java" startLine="162" startPosition="50" endLine="163" endPosition="89" />
     <scopeInfo nodeId="8004978336433092342" fileName="PluginMoveHelper.java" startLine="166" startPosition="36" endLine="167" endPosition="94" />
     <scopeInfo nodeId="3178711211098725026" fileName="PluginMoveHelper.java" startLine="173" startPosition="39" endLine="174" endPosition="38" />
     <scopeInfo nodeId="1161420610164992203" fileName="PluginMoveHelper.java" startLine="183" startPosition="25" endLine="184" endPosition="86" />
@@ -2405,7 +2405,7 @@
     <nodeInfo nodeId="9065176582222574806" fileName="UpdateRefactoringVersions_Action.java" startLine="77" startPosition="7" endLine="78" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="79" startPosition="27" endLine="80" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9065176582222574572" fileName="UpdateRefactoringVersions_Action.java" startLine="84" startPosition="110" endLine="85" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9065176582222574578" fileName="UpdateRefactoringVersions_Action.java" startLine="85" startPosition="42" endLine="86" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9065176582222574578" fileName="UpdateRefactoringVersions_Action.java" startLine="85" startPosition="42" endLine="86" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9065176582222574591" fileName="UpdateRefactoringVersions_Action.java" startLine="87" startPosition="40" endLine="88" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9065176582222574603" fileName="UpdateRefactoringVersions_Action.java" startLine="88" startPosition="116" endLine="89" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9065176582222574608" fileName="UpdateRefactoringVersions_Action.java" startLine="89" startPosition="39" endLine="90" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2433,7 +2433,7 @@
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UpdateRefactoringVersions_Action#()V" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="38" startPosition="89" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="9065176582222574655" fileName="UpdateRefactoringVersions_Action.java" startLine="117" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="as_hexye9_a0a0a1a7#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="9065176582222574589" fileName="UpdateRefactoringVersions_Action.java" startLine="86" startPosition="106" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9065176582222574589" fileName="UpdateRefactoringVersions_Action.java" startLine="86" startPosition="100" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="9065176582222574748" fileName="UpdateRefactoringVersions_Action.java" startLine="59" startPosition="9" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="9065176582222574777" fileName="UpdateRefactoringVersions_Action.java" startLine="68" startPosition="7" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />

@@ -161,7 +161,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     @Override
     public void beforeModelRemoved(SModelDescriptor descriptor) {
       if (descriptor instanceof EditableSModel) {
-        disposeModelChangesManager(descriptor.getSModelReference());
+        disposeModelChangesManager(descriptor.getReference());
       }
     }
   }

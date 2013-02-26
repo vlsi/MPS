@@ -83,7 +83,7 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
 
   /*package*/ void updateModelVersion(RefactorableSModelDescriptor model, final Map<String, Object> _params) {
     int modelVersion = model.getVersion();
-    int historyVersion = model.getStructureModificationLog().getLatestVersion(model.getSModelReference());
+    int historyVersion = model.getStructureModificationLog().getLatestVersion(model.getReference());
     if (modelVersion < historyVersion) {
       LOG.info("updating version of " + model + " from " + modelVersion + " to .history version " + historyVersion);
       model.setVersion(historyVersion);

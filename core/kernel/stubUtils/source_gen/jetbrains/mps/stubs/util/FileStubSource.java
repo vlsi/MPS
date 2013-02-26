@@ -38,7 +38,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
 
   @Override
   public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
-    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
+    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
     final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(getFile());
     new ProjectStructureBuilder(moduleDesc, getFile(), model) {
       @Override

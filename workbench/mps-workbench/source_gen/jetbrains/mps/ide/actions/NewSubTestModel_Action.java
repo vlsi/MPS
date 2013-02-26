@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.logging.Logger;
@@ -45,7 +46,7 @@ public class NewSubTestModel_Action extends BaseAction {
     if (!(((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof SModelTreeNode)) {
       return false;
     }
-    return SModelStereotype.NONE.equals(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getStereotype());
+    return SModelStereotype.NONE.equals(SModelStereotype.getStereotype(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -112,19 +113,19 @@ public class NewSubTestModel_Action extends BaseAction {
 
   /*package*/ String getTestModelName(final Map<String, Object> _params) {
     StringBuilder builder = new StringBuilder();
-    builder.append(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getLongName());
+    builder.append(SNodeOperations.getModelLongName(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))));
     int testModelCount = 0;
     List<SModelDescriptor> models = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule().getOwnModelDescriptors();
     List<SModelDescriptor> sortedModels = SortUtil.sortModels(models);
     for (SModelDescriptor md : sortedModels) {
-      if (!(SModelStereotype.TESTS.equals(md.getStereotype()))) {
+      if (!(SModelStereotype.TESTS.equals(SModelStereotype.getStereotype(md)))) {
         continue;
       }
-      String name = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getLongName() + ((testModelCount == 0 ?
+      String name = SNodeOperations.getModelLongName(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))) + ((testModelCount == 0 ?
         "" :
         testModelCount
       ));
-      if (name.equals(md.getLongName())) {
+      if (name.equals(SNodeOperations.getModelLongName(md))) {
         testModelCount++;
       }
     }

@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.concurrent.atomic.AtomicLong;
 import jetbrains.mps.generator.textGen.TextGeneratorEngine;
@@ -121,7 +122,7 @@ public class TextGen_Facet extends IFacet.Stub {
 
               for (GResource resource : Sequence.fromIterable(input)) {
                 if (resource.module().getOutputFor(resource.model()) == null) {
-                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + resource.model().getLongName())));
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(resource.model()))));
                 }
               }
               Iterable<GResource> resourcesWithOutput = Sequence.fromIterable(input).where(new IWhereFilter<GResource>() {

@@ -311,8 +311,8 @@
   <root nodeRef="r:7c1ca8f8-f777-4794-ae8a-39c7625e0e92(jetbrains.mps.gwt.client.stubs)/4372437818008125145">
     <nodeInfo nodeId="4372437818008125438" fileName="GWTStubsSource.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="path" />
     <nodeInfo nodeId="4372437818008125153" fileName="GWTStubsSource.java" startLine="43" startPosition="38" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4372437818008125174" fileName="GWTStubsSource.java" startLine="48" startPosition="73" endLine="49" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4372437818008125184" fileName="GWTStubsSource.java" startLine="49" startPosition="108" endLine="50" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4372437818008125174" fileName="GWTStubsSource.java" startLine="48" startPosition="73" endLine="49" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4372437818008125184" fileName="GWTStubsSource.java" startLine="49" startPosition="102" endLine="50" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4372437818008125190" fileName="GWTStubsSource.java" startLine="50" startPosition="157" endLine="51" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4372437818008125200" fileName="GWTStubsSource.java" startLine="51" startPosition="60" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4372437818008125201" fileName="GWTStubsSource.java" startLine="52" startPosition="0" endLine="53" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

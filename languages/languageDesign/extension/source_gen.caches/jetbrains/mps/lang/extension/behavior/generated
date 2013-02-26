@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-b7dmo18fdzxpquc0ot4hbdm63zbljp1">
+<dependencies version="2" modelHash="1urgoidf1vt4q6vsak2m9isghamf521">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
@@ -43,7 +43,7 @@
     <file name="ExtensionPointType_BehaviorDescriptor.java" />
     <file name="GetExtensionObjectsOperation_BehaviorDescriptor.java" />
   </common>
-  <source id="63012922130945360" name="ExtensionPointDeclaration_Behavior" hash="-8a9zalzddzm1fihvnkfyh8m8l4gdtkf">
+  <source id="63012922130945360" name="ExtensionPointDeclaration_Behavior" hash="-4m6w1tnsxe25edu9ofx6k183qlqsj22">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

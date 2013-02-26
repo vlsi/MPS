@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
 import java.util.Set;
@@ -152,7 +153,7 @@ public class ProjectTestHelper {
         for (IModule mod : withGenerators(Collections.singletonList(module))) {
           models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
             public boolean accept(SModelDescriptor it) {
-              return it.isGeneratable();
+              return SNodeOperations.isGeneratable(it);
             }
           }));
         }

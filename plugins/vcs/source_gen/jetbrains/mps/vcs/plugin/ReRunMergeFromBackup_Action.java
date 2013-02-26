@@ -100,7 +100,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
           String repository = modelsAsText[MergeVersion.REPOSITORY.ordinal()];
 
           String uid = ModelPersistence.loadDescriptor(new InputSource(new StringReader(mine))).getUID();
-          if (uid == null || !(SModelReference.fromString(uid).equals(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModelReference()))) {
+          if (uid == null || !(SModelReference.fromString(uid).equals(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getReference()))) {
             continue;
           }
 
@@ -118,7 +118,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
           continue;
         }
       }
-      Messages.showInfoMessage("No suitable backup files for " + ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModelReference().getSModelFqName() + "was not found.", "No Backup Files Found");
+      Messages.showInfoMessage("No suitable backup files for " + ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getReference().getSModelFqName() + "was not found.", "No Backup Files Found");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);
     }

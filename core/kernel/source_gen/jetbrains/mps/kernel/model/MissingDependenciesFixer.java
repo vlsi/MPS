@@ -40,7 +40,7 @@ public class MissingDependenciesFixer {
         boolean wereChanges = false;
         IModule module = myModelDescriptor.getModule();
         if (module == null) {
-          LOG.error("Module is null: " + myModelDescriptor.getSModelReference().toString());
+          LOG.error("Module is null: " + myModelDescriptor.getReference().toString());
           return;
         }
         IScope moduleScope = module.getScope();

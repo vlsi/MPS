@@ -29,6 +29,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.SModelStereotype;
 
 public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -100,8 +102,8 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction_impl(SModelDescriptor parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "name", parameterObject.getLongName());
-      SPropertyOperations.set(node, "stereotype", parameterObject.getStereotype());
+      SPropertyOperations.set(node, "name", SNodeOperations.getModelLongName(parameterObject));
+      SPropertyOperations.set(node, "stereotype", SModelStereotype.getStereotype(parameterObject));
     }
 
     public boolean isReferentPresentation() {
@@ -113,7 +115,7 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText_internal(SModelDescriptor parameterObject) {
-      return parameterObject.getLongName() + "@" + parameterObject.getStereotype();
+      return SNodeOperations.getModelLongName(parameterObject) + "@" + SModelStereotype.getStereotype(parameterObject);
     }
   }
 

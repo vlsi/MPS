@@ -325,7 +325,7 @@ public class CopyPasteUtil {
       public void run() {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
         for (SModelDescriptor sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {
-          allImportedModels.add(sm.getSModelReference());
+          allImportedModels.add(sm.getReference());
         }
         for (SModelReference modelReference : necessaryImports) {
           if (modelReference != null && !((allImportedModels.contains(modelReference))) && !((targetModel.getReference().equals(modelReference)))) {
