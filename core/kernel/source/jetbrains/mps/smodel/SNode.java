@@ -401,6 +401,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return "" + SNodeUtil.getPresentation(this);
   }
 
+  @Override
   public String toString() {
     assertRead();
     assertDisposed();

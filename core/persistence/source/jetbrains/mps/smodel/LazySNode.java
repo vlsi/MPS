@@ -21,9 +21,9 @@ import org.jetbrains.annotations.Nullable;
 /**
  * evgeny, 2/25/13
  */
-public final class SLazyNode extends SNode {
+public final class LazySNode extends SNode {
 
-  public SLazyNode(@NotNull String conceptFqName) {
+  public LazySNode(@NotNull String conceptFqName) {
     super(conceptFqName);
   }
 

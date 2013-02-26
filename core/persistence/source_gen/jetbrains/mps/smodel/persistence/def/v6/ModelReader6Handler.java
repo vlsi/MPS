@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
-import jetbrains.mps.smodel.SLazyNode;
+import jetbrains.mps.smodel.LazySNode;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -387,7 +387,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      return new SLazyNode(InternUtil.intern(fieldhelper.readType(attrs.getValue("type"))));
+      return new LazySNode(InternUtil.intern(fieldhelper.readType(attrs.getValue("type"))));
     }
 
     @Override

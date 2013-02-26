@@ -269,6 +269,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   //todo will migrate after SModelDescriptor is migrated
+  @Override
   public SModelDescriptor getModelDescriptor() {
     return myModelDescriptor;
   }
