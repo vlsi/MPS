@@ -15,13 +15,10 @@
  */
 package jetbrains.mps.messages;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Date;
@@ -30,8 +27,6 @@ import java.util.Date;
  * @author Kostik
  */
 public class Message implements IMessage {
-  private static final Logger LOG = Logger.getLogger(Message.class);
-
   private String mySender;
   private MessageKind myKind;
   private String myText;

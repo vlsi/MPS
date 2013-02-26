@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -123,10 +124,11 @@ public class DefaultSModel extends SModel {
       myCause = cause;
     }
 
+    @NotNull
     @Override
-    public Collection<IMessage> getProblems() {
-      return Collections.<IMessage>singleton(
-        new Message(MessageKind.ERROR, myCause == null ? "Couldn't read model." : myCause.getMessageEx()));
+    public Iterable<Problem> getProblems() {
+      return Collections.<Problem>singleton(
+        new PersistenceProblem(myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
     }
   }
 }

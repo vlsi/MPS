@@ -256,6 +256,13 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     // already loaded
   }
 
+  @NotNull
+  @Override
+  public Iterable<Problem> getProblems() {
+    // TODO implement
+    return Collections.emptySet();
+  }
+
   @Override
   public void unload() {
     //todo

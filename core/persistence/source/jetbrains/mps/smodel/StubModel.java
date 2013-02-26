@@ -13,16 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Collection;
 import java.util.Collections;
 
 public class StubModel extends SModel implements InvalidSModel {
@@ -33,9 +30,10 @@ public class StubModel extends SModel implements InvalidSModel {
     myCause = cause;
   }
 
+  @NotNull
   @Override
-  public Collection<IMessage> getProblems() {
-    return Collections.<IMessage>singleton(
-      new Message(MessageKind.ERROR, myCause == null ? "Couldn't read model." : myCause.getMessageEx()));
+  public Iterable<Problem> getProblems() {
+    return Collections.<Problem>singleton(
+      new PersistenceProblem(myCause == null ? "Couldn't read model." : myCause.getMessageEx(), null, true));
   }
 }
