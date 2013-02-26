@@ -9281,30 +9281,31 @@
     <nodeInfo nodeId="5636695426879409878" fileName="Migrations30_ActionGroup.java" startLine="21" startPosition="129" endLine="22" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8418469470841235726" fileName="Migrations30_ActionGroup.java" startLine="22" startPosition="128" endLine="23" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9012587759412980579" fileName="Migrations30_ActionGroup.java" startLine="23" startPosition="126" endLine="24" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1478877201356807072" fileName="Migrations30_ActionGroup.java" startLine="24" startPosition="127" endLine="25" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6958734279000819684" fileName="Migrations30_ActionGroup.java" startLine="25" startPosition="128" endLine="26" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7000238517768089869" fileName="Migrations30_ActionGroup.java" startLine="26" startPosition="135" endLine="27" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6785851103865266414" fileName="Migrations30_ActionGroup.java" startLine="27" startPosition="131" endLine="28" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="29" startPosition="7" endLine="30" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="30" startPosition="112" endLine="31" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="31" startPosition="66" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="32" startPosition="115" endLine="33" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="35" startPosition="27" endLine="36" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="28" startPosition="129" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="19" startPosition="24" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="16" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Migrations30_ActionGroup#()V" />
-    <scopeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="35" startPosition="0" endLine="36" endPosition="39">
+    <nodeInfo nodeId="7637613868888918099" fileName="Migrations30_ActionGroup.java" startLine="24" startPosition="127" endLine="25" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1478877201356807072" fileName="Migrations30_ActionGroup.java" startLine="25" startPosition="137" endLine="26" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6958734279000819684" fileName="Migrations30_ActionGroup.java" startLine="26" startPosition="128" endLine="27" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7000238517768089869" fileName="Migrations30_ActionGroup.java" startLine="27" startPosition="135" endLine="28" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6785851103865266414" fileName="Migrations30_ActionGroup.java" startLine="28" startPosition="131" endLine="29" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="30" startPosition="7" endLine="31" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="31" startPosition="112" endLine="32" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="32" startPosition="66" endLine="33" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="33" startPosition="115" endLine="34" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="36" startPosition="27" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="29" startPosition="129" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="19" startPosition="24" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="16" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Migrations30_ActionGroup#()V" />
+    <scopeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="36" startPosition="0" endLine="37" endPosition="39">
       <varInfo nodeId="8418469470841235721" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="35" startPosition="27" endLine="36" endPosition="39" />
-    <scopeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="29" startPosition="7" endLine="33" endPosition="56">
+    <scopeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="36" startPosition="27" endLine="37" endPosition="39" />
+    <scopeInfo nodeId="2410923023159158825" fileName="Migrations30_ActionGroup.java" startLine="30" startPosition="7" endLine="34" endPosition="56">
       <varInfo nodeId="2410923023159158825" varName="action" />
       <varInfo nodeId="2410923023159158825" varName="manager" />
     </scopeInfo>
-    <scopeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="20" startPosition="9" endLine="34" endPosition="7" />
-    <scopeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="16" startPosition="37" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="16" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.Migrations30_ActionGroup" />
+    <scopeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="20" startPosition="9" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="16" startPosition="37" endLine="38" endPosition="5" />
+    <scopeInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="16" startPosition="0" endLine="40" endPosition="0" />
+    <unitInfo nodeId="8418469470841235721" fileName="Migrations30_ActionGroup.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.Migrations30_ActionGroup" />
   </root>
   <root nodeRef="r:87b037b5-10c4-4da9-9c5f-698fdb4c2fba(jetbrains.mps.lang.smodel.pluginSolution.plugin)/9012587759412831851">
     <nodeInfo nodeId="9012587759412831851" fileName="MigrateToSModelOpenAPI_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
