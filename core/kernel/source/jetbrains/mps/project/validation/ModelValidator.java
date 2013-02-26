@@ -44,12 +44,10 @@ public class ModelValidator {
       return errors;
     }
     if (myModel instanceof InvalidSModel) {
-      Collection<IMessage> problems = ((InvalidSModel) myModel).getProblems();
-      if (problems != null) {
-        for (IMessage m : problems) {
-          if (m.getKind() == MessageKind.ERROR) {
-            errors.add(m.getText());
-          }
+      Iterable<SModel.Problem> problems = myModel.getProblems();
+      for (SModel.Problem m : problems) {
+        if (m.isError()) {
+          errors.add(m.getText());
         }
       }
       if (errors.isEmpty()) {

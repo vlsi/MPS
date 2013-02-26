@@ -2100,6 +2100,12 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     public void load() {
     }
 
+    @NotNull
+    @Override
+    public Iterable<Problem> getProblems() {
+      return Collections.emptySet();
+    }
+
     @Override
     public void save() throws IOException {
 
