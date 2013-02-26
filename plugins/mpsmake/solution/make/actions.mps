@@ -64,6 +64,7 @@
   <import index="jrbx" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)" version="-1" />
   <import index="nhkf" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.facets(MPS.Core/jetbrains.mps.project.facets@java_stub)" version="-1" />
   <import index="51te" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.extapi.model(MPS.Core/jetbrains.mps.extapi.model@java_stub)" version="-1" />
+  <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tprs" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
@@ -77,25 +78,24 @@
   <import index="1oap" modelUID="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" version="0" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
   <import index="tgbt" modelUID="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" version="1" implicit="yes" />
-  <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" implicit="yes" />
   <roots>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="5882989260841555164">
       <property name="id" nameId="tp4k.5023285075122009366" value="jebrains.mps.ide.make" />
       <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Allows to transform models" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Allows to transform models" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
-      <property name="name" nameId="tpck.1169194664001" value="MPS Generation support" />
       <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
+      <property name="name" nameId="tpck.1169194664001" value="MPS Generation support" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
       <property name="version" nameId="tp4k.5023285075122009369" value="3.0" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5332171957773708940">
-      <property name="description" nameId="tp4k.1213273179528" value="Check models for errors before generation" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="description" nameId="tp4k.1213273179528" value="Check models for errors before generation" />
       <property name="name" nameId="tpck.1169194664001" value="CheckModelsBeforeGeneration" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Check Models Before Generation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Build.Options" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Check Models Before Generation" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="5332171957773708985">
       <property name="name" nameId="tpck.1169194664001" value="GenerateOptions" />
@@ -113,21 +113,21 @@
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="CleanProject" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Clean Compiled Java Files" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Project" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Clean Compiled Java Files" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2017614408232613081">
       <property name="name" nameId="tpck.1169194664001" value="CompileProject" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Compile Java Files" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Project" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Compile Java Files" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2017614408232613132">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="RecompileProject" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Recompile Java Files" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Project" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Recompile Java Files" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="4753172061859438776">
       <property name="name" nameId="tpck.1169194664001" value="JavaModuleActions" />
@@ -136,20 +136,20 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4753172061859438783">
       <property name="name" nameId="tpck.1169194664001" value="CleanModule" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Clean Compiled Java Files" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Module" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Clean Compiled Java Files" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4753172061859438849">
       <property name="name" nameId="tpck.1169194664001" value="RebuildModule" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Recompile Java Files" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Module" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Recompile Java Files" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4753172061859438882">
       <property name="name" nameId="tpck.1169194664001" value="MakeModule" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Compile Java Files" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Java.Module" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Compile Java Files" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4753172061859438915">
       <property name="name" nameId="tpck.1169194664001" value="DefaultMakeTask" />
@@ -157,19 +157,19 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3366942412399971107">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="Options" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Build.Options" />
       <property name="caption" nameId="tp4k.1205250923097" value="Options" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Build.Options" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="3366942412399973391">
       <property name="name" nameId="tpck.1169194664001" value="ShowMappingsPartitioning" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Show Mappings Partitioning" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Deprecated.Model" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Show Mappings Partitioning" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8610665572788514618">
       <property name="name" nameId="tpck.1169194664001" value="MakeSelectedModels" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Make Model" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8610665572788514683">
       <property name="name" nameId="tpck.1169194664001" value="MakeActionParameters" />
@@ -183,8 +183,8 @@
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="MakeProject" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Make _Project" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8610665572788515222">
       <property name="name" nameId="tpck.1169194664001" value="ProjectMake" />
@@ -209,38 +209,38 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8610665572788515373">
       <property name="name" nameId="tpck.1169194664001" value="MakeSelection" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Make" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Make" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8610665572788515455">
       <property name="name" nameId="tpck.1169194664001" value="MakeNamespace" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Make" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8610665572788515572">
       <property name="name" nameId="tpck.1169194664001" value="RebuildSelectedModules" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rebuild Module" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8610665572788515637">
       <property name="name" nameId="tpck.1169194664001" value="MakeSelectedModules" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Make Module" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8610665572788515703">
       <property name="name" nameId="tpck.1169194664001" value="RebuildSelectedModels" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rebuild Model" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8610665572788515769">
       <property name="name" nameId="tpck.1169194664001" value="TextPreviewModel" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Preview Generated Text" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Preview Generated Text" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8610665572788515994">
       <property name="name" nameId="tpck.1169194664001" value="ToolbarMake" />
@@ -249,8 +249,8 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8610665572788515998">
       <property name="name" nameId="tpck.1169194664001" value="RebuildProject" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="_Rebuild Project" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Make" />
     </node>
     <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="8610665572788521540">
       <property name="keymap" nameId="tp4k.1562714432501166281" value="$default" />
@@ -286,54 +286,54 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2355088855588242086">
       <property name="name" nameId="tpck.1169194664001" value="BuildAllBehaviors" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rebuild All Behaviors" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2355088855588242147">
       <property name="name" nameId="tpck.1169194664001" value="BuildAllConstraints" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rebuild All Constraints" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2355088855588242208">
       <property name="name" nameId="tpck.1169194664001" value="BuildAllGenerators" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rebuild All Generators" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2355088855588242250">
       <property name="name" nameId="tpck.1169194664001" value="BuildAllLanguageDescriptors" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rebuild All Language Descriptors" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2355088855588242313">
       <property name="name" nameId="tpck.1169194664001" value="BuildAllStructures" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rebuild All Structures" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2355088855588242374">
       <property name="name" nameId="tpck.1169194664001" value="MakeAddition" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
       <property name="caption" nameId="tp4k.1204991940915" value="Make" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2355088855588242385">
       <property name="name" nameId="tpck.1169194664001" value="RebuildRequiredModels" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rebuild Required Models" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968054079" />
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="675857548158123534">
       <property name="name" nameId="tpck.1169194664001" value="BuildAllEditors" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rebuild All Editors" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="459403722178709461">
       <property name="name" nameId="tpck.1169194664001" value="BuildAllIntentions" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
       <property name="caption" nameId="tp4k.1205250923097" value="Rebuild All Intentions" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Internal.Make" />
     </node>
   </roots>
   <root id="5882989260841555164" />
