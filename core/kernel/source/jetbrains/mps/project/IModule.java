@@ -158,14 +158,7 @@ public interface IModule extends SModule {
   // ----- deprecated part
   // model creation stuff
 
-  // AbstractModule#createModel
-  // ModelAdjuster? WTF? something between creating and registration I think
-  // talk with Evgeny
-  SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
 
-  public static interface ModelAdjuster {
-    void adjust(SModelDescriptor model);
-  }
 
   // module source path stuff
 
@@ -219,6 +212,22 @@ public interface IModule extends SModule {
   boolean reloadClassesAfterGeneration();
 
   // other methods
+
+  /**
+   * If you need just model: use root.createModel
+   * // remove second thing?
+   * If you need model with adjustments (auto imports, optimized imports, etc): use SModuleOperations.createModel
+   */
+  @Deprecated
+  SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
+
+  /**
+   * Create model through modelRoot.createModel, apply adjuster, and register model in repository after this operations
+   */
+  @Deprecated
+  public static interface ModelAdjuster {
+    void adjust(SModelDescriptor model);
+  }
 
   /**
    * @see SModule#getModuleName

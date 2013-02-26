@@ -116,7 +116,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     myFacets = createFacets();
   }
 
-  private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
+  public static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
 
   public static void registerModelCreationListener(ModelCreationListener listener) {
     ourModelCreationListeners.add(listener);
@@ -127,37 +127,16 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
+  @Deprecated
   public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
-    // why ModelRoot register model in module? WTF
-    // should be public AbstractModule#addModel method!
-    // ourModelsCreationListeners should be called in addModel method
-
-    // so this goes to SModuleOperation method with createModel from ModelRoot, apply adj and register in module
-    // deprecated
-    if (!root.canCreateModel(name)) {
-      LOG.error("Can't create a model " + name + " under model root " + root.getPresentation());
-      return null;
+    // todo: remove register from ModelRoot
+    if (adj == null) {
+      return (EditableSModelDescriptor) SModuleOperations.createModelWithAdjustments(name, root);
+    } else {
+      EditableSModelDescriptor descriptor = (EditableSModelDescriptor) SModuleOperations.createModelWithAdjustments(name, root);
+      adj.adjust(descriptor);
+      return descriptor;
     }
-
-    EditableSModelDescriptor model = (EditableSModelDescriptor) root.createModel(name);
-    if (adj != null) {
-      adj.adjust(model);
-    }
-    model.getSModel();
-    model.setChanged(true);
-    model.save();
-
-//    ((ModelRootBase) root).register(model);
-
-    for (ModelCreationListener listener : ourModelCreationListeners) {
-      if (listener.isApplicable(this, model)) {
-        listener.onCreate(this, model);
-      }
-    }
-
-    new MissingDependenciesFixer(model).fix(false);
-
-    return model;
   }
 
   //----reference
