@@ -40,6 +40,11 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   //------
 
+  @Deprecated
+  /**
+   * todo Evgeny will get rid of it
+   * @Deprecated in 3.0
+   */
   void forceLoad();
 
   @Deprecated
