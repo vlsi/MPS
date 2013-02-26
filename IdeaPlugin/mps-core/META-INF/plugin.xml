@@ -124,6 +124,7 @@
     <lang.fileViewProviderFactory language="MPS"
                                   implementationClass="jetbrains.mps.idea.core.psi.MPSFileViewProviderFactory"/>
     <navbar implementation="jetbrains.mps.idea.core.psi.MPSNavBarExtension" id="MPSNavbar"/>
+    <lang.parserDefinition language="MPS" implementationClass="jetbrains.mps.idea.core.fileType.MPSParserDefinition"/>
   </extensions>
 
   <actions>
