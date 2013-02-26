@@ -4643,7 +4643,7 @@
                             <property name="value" nameId="tpee.1068580320021" value="1" />
                           </node>
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1230052642374">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052642348" resolveInfo="a" />
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052642370" resolveInfo="a" />
                           </node>
                         </node>
                       </node>
@@ -12491,8 +12491,8 @@
                   <property name="value" nameId="tpee.1068580320021" value="5" />
                 </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1230053302561">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1230053302546" resolveInfo="Class" />
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053302547" resolveInfo="f" />
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~Class" resolveInfo="Class" />
                 </node>
               </node>
             </node>
