@@ -130,7 +130,7 @@ public interface SModel {
     String getText();
 
     /**
-     *  Errors usually cause model to be partly loaded, so it cannot be saved back to the storage later.
+     *  Errors usually cause model to be partially loaded, so it cannot be saved back to the storage later.
      */
     boolean isError();
   }
