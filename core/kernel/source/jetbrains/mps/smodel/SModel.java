@@ -80,7 +80,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   private INodeIdToNodeMap myIdToNodeMap = createNodeIdMap();
 
-  private SModelDescriptor myModelDescriptor;
+  protected SModelDescriptor myModelDescriptor;
 
   private StackTraceElement[] myDisposedStacktrace = null;
   private ModelDependenciesManager myModelDependenciesManager;
@@ -236,6 +236,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   @Override
+  public boolean isLoaded() {
+    return true;
+  }
+
+  @Override
   public boolean isReadOnly() {
     SModelDescriptor md = getModelDescriptor();
     return md != null && md.isReadOnly();
@@ -244,6 +249,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   @Override
   public void save() throws IOException {
     //todo
+  }
+
+  @Override
+  public void load() {
+    // already loaded
   }
 
   @Override
@@ -279,8 +289,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   protected void enforceFullLoad() {
-    if (myModelDescriptor == null) return;
-    myModelDescriptor.forceLoad();
   }
 
   private void fireModelNodesReadAccess() {

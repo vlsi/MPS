@@ -2092,6 +2092,15 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     @Override
+    public boolean isLoaded() {
+      return true;
+    }
+
+    @Override
+    public void load() {
+    }
+
+    @Override
     public void save() throws IOException {
 
     }
