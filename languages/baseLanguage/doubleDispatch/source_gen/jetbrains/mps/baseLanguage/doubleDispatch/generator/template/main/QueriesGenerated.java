@@ -116,7 +116,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_2323553266848914943(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("var:methodDecl")), "parameter", true)).skip(1);
+    return ListSequence.fromList(SLinkOperations.getTargets(((SNode) _context.getVariable("methodDecl")), "parameter", true)).skip(1);
   }
 
   public static Iterable sourceNodesQuery_2323553266848914918(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

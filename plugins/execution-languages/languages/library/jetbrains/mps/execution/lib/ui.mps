@@ -2803,17 +2803,17 @@
                     <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1240470842553499993">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1240470842553499994">
                         <node role="expression" roleId="tpee.1068580123156" type="cx9y.IndexedTupleLiteral" typeId="cx9y.1238853782547" id="1240470842553499995">
-                          <node role="component" roleId="cx9y.1238853845806" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="1240470842553499996">
-                            <node role="ifTrue" roleId="tpee.1163668922816" type="tp25.ReadConceptReferenceExpression" typeId="tp25.448792706993295611" id="1240470842553499997">
-                              <link role="conceptDeclaration" roleId="tp25.448792706993295615" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-                            </node>
-                            <node role="ifFalse" roleId="tpee.1163668934364" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="1240470842553499998">
-                              <node role="index" roleId="cx9y.1238857834412" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="1240470842553499999">
+                          <node role="component" roleId="cx9y.1238853845806" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="9063453653396375043">
+                            <node role="ifFalse" roleId="tpee.1163668934364" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="9063453653396507060">
+                              <node role="index" roleId="cx9y.1238857834412" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="9063453653396519888">
                                 <property name="value" nameId="tpee.1068580320021" value="0" />
                               </node>
-                              <node role="tuple" roleId="cx9y.1238857764950" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1240470842553500000">
+                              <node role="tuple" roleId="cx9y.1238857764950" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9063453653396481233">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1240470842553500009" resolveInfo="it" />
                               </node>
+                            </node>
+                            <node role="ifTrue" roleId="tpee.1163668922816" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="9063453653396455494">
+                              <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
                             </node>
                             <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="1240470842553500001">
                               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1240470842553500002" />

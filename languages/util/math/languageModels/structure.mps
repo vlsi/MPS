@@ -14,6 +14,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="is in interval" />
       <property name="name" nameId="tpck.1169194664001" value="InIntervalExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="interval" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value=":in:" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1081773326031" resolveInfo="BinaryOperation" />
@@ -23,6 +24,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="(?) interval contains" />
       <property name="name" nameId="tpck.1169194664001" value="IntervalContainsExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="interval" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value=":contains:" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1081773326031" resolveInfo="BinaryOperation" />
@@ -32,6 +34,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Interval literal" />
       <property name="name" nameId="tpck.1169194664001" value="IntervalLiteral" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="interval" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="interval" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -41,6 +44,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Interval type" />
       <property name="name" nameId="tpck.1169194664001" value="IntervalType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="interval" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="interval" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
@@ -50,6 +54,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Power expression" />
       <property name="name" nameId="tpck.1169194664001" value="PowExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="methods" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="^" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -59,6 +64,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Matrix row constructor" />
       <property name="name" nameId="tpck.1169194664001" value="MatrixConstructor" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="[" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -67,6 +73,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="VectorType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="vector" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1237218038292" resolveInfo="MathPrimitiveType" />
@@ -75,6 +82,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MatrixNorm" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="norm" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -83,6 +91,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MatrixType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="matrix" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1237218038292" resolveInfo="MathPrimitiveType" />
@@ -101,6 +110,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Zero matrix" />
       <property name="name" nameId="tpck.1169194664001" value="MatrixZero" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="zero" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -110,6 +120,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Imaginary unit" />
       <property name="name" nameId="tpck.1169194664001" value="LiteralI" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="complex" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="I" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -119,6 +130,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="minus operation for big decimal types" />
       <property name="name" nameId="tpck.1169194664001" value="DecimalMinusExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="highPrecisionArithmetic" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value=":-d" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1238402702427" resolveInfo="DecimalBinaryOperation" />
@@ -135,6 +147,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="DecimalBinaryOperation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="highPrecisionArithmetic" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1081773326031" resolveInfo="BinaryOperation" />
     </node>
@@ -142,6 +155,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MathFuncExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="methods" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
@@ -156,6 +170,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Trigonometric sine of a value" />
       <property name="name" nameId="tpck.1169194664001" value="SineExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="methods" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="sin" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1238343594087" resolveInfo="MathFuncExpression" />
@@ -165,6 +180,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="multiplication operation for big decimal types" />
       <property name="name" nameId="tpck.1169194664001" value="DecimalMulExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="highPrecisionArithmetic" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value=":*d" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1238402702427" resolveInfo="DecimalBinaryOperation" />
@@ -174,6 +190,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Transpose operation" />
       <property name="name" nameId="tpck.1169194664001" value="TransposeOperation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7255837154369580413" resolveInfo="MatrixExponentialOperation" />
     </node>
@@ -182,6 +199,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Matrix initializer" />
       <property name="name" nameId="tpck.1169194664001" value="MatrixInitializer" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="matrix" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -196,6 +214,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1237214346477">
       <property name="name" nameId="tpck.1169194664001" value="MathTypeCast" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="internals" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
@@ -204,6 +223,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Trigonometric tangent of a value" />
       <property name="name" nameId="tpck.1169194664001" value="TangentExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="methods" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="tan" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1238343594087" resolveInfo="MathFuncExpression" />
@@ -212,6 +232,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="DivExpressionFraction" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="frac" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -221,6 +242,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Absolute value of a number" />
       <property name="name" nameId="tpck.1169194664001" value="AbsExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="methods" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="abs" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -238,6 +260,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Natural logarithm of a value" />
       <property name="name" nameId="tpck.1169194664001" value="LogExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="methods" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ln" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1238343594087" resolveInfo="MathFuncExpression" />
@@ -247,6 +270,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="divide operation for big decimal types" />
       <property name="name" nameId="tpck.1169194664001" value="DecimalDivExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="highPrecisionArithmetic" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value=":/d" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1238402702427" resolveInfo="DecimalBinaryOperation" />
@@ -255,6 +279,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ExtrSymbol" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1236426954905" resolveInfo="MathSymbol" />
     </node>
@@ -266,6 +291,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1236427936913">
       <property name="name" nameId="tpck.1169194664001" value="MathSymbolIndexReference" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
@@ -274,6 +300,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Identity matrix" />
       <property name="name" nameId="tpck.1169194664001" value="MatrixUnit" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="identity" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -283,6 +310,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Matrix determinant" />
       <property name="name" nameId="tpck.1169194664001" value="Determinant" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="det" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1238343594087" resolveInfo="MathFuncExpression" />
@@ -292,6 +320,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Product of expressions" />
       <property name="name" nameId="tpck.1169194664001" value="BigProdExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="prod" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1236428893250" resolveInfo="ArithmSymbol" />
@@ -301,6 +330,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Sum of expressions" />
       <property name="name" nameId="tpck.1169194664001" value="BigSumExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="sum" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1236428893250" resolveInfo="ArithmSymbol" />
@@ -310,6 +340,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Matrix inverse operation" />
       <property name="name" nameId="tpck.1169194664001" value="MatrixInverseOperation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7255837154369580413" resolveInfo="MatrixExponentialOperation" />
     </node>
@@ -318,6 +349,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Trigonometric cosine of a value" />
       <property name="name" nameId="tpck.1169194664001" value="CosineExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="methods" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="cos" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1238343594087" resolveInfo="MathFuncExpression" />
@@ -327,6 +359,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Arbitrary precision signed decimal number" />
       <property name="name" nameId="tpck.1169194664001" value="BigDecimalType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="highPrecisionArithmetic" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="bigdecimal" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1237218038292" resolveInfo="MathPrimitiveType" />
@@ -336,6 +369,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Arbitrary precision complex number" />
       <property name="name" nameId="tpck.1169194664001" value="BigComplexType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="complex" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="bigcomplex" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1237218038292" resolveInfo="MathPrimitiveType" />
@@ -345,6 +379,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Minimum of expressions" />
       <property name="name" nameId="tpck.1169194664001" value="BigMinExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="min" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1236428507726" resolveInfo="ExtrSymbol" />
@@ -352,6 +387,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1236428893250">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ArithmSymbol" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1236426954905" resolveInfo="MathSymbol" />
     </node>
@@ -359,11 +395,13 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MathSymbol" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1238328560395">
       <property name="name" nameId="tpck.1169194664001" value="ComplexLiteral" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="internals" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
@@ -377,6 +415,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Double precision complex number" />
       <property name="name" nameId="tpck.1169194664001" value="ComplexType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="complex" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="complex" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1237218038292" resolveInfo="MathPrimitiveType" />
@@ -386,6 +425,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Wildcard index" />
       <property name="name" nameId="tpck.1169194664001" value="MatrixIndexWildcard" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="*" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -395,6 +435,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Vector initializer" />
       <property name="name" nameId="tpck.1169194664001" value="VectorInitializer" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="vector" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
@@ -404,6 +445,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Arbitrary precision integer" />
       <property name="name" nameId="tpck.1169194664001" value="BigIntegerType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="highPrecisionArithmetic" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="biginteger" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1237218038292" resolveInfo="MathPrimitiveType" />
@@ -413,6 +455,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Exponent of a value" />
       <property name="name" nameId="tpck.1169194664001" value="ExponentExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="methods" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="exp" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1238343594087" resolveInfo="MathFuncExpression" />
@@ -429,6 +472,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Maximum of expressions" />
       <property name="name" nameId="tpck.1169194664001" value="BigMaxExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="bigSymbols" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="max" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1236428507726" resolveInfo="ExtrSymbol" />
@@ -445,6 +489,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="plus operation for bigdecimal types" />
       <property name="name" nameId="tpck.1169194664001" value="DecimalPlusExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="highPrecisionArithmetic" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value=":+d" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1238402702427" resolveInfo="DecimalBinaryOperation" />
@@ -460,11 +505,13 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6389121991274611498">
       <property name="name" nameId="tpck.1169194664001" value="MatrixElementAccessExpression" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6219660258344759890">
       <property name="name" nameId="tpck.1169194664001" value="MatrixInitializerIndexReference" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
@@ -472,18 +519,21 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MathPrimitiveType" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7255837154369354272">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ExponentialOperation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7255837154369580413">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="MatrixExponentialOperation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7255837154369354272" resolveInfo="ExponentialOperation" />
     </node>
@@ -492,6 +542,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Matrix conjugate" />
       <property name="name" nameId="tpck.1169194664001" value="ConjugateOperation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrix" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7255837154369580413" resolveInfo="MatrixExponentialOperation" />
     </node>

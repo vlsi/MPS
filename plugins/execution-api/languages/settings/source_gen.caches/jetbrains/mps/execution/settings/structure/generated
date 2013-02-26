@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-drhwcihxex0hliokfrsurwo7b840c83">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
+<dependencies version="2" modelHash="-1qllswb6ymdeqgrgyd86rz4g1elhwpl">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-92tu7rxl21zsoz29xy7caobqrksdhqe" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
-  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-acs1znq6d4zmq0jt0ai12tqya72tq9" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9bdhyw4fyjj9lptx5av16k73e6s932q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
+  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-286yfilw30wq2oq3e4nqhxc1wwa35zb" />
   <dep model="r:29a26f36-0627-4505-9c3e-faf17694979c(jetbrains.mps.execution.common.structure)" hash="-ehfnr7lw5nxnyni82ijt9acutyy4j3a" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-71ygfppz5a6um2g0qle2y4h8kch18sg">
@@ -51,19 +51,19 @@
   <source id="946964771156066331" name="PersistentConfigurationMethod" hash="44vxdrn2ls7ffupad5ca55zg9c8kfr1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156066332" name="PersistentConfigurationType" hash="-7yrdyzd0ri4tbd3ob43zfsl3gqh0j95">
+  <source id="946964771156066332" name="PersistentConfigurationType" hash="-7kon6is22qd4kkwmajcjphygvmwd45z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="946964771156066336" name="PersistentConfiguration" hash="edbelcayp8y1c42jy6y0ucodqzrt6d8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156066557" name="TemplatePersistentConfigurationType" hash="dd4s62qcia9zu1wippnb40t0foa8tkj">
+  <source id="946964771156066557" name="TemplatePersistentConfigurationType" hash="bi35fxhueriabrlpirko783xdzxzon2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156066561" name="TemplateParameterReference" hash="9m0onwd59vhk6nn6rykhqq0iargno6g">
+  <source id="946964771156066561" name="TemplateParameterReference" hash="5i36ugfik62jazjnbxjr5p9npqsxpec">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156066563" name="ReportConfigurationErrorStatement" hash="dgr2u627wjwn9kgnm5yxor3pp3kuqnw">
+  <source id="946964771156066563" name="ReportConfigurationErrorStatement" hash="-c2017lwyjwz8hml949nmq42upy161so">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="946964771156066566" name="CreateEditor_Function" hash="5ph84iqbz4ad93kup7qjr2kowz88ott">
@@ -72,13 +72,13 @@
   <source id="946964771156066571" name="Dispose_Function" hash="2behhu9g5ff9jycq3y70c7x6aysf8n">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156066574" name="PersistentPropertyReferenceOperation" hash="4gozxoakj3ha507lg2wluj1v52upkwa">
+  <source id="946964771156066574" name="PersistentPropertyReferenceOperation" hash="-e5ucy6k3c20494ku84tlxlo3zgqypln">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="946964771156066579" name="PersistentConfigurationTemplate" hash="-ay1nvn014jvspmcnykr6mzmg0bnamiy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156066582" name="PersistentConfigurationTemplateInitializer" hash="5lj4zyt0spp9i8hmvaoa36jrzlo8vlz">
+  <source id="946964771156066582" name="PersistentConfigurationTemplateInitializer" hash="-7toryjh4pfwgfp9bzxqt7m651pi8p0c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="946964771156066585" name="PersistentPropertyDeclaration" hash="-1zoh9rv2vxbwx5e3xjg9fo714vi5tp9">
@@ -87,10 +87,10 @@
   <source id="946964771156066586" name="TemplateParameter" hash="-aq8m5e5uqh1njcw14w0tywd6y46vjdm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156066588" name="EditorExpression" hash="-9cplrqnauu18zezco47o2xbebpteutn">
+  <source id="946964771156066588" name="EditorExpression" hash="-dv8m1l3cb7d3eirt2o4zjq3f8tu5te6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156066591" name="CheckProperitesOperation" hash="-4myoqkjldgkapia9opbontjhgw3a056">
+  <source id="946964771156066591" name="CheckProperitesOperation" hash="-46e7n1rf69akv1qip13ezb68sqcdxjc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="946964771156066594" name="IPersistentPropertyHolder" hash="-9zlwexek2f2cga8a5hi5le0qucxb8jv">
@@ -105,34 +105,34 @@
   <source id="946964771156066605" name="EditorOperationDeclaration" hash="-9d54zvvmyx22y058pgfzx3aj8usjwsv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156066606" name="EditorOperationCall" hash="4zcf15ihb3h2ry14v8u9nbgjak667r6">
+  <source id="946964771156066606" name="EditorOperationCall" hash="4xtatdo1gxi8xesomgl5ln0fcsoxaf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="946964771156066610" name="EditorPropertyDeclaration" hash="1wt770dbo8ixz51s5vh5hbr7sqnjheh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156066611" name="EditorPropertyReference" hash="cz5osgw13m5w82vic08hxk5azs4pisc">
+  <source id="946964771156066611" name="EditorPropertyReference" hash="-2g5ngp3xoca0m112wh43jeir4nmbig">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="946964771156066614" name="ResetFrom_Function" hash="-7uzrqoz9ittfmsnmamr1gq2bqh4csq1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156066618" name="SettingsEditorType" hash="-bqadu5nklzg1psxfygbf8vddf59i1rt">
+  <source id="946964771156066618" name="SettingsEditorType" hash="-7ql9glbn6p6mg04972q6eh61xbx4rzy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="946964771156066621" name="SettingsEditor" hash="-426mwtvf81ddu9d3mujnr65l2sx9dlw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="946964771156067216" name="Configuration_Parameter" hash="-7rsls16rm0om4q120wgx1zr3d6iuj35">
+  <source id="946964771156067216" name="Configuration_Parameter" hash="8gzf0mohdw0al131g1x1133kkz3yzqm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="946964771156905617" name="PersistentConfigurationAssistent" hash="-1ai19912v07et65zkh064x5fjjlq5f5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5365453833390705317" name="GetEditorOperation" hash="930ubkfssq4uqt3cu1z694pd2th2khc">
+  <source id="5365453833390705317" name="GetEditorOperation" hash="-1pyekhfao3pbizcfpkhtp1980677a42">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2722628536111969416" name="GridBagConstraints" hash="-ao1z09ock6zpzktmmnjkua821kl7t6c">
+  <source id="2722628536111969416" name="GridBagConstraints" hash="-ba87n5ted825kjnh3ew43de8qq79bvo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2722628536111969417" name="GridBagConstraintsKind" hash="70bcl99bajfmk6f184fr134hn2xuhtp">

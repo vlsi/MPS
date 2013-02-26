@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -28,8 +28,9 @@ import java.io.IOException;
  */
 public interface SModel {
 
-  @Deprecated//todo migration only. REMOVE
-  SModelDescriptor getModelDescriptor() ;
+  @Deprecated
+//todo migration only. REMOVE
+  SModelDescriptor getModelDescriptor();
 
   /**
    * Returns the id of the model valid within the containing module.
@@ -48,6 +49,7 @@ public interface SModel {
 
   ModelRoot getModelRoot();
 
+  // TODO remove
   void setModelRoot(ModelRoot mr);
 
   /**
@@ -81,6 +83,15 @@ public interface SModel {
    */
   @NotNull
   DataSource getSource();
+
+  boolean isLoaded();
+
+  /**
+   * When owning a read action lock, this method will fully load the model from the storage.
+   * Does nothing if already loaded.
+   * The load() method is called automatically on a not-loaded model whenever elements from it are being resolved.
+   */
+  void load();
 
   /**
    * When owning a write action lock, this method will save the model into the storage.

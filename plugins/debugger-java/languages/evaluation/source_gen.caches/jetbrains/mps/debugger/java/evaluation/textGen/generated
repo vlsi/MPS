@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="-2by7v9c9rslnz4bra1s20cy49vgd2bo">
   <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" hash="1oieg0nih8h7eiy1sqqjnea5i6m0ge1" />
   <dep model="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)" hash="77oqu8czg6lm43690a8a2opdmanqii0" />
-  <dep model="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)" hash="-r2jahzdeim3vs61ld4upvv2a4396oe" />
+  <dep model="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)" hash="9fxii8wuocdulza8lavpp7wtjtkcz4y" />
   <common hash="-90k0mkciz356tshz4jyrl3j72u58l3h" />
   <source id="948722627350505706" name="LowLevelVariable_TextGen" hash="-6u118zscohjwo96y3hynhlmoyxq0p3z">
     <dep model="r:1e88207e-a8e3-4e7e-8d9b-916f60cbdc61(jetbrains.mps.lang.textGen.generator.template.main@generator)" />

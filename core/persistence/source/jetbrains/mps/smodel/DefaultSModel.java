@@ -62,6 +62,14 @@ public class DefaultSModel extends SModel {
     return fullLoadUpdateMode;
   }
 
+  @Override
+  protected void enforceFullLoad() {
+    SModelDescriptor md = myModelDescriptor;
+    if (!(md instanceof DefaultSModelDescriptor)) return;
+    md.load();
+  }
+
+
   public SModelHeader getSModelHeader() {
     return myHeader;
   }

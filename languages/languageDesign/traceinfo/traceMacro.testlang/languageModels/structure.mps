@@ -10,6 +10,7 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7980748436587788162">
       <property name="name" nameId="tpck.1169194664001" value="GeneratedForeach" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tp2q.1153943597977" resolveInfo="ForEachStatement" />
     </node>
   </roots>

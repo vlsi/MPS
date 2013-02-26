@@ -41,8 +41,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848036997" resolveInfo="BuildLayout_Node" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848036984">
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/layout.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="create a folder" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/layout.png" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_Folder" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="folder" />
@@ -100,8 +100,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5248329904288265468" resolveInfo="BuildSource_JavaSources" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848136194">
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/macro.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="defines folder macro with default value (for local build)" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/macro.png" />
       <property name="name" nameId="tpck.1169194664001" value="BuildFolderMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="folder" />
@@ -177,6 +177,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8618885170173601777">
       <property name="name" nameId="tpck.1169194664001" value="BuildCompositePath" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
@@ -204,8 +205,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="6647099934206689694" resolveInfo="BuildPlugin" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3767587139141066978">
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/macro.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="defines variable macro" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/macro.png" />
       <property name="name" nameId="tpck.1169194664001" value="BuildVariableMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="var" />
@@ -273,8 +274,8 @@
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="5248329904288265463">
       <property name="noValueText" nameId="tpce.1212087449254" value="&lt;no kind&gt;" />
       <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_internal_value" />
-      <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaContentFolderKind" />
       <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaContentFolderKind" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Sources" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
@@ -592,8 +593,8 @@
     </node>
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="4198392933254416814">
       <property name="memberIdentifierPolicy" nameId="tpce.1197591154882" value="derive_from_internal_value" />
-      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyFilterEolStyle" />
       <property name="hasNoDefaultMember" nameId="tpce.1212080844762" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyFilterEolStyle" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Handlers" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
@@ -790,6 +791,11 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_CopyProcessor" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Processor" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="9184644532456508467" resolveInfo="BuildLayout_CopyHandler" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6354776497066088012">
+      <property name="name" nameId="tpck.1169194664001" value="GeneratorInternal_ProjectDependency" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="GeneratorInternal" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </roots>
   <root id="5617550519002745363">
@@ -1955,5 +1961,17 @@
   </root>
   <root id="5970181360961342215" />
   <root id="1330375798058820290" />
+  <root id="6354776497066088012">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6354776497066088381">
+      <property name="name" nameId="tpck.1169194664001" value="path" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6354776497069761491">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="project" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5617550519002745363" resolveInfo="BuildProject" />
+    </node>
+  </root>
 </model>
 

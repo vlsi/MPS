@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-35a8h42r3vsqvkpsu0vskvfcfxuto8h">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
+<dependencies version="2" modelHash="2vygr20pvo4n42r5vh4kjosb9c48unv">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-92tu7rxl21zsoz29xy7caobqrksdhqe" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9bdhyw4fyjj9lptx5av16k73e6s932q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="8z80ajyemoemfkxi7e0h95f7hnqqac0">
     <dep root="1216860049619" />
@@ -47,103 +47,103 @@
     <file name="GenerationContext_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1216860049619" name="GenerationContextOp_Base" hash="7wq0ty69ghdzb1u528jyahquo26nmjh">
+  <source id="1216860049619" name="GenerationContextOp_Base" hash="3iv3po9xzsh52wqajnhozxceyki3t3k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1216860049622" name="GenerationContextOp_GetOutputByLabel" hash="-ca3csvw6jbuq4jzeq6oilw9g9k2uiop">
+  <source id="1216860049622" name="GenerationContextOp_GetOutputByLabel" hash="-e731obshwuvk4oo86nyojgibnl1gs6u">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1216860049627" name="GenerationContextOp_GetOutputByLabelAndInput" hash="ej8ib6x5zvj6g80aawnh5lv0wcbqaot">
+  <source id="1216860049627" name="GenerationContextOp_GetOutputByLabelAndInput" hash="-2972sazp7x8vqgg2u8f7w93t4myyccy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1216860049633" name="GenerationContextType" hash="-75zdrlti3tohi4m7a5r970y0b2k8z8e">
+  <source id="1216860049633" name="GenerationContextType" hash="dzel4s2hi0r5wnb0c57bkd8vhx3m294">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1216860049635" name="TemplateFunctionParameter_generationContext" hash="4xs703n4qdqc4q60xmutormxgq7j1s0">
+  <source id="1216860049635" name="TemplateFunctionParameter_generationContext" hash="-c8f8u7qh5i2tv8p1te8e3qqecjrveql">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1216945228272" name="GenerationContextOp_GetScope" hash="67s5md3492luqglo7h4arzdy1xdh98x">
+  <source id="1216945228272" name="GenerationContextOp_GetScope" hash="1mr4fb8v835r5kury44dpi23frdif6v">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217004708011" name="GenerationContextOp_GetInputModel" hash="5g6y57qp3jkwof0t381g8umpswvfbi">
+  <source id="1217004708011" name="GenerationContextOp_GetInputModel" hash="764v4rsbi3ctjdhfy6v7q7jyvcrxcjo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217026863835" name="GenerationContextOp_GetOriginalInputModel" hash="9w8b1s4xg0nn8od17tgtley1185mmo">
+  <source id="1217026863835" name="GenerationContextOp_GetOriginalInputModel" hash="3fq4v1a6s1z8oyy1ra3vz2jbj2cpzhh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217282130234" name="GenerationContextOp_GetOutputModel" hash="8kgc4q2le635d3h6u4qyeij2z84mvri">
+  <source id="1217282130234" name="GenerationContextOp_GetOutputModel" hash="d940u00wvwkc442ckpmsyf70zk80jci">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217369610610" name="GenerationContextOp_GetTemplateNode" hash="2cty9lal2we3cphe3rp47jo7ptsgkz8">
+  <source id="1217369610610" name="GenerationContextOp_GetTemplateNode" hash="-25zkuw1jr5kbn9lgvog5gtmbau63doo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217881979074" name="GenerationContextOp_GetPrevInputByLabel" hash="8lpwcac0gj7emq3ygnbfb72obyr6jda">
+  <source id="1217881979074" name="GenerationContextOp_GetPrevInputByLabel" hash="-5sqxtt6gr03d907dbmps381apxnsehj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217884725453" name="GenerationContextOp_GetCopiedOutputByInput" hash="-3ska1tnrwcnca9rgxfbautg51ote8bq">
+  <source id="1217884725453" name="GenerationContextOp_GetCopiedOutputByInput" hash="264e0gq0v2ldklpg8414frqf8sbirwf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217889725928" name="GenerationContextOp_SessionObjectAccess" hash="-9zwyd4kxsnxjp3jes35a7abancu4ml5">
+  <source id="1217889725928" name="GenerationContextOp_SessionObjectAccess" hash="-1wvq69wa1oolp0ch8u721z2gifget4b">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217889960776" name="GenerationContextOp_UserObjectAccessBase" hash="-7pt5dv7s6k6vgo6952fcp95jl749tgi">
+  <source id="1217889960776" name="GenerationContextOp_UserObjectAccessBase" hash="-4diffx90zn0jbvihd9lulqdij4xvc05">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217894011536" name="GenerationContextOp_StepObjectAccess" hash="8g6z3mikxtbbt7km0w90k6gqwdcze5c">
+  <source id="1217894011536" name="GenerationContextOp_StepObjectAccess" hash="8e4q2jhrb4ekdstkn6c4l5pfh9st0tp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217894033795" name="GenerationContextOp_TransientObjectAccess" hash="-7i9vvjst3hyq3ndk824e2pgf8bzc417">
+  <source id="1217894033795" name="GenerationContextOp_TransientObjectAccess" hash="-4d0zrb70xcw4csmgj2mh9xh75v2xb4v">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217960179967" name="GenerationContextOp_ShowErrorMessage" hash="-8667kzhqjms1q4xtvdkwifz244qrboc">
+  <source id="1217960179967" name="GenerationContextOp_ShowErrorMessage" hash="9ksvxtfnr2zchw84qqvov9wlh0m3f0k">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217960314443" name="GenerationContextOp_ShowMessageBase" hash="akqd7zi8buuf77qa98sm8gn7xqcwbj3">
+  <source id="1217960314443" name="GenerationContextOp_ShowMessageBase" hash="-5yzt37qqntbikvm8jgtvn9xddhiycq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217969995796" name="GenerationContextOp_ShowWarningMessage" hash="-b6tip5cvul28v3porlw2zh34bd96x6">
+  <source id="1217969995796" name="GenerationContextOp_ShowWarningMessage" hash="3edcodde9ne128ogbc7cpw4gvn0ekr5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1217970068025" name="GenerationContextOp_ShowInfoMessage" hash="68j6ponwvj8tqt37ezj3k24wmca9aqv">
+  <source id="1217970068025" name="GenerationContextOp_ShowInfoMessage" hash="edefe3ndiopyb1rlklgjtup4n7k2mlh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1218047638031" name="GenerationContextOp_CreateUniqueName" hash="-4myyuy1wl5byiceltqp3j25fywjk7ky">
+  <source id="1218047638031" name="GenerationContextOp_CreateUniqueName" hash="243zj27nt1zxug2jyu7oag9x07dh8zt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1221156564099" name="GenerationContextOp_GetOutputListByLabelAndInput" hash="7l1b8a7odbveo2uu2m2gct093zx6t9h">
+  <source id="1221156564099" name="GenerationContextOp_GetOutputListByLabelAndInput" hash="-8y4frrpgeyeajyjwy2ybhzjj4uwanht">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1221218985173" name="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" hash="-c4qx2e0y8xel9vz9yojlicq8jlxblig">
+  <source id="1221218985173" name="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" hash="-ce17rj2icv47axqtwvwhg7orcrrj5a5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1224102704684" name="GenerationContextOp_GetInvocationContext" hash="-61344jya73ote0zaqmmbe9zif98g3v4">
+  <source id="1224102704684" name="GenerationContextOp_GetInvocationContext" hash="hm0z6758zrmqdbnwqe1dndjgy0jmkj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1229477454423" name="GenerationContextOp_GetOriginalCopiedInputByOutput" hash="9fisu6tbyc9ec0mqhbnfk37ukizssrh">
+  <source id="1229477454423" name="GenerationContextOp_GetOriginalCopiedInputByOutput" hash="-8klfz92g1ozrdnjpzqlw08p0wye0ov3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4589968773278056990" name="GenerationContextOp_NodePatternRef" hash="-azu4tt00x5unoywfladt2to4bo4w8m4">
+  <source id="4589968773278056990" name="GenerationContextOp_NodePatternRef" hash="46nakag8pkhii8lrycga329y0m1m34c">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5190093307972723402" name="GenerationContextOp_ParameterRef" hash="-bcu8iq8v347qnciiwml9xsd5sfki6zi">
+  <source id="5190093307972723402" name="GenerationContextOp_ParameterRef" hash="-9a5b7aw17noqaazq4bffsrmagoo54gt">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1758784108619220823" name="GenerationContextOp_LinkPatternRef" hash="-5a4l9g184ejwvt61ybxk6dwkiwv6mms">
+  <source id="1758784108619220823" name="GenerationContextOp_LinkPatternRef" hash="-4kf8jtrtw4wwpwws0gtlni8xn1f8hpb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1758784108619220824" name="GenerationContextOp_PropertyPatternRef" hash="-3kmvjg28ja51rs99p7qrxvtatcoe2ft">
+  <source id="1758784108619220824" name="GenerationContextOp_PropertyPatternRef" hash="2g4xgooxndsammrfpi4frfztyru78yf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1758784108619328022" name="GenerationContextOp_PatternRef" hash="-5qar17xh3hk2zzu88y347y1vb9lx9vv">
+  <source id="1758784108619328022" name="GenerationContextOp_PatternRef" hash="-exgdzf8ht3o8e7gn1hnn6jdcak1w8n0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5403673535105109113" name="GenerationContextOp_DirtyNode" hash="-asomhq1idxivrv66erfvlub5166cemq">
+  <source id="5403673535105109113" name="GenerationContextOp_DirtyNode" hash="acs7kh8hjrptn8igq4biowj0naylo9g">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2507865635201615235" name="GenerationContextOp_GenParameterRef" hash="8qlsvutg2j6m5kygigd7klwqgcl6kf7">
+  <source id="2507865635201615235" name="GenerationContextOp_GenParameterRef" hash="dn4n40m77r739lyv8vgzukflek96u1p">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2721957369897614808" name="GenerationContextOp_VarRef" hash="-8b4cj3hvnchmmlvukfxa20xbux44v8z">
+  <source id="2721957369897614808" name="GenerationContextOp_VarRef" hash="5q4mo25zhlzpfqebsq8eqm53l3e44q">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

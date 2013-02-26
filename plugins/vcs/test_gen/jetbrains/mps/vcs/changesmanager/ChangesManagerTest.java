@@ -873,7 +873,7 @@ public class ChangesManagerTest {
     final EditableSModel md = newModelDiff.value.getModelDescriptor();
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
-        ((SModelDescriptor) md).forceLoad();
+        md.load();
         md.save();
       }
     });

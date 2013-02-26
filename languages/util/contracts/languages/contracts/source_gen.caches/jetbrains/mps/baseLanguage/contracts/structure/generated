@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2deacziirskmn1r2k6jhney8hkija28">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
+<dependencies version="2" modelHash="-6r4i1nhp6gymfnf6682gpqyro469w0p">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-92tu7rxl21zsoz29xy7caobqrksdhqe" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9bdhyw4fyjj9lptx5av16k73e6s932q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="cddhj8afr3hhplsvzczxj3nvw3uzd0u">
     <dep root="2203155934614032172" />
@@ -26,7 +26,7 @@
   <source id="332248429538012435" name="Precondition" hash="7lq9yzhx0eiq08ef5vfw878sqbypl92">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2203155934614032172" name="ResultExpression" hash="-3h4mku7233guzimes1t2tpymy98ulif">
+  <source id="2203155934614032172" name="ResultExpression" hash="c2glge3kiukdk6j9e42kbjn6wui6m6t">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2203155934615032373" name="Postcondition" hash="-1ay7dtmyediw72fd1dj4cj6sktyxsfr">
@@ -35,7 +35,7 @@
   <source id="8892289062514160035" name="Condition" hash="-b5ubhe075bqvhivev33vn6d0nyn90fe">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2329648364425265319" name="ContractThisExpression" hash="b78rhssyn7pp7cktq4chs4tkcjezwki">
+  <source id="2329648364425265319" name="ContractThisExpression" hash="2o6ebr0ciw32w6e9rbe4smcjkcbqcxn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

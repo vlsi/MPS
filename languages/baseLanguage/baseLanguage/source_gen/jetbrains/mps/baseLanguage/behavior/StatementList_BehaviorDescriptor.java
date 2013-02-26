@@ -6,11 +6,12 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeFacade_BehaviorDescriptor;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
 
-public class StatementList_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IContainer_BehaviorDescriptor, ILocalVariableElementList_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
+public class StatementList_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IContainer_BehaviorDescriptor, ILocalVariableElementList_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, ScopeFacade_BehaviorDescriptor {
   public StatementList_BehaviorDescriptor() {
   }
 

@@ -6,7 +6,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.plugins.PluginFactoriesRegistry;
 import jetbrains.mps.plugins.AbstractPluginFactory;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
-import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -17,9 +16,6 @@ public class Execution_PluginInitializer implements ApplicationComponent {
       public <T> T create(Class<T> klass) {
         if (BaseApplicationPlugin.class == klass) {
           return (T) new Execution_ApplicationPlugin();
-        }
-        if (BaseProjectPlugin.class == klass) {
-          return (T) new Execution_ProjectPlugin();
         }
         return null;
       }

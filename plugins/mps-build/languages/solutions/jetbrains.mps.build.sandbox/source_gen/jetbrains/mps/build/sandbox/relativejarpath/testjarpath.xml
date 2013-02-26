@@ -11,6 +11,8 @@
     </copy>
   </target>
   
+  <target name="buildDependents" />
+  
   <target name="fetchDependencies">
     <unjar src="${basedir}/../../../../lib/annotations.jar" dest="${build.tmp}/default/annotations_jar" />
   </target>

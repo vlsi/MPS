@@ -42,6 +42,7 @@
     <node type="tp3j.IntentionDeclaration" typeId="tp3j.1192794744107" id="4222318806802430725">
       <property name="isAvailableInChildNodes" nameId="tp3j.2522969319638091386" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="SuppressErrors" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="forConcept" roleId="tp3j.2522969319638198290" targetNodeId="tpck.3393165121846091586" resolveInfo="ICanSuppressErrors" />
     </node>
   </roots>

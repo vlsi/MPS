@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeRef="r:e5da3639-8955-4a71-a390-4e05ddeb2481(jetbrains.mps.build.sandbox.relativejarpath)/867429721720070735">
-    <unitInfo nodeId="867429721720070735" fileName="testjarpath.xml" startLine="1" startPosition="0" endLine="24" endPosition="10" unitName="jetbrains.mps.build.sandbox.relativejarpath.testjarpath" />
+    <unitInfo nodeId="867429721720070735" fileName="testjarpath.xml" startLine="1" startPosition="0" endLine="26" endPosition="10" unitName="jetbrains.mps.build.sandbox.relativejarpath.testjarpath" />
   </root>
 </debugInfo>
 

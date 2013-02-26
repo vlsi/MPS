@@ -27,17 +27,17 @@ import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.behavior.BuildLayout_CopyProcessor_Behavior;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
+import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.build.util.JavaModulesClosure;
 import jetbrains.mps.build.behavior.BuildSourceArchiveRelativePath_Behavior;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import java.util.List;
 import java.util.Collections;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -53,8 +53,11 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.util.GenerationUtil;
 import jetbrains.mps.build.util.FetchDependenciesProcessor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.build.util.ProjectDependency;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_5248329904288166450(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -683,28 +686,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6520682027041196886(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if (((Tuples._2<Iterable<SNode>, String>) _context.getVariable("var:depsAndBasePath"))._1() == null) {
-      return "?????";
-    }
-    SNode script = SLinkOperations.getTarget(_context.getNode(), "script", false);
-    String filePath = BuildProject_Behavior.call_getScriptsPath_4796668409958419284(script, Context.defaultContext(_context));
-    if (filePath == null) {
-      _context.showErrorMessage(script, "no script path for required script " + SPropertyOperations.getString(script, "name"));
-      return ".";
-    }
-    try {
-      String relative = new RelativePathHelper(((Tuples._2<Iterable<SNode>, String>) _context.getVariable("var:depsAndBasePath"))._1()).makeRelative(filePath);
-      if ((relative == null || relative.length() == 0)) {
-        return BuildProject_Behavior.call_getOutputFileName_4915877860351551360(script);
-      }
-      if (!(relative.endsWith("/"))) {
-        relative += "/";
-      }
-      return relative + BuildProject_Behavior.call_getOutputFileName_4915877860351551360(script);
-    } catch (RelativePathHelper.PathException ex) {
-      _context.showErrorMessage(_context.getNode(), "cannot calculate relative path: " + ex.getMessage());
-      return "????";
-    }
+    return SPropertyOperations.getString(_context.getNode(), "path");
   }
 
   public static Object propertyMacro_GetPropertyValue_3595702787188242919(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1383,7 +1365,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6520682027041201801(final IOperationContext operationContext, final IfMacroContext _context) {
-    return Sequence.fromIterable(((Tuples._2<Iterable<SNode>, String>) _context.getVariable("var:depsAndBasePath"))._0()).isNotEmpty();
+    return ListSequence.fromList(((List<SNode>) _context.getVariable("var:dependency"))).isNotEmpty();
   }
 
   public static boolean ifMacro_Condition_6408167411310620878(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1967,7 +1949,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_6520682027041196812(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ((Tuples._2<Iterable<SNode>, String>) _context.getVariable("var:depsAndBasePath"))._0();
+    return ((List<SNode>) _context.getVariable("var:dependency"));
   }
 
   public static Iterable sourceNodesQuery_6647099934206970591(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -2179,17 +2161,12 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_6520682027041193831(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    Iterable<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "dependencies", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildProjectDependency") && (SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), "artifacts", true) == null) && !(BuildProject_Behavior.call_isPackaged_4129895186893455885(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency"), "script", false), Context.defaultContext(_context)));
+    List<Tuples._2<SNode, String>> dependencies = new ProjectDependency(_context, _context.getNode()).collectDependencies().getDependencies();
+    return ListSequence.fromList(dependencies).select(new ISelector<Tuples._2<SNode, String>, SNode>() {
+      public SNode select(Tuples._2<SNode, String> it) {
+        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a093(it._1(), it._0());
       }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildProjectDependency");
-      }
-    });
-    String basePath = BuildProject_Behavior.call_getBasePath_4959435991187146924(_context.getNode(), Context.defaultContext(_context));
-    return MultiTuple.<Iterable<SNode>,String>from(list, basePath);
+    }).toListSequence();
   }
 
   public static Object insertMacro_varValue_6520682027040940450(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -2321,6 +2298,13 @@ public class QueriesGenerated {
       ));
     }
     return MultiTuple.<String,String,Object>from(fsetExt, prefix, null);
+  }
+
+  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a093(Object p0, Object p1) {
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency", null, GlobalScope.getInstance(), false);
+    n1.setProperty("path", (String) p0);
+    n1.setReferenceTarget("project", (SNode) p1);
+    return n1;
   }
 
   public static boolean isNotEmpty_x583g4_a0a0a9(String str) {

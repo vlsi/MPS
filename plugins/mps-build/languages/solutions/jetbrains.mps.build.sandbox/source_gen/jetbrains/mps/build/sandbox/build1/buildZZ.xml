@@ -10,6 +10,7 @@
   </target>
   
   <target name="buildDependents">
+    <ant antfile="buildY.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="buildZ.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   

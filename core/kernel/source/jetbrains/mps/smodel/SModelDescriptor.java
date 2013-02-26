@@ -34,10 +34,6 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   void setModule(SModule container);
 
-  //------
-
-  void forceLoad();
-
   // TODO remove
   boolean isGeneratable();
 
@@ -48,8 +44,6 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
   String getLongName();
 
   String getStereotype();
-
-  boolean isLoaded();
 
   //------
 
