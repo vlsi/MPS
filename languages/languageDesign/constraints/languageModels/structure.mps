@@ -23,8 +23,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="property getter" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_PropertyGetter" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="getter" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
@@ -34,7 +34,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="node in a question" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintsFunctionParameter_node" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="node" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -43,8 +43,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="return list of nodes that can be referenced from given node" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_ReferentSearchScope_Factory" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="search scope (deprecated)" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1148934493876" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
@@ -59,8 +59,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1148934493876">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_ReferentSearchScope_AbstractBase" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -69,7 +69,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="parent of the referenceNode, useful when the reference node is not defined yet (null)" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptParameter_ReferentSearchScope_enclosingNode" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="enclosingNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -78,8 +78,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="property setter" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_PropertySetter" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="setter" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
@@ -95,8 +95,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="executed on every link assignment" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_ReferentSetHandler" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="'referent set' event handler" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
@@ -106,7 +106,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="node with the reference" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_referenceNode" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="referenceNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -116,7 +116,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="new value of the reference" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_newReferentNode" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="newReferentNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -126,7 +126,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="old value of the reference" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_oldReferentNode" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="oldReferentNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -135,8 +135,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="return false if node cannot be a child of parentNode" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_CanBeAChild" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -145,7 +145,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="parent node to check" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_parentNode" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="parentNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -154,8 +154,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="return false if node cannot be a parent of given node" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_CanBeAParent" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -163,7 +163,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_childConcept" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="childConcept" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -172,7 +172,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_link" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="link" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -182,7 +182,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="target concept (useful for specialized links)" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_linkTarget" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="linkTarget" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -192,7 +192,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="new value of the node" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintsFunctionParameter_propertyValue" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="propertyValue" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -201,15 +201,15 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="property validator" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_PropertyValidator" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="validator" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1213093968558">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/constraints.png" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptConstraints" />
@@ -217,8 +217,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1227084988347">
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_CanBeARoot" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -227,7 +227,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="node to present (target of the referenceNode's reference)" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_parameterNode" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="parameterNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -236,8 +236,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="reference presentation in completion list (default - reference name)" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_ReferentSearchScope_Presentation" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="search scope item presentation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1148934493876" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
@@ -246,7 +246,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_visible" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="visible" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -255,7 +255,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_smartReference" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="smartReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -264,20 +264,20 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_inEditor" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="inEditor" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3754598629525415375">
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_GetAlternativeIcon" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7855321458717464197">
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_CanBeAnAncestor" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
     </node>
@@ -285,8 +285,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="return true if the reference is in scope" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_ReferentSearchScope_Validator" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="reference validity" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1148934493876" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
@@ -296,7 +296,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="node to be validated" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_checkedNode" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="checkedNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -305,8 +305,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="whether reference set handler keeps original reference" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_RefSetHandlerKeepsReference" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="keeps reference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
@@ -315,7 +315,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_containingLink" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="containingLink" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -336,7 +336,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="node with the reference, or closest not-null context node" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_contextNode" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="contextNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -346,7 +346,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="target role in contextNode" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_contextRole" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="contextRole" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -356,7 +356,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="false when reference is being created" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_exists" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="exists" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -366,7 +366,7 @@
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="target index in contextRole" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_position" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="position" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
@@ -375,8 +375,8 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="creates scope for the reference (jetbrains.mps.scope.Scope)" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunction_ReferentSearchScope_Scope" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Functions" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="reference scope" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1148934493876" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
@@ -385,7 +385,7 @@
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="ConstraintFunctionParameter_childNode" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Parameters" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="childNode" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />

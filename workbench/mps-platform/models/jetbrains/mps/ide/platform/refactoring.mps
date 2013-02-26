@@ -1840,7 +1840,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2183214647889839845" resolveInfo="descr" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8788437410272262501">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelDescriptor%disLoaded()%cboolean" resolveInfo="isLoaded" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%disLoaded()%cboolean" resolveInfo="isLoaded" />
                     </node>
                   </node>
                 </node>

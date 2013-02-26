@@ -35,7 +35,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SModelScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -45,7 +47,7 @@ import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import java.io.IOException;
 import java.util.*;
 
-public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
+public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
   private static final String[] EMPTY_ARRAY = new String[0];
 
@@ -60,7 +62,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   private String[] myProperties = null;
 
-  private volatile SModel myModel;
+  protected volatile SModel myModel;
   private SNodeId myId;
 
   private Object[] myUserObjects; // key,value,key,value ; !copy-on-write
@@ -399,6 +401,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return "" + SNodeUtil.getPresentation(this);
   }
 
+  @Override
   public String toString() {
     assertRead();
     assertDisposed();
@@ -422,8 +425,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Override
   public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    enforceModelLoad();
-
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
     }
@@ -905,11 +906,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  private void enforceModelLoad() {
-    if (myModel == null || parent != null) return;
-    if (!myModel.isRoot(this)) return;
-    myModel.enforceFullLoad();
-  }
 
   private void fireNodeUnclassifiedReadAccess() {
     if (myModel == null || !((jetbrains.mps.smodel.SModel) myModel).canFireEvent()) return;
@@ -985,7 +981,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   protected SNode firstChild() {
-    enforceModelLoad();
     return first;
   }
 
@@ -2094,6 +2089,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     @Override
     public DataSource getSource() {
       return new NullDataSource();
+    }
+
+    @Override
+    public boolean isLoaded() {
+      return true;
+    }
+
+    @Override
+    public void load() {
     }
 
     @Override

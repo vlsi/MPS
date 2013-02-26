@@ -8,8 +8,8 @@
   <import index="911s" modelUID="r:9da2e6e5-b7a9-4059-9bac-c3700f7d675c(jetbrains.mps.core.properties.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3961775458390517588">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="PropertiesFile" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="properties file" />
@@ -32,8 +32,8 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3961775458390522585">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="incomingRefs" nameId="tpce.3656905254337409260" value="forbidden" />
       <property name="name" nameId="tpck.1169194664001" value="PropertiesComment" />
+      <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="#" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3961775458390522562" resolveInfo="PropertiesLine" />
     </node>

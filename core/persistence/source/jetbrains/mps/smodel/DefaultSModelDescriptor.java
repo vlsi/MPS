@@ -99,7 +99,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   }
 
   @Override
-  public void forceLoad() {
+  public void load() {
     myModel.getModel(ModelLoadingState.FULLY_LOADED);
   }
 

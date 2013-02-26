@@ -30,6 +30,7 @@
     <classNode dependClassName="jetbrains.mps.refactoring.ModelLinkMap" />
     <classNode dependClassName="jetbrains.mps.refactoring.StructureModificationProcessor" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.LazySNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelHeader" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />

@@ -50,15 +50,15 @@ public class ForcedSaveAll_Action extends BaseAction {
         if (!(SModelStereotype.isUserModel(descr) && descr instanceof EditableSModel)) {
           continue;
         }
-        EditableSModel modelDescr = (EditableSModel) descr;
-        if (modelDescr.isReadOnly()) {
+        EditableSModel model = (EditableSModel) descr;
+        if (model.isReadOnly()) {
           continue;
         }
         // ensure model is loaded 
-        ((SModelDescriptor) modelDescr).forceLoad();
+        model.load();
         //  and force to save model 
-        modelDescr.setChanged(true);
-        modelDescr.save();
+        model.setChanged(true);
+        model.save();
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ForcedSaveAll", t);

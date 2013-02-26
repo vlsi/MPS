@@ -102,7 +102,7 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
                   SNode ccp = SNodeOperations.as(((SNode) ((jetbrains.mps.smodel.SNode) i).getConceptDeclarationNode()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
                   if (ccp != null) {
                     total.value++;
-                    if (!(SPropertyOperations.hasValue(ccp, "incomingRefs", "forbidden", null))) {
+                    if (!(SPropertyOperations.hasValue(ccp, "staticScope", "none", null))) {
                       referenceable.value++;
                       String cname = BehaviorReflection.invokeVirtual(String.class, ccp, "virtual_getFqName_1213877404258", new Object[]{});
                       if (MapSequence.fromMap(used).containsKey(cname)) {

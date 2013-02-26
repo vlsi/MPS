@@ -38,14 +38,6 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   void setModule(SModule container);
 
-  //------
-
-  @Deprecated
-  /**
-   * todo Evgeny will get rid of it
-   * @Deprecated in 3.0
-   */
-  void forceLoad();
 
   @Deprecated
   /**
@@ -76,8 +68,6 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * @Deprecated in 3.0
    */
   String getStereotype();
-
-  boolean isLoaded();
 
   //------
 

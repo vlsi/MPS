@@ -6,13 +6,14 @@ import jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ImplementationContainer_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, IContainer_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, ITypeApplicable_BehaviorDescriptor, IHasModifiers_BehaviorDescriptor {
+public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, IContainer_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, TypeAnnotable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ScopeConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, ITypeApplicable_BehaviorDescriptor, IHasModifiers_BehaviorDescriptor, ImplementationContainer_BehaviorDescriptor {
   public BaseMethodDeclaration_BehaviorDescriptor() {
   }
 
@@ -99,6 +100,10 @@ public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDe
 
   public boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
     return IStatementListContainer_Behavior.virtual_isExecuteSynchronous_1230212745736(thisNode);
+  }
+
+  public boolean virtual_isImplementation_1319728274783152230(SNode thisNode, SNode child) {
+    return BaseMethodDeclaration_Behavior.virtual_isImplementation_1319728274783152230(thisNode, child);
   }
 
   public boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
