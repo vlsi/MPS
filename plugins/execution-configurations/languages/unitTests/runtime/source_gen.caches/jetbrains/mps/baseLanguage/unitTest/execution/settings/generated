@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4ghzowobwsln9is3xu5dduuhwai2bw">
+<dependencies version="2" modelHash="5crkl8ndprjch1auo0nemuhixwyenr">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.event(JDK/java.awt.event@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
@@ -85,7 +85,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModelChooser.java" />
   </source>
-  <source id="6062668769034852876" name="ModelChooserComponent" hash="c4i7zhvvcytswt5uwu1bue2idjmctsj">
+  <source id="6062668769034852876" name="ModelChooserComponent" hash="c6bi35vmg1mqznb989if08njsq020rb">
     <dep root="6062668769034852877" />
     <dep root="6062668769034853017" />
     <dep root="6062668769034853189" />
@@ -99,7 +99,7 @@
   <source id="6062668769034852877" name="ModelChooserComponent_Controller" hash="35gh9tki8j7ifyrochfjioaqrac6he0">
     <dep model="r:00000000-0000-4000-0000-011c89590557(jetbrains.mps.uiLanguage.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="6062668769034852880" name="ModuleChooser" hash="-1xggf0996jbzzp1whwoplid3jukk0pn">
+  <source id="6062668769034852880" name="ModuleChooser" hash="d073uzs47ipi0bpbqe95635amqzvegd">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -114,7 +114,6 @@
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi(MPS.Platform/com.intellij.openapi@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" />
     <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
-    <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -124,7 +123,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ModuleChooser.java" />
   </source>
-  <source id="6062668769034853016" name="ModuleChooserComponent" hash="erjtx0neghotfmw8q1vd6wo8ktjbtyo">
+  <source id="6062668769034853016" name="ModuleChooserComponent" hash="-caqlw1oge4b3sbdht5i0trxlbjhqoee">
     <dep root="6062668769034852877" />
     <dep root="6062668769034853017" />
     <dep root="6062668769034853189" />
@@ -189,7 +188,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590557(jetbrains.mps.uiLanguage.generator.baseLanguage.template.main@generator)" />
     <dep model="r:03a139dc-3ebb-4127-956e-d3aaa9b6277c(jetbrains.mps.execution.settings.generator.template.main@generator)" />
   </source>
-  <source id="6062668769034854227" name="ListPanel_Component" hash="-9orrvx084gehucv0u1uxb1vchh951vs">
+  <source id="6062668769034854227" name="ListPanel_Component" hash="-66k8vh7av79v66iahumb37e98toluk2">
     <dep root="6062668769034852877" />
     <dep root="6062668769034853017" />
     <dep root="6062668769034853189" />

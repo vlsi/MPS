@@ -171,17 +171,19 @@ public class ApiMigrationHelper {
     }
 
     // static method calls 
-    Set<SNode> smethods = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(smethods).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(oldNode)));
+    if (SNodeOperations.isInstanceOf(oldNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+      Set<SNode> smethods = SetSequence.fromSet(new HashSet<SNode>());
+      SetSequence.fromSet(smethods).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(SNodeOperations.cast(oldNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
 
-    Set<SReference> smusages = ((Set) FindUsagesManager.getInstance().findUsages(((Set) smethods), SearchType.USAGES, scope, new EmptyProgressMonitor()));
+      Set<jetbrains.mps.smodel.SReference> smusages = ((Set) FindUsagesManager.getInstance().findUsages(((Set) smethods), SearchType.USAGES, scope, new EmptyProgressMonitor()));
 
-    for (SReference ref : SetSequence.fromSet(smusages)) {
-      SNode rNode = ref.getSourceNode();
-      if (rNode.getModel().isReadOnly()) {
-        continue;
+      for (jetbrains.mps.smodel.SReference ref : SetSequence.fromSet(smusages)) {
+        SNode rNode = ref.getSourceNode();
+        if (rNode.getModel().isReadOnly()) {
+          continue;
+        }
+        SetSequence.fromSet(unknownUsages).addElement(rNode);
       }
-      SetSequence.fromSet(unknownUsages).addElement(rNode);
     }
 
     Iterable<SearchResult<SNode>> results = SetSequence.fromSet(changedClassUsages).select(new ISelector<SNode, SearchResult<SNode>>() {
@@ -234,7 +236,7 @@ public class ApiMigrationHelper {
               if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), newNode)) {
                 continue;
               }
-              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0jb0l(oldNode, operand));
+              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0eb0l(oldNode, operand));
             }
           }
         });
@@ -445,7 +447,7 @@ public class ApiMigrationHelper {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0jb0l(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0eb0l(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
