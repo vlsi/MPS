@@ -27,6 +27,11 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
   /**
    * After model loading call SModelRepository.fireModelRepositoryChanged
    */
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   SModel getSModel();
 
   @Deprecated
@@ -36,6 +41,11 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    */
   IModule getModule();
 
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   void setModule(SModule container);
 
 
@@ -86,11 +96,26 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   //------
 
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   SModelDescriptor resolveModel(SModelReference reference);
 
   //--------------model listeners--------------------
 
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   void addModelListener(@NotNull SModelListener listener);
 
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   void removeModelListener(@NotNull SModelListener listener);
 }
