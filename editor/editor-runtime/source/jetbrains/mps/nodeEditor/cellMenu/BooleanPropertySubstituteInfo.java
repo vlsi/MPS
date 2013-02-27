@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.cellMenu;
 
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.PropertySubstituteAction;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -35,8 +35,8 @@ public class BooleanPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
     myPropertyName = propertyName;
   }
 
-  public List<INodeSubstituteAction> createActions() {
-    List<INodeSubstituteAction> list = new ArrayList<INodeSubstituteAction>(2);
+  public List<SubstituteAction> createActions() {
+    List<SubstituteAction> list = new ArrayList<SubstituteAction>(2);
     list.add(new PropertySubstituteAction(myNode, myPropertyName, "true"));
     list.add(new PropertySubstituteAction(myNode, myPropertyName, null));
     return list;

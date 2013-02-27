@@ -15,25 +15,36 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
 
 public class RemoveSubstituteActionByConditionContext {
-  private Iterator<INodeSubstituteAction> myActions;
+  private Iterator<SubstituteAction> myActions;
   private SNode myParentNode;
   private SNode myCurrentChild;
   private SNode myChildConcept;
 
-  public RemoveSubstituteActionByConditionContext(Iterator<INodeSubstituteAction> actions, SNode parentNode, SNode currentChild, SNode childConcept) {
+  public RemoveSubstituteActionByConditionContext(Iterator<SubstituteAction> actions, SNode parentNode, SNode currentChild, SNode childConcept) {
     myActions = actions;
     myParentNode = parentNode;
     myCurrentChild = currentChild;
     myChildConcept = childConcept;
   }
 
+  /**
+   * Should be removed after MPS 3.0 release
+   *
+   * @deprecated since MPS 3.0
+   */
+  @Deprecated
   public Iterator<INodeSubstituteAction> getActions() {
+    return (Iterator) myActions;
+  }
+
+  public Iterator<SubstituteAction> getSubstituteActions() {
     return myActions;
   }
 

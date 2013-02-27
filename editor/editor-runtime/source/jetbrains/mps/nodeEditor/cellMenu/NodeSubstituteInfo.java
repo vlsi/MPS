@@ -15,14 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-
-import java.util.List;
 
 public interface NodeSubstituteInfo extends SubstituteInfo {
-  List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching);
-
-  List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell);
 }

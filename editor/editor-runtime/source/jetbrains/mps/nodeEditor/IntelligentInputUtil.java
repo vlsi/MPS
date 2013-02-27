@@ -25,10 +25,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.CellAction;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -98,8 +97,8 @@ public class IntelligentInputUtil {
         smallPattern = trimLeft(smallPattern);
       }
 
-      List<INodeSubstituteAction> matchingActions = info.getMatchingActions(smallPattern, true);
-      INodeSubstituteAction item = matchingActions.get(0);
+      List<SubstituteAction> matchingActions = info.getMatchingActions(smallPattern, true);
+      SubstituteAction item = matchingActions.get(0);
       SNode newNode = item.substitute(editorContext, smallPattern);
       editorContext.flushEvents();
       EditorCell cellForNewNode = (EditorCell) editorContext.getEditorComponent().findNodeCell(newNode);
@@ -165,8 +164,8 @@ public class IntelligentInputUtil {
         smallPattern = trimLeft(smallPattern);
       }
 
-      List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
-      INodeSubstituteAction item = matchingActions.get(0);
+      List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
+      SubstituteAction item = matchingActions.get(0);
       item.substitute(editorContext, smallPattern);
 
       newNode = editorContext.getSelectedCell().getSNode();
@@ -194,8 +193,8 @@ public class IntelligentInputUtil {
         smallPattern = trimLeft(smallPattern);
       }
 
-      List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern + tail, true);
-      INodeSubstituteAction item = matchingActions.get(0);
+      List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern + tail, true);
+      SubstituteAction item = matchingActions.get(0);
       item.substitute(editorContext, smallPattern + tail);
       return true;
     } else {
@@ -244,10 +243,10 @@ public class IntelligentInputUtil {
     if (rtHintCell != null) {
       final NodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
       assert rtSubstituteInfo != null;
-      List<INodeSubstituteAction> rtMatchingActions =
-        TypeContextManager.getInstance().runResolveAction(new Computable<List<INodeSubstituteAction>>() {
+      List<SubstituteAction> rtMatchingActions =
+        TypeContextManager.getInstance().runResolveAction(new Computable<List<SubstituteAction>>() {
           @Override
-          public List<INodeSubstituteAction> compute() {
+          public List<SubstituteAction> compute() {
             return rtSubstituteInfo.getMatchingActions(tail, true);
           }
         });
@@ -263,7 +262,7 @@ public class IntelligentInputUtil {
         return true;
       }
 
-      INodeSubstituteAction rtItem = rtMatchingActions.get(0);
+      SubstituteAction rtItem = rtMatchingActions.get(0);
       final SNode yetNewNode = rtItem.substitute(editorContext, tail);
 
       editorContext.flushEvents();
@@ -296,12 +295,12 @@ public class IntelligentInputUtil {
     boolean property = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept)), "virtual_substituteInAmbigousPosition_1262430001741498020", new Object[]{});
     if (property) {
       SNode outputConcept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
-      for (INodeSubstituteAction action : substituteInfo.getMatchingActions(text, true)) {
+      for (SubstituteAction action : substituteInfo.getMatchingActions(text, true)) {
         if (outputConcept != action.getOutputConcept()) {
           return false;
         }
       }
-      INodeSubstituteAction action = substituteInfo.getMatchingActions(text, true).get(0);
+      SubstituteAction action = substituteInfo.getMatchingActions(text, true).get(0);
       action.substitute(editorContext, text);
       return true;
     }
@@ -330,8 +329,8 @@ public class IntelligentInputUtil {
       return applyLeftTransform(editorContext, head, smallPattern, cellForNewNode, newNode, false);
     } else if (canCompleteTheWholeStringImmediately(info, head + smallPattern)) {
 
-      List<INodeSubstituteAction> matchingActions = info.getMatchingActions(head + smallPattern, true);
-      INodeSubstituteAction item = matchingActions.get(0);
+      List<SubstituteAction> matchingActions = info.getMatchingActions(head + smallPattern, true);
+      SubstituteAction item = matchingActions.get(0);
       item.substitute(editorContext, head + smallPattern);
       return true;
     } else {
@@ -448,7 +447,7 @@ public class IntelligentInputUtil {
   private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
     final SideTransformHintSubstituteActionsHelper helper = new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getRightTransformAnchorTag(), cell.getContext().getOperationContext());
     NodeSubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
-      protected List<INodeSubstituteAction> createActions() {
+      protected List<SubstituteAction> createActions() {
         return helper.createActions();
       }
     };

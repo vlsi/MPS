@@ -39,13 +39,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
@@ -160,7 +160,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     if (pattern.equals("")) return false;
 
-    List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
+    List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
     if (matchingActions.size() == 0 && canActivatePopup) {
       return false;
     }

@@ -33,12 +33,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -440,10 +440,10 @@ public class EditorManager {
     // create the hint's auto-completion menu
     final String transformTag = (String) node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_TAG);
     sideTransformHintCell.setSubstituteInfo(new AbstractNodeSubstituteInfo(context) {
-      protected List<INodeSubstituteAction> createActions() {
-        List<INodeSubstituteAction> list = ModelActions.createRightTransformHintSubstituteActions(node, side, transformTag, context.getOperationContext());
-        List<INodeSubstituteAction> wrapperList = new ArrayList<INodeSubstituteAction>(list.size());
-        for (final INodeSubstituteAction action : list) {
+      protected List<SubstituteAction> createActions() {
+        List<SubstituteAction> list = ModelActions.createSideTransformHintSubstituteActions(node, side, transformTag, context.getOperationContext());
+        List<SubstituteAction> wrapperList = new ArrayList<SubstituteAction>(list.size());
+        for (final SubstituteAction action : list) {
           wrapperList.add(new NodeSubstituteActionWrapper(action) {
             public SNode substitute(@Nullable jetbrains.mps.openapi.editor.EditorContext context, String pattern) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {

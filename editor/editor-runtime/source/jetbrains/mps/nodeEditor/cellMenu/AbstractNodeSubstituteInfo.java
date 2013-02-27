@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -35,9 +35,9 @@ import java.util.Map;
  * Time: Oct 29, 2003 2:17:38 PM
  */
 public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
-  private List<INodeSubstituteAction> myCachedActionList;
-  private Map<String, List<INodeSubstituteAction>> myPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();
-  private Map<String, List<INodeSubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();
+  private List<SubstituteAction> myCachedActionList;
+  private Map<String, List<SubstituteAction>> myPatternsToActionListsCache = new HashMap<String, List<SubstituteAction>>();
+  private Map<String, List<SubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<String, List<SubstituteAction>>();
   private String myOriginalText;
   private EditorContext myEditorContext;
 
@@ -61,7 +61,7 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return myOriginalText;
   }
 
-  protected abstract List<INodeSubstituteAction> createActions();
+  protected abstract List<SubstituteAction> createActions();
 
   public void invalidateActions() {
     myCachedActionList = null;
@@ -73,7 +73,7 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
         int count = 0;
-        for (INodeSubstituteAction action : getActionsFromCache(pattern, strictMatching)) {
+        for (SubstituteAction action : getActionsFromCache(pattern, strictMatching)) {
           if (strictMatching ? action.canSubstituteStrictly(pattern) : action.canSubstitute(pattern)) {
             count++;
           }
@@ -90,15 +90,15 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return null;
   }
 
-  public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
+  public List<SubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
     InequalitySystem inequalitiesSystem = getInequalitiesSystem(contextCell);
 
-    List<INodeSubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
+    List<SubstituteAction> substituteActionList = getMatchingActions(pattern, strictMatching);
     if (inequalitiesSystem == null) return substituteActionList;
 
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    List<SubstituteAction> result = new ArrayList<SubstituteAction>();
     // In case this becomes a performance bottleneck, use the SubtypingCache
-    for (INodeSubstituteAction nodeSubstituteAction : substituteActionList) {
+    for (SubstituteAction nodeSubstituteAction : substituteActionList) {
       SNode type = nodeSubstituteAction.getActionType(pattern, contextCell);
       if (type != null && inequalitiesSystem.satisfies(type)) {
         result.add(nodeSubstituteAction);
@@ -107,12 +107,12 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return result;
   }
 
-  public List<INodeSubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
-    return ModelAccess.instance().runReadAction(new Computable<List<INodeSubstituteAction>>() {
-      public List<INodeSubstituteAction> compute() {
-        List<INodeSubstituteAction> actionsFromCache = getActionsFromCache(pattern, strictMatching);
-        ArrayList<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>(actionsFromCache.size());
-        for (INodeSubstituteAction item : actionsFromCache) {
+  public List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
+    return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
+      public List<SubstituteAction> compute() {
+        List<SubstituteAction> actionsFromCache = getActionsFromCache(pattern, strictMatching);
+        ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actionsFromCache.size());
+        for (SubstituteAction item : actionsFromCache) {
           if (strictMatching ? item.canSubstituteStrictly(pattern) : item.canSubstitute(pattern)) {
             result.add(item);
           }
@@ -124,7 +124,7 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     });
   }
 
-  private List<INodeSubstituteAction> getActions() {
+  private List<SubstituteAction> getActions() {
     if (myCachedActionList == null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -135,8 +135,8 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     return myCachedActionList;
   }
 
-  private void putActionsToCache(String pattern, boolean strictMatching, List<INodeSubstituteAction> actions) {
-    List<INodeSubstituteAction> actionsCopy = new ArrayList<INodeSubstituteAction>(actions);
+  private void putActionsToCache(String pattern, boolean strictMatching, List<SubstituteAction> actions) {
+    List<SubstituteAction> actionsCopy = new ArrayList<SubstituteAction>(actions);
     if (strictMatching) {
       myStrictPatternsToActionListsCache.put(pattern, actionsCopy);
     } else {
@@ -144,7 +144,7 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     }
   }
 
-  private List<INodeSubstituteAction> getActionsFromCache(String pattern, boolean strictMatching) {
+  private List<SubstituteAction> getActionsFromCache(String pattern, boolean strictMatching) {
     if (!strictMatching) {
       for (; pattern != null && pattern.length() > 0; pattern = pattern.substring(0, pattern.length() - 1)) {
         if (myPatternsToActionListsCache.containsKey(pattern)) {

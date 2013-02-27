@@ -15,11 +15,17 @@
  */
 package jetbrains.mps.openapi.editor.cells;
 
+import java.util.List;
+
 /**
  * User: shatalin
  * Date: 2/14/13
  */
 public interface SubstituteInfo {
+  List<SubstituteAction> getMatchingActions(String pattern, boolean strictMatching);
+
+  List<SubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell);
+
   // TODO: check if this method should be in API
   void invalidateActions();
 

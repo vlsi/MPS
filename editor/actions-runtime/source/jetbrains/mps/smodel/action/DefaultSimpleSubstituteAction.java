@@ -19,12 +19,6 @@ import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class DefaultSimpleSubstituteAction extends DefaultChildNodeSubstituteAction {
-  // since MPS 2.0
-  @Deprecated
-  public DefaultSimpleSubstituteAction(Object parameterObject, SNode parentNode, SNode currentChild, IChildNodeSetter setter, IScope scope) {
-    super(parameterObject, parentNode, currentChild, setter, scope);
-  }
-
   /**
    * @param concept instanceof AbstractConceptDeclaration
    */

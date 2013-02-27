@@ -24,7 +24,7 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -111,7 +111,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
             return;
           }
           substituteInfo.invalidateActions();
-          List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(textToMatch, true);
+          List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(textToMatch, true);
           if ((int) ListSequence.fromList(matchingActions).count() == 1) {
             ListSequence.fromList(matchingActions).first().substitute(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), initialText.value);
           }
