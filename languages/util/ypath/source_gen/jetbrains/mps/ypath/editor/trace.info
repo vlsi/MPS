@@ -647,7 +647,7 @@
     <nodeInfo nodeId="1197644974886" fileName="IterateOperation_Editor.java" startLine="131" startPosition="112" endLine="132" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197644974893" fileName="IterateOperation_Editor.java" startLine="136" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197644974893" fileName="IterateOperation_Editor.java" startLine="138" startPosition="63" endLine="139" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197644974893" fileName="IterateOperation_Editor.java" startLine="142" startPosition="108" endLine="143" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197644974893" fileName="IterateOperation_Editor.java" startLine="142" startPosition="103" endLine="143" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="147" startPosition="88" endLine="148" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="148" startPosition="81" endLine="149" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="149" startPosition="36" endLine="150" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -686,7 +686,7 @@
     <nodeInfo nodeId="1197644974899" fileName="IterateOperation_Editor.java" startLine="203" startPosition="112" endLine="204" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197644974915" fileName="IterateOperation_Editor.java" startLine="208" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197644974915" fileName="IterateOperation_Editor.java" startLine="210" startPosition="63" endLine="211" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197644974915" fileName="IterateOperation_Editor.java" startLine="214" startPosition="108" endLine="215" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197644974915" fileName="IterateOperation_Editor.java" startLine="214" startPosition="103" endLine="215" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="219" startPosition="88" endLine="220" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="220" startPosition="81" endLine="221" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="221" startPosition="36" endLine="222" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -707,7 +707,7 @@
     <nodeInfo nodeId="1197644974919" fileName="IterateOperation_Editor.java" startLine="241" startPosition="112" endLine="242" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197644974927" fileName="IterateOperation_Editor.java" startLine="246" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197644974927" fileName="IterateOperation_Editor.java" startLine="248" startPosition="63" endLine="249" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197644974927" fileName="IterateOperation_Editor.java" startLine="252" startPosition="108" endLine="253" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197644974927" fileName="IterateOperation_Editor.java" startLine="252" startPosition="103" endLine="253" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="257" startPosition="91" endLine="258" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="258" startPosition="97" endLine="259" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="259" startPosition="50" endLine="260" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -886,16 +886,16 @@
     <scopeInfo nodeId="7098165822328570354" fileName="IterateOperation_Editor.java" startLine="114" startPosition="112" endLine="115" endPosition="136" />
     <scopeInfo nodeId="1197644974885" fileName="IterateOperation_Editor.java" startLine="131" startPosition="112" endLine="132" endPosition="75" />
     <scopeInfo nodeId="1197644974893" fileName="IterateOperation_Editor.java" startLine="138" startPosition="63" endLine="139" endPosition="66" />
-    <scopeInfo nodeId="1197644974893" fileName="IterateOperation_Editor.java" startLine="142" startPosition="108" endLine="143" endPosition="72" />
+    <scopeInfo nodeId="1197644974893" fileName="IterateOperation_Editor.java" startLine="142" startPosition="103" endLine="143" endPosition="82" />
     <scopeInfo nodeId="1197644974895" fileName="IterateOperation_Editor.java" startLine="167" startPosition="34" endLine="168" endPosition="14" />
     <scopeInfo nodeId="1197644974895" fileName="IterateOperation_Editor.java" startLine="171" startPosition="69" endLine="172" endPosition="67" />
     <scopeInfo nodeId="1197644974895" fileName="IterateOperation_Editor.java" startLine="175" startPosition="81" endLine="176" endPosition="67" />
     <scopeInfo nodeId="1197644974898" fileName="IterateOperation_Editor.java" startLine="203" startPosition="112" endLine="204" endPosition="215" />
     <scopeInfo nodeId="1197644974915" fileName="IterateOperation_Editor.java" startLine="210" startPosition="63" endLine="211" endPosition="66" />
-    <scopeInfo nodeId="1197644974915" fileName="IterateOperation_Editor.java" startLine="214" startPosition="108" endLine="215" endPosition="72" />
+    <scopeInfo nodeId="1197644974915" fileName="IterateOperation_Editor.java" startLine="214" startPosition="103" endLine="215" endPosition="82" />
     <scopeInfo nodeId="1197644974918" fileName="IterateOperation_Editor.java" startLine="241" startPosition="112" endLine="242" endPosition="142" />
     <scopeInfo nodeId="1197644974927" fileName="IterateOperation_Editor.java" startLine="248" startPosition="63" endLine="249" endPosition="66" />
-    <scopeInfo nodeId="1197644974927" fileName="IterateOperation_Editor.java" startLine="252" startPosition="108" endLine="253" endPosition="72" />
+    <scopeInfo nodeId="1197644974927" fileName="IterateOperation_Editor.java" startLine="252" startPosition="103" endLine="253" endPosition="82" />
     <scopeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="259" startPosition="50" endLine="260" endPosition="83" />
     <scopeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="260" startPosition="83" endLine="261" endPosition="85" />
     <scopeInfo nodeId="1168525025375" fileName="IterateOperation_Editor.java" startLine="270" startPosition="40" endLine="271" endPosition="82" />
@@ -6219,7 +6219,7 @@
     <nodeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="225" startPosition="207" endLine="226" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197921774651" fileName="ListFeature_Editor.java" startLine="230" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197921774651" fileName="ListFeature_Editor.java" startLine="232" startPosition="61" endLine="233" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197921774651" fileName="ListFeature_Editor.java" startLine="236" startPosition="108" endLine="237" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197921774651" fileName="ListFeature_Editor.java" startLine="236" startPosition="103" endLine="237" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062535740" fileName="ListFeature_Editor.java" startLine="243" startPosition="31" endLine="244" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226062535746" fileName="ListFeature_Editor.java" startLine="244" startPosition="51" endLine="245" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226062535756" fileName="ListFeature_Editor.java" startLine="246" startPosition="113" endLine="247" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6253,7 +6253,7 @@
     <nodeInfo nodeId="1197921774704" fileName="ListFeature_Editor.java" startLine="298" startPosition="115" endLine="299" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197921774719" fileName="ListFeature_Editor.java" startLine="303" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197921774719" fileName="ListFeature_Editor.java" startLine="305" startPosition="63" endLine="306" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197921774719" fileName="ListFeature_Editor.java" startLine="309" startPosition="108" endLine="310" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197921774719" fileName="ListFeature_Editor.java" startLine="309" startPosition="103" endLine="310" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="314" startPosition="92" endLine="315" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="315" startPosition="90" endLine="316" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="316" startPosition="51" endLine="317" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -6266,7 +6266,7 @@
     <nodeInfo nodeId="1197921774723" fileName="ListFeature_Editor.java" startLine="326" startPosition="115" endLine="327" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197921774728" fileName="ListFeature_Editor.java" startLine="331" startPosition="0" endLine="332" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197921774728" fileName="ListFeature_Editor.java" startLine="333" startPosition="61" endLine="334" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197921774728" fileName="ListFeature_Editor.java" startLine="337" startPosition="108" endLine="338" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197921774728" fileName="ListFeature_Editor.java" startLine="337" startPosition="103" endLine="338" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="342" startPosition="91" endLine="343" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="343" startPosition="81" endLine="344" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="344" startPosition="33" endLine="345" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6592,17 +6592,17 @@
     <scopeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="212" startPosition="40" endLine="213" endPosition="85" />
     <scopeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="213" startPosition="85" endLine="214" endPosition="98" />
     <scopeInfo nodeId="1197921774651" fileName="ListFeature_Editor.java" startLine="232" startPosition="61" endLine="233" endPosition="55" />
-    <scopeInfo nodeId="1197921774651" fileName="ListFeature_Editor.java" startLine="236" startPosition="108" endLine="237" endPosition="72" />
+    <scopeInfo nodeId="1197921774651" fileName="ListFeature_Editor.java" startLine="236" startPosition="103" endLine="237" endPosition="82" />
     <scopeInfo nodeId="1226062535736" fileName="ListFeature_Editor.java" startLine="256" startPosition="44" endLine="257" endPosition="46" />
     <scopeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="274" startPosition="113" endLine="275" endPosition="89" />
     <scopeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="277" startPosition="113" endLine="278" endPosition="87" />
     <scopeInfo nodeId="1183979884557" fileName="ListFeature_Editor.java" startLine="280" startPosition="113" endLine="281" endPosition="86" />
     <scopeInfo nodeId="1197921774703" fileName="ListFeature_Editor.java" startLine="298" startPosition="115" endLine="299" endPosition="180" />
     <scopeInfo nodeId="1197921774719" fileName="ListFeature_Editor.java" startLine="305" startPosition="63" endLine="306" endPosition="55" />
-    <scopeInfo nodeId="1197921774719" fileName="ListFeature_Editor.java" startLine="309" startPosition="108" endLine="310" endPosition="72" />
+    <scopeInfo nodeId="1197921774719" fileName="ListFeature_Editor.java" startLine="309" startPosition="103" endLine="310" endPosition="82" />
     <scopeInfo nodeId="1197921774722" fileName="ListFeature_Editor.java" startLine="326" startPosition="115" endLine="327" endPosition="72" />
     <scopeInfo nodeId="1197921774728" fileName="ListFeature_Editor.java" startLine="333" startPosition="61" endLine="334" endPosition="55" />
-    <scopeInfo nodeId="1197921774728" fileName="ListFeature_Editor.java" startLine="337" startPosition="108" endLine="338" endPosition="72" />
+    <scopeInfo nodeId="1197921774728" fileName="ListFeature_Editor.java" startLine="337" startPosition="103" endLine="338" endPosition="82" />
     <scopeInfo nodeId="1197921774730" fileName="ListFeature_Editor.java" startLine="362" startPosition="37" endLine="363" endPosition="14" />
     <scopeInfo nodeId="1197921774730" fileName="ListFeature_Editor.java" startLine="366" startPosition="69" endLine="367" endPosition="67" />
     <scopeInfo nodeId="1197921774730" fileName="ListFeature_Editor.java" startLine="370" startPosition="81" endLine="371" endPosition="70" />
@@ -7188,7 +7188,7 @@
     <nodeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="226" startPosition="215" endLine="227" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197921944686" fileName="SequenceFeature_Editor.java" startLine="231" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197921944686" fileName="SequenceFeature_Editor.java" startLine="233" startPosition="65" endLine="234" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197921944686" fileName="SequenceFeature_Editor.java" startLine="237" startPosition="108" endLine="238" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197921944686" fileName="SequenceFeature_Editor.java" startLine="237" startPosition="103" endLine="238" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062535032" fileName="SequenceFeature_Editor.java" startLine="244" startPosition="31" endLine="245" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226062535038" fileName="SequenceFeature_Editor.java" startLine="245" startPosition="49" endLine="246" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226062535048" fileName="SequenceFeature_Editor.java" startLine="247" startPosition="113" endLine="248" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -7223,7 +7223,7 @@
     <nodeInfo nodeId="1197921944739" fileName="SequenceFeature_Editor.java" startLine="300" startPosition="115" endLine="301" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197921944754" fileName="SequenceFeature_Editor.java" startLine="305" startPosition="0" endLine="306" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197921944754" fileName="SequenceFeature_Editor.java" startLine="307" startPosition="67" endLine="308" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197921944754" fileName="SequenceFeature_Editor.java" startLine="311" startPosition="108" endLine="312" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197921944754" fileName="SequenceFeature_Editor.java" startLine="311" startPosition="103" endLine="312" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="316" startPosition="92" endLine="317" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="317" startPosition="90" endLine="318" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="318" startPosition="51" endLine="319" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -7236,7 +7236,7 @@
     <nodeInfo nodeId="1197921944758" fileName="SequenceFeature_Editor.java" startLine="328" startPosition="115" endLine="329" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197921944763" fileName="SequenceFeature_Editor.java" startLine="333" startPosition="0" endLine="334" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197921944763" fileName="SequenceFeature_Editor.java" startLine="335" startPosition="65" endLine="336" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197921944763" fileName="SequenceFeature_Editor.java" startLine="339" startPosition="108" endLine="340" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197921944763" fileName="SequenceFeature_Editor.java" startLine="339" startPosition="103" endLine="340" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="344" startPosition="91" endLine="345" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="345" startPosition="81" endLine="346" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="346" startPosition="33" endLine="347" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -7562,17 +7562,17 @@
     <scopeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="213" startPosition="40" endLine="214" endPosition="85" />
     <scopeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="214" startPosition="85" endLine="215" endPosition="98" />
     <scopeInfo nodeId="1197921944686" fileName="SequenceFeature_Editor.java" startLine="233" startPosition="65" endLine="234" endPosition="55" />
-    <scopeInfo nodeId="1197921944686" fileName="SequenceFeature_Editor.java" startLine="237" startPosition="108" endLine="238" endPosition="72" />
+    <scopeInfo nodeId="1197921944686" fileName="SequenceFeature_Editor.java" startLine="237" startPosition="103" endLine="238" endPosition="82" />
     <scopeInfo nodeId="1226062535028" fileName="SequenceFeature_Editor.java" startLine="257" startPosition="44" endLine="258" endPosition="46" />
     <scopeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="276" startPosition="113" endLine="277" endPosition="89" />
     <scopeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="279" startPosition="113" endLine="280" endPosition="87" />
     <scopeInfo nodeId="1184066566379" fileName="SequenceFeature_Editor.java" startLine="282" startPosition="113" endLine="283" endPosition="86" />
     <scopeInfo nodeId="1197921944738" fileName="SequenceFeature_Editor.java" startLine="300" startPosition="115" endLine="301" endPosition="180" />
     <scopeInfo nodeId="1197921944754" fileName="SequenceFeature_Editor.java" startLine="307" startPosition="67" endLine="308" endPosition="55" />
-    <scopeInfo nodeId="1197921944754" fileName="SequenceFeature_Editor.java" startLine="311" startPosition="108" endLine="312" endPosition="72" />
+    <scopeInfo nodeId="1197921944754" fileName="SequenceFeature_Editor.java" startLine="311" startPosition="103" endLine="312" endPosition="82" />
     <scopeInfo nodeId="1197921944757" fileName="SequenceFeature_Editor.java" startLine="328" startPosition="115" endLine="329" endPosition="72" />
     <scopeInfo nodeId="1197921944763" fileName="SequenceFeature_Editor.java" startLine="335" startPosition="65" endLine="336" endPosition="55" />
-    <scopeInfo nodeId="1197921944763" fileName="SequenceFeature_Editor.java" startLine="339" startPosition="108" endLine="340" endPosition="72" />
+    <scopeInfo nodeId="1197921944763" fileName="SequenceFeature_Editor.java" startLine="339" startPosition="103" endLine="340" endPosition="82" />
     <scopeInfo nodeId="1197921944765" fileName="SequenceFeature_Editor.java" startLine="364" startPosition="37" endLine="365" endPosition="14" />
     <scopeInfo nodeId="1197921944765" fileName="SequenceFeature_Editor.java" startLine="368" startPosition="69" endLine="369" endPosition="67" />
     <scopeInfo nodeId="1197921944765" fileName="SequenceFeature_Editor.java" startLine="372" startPosition="81" endLine="373" endPosition="70" />
@@ -8342,7 +8342,7 @@
     <nodeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="268" startPosition="217" endLine="269" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197921919380" fileName="ParamListFeature_Editor.java" startLine="273" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197921919380" fileName="ParamListFeature_Editor.java" startLine="275" startPosition="66" endLine="276" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197921919380" fileName="ParamListFeature_Editor.java" startLine="279" startPosition="108" endLine="280" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197921919380" fileName="ParamListFeature_Editor.java" startLine="279" startPosition="103" endLine="280" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062535614" fileName="ParamListFeature_Editor.java" startLine="286" startPosition="31" endLine="287" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226062535620" fileName="ParamListFeature_Editor.java" startLine="287" startPosition="51" endLine="288" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226062535630" fileName="ParamListFeature_Editor.java" startLine="289" startPosition="113" endLine="290" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -8376,7 +8376,7 @@
     <nodeInfo nodeId="1197921919433" fileName="ParamListFeature_Editor.java" startLine="341" startPosition="115" endLine="342" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197921919448" fileName="ParamListFeature_Editor.java" startLine="346" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197921919448" fileName="ParamListFeature_Editor.java" startLine="348" startPosition="68" endLine="349" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197921919448" fileName="ParamListFeature_Editor.java" startLine="352" startPosition="108" endLine="353" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197921919448" fileName="ParamListFeature_Editor.java" startLine="352" startPosition="103" endLine="353" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="357" startPosition="92" endLine="358" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="358" startPosition="90" endLine="359" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="359" startPosition="51" endLine="360" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -8389,7 +8389,7 @@
     <nodeInfo nodeId="1197921919452" fileName="ParamListFeature_Editor.java" startLine="369" startPosition="115" endLine="370" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197921919457" fileName="ParamListFeature_Editor.java" startLine="374" startPosition="0" endLine="375" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197921919457" fileName="ParamListFeature_Editor.java" startLine="376" startPosition="66" endLine="377" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197921919457" fileName="ParamListFeature_Editor.java" startLine="380" startPosition="108" endLine="381" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197921919457" fileName="ParamListFeature_Editor.java" startLine="380" startPosition="103" endLine="381" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="385" startPosition="91" endLine="386" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="386" startPosition="81" endLine="387" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="387" startPosition="33" endLine="388" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -8878,17 +8878,17 @@
     <scopeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="255" startPosition="40" endLine="256" endPosition="85" />
     <scopeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="256" startPosition="85" endLine="257" endPosition="98" />
     <scopeInfo nodeId="1197921919380" fileName="ParamListFeature_Editor.java" startLine="275" startPosition="66" endLine="276" endPosition="55" />
-    <scopeInfo nodeId="1197921919380" fileName="ParamListFeature_Editor.java" startLine="279" startPosition="108" endLine="280" endPosition="72" />
+    <scopeInfo nodeId="1197921919380" fileName="ParamListFeature_Editor.java" startLine="279" startPosition="103" endLine="280" endPosition="82" />
     <scopeInfo nodeId="1226062535610" fileName="ParamListFeature_Editor.java" startLine="299" startPosition="44" endLine="300" endPosition="46" />
     <scopeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="317" startPosition="113" endLine="318" endPosition="89" />
     <scopeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="320" startPosition="113" endLine="321" endPosition="87" />
     <scopeInfo nodeId="1184657730977" fileName="ParamListFeature_Editor.java" startLine="323" startPosition="113" endLine="324" endPosition="86" />
     <scopeInfo nodeId="1197921919432" fileName="ParamListFeature_Editor.java" startLine="341" startPosition="115" endLine="342" endPosition="180" />
     <scopeInfo nodeId="1197921919448" fileName="ParamListFeature_Editor.java" startLine="348" startPosition="68" endLine="349" endPosition="55" />
-    <scopeInfo nodeId="1197921919448" fileName="ParamListFeature_Editor.java" startLine="352" startPosition="108" endLine="353" endPosition="72" />
+    <scopeInfo nodeId="1197921919448" fileName="ParamListFeature_Editor.java" startLine="352" startPosition="103" endLine="353" endPosition="82" />
     <scopeInfo nodeId="1197921919451" fileName="ParamListFeature_Editor.java" startLine="369" startPosition="115" endLine="370" endPosition="72" />
     <scopeInfo nodeId="1197921919457" fileName="ParamListFeature_Editor.java" startLine="376" startPosition="66" endLine="377" endPosition="55" />
-    <scopeInfo nodeId="1197921919457" fileName="ParamListFeature_Editor.java" startLine="380" startPosition="108" endLine="381" endPosition="72" />
+    <scopeInfo nodeId="1197921919457" fileName="ParamListFeature_Editor.java" startLine="380" startPosition="103" endLine="381" endPosition="82" />
     <scopeInfo nodeId="1197921919459" fileName="ParamListFeature_Editor.java" startLine="405" startPosition="37" endLine="406" endPosition="14" />
     <scopeInfo nodeId="1197921919459" fileName="ParamListFeature_Editor.java" startLine="409" startPosition="69" endLine="410" endPosition="67" />
     <scopeInfo nodeId="1197921919459" fileName="ParamListFeature_Editor.java" startLine="413" startPosition="81" endLine="414" endPosition="70" />
@@ -9682,7 +9682,7 @@
     <nodeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="267" startPosition="225" endLine="268" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197922168417" fileName="ParamSequenceFeature_Editor.java" startLine="272" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197922168417" fileName="ParamSequenceFeature_Editor.java" startLine="274" startPosition="70" endLine="275" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197922168417" fileName="ParamSequenceFeature_Editor.java" startLine="278" startPosition="108" endLine="279" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197922168417" fileName="ParamSequenceFeature_Editor.java" startLine="278" startPosition="103" endLine="279" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226062536254" fileName="ParamSequenceFeature_Editor.java" startLine="285" startPosition="31" endLine="286" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226062536260" fileName="ParamSequenceFeature_Editor.java" startLine="286" startPosition="51" endLine="287" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1226062536270" fileName="ParamSequenceFeature_Editor.java" startLine="288" startPosition="113" endLine="289" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -9716,7 +9716,7 @@
     <nodeInfo nodeId="1197922168470" fileName="ParamSequenceFeature_Editor.java" startLine="340" startPosition="115" endLine="341" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197922168485" fileName="ParamSequenceFeature_Editor.java" startLine="345" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197922168485" fileName="ParamSequenceFeature_Editor.java" startLine="347" startPosition="72" endLine="348" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197922168485" fileName="ParamSequenceFeature_Editor.java" startLine="351" startPosition="108" endLine="352" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197922168485" fileName="ParamSequenceFeature_Editor.java" startLine="351" startPosition="103" endLine="352" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="356" startPosition="92" endLine="357" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="357" startPosition="90" endLine="358" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="358" startPosition="51" endLine="359" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -9729,7 +9729,7 @@
     <nodeInfo nodeId="1197922168489" fileName="ParamSequenceFeature_Editor.java" startLine="368" startPosition="115" endLine="369" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1197922168494" fileName="ParamSequenceFeature_Editor.java" startLine="373" startPosition="0" endLine="374" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="1197922168494" fileName="ParamSequenceFeature_Editor.java" startLine="375" startPosition="70" endLine="376" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197922168494" fileName="ParamSequenceFeature_Editor.java" startLine="379" startPosition="108" endLine="380" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1197922168494" fileName="ParamSequenceFeature_Editor.java" startLine="379" startPosition="103" endLine="380" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="384" startPosition="91" endLine="385" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="385" startPosition="81" endLine="386" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="386" startPosition="33" endLine="387" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -10218,17 +10218,17 @@
     <scopeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="254" startPosition="40" endLine="255" endPosition="85" />
     <scopeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="255" startPosition="85" endLine="256" endPosition="98" />
     <scopeInfo nodeId="1197922168417" fileName="ParamSequenceFeature_Editor.java" startLine="274" startPosition="70" endLine="275" endPosition="55" />
-    <scopeInfo nodeId="1197922168417" fileName="ParamSequenceFeature_Editor.java" startLine="278" startPosition="108" endLine="279" endPosition="72" />
+    <scopeInfo nodeId="1197922168417" fileName="ParamSequenceFeature_Editor.java" startLine="278" startPosition="103" endLine="279" endPosition="82" />
     <scopeInfo nodeId="1226062536250" fileName="ParamSequenceFeature_Editor.java" startLine="298" startPosition="44" endLine="299" endPosition="46" />
     <scopeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="316" startPosition="113" endLine="317" endPosition="89" />
     <scopeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="319" startPosition="113" endLine="320" endPosition="87" />
     <scopeInfo nodeId="1184659126273" fileName="ParamSequenceFeature_Editor.java" startLine="322" startPosition="113" endLine="323" endPosition="86" />
     <scopeInfo nodeId="1197922168469" fileName="ParamSequenceFeature_Editor.java" startLine="340" startPosition="115" endLine="341" endPosition="180" />
     <scopeInfo nodeId="1197922168485" fileName="ParamSequenceFeature_Editor.java" startLine="347" startPosition="72" endLine="348" endPosition="55" />
-    <scopeInfo nodeId="1197922168485" fileName="ParamSequenceFeature_Editor.java" startLine="351" startPosition="108" endLine="352" endPosition="72" />
+    <scopeInfo nodeId="1197922168485" fileName="ParamSequenceFeature_Editor.java" startLine="351" startPosition="103" endLine="352" endPosition="82" />
     <scopeInfo nodeId="1197922168488" fileName="ParamSequenceFeature_Editor.java" startLine="368" startPosition="115" endLine="369" endPosition="72" />
     <scopeInfo nodeId="1197922168494" fileName="ParamSequenceFeature_Editor.java" startLine="375" startPosition="70" endLine="376" endPosition="55" />
-    <scopeInfo nodeId="1197922168494" fileName="ParamSequenceFeature_Editor.java" startLine="379" startPosition="108" endLine="380" endPosition="72" />
+    <scopeInfo nodeId="1197922168494" fileName="ParamSequenceFeature_Editor.java" startLine="379" startPosition="103" endLine="380" endPosition="82" />
     <scopeInfo nodeId="1197922168496" fileName="ParamSequenceFeature_Editor.java" startLine="404" startPosition="37" endLine="405" endPosition="14" />
     <scopeInfo nodeId="1197922168496" fileName="ParamSequenceFeature_Editor.java" startLine="408" startPosition="69" endLine="409" endPosition="67" />
     <scopeInfo nodeId="1197922168496" fileName="ParamSequenceFeature_Editor.java" startLine="412" startPosition="81" endLine="413" endPosition="70" />
@@ -12372,7 +12372,7 @@
     <nodeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="225" startPosition="212" endLine="226" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844536336" fileName="GenericFeature_Editor.java" startLine="230" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="4581582910844536336" fileName="GenericFeature_Editor.java" startLine="232" startPosition="63" endLine="233" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910844536336" fileName="GenericFeature_Editor.java" startLine="236" startPosition="108" endLine="237" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910844536336" fileName="GenericFeature_Editor.java" startLine="236" startPosition="103" endLine="237" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844536341" fileName="GenericFeature_Editor.java" startLine="243" startPosition="31" endLine="244" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4581582910844536347" fileName="GenericFeature_Editor.java" startLine="244" startPosition="51" endLine="245" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4581582910844536357" fileName="GenericFeature_Editor.java" startLine="246" startPosition="113" endLine="247" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -12406,7 +12406,7 @@
     <nodeInfo nodeId="4581582910844536398" fileName="GenericFeature_Editor.java" startLine="298" startPosition="114" endLine="299" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844536413" fileName="GenericFeature_Editor.java" startLine="303" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="4581582910844536413" fileName="GenericFeature_Editor.java" startLine="305" startPosition="65" endLine="306" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910844536413" fileName="GenericFeature_Editor.java" startLine="309" startPosition="108" endLine="310" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910844536413" fileName="GenericFeature_Editor.java" startLine="309" startPosition="103" endLine="310" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="314" startPosition="91" endLine="315" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="315" startPosition="90" endLine="316" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="316" startPosition="50" endLine="317" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -12419,7 +12419,7 @@
     <nodeInfo nodeId="4581582910844536417" fileName="GenericFeature_Editor.java" startLine="326" startPosition="114" endLine="327" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844536422" fileName="GenericFeature_Editor.java" startLine="331" startPosition="0" endLine="332" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="4581582910844536422" fileName="GenericFeature_Editor.java" startLine="333" startPosition="63" endLine="334" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910844536422" fileName="GenericFeature_Editor.java" startLine="337" startPosition="108" endLine="338" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910844536422" fileName="GenericFeature_Editor.java" startLine="337" startPosition="103" endLine="338" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="342" startPosition="90" endLine="343" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="343" startPosition="81" endLine="344" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="344" startPosition="33" endLine="345" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -12691,17 +12691,17 @@
     <scopeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="212" startPosition="40" endLine="213" endPosition="84" />
     <scopeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="213" startPosition="84" endLine="214" endPosition="97" />
     <scopeInfo nodeId="4581582910844536336" fileName="GenericFeature_Editor.java" startLine="232" startPosition="63" endLine="233" endPosition="55" />
-    <scopeInfo nodeId="4581582910844536336" fileName="GenericFeature_Editor.java" startLine="236" startPosition="108" endLine="237" endPosition="72" />
+    <scopeInfo nodeId="4581582910844536336" fileName="GenericFeature_Editor.java" startLine="236" startPosition="103" endLine="237" endPosition="82" />
     <scopeInfo nodeId="4581582910844536337" fileName="GenericFeature_Editor.java" startLine="256" startPosition="44" endLine="257" endPosition="46" />
     <scopeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="274" startPosition="112" endLine="275" endPosition="88" />
     <scopeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="277" startPosition="112" endLine="278" endPosition="86" />
     <scopeInfo nodeId="4581582910844536280" fileName="GenericFeature_Editor.java" startLine="280" startPosition="112" endLine="281" endPosition="85" />
     <scopeInfo nodeId="4581582910844536397" fileName="GenericFeature_Editor.java" startLine="298" startPosition="114" endLine="299" endPosition="180" />
     <scopeInfo nodeId="4581582910844536413" fileName="GenericFeature_Editor.java" startLine="305" startPosition="65" endLine="306" endPosition="55" />
-    <scopeInfo nodeId="4581582910844536413" fileName="GenericFeature_Editor.java" startLine="309" startPosition="108" endLine="310" endPosition="72" />
+    <scopeInfo nodeId="4581582910844536413" fileName="GenericFeature_Editor.java" startLine="309" startPosition="103" endLine="310" endPosition="82" />
     <scopeInfo nodeId="4581582910844536416" fileName="GenericFeature_Editor.java" startLine="326" startPosition="114" endLine="327" endPosition="72" />
     <scopeInfo nodeId="4581582910844536422" fileName="GenericFeature_Editor.java" startLine="333" startPosition="63" endLine="334" endPosition="55" />
-    <scopeInfo nodeId="4581582910844536422" fileName="GenericFeature_Editor.java" startLine="337" startPosition="108" endLine="338" endPosition="72" />
+    <scopeInfo nodeId="4581582910844536422" fileName="GenericFeature_Editor.java" startLine="337" startPosition="103" endLine="338" endPosition="82" />
     <scopeInfo nodeId="4581582910844536424" fileName="GenericFeature_Editor.java" startLine="362" startPosition="36" endLine="363" endPosition="14" />
     <scopeInfo nodeId="4581582910844536424" fileName="GenericFeature_Editor.java" startLine="366" startPosition="69" endLine="367" endPosition="67" />
     <scopeInfo nodeId="4581582910844536424" fileName="GenericFeature_Editor.java" startLine="370" startPosition="81" endLine="371" endPosition="69" />
@@ -13263,7 +13263,7 @@
     <nodeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="267" startPosition="223" endLine="268" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844784823" fileName="GenericParamFeature_Editor.java" startLine="272" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="4581582910844784823" fileName="GenericParamFeature_Editor.java" startLine="274" startPosition="69" endLine="275" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910844784823" fileName="GenericParamFeature_Editor.java" startLine="278" startPosition="108" endLine="279" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910844784823" fileName="GenericParamFeature_Editor.java" startLine="278" startPosition="103" endLine="279" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844784828" fileName="GenericParamFeature_Editor.java" startLine="285" startPosition="31" endLine="286" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4581582910844784834" fileName="GenericParamFeature_Editor.java" startLine="286" startPosition="51" endLine="287" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4581582910844784844" fileName="GenericParamFeature_Editor.java" startLine="288" startPosition="113" endLine="289" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -13297,7 +13297,7 @@
     <nodeInfo nodeId="4581582910844784885" fileName="GenericParamFeature_Editor.java" startLine="340" startPosition="115" endLine="341" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844784900" fileName="GenericParamFeature_Editor.java" startLine="345" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="4581582910844784900" fileName="GenericParamFeature_Editor.java" startLine="347" startPosition="71" endLine="348" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910844784900" fileName="GenericParamFeature_Editor.java" startLine="351" startPosition="108" endLine="352" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910844784900" fileName="GenericParamFeature_Editor.java" startLine="351" startPosition="103" endLine="352" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="356" startPosition="92" endLine="357" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="357" startPosition="90" endLine="358" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="358" startPosition="51" endLine="359" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -13310,7 +13310,7 @@
     <nodeInfo nodeId="4581582910844784904" fileName="GenericParamFeature_Editor.java" startLine="368" startPosition="115" endLine="369" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844784909" fileName="GenericParamFeature_Editor.java" startLine="373" startPosition="0" endLine="374" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="4581582910844784909" fileName="GenericParamFeature_Editor.java" startLine="375" startPosition="69" endLine="376" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4581582910844784909" fileName="GenericParamFeature_Editor.java" startLine="379" startPosition="108" endLine="380" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4581582910844784909" fileName="GenericParamFeature_Editor.java" startLine="379" startPosition="103" endLine="380" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="384" startPosition="91" endLine="385" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="385" startPosition="81" endLine="386" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="386" startPosition="33" endLine="387" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -13745,17 +13745,17 @@
     <scopeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="254" startPosition="40" endLine="255" endPosition="85" />
     <scopeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="255" startPosition="85" endLine="256" endPosition="98" />
     <scopeInfo nodeId="4581582910844784823" fileName="GenericParamFeature_Editor.java" startLine="274" startPosition="69" endLine="275" endPosition="55" />
-    <scopeInfo nodeId="4581582910844784823" fileName="GenericParamFeature_Editor.java" startLine="278" startPosition="108" endLine="279" endPosition="72" />
+    <scopeInfo nodeId="4581582910844784823" fileName="GenericParamFeature_Editor.java" startLine="278" startPosition="103" endLine="279" endPosition="82" />
     <scopeInfo nodeId="4581582910844784824" fileName="GenericParamFeature_Editor.java" startLine="298" startPosition="44" endLine="299" endPosition="46" />
     <scopeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="316" startPosition="113" endLine="317" endPosition="89" />
     <scopeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="319" startPosition="113" endLine="320" endPosition="87" />
     <scopeInfo nodeId="4581582910844784760" fileName="GenericParamFeature_Editor.java" startLine="322" startPosition="113" endLine="323" endPosition="86" />
     <scopeInfo nodeId="4581582910844784884" fileName="GenericParamFeature_Editor.java" startLine="340" startPosition="115" endLine="341" endPosition="180" />
     <scopeInfo nodeId="4581582910844784900" fileName="GenericParamFeature_Editor.java" startLine="347" startPosition="71" endLine="348" endPosition="55" />
-    <scopeInfo nodeId="4581582910844784900" fileName="GenericParamFeature_Editor.java" startLine="351" startPosition="108" endLine="352" endPosition="72" />
+    <scopeInfo nodeId="4581582910844784900" fileName="GenericParamFeature_Editor.java" startLine="351" startPosition="103" endLine="352" endPosition="82" />
     <scopeInfo nodeId="4581582910844784903" fileName="GenericParamFeature_Editor.java" startLine="368" startPosition="115" endLine="369" endPosition="72" />
     <scopeInfo nodeId="4581582910844784909" fileName="GenericParamFeature_Editor.java" startLine="375" startPosition="69" endLine="376" endPosition="55" />
-    <scopeInfo nodeId="4581582910844784909" fileName="GenericParamFeature_Editor.java" startLine="379" startPosition="108" endLine="380" endPosition="72" />
+    <scopeInfo nodeId="4581582910844784909" fileName="GenericParamFeature_Editor.java" startLine="379" startPosition="103" endLine="380" endPosition="82" />
     <scopeInfo nodeId="4581582910844784911" fileName="GenericParamFeature_Editor.java" startLine="404" startPosition="37" endLine="405" endPosition="14" />
     <scopeInfo nodeId="4581582910844784911" fileName="GenericParamFeature_Editor.java" startLine="408" startPosition="69" endLine="409" endPosition="67" />
     <scopeInfo nodeId="4581582910844784911" fileName="GenericParamFeature_Editor.java" startLine="412" startPosition="81" endLine="413" endPosition="70" />
