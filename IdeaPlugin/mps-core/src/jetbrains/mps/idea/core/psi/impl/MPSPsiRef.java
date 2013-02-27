@@ -19,15 +19,23 @@ package jetbrains.mps.idea.core.psi.impl;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiNamedElement;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * evgeny, 1/25/13
@@ -105,7 +113,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
       @Override
       public PsiElement resolve() {
         // TODO
-        return null;
+        return MPSPsiRef.this.resolve();
       }
 
       @NotNull
@@ -116,14 +124,45 @@ public class MPSPsiRef extends MPSPsiNodeBase {
 
       @Override
       public PsiElement handleElementRename(String newElementName) throws IncorrectOperationException {
-        // TODO
-        return null;
+        return MPSPsiRef.this;
       }
 
       @Override
-      public PsiElement bindToElement(@NotNull PsiElement element) throws IncorrectOperationException {
-        // TODO
-        return null;
+      public PsiElement bindToElement(final @NotNull PsiElement element) throws IncorrectOperationException {
+        if (element instanceof MPSPsiNodeBase) {
+          // TODO targeting mps node
+        } else {
+          final SNode newTargetNode = MPS2PsiMapperUtil.findNodeByPsi(element, getProject());
+
+          PsiElement psiParent = getParent();
+          if (psiParent instanceof MPSPsiNode) {
+            MPSPsiNode mpsParent = (MPSPsiNode) psiParent;
+            final SNode parentNode = mpsParent.getNodeReference().resolve(MPSModuleRepository.getInstance());
+
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              @Override
+              public void run() {
+                // setReferenceTarget: ignoring the fact that there may be multiple references in one role?
+                if (newTargetNode == null) {
+                  // invalidating the SReference
+                  parentNode.setReferenceTarget(role, null);
+                  // TODO what to do with this MPSPsiRef?
+
+                } else {
+                  parentNode.setReferenceTarget(role, newTargetNode);
+
+                  model = newTargetNode.getModel().getReference();
+                  nodeId = newTargetNode.getNodeId();
+                  // TODO toString is a bad fallback
+                  referenceText = element instanceof PsiNamedElement ? ((PsiNamedElement)element).getName() : element.toString();
+                }
+              }
+            });
+
+          }
+        }
+
+        return MPSPsiRef.this;
       }
 
       @Override
@@ -148,5 +187,10 @@ public class MPSPsiRef extends MPSPsiNodeBase {
   @Override
   public String toString() {
     return "reference in " + role;
+  }
+
+  @Override
+  public boolean isWritable() {
+    return true;
   }
 }

@@ -244,4 +244,5 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
   public VirtualFile getSourceVirtualFile() {
     return mySourceVirtualFile;
   }
+
 }

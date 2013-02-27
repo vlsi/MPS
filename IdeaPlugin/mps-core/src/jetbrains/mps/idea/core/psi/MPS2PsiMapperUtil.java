@@ -16,20 +16,40 @@
 
 package jetbrains.mps.idea.core.psi;
 
-import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * danilla 2/13/13
+ * danilla 2/25/13
  */
 
-public interface MPSNodePsiSourceFinder {
-
-  public static final ExtensionPointName<MPSNodePsiSourceFinder> EP_NAME = ExtensionPointName.create("com.intellij.mps.psiSourceFinder");
+public class MPS2PsiMapperUtil {
 
   @Nullable
-  PsiElement getPsiSource(SNode node, Project project);
+  public static PsiElement getPsiSource(SNode node, Project project) {
+    for (MPS2PsiMapper finder : MPS2PsiMapper.EP_NAME.getExtensions()) {
+      PsiElement psiElement = finder.getPsiSource(node, project);
+      if (psiElement != null) {
+        return psiElement;
+      }
+    }
+    return null;
+  }
+
+  @Nullable
+  public static SNode findNodeByPsi(PsiElement element, Project project) {
+    for (MPS2PsiMapper finder : MPS2PsiMapper.EP_NAME.getExtensions()) {
+      SNode node = finder.getMPSNodeForPsi(element, project);
+      if (node != null) {
+        return node;
+      }
+    }
+    return null;
+  }
+
+
+
+
 }

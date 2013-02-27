@@ -29,10 +29,10 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.impl.PsiModificationTrackerImpl;
 import com.intellij.psi.impl.PsiTreeChangeEventImpl;
-import com.intellij.psi.util.PsiModificationTracker;
-import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
+import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.file.impl.FileManager;
+import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
 import jetbrains.mps.idea.core.psi.MPSKeys;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ModelProvider;
@@ -58,7 +58,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * evgeny, 1/25/13
  */
-public class MPSPsiProvider extends AbstractProjectComponent  {
+public class MPSPsiProvider extends AbstractProjectComponent {
 
   // TODO softReference..
   ConcurrentMap<SModelReference, MPSPsiModel> models = new ConcurrentHashMap<SModelReference, MPSPsiModel>();
@@ -79,7 +79,6 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
       // TODO notify ANY_PSI_CHANGE_TOPIC
     }
   };
-
 
 
   protected MPSPsiProvider(Project project) {
@@ -111,11 +110,9 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
     if (node == null) return null;
 
     // give chance to other to tell us what the PSI element is
-    for (MPSNodePsiSourceFinder finder : MPSNodePsiSourceFinder.EP_NAME.getExtensions()) {
-      PsiElement psiElement = finder.getPsiSource(node, myProject);
-      if (psiElement != null) {
-        return psiElement;
-      }
+    PsiElement source = MPS2PsiMapperUtil.getPsiSource(node, myProject);
+    if (source != null) {
+      return source;
     }
 
     final SModel containingModel = node.getContainingModel();
@@ -205,7 +202,7 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
     // TODO: this is a dumb straightforward solution, better use beforeChage*. Or not?
     manager.dropResolveCaches();
 
-    ((PsiManagerImpl)manager).childrenChanged(event);
+    ((PsiManagerImpl) manager).childrenChanged(event);
 
     myModificationTracker.incCounter();
   }
