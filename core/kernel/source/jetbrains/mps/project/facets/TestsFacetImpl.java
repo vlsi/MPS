@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.facets;
 
+import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -22,8 +23,19 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
-public class TestsFacetImpl implements TestsFacet {
+public class TestsFacetImpl extends ModuleFacetBase implements TestsFacet {
   private IFile myModuleHome;
+
+  public TestsFacetImpl() {
+  }
+
+  @Override
+  public void attach() {
+    IFile descriptorFile = ((AbstractModule) getModule()).getDescriptorFile();
+    if (descriptorFile != null) {
+      myModuleHome = descriptorFile.getParent();
+    }
+  }
 
   private TestsFacetImpl(IFile moduleHome) {
     myModuleHome = moduleHome;
@@ -41,10 +53,5 @@ public class TestsFacetImpl implements TestsFacet {
     } else {
       return null;
     }
-  }
-
-  @Nullable
-  public static TestsFacet fromModule(AbstractModule module) {
-    return module.getDescriptorFile() != null ? new TestsFacetImpl(module.getDescriptorFile().getParent()) : null;
   }
 }

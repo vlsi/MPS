@@ -22,6 +22,9 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
 import java.util.Set;
 
 public interface JavaModuleFacet extends SModuleFacet {
+
+  public static final String FACET_TYPE = "java";
+
   // for "generate" task
   boolean isCompileInMps();
 

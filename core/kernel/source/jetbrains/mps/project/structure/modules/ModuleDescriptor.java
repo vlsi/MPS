@@ -35,6 +35,7 @@ public class ModuleDescriptor {
   private String myTimestamp;
 
   private Collection<ModelRootDescriptor> myModelRoots;
+  private Collection<ModuleFacetDescriptor> myFacets;
   private Collection<Dependency> myDependencies;
   private Collection<ModuleReference> myUsedLanguages;
   private Collection<ModuleReference> myUsedDevkits;
@@ -47,6 +48,7 @@ public class ModuleDescriptor {
 
   public ModuleDescriptor() {
     myModelRoots = new LinkedHashSet<ModelRootDescriptor>();
+    myFacets = new LinkedHashSet<ModuleFacetDescriptor>();
     myDependencies = new TreeSet<Dependency>(DEPENDENCY_COMPARATOR);
     myUsedLanguages = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
     myUsedDevkits = new TreeSet<ModuleReference>(MODULE_REFERENCE_COMPARATOR);
@@ -103,6 +105,10 @@ public class ModuleDescriptor {
 
   public Collection<ModelRootDescriptor> getModelRootDescriptors() {
     return myModelRoots;
+  }
+
+  public Collection<ModuleFacetDescriptor> getModuleFacetDescriptors() {
+    return myFacets;
   }
 
   public Collection<Dependency> getDependencies() {
@@ -176,6 +182,11 @@ public class ModuleDescriptor {
       root.save(stream);
     }
 
+    stream.writeInt(myFacets.size());
+    for (ModuleFacetDescriptor facet : myFacets) {
+      facet.save(stream);
+    }
+
     stream.writeInt(myDependencies.size());
     for (Dependency dep : myDependencies) {
       dep.save(stream);
@@ -213,6 +224,11 @@ public class ModuleDescriptor {
     myModelRoots.clear();
     for (int size = stream.readInt(); size > 0; size--) {
       myModelRoots.add(ModelRootDescriptor.load(stream));
+    }
+
+    myFacets.clear();
+    for (int size = stream.readInt(); size > 0; size++) {
+      myFacets.add(ModuleFacetDescriptor.load(stream));
     }
 
     myDependencies.clear();
