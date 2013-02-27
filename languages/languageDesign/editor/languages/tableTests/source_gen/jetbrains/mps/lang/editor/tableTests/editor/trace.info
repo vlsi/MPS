@@ -926,7 +926,7 @@
     <nodeInfo nodeId="5877647854348506803" fileName="StateMachine_Editor.java" startLine="148" startPosition="13" endLine="149" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5877647854348506843" fileName="StateMachine_Editor.java" startLine="151" startPosition="127" endLine="152" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5877647854348506990" fileName="StateMachine_Editor.java" startLine="154" startPosition="13" endLine="155" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3417144755649089668" fileName="StateMachine_Editor.java" startLine="159" startPosition="88" endLine="160" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3417144755649089668" fileName="StateMachine_Editor.java" startLine="159" startPosition="84" endLine="160" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3417144755649089721" fileName="StateMachine_Editor.java" startLine="161" startPosition="41" endLine="162" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3417144755649089727" fileName="StateMachine_Editor.java" startLine="164" startPosition="41" endLine="165" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3417144755649089731" fileName="StateMachine_Editor.java" startLine="167" startPosition="40" endLine="168" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -995,7 +995,7 @@
     <nodeInfo nodeId="6645285158565208813" fileName="StateMachine_Editor.java" startLine="175" startPosition="74" endLine="206" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3417144755649166259" fileName="StateMachine_Editor.java" startLine="174" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDefaultNodeSetter#()Ljetbrains/mps/smodel/action/DefaultChildNodeSetter;" />
     <nodeInfo nodeId="3417144755649089652" fileName="StateMachine_Editor.java" startLine="172" startPosition="13" endLine="208" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3417144755649089636" fileName="StateMachine_Editor.java" startLine="158" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubstituteInfo#(II)Ljetbrains/mps/nodeEditor/cellMenu/NodeSubstituteInfo;" />
+    <nodeInfo nodeId="3417144755649089636" fileName="StateMachine_Editor.java" startLine="158" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubstituteInfo#(II)Ljetbrains/mps/openapi/editor/cells/SubstituteInfo;" />
     <nodeInfo nodeId="7483705179651268864" fileName="StateMachine_Editor.java" startLine="82" startPosition="95" endLine="226" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7483705179651268810" fileName="StateMachine_Editor.java" startLine="82" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTableModel#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/lang/editor/table/runtime/TableModel;" />
     <nodeInfo nodeId="7483705179651268810" fileName="StateMachine_Editor.java" startLine="80" startPosition="85" endLine="228" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1131,7 +1131,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3417144755649166262" fileName="StateMachine_Editor.java" startLine="175" startPosition="74" endLine="206" endPosition="18" />
     <scopeInfo nodeId="3417144755649166259" fileName="StateMachine_Editor.java" startLine="174" startPosition="0" endLine="208" endPosition="0" />
-    <scopeInfo nodeId="3417144755649089643" fileName="StateMachine_Editor.java" startLine="159" startPosition="88" endLine="208" endPosition="14">
+    <scopeInfo nodeId="3417144755649089643" fileName="StateMachine_Editor.java" startLine="159" startPosition="84" endLine="208" endPosition="14">
       <varInfo nodeId="3417144755649089669" varName="linkDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="3417144755649089636" fileName="StateMachine_Editor.java" startLine="158" startPosition="0" endLine="210" endPosition="0">

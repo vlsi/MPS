@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import java.util.List;
@@ -100,7 +100,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
           if (textToMatch.length() == 0) {
             return;
           }
-          NodeSubstituteInfo substituteInfo = null;
+          SubstituteInfo substituteInfo = null;
           if (errorLabel != null) {
             substituteInfo = errorLabel.getSubstituteInfo();
           } else if (unresolvedReference != null && ((EditorContext) MapSequence.fromMap(_params).get("editorContext")) != null) {

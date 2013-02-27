@@ -23,7 +23,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -93,7 +93,7 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       // hack before actions are refactored 
-      List<INodeSubstituteAction> actions = ModelActions.createChildSubstituteActions(SNodeOperations.getParent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), new AbstractChildNodeSetter() {
+      List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(SNodeOperations.getParent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), new AbstractChildNodeSetter() {
         @Override
         protected SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope, @Nullable EditorContext editorContext) {
           SNode sourceNode = (SNode) oldChild;
@@ -108,10 +108,10 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((INodeSubstituteAction) parameterObject, node, model, scope, operationContext, editorContext);
+      this.handleAction_impl((SubstituteAction) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(INodeSubstituteAction parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SubstituteAction parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       parameterObject.substitute(editorContext, parameterObject.getMatchingText(null));
     }
 
@@ -120,18 +120,18 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((INodeSubstituteAction) parameterObject);
+      return this.getMatchingText_internal((SubstituteAction) parameterObject);
     }
 
-    public String getMatchingText_internal(INodeSubstituteAction parameterObject) {
+    public String getMatchingText_internal(SubstituteAction parameterObject) {
       return parameterObject.getMatchingText(null);
     }
 
     public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((INodeSubstituteAction) parameterObject);
+      return this.getDescriptionText_internal((SubstituteAction) parameterObject);
     }
 
-    public String getDescriptionText_internal(INodeSubstituteAction parameterObject) {
+    public String getDescriptionText_internal(SubstituteAction parameterObject) {
       return parameterObject.getDescriptionText(null);
     }
   }

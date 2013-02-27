@@ -24,7 +24,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
@@ -156,7 +156,7 @@ public class StateMachine_Editor extends DefaultNodeEditor {
           }
 
           @Override
-          public NodeSubstituteInfo getSubstituteInfo(final int row, final int column) {
+          public SubstituteInfo getSubstituteInfo(final int row, final int column) {
             SNode linkDeclaration = null;
             if (row == 0 && column > 0) {
               linkDeclaration = SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.tableTests.structure.StateMachine", "events");
