@@ -130,7 +130,7 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5848582975480817267">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToSModelDescriptorOpenAPI" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to model вуыскшзещк OpenAPI" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to model descriptor OpenAPI" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
   </roots>

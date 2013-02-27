@@ -18,7 +18,7 @@ public class MigrateToSModelDescriptorOpenAPI_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public MigrateToSModelDescriptorOpenAPI_Action() {
-    super("Migrate to model \u0432\u0443\u044b\u0441\u043a\u0448\u0437\u0435\u0449\u043a OpenAPI", "", ICON);
+    super("Migrate to model descriptor OpenAPI", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
