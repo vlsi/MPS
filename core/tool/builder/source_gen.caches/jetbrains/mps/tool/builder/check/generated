@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2qguksxchawmhzwh0l6dpiohhzvmn9r">
+<dependencies version="2" modelHash="-7i39pjkajhmkqxxqx2qjdqt92badosx">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="621em7vpw5ex0v0ghcf6e9cwqktpv6v" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-3oix0gm2cosksx5q7bcotftdn7n21nk" />
   <common hash="-awxfc9yi6oziergvdxfobo25b1b2utu" />
-  <source id="2546981710035415466" name="TestBrokenReferencesWorker" hash="-c95js0jwho3f9f0897bcizufu82jusv">
+  <source id="2546981710035415466" name="TestBrokenReferencesWorker" hash="ch9xgb02kr752p2qk5d4l9skb50eksr">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TestBrokenReferencesWorker.java" />

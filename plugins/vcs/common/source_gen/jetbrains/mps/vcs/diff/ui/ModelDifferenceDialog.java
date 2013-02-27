@@ -50,7 +50,6 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import java.util.Arrays;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class ModelDifferenceDialog extends DialogWrapper {
   private Project myProject;

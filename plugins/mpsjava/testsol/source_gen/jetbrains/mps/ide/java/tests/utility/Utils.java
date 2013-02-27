@@ -33,7 +33,7 @@ import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
 import java.util.Iterator;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.project.SModelRoot;
@@ -127,7 +127,7 @@ public class Utils {
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
     for (SModel md : Sequence.fromIterable(mr.loadModels())) {
-      SModel m = ((SModel) md).getSModel();
+      SModel m = ((SModelDescriptor) md).getSModel();
       ListSequence.fromList(models).addElement(m);
     }
 
@@ -218,7 +218,7 @@ public class Utils {
     for (SModel m : Sequence.fromIterable(srcModels)) {
       // <node> 
 
-      SModel zzz = ((SModel) m).getSModel();
+      SModel zzz = ((SModelDescriptor) m).getSModel();
       srcModelsX.add(zzz);
 
       for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(zzz, null))) {

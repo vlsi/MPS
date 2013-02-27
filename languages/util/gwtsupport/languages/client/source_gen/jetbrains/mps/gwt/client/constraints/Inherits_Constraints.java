@@ -57,7 +57,7 @@ public class Inherits_Constraints extends BaseConstraintsDescriptor {
               }
             }).translate(new ITranslator2<SModel, SNode>() {
               public Iterable<SNode> translate(SModel smd) {
-                return SModelOperations.getNodes((((org.jetbrains.mps.openapi.model.SModel) smd.getSModel())), "jetbrains.mps.gwt.client.structure.GWTModule");
+                return SModelOperations.getNodes((((SModel) smd.getSModel())), "jetbrains.mps.gwt.client.structure.GWTModule");
               }
             });
           }

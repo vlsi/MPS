@@ -10,6 +10,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelOperations;
@@ -79,7 +80,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   protected void setUpNode(List<SNodeReference> nodesToImport) {
     EvaluationModule containerModule = (EvaluationModule) myContainerModule.resolve(myDebuggerRepository);
     // wanted to use resolve method here, but it was not implemented:( 
-    SModel containerModel = (SModel) SModelRepository.getInstance().getModelDescriptor(myContainerModel);
+    SModel containerModel = (SModelDescriptor) SModelRepository.getInstance().getModelDescriptor(myContainerModel);
 
     setUpDependencies(containerModule, containerModel);
 
@@ -213,7 +214,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     // (and this class in general, since it inherited a lot of the ugly stuff from the old evaluation code) 
     SModel stub = findStubForFqName(modelFqNameFromUnitName(unitName));
     if (stub != null) {
-      org.jetbrains.mps.openapi.model.SModel model = stub.getSModel();
+      SModel model = stub.getSModel();
       SNode node = ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(model, "jetbrains.mps.lang.traceable.structure.UnitConcept")).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_v5yv3u_a0a0a0a0a0a0b0d0o(BehaviorReflection.invokeVirtual(String.class, it, "virtual_getUnitName_5067982036267369911", new Object[]{}), unitName) && SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");

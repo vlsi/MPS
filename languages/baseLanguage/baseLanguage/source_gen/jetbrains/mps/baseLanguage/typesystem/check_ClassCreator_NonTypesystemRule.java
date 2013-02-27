@@ -66,14 +66,14 @@ public class check_ClassCreator_NonTypesystemRule extends AbstractNonTypesystemR
     return null;
   }
 
-  private static SModel check_gfouwf_a0a1a0a1(SModel checkedDotOperand) {
+  private static SModel check_gfouwf_a0a1a0a1(jetbrains.mps.smodel.SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SModel check_gfouwf_a0a0b0a0b(SNode checkedDotOperand) {
+  private static jetbrains.mps.smodel.SModel check_gfouwf_a0a0b0a0b(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

@@ -26,7 +26,6 @@ import com.intellij.ide.DataManager;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.findUsages.UsagesList;
 import java.util.Set;

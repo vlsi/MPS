@@ -9,7 +9,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.ModuleId;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Arrays;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.IScope;

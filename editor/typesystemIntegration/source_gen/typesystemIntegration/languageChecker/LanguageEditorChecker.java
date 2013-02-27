@@ -8,8 +8,6 @@ import jetbrains.mps.checkers.AbstractConstraintsChecker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.Map;
-
-import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.checkers.LanguageErrorsComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -19,12 +17,12 @@ import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.SModelAdapter;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.checkers.ConstraintsChecker;
 import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.CardinalitiesChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import java.util.List;
@@ -110,14 +108,14 @@ public class LanguageEditorChecker extends BaseEditorChecker {
 
   private void removeModelListener(SModel modelDescriptor) {
     if (SetSequence.fromSet(myListenedModels).contains(modelDescriptor)) {
-      ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
+      ((SModelDescriptor) modelDescriptor).removeModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).removeElement(modelDescriptor);
     }
   }
 
   private void addModelListener(SModel modelDescriptor) {
     if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
-      ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
+      ((SModelDescriptor) modelDescriptor).addModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
     }
   }

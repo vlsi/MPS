@@ -4,7 +4,7 @@ package jetbrains.mps.kernel.model;
 
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IScope;
@@ -26,7 +26,7 @@ public class MissingDependenciesFixer {
   private SModel myModelDescriptor;
 
   public MissingDependenciesFixer(SModel modelDescriptor) {
-    myModelDescriptor = (SModel) modelDescriptor;
+    myModelDescriptor = (SModelDescriptor) modelDescriptor;
   }
 
   @Deprecated

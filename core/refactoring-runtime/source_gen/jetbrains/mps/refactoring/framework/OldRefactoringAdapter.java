@@ -9,7 +9,7 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.ArrayList;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 @Deprecated
 public class OldRefactoringAdapter implements IRefactoring {
@@ -118,7 +118,7 @@ public class OldRefactoringAdapter implements IRefactoring {
         return myOldRefactoring.isApplicableWRTConcept((SNode) o);
       } else
       if (myTarget == RefactoringTarget.MODEL) {
-        return myOldRefactoring.isApplicableToModel((SModel) o);
+        return myOldRefactoring.isApplicableToModel((SModelDescriptor) o);
       } else {
         return myOldRefactoring.isApplicableToModule((IModule) o);
       }

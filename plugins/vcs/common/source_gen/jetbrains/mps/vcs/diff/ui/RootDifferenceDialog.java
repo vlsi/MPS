@@ -61,7 +61,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.wm.WindowManager;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class RootDifferenceDialog extends DialogWrapper implements DataProvider {
   private ModelChangeSet myChangeSet;

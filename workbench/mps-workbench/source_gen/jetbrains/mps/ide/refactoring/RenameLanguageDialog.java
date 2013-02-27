@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class RenameLanguageDialog extends RenameDialog {
   private JCheckBox myRegenerateLanguage;

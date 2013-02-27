@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.reloading.ReloadAdapter;
 
 public class DesignPartLoader {

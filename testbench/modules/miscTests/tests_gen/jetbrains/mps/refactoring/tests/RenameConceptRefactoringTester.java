@@ -13,10 +13,10 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class RenameConceptRefactoringTester implements IRefactoringTester {
   private static final String STRMD = "strmd";
@@ -64,7 +64,7 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
               }
               SModel sModel = sandbox1.getSModel();
               String conceptFqName = sModel.getRootNodes().iterator().next().getConcept().getConceptId();
-              SModel structureModelDescriptor = (SModel) refactoringContext.getParameter(RenameConceptRefactoringTester.STRMD);
+              SModel structureModelDescriptor = (SModelDescriptor) refactoringContext.getParameter(RenameConceptRefactoringTester.STRMD);
               result[0] = conceptFqName.equals(structureModelDescriptor.getReference().getSModelFqName() + "." + newConceptName);
             } catch (Throwable t) {
               t.printStackTrace();

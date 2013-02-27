@@ -21,7 +21,6 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelOperations;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class ModuleUsagesFinder implements IFinder {
   private static final String USED_BY = "used by";

@@ -21,7 +21,6 @@ import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class ModuleChooser extends BaseChooserComponent {
   private final List<ModuleReference> myCheckedModules = ListSequence.fromList(new ArrayList<ModuleReference>());

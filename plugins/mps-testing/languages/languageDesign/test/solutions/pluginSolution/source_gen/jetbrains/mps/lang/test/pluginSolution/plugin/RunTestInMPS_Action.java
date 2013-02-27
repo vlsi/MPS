@@ -20,10 +20,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.lang.reflect.Method;
 import java.lang.reflect.Constructor;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.logging.Logger;
 
@@ -106,7 +106,7 @@ public class RunTestInMPS_Action extends BaseAction {
       System.out.println("Test " + className + "." + testName);
       final Class c = ((IClassLoadingModule) ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor().getModule()).getClass(BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), test, "virtual_getTestCase_1216134500045", new Object[]{}), "virtual_getClassName_1216136193905", new Object[]{}));
       final Method meth = c.getMethod("runTest", String.class, String.class, Boolean.TYPE);
-      Constructor ctor = c.getConstructor(Project.class, SModel.class);
+      Constructor ctor = c.getConstructor(Project.class, SModelDescriptor.class);
       final Object testClass = ctor.newInstance(((Project) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor());
       Thread thread = new Thread(new Runnable() {
         @Override

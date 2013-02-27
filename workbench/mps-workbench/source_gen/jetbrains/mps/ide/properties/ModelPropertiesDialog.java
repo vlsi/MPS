@@ -11,7 +11,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import javax.swing.JPanel;

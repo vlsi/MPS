@@ -14,9 +14,9 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.make.TextPreviewUtil;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.logging.Logger;
 
@@ -89,8 +89,8 @@ public class TextPreviewModel_Action extends BaseAction {
   }
 
   private boolean isUserEditableModel(SModel md, final Map<String, Object> _params) {
-    // TODO SModel cast 
-    if (!(SModelStereotype.isUserModel((SModel) md))) {
+    // TODO SModelDescriptor cast 
+    if (!(SModelStereotype.isUserModel((SModelDescriptor) md))) {
       return false;
     }
     return md instanceof EditableSModel && !(((EditableSModel) md).isReadOnly());

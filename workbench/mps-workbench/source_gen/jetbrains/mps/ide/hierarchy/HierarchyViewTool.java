@@ -5,15 +5,13 @@ package jetbrains.mps.ide.hierarchy;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
-
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import com.intellij.openapi.project.Project;
 import com.intellij.icons.AllIcons;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -33,7 +31,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
 
   public void onCreateStructureModel(SModel md) {
     myStructureModels.add(md);
-    ((SModelInternal) md).addModelListener(myModelListener);
+    ((SModelDescriptor) md).addModelListener(myModelListener);
   }
 
   @Override
@@ -50,7 +48,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
     super.projectOpened();
     for (SModel md : SModelRepository.getInstance().getModelDescriptors()) {
       if (LanguageAspect.STRUCTURE.is(md)) {
-        myStructureModels.add((SModel) md);
+        myStructureModels.add((SModelDescriptor) md);
       }
     }
   }
@@ -73,7 +71,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
 
       @Override
       public void onCreate(SModule module, SModel model) {
-        onCreateStructureModel((SModel) model);
+        onCreateStructureModel((SModelDescriptor) model);
       }
     };
     AbstractModule.registerModelCreationListener(myCreationListener);
@@ -89,14 +87,14 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   @Override
   protected void doRegister() {
     for (SModel md : myStructureModels) {
-      ((SModelInternal) md).addModelListener(myModelListener);
+      ((SModelDescriptor) md).addModelListener(myModelListener);
     }
   }
 
   @Override
   protected void doUnregister() {
     for (SModel md : myStructureModels) {
-      ((SModelInternal) md).removeModelListener(myModelListener);
+      ((SModelDescriptor) md).removeModelListener(myModelListener);
     }
     myStructureModels.clear();
   }

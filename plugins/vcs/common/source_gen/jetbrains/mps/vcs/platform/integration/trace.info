@@ -14,23 +14,23 @@
     <nodeInfo nodeId="5337823064584388737" fileName="OptimizeImportsCheckinHandler.java" startLine="60" startPosition="34" endLine="61" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5337823064584388748" fileName="OptimizeImportsCheckinHandler.java" startLine="65" startPosition="31" endLine="66" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5337823064584388770" fileName="OptimizeImportsCheckinHandler.java" startLine="77" startPosition="63" endLine="78" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5337823064584388777" fileName="OptimizeImportsCheckinHandler.java" startLine="78" startPosition="58" endLine="79" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5337823064584388784" fileName="OptimizeImportsCheckinHandler.java" startLine="79" startPosition="86" endLine="80" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5337823064584388793" fileName="OptimizeImportsCheckinHandler.java" startLine="81" startPosition="39" endLine="82" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5337823064584388777" fileName="OptimizeImportsCheckinHandler.java" startLine="78" startPosition="58" endLine="79" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5337823064584388784" fileName="OptimizeImportsCheckinHandler.java" startLine="79" startPosition="66" endLine="80" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5337823064584388793" fileName="OptimizeImportsCheckinHandler.java" startLine="81" startPosition="39" endLine="82" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5337823064584388810" fileName="OptimizeImportsCheckinHandler.java" startLine="83" startPosition="28" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="5337823064584388811" fileName="OptimizeImportsCheckinHandler.java" startLine="85" startPosition="9" endLine="86" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5337823064584388816" fileName="OptimizeImportsCheckinHandler.java" startLine="87" startPosition="7" endLine="88" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5337823064584388823" fileName="OptimizeImportsCheckinHandler.java" startLine="88" startPosition="116" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5337823064584388837" fileName="OptimizeImportsCheckinHandler.java" startLine="90" startPosition="11" endLine="91" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5337823064584388859" fileName="OptimizeImportsCheckinHandler.java" startLine="95" startPosition="31" endLine="96" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5337823064584388871" fileName="OptimizeImportsCheckinHandler.java" startLine="97" startPosition="69" endLine="98" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5337823064584388871" fileName="OptimizeImportsCheckinHandler.java" startLine="97" startPosition="59" endLine="98" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5337823064584388828" fileName="OptimizeImportsCheckinHandler.java" startLine="103" startPosition="29" endLine="104" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5337823064584388879" fileName="OptimizeImportsCheckinHandler.java" startLine="106" startPosition="5" endLine="107" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5337823064584388654" fileName="OptimizeImportsCheckinHandler.java" startLine="116" startPosition="91" endLine="117" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5337823064584388641" fileName="OptimizeImportsCheckinHandler.java" startLine="111" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptimizeImportsCheckinHandlerFactory#()V" />
     <nodeInfo nodeId="5337823064584388692" fileName="OptimizeImportsCheckinHandler.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSettings#()Lcom/intellij/openapi/vcs/VcsConfiguration;" />
     <nodeInfo nodeId="5337823064584388756" fileName="OptimizeImportsCheckinHandler.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refresh#()V" />
-    <nodeInfo nodeId="5337823064584388805" fileName="OptimizeImportsCheckinHandler.java" startLine="82" startPosition="139" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5337823064584388805" fileName="OptimizeImportsCheckinHandler.java" startLine="82" startPosition="129" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5337823064584388866" fileName="OptimizeImportsCheckinHandler.java" startLine="96" startPosition="96" endLine="99" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5337823064584388672" fileName="OptimizeImportsCheckinHandler.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OptimizeImportsCheckinHandler#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/vcs/CheckinProjectPanel;)V" />
     <nodeInfo nodeId="5337823064584388733" fileName="OptimizeImportsCheckinHandler.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="restoreState#()V" />
@@ -52,7 +52,7 @@
     <scopeInfo nodeId="5337823064584388736" fileName="OptimizeImportsCheckinHandler.java" startLine="60" startPosition="34" endLine="61" endPosition="98" />
     <scopeInfo nodeId="5337823064584388747" fileName="OptimizeImportsCheckinHandler.java" startLine="65" startPosition="31" endLine="66" endPosition="100" />
     <scopeInfo nodeId="5337823064584388809" fileName="OptimizeImportsCheckinHandler.java" startLine="83" startPosition="28" endLine="84" endPosition="19" />
-    <scopeInfo nodeId="5337823064584388870" fileName="OptimizeImportsCheckinHandler.java" startLine="97" startPosition="69" endLine="98" endPosition="56" />
+    <scopeInfo nodeId="5337823064584388870" fileName="OptimizeImportsCheckinHandler.java" startLine="97" startPosition="59" endLine="98" endPosition="56" />
     <scopeInfo nodeId="5337823064584388826" fileName="OptimizeImportsCheckinHandler.java" startLine="103" startPosition="0" endLine="104" endPosition="64">
       <varInfo nodeId="5337823064584388834" varName="e" />
     </scopeInfo>
@@ -109,100 +109,100 @@
     <unitInfo nodeId="5337823064584388635" fileName="OptimizeImportsCheckinHandler.java" startLine="34" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199020">
-    <nodeInfo nodeId="6030177200825199033" fileName="ModelDiffTool.java" startLine="38" startPosition="47" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199040" fileName="ModelDiffTool.java" startLine="39" startPosition="51" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199043" fileName="ModelDiffTool.java" startLine="40" startPosition="26" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199048" fileName="ModelDiffTool.java" startLine="42" startPosition="9" endLine="43" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199055" fileName="ModelDiffTool.java" startLine="43" startPosition="40" endLine="44" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199066" fileName="ModelDiffTool.java" startLine="45" startPosition="36" endLine="46" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199069" fileName="ModelDiffTool.java" startLine="46" startPosition="40" endLine="47" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199076" fileName="ModelDiffTool.java" startLine="47" startPosition="64" endLine="48" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199077" fileName="ModelDiffTool.java" startLine="49" startPosition="5" endLine="50" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6030177200825199166" fileName="ModelDiffTool.java" startLine="54" startPosition="47" endLine="55" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199173" fileName="ModelDiffTool.java" startLine="55" startPosition="51" endLine="56" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199196" fileName="ModelDiffTool.java" startLine="59" startPosition="62" endLine="60" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6030177200825199207" fileName="ModelDiffTool.java" startLine="61" startPosition="23" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199209" fileName="ModelDiffTool.java" startLine="63" startPosition="5" endLine="64" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6976105926957848554" fileName="ModelDiffTool.java" startLine="69" startPosition="111" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199105" fileName="ModelDiffTool.java" startLine="74" startPosition="110" endLine="75" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2834132315319621384" fileName="ModelDiffTool.java" startLine="75" startPosition="134" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6030177200825199132" fileName="ModelDiffTool.java" startLine="80" startPosition="35" endLine="81" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4387441155898856124" fileName="ModelDiffTool.java" startLine="86" startPosition="9" endLine="87" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4387441155898795192" fileName="ModelDiffTool.java" startLine="87" startPosition="40" endLine="88" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4387441155898902219" fileName="ModelDiffTool.java" startLine="89" startPosition="30" endLine="90" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4387441155898977853" fileName="ModelDiffTool.java" startLine="91" startPosition="7" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6030177200825199138" fileName="ModelDiffTool.java" startLine="92" startPosition="0" endLine="93" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199151" fileName="ModelDiffTool.java" startLine="94" startPosition="31" endLine="95" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="99" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6030177200825199023" fileName="ModelDiffTool.java" startLine="34" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDiffTool#()V" />
-    <nodeInfo nodeId="6030177200825199202" fileName="ModelDiffTool.java" startLine="60" startPosition="46" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4387441155898888474" fileName="ModelDiffTool.java" startLine="88" startPosition="69" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199128" fileName="ModelDiffTool.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
-    <nodeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent#(Ljava/lang/String;Lcom/intellij/openapi/diff/DiffRequest;Ljava/awt/Window;Lcom/intellij/openapi/Disposable;)Lcom/intellij/openapi/diff/DiffViewer;" />
-    <nodeInfo nodeId="6030177200825199120" fileName="ModelDiffTool.java" startLine="77" startPosition="36" endLine="83" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6030177200825199189" fileName="ModelDiffTool.java" startLine="59" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isModelFile#(Lcom/intellij/openapi/diff/DiffContent;)Z" />
-    <nodeInfo nodeId="6030177200825199046" fileName="ModelDiffTool.java" startLine="41" startPosition="26" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6030177200825199115" fileName="ModelDiffTool.java" startLine="76" startPosition="0" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199136" fileName="ModelDiffTool.java" startLine="85" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6030177200825199092" fileName="ModelDiffTool.java" startLine="73" startPosition="82" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="37" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
-    <nodeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="73" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readModel#(Lcom/intellij/openapi/diff/DiffContent;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <scopeInfo nodeId="6030177200825199026" fileName="ModelDiffTool.java" startLine="34" startPosition="26" endLine="34" endPosition="26" />
-    <scopeInfo nodeId="6030177200825199206" fileName="ModelDiffTool.java" startLine="61" startPosition="23" endLine="62" endPosition="18" />
-    <scopeInfo nodeId="6976105926957848553" fileName="ModelDiffTool.java" startLine="69" startPosition="111" endLine="70" endPosition="16" />
-    <scopeInfo nodeId="6030177200825199131" fileName="ModelDiffTool.java" startLine="80" startPosition="35" endLine="81" endPosition="47" />
-    <scopeInfo nodeId="4387441155898888476" fileName="ModelDiffTool.java" startLine="89" startPosition="30" endLine="90" endPosition="62" />
-    <scopeInfo nodeId="6030177200825199147" fileName="ModelDiffTool.java" startLine="94" startPosition="0" endLine="95" endPosition="86">
+    <nodeInfo nodeId="6030177200825199033" fileName="ModelDiffTool.java" startLine="37" startPosition="47" endLine="38" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199040" fileName="ModelDiffTool.java" startLine="38" startPosition="51" endLine="39" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199043" fileName="ModelDiffTool.java" startLine="39" startPosition="26" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199048" fileName="ModelDiffTool.java" startLine="41" startPosition="9" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199055" fileName="ModelDiffTool.java" startLine="42" startPosition="40" endLine="43" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199066" fileName="ModelDiffTool.java" startLine="44" startPosition="36" endLine="45" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199069" fileName="ModelDiffTool.java" startLine="45" startPosition="40" endLine="46" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199076" fileName="ModelDiffTool.java" startLine="46" startPosition="64" endLine="47" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199077" fileName="ModelDiffTool.java" startLine="48" startPosition="5" endLine="49" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6030177200825199166" fileName="ModelDiffTool.java" startLine="53" startPosition="47" endLine="54" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199173" fileName="ModelDiffTool.java" startLine="54" startPosition="51" endLine="55" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199196" fileName="ModelDiffTool.java" startLine="58" startPosition="62" endLine="59" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6030177200825199207" fileName="ModelDiffTool.java" startLine="60" startPosition="23" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199209" fileName="ModelDiffTool.java" startLine="62" startPosition="5" endLine="63" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6976105926957848554" fileName="ModelDiffTool.java" startLine="68" startPosition="111" endLine="69" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199105" fileName="ModelDiffTool.java" startLine="73" startPosition="110" endLine="74" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2834132315319621384" fileName="ModelDiffTool.java" startLine="74" startPosition="124" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6030177200825199132" fileName="ModelDiffTool.java" startLine="79" startPosition="35" endLine="80" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4387441155898856124" fileName="ModelDiffTool.java" startLine="85" startPosition="9" endLine="86" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4387441155898795192" fileName="ModelDiffTool.java" startLine="86" startPosition="40" endLine="87" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4387441155898902219" fileName="ModelDiffTool.java" startLine="88" startPosition="30" endLine="89" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4387441155898977853" fileName="ModelDiffTool.java" startLine="90" startPosition="7" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6030177200825199138" fileName="ModelDiffTool.java" startLine="91" startPosition="0" endLine="92" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199151" fileName="ModelDiffTool.java" startLine="93" startPosition="31" endLine="94" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="98" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="6030177200825199023" fileName="ModelDiffTool.java" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDiffTool#()V" />
+    <nodeInfo nodeId="6030177200825199202" fileName="ModelDiffTool.java" startLine="59" startPosition="46" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4387441155898888474" fileName="ModelDiffTool.java" startLine="87" startPosition="69" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199128" fileName="ModelDiffTool.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="52" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canShow#(Lcom/intellij/openapi/diff/DiffRequest;)Z" />
+    <nodeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="66" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent#(Ljava/lang/String;Lcom/intellij/openapi/diff/DiffRequest;Ljava/awt/Window;Lcom/intellij/openapi/Disposable;)Lcom/intellij/openapi/diff/DiffViewer;" />
+    <nodeInfo nodeId="6030177200825199120" fileName="ModelDiffTool.java" startLine="76" startPosition="36" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6030177200825199189" fileName="ModelDiffTool.java" startLine="58" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isModelFile#(Lcom/intellij/openapi/diff/DiffContent;)Z" />
+    <nodeInfo nodeId="6030177200825199046" fileName="ModelDiffTool.java" startLine="40" startPosition="26" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6030177200825199115" fileName="ModelDiffTool.java" startLine="75" startPosition="0" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199136" fileName="ModelDiffTool.java" startLine="84" startPosition="5" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6030177200825199092" fileName="ModelDiffTool.java" startLine="72" startPosition="82" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="36" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="show#(Lcom/intellij/openapi/diff/DiffRequest;)V" />
+    <nodeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="72" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readModel#(Lcom/intellij/openapi/diff/DiffContent;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <scopeInfo nodeId="6030177200825199026" fileName="ModelDiffTool.java" startLine="33" startPosition="26" endLine="33" endPosition="26" />
+    <scopeInfo nodeId="6030177200825199206" fileName="ModelDiffTool.java" startLine="60" startPosition="23" endLine="61" endPosition="18" />
+    <scopeInfo nodeId="6976105926957848553" fileName="ModelDiffTool.java" startLine="68" startPosition="111" endLine="69" endPosition="16" />
+    <scopeInfo nodeId="6030177200825199131" fileName="ModelDiffTool.java" startLine="79" startPosition="35" endLine="80" endPosition="47" />
+    <scopeInfo nodeId="4387441155898888476" fileName="ModelDiffTool.java" startLine="88" startPosition="30" endLine="89" endPosition="62" />
+    <scopeInfo nodeId="6030177200825199147" fileName="ModelDiffTool.java" startLine="93" startPosition="0" endLine="94" endPosition="86">
       <varInfo nodeId="6030177200825199148" varName="ioe" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199150" fileName="ModelDiffTool.java" startLine="94" startPosition="31" endLine="95" endPosition="86" />
-    <scopeInfo nodeId="6030177200825199023" fileName="ModelDiffTool.java" startLine="34" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="6030177200825199047" fileName="ModelDiffTool.java" startLine="42" startPosition="9" endLine="44" endPosition="40" />
-    <scopeInfo nodeId="6030177200825199165" fileName="ModelDiffTool.java" startLine="54" startPosition="47" endLine="56" endPosition="88">
+    <scopeInfo nodeId="6030177200825199150" fileName="ModelDiffTool.java" startLine="93" startPosition="31" endLine="94" endPosition="86" />
+    <scopeInfo nodeId="6030177200825199023" fileName="ModelDiffTool.java" startLine="33" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="6030177200825199047" fileName="ModelDiffTool.java" startLine="41" startPosition="9" endLine="43" endPosition="40" />
+    <scopeInfo nodeId="6030177200825199165" fileName="ModelDiffTool.java" startLine="53" startPosition="47" endLine="55" endPosition="88">
       <varInfo nodeId="6030177200825199167" varName="contents" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199062" fileName="ModelDiffTool.java" startLine="45" startPosition="0" endLine="48" endPosition="13">
+    <scopeInfo nodeId="6030177200825199062" fileName="ModelDiffTool.java" startLine="44" startPosition="0" endLine="47" endPosition="13">
       <varInfo nodeId="6030177200825199063" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199065" fileName="ModelDiffTool.java" startLine="45" startPosition="36" endLine="48" endPosition="13" />
-    <scopeInfo nodeId="6030177200825199128" fileName="ModelDiffTool.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="53" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="6030177200825199065" fileName="ModelDiffTool.java" startLine="44" startPosition="36" endLine="47" endPosition="13" />
+    <scopeInfo nodeId="6030177200825199128" fileName="ModelDiffTool.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="6030177200825199160" fileName="ModelDiffTool.java" startLine="52" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="6030177200825199163" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199195" fileName="ModelDiffTool.java" startLine="59" startPosition="62" endLine="64" endPosition="59">
+    <scopeInfo nodeId="6030177200825199195" fileName="ModelDiffTool.java" startLine="58" startPosition="62" endLine="63" endPosition="59">
       <varInfo nodeId="6030177200825199197" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="67" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="6976105926957848541" fileName="ModelDiffTool.java" startLine="66" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="6976105926957848550" varName="disposable" />
       <varInfo nodeId="6976105926957848546" varName="request" />
       <varInfo nodeId="6976105926957848544" varName="string" />
       <varInfo nodeId="6976105926957848548" varName="window" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199119" fileName="ModelDiffTool.java" startLine="77" startPosition="36" endLine="83" endPosition="11" />
-    <scopeInfo nodeId="6030177200825199189" fileName="ModelDiffTool.java" startLine="59" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="6030177200825199119" fileName="ModelDiffTool.java" startLine="76" startPosition="36" endLine="82" endPosition="11" />
+    <scopeInfo nodeId="6030177200825199189" fileName="ModelDiffTool.java" startLine="58" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="6030177200825199192" varName="contents" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199137" fileName="ModelDiffTool.java" startLine="86" startPosition="9" endLine="93" endPosition="92">
+    <scopeInfo nodeId="6030177200825199137" fileName="ModelDiffTool.java" startLine="85" startPosition="9" endLine="92" endPosition="92">
       <varInfo nodeId="4387441155898856127" varName="bytes" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199100" fileName="ModelDiffTool.java" startLine="74" startPosition="110" endLine="84" endPosition="7">
+    <scopeInfo nodeId="6030177200825199100" fileName="ModelDiffTool.java" startLine="73" startPosition="110" endLine="83" endPosition="7">
       <varInfo nodeId="6030177200825199106" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199032" fileName="ModelDiffTool.java" startLine="38" startPosition="47" endLine="50" endPosition="66">
+    <scopeInfo nodeId="6030177200825199032" fileName="ModelDiffTool.java" startLine="37" startPosition="47" endLine="49" endPosition="66">
       <varInfo nodeId="6030177200825199034" varName="contents" />
       <varInfo nodeId="6030177200825199044" varName="newModel" />
       <varInfo nodeId="6030177200825199041" varName="oldModel" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="37" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="6030177200825199027" fileName="ModelDiffTool.java" startLine="36" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="6030177200825199030" varName="request" />
     </scopeInfo>
-    <scopeInfo nodeId="6030177200825199091" fileName="ModelDiffTool.java" startLine="73" startPosition="82" endLine="96" endPosition="5" />
-    <scopeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="73" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="6030177200825199091" fileName="ModelDiffTool.java" startLine="72" startPosition="82" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="6030177200825199085" fileName="ModelDiffTool.java" startLine="72" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="6030177200825199089" varName="content" />
     </scopeInfo>
-    <unitInfo nodeId="6030177200825199126" fileName="ModelDiffTool.java" startLine="78" startPosition="56" endLine="83" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ModelDiffTool$1" />
-    <unitInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="33" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelDiffTool" />
+    <unitInfo nodeId="6030177200825199126" fileName="ModelDiffTool.java" startLine="77" startPosition="56" endLine="82" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ModelDiffTool$1" />
+    <unitInfo nodeId="6030177200825199020" fileName="ModelDiffTool.java" startLine="32" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ModelDiffTool" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/6030177200825199214">
     <nodeInfo nodeId="6030177200825199333" fileName="ModelMergeTool.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -525,99 +525,99 @@
     <unitInfo nodeId="7788464498752623152" fileName="DiskMemoryConflictResolverImpl.java" startLine="29" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.DiskMemoryConflictResolverImpl" />
   </root>
   <root nodeRef="r:f7252e75-44f2-46f6-9600-c9b291e7dd5f(jetbrains.mps.vcs.platform.integration)/7788464498752650651">
-    <nodeInfo nodeId="7788464498752650700" fileName="ConflictingModelsWarnings.java" startLine="29" startPosition="92" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752650708" fileName="ConflictingModelsWarnings.java" startLine="30" startPosition="62" endLine="31" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752650714" fileName="ConflictingModelsWarnings.java" startLine="31" startPosition="87" endLine="32" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752650724" fileName="ConflictingModelsWarnings.java" startLine="33" startPosition="29" endLine="34" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7788464498752650731" fileName="ConflictingModelsWarnings.java" startLine="34" startPosition="50" endLine="35" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7788464498752650737" fileName="ConflictingModelsWarnings.java" startLine="36" startPosition="30" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7788464498752650755" fileName="ConflictingModelsWarnings.java" startLine="39" startPosition="29" endLine="40" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752650765" fileName="ConflictingModelsWarnings.java" startLine="43" startPosition="14" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7788464498752650780" fileName="ConflictingModelsWarnings.java" startLine="46" startPosition="29" endLine="47" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752650791" fileName="ConflictingModelsWarnings.java" startLine="52" startPosition="30" endLine="53" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7788464498752650803" fileName="ConflictingModelsWarnings.java" startLine="55" startPosition="29" endLine="56" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752650812" fileName="ConflictingModelsWarnings.java" startLine="59" startPosition="14" endLine="60" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650823" fileName="ConflictingModelsWarnings.java" startLine="65" startPosition="84" endLine="66" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7788464498752650661" fileName="ConflictingModelsWarnings.java" startLine="71" startPosition="37" endLine="72" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650671" fileName="ConflictingModelsWarnings.java" startLine="73" startPosition="44" endLine="74" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650678" fileName="ConflictingModelsWarnings.java" startLine="75" startPosition="45" endLine="76" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650680" fileName="ConflictingModelsWarnings.java" startLine="77" startPosition="5" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="82" startPosition="36" endLine="83" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="84" startPosition="5" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="89" startPosition="36" endLine="90" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="91" startPosition="5" endLine="92" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650684" fileName="ConflictingModelsWarnings.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConflictingModelsWarnings#()V" />
-    <nodeInfo nodeId="7788464498752650810" fileName="ConflictingModelsWarnings.java" startLine="59" startPosition="12" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7788464498752650753" fileName="ConflictingModelsWarnings.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752650778" fileName="ConflictingModelsWarnings.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752650801" fileName="ConflictingModelsWarnings.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7788464498752650814" fileName="ConflictingModelsWarnings.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMergeDialog#(Lcom/intellij/openapi/project/Project;null)V" />
-    <nodeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="81" startPosition="80" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="88" startPosition="82" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7788464498752650739" fileName="ConflictingModelsWarnings.java" startLine="37" startPosition="40" endLine="42" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650767" fileName="ConflictingModelsWarnings.java" startLine="44" startPosition="30" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650793" fileName="ConflictingModelsWarnings.java" startLine="53" startPosition="29" endLine="58" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="81" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_bmsafs_a0a0b#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/smodel/SModelDescriptor;" />
-    <nodeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="88" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_bmsafs_a0a2a1#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="7788464498752650763" fileName="ConflictingModelsWarnings.java" startLine="43" startPosition="12" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7788464498752650659" fileName="ConflictingModelsWarnings.java" startLine="70" startPosition="64" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7788464498752650789" fileName="ConflictingModelsWarnings.java" startLine="51" startPosition="12" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7788464498752650787" fileName="ConflictingModelsWarnings.java" startLine="51" startPosition="10" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7788464498752650652" fileName="ConflictingModelsWarnings.java" startLine="69" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModuleType#(Ljetbrains/mps/project/IModule;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7788464498752650735" fileName="ConflictingModelsWarnings.java" startLine="35" startPosition="26" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7788464498752650722" fileName="ConflictingModelsWarnings.java" startLine="32" startPosition="110" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7788464498752650689" fileName="ConflictingModelsWarnings.java" startLine="27" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWarningPanel#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/ide/editor/warningPanel/WarningPanel;" />
-    <scopeInfo nodeId="7788464498752650687" fileName="ConflictingModelsWarnings.java" startLine="24" startPosition="38" endLine="24" endPosition="38" />
-    <scopeInfo nodeId="7788464498752650754" fileName="ConflictingModelsWarnings.java" startLine="39" startPosition="29" endLine="40" endPosition="62" />
-    <scopeInfo nodeId="7788464498752650779" fileName="ConflictingModelsWarnings.java" startLine="46" startPosition="29" endLine="47" endPosition="51" />
-    <scopeInfo nodeId="7788464498752650802" fileName="ConflictingModelsWarnings.java" startLine="55" startPosition="29" endLine="56" endPosition="50" />
-    <scopeInfo nodeId="7788464498752650811" fileName="ConflictingModelsWarnings.java" startLine="59" startPosition="14" endLine="60" endPosition="20" />
-    <scopeInfo nodeId="7788464498752650822" fileName="ConflictingModelsWarnings.java" startLine="65" startPosition="84" endLine="66" endPosition="92" />
-    <scopeInfo nodeId="7788464498752650660" fileName="ConflictingModelsWarnings.java" startLine="71" startPosition="37" endLine="72" endPosition="24" />
-    <scopeInfo nodeId="7788464498752650670" fileName="ConflictingModelsWarnings.java" startLine="73" startPosition="44" endLine="74" endPosition="24" />
-    <scopeInfo nodeId="7788464498752650677" fileName="ConflictingModelsWarnings.java" startLine="75" startPosition="45" endLine="76" endPosition="25" />
-    <scopeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="82" startPosition="36" endLine="83" endPosition="52" />
-    <scopeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="89" startPosition="36" endLine="90" endPosition="43" />
-    <scopeInfo nodeId="7788464498752650684" fileName="ConflictingModelsWarnings.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="7788464498752650753" fileName="ConflictingModelsWarnings.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="7788464498752650778" fileName="ConflictingModelsWarnings.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="7788464498752650801" fileName="ConflictingModelsWarnings.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="7788464498752650814" fileName="ConflictingModelsWarnings.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
+    <nodeInfo nodeId="7788464498752650700" fileName="ConflictingModelsWarnings.java" startLine="28" startPosition="92" endLine="29" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752650708" fileName="ConflictingModelsWarnings.java" startLine="29" startPosition="52" endLine="30" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752650714" fileName="ConflictingModelsWarnings.java" startLine="30" startPosition="87" endLine="31" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752650724" fileName="ConflictingModelsWarnings.java" startLine="32" startPosition="29" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7788464498752650731" fileName="ConflictingModelsWarnings.java" startLine="33" startPosition="50" endLine="34" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7788464498752650737" fileName="ConflictingModelsWarnings.java" startLine="35" startPosition="30" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7788464498752650755" fileName="ConflictingModelsWarnings.java" startLine="38" startPosition="29" endLine="39" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752650765" fileName="ConflictingModelsWarnings.java" startLine="42" startPosition="14" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7788464498752650780" fileName="ConflictingModelsWarnings.java" startLine="45" startPosition="29" endLine="46" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752650791" fileName="ConflictingModelsWarnings.java" startLine="51" startPosition="30" endLine="52" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7788464498752650803" fileName="ConflictingModelsWarnings.java" startLine="54" startPosition="29" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752650812" fileName="ConflictingModelsWarnings.java" startLine="58" startPosition="14" endLine="59" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650823" fileName="ConflictingModelsWarnings.java" startLine="64" startPosition="84" endLine="65" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7788464498752650661" fileName="ConflictingModelsWarnings.java" startLine="70" startPosition="37" endLine="71" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650671" fileName="ConflictingModelsWarnings.java" startLine="72" startPosition="44" endLine="73" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650678" fileName="ConflictingModelsWarnings.java" startLine="74" startPosition="45" endLine="75" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650680" fileName="ConflictingModelsWarnings.java" startLine="76" startPosition="5" endLine="77" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="81" startPosition="36" endLine="82" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="83" startPosition="5" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="88" startPosition="36" endLine="89" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="90" startPosition="5" endLine="91" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650684" fileName="ConflictingModelsWarnings.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConflictingModelsWarnings#()V" />
+    <nodeInfo nodeId="7788464498752650810" fileName="ConflictingModelsWarnings.java" startLine="58" startPosition="12" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7788464498752650753" fileName="ConflictingModelsWarnings.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7788464498752650778" fileName="ConflictingModelsWarnings.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7788464498752650801" fileName="ConflictingModelsWarnings.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7788464498752650814" fileName="ConflictingModelsWarnings.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMergeDialog#(Lcom/intellij/openapi/project/Project;null)V" />
+    <nodeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="80" startPosition="91" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="87" startPosition="72" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752650739" fileName="ConflictingModelsWarnings.java" startLine="36" startPosition="40" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650767" fileName="ConflictingModelsWarnings.java" startLine="43" startPosition="30" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650793" fileName="ConflictingModelsWarnings.java" startLine="52" startPosition="29" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_bmsafs_a0a0b#(Ljetbrains/mps/smodel/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+    <nodeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="87" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_bmsafs_a0a2a1#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="7788464498752650763" fileName="ConflictingModelsWarnings.java" startLine="42" startPosition="12" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7788464498752650659" fileName="ConflictingModelsWarnings.java" startLine="69" startPosition="64" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752650789" fileName="ConflictingModelsWarnings.java" startLine="50" startPosition="12" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752650787" fileName="ConflictingModelsWarnings.java" startLine="50" startPosition="10" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7788464498752650652" fileName="ConflictingModelsWarnings.java" startLine="68" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModuleType#(Ljetbrains/mps/project/IModule;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7788464498752650735" fileName="ConflictingModelsWarnings.java" startLine="34" startPosition="26" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752650722" fileName="ConflictingModelsWarnings.java" startLine="31" startPosition="110" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7788464498752650689" fileName="ConflictingModelsWarnings.java" startLine="26" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWarningPanel#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/ide/editor/warningPanel/WarningPanel;" />
+    <scopeInfo nodeId="7788464498752650687" fileName="ConflictingModelsWarnings.java" startLine="23" startPosition="38" endLine="23" endPosition="38" />
+    <scopeInfo nodeId="7788464498752650754" fileName="ConflictingModelsWarnings.java" startLine="38" startPosition="29" endLine="39" endPosition="62" />
+    <scopeInfo nodeId="7788464498752650779" fileName="ConflictingModelsWarnings.java" startLine="45" startPosition="29" endLine="46" endPosition="51" />
+    <scopeInfo nodeId="7788464498752650802" fileName="ConflictingModelsWarnings.java" startLine="54" startPosition="29" endLine="55" endPosition="50" />
+    <scopeInfo nodeId="7788464498752650811" fileName="ConflictingModelsWarnings.java" startLine="58" startPosition="14" endLine="59" endPosition="20" />
+    <scopeInfo nodeId="7788464498752650822" fileName="ConflictingModelsWarnings.java" startLine="64" startPosition="84" endLine="65" endPosition="92" />
+    <scopeInfo nodeId="7788464498752650660" fileName="ConflictingModelsWarnings.java" startLine="70" startPosition="37" endLine="71" endPosition="24" />
+    <scopeInfo nodeId="7788464498752650670" fileName="ConflictingModelsWarnings.java" startLine="72" startPosition="44" endLine="73" endPosition="24" />
+    <scopeInfo nodeId="7788464498752650677" fileName="ConflictingModelsWarnings.java" startLine="74" startPosition="45" endLine="75" endPosition="25" />
+    <scopeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="81" startPosition="36" endLine="82" endPosition="52" />
+    <scopeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="88" startPosition="36" endLine="89" endPosition="43" />
+    <scopeInfo nodeId="7788464498752650684" fileName="ConflictingModelsWarnings.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="7788464498752650753" fileName="ConflictingModelsWarnings.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="7788464498752650778" fileName="ConflictingModelsWarnings.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="7788464498752650801" fileName="ConflictingModelsWarnings.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="7788464498752650814" fileName="ConflictingModelsWarnings.java" startLine="64" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="7788464498752650817" varName="interestingFiles" />
       <varInfo nodeId="7788464498752650815" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="81" startPosition="80" endLine="85" endPosition="16" />
-    <scopeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="88" startPosition="82" endLine="92" endPosition="16" />
-    <scopeInfo nodeId="7788464498752650736" fileName="ConflictingModelsWarnings.java" startLine="36" startPosition="30" endLine="42" endPosition="11" />
-    <scopeInfo nodeId="7788464498752650764" fileName="ConflictingModelsWarnings.java" startLine="43" startPosition="14" endLine="49" endPosition="11" />
-    <scopeInfo nodeId="7788464498752650790" fileName="ConflictingModelsWarnings.java" startLine="52" startPosition="30" endLine="58" endPosition="11" />
-    <scopeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="81" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="80" startPosition="91" endLine="84" endPosition="16" />
+    <scopeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="87" startPosition="72" endLine="91" endPosition="16" />
+    <scopeInfo nodeId="7788464498752650736" fileName="ConflictingModelsWarnings.java" startLine="35" startPosition="30" endLine="41" endPosition="11" />
+    <scopeInfo nodeId="7788464498752650764" fileName="ConflictingModelsWarnings.java" startLine="42" startPosition="14" endLine="48" endPosition="11" />
+    <scopeInfo nodeId="7788464498752650790" fileName="ConflictingModelsWarnings.java" startLine="51" startPosition="30" endLine="57" endPosition="11" />
+    <scopeInfo nodeId="7788464498752650703" fileName="ConflictingModelsWarnings.java" startLine="80" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="7788464498752650703" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="88" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="7788464498752650717" fileName="ConflictingModelsWarnings.java" startLine="87" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="7788464498752650717" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752650658" fileName="ConflictingModelsWarnings.java" startLine="70" startPosition="64" endLine="78" endPosition="16" />
-    <scopeInfo nodeId="7788464498752650788" fileName="ConflictingModelsWarnings.java" startLine="51" startPosition="12" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="7788464498752650652" fileName="ConflictingModelsWarnings.java" startLine="69" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="7788464498752650658" fileName="ConflictingModelsWarnings.java" startLine="69" startPosition="64" endLine="77" endPosition="16" />
+    <scopeInfo nodeId="7788464498752650788" fileName="ConflictingModelsWarnings.java" startLine="50" startPosition="12" endLine="60" endPosition="7" />
+    <scopeInfo nodeId="7788464498752650652" fileName="ConflictingModelsWarnings.java" startLine="68" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="7788464498752650653" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752650723" fileName="ConflictingModelsWarnings.java" startLine="33" startPosition="29" endLine="50" endPosition="7">
+    <scopeInfo nodeId="7788464498752650723" fileName="ConflictingModelsWarnings.java" startLine="32" startPosition="29" endLine="49" endPosition="7">
       <varInfo nodeId="7788464498752650725" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752650699" fileName="ConflictingModelsWarnings.java" startLine="29" startPosition="92" endLine="62" endPosition="5">
+    <scopeInfo nodeId="7788464498752650699" fileName="ConflictingModelsWarnings.java" startLine="28" startPosition="92" endLine="61" endPosition="5">
       <varInfo nodeId="7788464498752650701" varName="md" />
       <varInfo nodeId="7788464498752650709" varName="modelFile" />
       <varInfo nodeId="7788464498752650715" varName="moduleFile" />
     </scopeInfo>
-    <scopeInfo nodeId="7788464498752650689" fileName="ConflictingModelsWarnings.java" startLine="27" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="7788464498752650689" fileName="ConflictingModelsWarnings.java" startLine="26" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="7788464498752650692" varName="node" />
       <varInfo nodeId="7788464498752650695" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="7788464498752650753" fileName="ConflictingModelsWarnings.java" startLine="38" startPosition="290" endLine="42" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$3" />
-    <unitInfo nodeId="7788464498752650778" fileName="ConflictingModelsWarnings.java" startLine="45" startPosition="200" endLine="49" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$2" />
-    <unitInfo nodeId="7788464498752650801" fileName="ConflictingModelsWarnings.java" startLine="54" startPosition="222" endLine="58" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$1" />
-    <unitInfo nodeId="7788464498752650651" fileName="ConflictingModelsWarnings.java" startLine="23" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings" />
+    <unitInfo nodeId="7788464498752650753" fileName="ConflictingModelsWarnings.java" startLine="37" startPosition="290" endLine="41" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$3" />
+    <unitInfo nodeId="7788464498752650778" fileName="ConflictingModelsWarnings.java" startLine="44" startPosition="200" endLine="48" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$2" />
+    <unitInfo nodeId="7788464498752650801" fileName="ConflictingModelsWarnings.java" startLine="53" startPosition="222" endLine="57" endPosition="9" unitName="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings$1" />
+    <unitInfo nodeId="7788464498752650651" fileName="ConflictingModelsWarnings.java" startLine="22" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.vcs.platform.integration.ConflictingModelsWarnings" />
   </root>
 </debugInfo>
 

@@ -5,7 +5,6 @@ package jetbrains.mps.scope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import java.util.Collection;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelOperations;

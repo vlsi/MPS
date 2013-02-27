@@ -30,7 +30,6 @@ import java.util.Iterator;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 

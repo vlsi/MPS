@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.Project;
 import java.lang.annotation.Retention;
@@ -60,7 +60,7 @@ public class MPSProjectITestsSuite extends Suite {
       if (Sequence.fromIterable(modelDescriptors).isEmpty()) {
         throw new InitializationError("Unable to locate class: " + testClassName + " - no model descriptors found (model or module was not specified)");
       }
-      return Collections.singletonList(MultiTuple.<String,SModule>from(testClassName, Sequence.fromIterable(modelDescriptors).first().getModule()));
+      return Collections.singletonList(MultiTuple.<String,SModule>from(testClassName, ((SModule) Sequence.fromIterable(modelDescriptors).first().getModule())));
     }
 
     final List<Tuples._2<String, SModule>> testClassDescriptors = ListSequence.fromList(new ArrayList<Tuples._2<String, SModule>>());
@@ -68,8 +68,8 @@ public class MPSProjectITestsSuite extends Suite {
       @Override
       public void run() {
         for (SModel model : Sequence.fromIterable(modelDescriptors)) {
-          for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((SModel) ((SModel) model).getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
-            ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,SModule>from(BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}), model.getModule()));
+          for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((SModel) ((SModelDescriptor) model).getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
+            ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,SModule>from(BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}), ((SModule) model.getModule())));
           }
         }
       }

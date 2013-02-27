@@ -35,7 +35,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.lang.reflect.Method;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.Solution;
@@ -225,7 +225,7 @@ public class IconManager {
 
   public static Icon getIconFor(SModel model) {
     if (model instanceof SModel) {
-      SModel modelDescriptor = (SModel) model;
+      SModel modelDescriptor = (SModelDescriptor) model;
       LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
       if (aspect != null) {
         return getIconForAspect(aspect);

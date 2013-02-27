@@ -26,7 +26,7 @@ import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.SModelFileTracker;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ChangeModelProcessor {
   private static final String TEST_RESOURCES_PATH = "core/kernel/testMake/solutions/jetbrains.mps.testModels/jetbrains/mps/testModels/";
@@ -129,7 +129,7 @@ public class ChangeModelProcessor {
     final SModel[] model = new SModel[]{null};
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        model[0] = ((SModel) modelDescriptor).getSModel();
+        model[0] = ((SModelDescriptor) modelDescriptor).getSModel();
       }
     });
     return model[0];

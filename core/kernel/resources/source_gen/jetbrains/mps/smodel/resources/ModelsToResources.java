@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.generator.GenerationFacade;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -35,9 +35,9 @@ public class ModelsToResources {
       }
     }, true);
     if (dirtyOnly) {
-      smds = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) GenerationFacade.getModifiedModels(Sequence.fromIterable(smds).select(new ISelector<SModel, SModel>() {
-        public SModel select(SModel it) {
-          return (SModel) it;
+      smds = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) GenerationFacade.getModifiedModels(Sequence.fromIterable(smds).select(new ISelector<SModel, SModelDescriptor>() {
+        public SModelDescriptor select(SModel it) {
+          return (SModelDescriptor) it;
         }
       }).toListSequence(), this.context));
     }
@@ -121,7 +121,7 @@ __switch__:
                       this.__CP__ = 12;
                       break;
                     case 13:
-                      ListSequence.fromList(models.value).addElement((SModel) smd);
+                      ListSequence.fromList(models.value).addElement((SModelDescriptor) smd);
                       this.__CP__ = 11;
                       break;
                     case 15:
@@ -132,7 +132,7 @@ __switch__:
                       this.__CP__ = 11;
                       break;
                     case 18:
-                      models.value = ListSequence.fromListAndArray(new ArrayList<SModel>(), (SModel) smd);
+                      models.value = ListSequence.fromListAndArray(new ArrayList<SModel>(), (SModelDescriptor) smd);
                       this.__CP__ = 1;
                       break;
                     default:
