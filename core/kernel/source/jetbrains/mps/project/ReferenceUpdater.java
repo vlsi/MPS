@@ -36,7 +36,7 @@ public class ReferenceUpdater {
     ModelAccess.assertLegalWrite();
 
     for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
-      if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
+      if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(sm))) continue;
 
       SModel model = sm.getSModel();
       if ((((jetbrains.mps.smodel.SModel) model).updateSModelReferences() | ((jetbrains.mps.smodel.SModel) model).updateModuleReferences()) && (sm instanceof EditableSModel)) {

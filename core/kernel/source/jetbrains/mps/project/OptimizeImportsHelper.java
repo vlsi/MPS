@@ -17,7 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
@@ -103,7 +103,7 @@ public class OptimizeImportsHelper {
   private Result optimizeModelsImports_internal(List<SModelDescriptor> modelsToOptimize) {
     Result result = new Result();
     for (SModelDescriptor modelDescriptor : modelsToOptimize) {
-      if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) {
+      if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
         result.add(collectModelDependencies(modelDescriptor));
       } else {
         result.add(optimizeModelImports_internal(modelDescriptor));
@@ -153,7 +153,7 @@ public class OptimizeImportsHelper {
       result.myUsedLanguages.add(jetbrains.mps.util.SNodeOperations.getLanguage(node));
       for (SReference ref : node.getReferences()) {
         SModelReference mr = ref.getTargetSModelReference();
-        if (!modelDescriptor.getSModelReference().equals(mr)) {
+        if (!modelDescriptor.getReference().equals(mr)) {
           result.myUsedModels.add(mr);
         }
       }
@@ -221,7 +221,7 @@ public class OptimizeImportsHelper {
 
     for (Solution solution : dk.getAllExportedSolutions()) {
       for (SModelDescriptor model : solution.getOwnModelDescriptors()) {
-        if (result.myUsedModels.contains(model.getSModelReference())) return null;
+        if (result.myUsedModels.contains(model.getReference())) return null;
       }
     }
     return dk.getModuleReference();
@@ -233,14 +233,14 @@ public class OptimizeImportsHelper {
     if (result.myUsedLanguages.contains(language)) return null;
 
     for (SModelDescriptor md : language.getAccessoryModels()) {
-      if (result.myUsedModels.contains(md.getSModelReference())) return null;
+      if (result.myUsedModels.contains(md.getReference())) return null;
     }
 
     return language.getModuleReference();
   }
 
   private String removeFromImports(SModelDescriptor modelDescriptor, Set<SModelReference> unusedModels, Set<ModuleReference> unusedLanguages, Set<ModuleReference> unusedDevkits) {
-    StringBuilder report = new StringBuilder("Import for model " + modelDescriptor.getSModelReference() + " were optimized \n");
+    StringBuilder report = new StringBuilder("Import for model " + modelDescriptor.getReference() + " were optimized \n");
 
     for (ModuleReference langRef : unusedLanguages) {
       ((jetbrains.mps.smodel.SModel) modelDescriptor.getSModel()).deleteLanguage(langRef);

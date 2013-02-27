@@ -18,6 +18,7 @@ package jetbrains.mps.ide.generator;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.QueryMethodGenerated;
 
@@ -27,7 +28,7 @@ import java.lang.reflect.Method;
 public class GeneratedQueriesOpener {
 
   public static boolean openQueryMethod(IOperationContext context, SNode node) {
-    String modelName = node.getModel().getModelDescriptor().getLongName();
+    String modelName = SNodeOperations.getModelLongName(node.getModel().getModelDescriptor());
 
     Class cls;
     try {

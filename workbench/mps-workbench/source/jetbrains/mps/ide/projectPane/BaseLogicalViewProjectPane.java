@@ -51,7 +51,8 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
@@ -529,7 +530,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   private class MyModelRepositoryAdapter extends SModelRepositoryAdapter {
     @Override
     public void modelRepositoryChanged(SModelDescriptor modelDescriptor) {
-      if (!SModelStereotype.INTERNAL.equals(modelDescriptor.getStereotype())) {
+      if (!SModelStereotype.INTERNAL.equals(SModelStereotype.getStereotype(modelDescriptor))) {
         myNeedRebuild = true;
       }
     }

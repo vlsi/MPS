@@ -61,7 +61,7 @@ public class ModelFindOperations {
     SModel model = myModelDescriptor.getSModel();
     if (model == null) return false;
 
-    return SModelOperations.getImportElement(model, modelDescriptor.getSModelReference()) != null;
+    return SModelOperations.getImportElement(model, modelDescriptor.getReference()) != null;
   }
 
   public boolean hasUsages(Set<SModelReference> models) {
@@ -79,7 +79,7 @@ public class ModelFindOperations {
     if (model == null) return false;
 
     for (SModelDescriptor modelDescriptor : SModelOperations.allImportedModels(model, GlobalScope.getInstance())) {
-      if (models.contains(modelDescriptor.getSModelReference())) {
+      if (models.contains(modelDescriptor.getReference())) {
         return true;
       }
     }

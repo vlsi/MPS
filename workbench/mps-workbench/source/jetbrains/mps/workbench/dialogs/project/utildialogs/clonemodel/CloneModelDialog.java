@@ -25,8 +25,8 @@ import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.util.*;
 import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
@@ -43,7 +43,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
   private JComboBox myModelStereotype;
 
   public CloneModelDialog(final SModelDescriptor modelDescriptor, IOperationContext operationContext) {
-    super("Clone Model " + modelDescriptor.getLongName(), operationContext);
+    super("Clone Model " + jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor), operationContext);
 
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -54,7 +54,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
 
     collectModelProps();
     initUI();
-    myModelStereotype.setSelectedItem(modelDescriptor.getStereotype());
+    myModelStereotype.setSelectedItem(SModelStereotype.getStereotype(modelDescriptor));
   }
 
   private void initUI() {

@@ -82,9 +82,9 @@ public class StubModelsResolver {
     }
 
     for (SModelDescriptor model : models) {
-      if (!model.getSModelReference().getSModelFqName().equals(key.o2)) continue;
+      if (!model.getReference().getSModelFqName().equals(key.o2)) continue;
       Set<SModelReference> modelsFromCache = myStubModulesCache.get(key);
-      modelsFromCache.add(model.getSModelReference());
+      modelsFromCache.add(model.getReference());
     }
   }
 }

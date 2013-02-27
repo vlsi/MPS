@@ -25,11 +25,10 @@ import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.DifflibFacade;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -124,7 +123,7 @@ public class IncrementalGenerationHandler {
     String currentHash = myGenerationHashes.get(GeneratableSModel.FILE);
     ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, currentHash, true);
     if (cacheContainer == null) {
-      LOG.error("cannot create cache for " + currentHash + ", " + myModel.getSModelReference().toString());
+      LOG.error("cannot create cache for " + currentHash + ", " + myModel.getReference().toString());
       return null;
     }
 
@@ -142,7 +141,7 @@ public class IncrementalGenerationHandler {
     ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, oldHash, false);
     if (cacheContainer == null) {
       if (myTracer != null)
-        myTracer.report("No cache for " + myModel.getSModelReference().toString() + " (" + oldHash + ")");
+        myTracer.report("No cache for " + myModel.getReference().toString() + " (" + oldHash + ")");
       return;
     }
 

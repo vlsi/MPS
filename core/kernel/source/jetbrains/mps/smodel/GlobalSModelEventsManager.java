@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
@@ -85,14 +85,14 @@ public class GlobalSModelEventsManager implements CoreComponent {
 
   private void addListeners(SModelDescriptor sm) {
     for (SModelListener listener : myRelayListeners) {
-      sm.addModelListener(listener);
+      ((SModelInternal) sm).addModelListener(listener);
     }
     myEventsCollector.add(sm);
   }
 
   private void removeListeners(SModelDescriptor sm) {
     for (SModelListener listener : myRelayListeners) {
-      sm.removeModelListener(listener);
+      ((SModelInternal) sm).removeModelListener(listener);
     }
     myEventsCollector.remove(sm);
   }

@@ -175,7 +175,7 @@ public class GenerationRootDependencies {
 
     List<String> external = new ArrayList<String>(externalModels.size());
     for (SModelDescriptor m : externalModels) {
-      final SModelReference modelRef = m.getSModelReference();
+      final SModelReference modelRef = m.getReference();
       if(modelRef == null) {
         continue; // TODO report error?
       }

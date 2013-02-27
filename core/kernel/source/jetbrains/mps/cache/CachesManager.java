@@ -19,7 +19,8 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 
 import java.util.ArrayList;
@@ -93,7 +94,7 @@ public class CachesManager implements CoreComponent {
     ModelEventRouter eventRouter = new ModelEventRouter(cache);
     myModelEventRouters.put(cache, eventRouter);
     for (SModelDescriptor dependsOnModel : dependsOnModels) {
-      dependsOnModel.addModelListener(eventRouter);
+      ((SModelInternal) dependsOnModel).addModelListener(eventRouter);
     }
 
     // publish
@@ -103,7 +104,7 @@ public class CachesManager implements CoreComponent {
       myModelEventRouters.remove(cache);
       myDependsOnModels.remove(key);
       for (SModelDescriptor dependsOnModel : dependsOnModels) {
-        dependsOnModel.removeModelListener(eventRouter);
+        ((SModelInternal) dependsOnModel).removeModelListener(eventRouter);
       }
       cache.clearCache();
       return existing;
@@ -130,7 +131,7 @@ public class CachesManager implements CoreComponent {
     List<SModelDescriptor> dependsOnModels = myDependsOnModels.remove(key);
     if (eventRouter != null && dependsOnModels != null) {
       for (SModelDescriptor dependsOnModel : dependsOnModels) {
-        dependsOnModel.removeModelListener(eventRouter);
+        ((SModelInternal) dependsOnModel).removeModelListener(eventRouter);
       }
     }
     cache.clearCache();
@@ -151,14 +152,14 @@ public class CachesManager implements CoreComponent {
 
   private void onModelRemoved(SModelDescriptor modelDescriptor) {
     List<Object> keysToRemove = new ArrayList<Object>();
-    SModelReference reference = modelDescriptor.getSModelReference();
+    SModelReference reference = modelDescriptor.getReference();
     for (Object key : myDependsOnModels.keySet()) {
       List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
       if (dependsOnModels == null) {
         continue;
       }
       for (SModelDescriptor dependsOnModel : dependsOnModels) {
-        if (dependsOnModel.getSModelReference().equals(reference)) {
+        if (dependsOnModel.getReference().equals(reference)) {
           keysToRemove.add(key);
         }
       }

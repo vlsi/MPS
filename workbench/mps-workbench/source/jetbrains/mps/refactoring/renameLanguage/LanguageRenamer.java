@@ -63,8 +63,8 @@ public class LanguageRenamer {
       if (!SModelStereotype.isUserModel(sm)) continue;
       if (!(sm instanceof EditableSModel)) continue;
 
-      if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
-        String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());
+      if (sm.getReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
+        String suffix = sm.getReference().getSModelFqName().toString().substring(oldFqName.length());
         myContext.changeModelName(((EditableSModel) sm), myNewName + suffix);
       }
     }
@@ -88,8 +88,8 @@ public class LanguageRenamer {
         if (!SModelStereotype.isUserModel(sm)) continue;
         if (!(sm instanceof EditableSModel)) continue;
 
-        if (sm.getSModelReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
-          String suffix = sm.getSModelReference().getSModelFqName().toString().substring(oldFqName.length());
+        if (sm.getReference().getSModelFqName().toString().startsWith(oldFqName + ".")) {
+          String suffix = sm.getReference().getSModelFqName().toString().substring(oldFqName.length());
           myContext.changeModelName(((EditableSModel) sm), newPrefix + suffix);
         }
       }

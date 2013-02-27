@@ -23,8 +23,9 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.*;
+import jetbrains.mps.util.SNodeOperations;
 
 import javax.swing.tree.MutableTreeNode;
 import java.util.ArrayList;
@@ -44,9 +45,9 @@ public class SModelsSubtree {
     List<SModelDescriptor> stubs = new ArrayList<SModelDescriptor>();
 
     for (SModelDescriptor modelDescriptor : models) {
-      if (ProjectModels.isProjectModel(modelDescriptor.getSModelReference())) continue;
+      if (ProjectModels.isProjectModel(modelDescriptor.getReference())) continue;
 
-      String stereotype = modelDescriptor.getStereotype();
+      String stereotype = SModelStereotype.getStereotype(modelDescriptor);
 
       if (stereotype == null || stereotype.length() == 0) {
         stereotype = ".";
@@ -141,7 +142,7 @@ public class SModelsSubtree {
       int rootIndex = 0;
       while (rootIndex < sortedModels.size()) {
         SModelDescriptor rootModelDescriptor = sortedModels.get(rootIndex);
-        int countNamePart = getCountNamePart(rootModelDescriptor, NameUtil.namespaceFromLongName(rootModelDescriptor.getSModelReference().getLongName()));
+        int countNamePart = getCountNamePart(rootModelDescriptor, NameUtil.namespaceFromLongName(rootModelDescriptor.getReference().getLongName()));
         SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, context, countNamePart);
         result.add(treeNode);
         rootIndex = (isNeedBuildChildModels) ? buildChildModels(treeNode, sortedModels, rootIndex) : rootIndex + 1;
@@ -160,7 +161,7 @@ public class SModelsSubtree {
       SModelDescriptor candidate = (SModelDescriptor) candidates.get(index);
       if (treeNode.isSubfolderModel(candidate)) {
         IOperationContext context = treeNode.getOperationContext();
-        int countNamePart = getCountNamePart(candidate, treeNode.getSModelDescriptor().getLongName());
+        int countNamePart = getCountNamePart(candidate, SNodeOperations.getModelLongName(treeNode.getSModelDescriptor()));
         SModelTreeNode newChildModel = new SModelTreeNode(candidate, null, context, countNamePart);
         treeNode.addChildModel(newChildModel);
         index = buildChildModels(newChildModel, candidates, index);
@@ -172,7 +173,7 @@ public class SModelsSubtree {
   }
 
   public static int getCountNamePart(SModelDescriptor md, String baseName) {
-    String modelLongName = md.getLongName();
+    String modelLongName = jetbrains.mps.util.SNodeOperations.getModelLongName(md);
     String shortName = md instanceof TransientSModelDescriptor ? modelLongName : modelLongName.replace(baseName + '.', "");
     return shortName.split("\\.").length - 1;
   }

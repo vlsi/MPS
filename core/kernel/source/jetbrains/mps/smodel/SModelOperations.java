@@ -63,7 +63,7 @@ public class SModelOperations {
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
     for (SModelDescriptor sm : allImportedModels(model, scope)) {
-      importedModels.add(sm.getSModelReference());
+      importedModels.add(sm.getReference());
     }
 
     for (SNode node : new NodesIterable(model)) {
@@ -175,7 +175,7 @@ public class SModelOperations {
     for (Language language : getLanguages(model, scope)) {
       for (SModelDescriptor am : language.getAccessoryModels()) {
         if (am != sourceModel) {
-          SModelDescriptor scopeModelDescriptor = scope.getModelDescriptor(am.getSModelReference());
+          SModelDescriptor scopeModelDescriptor = scope.getModelDescriptor(am.getReference());
           if (scopeModelDescriptor != null) {
             result.add(scopeModelDescriptor);
           }
@@ -235,7 +235,7 @@ public class SModelOperations {
   public static Set<SModelReference> getDependenciesModelRefs(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SModelDescriptor sm : getDependenciesModels(sModel)) {
-      result.add(sm.getSModelReference());
+      result.add(sm.getReference());
     }
     return result;
   }
@@ -299,7 +299,7 @@ public class SModelOperations {
       if (modelDescriptor == null) {
         for (Language l : getLanguages(model, scope)) {
           for (SModelDescriptor accessory : l.getAccessoryModels()) {
-            if (modelReference.equals(accessory.getSModelReference())) {
+            if (modelReference.equals(accessory.getReference())) {
               modelDescriptor = accessory;
               break;
             }

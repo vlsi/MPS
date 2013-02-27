@@ -41,7 +41,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.util.*;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -108,7 +108,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         }
         for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
           SNode sNode = editorComponent.getEditedNode();
-          if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) && sNode.getModel().getReference().equals(modelDescriptor.getSModelReference())) {
+          if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) && sNode.getModel().getReference().equals(modelDescriptor.getReference())) {
             myCheckedOnceEditors.remove(editorComponent);
           }
         }

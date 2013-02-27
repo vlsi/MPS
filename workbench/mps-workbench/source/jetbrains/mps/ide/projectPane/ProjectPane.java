@@ -54,6 +54,7 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.annotations.NonNls;
@@ -314,7 +315,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       public void doOnPaneActivation() {
         SModelTreeNode modelTreeNode = myFindHelper.findMostSuitableModelTreeNode(model);
         if (modelTreeNode == null) {
-          LOG.warning("Couldn't select model \"" + model.getLongName() + "\" : tree node not found.");
+          LOG.warning("Couldn't select model \"" + SNodeOperations.getModelLongName(model) + "\" : tree node not found.");
           return;
         }
         getTree().selectNode(modelTreeNode);

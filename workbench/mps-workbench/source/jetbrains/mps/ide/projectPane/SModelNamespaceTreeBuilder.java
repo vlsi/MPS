@@ -23,7 +23,7 @@ public class SModelNamespaceTreeBuilder extends DefaultNamespaceTreeBuilder<SMod
   @Override
   protected String getNamespace(SModelTreeNode node) {
     SModelDescriptor d = node.getSModelDescriptor();
-    return NameUtil.namespaceFromLongName(d.getSModelReference().getLongName());
+    return NameUtil.namespaceFromLongName(d.getReference().getLongName());
   }
 
   @Override

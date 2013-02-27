@@ -30,7 +30,8 @@ import jetbrains.mps.newTypesystem.context.component.TypeSystemComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -368,7 +369,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
       if (sm == null) return;
 
       if (!myNodesCount.containsKey(sm)) {
-        sm.addModelListener(myListener);
+        ((SModelInternal) sm).addModelListener(myListener);
         myNodesCount.put(sm, 1);
       } else {
         Integer oldValue = myNodesCount.get(sm);
@@ -388,7 +389,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
         SModelDescriptor sm = myDescriptors.get(ref);
         Integer count = myNodesCount.get(sm);
         if (count == 1) {
-          sm.removeModelListener(myListener);
+          ((SModelInternal) sm).removeModelListener(myListener);
           myNodesCount.remove(sm);
         } else {
           myNodesCount.put(sm, count - 1);
@@ -400,7 +401,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
 
     void dispose() {
       for (SModelDescriptor sm : Collections.unmodifiableCollection(myNodesCount.keySet())) {
-        sm.removeModelListener(myListener);
+        ((SModelInternal) sm).removeModelListener(myListener);
       }
     }
   }

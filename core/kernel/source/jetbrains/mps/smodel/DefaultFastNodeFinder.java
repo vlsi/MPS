@@ -40,7 +40,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
     myModel = model;
     myModelDescriptor = model.getModelDescriptor();
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryAdapter);
-    myModelDescriptor.addModelListener(myListener);
+    ((SModelInternal) myModelDescriptor).addModelListener(myListener);
   }
 
   @Override
@@ -49,7 +49,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       myInitialized = false;
       myNodes.clear();
     }
-    myModelDescriptor.removeModelListener(myListener);
+    ((SModelInternal) myModelDescriptor).removeModelListener(myListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryAdapter);
   }
 

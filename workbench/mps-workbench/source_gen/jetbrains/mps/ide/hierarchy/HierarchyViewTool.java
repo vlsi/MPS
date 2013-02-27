@@ -5,6 +5,8 @@ package jetbrains.mps.ide.hierarchy;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
+
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.listener.ModelCreationListener;
@@ -31,7 +33,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
 
   public void onCreateStructureModel(SModelDescriptor md) {
     myStructureModels.add(md);
-    md.addModelListener(myModelListener);
+    ((SModelInternal) md).addModelListener(myModelListener);
   }
 
   @Override
@@ -87,14 +89,14 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   @Override
   protected void doRegister() {
     for (SModelDescriptor md : myStructureModels) {
-      md.addModelListener(myModelListener);
+      ((SModelInternal) md).addModelListener(myModelListener);
     }
   }
 
   @Override
   protected void doUnregister() {
     for (SModelDescriptor md : myStructureModels) {
-      md.removeModelListener(myModelListener);
+      ((SModelInternal) md).removeModelListener(myModelListener);
     }
     myStructureModels.clear();
   }

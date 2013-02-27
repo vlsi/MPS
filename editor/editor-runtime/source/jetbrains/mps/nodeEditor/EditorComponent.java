@@ -3162,7 +3162,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
         if (myNode != null) {
           assertModelNotDisposed();
-          if (myNode.getModel().getReference().equals(descriptor.getSModelReference())) {
+          if (myNode.getModel().getReference().equals(descriptor.getReference())) {
             clearModelDisposedTrace();
             SNodeId oldId = myNode.getNodeId();
             myNode = descriptor.getSModel().getNode(oldId);
@@ -3180,7 +3180,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     @Override
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       if (myModelDescriptorsWithListener.contains(modelDescriptor)) {
-        if (myNode != null && myNode.getModel().getReference().equals(modelDescriptor.getSModelReference())) {
+        if (myNode != null && myNode.getModel().getReference().equals(modelDescriptor.getReference())) {
           myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
         }
       }

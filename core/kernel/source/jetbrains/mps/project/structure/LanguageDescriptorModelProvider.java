@@ -149,7 +149,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   }
 
   private void removeModel(SModelDescriptor md) {
-    if (myModels.remove(md.getSModelReference()) != null) {
+    if (myModels.remove(md.getReference()) != null) {
       SModelRepository.getInstance().removeModelDescriptor(md);
     }
   }

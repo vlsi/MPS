@@ -173,7 +173,7 @@ public class StubResolver {
 
   private static SModelReference check_ar1im2_a0e0a0c0e(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelReference();
+      return checkedDotOperand.getReference();
     }
     return null;
   }

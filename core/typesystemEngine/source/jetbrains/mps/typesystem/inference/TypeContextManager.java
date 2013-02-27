@@ -30,6 +30,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -103,7 +104,7 @@ public class TypeContextManager implements CoreComponent {
         if (! myListeningForModels.contains(md)) {
           continue;
         }
-        SModelReference modelRef = md.getSModelReference();
+        SModelReference modelRef = md.getReference();
         synchronized (myLock) {
           for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
             if (nodePointer == null)continue;
@@ -154,7 +155,7 @@ public class TypeContextManager implements CoreComponent {
 
   public void dispose() {
     for (SModelDescriptor model : myListeningForModels) {
-      model.removeModelListener(myModelListener);
+      ((SModelInternal) model).removeModelListener(myModelListener);
     }
     myListeningForModels.clear();
     for (SNodeReference nodePointer : new ArrayList<SNodeReference>(myTypeCheckingContexts.keySet())) {
@@ -410,7 +411,7 @@ public class TypeContextManager implements CoreComponent {
     SModel sModel = node.getModel();
     SModelDescriptor descriptor = sModel.getModelDescriptor();
     if (descriptor != null && !myListeningForModels.contains(descriptor)) {
-      descriptor.addModelListener(myModelListener);
+      ((SModelInternal) descriptor).addModelListener(myModelListener);
       myListeningForModels.add(descriptor);
     }
   }

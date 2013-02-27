@@ -25,6 +25,8 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.SNodeOperations;
 
 import javax.swing.Icon;
 
@@ -36,9 +38,9 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
     super(operationContext);
     myProject = operationContext.getProject();
     myModelDescriptor = modelDescriptor;
-    String name = modelDescriptor.getLongName();
-    if (modelDescriptor.getStereotype().length() > 0) {
-      name += "@" + modelDescriptor.getStereotype();
+    String name = SNodeOperations.getModelLongName(modelDescriptor);
+    if (SModelStereotype.getStereotype(modelDescriptor).length() > 0) {
+      name += "@" + SModelStereotype.getStereotype(modelDescriptor);
     }
     setUserObject(name);
     setNodeIdentifier(name);

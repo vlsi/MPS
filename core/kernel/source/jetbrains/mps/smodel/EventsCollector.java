@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -166,14 +166,14 @@ public class EventsCollector {
     checkDisposed();
     //assert !myModelDescriptors.contains(sm) : "EventsCollector was already configured to listen for changes in this model descriptor: " + sm.getSModelReference().toString();
     myModelDescriptors.add(sm);
-    sm.addModelListener(myListener);
+    ((SModelInternal) sm).addModelListener(myListener);
   }
 
   public void remove(@NotNull SModelDescriptor sm) {
     checkDisposed();
 
     myModelDescriptors.remove(sm);
-    sm.removeModelListener(myListener);
+    ((SModelInternal) sm).removeModelListener(myListener);
   }
 
   public void flush() {

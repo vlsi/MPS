@@ -21,9 +21,9 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -96,7 +96,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myLabel = label;
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
-    setUserObject(modelDescriptor.getLongName());
+    setUserObject(SNodeOperations.getModelLongName(modelDescriptor));
     if (myModelDescriptor != null) {
       setNodeIdentifier(myModelDescriptor.toString());
     } else {
@@ -306,13 +306,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   public boolean isSubfolderModel(SModelDescriptor candidate) {
     if (myModelDescriptor == null) return false;
-    String modelName = myModelDescriptor.getLongName();
-    String candidateName = candidate.getLongName();
+    String modelName = SNodeOperations.getModelLongName(myModelDescriptor);
+    String candidateName = SNodeOperations.getModelLongName(candidate);
     if (candidateName == null || !candidateName.startsWith(modelName) || modelName.equals(candidateName))
       return false;
     if (candidateName.charAt(modelName.length()) == '.') {
-      String modelStereotype = myModelDescriptor.getStereotype();
-      String candidateStereotype = candidate.getStereotype();
+      String modelStereotype = SModelStereotype.getStereotype(myModelDescriptor);
+      String candidateStereotype = SModelStereotype.getStereotype(candidate);
       if (!modelStereotype.equals(candidateStereotype)) return false;
       String shortName = candidateName.replace(modelName + ".", "");
       if (shortName.contains(".")) {

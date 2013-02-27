@@ -136,7 +136,7 @@ public class ImmatureReferences implements CoreComponent {
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
     @Override
     public void modelRemoved(SModelDescriptor modelDescriptor) {
-      ConcurrentMap<SReferenceBase, Object> refSet = myReferences.remove(modelDescriptor.getSModelReference());
+      ConcurrentMap<SReferenceBase, Object> refSet = myReferences.remove(modelDescriptor.getReference());
       if (refSet != null) {
         refSet.clear();
       }

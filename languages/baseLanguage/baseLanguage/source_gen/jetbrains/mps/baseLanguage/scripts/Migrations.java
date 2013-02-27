@@ -717,7 +717,7 @@ public class Migrations {
 
   private static SModelReference check_b5gojm_a0a0a0e0b0a0a0q(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelReference();
+      return checkedDotOperand.getReference();
     }
     return null;
   }

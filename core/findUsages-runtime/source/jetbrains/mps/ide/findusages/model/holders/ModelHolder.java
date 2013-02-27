@@ -37,7 +37,7 @@ public class ModelHolder implements IHolder<SModel> {
   }
 
   public ModelHolder(SModel model) {
-    myModelReference = model.getModelDescriptor().getSModelReference();
+    myModelReference = model.getModelDescriptor().getReference();
   }
 
   private SModelDescriptor getModelDescriptor() {

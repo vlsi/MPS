@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -89,7 +89,7 @@ public class QueryMethodGenerated implements CoreComponent {
     if (module == null) {
       reportErrorWhileClassLoading(
         queriesClassName, suppressErrorLogging,
-        "couldn't find class 'QueriesGenerated': no module for model '" + sm.getSModelReference() + "'");
+        "couldn't find class 'QueriesGenerated': no module for model '" + sm.getReference() + "'");
     }
     if (!(module instanceof IClassLoadingModule)) {
       reportErrorWhileClassLoading(
@@ -101,7 +101,7 @@ public class QueryMethodGenerated implements CoreComponent {
     if (queriesClass == null) {
       reportErrorWhileClassLoading(
         queriesClassName, suppressErrorLogging,
-        "couldn't find class 'QueriesGenerated' for model '" + sm.getSModelReference() + "' : TRY TO GENERATE"
+        "couldn't find class 'QueriesGenerated' for model '" + sm.getReference() + "' : TRY TO GENERATE"
       );
     }
 

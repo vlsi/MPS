@@ -31,8 +31,10 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.*;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -211,8 +213,8 @@ public abstract class ProjectTreeFindHelper {
         SModelTreeNode modelNode = (SModelTreeNode) node;
         if (!modelNode.hasModelsUnder()) return false;
 
-        String outerName = modelNode.getSModelDescriptor().getLongName();
-        String innerName = myModel.getLongName();
+        String outerName = SNodeOperations.getModelLongName(modelNode.getSModelDescriptor());
+        String innerName = SNodeOperations.getModelLongName(myModel);
         return innerName.startsWith(outerName + ".");
       }
 
@@ -250,8 +252,8 @@ public abstract class ProjectTreeFindHelper {
         SModelTreeNode modelNode = (SModelTreeNode) node;
         if (!modelNode.hasModelsUnder()) return false;
 
-        String outerName = modelNode.getSModelDescriptor().getLongName();
-        String innerName = myModel.getLongName();
+        String outerName = SNodeOperations.getModelLongName(modelNode.getSModelDescriptor());
+        String innerName = jetbrains.mps.util.SNodeOperations.getModelLongName(myModel);
         return innerName.startsWith(outerName + ".");
       }
       if (!node.isInitialized() && !node.hasInfiniteSubtree()) {
@@ -289,8 +291,8 @@ public abstract class ProjectTreeFindHelper {
       if (!(node instanceof SModelTreeNode)) return false;
       SModelTreeNode modelNode = (SModelTreeNode) node;
       SModelDescriptor modelDescriptor = modelNode.getSModelDescriptor();
-      SModelReference modelReference = modelDescriptor.getSModelReference();
-      return modelReference.equals(myModel.getSModelReference());
+      SModelReference modelReference = modelDescriptor.getReference();
+      return modelReference.equals(myModel.getReference());
     }
   }
 

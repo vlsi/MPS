@@ -8,6 +8,8 @@ import jetbrains.mps.checkers.AbstractConstraintsChecker;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.Map;
+
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.checkers.LanguageErrorsComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -108,14 +110,14 @@ public class LanguageEditorChecker extends BaseEditorChecker {
 
   private void removeModelListener(SModelDescriptor modelDescriptor) {
     if (SetSequence.fromSet(myListenedModels).contains(modelDescriptor)) {
-      modelDescriptor.removeModelListener(myModelListener);
+      ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).removeElement(modelDescriptor);
     }
   }
 
   private void addModelListener(SModelDescriptor modelDescriptor) {
     if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
-      modelDescriptor.addModelListener(myModelListener);
+      ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
     }
   }

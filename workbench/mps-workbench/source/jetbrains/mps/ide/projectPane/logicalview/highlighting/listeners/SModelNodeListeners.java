@@ -85,20 +85,20 @@ public class SModelNodeListeners implements NodeListeners {
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
 
     SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
-    myModel.addModelListener(mySimpleModelListener);
+    ((SModelInternal) myModel).addModelListener(mySimpleModelListener);
 
-    if (!SModelStereotype.isStubModelStereotype(myModel.getStereotype())) {
+    if (!SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(myModel))) {
       ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myStatusListener);
     }
   }
 
   @Override
   public void stopListening() {
-    if (!SModelStereotype.isStubModelStereotype(myModel.getStereotype())) {
+    if (!SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(myModel))) {
       ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
     }
 
-    myModel.removeModelListener(mySimpleModelListener);
+    ((SModelInternal) myModel).removeModelListener(mySimpleModelListener);
     SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);
 
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);

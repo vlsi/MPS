@@ -25,7 +25,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -66,7 +66,7 @@ public class ImportHelper {
           @Override
           public boolean met(SModelDescriptor modelDescriptor) {
             boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-              || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
+              || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
             boolean hasModule = modelDescriptor.getModule() != null;
             return rightStereotype && hasModule;
           }
@@ -74,7 +74,7 @@ public class ImportHelper {
         ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
         List<SModelReference> filteredModelRefs = new ArrayList<SModelReference>();
         for (SModelDescriptor md : iter) {
-          filteredModelRefs.add(md.getSModelReference());
+          filteredModelRefs.add(md.getReference());
         }
         return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
       }

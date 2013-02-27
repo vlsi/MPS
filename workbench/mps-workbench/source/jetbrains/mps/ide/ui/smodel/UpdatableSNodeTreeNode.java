@@ -20,7 +20,7 @@ import jetbrains.mps.ide.projectPane.logicalview.SNodeTreeUpdater;
 import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
@@ -52,7 +52,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   private void addListeners() {
     if (myEventsListener == null) return;
     SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
-    myEventsListener.getModelDescriptor().addModelListener(mySNodeModelListener);
+    ((SModelInternal) myEventsListener.getModelDescriptor()).addModelListener(mySNodeModelListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
   }
 
@@ -62,7 +62,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     SModelDescriptor md = getModelDescriptor();
     if (md == null) return;
     if (mySNodeModelListener != null) {
-      getModelDescriptor().removeModelListener(mySNodeModelListener);
+      ((SModelInternal) getModelDescriptor()).removeModelListener(mySNodeModelListener);
     }
     if (myEventsListener == null) return;
     SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);

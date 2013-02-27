@@ -55,7 +55,7 @@ public interface GenerationCacheContainer {
 
     @Override
     public ModelCacheContainer getCache(@NotNull SModelDescriptor descriptor, String hash, boolean create) {
-      String modelId = descriptor.getSModelReference().getSModelId().toString();
+      String modelId = descriptor.getReference().getSModelId().toString();
       if(modelId == null || modelId.isEmpty()) {
         LOG.error("bad model id: " + modelId);
         return null;

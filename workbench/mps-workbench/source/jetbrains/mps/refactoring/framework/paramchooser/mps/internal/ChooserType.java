@@ -21,10 +21,9 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
@@ -36,7 +35,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 public abstract class ChooserType<T> {
   public abstract ChooseByNameModel createChooserModel(IChooserSettings<T> settings, RefactoringContext context, String paramName);
@@ -75,7 +73,7 @@ public abstract class ChooserType<T> {
         public SModelReference[] find(boolean checkboxState) {
           List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
           List<SModelReference> modelReferencess = new ArrayList<SModelReference>(modelDescriptors.size());
-          for (SModelDescriptor md:modelDescriptors) modelReferencess.add(md.getSModelReference());
+          for (SModelDescriptor md:modelDescriptors) modelReferencess.add(md.getReference());
           List<SModelReference> filteredModelRefs = filter(settings, modelReferencess);
           return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
         }

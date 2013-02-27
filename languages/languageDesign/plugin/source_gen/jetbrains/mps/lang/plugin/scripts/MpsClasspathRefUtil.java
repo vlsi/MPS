@@ -94,7 +94,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
   private static SModelReference check_xpwqv8_a0c0c0f0b(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelReference();
+      return checkedDotOperand.getReference();
     }
     return null;
   }

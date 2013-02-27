@@ -208,7 +208,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   private void removeModel(SModelDescriptor md) {
-    if (myModels.remove(md.getSModelReference()) != null) {
+    if (myModels.remove(md.getReference()) != null) {
       SModelRepository.getInstance().unRegisterModelDescriptor(md, this);
       if (md instanceof ProjectStructureSModelDescriptor) {
         ((ProjectStructureSModelDescriptor) md).dropModel();

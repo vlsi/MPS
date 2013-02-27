@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.annotation.ImmutableObject;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -132,7 +131,7 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   public SModelReference update() {
     SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(this);
     if (sm == null) return this;
-    return sm.getSModelReference();
+    return sm.getReference();
   }
 
   public boolean differs(SModelReference ref) {

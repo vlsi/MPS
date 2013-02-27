@@ -23,11 +23,11 @@ import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.util.*;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -90,14 +90,14 @@ public class TestModule extends ClassLoadingModule {
 
   public SModelDescriptor createModel(SModelDescriptor originalModel) {
     String stereotype = "999";
-    while (!isValidName(originalModel.getLongName(), stereotype)) {
+    while (!isValidName(SNodeOperations.getModelLongName(originalModel), stereotype)) {
       stereotype += "_";
     }
 
-    SModelFqName fqName = new SModelFqName(originalModel.getLongName(), stereotype);
-    SModelDescriptor result = new TestSModelDescriptor(fqName, originalModel.getLongName(), originalModel.getSModel());
+    SModelFqName fqName = new SModelFqName(SNodeOperations.getModelLongName(originalModel), stereotype);
+    SModelDescriptor result = new TestSModelDescriptor(fqName, jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel), originalModel.getSModel());
 
-    myModels.put(result.getSModelReference().getSModelFqName(), result);
+    myModels.put(result.getReference().getSModelFqName(), result);
     myOriginalModels.put(result, originalModel);
     invalidateCaches();
     return result;

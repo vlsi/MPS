@@ -30,7 +30,8 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -117,7 +118,7 @@ public class ModelRepositoryComponent {
       public ModelTreeNode(SModelDescriptor modelDescriptor) {
         super(null);
         myModelDescriptor = modelDescriptor;
-        setNodeIdentifier(myModelDescriptor.getLongName());
+        setNodeIdentifier(SNodeOperations.getModelLongName(myModelDescriptor));
         SModule owner = SModelRepository.getInstance().getOwner(myModelDescriptor);
         if (owner != null) {
           add(new OwnerTreeNode(owner));
@@ -133,7 +134,7 @@ public class ModelRepositoryComponent {
           //setColor(new Color(0x00, 0x00, 0x90));
         }
         setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
-        String text = myModelDescriptor.getLongName();
+        String text = jetbrains.mps.util.SNodeOperations.getModelLongName(myModelDescriptor);
         if (myModelDescriptor instanceof DefaultSModelDescriptor) {
           text += "(" + ((DefaultSModelDescriptor) myModelDescriptor).getLoadingState().toString() + ")";
         }

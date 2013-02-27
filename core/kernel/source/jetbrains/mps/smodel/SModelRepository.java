@@ -92,7 +92,7 @@ public class SModelRepository implements CoreComponent {
         return;
       }
 
-      SModelReference modelReference = modelDescriptor.getSModelReference();
+      SModelReference modelReference = modelDescriptor.getReference();
       SModelDescriptor registeredModel = getModelDescriptor(modelReference);
 
       LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
@@ -106,7 +106,7 @@ public class SModelRepository implements CoreComponent {
 
       ownerModels.add(modelDescriptor);
       myModelOwner.put(modelDescriptor, container);
-      modelDescriptor.setModule(container);
+      ((SModelInternal) modelDescriptor).setModule(container);
 
       assert modelReference.getModelId() != null : "can't add model w/o model id";
       myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
@@ -115,7 +115,7 @@ public class SModelRepository implements CoreComponent {
         myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
       }
       modelDescriptor.attach();
-      modelDescriptor.addModelListener(myModelsListener);
+      ((SModelInternal) modelDescriptor).addModelListener(myModelsListener);
     }
     fireModelAdded(modelDescriptor);
   }
@@ -136,12 +136,12 @@ public class SModelRepository implements CoreComponent {
       Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
       if (!ownerModels.remove(md)) throw new IllegalStateException();
 
-      if (md.getSModelReference().getModelId() != null) {
-        myIdToModelDescriptorMap.remove(md.getSModelReference().getModelId());
-        md.setModule(null);
+      if (md.getReference().getModelId() != null) {
+        myIdToModelDescriptorMap.remove(md.getReference().getModelId());
+        ((SModelInternal) md).setModule(null);
       }
-      myFqNameToModelDescriptorMap.remove(md.getSModelReference().getSModelFqName());
-      md.removeModelListener(myModelsListener);
+      myFqNameToModelDescriptorMap.remove(md.getReference().getSModelFqName());
+      ((SModelInternal) md).removeModelListener(myModelsListener);
       fireModelRemoved(md);
       md.detach();
     }
@@ -187,7 +187,7 @@ public class SModelRepository implements CoreComponent {
   public List<SModelDescriptor> getModelDescriptorsByModelName(String modelName) {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor d : getModelDescriptors()) {
-      if (modelName.equals(d.getLongName())) {
+      if (modelName.equals(jetbrains.mps.util.SNodeOperations.getModelLongName(d))) {
         result.add(d);
       }
     }

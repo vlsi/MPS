@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.smodel.event.SModelListener;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -209,7 +212,8 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     MPSModuleRepository.getInstance().invalidateCaches();
 
     if (getStructureModelDescriptor() != null && myCachesInvalidator == null) {
-      getStructureModelDescriptor().addModelListener(myCachesInvalidator = new CachesInvalidator());
+      SModelListener listener = myCachesInvalidator = new CachesInvalidator();
+      ((SModelInternal) getStructureModelDescriptor()).addModelListener(listener);
     }
 
     invalidateDependencies();
@@ -243,9 +247,9 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   public List<EditableSModelDescriptor> getUtilModels() {
     List<EditableSModelDescriptor> result = new ArrayList<EditableSModelDescriptor>();
     for (SModelDescriptor md : getOwnModelDescriptors()) {
-      if (md.getStereotype().equals(SModelStereotype.NONE)
+      if (SModelStereotype.getStereotype(md).equals(SModelStereotype.NONE)
         && getAspectForModel(md) == null
-        && !isAccessoryModel(md.getSModelReference())) {
+        && !isAccessoryModel(md.getReference())) {
         result.add(((EditableSModelDescriptor) md));
       }
     }

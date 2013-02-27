@@ -23,6 +23,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
@@ -42,17 +43,17 @@ public class ModelNodeData extends BaseNodeData {
     super(role,
       (isResult && nodeRepresentator != null) ?
         nodeRepresentator.getPresentation(result.getObject()) :
-        ((SModel) result.getPathObject()).getModelDescriptor().getLongName(),
+        SNodeOperations.getModelLongName(((SModel) result.getPathObject()).getModelDescriptor()),
       "",
       false,
       isResult,
       resultsSection);
-    myModelReference = ((SModel) result.getPathObject()).getModelDescriptor().getSModelReference();
+    myModelReference = ((SModel) result.getPathObject()).getModelDescriptor().getReference();
   }
 
   public ModelNodeData(PathItemRole role, SModel model, boolean isResult, boolean resultsSection) {
-    super(role, model.getModelDescriptor().getLongName()+ (!jetbrains.mps.util.SNodeOperations.getModelStereotype(model).isEmpty() ? "@"+ jetbrains.mps.util.SNodeOperations.getModelStereotype(model) : ""), "", false, isResult, resultsSection);
-    myModelReference = model.getModelDescriptor().getSModelReference();
+    super(role, SNodeOperations.getModelLongName(model.getModelDescriptor()) + (!jetbrains.mps.util.SNodeOperations.getModelStereotype(model).isEmpty() ? "@"+ jetbrains.mps.util.SNodeOperations.getModelStereotype(model) : ""), "", false, isResult, resultsSection);
+    myModelReference = model.getModelDescriptor().getReference();
   }
 
   public ModelNodeData(Element element, Project project) throws CantLoadSomethingException {

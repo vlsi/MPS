@@ -33,9 +33,9 @@ import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.util.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -216,11 +216,11 @@ class GenerationSession {
         if (gfe.getMessage() != null && gfe.getCause() == null) {
           myLogger.error(gfe.getMessage());
         }
-        myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed : " + gfe);
+        myLogger.error("model \"" + myOriginalInputModel.getReference().getSModelFqName() + "\" generation failed : " + gfe);
         return new GenerationStatus.ERROR(myOriginalInputModel);
       } catch (Exception e) {
         myLogger.handleException(e);
-        myLogger.error("model \"" + myOriginalInputModel.getSModelReference().getSModelFqName() + "\" generation failed (see exception)");
+        myLogger.error("model \"" + myOriginalInputModel.getReference().getSModelFqName() + "\" generation failed (see exception)");
         return new GenerationStatus.ERROR(myOriginalInputModel);
       } finally {
         if (myNewCache != null) {
@@ -548,7 +548,7 @@ class GenerationSession {
 
 
   private SModel createTransientModel() {
-    String longName = myOriginalInputModel.getLongName();
+    String longName = jetbrains.mps.util.SNodeOperations.getModelLongName(myOriginalInputModel);
     String stereotype = Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep;
     SModelDescriptor transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
     return transientModel.getSModel();

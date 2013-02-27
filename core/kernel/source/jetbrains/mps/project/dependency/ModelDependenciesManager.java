@@ -151,11 +151,11 @@ public class ModelDependenciesManager {
     }
 
     private void registerSelf() {
-      mySModelDescriptor.addModelListener(this);
+      ((SModelInternal) mySModelDescriptor).addModelListener(this);
     }
 
     private void unregisterSelf() {
-      mySModelDescriptor.removeModelListener(this);
+      ((SModelInternal) mySModelDescriptor).removeModelListener(this);
     }
   }
 

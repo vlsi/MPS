@@ -21,7 +21,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeD
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -88,7 +88,7 @@ public class DataTreeChangesNotifier {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
         if (event.getModelDescriptor() == null) continue;
-        if (!myModels.contains(event.getModelDescriptor().getSModelReference())) continue;
+        if (!myModels.contains(event.getModelDescriptor().getReference())) continue;
 
         if (event instanceof SModelRootEvent) {
           SModelRootEvent modelRootEvent = (SModelRootEvent) event;
@@ -112,7 +112,7 @@ public class DataTreeChangesNotifier {
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     @Override
     public void modelDeleted(SModelDescriptor modelDescriptor) {
-      if (!myModels.contains(modelDescriptor.getSModelReference())) return;
+      if (!myModels.contains(modelDescriptor.getReference())) return;
       myChanged = true;
     }
   }
