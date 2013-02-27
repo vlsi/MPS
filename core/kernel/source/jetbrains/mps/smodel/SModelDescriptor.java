@@ -13,7 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.util.*;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -23,7 +28,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 /**
  * This is a common descriptor used for all models - stub, transient, caches, regular MPS models
  */
-public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel {
+public abstract class SModelDescriptor implements org.jetbrains.mps.openapi.model.SModel {
   /**
    * After model loading call SModelRepository.fireModelRepositoryChanged
    */
@@ -32,9 +37,11 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * Cast to SModelInternal in java code, use migration in MPS
    * @Deprecated in 3.0
    */
+  public abstract
   SModel getSModel();
 
   @Deprecated
+  public abstract
   /**
    * Replace with implemented in java code, use migration in MPS
    * @Deprecated in 3.0
@@ -42,11 +49,14 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
   IModule getModule();
 
   @Deprecated
+  public
   /**
    * Cast to SModelInternal in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  void setModule(SModule container);
+  void setModule(SModule container){
+    ((SModelInternal)this).setModule(container);
+  }
 
 
   @Deprecated
@@ -54,7 +64,10 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * Replace with SNodeOperations.isGeneratable in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  boolean isGeneratable();
+  public
+  boolean isGeneratable(){
+    return jetbrains.mps.util.SNodeOperations.isGeneratable(this);
+  }
 
   //------
 
@@ -63,21 +76,30 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * Replace with getReference() in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  SModelReference getSModelReference();
+  public
+  SModelReference getSModelReference(){
+    return getReference();
+  }
 
   @Deprecated
   /**
-   * Replace with SNodeOperations.getModelLongName(m.getSModel()) in java code, use migration in MPS
+   * Replace with SNodeOperations.getModelLongName(this) in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  String getLongName();
+  public
+  String getLongName(){
+    return SNodeOperations.getModelLongName(this);
+  }
 
   @Deprecated
   /**
    * Replace with SModelStereotype.getStereotype(m.getSModel()) in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  String getStereotype();
+  public
+  String getStereotype(){
+    return SModelStereotype.getStereotype(this);
+  }
 
   //------
 
@@ -86,14 +108,20 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * Replace with SNodeOperations.isRegistered in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  boolean isRegistered();
+  public
+  boolean isRegistered(){
+    return SNodeOperations.isRegistered(this);
+  }
 
   @Deprecated
   /**
    * Replace with detach() in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  void dispose();
+  public
+  void dispose(){
+    detach();
+  }
 
   //------
 
@@ -102,7 +130,10 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * Replace with getModule() instanceof TransientModelsModule in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public boolean isTransient();
+  public
+   boolean isTransient(){
+    return getModule() instanceof TransientModelsModule;
+  }
 
   //------
 
@@ -111,7 +142,10 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * Cast to SModelInternal in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  SModelDescriptor resolveModel(SModelReference reference);
+  public
+  SModel resolveModel(SModelReference reference){
+     return ((SModelInternal)this).resolveModel(reference);
+  }
 
   //--------------model listeners--------------------
 
@@ -120,12 +154,18 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * Cast to SModelInternal in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  void addModelListener(@NotNull SModelListener listener);
+  public
+  void addModelListener(@NotNull SModelListener listener){
+    ((SModelInternal)this).addModelListener(listener);
+  }
 
   @Deprecated
   /**
    * Cast to SModelInternal in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  void removeModelListener(@NotNull SModelListener listener);
+  public
+  void removeModelListener(@NotNull SModelListener listener){
+    ((SModelInternal)this).removeModelListener(listener);
+  }
 }
