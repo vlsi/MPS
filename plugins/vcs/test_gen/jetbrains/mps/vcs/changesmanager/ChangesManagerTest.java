@@ -60,7 +60,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import java.util.Set;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.io.IOException;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
@@ -403,7 +403,7 @@ public class ChangesManagerTest {
       public void run() {
         SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
           @Override
-          public void modelsReplaced(Set<SModelDescriptor> modelDescriptors) {
+          public void modelsReplaced(Set<SModel> modelDescriptors) {
             if (modelDescriptors.contains(modelDescriptor)) {
               SModelRepository.getInstance().removeModelRepositoryListener(this);
             }
@@ -893,7 +893,7 @@ public class ChangesManagerTest {
 
     runCommandAndWait(new Runnable() {
       public void run() {
-        SModel m = ((SModelDescriptor) md).getSModel();
+        SModel m = ((SModel) md).getSModel();
         ((jetbrains.mps.smodel.SModel) m).addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
         createNewRoot(m);
       }

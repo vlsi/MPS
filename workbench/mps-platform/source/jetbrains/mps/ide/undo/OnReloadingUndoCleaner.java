@@ -23,7 +23,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -50,8 +50,8 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
   public void initComponent() {
     SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
       @Override
-      public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
-        for (SModelDescriptor sm : replacedModels) {
+      public void modelsReplaced(Set<SModel> replacedModels) {
+        for (SModel sm : replacedModels) {
           if (!jetbrains.mps.util.SNodeOperations.isRegistered(sm)) {
             continue;
           }

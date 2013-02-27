@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -38,7 +38,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public abstract class BaseSModelDescriptor implements SModelDescriptor {
+public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
   private ModelRoot myModelRoot;
@@ -57,7 +57,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
-  public SModelDescriptor getModelDescriptor() {
+  public SModel getModelDescriptor() {
     return this;
   }
 
@@ -292,7 +292,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
-  public SModelDescriptor resolveModel(SModelReference reference) {
+  public SModel resolveModel(SModelReference reference) {
     return SModelRepository.getInstance().getModelDescriptor(reference);
   }
 

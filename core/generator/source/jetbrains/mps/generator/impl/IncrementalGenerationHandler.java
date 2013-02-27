@@ -26,7 +26,7 @@ import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.DifflibFacade;
 import org.jetbrains.annotations.NotNull;
 
@@ -42,7 +42,7 @@ public class IncrementalGenerationHandler {
 
   private static final String CONDITIONALS_ID = "";
 
-  private SModelDescriptor myModel;
+  private SModel myModel;
   private GenerationOptions myGenerationOptions;
   private IOperationContext myOperationContext;
   private final String myPlanSignature;
@@ -58,7 +58,7 @@ public class IncrementalGenerationHandler {
   private IntermediateModelsCache myCache;
 
   public IncrementalGenerationHandler(org.jetbrains.mps.openapi.model.SModel model, IOperationContext operationContext, GenerationOptions options, String planSignature, Map<String, Object> genParameters, IncrementalReporter tracer) {
-    myModel = (SModelDescriptor) model;
+    myModel = (SModel) model;
     myGenerationOptions = options;
     myOperationContext = operationContext;
     myPlanSignature = planSignature;
@@ -220,7 +220,7 @@ public class IncrementalGenerationHandler {
     Map<String, String> externalHashes = oldDependencies.getExternalHashes();
     for (Entry<String, String> entry : externalHashes.entrySet()) {
       String modelReference = entry.getKey();
-      SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
+      SModel sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
       if (sm == null) {
         changedModels.add(modelReference);
         continue;
@@ -517,7 +517,7 @@ public class IncrementalGenerationHandler {
     return graph;
   }
 
-  public SModelDescriptor getModel() {
+  public SModel getModel() {
     return myModel;
   }
 

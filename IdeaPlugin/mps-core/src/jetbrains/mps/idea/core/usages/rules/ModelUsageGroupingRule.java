@@ -23,7 +23,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.usages.Usage;
 import com.intellij.usages.UsageGroup;
 import com.intellij.usages.impl.rules.FileGroupingRule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -42,7 +42,7 @@ public class ModelUsageGroupingRule extends FileGroupingRule {
   public UsageGroup groupUsage(@NotNull Usage usage) {
     if (usage instanceof UsageInModel) {
       final UsageInModel usageInModel = (UsageInModel) usage;
-      SModelDescriptor modelDescriptor = usageInModel.getModel();
+      SModel modelDescriptor = usageInModel.getModel();
       Collection<VirtualFile> filesByModelDescriptor = ModelUtil.getVFilesByModelDescriptor(modelDescriptor);
       if (filesByModelDescriptor.isEmpty()) {
         return null;

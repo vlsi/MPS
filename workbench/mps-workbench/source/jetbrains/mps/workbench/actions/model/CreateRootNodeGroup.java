@@ -34,7 +34,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -78,7 +78,7 @@ public class CreateRootNodeGroup extends BaseGroup {
   public void doUpdate(AnActionEvent event) {
     removeAll();
 
-    SModelDescriptor modelDescriptor = event.getData(MPSDataKeys.CONTEXT_MODEL);
+    SModel modelDescriptor = event.getData(MPSDataKeys.CONTEXT_MODEL);
     if (modelDescriptor == null) {
       setEnabledState(event.getPresentation(), false);
       return;
@@ -195,9 +195,9 @@ public class CreateRootNodeGroup extends BaseGroup {
     private IScope myScope;
     public IOperationContext myContext;
     private final SNodeReference myNodeConcept;
-    private final SModelDescriptor myModelDescriptor;
+    private final SModel myModelDescriptor;
 
-    public NewRootNodeAction(final SNodeReference nodeConcept, SModelDescriptor modelDescriptor) {
+    public NewRootNodeAction(final SNodeReference nodeConcept, SModel modelDescriptor) {
       super(NodePresentationUtil.matchingText(nodeConcept.resolve(MPSModuleRepository.getInstance())));
       myNodeConcept = nodeConcept;
       myModelDescriptor = modelDescriptor;

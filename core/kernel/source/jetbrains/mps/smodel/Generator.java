@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
@@ -159,9 +159,9 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     });
   }
 
-  public List<SModelDescriptor> getOwnTemplateModels() {
-    List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor modelDescriptor : getOwnModelDescriptors()) {
+  public List<SModel> getOwnTemplateModels() {
+    List<SModel> templateModels = new ArrayList<SModel>();
+    for (SModel modelDescriptor : getOwnModelDescriptors()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
         templateModels.add(modelDescriptor);
       }
@@ -204,7 +204,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   }
 
   public static String generateGeneratorUID(Language sourceLanguage) {
-    return sourceLanguage.getModuleName() + "#" + SModel.generateUniqueId();
+    return sourceLanguage.getModuleName() + "#" + jetbrains.mps.smodel.SModel.generateUniqueId();
   }
 
   public Language getSourceLanguage() {
@@ -269,10 +269,10 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return descriptorChanged[0];
   }
 
-  public List<SModelDescriptor> getGeneratorModels() {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    List<SModelDescriptor> ownModels = this.getOwnModelDescriptors();
-    for (SModelDescriptor ownModel : ownModels) {
+  public List<SModel> getGeneratorModels() {
+    List<SModel> result = new ArrayList<SModel>();
+    List<SModel> ownModels = this.getOwnModelDescriptors();
+    for (SModel ownModel : ownModels) {
       if (SModelStereotype.isGeneratorModel(ownModel)) {
         result.add((ownModel));
       } else if (SModelStereotype.isUserModel(ownModel)) {

@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.openapi.editor.Editor;
@@ -74,7 +73,7 @@ public class EmbeddableEditor {
     myModel = ((EditableSModel) ProjectModels.createDescriptorFor(true));
     ((SModel) smodel()).addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
     ((SModel) smodel()).addLanguage(ModuleReference.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)"));
-    SModelRepository.getInstance().registerModelDescriptor((SModelDescriptor) myModel, myOwner);
+    SModelRepository.getInstance().registerModelDescriptor((SModel) myModel, myOwner);
     setNode(node, true);
   }
 
@@ -237,7 +236,7 @@ public class EmbeddableEditor {
   }
 
   private final org.jetbrains.mps.openapi.model.SModel smodel() {
-    return ((SModelDescriptor) myModel).getSModel();
+    return ((SModel) myModel).getSModel();
   }
 
   public void disposeEditor() {

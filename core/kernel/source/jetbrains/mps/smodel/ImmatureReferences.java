@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.components.CoreComponent;
 
@@ -135,7 +135,7 @@ public class ImmatureReferences implements CoreComponent {
 
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
     @Override
-    public void modelRemoved(SModelDescriptor modelDescriptor) {
+    public void modelRemoved(SModel modelDescriptor) {
       ConcurrentMap<SReferenceBase, Object> refSet = myReferences.remove(modelDescriptor.getReference());
       if (refSet != null) {
         refSet.clear();

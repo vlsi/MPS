@@ -35,7 +35,7 @@ import java.io.IOException;
 import java.awt.datatransfer.DataFlavor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
@@ -324,7 +324,7 @@ public class CopyPasteUtil {
       @Override
       public void run() {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
-        for (SModelDescriptor sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {
+        for (SModel sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {
           allImportedModels.add(sm.getReference());
         }
         for (SModelReference modelReference : necessaryImports) {
@@ -385,7 +385,7 @@ public class CopyPasteUtil {
         }
 
         for (SModelReference model : requiredImports) {
-          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
+          SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
           if (modelDescriptor == null) {
             continue;
           }

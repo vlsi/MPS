@@ -18,7 +18,7 @@ package jetbrains.mps.generator.test;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Assert;
 import org.junit.Test;
@@ -34,11 +34,11 @@ public class IncrementalGenerationTest extends GenerationTestBase {
   @Test
   public void testIncSolution1() throws IOException {
     final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/languageDesign/generator/generator.mpr"));
-    SModelDescriptor descr = findModel(p, "test_Closure");
+    SModel descr = findModel(p, "test_Closure");
 
     doTestIncrementalGeneration(p, descr,
       new ModelChangeRunnable() {
-        public void run(SModelDescriptor descr) {
+        public void run(SModel descr) {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"User");
           Assert.assertNotNull("No root in model", root);
@@ -60,11 +60,11 @@ public class IncrementalGenerationTest extends GenerationTestBase {
   @Test
   public void testIdeActions() throws IOException {
     final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.mpr"));
-    SModelDescriptor descr = findModel(p, "jetbrains.mps.ide.actions");
+    SModel descr = findModel(p, "jetbrains.mps.ide.actions");
 
     doTestIncrementalGeneration(p, descr,
       new ModelChangeRunnable() {
-        public void run(SModelDescriptor descr) {
+        public void run(SModel descr) {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"GoToFile");
           Assert.assertNotNull("No root in model", root);
@@ -78,11 +78,11 @@ public class IncrementalGenerationTest extends GenerationTestBase {
   @Test
   public void testBaseLanguageStructure() throws IOException {
     final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.mpr"));
-    SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.structure");
+    SModel descr = findModel(p, "jetbrains.mps.baseLanguage.structure");
 
     doTestIncrementalGeneration(p, descr,
       new ModelChangeRunnable() {
-        public void run(SModelDescriptor descr) {
+        public void run(SModel descr) {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"Expression");
           Assert.assertNotNull("No root in model", root);
@@ -96,11 +96,11 @@ public class IncrementalGenerationTest extends GenerationTestBase {
   @Test
   public void testBaseLanguageEditor() throws IOException {
     final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.mpr"));
-    SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
+    SModel descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
 
     doTestIncrementalGeneration(p, descr,
       new ModelChangeRunnable() {
-        public void run(SModelDescriptor descr) {
+        public void run(SModel descr) {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"StatementList_Editor");
           Assert.assertNotNull("No root in model", root);

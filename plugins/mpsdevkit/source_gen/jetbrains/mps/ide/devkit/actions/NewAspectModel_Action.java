@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
@@ -69,7 +69,7 @@ public class NewAspectModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SModelDescriptor modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((IModule) MapSequence.fromMap(_params).get("module"))));
+      final SModel modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) ((IModule) MapSequence.fromMap(_params).get("module"))));
       // we need it since tree is updated later 
       SwingUtilities.invokeLater(new Runnable() {
         @Override

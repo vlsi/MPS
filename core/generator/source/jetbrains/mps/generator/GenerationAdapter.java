@@ -16,21 +16,21 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.List;
 
 public class GenerationAdapter implements GenerationListener {
 
   @Override
-  public void beforeGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
+  public void beforeGeneration(List<SModel> inputModels, GenerationOptions options, IOperationContext operationContext) {
   }
 
   @Override
-  public void modelsGenerated(List<SModelDescriptor> models, boolean success) {
+  public void modelsGenerated(List<SModel> models, boolean success) {
   }
 
   @Override
-  public void afterGeneration(List<SModelDescriptor> inputModels, GenerationOptions options, IOperationContext operationContext) {
+  public void afterGeneration(List<SModel> inputModels, GenerationOptions options, IOperationContext operationContext) {
   }
 }

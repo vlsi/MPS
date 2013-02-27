@@ -33,7 +33,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.make.runtime.java.JavaStreamHandler;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.messages.IMessage;
@@ -179,13 +179,13 @@ public class TextGen_Facet extends IFacet.Stub {
                   prepareTime += TextGenUtil.withTimeTracking(new Runnable() {
                     public void run() {
                       for (GResource resource : ListSequence.fromList(currentInput)) {
-                        MapSequence.fromMap(retainedFilesDelta).put(resource, RetainedUtil.retainedFilesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
-                          public boolean accept(SModelDescriptor smd) {
+                        MapSequence.fromMap(retainedFilesDelta).put(resource, RetainedUtil.retainedFilesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
+                          public boolean accept(SModel smd) {
                             return GenerationFacade.canGenerate(smd);
                           }
                         }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
-                        MapSequence.fromMap(retainedCachesDelta).put(resource, RetainedUtil.retainedCachesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModelDescriptor>() {
-                          public boolean accept(SModelDescriptor smd) {
+                        MapSequence.fromMap(retainedCachesDelta).put(resource, RetainedUtil.retainedCachesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
+                          public boolean accept(SModel smd) {
                             return GenerationFacade.canGenerate(smd);
                           }
                         }), resource.module(), pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Make_Facet.Target_make.Parameters.class).pathToFile()));
@@ -247,12 +247,12 @@ public class TextGen_Facet extends IFacet.Stub {
                     });
                     LOG.info("approximate handlers size: " + handlersSize / 1000 / 1000 + " mb");
 
-                    int overallRootsCount = ListSequence.fromList(currentInput).select(new ISelector<GResource, SModelDescriptor>() {
-                      public SModelDescriptor select(GResource it) {
+                    int overallRootsCount = ListSequence.fromList(currentInput).select(new ISelector<GResource, SModel>() {
+                      public SModel select(GResource it) {
                         return it.model();
                       }
-                    }).foldLeft(0, new ILeftCombinator<SModelDescriptor, Integer>() {
-                      public Integer combine(Integer s, SModelDescriptor it) {
+                    }).foldLeft(0, new ILeftCombinator<SModel, Integer>() {
+                      public Integer combine(Integer s, SModel it) {
                         return s + IterableUtil.asCollection(it.getSModel().getRootNodes()).size();
                       }
                     });
@@ -292,7 +292,7 @@ public class TextGen_Facet extends IFacet.Stub {
                             public void run() {
                               if (!(Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.configure"), Generate_Facet.Target_configure.Variables.class).saveTransient()))) {
                                 for (GResource resource : ListSequence.fromList(currentInput)) {
-                                  SModelDescriptor outputMD = resource.status().getOutputModelDescriptor();
+                                  SModel outputMD = resource.status().getOutputModelDescriptor();
                                   if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
                                     ((TransientModelsModule) outputMD.getModule()).removeModel(outputMD);
                                   }

@@ -6,7 +6,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.extapi.model.GeneratableSModel;
@@ -34,11 +34,11 @@ public class ModelProperties {
   private List<ModuleReference> myUsedLanguages = new ArrayList<ModuleReference>();
   private List<ModuleReference> myUsedDevKits = new ArrayList<ModuleReference>();
   private List<ModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<ModuleReference>();
-  private SModelDescriptor myModelDescriptor;
+  private SModel myModelDescriptor;
   private boolean myDoNotGenerate;
   private boolean myGenerateIntoModelFolder;
 
-  public ModelProperties(SModelDescriptor modelDescriptor) {
+  public ModelProperties(SModel modelDescriptor) {
     myModelDescriptor = modelDescriptor;
     SModel model = myModelDescriptor.getSModel();
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
@@ -50,7 +50,7 @@ public class ModelProperties {
   }
 
   @Deprecated
-  public ModelProperties(SModelDescriptor modelDescriptor, IOperationContext context) {
+  public ModelProperties(SModel modelDescriptor, IOperationContext context) {
     myModelDescriptor = modelDescriptor;
     SModel model = myModelDescriptor.getSModel();
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
@@ -61,7 +61,7 @@ public class ModelProperties {
     myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
   }
 
-  public SModelDescriptor getModelDescriptor() {
+  public SModel getModelDescriptor() {
     return myModelDescriptor;
   }
 

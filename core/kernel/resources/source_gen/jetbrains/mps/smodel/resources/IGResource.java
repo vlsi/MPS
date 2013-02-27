@@ -4,13 +4,13 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.GenerationStatus;
 
 @Deprecated
 public interface IGResource extends IResource {
   public IModule module();
-  public SModelDescriptor model();
-  public Iterable<SModelDescriptor> retainedModels();
+  public SModel model();
+  public Iterable<SModel> retainedModels();
   public GenerationStatus status();
 }

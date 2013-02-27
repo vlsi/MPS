@@ -8,7 +8,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Mapper;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -70,7 +70,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
       });
     } else if (myItem instanceof SModelReference) {
       SModelReference ref = (SModelReference) myItem;
-      SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
+      SModel descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
       if (descriptor == null) {
         return null;
       }

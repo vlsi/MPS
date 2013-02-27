@@ -24,7 +24,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
@@ -51,7 +51,7 @@ public class MPSProjectViewNodeDeleteProvider implements DeleteProvider {
         for (MPSProjectViewNode myProjectViewNode : myProjectViewNodes) {
           SNode nodeToDelete = myProjectViewNode.getValue().resolve(MPSModuleRepository.getInstance());
           if (nodeToDelete != null) {
-            SModelDescriptor modelDescriptor = nodeToDelete.getModel().getModelDescriptor();
+            SModel modelDescriptor = nodeToDelete.getModel().getModelDescriptor();
             if (modelDescriptor instanceof EditableSModel) {
               nodeToDelete.delete();
               modelsToSave.add((EditableSModel) modelDescriptor);

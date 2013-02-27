@@ -23,7 +23,7 @@ import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -155,7 +155,7 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPSNodePsiSourc
     // old SModel, non-openapi
     SModel model = node.getModel();
     if (model == null) return null;
-    SModelDescriptor mDesc = model.getModelDescriptor();
+    SModel mDesc = model.getModelDescriptor();
     if (mDesc == null || !(mDesc instanceof PsiJavaStubModelDescriptor)) {
       return null;
     }

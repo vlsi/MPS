@@ -48,7 +48,7 @@ import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -349,14 +349,14 @@ public class Java_Command {
     return 0;
   }
 
-  private static IModule check_yvpt_a0a0a3(SModelDescriptor checkedDotOperand) {
+  private static IModule check_yvpt_a0a0a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_yvpt_a0a0a0d(SNodePointer checkedDotOperand) {
+  private static SModel check_yvpt_a0a0a0d(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

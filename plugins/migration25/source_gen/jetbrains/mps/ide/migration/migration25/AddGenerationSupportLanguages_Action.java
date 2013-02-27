@@ -22,8 +22,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.logging.Logger;
 
@@ -88,15 +87,15 @@ public class AddGenerationSupportLanguages_Action extends BaseAction {
           it.save();
         }
       });
-      Sequence.fromIterable(generators).translate(new ITranslator2<Generator, SModelDescriptor>() {
-        public Iterable<SModelDescriptor> translate(Generator it) {
+      Sequence.fromIterable(generators).translate(new ITranslator2<Generator, SModel>() {
+        public Iterable<SModel> translate(Generator it) {
           return it.getOwnTemplateModels();
         }
-      }).visitAll(new IVisitor<SModelDescriptor>() {
-        public void visit(SModelDescriptor it) {
-          ((SModel) it.getSModel()).addDevKit(genPurpose);
-          ((SModel) it.getSModel()).addLanguage(generator);
-          ((SModel) it.getSModel()).addLanguage(genContext);
+      }).visitAll(new IVisitor<SModel>() {
+        public void visit(SModel it) {
+          ((jetbrains.mps.smodel.SModel) it.getSModel()).addDevKit(genPurpose);
+          ((jetbrains.mps.smodel.SModel) it.getSModel()).addLanguage(generator);
+          ((jetbrains.mps.smodel.SModel) it.getSModel()).addLanguage(genContext);
         }
       });
 

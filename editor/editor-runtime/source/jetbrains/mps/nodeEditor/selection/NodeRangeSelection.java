@@ -22,7 +22,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
@@ -59,7 +59,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     if (modelId == null) {
       throw new SelectionStoreException("Model ID property missed");
     }
-    SModelDescriptor sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelId));
+    SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelId));
     if (sModelDescriptor == null) {
       throw new SelectionRestoreException();
     }

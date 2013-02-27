@@ -34,7 +34,7 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -184,7 +184,7 @@ public class NewGeneratorDialog extends DialogWrapper {
 
   private void adjustTemplateModel(Language sourceLanguage, Generator newGenerator) {
     boolean alreadyOwnsTemplateModel = false;
-    for (SModelDescriptor modelDescriptor : newGenerator.getOwnModelDescriptors()) {
+    for (SModel modelDescriptor : newGenerator.getOwnModelDescriptors()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
         alreadyOwnsTemplateModel = true;
         break;
@@ -194,7 +194,7 @@ public class NewGeneratorDialog extends DialogWrapper {
       return;
     }
     EditableSModel templateModelDescriptor = newGenerator.createModel(getTemplateModelPrefix(sourceLanguage) + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next(), null);
-    SModel templateModel = ((SModelDescriptor) templateModelDescriptor).getSModel();
+    SModel templateModel = ((SModel) templateModelDescriptor).getSModel();
     SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     SPropertyOperations.set(mappingConfiguration, "name", "main");
     SModelOperations.addRootNode(templateModel, mappingConfiguration);

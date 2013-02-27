@@ -6,7 +6,7 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
@@ -20,7 +20,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
   private SModel myModel;
   private boolean myRootsOnly;
   private IScope myScope;
-  private List<SModelDescriptor> myModels;
+  private List<SModel> myModels;
 
   public ModelAndImportedModelsScope(SModel model, boolean rootsOnly, IScope scope) {
     myModel = model;
@@ -29,10 +29,10 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
   }
 
   @NotNull
-  public List<SModelDescriptor> getModels() {
+  public List<SModel> getModels() {
     if (myModels == null) {
       if (myModel == null) {
-        myModels = new ArrayList<SModelDescriptor>(1);
+        myModels = new ArrayList<SModel>(1);
       } else {
         myModels = SModelOperations.allImportedModels(myModel, myScope);
         myModels.add(0, myModel.getModelDescriptor());
@@ -60,7 +60,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
           if (model == null) {
             continue;
           }
-          SModel md = ((SModelDescriptor) model).getSModel();
+          SModel md = ((SModel) model).getSModel();
           if (condition instanceof IsInstanceCondition) {
             IsInstanceCondition isInstance = (IsInstanceCondition) condition;
             result.addAll(SNodeOperations.getModelFastFinder(md).getNodes(isInstance.getConceptFqName(), true));

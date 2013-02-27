@@ -44,7 +44,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.Nls;
@@ -60,14 +60,14 @@ import java.util.List;
 
 public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
   private ModelProperties myModelProperties;
-  private SModelDescriptor myModelDescriptor;
+  private SModel myModelDescriptor;
   private boolean myInPlugin = false;
 
-  public ModelPropertiesConfigurable(SModelDescriptor modelDescriptor, IOperationContext context) {
+  public ModelPropertiesConfigurable(SModel modelDescriptor, IOperationContext context) {
     this(modelDescriptor, context, false);
   }
 
-  public ModelPropertiesConfigurable(SModelDescriptor modelDescriptor, IOperationContext context, boolean inPlugin) {
+  public ModelPropertiesConfigurable(SModel modelDescriptor, IOperationContext context, boolean inPlugin) {
     super(context.getProject());
     myModelDescriptor = modelDescriptor;
     myModelProperties = new ModelProperties(modelDescriptor, context);

@@ -9,7 +9,7 @@ import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
@@ -48,7 +48,7 @@ public class ClassStubPsiSourceFinder implements MPSNodePsiSourceFinder {
     SModel model = node.getModel();
     if (model == null) return null;
 
-    SModelDescriptor modelDesc = model.getModelDescriptor();
+    SModel modelDesc = model.getModelDescriptor();
 
     // class file stubs
     if (!(modelDesc instanceof JavaClassStubModelDescriptor)) return null;

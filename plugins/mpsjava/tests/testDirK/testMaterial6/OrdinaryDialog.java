@@ -17,7 +17,7 @@ package jetbrains.mps.ide.java.testMaterial6;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.JComponent;
 import java.awt.Frame;
@@ -28,7 +28,7 @@ import java.awt.HeadlessException;
  */
 public class OrdinaryDialog extends BaseDialog {
 
-  public OrdinaryDialog(Frame mainFrame, IOperationContext context, SModelDescriptor contextModel, String text) throws HeadlessException {
+  public OrdinaryDialog(Frame mainFrame, IOperationContext context, SModel contextModel, String text) throws HeadlessException {
     super(mainFrame, text);
   }
 

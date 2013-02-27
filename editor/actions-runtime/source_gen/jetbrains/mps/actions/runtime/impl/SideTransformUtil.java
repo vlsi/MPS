@@ -20,7 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -61,7 +61,7 @@ public class SideTransformUtil {
       if (actionsModelDescriptor == null) {
         continue;
       }
-      SModel model = ((SModelDescriptor) actionsModelDescriptor).getSModel();
+      SModel model = ((SModel) actionsModelDescriptor).getSModel();
       if (model == null) {
         continue;
       }

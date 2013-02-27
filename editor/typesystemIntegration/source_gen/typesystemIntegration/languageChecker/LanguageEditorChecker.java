@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.SModelAdapter;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -62,12 +62,12 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   };
   private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
     @Override
-    public void beforeModelRemoved(SModelDescriptor descriptor) {
+    public void beforeModelRemoved(SModel descriptor) {
       modelDescriptorRemoved(descriptor);
     }
 
     @Override
-    public void beforeModelDeleted(SModelDescriptor descriptor) {
+    public void beforeModelDeleted(SModel descriptor) {
       modelDescriptorRemoved(descriptor);
     }
   };
@@ -77,7 +77,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       clearForModel(model.getReference());
     }
   };
-  private Set<SModelDescriptor> myListenedModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());
+  private Set<SModel> myListenedModels = SetSequence.fromSet(new HashSet<SModel>());
 
   public LanguageEditorChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
@@ -97,25 +97,25 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       component.removeDisposeListener(myDisposeListener);
     }
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
-    for (SModelDescriptor modelDescriptor : SetSequence.fromSetWithValues(new HashSet<SModelDescriptor>(), myListenedModels)) {
+    for (SModel modelDescriptor : SetSequence.fromSetWithValues(new HashSet<SModel>(), myListenedModels)) {
       removeModelListener(modelDescriptor);
     }
     super.doDispose();
   }
 
-  private void modelDescriptorRemoved(SModelDescriptor modelDescriptor) {
+  private void modelDescriptorRemoved(SModel modelDescriptor) {
     this.removeModelListener(modelDescriptor);
     this.clearForModel(modelDescriptor.getReference());
   }
 
-  private void removeModelListener(SModelDescriptor modelDescriptor) {
+  private void removeModelListener(SModel modelDescriptor) {
     if (SetSequence.fromSet(myListenedModels).contains(modelDescriptor)) {
       ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).removeElement(modelDescriptor);
     }
   }
 
-  private void addModelListener(SModelDescriptor modelDescriptor) {
+  private void addModelListener(SModel modelDescriptor) {
     if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
       ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
@@ -187,7 +187,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       return result;
     }
 
-    SModelDescriptor descriptor = SNodeOperations.getModel(sNode).getModelDescriptor();
+    SModel descriptor = SNodeOperations.getModel(sNode).getModelDescriptor();
     if (descriptor == null) {
       // descriptor is null for a replaced model 
       // after model is replaced but before it is disposed (this can happen asyncronously) 

@@ -16,7 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -27,7 +27,7 @@ import java.io.*;
  */
 public interface GenerationCacheContainer {
 
-  ModelCacheContainer getCache(@NotNull SModelDescriptor descriptor, String hash, boolean create);
+  ModelCacheContainer getCache(@NotNull SModel descriptor, String hash, boolean create);
 
   public interface ModelCacheContainer {
 
@@ -54,7 +54,7 @@ public interface GenerationCacheContainer {
     }
 
     @Override
-    public ModelCacheContainer getCache(@NotNull SModelDescriptor descriptor, String hash, boolean create) {
+    public ModelCacheContainer getCache(@NotNull SModel descriptor, String hash, boolean create) {
       String modelId = descriptor.getReference().getSModelId().toString();
       if(modelId == null || modelId.isEmpty()) {
         LOG.error("bad model id: " + modelId);

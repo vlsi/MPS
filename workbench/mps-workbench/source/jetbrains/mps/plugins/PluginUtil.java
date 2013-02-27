@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.ModuleNameUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -128,7 +129,7 @@ public class PluginUtil {
   public static final class ProjectPluginCreator extends PluginCreator<BaseProjectPlugin> {
     @Override
     public String getPlugin(Language l) {
-      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + ModuleNameUtil.getModuleShortName(l) + "_ProjectPlugin";
+      return SNodeOperations.getModelLongName(LanguageAspect.PLUGIN.get(l)) + "." + ModuleNameUtil.getModuleShortName(l) + "_ProjectPlugin";
     }
 
     @Override
@@ -141,7 +142,7 @@ public class PluginUtil {
   public static final class ApplicationPluginCreator extends PluginCreator<BaseApplicationPlugin> {
     @Override
     public String getPlugin(Language l) {
-      return LanguageAspect.PLUGIN.get(l).getLongName() + "." + ModuleNameUtil.getModuleShortName(l) + "_ApplicationPlugin";
+      return SNodeOperations.getModelLongName(LanguageAspect.PLUGIN.get(l)) + "." + ModuleNameUtil.getModuleShortName(l) + "_ApplicationPlugin";
     }
 
     @Override

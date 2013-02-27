@@ -21,7 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
@@ -48,7 +48,7 @@ public class NodeNavigatable extends BaseNavigatable {
       return;
     }
 
-    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+    SModel modelDescriptor = node.getModel().getModelDescriptor();
     if (modelDescriptor == null) return;
 
     IModule module = modelDescriptor.getModule();

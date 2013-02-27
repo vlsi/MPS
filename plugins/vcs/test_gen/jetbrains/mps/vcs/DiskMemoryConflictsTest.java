@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import org.junit.Assert;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.Scanner;
@@ -109,7 +109,7 @@ public class DiskMemoryConflictsTest {
       public void run() {
         if (SModelRepository.getInstance().getModelDescriptor(myModelDescriptor.getSModelReference()) != null) {
           try {
-            final SModelDescriptor modelDescriptor = myModelDescriptor;
+            final SModel modelDescriptor = myModelDescriptor;
             Assert.assertNotNull(modelDescriptor);
             SNode node = modelDescriptor.getSModel().getNode(SNodeId.fromString("6010389230754495469"));
             Assert.assertNotNull(node);

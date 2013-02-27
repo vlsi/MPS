@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.Set;
@@ -62,7 +62,7 @@ public class RunTestInMPS_Action extends BaseAction {
       return false;
     }
     {
-      SModelDescriptor modelDescriptor = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
+      SModel modelDescriptor = event.getData(MPSCommonDataKeys.CONTEXT_MODEL);
       if (modelDescriptor == null) {
         return false;
       }
@@ -106,7 +106,7 @@ public class RunTestInMPS_Action extends BaseAction {
       System.out.println("Test " + className + "." + testName);
       final Class c = ((IClassLoadingModule) ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor().getModule()).getClass(BehaviorReflection.invokeVirtual(String.class, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), test, "virtual_getTestCase_1216134500045", new Object[]{}), "virtual_getClassName_1216136193905", new Object[]{}));
       final Method meth = c.getMethod("runTest", String.class, String.class, Boolean.TYPE);
-      Constructor ctor = c.getConstructor(Project.class, SModelDescriptor.class);
+      Constructor ctor = c.getConstructor(Project.class, SModel.class);
       final Object testClass = ctor.newInstance(((Project) MapSequence.fromMap(_params).get("project")), ((SModel) MapSequence.fromMap(_params).get("model")).getModelDescriptor());
       Thread thread = new Thread(new Runnable() {
         @Override

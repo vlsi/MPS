@@ -30,7 +30,7 @@ import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
@@ -84,7 +84,7 @@ public class ReferencesTest extends BaseMPSTest {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
+        for (SModel sm : SModelRepository.getInstance().getModelDescriptors()) {
           if (!SModelStereotype.isUserModel(sm)) continue;
           checkModel(sm);
         }
@@ -101,7 +101,7 @@ public class ReferencesTest extends BaseMPSTest {
     assertTrue(fatals.isEmpty());
   }
 
-  private void checkModel(final SModelDescriptor sm) {
+  private void checkModel(final SModel sm) {
     final IScope scope = sm.getModule().getScope();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {

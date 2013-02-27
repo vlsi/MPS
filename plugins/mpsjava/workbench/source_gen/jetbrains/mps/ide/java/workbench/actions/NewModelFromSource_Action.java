@@ -24,7 +24,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.io.File;
@@ -134,7 +134,7 @@ public class NewModelFromSource_Action extends BaseAction {
         }
       });
       dialog.value.show();
-      SModelDescriptor result = dialog.value.getResult();
+      SModel result = dialog.value.getResult();
       if (result != null) {
         TreeFileChooser treeFileChooser = new TreeFileChooser();
         treeFileChooser.setDirectoriesAreAlwaysVisible(true);
@@ -180,7 +180,7 @@ public class NewModelFromSource_Action extends BaseAction {
             JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), parseException.value.getMessage(), "Parse error", JOptionPane.ERROR_MESSAGE);
           }
         }
-        SModelDescriptor modelDescriptor = result;
+        SModel modelDescriptor = result;
         ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModel(modelDescriptor, false);
       }
     } catch (Throwable t) {

@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -81,7 +81,7 @@ public class QueryMethodGenerated implements CoreComponent {
   }
 
   @NotNull
-  public static Class getQueriesGeneratedClassFor(@NotNull SModelDescriptor sm, boolean suppressErrorLogging) throws ClassNotFoundException {
+  public static Class getQueriesGeneratedClassFor(@NotNull SModel sm, boolean suppressErrorLogging) throws ClassNotFoundException {
     String packageName = SModelStereotype.withoutStereotype(sm.getModelName());
     String queriesClassName = packageName + ".QueriesGenerated";
 

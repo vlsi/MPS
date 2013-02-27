@@ -4,7 +4,7 @@ package jetbrains.mps.ide.properties;
 
 import jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelProperties;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
@@ -47,9 +47,9 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 
 public class ModelPropertiesDialog extends BasePropertiesDialog {
   public ModelProperties myPresenter;
-  public SModelDescriptor myModel;
+  public SModel myModel;
 
-  /*package*/ ModelPropertiesDialog(final SModelDescriptor sm, final IOperationContext context) {
+  /*package*/ ModelPropertiesDialog(final SModel sm, final IOperationContext context) {
     super("Model Properties for " + sm.getReference().getSModelFqName(), context);
     myModel = sm;
     ModelAccess.instance().runReadAction(new Runnable() {

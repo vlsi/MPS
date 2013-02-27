@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -34,7 +34,7 @@ public class ShowMappingsPartitioning_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() == 1;
+    return ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() == 1;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -81,7 +81,7 @@ public class ShowMappingsPartitioning_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      PartitioningHelper.showMappingPartitioning(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IScope) MapSequence.fromMap(_params).get("scope")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
+      PartitioningHelper.showMappingPartitioning(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IScope) MapSequence.fromMap(_params).get("scope")), ((List<SModel>) MapSequence.fromMap(_params).get("models")));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowMappingsPartitioning", t);
     }

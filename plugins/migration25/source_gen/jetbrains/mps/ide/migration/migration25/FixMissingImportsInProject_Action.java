@@ -26,7 +26,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
@@ -93,7 +93,7 @@ public class FixMissingImportsInProject_Action extends BaseAction {
         }
 
         for (SModelReference modelReference : ListSequence.fromList(modelReferences)) {
-          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+          SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
           if (modelDescriptor == null) {
             continue;
           }

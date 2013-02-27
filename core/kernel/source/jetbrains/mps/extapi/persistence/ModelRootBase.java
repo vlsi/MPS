@@ -17,7 +17,7 @@ package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -70,7 +70,7 @@ public abstract class ModelRootBase implements ModelRoot {
   public void dispose() {
     SModelRepository smRepo = SModelRepository.getInstance();
     for (SModel model : myModels) {
-      SModelDescriptor modelDescriptor = (SModelDescriptor) model;
+      SModel modelDescriptor = (SModel) model;
       if (modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance())!=modelDescriptor) {
         // TODO fix the problem and remove continue statement
         // theoretically can happen in JavaStubs (where several roots share the same model)
@@ -95,7 +95,7 @@ public abstract class ModelRootBase implements ModelRoot {
   protected void register(SModel model) {
     SModelRepository modelRepository = SModelRepository.getInstance();
     if (modelRepository.getModelDescriptor(model.getReference()) == null) {
-      modelRepository.registerModelDescriptor((SModelDescriptor) model, getModule());
+      modelRepository.registerModelDescriptor((SModel) model, getModule());
       myModels.add(model);
     }
   }
@@ -103,7 +103,7 @@ public abstract class ModelRootBase implements ModelRoot {
   protected void unregister(SModel model) {
     SModelRepository modelRepository = SModelRepository.getInstance();
     if (modelRepository.getModelDescriptor(model.getReference()) != null) {
-      modelRepository.unRegisterModelDescriptor((SModelDescriptor) model, getModule());
+      modelRepository.unRegisterModelDescriptor((SModel) model, getModule());
       myModels.remove(model);
     }
   }
@@ -121,7 +121,7 @@ public abstract class ModelRootBase implements ModelRoot {
     while (it.hasNext()) {
       SModel model = it.next();
       if (loaded.contains(model.getReference())) continue;
-      modelRepository.unRegisterModelDescriptor((SModelDescriptor) model, getModule());
+      modelRepository.unRegisterModelDescriptor((SModel) model, getModule());
       it.remove();
     }
   }

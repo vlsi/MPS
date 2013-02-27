@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SModelId;
 
@@ -38,7 +38,7 @@ public class StubMigrationHelper {
   }
 
   //ret null if no need for conversion or failed
-  public static SModelId convertModelUIDInScope(String fid, Iterable<SModelDescriptor> models) {
+  public static SModelId convertModelUIDInScope(String fid, Iterable<SModel> models) {
     int li = fid.lastIndexOf('#');
     int fi = fid.indexOf('#');
     if (fi != li) return null;
@@ -46,7 +46,7 @@ public class StubMigrationHelper {
     String mid = fid.substring(fi + 1);
     String stereo = fid.substring(0, fi);
 
-    for (SModelDescriptor m : models) {
+    for (SModel m : models) {
       if (jetbrains.mps.util.SNodeOperations.getModelLongName(m).equals(mid) && SModelStereotype.getStereotype(m).equals(stereo)) {
         module = m.getModule().getModuleReference();
       }

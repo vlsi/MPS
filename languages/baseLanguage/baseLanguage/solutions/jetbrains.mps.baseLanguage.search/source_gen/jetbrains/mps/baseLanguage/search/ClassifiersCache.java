@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Set;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
@@ -39,8 +39,8 @@ import jetbrains.mps.cache.CachesManager;
   }
 
   @Override
-  public Set<SModelDescriptor> getDependsOnModels(Object element) {
-    return Collections.singleton((SModelDescriptor) element);
+  public Set<SModel> getDependsOnModels(Object element) {
+    return Collections.singleton((SModel) element);
   }
 
   private void processNode(SNode node, boolean put) {

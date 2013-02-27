@@ -13,23 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 
 import java.util.Set;
 
 public interface SModelRepositoryListener {
-  void beforeModelDeleted(SModelDescriptor modelDescriptor);
+  void beforeModelDeleted(SModel modelDescriptor);
 
-  void modelDeleted(SModelDescriptor modelDescriptor);
+  void modelDeleted(SModel modelDescriptor);
 
-  void beforeModelRemoved(SModelDescriptor modelDescriptor);
+  void beforeModelRemoved(SModel modelDescriptor);
 
-  void modelRemoved(SModelDescriptor modelDescriptor);
+  void modelRemoved(SModel modelDescriptor);
 
-  void modelAdded(SModelDescriptor modelDescriptor);
+  void modelAdded(SModel modelDescriptor);
 
-  void modelRenamed(SModelDescriptor modelDescriptor);
+  void modelRenamed(SModel modelDescriptor);
 
   /**
    * This method will be called by SModelRepository to notify clients that underlying
@@ -38,12 +38,12 @@ public interface SModelRepositoryListener {
    * <p/>
    * It is guaranteed that this method will be executed in event dispatch thread if EDT is available.
    * <p/>
-   * Old instance of SModel will not be attached to any SModelDescriptor and will not
+   * Old instance of SModel will not be attached to any SModel and will not
    * be disposed till the end of notifications processing.
    *
    * @param md model descriptor with replaced SModel instance
    */
 
-  void modelsReplaced(Set<SModelDescriptor> reloadedModels);
+  void modelsReplaced(Set<SModel> reloadedModels);
 }
 

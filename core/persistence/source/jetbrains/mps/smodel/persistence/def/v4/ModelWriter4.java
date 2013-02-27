@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import org.jdom.Document;
@@ -100,7 +100,7 @@ public class ModelWriter4 implements IModelWriter {
       importElem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
 
       int version = -1;
-      SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+      SModel importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
       if (importedModelDescriptor instanceof DefaultSModelDescriptor) {
         version = ((DefaultSModelDescriptor) importedModelDescriptor).getVersion();
       }

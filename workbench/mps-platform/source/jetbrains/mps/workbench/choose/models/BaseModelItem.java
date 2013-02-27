@@ -19,7 +19,7 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
@@ -47,7 +47,7 @@ public abstract class BaseModelItem implements NavigationItem {
   }
 
   public FileStatus getFileStatus() {
-    SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(myModelReference);
+    SModel md = SModelRepository.getInstance().getModelDescriptor(myModelReference);
     boolean changed = md instanceof EditableSModel && ((EditableSModel) md).isChanged();
     return changed ? FileStatus.MODIFIED : FileStatus.NOT_CHANGED;
   }

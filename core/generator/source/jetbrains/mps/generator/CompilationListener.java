@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.List;
 
 @Deprecated
 public interface CompilationListener {
-  void beforeModelsCompiled(List<SModelDescriptor> models, boolean success);
+  void beforeModelsCompiled(List<SModel> models, boolean success);
 
-  void afterModelsCompiled(List<SModelDescriptor> models, boolean success);
+  void afterModelsCompiled(List<SModel> models, boolean success);
 }

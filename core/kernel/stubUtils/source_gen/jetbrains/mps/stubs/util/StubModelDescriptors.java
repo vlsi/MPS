@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.project.IModule;
@@ -51,7 +51,7 @@ public abstract class StubModelDescriptors {
     for (String subpkg : ListSequence.fromList(pi.subpackages(prefix))) {
       if (ListSequence.fromList(pi.resources(subpkg)).isNotEmpty()) {
         SModelReference smref = smodelRefWithId(subpkg);
-        SModelDescriptor descById = SModelRepository.getInstance().getModelDescriptor(smref);
+        SModel descById = SModelRepository.getInstance().getModelDescriptor(smref);
         if (descById != null) {
           assert descById.getModule() == module;
           SetSequence.fromSet(result).addElement(((BaseStubModelDescriptor) descById));

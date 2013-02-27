@@ -36,7 +36,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_S
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -91,7 +91,7 @@ public class GeneratorPrioritiesTree {
 
     Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(descriptor.getId());
 
-    for (SModelDescriptor templateModel : generator.getOwnTemplateModels()) {
+    for (SModel templateModel : generator.getOwnTemplateModels()) {
       ExtendedCheckedTreeNode templateNode = new ModelCheckedTreeNode(templateModel.getReference());
       generatorNode.add(templateNode);
       for (SNode mapping : SModelOperations.getRoots(templateModel.getSModel(), "jetbrains.mps.lang.generator.structure.MappingConfiguration")){

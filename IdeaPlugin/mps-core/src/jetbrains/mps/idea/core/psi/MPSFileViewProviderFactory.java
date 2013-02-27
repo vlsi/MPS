@@ -30,7 +30,7 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
@@ -106,7 +106,7 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
       FileSourcePsiFile psiFile = ModelAccess.instance().runReadAction(new Computable<FileSourcePsiFile>() {
         @Override
         public FileSourcePsiFile compute() {
-          SModelDescriptor descr = SModelFileTracker.getInstance().findModel(modelFile);
+          SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
           if(descr != null) {
             return createAndUpdatePsiFile(descr);
           }
@@ -116,7 +116,7 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
       return psiFile;
     }
 
-    private FileSourcePsiFile createAndUpdatePsiFile (SModelDescriptor descr) {
+    private FileSourcePsiFile createAndUpdatePsiFile (SModel descr) {
       FileSourcePsiFile result = new FileSourcePsiFile(this, descr.getModelName());
 
       MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());

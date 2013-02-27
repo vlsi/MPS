@@ -18,7 +18,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -92,19 +92,19 @@ public class ModelsAutoImportsManager {
     public void onCreate(SModule module, SModel model) {
       for (SModel modelToImport : getAutoImportedModels(module, model)) {
         // todo: ! what's up with module? add model module to module dependencies?
-        ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addModelImport((SModelReference) modelToImport.getReference(), false);
+        ((jetbrains.mps.smodel.SModel) ((SModel) model).getSModel()).addModelImport((SModelReference) modelToImport.getReference(), false);
       }
       for (Language language : getAutoImportedLanguages(module, model)) {
         if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(language)) {
           ((AbstractModule) model.getModule()).addUsedLanguage(language.getModuleReference());
         }
-        ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addLanguage(language.getModuleReference());
+        ((jetbrains.mps.smodel.SModel) ((SModel) model).getSModel()).addLanguage(language.getModuleReference());
       }
       for (DevKit devKit : getAutoImportedDevKits(module, model)) {
         if (!((AbstractModule) model.getModule()).getUsedDevkitReferences().contains(devKit.getModuleReference())) {
           ((AbstractModule) model.getModule()).addUsedDevkit(devKit.getModuleReference());
         }
-        ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addDevKit(devKit.getModuleReference());
+        ((jetbrains.mps.smodel.SModel) ((SModel) model).getSModel()).addDevKit(devKit.getModuleReference());
       }
     }
   }

@@ -21,7 +21,7 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.util.containers.BidirectionalMap;
@@ -126,7 +126,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
     return md;
   }
 
-  private void invalidateCacheForModel(SModelDescriptor md) {
+  private void invalidateCacheForModel(SModel md) {
     synchronized (myCache) {
       List<IFile> file = myFilesToModels.getKeysByValue(md);
       if (file != null && file.size() != 0) {
@@ -169,7 +169,7 @@ public abstract class BaseModelCache<T> implements CoreComponent {
       T cache = BaseModelCache.this.generateCache(status);
       if (cache == null) return;
 
-      SModelDescriptor model = status.getOriginalInputModel();
+      SModel model = status.getOriginalInputModel();
 
       synchronized (myCache) {
         myCache.put(model, cache);
@@ -193,22 +193,22 @@ public abstract class BaseModelCache<T> implements CoreComponent {
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     @Override
-    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+    public void beforeModelDeleted(SModel modelDescriptor) {
       invalidateCacheForModel(modelDescriptor);
     }
 
     @Override
-    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
+    public void beforeModelRemoved(SModel modelDescriptor) {
       invalidateCacheForModel(modelDescriptor);
     }
 
     @Override
-    public void modelAdded(SModelDescriptor modelDescriptor) {
+    public void modelAdded(SModel modelDescriptor) {
       invalidateCacheForModel(modelDescriptor);
     }
 
     @Override
-    public void modelRenamed(SModelDescriptor modelDescriptor) {
+    public void modelRenamed(SModel modelDescriptor) {
       invalidateCacheForModel(modelDescriptor);
     }
   }

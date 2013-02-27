@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.reloading.ReloadAdapter;
 
 public class DesignPartLoader {
@@ -65,7 +65,7 @@ public class DesignPartLoader {
   }
 
   private SModule getModuleFor(SModel smodel) {
-    SModelDescriptor smd = smodel.getModelDescriptor();
+    SModel smd = smodel.getModelDescriptor();
     return (smd != null ?
       smd.getModule() :
       null

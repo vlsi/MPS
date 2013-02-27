@@ -4,10 +4,10 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 @Deprecated
 public interface IMResource extends IResource {
   public IModule module();
-  public Iterable<SModelDescriptor> models();
+  public Iterable<SModel> models();
 }

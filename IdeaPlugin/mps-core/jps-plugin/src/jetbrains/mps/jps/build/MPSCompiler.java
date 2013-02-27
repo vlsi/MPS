@@ -13,7 +13,7 @@ import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -50,11 +50,11 @@ public class MPSCompiler {
      */
     public boolean build() {
         ProjectOperationContext context = new ProjectOperationContext(myProject);
-        List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+        List<SModel> models = new ArrayList<SModel>();
         GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
 
         for (SModel m : myModels) {
-            models.add((SModelDescriptor) m);
+            models.add((SModel) m);
         }
 
         boolean success = GenerationFacade.generateModels(myProject, models, context,

@@ -53,7 +53,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.annotation.Hack;
@@ -306,7 +306,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     });
   }
 
-  public void selectModel(@NotNull final SModelDescriptor model, boolean autofocus) {
+  public void selectModel(@NotNull final SModel model, boolean autofocus) {
     if (!ThreadUtils.isEventDispatchThread()) {
       throw new IllegalStateException("Can't use this outside of EDT");
     }
@@ -358,7 +358,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   //----select next queries----
 
   @Override
-  public void selectNextModel(SModelDescriptor modelDescriptor) {
+  public void selectNextModel(SModel modelDescriptor) {
     final MPSTreeNode mpsTreeNode = myFindHelper.findNextTreeNode(modelDescriptor);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override

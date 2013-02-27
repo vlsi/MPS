@@ -28,7 +28,7 @@ import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
@@ -84,7 +84,7 @@ public class MethodCallChecker extends SpecificChecker {
           addIssue(results, node, "Target module " + descriptor.getModule().getModuleName() + " should be imported", ModelChecker.SEVERITY_ERROR, "target module not imported", new IModelCheckerFix() {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
-                SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(uid);
+                SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
                 check_lz161n_a1a0a5a0a7a1a6a1(check_lz161n_a0b0a0f0a0h0b0g0b(model.getModelDescriptor()), sm);
                 return true;
               }
@@ -98,7 +98,7 @@ public class MethodCallChecker extends SpecificChecker {
     return results;
   }
 
-  private static void check_lz161n_a1a0a5a0a7a1a6a1(IModule checkedDotOperand, SModelDescriptor sm) {
+  private static void check_lz161n_a1a0a5a0a7a1a6a1(IModule checkedDotOperand, SModel sm) {
     if (null != checkedDotOperand) {
       checkedDotOperand.addDependency(check_lz161n_a0a1a0a5a0a7a1a6a1(check_lz161n_a0a0b0a0f0a0h0b0g0b(sm)), false);
     }
@@ -112,14 +112,14 @@ public class MethodCallChecker extends SpecificChecker {
     return null;
   }
 
-  private static IModule check_lz161n_a0a0b0a0f0a0h0b0g0b(SModelDescriptor checkedDotOperand) {
+  private static IModule check_lz161n_a0a0b0a0f0a0h0b0g0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_lz161n_a0b0a0f0a0h0b0g0b(SModelDescriptor checkedDotOperand) {
+  private static IModule check_lz161n_a0b0a0f0a0h0b0g0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

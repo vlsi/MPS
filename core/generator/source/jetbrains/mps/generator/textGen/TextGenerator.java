@@ -28,7 +28,7 @@ import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGen;
@@ -145,7 +145,7 @@ public class TextGenerator {
     ModelDependencies modelDep = null;
 
     // process unchanged files
-    SModelDescriptor originalInputModel = sourceStatus.getOriginalInputModel();
+    SModel originalInputModel = sourceStatus.getOriginalInputModel();
     for (GenerationRootDependencies rdep : unchangedDependencies) {
       for (String filename : rdep.getFiles()) {
         if (streamHandler.touch(filename, false)) {

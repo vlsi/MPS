@@ -122,7 +122,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   @Override
   public IModule getModule() {
-    SModelDescriptor md = getModelDescriptor();
+    org.jetbrains.mps.openapi.model.SModel md = getModelDescriptor();
     return md == null ? null : md.getModule();
   }
 
@@ -229,7 +229,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   @Override
   @NotNull
   public DataSource getSource() {
-    SModelDescriptor md = getModelDescriptor();
+    org.jetbrains.mps.openapi.model.SModel md = getModelDescriptor();
     return md == null ? new NullDataSource() : md.getSource();
   }
 
@@ -240,7 +240,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
   @Override
   public boolean isReadOnly() {
-    SModelDescriptor md = getModelDescriptor();
+    org.jetbrains.mps.openapi.model.SModel md = getModelDescriptor();
     return md != null && md.isReadOnly();
   }
 
@@ -298,14 +298,14 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return this;
   }
 
-  //todo will migrate after SModelDescriptor is migrated
+  //todo will migrate after SModel is migrated
   @Override
-  public SModelDescriptor getModelDescriptor() {
+  public org.jetbrains.mps.openapi.model.SModel getModelDescriptor() {
     return myModelDescriptor;
   }
 
-  public synchronized void setModelDescriptor(SModelDescriptor modelDescriptor) {
-    myModelDescriptor = modelDescriptor;
+  public synchronized void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
+    myModelDescriptor = ((SModelDescriptor) modelDescriptor);
   }
 
   protected void enforceFullLoad() {
@@ -670,7 +670,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (importElement != null) return;
     importElement = SModelOperations.getAdditionalModelElement(this, modelReference);
     if (importElement == null) {
-      SModelDescriptor modelDescriptor = MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
+      org.jetbrains.mps.openapi.model.SModel modelDescriptor = MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
       int usedVersion = -1;
       if (modelDescriptor instanceof RefactorableSModelDescriptor) {
         usedVersion = ((RefactorableSModelDescriptor) modelDescriptor).getVersion();
@@ -796,7 +796,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
       if (RoleIdsComponent.isEnabled()) {
         version = RoleIdsComponent.getModelVersion(ref);
       } else {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(ref);
+        org.jetbrains.mps.openapi.model.SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(ref);
         version = modelDescriptor instanceof RefactorableSModelDescriptor ? ((RefactorableSModelDescriptor) modelDescriptor).getVersion() : -1;
       }
       implicitImports.add(new ImportElement(ref, -1, version));  // for compatibility index will be assigned on save

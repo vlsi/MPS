@@ -65,7 +65,7 @@ public class DefaultSModel extends SModel {
 
   @Override
   protected void enforceFullLoad() {
-    SModelDescriptor md = myModelDescriptor;
+    org.jetbrains.mps.openapi.model.SModel md = myModelDescriptor;
     if (!(md instanceof DefaultSModelDescriptor)) return;
     md.load();
   }
@@ -100,7 +100,7 @@ public class DefaultSModel extends SModel {
   }
 
   /**
-   * @deprecated Use SModelDescriptor.getRefactoringsHistory()
+   * @deprecated Use SModel.getRefactoringsHistory()
    */
   @Deprecated
   public Element getRefactoringHistoryElement() {

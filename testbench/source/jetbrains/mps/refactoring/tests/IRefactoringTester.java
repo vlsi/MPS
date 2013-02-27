@@ -16,9 +16,9 @@
 package jetbrains.mps.refactoring.tests;
 
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.Language;
 
 public interface IRefactoringTester {
-  public boolean testRefactoring(Project project, SModelDescriptor sandbox1, SModelDescriptor sandbox2, Language testRefactoringlanguage, Language testRefactoringTargetLanguage);
+  public boolean testRefactoring(Project project, SModel sandbox1, SModel sandbox2, Language testRefactoringlanguage, Language testRefactoringTargetLanguage);
 }

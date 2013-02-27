@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -230,7 +230,7 @@ public class SNodeOperations {
     }
   }
 
-  public static SModelDescriptor getModelFromNodeReference(SNodeReference ref) {
+  public static SModel getModelFromNodeReference(SNodeReference ref) {
     SModelReference mr = ref.getModelReference();
     if (mr == null) {
       return null;
@@ -348,7 +348,7 @@ public class SNodeOperations {
   }
 
   public static boolean isGeneratable(SModel model) {
-    assert model instanceof SModelDescriptor;
+    assert model instanceof SModel;
     return model instanceof GeneratableSModel && ((GeneratableSModel) model).isGeneratable();
   }
 }

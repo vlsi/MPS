@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.Generator;
 import javax.swing.JPanel;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 
 @Deprecated
@@ -315,7 +315,7 @@ public class StandardDialogs {
     }.invoke();
   }
 
-  public static ModelPropertiesDialog createModelPropertiesDialog(final SModelDescriptor d, final IOperationContext context) {
+  public static ModelPropertiesDialog createModelPropertiesDialog(final SModel d, final IOperationContext context) {
     return new _FunctionTypes._return_P0_E0<ModelPropertiesDialog>() {
       public ModelPropertiesDialog invoke() {
         final ModelPropertiesDialog result_960thj_a0a0a5 = new ModelPropertiesDialog(d, context);
@@ -327,7 +327,7 @@ public class StandardDialogs {
         final BaseBindedDialog.ConstraintsType result_960thj_a1a0a1a0a0a5 = BaseBindedDialog.ConstraintsType.FIELD;
         result_960thj_a0a1a0a0a5.setConstraints(result_960thj_a1a0a1a0a0a5);
         result_960thj_a1a0a0a5.addComponent(result_960thj_a0a1a0a0a5);
-        SModelDescriptor myModel = dialog.myModel;
+        SModel myModel = dialog.myModel;
         if (myModel != null && myModel.getSource() instanceof FileDataSource) {
           final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a2a1a0a0a5 = new BaseTabbedBindedDialog.ComponentDescriptor();
           final JComponent result_960thj_a0a0a2a1a0a0a5 = StandardComponents.createFilePanel("Model File:", ((FileDataSource) myModel.getSource()).getFile());

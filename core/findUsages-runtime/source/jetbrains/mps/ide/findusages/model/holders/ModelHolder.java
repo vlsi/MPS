@@ -19,7 +19,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.NameUtil;
@@ -40,13 +40,13 @@ public class ModelHolder implements IHolder<SModel> {
     myModelReference = model.getModelDescriptor().getReference();
   }
 
-  private SModelDescriptor getModelDescriptor() {
+  private SModel getModelDescriptor() {
     return SModelRepository.getInstance().getModelDescriptor(myModelReference);
   }
 
   @Override
   public SModel getObject() {
-    SModelDescriptor modelDescriptor = getModelDescriptor();
+    SModel modelDescriptor = getModelDescriptor();
     if (modelDescriptor == null) return null;
     return modelDescriptor.getSModel();
   }

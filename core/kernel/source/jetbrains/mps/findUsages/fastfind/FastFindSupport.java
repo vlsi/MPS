@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.findUsages.fastfind;
 
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.containers.MultiMap;
 
@@ -24,7 +24,7 @@ import java.util.Set;
 @Deprecated //use openapi. this does not work
 public interface FastFindSupport {
   //note that Set<String> is passed because we won't have concept nodes at runtime in future
-  MultiMap<SModelDescriptor,String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> concepts);
+  MultiMap<SModel,String> findModelsWithPossibleInstances(Set<SModel> models, Set<String> concepts);
 
-  MultiMap<SModelDescriptor,SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes);
+  MultiMap<SModel,SNode> findModelsWithPossibleUsages(Set<SModel> models, Set<SNode> nodes);
 }

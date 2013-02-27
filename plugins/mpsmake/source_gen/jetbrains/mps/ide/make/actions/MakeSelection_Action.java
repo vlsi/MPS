@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -42,8 +42,8 @@ public class MakeSelection_Action extends BaseAction {
       return false;
     }
     List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
-    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModelDescriptor>) ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
-    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), modules, ((IModule) MapSequence.fromMap(_params).get("cmodule"))).actionText(MakeSelection_Action.this.cleanMake);
+    List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) ((List<SModel>) MapSequence.fromMap(_params).get("models")));
+    String text = new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ((SModel) MapSequence.fromMap(_params).get("cmodel")), modules, ((IModule) MapSequence.fromMap(_params).get("cmodule"))).actionText(MakeSelection_Action.this.cleanMake);
     if (text != null) {
       event.getPresentation().setText(text);
       return true;
@@ -81,8 +81,8 @@ public class MakeSelection_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
-      List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModelDescriptor>) ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
-      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), modules, ((IModule) MapSequence.fromMap(_params).get("cmodule"))), MakeSelection_Action.this.cleanMake).executeAction();
+      List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) ((List<SModel>) MapSequence.fromMap(_params).get("models")));
+      new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ((SModel) MapSequence.fromMap(_params).get("cmodel")), modules, ((IModule) MapSequence.fromMap(_params).get("cmodule"))), MakeSelection_Action.this.cleanMake).executeAction();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MakeSelection", t);
     }

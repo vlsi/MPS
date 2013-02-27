@@ -24,17 +24,17 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
 
 import javax.swing.Icon;
 
 public class SModelReferenceTreeNode extends MPSTreeNode {
-  private SModelDescriptor myModelDescriptor;
+  private SModel myModelDescriptor;
   private Project myProject;
 
-  public SModelReferenceTreeNode(SModelDescriptor modelDescriptor, IOperationContext operationContext) {
+  public SModelReferenceTreeNode(SModel modelDescriptor, IOperationContext operationContext) {
     super(operationContext);
     myProject = operationContext.getProject();
     myModelDescriptor = modelDescriptor;

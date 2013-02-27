@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ScopeOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -51,7 +51,7 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
             List<SNode> result = new ArrayList<SNode>();
 
             for (Language language : ScopeOperations.getModules(operationContext.getScope(), Language.class)) {
-              SModelDescriptor strucModelDescriptor = LanguageAspect.STRUCTURE.get(language);
+              SModel strucModelDescriptor = LanguageAspect.STRUCTURE.get(language);
               SModel strucModel = strucModelDescriptor.getSModel();
               ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(strucModel, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {

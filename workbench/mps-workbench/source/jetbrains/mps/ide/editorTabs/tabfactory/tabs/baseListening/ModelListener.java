@@ -17,7 +17,7 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 
@@ -36,7 +36,7 @@ public abstract class ModelListener {
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRemovedListener);
 
     for (SModelReference r : myImportantNodes.keySet()) {
-      SModelDescriptor d = SModelRepository.getInstance().getModelDescriptor(r);
+      SModel d = SModelRepository.getInstance().getModelDescriptor(r);
       if (d == null) continue;
       ((SModelInternal) d).removeModelListener(myRootRemovedListener);
     }
@@ -51,7 +51,7 @@ public abstract class ModelListener {
   }
 
   public void aspectAdded(SNode node) {
-    SModelDescriptor descriptor = node.getModel().getModelDescriptor();
+    SModel descriptor = node.getModel().getModelDescriptor();
     if (!myImportantNodes.containsKey(descriptor.getReference())) {
       ((SModelInternal) descriptor).addModelListener(myRootRemovedListener);
     }
@@ -78,7 +78,7 @@ public abstract class ModelListener {
 
   private class ModelRemovedAdapter extends SModelRepositoryAdapter {
     @Override
-    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
+    public void beforeModelRemoved(SModel modelDescriptor) {
       SModelReference ref = modelDescriptor.getReference();
       if (!myImportantNodes.containsKey(ref)) return;
 

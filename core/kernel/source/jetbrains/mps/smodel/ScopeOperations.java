@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -58,7 +58,7 @@ public class ScopeOperations {
   // deprecated stuff
   // remove after MPS 3.0
   @Deprecated
-  public static SModelDescriptor getModelDescriptor(SearchScope scope, SModelFqName fqName) {
+  public static SModel getModelDescriptor(SearchScope scope, SModelFqName fqName) {
     return getModelDescriptor(scope, new SModelReference(fqName, null));
   }
 
@@ -68,18 +68,18 @@ public class ScopeOperations {
   }
 
   @Deprecated
-  public static SModelDescriptor getModelDescriptor(SearchScope scope, SModelReference modelReference) {
+  public static SModel getModelDescriptor(SearchScope scope, SModelReference modelReference) {
     org.jetbrains.mps.openapi.model.SModel model = scope.resolve(modelReference);
-    if (model != null && !(model instanceof SModelDescriptor)) {
+    if (model != null && !(model instanceof SModel)) {
       throw new IllegalStateException();
     }
-    return (SModelDescriptor) model;
+    return (SModel) model;
   }
 
   @Deprecated
-  public static Iterable<SModelDescriptor> getModelDescriptors(SearchScope scope) {
+  public static Iterable<SModel> getModelDescriptors(SearchScope scope) {
     for (org.jetbrains.mps.openapi.model.SModel model : scope.getModels()) {
-      if (!(model instanceof SModelDescriptor)) {
+      if (!(model instanceof SModel)) {
         throw new IllegalStateException();
       }
     }

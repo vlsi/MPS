@@ -20,7 +20,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -91,7 +91,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   }
 
   public void updateLoadedModels() {
-    for (SModelDescriptor md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
+    for (SModel md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
       if (md instanceof DefaultSModelDescriptor) {
         updateModel((DefaultSModelDescriptor) md);
       }
@@ -159,7 +159,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     }
 
     @Override
-    public void beforeModelRemoved(SModelDescriptor descriptor) {
+    public void beforeModelRemoved(SModel descriptor) {
       if (descriptor instanceof EditableSModel) {
         disposeModelChangesManager(descriptor.getReference());
       }

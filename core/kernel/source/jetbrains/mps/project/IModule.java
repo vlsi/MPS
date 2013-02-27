@@ -22,7 +22,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -110,7 +110,7 @@ public interface IModule extends SModule {
 
   // SModule#getModels. But how to migrate? ModuleOperations.getOwnModelDescriptors with unchecked cast?
   // When is it safe to migrate method call? calc expected type?
-  List<SModelDescriptor> getOwnModelDescriptors();
+  List<SModel> getOwnModelDescriptors();
 
   // SModule#getModuleScope
   @NotNull
@@ -161,10 +161,10 @@ public interface IModule extends SModule {
   // AbstractModule#createModel
   // ModelAdjuster? WTF? something between creating and registration I think
   // talk with Evgeny
-  SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
+  SModel createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);
 
   public static interface ModelAdjuster {
-    void adjust(SModelDescriptor model);
+    void adjust(SModel model);
   }
 
   // module source path stuff
@@ -253,7 +253,7 @@ public interface IModule extends SModule {
    * @see ModelsAutoImportsManager
    */
   @Deprecated
-  Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm);
+  Collection<SModel> getImplicitlyImportedModelsFor(SModel sm);
 
   /**
    * This method always returns empty list. All auto imported languages added to model in model creation
@@ -261,7 +261,7 @@ public interface IModule extends SModule {
    * @see ModelsAutoImportsManager
    */
   @Deprecated
-  Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm);
+  Collection<Language> getImplicitlyImportedLanguages(SModel sm);
 
   /**
    * @see SModuleOperations#getIndexablePaths

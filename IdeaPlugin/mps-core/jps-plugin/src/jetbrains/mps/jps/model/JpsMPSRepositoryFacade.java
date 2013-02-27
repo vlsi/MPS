@@ -46,7 +46,7 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -273,7 +273,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         libSolution.updateModelsSet();
       }
       if (MPSCompilerUtil.isExtraTracingMode()) {
-        for (SModelDescriptor desc : SModelRepository.getInstance().getModelDescriptors(regSolution)) {
+        for (SModel desc : SModelRepository.getInstance().getModelDescriptors(regSolution)) {
           MPSCompilerUtil.debug(context, "LIB model " + desc.getModelName());
         }
       }
@@ -286,7 +286,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         for (SModule m : MPSModuleRepository.getInstance().getModules(myProject)) {
           context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Debug output: module " + m.getModuleReference().toString()));
 
-          for (SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors(m)) {
+          for (SModel d : SModelRepository.getInstance().getModelDescriptors(m)) {
             context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Debug output: model " + d.getLongName() + " / " + d.getReference().toString()));
             // It makes model loading non-lazy and kills the whole thing if stubs are built for everything (like SDK, libs, etc)
   //          for (SNode n : d.getRootNodes()) {

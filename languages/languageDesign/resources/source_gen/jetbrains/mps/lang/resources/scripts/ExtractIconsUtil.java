@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -56,7 +56,7 @@ public class ExtractIconsUtil {
 
   private static SNode getIconResourceBundle(Language lang) {
     EditableSModel pluginModel = getPluginModel(lang);
-    SModel smodel = ((SModelDescriptor) pluginModel).getSModel();
+    SModel smodel = ((SModel) pluginModel).getSModel();
     SNode irb = ListSequence.fromList(SModelOperations.getRoots(smodel, "jetbrains.mps.lang.resources.structure.IconResourceBundle")).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode irb) {
         return "Behavior".equals(SPropertyOperations.getString(irb, "name"));
@@ -70,7 +70,7 @@ public class ExtractIconsUtil {
   }
 
   private static EditableSModel getPluginModel(Language lang) {
-    SModelDescriptor plugin = LanguageAspect.PLUGIN.get(lang);
+    SModel plugin = LanguageAspect.PLUGIN.get(lang);
     LanguageAspect aspectForModel = lang.getAspectForModel(plugin);
     return aspectForModel.getOrCreate(lang);
   }

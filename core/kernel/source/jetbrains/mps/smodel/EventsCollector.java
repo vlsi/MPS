@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -24,7 +24,7 @@ import java.util.*;
 public class EventsCollector {
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private SModelListener myListener = createCommandEventsCollector();
-  private Set<SModelDescriptor> myModelDescriptors = new LinkedHashSet<SModelDescriptor>();
+  private Set<SModel> myModelDescriptors = new LinkedHashSet<SModel>();
   private ModelAccessListener myModelAccessListener = new MyModelAccessAdapter();
   private volatile boolean myDisposed;
 
@@ -132,11 +132,11 @@ public class EventsCollector {
       }
 
       @Override
-      public void modelSaved(SModelDescriptor sm) {
+      public void modelSaved(SModel sm) {
       }
 
       @Override
-      public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
+      public void modelLoadingStateChanged(SModel sm, ModelLoadingState oldState, ModelLoadingState newState) {
       }
 
       @Override
@@ -162,14 +162,14 @@ public class EventsCollector {
     };
   }
 
-  public void add(@NotNull SModelDescriptor sm) {
+  public void add(@NotNull SModel sm) {
     checkDisposed();
     //assert !myModelDescriptors.contains(sm) : "EventsCollector was already configured to listen for changes in this model descriptor: " + sm.getSModelReference().toString();
     myModelDescriptors.add(sm);
     ((SModelInternal) sm).addModelListener(myListener);
   }
 
-  public void remove(@NotNull SModelDescriptor sm) {
+  public void remove(@NotNull SModel sm) {
     checkDisposed();
 
     myModelDescriptors.remove(sm);
@@ -197,7 +197,7 @@ public class EventsCollector {
   public void dispose() {
     checkDisposed();
 
-    for (SModelDescriptor sm : new LinkedHashSet<SModelDescriptor>(myModelDescriptors)) {
+    for (SModel sm : new LinkedHashSet<SModel>(myModelDescriptors)) {
       remove(sm);
     }
     ModelAccess.instance().removeCommandListener(myModelAccessListener);

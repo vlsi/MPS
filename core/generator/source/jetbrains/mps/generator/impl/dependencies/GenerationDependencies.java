@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.dependencies;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.textGen.TextGenManager;
@@ -233,7 +233,7 @@ public class GenerationDependencies {
       rootDependencies.add(dep);
       for (String modelReference : dep.getExternal()) {
         if (!externalHashes.containsKey(modelReference)) {
-          SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
+          SModel sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
           Map<String, String> hashes = incrementalStrategy.getModelHashes(sm, operationContext);
           String value = hashes != null ? hashes.get(GeneratableSModel.FILE) : null;
           externalHashes.put(modelReference, value);

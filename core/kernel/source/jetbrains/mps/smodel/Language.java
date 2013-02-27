@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -239,14 +239,14 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public List<SNode> getConceptDeclarations() {
-    SModelDescriptor structureModel = getStructureModelDescriptor();
+    SModel structureModel = getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptyList();
     return ((jetbrains.mps.smodel.SModel) structureModel.getSModel()).getFastNodeFinder().getNodes(SNodeUtil.concept_ConceptDeclaration, true);
   }
 
   public List<EditableSModelDescriptor> getUtilModels() {
     List<EditableSModelDescriptor> result = new ArrayList<EditableSModelDescriptor>();
-    for (SModelDescriptor md : getOwnModelDescriptors()) {
+    for (SModel md : getOwnModelDescriptors()) {
       if (SModelStereotype.getStereotype(md).equals(SModelStereotype.NONE)
         && getAspectForModel(md) == null
         && !isAccessoryModel(md.getReference())) {
@@ -256,7 +256,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return result;
   }
 
-  public SModelDescriptor getStructureModelDescriptor() {
+  public SModel getStructureModelDescriptor() {
     return LanguageAspect.STRUCTURE.get(this);
   }
 
@@ -280,7 +280,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<SNode>() {
       @Override
       public SNode compute() {
-        SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
+        SModel structureModelDescriptor = getStructureModelDescriptor();
         if (structureModelDescriptor == null) return null;
         SModel structureModel = structureModelDescriptor.getSModel();
 
@@ -323,10 +323,10 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
-  public List<SModelDescriptor> getAccessoryModels() {
-    List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
+  public List<SModel> getAccessoryModels() {
+    List<SModel> result = new LinkedList<SModel>();
     for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
+      SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }

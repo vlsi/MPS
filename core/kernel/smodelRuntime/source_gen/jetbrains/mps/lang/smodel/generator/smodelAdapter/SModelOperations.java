@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
@@ -92,8 +92,8 @@ public class SModelOperations {
   private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, boolean roots, @Nullable SNode concept) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(sModel);
-    List<SModelDescriptor> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
-    for (SModelDescriptor descriptor : modelDescriptors) {
+    List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
+    for (SModel descriptor : modelDescriptors) {
       modelsList.add(descriptor.getSModel());
     }
     List<SNode> resultNodes = new ArrayList<SNode>();

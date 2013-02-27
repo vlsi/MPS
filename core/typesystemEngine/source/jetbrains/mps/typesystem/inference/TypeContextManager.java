@@ -33,7 +33,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -63,7 +63,7 @@ public class TypeContextManager implements CoreComponent {
   private static boolean myReported = false;
 
   private final Object myLock = new Object();
-  private Set<SModelDescriptor> myListeningForModels = new THashSet<SModelDescriptor>();
+  private Set<SModel> myListeningForModels = new THashSet<SModel>();
   private Map<SNodeReference, List<TypecheckingContextHolder>> myTypeCheckingContexts =
     new THashMap<SNodeReference, List<TypecheckingContextHolder>>(); //todo cleanup on reload (temp solution)
 
@@ -91,16 +91,16 @@ public class TypeContextManager implements CoreComponent {
   };
 
   private SModelRepositoryAdapter mySModelRepositoryListener = new SModelRepositoryAdapter() {
-    public void modelDeleted(SModelDescriptor modelDescriptor) {
+    public void modelDeleted(SModel modelDescriptor) {
       myListeningForModels.remove(modelDescriptor);
     }
 
-    public void modelRemoved(SModelDescriptor modelDescriptor) {
+    public void modelRemoved(SModel modelDescriptor) {
       myListeningForModels.remove(modelDescriptor);
     }
 
-    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
-      for (SModelDescriptor md : replacedModels) {
+    public void modelsReplaced(Set<SModel> replacedModels) {
+      for (SModel md : replacedModels) {
         if (! myListeningForModels.contains(md)) {
           continue;
         }
@@ -154,7 +154,7 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public void dispose() {
-    for (SModelDescriptor model : myListeningForModels) {
+    for (SModel model : myListeningForModels) {
       ((SModelInternal) model).removeModelListener(myModelListener);
     }
     myListeningForModels.clear();
@@ -409,7 +409,7 @@ public class TypeContextManager implements CoreComponent {
 
   private void addModelListener(SNode node) {
     SModel sModel = node.getModel();
-    SModelDescriptor descriptor = sModel.getModelDescriptor();
+    SModel descriptor = sModel.getModelDescriptor();
     if (descriptor != null && !myListeningForModels.contains(descriptor)) {
       ((SModelInternal) descriptor).addModelListener(myModelListener);
       myListeningForModels.add(descriptor);

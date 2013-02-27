@@ -28,7 +28,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Iterator;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByConditionContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -140,7 +140,7 @@ public class ChildSubstituteActionsUtil {
   private static List<SNode> getAllActionsBuilders(List<Language> languages) {
     List<SNode> result = new ArrayList<SNode>();
     for (Language language : ListSequence.fromList(languages)) {
-      SModelDescriptor actionsModelDescr = LanguageAspect.ACTIONS.get(language);
+      SModel actionsModelDescr = LanguageAspect.ACTIONS.get(language);
       if (actionsModelDescr == null) {
         continue;
       }

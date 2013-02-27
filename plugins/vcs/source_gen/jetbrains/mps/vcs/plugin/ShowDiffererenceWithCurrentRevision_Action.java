@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -40,10 +40,10 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof DefaultSModelDescriptor)) {
+    if (!(((SModel) MapSequence.fromMap(_params).get("model")) instanceof DefaultSModelDescriptor)) {
       return false;
     }
-    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getSource().getFile());
+    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) ((SModel) MapSequence.fromMap(_params).get("model"))).getSource().getFile());
     if (SNodeOperations.isRoot(((SNode) MapSequence.fromMap(_params).get("node"))) && ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
       FileStatus fileStatus = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
       return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
@@ -84,7 +84,7 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      VcsActionsUtil.showRootDifference((EditableSModel) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), null);
+      VcsActionsUtil.showRootDifference((EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), null);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);
     }

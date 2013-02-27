@@ -35,7 +35,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.util.*;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
@@ -50,7 +50,7 @@ import java.util.*;
  */
 class GenerationSession {
   private final ITaskPoolProvider myTaskPoolProvider;
-  private final SModelDescriptor myOriginalInputModel;
+  private final SModel myOriginalInputModel;
   private GenerationPlan myGenerationPlan;
 
   private final IOperationContext myInvocationContext;
@@ -76,7 +76,7 @@ class GenerationSession {
             ProgressMonitor progressMonitor, GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
             IPerformanceTracer tracer, GenerationOptions generationOptions) {
     myTaskPoolProvider = taskPoolProvider;
-    myOriginalInputModel = (SModelDescriptor) inputModel;
+    myOriginalInputModel = (SModel) inputModel;
     myInvocationContext = invocationContext;
     myTransientModelsModule = transientModelsModule;
     myGenerationTracer = generationOptions.getGenerationTracer();
@@ -550,12 +550,12 @@ class GenerationSession {
   private SModel createTransientModel() {
     String longName = jetbrains.mps.util.SNodeOperations.getModelLongName(myOriginalInputModel);
     String stereotype = Integer.toString(myMajorStep + 1) + "_" + ++myMinorStep;
-    SModelDescriptor transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
+    SModel transientModel = mySessionContext.getModule().createTransientModel(longName, stereotype);
     return transientModel.getSModel();
   }
 
   private void recycleWasteModel(@NotNull SModel model) {
-    SModelDescriptor md = model.getModelDescriptor();
+    SModel md = model.getModelDescriptor();
     if (model instanceof TransientSModel) {
       ttrace.push("recycling", false);
       ((jetbrains.mps.smodel.SModel) model).disposeFastNodeFinder();

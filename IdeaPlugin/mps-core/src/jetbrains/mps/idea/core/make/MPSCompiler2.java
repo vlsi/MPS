@@ -32,7 +32,7 @@ import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.library.contributor.PluginLibrariesContributor;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -75,7 +75,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
           Module module = context.getModuleByFile(modelFile);
           modulesWithModels.add(module);
 
-          SModelDescriptor model = SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(modelFile.getPath()));
+          SModel model = SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(modelFile.getPath()));
           if (model == null || !model.isGeneratable()) continue;
 
           generationItems.add(createGenerationItem(modelFile, module, model.getSModelReference()));
@@ -122,7 +122,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
 
     context.getProgressIndicator().setText(MPSBundle.message("generating.models"));
 
-    final Map<MPSFacet, List<SModelDescriptor>> facetToModels = new java.util.HashMap<MPSFacet, List<SModelDescriptor>>();
+    final Map<MPSFacet, List<SModel>> facetToModels = new java.util.HashMap<MPSFacet, List<SModel>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -132,10 +132,10 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
             continue;
           }
 
-          List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+          List<SModel> models = new ArrayList<SModel>();
           for (VirtualFile file : e.getValue()) {
             final IFile modelFile = FileSystem.getInstance().getFileByPath(file.getPath());
-            SModelDescriptor descr = SModelFileTracker.getInstance().findModel(modelFile);
+            SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
             if (descr == null || !GenerationFacade.canGenerate(descr)) return;
 
             models.add(descr);
@@ -177,7 +177,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
     return new MyGenerationItem(module, ref, modelFile, path, generated);
   }
 
-  private void executeMPSMake(final CompileContext context, final Module module, Map<MPSFacet, List<SModelDescriptor>> facetToModels, File outputRootDir, File cachesOutputRootDir, /*out*/List<File> generatedModelFiles, /*out*/List<File> filesToRefresh) {
+  private void executeMPSMake(final CompileContext context, final Module module, Map<MPSFacet, List<SModel>> facetToModels, File outputRootDir, File cachesOutputRootDir, /*out*/List<File> generatedModelFiles, /*out*/List<File> filesToRefresh) {
     MPSMakeConfiguration makeConfiguration = new MPSMakeConfiguration();
     makeConfiguration.addProperty("OUTPUT_ROOT_DIR", outputRootDir.getAbsolutePath());
     makeConfiguration.addProperty("CACHES_OUTPUT_ROOT_DIR", cachesOutputRootDir.getAbsolutePath());
@@ -187,10 +187,10 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
       makeConfiguration.addConfiguredLibrary(library.path, new File(library.path), false);
     }
 
-    for (Map.Entry<MPSFacet, List<SModelDescriptor>> chunk : facetToModels.entrySet()) {
+    for (Map.Entry<MPSFacet, List<SModel>> chunk : facetToModels.entrySet()) {
       MPSFacet facet = chunk.getKey();
       final Set<File> modelsToMake = new HashSet<File>();
-      for (final SModelDescriptor model : chunk.getValue()) {
+      for (final SModel model : chunk.getValue()) {
         modelsToMake.add(new File(((DefaultSModelDescriptor) model).getSource().getFile().getPath()));
       }
 

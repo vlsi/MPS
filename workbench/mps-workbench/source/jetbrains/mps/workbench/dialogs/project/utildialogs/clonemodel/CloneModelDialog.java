@@ -26,7 +26,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog;
 import org.jdesktop.beansbinding.*;
 import org.jdesktop.beansbinding.AutoBinding.UpdateStrategy;
@@ -42,7 +42,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
   private SModel myCloningModel;
   private JComboBox myModelStereotype;
 
-  public CloneModelDialog(final SModelDescriptor modelDescriptor, IOperationContext operationContext) {
+  public CloneModelDialog(final SModel modelDescriptor, IOperationContext operationContext) {
     super("Clone Model " + jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor), operationContext);
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -132,7 +132,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     int i;
     for (i = 1; ; i++) {
       SModelFqName name = new SModelFqName(result + i, stereotype);
-      SModelDescriptor model = ScopeOperations.getModelDescriptor(getOperationContext().getScope(), name);
+      SModel model = ScopeOperations.getModelDescriptor(getOperationContext().getScope(), name);
       if (model == null) break;
     }
     return result + i;
@@ -172,13 +172,13 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     }
 
     final ModelRoot modelRoot = ModuleUtil.findModelRoot(module, reference.getPath());
-    final SModelDescriptor modelDescriptor = ModelAccess.instance().runWriteActionInCommand(
-      new Computable<SModelDescriptor>() {
+    final SModel modelDescriptor = ModelAccess.instance().runWriteActionInCommand(
+      new Computable<SModel>() {
         @Override
-        public SModelDescriptor compute() {
+        public SModel compute() {
           return module.createModel(modelName, modelRoot, new ModelAdjuster() {
             @Override
-            public void adjust(SModelDescriptor model) {
+            public void adjust(SModel model) {
               for (SModelReference ref : myModelProperties.getImportedModels()) {
                 ((jetbrains.mps.smodel.SModel) model.getSModel()).addModelImport(ref, false);
               }

@@ -24,7 +24,7 @@ import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.ide.findusages.model.scopes.ProjectScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -84,7 +84,7 @@ public class ScopeOptions extends BaseOptions {
     myModule = module;
   }
 
-  public FindUsagesScope getScope(IOperationContext operationContext, SModelDescriptor descriptor) {
+  public FindUsagesScope getScope(IOperationContext operationContext, SModel descriptor) {
     switch (myScopeType) {
       case GLOBAL:
         return new GlobalScope();
@@ -102,7 +102,7 @@ public class ScopeOptions extends BaseOptions {
   }
 
   @NotNull
-  public SearchQuery getResult(SNode node, IOperationContext context, SModelDescriptor modelDescriptor) {
+  public SearchQuery getResult(SNode node, IOperationContext context, SModel modelDescriptor) {
     return new SearchQuery(node, getScope(context, modelDescriptor));
   }
 

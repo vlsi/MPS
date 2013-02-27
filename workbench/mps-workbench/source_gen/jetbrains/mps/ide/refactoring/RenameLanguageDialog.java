@@ -30,7 +30,7 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class RenameLanguageDialog extends RenameDialog {
   private JCheckBox myRegenerateLanguage;
@@ -114,7 +114,7 @@ public class RenameLanguageDialog extends RenameDialog {
         ModuleContext context = new ModuleContext(myLanguage, ProjectHelper.toMPSProject(myProject));
         MakeSession sess = new MakeSession(context);
         if (IMakeService.INSTANCE.get().openNewSession(sess)) {
-          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModelDescriptor>) params.getModelDescriptors())).resources(false));
+          IMakeService.INSTANCE.get().make(sess, new ModelsToResources(context, ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) params.getModelDescriptors())).resources(false));
         }
         //         GeneratorUIFacade.getInstance().generateModels(new ModuleContext(myLanguage, myProject), params.getModelDescriptors(), GeneratorUIFacade.getInstance().getDefaultGenerationHandler(), true, false); 
       }

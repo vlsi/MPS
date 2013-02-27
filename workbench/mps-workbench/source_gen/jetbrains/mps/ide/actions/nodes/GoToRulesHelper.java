@@ -14,7 +14,7 @@ import java.util.Collections;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -67,7 +67,7 @@ public class GoToRulesHelper {
     if (typesystem == null) {
       return Collections.emptyList();
     }
-    SModel typesystemModel = ((SModelDescriptor) typesystem).getSModel();
+    SModel typesystemModel = ((SModel) typesystem).getSModel();
     if (typesystemModel == null) {
       return Collections.emptyList();
     }

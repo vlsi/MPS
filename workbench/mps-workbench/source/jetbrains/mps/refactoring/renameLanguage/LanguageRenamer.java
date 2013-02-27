@@ -26,7 +26,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 
 public class LanguageRenamer {
@@ -59,7 +59,7 @@ public class LanguageRenamer {
   }
 
   private void renameLanguage(String oldFqName) {
-    for (SModelDescriptor sm : myLanguage.getOwnModelDescriptors()) {
+    for (SModel sm : myLanguage.getOwnModelDescriptors()) {
       if (!SModelStereotype.isUserModel(sm)) continue;
       if (!(sm instanceof EditableSModel)) continue;
 
@@ -84,7 +84,7 @@ public class LanguageRenamer {
 
       String newPrefix = myNewName + oldFqName.substring(oldFqName.length());
 
-      for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
+      for (SModel sm : g.getOwnModelDescriptors()) {
         if (!SModelStereotype.isUserModel(sm)) continue;
         if (!(sm instanceof EditableSModel)) continue;
 

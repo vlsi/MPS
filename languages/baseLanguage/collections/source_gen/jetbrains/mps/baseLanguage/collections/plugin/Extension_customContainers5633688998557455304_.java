@@ -7,7 +7,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -24,7 +24,7 @@ public class Extension_customContainers5633688998557455304_ extends Extension.De
       public List<SNode> invoke() {
         List<SNode> res = new ArrayList<SNode>();
         // Find the model(s) with custom container declarations 
-        SModelDescriptor desc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("jetbrains.mps.baseLanguage.collections.custom"));
+        SModel desc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("jetbrains.mps.baseLanguage.collections.custom"));
         SModel mdl = desc.getSModel();
         if (mdl != null) {
           ListSequence.fromList(res).addSequence(ListSequence.fromList(SModelOperations.getNodes(mdl, "jetbrains.mps.baseLanguage.collections.structure.CustomContainers")));

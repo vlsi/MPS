@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,7 +28,7 @@ public class LanguageDescriptor_Behavior {
       genContext.showErrorMessage(SLinkOperations.getTarget(thisNode, "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "language", true), "namespace"));
       return true;
     }
-    SModelDescriptor ts = languageAspect.get(l);
+    SModel ts = languageAspect.get(l);
     if (ts == null) {
       return true;
     }

@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
@@ -136,7 +136,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
         SModelReference reference = SModelReference.fromString(m.group(1));
         final String name = m.group(2);
-        SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(reference);
+        SModel sm = SModelRepository.getInstance().getModelDescriptor(reference);
         if (sm == null) return null;
 
         Condition<SNode> cond = new Condition<SNode>() {
@@ -263,7 +263,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     @Override
-    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
+    public void beforeModelRemoved(SModel modelDescriptor) {
       if (!(modelDescriptor.isLoaded())) return;
 
       Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
@@ -281,8 +281,8 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     }
 
     @Override
-    public void modelsReplaced(final Set<SModelDescriptor> descriptors) {
-      for (SModelDescriptor md : descriptors) {
+    public void modelsReplaced(final Set<SModel> descriptors) {
+      for (SModel md : descriptors) {
         if (md.getReference().resolve(MPSModuleRepository.getInstance()) != md) return;
 
         for (SNode root : md.getSModel().getRootNodes()) {

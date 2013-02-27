@@ -34,7 +34,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeGroupTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -51,7 +51,7 @@ public class SModelNodeListeners implements NodeListeners {
   private MySNodeTreeUpdater myTreeUpdater;
 
   private SModelTreeNode myTreeNode;
-  private SModelDescriptor myModel;
+  private SModel myModel;
 
   private ProjectPaneTreeGenStatusUpdater myGenStatusVisitor = new ProjectPaneTreeGenStatusUpdater();
   private ProjectPaneTreeErrorChecker myErrorVisitor = new ProjectPaneTreeErrorChecker();
@@ -64,7 +64,7 @@ public class SModelNodeListeners implements NodeListeners {
     mySimpleModelListener = new MySimpleModelListener(modelNode);
     myModelRepositoryListener = new SModelRepositoryAdapter() {
       @Override
-      public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      public void modelsReplaced(Set<SModel> replacedModels) {
         if (replacedModels.contains(myModel)) {
           visitNode(modelNode);
         }
@@ -139,7 +139,7 @@ public class SModelNodeListeners implements NodeListeners {
     }
 
     @Override
-    public void modelSaved(SModelDescriptor sm) {
+    public void modelSaved(SModel sm) {
       visitNode(myModelNode);
     }
 
@@ -154,7 +154,7 @@ public class SModelNodeListeners implements NodeListeners {
   private class MySModelEventsListener implements SModelEventsListener {
     @Override
     @NotNull
-    public SModelDescriptor getModelDescriptor() {
+    public SModel getModelDescriptor() {
       return myModel;
     }
 
@@ -205,7 +205,7 @@ public class SModelNodeListeners implements NodeListeners {
     }
 
     @Override
-    public SModelDescriptor getSModelDescriptor() {
+    public SModel getSModelDescriptor() {
       return myTreeNode.getSModelDescriptor();
     }
 

@@ -29,7 +29,7 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NonNls;
@@ -146,7 +146,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        SModelDescriptor md = myFile.getNode().getModel().getModelDescriptor();
+        SModel md = myFile.getNode().getModel().getModelDescriptor();
         return md instanceof EditableSModel && ((EditableSModel) md).isChanged();
       }
     });
@@ -245,7 +245,7 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
       myIsValid = false;
       return null;
     }
-    SModelDescriptor sm = node.getModel().getModelDescriptor();
+    SModel sm = node.getModel().getModelDescriptor();
 
     IOperationContext result = new ModuleContext(sm.getModule(), ProjectHelper.toMPSProject(myProject));
     assert result.getModule() == sm.getModule() : "Different modules: " + result.getModule() + "/" + sm.getModule();

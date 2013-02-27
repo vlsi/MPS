@@ -12,7 +12,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.extapi.model.EditableSModel;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
@@ -63,8 +63,8 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final SModel memory = ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")).getSModel();
-      final SModel disk = ModelPersistence.readModel(((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).getSource().getFile(), false);
+      final SModel memory = ((SModel) MapSequence.fromMap(_params).get("modelDescriptor")).getSModel();
+      final SModel disk = ModelPersistence.readModel(((DefaultSModelDescriptor) ((SModel) MapSequence.fromMap(_params).get("modelDescriptor"))).getSource().getFile(), false);
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           new ModelDifferenceDialog(disk, memory, ((Project) MapSequence.fromMap(_params).get("project")), "Disk", "Memory").show();

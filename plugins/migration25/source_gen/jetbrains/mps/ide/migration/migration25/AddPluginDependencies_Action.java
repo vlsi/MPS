@@ -15,7 +15,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -59,7 +59,7 @@ public class AddPluginDependencies_Action extends BaseAction {
     try {
       ModuleReference standaloneRef = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("ef7bf5ac-d06c-4342-b11d-e42104eb9343")).getModuleReference();
       for (Language lang : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(Language.class))) {
-        SModelDescriptor aspect = LanguageAspect.PLUGIN.get(lang);
+        SModel aspect = LanguageAspect.PLUGIN.get(lang);
         if (aspect == null) {
           continue;
         }

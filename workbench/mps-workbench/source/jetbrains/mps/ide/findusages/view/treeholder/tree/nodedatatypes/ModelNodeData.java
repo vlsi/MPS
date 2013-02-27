@@ -25,7 +25,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jdom.Element;
@@ -62,7 +62,7 @@ public class ModelNodeData extends BaseNodeData {
 
   @Override
   public Icon getIcon() {
-    SModelDescriptor modelDescriptor = getModelDescriptor();
+    SModel modelDescriptor = getModelDescriptor();
     if (modelDescriptor != null) {
       return IconManager.getIconFor(modelDescriptor);
     }
@@ -75,12 +75,12 @@ public class ModelNodeData extends BaseNodeData {
   }
 
   public SModel getModel() {
-    SModelDescriptor modelDescriptor = getModelDescriptor();
+    SModel modelDescriptor = getModelDescriptor();
     if (modelDescriptor == null) return null;
     return modelDescriptor.getSModel();
   }
 
-  public SModelDescriptor getModelDescriptor() {
+  public SModel getModelDescriptor() {
     return SModelRepository.getInstance().getModelDescriptor(myModelReference);
   }
 

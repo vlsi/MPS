@@ -16,7 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.extapi.model.EditableSModel;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 
 /**
  * evgeny, 3/7/11
@@ -35,7 +35,7 @@ public class ReferenceUpdater {
   public void updateModelReferences() {
     ModelAccess.assertLegalWrite();
 
-    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors()) {
+    for (SModel sm : SModelRepository.getInstance().getModelDescriptors()) {
       if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(sm))) continue;
 
       SModel model = sm.getSModel();

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -32,11 +32,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ModelFindOperations {
-  private SModelDescriptor myModelDescriptor;
+  private SModel myModelDescriptor;
   private FileDataSource myDataSource;
   private boolean myNeedSearchForStrings;
 
-  public ModelFindOperations(SModelDescriptor descriptor) {
+  public ModelFindOperations(SModel descriptor) {
     myModelDescriptor = descriptor;
     DataSource source = descriptor != null ? myModelDescriptor.getSource() : null;
     myDataSource = source instanceof FileDataSource ? (FileDataSource) source : null;
@@ -53,7 +53,7 @@ public class ModelFindOperations {
     return s.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
   }
 
-  public boolean hasImportedModel(SModelDescriptor modelDescriptor) {
+  public boolean hasImportedModel(SModel modelDescriptor) {
     if (myDataSource == null) return false;
     if (myNeedSearchForStrings && !containsString(myModelDescriptor, modelDescriptor.toString()))
       return false;
@@ -78,7 +78,7 @@ public class ModelFindOperations {
     SModel model = myModelDescriptor.getSModel();
     if (model == null) return false;
 
-    for (SModelDescriptor modelDescriptor : SModelOperations.allImportedModels(model, GlobalScope.getInstance())) {
+    for (SModel modelDescriptor : SModelOperations.allImportedModels(model, GlobalScope.getInstance())) {
       if (models.contains(modelDescriptor.getReference())) {
         return true;
       }
@@ -86,7 +86,7 @@ public class ModelFindOperations {
     return false;
   }
 
-  public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {
+  public boolean containsSomeString(@NotNull SModel sm, @NotNull Set<String> strings) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     if (dsm.isChanged()) return true;
 
@@ -120,7 +120,7 @@ public class ModelFindOperations {
     return true;
   }
 
-  public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
+  public boolean containsString(@NotNull SModel modelDescriptor, @NotNull String string) {
     return containsSomeString(modelDescriptor, CollectionUtil.set(string));
   }
 }

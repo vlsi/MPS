@@ -20,7 +20,7 @@ import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import org.jetbrains.annotations.NotNull;
@@ -42,9 +42,9 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   private final SModelRepositoryAdapter mySmodelReloadListener = new SModelRepositoryAdapter() {
     @Override
-    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
-      Set<SModelDescriptor> registeredModels = new HashSet<SModelDescriptor>();
-      for (SModelDescriptor modelDescriptor : replacedModels) {
+    public void modelsReplaced(Set<SModel> replacedModels) {
+      Set<SModel> registeredModels = new HashSet<SModel>();
+      for (SModel modelDescriptor : replacedModels) {
         if (jetbrains.mps.util.SNodeOperations.isRegistered(modelDescriptor)) {
           registeredModels.add(modelDescriptor);
         }

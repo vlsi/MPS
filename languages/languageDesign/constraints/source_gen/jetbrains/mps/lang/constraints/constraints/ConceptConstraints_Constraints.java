@@ -36,7 +36,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
@@ -162,14 +162,14 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
     return LanguageAspect.CONSTRAINTS.is(model.getModelDescriptor()) || SModelStereotype.isGeneratorModel(model);
   }
 
-  private static SModel check_guz8cy_a0c0a0(SModelDescriptor checkedDotOperand) {
+  private static SModel check_guz8cy_a0c0a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }
     return null;
   }
 
-  private static SModelDescriptor check_guz8cy_a0a2a0a(Language checkedDotOperand) {
+  private static SModel check_guz8cy_a0a2a0a(Language checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getStructureModelDescriptor();
     }

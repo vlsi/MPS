@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.stubs;
 
 import jetbrains.mps.smodel.persistence.ModelRootManagerBase;
 import java.util.Collection;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.SModelRoot;
 import java.util.List;
@@ -29,8 +29,8 @@ public class JavaStubs extends ModelRootManagerBase {
   }
 
   @Override
-  public Collection<SModelDescriptor> load(@NotNull SModelRoot modelRoot) {
-    List<SModelDescriptor> result = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+  public Collection<SModel> load(@NotNull SModelRoot modelRoot) {
+    List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     IClassPathItem cp = JavaStubs.this.create(modelRoot.getPath());
     JavaStubs.this.getModelDescriptors(result, modelRoot.getPath(), cp, "", LanguageID.JAVA, modelRoot);
     return result;
@@ -46,13 +46,13 @@ public class JavaStubs extends ModelRootManagerBase {
     return null;
   }
 
-  /*package*/ void getModelDescriptors(List<SModelDescriptor> result, String startPath, IClassPathItem cp, String prefix, String languageId, ModelRoot modelRoot) {
+  /*package*/ void getModelDescriptors(List<SModel> result, String startPath, IClassPathItem cp, String prefix, String languageId, ModelRoot modelRoot) {
     for (String subpackage : cp.getSubpackages(prefix)) {
       if (cp.getRootClasses(subpackage).iterator().hasNext()) {
         SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage, languageId, modelRoot.getModule().getModuleReference());
         BaseStubModelDescriptor smd;
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
-          SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+          SModel descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
           assert descriptor instanceof BaseStubModelDescriptor;
           smd = (BaseStubModelDescriptor) descriptor;
           ListSequence.fromList(result).addElement(descriptor);

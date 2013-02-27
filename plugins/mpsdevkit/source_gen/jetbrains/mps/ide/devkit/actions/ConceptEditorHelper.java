@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.Condition;
@@ -59,7 +59,7 @@ public class ConceptEditorHelper {
     Language language = SModelUtil.getDeclaringLanguage(applicableNode);
     assert language != null : "Language shouldn't be null for " + applicableNode;
 
-    SModelDescriptor md = aspect.get(language);
+    SModel md = aspect.get(language);
     if (md == null) {
       md = aspect.createNew(language);
     }
@@ -78,7 +78,7 @@ public class ConceptEditorHelper {
     }, true).toListSequence();
   }
 
-  public static class ModelCondition implements Condition<SModelDescriptor> {
+  public static class ModelCondition implements Condition<SModel> {
     private Language myLanguage;
     private LanguageAspect myAspect;
 
@@ -88,12 +88,12 @@ public class ConceptEditorHelper {
     }
 
     @Override
-    public boolean met(SModelDescriptor modelDescriptor) {
+    public boolean met(SModel modelDescriptor) {
       return Language.getLanguageFor(modelDescriptor) == this.myLanguage && Language.getModelAspect(modelDescriptor) == this.myAspect;
     }
   }
 
-  public static class GeneratorCondition implements Condition<SModelDescriptor> {
+  public static class GeneratorCondition implements Condition<SModel> {
     private Language myLanguage;
 
     public GeneratorCondition(Language language) {
@@ -101,7 +101,7 @@ public class ConceptEditorHelper {
     }
 
     @Override
-    public boolean met(SModelDescriptor modelDescriptor) {
+    public boolean met(SModel modelDescriptor) {
       for (Generator generator : CollectionSequence.fromCollection(this.myLanguage.getGenerators())) {
         if (generator.getOwnTemplateModels().contains(modelDescriptor)) {
           return true;

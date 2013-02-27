@@ -25,7 +25,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.IFile;
@@ -41,8 +41,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class TestModule extends ClassLoadingModule {
 
   private IModule myPeer;
-  private Map<SModelFqName, SModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
-  private Map<SModelDescriptor, SModelDescriptor> myOriginalModels = new HashMap<SModelDescriptor, SModelDescriptor>();
+  private Map<SModelFqName, SModel> myModels = new ConcurrentHashMap<SModelFqName, SModel>();
+  private Map<SModel, SModel> myOriginalModels = new HashMap<SModel, SModel>();
 
   public TestModule(String namespace, String moduleId, IModule peer) {
     myPeer = peer;
@@ -88,14 +88,14 @@ public class TestModule extends ClassLoadingModule {
         && !myModels.containsKey(sModelFqName);
   }
 
-  public SModelDescriptor createModel(SModelDescriptor originalModel) {
+  public SModel createModel(SModel originalModel) {
     String stereotype = "999";
     while (!isValidName(SNodeOperations.getModelLongName(originalModel), stereotype)) {
       stereotype += "_";
     }
 
     SModelFqName fqName = new SModelFqName(SNodeOperations.getModelLongName(originalModel), stereotype);
-    SModelDescriptor result = new TestSModelDescriptor(fqName, jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel), originalModel.getSModel());
+    SModel result = new TestSModelDescriptor(fqName, jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel), originalModel.getSModel());
 
     myModels.put(result.getReference().getSModelFqName(), result);
     myOriginalModels.put(result, originalModel);
@@ -103,7 +103,7 @@ public class TestModule extends ClassLoadingModule {
     return result;
   }
 
-  public void publish(SModelDescriptor descr) {
+  public void publish(SModel descr) {
     SModelRepository.getInstance().registerModelDescriptor(descr, this);
   }
 
@@ -111,8 +111,8 @@ public class TestModule extends ClassLoadingModule {
     return "Test Transient models";
   }
 
-  public List<SModelDescriptor> getOwnModelDescriptors() {
-    return new ArrayList<SModelDescriptor>(myModels.values());
+  public List<SModel> getOwnModelDescriptors() {
+    return new ArrayList<SModel>(myModels.values());
   }
 
   protected ModuleScope createScope() {
@@ -174,9 +174,9 @@ public class TestModule extends ClassLoadingModule {
     }
 
     @Override
-    public SModelDescriptor resolveModel(SModelReference reference) {
+    public SModel resolveModel(SModelReference reference) {
       if (reference.getLongName().equals(myLongName)) {
-        SModelDescriptor descriptor = myModels.get(reference.getSModelFqName());
+        SModel descriptor = myModels.get(reference.getSModelFqName());
         if (descriptor != null) {
           return descriptor;
         }

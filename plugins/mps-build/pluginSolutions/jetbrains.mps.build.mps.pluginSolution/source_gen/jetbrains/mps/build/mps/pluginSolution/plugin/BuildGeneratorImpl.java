@@ -6,7 +6,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -86,7 +86,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   public void generate() {
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
-        SModelDescriptor descriptor = getSModelDescriptor(new EmptyProgressIndicator());
+        SModel descriptor = getSModelDescriptor(new EmptyProgressIndicator());
 
         addRequiredImports(descriptor.getSModel(), descriptor.getModule().getModuleDescriptor());
 
@@ -180,7 +180,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     ((jetbrains.mps.smodel.SModel) smodel).addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getSModel().getModelDescriptor().getReference(), false);
   }
 
-  public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {
+  public SModel getSModelDescriptor(ProgressIndicator indicator) {
     if (getCreateModel()) {
       Solution solution;
       if (getCreateSolution()) {
@@ -196,7 +196,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       indicator.setText("Creating Model...");
       return BuildGeneratorUtil.createModel(getNewModelName(), solution);
     } else {
-      return (SModelDescriptor) this.getModel();
+      return (SModel) this.getModel();
     }
   }
 
@@ -223,7 +223,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "plugins", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMPSPlugin", null));
 
     // internal base dir is a project base dir 
-    SModel targetSModel = ((SModelDescriptor) targetModelDescriptor).getSModel();
+    SModel targetSModel = ((SModel) targetModelDescriptor).getSModel();
     try {
       String relativeToModuleProjectPath = Context.defaultContext().getRelativePathHelper(targetSModel).makeRelative(myProject.getBasePath());
       SPropertyOperations.set(buildProject, "internalBaseDirectory", relativeToModuleProjectPath);

@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import javax.swing.tree.DefaultTreeModel;
 import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.tree.TreePath;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -84,7 +84,7 @@ public class EditOperandDialog extends DialogWrapper {
     MappingSelectTree.GenRefNodeData genData = new MappingSelectTree.GenRefNodeData(gen.getModuleReference());
     DefaultMutableTreeNode genNode = new DefaultMutableTreeNode(genData);
     root.add(genNode);
-    for (SModelDescriptor templateModel : gen.getOwnTemplateModels()) {
+    for (SModel templateModel : gen.getOwnTemplateModels()) {
       MappingSelectTree.ModelRefNodeData modelData = new MappingSelectTree.ModelRefNodeData(templateModel.getReference());
       DefaultMutableTreeNode modelNode = new DefaultMutableTreeNode(modelData);
       genNode.add(modelNode);

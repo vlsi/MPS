@@ -24,7 +24,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import jetbrains.mps.util.containers.MultiMap;
@@ -88,7 +88,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
       String nodeId = id == null ? elem.toString() : id.value(elem);
 
       //get all files in scope
-      ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
+      ManyToManyMap<SModel, VirtualFile> scopeFiles = new ManyToManyMap<SModel, VirtualFile>();
       for (SModel sm : models) {
         assert sm instanceof DefaultSModelDescriptor : "a non-regular model is passed to FindSupport designed for regular models";
         IFile modelFile = ((DefaultSModelDescriptor) sm).getSource().getFile();
@@ -108,7 +108,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
 
       //back-transform
       for (VirtualFile file : matchingFiles) {
-        for (SModelDescriptor m : scopeFiles.getBySecond(file)) {
+        for (SModel m : scopeFiles.getBySecond(file)) {
           result.putValue(m, elem);
         }
       }

@@ -4,7 +4,7 @@ package jetbrains.mps.samples.plainText.stubs;
 
 import jetbrains.mps.smodel.persistence.ModelRootManagerBase;
 import java.util.Collection;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.SModelRoot;
 import java.util.List;
@@ -23,8 +23,8 @@ public class PlainText extends ModelRootManagerBase {
   }
 
   @Override
-  public Collection<SModelDescriptor> load(@NotNull SModelRoot modelRoot) {
-    List<SModelDescriptor> res = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+  public Collection<SModel> load(@NotNull SModelRoot modelRoot) {
+    List<SModel> res = ListSequence.fromList(new ArrayList<SModel>());
     ListSequence.fromList(res).addElement(new TextModelDescriptor(modelRoot.getModule(), new TextModelDataSource(PlainText.this.getRootDir(modelRoot), modelRoot)));
     return res;
   }
@@ -40,7 +40,7 @@ public class PlainText extends ModelRootManagerBase {
   }
 
   @Override
-  public SModelDescriptor createModel(@NotNull SModelRoot modelRoot, @NotNull SModelFqName fqName) {
+  public SModel createModel(@NotNull SModelRoot modelRoot, @NotNull SModelFqName fqName) {
     IFile dir = PlainText.this.getRootDir(modelRoot);
     return new TextModelDescriptor(modelRoot.getModule(), new TextModelDataSource(dir, modelRoot));
   }

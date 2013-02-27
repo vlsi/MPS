@@ -15,7 +15,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
@@ -84,7 +84,7 @@ public class MoveNodes_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<SModelDescriptor> targetModelDescriptor = new Wrappers._T<SModelDescriptor>();
+      final Wrappers._T<SModel> targetModelDescriptor = new Wrappers._T<SModel>();
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -93,8 +93,8 @@ public class MoveNodes_Action extends BaseAction {
       });
       final Object newLocation = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), targetModelDescriptor.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {
         @Override
-        public boolean check(Object selectedObject, SModelDescriptor model) {
-          return selectedObject instanceof SNode || selectedObject instanceof SModelDescriptor;
+        public boolean check(Object selectedObject, SModel model) {
+          return selectedObject instanceof SNode || selectedObject instanceof SModel;
         }
       });
       if (newLocation == null) {

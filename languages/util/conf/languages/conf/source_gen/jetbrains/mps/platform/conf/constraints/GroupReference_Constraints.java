@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -57,16 +57,16 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).translate(new ITranslator2<IModule, SModelDescriptor>() {
-              public Iterable<SModelDescriptor> translate(IModule m) {
+            return Sequence.fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).translate(new ITranslator2<IModule, SModel>() {
+              public Iterable<SModel> translate(IModule m) {
                 return m.getOwnModelDescriptors();
               }
-            }).where(new IWhereFilter<SModelDescriptor>() {
-              public boolean accept(SModelDescriptor smd) {
+            }).where(new IWhereFilter<SModel>() {
+              public boolean accept(SModel smd) {
                 return !("java_stub".equals(SModelStereotype.getStereotype(smd)));
               }
-            }).translate(new ITranslator2<SModelDescriptor, SNode>() {
-              public Iterable<SNode> translate(SModelDescriptor smd) {
+            }).translate(new ITranslator2<SModel, SNode>() {
+              public Iterable<SNode> translate(SModel smd) {
                 return SModelOperations.getNodes(((SModel) smd.getSModel()), "jetbrains.mps.platform.conf.structure.Group");
               }
             });
@@ -101,16 +101,16 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return Sequence.fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).translate(new ITranslator2<IModule, SModelDescriptor>() {
-              public Iterable<SModelDescriptor> translate(IModule m) {
+            return Sequence.fromIterable(((Iterable<IModule>) operationContext.getScope().getVisibleModules())).translate(new ITranslator2<IModule, SModel>() {
+              public Iterable<SModel> translate(IModule m) {
                 return m.getOwnModelDescriptors();
               }
-            }).where(new IWhereFilter<SModelDescriptor>() {
-              public boolean accept(SModelDescriptor smd) {
+            }).where(new IWhereFilter<SModel>() {
+              public boolean accept(SModel smd) {
                 return !("java_stub".equals(SModelStereotype.getStereotype(smd)));
               }
-            }).translate(new ITranslator2<SModelDescriptor, SNode>() {
-              public Iterable<SNode> translate(SModelDescriptor smd) {
+            }).translate(new ITranslator2<SModel, SNode>() {
+              public Iterable<SNode> translate(SModel smd) {
                 return SModelOperations.getNodes(((SModel) smd.getSModel()), "jetbrains.mps.platform.conf.structure.AbstractAction");
               }
             });

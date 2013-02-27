@@ -37,7 +37,7 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.apache.log4j.Level;
@@ -292,7 +292,7 @@ public abstract class MpsWorker {
       }
       info("Read model " + modelReference);
       SModelHeader d = ModelPersistence.loadDescriptor(ifile);
-      SModelDescriptor existingDescr = SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
+      SModel existingDescr = SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
       if (existingDescr == null) {
         error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");
       } else {

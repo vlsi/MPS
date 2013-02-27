@@ -47,7 +47,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodePointer;
@@ -168,7 +168,7 @@ public class TabbedEditor extends BaseNodeEditor {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SModelDescriptor model = getCurrentNodeModel();
+        SModel model = getCurrentNodeModel();
         if (model == null) return;
         ((SModelInternal) model).removeModelListener(myModelListener);
       }
@@ -206,12 +206,12 @@ public class TabbedEditor extends BaseNodeEditor {
     }
 
     if (rootChange) {
-      SModelDescriptor model = getCurrentNodeModel();
+      SModel model = getCurrentNodeModel();
       if (model != null) {
         ((SModelInternal) model).removeModelListener(myModelListener);
       }
 
-      SModelDescriptor md = containingRoot.getModel().getModelDescriptor();
+      SModel md = containingRoot.getModel().getModelDescriptor();
       IModule module = md.getModule();
       assert module != null : md.getReference().toString() + "; node is disposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(node);
       editNode(new SNodePointer(containingRoot), new ModuleContext(module, myContext.getProject()), select);
@@ -230,7 +230,7 @@ public class TabbedEditor extends BaseNodeEditor {
     }
   }
 
-  private SModelDescriptor getCurrentNodeModel() {
+  private SModel getCurrentNodeModel() {
     SNodeReference n = getCurrentlyEditedNode();
     if (n == null) return null;
     return SModelRepository.getInstance().getModelDescriptor(n.getModelReference());

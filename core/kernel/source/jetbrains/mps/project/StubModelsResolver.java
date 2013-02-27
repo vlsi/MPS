@@ -16,7 +16,7 @@
 package jetbrains.mps.project;
 
 import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.IterableUtil;
@@ -71,17 +71,17 @@ public class StubModelsResolver {
     if (myStubModulesCache.containsKey(key)) return;
 
     IModule module = ModuleRepositoryFacade.getInstance().getModule(key.o1);
-    Set<SModelDescriptor> visibleModels = new HashSet<SModelDescriptor>(IterableUtil.asCollection(module.getScope().getModelDescriptors()));
+    Set<SModel> visibleModels = new HashSet<SModel>(IterableUtil.asCollection(module.getScope().getModelDescriptors()));
 
     fillCacheWithModels(key, visibleModels);
   }
 
-  private void fillCacheWithModels(Pair<SModuleReference, SModelFqName> key, Iterable<SModelDescriptor> models) {
+  private void fillCacheWithModels(Pair<SModuleReference, SModelFqName> key, Iterable<SModel> models) {
     if (!myStubModulesCache.containsKey(key)) {
       myStubModulesCache.put(key, new HashSet<SModelReference>());
     }
 
-    for (SModelDescriptor model : models) {
+    for (SModel model : models) {
       if (!model.getReference().getSModelFqName().equals(key.o2)) continue;
       Set<SModelReference> modelsFromCache = myStubModulesCache.get(key);
       modelsFromCache.add(model.getReference());

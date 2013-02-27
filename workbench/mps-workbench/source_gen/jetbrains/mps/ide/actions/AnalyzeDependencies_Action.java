@@ -17,7 +17,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.dependencyViewer.DependencyViewerScope;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -72,8 +72,8 @@ public class AnalyzeDependencies_Action extends BaseAction {
       final DependencyViewerScope scope = new DependencyViewerScope();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("myModels")) != null) {
-            for (SModelDescriptor model : ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("myModels"))) {
+          if (((List<SModel>) MapSequence.fromMap(_params).get("myModels")) != null) {
+            for (SModel model : ((List<SModel>) MapSequence.fromMap(_params).get("myModels"))) {
               scope.add(model);
             }
           }

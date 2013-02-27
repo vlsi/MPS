@@ -23,7 +23,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
@@ -71,9 +71,9 @@ public abstract class ChooserType<T> {
 
         @Override
         public SModelReference[] find(boolean checkboxState) {
-          List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
+          List<SModel> modelDescriptors = SModelRepository.getInstance().getModelDescriptors();
           List<SModelReference> modelReferencess = new ArrayList<SModelReference>(modelDescriptors.size());
-          for (SModelDescriptor md:modelDescriptors) modelReferencess.add(md.getReference());
+          for (SModel md:modelDescriptors) modelReferencess.add(md.getReference());
           List<SModelReference> filteredModelRefs = filter(settings, modelReferencess);
           return filteredModelRefs.toArray(new SModelReference[filteredModelRefs.size()]);
         }

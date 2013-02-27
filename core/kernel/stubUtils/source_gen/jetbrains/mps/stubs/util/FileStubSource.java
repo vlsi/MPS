@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
@@ -37,7 +37,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
   }
 
   @Override
-  public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
+  public SModel loadSModel(IModule module, SModel descriptor) {
     SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
     final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(getFile());
     new ProjectStructureBuilder(moduleDesc, getFile(), model) {
@@ -76,7 +76,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
   }
 
   @Override
-  public boolean hasModel(SModelDescriptor descriptor) {
+  public boolean hasModel(SModel descriptor) {
     return getFile() != null && getFile().exists();
   }
 }

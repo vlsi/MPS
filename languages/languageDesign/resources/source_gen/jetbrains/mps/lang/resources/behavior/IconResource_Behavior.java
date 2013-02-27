@@ -4,7 +4,7 @@ package jetbrains.mps.lang.resources.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
@@ -24,7 +24,7 @@ public class IconResource_Behavior {
   public static void virtual_generate_8974276187400030152(final SNode thisNode) {
     ModelAccess.instance().writeFilesInEDT(new Runnable() {
       public void run() {
-        SModelDescriptor model = SNodeOperations.getModel(thisNode).getModelDescriptor();
+        SModel model = SNodeOperations.getModel(thisNode).getModelDescriptor();
         String outputRoot = model.getModule().getOutputFor(model);
         IFile outputRootFile = FileSystem.getInstance().getFileByPath(outputRoot);
         IFile output = FileGenerationUtil.getDefaultOutputDir(model, outputRootFile);

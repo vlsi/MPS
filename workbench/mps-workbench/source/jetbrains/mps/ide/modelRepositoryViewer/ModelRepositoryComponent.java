@@ -31,7 +31,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -102,7 +102,7 @@ public class ModelRepositoryComponent {
 
           if (MPSCore.getInstance().isTestMode()) return;
 
-          for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getModelDescriptors())) {
+          for (SModel modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getModelDescriptors())) {
             root[0].add(new ModelTreeNode(modelDescriptor));
           }
         }
@@ -113,9 +113,9 @@ public class ModelRepositoryComponent {
     }
 
     private class ModelTreeNode extends MPSTreeNode {
-      private SModelDescriptor myModelDescriptor;
+      private SModel myModelDescriptor;
 
-      public ModelTreeNode(SModelDescriptor modelDescriptor) {
+      public ModelTreeNode(SModel modelDescriptor) {
         super(null);
         myModelDescriptor = modelDescriptor;
         setNodeIdentifier(SNodeOperations.getModelLongName(myModelDescriptor));
@@ -193,7 +193,7 @@ public class ModelRepositoryComponent {
 
     private SModelListener myModelListener = new SModelAdapter() {
       @Override
-      public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
+      public void modelLoadingStateChanged(SModel sm, ModelLoadingState oldState, ModelLoadingState newState) {
         requestUpdate();
       }
     };

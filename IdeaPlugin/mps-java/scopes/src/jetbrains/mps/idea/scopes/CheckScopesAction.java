@@ -28,7 +28,7 @@ import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
@@ -64,7 +64,7 @@ public class CheckScopesAction extends AnAction {
         long mpsTime = 0, ideaTime = 0;
         int notEqualMembersCount = 0;
 
-        SModelDescriptor descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
+        SModel descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
         for (SNode root : descriptor.getSModel().getRootNodes()) {
           if (LanguageHierarchyCache.isAssignable(root.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
             PsiClass clazz = getPsiClass(myProject, root);
@@ -123,7 +123,7 @@ public class CheckScopesAction extends AnAction {
 
   @Nullable
   private static PsiFile getFileForNode(Project project, SNode node) {
-    SModelDescriptor model = node.getModel().getModelDescriptor();
+    SModel model = node.getModel().getModelDescriptor();
     DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
     if (debugInfo == null) {
       return null;

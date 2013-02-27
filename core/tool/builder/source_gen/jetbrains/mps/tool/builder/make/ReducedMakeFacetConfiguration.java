@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.Collections;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
@@ -35,7 +35,7 @@ public class ReducedMakeFacetConfiguration {
   private List<String> writtenFiles = ListSequence.fromList(new ArrayList<String>());
   private List<String> deletedFiles = ListSequence.fromList(new ArrayList<String>());
   private List<String> keptFiles = ListSequence.fromList(new ArrayList<String>());
-  private Map<String, SModelDescriptor> sources = MapSequence.fromMap(new HashMap<String, SModelDescriptor>());
+  private Map<String, SModel> sources = MapSequence.fromMap(new HashMap<String, SModel>());
 
   public ReducedMakeFacetConfiguration(IRedirects pathRedirects) {
     this.outputPathRedirects = pathRedirects;
@@ -64,7 +64,7 @@ public class ReducedMakeFacetConfiguration {
     return ListSequence.fromList(deletedFiles).asUnmodifiable();
   }
 
-  public SModelDescriptor getSource(String filePath) {
+  public SModel getSource(String filePath) {
     return MapSequence.fromMap(sources).get(filePath);
   }
 
@@ -96,7 +96,7 @@ public class ReducedMakeFacetConfiguration {
           compileProps._1(true);
         }
 
-        Tuples._4<List<String>, List<String>, List<String>, Map<String, SModelDescriptor>> report = (Tuples._4<List<String>, List<String>, List<String>, Map<String, SModelDescriptor>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report"), Object.class);
+        Tuples._4<List<String>, List<String>, List<String>, Map<String, SModel>> report = (Tuples._4<List<String>, List<String>, List<String>, Map<String, SModel>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report"), Object.class);
         report._0(writtenFiles);
         report._1(deletedFiles);
         report._2(keptFiles);

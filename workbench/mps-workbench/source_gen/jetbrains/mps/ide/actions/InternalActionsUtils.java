@@ -22,7 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.UnregisteredNodes;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -64,12 +64,12 @@ public class InternalActionsUtils {
       public void run() {
         Iterable<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
         LOG.warning("Modules: " + Sequence.fromIterable(modules).count());
-        modelReferences.value = Sequence.fromIterable(modules).translate(new ITranslator2<IModule, SModelDescriptor>() {
-          public Iterable<SModelDescriptor> translate(IModule it) {
+        modelReferences.value = Sequence.fromIterable(modules).translate(new ITranslator2<IModule, SModel>() {
+          public Iterable<SModel> translate(IModule it) {
             return it.getOwnModelDescriptors();
           }
-        }).select(new ISelector<SModelDescriptor, SModelReference>() {
-          public SModelReference select(SModelDescriptor it) {
+        }).select(new ISelector<SModel, SModelReference>() {
+          public SModelReference select(SModel it) {
             return it.getReference();
           }
         });
@@ -148,7 +148,7 @@ public class InternalActionsUtils {
 
   private static Logger LOG = Logger.getLogger(InternalActionsUtils.class);
 
-  private static SModel check_6btuvs_a0d0a0a2a4a2(SModelDescriptor checkedDotOperand) {
+  private static SModel check_6btuvs_a0d0a0a2a4a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }

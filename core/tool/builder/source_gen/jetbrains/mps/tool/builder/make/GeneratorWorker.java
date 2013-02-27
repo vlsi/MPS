@@ -33,7 +33,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.IOperationContext;
@@ -209,14 +209,14 @@ public class GeneratorWorker extends MpsWorker {
     }));
   }
 
-  private Iterable<SModelDescriptor> getModelsToGenerate(SModule mod) {
+  private Iterable<SModel> getModelsToGenerate(SModule mod) {
     return Sequence.fromIterable(((Iterable<SModel>) mod.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return GenerationFacade.canGenerate(it);
       }
-    }).select(new ISelector<SModel, SModelDescriptor>() {
-      public SModelDescriptor select(SModel it) {
-        return (SModelDescriptor) it;
+    }).select(new ISelector<SModel, SModel>() {
+      public SModel select(SModel it) {
+        return (SModel) it;
       }
     });
   }

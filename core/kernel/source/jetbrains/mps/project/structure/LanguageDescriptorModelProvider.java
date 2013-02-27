@@ -20,7 +20,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModelId;
 
@@ -142,13 +142,13 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   }
 
   private void removeAll() {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>(myModels.values());
-    for (SModelDescriptor model : models) {
+    List<SModel> models = new ArrayList<SModel>(myModels.values());
+    for (SModel model : models) {
       removeModel(model);
     }
   }
 
-  private void removeModel(SModelDescriptor md) {
+  private void removeModel(SModel md) {
     if (myModels.remove(md.getReference()) != null) {
       SModelRepository.getInstance().removeModelDescriptor(md);
     }

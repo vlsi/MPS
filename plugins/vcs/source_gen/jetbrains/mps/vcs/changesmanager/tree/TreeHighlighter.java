@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
@@ -163,7 +163,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   private void rehighlightNode(@NotNull MPSTreeNode node, @NotNull Feature feature) {
     unhighlightNode(node);
 
-    SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(feature.getModelReference());
+    SModel model = SModelRepository.getInstance().getModelDescriptor(feature.getModelReference());
     if (model instanceof DefaultSModelDescriptor) {
       DefaultSModelDescriptor emd = (DefaultSModelDescriptor) model;
       myRegistry.getCurrentDifference(emd).setEnabled(true);
@@ -275,7 +275,7 @@ public class TreeHighlighter implements TreeMessageOwner {
 
   @Nullable
   private TreeMessage getMessage(@NotNull ModelFeature modelFeature) {
-    SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelFeature.getModelReference());
+    SModel md = SModelRepository.getInstance().getModelDescriptor(modelFeature.getModelReference());
     if (md instanceof DefaultSModelDescriptor) {
       FileStatus status = getModelFileStatus((DefaultSModelDescriptor) md, myRegistry.getProject());
       return (status == null ?
@@ -337,7 +337,7 @@ public class TreeHighlighter implements TreeMessageOwner {
     @Override
     public void fileStatusChanged(@NotNull VirtualFile file) {
       IFile ifile = VirtualFileUtils.toIFile(file);
-      SModelDescriptor emd = SModelFileTracker.getInstance().findModel(ifile);
+      SModel emd = SModelFileTracker.getInstance().findModel(ifile);
       if (emd != null) {
         rehighlightFeatureAndDescendants(new ModelFeature(emd.getReference()));
       }

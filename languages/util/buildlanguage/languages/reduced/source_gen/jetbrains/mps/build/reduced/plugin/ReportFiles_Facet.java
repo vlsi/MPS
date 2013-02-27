@@ -19,7 +19,7 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.vfs.IFile;
@@ -81,7 +81,7 @@ public class ReportFiles_Facet extends IFacet.Stub {
               ModelAccess.instance().requireWrite(new Runnable() {
                 public void run() {
                   for (TResource itr : Sequence.fromIterable(input)) {
-                    final SModelDescriptor md = itr.modelDescriptor();
+                    final SModel md = itr.modelDescriptor();
                     new DeltaReconciler(itr.delta()).visitAll(new FilesDelta.Visitor() {
                       @Override
                       public boolean acceptWritten(IFile file) {
@@ -175,12 +175,12 @@ public class ReportFiles_Facet extends IFacet.Stub {
       return 100;
     }
 
-    public static class Parameters extends MultiTuple._4<List<String>, List<String>, List<String>, Map<String, SModelDescriptor>> {
+    public static class Parameters extends MultiTuple._4<List<String>, List<String>, List<String>, Map<String, SModel>> {
       public Parameters() {
         super();
       }
 
-      public Parameters(List<String> writtenFiles, List<String> deletedFiles, List<String> keptFiles, Map<String, SModelDescriptor> sourceModels) {
+      public Parameters(List<String> writtenFiles, List<String> deletedFiles, List<String> keptFiles, Map<String, SModel> sourceModels) {
         super(writtenFiles, deletedFiles, keptFiles, sourceModels);
       }
 
@@ -196,7 +196,7 @@ public class ReportFiles_Facet extends IFacet.Stub {
         return super._2(value);
       }
 
-      public Map<String, SModelDescriptor> sourceModels(Map<String, SModelDescriptor> value) {
+      public Map<String, SModel> sourceModels(Map<String, SModel> value) {
         return super._3(value);
       }
 
@@ -212,12 +212,12 @@ public class ReportFiles_Facet extends IFacet.Stub {
         return super._2();
       }
 
-      public Map<String, SModelDescriptor> sourceModels() {
+      public Map<String, SModel> sourceModels() {
         return super._3();
       }
 
       @SuppressWarnings(value = "unchecked")
-      public ReportFiles_Facet.Target_report.Parameters assignFrom(Tuples._4<List<String>, List<String>, List<String>, Map<String, SModelDescriptor>> from) {
+      public ReportFiles_Facet.Target_report.Parameters assignFrom(Tuples._4<List<String>, List<String>, List<String>, Map<String, SModel>> from) {
         return (ReportFiles_Facet.Target_report.Parameters) super.assign(from);
       }
     }

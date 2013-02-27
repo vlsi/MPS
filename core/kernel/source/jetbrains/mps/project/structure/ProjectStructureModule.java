@@ -28,7 +28,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -196,8 +196,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   private void removeAll() {
-    List<SModelDescriptor> models = this.getOwnModelDescriptors();
-    for (SModelDescriptor model : models) {
+    List<SModel> models = this.getOwnModelDescriptors();
+    for (SModel model : models) {
       removeModel(model);
     }
   }
@@ -207,7 +207,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     return Collections.singleton(BootstrapLanguages.PROJECT);
   }
 
-  private void removeModel(SModelDescriptor md) {
+  private void removeModel(SModel md) {
     if (myModels.remove(md.getReference()) != null) {
       SModelRepository.getInstance().unRegisterModelDescriptor(md, this);
       if (md instanceof ProjectStructureSModelDescriptor) {
@@ -240,8 +240,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   @Override
-  public List<SModelDescriptor> getOwnModelDescriptors() {
-    return new ArrayList<SModelDescriptor>(myModels.values());
+  public List<SModel> getOwnModelDescriptors() {
+    return new ArrayList<SModel>(myModels.values());
   }
 
   @Override
@@ -342,7 +342,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
 
     @Override
-    public SModelDescriptor resolveModel(SModelReference reference) {
+    public SModel resolveModel(SModelReference reference) {
       return myProjectStructureModule.myModels.get(reference);
     }
   }

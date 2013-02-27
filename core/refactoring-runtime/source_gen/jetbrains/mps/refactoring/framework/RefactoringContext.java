@@ -9,7 +9,7 @@ import java.util.HashMap;
 import jetbrains.mps.findUsages.UsagesList;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
@@ -59,14 +59,14 @@ public class RefactoringContext {
   private Set<String> myTransientParameters = new HashSet<String>();
   private boolean myIsLocal = false;
   private boolean myDoesGenerateModels = false;
-  private SModelDescriptor mySelectedModel;
+  private SModel mySelectedModel;
   private SNode mySelectedNode;
   private List<SNode> mySelectedNodes = new ArrayList<SNode>();
   private IOperationContext myCurrentOperationContext;
   private IScope myCurrentScope;
   private Project mySelectedProject;
   private IModule mySelectedModule;
-  private List<SModelDescriptor> mySelectedModels;
+  private List<SModel> mySelectedModels;
   private List<IModule> mySelectedModules;
   private Map<StructureModificationData.ConceptFeature, StructureModificationData.ConceptFeature> myConceptFeatureMap = new HashMap<StructureModificationData.ConceptFeature, StructureModificationData.ConceptFeature>();
   private Map<StructureModificationData.FullNodeId, StructureModificationData.FullNodeId> myMoveMap = new HashMap<StructureModificationData.FullNodeId, StructureModificationData.FullNodeId>();
@@ -311,7 +311,7 @@ public class RefactoringContext {
 
   public void changeModelName(EditableSModel model, String newName) {
     if (LanguageAspect.STRUCTURE.is(model)) {
-      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) ((SModelDescriptor) model).getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
+      for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) ((SModel) model).getSModel()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
         this.changeFeatureName(concept, NameUtil.longNameFromNamespaceAndShortName(newName, SPropertyOperations.getString(concept, "name")), SPropertyOperations.getString(concept, "name"));
       }
     }
@@ -520,19 +520,19 @@ public class RefactoringContext {
     mySelectedNodes = selectedNodes;
   }
 
-  public SModelDescriptor getSelectedModel() {
+  public SModel getSelectedModel() {
     return mySelectedModel;
   }
 
-  public void setSelectedModel(SModelDescriptor selectedModel) {
+  public void setSelectedModel(SModel selectedModel) {
     mySelectedModel = selectedModel;
   }
 
-  public List<SModelDescriptor> getSelectedModels() {
+  public List<SModel> getSelectedModels() {
     return mySelectedModels;
   }
 
-  public void setSelectedModels(List<SModelDescriptor> selectedModels) {
+  public void setSelectedModels(List<SModel> selectedModels) {
     mySelectedModels = selectedModels;
   }
 
@@ -598,7 +598,7 @@ public class RefactoringContext {
 
               break;
             case MODEL:
-              SModelDescriptor descriptor = ((SModel) target).getModelDescriptor();
+              SModel descriptor = ((SModel) target).getModelDescriptor();
               setSelectedModel(descriptor);
               setSelectedModule(descriptor.getModule());
               break;

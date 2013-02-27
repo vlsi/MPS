@@ -22,7 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.util.*;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
@@ -126,7 +126,7 @@ public class ProjectTest {
   }
 
   private static boolean needsGeneration(IModule module) {
-    for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
+    for (SModel descriptor : module.getOwnModelDescriptors()) {
       if (jetbrains.mps.util.SNodeOperations.isGeneratable(descriptor)) return true;
     }
     return false;

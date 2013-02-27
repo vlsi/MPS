@@ -116,7 +116,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     if (myModel == null) return null;
 
-    SModelDescriptor md = myModel.getModelDescriptor();
+    org.jetbrains.mps.openapi.model.SModel md = myModel.getModelDescriptor();
     return md != null ? md : new FakeModelDescriptor(myModel);
   }
 
@@ -2021,7 +2021,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     @Override
-    public SModelDescriptor getModelDescriptor() {
+    public SModel getModelDescriptor() {
       throw new UnsupportedOperationException();
     }
 

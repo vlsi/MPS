@@ -111,7 +111,7 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    * Cast to SModelInternal in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  SModelDescriptor resolveModel(SModelReference reference);
+  SModel resolveModel(SModelReference reference);
 
   //--------------model listeners--------------------
 

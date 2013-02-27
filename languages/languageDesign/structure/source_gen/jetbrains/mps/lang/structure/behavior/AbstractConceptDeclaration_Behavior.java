@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -41,7 +41,7 @@ public class AbstractConceptDeclaration_Behavior {
     if (language == null) {
       return null;
     }
-    SModelDescriptor md = aspect.get(language);
+    SModel md = aspect.get(language);
     if (md == null) {
       return null;
     }
@@ -90,7 +90,7 @@ public class AbstractConceptDeclaration_Behavior {
       return result;
     }
     for (Generator g : language.getGenerators()) {
-      for (SModelDescriptor sd : g.getOwnTemplateModels()) {
+      for (SModel sd : g.getOwnTemplateModels()) {
         SModel m = sd.getSModel();
         for (SNode node : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
           if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false) == thisNode || SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))), "applicableConcept", false) == thisNode) {

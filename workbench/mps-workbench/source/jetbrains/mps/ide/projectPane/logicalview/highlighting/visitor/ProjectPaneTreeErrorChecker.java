@@ -26,7 +26,7 @@ import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -40,7 +40,7 @@ public class ProjectPaneTreeErrorChecker extends TreeNodeVisitor {
     List<String> errors = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       @Override
       public List<String> compute() {
-        final SModelDescriptor modelDescriptor = node.getSModelDescriptor();
+        final SModel modelDescriptor = node.getSModelDescriptor();
         if (modelDescriptor == null) return Collections.emptyList();
         if (!(modelDescriptor.isLoaded())) return Collections.emptyList();
         IOperationContext context = node.getOperationContext();

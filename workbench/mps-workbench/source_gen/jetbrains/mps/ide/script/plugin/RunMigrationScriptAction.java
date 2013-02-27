@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 
@@ -59,7 +59,7 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
     }
     myModels = new ArrayList<SModel>();
     if (e.getData(MPSCommonDataKeys.MODELS) != null) {
-      for (SModelDescriptor model : ListSequence.fromList(e.getData(MPSCommonDataKeys.MODELS))) {
+      for (SModel model : ListSequence.fromList(e.getData(MPSCommonDataKeys.MODELS))) {
         myModels.add(model);
       }
     }

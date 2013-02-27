@@ -45,7 +45,7 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -471,7 +471,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
-  public List<SModelDescriptor> getOwnModelDescriptors() {
+  public List<SModel> getOwnModelDescriptors() {
     return SModelRepository.getInstance().getModelDescriptors(this);
   }
 
@@ -797,13 +797,13 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   @Override
   @Deprecated
-  public final Collection<SModelDescriptor> getImplicitlyImportedModelsFor(SModelDescriptor sm) {
+  public final Collection<SModel> getImplicitlyImportedModelsFor(SModel sm) {
     return Collections.emptyList();
   }
 
   @Override
   @Deprecated
-  public final Collection<Language> getImplicitlyImportedLanguages(SModelDescriptor sm) {
+  public final Collection<Language> getImplicitlyImportedLanguages(SModel sm) {
     return Collections.emptyList();
   }
 

@@ -26,7 +26,7 @@ import jetbrains.mps.openapi.editor.EditorInspector;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -43,7 +43,7 @@ import java.util.List;
  */
 public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext {
   private EditorComponent myNodeEditorComponent;
-  private SModelDescriptor myModelDescriptor;
+  private SModel myModelDescriptor;
   private IOperationContext myOperationContext;
   private jetbrains.mps.openapi.editor.cells.EditorCell myContextCell;
   private List<Pair<SNode,SNodeReference>> myModelModifications = null;

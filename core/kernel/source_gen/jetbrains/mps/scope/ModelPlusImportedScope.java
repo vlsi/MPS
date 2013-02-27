@@ -5,7 +5,7 @@ package jetbrains.mps.scope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import java.util.Collection;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelOperations;
@@ -23,7 +23,7 @@ public class ModelPlusImportedScope extends Scope {
   private final boolean myRootsOnly;
   private final IScope myModuleScope;
   private final String myTargetConcept;
-  private Collection<SModelDescriptor> myModels;
+  private Collection<SModel> myModels;
 
   public ModelPlusImportedScope(SModel model, boolean rootsOnly, IScope moduleScope, String targetConcept) {
     this.myModel = model;
@@ -32,9 +32,9 @@ public class ModelPlusImportedScope extends Scope {
     this.myTargetConcept = targetConcept;
   }
 
-  public Collection<SModelDescriptor> getModels() {
+  public Collection<SModel> getModels() {
     if (myModels == null) {
-      List<SModelDescriptor> imported;
+      List<SModel> imported;
       if (myModel == null) {
         imported = Collections.emptyList();
       } else {
@@ -53,9 +53,9 @@ public class ModelPlusImportedScope extends Scope {
 
   @Override
   public SNode resolve(SNode contextNode, String refText) {
-    Collection<SModelDescriptor> models = getModels();
+    Collection<SModel> models = getModels();
     SNode result = null;
-    for (SModelDescriptor model : models) {
+    for (SModel model : models) {
       if (model == null) {
         continue;
       }
@@ -95,9 +95,9 @@ public class ModelPlusImportedScope extends Scope {
 
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
-    Collection<SModelDescriptor> models = getModels();
+    Collection<SModel> models = getModels();
     List<SNode> result = new ArrayList<SNode>();
-    for (SModelDescriptor model : models) {
+    for (SModel model : models) {
       if (model == null) {
         continue;
       }

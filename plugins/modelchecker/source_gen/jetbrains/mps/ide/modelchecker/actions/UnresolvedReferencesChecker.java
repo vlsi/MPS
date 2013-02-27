@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
@@ -102,7 +102,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     return null;
   }
 
-  private static IModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModelDescriptor checkedDotOperand) {
+  private static IModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

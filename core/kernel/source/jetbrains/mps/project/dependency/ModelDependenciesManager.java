@@ -19,7 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -118,9 +118,9 @@ public class ModelDependenciesManager {
 
   private class MySModelWatcher extends SModelAdapter {
 
-    private SModelDescriptor mySModelDescriptor;
+    private SModel mySModelDescriptor;
 
-    private MySModelWatcher(SModelDescriptor sModelDescriptor) {
+    private MySModelWatcher(SModel sModelDescriptor) {
       mySModelDescriptor = sModelDescriptor;
       registerSelf();
     }

@@ -10,7 +10,7 @@ import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
 import java.util.HashMap;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -42,7 +42,7 @@ public class LanguageErrorsComponent {
   private Set<SNode> myInvalidation = new HashSet<SNode>();
   private LanguageErrorsComponent.MyModelListener myModelListener = new LanguageErrorsComponent.MyModelListener();
   private LanguageErrorsComponent.MyModelRepositoryListener myModelRepositoryListener = new LanguageErrorsComponent.MyModelRepositoryListener();
-  private Set<SModelDescriptor> myListenedModels = new HashSet<SModelDescriptor>();
+  private Set<SModel> myListenedModels = new HashSet<SModel>();
   private boolean myCheckedRoot = false;
   private SNode myCurrentNode = null;
   private SNode myRoot;
@@ -58,7 +58,7 @@ public class LanguageErrorsComponent {
   }
 
   private void removeModelListener() {
-    for (SModelDescriptor modelDescriptor : myListenedModels) {
+    for (SModel modelDescriptor : myListenedModels) {
       ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
     }
     SetSequence.fromSet(myListenedModels).clear();
@@ -124,7 +124,7 @@ public class LanguageErrorsComponent {
     SetSequence.fromSet(reporters).addElement(reporter);
   }
 
-  private void addModelListener(SModelDescriptor modelDescriptor) {
+  private void addModelListener(SModel modelDescriptor) {
     if (modelDescriptor == null) {
       return;
     }
@@ -245,7 +245,7 @@ public class LanguageErrorsComponent {
     }
   }
 
-  public void processModelRemoved(SModelDescriptor modelDescriptor) {
+  public void processModelRemoved(SModel modelDescriptor) {
     SetSequence.fromSet(myListenedModels).removeElement(modelDescriptor);
   }
 
@@ -338,12 +338,12 @@ public class LanguageErrorsComponent {
     }
 
     @Override
-    public void modelRemoved(SModelDescriptor descriptor) {
+    public void modelRemoved(SModel descriptor) {
       processModelRemoved(descriptor);
     }
 
     @Override
-    public void modelDeleted(SModelDescriptor descriptor) {
+    public void modelDeleted(SModel descriptor) {
       processModelRemoved(descriptor);
     }
   }
@@ -355,14 +355,14 @@ public class LanguageErrorsComponent {
     return null;
   }
 
-  private static IModule check_29uvfh_a0a7a12(SModelDescriptor checkedDotOperand) {
+  private static IModule check_29uvfh_a0a7a12(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_29uvfh_a0a0h0v(SModel checkedDotOperand) {
+  private static SModel check_29uvfh_a0a0h0v(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

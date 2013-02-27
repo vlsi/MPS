@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.smodel.EventsCollector;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,7 +31,7 @@ public class SModelEventsDispatcher {
   private static SModelEventsDispatcher myInstance;
 
   private EventsCollector myEventsCollector;
-  private Map<SModelDescriptor, Set<SModelEventsListener>> myDescriptorsToListenersMap = new HashMap<SModelDescriptor, Set<SModelEventsListener>>();
+  private Map<SModel, Set<SModelEventsListener>> myDescriptorsToListenersMap = new HashMap<SModel, Set<SModelEventsListener>>();
 
   public static SModelEventsDispatcher getInstance() {
     if (myInstance == null) {
@@ -41,7 +41,7 @@ public class SModelEventsDispatcher {
   }
 
   public void registerListener(SModelEventsListener l) {
-    SModelDescriptor modelDescriptor = l.getModelDescriptor();
+    SModel modelDescriptor = l.getModelDescriptor();
     Set<SModelEventsListener> listeners = myDescriptorsToListenersMap.get(modelDescriptor);
     if (listeners == null) {
       listeners = new HashSet();
@@ -52,7 +52,7 @@ public class SModelEventsDispatcher {
   }
 
   public void unregisterListener(SModelEventsListener l) {
-    SModelDescriptor modelDescriptor = l.getModelDescriptor();
+    SModel modelDescriptor = l.getModelDescriptor();
     Set<SModelEventsListener> listeners = myDescriptorsToListenersMap.get(modelDescriptor);
     assert listeners != null : "specified listener was not registered";
     listeners.remove(l);
@@ -80,7 +80,7 @@ public class SModelEventsDispatcher {
   public interface SModelEventsListener {
 
     @NotNull
-    SModelDescriptor getModelDescriptor();
+    SModel getModelDescriptor();
 
     void eventsHappened(List<SModelEvent> events);
   }
@@ -90,9 +90,9 @@ public class SModelEventsDispatcher {
 
     @Override
     protected void eventsHappened(List<SModelEvent> events) {
-      Map<SModelDescriptor, List<SModelEvent>> descriptorsToEventsMap = new HashMap<SModelDescriptor, List<SModelEvent>>();
+      Map<SModel, List<SModelEvent>> descriptorsToEventsMap = new HashMap<SModel, List<SModelEvent>>();
       for (SModelEvent event : events) {
-        SModelDescriptor descriptor = event.getModelDescriptor();
+        SModel descriptor = event.getModelDescriptor();
         List<SModelEvent> collectedEvents = descriptorsToEventsMap.get(descriptor);
         if (collectedEvents == null) {
           collectedEvents = new ArrayList();
@@ -100,7 +100,7 @@ public class SModelEventsDispatcher {
         }
         collectedEvents.add(event);
       }
-      for (Entry<SModelDescriptor, List<SModelEvent>> entry : descriptorsToEventsMap.entrySet()) {
+      for (Entry<SModel, List<SModelEvent>> entry : descriptorsToEventsMap.entrySet()) {
         Set<SModelEventsListener> listeners = myDescriptorsToListenersMap.get(entry.getKey());
         if (listeners != null) {
           for (SModelEventsListener listener : listeners) {

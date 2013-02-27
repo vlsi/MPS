@@ -61,7 +61,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.wm.WindowManager;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class RootDifferenceDialog extends DialogWrapper implements DataProvider {
   private ModelChangeSet myChangeSet;
@@ -358,7 +358,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     return null;
   }
 
-  private static SModel check_vu2gar_a0a0g0a7a23(SModelDescriptor checkedDotOperand) {
+  private static SModel check_vu2gar_a0a0g0a7a23(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }

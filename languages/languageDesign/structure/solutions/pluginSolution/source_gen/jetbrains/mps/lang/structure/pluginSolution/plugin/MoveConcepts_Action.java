@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -107,8 +107,8 @@ public class MoveConcepts_Action extends BaseAction {
       }
       final SModelReference targetModel;
       List<SModelReference> myModels;
-      myModels = ListSequence.fromList(((List<SModelDescriptor>) (SModelRepository.getInstance().getModelDescriptors()))).select(new ISelector<SModelDescriptor, SModelReference>() {
-        public SModelReference select(SModelDescriptor it) {
+      myModels = ListSequence.fromList(((List<SModel>) (SModelRepository.getInstance().getModelDescriptors()))).select(new ISelector<SModel, SModelReference>() {
+        public SModelReference select(SModel it) {
           return it.getReference();
         }
       }).where(new IWhereFilter<SModelReference>() {

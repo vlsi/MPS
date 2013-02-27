@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -305,7 +305,7 @@ public class LanguageHierarchyCache implements CoreComponent {
       @Override
       public void run() {
         for (Language language : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-          SModelDescriptor structureDescriptor = language.getStructureModelDescriptor();
+          SModel structureDescriptor = language.getStructureModelDescriptor();
           if (structureDescriptor == null) continue;
           Iterable<SNode> iterable =
             new ConditionalIterable<SNode>(

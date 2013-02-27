@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class GenerationResult implements IClassesData {
   private SNode myNode;
@@ -37,8 +37,8 @@ public class GenerationResult implements IClassesData {
     return myContext;
   }
 
-  public SModelDescriptor getModelDescriptor() {
-    return (SModelDescriptor) myModel;
+  public SModel getModelDescriptor() {
+    return (SModel) myModel;
   }
 
   public boolean isSuccessful() {

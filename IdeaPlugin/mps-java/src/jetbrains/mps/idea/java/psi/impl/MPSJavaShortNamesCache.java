@@ -38,7 +38,7 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
@@ -76,7 +76,7 @@ public class MPSJavaShortNamesCache extends PsiShortNamesCache {
         @Override
         public void run() {
 
-          for (SModelDescriptor model : SModelRepository.getInstance().getModelDescriptors(facetSolution)) {
+          for (SModel model : SModelRepository.getInstance().getModelDescriptors(facetSolution)) {
             for (SNode root : model.getRootNodes()) {
               for (SNode claz : SNodeOperations.getAncestors(root, "jetbrains.mps.baseLanguage.structure.Classifier", true)) {
                 PsiElement psiElem = MPSPsiProvider.getInstance(scope.getProject()).getPsi(claz);
