@@ -48,5 +48,9 @@ do
      -e 's/new SModel(/new jetbrains\.mps\.smodel\.SModel(/g' \
      -e 's/\([^\.]\)SModel\.ImportElement/\1jetbrains\.mps\.smodel\.SModel\.ImportElement/g' \
      -e 's/(ABCDE)/(jetbrains\.mps\.smodel\.SModel)/g' \
+\
+     -e 's/import jetbrains\.mps\.smodel\.SModelDescriptor;/import org\.jetbrains\.mps\.openapi\.model\.SModel;/g' \
+     -e 's/extends SModelDescriptor/extends jetbrains\.mps\.smodel\.SModelDescriptor/g' \
+     -e 's/\([^a-zA-Z\.]\)SModelDescriptor\([^a-zA-Z]\)/\1SModel\2/g' \
     $fl
 done
