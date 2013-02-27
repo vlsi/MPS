@@ -20,6 +20,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -2051,7 +2052,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     @Override
-    public SModule getModule() {
+    public IModule getModule() {
       return null;
     }
 

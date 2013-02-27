@@ -45,7 +45,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.model.util.NodesIterator;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
@@ -122,7 +121,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   @Override
-  public SModule getModule() {
+  public IModule getModule() {
     SModelDescriptor md = getModelDescriptor();
     return md == null ? null : md.getModule();
   }

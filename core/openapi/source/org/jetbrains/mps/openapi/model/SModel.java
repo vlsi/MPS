@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -60,7 +61,7 @@ public interface SModel {
   /**
    * Retrieves the owning module
    */
-  SModule getModule();
+  IModule getModule();
 
   boolean isReadOnly();
 
