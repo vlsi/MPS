@@ -1627,7 +1627,7 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1613125646032871422" resolveInfo="myModule" />
                               </node>
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5149305731183885538">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dcreateModel(java%dlang%dString,org%djetbrains%dmps%dopenapi%dpersistence%dModelRoot,jetbrains%dmps%dproject%dIModule$ModelAdjuster)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="createModel" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dcreateModel(java%dlang%dString,org%djetbrains%dmps%dopenapi%dpersistence%dModelRoot,jetbrains%dmps%dproject%dIModule$ModelAdjuster)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="createModel" />
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6696746041597121602">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5149305731183885524" resolveInfo="fqName" />
                                 </node>
@@ -1676,7 +1676,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1528219416041813558">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1528219416041813559">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9ww.~ModelPropertiesConfigurable%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSModelDescriptor,jetbrains%dmps%dsmodel%dIOperationContext)" resolveInfo="ModelPropertiesConfigurable" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9ww.~ModelPropertiesConfigurable%d&lt;init&gt;(org%djetbrains%dmps%dopenapi%dmodel%dSModel,jetbrains%dmps%dsmodel%dIOperationContext)" resolveInfo="ModelPropertiesConfigurable" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8630147074989772135">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1613125646032871447" resolveInfo="myResult" />
                 </node>

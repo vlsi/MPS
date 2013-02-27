@@ -791,7 +791,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7705742079275758004" resolveInfo="projectPane" />
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7705742079275758065">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gcfa.~ProjectPane%dselectModel(jetbrains%dmps%dsmodel%dSModelDescriptor,boolean)%cvoid" resolveInfo="selectModel" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gcfa.~ProjectPane%dselectModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel,boolean)%cvoid" resolveInfo="selectModel" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7705742079275758066">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7705742079275758045" resolveInfo="model" />
                       </node>

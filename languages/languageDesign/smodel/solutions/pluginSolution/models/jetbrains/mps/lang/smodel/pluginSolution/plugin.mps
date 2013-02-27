@@ -75,13 +75,13 @@
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690967691224" />
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8418469470840880071">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToSNodeOpenAPI" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to node OpenAPI" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8418469470841235721">
       <property name="name" nameId="tpck.1169194664001" value="Migrations30" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1204991940915" value="Migrations 3.0" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7949796796600715200">
@@ -89,8 +89,8 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1719872688913296344">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToNewSNodeMethods" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to new SNode methods" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7039601390004640869">
       <property name="name" nameId="tpck.1169194664001" value="ApiTransformations" />
@@ -100,38 +100,38 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5636695426879360410">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToNewSNodeAccess" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to new SNodeAccess (one pass only!)" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1478877201356791037">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToSNodeIdOpenAPI" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to node id OpenAPI" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6941165737436787361">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToSNodeReferenceOpenAPI" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to node reference OpenAPI" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7000238517768078573">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToSReferenceOpenAPI" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to sreference OpenAPI" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6785851103865251180">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToSModelIdOpenAPI" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to model id OpenAPI" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to model id OpenAPI" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="9012587759412831851">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToSModelOpenAPI" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to model OpenAPI" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5848582975480817267">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToSModelDescriptorOpenAPI" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
       <property name="caption" nameId="tp4k.1205250923097" value="Migrate to model descriptor OpenAPI" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
     </node>
   </roots>
   <root id="5487985028841902721">
@@ -251,7 +251,7 @@
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~SModelRepository" resolveInfo="SModelRepository" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841902778">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(org%djetbrains%dmps%dopenapi%dmodel%dSModelReference)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModelDescriptor" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5487985028841902779">
                               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelReference%dfromString(java%dlang%dString)%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="fromString" />
                               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
@@ -7380,7 +7380,7 @@
                           </node>
                           <node role="expression" roleId="tpee.1070534934092" type="pxpg.CheckedDotExpression" typeId="pxpg.4079382982702596667" id="7039601390004648057">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7039601390004648075">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7039601390004648058">
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7039601390004648074">
@@ -10030,7 +10030,7 @@
                   <node role="operand" roleId="tpee.1197027771414" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="4910195192873128662">
                     <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4910195192873128663">
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4910195192873128664">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNodePointer%dgetModel()%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModel" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNodePointer%dgetModel()%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModel" />
                       </node>
                       <node role="operand" roleId="tpee.1197027771414" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4910195192873128665">
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4910195192873128666">
@@ -13304,7 +13304,7 @@
                             </node>
                             <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5848582975469235670">
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5848582975469235671">
-                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
+                                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
                               </node>
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5848582975469235672">
                                 <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5848582975469235673">
@@ -13565,7 +13565,7 @@
                       <node role="replacementNode" roleId="tp25.1140131861877" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5848582975483069971">
                         <node role="quotedNode" roleId="tp3r.1196350785114" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5848582975483069972">
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5848582975483069973">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SModel%dgetModule()%cjetbrains%dmps%dproject%dIModule" resolveInfo="getModule" />
                           </node>
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="5848582975483069974">
                             <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="5848582975483069975">

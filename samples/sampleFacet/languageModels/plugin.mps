@@ -117,7 +117,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5590401931537536755">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~DefaultGenerationParametersProvider%daddParameter(jetbrains%dmps%dsmodel%dSModelDescriptor,java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="addParameter" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~DefaultGenerationParametersProvider%daddParameter(org%djetbrains%dmps%dopenapi%dmodel%dSModel,java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="addParameter" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5590401931537536756">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5590401931537536759" resolveInfo="smd" />
                               </node>
@@ -151,7 +151,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7937398471886840727">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~DefaultGenerationParametersProvider%daddParameter(jetbrains%dmps%dsmodel%dSModelDescriptor,java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="addParameter" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~DefaultGenerationParametersProvider%daddParameter(org%djetbrains%dmps%dopenapi%dmodel%dSModel,java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="addParameter" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1345172589086054456">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5590401931537536759" resolveInfo="smd" />
                               </node>
@@ -185,7 +185,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8014813979421756091">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~DefaultGenerationParametersProvider%daddParameter(jetbrains%dmps%dsmodel%dSModelDescriptor,java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="addParameter" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y5px.~DefaultGenerationParametersProvider%daddParameter(org%djetbrains%dmps%dopenapi%dmodel%dSModel,java%dlang%dString,java%dlang%dObject)%cvoid" resolveInfo="addParameter" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8014813979421756092">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5590401931537536759" resolveInfo="smd" />
                               </node>

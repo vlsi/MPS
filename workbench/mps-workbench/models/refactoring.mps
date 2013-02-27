@@ -4270,7 +4270,7 @@
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2270577049313323323" resolveInfo="myHelper" />
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2270577049313342691">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eqee.~ProjectTreeFindHelper%dfindMostSuitableModelTreeNode(jetbrains%dmps%dsmodel%dSModelDescriptor)%cjetbrains%dmps%dide%dui%dsmodel%dSModelTreeNode" resolveInfo="findMostSuitableModelTreeNode" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="eqee.~ProjectTreeFindHelper%dfindMostSuitableModelTreeNode(org%djetbrains%dmps%dopenapi%dmodel%dSModel)%cjetbrains%dmps%dide%dui%dsmodel%dSModelTreeNode" resolveInfo="findMostSuitableModelTreeNode" />
                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="4366542054834708880">
                                           <node role="expression" roleId="tpee.1079359253376" type="tpee.CastExpression" typeId="tpee.1070534934090" id="4366542054834708881">
                                             <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4366542054834708883">

@@ -13437,7 +13437,7 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetInstance()%cjetbrains%dmps%dsmodel%dSModelRepository" resolveInfo="getInstance" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5646944109420332263">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(jetbrains%dmps%dsmodel%dSModelFqName)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="getModelDescriptor" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SModelRepository%dgetModelDescriptor(jetbrains%dmps%dsmodel%dSModelFqName)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="getModelDescriptor" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5646944109420332264">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420332254" resolveInfo="sModelFqName" />
                 </node>
@@ -13618,7 +13618,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5646944109420331689" resolveInfo="myModule" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8890409944291607337">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dcreateModel(java%dlang%dString,org%djetbrains%dmps%dopenapi%dpersistence%dModelRoot,jetbrains%dmps%dproject%dIModule$ModelAdjuster)%cjetbrains%dmps%dsmodel%dSModelDescriptor" resolveInfo="createModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dcreateModel(java%dlang%dString,org%djetbrains%dmps%dopenapi%dpersistence%dModelRoot,jetbrains%dmps%dproject%dIModule$ModelAdjuster)%corg%djetbrains%dmps%dopenapi%dmodel%dSModel" resolveInfo="createModel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8811637033171584231">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1023591392840705492" resolveInfo="packageName" />
                 </node>

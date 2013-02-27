@@ -64,8 +64,8 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6812098398776640299">
       <property name="name" nameId="tpck.1169194664001" value="ChangeMethodSignature" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
       <property name="caption" nameId="tp4k.1205250923097" value="ChangeMethodSignature" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6812098398776640439">
       <property name="name" nameId="tpck.1169194664001" value="ChangeMethodSignatureDialog" />
@@ -80,8 +80,8 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6930463558351181264">
       <property name="name" nameId="tpck.1169194664001" value="NewModelFromSource" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Models from Java Sources" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Actions" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Models from Java Sources" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="6930463558351181815">
       <property name="name" nameId="tpck.1169194664001" value="ModelNewActions" />
@@ -2433,7 +2433,7 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6930463558351181607">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gcfa.~ProjectPane%dselectModel(jetbrains%dmps%dsmodel%dSModelDescriptor,boolean)%cvoid" resolveInfo="selectModel" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="gcfa.~ProjectPane%dselectModel(org%djetbrains%dmps%dopenapi%dmodel%dSModel,boolean)%cvoid" resolveInfo="selectModel" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6930463558351181608">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6930463558351181598" resolveInfo="modelDescriptor" />
                   </node>
