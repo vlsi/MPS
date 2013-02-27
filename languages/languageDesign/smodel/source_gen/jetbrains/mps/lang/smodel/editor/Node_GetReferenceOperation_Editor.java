@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
@@ -105,8 +106,8 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "The 'reference' operation");
     editorCell.setCellId("Constant_utw2vv_a0_0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

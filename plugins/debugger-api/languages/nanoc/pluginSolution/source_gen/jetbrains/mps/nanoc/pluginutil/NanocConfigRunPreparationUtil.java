@@ -35,7 +35,7 @@ public class NanocConfigRunPreparationUtil {
         sourceFileName.value = SPropertyOperations.getString(sourceFileNode, "name");
       }
     });
-    String packageName = NameUtil.pathFromNamespace(descriptor.getLongName());
+    String packageName = NameUtil.pathFromNamespace(jetbrains.mps.util.SNodeOperations.getModelLongName(descriptor));
     File modelSourceFolder = new File(module.getOutputPath() + File.separator + packageName);
     File modelClassesFolder = new File(module.getFacet(JavaModuleFacet.class).getClassesGen().getPath() + File.separator + packageName);
     File f = new File(modelSourceFolder, sourceFileName.value + ".c");

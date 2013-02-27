@@ -164,7 +164,7 @@
   <root nodeRef="r:3decc57d-6015-4d6c-ad86-7f2134c013b6(jetbrains.mps.ide.findusages.findalgorithm.finders.specific)/7228605397000826824">
     <nodeInfo nodeId="7228605397000826897" fileName="AspectMethodsFinder.java" startLine="31" startPosition="80" endLine="32" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7228605397000826907" fileName="AspectMethodsFinder.java" startLine="32" startPosition="139" endLine="33" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7228605397000827103" fileName="AspectMethodsFinder.java" startLine="38" startPosition="86" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7228605397000827103" fileName="AspectMethodsFinder.java" startLine="38" startPosition="102" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7228605397000826924" fileName="AspectMethodsFinder.java" startLine="43" startPosition="7" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7228605397000826943" fileName="AspectMethodsFinder.java" startLine="46" startPosition="47" endLine="47" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7228605397000826950" fileName="AspectMethodsFinder.java" startLine="49" startPosition="5" endLine="50" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -208,7 +208,7 @@
     <scopeInfo nodeId="7228605397000826887" fileName="AspectMethodsFinder.java" startLine="27" startPosition="32" endLine="27" endPosition="32" />
     <scopeInfo nodeId="7228605397000827012" fileName="AspectMethodsFinder.java" startLine="74" startPosition="34" endLine="74" endPosition="34" />
     <scopeInfo nodeId="7228605397000827084" fileName="AspectMethodsFinder.java" startLine="110" startPosition="36" endLine="110" endPosition="36" />
-    <scopeInfo nodeId="7228605397000827102" fileName="AspectMethodsFinder.java" startLine="38" startPosition="86" endLine="39" endPosition="67" />
+    <scopeInfo nodeId="7228605397000827102" fileName="AspectMethodsFinder.java" startLine="38" startPosition="102" endLine="39" endPosition="67" />
     <scopeInfo nodeId="7228605397000826942" fileName="AspectMethodsFinder.java" startLine="46" startPosition="47" endLine="47" endPosition="48" />
     <scopeInfo nodeId="7228605397000826996" fileName="AspectMethodsFinder.java" startLine="60" startPosition="59" endLine="61" endPosition="40" />
     <scopeInfo nodeId="7228605397000827005" fileName="AspectMethodsFinder.java" startLine="65" startPosition="34" endLine="66" endPosition="28" />

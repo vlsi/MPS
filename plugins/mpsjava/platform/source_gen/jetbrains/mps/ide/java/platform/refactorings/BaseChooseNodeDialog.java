@@ -76,11 +76,11 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
     ModelTreeNode rootNode = new ModelTreeNode("Root");
     for (SModelDescriptor descriptor : SetSequence.fromSet(myVisibleModels).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return !(SModelStereotype.isStubModelStereotype(it.getStereotype()));
+        return !(SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(it)));
       }
     }).sort(new ISelector<SModelDescriptor, String>() {
       public String select(SModelDescriptor it) {
-        return it.getSModelReference().toString();
+        return it.getReference().toString();
       }
     }, true)) {
       rootNode.add(ModelTreeBuilder.createSModelTreeNode(descriptor));

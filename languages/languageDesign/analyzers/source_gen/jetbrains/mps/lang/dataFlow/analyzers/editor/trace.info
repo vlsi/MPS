@@ -1468,220 +1468,220 @@
     <unitInfo nodeId="4746038179140586941" fileName="Analyzer_Editor.java" startLine="32" startPosition="0" endLine="428" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.Analyzer_Editor" />
   </root>
   <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/4943044633101738905">
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="39" startPosition="89" endLine="40" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="40" startPosition="99" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="41" startPosition="48" endLine="42" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="41" startPosition="48" endLine="42" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="42" startPosition="81" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="42" startPosition="81" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="44" startPosition="80" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="44" startPosition="80" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="50" startPosition="88" endLine="51" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="51" startPosition="93" endLine="52" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="52" startPosition="47" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="53" startPosition="34" endLine="54" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="54" startPosition="65" endLine="55" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="55" startPosition="40" endLine="56" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="56" startPosition="34" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="60" startPosition="88" endLine="61" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="61" startPosition="87" endLine="62" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="62" startPosition="47" endLine="63" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="63" startPosition="34" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="67" startPosition="87" endLine="68" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="68" startPosition="81" endLine="69" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="69" startPosition="32" endLine="70" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="70" startPosition="45" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="71" startPosition="26" endLine="72" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="72" startPosition="88" endLine="73" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="73" startPosition="58" endLine="74" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="74" startPosition="73" endLine="75" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="75" startPosition="57" endLine="76" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="77" startPosition="35" endLine="78" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="78" startPosition="72" endLine="79" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="79" startPosition="78" endLine="80" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="81" startPosition="10" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="86" startPosition="33" endLine="87" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="90" startPosition="69" endLine="91" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="94" startPosition="81" endLine="95" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="98" startPosition="92" endLine="99" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="99" startPosition="84" endLine="100" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="100" startPosition="31" endLine="101" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="101" startPosition="44" endLine="102" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="102" startPosition="33" endLine="103" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="103" startPosition="28" endLine="104" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="104" startPosition="60" endLine="105" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="105" startPosition="44" endLine="106" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="106" startPosition="75" endLine="107" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="107" startPosition="59" endLine="108" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="109" startPosition="37" endLine="110" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="110" startPosition="74" endLine="111" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="111" startPosition="80" endLine="112" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="113" startPosition="12" endLine="114" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="118" startPosition="88" endLine="119" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="119" startPosition="88" endLine="120" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="120" startPosition="47" endLine="121" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="121" startPosition="34" endLine="122" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="122" startPosition="65" endLine="123" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="123" startPosition="40" endLine="124" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="124" startPosition="34" endLine="125" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="128" startPosition="88" endLine="129" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="129" startPosition="82" endLine="130" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="130" startPosition="29" endLine="131" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="131" startPosition="42" endLine="132" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="132" startPosition="26" endLine="133" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="133" startPosition="58" endLine="134" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="134" startPosition="44" endLine="135" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="135" startPosition="34" endLine="136" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="136" startPosition="59" endLine="137" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="137" startPosition="63" endLine="138" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="138" startPosition="40" endLine="139" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="139" startPosition="214" endLine="140" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="140" startPosition="57" endLine="141" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="142" startPosition="35" endLine="143" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="143" startPosition="72" endLine="144" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="144" startPosition="78" endLine="145" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="146" startPosition="10" endLine="147" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738919" fileName="ConceptCondition_Editor.java" startLine="154" startPosition="129" endLine="155" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738925" fileName="ConceptCondition_Editor.java" startLine="156" startPosition="172" endLine="157" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4943044633101738934" fileName="ConceptCondition_Editor.java" startLine="157" startPosition="134" endLine="158" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738954" fileName="ConceptCondition_Editor.java" startLine="159" startPosition="14" endLine="160" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4943044633101738960" fileName="ConceptCondition_Editor.java" startLine="161" startPosition="7" endLine="162" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="151" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptCondition_name_postfixCellMenu_hrb2do_a0e0#()V" />
-    <nodeInfo nodeId="4943044633101738952" fileName="ConceptCondition_Editor.java" startLine="159" startPosition="12" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_hrb2do_a2a#()V" />
-    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="60" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_hrb2do_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="76" startPosition="59" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="108" startPosition="61" endLine="114" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="141" startPosition="59" endLine="147" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4943044633101738923" fileName="ConceptCondition_Editor.java" startLine="155" startPosition="26" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="50" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_hrb2do_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="118" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_hrb2do_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="39" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_hrb2do_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="154" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPostfixes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="67" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_hrb2do_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="98" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_hrb2do_a0c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="128" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_hrb2do_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="151" startPosition="64" endLine="151" endPosition="64" />
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" />
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="41" startPosition="48" endLine="42" endPosition="81" />
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="42" startPosition="81" endLine="43" endPosition="81" />
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="80" />
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="44" startPosition="80" endLine="45" endPosition="81" />
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" />
-    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="86" startPosition="33" endLine="87" endPosition="14" />
-    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="90" startPosition="69" endLine="91" endPosition="67" />
-    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="94" startPosition="81" endLine="95" endPosition="66" />
-    <scopeInfo nodeId="4943044633101738953" fileName="ConceptCondition_Editor.java" startLine="159" startPosition="14" endLine="160" endPosition="64" />
-    <scopeInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="151" startPosition="0" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="4943044633101738924" fileName="ConceptCondition_Editor.java" startLine="156" startPosition="172" endLine="158" endPosition="61">
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="36" startPosition="79" endLine="37" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="40" startPosition="89" endLine="41" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="41" startPosition="99" endLine="42" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="42" startPosition="48" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="42" startPosition="48" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="45" startPosition="80" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="45" startPosition="80" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="51" startPosition="88" endLine="52" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="52" startPosition="93" endLine="53" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="53" startPosition="47" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="54" startPosition="34" endLine="55" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="55" startPosition="65" endLine="56" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="56" startPosition="40" endLine="57" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="57" startPosition="34" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="61" startPosition="88" endLine="62" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="62" startPosition="87" endLine="63" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="63" startPosition="47" endLine="64" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="64" startPosition="34" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="68" startPosition="87" endLine="69" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="69" startPosition="81" endLine="70" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="70" startPosition="32" endLine="71" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="71" startPosition="45" endLine="72" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="72" startPosition="26" endLine="73" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="73" startPosition="88" endLine="74" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="74" startPosition="58" endLine="75" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="75" startPosition="73" endLine="76" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="76" startPosition="57" endLine="77" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="78" startPosition="35" endLine="79" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="79" startPosition="72" endLine="80" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="80" startPosition="78" endLine="81" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="82" startPosition="10" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="87" startPosition="33" endLine="88" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="91" startPosition="69" endLine="92" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="95" startPosition="81" endLine="96" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="99" startPosition="92" endLine="100" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="100" startPosition="84" endLine="101" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="101" startPosition="31" endLine="102" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="102" startPosition="44" endLine="103" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="103" startPosition="33" endLine="104" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="104" startPosition="28" endLine="105" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="105" startPosition="60" endLine="106" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="106" startPosition="44" endLine="107" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="107" startPosition="75" endLine="108" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="108" startPosition="59" endLine="109" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="110" startPosition="37" endLine="111" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="111" startPosition="74" endLine="112" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="112" startPosition="80" endLine="113" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="114" startPosition="12" endLine="115" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="119" startPosition="88" endLine="120" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="120" startPosition="88" endLine="121" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="121" startPosition="47" endLine="122" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="122" startPosition="34" endLine="123" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="123" startPosition="65" endLine="124" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="124" startPosition="40" endLine="125" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="125" startPosition="34" endLine="126" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="129" startPosition="88" endLine="130" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="130" startPosition="82" endLine="131" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="131" startPosition="29" endLine="132" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="132" startPosition="42" endLine="133" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="133" startPosition="26" endLine="134" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="134" startPosition="58" endLine="135" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="135" startPosition="44" endLine="136" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="136" startPosition="34" endLine="137" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="137" startPosition="59" endLine="138" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="138" startPosition="107" endLine="139" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="139" startPosition="40" endLine="140" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="140" startPosition="214" endLine="141" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="141" startPosition="57" endLine="142" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="143" startPosition="35" endLine="144" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="144" startPosition="72" endLine="145" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="145" startPosition="78" endLine="146" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="147" startPosition="10" endLine="148" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738919" fileName="ConceptCondition_Editor.java" startLine="155" startPosition="129" endLine="156" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738925" fileName="ConceptCondition_Editor.java" startLine="157" startPosition="172" endLine="158" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4943044633101738934" fileName="ConceptCondition_Editor.java" startLine="158" startPosition="134" endLine="159" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738954" fileName="ConceptCondition_Editor.java" startLine="160" startPosition="14" endLine="161" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4943044633101738960" fileName="ConceptCondition_Editor.java" startLine="162" startPosition="7" endLine="163" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="152" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptCondition_name_postfixCellMenu_hrb2do_a0e0#()V" />
+    <nodeInfo nodeId="4943044633101738952" fileName="ConceptCondition_Editor.java" startLine="160" startPosition="12" endLine="162" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_hrb2do_a2a#()V" />
+    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="61" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_hrb2do_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="77" startPosition="59" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="109" startPosition="61" endLine="115" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="142" startPosition="59" endLine="148" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4943044633101738923" fileName="ConceptCondition_Editor.java" startLine="156" startPosition="26" endLine="162" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="51" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_hrb2do_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="119" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_hrb2do_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="40" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_hrb2do_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="155" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPostfixes#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="68" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_hrb2do_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="99" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_hrb2do_a0c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="129" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_hrb2do_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="152" startPosition="64" endLine="152" endPosition="64" />
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="36" startPosition="79" endLine="37" endPosition="63" />
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="42" startPosition="48" endLine="43" endPosition="81" />
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="81" />
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="80" />
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="45" startPosition="80" endLine="46" endPosition="81" />
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" />
+    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="87" startPosition="33" endLine="88" endPosition="14" />
+    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="91" startPosition="69" endLine="92" endPosition="67" />
+    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="95" startPosition="81" endLine="96" endPosition="66" />
+    <scopeInfo nodeId="4943044633101738953" fileName="ConceptCondition_Editor.java" startLine="160" startPosition="14" endLine="161" endPosition="64" />
+    <scopeInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="152" startPosition="0" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="4943044633101738924" fileName="ConceptCondition_Editor.java" startLine="157" startPosition="172" endLine="159" endPosition="61">
       <varInfo nodeId="4943044633101738926" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="4943044633101738905" varName="editorContext" />
       <varInfo nodeId="4943044633101738905" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="77" startPosition="35" endLine="80" endPosition="105">
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="78" startPosition="35" endLine="81" endPosition="105">
       <varInfo nodeId="4943044633101738905" varName="manager" />
       <varInfo nodeId="4943044633101738905" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="91" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="4943044633101738967" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="4943044633101738967" varName="editorContext" />
       <varInfo nodeId="4943044633101738967" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="109" startPosition="37" endLine="112" endPosition="107">
+    <scopeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="110" startPosition="37" endLine="113" endPosition="107">
       <varInfo nodeId="4943044633101738969" varName="manager" />
       <varInfo nodeId="4943044633101738969" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="142" startPosition="35" endLine="145" endPosition="105">
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="143" startPosition="35" endLine="146" endPosition="105">
       <varInfo nodeId="4943044633101738905" varName="manager" />
       <varInfo nodeId="4943044633101738905" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="60" startPosition="88" endLine="64" endPosition="22">
+    <scopeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="61" startPosition="88" endLine="65" endPosition="22">
       <varInfo nodeId="4943044633101738909" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="60" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="4943044633101738909" fileName="ConceptCondition_Editor.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="4943044633101738909" varName="editorContext" />
       <varInfo nodeId="4943044633101738909" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="50" startPosition="88" endLine="57" endPosition="22">
+    <scopeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="51" startPosition="88" endLine="58" endPosition="22">
       <varInfo nodeId="4943044633101738908" varName="editorCell" />
       <varInfo nodeId="4943044633101738908" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="118" startPosition="88" endLine="125" endPosition="22">
+    <scopeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="119" startPosition="88" endLine="126" endPosition="22">
       <varInfo nodeId="4943044633101738913" varName="editorCell" />
       <varInfo nodeId="4943044633101738913" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="39" startPosition="89" endLine="47" endPosition="22">
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="40" startPosition="89" endLine="48" endPosition="22">
       <varInfo nodeId="4943044633101738905" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738918" fileName="ConceptCondition_Editor.java" startLine="154" startPosition="129" endLine="162" endPosition="20">
+    <scopeInfo nodeId="4943044633101738918" fileName="ConceptCondition_Editor.java" startLine="155" startPosition="129" endLine="163" endPosition="20">
       <varInfo nodeId="4943044633101738920" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="50" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="4943044633101738908" fileName="ConceptCondition_Editor.java" startLine="51" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="4943044633101738908" varName="editorContext" />
       <varInfo nodeId="4943044633101738908" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="118" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="4943044633101738913" fileName="ConceptCondition_Editor.java" startLine="119" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="4943044633101738913" varName="editorContext" />
       <varInfo nodeId="4943044633101738913" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="39" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="40" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="4943044633101738905" varName="editorContext" />
       <varInfo nodeId="4943044633101738905" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="154" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="155" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="4943044633101738916" varName="editorContext" />
       <varInfo nodeId="4943044633101738916" varName="node" />
       <varInfo nodeId="4943044633101738916" varName="operationContext" />
       <varInfo nodeId="4943044633101738916" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="67" startPosition="87" endLine="82" endPosition="22">
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="68" startPosition="87" endLine="83" endPosition="22">
       <varInfo nodeId="4943044633101738905" varName="attributeConcept" />
       <varInfo nodeId="4943044633101738905" varName="attributeKind" />
       <varInfo nodeId="4943044633101738905" varName="editorCell" />
       <varInfo nodeId="4943044633101738905" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="98" startPosition="92" endLine="114" endPosition="24">
+    <scopeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="99" startPosition="92" endLine="115" endPosition="24">
       <varInfo nodeId="4943044633101738969" varName="attributeConcept" />
       <varInfo nodeId="4943044633101738969" varName="attributeKind" />
       <varInfo nodeId="4943044633101738969" varName="editorCell" />
       <varInfo nodeId="4943044633101738969" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="67" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="68" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="4943044633101738905" varName="editorContext" />
       <varInfo nodeId="4943044633101738905" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="98" startPosition="0" endLine="116" endPosition="0">
+    <scopeInfo nodeId="4943044633101738969" fileName="ConceptCondition_Editor.java" startLine="99" startPosition="0" endLine="117" endPosition="0">
       <varInfo nodeId="4943044633101738969" varName="editorContext" />
       <varInfo nodeId="4943044633101738969" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="128" startPosition="88" endLine="147" endPosition="22">
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="129" startPosition="88" endLine="148" endPosition="22">
       <varInfo nodeId="4943044633101738905" varName="attributeConcept" />
       <varInfo nodeId="4943044633101738905" varName="attributeKind" />
       <varInfo nodeId="4943044633101738905" varName="editorCell" />
       <varInfo nodeId="4943044633101738905" varName="provider" />
       <varInfo nodeId="4943044633101738905" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="128" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="129" startPosition="0" endLine="150" endPosition="0">
       <varInfo nodeId="4943044633101738905" varName="editorContext" />
       <varInfo nodeId="4943044633101738905" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="150" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.ConceptCondition_Editor$ConceptCondition_name_postfixCellMenu_hrb2do_a0e0" />
-    <unitInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="85" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.ConceptCondition_Editor$_Inline_hrb2do_a2a" />
-    <unitInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="34" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.ConceptCondition_Editor" />
+    <unitInfo nodeId="4943044633101738916" fileName="ConceptCondition_Editor.java" startLine="151" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.ConceptCondition_Editor$ConceptCondition_name_postfixCellMenu_hrb2do_a0e0" />
+    <unitInfo nodeId="4943044633101738967" fileName="ConceptCondition_Editor.java" startLine="86" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.ConceptCondition_Editor$_Inline_hrb2do_a2a" />
+    <unitInfo nodeId="4943044633101738905" fileName="ConceptCondition_Editor.java" startLine="35" startPosition="0" endLine="167" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.analyzers.editor.ConceptCondition_Editor" />
   </root>
   <root nodeRef="r:f6eee33a-bfb4-4e1b-8340-0fa8c23aeb2e(jetbrains.mps.lang.dataFlow.analyzers.editor)/4943044633102057746">
     <nodeInfo nodeId="4943044633102057746" fileName="ApplicableNodeReference_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

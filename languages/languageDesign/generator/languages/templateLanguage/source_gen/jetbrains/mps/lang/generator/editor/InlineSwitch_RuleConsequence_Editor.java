@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -35,7 +36,7 @@ public class InlineSwitch_RuleConsequence_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_yn898b_a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNodeList_yn898b_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_yn898b_b0(editorContext, node));

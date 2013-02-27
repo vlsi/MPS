@@ -108,7 +108,7 @@ public class MoveConcepts_Action extends BaseAction {
       List<SModelReference> myModels;
       myModels = ListSequence.fromList(((List<SModelDescriptor>) (SModelRepository.getInstance().getModelDescriptors()))).select(new ISelector<SModelDescriptor, SModelReference>() {
         public SModelReference select(SModelDescriptor it) {
-          return it.getSModelReference();
+          return it.getReference();
         }
       }).where(new IWhereFilter<SModelReference>() {
         public boolean accept(SModelReference it) {

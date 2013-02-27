@@ -11,6 +11,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -36,8 +37,8 @@ public class CellModel_BlockEnd_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_closeBrace");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
-    style.set(StyleAttributes.NULL_TEXT_COLOR, MPSColors.blue);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
+    style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

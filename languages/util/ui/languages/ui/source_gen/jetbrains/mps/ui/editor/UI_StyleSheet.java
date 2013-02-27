@@ -6,6 +6,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
@@ -26,7 +27,7 @@ public class UI_StyleSheet {
   @Deprecated
   public static Style getUIObject(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, new Color(102));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(102)));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
@@ -34,7 +35,7 @@ public class UI_StyleSheet {
   @Deprecated
   public static Style getUIObjectPart(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, new Color(102));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(102)));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     return style;
   }
@@ -43,7 +44,7 @@ public class UI_StyleSheet {
   public static Style getContainerBox(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, new Color(6723993));
+    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(6723993)));
     return style;
   }
 
@@ -62,18 +63,18 @@ public class UI_StyleSheet {
   }
 
   public static void applyUIObject(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, new Color(102));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(102)));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
   public static void applyUIObjectPart(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, new Color(102));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(102)));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
   }
 
   public static void applyContainerBox(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, new Color(6723993));
+    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(6723993)));
   }
 
   public static void applyContainerMargins(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {

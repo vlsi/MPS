@@ -62,9 +62,6 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_tg6zfx_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "checking");
     editorCell.setCellId("Constant_tg6zfx_a0a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -174,7 +171,6 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable");
     editorCell.setCellId("Constant_tg6zfx_a0b1a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -225,9 +221,6 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_tg6zfx_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "overrides");
     editorCell.setCellId("Constant_tg6zfx_a1b1a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

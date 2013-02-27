@@ -10,6 +10,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class CellModel_Indent_Editor extends DefaultNodeEditor {
@@ -22,7 +23,7 @@ public class CellModel_Indent_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_l8ulis_a");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyRootCellModelStyle(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

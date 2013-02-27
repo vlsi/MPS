@@ -52,7 +52,7 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
 
   @Override
   public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
-    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
+    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("32d0a39c-772f-4490-8142-e50f9a9f19d4")).getModuleReference();
     ((jetbrains.mps.smodel.SModel) model).addLanguage(lang);
 

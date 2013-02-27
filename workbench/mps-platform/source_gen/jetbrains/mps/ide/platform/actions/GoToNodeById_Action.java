@@ -12,6 +12,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
@@ -68,7 +69,7 @@ public class GoToNodeById_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + ((SModelDescriptor) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getLongName(), JOptionPane.QUESTION_MESSAGE);
+      String value = JOptionPane.showInputDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Enter node ID:", "Find node in model " + SNodeOperations.getModelLongName(((SModelDescriptor) MapSequence.fromMap(_params).get("CONTEXT_MODEL"))), JOptionPane.QUESTION_MESSAGE);
       if (value == null) {
         return;
       }

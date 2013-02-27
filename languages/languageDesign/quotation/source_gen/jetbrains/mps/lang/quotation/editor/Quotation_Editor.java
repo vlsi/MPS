@@ -12,6 +12,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
@@ -64,7 +65,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyLeftParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.cyan);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.MATCHING_LABEL, (String) null);
     editorCell.getStyle().putAll(style);
@@ -95,7 +96,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightParen(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.cyan);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
     style.set(StyleAttributes.MATCHING_LABEL, (String) null);
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new _Quotation_createModel());

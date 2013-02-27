@@ -140,6 +140,7 @@
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.eclipse.jdt.core.compiler.CategorizedProblem" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.CompilationResult" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

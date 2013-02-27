@@ -21,6 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class SimpleCanRunAndDebug extends AbstractCellProvider {
@@ -115,7 +116,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't run");
     editorCell.setCellId("Constant_o92gz8_c1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_o92gz8_a0c1a()}));
@@ -193,7 +194,7 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't debug");
     editorCell.setCellId("Constant_o92gz8_b3a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b3a()}));

@@ -393,7 +393,28 @@ public class BaseLanguageStyle_StyleSheet {
   @Deprecated
   public static Style getLabel(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+    return style;
+  }
+
+  @Deprecated
+  public static Style getFirstLevel(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+    return style;
+  }
+
+  @Deprecated
+  public static Style getSecondLevel(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+    return style;
+  }
+
+  @Deprecated
+  public static Style getThirdLevel(final EditorCell editorCell) {
+    Style style = new StyleImpl(editorCell);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     return style;
   }
 
@@ -643,7 +664,19 @@ public class BaseLanguageStyle_StyleSheet {
   }
 
   public static void applyLabel(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
+  }
+
+  public static void applyFirstLevel(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+  }
+
+  public static void applySecondLevel(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+  }
+
+  public static void applyThirdLevel(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
   }
 
   private static boolean _StyleParameter_QueryFunction_the604_a0d(EditorContext editorContext, SNode node) {

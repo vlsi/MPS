@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.SNodeOperations;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
@@ -66,7 +67,7 @@ public class FindCrossTemplateReferences_Action extends BaseAction {
     try {
       List<SModel> modelDescriptors = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModelDescriptor>) SModelRepository.getInstance().getModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor md) {
-          return SModelStereotype.isGeneratorModel(md) && md.isGeneratable();
+          return SModelStereotype.isGeneratorModel(md) && SNodeOperations.isGeneratable(md);
         }
       }));
 

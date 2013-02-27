@@ -138,7 +138,7 @@
     <nodeInfo nodeId="7390982340086719586" fileName="LanguageEditorChecker.java" startLine="98" startPosition="127" endLine="99" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7390982340086719593" fileName="LanguageEditorChecker.java" startLine="100" startPosition="5" endLine="101" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7390982340086719599" fileName="LanguageEditorChecker.java" startLine="104" startPosition="73" endLine="105" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7390982340086719604" fileName="LanguageEditorChecker.java" startLine="105" startPosition="46" endLine="106" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7390982340086719604" fileName="LanguageEditorChecker.java" startLine="105" startPosition="46" endLine="106" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7390982340086719621" fileName="LanguageEditorChecker.java" startLine="110" startPosition="74" endLine="111" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7390982340086719626" fileName="LanguageEditorChecker.java" startLine="111" startPosition="59" endLine="112" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7390982340086719646" fileName="LanguageEditorChecker.java" startLine="117" startPosition="77" endLine="118" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -258,7 +258,7 @@
     <scopeInfo nodeId="7390982340086719933" fileName="LanguageEditorChecker.java" startLine="216" startPosition="40" endLine="217" endPosition="62" />
     <scopeInfo nodeId="7390982340086720034" fileName="LanguageEditorChecker.java" startLine="233" startPosition="31" endLine="234" endPosition="13" />
     <scopeInfo nodeId="7390982340086720067" fileName="LanguageEditorChecker.java" startLine="237" startPosition="34" endLine="238" endPosition="13" />
-    <scopeInfo nodeId="7390982340086719598" fileName="LanguageEditorChecker.java" startLine="104" startPosition="73" endLine="106" endPosition="61" />
+    <scopeInfo nodeId="7390982340086719598" fileName="LanguageEditorChecker.java" startLine="104" startPosition="73" endLine="106" endPosition="55" />
     <scopeInfo nodeId="7390982340086719620" fileName="LanguageEditorChecker.java" startLine="110" startPosition="74" endLine="112" endPosition="75" />
     <scopeInfo nodeId="7390982340086719645" fileName="LanguageEditorChecker.java" startLine="117" startPosition="77" endLine="119" endPosition="72" />
     <scopeInfo nodeId="7390982340086719698" fileName="LanguageEditorChecker.java" startLine="133" startPosition="97" endLine="135" endPosition="73" />

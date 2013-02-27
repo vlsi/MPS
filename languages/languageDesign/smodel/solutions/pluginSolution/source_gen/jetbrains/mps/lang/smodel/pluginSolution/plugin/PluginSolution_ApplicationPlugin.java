@@ -23,6 +23,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new CheckLangForJavaStubModels_Action());
     addAction(new MigrateToNewSNodeAccess_Action());
     addAction(new MigrateToNewSNodeMethods_Action());
+    addAction(new MigrateToSModelDescriptorOpenAPI_Action());
     addAction(new MigrateToSModelIdOpenAPI_Action());
     addAction(new MigrateToSModelOpenAPI_Action());
     addAction(new MigrateToSNodeIdOpenAPI_Action());

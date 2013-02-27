@@ -21,6 +21,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
@@ -101,7 +102,7 @@ public class CopyTraceInfo_Facet extends IFacet.Stub {
                     continue;
                   }
 
-                  final IFile destination = facet.getClassesGen().getDescendant(tres.modelDescriptor().getLongName().replace(".", "/"));
+                  final IFile destination = facet.getClassesGen().getDescendant(SNodeOperations.getModelLongName(tres.modelDescriptor()).replace(".", "/"));
                   if (!(destination.exists())) {
                     ListSequence.fromList(toCreate).addElement(destination);
                   }

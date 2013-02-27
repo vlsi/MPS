@@ -70,7 +70,7 @@ public class InternalActionsUtils {
           }
         }).select(new ISelector<SModelDescriptor, SModelReference>() {
           public SModelReference select(SModelDescriptor it) {
-            return it.getSModelReference();
+            return it.getReference();
           }
         });
         LOG.warning("Models: " + Sequence.fromIterable(modelReferences.value).count());

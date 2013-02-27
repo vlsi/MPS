@@ -12,11 +12,11 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -51,7 +51,7 @@ public class StubUtil {
     IModule debuggerApi = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cc7da2f6-419f-4133-a811-31fcd3295a85"));
     List<SModelDescriptor> debuggerModels = debuggerApi.getOwnModelDescriptors();
     for (SModelDescriptor debuggerModel : ListSequence.fromList(debuggerModels)) {
-      if (eq_g10q2g_a0a0f0c(debuggerModel.getLongName(), targetSModelReference.getLongName())) {
+      if (eq_g10q2g_a0a0f0c(SNodeOperations.getModelLongName(debuggerModel), targetSModelReference.getLongName())) {
         return debuggerModel;
       }
     }
@@ -65,10 +65,10 @@ public class StubUtil {
     for (SNode candidate : ListSequence.fromList(SModelOperations.getNodes(newModelDescriptor.getSModel(), conceptFqName))) {
       if (eq_g10q2g_a0a0d0d(getResolveInfo.invoke(candidate), ((jetbrains.mps.smodel.SReference) reference).getResolveInfo())) {
         SModelReference oldModelReference = reference.getTargetSModelReference();
-        ((SModel) SNodeOperations.getModel(targetNode)).deleteModelImport(oldModelReference);
+        ((SModel) jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode)).deleteModelImport(oldModelReference);
 
         SNodeAccessUtil.setReferenceTarget(targetNode, role, candidate);
-        StubRefUtil.addRequiredImports(SNodeOperations.getModel(targetNode), candidate);
+        StubRefUtil.addRequiredImports(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode), candidate);
         return;
       }
     }
@@ -78,23 +78,23 @@ public class StubUtil {
   public static void resolveAndReplace(final SNode node, final SNode concept, String role) {
     SReference reference = node.getReference(role);
 
-    SNode provider = ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.lang.core.structure.ScopeProvider", false)).findFirst(new IWhereFilter<SNode>() {
+    SNode provider = ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getAncestors(node, "jetbrains.mps.lang.core.structure.ScopeProvider", false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_3734116213129936182", new Object[]{concept, node}) != null;
+        return BehaviorReflection.invokeVirtual(Scope.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.ScopeProvider"), "virtual_getScope_3734116213129936182", new Object[]{concept, node}) != null;
       }
     });
     Scope scope = BehaviorReflection.invokeVirtual(Scope.class, provider, "virtual_getScope_3734116213129936182", new Object[]{concept, node});
     SNode candidate = scope.resolve(node, SLinkOperations.getResolveInfo(reference));
     if (candidate != null) {
       SModelReference oldModelReference = reference.getTargetSModelReference();
-      ((SModel) SNodeOperations.getModel(node)).deleteModelImport(oldModelReference);
+      ((SModel) jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node)).deleteModelImport(oldModelReference);
 
       SNodeAccessUtil.setReferenceTarget(node, role, candidate);
-      StubRefUtil.addRequiredImports(SNodeOperations.getModel(node), candidate);
+      StubRefUtil.addRequiredImports(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node), candidate);
     } else {
       findAndReplace(node, role, new _FunctionTypes._return_P1_E0<String, SNode>() {
         public String invoke(SNode candidate) {
-          return SPropertyOperations.getString(SNodeOperations.cast(candidate, "jetbrains.mps.lang.core.structure.IResolveInfo"), "resolveInfo");
+          return SPropertyOperations.getString(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(candidate, "jetbrains.mps.lang.core.structure.IResolveInfo"), "resolveInfo");
         }
       }, BehaviorReflection.invokeVirtual(String.class, concept, "virtual_getFqName_1213877404258", new Object[]{}));
     }

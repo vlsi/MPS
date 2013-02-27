@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.messages.IMessageHandler;
 import com.intellij.openapi.progress.util.ProgressWindow;
 import jetbrains.mps.generator.GenerationFacade;
@@ -35,7 +36,7 @@ public class GeneratorUtil {
   public static Class generateAndLoadEvaluatorClass(Project ideaProject, SModelDescriptor modelDescriptor, String className, IOperationContext context, boolean developerMode, InMemoryJavaGenerationHandler handler, ClassLoader parentloader) throws EvaluationException {
     try {
 
-      final String fullClassName = modelDescriptor.getLongName() + "." + className;
+      final String fullClassName = SNodeOperations.getModelLongName(modelDescriptor) + "." + className;
       GeneratorUtil.MyCompilationResultAdapter compilationResult = new GeneratorUtil.MyCompilationResultAdapter();
       handler.setCompilationListener(compilationResult);
       IMessageHandler messageHandler = new GeneratorUtil.MyMessageHandler(ideaProject, developerMode);

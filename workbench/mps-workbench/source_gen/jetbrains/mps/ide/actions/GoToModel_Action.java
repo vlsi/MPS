@@ -83,7 +83,7 @@ public class GoToModel_Action extends BaseAction {
           Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
             @Override
             public boolean met(SModelDescriptor modelDescriptor) {
-              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor) || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
+              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor) || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
               boolean hasModule = modelDescriptor.getModule() != null;
               return rightStereotype && hasModule;
             }
@@ -91,7 +91,7 @@ public class GoToModel_Action extends BaseAction {
           ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
           List<SModelReference> result = new ArrayList<SModelReference>();
           for (SModelDescriptor md : iter) {
-            result.add(md.getSModelReference());
+            result.add(md.getReference());
           }
           return result.toArray(new SModelReference[result.size()]);
         }

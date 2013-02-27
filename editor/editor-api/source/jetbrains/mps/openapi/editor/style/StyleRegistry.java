@@ -55,6 +55,12 @@ public abstract class StyleRegistry {
     return ourColorMap.get(key);
   }
   public abstract void setColor(String key, Color color);
+  public Color getSimpleColor(Color color) {
+    return color;
+  }
+  public Color getSimpleColor(Color color, Color bg) {
+    return color;
+  }
 
   public StyleAttribute getAttributes(String key) {
     return ourStyleAttributesMap.get(key);

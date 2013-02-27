@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
@@ -95,7 +96,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_zeg0q_d0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
@@ -138,7 +139,7 @@ public class AtLeastNTimesRegexp_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_zeg0q_g0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyMatching(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     if (true) {

@@ -22,6 +22,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.editor.runtime.style.Padding;
@@ -227,13 +228,13 @@ public class CellModel_Collection_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_cvgoyj_d0a0");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBorderedCollection(style, editorCell);
-    style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_Collection_Editor._StyleParameter_QueryFunction_cvgoyj_a0d0a0((editorCell == null ?
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_Collection_Editor._StyleParameter_QueryFunction_cvgoyj_a0d0a0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
+    ))));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_cvgoyj_a3a0a(editorContext, node));
     return editorCell;

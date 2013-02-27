@@ -11,6 +11,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -63,13 +64,13 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_Alternation_Editor._StyleParameter_QueryFunction_zgm7s3_a2b0((editorCell == null ?
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_Alternation_Editor._StyleParameter_QueryFunction_zgm7s3_a2b0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
+    ))));
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(this.createCollection_zgm7s3_a1a(editorContext, node));
@@ -173,13 +174,13 @@ public class CellModel_Alternation_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBorderedCollection(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_Alternation_Editor._StyleParameter_QueryFunction_zgm7s3_a1c0((editorCell == null ?
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_Alternation_Editor._StyleParameter_QueryFunction_zgm7s3_a1c0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
+    ))));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createCollection_zgm7s3_a2a(editorContext, node));
     editorCell.addEditorCell(this.createCollection_zgm7s3_b2a(editorContext, node));

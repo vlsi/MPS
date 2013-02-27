@@ -153,7 +153,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
   @Override
   public boolean isLoaded() {
-    return getLoadingState() != ModelLoadingState.NOT_LOADED;
+    return getLoadingState() == ModelLoadingState.FULLY_LOADED;
   }
 
   @Override
@@ -283,7 +283,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
     updateDiskTimestamp();
 
-    if (!isLoaded()) return;
+    if (myModel.getState() == ModelLoadingState.NOT_LOADED) return;
 
     ModelLoadResult result = loadSModel(myModel.getState());
     replaceModel(result.getModel(), result.getState());

@@ -102,7 +102,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                     @Override
                     public boolean acceptWritten(IFile file) {
                       if (!(Sequence.fromIterable(Sequence.fromArray(new String[]{"dependencies", "generated", "trace.info"})).contains(file.getName()))) {
-                        String destPath = MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.collectScriptDirectories"), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(ftres.modelDescriptor().getSModelReference())).get(file.getName());
+                        String destPath = MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.collectScriptDirectories"), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(ftres.modelDescriptor().getReference())).get(file.getName());
                         if ((destPath != null && destPath.length() > 0)) {
                           IFile destFile = FileSystem.getInstance().getFileByPath(destPath);
                           ListSequence.fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, destFile));
@@ -217,7 +217,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
               for (final GResource gres : Sequence.fromIterable(input)) {
                 ModelAccess.instance().runReadAction(new Runnable() {
                   public void run() {
-                    MapSequence.fromMap(pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).put(gres.model().getSModelReference(), MapSequence.fromMap(new HashMap<String, String>()));
+                    MapSequence.fromMap(pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).put(gres.model().getReference(), MapSequence.fromMap(new HashMap<String, String>()));
 
                     // all descendants with scripts_dir_property 
                     Iterable<SNode> buildScriptDescendants = ListSequence.fromList(SModelOperations.getRoots(((SModel) gres.status().getOutputModel()), null)).where(new IWhereFilter<SNode>() {
@@ -240,7 +240,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                         }
                         targetXml = Utils.withoutExtension(targetXml) + ext;
                       }
-                      MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(gres.model().getSModelReference())).put(fileName, targetXml);
+                      MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(gres.model().getReference())).put(fileName, targetXml);
                     }
                   }
                 });

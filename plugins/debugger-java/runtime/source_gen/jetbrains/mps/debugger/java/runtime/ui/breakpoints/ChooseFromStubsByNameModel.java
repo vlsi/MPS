@@ -35,7 +35,7 @@ import org.jetbrains.annotations.NotNull;
         List<SModelDescriptor> mds = SModelRepository.getInstance().getModelDescriptors();
         Iterable<SModelDescriptor> stubModels = ListSequence.fromList(mds).where(new IWhereFilter<SModelDescriptor>() {
           public boolean accept(SModelDescriptor it) {
-            return SModelStereotype.isStubModelStereotype(it.getStereotype());
+            return SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(it));
           }
         });
         Iterable<NodeDescriptor> descr = GotoNavigationUtil.getNodeElements(stubModels, p);

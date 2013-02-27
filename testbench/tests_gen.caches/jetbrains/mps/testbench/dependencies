@@ -84,6 +84,7 @@
     <classNode dependClassName="jetbrains.mps.testbench.TestMakeService" />
     <classNode dependClassName="jetbrains.mps.testbench.Testbench" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />

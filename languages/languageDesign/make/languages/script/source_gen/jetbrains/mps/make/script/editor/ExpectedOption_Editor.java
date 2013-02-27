@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
@@ -87,7 +88,7 @@ public class ExpectedOption_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_97k2fj_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     style.set(StyleAttributes.DRAW_BRACKETS, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createRefNodeList_97k2fj_a3a(editorContext, node));

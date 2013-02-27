@@ -49,7 +49,7 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
   }
 
   public static ModelTreeNode createSModelTreeNode(SModelDescriptor descriptor) {
-    SModelReference sModelReference = descriptor.getSModelReference();
+    SModelReference sModelReference = descriptor.getReference();
     String label = sModelReference.getLongName();
     if (sModelReference.getStereotype().length() > 0) {
       label += "@" + sModelReference.getStereotype();

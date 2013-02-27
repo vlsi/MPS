@@ -103,7 +103,7 @@ public class LanguageEditorChecker extends BaseEditorChecker {
 
   private void modelDescriptorRemoved(SModelDescriptor modelDescriptor) {
     this.removeModelListener(modelDescriptor);
-    this.clearForModel(modelDescriptor.getSModelReference());
+    this.clearForModel(modelDescriptor.getReference());
   }
 
   private void removeModelListener(SModelDescriptor modelDescriptor) {

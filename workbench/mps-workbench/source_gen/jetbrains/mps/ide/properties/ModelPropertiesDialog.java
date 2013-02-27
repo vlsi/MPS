@@ -15,6 +15,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import javax.swing.JPanel;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.SNodeOperations;
 import java.awt.BorderLayout;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
@@ -26,7 +28,6 @@ import java.awt.event.ActionEvent;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.SNodeOperations;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
@@ -49,7 +50,7 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   public SModelDescriptor myModel;
 
   /*package*/ ModelPropertiesDialog(final SModelDescriptor sm, final IOperationContext context) {
-    super("Model Properties for " + sm.getSModelReference().getSModelFqName(), context);
+    super("Model Properties for " + sm.getReference().getSModelFqName(), context);
     myModel = sm;
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -82,11 +83,11 @@ public class ModelPropertiesDialog extends BasePropertiesDialog {
   }
 
   public JPanel createNamePanel() {
-    String stereotype = (myModel.getStereotype().equals("") ?
+    String stereotype = (SModelStereotype.getStereotype(myModel).equals("") ?
       "" :
-      " (" + myModel.getStereotype() + ")"
+      " (" + SModelStereotype.getStereotype(myModel) + ")"
     );
-    String initText = myModel.getLongName() + stereotype;
+    String initText = SNodeOperations.getModelLongName(myModel) + stereotype;
     return createFieldPanel("Model UID:", initText);
   }
 

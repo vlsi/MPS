@@ -34,6 +34,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -302,6 +303,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   public void load() {
     getSModel();
+  }
+
+  @NotNull
+  @Override
+  public Iterable<Problem> getProblems() {
+    return Collections.emptySet();
   }
 
   @Override

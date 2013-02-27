@@ -51,8 +51,8 @@ public class Inherits_Constraints extends BaseConstraintsDescriptor {
               }
             }).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor smd) {
-                return ((SModelStereotype.isStubModelStereotype(smd.getStereotype())) ?
-                  "gwt_stub".equals(smd.getStereotype()) :
+                return ((SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(smd))) ?
+                  "gwt_stub".equals(SModelStereotype.getStereotype(smd)) :
                   Sequence.fromIterable(((Iterable<ModuleReference>) ((SModel) smd.getSModel()).importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
                 );
               }

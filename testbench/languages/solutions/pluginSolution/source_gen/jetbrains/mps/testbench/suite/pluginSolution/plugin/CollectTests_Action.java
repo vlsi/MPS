@@ -34,6 +34,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -165,7 +166,7 @@ public class CollectTests_Action extends BaseAction {
                         SPropertyOperations.set(sref, "moduleID", mref.getModuleId().toString());
                       }
                       ListSequence.fromList(SLinkOperations.getTargets(suite.value, "testRef", true)).addElement(tref.invoke());
-                      ((SModel) model).addModelImport(smd.getSModelReference(), false);
+                      ((SModel) model).addModelImport(smd.getReference(), false);
                       ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDesc")).getModule().addDependency(module.getModuleReference(), false);
                     }
                   }, ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class));
@@ -190,7 +191,7 @@ public class CollectTests_Action extends BaseAction {
   }
 
   private boolean isUserEditableGeneratableModel(SModelDescriptor md, final Map<String, Object> _params) {
-    return CollectTests_Action.this.isUserEditableModel(md, _params) && md.isGeneratable();
+    return CollectTests_Action.this.isUserEditableModel(md, _params) && SNodeOperations.isGeneratable(md);
   }
 
   private List<ModuleReference> allSolutions(final Map<String, Object> _params) {

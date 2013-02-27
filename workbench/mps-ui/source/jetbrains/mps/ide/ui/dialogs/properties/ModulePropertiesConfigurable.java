@@ -114,6 +114,7 @@ import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
+import javax.swing.SwingUtilities;
 import javax.swing.event.TableColumnModelListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
@@ -1210,11 +1211,15 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               myMappings.put(mapping, myCurrentTree);
             }
 
-//            table.getSize().height -;
-
             table.setRowHeight(
               row, myCurrentTree.getTree().getPreferredSize().height + 20
             );
+            SwingUtilities.invokeLater(new Runnable() {
+              @Override
+              public void run() {
+                myCurrentTree.getTree().requestFocus();
+              }
+            });
             return ScrollPaneFactory.createScrollPane(myCurrentTree.getTree(), true);
           }
           return null;

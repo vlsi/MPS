@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
@@ -69,7 +70,7 @@ public class BuildAllStructures_Action extends BaseAction {
           Iterable<SModelDescriptor> allModels = SModelRepository.getInstance().getModelDescriptors();
           models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(allModels).where(new IWhereFilter<SModelDescriptor>() {
             public boolean accept(SModelDescriptor it) {
-              return it.isGeneratable() && LanguageAspect.STRUCTURE.is(it);
+              return SNodeOperations.isGeneratable(it) && LanguageAspect.STRUCTURE.is(it);
             }
           }));
         }

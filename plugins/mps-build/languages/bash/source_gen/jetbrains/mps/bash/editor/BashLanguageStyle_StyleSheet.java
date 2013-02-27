@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import java.awt.Color;
 
@@ -22,14 +23,14 @@ public class BashLanguageStyle_StyleSheet {
   public static Style getCommandName(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     return style;
   }
 
   @Deprecated
   public static Style getExternalCommandDescription(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     return style;
   }
 
@@ -37,7 +38,7 @@ public class BashLanguageStyle_StyleSheet {
   public static Style getHintStyle(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.AUTO_DELETABLE, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     return style;
   }
 
@@ -47,8 +48,8 @@ public class BashLanguageStyle_StyleSheet {
     style.set(StyleAttributes.AUTO_DELETABLE, true);
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray)));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
@@ -56,14 +57,14 @@ public class BashLanguageStyle_StyleSheet {
   @Deprecated
   public static Style getCommentSymbol(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     return style;
   }
 
   @Deprecated
   public static Style getCommentedCommand(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     return style;
   }
 
@@ -71,14 +72,14 @@ public class BashLanguageStyle_StyleSheet {
   public static Style getCommentedText(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.putAll(BashLanguageStyle_StyleSheet.getCommentedCommand(editorCell));
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     return style;
   }
 
   @Deprecated
   public static Style getActivationRecord(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     return style;
   }
 
@@ -86,7 +87,7 @@ public class BashLanguageStyle_StyleSheet {
   public static Style getShellScriptName(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     return style;
   }
 
@@ -100,14 +101,14 @@ public class BashLanguageStyle_StyleSheet {
   @Deprecated
   public static Style getQuotedWord(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(15004415));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(15004415)));
     return style;
   }
 
   @Deprecated
   public static Style getParameterExpansion(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
@@ -116,7 +117,7 @@ public class BashLanguageStyle_StyleSheet {
   public static Style getNullStyle(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.AUTO_DELETABLE, true);
-    style.set(StyleAttributes.NULL_TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     return style;
   }
 
@@ -130,7 +131,7 @@ public class BashLanguageStyle_StyleSheet {
   @Deprecated
   public static Style getQuotesCommandSubstitution(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.BACKGROUND_COLOR, new Color(16711603));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(16711603)));
     return style;
   }
 
@@ -138,7 +139,7 @@ public class BashLanguageStyle_StyleSheet {
   public static Style getQuoteStyle(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     return style;
   }
 
@@ -148,47 +149,47 @@ public class BashLanguageStyle_StyleSheet {
 
   public static void applyCommandName(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
   }
 
   public static void applyExternalCommandDescription(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
   }
 
   public static void applyHintStyle(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.AUTO_DELETABLE, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
   }
 
   public static void applyErrorStyle(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.AUTO_DELETABLE, true);
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray)));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
   }
 
   public static void applyCommentSymbol(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
   }
 
   public static void applyCommentedCommand(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
   }
 
   public static void applyCommentedText(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     BashLanguageStyle_StyleSheet.applyCommentedCommand(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
   }
 
   public static void applyActivationRecord(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
   }
 
   public static void applyShellScriptName(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 
   public static void applyOperator(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
@@ -196,17 +197,17 @@ public class BashLanguageStyle_StyleSheet {
   }
 
   public static void applyQuotedWord(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, new Color(15004415));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(15004415)));
   }
 
   public static void applyParameterExpansion(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
   }
 
   public static void applyNullStyle(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.AUTO_DELETABLE, true);
-    style.set(StyleAttributes.NULL_TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
   }
 
   public static void applySimpleWordStyle(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
@@ -214,11 +215,11 @@ public class BashLanguageStyle_StyleSheet {
   }
 
   public static void applyQuotesCommandSubstitution(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.BACKGROUND_COLOR, new Color(16711603));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(16711603)));
   }
 
   public static void applyQuoteStyle(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }
 }

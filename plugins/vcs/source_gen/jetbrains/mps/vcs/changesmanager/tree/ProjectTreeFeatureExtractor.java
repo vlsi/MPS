@@ -62,7 +62,7 @@ public class ProjectTreeFeatureExtractor implements TreeNodeFeatureExtractor {
       PackageNode pn = ((PackageNode) treeNode);
       return new VirtualPackageFeature(pn.getModelReference(), pn.getPackage());
     } else if (treeNode instanceof SModelTreeNode) {
-      return new ModelFeature(((SModelTreeNode) treeNode).getSModelDescriptor().getSModelReference());
+      return new ModelFeature(((SModelTreeNode) treeNode).getSModelDescriptor().getReference());
     }
     return null;
   }
