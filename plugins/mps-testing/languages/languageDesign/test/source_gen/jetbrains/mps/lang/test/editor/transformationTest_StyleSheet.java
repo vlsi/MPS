@@ -6,13 +6,14 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class transformationTest_StyleSheet {
   @Deprecated
   public static Style getAssertStyle(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     return style;
   }
 
@@ -20,38 +21,38 @@ public class transformationTest_StyleSheet {
   public static Style getNodeAnnotation(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.UNDERLINED, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     return style;
   }
 
   @Deprecated
   public static Style getNodeProperty(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     return style;
   }
 
   @Deprecated
   public static Style getEditorOperation(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     return style;
   }
 
   public static void applyAssertStyle(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
   }
 
   public static void applyNodeAnnotation(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.UNDERLINED, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
   public static void applyNodeProperty(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
   public static void applyEditorOperation(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 }

@@ -16,6 +16,7 @@ import jetbrains.mps.lang.core.editor.AliasEditorComponent;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
@@ -64,13 +65,13 @@ public class AbstractEquationStatement_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, AbstractEquationStatement_Editor._StyleParameter_QueryFunction_ie6eqd_a0b0((editorCell == null ?
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(AbstractEquationStatement_Editor._StyleParameter_QueryFunction_ie6eqd_a0b0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
+    ))));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractEquationStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_ie6eqd_a0b0()}));
     return editorCell;

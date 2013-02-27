@@ -219,385 +219,385 @@
     <unitInfo nodeId="1235747377646" fileName="IntervalContainsExpression_Editor.java" startLine="22" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalContainsExpression_Editor" />
   </root>
   <root nodeRef="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)/1235747377653">
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="34" startPosition="79" endLine="35" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="38" startPosition="82" endLine="39" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="42" startPosition="89" endLine="43" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="43" startPosition="96" endLine="44" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="44" startPosition="48" endLine="45" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="44" startPosition="48" endLine="45" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="45" startPosition="94" endLine="46" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="45" startPosition="94" endLine="46" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="46" startPosition="80" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="46" startPosition="80" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="48" startPosition="80" endLine="49" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="48" startPosition="80" endLine="49" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="49" startPosition="94" endLine="50" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377661" fileName="IntervalLiteral_Editor.java" startLine="56" startPosition="68" endLine="57" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377668" fileName="IntervalLiteral_Editor.java" startLine="58" startPosition="16" endLine="59" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="66" startPosition="44" endLine="67" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="69" startPosition="13" endLine="70" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="70" startPosition="79" endLine="71" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="71" startPosition="284" endLine="72" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="72" startPosition="60" endLine="73" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="73" startPosition="34" endLine="74" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="74" startPosition="55" endLine="75" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="75" startPosition="40" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377674" fileName="IntervalLiteral_Editor.java" startLine="83" startPosition="135" endLine="84" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="87" startPosition="37" endLine="88" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377683" fileName="IntervalLiteral_Editor.java" startLine="96" startPosition="135" endLine="97" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="100" startPosition="37" endLine="101" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="105" startPosition="87" endLine="106" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="106" startPosition="81" endLine="107" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="107" startPosition="30" endLine="108" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="108" startPosition="40" endLine="109" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="109" startPosition="26" endLine="110" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="110" startPosition="58" endLine="111" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="111" startPosition="34" endLine="112" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="112" startPosition="61" endLine="113" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="113" startPosition="40" endLine="114" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="114" startPosition="73" endLine="115" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="115" startPosition="57" endLine="116" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="117" startPosition="35" endLine="118" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="118" startPosition="72" endLine="119" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="119" startPosition="78" endLine="120" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="121" startPosition="10" endLine="122" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="125" startPosition="88" endLine="126" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="126" startPosition="87" endLine="127" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="127" startPosition="47" endLine="128" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="128" startPosition="34" endLine="129" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="129" startPosition="54" endLine="130" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="130" startPosition="40" endLine="131" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="131" startPosition="34" endLine="132" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="135" startPosition="87" endLine="136" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="136" startPosition="81" endLine="137" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="137" startPosition="28" endLine="138" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="138" startPosition="40" endLine="139" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="139" startPosition="26" endLine="140" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="140" startPosition="58" endLine="141" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="141" startPosition="34" endLine="142" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="142" startPosition="61" endLine="143" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="143" startPosition="56" endLine="144" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="144" startPosition="40" endLine="145" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="145" startPosition="73" endLine="146" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="146" startPosition="57" endLine="147" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="148" startPosition="35" endLine="149" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="149" startPosition="72" endLine="150" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="150" startPosition="78" endLine="151" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="152" startPosition="10" endLine="153" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377703" fileName="IntervalLiteral_Editor.java" startLine="159" startPosition="66" endLine="160" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377710" fileName="IntervalLiteral_Editor.java" startLine="161" startPosition="16" endLine="162" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="169" startPosition="44" endLine="170" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="172" startPosition="13" endLine="173" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="173" startPosition="79" endLine="174" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="174" startPosition="284" endLine="175" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="175" startPosition="60" endLine="176" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377716" fileName="IntervalLiteral_Editor.java" startLine="183" startPosition="135" endLine="184" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="187" startPosition="37" endLine="188" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377725" fileName="IntervalLiteral_Editor.java" startLine="196" startPosition="135" endLine="197" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="200" startPosition="37" endLine="201" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="205" startPosition="91" endLine="206" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="206" startPosition="96" endLine="207" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="207" startPosition="50" endLine="208" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="207" startPosition="50" endLine="208" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="208" startPosition="81" endLine="209" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="208" startPosition="81" endLine="209" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="209" startPosition="81" endLine="210" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="209" startPosition="81" endLine="210" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="210" startPosition="83" endLine="211" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="210" startPosition="83" endLine="211" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="211" startPosition="81" endLine="212" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="215" startPosition="88" endLine="216" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="216" startPosition="100" endLine="217" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="217" startPosition="47" endLine="218" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="218" startPosition="34" endLine="219" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="222" startPosition="88" endLine="223" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="223" startPosition="82" endLine="224" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="224" startPosition="38" endLine="225" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="225" startPosition="51" endLine="226" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="226" startPosition="26" endLine="227" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="227" startPosition="58" endLine="228" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="228" startPosition="51" endLine="229" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="229" startPosition="34" endLine="230" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="230" startPosition="60" endLine="231" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="231" startPosition="40" endLine="232" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="232" startPosition="73" endLine="233" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="233" startPosition="57" endLine="234" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="235" startPosition="35" endLine="236" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="236" startPosition="72" endLine="237" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="237" startPosition="78" endLine="238" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="239" startPosition="10" endLine="240" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="243" startPosition="90" endLine="244" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="244" startPosition="99" endLine="245" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="245" startPosition="49" endLine="246" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="246" startPosition="34" endLine="247" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="250" startPosition="88" endLine="251" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="251" startPosition="82" endLine="252" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="252" startPosition="36" endLine="253" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="253" startPosition="49" endLine="254" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="254" startPosition="26" endLine="255" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="255" startPosition="58" endLine="256" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="256" startPosition="49" endLine="257" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="257" startPosition="34" endLine="258" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="258" startPosition="60" endLine="259" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="259" startPosition="40" endLine="260" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="260" startPosition="73" endLine="261" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="261" startPosition="57" endLine="262" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="263" startPosition="35" endLine="264" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="264" startPosition="72" endLine="265" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="265" startPosition="78" endLine="266" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="267" startPosition="10" endLine="268" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1235747377666" fileName="IntervalLiteral_Editor.java" startLine="58" startPosition="14" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="63" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="80" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntervalLiteral_generic_cellMenu_yq81ip_a0a0#()V" />
-    <nodeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="93" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntervalLiteral_generic_cellMenu_yq81ip_b0a0#()V" />
-    <nodeInfo nodeId="1235747377708" fileName="IntervalLiteral_Editor.java" startLine="161" startPosition="14" endLine="163" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="166" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="180" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntervalLiteral_generic_cellMenu_yq81ip_a0e0#()V" />
-    <nodeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="193" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntervalLiteral_generic_cellMenu_yq81ip_b0e0#()V" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="169" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="183" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="187" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="196" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="200" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1235747377659" fileName="IntervalLiteral_Editor.java" startLine="55" startPosition="31" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235747377701" fileName="IntervalLiteral_Editor.java" startLine="158" startPosition="31" endLine="163" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="116" startPosition="59" endLine="122" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="147" startPosition="59" endLine="153" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="215" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_yq81ip_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="234" startPosition="59" endLine="240" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="243" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_yq81ip_c0_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="262" startPosition="59" endLine="268" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="158" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="125" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_yq81ip_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="205" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_yq81ip_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="42" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_yq81ip_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="53" startPosition="113" endLine="69" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="156" startPosition="113" endLine="172" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="105" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_yq81ip_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="135" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_yq81ip_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="222" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_yq81ip_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="250" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_yq81ip_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="156" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_yq81ip_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="53" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_yq81ip_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="63" startPosition="37" endLine="63" endPosition="37" />
-    <scopeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="80" startPosition="59" endLine="80" endPosition="59" />
-    <scopeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="93" startPosition="59" endLine="93" endPosition="59" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="166" startPosition="37" endLine="166" endPosition="37" />
-    <scopeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="180" startPosition="59" endLine="180" endPosition="59" />
-    <scopeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="193" startPosition="59" endLine="193" endPosition="59" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="34" startPosition="79" endLine="35" endPosition="63" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="38" startPosition="82" endLine="39" endPosition="65" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="44" startPosition="48" endLine="45" endPosition="94" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="45" startPosition="94" endLine="46" endPosition="80" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="46" startPosition="80" endLine="47" endPosition="81" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="80" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="48" startPosition="80" endLine="49" endPosition="94" />
-    <scopeInfo nodeId="1235747377660" fileName="IntervalLiteral_Editor.java" startLine="56" startPosition="68" endLine="57" endPosition="21" />
-    <scopeInfo nodeId="1235747377667" fileName="IntervalLiteral_Editor.java" startLine="58" startPosition="16" endLine="59" endPosition="21" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="66" startPosition="44" endLine="67" endPosition="46" />
-    <scopeInfo nodeId="1235747377673" fileName="IntervalLiteral_Editor.java" startLine="83" startPosition="135" endLine="84" endPosition="67" />
-    <scopeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="87" startPosition="37" endLine="88" endPosition="17" />
-    <scopeInfo nodeId="1235747377682" fileName="IntervalLiteral_Editor.java" startLine="96" startPosition="135" endLine="97" endPosition="66" />
-    <scopeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="100" startPosition="37" endLine="101" endPosition="17" />
-    <scopeInfo nodeId="1235747377702" fileName="IntervalLiteral_Editor.java" startLine="159" startPosition="66" endLine="160" endPosition="21" />
-    <scopeInfo nodeId="1235747377709" fileName="IntervalLiteral_Editor.java" startLine="161" startPosition="16" endLine="162" endPosition="21" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="169" startPosition="44" endLine="170" endPosition="46" />
-    <scopeInfo nodeId="1235747377715" fileName="IntervalLiteral_Editor.java" startLine="183" startPosition="135" endLine="184" endPosition="65" />
-    <scopeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="187" startPosition="37" endLine="188" endPosition="17" />
-    <scopeInfo nodeId="1235747377724" fileName="IntervalLiteral_Editor.java" startLine="196" startPosition="135" endLine="197" endPosition="64" />
-    <scopeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="200" startPosition="37" endLine="201" endPosition="17" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="207" startPosition="50" endLine="208" endPosition="81" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="208" startPosition="81" endLine="209" endPosition="81" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="209" startPosition="81" endLine="210" endPosition="83" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="210" startPosition="83" endLine="211" endPosition="81" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="63" startPosition="0" endLine="65" endPosition="0">
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="39" startPosition="82" endLine="40" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="43" startPosition="89" endLine="44" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="44" startPosition="96" endLine="45" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="45" startPosition="48" endLine="46" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="45" startPosition="48" endLine="46" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="46" startPosition="94" endLine="47" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="46" startPosition="94" endLine="47" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="47" startPosition="80" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="47" startPosition="80" endLine="48" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="49" startPosition="80" endLine="50" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="49" startPosition="80" endLine="50" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="50" startPosition="94" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377661" fileName="IntervalLiteral_Editor.java" startLine="57" startPosition="68" endLine="58" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377668" fileName="IntervalLiteral_Editor.java" startLine="59" startPosition="16" endLine="60" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="67" startPosition="44" endLine="68" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="70" startPosition="13" endLine="71" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="71" startPosition="79" endLine="72" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="72" startPosition="284" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="73" startPosition="60" endLine="74" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="74" startPosition="34" endLine="75" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="75" startPosition="55" endLine="76" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="76" startPosition="40" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377674" fileName="IntervalLiteral_Editor.java" startLine="84" startPosition="135" endLine="85" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="88" startPosition="37" endLine="89" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377683" fileName="IntervalLiteral_Editor.java" startLine="97" startPosition="135" endLine="98" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="101" startPosition="37" endLine="102" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="106" startPosition="87" endLine="107" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="107" startPosition="81" endLine="108" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="108" startPosition="30" endLine="109" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="109" startPosition="40" endLine="110" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="110" startPosition="26" endLine="111" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="111" startPosition="58" endLine="112" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="112" startPosition="34" endLine="113" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="113" startPosition="105" endLine="114" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="114" startPosition="40" endLine="115" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="115" startPosition="73" endLine="116" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="116" startPosition="57" endLine="117" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="118" startPosition="35" endLine="119" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="119" startPosition="72" endLine="120" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="120" startPosition="78" endLine="121" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="122" startPosition="10" endLine="123" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="126" startPosition="88" endLine="127" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="127" startPosition="87" endLine="128" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="128" startPosition="47" endLine="129" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="129" startPosition="34" endLine="130" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="130" startPosition="54" endLine="131" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="131" startPosition="40" endLine="132" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="132" startPosition="34" endLine="133" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="136" startPosition="87" endLine="137" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="137" startPosition="81" endLine="138" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="138" startPosition="28" endLine="139" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="139" startPosition="40" endLine="140" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="140" startPosition="26" endLine="141" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="141" startPosition="58" endLine="142" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="142" startPosition="34" endLine="143" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="143" startPosition="105" endLine="144" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="144" startPosition="56" endLine="145" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="145" startPosition="40" endLine="146" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="146" startPosition="73" endLine="147" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="147" startPosition="57" endLine="148" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="149" startPosition="35" endLine="150" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="150" startPosition="72" endLine="151" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="151" startPosition="78" endLine="152" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="153" startPosition="10" endLine="154" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377703" fileName="IntervalLiteral_Editor.java" startLine="160" startPosition="66" endLine="161" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377710" fileName="IntervalLiteral_Editor.java" startLine="162" startPosition="16" endLine="163" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="170" startPosition="44" endLine="171" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="173" startPosition="13" endLine="174" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="174" startPosition="79" endLine="175" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="175" startPosition="284" endLine="176" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="176" startPosition="60" endLine="177" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377716" fileName="IntervalLiteral_Editor.java" startLine="184" startPosition="135" endLine="185" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="188" startPosition="37" endLine="189" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377725" fileName="IntervalLiteral_Editor.java" startLine="197" startPosition="135" endLine="198" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="201" startPosition="37" endLine="202" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="206" startPosition="91" endLine="207" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="207" startPosition="96" endLine="208" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="208" startPosition="50" endLine="209" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="208" startPosition="50" endLine="209" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="209" startPosition="81" endLine="210" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="209" startPosition="81" endLine="210" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="210" startPosition="81" endLine="211" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="210" startPosition="81" endLine="211" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="211" startPosition="83" endLine="212" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="211" startPosition="83" endLine="212" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="212" startPosition="81" endLine="213" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="216" startPosition="88" endLine="217" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="217" startPosition="100" endLine="218" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="218" startPosition="47" endLine="219" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="219" startPosition="34" endLine="220" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="223" startPosition="88" endLine="224" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="224" startPosition="82" endLine="225" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="225" startPosition="38" endLine="226" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="226" startPosition="51" endLine="227" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="227" startPosition="26" endLine="228" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="228" startPosition="58" endLine="229" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="229" startPosition="51" endLine="230" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="230" startPosition="34" endLine="231" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="231" startPosition="60" endLine="232" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="232" startPosition="40" endLine="233" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="233" startPosition="73" endLine="234" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="234" startPosition="57" endLine="235" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="236" startPosition="35" endLine="237" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="237" startPosition="72" endLine="238" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="238" startPosition="78" endLine="239" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="240" startPosition="10" endLine="241" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="244" startPosition="90" endLine="245" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="245" startPosition="99" endLine="246" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="246" startPosition="49" endLine="247" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="247" startPosition="34" endLine="248" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="251" startPosition="88" endLine="252" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="252" startPosition="82" endLine="253" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="253" startPosition="36" endLine="254" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="254" startPosition="49" endLine="255" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="255" startPosition="26" endLine="256" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="256" startPosition="58" endLine="257" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="257" startPosition="49" endLine="258" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="258" startPosition="34" endLine="259" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="259" startPosition="60" endLine="260" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="260" startPosition="40" endLine="261" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="261" startPosition="73" endLine="262" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="262" startPosition="57" endLine="263" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="264" startPosition="35" endLine="265" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="265" startPosition="72" endLine="266" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="266" startPosition="78" endLine="267" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="268" startPosition="10" endLine="269" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1235747377666" fileName="IntervalLiteral_Editor.java" startLine="59" startPosition="14" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="64" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="81" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntervalLiteral_generic_cellMenu_yq81ip_a0a0#()V" />
+    <nodeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="94" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntervalLiteral_generic_cellMenu_yq81ip_b0a0#()V" />
+    <nodeInfo nodeId="1235747377708" fileName="IntervalLiteral_Editor.java" startLine="162" startPosition="14" endLine="164" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="167" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="181" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntervalLiteral_generic_cellMenu_yq81ip_a0e0#()V" />
+    <nodeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="194" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntervalLiteral_generic_cellMenu_yq81ip_b0e0#()V" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="170" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidText#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="188" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="197" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAction#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IScope;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="201" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMatchingText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1235747377659" fileName="IntervalLiteral_Editor.java" startLine="56" startPosition="31" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235747377701" fileName="IntervalLiteral_Editor.java" startLine="159" startPosition="31" endLine="164" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="117" startPosition="59" endLine="123" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="148" startPosition="59" endLine="154" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="216" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_yq81ip_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="235" startPosition="59" endLine="241" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="244" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_yq81ip_c0_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="263" startPosition="59" endLine="269" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="56" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="159" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="126" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_yq81ip_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="206" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_yq81ip_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="43" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_yq81ip_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="54" startPosition="113" endLine="70" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="157" startPosition="113" endLine="173" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="106" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_yq81ip_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="136" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_yq81ip_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="223" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_yq81ip_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="251" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_yq81ip_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="157" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_yq81ip_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="54" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_yq81ip_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="64" startPosition="37" endLine="64" endPosition="37" />
+    <scopeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="81" startPosition="59" endLine="81" endPosition="59" />
+    <scopeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="94" startPosition="59" endLine="94" endPosition="59" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="167" startPosition="37" endLine="167" endPosition="37" />
+    <scopeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="181" startPosition="59" endLine="181" endPosition="59" />
+    <scopeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="194" startPosition="59" endLine="194" endPosition="59" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="39" startPosition="82" endLine="40" endPosition="65" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="45" startPosition="48" endLine="46" endPosition="94" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="46" startPosition="94" endLine="47" endPosition="80" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="47" startPosition="80" endLine="48" endPosition="81" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="48" startPosition="81" endLine="49" endPosition="80" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="49" startPosition="80" endLine="50" endPosition="94" />
+    <scopeInfo nodeId="1235747377660" fileName="IntervalLiteral_Editor.java" startLine="57" startPosition="68" endLine="58" endPosition="21" />
+    <scopeInfo nodeId="1235747377667" fileName="IntervalLiteral_Editor.java" startLine="59" startPosition="16" endLine="60" endPosition="21" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="67" startPosition="44" endLine="68" endPosition="46" />
+    <scopeInfo nodeId="1235747377673" fileName="IntervalLiteral_Editor.java" startLine="84" startPosition="135" endLine="85" endPosition="67" />
+    <scopeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="88" startPosition="37" endLine="89" endPosition="17" />
+    <scopeInfo nodeId="1235747377682" fileName="IntervalLiteral_Editor.java" startLine="97" startPosition="135" endLine="98" endPosition="66" />
+    <scopeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="101" startPosition="37" endLine="102" endPosition="17" />
+    <scopeInfo nodeId="1235747377702" fileName="IntervalLiteral_Editor.java" startLine="160" startPosition="66" endLine="161" endPosition="21" />
+    <scopeInfo nodeId="1235747377709" fileName="IntervalLiteral_Editor.java" startLine="162" startPosition="16" endLine="163" endPosition="21" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="170" startPosition="44" endLine="171" endPosition="46" />
+    <scopeInfo nodeId="1235747377715" fileName="IntervalLiteral_Editor.java" startLine="184" startPosition="135" endLine="185" endPosition="65" />
+    <scopeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="188" startPosition="37" endLine="189" endPosition="17" />
+    <scopeInfo nodeId="1235747377724" fileName="IntervalLiteral_Editor.java" startLine="197" startPosition="135" endLine="198" endPosition="64" />
+    <scopeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="201" startPosition="37" endLine="202" endPosition="17" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="208" startPosition="50" endLine="209" endPosition="81" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="209" startPosition="81" endLine="210" endPosition="81" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="210" startPosition="81" endLine="211" endPosition="83" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="211" startPosition="83" endLine="212" endPosition="81" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="64" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1235747377653" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="80" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="93" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="166" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="81" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="94" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="167" startPosition="0" endLine="169" endPosition="0">
       <varInfo nodeId="1235747377653" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="180" startPosition="0" endLine="182" endPosition="0" />
-    <scopeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="193" startPosition="0" endLine="195" endPosition="0" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="181" startPosition="0" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="194" startPosition="0" endLine="196" endPosition="0" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1235747377653" varName="editorContext" />
       <varInfo nodeId="1235747377653" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1235747377653" varName="editorContext" />
       <varInfo nodeId="1235747377653" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="66" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1235747377653" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="84" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="1235747377671" varName="editorContext" />
       <varInfo nodeId="1235747377671" varName="model" />
       <varInfo nodeId="1235747377671" varName="node" />
       <varInfo nodeId="1235747377671" varName="operationContext" />
       <varInfo nodeId="1235747377671" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="96" startPosition="0" endLine="99" endPosition="0">
+    <scopeInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="97" startPosition="0" endLine="100" endPosition="0">
       <varInfo nodeId="1235747377680" varName="editorContext" />
       <varInfo nodeId="1235747377680" varName="model" />
       <varInfo nodeId="1235747377680" varName="node" />
       <varInfo nodeId="1235747377680" varName="operationContext" />
       <varInfo nodeId="1235747377680" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="100" startPosition="0" endLine="103" endPosition="0" />
-    <scopeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="117" startPosition="35" endLine="120" endPosition="105">
+    <scopeInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="101" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="118" startPosition="35" endLine="121" endPosition="105">
       <varInfo nodeId="1235747377689" varName="manager" />
       <varInfo nodeId="1235747377689" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="148" startPosition="35" endLine="151" endPosition="105">
+    <scopeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="149" startPosition="35" endLine="152" endPosition="105">
       <varInfo nodeId="1235747377694" varName="manager" />
       <varInfo nodeId="1235747377694" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="169" startPosition="0" endLine="172" endPosition="0">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="170" startPosition="0" endLine="173" endPosition="0">
       <varInfo nodeId="1235747377653" varName="s" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="183" startPosition="0" endLine="186" endPosition="0">
+    <scopeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="184" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="1235747377713" varName="editorContext" />
       <varInfo nodeId="1235747377713" varName="model" />
       <varInfo nodeId="1235747377713" varName="node" />
       <varInfo nodeId="1235747377713" varName="operationContext" />
       <varInfo nodeId="1235747377713" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="187" startPosition="0" endLine="190" endPosition="0" />
-    <scopeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="196" startPosition="0" endLine="199" endPosition="0">
+    <scopeInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="188" startPosition="0" endLine="191" endPosition="0" />
+    <scopeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="197" startPosition="0" endLine="200" endPosition="0">
       <varInfo nodeId="1235747377722" varName="editorContext" />
       <varInfo nodeId="1235747377722" varName="model" />
       <varInfo nodeId="1235747377722" varName="node" />
       <varInfo nodeId="1235747377722" varName="operationContext" />
       <varInfo nodeId="1235747377722" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="200" startPosition="0" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="235" startPosition="35" endLine="238" endPosition="105">
+    <scopeInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="201" startPosition="0" endLine="204" endPosition="0" />
+    <scopeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="236" startPosition="35" endLine="239" endPosition="105">
       <varInfo nodeId="1235747377735" varName="manager" />
       <varInfo nodeId="1235747377735" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="263" startPosition="35" endLine="266" endPosition="105">
+    <scopeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="264" startPosition="35" endLine="267" endPosition="105">
       <varInfo nodeId="1235747377740" varName="manager" />
       <varInfo nodeId="1235747377740" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="215" startPosition="88" endLine="219" endPosition="22">
+    <scopeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="216" startPosition="88" endLine="220" endPosition="22">
       <varInfo nodeId="1235747377734" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="243" startPosition="90" endLine="247" endPosition="22">
+    <scopeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="244" startPosition="90" endLine="248" endPosition="22">
       <varInfo nodeId="1235747377739" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377658" fileName="IntervalLiteral_Editor.java" startLine="55" startPosition="31" endLine="60" endPosition="9" />
-    <scopeInfo nodeId="1235747377700" fileName="IntervalLiteral_Editor.java" startLine="158" startPosition="31" endLine="163" endPosition="9" />
-    <scopeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="215" startPosition="0" endLine="221" endPosition="0">
+    <scopeInfo nodeId="1235747377658" fileName="IntervalLiteral_Editor.java" startLine="56" startPosition="31" endLine="61" endPosition="9" />
+    <scopeInfo nodeId="1235747377700" fileName="IntervalLiteral_Editor.java" startLine="159" startPosition="31" endLine="164" endPosition="9" />
+    <scopeInfo nodeId="1235747377734" fileName="IntervalLiteral_Editor.java" startLine="216" startPosition="0" endLine="222" endPosition="0">
       <varInfo nodeId="1235747377734" varName="editorContext" />
       <varInfo nodeId="1235747377734" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="243" startPosition="0" endLine="249" endPosition="0">
+    <scopeInfo nodeId="1235747377739" fileName="IntervalLiteral_Editor.java" startLine="244" startPosition="0" endLine="250" endPosition="0">
       <varInfo nodeId="1235747377739" varName="editorContext" />
       <varInfo nodeId="1235747377739" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="55" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="125" startPosition="88" endLine="132" endPosition="22">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="56" startPosition="0" endLine="63" endPosition="0" />
+    <scopeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="126" startPosition="88" endLine="133" endPosition="22">
       <varInfo nodeId="1235747377692" varName="editorCell" />
       <varInfo nodeId="1235747377692" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="158" startPosition="0" endLine="165" endPosition="0" />
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="205" startPosition="91" endLine="212" endPosition="22">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="159" startPosition="0" endLine="166" endPosition="0" />
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="206" startPosition="91" endLine="213" endPosition="22">
       <varInfo nodeId="1235747377653" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="42" startPosition="89" endLine="50" endPosition="22">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="43" startPosition="89" endLine="51" endPosition="22">
       <varInfo nodeId="1235747377653" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="125" startPosition="0" endLine="134" endPosition="0">
+    <scopeInfo nodeId="1235747377692" fileName="IntervalLiteral_Editor.java" startLine="126" startPosition="0" endLine="135" endPosition="0">
       <varInfo nodeId="1235747377692" varName="editorContext" />
       <varInfo nodeId="1235747377692" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="205" startPosition="0" endLine="214" endPosition="0">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="206" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="1235747377653" varName="editorContext" />
       <varInfo nodeId="1235747377653" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="42" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="43" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1235747377653" varName="editorContext" />
       <varInfo nodeId="1235747377653" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="105" startPosition="87" endLine="122" endPosition="22">
+    <scopeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="106" startPosition="87" endLine="123" endPosition="22">
       <varInfo nodeId="1235747377689" varName="attributeConcept" />
       <varInfo nodeId="1235747377689" varName="attributeKind" />
       <varInfo nodeId="1235747377689" varName="editorCell" />
       <varInfo nodeId="1235747377689" varName="provider" />
       <varInfo nodeId="1235747377689" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="135" startPosition="87" endLine="153" endPosition="22">
+    <scopeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="136" startPosition="87" endLine="154" endPosition="22">
       <varInfo nodeId="1235747377694" varName="attributeConcept" />
       <varInfo nodeId="1235747377694" varName="attributeKind" />
       <varInfo nodeId="1235747377694" varName="editorCell" />
       <varInfo nodeId="1235747377694" varName="provider" />
       <varInfo nodeId="1235747377694" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="222" startPosition="88" endLine="240" endPosition="22">
+    <scopeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="223" startPosition="88" endLine="241" endPosition="22">
       <varInfo nodeId="1235747377735" varName="attributeConcept" />
       <varInfo nodeId="1235747377735" varName="attributeKind" />
       <varInfo nodeId="1235747377735" varName="editorCell" />
       <varInfo nodeId="1235747377735" varName="provider" />
       <varInfo nodeId="1235747377735" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="250" startPosition="88" endLine="268" endPosition="22">
+    <scopeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="251" startPosition="88" endLine="269" endPosition="22">
       <varInfo nodeId="1235747377740" varName="attributeConcept" />
       <varInfo nodeId="1235747377740" varName="attributeKind" />
       <varInfo nodeId="1235747377740" varName="editorCell" />
       <varInfo nodeId="1235747377740" varName="provider" />
       <varInfo nodeId="1235747377740" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="105" startPosition="0" endLine="124" endPosition="0">
+    <scopeInfo nodeId="1235747377689" fileName="IntervalLiteral_Editor.java" startLine="106" startPosition="0" endLine="125" endPosition="0">
       <varInfo nodeId="1235747377689" varName="editorContext" />
       <varInfo nodeId="1235747377689" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="135" startPosition="0" endLine="155" endPosition="0">
+    <scopeInfo nodeId="1235747377694" fileName="IntervalLiteral_Editor.java" startLine="136" startPosition="0" endLine="156" endPosition="0">
       <varInfo nodeId="1235747377694" varName="editorContext" />
       <varInfo nodeId="1235747377694" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="156" startPosition="113" endLine="176" endPosition="22">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="157" startPosition="113" endLine="177" endPosition="22">
       <varInfo nodeId="1235747377653" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="222" startPosition="0" endLine="242" endPosition="0">
+    <scopeInfo nodeId="1235747377735" fileName="IntervalLiteral_Editor.java" startLine="223" startPosition="0" endLine="243" endPosition="0">
       <varInfo nodeId="1235747377735" varName="editorContext" />
       <varInfo nodeId="1235747377735" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="250" startPosition="0" endLine="270" endPosition="0">
+    <scopeInfo nodeId="1235747377740" fileName="IntervalLiteral_Editor.java" startLine="251" startPosition="0" endLine="271" endPosition="0">
       <varInfo nodeId="1235747377740" varName="editorContext" />
       <varInfo nodeId="1235747377740" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="156" startPosition="0" endLine="178" endPosition="0">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="157" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="1235747377653" varName="editorContext" />
       <varInfo nodeId="1235747377653" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="53" startPosition="113" endLine="76" endPosition="22">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="54" startPosition="113" endLine="77" endPosition="22">
       <varInfo nodeId="1235747377653" varName="editorCell" />
       <varInfo nodeId="1235747377653" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="53" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="54" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="1235747377653" varName="editorContext" />
       <varInfo nodeId="1235747377653" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="79" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_yq81ip_a0a0" />
-    <unitInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="92" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_yq81ip_b0a0" />
-    <unitInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="179" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_yq81ip_a0e0" />
-    <unitInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="192" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_yq81ip_b0e0" />
-    <unitInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="54" startPosition="83" endLine="69" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$1" />
-    <unitInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="157" startPosition="83" endLine="172" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$2" />
-    <unitInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="33" startPosition="0" endLine="271" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor" />
+    <unitInfo nodeId="1235747377671" fileName="IntervalLiteral_Editor.java" startLine="80" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_yq81ip_a0a0" />
+    <unitInfo nodeId="1235747377680" fileName="IntervalLiteral_Editor.java" startLine="93" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_yq81ip_b0a0" />
+    <unitInfo nodeId="1235747377713" fileName="IntervalLiteral_Editor.java" startLine="180" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_yq81ip_a0e0" />
+    <unitInfo nodeId="1235747377722" fileName="IntervalLiteral_Editor.java" startLine="193" startPosition="0" endLine="205" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$IntervalLiteral_generic_cellMenu_yq81ip_b0e0" />
+    <unitInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="55" startPosition="83" endLine="70" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$1" />
+    <unitInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="158" startPosition="83" endLine="173" endPosition="5" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor$2" />
+    <unitInfo nodeId="1235747377653" fileName="IntervalLiteral_Editor.java" startLine="34" startPosition="0" endLine="272" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.editor.IntervalLiteral_Editor" />
   </root>
   <root nodeRef="r:93eafd6e-0a56-402c-930d-564027be226b(jetbrains.mps.baseLanguage.math.editor)/1235747377742">
     <nodeInfo nodeId="1235747377742" fileName="IntervalType_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

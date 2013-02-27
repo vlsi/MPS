@@ -6,30 +6,31 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ExecutionSettings_StyleSheet {
   @Deprecated
   public static Style getPersistentConfigurationRef(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     return style;
   }
 
   @Deprecated
   public static Style getPersistentConfigurationRefDeprecated(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.STRIKE_OUT, true);
     return style;
   }
 
   public static void applyPersistentConfigurationRef(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 
   public static void applyPersistentConfigurationRefDeprecated(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.STRIKE_OUT, true);
   }
 }

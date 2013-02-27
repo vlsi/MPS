@@ -11,6 +11,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class NullConstant_Editor extends DefaultNodeEditor {
@@ -25,7 +26,7 @@ public class NullConstant_Editor extends DefaultNodeEditor {
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Mapping_Editor extends DefaultNodeEditor {
@@ -168,7 +169,7 @@ public class Mapping_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_mcrsin_a1b0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

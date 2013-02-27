@@ -21,6 +21,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class StatementList_Editor extends DefaultNodeEditor {
@@ -113,7 +114,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, true);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("<no statements>");
       return editorCell;

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
@@ -94,7 +95,7 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_85j21_c0a");
     Style style = new StyleImpl();
     RunConfigurations_StyleSheet.applyLeftOperationBrace(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.black);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
     style.set(StyleAttributes.PUNCTUATION_LEFT, false);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -173,7 +174,7 @@ public class PersistentConfigurationTemplate_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_85j21_e0a");
     Style style = new StyleImpl();
     RunConfigurations_StyleSheet.applyRightOperationBrace(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.black);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.black));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

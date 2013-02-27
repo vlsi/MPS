@@ -841,7 +841,6 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5497648299878742144">
           <property name="text" nameId="tpc2.1073389577007" value="refactoring" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="5497648299878742145">
           <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no name&gt;" />
@@ -886,7 +885,6 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5497648299878742157">
           <property name="text" nameId="tpc2.1073389577007" value="target:" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="5497648299878742158">
           <property name="emptyNoTargetText" nameId="tpc2.1214560368769" value="false" />
@@ -905,7 +903,6 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5497648299878742176">
         <property name="text" nameId="tpc2.1073389577007" value="parameters:" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="5497648299878742177">
         <property name="vertical" nameId="tpc2.1140524450554" value="true" />
@@ -919,7 +916,6 @@
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="5497648299878742181">
         <property name="text" nameId="tpc2.1073389577007" value="internal fields:" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="5497648299878742182">
         <property name="vertical" nameId="tpc2.1140524450554" value="true" />

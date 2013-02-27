@@ -6,6 +6,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -45,14 +46,14 @@ public class Styles_StyleSheet {
   @Deprecated
   public static Style getStyle(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     return style;
   }
 
   @Deprecated
   public static Style getReference(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     return style;
   }
@@ -61,7 +62,7 @@ public class Styles_StyleSheet {
   public static Style getItem(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     return style;
   }
 
@@ -71,7 +72,7 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.UNDERLINED, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     return style;
   }
 
@@ -81,7 +82,7 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     return style;
   }
 
@@ -148,31 +149,31 @@ public class Styles_StyleSheet {
   }
 
   public static void applyStyle(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
   public static void applyReference(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }
 
   public static void applyItem(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
   public static void applyHeader(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.UNDERLINED, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
 
   public static void applyProperty(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
 
   public static void applyBordered(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {

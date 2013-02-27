@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
@@ -113,7 +114,7 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_rscqin_a1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -124,7 +125,7 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_rscqin_b1a");
     Style style = new StyleImpl();
     buildStyles_StyleSheet.applyKeyword(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -152,7 +153,7 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_rscqin_d1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

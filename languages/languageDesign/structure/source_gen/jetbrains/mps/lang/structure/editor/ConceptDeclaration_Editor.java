@@ -129,7 +129,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_ueqr71_c0a");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.EDITABLE, ConceptDeclaration_Editor._StyleParameter_QueryFunction_ueqr71_a0c0a((editorCell == null ?
       null :
       editorCell.getContext()
@@ -437,9 +436,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ueqr71_a0b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "instance can be root:");
     editorCell.setCellId("Constant_ueqr71_a0b2a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -451,6 +447,9 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_rootable");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -479,9 +478,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ueqr71_a1b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "incoming references:");
     editorCell.setCellId("Constant_ueqr71_a1b2a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -537,9 +533,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ueqr71_b2b1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for children:");
     editorCell.setCellId("Constant_ueqr71_b2b1c0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -586,9 +579,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ueqr71_a3b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "alias:");
     editorCell.setCellId("Constant_ueqr71_a3b2a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -630,9 +620,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ueqr71_a4b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "short description:");
     editorCell.setCellId("Constant_ueqr71_a4b2a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -671,7 +658,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "properties:");
     editorCell.setCellId("Constant_ueqr71_g1c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -739,9 +725,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ueqr71_j1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "children:");
     editorCell.setCellId("Constant_ueqr71_j1c0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -827,9 +810,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ueqr71_m1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "references:");
     editorCell.setCellId("Constant_ueqr71_m1c0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -916,7 +896,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept properties:");
     editorCell.setCellId("Constant_ueqr71_p1c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -985,7 +964,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept links:");
     editorCell.setCellId("Constant_ueqr71_s1c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -1054,7 +1032,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept property declarations:");
     editorCell.setCellId("Constant_ueqr71_v1c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -1123,7 +1100,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept link declarations:");
     editorCell.setCellId("Constant_ueqr71_y1c0");
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -1211,9 +1187,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ueqr71_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "help URL:");
     editorCell.setCellId("Constant_ueqr71_a0a_0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -1298,9 +1271,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_ueqr71_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
     editorCell.setCellId("Constant_ueqr71_a2a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -1313,6 +1283,9 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_iconPath");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.applyStringLiteral(style, editorCell);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

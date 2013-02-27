@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
@@ -32,7 +33,7 @@ public class RunConfigurations_StyleSheet {
   public static Style getOperation(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     return style;
   }
 
@@ -66,7 +67,7 @@ public class RunConfigurations_StyleSheet {
   @Deprecated
   public static Style getConceptFunctionHeader(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     return style;
   }
@@ -84,7 +85,7 @@ public class RunConfigurations_StyleSheet {
 
   public static void applyOperation(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
   }
 
   public static void applyLeftOperationBrace(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
@@ -106,7 +107,7 @@ public class RunConfigurations_StyleSheet {
   }
 
   public static void applyConceptFunctionHeader(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
   }
 }

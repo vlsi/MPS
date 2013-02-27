@@ -41,6 +41,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Propert
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -252,7 +253,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

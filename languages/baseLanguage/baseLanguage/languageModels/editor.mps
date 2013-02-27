@@ -12045,6 +12045,24 @@
         <property name="color" nameId="tpc2.1186403713874" value="DARK_GREEN" />
       </node>
     </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="6758658092288781786">
+      <property name="name" nameId="tpck.1169194664001" value="FirstLevel" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="6758658092288879160">
+        <property name="color" nameId="tpc2.1186403713874" value="darkGray" />
+      </node>
+    </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="6758658092288787813">
+      <property name="name" nameId="tpck.1169194664001" value="SecondLevel" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="6758658092288879165">
+        <property name="color" nameId="tpc2.1186403713874" value="gray" />
+      </node>
+    </node>
+    <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleSheetClass" typeId="tpc2.1186402373407" id="6758658092288789795">
+      <property name="name" nameId="tpck.1169194664001" value="ThirdLevel" />
+      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="6758658092288879170">
+        <property name="color" nameId="tpc2.1186403713874" value="lightGray" />
+      </node>
+    </node>
   </root>
   <root id="1188206419020">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1188206420397">

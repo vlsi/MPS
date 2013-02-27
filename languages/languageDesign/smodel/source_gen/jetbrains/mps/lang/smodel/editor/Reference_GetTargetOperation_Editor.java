@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
@@ -44,8 +45,8 @@ public class Reference_GetTargetOperation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_5uwcto_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -774,9 +774,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177324036612">
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177324036613">
           <property name="text" nameId="tpc2.1073389577007" value="add custom items " />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678677">
-            <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-          </node>
+          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288781786" resolveInfo="FirstLevel" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1196347250332">
           <property name="vertical" nameId="tpc2.1073389446425" value="false" />
@@ -1288,9 +1286,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177409855949">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177409856765">
         <property name="text" nameId="tpc2.1073389577007" value="remove concept" />
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678172">
-          <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-        </node>
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288781786" resolveInfo="FirstLevel" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1177409858894">
         <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no concept&gt;" />
@@ -1314,9 +1310,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177414095276">
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177414096049">
           <property name="text" nameId="tpc2.1073389577007" value="remove by condition" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678823">
-            <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-          </node>
+          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288781786" resolveInfo="FirstLevel" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310994731">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -1342,9 +1336,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177498639101">
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177498639102">
           <property name="text" nameId="tpc2.1073389577007" value="simple item" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678540">
-            <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-          </node>
+          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288787813" resolveInfo="SecondLevel" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310998109">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -1357,9 +1349,7 @@
           <property name="vertical" nameId="tpc2.1073389446425" value="true" />
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177498639107">
             <property name="text" nameId="tpc2.1073389577007" value="matching text" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678441">
-              <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177498639108">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843176456" />
@@ -1374,9 +1364,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177498639111">
             <property name="text" nameId="tpc2.1073389577007" value="description text" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678381">
-              <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177498639112">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843178394" />
@@ -1391,9 +1379,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1203073771800">
             <property name="text" nameId="tpc2.1073389577007" value="icon" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678608">
-              <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1203073771801">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843182145" />
@@ -1408,9 +1394,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1230301265470">
             <property name="text" nameId="tpc2.1073389577007" value="type" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1230301288070">
-              <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1230301269581">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1230301269582" />
@@ -1425,9 +1409,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177498639115">
             <property name="text" nameId="tpc2.1073389577007" value="do transform" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678036">
-              <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177498639116">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843183927" />
@@ -1458,9 +1440,7 @@
       <property name="vertical" nameId="tpc2.1073389446425" value="true" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177508996218">
         <property name="text" nameId="tpc2.1073389577007" value="parameterized item" />
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399679055">
-          <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-        </node>
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288787813" resolveInfo="SecondLevel" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177508996219">
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843160027" />
@@ -1469,9 +1449,7 @@
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177508996222">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177508996223">
               <property name="text" nameId="tpc2.1073389577007" value="parameter type" />
-              <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399677855">
-                <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-              </node>
+              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
             </node>
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177508996224">
               <property name="text" nameId="tpc2.1073389577007" value="=" />
@@ -1487,9 +1465,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177508996226">
             <property name="text" nameId="tpc2.1073389577007" value="query" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678877">
-              <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177508996227">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843161935" />
@@ -1504,9 +1480,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177508996230">
             <property name="text" nameId="tpc2.1073389577007" value="matching text" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678080">
-              <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177508996231">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843164654" />
@@ -1521,9 +1495,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177508996234">
             <property name="text" nameId="tpc2.1073389577007" value="description text" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399677847">
-              <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177508996235">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843166686" />
@@ -1538,9 +1510,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1203074284886">
             <property name="text" nameId="tpc2.1073389577007" value="icon" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678135">
-              <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1203074284887">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843168703" />
@@ -1555,9 +1525,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1230301214743">
             <property name="text" nameId="tpc2.1073389577007" value="type" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1230301229463">
-              <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1230301239230">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1230301239231" />
@@ -1572,9 +1540,7 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177508996238">
             <property name="text" nameId="tpc2.1073389577007" value="do transform" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678749">
-              <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-            </node>
+            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288789795" resolveInfo="ThirdLevel" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1177508996239">
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843170595" />
@@ -1605,9 +1571,7 @@
       <property name="vertical" nameId="tpc2.1073389446425" value="false" />
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1177614733418">
         <property name="text" nameId="tpc2.1073389577007" value="remove defaults" />
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399679011">
-          <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-        </node>
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288781786" resolveInfo="FirstLevel" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="1239880240621" />
     </node>
@@ -1655,9 +1619,7 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1180111544814">
           <property name="text" nameId="tpc2.1073389577007" value="include transform menu for" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678244">
-            <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-          </node>
+          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288781786" resolveInfo="FirstLevel" />
         </node>
         <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="1239880240760" />
       </node>
@@ -1677,7 +1639,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="2886182022232400334">
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="0" />
         <link role="editorComponent" roleId="tpc2.1078939183255" targetNodeId="tpco.2900100530630621651" resolveInfo="AliasEditorComponent" />
-        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
+        <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288781786" resolveInfo="FirstLevel" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="2886182022232400335">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
         </node>
@@ -1708,9 +1670,6 @@
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="2886182022232400678">
             <property name="flag" nameId="tpc2.1186414551515" value="false" />
           </node>
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="2886182022232400679">
-            <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-          </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1182819336193">
           <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no concept&gt;" />
@@ -1734,9 +1693,7 @@
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1074357240595499282" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1074357240595499283">
           <property name="text" nameId="tpc2.1073389577007" value="target node" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1074357240595499284">
-            <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-          </node>
+          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288781786" resolveInfo="FirstLevel" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1074357240595499285">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -1764,9 +1721,7 @@
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Indent" typeId="tpc2.1198256887712" id="1224843145978" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1182819368207">
           <property name="text" nameId="tpc2.1073389577007" value="handler" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678139">
-            <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-          </node>
+          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288781786" resolveInfo="FirstLevel" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310997000">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />
@@ -1822,9 +1777,7 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1197454671022">
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1197454671023">
           <property name="text" nameId="tpc2.1073389577007" value="remove by condition" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678033">
-            <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
-          </node>
+          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.6758658092288781786" resolveInfo="FirstLevel" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1214310995803">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />

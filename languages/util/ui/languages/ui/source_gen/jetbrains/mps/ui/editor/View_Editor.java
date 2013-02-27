@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
@@ -31,7 +32,7 @@ public class View_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_3ycbab_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("<ctrl+space creates a view>");

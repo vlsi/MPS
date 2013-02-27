@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -38,7 +39,7 @@ public class ComponentsList_Editor extends DefaultNodeEditor {
     editorCell.setCellId("refNodeList_entry");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;

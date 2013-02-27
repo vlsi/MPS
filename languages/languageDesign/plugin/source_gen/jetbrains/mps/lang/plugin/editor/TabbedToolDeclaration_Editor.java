@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_Behavior;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -268,7 +269,7 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_txf5qz_a2b1b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -279,7 +280,7 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_txf5qz_b2b1b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -302,7 +303,7 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_txf5qz_c2b1b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -313,7 +314,7 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
     style.set(StyleAttributes.MATCHING_LABEL, "parenthesis");
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -456,7 +457,7 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no tool fields>");
       editorCell.setCellId("Constant_txf5qz_a5b1a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

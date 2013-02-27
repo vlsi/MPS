@@ -45,7 +45,6 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="true" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1218984549446">
           <property name="text" nameId="tpc2.1073389577007" value="description:" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1218984549447">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3b.1197385993272" resolveInfo="description" />
@@ -55,7 +54,6 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1218984549450">
           <property name="text" nameId="tpc2.1073389577007" value="long description:" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1218984549451">
           <property name="allowEmptyText" nameId="tpc2.1140114345053" value="true" />
@@ -148,14 +146,12 @@
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1218984549469">
           <property name="text" nameId="tpc2.1073389577007" value="simple finder" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1218984549471">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1218984549472">
           <property name="text" nameId="tpc2.1073389577007" value="for concept" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1218984549474">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3b.1218978181697" />

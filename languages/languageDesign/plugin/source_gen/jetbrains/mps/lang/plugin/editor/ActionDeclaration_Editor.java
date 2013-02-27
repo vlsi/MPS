@@ -33,6 +33,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ActionDeclaration_Editor extends DefaultNodeEditor {
@@ -747,7 +748,7 @@ public class ActionDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_6wnsz8_q1b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
