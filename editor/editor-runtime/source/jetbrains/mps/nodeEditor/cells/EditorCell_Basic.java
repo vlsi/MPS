@@ -631,7 +631,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public void setSubstituteInfo(SubstituteInfo info) {
-    //To change body of implemented methods use File | Settings | File Templates.
+    mySubstituteInfo = (NodeSubstituteInfo) info;
   }
 
   public void setSubstituteInfo(NodeSubstituteInfo substituteInfo) {
