@@ -27,7 +27,7 @@ public class BuildGeneratorUtil {
     List<SModelDescriptor> ownModelDescriptors = solution.getOwnModelDescriptors();
     final Wrappers._T<SModelDescriptor> modelDescriptor = new Wrappers._T<SModelDescriptor>(null);
     for (SModelDescriptor descriptor : ListSequence.fromList(ownModelDescriptors)) {
-      if (descriptor.getSModelReference().getSModelFqName().equals(newModelFQName)) {
+      if (descriptor.getReference().getSModelFqName().equals(newModelFQName)) {
         modelDescriptor.value = descriptor;
         break;
       }

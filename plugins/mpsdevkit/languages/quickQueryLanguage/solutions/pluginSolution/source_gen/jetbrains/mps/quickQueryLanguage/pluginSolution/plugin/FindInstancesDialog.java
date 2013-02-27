@@ -136,7 +136,7 @@ public class FindInstancesDialog extends BaseDialog {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         model.value = SNodeOperations.getModel(myNode);
-        fqName.value = model.value.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
+        fqName.value = jetbrains.mps.util.SNodeOperations.getModelLongName(model.value.getModelDescriptor()) + "." + QueryExecutor.GENERATED_QUERY_NAME;
         loader.value = cd.getClassLoader(SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(FindInstancesDialog.this.myNode)).getClassLoader());
       }
     });

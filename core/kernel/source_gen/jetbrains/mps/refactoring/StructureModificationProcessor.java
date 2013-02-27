@@ -62,7 +62,7 @@ public class StructureModificationProcessor {
         continue;
       }
       for (StructureModification data : ListSequence.fromList(usedModel.getStructureModificationLog().getHistory())) {
-        if (importElement.getUsedVersion() <= MapSequence.fromMap(data.getDependencies()).get(usedModel.getSModelReference())) {
+        if (importElement.getUsedVersion() <= MapSequence.fromMap(data.getDependencies()).get(usedModel.getReference())) {
           ListSequence.fromList(result).addElement(data);
         }
       }

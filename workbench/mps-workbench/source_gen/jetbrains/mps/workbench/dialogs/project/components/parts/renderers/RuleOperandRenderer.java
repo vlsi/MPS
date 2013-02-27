@@ -123,7 +123,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
             if (model == null || node == null) {
               return null;
             }
-            String modelName = NameUtil.shortNameFromLongName(model.getLongName());
+            String modelName = NameUtil.shortNameFromLongName(SNodeOperations.getModelLongName(model));
             return modelName + "." + node.getName();
           }
         });

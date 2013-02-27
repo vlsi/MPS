@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -28,8 +28,9 @@ import java.io.IOException;
  */
 public interface SModel {
 
-  @Deprecated//todo migration only. REMOVE
-  SModelDescriptor getModelDescriptor() ;
+  @Deprecated
+//todo migration only. REMOVE
+  SModelDescriptor getModelDescriptor();
 
   /**
    * Returns the id of the model valid within the containing module.
@@ -48,6 +49,7 @@ public interface SModel {
 
   ModelRoot getModelRoot();
 
+  // TODO remove
   void setModelRoot(ModelRoot mr);
 
   /**
@@ -83,7 +85,28 @@ public interface SModel {
   DataSource getSource();
 
   /**
+   * The model is fully loaded into memory.
+   */
+  boolean isLoaded();
+
+  /**
+   * When owning a read action lock, this method will fully load the model from the storage.
+   * Does nothing if already loaded.
+   * The load() method is called automatically on a not-loaded model whenever elements from it are being resolved.
+   * Problems can be retrieved later by the {@link #getProblems()} method.
+   */
+  void load();
+
+  /**
+   * The list of persistence-specific model problems (like syntax or I/O errors).
+   * Returns empty list if this model is not loaded yet.
+   */
+  @NotNull
+  Iterable<Problem> getProblems();
+
+  /**
    * When owning a write action lock, this method will save the model into the storage.
+   * Throws an exception if there were fatal errors during the load phase.
    */
   void save() throws IOException;
 
@@ -92,4 +115,23 @@ public interface SModel {
    * A modified model is first saved into the storage so that the changes are preserved.
    */
   void unload();
+
+  /**
+   * Represents a problem with the persitence.
+   */
+  interface Problem {
+
+    int getColumn();
+
+    int getLine();
+
+    String getLocation();
+
+    String getText();
+
+    /**
+     *  Errors usually cause model to be partially loaded, so it cannot be saved back to the storage later.
+     */
+    boolean isError();
+  }
 }

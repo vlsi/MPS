@@ -101,7 +101,7 @@ public class ForbidIncomingReferencesInSubconcepts_Intention implements Intentio
         for (SNode cd : ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
           SNode c = cd;
           if (ListSequence.fromList(SConceptOperations.getConceptHierarchy(c)).contains(node)) {
-            SPropertyOperations.set(cd, "incomingRefs", "forbidden");
+            SPropertyOperations.set(cd, "staticScope", "none");
           }
         }
       }

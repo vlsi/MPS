@@ -16,6 +16,8 @@
 
 package jetbrains.mps.idea.core.psi.impl.file;
 
+import com.intellij.ide.impl.ProjectViewSelectInTarget;
+import com.intellij.ide.projectView.impl.ProjectViewPane;
 import com.intellij.lang.Language;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.progress.ProgressIndicatorProvider;
@@ -121,6 +123,21 @@ public class FileSourcePsiFile extends PsiPlainTextFileImpl {
   @Override
   public FileType getFileType() {
     return MPSFileType.INSTANCE;
+  }
+
+  @Override
+  public boolean canNavigateToSource() {
+    return false;
+  }
+
+  @Override
+  public boolean canNavigate() {
+    return true;
+  }
+
+  @Override
+  public void navigate(boolean requestFocus) {
+    ProjectViewSelectInTarget.select(getProject(), this, ProjectViewPane.ID, null, getVirtualFile(), requestFocus);
   }
 
   @Override

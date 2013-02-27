@@ -74,7 +74,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
         }
 
         for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
-          if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) {
+          if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
             continue;
           }
 
@@ -89,9 +89,9 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
             SetSequence.fromSet(dependencies).addElement(mref);
           }
           // remove all imported already models 
-          SetSequence.fromSet(dependencies).removeElement(modelDescriptor.getSModelReference());
+          SetSequence.fromSet(dependencies).removeElement(modelDescriptor.getReference());
           for (SModelDescriptor importedModel : ListSequence.fromList(jetbrains.mps.smodel.SModelOperations.allImportedModels(model, GlobalScope.getInstance()))) {
-            SetSequence.fromSet(dependencies).removeElement(importedModel.getSModelReference());
+            SetSequence.fromSet(dependencies).removeElement(importedModel.getReference());
           }
           // add new dependencies to model 
           for (SModelReference modelToImport : SetSequence.fromSet(dependencies)) {

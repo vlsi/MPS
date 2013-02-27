@@ -468,7 +468,7 @@
     <nodeInfo nodeId="5543290333466300056" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="62" startPosition="77" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
     <nodeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="5543290333466299995" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="61" startPosition="82" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5543290333466299995" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="61" startPosition="121" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6560218837114085029" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="84" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_lb7xg4_a0a0a0b0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6560218837114085040" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="91" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_lb7xg4_a0a0a0c0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6560218837114085051" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="98" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_lb7xg4_a0a0a0d0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
@@ -499,10 +499,10 @@
     <scopeInfo nodeId="6560218837114085051" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="98" startPosition="66" endLine="102" endPosition="24">
       <varInfo nodeId="6560218837114085051" varName="quotedNode_1" />
     </scopeInfo>
-    <scopeInfo nodeId="5543290333466299995" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="61" startPosition="82" endLine="66" endPosition="17">
+    <scopeInfo nodeId="5543290333466299995" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="61" startPosition="121" endLine="66" endPosition="17">
       <varInfo nodeId="5543290333466299998" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="5543290333466292296" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="61" startPosition="82" endLine="67" endPosition="57" />
+    <scopeInfo nodeId="5543290333466292296" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="61" startPosition="121" endLine="67" endPosition="57" />
     <scopeInfo nodeId="6560218837114085029" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="84" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="6560218837114085040" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="91" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="6560218837114085051" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="98" startPosition="0" endLine="104" endPosition="0" />

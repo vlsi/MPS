@@ -156,7 +156,7 @@ public class QueriesGenerated {
     }
     SModel m = ts.getSModel();
     if (m == null) {
-      _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "Cannot load model: " + ts.getLongName());
+      _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "Cannot load model: " + SNodeOperations.getModelLongName(ts));
       return false;
     }
     return ListSequence.fromList(SModelOperations.getRoots(m, null)).isNotEmpty();
@@ -175,7 +175,7 @@ public class QueriesGenerated {
     }
     SModel m = ts.getSModel();
     if (m == null) {
-      _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "Cannot load model: " + ts.getLongName());
+      _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "Cannot load model: " + SNodeOperations.getModelLongName(ts));
       return false;
     }
     return ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).isNotEmpty();

@@ -58,7 +58,7 @@ public class TestUtils {
     final Wrappers._T<String> value = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        value.value = SNodeOperations.getModelFromNodeReference(((SNodePointer) pointer)).getSModelReference().toString() + POINTER_SEPARATOR + ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()).getNodeId().toString();
+        value.value = SNodeOperations.getModelFromNodeReference(((SNodePointer) pointer)).getReference().toString() + POINTER_SEPARATOR + ((SNodePointer) pointer).resolve(MPSModuleRepository.getInstance()).getNodeId().toString();
       }
     });
     return value.value;

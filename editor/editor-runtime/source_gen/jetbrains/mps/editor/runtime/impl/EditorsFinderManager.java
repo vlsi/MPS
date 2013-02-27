@@ -176,7 +176,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     SModelDescriptor editorModelDescriptor = LanguageAspect.EDITOR.get(language);
     String editorUID = null;
     if (editorModelDescriptor != null) {
-      editorUID = editorModelDescriptor.getSModelReference().getSModelFqName().toString();
+      editorUID = editorModelDescriptor.getReference().getSModelFqName().toString();
     }
     try {
       String editorClassName = editorUID + "." + SPropertyOperations.getString(conceptDeclaration, "name") + "_Editor";

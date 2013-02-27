@@ -44,7 +44,7 @@ public class JavaStubModelDataSource extends FolderSetDataSource implements Stub
 
   @Override
   public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
-    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
+    SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
       ((jetbrains.mps.smodel.SModel) model).addLanguage(l.getModuleReference());
     }
@@ -60,7 +60,7 @@ public class JavaStubModelDataSource extends FolderSetDataSource implements Stub
         if (dir.indexOf("!") != -1) {
           cp.add(ClassPathFactory.getInstance().createFromPath(dir.substring(0, dir.indexOf("!")), this.getClass().getName()));
         } else {
-          String name = descriptor.getSModelReference().getLongName().replace('.', File.separatorChar);
+          String name = descriptor.getReference().getLongName().replace('.', File.separatorChar);
 
           // dirty hack for current problems with path separators 
           String dirCorrected = dir.replace('/', File.separatorChar);

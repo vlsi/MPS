@@ -27,29 +27,57 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
   /**
    * After model loading call SModelRepository.fireModelRepositoryChanged
    */
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   SModel getSModel();
 
-  @Override
+  @Deprecated
+  /**
+   * Replace with implemented in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   IModule getModule();
 
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   void setModule(SModule container);
 
-  //------
 
-  void forceLoad();
-
-  // TODO remove
+  @Deprecated
+  /**
+   * Replace with SNodeOperations.isGeneratable in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   boolean isGeneratable();
 
   //------
 
+  @Deprecated
+  /**
+   * Replace with getReference() in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   SModelReference getSModelReference();
 
+  @Deprecated
+  /**
+   * Replace with SNodeOperations.getModelLongName(m.getSModel()) in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   String getLongName();
 
+  @Deprecated
+  /**
+   * Replace with SModelStereotype.getStereotype(m.getSModel()) in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   String getStereotype();
-
-  boolean isLoaded();
 
   //------
 
@@ -59,16 +87,35 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   //------
 
-  //not used, left for compatibility
+  @Deprecated
+  /**
+   * Replace with getModule() instanceof TransientModelsModule in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public boolean isTransient();
 
   //------
 
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   SModelDescriptor resolveModel(SModelReference reference);
 
   //--------------model listeners--------------------
 
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   void addModelListener(@NotNull SModelListener listener);
 
+  @Deprecated
+  /**
+   * Cast to SModelInternal in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   void removeModelListener(@NotNull SModelListener listener);
 }

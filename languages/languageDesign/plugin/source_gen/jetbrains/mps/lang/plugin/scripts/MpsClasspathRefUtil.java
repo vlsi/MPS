@@ -41,7 +41,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
         List<SModelDescriptor> models = newModule.getOwnModelDescriptors();
         SModelReference modelRef = check_xpwqv8_a0c0c0f0b(ListSequence.fromList(models).findFirst(new IWhereFilter<SModelDescriptor>() {
           public boolean accept(SModelDescriptor it) {
-            return eq_xpwqv8_a0a0a0a0a0a0c0c0f0b(it.getLongName(), fqname);
+            return eq_xpwqv8_a0a0a0a0a0a0c0c0f0b(jetbrains.mps.util.SNodeOperations.getModelLongName(it), fqname);
           }
         }));
         if (modelRef == null) {

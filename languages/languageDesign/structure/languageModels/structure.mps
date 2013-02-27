@@ -244,6 +244,11 @@
       <property name="name" nameId="tpck.1169194664001" value="ChildrenIncomingReferencesPolicy" />
       <link role="memberDataType" roleId="1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
+    <node type="tpce.EnumerationDataTypeDeclaration" typeId="1082978164219" id="5404671619616246759">
+      <property name="memberIdentifierPolicy" nameId="1197591154882" value="custom" />
+      <property name="name" nameId="tpck.1169194664001" value="StaticScope" />
+      <link role="memberDataType" roleId="1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
   </roots>
   <root id="1071489090640">
     <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="1096454100552">
@@ -254,13 +259,9 @@
       <property name="name" nameId="tpck.1169194664001" value="iconPath" />
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
-    <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="3656905254337409260">
-      <property name="name" nameId="tpck.1169194664001" value="incomingRefs" />
-      <link role="dataType" roleId="1082985295845" targetNodeId="8087047305080774904" resolveInfo="InstanceIncomingReferencesPolicy" />
-    </node>
-    <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="3656905254337409264">
-      <property name="name" nameId="tpck.1169194664001" value="childrenRefs" />
-      <link role="dataType" roleId="1082985295845" targetNodeId="3220559764717766993" resolveInfo="ChildrenIncomingReferencesPolicy" />
+    <node role="propertyDeclaration" roleId="1071489727084" type="tpce.PropertyDeclaration" typeId="1071489288299" id="5404671619616246344">
+      <property name="name" nameId="tpck.1169194664001" value="staticScope" />
+      <link role="dataType" roleId="1082985295845" targetNodeId="5404671619616246759" resolveInfo="StaticScope" />
     </node>
     <node role="linkDeclaration" roleId="1071489727083" type="tpce.LinkDeclaration" typeId="1071489288298" id="1071489389519">
       <property name="role" nameId="1071599776563" value="extends" />
@@ -719,6 +720,22 @@
       <property name="internalValue" nameId="1083923523171" value="forbidden" />
       <property name="javaIdentifier" nameId="1192116978809" value="forbidden" />
       <property name="externalValue" nameId="1083923523172" value="enforce `forbidden'" />
+    </node>
+  </root>
+  <root id="5404671619616246759">
+    <node role="member" roleId="1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="1083171877298" id="5404671619616246760">
+      <property name="javaIdentifier" nameId="1192116978809" value="global" />
+      <property name="externalValue" nameId="1083923523172" value="global" />
+    </node>
+    <node role="member" roleId="1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="1083171877298" id="5404671619616246761">
+      <property name="internalValue" nameId="1083923523171" value="root" />
+      <property name="javaIdentifier" nameId="1192116978809" value="root" />
+      <property name="externalValue" nameId="1083923523172" value="containing root" />
+    </node>
+    <node role="member" roleId="1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="1083171877298" id="5404671619616246764">
+      <property name="internalValue" nameId="1083923523171" value="none" />
+      <property name="javaIdentifier" nameId="1192116978809" value="none" />
+      <property name="externalValue" nameId="1083923523172" value="none" />
     </node>
   </root>
 </model>

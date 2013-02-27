@@ -30,6 +30,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.Condition;
@@ -109,7 +110,7 @@ public class MappingDialog extends DialogWrapper {
       MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(moduleContext, MPSIcons.Nodes.Generator, generator.getModuleFqName(), "generator/" + generator.getName());
       root.add(generatorTreeNode);
       for (SModelDescriptor md : generator.getOwnTemplateModels()) {
-        MPSTreeNode modelTreeNode = new MappingDialog.MyTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), md.getLongName() + "@" + md.getStereotype());
+        MPSTreeNode modelTreeNode = new MappingDialog.MyTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), SNodeOperations.getModelLongName(md) + "@" + SModelStereotype.getStereotype(md));
         generatorTreeNode.add(modelTreeNode);
         SModel model = md.getSModel();
         for (SNode node : SModelOperations.getRoots(model, "jetbrains.mps.lang.generator.structure.MappingConfiguration")) {

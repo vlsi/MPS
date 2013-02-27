@@ -225,6 +225,25 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor" file="IType_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor" file="IWrapper_BehaviorDescriptor.java" />
+  <dependency className="jetbrains.mps.lang.core.behavior.ImplementationContainer_Behavior" file="ImplementationContainer_Behavior.java">
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.ImplementationContainer_BehaviorDescriptor" file="ImplementationContainer_BehaviorDescriptor.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor" file="ImplementationPart_BehaviorDescriptor.java">
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeFacade_BehaviorDescriptor" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" file="InterfacePart_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" file="LinkAttribute_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -243,6 +262,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.Attribute_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.core.behavior.ScopeFacade_BehaviorDescriptor" file="ScopeFacade_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior" file="ScopeProvider_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Deprecated" />

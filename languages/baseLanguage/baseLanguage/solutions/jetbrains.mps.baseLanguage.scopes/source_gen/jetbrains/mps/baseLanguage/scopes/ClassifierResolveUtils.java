@@ -17,6 +17,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
@@ -124,7 +125,7 @@ public class ClassifierResolveUtils {
     List<SModelDescriptor> result = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     for (IModule module : Sequence.fromIterable(scope.getVisibleModules())) {
       for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
-        if (eq_8z6r2b_a0a0a0c0f(modelDescriptor.getLongName(), modelLongName)) {
+        if (eq_8z6r2b_a0a0a0c0f(jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor), modelLongName)) {
           ListSequence.fromList(result).addElement(modelDescriptor);
         }
       }
@@ -135,7 +136,7 @@ public class ClassifierResolveUtils {
   private static Iterable<SNode> resolveClassifierByFqNameWithNonStubPriority(Iterable<SModelDescriptor> models, String classifierFqName) {
     models = Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return !(it.isTransient());
+        return !((it.getModule() instanceof TransientModelsModule));
       }
     });
 
@@ -144,7 +145,7 @@ public class ClassifierResolveUtils {
     // resolve without stubs 
     Iterable<SNode> result = resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return neq_8z6r2b_a0a0a0a0a0a0f0g(it.getStereotype(), stubStereoType);
+        return neq_8z6r2b_a0a0a0a0a0a0f0g(SModelStereotype.getStereotype(it), stubStereoType);
       }
     }), classifierFqName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
@@ -154,7 +155,7 @@ public class ClassifierResolveUtils {
     // resolve with stubs 
     return resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return eq_8z6r2b_a0a0a0a0a0a9a6(it.getStereotype(), stubStereoType);
+        return eq_8z6r2b_a0a0a0a0a0a9a6(SModelStereotype.getStereotype(it), stubStereoType);
       }
     }), classifierFqName);
   }
@@ -170,11 +171,11 @@ public class ClassifierResolveUtils {
   private static Iterable<SNode> resolveClassifierByFqName(SModelDescriptor modelDescriptor, String classifierFqName) {
     assert !(classifierFqName.contains("$"));
 
-    if (!(classifierFqName.startsWith(modelDescriptor.getLongName()))) {
+    if (!(classifierFqName.startsWith(jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor)))) {
       return Collections.<SNode>emptyList();
     }
 
-    String classifierNestedName = classifierFqName.substring(modelDescriptor.getLongName().length() + 1);
+    String classifierNestedName = classifierFqName.substring(jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor).length() + 1);
     return resolveClassifierByNestedName(modelDescriptor, classifierNestedName);
   }
 
@@ -346,7 +347,7 @@ public class ClassifierResolveUtils {
 
     for (SModel model : Sequence.fromIterable(models)) {
       // FIXME will be unnecessary when transient models live in a separate repository 
-      if (!(model.equals(contextNodeModel)) && model instanceof SModelDescriptor && ((SModelDescriptor) model).isTransient()) {
+      if (!(model.equals(contextNodeModel)) && model instanceof SModelDescriptor && (((SModelDescriptor) model).getModule() instanceof TransientModelsModule)) {
         continue;
       }
 
@@ -504,7 +505,7 @@ public class ClassifierResolveUtils {
       for (SModel m : Sequence.fromIterable(models)) {
 
         // FIXME will be unnecessary when transient models live in a separate repository 
-        if (!(m.equals(contextNodeModel)) && m instanceof SModelDescriptor && ((SModelDescriptor) m).isTransient()) {
+        if (!(m.equals(contextNodeModel)) && m instanceof SModelDescriptor && (((SModelDescriptor) m).getModule() instanceof TransientModelsModule)) {
           continue;
         }
 

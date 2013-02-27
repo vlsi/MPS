@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a09v3ldzhlgkry1krwvpbu4ikfb89dx">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
+<dependencies version="2" modelHash="-34abc22tae4skbmao818thu4y9fyo2h">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-92tu7rxl21zsoz29xy7caobqrksdhqe" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="a7c2ku0s74knl0vk8tegekel7po2h4e" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9bdhyw4fyjj9lptx5av16k73e6s932q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-8l7cqv17907zysjtx467k7ils0pjy5k">
     <dep root="1104094430779063683" />
@@ -27,43 +27,43 @@
     <file name="Lang_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="3157158168562217892" name="BreakpointCreator" hash="-3c7arp0o59jufixn1c4mpc1xu8qa9dd">
+  <source id="3157158168562217892" name="BreakpointCreator" hash="-8qy3kfp0xsc6ok5r0q8ani7xr0lg772">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3157158168562219319" name="BreakpointableNodeItem" hash="-9d84631jj8pnhzi7im9u28dckl3kus7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="3157158168562219322" name="ConceptFunction_CreateBreakpoint" hash="de5s8b913ay4penbgh8shev8ha8vpgi">
+  <source id="3157158168562219322" name="ConceptFunction_CreateBreakpoint" hash="-2m80o3h5bw98ey5opt13co1zvt4l10e">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1270798772176052876" name="ConceptFunctionParameter_Debug_Project" hash="-1y1moie96io19dqsostg9b7blr419ck">
+  <source id="1270798772176052876" name="ConceptFunctionParameter_Debug_Project" hash="7wsfxje31i8ev87r9gnnu9xg9falkmw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1270798772176052880" name="ConceptFunctionParameter_DebuggableNode" hash="5ud6tvd4v86wnsu34zqq84jw9ns01x8">
+  <source id="1270798772176052880" name="ConceptFunctionParameter_DebuggableNode" hash="-6hrc5kibfwlv2fe4y1snpnvf9nhjm9b">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5789575999242884574" name="ConceptDeclarationReference" hash="-3e274aikdzyx13audiee6mcurehajhy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1104094430779063683" name="DebuggerType" hash="-e45cvq5g1juxyijpuybiki5iccllr86">
+  <source id="1104094430779063683" name="DebuggerType" hash="au70vx25d39o64mqu5k2mchboorfbwl">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1104094430779068753" name="DebuggerReference" hash="11af2housagdi8vp1x0hgda5welxtkn">
+  <source id="1104094430779068753" name="DebuggerReference" hash="3fenx4m794fqemnbzpkcews57474gcy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2569394751387978473" name="CreateBreakpointOperation" hash="-7oj0rs95f9k4zp0nltk58oxgsgf8sme">
+  <source id="2569394751387978473" name="CreateBreakpointOperation" hash="-9norj3hcfyzivlnpa0jqbyu8accbo1t">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6720907903633266914" name="GetDebuggerSettings_Function" hash="-1pesgjfikbchxcqbbjsz33et58dyl0z">
+  <source id="6720907903633266914" name="GetDebuggerSettings_Function" hash="-6nptbn2ikezgszds1c2pqnncuv3ql1m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6720907903633266421" name="DebuggerConfiguration" hash="effxg81700eee91ugd8h5nlv2ydesoy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8751745335399632073" name="ConceptFunction_IsApplicableToConcept" hash="-2z51vmfa55dp7c8whhkkl61vi301bhy">
+  <source id="8751745335399632073" name="ConceptFunction_IsApplicableToConcept" hash="-5htbcx3x1nfwzuruab2k0l37yg24v">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="8751745335399632077" name="ConceptFunctionParameter_Concept" hash="-9damo03qpn5rqrpknaetmazv10pbkk0">
+  <source id="8751745335399632077" name="ConceptFunctionParameter_Concept" hash="-7b4qds0l4yb9ndewgtutsrl4ry7ni88">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

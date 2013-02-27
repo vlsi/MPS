@@ -19,6 +19,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -62,7 +63,7 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
               }
             }).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor smd) {
-                return !("java_stub".equals(smd.getStereotype()));
+                return !("java_stub".equals(SModelStereotype.getStereotype(smd)));
               }
             }).translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
@@ -106,7 +107,7 @@ public class GroupReference_Constraints extends BaseConstraintsDescriptor {
               }
             }).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor smd) {
-                return !("java_stub".equals(smd.getStereotype()));
+                return !("java_stub".equals(SModelStereotype.getStereotype(smd)));
               }
             }).translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {

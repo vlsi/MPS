@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="b0ja2bv6y2h5p13clhjrkku2pty0k5n">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="1o2v1am7ahnmfqj93sr7lgsgpfhyz9n" />
+<dependencies version="2" modelHash="dezz8ou71peq0e39ak0povp4l95gu80">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-92tu7rxl21zsoz29xy7caobqrksdhqe" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-act6qny6z7zw85vmijovp95lnr9t9zd" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="a7c2ku0s74knl0vk8tegekel7po2h4e" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="9ywk7amtncgljhhml38fzfdhxlv0r5a" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-9bdhyw4fyjj9lptx5av16k73e6s932q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-c1prn3teyxjh37lzg3o3idls8kjv8gf" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
   <common hash="-es5l5w8xqra45qq2a0s3jyeimzk4pzt">
     <dep root="5202024118203914171" />
@@ -23,16 +23,16 @@
   <source id="6409088484822265794" name="DecisionTable" hash="5r2i7xo4eb5rkjajkjxu0g51czpg98y">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6409088484822290058" name="DecisionTableType" hash="5y6qlmj0n3ow7fcvyx1h98ehsmg0rlm">
+  <source id="6409088484822290058" name="DecisionTableType" hash="-enoyqp63f9fhbcfvwe5a6tp7zygsqwx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5202024118203914171" name="XVariableReference" hash="c60pqv20cpz4ovon4fyfv9aks4wc1ss">
+  <source id="5202024118203914171" name="XVariableReference" hash="71thagod8oczcku70f7ev5vhqqq9gfv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5202024118203914172" name="YVariableReference" hash="44wjvt2w23umwrz6rof2alwq2yav3vm">
+  <source id="5202024118203914172" name="YVariableReference" hash="-6d31zo7g6g30fwpcon9dbwyruouomxn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5202024118203995643" name="DecideOperation" hash="4s33p9hx3pk3zl3inzehibwek61utyo">
+  <source id="5202024118203995643" name="DecideOperation" hash="48s8ndw9t8sxm9krtv4b3tsm67xhbm6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6487201325881248120" name="CaseExpression" hash="2slwhu3s974957pg3nzwjhocjv9sxsh">

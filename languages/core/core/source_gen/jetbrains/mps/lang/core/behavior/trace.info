@@ -18,9 +18,13 @@
   <unitInfo fileName="ISuppressErrors_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
   <unitInfo fileName="IType_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor" />
   <unitInfo fileName="IWrapper_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.IWrapper_BehaviorDescriptor" />
+  <unitInfo fileName="ImplementationContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ImplementationContainer_BehaviorDescriptor" />
+  <unitInfo fileName="ImplementationPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ImplementationPart_BehaviorDescriptor" />
+  <unitInfo fileName="InterfacePart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor" />
   <unitInfo fileName="LinkAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor" />
   <unitInfo fileName="NodeAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor" />
   <unitInfo fileName="PropertyAttribute_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor" />
+  <unitInfo fileName="ScopeFacade_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ScopeFacade_BehaviorDescriptor" />
   <unitInfo fileName="ScopeProvider_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
   <unitInfo fileName="SuppressErrorsAnnotation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.SuppressErrorsAnnotation_BehaviorDescriptor" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1213877396626">
@@ -328,6 +332,29 @@
       <varInfo nodeId="1262430001741646630" varName="thisConcept" />
     </scopeInfo>
     <unitInfo nodeId="1262430001741646630" fileName="SuppressErrorsAnnotation_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.SuppressErrorsAnnotation_Behavior" />
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/1319728274783151658">
+    <nodeInfo nodeId="1319728274783151658" fileName="ImplementationContainer_Behavior.java" startLine="15" startPosition="96" endLine="16" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1319728274783151658" fileName="ImplementationContainer_Behavior.java" startLine="20" startPosition="129" endLine="21" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1319728274783151658" fileName="ImplementationContainer_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1319728274783151658" fileName="ImplementationContainer_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isImplementation_1319728274783152230#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1319728274783151658" fileName="ImplementationContainer_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isImplementation_1319728274783152230#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <scopeInfo nodeId="1319728274783151660" fileName="ImplementationContainer_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
+    <scopeInfo nodeId="1319728274783151658" fileName="ImplementationContainer_Behavior.java" startLine="15" startPosition="96" endLine="16" endPosition="137" />
+    <scopeInfo nodeId="1319728274783151658" fileName="ImplementationContainer_Behavior.java" startLine="20" startPosition="129" endLine="21" endPosition="289" />
+    <scopeInfo nodeId="1319728274783151658" fileName="ImplementationContainer_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="1319728274783151658" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1319728274783151658" fileName="ImplementationContainer_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="1319728274783152245" varName="child" />
+      <varInfo nodeId="1319728274783151658" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1319728274783151658" fileName="ImplementationContainer_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="1319728274783151658" varName="callerConceptFqName" />
+      <varInfo nodeId="1319728274783152245" varName="child" />
+      <varInfo nodeId="1319728274783151658" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1319728274783151658" fileName="ImplementationContainer_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.core.behavior.ImplementationContainer_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)/201537367881074471">
     <nodeInfo nodeId="201537367881074471" fileName="IMetaLevelChanger_Behavior.java" startLine="15" startPosition="80" endLine="16" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -51,12 +51,12 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
           SNode target = SLinkOperations.getTarget(ref, "target", false);
           if (SNodeOperations.isInstanceOf(target, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
             SNode decl = SNodeOperations.cast(target, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
-            if (SPropertyOperations.hasValue(decl, "incomingRefs", "forbidden", null)) {
+            if (SPropertyOperations.hasValue(decl, "staticScope", "none", null)) {
               addIssue(results, ref, "Reference to a non-referenceable concept found: " + SPropertyOperations.getString(target, "name"), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable concept", null);
             }
           }
         }
-        if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.hasValue(SNodeOperations.cast(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "incomingRefs", "forbidden", null)) {
+        if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.hasValue(SNodeOperations.cast(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "staticScope", "none", null)) {
           SNode c = concept;
           if (SConceptOperations.isSubConceptOf(c, "jetbrains.mps.lang.core.structure.INamedConcept")) {
             addIssue(results, c, "INamedConcept inheritors are usually referenceable", ModelChecker.SEVERITY_WARNING, "non-referenceable named concept", null);
@@ -79,15 +79,14 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
           addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", null);
           continue;
         }
-        boolean sameRoot = SNodeOperations.getContainingRoot(target) == SNodeOperations.getContainingRoot(node);
-        checkNode(results, target, sameRoot, false, target);
+        checkNode(results, target, node, false, target);
         SNode curr = target;
         while (!(SNodeOperations.isAttribute(curr))) {
           curr = SNodeOperations.getParent(curr);
           if (curr == null) {
             break;
           }
-          checkNode(results, curr, sameRoot, true, target);
+          checkNode(results, curr, node, true, target);
         }
       }
     }
@@ -96,7 +95,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
 
 
 
-  private void checkNode(List<SearchResult<ModelCheckerIssue>> results, SNode node, boolean sameRoot, boolean isAncestor, SNode anchor) {
+  private void checkNode(List<SearchResult<ModelCheckerIssue>> results, SNode node, SNode refNode, boolean isAncestor, SNode anchor) {
     SNode conceptDecl = SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance());
     if (conceptDecl == null) {
       addIssue(results, node, "No concept found for " + node.toString(), ModelChecker.SEVERITY_ERROR, "no concept", null);
@@ -105,16 +104,14 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
       SNode decl = SNodeOperations.cast(conceptDecl, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
 
       if (isAncestor) {
-        if (SPropertyOperations.hasValue(decl, "childrenRefs", "forbidden", null)) {
-          addIssue(results, anchor, "Reference to a node under `enforce forbidden' references node: ancestor concept=" + SPropertyOperations.getString(decl, "name"), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable node", null);
-        } else if (SPropertyOperations.hasValue(decl, "childrenRefs", "local", null) && !(sameRoot)) {
-          addIssue(results, anchor, "Cross-root reference to a locally referenceable concept found: ancestor concept=" + SPropertyOperations.getString(decl, "name"), ModelChecker.SEVERITY_ERROR, "reference to a locally referenceable node", null);
+        if (SNodeOperations.isInstanceOf(decl, "jetbrains.mps.lang.core.structure.ScopeFacade") && !(ListSequence.fromList(SNodeOperations.getAncestors(refNode, null, true)).contains(node))) {
+          addIssue(results, anchor, "Reference from outside to a node under ScopeFacade: facade=" + SPropertyOperations.getString(decl, "name"), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable node", null);
         }
-
       } else {
-        if (SPropertyOperations.hasValue(decl, "incomingRefs", "forbidden", null)) {
+
+        if (SPropertyOperations.hasValue(decl, "staticScope", "none", null)) {
           addIssue(results, anchor, "Reference to a non-referenceable node found: " + SPropertyOperations.getString(decl, "name"), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable node", null);
-        } else if (SPropertyOperations.hasValue(decl, "incomingRefs", "local", null) && !(sameRoot)) {
+        } else if (SPropertyOperations.hasValue(decl, "staticScope", "none", null) && !(SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(refNode))) {
           addIssue(results, anchor, "Cross-root reference to a locally referenceable node found: " + SPropertyOperations.getString(decl, "name"), ModelChecker.SEVERITY_ERROR, "reference to a locally referenceable node", null);
         }
       }

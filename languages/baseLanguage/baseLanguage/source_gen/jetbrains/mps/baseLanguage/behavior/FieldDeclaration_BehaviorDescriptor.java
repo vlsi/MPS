@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import javax.swing.Icon;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -12,7 +13,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor {
+public class FieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public FieldDeclaration_BehaviorDescriptor() {
   }
 

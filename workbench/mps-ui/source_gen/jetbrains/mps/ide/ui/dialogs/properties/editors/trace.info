@@ -27,7 +27,7 @@
     <nodeInfo nodeId="3995997045458442825" fileName="ManagerTableCellEditor.java" startLine="81" startPosition="0" endLine="82" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3995997045458442831" fileName="ManagerTableCellEditor.java" startLine="84" startPosition="79" endLine="85" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3995997045458442833" fileName="ManagerTableCellEditor.java" startLine="85" startPosition="33" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3995997045458442838" fileName="ManagerTableCellEditor.java" startLine="88" startPosition="64" endLine="89" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3995997045458442838" fileName="ManagerTableCellEditor.java" startLine="88" startPosition="103" endLine="89" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3995997045458442844" fileName="ManagerTableCellEditor.java" startLine="89" startPosition="43" endLine="90" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3995997045458442878" fileName="ManagerTableCellEditor.java" startLine="96" startPosition="7" endLine="97" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3995997045458442805" fileName="ManagerTableCellEditor.java" startLine="74" startPosition="69" endLine="77" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -48,7 +48,7 @@
     <nodeInfo nodeId="3995997045458442787" fileName="ManagerTableCellEditor.java" startLine="70" startPosition="54" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3995997045458442776" fileName="ManagerTableCellEditor.java" startLine="69" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getManagerNodes#()Ljava/util/List;" />
     <scopeInfo nodeId="3995997045458442809" fileName="ManagerTableCellEditor.java" startLine="75" startPosition="36" endLine="76" endPosition="21" />
-    <scopeInfo nodeId="3995997045458442837" fileName="ManagerTableCellEditor.java" startLine="88" startPosition="64" endLine="90" endPosition="173">
+    <scopeInfo nodeId="3995997045458442837" fileName="ManagerTableCellEditor.java" startLine="88" startPosition="103" endLine="90" endPosition="173">
       <varInfo nodeId="3995997045458442839" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="3995997045458442835" fileName="ManagerTableCellEditor.java" startLine="87" startPosition="96" endLine="91" endPosition="15" />

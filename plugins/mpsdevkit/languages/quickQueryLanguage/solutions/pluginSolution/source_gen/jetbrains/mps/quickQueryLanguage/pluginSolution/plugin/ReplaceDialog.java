@@ -117,7 +117,7 @@ public class ReplaceDialog extends BaseDialog {
       }
     });
 
-    String fqName = model.value.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
+    String fqName = jetbrains.mps.util.SNodeOperations.getModelLongName(model.value.getModelDescriptor()) + "." + QueryExecutor.GENERATED_QUERY_NAME;
     ClassLoader loader = cd.getClassLoader(QueryExecutor.class.getClassLoader());
     final Wrappers._T<Query> query = new Wrappers._T<Query>(null);
     try {

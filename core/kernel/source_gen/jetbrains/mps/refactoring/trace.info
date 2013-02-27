@@ -759,7 +759,7 @@
     <nodeInfo nodeId="6798259919457177079" fileName="StructureModificationProcessor.java" startLine="57" startPosition="67" endLine="58" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6798259919457177100" fileName="StructureModificationProcessor.java" startLine="59" startPosition="139" endLine="60" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6798259919457177113" fileName="StructureModificationProcessor.java" startLine="61" startPosition="30" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6798259919457177176" fileName="StructureModificationProcessor.java" startLine="65" startPosition="128" endLine="66" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6798259919457177176" fileName="StructureModificationProcessor.java" startLine="65" startPosition="122" endLine="66" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5895770037072643407" fileName="StructureModificationProcessor.java" startLine="69" startPosition="5" endLine="70" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1158649578080894462" fileName="StructureModificationProcessor.java" startLine="73" startPosition="91" endLine="74" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="1158649578080894464" fileName="StructureModificationProcessor.java" startLine="74" startPosition="20" endLine="75" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -836,7 +836,7 @@
     <scopeInfo nodeId="9051163691968353750" fileName="StructureModificationProcessor.java" startLine="47" startPosition="84" endLine="48" endPosition="19" />
     <scopeInfo nodeId="1216099837721873602" fileName="StructureModificationProcessor.java" startLine="51" startPosition="111" endLine="52" endPosition="38" />
     <scopeInfo nodeId="6798259919457177112" fileName="StructureModificationProcessor.java" startLine="61" startPosition="30" endLine="62" endPosition="17" />
-    <scopeInfo nodeId="6798259919457177132" fileName="StructureModificationProcessor.java" startLine="65" startPosition="128" endLine="66" endPosition="57" />
+    <scopeInfo nodeId="6798259919457177132" fileName="StructureModificationProcessor.java" startLine="65" startPosition="122" endLine="66" endPosition="57" />
     <scopeInfo nodeId="1158649578080894497" fileName="StructureModificationProcessor.java" startLine="82" startPosition="58" endLine="83" endPosition="28" />
     <scopeInfo nodeId="1158649578080894500" fileName="StructureModificationProcessor.java" startLine="85" startPosition="59" endLine="86" endPosition="52" />
     <scopeInfo nodeId="1158649578080894514" fileName="StructureModificationProcessor.java" startLine="88" startPosition="58" endLine="89" endPosition="53" />

@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.util.SNodeOperations;
 
 public class DataFlowManager implements CoreComponent {
   private static Logger LOG = Logger.getLogger(DataFlowManager.class);
@@ -79,7 +80,7 @@ public class DataFlowManager implements CoreComponent {
     for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
       SModelDescriptor dfaModel = LanguageAspect.DATA_FLOW.get(l);
       if (dfaModel != null && dfaModel.getSModel().getRootNodes().iterator().hasNext()) {
-        String dfaBuildersClassName = dfaModel.getLongName() + ".DFABuilders";
+        String dfaBuildersClassName = SNodeOperations.getModelLongName(dfaModel) + ".DFABuilders";
         Class<? extends DataFlowBuilders> buildersClass = l.getClass(dfaBuildersClassName);
         if (buildersClass != null) {
           try {

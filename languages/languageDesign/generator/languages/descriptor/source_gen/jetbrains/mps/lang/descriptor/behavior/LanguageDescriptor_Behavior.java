@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
@@ -33,7 +34,7 @@ public class LanguageDescriptor_Behavior {
     }
     SModel m = ts.getSModel();
     if (m == null) {
-      genContext.showErrorMessage(SLinkOperations.getTarget(thisNode, "language", true), "Cannot load model: " + ts.getLongName());
+      genContext.showErrorMessage(SLinkOperations.getTarget(thisNode, "language", true), "Cannot load model: " + SNodeOperations.getModelLongName(ts));
       return true;
     }
     return ListSequence.fromList(SModelOperations.getRoots(m, null)).isEmpty();

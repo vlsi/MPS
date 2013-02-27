@@ -26,6 +26,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.core.plugin.Make_Facet.Target_make.Parameters;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
@@ -106,7 +107,7 @@ public class Binaries_Facet extends IFacet.Stub {
                         SModel model = smd.getSModel();
                         String output = module.getOutputFor(smd);
                         if (output == null) {
-                          monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + smd.getLongName())));
+                          monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(smd))));
                           return null;
                         } else {
                           IFile outputRoot = pa.global().properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Parameters.class).pathToFile().invoke(output);

@@ -84,7 +84,7 @@ public class AddAccessoryModel_Action extends BaseAction {
           List<SModelDescriptor> descriptors = SModelRepository.getInstance().getModelDescriptors();
           ListSequence.fromList(models).addSequence(ListSequence.fromList(descriptors).select(new ISelector<SModelDescriptor, SModelReference>() {
             public SModelReference select(SModelDescriptor it) {
-              return it.getSModelReference();
+              return it.getReference();
             }
           }));
         }

@@ -11,6 +11,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -37,7 +38,7 @@ public class CompareTransientModels_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientModelsModule.TransientSModelDescriptor && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientModelsModule.TransientSModelDescriptor && eq_5whyyr_a0a0a3(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0).getLongName(), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1).getLongName());
+    return ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientModelsModule.TransientSModelDescriptor && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientModelsModule.TransientSModelDescriptor && eq_5whyyr_a0a0a3(SNodeOperations.getModelLongName(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0)), SNodeOperations.getModelLongName(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1)));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

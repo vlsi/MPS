@@ -96,7 +96,7 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
     } else {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          Node_Configuration.this.setModelId(node.getModel().getModelDescriptor().getSModelReference().toString());
+          Node_Configuration.this.setModelId(node.getModel().getModelDescriptor().getReference().toString());
           Node_Configuration.this.setNodeId(node.getNodeId().toString());
         }
       });

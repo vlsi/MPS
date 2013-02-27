@@ -104,7 +104,7 @@ public class MultiConceptNode_Configuration implements IPersistentConfiguration,
     } else {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          MultiConceptNode_Configuration.this.setModelId(node.getModel().getModelDescriptor().getSModelReference().toString());
+          MultiConceptNode_Configuration.this.setModelId(node.getModel().getModelDescriptor().getReference().toString());
           MultiConceptNode_Configuration.this.setNodeId(node.getNodeId().toString());
         }
       });

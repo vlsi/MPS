@@ -4643,7 +4643,7 @@
                             <property name="value" nameId="tpee.1068580320021" value="1" />
                           </node>
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="1230052642374">
-                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052642348" resolveInfo="a" />
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230052642370" resolveInfo="a" />
                           </node>
                         </node>
                       </node>
@@ -12418,7 +12418,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1230053302525">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1230053302526">
-        <property name="name" nameId="tpck.1169194664001" value="Class" />
+        <property name="name" nameId="tpck.1169194664001" value="Clazz" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302539" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302540">
           <property name="name" nameId="tpck.1169194664001" value="before1" />
@@ -12452,7 +12452,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1230053302541">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1230053302542">
-        <property name="name" nameId="tpck.1169194664001" value="Class2" />
+        <property name="name" nameId="tpck.1169194664001" value="Clazz2" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302543" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302544">
           <property name="name" nameId="tpck.1169194664001" value="before2" />
@@ -12461,7 +12461,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1230053302545">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1230053302546">
-        <property name="name" nameId="tpck.1169194664001" value="Class" />
+        <property name="name" nameId="tpck.1169194664001" value="Clazz" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302550" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302551">
           <property name="name" nameId="tpck.1169194664001" value="after1" />
@@ -12475,7 +12475,7 @@
     </node>
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1230053302552">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1230053302553">
-        <property name="name" nameId="tpck.1169194664001" value="Class2" />
+        <property name="name" nameId="tpck.1169194664001" value="Clazz2" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1230053302562" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1230053302563">
           <property name="name" nameId="tpck.1169194664001" value="after2" />
@@ -12491,8 +12491,8 @@
                   <property name="value" nameId="tpee.1068580320021" value="5" />
                 </node>
                 <node role="lValue" roleId="tpee.1068498886295" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1230053302561">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1230053302546" resolveInfo="Class" />
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1230053302547" resolveInfo="f" />
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="1230053302546" resolveInfo="Clazz" />
                 </node>
               </node>
             </node>
