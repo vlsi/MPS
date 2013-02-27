@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 /**
  * This is a common descriptor used for all models - stub, transient, caches, regular MPS models
  */
-public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel {
+public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel, SModelInternal {
   /**
    * After model loading call SModelRepository.fireModelRepositoryChanged
    */

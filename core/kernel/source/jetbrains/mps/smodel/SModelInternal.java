@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public interface SModelInternal {
-  SModel resolveModel(SModelReference reference);
+  SModelDescriptor resolveModel(jetbrains.mps.smodel.SModelReference reference);
   SModel getSModel();
   void setModule(SModule container);
   void addModelListener(@NotNull SModelListener listener);
