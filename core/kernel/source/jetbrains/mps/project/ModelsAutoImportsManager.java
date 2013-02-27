@@ -66,6 +66,25 @@ public class ModelsAutoImportsManager {
     return result;
   }
 
+  public static void doAutoImport(SModule module, SModel model) {
+    for (SModel modelToImport : getAutoImportedModels(module, model)) {
+      // todo: ! what's up with module? add model module to module dependencies?
+      ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addModelImport((SModelReference) modelToImport.getReference(), false);
+    }
+    for (Language language : getAutoImportedLanguages(module, model)) {
+      if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(language)) {
+        ((AbstractModule) model.getModule()).addUsedLanguage(language.getModuleReference());
+      }
+      ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addLanguage(language.getModuleReference());
+    }
+    for (DevKit devKit : getAutoImportedDevKits(module, model)) {
+      if (!((AbstractModule) model.getModule()).getUsedDevkitReferences().contains(devKit.getModuleReference())) {
+        ((AbstractModule) model.getModule()).addUsedDevkit(devKit.getModuleReference());
+      }
+      ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addDevKit(devKit.getModuleReference());
+    }
+  }
+
   public static abstract class AutoImportsContributor<ModuleType extends SModule> {
     public abstract Class<ModuleType> getApplicableSModuleClass();
 
@@ -79,33 +98,6 @@ public class ModelsAutoImportsManager {
 
     public Set<DevKit> getAutoImportedDevKits(ModuleType contextModule, SModel model) {
       return Collections.emptySet();
-    }
-  }
-
-  public static class AutoImportsModelCreationListener extends ModelCreationListener {
-    @Override
-    public boolean isApplicable(SModule module, SModel model) {
-      return true;
-    }
-
-    @Override
-    public void onCreate(SModule module, SModel model) {
-      for (SModel modelToImport : getAutoImportedModels(module, model)) {
-        // todo: ! what's up with module? add model module to module dependencies?
-        ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addModelImport((SModelReference) modelToImport.getReference(), false);
-      }
-      for (Language language : getAutoImportedLanguages(module, model)) {
-        if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(language)) {
-          ((AbstractModule) model.getModule()).addUsedLanguage(language.getModuleReference());
-        }
-        ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addLanguage(language.getModuleReference());
-      }
-      for (DevKit devKit : getAutoImportedDevKits(module, model)) {
-        if (!((AbstractModule) model.getModule()).getUsedDevkitReferences().contains(devKit.getModuleReference())) {
-          ((AbstractModule) model.getModule()).addUsedDevkit(devKit.getModuleReference());
-        }
-        ((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).addDevKit(devKit.getModuleReference());
-      }
     }
   }
 }

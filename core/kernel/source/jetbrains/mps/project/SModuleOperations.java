@@ -128,6 +128,9 @@ public class SModuleOperations {
   }
 
   public static EditableSModel createModelWithAdjustments(String name, @NotNull ModelRoot root) {
+    // move to platform
+    // need for model creation from ui (maybe even workbench)
+
     // why ModelRoot register model in module? WTF
     // should be public AbstractModule#addModel method!
     // ourModelsCreationListeners should be called in addModel method
@@ -143,17 +146,9 @@ public class SModuleOperations {
     // model.getSModel() ?
     model.setChanged(true);
     model.save();
-
     // ((ModelRootBase) root).register(model);
 
-    // ?
-    SModule module = root.getModule();
-    for (ModelCreationListener listener : AbstractModule.ourModelCreationListeners) {
-      if (listener.isApplicable(module, model)) {
-        listener.onCreate(module, model);
-      }
-    }
-
+    ModelsAutoImportsManager.doAutoImport(root.getModule(), model);
     new MissingDependenciesFixer(model).fix(false);
 
     return model;

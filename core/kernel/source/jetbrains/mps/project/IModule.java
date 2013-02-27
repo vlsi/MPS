@@ -141,6 +141,7 @@ public interface IModule extends SModule {
 
   // ?
   // btw onModuleRegistered
+  // setRepository I think
   void attach();
 
   // ?
@@ -215,8 +216,8 @@ public interface IModule extends SModule {
 
   /**
    * If you need just model: use root.createModel
-   * // remove second thing?
-   * If you need model with adjustments (auto imports, optimized imports, etc): use SModuleOperations.createModel
+   * If you need model with adjustments (auto imports, optimized imports, etc): use SModuleOperations#createModelWithAdjustments
+   * @see SModuleOperations#createModelWithAdjustments(String, org.jetbrains.mps.openapi.persistence.ModelRoot)
    */
   @Deprecated
   SModelDescriptor createModel(String fqName, ModelRoot root, @Nullable ModelAdjuster adj);

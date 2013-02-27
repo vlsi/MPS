@@ -116,14 +116,18 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     myFacets = createFacets();
   }
 
-  public static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
-
+  /**
+   * Do nothing. If you need it please vote and add comment to MPS-17524
+   */
+  @Deprecated
   public static void registerModelCreationListener(ModelCreationListener listener) {
-    ourModelCreationListeners.add(listener);
   }
 
+  /**
+   * Do notjing. If you need it please vote and add comment to MPS-17524
+   */
+  @Deprecated
   public static void unregisterModelCreationListener(ModelCreationListener creationListener) {
-    ourModelCreationListeners.remove(creationListener);
   }
 
   @Override
