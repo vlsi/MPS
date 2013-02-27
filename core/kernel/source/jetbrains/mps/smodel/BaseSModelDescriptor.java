@@ -127,7 +127,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
-  public void dispose() {
+  public void detach() {
     ModelAccess.assertLegalWrite();
     SModel smodel = getCurrentModelInternal();
     if (smodel != null) {
@@ -135,6 +135,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       ((jetbrains.mps.smodel.SModel) smodel).dispose();
     }
     clearListeners();
+  }
+
+  public void dispose() {
+    detach();
   }
 
   @Override

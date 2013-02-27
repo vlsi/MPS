@@ -83,6 +83,11 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   boolean isRegistered();
 
+  @Deprecated
+  /**
+   * Replace with detach() in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   void dispose();
 
   //------

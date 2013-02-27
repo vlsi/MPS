@@ -182,9 +182,13 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
   }
 
   @Override
-  public void dispose() {
+  public void detach() {
     UnregisteredNodes.instance().clear(getReference());
-    super.dispose();
+    super.detach();
+  }
+
+  public void dispose() {
+    detach();
   }
 
   public String toString() {

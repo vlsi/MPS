@@ -116,9 +116,14 @@ public interface SModel {
    */
   void unload();
 
+
+  void attach();
+
+  void detach();
+
   /**
-   * Represents a problem with the persitence.
-   */
+     * Represents a problem with the persitence.
+     */
   interface Problem {
 
     int getColumn();

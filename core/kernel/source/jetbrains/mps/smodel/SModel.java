@@ -268,6 +268,16 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     //todo
   }
 
+  @Override
+  public void attach() {
+    throw new UnsupportedOperationException("shouldn't be called");
+  }
+
+  @Override
+  public void detach() {
+    throw new UnsupportedOperationException("shouldn't be called");
+  }
+
   @NotNull
   public String toString() {
     return getSModelReference().toString();

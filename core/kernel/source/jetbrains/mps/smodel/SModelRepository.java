@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import gnu.trove.THashMap;
 import jetbrains.mps.MPSCore;
@@ -35,7 +35,12 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SModelRepository implements CoreComponent {
@@ -109,9 +114,7 @@ public class SModelRepository implements CoreComponent {
       if (modelReference.getSModelFqName() != null) {
         myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
       }
-      if (modelDescriptor instanceof BaseSModelDescriptor) {
-        ((BaseSModelDescriptor) modelDescriptor).attach();
-      }
+      modelDescriptor.attach();
       modelDescriptor.addModelListener(myModelsListener);
     }
     fireModelAdded(modelDescriptor);
@@ -140,7 +143,7 @@ public class SModelRepository implements CoreComponent {
       myFqNameToModelDescriptorMap.remove(md.getSModelReference().getSModelFqName());
       md.removeModelListener(myModelsListener);
       fireModelRemoved(md);
-      md.dispose();
+      md.detach();
     }
   }
 

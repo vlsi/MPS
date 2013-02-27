@@ -2067,12 +2067,12 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     @Override
     public void addRootNode(org.jetbrains.mps.openapi.model.SNode node) {
-      myModel.addRootNode((SNode) node);
+      myModel.addRootNode(node);
     }
 
     @Override
     public void removeRootNode(org.jetbrains.mps.openapi.model.SNode node) {
-      myModel.removeRootNode((SNode) node);
+      myModel.removeRootNode(node);
     }
 
     @Override
@@ -2098,6 +2098,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     @Override
     public void load() {
+
     }
 
     @NotNull
@@ -2115,6 +2116,16 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     public void unload() {
 
     }
+
+    @Override
+    public void attach() {
+
+    }
+
+    @Override
+    public void detach() {
+
+    }
   }
 
   private static class MyTransformingCondition implements Condition<org.jetbrains.mps.openapi.model.SNode> {
@@ -2126,8 +2137,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     @Override
     public boolean met(org.jetbrains.mps.openapi.model.SNode object) {
-      if (!(object instanceof SNode)) return false;
-      return myCondition.met((SNode) object);
+      return object instanceof SNode && myCondition.met((SNode) object);
     }
   }
 }
