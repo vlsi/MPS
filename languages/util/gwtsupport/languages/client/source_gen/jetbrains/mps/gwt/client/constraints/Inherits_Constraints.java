@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -53,7 +52,7 @@ public class Inherits_Constraints extends BaseConstraintsDescriptor {
               public boolean accept(SModel smd) {
                 return ((SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(smd))) ?
                   "gwt_stub".equals(SModelStereotype.getStereotype(smd)) :
-                  Sequence.fromIterable(((Iterable<ModuleReference>) ((SModel) smd.getSModel()).importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
+                  Sequence.fromIterable(((Iterable<ModuleReference>) ((jetbrains.mps.smodel.SModel) smd.getSModel()).importedLanguages())).contains(ModuleReference.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092(jetbrains.mps.gwt.client)"))
                 );
               }
             }).translate(new ITranslator2<SModel, SNode>() {

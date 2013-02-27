@@ -16,7 +16,6 @@ import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -65,7 +64,7 @@ public class StubUtil {
     for (SNode candidate : ListSequence.fromList(SModelOperations.getNodes(newModelDescriptor.getSModel(), conceptFqName))) {
       if (eq_g10q2g_a0a0d0d(getResolveInfo.invoke(candidate), ((jetbrains.mps.smodel.SReference) reference).getResolveInfo())) {
         SModelReference oldModelReference = reference.getTargetSModelReference();
-        ((SModel) jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode)).deleteModelImport(oldModelReference);
+        ((jetbrains.mps.smodel.SModel) jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode)).deleteModelImport(oldModelReference);
 
         SNodeAccessUtil.setReferenceTarget(targetNode, role, candidate);
         StubRefUtil.addRequiredImports(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode), candidate);
@@ -87,7 +86,7 @@ public class StubUtil {
     SNode candidate = scope.resolve(node, SLinkOperations.getResolveInfo(reference));
     if (candidate != null) {
       SModelReference oldModelReference = reference.getTargetSModelReference();
-      ((SModel) jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node)).deleteModelImport(oldModelReference);
+      ((jetbrains.mps.smodel.SModel) jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node)).deleteModelImport(oldModelReference);
 
       SNodeAccessUtil.setReferenceTarget(node, role, candidate);
       StubRefUtil.addRequiredImports(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node), candidate);
