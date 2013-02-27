@@ -67,14 +67,14 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   @Deprecated
   /**
-   * Replace with SNodeOperations.getModelLongName(m.getSModel()) in java code, use migration in MPS
+   * Replace with SNodeOperations.getModelLongName(this) in java code, use migration in MPS
    * @Deprecated in 3.0
    */
   String getLongName();
 
   @Deprecated
   /**
-   * Replace with SModelStereotype.getStereotype(m.getSModel()) in java code, use migration in MPS
+   * Replace with SModelStereotype.getStereotype(this) in java code, use migration in MPS
    * @Deprecated in 3.0
    */
   String getStereotype();
