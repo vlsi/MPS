@@ -1042,7 +1042,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
    * @Deprecated in 3.0
    */
   public boolean isRegistered() {
-    return myModelDescriptor != null && myModelDescriptor.isRegistered();
+    return myModelDescriptor != null && getReference().resolve(MPSModuleRepository.getInstance()) == myModelDescriptor;
   }
 
   protected SModel createEmptyCopy() {

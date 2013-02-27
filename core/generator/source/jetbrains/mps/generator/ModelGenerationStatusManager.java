@@ -32,7 +32,6 @@ import java.util.List;
 import java.util.Set;
 
 public class ModelGenerationStatusManager implements CoreComponent {
-
   private static ModelGenerationStatusManager INSTANCE;
 
   public static ModelGenerationStatusManager getInstance() {
@@ -46,7 +45,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       Set<SModelDescriptor> registeredModels = new HashSet<SModelDescriptor>();
       for (SModelDescriptor modelDescriptor : replacedModels) {
-        if (modelDescriptor.isRegistered()) {
+        if (jetbrains.mps.util.SNodeOperations.isRegistered(modelDescriptor)) {
           registeredModels.add(modelDescriptor);
         }
       }

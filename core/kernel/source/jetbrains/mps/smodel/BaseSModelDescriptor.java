@@ -148,7 +148,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   @Override
   public boolean isRegistered() {
-    // Note: can be called without read action
     SModule copy = myModule;
     return copy != null && copy.getRepository() != null;
   }

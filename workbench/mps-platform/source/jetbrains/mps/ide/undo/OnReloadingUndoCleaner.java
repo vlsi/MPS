@@ -33,7 +33,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
 
-
 class OnReloadingUndoCleaner implements ApplicationComponent {
   private ProjectManager myProjectManager;
 
@@ -49,12 +48,11 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
 
   @Override
   public void initComponent() {
-
     SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
       @Override
       public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
         for (SModelDescriptor sm : replacedModels) {
-          if (!sm.isRegistered()) {
+          if (!jetbrains.mps.util.SNodeOperations.isRegistered(sm)) {
             continue;
           }
           for (SNode root : sm.getSModel().getRootNodes()) {

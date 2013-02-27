@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.FastNodeFinder;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 
 public class SNodeOperations {
@@ -340,6 +341,10 @@ public class SNodeOperations {
 
   public static int nodesCount(SModel model) {
     return IterableUtil.asCollection(new NodesIterable(model)).size();
+  }
+
+  public static boolean isRegistered(SModel model) {
+    return model.getReference().resolve(MPSModuleRepository.getInstance()) != null;
   }
 
   public static boolean isGeneratable(SModel model) {

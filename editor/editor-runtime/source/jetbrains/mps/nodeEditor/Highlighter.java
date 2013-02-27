@@ -39,13 +39,12 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.util.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -104,7 +103,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private SModelRepositoryListener myModelReloadListener = new SModelRepositoryAdapter() {
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       for (SModelDescriptor modelDescriptor : replacedModels) {
-        if (!modelDescriptor.isRegistered()){
+        if (!jetbrains.mps.util.SNodeOperations.isRegistered(modelDescriptor)){
           continue;
         }
         for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {

@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.model;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -115,7 +116,6 @@ public interface SModel {
    * A modified model is first saved into the storage so that the changes are preserved.
    */
   void unload();
-
 
   void attach();
 

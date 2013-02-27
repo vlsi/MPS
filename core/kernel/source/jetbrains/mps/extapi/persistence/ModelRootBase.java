@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -70,7 +71,7 @@ public abstract class ModelRootBase implements ModelRoot {
     SModelRepository smRepo = SModelRepository.getInstance();
     for (SModel model : myModels) {
       SModelDescriptor modelDescriptor = (SModelDescriptor) model;
-      if (!modelDescriptor.isRegistered()) {
+      if (modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance())!=modelDescriptor) {
         // TODO fix the problem and remove continue statement
         // theoretically can happen in JavaStubs (where several roots share the same model)
         continue;

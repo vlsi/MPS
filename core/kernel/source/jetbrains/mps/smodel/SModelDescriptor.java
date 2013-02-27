@@ -81,6 +81,11 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
 
   //------
 
+  @Deprecated
+  /**
+   * Replace with SNodeOperations.isRegistered in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   boolean isRegistered();
 
   @Deprecated

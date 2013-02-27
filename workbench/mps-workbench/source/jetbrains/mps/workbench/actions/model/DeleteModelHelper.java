@@ -96,9 +96,7 @@ public class DeleteModelHelper {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (!(((SModelDescriptor) modelDescriptor).isRegistered())) {
-          return;
-        }
+        if (modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance())!=modelDescriptor) return;
         RefactoringAccess.getInstance().getRefactoringFacade().execute(context);
       }
     });
