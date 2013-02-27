@@ -731,106 +731,30 @@
     <unitInfo nodeId="5797068448049410628" fileName="ChildHierarchyTreeNode.java" startLine="18" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.ChildHierarchyTreeNode" />
   </root>
   <root nodeRef="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)/5797068448049410631">
-    <nodeInfo nodeId="5797068448049410636" fileName="HierarchyViewTool.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStructureModels" />
-    <nodeInfo nodeId="5797068448049410643" fileName="HierarchyViewTool.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelListener" />
-    <nodeInfo nodeId="1122870626408957113" fileName="HierarchyViewTool.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCoreComponents" />
-    <nodeInfo nodeId="1333842892732734054" fileName="HierarchyViewTool.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCreationListener" />
-    <nodeInfo nodeId="5797068448049410673" fileName="HierarchyViewTool.java" startLine="27" startPosition="79" endLine="28" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1122870626408957118" fileName="HierarchyViewTool.java" startLine="28" startPosition="77" endLine="29" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410655" fileName="HierarchyViewTool.java" startLine="32" startPosition="59" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410660" fileName="HierarchyViewTool.java" startLine="33" startPosition="30" endLine="34" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1333842892732797389" fileName="HierarchyViewTool.java" startLine="38" startPosition="34" endLine="39" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1122870626408957343" fileName="HierarchyViewTool.java" startLine="40" startPosition="34" endLine="41" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1333842892732797392" fileName="HierarchyViewTool.java" startLine="42" startPosition="5" endLine="43" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410701" fileName="HierarchyViewTool.java" startLine="47" startPosition="31" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410716" fileName="HierarchyViewTool.java" startLine="50" startPosition="44" endLine="51" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410726" fileName="HierarchyViewTool.java" startLine="57" startPosition="31" endLine="58" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410728" fileName="HierarchyViewTool.java" startLine="58" startPosition="26" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1122870626408957110" fileName="HierarchyViewTool.java" startLine="63" startPosition="31" endLine="64" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410688" fileName="HierarchyViewTool.java" startLine="64" startPosition="23" endLine="65" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1122870626408957284" fileName="HierarchyViewTool.java" startLine="68" startPosition="65" endLine="69" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1122870626408957309" fileName="HierarchyViewTool.java" startLine="73" startPosition="58" endLine="74" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1333842892732786458" fileName="HierarchyViewTool.java" startLine="76" startPosition="6" endLine="77" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3499818918522404866" fileName="HierarchyViewTool.java" startLine="81" startPosition="82" endLine="82" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3499818918522415633" fileName="HierarchyViewTool.java" startLine="82" startPosition="128" endLine="83" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410740" fileName="HierarchyViewTool.java" startLine="83" startPosition="68" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5797068448049410758" fileName="HierarchyViewTool.java" startLine="89" startPosition="51" endLine="90" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410775" fileName="HierarchyViewTool.java" startLine="96" startPosition="51" endLine="97" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410780" fileName="HierarchyViewTool.java" startLine="98" startPosition="5" endLine="99" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049410788" fileName="HierarchyViewTool.java" startLine="102" startPosition="28" endLine="103" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1122870626408957314" fileName="HierarchyViewTool.java" startLine="39" startPosition="29" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5797068448049410710" fileName="HierarchyViewTool.java" startLine="49" startPosition="76" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5797068448049410753" fileName="HierarchyViewTool.java" startLine="88" startPosition="31" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5797068448049410770" fileName="HierarchyViewTool.java" startLine="95" startPosition="33" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5797068448049410784" fileName="HierarchyViewTool.java" startLine="102" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPriority#()I" />
-    <nodeInfo nodeId="5797068448049410665" fileName="HierarchyViewTool.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HierarchyViewTool#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-    <nodeInfo nodeId="5797068448049410649" fileName="HierarchyViewTool.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCreateStructureModel#(Ljetbrains/mps/smodel/SModelDescriptor;)V" />
-    <nodeInfo nodeId="1122870626408957278" fileName="HierarchyViewTool.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="1122870626408957303" fileName="HierarchyViewTool.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCreate#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="5797068448049410703" fileName="HierarchyViewTool.java" startLine="48" startPosition="26" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5797068448049410722" fileName="HierarchyViewTool.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="5797068448049410733" fileName="HierarchyViewTool.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createHierarchyTree#(Z)Ljetbrains/mps/ide/hierarchy/AbstractHierarchyTree;" />
-    <nodeInfo nodeId="5797068448049410746" fileName="HierarchyViewTool.java" startLine="87" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRegister#()V" />
-    <nodeInfo nodeId="5797068448049410763" fileName="HierarchyViewTool.java" startLine="94" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUnregister#()V" />
-    <nodeInfo nodeId="1333842892732797384" fileName="HierarchyViewTool.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="5797068448049410697" fileName="HierarchyViewTool.java" startLine="46" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="1122870626408957183" fileName="HierarchyViewTool.java" startLine="65" startPosition="71" endLine="76" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1122870626408957105" fileName="HierarchyViewTool.java" startLine="62" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTool#()V" />
-    <scopeInfo nodeId="1122870626408957315" fileName="HierarchyViewTool.java" startLine="40" startPosition="34" endLine="41" endPosition="13" />
-    <scopeInfo nodeId="5797068448049410715" fileName="HierarchyViewTool.java" startLine="50" startPosition="44" endLine="51" endPosition="53" />
-    <scopeInfo nodeId="1122870626408957283" fileName="HierarchyViewTool.java" startLine="68" startPosition="65" endLine="69" endPosition="145" />
-    <scopeInfo nodeId="1122870626408957308" fileName="HierarchyViewTool.java" startLine="73" startPosition="58" endLine="74" endPosition="57" />
-    <scopeInfo nodeId="5797068448049410757" fileName="HierarchyViewTool.java" startLine="89" startPosition="51" endLine="90" endPosition="43" />
-    <scopeInfo nodeId="5797068448049410774" fileName="HierarchyViewTool.java" startLine="96" startPosition="51" endLine="97" endPosition="46" />
-    <scopeInfo nodeId="5797068448049410787" fileName="HierarchyViewTool.java" startLine="102" startPosition="28" endLine="103" endPosition="13" />
-    <scopeInfo nodeId="5797068448049410672" fileName="HierarchyViewTool.java" startLine="27" startPosition="79" endLine="29" endPosition="43" />
-    <scopeInfo nodeId="5797068448049410654" fileName="HierarchyViewTool.java" startLine="32" startPosition="59" endLine="34" endPosition="41" />
-    <scopeInfo nodeId="5797068448049410725" fileName="HierarchyViewTool.java" startLine="57" startPosition="31" endLine="59" endPosition="30" />
-    <scopeInfo nodeId="5797068448049410709" fileName="HierarchyViewTool.java" startLine="49" startPosition="76" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="5797068448049410739" fileName="HierarchyViewTool.java" startLine="81" startPosition="82" endLine="84" endPosition="16">
+    <nodeInfo nodeId="1122870626408957113" fileName="HierarchyViewTool.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCoreComponents" />
+    <nodeInfo nodeId="5797068448049410673" fileName="HierarchyViewTool.java" startLine="13" startPosition="79" endLine="14" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1122870626408957118" fileName="HierarchyViewTool.java" startLine="14" startPosition="77" endLine="15" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3499818918522404866" fileName="HierarchyViewTool.java" startLine="19" startPosition="82" endLine="20" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3499818918522415633" fileName="HierarchyViewTool.java" startLine="20" startPosition="128" endLine="21" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5797068448049410740" fileName="HierarchyViewTool.java" startLine="21" startPosition="68" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448049410788" fileName="HierarchyViewTool.java" startLine="25" startPosition="28" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5797068448049410784" fileName="HierarchyViewTool.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPriority#()I" />
+    <nodeInfo nodeId="5797068448049410665" fileName="HierarchyViewTool.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HierarchyViewTool#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/ide/MPSCoreComponents;)V" />
+    <nodeInfo nodeId="5797068448049410733" fileName="HierarchyViewTool.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createHierarchyTree#(Z)Ljetbrains/mps/ide/hierarchy/AbstractHierarchyTree;" />
+    <scopeInfo nodeId="5797068448049410787" fileName="HierarchyViewTool.java" startLine="25" startPosition="28" endLine="26" endPosition="13" />
+    <scopeInfo nodeId="5797068448049410672" fileName="HierarchyViewTool.java" startLine="13" startPosition="79" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="5797068448049410739" fileName="HierarchyViewTool.java" startLine="19" startPosition="82" endLine="22" endPosition="16">
       <varInfo nodeId="3499818918522404867" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049410749" fileName="HierarchyViewTool.java" startLine="88" startPosition="31" endLine="91" endPosition="5" />
-    <scopeInfo nodeId="5797068448049410753" fileName="HierarchyViewTool.java" startLine="88" startPosition="31" endLine="91" endPosition="5">
-      <varInfo nodeId="5797068448049410755" varName="md" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049410770" fileName="HierarchyViewTool.java" startLine="95" startPosition="33" endLine="98" endPosition="5">
-      <varInfo nodeId="5797068448049410772" varName="md" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049410784" fileName="HierarchyViewTool.java" startLine="102" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="5797068448049410665" fileName="HierarchyViewTool.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="5797068448049410784" fileName="HierarchyViewTool.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="5797068448049410665" fileName="HierarchyViewTool.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="5797068448049410670" varName="coreComponents" />
       <varInfo nodeId="5797068448049410668" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049410649" fileName="HierarchyViewTool.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="5797068448049410652" varName="md" />
-    </scopeInfo>
-    <scopeInfo nodeId="1122870626408957278" fileName="HierarchyViewTool.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="1122870626408957281" varName="model" />
-      <varInfo nodeId="2792416555947858684" varName="module" />
-    </scopeInfo>
-    <scopeInfo nodeId="1122870626408957303" fileName="HierarchyViewTool.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="1122870626408957306" varName="model" />
-      <varInfo nodeId="2792416555947858681" varName="module" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049410766" fileName="HierarchyViewTool.java" startLine="95" startPosition="33" endLine="99" endPosition="30" />
-    <scopeInfo nodeId="1333842892732797387" fileName="HierarchyViewTool.java" startLine="38" startPosition="34" endLine="43" endPosition="71" />
-    <scopeInfo nodeId="5797068448049410703" fileName="HierarchyViewTool.java" startLine="48" startPosition="26" endLine="53" endPosition="5">
-      <varInfo nodeId="5797068448049410707" varName="md" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049410722" fileName="HierarchyViewTool.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="5797068448049410700" fileName="HierarchyViewTool.java" startLine="47" startPosition="31" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="5797068448049410733" fileName="HierarchyViewTool.java" startLine="80" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="5797068448049410733" fileName="HierarchyViewTool.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="5797068448049410737" varName="isParentHierarchy" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049410746" fileName="HierarchyViewTool.java" startLine="87" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="5797068448049410763" fileName="HierarchyViewTool.java" startLine="94" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1333842892732797384" fileName="HierarchyViewTool.java" startLine="37" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="5797068448049410697" fileName="HierarchyViewTool.java" startLine="46" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1122870626408957108" fileName="HierarchyViewTool.java" startLine="63" startPosition="31" endLine="77" endPosition="69" />
-    <scopeInfo nodeId="1122870626408957105" fileName="HierarchyViewTool.java" startLine="62" startPosition="0" endLine="79" endPosition="0" />
-    <unitInfo nodeId="1122870626408957276" fileName="HierarchyViewTool.java" startLine="66" startPosition="34" endLine="76" endPosition="5" unitName="jetbrains.mps.ide.hierarchy.HierarchyViewTool$1" />
-    <unitInfo nodeId="5797068448049410631" fileName="HierarchyViewTool.java" startLine="21" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.HierarchyViewTool" />
+    <unitInfo nodeId="5797068448049410631" fileName="HierarchyViewTool.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.HierarchyViewTool" />
   </root>
   <root nodeRef="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)/5797068448049411442">
     <nodeInfo nodeId="5797068448049411493" fileName="BaseLanguageHierarchyViewTool.java" startLine="18" startPosition="57" endLine="19" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -1921,96 +1845,7 @@
     </scopeInfo>
     <unitInfo nodeId="5797068448049414443" fileName="ConceptHierarchyTree.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree" />
   </root>
-  <root nodeRef="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)/5797068448049415238">
-    <nodeInfo nodeId="5797068448049415241" fileName="HierarchyModelListener.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHierarchyTree" />
-    <nodeInfo nodeId="5797068448049415250" fileName="HierarchyModelListener.java" startLine="16" startPosition="70" endLine="17" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415290" fileName="HierarchyModelListener.java" startLine="21" startPosition="38" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415301" fileName="HierarchyModelListener.java" startLine="26" startPosition="58" endLine="27" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049415308" fileName="HierarchyModelListener.java" startLine="27" startPosition="52" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049415314" fileName="HierarchyModelListener.java" startLine="28" startPosition="57" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415328" fileName="HierarchyModelListener.java" startLine="31" startPosition="33" endLine="32" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5797068448049415335" fileName="HierarchyModelListener.java" startLine="34" startPosition="46" endLine="35" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415345" fileName="HierarchyModelListener.java" startLine="40" startPosition="68" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049415352" fileName="HierarchyModelListener.java" startLine="41" startPosition="47" endLine="42" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415361" fileName="HierarchyModelListener.java" startLine="42" startPosition="52" endLine="43" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415370" fileName="HierarchyModelListener.java" startLine="43" startPosition="52" endLine="44" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415379" fileName="HierarchyModelListener.java" startLine="47" startPosition="58" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5797068448049415386" fileName="HierarchyModelListener.java" startLine="48" startPosition="47" endLine="49" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415393" fileName="HierarchyModelListener.java" startLine="49" startPosition="39" endLine="50" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415400" fileName="HierarchyModelListener.java" startLine="50" startPosition="31" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415409" fileName="HierarchyModelListener.java" startLine="55" startPosition="48" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415418" fileName="HierarchyModelListener.java" startLine="60" startPosition="50" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415427" fileName="HierarchyModelListener.java" startLine="65" startPosition="60" endLine="66" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415436" fileName="HierarchyModelListener.java" startLine="70" startPosition="58" endLine="71" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5797068448049415244" fileName="HierarchyModelListener.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HierarchyModelListener#(Ljetbrains/mps/ide/hierarchy/AbstractHierarchyTree;)V" />
-    <nodeInfo nodeId="5797068448049415263" fileName="HierarchyModelListener.java" startLine="20" startPosition="67" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5797068448049415323" fileName="HierarchyModelListener.java" startLine="30" startPosition="46" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5797068448049415329" fileName="HierarchyModelListener.java" startLine="33" startPosition="7" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5797068448049415403" fileName="HierarchyModelListener.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootAdded#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" />
-    <nodeInfo nodeId="5797068448049415412" fileName="HierarchyModelListener.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rootRemoved#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" />
-    <nodeInfo nodeId="5797068448049415421" fileName="HierarchyModelListener.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceRemoved#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" />
-    <nodeInfo nodeId="5797068448049415430" fileName="HierarchyModelListener.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="referenceAdded#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" />
-    <nodeInfo nodeId="5797068448049415254" fileName="HierarchyModelListener.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectNodes#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="5797068448049415339" fileName="HierarchyModelListener.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="structureReferenceEvent#(Ljetbrains/mps/smodel/event/SModelReferenceEvent;)V" />
-    <nodeInfo nodeId="5797068448049415373" fileName="HierarchyModelListener.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="structureRootEvent#(Ljetbrains/mps/smodel/event/SModelRootEvent;)V" />
-    <nodeInfo nodeId="5797068448049415318" fileName="HierarchyModelListener.java" startLine="29" startPosition="39" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5797068448049415294" fileName="HierarchyModelListener.java" startLine="26" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="structureEvent#(Ljava/util/List;)V" />
-    <scopeInfo nodeId="5797068448049415249" fileName="HierarchyModelListener.java" startLine="16" startPosition="70" endLine="17" endPosition="36" />
-    <scopeInfo nodeId="5797068448049415267" fileName="HierarchyModelListener.java" startLine="21" startPosition="38" endLine="22" endPosition="32" />
-    <scopeInfo nodeId="5797068448049415327" fileName="HierarchyModelListener.java" startLine="31" startPosition="33" endLine="32" endPosition="17" />
-    <scopeInfo nodeId="5797068448049415334" fileName="HierarchyModelListener.java" startLine="34" startPosition="46" endLine="35" endPosition="39" />
-    <scopeInfo nodeId="5797068448049415408" fileName="HierarchyModelListener.java" startLine="55" startPosition="48" endLine="56" endPosition="30" />
-    <scopeInfo nodeId="5797068448049415417" fileName="HierarchyModelListener.java" startLine="60" startPosition="50" endLine="61" endPosition="30" />
-    <scopeInfo nodeId="5797068448049415426" fileName="HierarchyModelListener.java" startLine="65" startPosition="60" endLine="66" endPosition="35" />
-    <scopeInfo nodeId="5797068448049415435" fileName="HierarchyModelListener.java" startLine="70" startPosition="58" endLine="71" endPosition="35" />
-    <scopeInfo nodeId="5797068448049415244" fileName="HierarchyModelListener.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="5797068448049415247" varName="hierarchyTree" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415262" fileName="HierarchyModelListener.java" startLine="20" startPosition="67" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="5797068448049415263" fileName="HierarchyModelListener.java" startLine="20" startPosition="67" endLine="23" endPosition="5">
-      <varInfo nodeId="5797068448049415265" varName="child" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415344" fileName="HierarchyModelListener.java" startLine="40" startPosition="68" endLine="44" endPosition="26">
-      <varInfo nodeId="5797068448049415346" varName="nodes" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415378" fileName="HierarchyModelListener.java" startLine="47" startPosition="58" endLine="51" endPosition="26">
-      <varInfo nodeId="5797068448049415380" varName="nodes" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415403" fileName="HierarchyModelListener.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="5797068448049415406" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415412" fileName="HierarchyModelListener.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="5797068448049415415" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415421" fileName="HierarchyModelListener.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="5797068448049415424" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415430" fileName="HierarchyModelListener.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="5797068448049415433" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415254" fileName="HierarchyModelListener.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="5797068448049415259" varName="list" />
-      <varInfo nodeId="5797068448049415257" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415322" fileName="HierarchyModelListener.java" startLine="30" startPosition="46" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="5797068448049415339" fileName="HierarchyModelListener.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="5797068448049415342" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415373" fileName="HierarchyModelListener.java" startLine="47" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="5797068448049415376" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415318" fileName="HierarchyModelListener.java" startLine="29" startPosition="39" endLine="37" endPosition="5">
-      <varInfo nodeId="5797068448049415320" varName="searchedNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415300" fileName="HierarchyModelListener.java" startLine="26" startPosition="58" endLine="37" endPosition="5">
-      <varInfo nodeId="5797068448049415302" varName="nodeInTree" />
-      <varInfo nodeId="5797068448049415309" varName="treeNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5797068448049415294" fileName="HierarchyModelListener.java" startLine="26" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="5797068448049415297" varName="searchedNodes" />
-    </scopeInfo>
-    <unitInfo nodeId="5797068448049415238" fileName="HierarchyModelListener.java" startLine="13" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.HierarchyModelListener" />
-  </root>
+  <root nodeRef="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)/5797068448049415238" />
   <root nodeRef="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)/5797068448049415534">
     <nodeInfo nodeId="5797068448049415537" fileName="CircularHierarchyException.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRepeatedObject" />
     <nodeInfo nodeId="5797068448049415548" fileName="CircularHierarchyException.java" startLine="9" startPosition="76" endLine="10" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
