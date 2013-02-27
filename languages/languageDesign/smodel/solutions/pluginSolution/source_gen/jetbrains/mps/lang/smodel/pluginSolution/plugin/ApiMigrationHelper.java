@@ -165,6 +165,9 @@ public class ApiMigrationHelper {
       if (SNodeOperations.getContainingLinkDeclaration(((SNode) rNode)) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", "operation")) {
         SetSequence.fromSet(castedMethodCalls).addElement(rNode);
         continue;
+      } else if (SNodeOperations.getContainingLinkDeclaration(((SNode) rNode)) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression", "operation")) {
+        SetSequence.fromSet(castedMethodCalls).addElement(rNode);
+        continue;
       }
 
       SetSequence.fromSet(unknownUsages).addElement(rNode);
