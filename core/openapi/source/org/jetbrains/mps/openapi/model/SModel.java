@@ -31,6 +31,10 @@ public interface SModel {
 
   @Deprecated
 //todo migration only. REMOVE
+  SModel getSModel();
+
+  @Deprecated
+//todo migration only. REMOVE
   SModelDescriptor getModelDescriptor();
 
   /**

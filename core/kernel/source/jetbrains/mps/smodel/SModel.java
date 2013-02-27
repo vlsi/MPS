@@ -295,6 +295,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return myDisposedStacktrace;
   }
 
+  @Override
+  public org.jetbrains.mps.openapi.model.SModel getSModel() {
+    return this;
+  }
+
   //todo will migrate after SModelDescriptor is migrated
   @Override
   public SModelDescriptor getModelDescriptor() {

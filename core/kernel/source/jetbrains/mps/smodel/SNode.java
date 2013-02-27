@@ -2015,6 +2015,11 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     @Override
+    public org.jetbrains.mps.openapi.model.SModel getSModel() {
+      return myModel;
+    }
+
+    @Override
     public SModelDescriptor getModelDescriptor() {
       throw new UnsupportedOperationException();
     }
