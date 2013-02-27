@@ -38,7 +38,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public abstract class BaseSModelDescriptor extends SModelDescriptor {
+public abstract class BaseSModelDescriptor implements SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
   private ModelRoot myModelRoot;

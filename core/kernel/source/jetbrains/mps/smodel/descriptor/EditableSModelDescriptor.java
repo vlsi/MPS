@@ -22,6 +22,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
  *  use EditableSModel
  */
 @Deprecated
-public interface EditableSModelDescriptor extends EditableSModel {
+public interface EditableSModelDescriptor extends SModelDescriptor, EditableSModel {
 
 }
