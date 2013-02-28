@@ -210,12 +210,12 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
 
     @Override
-    public EditorCell createEditorCell(EditorContext context, SNode node) {
+    public jetbrains.mps.openapi.editor.cells.EditorCell createEditorCell(EditorContext context, SNode node) {
       return new EditorCell_Error(context, node, "    ");
     }
 
     @Override
-    public EditorCell createInspectedCell(EditorContext context, SNode node) {
+    public jetbrains.mps.openapi.editor.cells.EditorCell createInspectedCell(EditorContext context, SNode node) {
       return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
   }
