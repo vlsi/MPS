@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.icons.AllIcons;
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.ide.OccurenceNavigator;
 import com.intellij.openapi.actionSystem.*;
@@ -22,6 +23,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.content.tabs.PinToolwindowTabAction;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -263,17 +265,20 @@ public abstract class UsagesView implements IExternalizeable {
     private boolean myShowRerunButton;
     private boolean myShowRegenerateButton;
     private boolean myShowCloseButton;
+    private boolean myShowPinButton;
 
     public ButtonConfiguration(boolean showRerun, boolean showRegenerate, boolean showClose) {
       myShowRerunButton = showRerun;
       myShowRegenerateButton = showRegenerate;
       myShowCloseButton = showClose;
+      myShowPinButton = true;
     }
 
     public ButtonConfiguration(boolean showRerun) {
       myShowRerunButton = showRerun;
       myShowRegenerateButton = true;
       myShowCloseButton = true;
+      myShowPinButton = true;
     }
 
     public ButtonConfiguration(Element optionsXML, jetbrains.mps.project.Project project) {
@@ -290,6 +295,10 @@ public abstract class UsagesView implements IExternalizeable {
 
     public boolean isShowCloseButton() {
       return myShowCloseButton;
+    }
+
+    public boolean isShowPinButton() {
+      return myShowPinButton;
     }
 
     @Override
@@ -371,6 +380,31 @@ public abstract class UsagesView implements IExternalizeable {
           }
         });
       }
+
+      if (buttonConfiguration.isShowCloseButton()) {
+        AnAction action = new AnAction("Close", "", Actions.Cancel) {
+          @Override
+          public void actionPerformed(AnActionEvent e) {
+            close();
+          }
+        };
+        actionGroup.addAction(action);
+      }
+
+      if (buttonConfiguration.isShowPinButton()) {
+        actionGroup.addAction(new PinToolwindowTabAction() {
+
+          @Override
+          public void update(AnActionEvent event) {
+            super.update(event);
+            event.getPresentation().setIcon(AllIcons.General.Pin_tab);
+            event.getPresentation().setVisible(true);
+          }
+        });
+      }
+
+      actionGroup.addAll(myTreeComponent.getActionsToolbar());
+
       if (buttonConfiguration.isShowRegenerateButton()) {
         actionGroup.addAction(new AnAction("Rebuild models", "", Actions.Compile) {
           @Override
@@ -385,17 +419,6 @@ public abstract class UsagesView implements IExternalizeable {
         });
       }
 
-      actionGroup.addAll(myTreeComponent.getActionsToolbar());
-
-      if (buttonConfiguration.isShowCloseButton()) {
-        AnAction action = new AnAction("Close", "", Actions.Cancel) {
-          @Override
-          public void actionPerformed(AnActionEvent e) {
-            close();
-          }
-        };
-        actionGroup.addAction(action);
-      }
 
       ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false);
       actionToolbar.setOrientation(SwingConstants.VERTICAL);
