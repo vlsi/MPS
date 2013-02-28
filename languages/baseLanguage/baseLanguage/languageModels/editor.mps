@@ -4986,7 +4986,7 @@
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="2293171564565910238">
-          <property name="tag" nameId="tpc2.1214320119174" value="ext_3_RTransform" />
+          <property name="tag" nameId="tpc2.1214320119174" value="default_RTransform" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Component" typeId="tpc2.1078939183254" id="6650568951502239952">
