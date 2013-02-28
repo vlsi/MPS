@@ -81,7 +81,7 @@ public class ModelNodeNavigatable implements Navigatable {
       MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
       SModelRepository smrepo = SModelRepository.getInstance();
       for (SModel smd: smrepo.getModelDescriptors(facet.getSolution())) {
-        if (smd.getSModelReference().getLongName().equals(modelName)) {
+        if (smd.getReference().getLongName().equals(modelName)) {
           model = smd.getSModel();
         }
       }

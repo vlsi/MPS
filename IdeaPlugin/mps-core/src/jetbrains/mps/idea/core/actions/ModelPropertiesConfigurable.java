@@ -74,7 +74,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
   private void initState(SModel sModel) {
     myUsedLanguages = SNodeOperations.getUsedLanguages(sModel);
     myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
-    myModelLongName = myDescriptor.getLongName();
+    myModelLongName = SNodeOperations.getModelLongName(myDescriptor);
     IModule module = myDescriptor.getModule();
     myVisibleLanguages = new HashSet<ModuleReference>();
     for (Language visibleLanguage : module.getScope().getVisibleLanguages()) {
@@ -94,7 +94,7 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
   @Nls
   @Override
   public String getDisplayName() {
-    return MPSBundle.message("model.properties.configurable.display.name", myDescriptor.getLongName());
+    return MPSBundle.message("model.properties.configurable.display.name", SNodeOperations.getModelLongName(myDescriptor));
   }
 
   @Override

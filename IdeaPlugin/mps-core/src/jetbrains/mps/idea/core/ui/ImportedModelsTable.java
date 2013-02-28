@@ -52,7 +52,7 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
     @Override
     protected List<SModelReference> getAllVisibleElements() {
         Set<SModelReference> modelsToHide = new HashSet<SModelReference>();
-        modelsToHide.add(myModelDescriptor.getSModelReference());
+        modelsToHide.add(myModelDescriptor.getReference());
         for (SModelReference importedModelRef : getElements()) {
             modelsToHide.add(importedModelRef);
         }
@@ -60,10 +60,10 @@ public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
         List<SModelReference> result = new ArrayList<SModelReference>();
         IModule module = myModelDescriptor.getModule();
         for (SModel modelDescriptor : module.getScope().getModelDescriptors()) {
-            if (modelsToHide.contains(modelDescriptor.getSModelReference())) {
+            if (modelsToHide.contains(modelDescriptor.getReference())) {
                 continue;
             }
-            result.add(modelDescriptor.getSModelReference());
+            result.add(modelDescriptor.getReference());
         }
         return result;
     }

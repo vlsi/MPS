@@ -42,7 +42,7 @@ public class MPSProjectViewModelPsiFile extends PsiFileNode {
 
   @Override
   public void update(PresentationData presentationData) {
-    ModelPresentation modelPresentation = new ModelPresentation(mySModelDescriptor.getSModelReference());
+    ModelPresentation modelPresentation = new ModelPresentation(mySModelDescriptor.getReference());
     presentationData.setPresentableText(mySModelDescriptor.getModelName());
     presentationData.setIcon(modelPresentation.doGetIcon());
   }

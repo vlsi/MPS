@@ -88,7 +88,7 @@ public class GeneratedSourcePosition {
         SNode node = getNode();
         if (node == null) return null;
         SModel modelDescriptor = node.getModel().getModelDescriptor();
-        return modelDescriptor.getSModelReference();
+        return modelDescriptor.getReference();
       }
     });
     if (reference == null) {

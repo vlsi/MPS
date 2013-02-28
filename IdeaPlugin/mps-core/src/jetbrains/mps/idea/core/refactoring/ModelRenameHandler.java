@@ -36,6 +36,7 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelFqName;
@@ -82,9 +83,9 @@ public class ModelRenameHandler implements RenameHandler {
     final AtomicReference<String> targetFqName = new AtomicReference<String>(null);
 
     Pair<String, Boolean> result = Messages.showInputDialogWithCheckBox(
-      MPSBundle.message("rename.model.to", modelDescriptor.getLongName()),
+      MPSBundle.message("rename.model.to", SNodeOperations.getModelLongName(modelDescriptor)),
       MPSBundle.message("rename.model"),
-      MPSBundle.message("update.all.references"), true, true, null, modelDescriptor.getLongName(),
+      MPSBundle.message("update.all.references"), true, true, null, SNodeOperations.getModelLongName(modelDescriptor),
       new MyInputValidator() {
         @Override
         protected void doRename(String fqName) {

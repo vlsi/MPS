@@ -32,9 +32,9 @@ import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.library.contributor.PluginLibrariesContributor;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.util.*;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -76,9 +76,9 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
           modulesWithModels.add(module);
 
           SModel model = SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(modelFile.getPath()));
-          if (model == null || !model.isGeneratable()) continue;
+          if (model == null || !jetbrains.mps.util.SNodeOperations.isGeneratable(model)) continue;
 
-          generationItems.add(createGenerationItem(modelFile, module, model.getSModelReference()));
+          generationItems.add(createGenerationItem(modelFile, module, model.getReference()));
         }
       }
     });

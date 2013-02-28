@@ -130,7 +130,7 @@ public class CheckScopesAction extends AnAction {
     }
     Iterable<UnitPositionInfo> positions = debugInfo.getUnitsForNode(node);
     if (!positions.iterator().hasNext()) return null;
-    return GeneratedSourcePosition.getPsiFile(project, model.getSModelReference(), positions.iterator().next().getFileName());
+    return GeneratedSourcePosition.getPsiFile(project, model.getReference(), positions.iterator().next().getFileName());
   }
 
   @Nullable
