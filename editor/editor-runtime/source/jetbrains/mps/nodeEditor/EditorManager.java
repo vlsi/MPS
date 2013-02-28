@@ -161,19 +161,48 @@ public class EditorManager {
     }
   }
 
-  public EditorCell getCurrentAttributedPropertyCell() {
-    return getCurrentAttributedCellWithRole(AttributeKind.Property.class);
+  /**
+   * Should be removed after MPS 3.0
+   *
+   * @deprecated use getCurrentAttributedCellWithRole() instead
+   */
+  @Deprecated
+  public jetbrains.mps.nodeEditor.cells.EditorCell getCurrentAttributedPropertyCell() {
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) getCurrentAttributedCellWithRole(AttributeKind.Property.class);
   }
 
-  public EditorCell getCurrentAttributedLinkCell() {
-    return getCurrentAttributedCellWithRole(AttributeKind.Reference.class);
+  /**
+   * Should be removed after MPS 3.0
+   *
+   * @deprecated use getCurrentAttributedCellWithRole() instead
+   */
+  @Deprecated
+  public jetbrains.mps.nodeEditor.cells.EditorCell getCurrentAttributedLinkCell() {
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) getCurrentAttributedCellWithRole(AttributeKind.Reference.class);
   }
 
-  public EditorCell getCurrentAttributedNodeCell() {
-    return getCurrentAttributedCellWithRole(AttributeKind.Node.class);
+  /**
+   * Should be removed after MPS 3.0
+   *
+   * @deprecated use getCurrentAttributedCellWithRole() instead
+   */
+  @Deprecated
+  public jetbrains.mps.nodeEditor.cells.EditorCell getCurrentAttributedNodeCell() {
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) getCurrentAttributedCellWithRole(AttributeKind.Node.class);
   }
 
-  public EditorCell createRoleAttributeCell(jetbrains.mps.openapi.editor.EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
+  /**
+   * Should be removed after MPS 3.0
+   *
+   * @deprecated use createNodeRoleAttributeCell() instead
+   */
+  @Deprecated
+  public jetbrains.mps.nodeEditor.cells.EditorCell createRoleAttributeCell(jetbrains.mps.openapi.editor.EditorContext context, SNode roleAttribute,
+      Class attributeKind, EditorCell cellWithRole) {
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) createNodeRoleAttributeCell(context, roleAttribute, attributeKind, cellWithRole);
+  }
+
+  public EditorCell createNodeRoleAttributeCell(jetbrains.mps.openapi.editor.EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
     // TODO: Make processing of style attributes more generic.
     EditorCell attributeCell = context.createRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
     // see a comment for isAttributedCell() method
