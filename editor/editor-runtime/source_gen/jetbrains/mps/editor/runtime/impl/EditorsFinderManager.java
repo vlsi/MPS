@@ -41,7 +41,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -210,12 +210,12 @@ public class EditorsFinderManager implements ApplicationComponent {
     }
 
     @Override
-    public jetbrains.mps.openapi.editor.cells.EditorCell createEditorCell(EditorContext context, SNode node) {
+    public EditorCell createEditorCell(EditorContext context, SNode node) {
       return new EditorCell_Error(context, node, "    ");
     }
 
     @Override
-    public jetbrains.mps.openapi.editor.cells.EditorCell createInspectedCell(EditorContext context, SNode node) {
+    public EditorCell createInspectedCell(EditorContext context, SNode node) {
       return new EditorCell_Constant(context, node, jetbrains.mps.util.SNodeOperations.getDebugText(node));
     }
   }
