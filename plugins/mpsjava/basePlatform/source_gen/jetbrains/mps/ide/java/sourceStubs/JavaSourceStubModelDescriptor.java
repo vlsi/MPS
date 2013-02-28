@@ -38,7 +38,7 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
   private static Logger LOG = Logger.getLogger(JavaSourceStubModelDescriptor.class);
 
   private SModelReference myModelRef;
-  private SModel myModel;
+  private jetbrains.mps.smodel.SModel myModel;
   private MultiStreamDataSource myDataSource;
   private String myJavaPackage;
   private Map<String, Set<SNode>> myRootsPerFile = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
@@ -56,7 +56,7 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
 
 
   @Override
-  protected SModel createModel() {
+  protected jetbrains.mps.smodel.SModel createModel() {
 
     myModel = new jetbrains.mps.smodel.SModel(myModelRef);
 

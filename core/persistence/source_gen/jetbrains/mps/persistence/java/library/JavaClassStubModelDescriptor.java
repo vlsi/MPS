@@ -30,7 +30,7 @@ import jetbrains.mps.smodel.SModelRepository;
 public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource {
   private static final Logger LOG = Logger.getLogger(JavaClassStubModelDescriptor.class);
 
-  private SModel myModel;
+  private jetbrains.mps.smodel.SModel myModel;
   private ModelRoot myModelRoot;
 
   public JavaClassStubModelDescriptor(SModelReference modelReference, FolderSetDataSource source, ModelRoot root) {
@@ -55,7 +55,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   }
 
   @Override
-  public synchronized SModel getSModel() {
+  public synchronized jetbrains.mps.smodel.SModel getSModel() {
     if (myModel == null) {
       myModel = createModel();
       ((jetbrains.mps.smodel.SModel) myModel).setModelDescriptor(this);
@@ -69,8 +69,8 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
     return myModel != null;
   }
 
-  private SModel createModel() {
-    SModel model = new jetbrains.mps.smodel.SModel(getSModelReference(), new ForeignNodeIdMap());
+  private jetbrains.mps.smodel.SModel createModel() {
+    jetbrains.mps.smodel.SModel model = new jetbrains.mps.smodel.SModel(getSModelReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
       ((jetbrains.mps.smodel.SModel) model).addLanguage(l.getModuleReference());
     }
@@ -132,7 +132,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
       updateDiskTimestamp();
       return;
     }
-    final SModel result = createModel();
+    final jetbrains.mps.smodel.SModel result = createModel();
     super.replaceModel(new Runnable() {
       @Override
       public void run() {

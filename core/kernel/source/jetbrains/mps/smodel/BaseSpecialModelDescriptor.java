@@ -20,14 +20,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
-  protected SModel mySModel;
+  protected jetbrains.mps.smodel.SModel mySModel;
 
   protected BaseSpecialModelDescriptor(@NotNull SModelReference modelReference) {
     super(modelReference, new NullDataSource());
   }
 
   @Override
-  public final synchronized SModel getSModel() {
+  public final synchronized jetbrains.mps.smodel.SModel getSModel() {
     if (mySModel == null) {
       mySModel = createModel();
       ((jetbrains.mps.smodel.SModel) mySModel).setModelDescriptor(this);
@@ -51,5 +51,5 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
     return mySModel;
   }
 
-  protected abstract SModel createModel();
+  protected abstract jetbrains.mps.smodel.SModel createModel();
 }

@@ -13,13 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.project.dependency.ModelDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel.ImportElement;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
+
+import java.util.List;
 
 public interface SModelInternal extends SModel {
   SModel resolveModel(jetbrains.mps.smodel.SModelReference reference);
@@ -29,4 +36,62 @@ public interface SModelInternal extends SModel {
   void removeModelListener(@NotNull SModelListener listener);
 
 
+  //todo get rid of, try to cast, show an error if not casted
+  boolean isDisposed();
+
+  //todo cast if can be
+  StackTraceElement[] getDisposedStacktrace();
+
+  void setModelDescriptor(SModel modelDescriptor);
+
+  boolean canFireEvent();
+
+  void dispose();
+
+  //todo this is an external functionality. Should be implemented externally
+  FastNodeFinder getFastNodeFinder();
+
+  //todo this is an external functionality. Should be implemented externally
+  void disposeFastNodeFinder();
+
+  ModelDependenciesManager getModelDepsManager();
+
+  List<ModuleReference> importedLanguages();
+
+  void deleteLanguage(@NotNull ModuleReference ref);
+
+  void addLanguage(ModuleReference ref);
+
+  List<ModuleReference> importedDevkits();
+
+  void addDevKit(ModuleReference ref);
+
+  void deleteDevKit(@NotNull ModuleReference ref);
+
+  List<ImportElement> importedModels();
+
+  void addModelImport(jetbrains.mps.smodel.SModelReference modelReference, boolean firstVersion);
+
+  void addModelImport(ImportElement importElement);
+
+  void deleteModelImport(jetbrains.mps.smodel.SModelReference modelReference);
+
+  // create new implicit import list based on used models, explicit import and old implicit import list
+  void calculateImplicitImports();
+
+  List<ModuleReference> engagedOnGenerationLanguages();
+
+  void addEngagedOnGenerationLanguage(ModuleReference ref);
+
+  void removeEngagedOnGenerationLanguage(ModuleReference ref);
+
+  List<ImportElement> getAdditionalModelVersions();
+
+  void addAdditionalModelVersion(@NotNull jetbrains.mps.smodel.SModelReference modelReference, int usedVersion);
+
+  void addAdditionalModelVersion(@NotNull ImportElement element);
+
+  int getVersion();
+
+  void setVersion(int version);
 }
