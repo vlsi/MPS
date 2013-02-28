@@ -10,6 +10,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ConfUtil {
@@ -27,7 +28,7 @@ public class ConfUtil {
       public boolean accept(SModel smd) {
         return ((SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(smd))) ?
           "conf_stub".equals(SModelStereotype.getStereotype(smd)) :
-          Sequence.fromIterable(((Iterable<ModuleReference>) ((jetbrains.mps.smodel.SModel) smd.getSModel()).importedLanguages())).contains(ConfUtil.CONF_LANG)
+          Sequence.fromIterable(((Iterable<ModuleReference>) ((SModelInternal) smd.getSModel()).importedLanguages())).contains(ConfUtil.CONF_LANG)
         );
       }
     }).select(new ISelector<SModel, SModel>() {

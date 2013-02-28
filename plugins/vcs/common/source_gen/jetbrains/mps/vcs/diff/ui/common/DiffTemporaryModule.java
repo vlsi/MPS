@@ -18,6 +18,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -108,8 +109,7 @@ public class DiffTemporaryModule extends AbstractModule {
     if (module == null) {
       module = new DiffTemporaryModule(model, version, project);
     }
-    jetbrains.mps.smodel.SModel m = (jetbrains.mps.smodel.SModel) model;
-    m.setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, m, mergeResultModel));
+    ((SModelInternal) model).setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, (jetbrains.mps.smodel.SModel) model, mergeResultModel));
   }
 
   public static void setSModelId(SModel model, String version) {

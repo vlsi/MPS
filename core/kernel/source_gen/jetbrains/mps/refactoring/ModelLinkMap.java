@@ -23,6 +23,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import jetbrains.mps.smodel.ModelAccess;
@@ -183,13 +184,13 @@ public class ModelLinkMap {
   public boolean updateModelReference(SModelReference model, final SModelReference newModel) {
     boolean res = false;
     // update imports 
-    for (jetbrains.mps.smodel.SModel.ImportElement element : ListSequence.fromList(((jetbrains.mps.smodel.SModel) myModel).importedModels())) {
+    for (jetbrains.mps.smodel.SModel.ImportElement element : ListSequence.fromList(((SModelInternal) myModel).importedModels())) {
       if (model.equals(element.getModelReference())) {
         res = true;
         element.setModelReference((jetbrains.mps.smodel.SModelReference) newModel);
       }
     }
-    for (jetbrains.mps.smodel.SModel.ImportElement element : ListSequence.fromList(((jetbrains.mps.smodel.SModel) myModel).getAdditionalModelVersions())) {
+    for (jetbrains.mps.smodel.SModel.ImportElement element : ListSequence.fromList(((SModelInternal) myModel).getAdditionalModelVersions())) {
       if (model.equals(element.getModelReference())) {
         element.setModelReference((jetbrains.mps.smodel.SModelReference) newModel);
       }
@@ -240,7 +241,7 @@ public class ModelLinkMap {
     if (RoleIdsComponent.isEnabled()) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          for (jetbrains.mps.smodel.SModel.ImportElement i : ListSequence.fromList(((jetbrains.mps.smodel.SModel) myModel).getAdditionalModelVersions())) {
+          for (jetbrains.mps.smodel.SModel.ImportElement i : ListSequence.fromList(((SModelInternal) myModel).getAdditionalModelVersions())) {
             RoleIdsComponent.modelVersionRead(i);
           }
           for (final SNodeReference ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {

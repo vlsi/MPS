@@ -42,6 +42,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -367,7 +368,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
           myContext.select(result.value);
           if ((myRefactoringModel != null) && myExtractIntoOuterContainer) {
             SModelReference ref = SNodeOperations.getModel(myStaticTarget).getReference();
-            ((jetbrains.mps.smodel.SModel) myRefactoringModel).addModelImport(ref, false);
+            ((SModelInternal) myRefactoringModel).addModelImport(ref, false);
           }
         }
       });

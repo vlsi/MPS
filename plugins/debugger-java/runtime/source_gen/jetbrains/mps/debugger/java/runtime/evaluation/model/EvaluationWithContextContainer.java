@@ -10,7 +10,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelOperations;
@@ -80,7 +80,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   protected void setUpNode(List<SNodeReference> nodesToImport) {
     EvaluationModule containerModule = (EvaluationModule) myContainerModule.resolve(myDebuggerRepository);
     // wanted to use resolve method here, but it was not implemented:( 
-    SModel containerModel = (SModelDescriptor) SModelRepository.getInstance().getModelDescriptor(myContainerModel);
+    SModel containerModel = (SModelInternal) SModelRepository.getInstance().getModelDescriptor(myContainerModel);
 
     setUpDependencies(containerModule, containerModel);
 
@@ -103,8 +103,8 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     });
     containerModule.updateModelsSet();
 
-    ((jetbrains.mps.smodel.SModel) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
-    ((jetbrains.mps.smodel.SModel) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
+    ((SModelInternal) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
+    ((SModelInternal) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
     containerModule.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
     containerModule.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
     containerModule.addDependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")).getModuleReference(), false);

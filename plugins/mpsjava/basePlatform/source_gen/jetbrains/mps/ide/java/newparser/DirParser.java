@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelFqName;
@@ -145,7 +146,7 @@ public class DirParser {
           SModel mdl = registerModelForPackage(finalPkg);
 
           if (mdl != null) {
-            ((jetbrains.mps.smodel.SModel) mdl).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
+            ((SModelInternal) mdl).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
             for (SNode r : ListSequence.fromList(roots)) {
               SModelOperations.addRootNode(mdl, r);
             }

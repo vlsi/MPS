@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.Project;
 import java.lang.annotation.Retention;
@@ -68,7 +68,7 @@ public class MPSProjectITestsSuite extends Suite {
       @Override
       public void run() {
         for (SModel model : Sequence.fromIterable(modelDescriptors)) {
-          for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((SModel) ((SModelDescriptor) model).getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
+          for (SNode testCase : ListSequence.fromList(SModelOperations.getRoots(((SModel) ((SModelInternal) model).getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
             ListSequence.fromList(testClassDescriptors).addElement(MultiTuple.<String,SModule>from(BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}), ((SModule) model.getModule())));
           }
         }

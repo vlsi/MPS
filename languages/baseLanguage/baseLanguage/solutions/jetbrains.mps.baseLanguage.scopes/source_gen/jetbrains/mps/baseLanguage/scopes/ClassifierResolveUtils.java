@@ -32,13 +32,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SModelInternal;
 
 public class ClassifierResolveUtils {
   private ClassifierResolveUtils() {
@@ -348,7 +347,7 @@ public class ClassifierResolveUtils {
 
     for (SModel model : Sequence.fromIterable(models)) {
       // FIXME will be unnecessary when transient models live in a separate repository 
-      if (!(model.equals(contextNodeModel)) && model instanceof SModel && (((SModelDescriptor) model).getModule() instanceof TransientModelsModule)) {
+      if (!(model.equals(contextNodeModel)) && model instanceof SModel && (((SModelInternal) model).getModule() instanceof TransientModelsModule)) {
         continue;
       }
 
@@ -506,7 +505,7 @@ public class ClassifierResolveUtils {
       for (SModel m : Sequence.fromIterable(models)) {
 
         // FIXME will be unnecessary when transient models live in a separate repository 
-        if (!(m.equals(contextNodeModel)) && m instanceof SModel && (((SModelDescriptor) m).getModule() instanceof TransientModelsModule)) {
+        if (!(m.equals(contextNodeModel)) && m instanceof SModel && (((SModelInternal) m).getModule() instanceof TransientModelsModule)) {
           continue;
         }
 

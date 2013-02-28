@@ -13,6 +13,7 @@ import java.io.OutputStream;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.io.IOException;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.InputStream;
@@ -81,7 +82,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   public synchronized SModel getSModel() {
     if (myModel == null) {
       myModel = loadSModel();
-      ((SModel) myModel).setModelDescriptor(this);
+      ((SModelInternal) myModel).setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
@@ -119,7 +120,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     org.jetbrains.mps.openapi.model.SModel old = myModel;
     notifyModelReplaced(old);
 
-    check_bp2jat_a5a31(((SModel) old));
+    check_bp2jat_a5a31(((SModelInternal) old));
 
     myModel = null;
     isChanged = false;
@@ -137,7 +138,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   }
 
-  private static void check_bp2jat_a5a31(SModel checkedDotOperand) {
+  private static void check_bp2jat_a5a31(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setModelDescriptor(null);
     }

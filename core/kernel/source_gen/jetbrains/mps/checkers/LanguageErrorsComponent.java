@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelInternal;
 
 public class LanguageErrorsComponent {
   private Map<SNode, Set<IErrorReporter>> myNodesToErrors = new HashMap<SNode, Set<IErrorReporter>>();
@@ -58,7 +57,7 @@ public class LanguageErrorsComponent {
 
   private void removeModelListener() {
     for (SModel modelDescriptor : myListenedModels) {
-      ((SModelDescriptor) modelDescriptor).removeModelListener(myModelListener);
+      ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
     }
     SetSequence.fromSet(myListenedModels).clear();
   }
@@ -128,7 +127,7 @@ public class LanguageErrorsComponent {
       return;
     }
     if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
-      ((SModelDescriptor) modelDescriptor).addModelListener(myModelListener);
+      ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
     }
   }

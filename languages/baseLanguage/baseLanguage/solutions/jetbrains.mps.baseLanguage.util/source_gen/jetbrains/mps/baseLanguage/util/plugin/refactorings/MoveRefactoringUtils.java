@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -40,7 +41,7 @@ public class MoveRefactoringUtils {
     if (model == toImport || SModelOperations.getImportedModelUIDs(model).contains(ref)) {
       return;
     }
-    ((jetbrains.mps.smodel.SModel) model).addModelImport(ref, false);
+    ((SModelInternal) model).addModelImport(ref, false);
   }
 
   public static void addNodeModelImportIfNeed(SNode node, SNode toImport) {

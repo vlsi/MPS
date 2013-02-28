@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -65,7 +66,7 @@ public class AddPluginDependencies_Action extends BaseAction {
 
         lang.addDependency(standaloneRef, false);
         SModel model = aspect.getSModel();
-        ((jetbrains.mps.smodel.SModel) model).addLanguage(standaloneRef);
+        ((SModelInternal) model).addLanguage(standaloneRef);
         SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor", null);
       }
       SModelRepository.getInstance().saveAll();
