@@ -26,7 +26,6 @@ import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 import jetbrains.mps.nodeEditor.selection.MultipleSelection;
@@ -34,6 +33,7 @@ import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
@@ -710,8 +710,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return getTextLine().isEverythingSelected();
   }
 
-  public NodeSubstituteInfo getSubstituteInfo() {
-    NodeSubstituteInfo substituteInfo = super.getSubstituteInfo();
+  @Override
+  public SubstituteInfo getSubstituteInfo() {
+    SubstituteInfo substituteInfo = super.getSubstituteInfo();
     if (substituteInfo != null) {
       substituteInfo.setOriginalText(getText() == null || getText().equals("") ? getNullText() : getText());
     }

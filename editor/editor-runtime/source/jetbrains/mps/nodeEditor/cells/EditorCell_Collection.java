@@ -29,7 +29,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent_Old;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Superscript;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
@@ -38,6 +37,7 @@ import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.util.ArrayWrapper;
 import jetbrains.mps.util.Condition;
@@ -884,12 +884,12 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   }
 
   @Override
-  public void setSubstituteInfo(NodeSubstituteInfo substitueInfo) {
+  public void setSubstituteInfo(SubstituteInfo substitueInfo) {
     super.setSubstituteInfo(substitueInfo);
     if (isTransparentCollection()) {
       for (jetbrains.mps.openapi.editor.cells.EditorCell child : getEditorCells()) {
         if (child.getSNode() == getSNode()) {
-          ((EditorCell) child).setSubstituteInfo(substitueInfo);
+          child.setSubstituteInfo(substitueInfo);
         }
       }
     }
