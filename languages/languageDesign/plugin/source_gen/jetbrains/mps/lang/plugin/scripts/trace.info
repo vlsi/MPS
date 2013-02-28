@@ -98,124 +98,124 @@
     <unitInfo nodeId="1656966147171140372" fileName="FixJDKTools_MigrationScript.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.FixJDKTools_MigrationScript" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)/1760076887286546794">
-    <nodeInfo nodeId="1760076887286546819" fileName="MpsClasspathRefUtil.java" startLine="27" startPosition="70" endLine="28" endPosition="795" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1760076887286546826" fileName="MpsClasspathRefUtil.java" startLine="28" startPosition="795" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1760076887286546827" fileName="MpsClasspathRefUtil.java" startLine="29" startPosition="0" endLine="30" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1760076887286546832" fileName="MpsClasspathRefUtil.java" startLine="30" startPosition="50" endLine="31" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1760076887286546840" fileName="MpsClasspathRefUtil.java" startLine="31" startPosition="68" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1760076887286546846" fileName="MpsClasspathRefUtil.java" startLine="33" startPosition="87" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1760076887286546851" fileName="MpsClasspathRefUtil.java" startLine="34" startPosition="67" endLine="35" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3049893160015560423" fileName="MpsClasspathRefUtil.java" startLine="37" startPosition="32" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1760076887286546858" fileName="MpsClasspathRefUtil.java" startLine="39" startPosition="9" endLine="40" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1760076887286546872" fileName="MpsClasspathRefUtil.java" startLine="42" startPosition="44" endLine="43" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1760076887286546882" fileName="MpsClasspathRefUtil.java" startLine="46" startPosition="31" endLine="47" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4214874532454945108" fileName="MpsClasspathRefUtil.java" startLine="49" startPosition="43" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1760076887286546886" fileName="MpsClasspathRefUtil.java" startLine="51" startPosition="9" endLine="52" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1760076887286546891" fileName="MpsClasspathRefUtil.java" startLine="52" startPosition="83" endLine="53" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1760076887286546895" fileName="MpsClasspathRefUtil.java" startLine="54" startPosition="59" endLine="55" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1760076887286546900" fileName="MpsClasspathRefUtil.java" startLine="55" startPosition="88" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1760076887286546906" fileName="MpsClasspathRefUtil.java" startLine="57" startPosition="9" endLine="58" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1760076887286546913" fileName="MpsClasspathRefUtil.java" startLine="58" startPosition="78" endLine="59" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1760076887286546919" fileName="MpsClasspathRefUtil.java" startLine="59" startPosition="77" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1760076887286546924" fileName="MpsClasspathRefUtil.java" startLine="60" startPosition="58" endLine="61" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1760076887286546928" fileName="MpsClasspathRefUtil.java" startLine="62" startPosition="69" endLine="63" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1760076887286546943" fileName="MpsClasspathRefUtil.java" startLine="65" startPosition="50" endLine="66" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1760076887286546953" fileName="MpsClasspathRefUtil.java" startLine="68" startPosition="13" endLine="69" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1760076887286546955" fileName="MpsClasspathRefUtil.java" startLine="69" startPosition="79" endLine="70" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4214874532454943882" fileName="MpsClasspathRefUtil.java" startLine="71" startPosition="28" endLine="72" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1760076887286546996" fileName="MpsClasspathRefUtil.java" startLine="74" startPosition="9" endLine="75" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="81" startPosition="36" endLine="82" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="83" startPosition="5" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="88" startPosition="36" endLine="89" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="90" startPosition="5" endLine="91" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="95" startPosition="36" endLine="96" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="97" startPosition="5" endLine="98" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1760076887286546796" fileName="MpsClasspathRefUtil.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsClasspathRefUtil#()V" />
-    <nodeInfo nodeId="3049893160015559520" fileName="MpsClasspathRefUtil.java" startLine="36" startPosition="41" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1760076887286546870" fileName="MpsClasspathRefUtil.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-    <nodeInfo nodeId="1760076887286546880" fileName="MpsClasspathRefUtil.java" startLine="45" startPosition="12" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4214874532454943884" fileName="MpsClasspathRefUtil.java" startLine="48" startPosition="9" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1760076887286546941" fileName="MpsClasspathRefUtil.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/modules/Dependency;)Z" />
-    <nodeInfo nodeId="4214874532454943855" fileName="MpsClasspathRefUtil.java" startLine="70" startPosition="96" endLine="73" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="80" startPosition="71" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="87" startPosition="81" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="94" startPosition="83" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1760076887286546893" fileName="MpsClasspathRefUtil.java" startLine="53" startPosition="78" endLine="57" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1760076887286546873" fileName="MpsClasspathRefUtil.java" startLine="101" startPosition="76" endLine="105" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1760076887286546864" fileName="MpsClasspathRefUtil.java" startLine="40" startPosition="65" endLine="45" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1760076887286546936" fileName="MpsClasspathRefUtil.java" startLine="63" startPosition="95" endLine="68" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xpwqv8_a0d0b#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="87" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xpwqv8_a0b0f0b#(Ljetbrains/mps/smodel/SModelReference;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="94" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xpwqv8_a0c0c0f0b#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelReference;" />
-    <nodeInfo nodeId="1760076887286546873" fileName="MpsClasspathRefUtil.java" startLine="101" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_xpwqv8_a0a0a0a0a0a0c0c0f0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1760076887286546926" fileName="MpsClasspathRefUtil.java" startLine="61" startPosition="38" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1760076887286546856" fileName="MpsClasspathRefUtil.java" startLine="35" startPosition="62" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1760076887286546841" fileName="MpsClasspathRefUtil.java" startLine="32" startPosition="0" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1760076887286546814" fileName="MpsClasspathRefUtil.java" startLine="27" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="updateReferencesToMpsClasspath#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1760076887286546799" fileName="MpsClasspathRefUtil.java" startLine="24" startPosition="33" endLine="24" endPosition="33" />
-    <scopeInfo nodeId="3049893160015559522" fileName="MpsClasspathRefUtil.java" startLine="37" startPosition="32" endLine="38" endPosition="19" />
-    <scopeInfo nodeId="1760076887286546871" fileName="MpsClasspathRefUtil.java" startLine="42" startPosition="44" endLine="43" endPosition="114" />
-    <scopeInfo nodeId="1760076887286546881" fileName="MpsClasspathRefUtil.java" startLine="46" startPosition="31" endLine="47" endPosition="19" />
-    <scopeInfo nodeId="4214874532454943885" fileName="MpsClasspathRefUtil.java" startLine="49" startPosition="43" endLine="50" endPosition="16" />
-    <scopeInfo nodeId="1760076887286546942" fileName="MpsClasspathRefUtil.java" startLine="65" startPosition="50" endLine="66" endPosition="83" />
-    <scopeInfo nodeId="4214874532454943856" fileName="MpsClasspathRefUtil.java" startLine="71" startPosition="28" endLine="72" endPosition="37" />
-    <scopeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="81" startPosition="36" endLine="82" endPosition="43" />
-    <scopeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="88" startPosition="36" endLine="89" endPosition="45" />
-    <scopeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="95" startPosition="36" endLine="96" endPosition="46" />
-    <scopeInfo nodeId="1760076887286546796" fileName="MpsClasspathRefUtil.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1760076887286546894" fileName="MpsClasspathRefUtil.java" startLine="54" startPosition="59" endLine="56" endPosition="19" />
-    <scopeInfo nodeId="1760076887286546870" fileName="MpsClasspathRefUtil.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+    <nodeInfo nodeId="1760076887286546819" fileName="MpsClasspathRefUtil.java" startLine="28" startPosition="70" endLine="29" endPosition="795" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1760076887286546826" fileName="MpsClasspathRefUtil.java" startLine="29" startPosition="795" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1760076887286546827" fileName="MpsClasspathRefUtil.java" startLine="30" startPosition="0" endLine="31" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1760076887286546832" fileName="MpsClasspathRefUtil.java" startLine="31" startPosition="50" endLine="32" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1760076887286546840" fileName="MpsClasspathRefUtil.java" startLine="32" startPosition="68" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1760076887286546846" fileName="MpsClasspathRefUtil.java" startLine="34" startPosition="87" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1760076887286546851" fileName="MpsClasspathRefUtil.java" startLine="35" startPosition="67" endLine="36" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3049893160015560423" fileName="MpsClasspathRefUtil.java" startLine="38" startPosition="32" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1760076887286546858" fileName="MpsClasspathRefUtil.java" startLine="40" startPosition="9" endLine="41" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1760076887286546872" fileName="MpsClasspathRefUtil.java" startLine="43" startPosition="44" endLine="44" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1760076887286546882" fileName="MpsClasspathRefUtil.java" startLine="47" startPosition="31" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4214874532454945108" fileName="MpsClasspathRefUtil.java" startLine="50" startPosition="43" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1760076887286546886" fileName="MpsClasspathRefUtil.java" startLine="52" startPosition="9" endLine="53" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1760076887286546891" fileName="MpsClasspathRefUtil.java" startLine="53" startPosition="83" endLine="54" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1760076887286546895" fileName="MpsClasspathRefUtil.java" startLine="55" startPosition="59" endLine="56" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1760076887286546900" fileName="MpsClasspathRefUtil.java" startLine="56" startPosition="88" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1760076887286546906" fileName="MpsClasspathRefUtil.java" startLine="58" startPosition="9" endLine="59" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1760076887286546913" fileName="MpsClasspathRefUtil.java" startLine="59" startPosition="78" endLine="60" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1760076887286546919" fileName="MpsClasspathRefUtil.java" startLine="60" startPosition="77" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1760076887286546924" fileName="MpsClasspathRefUtil.java" startLine="61" startPosition="58" endLine="62" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1760076887286546928" fileName="MpsClasspathRefUtil.java" startLine="63" startPosition="69" endLine="64" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1760076887286546943" fileName="MpsClasspathRefUtil.java" startLine="66" startPosition="50" endLine="67" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1760076887286546953" fileName="MpsClasspathRefUtil.java" startLine="69" startPosition="13" endLine="70" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1760076887286546955" fileName="MpsClasspathRefUtil.java" startLine="70" startPosition="79" endLine="71" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4214874532454943882" fileName="MpsClasspathRefUtil.java" startLine="72" startPosition="28" endLine="73" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1760076887286546996" fileName="MpsClasspathRefUtil.java" startLine="75" startPosition="9" endLine="76" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="82" startPosition="36" endLine="83" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="84" startPosition="5" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="89" startPosition="36" endLine="90" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="91" startPosition="5" endLine="92" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="96" startPosition="36" endLine="97" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="98" startPosition="5" endLine="99" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1760076887286546796" fileName="MpsClasspathRefUtil.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsClasspathRefUtil#()V" />
+    <nodeInfo nodeId="3049893160015559520" fileName="MpsClasspathRefUtil.java" startLine="37" startPosition="41" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1760076887286546870" fileName="MpsClasspathRefUtil.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+    <nodeInfo nodeId="1760076887286546880" fileName="MpsClasspathRefUtil.java" startLine="46" startPosition="12" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4214874532454943884" fileName="MpsClasspathRefUtil.java" startLine="49" startPosition="9" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1760076887286546941" fileName="MpsClasspathRefUtil.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/modules/Dependency;)Z" />
+    <nodeInfo nodeId="4214874532454943855" fileName="MpsClasspathRefUtil.java" startLine="71" startPosition="96" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="81" startPosition="79" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="88" startPosition="81" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="95" startPosition="83" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1760076887286546893" fileName="MpsClasspathRefUtil.java" startLine="54" startPosition="78" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1760076887286546873" fileName="MpsClasspathRefUtil.java" startLine="102" startPosition="76" endLine="106" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1760076887286546864" fileName="MpsClasspathRefUtil.java" startLine="41" startPosition="65" endLine="46" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1760076887286546936" fileName="MpsClasspathRefUtil.java" startLine="64" startPosition="95" endLine="69" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="81" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xpwqv8_a0d0b#(Ljetbrains/mps/smodel/SModelInternal;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="88" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xpwqv8_a0b0f0b#(Ljetbrains/mps/smodel/SModelReference;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="95" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_xpwqv8_a0c0c0f0b#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelReference;" />
+    <nodeInfo nodeId="1760076887286546873" fileName="MpsClasspathRefUtil.java" startLine="102" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_xpwqv8_a0a0a0a0a0a0c0c0f0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1760076887286546926" fileName="MpsClasspathRefUtil.java" startLine="62" startPosition="38" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1760076887286546856" fileName="MpsClasspathRefUtil.java" startLine="36" startPosition="62" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1760076887286546841" fileName="MpsClasspathRefUtil.java" startLine="33" startPosition="0" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1760076887286546814" fileName="MpsClasspathRefUtil.java" startLine="28" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="updateReferencesToMpsClasspath#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1760076887286546799" fileName="MpsClasspathRefUtil.java" startLine="25" startPosition="33" endLine="25" endPosition="33" />
+    <scopeInfo nodeId="3049893160015559522" fileName="MpsClasspathRefUtil.java" startLine="38" startPosition="32" endLine="39" endPosition="19" />
+    <scopeInfo nodeId="1760076887286546871" fileName="MpsClasspathRefUtil.java" startLine="43" startPosition="44" endLine="44" endPosition="114" />
+    <scopeInfo nodeId="1760076887286546881" fileName="MpsClasspathRefUtil.java" startLine="47" startPosition="31" endLine="48" endPosition="19" />
+    <scopeInfo nodeId="4214874532454943885" fileName="MpsClasspathRefUtil.java" startLine="50" startPosition="43" endLine="51" endPosition="16" />
+    <scopeInfo nodeId="1760076887286546942" fileName="MpsClasspathRefUtil.java" startLine="66" startPosition="50" endLine="67" endPosition="83" />
+    <scopeInfo nodeId="4214874532454943856" fileName="MpsClasspathRefUtil.java" startLine="72" startPosition="28" endLine="73" endPosition="37" />
+    <scopeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="82" startPosition="36" endLine="83" endPosition="43" />
+    <scopeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="89" startPosition="36" endLine="90" endPosition="45" />
+    <scopeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="96" startPosition="36" endLine="97" endPosition="46" />
+    <scopeInfo nodeId="1760076887286546796" fileName="MpsClasspathRefUtil.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="1760076887286546894" fileName="MpsClasspathRefUtil.java" startLine="55" startPosition="59" endLine="57" endPosition="19" />
+    <scopeInfo nodeId="1760076887286546870" fileName="MpsClasspathRefUtil.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1760076887286546870" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546941" fileName="MpsClasspathRefUtil.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="1760076887286546941" fileName="MpsClasspathRefUtil.java" startLine="66" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1760076887286546941" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="80" startPosition="71" endLine="84" endPosition="16" />
-    <scopeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="87" startPosition="81" endLine="91" endPosition="16" />
-    <scopeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="94" startPosition="83" endLine="98" endPosition="16" />
-    <scopeInfo nodeId="1760076887286546873" fileName="MpsClasspathRefUtil.java" startLine="101" startPosition="76" endLine="105" endPosition="6" />
-    <scopeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="80" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="81" startPosition="79" endLine="85" endPosition="16" />
+    <scopeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="88" startPosition="81" endLine="92" endPosition="16" />
+    <scopeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="95" startPosition="83" endLine="99" endPosition="16" />
+    <scopeInfo nodeId="1760076887286546873" fileName="MpsClasspathRefUtil.java" startLine="102" startPosition="76" endLine="106" endPosition="6" />
+    <scopeInfo nodeId="1760076887286546834" fileName="MpsClasspathRefUtil.java" startLine="81" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="1760076887286546834" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="87" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="1760076887286546853" fileName="MpsClasspathRefUtil.java" startLine="88" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="1760076887286546853" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="94" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="1760076887286546866" fileName="MpsClasspathRefUtil.java" startLine="95" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="1760076887286546866" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546873" fileName="MpsClasspathRefUtil.java" startLine="101" startPosition="0" endLine="107" endPosition="0">
+    <scopeInfo nodeId="1760076887286546873" fileName="MpsClasspathRefUtil.java" startLine="102" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="1760076887286546873" varName="a" />
       <varInfo nodeId="1760076887286546873" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546927" fileName="MpsClasspathRefUtil.java" startLine="62" startPosition="69" endLine="73" endPosition="11">
+    <scopeInfo nodeId="1760076887286546927" fileName="MpsClasspathRefUtil.java" startLine="63" startPosition="69" endLine="74" endPosition="11">
       <varInfo nodeId="1760076887286546811" varName="dep" />
       <varInfo nodeId="1760076887286546809" varName="dependencies" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546857" fileName="MpsClasspathRefUtil.java" startLine="36" startPosition="41" endLine="75" endPosition="14">
+    <scopeInfo nodeId="1760076887286546857" fileName="MpsClasspathRefUtil.java" startLine="37" startPosition="41" endLine="76" endPosition="14">
       <varInfo nodeId="1760076887286546807" varName="modelRef" />
       <varInfo nodeId="1760076887286546804" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546856" fileName="MpsClasspathRefUtil.java" startLine="35" startPosition="62" endLine="76" endPosition="7">
+    <scopeInfo nodeId="1760076887286546856" fileName="MpsClasspathRefUtil.java" startLine="36" startPosition="62" endLine="77" endPosition="7">
       <varInfo nodeId="1760076887286546803" varName="newModule" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546845" fileName="MpsClasspathRefUtil.java" startLine="33" startPosition="87" endLine="76" endPosition="7">
+    <scopeInfo nodeId="1760076887286546845" fileName="MpsClasspathRefUtil.java" startLine="34" startPosition="87" endLine="77" endPosition="7">
       <varInfo nodeId="1760076887286546805" varName="fqname" />
       <varInfo nodeId="1760076887286546802" varName="oldModelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546841" fileName="MpsClasspathRefUtil.java" startLine="32" startPosition="0" endLine="77" endPosition="5">
+    <scopeInfo nodeId="1760076887286546841" fileName="MpsClasspathRefUtil.java" startLine="33" startPosition="0" endLine="78" endPosition="5">
       <varInfo nodeId="1760076887286546801" varName="ref" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546818" fileName="MpsClasspathRefUtil.java" startLine="27" startPosition="70" endLine="77" endPosition="5">
+    <scopeInfo nodeId="1760076887286546818" fileName="MpsClasspathRefUtil.java" startLine="28" startPosition="70" endLine="78" endPosition="5">
       <varInfo nodeId="1760076887286546800" varName="model" />
       <varInfo nodeId="1760076887286546808" varName="module" />
       <varInfo nodeId="1760076887286546812" varName="modules" />
     </scopeInfo>
-    <scopeInfo nodeId="1760076887286546814" fileName="MpsClasspathRefUtil.java" startLine="27" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="1760076887286546814" fileName="MpsClasspathRefUtil.java" startLine="28" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1760076887286546813" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1760076887286546870" fileName="MpsClasspathRefUtil.java" startLine="41" startPosition="102" endLine="45" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.MpsClasspathRefUtil$1" />
-    <unitInfo nodeId="1760076887286546941" fileName="MpsClasspathRefUtil.java" startLine="64" startPosition="116" endLine="68" endPosition="11" unitName="jetbrains.mps.lang.plugin.scripts.MpsClasspathRefUtil$2" />
-    <unitInfo nodeId="1760076887286546794" fileName="MpsClasspathRefUtil.java" startLine="23" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MpsClasspathRefUtil" />
+    <unitInfo nodeId="1760076887286546870" fileName="MpsClasspathRefUtil.java" startLine="42" startPosition="102" endLine="46" endPosition="9" unitName="jetbrains.mps.lang.plugin.scripts.MpsClasspathRefUtil$1" />
+    <unitInfo nodeId="1760076887286546941" fileName="MpsClasspathRefUtil.java" startLine="65" startPosition="116" endLine="69" endPosition="11" unitName="jetbrains.mps.lang.plugin.scripts.MpsClasspathRefUtil$2" />
+    <unitInfo nodeId="1760076887286546794" fileName="MpsClasspathRefUtil.java" startLine="24" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.lang.plugin.scripts.MpsClasspathRefUtil" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)/4214874532454943783">
     <nodeInfo nodeId="4214874532454943783" fileName="UpdateMPSModules_MigrationScript.java" startLine="15" startPosition="79" endLine="16" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

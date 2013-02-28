@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class CheckUtils {
@@ -48,28 +49,28 @@ public class CheckUtils {
     }
   }
 
-  private static IModule check_c4dr2s_a0a0c(SModel checkedDotOperand) {
+  private static IModule check_c4dr2s_a0a0c(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_c4dr2s_a0a0a2(SModel checkedDotOperand) {
+  private static SModelInternal check_c4dr2s_a0a0a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IModule check_c4dr2s_a0c0e(SModel checkedDotOperand) {
+  private static IModule check_c4dr2s_a0c0e(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_c4dr2s_a0a2a4(SModel checkedDotOperand) {
+  private static SModelInternal check_c4dr2s_a0a2a4(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

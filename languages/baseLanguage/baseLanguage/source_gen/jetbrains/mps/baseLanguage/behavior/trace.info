@@ -4563,7 +4563,7 @@
     <nodeInfo nodeId="1809207813036428082" fileName="VariableReference_Behavior.java" startLine="98" startPosition="28" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1225456361167" fileName="VariableReference_Behavior.java" startLine="102" startPosition="296" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877348222" fileName="VariableReference_Behavior.java" startLine="119" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="4269075651248721485" fileName="VariableReference_Behavior.java" startLine="123" startPosition="73" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4269075651248721485" fileName="VariableReference_Behavior.java" startLine="123" startPosition="81" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="304895491242222875" fileName="VariableReference_Behavior.java" startLine="35" startPosition="14" endLine="39" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="304895491242222873" fileName="VariableReference_Behavior.java" startLine="35" startPosition="12" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="304895491242223011" fileName="VariableReference_Behavior.java" startLine="46" startPosition="85" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -4571,7 +4571,7 @@
     <nodeInfo nodeId="1240475641060" fileName="VariableReference_Behavior.java" startLine="84" startPosition="5" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1225456338788" fileName="VariableReference_Behavior.java" startLine="101" startPosition="5" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2242608743097563043" fileName="VariableReference_Behavior.java" startLine="111" startPosition="56" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4269075651248721485" fileName="VariableReference_Behavior.java" startLine="123" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_gidzrl_a0e0a0e#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="4269075651248721485" fileName="VariableReference_Behavior.java" startLine="123" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_gidzrl_a0e0a0e#(Ljetbrains/mps/smodel/SModelInternal;)Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="304895491242222855" fileName="VariableReference_Behavior.java" startLine="32" startPosition="135" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877348222" fileName="VariableReference_Behavior.java" startLine="110" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getDeclaration_3262277503800831941#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1213877348222" fileName="VariableReference_Behavior.java" startLine="46" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isCompileTimeConstant_1238860258777#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -4619,7 +4619,7 @@
       <varInfo nodeId="1213877348222" varName="thisConcept" />
     </scopeInfo>
     <scopeInfo nodeId="304895491242222874" fileName="VariableReference_Behavior.java" startLine="35" startPosition="14" endLine="39" endPosition="10" />
-    <scopeInfo nodeId="4269075651248721485" fileName="VariableReference_Behavior.java" startLine="123" startPosition="73" endLine="127" endPosition="16" />
+    <scopeInfo nodeId="4269075651248721485" fileName="VariableReference_Behavior.java" startLine="123" startPosition="81" endLine="127" endPosition="16" />
     <scopeInfo nodeId="2242608743097563015" fileName="VariableReference_Behavior.java" startLine="110" startPosition="82" endLine="116" endPosition="5" />
     <scopeInfo nodeId="4269075651248721485" fileName="VariableReference_Behavior.java" startLine="123" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="4269075651248721485" varName="checkedDotOperand" />
@@ -4834,7 +4834,7 @@
     <nodeInfo nodeId="4837286298389112224" fileName="BaseMethodDeclaration_Behavior.java" startLine="298" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="4837286298389112235" fileName="BaseMethodDeclaration_Behavior.java" startLine="302" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="4837286298389112244" fileName="BaseMethodDeclaration_Behavior.java" startLine="306" startPosition="0" endLine="309" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4269075651248721069" fileName="BaseMethodDeclaration_Behavior.java" startLine="403" startPosition="71" endLine="406" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4269075651248721069" fileName="BaseMethodDeclaration_Behavior.java" startLine="403" startPosition="79" endLine="406" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7192154694571049759" fileName="BaseMethodDeclaration_Behavior.java" startLine="417" startPosition="39" endLine="420" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7192154694571049759" fileName="BaseMethodDeclaration_Behavior.java" startLine="422" startPosition="39" endLine="425" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1239354014684" fileName="BaseMethodDeclaration_Behavior.java" startLine="54" startPosition="84" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -4874,7 +4874,7 @@
     <nodeInfo nodeId="3502149477493151398" fileName="BaseMethodDeclaration_Behavior.java" startLine="251" startPosition="105" endLine="256" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7192154694571049695" fileName="BaseMethodDeclaration_Behavior.java" startLine="263" startPosition="48" endLine="268" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="855369272314187085" fileName="BaseMethodDeclaration_Behavior.java" startLine="184" startPosition="5" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4269075651248721069" fileName="BaseMethodDeclaration_Behavior.java" startLine="403" startPosition="0" endLine="409" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_tq0gdw_a0a0k#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="4269075651248721069" fileName="BaseMethodDeclaration_Behavior.java" startLine="403" startPosition="0" endLine="409" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_tq0gdw_a0a0k#(Ljetbrains/mps/smodel/SModelInternal;)Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="7192154694571049759" fileName="BaseMethodDeclaration_Behavior.java" startLine="415" startPosition="162" endLine="421" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7192154694571049759" fileName="BaseMethodDeclaration_Behavior.java" startLine="415" startPosition="162" endLine="421" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2876202219157085071" fileName="BaseMethodDeclaration_Behavior.java" startLine="429" startPosition="0" endLine="435" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_tq0gdw_a0a0r#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
@@ -5112,7 +5112,7 @@
       <varInfo nodeId="1213877350233" varName="callerConceptFqName" />
       <varInfo nodeId="1213877350233" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4269075651248721069" fileName="BaseMethodDeclaration_Behavior.java" startLine="403" startPosition="71" endLine="407" endPosition="16" />
+    <scopeInfo nodeId="4269075651248721069" fileName="BaseMethodDeclaration_Behavior.java" startLine="403" startPosition="79" endLine="407" endPosition="16" />
     <scopeInfo nodeId="7192154694571049759" fileName="BaseMethodDeclaration_Behavior.java" startLine="416" startPosition="160" endLine="420" endPosition="5" />
     <scopeInfo nodeId="7192154694571049759" fileName="BaseMethodDeclaration_Behavior.java" startLine="421" startPosition="52" endLine="425" endPosition="5" />
     <scopeInfo nodeId="2876202219157085071" fileName="BaseMethodDeclaration_Behavior.java" startLine="429" startPosition="63" endLine="433" endPosition="7" />
@@ -6739,11 +6739,11 @@
     <nodeInfo nodeId="4269075651248721344" fileName="EnumConstantReference_Behavior.java" startLine="49" startPosition="5" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877400601" fileName="EnumConstantReference_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="4269075651248721429" fileName="EnumConstantReference_Behavior.java" startLine="31" startPosition="7" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4269075651248721344" fileName="EnumConstantReference_Behavior.java" startLine="46" startPosition="71" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4269075651248721344" fileName="EnumConstantReference_Behavior.java" startLine="46" startPosition="79" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5977339894439706605" fileName="EnumConstantReference_Behavior.java" startLine="39" startPosition="101" endLine="43" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3417429744615222784" fileName="EnumConstantReference_Behavior.java" startLine="26" startPosition="25" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1213877400601" fileName="EnumConstantReference_Behavior.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="4269075651248721344" fileName="EnumConstantReference_Behavior.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_p8mh91_a0c0a#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="4269075651248721344" fileName="EnumConstantReference_Behavior.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_p8mh91_a0c0a#(Ljetbrains/mps/smodel/SModelInternal;)Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="4269075651248721354" fileName="EnumConstantReference_Behavior.java" startLine="24" startPosition="85" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877400601" fileName="EnumConstantReference_Behavior.java" startLine="21" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_eval_1213877519769#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/IModule;)Ljava/lang/Object;" />
     <scopeInfo nodeId="1213877400627" fileName="EnumConstantReference_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
@@ -6758,7 +6758,7 @@
       <varInfo nodeId="1213877400601" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="5977339894439686386" fileName="EnumConstantReference_Behavior.java" startLine="39" startPosition="101" endLine="43" endPosition="6" />
-    <scopeInfo nodeId="4269075651248721344" fileName="EnumConstantReference_Behavior.java" startLine="46" startPosition="71" endLine="50" endPosition="16" />
+    <scopeInfo nodeId="4269075651248721344" fileName="EnumConstantReference_Behavior.java" startLine="46" startPosition="79" endLine="50" endPosition="16" />
     <scopeInfo nodeId="1213877400601" fileName="EnumConstantReference_Behavior.java" startLine="39" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="5977339894439686389" varName="child" />
       <varInfo nodeId="5977339894439686387" varName="kind" />
@@ -9358,11 +9358,11 @@
     <nodeInfo nodeId="4269075651248721577" fileName="StaticFieldReference_Behavior.java" startLine="31" startPosition="7" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isCompileTimeConstant_1238860258777#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="4269075651248721558" fileName="StaticFieldReference_Behavior.java" startLine="59" startPosition="71" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4269075651248721558" fileName="StaticFieldReference_Behavior.java" startLine="59" startPosition="79" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238863363508" fileName="StaticFieldReference_Behavior.java" startLine="47" startPosition="12" endLine="51" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3417429744615223700" fileName="StaticFieldReference_Behavior.java" startLine="26" startPosition="22" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1238863363506" fileName="StaticFieldReference_Behavior.java" startLine="47" startPosition="10" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4269075651248721558" fileName="StaticFieldReference_Behavior.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_o8sx3d_a0d0a#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="4269075651248721558" fileName="StaticFieldReference_Behavior.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_o8sx3d_a0d0a#(Ljetbrains/mps/smodel/SModelInternal;)Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="1238863363488" fileName="StaticFieldReference_Behavior.java" startLine="44" startPosition="80" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4269075651248721566" fileName="StaticFieldReference_Behavior.java" startLine="24" startPosition="85" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1213877524603" fileName="StaticFieldReference_Behavior.java" startLine="43" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getCompileTimeConstantValue_1238860310638#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/project/IModule;)Ljava/lang/Object;" />
@@ -9388,7 +9388,7 @@
       <varInfo nodeId="1213877524603" varName="thisConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1238863363507" fileName="StaticFieldReference_Behavior.java" startLine="47" startPosition="12" endLine="51" endPosition="8" />
-    <scopeInfo nodeId="4269075651248721558" fileName="StaticFieldReference_Behavior.java" startLine="59" startPosition="71" endLine="63" endPosition="16" />
+    <scopeInfo nodeId="4269075651248721558" fileName="StaticFieldReference_Behavior.java" startLine="59" startPosition="79" endLine="63" endPosition="16" />
     <scopeInfo nodeId="4269075651248721558" fileName="StaticFieldReference_Behavior.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="4269075651248721558" varName="checkedDotOperand" />
     </scopeInfo>

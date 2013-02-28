@@ -12,7 +12,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.scope.EmptyScope;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class EnumConstantReference_Behavior {
   public static void init(SNode thisNode) {
@@ -43,7 +43,7 @@ public class EnumConstantReference_Behavior {
     );
   }
 
-  private static IModule check_p8mh91_a0c0a(SModel checkedDotOperand) {
+  private static IModule check_p8mh91_a0c0a(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

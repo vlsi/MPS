@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import java.util.Collection;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.SModelInternal;
 
 /*package*/ class MpsClasspathRefUtil {
   private MpsClasspathRefUtil() {
@@ -77,7 +78,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     }
   }
 
-  private static IModule check_xpwqv8_a0d0b(SModel checkedDotOperand) {
+  private static IModule check_xpwqv8_a0d0b(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

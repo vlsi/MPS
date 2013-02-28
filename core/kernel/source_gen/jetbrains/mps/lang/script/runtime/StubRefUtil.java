@@ -21,6 +21,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class StubRefUtil {
   private static boolean isReferenceToJavaStub(@NotNull SReference reference) {
@@ -170,7 +171,7 @@ public class StubRefUtil {
     return null;
   }
 
-  private static IModule check_4tnolf_a0d0a0o(SModel checkedDotOperand) {
+  private static IModule check_4tnolf_a0d0a0o(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

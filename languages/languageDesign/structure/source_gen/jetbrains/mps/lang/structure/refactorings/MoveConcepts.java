@@ -22,6 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -79,12 +80,12 @@ public class MoveConcepts extends BaseLoggableRefactoring {
         return SConceptOperations.getDirectSuperConcepts(it, false);
       }
     }).subtract(ListSequence.fromList(refactoringContext.getSelectedNodes()));
-    List<ModuleReference> targetExtends = Sequence.fromIterable(targExtends).select(new ISelector<SNode, SModel>() {
-      public SModel select(SNode it) {
+    List<ModuleReference> targetExtends = Sequence.fromIterable(targExtends).select(new ISelector<SNode, SModelInternal>() {
+      public SModelInternal select(SNode it) {
         return check_u6ijv2_a0a0a0a0a0a7a0(SNodeOperations.getModel(it));
       }
-    }).distinct().select(new ISelector<SModel, ModuleReference>() {
-      public ModuleReference select(SModel it) {
+    }).distinct().select(new ISelector<SModelInternal, ModuleReference>() {
+      public ModuleReference select(SModelInternal it) {
         return check_u6ijv2_a0a0a0a0a7a0(Language.getLanguageFor(it));
       }
     }).where(new IWhereFilter<ModuleReference>() {
@@ -161,7 +162,7 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     refactoringContext.updateByDefault(model);
   }
 
-  private static SModel check_u6ijv2_a0a0a0a0a0a7a0(SModel checkedDotOperand) {
+  private static SModelInternal check_u6ijv2_a0a0a0a0a0a7a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

@@ -38,6 +38,7 @@ import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class ClassifierResolveUtils {
   private ClassifierResolveUtils() {
@@ -632,14 +633,14 @@ public class ClassifierResolveUtils {
     return false;
   }
 
-  private static SModel check_8z6r2b_a0a1a2(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a1a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SModel check_8z6r2b_a0a5a2(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a5a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
@@ -653,21 +654,21 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0j0c(SModel checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0j0c(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_8z6r2b_a0a0a9a2(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a0a9a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SModel check_8z6r2b_a0a0a3(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a0a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
@@ -681,21 +682,21 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a3a3(SModel checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a3a3(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_8z6r2b_a0a0d0d(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a0d0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SModel check_8z6r2b_a0a25a21(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a25a21(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
@@ -709,14 +710,14 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0ec0m(SModel checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0ec0m(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_8z6r2b_a0a0a65a21(SModel checkedDotOperand) {
+  private static SModelInternal check_8z6r2b_a0a0a65a21(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

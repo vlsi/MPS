@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class LanguageErrorsComponent {
   private Map<SNode, Set<IErrorReporter>> myNodesToErrors = new HashMap<SNode, Set<IErrorReporter>>();
@@ -353,14 +354,14 @@ public class LanguageErrorsComponent {
     return null;
   }
 
-  private static IModule check_29uvfh_a0a7a12(SModel checkedDotOperand) {
+  private static IModule check_29uvfh_a0a7a12(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_29uvfh_a0a0h0v(SModel checkedDotOperand) {
+  private static SModelInternal check_29uvfh_a0a0h0v(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

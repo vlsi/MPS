@@ -108,7 +108,8 @@ public class DiffTemporaryModule extends AbstractModule {
     if (module == null) {
       module = new DiffTemporaryModule(model, version, project);
     }
-    ((jetbrains.mps.smodel.SModel) model).setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, model, mergeResultModel));
+    jetbrains.mps.smodel.SModel m = (jetbrains.mps.smodel.SModel) model;
+    m.setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, m, mergeResultModel));
   }
 
   public static void setSModelId(SModel model, String version) {
@@ -182,10 +183,10 @@ public class DiffTemporaryModule extends AbstractModule {
     private IModule myModule;
     private boolean myEditable;
 
-    private DiffSModelDescriptor(IModule module, SModel model, boolean editable) {
+    private DiffSModelDescriptor(IModule module, jetbrains.mps.smodel.SModel model, boolean editable) {
       super(model.getReference());
       myModule = module;
-      mySModel = ((jetbrains.mps.smodel.SModel) model);
+      mySModel = model;
       myEditable = editable;
     }
 
