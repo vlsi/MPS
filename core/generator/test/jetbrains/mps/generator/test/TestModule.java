@@ -50,6 +50,7 @@ public class TestModule extends ClassLoadingModule {
     setModuleReference(reference);
   }
 
+  @Override
   public void dispose() {
     clearAll();
     super.dispose();
@@ -60,6 +61,7 @@ public class TestModule extends ClassLoadingModule {
     return ((AbstractModule) myPeer).getOutputPath();
   }
 
+  @Override
   public Class getClass(String fqName) {
     if (!(myPeer instanceof IClassLoadingModule)) {
       throw new IllegalStateException();
@@ -111,10 +113,12 @@ public class TestModule extends ClassLoadingModule {
     return "Test Transient models";
   }
 
+  @Override
   public List<SModelDescriptor> getOwnModelDescriptors() {
     return new ArrayList<SModelDescriptor>(myModels.values());
   }
 
+  @Override
   protected ModuleScope createScope() {
     return new TestModuleScope();
   }
@@ -131,6 +135,7 @@ public class TestModule extends ClassLoadingModule {
   }
 
   public class TestModuleScope extends ModuleScope {
+    @Override
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(TestModule.this);
@@ -140,6 +145,7 @@ public class TestModule extends ClassLoadingModule {
       return result;
     }
 
+    @Override
     protected Set<Language> getInitialUsedLanguages() {
       return CollectionUtil.filter(Language.class, getInitialModules());
     }

@@ -58,6 +58,12 @@ public class LanguageDescriptorPersistence {
             result_v3r4p8_a0a0e0c0b.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(languageElement, "modelRoot"), contentRoot, macroHelper));
           }
 
+          Element facets = XmlUtil.first(languageElement, "facets");
+          if (facets != null) {
+            result_v3r4p8_a0a0e0c0b.getModuleFacetDescriptors().addAll(ModuleDescriptorPersistence.loadFacets(XmlUtil.children(facets, "facet"), macroHelper));
+          }
+
+
           ModuleDescriptorPersistence.loadDependencies(result_v3r4p8_a0a0e0c0b, languageElement);
           for (Element extendedLanguage : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "extendedLanguages"), "extendedLanguage"))) {
             result_v3r4p8_a0a0e0c0b.getExtendedLanguages().add(ModuleReference.fromString(extendedLanguage.getText()));
@@ -120,6 +126,12 @@ public class LanguageDescriptorPersistence {
     Element models = new Element("models");
     ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRootDescriptors(), macroHelper);
     languageElement.addContent(models);
+
+    if (!(descriptor.getModuleFacetDescriptors().isEmpty())) {
+      Element facets = new Element("facets");
+      ModuleDescriptorPersistence.saveFacets(facets, descriptor.getModuleFacetDescriptors(), macroHelper);
+      languageElement.addContent(facets);
+    }
 
     Element accessoryModels = new Element("accessoryModels");
     for (SModelReference model : SetSequence.fromSet(descriptor.getAccessoryModels())) {

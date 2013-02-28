@@ -43,6 +43,7 @@ import jetbrains.mps.tool.builder.FileMPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Collections;
@@ -336,7 +337,7 @@ public class TestGenerationWorker extends MpsWorker {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           ClassLoaderManager.getInstance().updateClassPath();
-          new ModuleMaker().make(MPSModuleRepository.getInstance().getAllModules(), new EmptyProgressMonitor());
+          new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
         }
       });
       ModelAccess.instance().runWriteAction(new Runnable() {

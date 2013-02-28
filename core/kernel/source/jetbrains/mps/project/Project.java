@@ -85,7 +85,7 @@ public abstract class Project implements MPSModuleOwner {
   }
 
   @NotNull
-  public <T extends IModule> List<T> getProjectModules(Class<T> moduleClass) {
+  public <T extends SModule> List<T> getProjectModules(Class<T> moduleClass) {
     List<T> result = new ArrayList<T>();
     for (SModuleReference mr : myModules) {
       IModule module = ModuleRepositoryFacade.getInstance().getModule(mr);

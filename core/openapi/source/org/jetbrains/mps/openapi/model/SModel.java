@@ -65,6 +65,7 @@ public interface SModel {
    */
   Iterable<SNode> getRootNodes();
 
+  // TODO remove
   boolean isRoot(SNode node);
 
   /**

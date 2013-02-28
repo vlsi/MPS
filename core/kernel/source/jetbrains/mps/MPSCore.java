@@ -21,12 +21,12 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
+import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.GlobalScopeMinusTransient;
 import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
@@ -78,6 +78,7 @@ public class MPSCore extends ComponentPlugin {
     super.init();
 
     init(new PersistenceRegistry());
+    init(new FacetsRegistry());
     init(new ConceptRepository());
 
     // repositories
