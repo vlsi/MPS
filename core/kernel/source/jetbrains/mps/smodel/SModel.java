@@ -45,6 +45,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import org.jetbrains.mps.openapi.model.util.NodesIterator;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
@@ -60,7 +61,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class SModel implements org.jetbrains.mps.openapi.model.SModel {
+public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInternal {
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
@@ -294,13 +295,33 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   }
 
   @Override
+  public org.jetbrains.mps.openapi.model.SModel resolveModel(SModelReference reference) {
+    return getModelDescriptor().resolveModel(reference);
+  }
+
+  @Override
   public org.jetbrains.mps.openapi.model.SModel getSModel() {
     return this;
   }
 
+  @Override
+  public void setModule(SModule container) {
+    getModelDescriptor().setModule(container);
+  }
+
+  @Override
+  public void addModelListener(@NotNull SModelListener listener) {
+    getModelDescriptor().addModelListener(listener);
+  }
+
+  @Override
+  public void removeModelListener(@NotNull SModelListener listener) {
+    getModelDescriptor().removeModelListener(listener);
+  }
+
   //todo will migrate after SModel is migrated
   @Override
-  public org.jetbrains.mps.openapi.model.SModel getModelDescriptor() {
+  public SModelDescriptor getModelDescriptor() {
     return myModelDescriptor;
   }
 
@@ -1070,7 +1091,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     }
     to.setVersion(getVersion());
   }
-
 
   @Deprecated
   /**
