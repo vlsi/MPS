@@ -10,6 +10,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Set;
@@ -124,7 +125,7 @@ public abstract class MpsWorker {
       public void run() {
         ClassLoaderManager.getInstance().updateClassPath();
         ModuleMaker maker = new ModuleMaker();
-        maker.make(MPSModuleRepository.getInstance().getAllModules(), new EmptyProgressMonitor());
+        maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
       }
     });
     reload();
