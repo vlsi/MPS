@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4938diw3ybrxhu9a1sxv2zjvu2o3a6l">
+<dependencies version="2" modelHash="6x7sfi20hxbl6bbbkes7edxaaxr768d">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)" />
@@ -25,10 +25,10 @@
   <dep model="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" hash="48hgr0p9ditrk2v0o1606wxb962zsbo" />
   <dep model="r:00000000-0000-4000-0000-011c89590324(jetbrains.mps.lang.script.generator.baseLanguage.template.main@generator)" hash="-c4ttvls6jlxgdm0f12fs2wk3gt8ie3p" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-z22oiu2i3virhyguef3oewaixjm9hi" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="1skukqqrw8irjdwtn3fj42pglpcsc8a" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-2oxit3kj8xfbe6a1fkym495ltpqkzra" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="8lb0ssmvoceitlofqs9sah312lyoau7" />
-  <common hash="90wzz1hnvtd84hxj2e4pctvxc4wzo4x" />
-  <source id="1234198385755" name="HorizontalGapMigration" hash="-a86wl4fok6yhcvccm2lmdwbotdtshce">
+  <common hash="9vrma3siycyrwr86ji3ybmw1obisbj8" />
+  <source id="1234198385755" name="HorizontalGapMigration" hash="-vewt8rcoi815t1bk57r9g8ri4hpe7h">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -48,7 +48,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="HorizontalGapMigration_MigrationScript.java" />
   </source>
-  <source id="1237726848485" name="MigrationToIndentLayout" hash="cuh1l5ub8d02euxswt3xxgsngccjwe9">
+  <source id="1237726848485" name="MigrationToIndentLayout" hash="c0tt4h7vp1yse6z783xe52v6rvnxazs">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
