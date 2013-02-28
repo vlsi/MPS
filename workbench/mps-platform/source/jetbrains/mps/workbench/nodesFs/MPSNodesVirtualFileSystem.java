@@ -21,10 +21,21 @@ import com.intellij.openapi.vfs.DeprecatedVirtualFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.ide.MPSCoreComponents;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelAdapter;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.SModelRepositoryListener;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterator;
@@ -32,11 +43,19 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -117,7 +136,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
         SModelReference reference = SModelReference.fromString(m.group(1));
         final String name = m.group(2);
-        SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(reference);
+        SModel sm = SModelRepository.getInstance().getModelDescriptor(reference);
         if (sm == null) return null;
 
         Condition<SNode> cond = new Condition<SNode>() {
@@ -244,7 +263,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     @Override
-    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
+    public void beforeModelRemoved(SModel modelDescriptor) {
       if (!(modelDescriptor.isLoaded())) return;
 
       Collection<MPSNodeVirtualFile> deletedFiles = new ArrayList<MPSNodeVirtualFile>();
@@ -262,14 +281,11 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     }
 
     @Override
-    public void modelsReplaced(final Set<SModelDescriptor> descriptors) {
-      for (SModelDescriptor sModelDescriptor : descriptors) {
+    public void modelsReplaced(final Set<SModel> descriptors) {
+      for (SModel md : descriptors) {
+        if (md.getReference().resolve(MPSModuleRepository.getInstance()) != md) return;
 
-        if (!sModelDescriptor.isRegistered()) {
-          continue;
-        }
-
-        for (SNode root : sModelDescriptor.getSModel().getRootNodes()) {
+        for (SNode root : md.getSModel().getRootNodes()) {
           updateModificationStamp(root);
         }
 
@@ -277,7 +293,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
         Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
         for (Iterator<Entry<SNodeReference, MPSNodeVirtualFile>> it = myVirtualFiles.entrySet().iterator(); it.hasNext(); ) {
           Entry<SNodeReference, MPSNodeVirtualFile> entry = it.next();
-          if (!entry.getKey().getModelReference().equals(sModelDescriptor.getSModelReference())) continue;
+          if (!entry.getKey().getModelReference().equals(md.getReference())) continue;
 
           SNode node = entry.getKey().resolve(MPSModuleRepository.getInstance());
           MPSNodeVirtualFile file = entry.getValue();

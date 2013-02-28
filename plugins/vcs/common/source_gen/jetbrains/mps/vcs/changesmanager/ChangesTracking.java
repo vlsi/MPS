@@ -67,7 +67,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.logging.Logger;
 
 public class ChangesTracking {
@@ -559,7 +558,7 @@ public class ChangesTracking {
     }
 
     @Override
-    public void modelsReplaced(Set<SModelDescriptor> descriptors) {
+    public void modelsReplaced(Set<SModel> descriptors) {
       if (descriptors.contains(myModelDescriptor)) {
         scheduleFullUpdate();
       }

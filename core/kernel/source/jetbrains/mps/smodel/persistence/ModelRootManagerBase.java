@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -29,7 +29,7 @@ public abstract class ModelRootManagerBase implements IModelRootManager {
   }
 
   @Override
-  public SModelDescriptor createModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName) {
+  public SModel createModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName) {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
   }
 }

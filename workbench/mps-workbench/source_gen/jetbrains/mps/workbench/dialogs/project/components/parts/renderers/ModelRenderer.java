@@ -4,7 +4,7 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.renderers;
 
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import java.awt.Component;
 import javax.swing.JList;
@@ -19,7 +19,7 @@ public class ModelRenderer extends ProjectLevelRenderer {
   @Override
   public String getItemLabel(Object value) {
     final SModelReference modelReference = (SModelReference) value;
-    SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelReference);
+    SModel model = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (model == null) {
       String longName = modelReference.getSModelFqName().toString();
       return (longName.equals("") ?

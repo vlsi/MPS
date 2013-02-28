@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
@@ -86,7 +86,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   private boolean calcStatus(@NotNull final SNodeReference root) {
     FileStatus status = ModelAccess.instance().runReadAction(new Computable<FileStatus>() {
       public FileStatus compute() {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
+        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
         if (modelDescriptor instanceof DefaultSModelDescriptor) {
           DefaultSModelDescriptor md = (DefaultSModelDescriptor) modelDescriptor;
           if (ConflictsUtil.isModelOrModuleConflicting(md, myProject)) {
@@ -136,7 +136,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
           public void run() {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
-                SModelDescriptor modelDescriptor = null;
+                SModel modelDescriptor = null;
                 if (!(SNodeOperations.isDisposed(root) || SNodeOperations.isModelDisposed(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root)))) {
                   modelDescriptor = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root).getModelDescriptor();
                 }

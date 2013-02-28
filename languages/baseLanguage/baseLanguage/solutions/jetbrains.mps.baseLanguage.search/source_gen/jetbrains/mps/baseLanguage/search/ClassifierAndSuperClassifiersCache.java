@@ -7,7 +7,7 @@ import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.cache.DataSet;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -59,10 +59,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
   }
 
   @Override
-  public Set<SModelDescriptor> getDependsOnModels(Object element) {
-    Set<SModelDescriptor> dependsOnModel = new HashSet<SModelDescriptor>();
+  public Set<SModel> getDependsOnModels(Object element) {
+    Set<SModel> dependsOnModel = new HashSet<SModel>();
     for (SNode classifier : this.getClassifiers()) {
-      SModelDescriptor descriptor = SNodeOperations.getModel(classifier).getModelDescriptor();
+      SModel descriptor = SNodeOperations.getModel(classifier).getModelDescriptor();
       assert descriptor != null : "Model descriptor is null for classifier: " + classifier;
       dependsOnModel.add(descriptor);
     }

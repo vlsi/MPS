@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -67,9 +67,9 @@ public interface SModelListener {
 
   void referenceRemoved(SModelReferenceEvent event);
 
-  void modelSaved(SModelDescriptor sm);
+  void modelSaved(SModel sm);
 
-  void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState);
+  void modelLoadingStateChanged(SModel sm, ModelLoadingState oldState, ModelLoadingState newState);
 
   void beforeModelDisposed(SModel sm);
 

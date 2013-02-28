@@ -190,8 +190,8 @@ public class Utils {
     SModelRoot binSRoot = new SModelRoot();
     binSRoot.setModule(mod1);
     binSRoot.setPath(binPath);
-    Collection<SModelDescriptor> binStubModels = bin.load(binSRoot);
-    for (SModelDescriptor md : CollectionSequence.fromCollection(binStubModels)) {
+    Collection<SModel> binStubModels = bin.load(binSRoot);
+    for (SModel md : CollectionSequence.fromCollection(binStubModels)) {
       SModel m = md.getSModel();
       ListSequence.fromList(binModels).addElement(m);
 

@@ -107,8 +107,10 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.EventUtil;
@@ -313,7 +315,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private MyEventsCollector myEventsCollector = new MyEventsCollector();
   private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
-  private Set<SModelDescriptor> myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
+  private Set<SModel> myModelDescriptorsWithListener = new HashSet<SModel>();
 
   private List<RebuildListener> myRebuildListeners = new ArrayList<RebuildListener>();
   private List<EditorDisposeListener> myDisposeListeners = new ArrayList<EditorDisposeListener>();
@@ -352,7 +354,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myPopupMenuEnabled = true;
   private boolean myIsInFiguresHierarchy = false;
 
-  private Set<SModelDescriptor> myLastDeps = new HashSet<SModelDescriptor>();
+  private Set<SModel> myLastDeps = new HashSet<SModel>();
 
   private KeymapHandler<KeyEvent> myKeymapHandler = new AWTKeymapHandler();
   private ActionHandler myActionHandler = new ActionHandlerImpl(this);
@@ -1379,21 +1381,21 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       jetbrains.mps.util.SNodeOperations.isDisposed(getEditedNode());
   }
 
-  private void addOurListeners(@NotNull SModelDescriptor sm) {
+  private void addOurListeners(@NotNull SModel sm) {
     myEventsCollector.add(sm);
     myModelDescriptorsWithListener.add(sm);
   }
 
-  private void removeOurListeners(@NotNull SModelDescriptor sm) {
+  private void removeOurListeners(@NotNull SModel sm) {
     myEventsCollector.remove(sm);
     myModelDescriptorsWithListener.remove(sm);
   }
 
   private void removeOurListeners() {
-    for (SModelDescriptor sm : myModelDescriptorsWithListener.toArray(new SModelDescriptor[myModelDescriptorsWithListener.size()])) {
+    for (SModel sm : myModelDescriptorsWithListener.toArray(new SModel[myModelDescriptorsWithListener.size()])) {
       removeOurListeners(sm);
     }
-    myLastDeps = new HashSet<SModelDescriptor>();
+    myLastDeps = new HashSet<SModel>();
   }
 
   private void clearCaches() {
@@ -1419,17 +1421,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ((EditorCell_Basic) myRootCell).onAdd();
     }
 
-    Set<SModelDescriptor> oldDeps = myLastDeps;
+    Set<SModel> oldDeps = myLastDeps;
 
     myLastDeps = getModels(myCellsToNodesToDependOnMap.get(myRootCell));
     myLastDeps.addAll(getModelsAndPurgeOrphaned(myCellsToRefTargetsToDependOnMap.get(myRootCell)));
 
-    for (SModelDescriptor newDep : myLastDeps) {
+    for (SModel newDep : myLastDeps) {
       if (!oldDeps.contains(newDep)) {
         addOurListeners(newDep);
       }
     }
-    for (SModelDescriptor oldDep : oldDeps) {
+    for (SModel oldDep : oldDeps) {
       if (!myLastDeps.contains(oldDep)) {
         removeOurListeners(oldDep);
       }
@@ -1438,8 +1440,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
     if (myNode != null && myNode.getModel() != null) {
       SModel model = myNode.getModel();
-      SModelDescriptor modelDescriptor = model.getModelDescriptor();
-      if (modelDescriptor != null && modelDescriptor.isRegistered()) {
+      SModel modelDescriptor = model.getModelDescriptor();
+      boolean registered = modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance()) != modelDescriptor;
+
+      if (modelDescriptor != null && registered) {
         assert myModelDescriptorsWithListener.contains(modelDescriptor) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
       }
     }
@@ -1449,14 +1453,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getEditorContext().popTracerTask();
   }
 
-  private Set<SModelDescriptor> getModelsAndPurgeOrphaned(Set<SNodeReference> nodePointers) {
+  private Set<SModel> getModelsAndPurgeOrphaned(Set<SNodeReference> nodePointers) {
     if (nodePointers == null) {
       return Collections.emptySet();
     }
-    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>();
+    Set<SModel> modelDescriptors = new HashSet<SModel>();
     Set<SNodeReference> nodeProxiesToDelete = new HashSet<SNodeReference>();
     for (SNodeReference nodeProxy : nodePointers) {
-      SModelDescriptor model = nodeProxy.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodeProxy.getModelReference());
+      SModel model = nodeProxy.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodeProxy.getModelReference());
       if (model == null) {
         nodeProxiesToDelete.add(nodeProxy);
       } else {
@@ -1467,18 +1471,18 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return modelDescriptors;
   }
 
-  private Set<SModelDescriptor> getModels(@Nullable Set<SNode> nodes) {
+  private Set<SModel> getModels(@Nullable Set<SNode> nodes) {
     if (nodes == null) {
-      return new HashSet<SModelDescriptor>();
+      return new HashSet<SModel>();
     }
-    Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
+    Set<SModel> result = new HashSet<SModel>();
     for (SNode node : nodes) {
       SModel model = node.getModel();
       if (model == null) continue;
 
       // Getting modelDescriptor via SModelRepository because sometimes
       // node.getModel().getModelDescriptor() == null while reloading models from disk.
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model.getReference());
+      SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model.getReference());
       if (modelDescriptor != null) {
         result.add(modelDescriptor);
       }
@@ -3150,17 +3154,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private class MySimpleModelListener extends SModelRepositoryAdapter {
     @Override
-    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+    public void modelsReplaced(Set<SModel> replacedModels) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
       boolean needToRebuild = false;
 
-      for (SModelDescriptor descriptor : replacedModels) {
+      for (SModel descriptor : replacedModels) {
         if (myModelDescriptorsWithListener.contains(descriptor)) {
           needToRebuild = true;
         }
         if (myNode != null) {
           assertModelNotDisposed();
-          if (myNode.getModel().getReference().equals(descriptor.getSModelReference())) {
+          if (myNode.getModel().getReference().equals(descriptor.getReference())) {
             clearModelDisposedTrace();
             SNodeId oldId = myNode.getNodeId();
             myNode = descriptor.getSModel().getNode(oldId);
@@ -3176,9 +3180,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
 
     @Override
-    public void modelRemoved(SModelDescriptor modelDescriptor) {
+    public void modelRemoved(SModel modelDescriptor) {
       if (myModelDescriptorsWithListener.contains(modelDescriptor)) {
-        if (myNode != null && myNode.getModel().getReference().equals(modelDescriptor.getSModelReference())) {
+        if (myNode != null && myNode.getModel().getReference().equals(modelDescriptor.getReference())) {
           myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
         }
       }

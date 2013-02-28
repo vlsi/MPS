@@ -28,7 +28,7 @@ import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
 
@@ -224,10 +224,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     });
   }
 
-  protected SModelDescriptor getModelDescriptor() {
+  protected SModel getModelDescriptor() {
     SNode node = getSNode();
     if (node == null) return null;
-    SModelDescriptor md = node.getModel().getModelDescriptor();
+    SModel md = node.getModel().getModelDescriptor();
     return md;
   }
 

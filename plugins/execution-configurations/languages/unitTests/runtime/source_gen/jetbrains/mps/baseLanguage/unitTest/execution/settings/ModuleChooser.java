@@ -21,7 +21,6 @@ import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ModuleChooser extends BaseChooserComponent {
   private final List<ModuleReference> myCheckedModules = ListSequence.fromList(new ArrayList<ModuleReference>());
@@ -51,7 +50,7 @@ public class ModuleChooser extends BaseChooserComponent {
         Set<SNode> us = ((Set) usages);
         for (SNode node : us) {
           SModel model = SNodeOperations.getModel(node);
-          SModelDescriptor md = model.getModelDescriptor();
+          SModel md = model.getModelDescriptor();
           ModuleReference module = md.getModule().getModuleReference();
           if (ListSequence.fromList(ModuleChooser.this.myCheckedModules).contains(module)) {
             continue;

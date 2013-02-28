@@ -37,7 +37,7 @@ public class GenerationResult implements IClassesData {
     return myContext;
   }
 
-  public SModelDescriptor getModelDescriptor() {
+  public SModel getModelDescriptor() {
     return (SModelDescriptor) myModel;
   }
 

@@ -23,11 +23,11 @@ import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.*;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -41,8 +41,8 @@ import java.util.concurrent.ConcurrentHashMap;
 public class TestModule extends ClassLoadingModule {
 
   private IModule myPeer;
-  private Map<SModelFqName, SModelDescriptor> myModels = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
-  private Map<SModelDescriptor, SModelDescriptor> myOriginalModels = new HashMap<SModelDescriptor, SModelDescriptor>();
+  private Map<SModelFqName, SModel> myModels = new ConcurrentHashMap<SModelFqName, SModel>();
+  private Map<SModel, SModel> myOriginalModels = new HashMap<SModel, SModel>();
 
   public TestModule(String namespace, String moduleId, IModule peer) {
     myPeer = peer;
@@ -50,6 +50,7 @@ public class TestModule extends ClassLoadingModule {
     setModuleReference(reference);
   }
 
+  @Override
   public void dispose() {
     clearAll();
     super.dispose();
@@ -60,6 +61,7 @@ public class TestModule extends ClassLoadingModule {
     return ((AbstractModule) myPeer).getOutputPath();
   }
 
+  @Override
   public Class getClass(String fqName) {
     if (!(myPeer instanceof IClassLoadingModule)) {
       throw new IllegalStateException();
@@ -88,22 +90,22 @@ public class TestModule extends ClassLoadingModule {
         && !myModels.containsKey(sModelFqName);
   }
 
-  public SModelDescriptor createModel(SModelDescriptor originalModel) {
+  public SModel createModel(SModel originalModel) {
     String stereotype = "999";
-    while (!isValidName(originalModel.getLongName(), stereotype)) {
+    while (!isValidName(SNodeOperations.getModelLongName(originalModel), stereotype)) {
       stereotype += "_";
     }
 
-    SModelFqName fqName = new SModelFqName(originalModel.getLongName(), stereotype);
-    SModelDescriptor result = new TestSModelDescriptor(fqName, originalModel.getLongName(), originalModel.getSModel());
+    SModelFqName fqName = new SModelFqName(SNodeOperations.getModelLongName(originalModel), stereotype);
+    SModel result = new TestSModelDescriptor(fqName, jetbrains.mps.util.SNodeOperations.getModelLongName(originalModel), originalModel.getSModel());
 
-    myModels.put(result.getSModelReference().getSModelFqName(), result);
+    myModels.put(result.getReference().getSModelFqName(), result);
     myOriginalModels.put(result, originalModel);
     invalidateCaches();
     return result;
   }
 
-  public void publish(SModelDescriptor descr) {
+  public void publish(SModel descr) {
     SModelRepository.getInstance().registerModelDescriptor(descr, this);
   }
 
@@ -111,10 +113,11 @@ public class TestModule extends ClassLoadingModule {
     return "Test Transient models";
   }
 
-  public List<SModelDescriptor> getOwnModelDescriptors() {
-    return new ArrayList<SModelDescriptor>(myModels.values());
+  public List<SModel> getOwnModelDescriptors() {
+    return new ArrayList<SModel>(myModels.values());
   }
 
+  @Override
   protected ModuleScope createScope() {
     return new TestModuleScope();
   }
@@ -131,6 +134,7 @@ public class TestModule extends ClassLoadingModule {
   }
 
   public class TestModuleScope extends ModuleScope {
+    @Override
     protected Set<IModule> getInitialModules() {
       Set<IModule> result = new HashSet<IModule>();
       result.add(TestModule.this);
@@ -140,6 +144,7 @@ public class TestModule extends ClassLoadingModule {
       return result;
     }
 
+    @Override
     protected Set<Language> getInitialUsedLanguages() {
       return CollectionUtil.filter(Language.class, getInitialModules());
     }
@@ -174,9 +179,9 @@ public class TestModule extends ClassLoadingModule {
     }
 
     @Override
-    public SModelDescriptor resolveModel(SModelReference reference) {
+    public SModel resolveModel(SModelReference reference) {
       if (reference.getLongName().equals(myLongName)) {
-        SModelDescriptor descriptor = myModels.get(reference.getSModelFqName());
+        SModel descriptor = myModels.get(reference.getSModelFqName());
         if (descriptor != null) {
           return descriptor;
         }

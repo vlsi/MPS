@@ -28,7 +28,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
@@ -159,7 +159,7 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
           for (SNode node : myProjectPane.getSelectedSNodes()) {
             result.add(new Pair(new jetbrains.mps.smodel.SNodePointer(node), ""));
           }
-          SModelDescriptor contextDescriptor = myProjectPane.getContextModel();
+          SModel contextDescriptor = myProjectPane.getContextModel();
           if (contextDescriptor != null) {
             for (PackageNode treeNode : myProjectPane.getSelectedTreeNodes(PackageNode.class)) {
               String searchedPack = treeNode.getFullPackage();

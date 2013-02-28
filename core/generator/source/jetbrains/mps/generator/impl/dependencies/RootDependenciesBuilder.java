@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.generator.TransientSModel;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +40,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
   private boolean dependsOnModelNodes = false;
   private boolean dependsOnConditionals = false;
   private Set<SNode> dependsOn = new HashSet<SNode>();
-  private Set<SModelDescriptor> dependsOnModels = new HashSet<SModelDescriptor>();
+  private Set<SModel> dependsOnModels = new HashSet<SModel>();
   private GenerationRootDependencies mySavedDependencies;
 
   public RootDependenciesBuilder(@Nullable SNode originalRoot, @NotNull IncrementalDependenciesBuilder builder, @Nullable String hash) {
@@ -89,7 +89,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
     if (model == null || model instanceof TransientSModel || model == myBuilder.currentInputModel || model == myBuilder.originalInputModel) {
       return;
     }
-    final SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    final SModel modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor != null) {
       dependsOnModels.add(modelDescriptor);
       myBuilder.reportModelAccess(modelDescriptor, myOriginalRoot);
@@ -242,7 +242,7 @@ public class RootDependenciesBuilder implements DependenciesReadListener {
     return Collections.unmodifiableSet(dependsOn);
   }
 
-  public Collection<SModelDescriptor> getDependsOnModels() {
+  public Collection<SModel> getDependsOnModels() {
     return Collections.unmodifiableSet(dependsOnModels);
   }
 

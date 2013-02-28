@@ -17,7 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
@@ -78,7 +78,7 @@ public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
       return "ctrl shift H";
     }
 
-    private static SModule check_366854_a0a2a0a(SModel checkedDotOperand) {
+    private static IModule check_366854_a0a2a0a(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
       }

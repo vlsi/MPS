@@ -88,7 +88,7 @@ public class DataTreeChangesNotifier {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
         if (event.getModelDescriptor() == null) continue;
-        if (!myModels.contains(event.getModelDescriptor().getSModelReference())) continue;
+        if (!myModels.contains(event.getModelDescriptor().getReference())) continue;
 
         if (event instanceof SModelRootEvent) {
           SModelRootEvent modelRootEvent = (SModelRootEvent) event;
@@ -111,8 +111,8 @@ public class DataTreeChangesNotifier {
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     @Override
-    public void modelDeleted(SModelDescriptor modelDescriptor) {
-      if (!myModels.contains(modelDescriptor.getSModelReference())) return;
+    public void modelDeleted(SModel modelDescriptor) {
+      if (!myModels.contains(modelDescriptor.getReference())) return;
       myChanged = true;
     }
   }

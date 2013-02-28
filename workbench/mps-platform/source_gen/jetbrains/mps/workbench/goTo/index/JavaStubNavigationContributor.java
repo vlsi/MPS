@@ -62,7 +62,7 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
         }
       }
 
-      SModelDescriptor md = (SModelDescriptor) model;
+      SModel md = (SModelDescriptor) model;
       iterateClassPath(md.getModule().getModuleReference(), cp, res, SNodeOperations.getModelLongName(md));
 
     }

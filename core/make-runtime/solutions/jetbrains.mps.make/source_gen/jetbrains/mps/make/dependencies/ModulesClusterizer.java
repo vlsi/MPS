@@ -21,7 +21,7 @@ import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.smodel.Language;
@@ -101,9 +101,9 @@ public class ModulesClusterizer {
     Queue<String> nsq = QueueSequence.fromQueue(new LinkedList<String>());
     for (IModule mod : modules) {
       if (mod instanceof Generator) {
-        Iterable<SModelDescriptor> genModels = mod.getOwnModelDescriptors();
-        QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(genModels).translate(new ITranslator2<SModelDescriptor, String>() {
-          public Iterable<String> translate(SModelDescriptor smd) {
+        Iterable<SModel> genModels = mod.getOwnModelDescriptors();
+        QueueSequence.fromQueue(nsq).addSequence(Sequence.fromIterable(genModels).translate(new ITranslator2<SModel, String>() {
+          public Iterable<String> translate(SModel smd) {
             return ModelContentUtil.getUsedLanguageNamespaces(smd.getSModel(), false);
           }
         }).where(new IWhereFilter<String>() {

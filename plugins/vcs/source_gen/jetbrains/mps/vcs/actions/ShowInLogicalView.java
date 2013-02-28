@@ -8,7 +8,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SModelFileTracker;
@@ -31,9 +31,9 @@ public class ShowInLogicalView extends AbstractVcsAction {
     assert project != null;
     ProjectPane projectPane = ProjectPane.getInstance(project);
     if (MPSFileTypesManager.instance().isModelFile(selectedFile)) {
-      SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
+      SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
         @Override
-        public SModelDescriptor compute() {
+        public SModel compute() {
           return SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(selectedFile));
         }
       });

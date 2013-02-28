@@ -27,7 +27,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
@@ -56,7 +56,7 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
         return new BaseModelItem(modelReference) {
           @Override
           public void navigate(boolean requestFocus) {
-            final SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelReference);
+            final SModel md = SModelRepository.getInstance().getModelDescriptor(modelReference);
 
             VirtualFile modelFile = ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
               @Override
@@ -73,19 +73,19 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
 
       @Override
       public SModelReference[] find(IScope scope) {
-        Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
+        Condition<SModel> cond = new Condition<SModel>() {
           @Override
-          public boolean met(SModelDescriptor modelDescriptor) {
+          public boolean met(SModel modelDescriptor) {
             boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor)
-              || SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
+              || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
             boolean hasModule = modelDescriptor.getModule() != null;
             return rightStereotype && hasModule;
           }
         };
-        ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
+        ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModelDescriptors(), cond);
         List<SModelReference> result = new ArrayList<SModelReference>();
-        for (SModelDescriptor md : iter) {
-          result.add(md.getSModelReference());
+        for (SModel md : iter) {
+          result.add(md.getReference());
         }
         return result.toArray(new SModelReference[result.size()]);
       }

@@ -6,12 +6,12 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 
@@ -20,7 +20,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
   private SModel myModel;
   private boolean myRootsOnly;
   private IScope myScope;
-  private List<SModelDescriptor> myModels;
+  private List<SModel> myModels;
 
   public ModelAndImportedModelsScope(SModel model, boolean rootsOnly, IScope scope) {
     myModel = model;
@@ -29,10 +29,10 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
   }
 
   @NotNull
-  public List<SModelDescriptor> getModels() {
+  public List<SModel> getModels() {
     if (myModels == null) {
       if (myModel == null) {
-        myModels = new ArrayList<SModelDescriptor>(1);
+        myModels = new ArrayList<SModel>(1);
       } else {
         myModels = SModelOperations.allImportedModels(myModel, myScope);
         myModels.add(0, myModel.getModelDescriptor());

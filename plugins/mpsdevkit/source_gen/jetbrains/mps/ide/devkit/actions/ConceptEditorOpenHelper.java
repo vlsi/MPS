@@ -5,7 +5,7 @@ package jetbrains.mps.ide.devkit.actions;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -34,8 +34,8 @@ public class ConceptEditorOpenHelper {
     // We should be sure that node and base node are inside the same module.  
     // Otherwise, tabbed editor for base node will be opened, but there will be no tab for "node" 
     // So, the user will not be able to open node by a double-click 
-    SModelDescriptor baseModelDesIcriptor = SNodeOperations.getModel(baseNode).getModelDescriptor();
-    SModelDescriptor mainModelDescriptor = SNodeOperations.getModel(node).getModelDescriptor();
+    SModel baseModelDesIcriptor = SNodeOperations.getModel(baseNode).getModelDescriptor();
+    SModel mainModelDescriptor = SNodeOperations.getModel(node).getModelDescriptor();
     if (mainModelDescriptor == null) {
       return null;
     }

@@ -43,6 +43,7 @@ import jetbrains.mps.tool.builder.FileMPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Collections;
@@ -54,7 +55,6 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -336,7 +336,7 @@ public class TestGenerationWorker extends MpsWorker {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           ClassLoaderManager.getInstance().updateClassPath();
-          new ModuleMaker().make(MPSModuleRepository.getInstance().getAllModules(), new EmptyProgressMonitor());
+          new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
         }
       });
       ModelAccess.instance().runWriteAction(new Runnable() {
@@ -406,7 +406,7 @@ public class TestGenerationWorker extends MpsWorker {
           if (!(((FileMPSProject) prj).getDescriptor().getTestConfigurations().isEmpty())) {
             for (BaseTestConfiguration tconf : ((FileMPSProject) prj).getDescriptor().getTestConfigurations()) {
               try {
-                result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable((Iterable<SModelDescriptor>) tconf.getGenParams(prj, true).getModelDescriptors()));
+                result.value = Sequence.fromIterable(result.value).concat(Sequence.fromIterable((Iterable<SModel>) tconf.getGenParams(prj, true).getModelDescriptors()));
               } catch (IllegalGeneratorConfigurationException e) {
                 log("Error while reading configuration of project " + prj.getName(), e);
               }
@@ -428,8 +428,8 @@ public class TestGenerationWorker extends MpsWorker {
           public Iterable<Generator> translate(SModule it) {
             return ((Language) it).getGenerators();
           }
-        }).translate(new ITranslator2<Generator, SModelDescriptor>() {
-          public Iterable<SModelDescriptor> translate(Generator gen) {
+        }).translate(new ITranslator2<Generator, SModel>() {
+          public Iterable<SModel> translate(Generator gen) {
             return gen.getOwnModelDescriptors();
           }
         }));

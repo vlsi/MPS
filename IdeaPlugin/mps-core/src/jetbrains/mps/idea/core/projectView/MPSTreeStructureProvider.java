@@ -33,7 +33,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.FileSystem;
@@ -68,7 +68,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
         if (childModelFile != null && childNode instanceof PsiFileNode) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              SModelDescriptor descr = SModelFileTracker.getInstance().findModel(childModelFile);
+              SModel descr = SModelFileTracker.getInstance().findModel(childModelFile);
               if (descr != null)
                 modifiedChildren.add(new MPSProjectViewModelPsiFile((PsiFileNode) node, descr));
             }
@@ -83,7 +83,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     final List<AbstractTreeNode> newChildren = new ArrayList<AbstractTreeNode>(children);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModelDescriptor descr = SModelFileTracker.getInstance().findModel(modelFile);
+        SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
         if (descr == null) return;
 
         SModel model = descr.getSModel();

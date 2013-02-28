@@ -22,7 +22,7 @@ import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.NameUtil;
@@ -96,7 +96,7 @@ class Dependencies {
     for (SModel md : m.getModels()) {
       if (!SModelStereotype.isUserModel(md)) continue;
 
-      ModelDependencies dependRoot = BLDependenciesCache.getInstance().get((SModelDescriptor) md);
+      ModelDependencies dependRoot = BLDependenciesCache.getInstance().get((SModel) md);
       if (dependRoot == null) continue;
       add(m, dependRoot);
     }

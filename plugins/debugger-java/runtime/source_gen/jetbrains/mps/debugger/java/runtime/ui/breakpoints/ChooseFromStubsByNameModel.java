@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -32,9 +32,9 @@ import org.jetbrains.annotations.NotNull;
   /*package*/ ChooseFromStubsByNameModel(final Project p) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SModelDescriptor> mds = SModelRepository.getInstance().getModelDescriptors();
-        Iterable<SModelDescriptor> stubModels = ListSequence.fromList(mds).where(new IWhereFilter<SModelDescriptor>() {
-          public boolean accept(SModelDescriptor it) {
+        List<SModel> mds = SModelRepository.getInstance().getModelDescriptors();
+        Iterable<SModel> stubModels = ListSequence.fromList(mds).where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel it) {
             return SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(it));
           }
         });

@@ -30,7 +30,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
@@ -74,7 +74,7 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
   }
 
   @Override
-  public void selectInTree(@NotNull IOperationContext context, @NotNull SModelDescriptor model, boolean focus) {
+  public void selectInTree(@NotNull IOperationContext context, @NotNull SModel model, boolean focus) {
     // TODO
   }
 

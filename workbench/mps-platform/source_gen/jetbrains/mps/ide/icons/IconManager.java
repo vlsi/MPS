@@ -224,8 +224,8 @@ public class IconManager {
   }
 
   public static Icon getIconFor(SModel model) {
-    if (model instanceof SModelDescriptor) {
-      SModelDescriptor modelDescriptor = (SModelDescriptor) model;
+    if (model instanceof SModel) {
+      SModel modelDescriptor = (SModelDescriptor) model;
       LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
       if (aspect != null) {
         return getIconForAspect(aspect);

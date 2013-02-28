@@ -24,7 +24,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
@@ -42,7 +42,7 @@ public class OpenModelPropertiesAction extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent anActionEvent) {
-        SModelDescriptor descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
+        SModel descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
         if (!(descriptor instanceof EditableSModelDescriptor)) {
             return;
         }

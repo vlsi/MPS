@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.xml.sax.InputSource;
 import java.io.StringReader;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.diff.MergeRequest;
 import com.intellij.openapi.diff.DiffRequestFactory;
 import com.intellij.openapi.diff.DiffManager;
@@ -100,11 +100,11 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
           String repository = modelsAsText[MergeVersion.REPOSITORY.ordinal()];
 
           String uid = ModelPersistence.loadDescriptor(new InputSource(new StringReader(mine))).getUID();
-          if (uid == null || !(SModelReference.fromString(uid).equals(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getReference()))) {
+          if (uid == null || !(SModelReference.fromString(uid).equals(((SModel) MapSequence.fromMap(_params).get("model")).getReference()))) {
             continue;
           }
 
-          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel()), mine, _params);
+          mine = ReRunMergeFromBackup_Action.this.selectMineModel(ModelPersistence.modelToString(((SModel) MapSequence.fromMap(_params).get("model")).getSModel()), mine, _params);
           if (mine == null) {
             return;
           }
@@ -118,7 +118,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
           continue;
         }
       }
-      Messages.showInfoMessage("No suitable backup files for " + ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getReference().getSModelFqName() + "was not found.", "No Backup Files Found");
+      Messages.showInfoMessage("No suitable backup files for " + ((SModel) MapSequence.fromMap(_params).get("model")).getReference().getSModelFqName() + "was not found.", "No Backup Files Found");
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);
     }
@@ -129,7 +129,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
   }
 
   private IFile getModelFile(final Map<String, Object> _params) {
-    return ((BaseEditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).getSource().getFile();
+    return ((BaseEditableSModelDescriptor) ((SModel) MapSequence.fromMap(_params).get("model"))).getSource().getFile();
   }
 
   private String selectMineModel(String currentModel, String backUpModel, final Map<String, Object> _params) {

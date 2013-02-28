@@ -50,7 +50,6 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import java.util.Arrays;
-import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ModelDifferenceDialog extends DialogWrapper {
   private Project myProject;
@@ -304,7 +303,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
     }
   }
 
-  private static SModel check_vk52pz_a0a0h0j(SModelDescriptor checkedDotOperand) {
+  private static SModel check_vk52pz_a0a0h0j(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }

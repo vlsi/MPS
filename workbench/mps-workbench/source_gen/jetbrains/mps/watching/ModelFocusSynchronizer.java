@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.workbench.ModelUtil;
@@ -56,7 +55,7 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
 
             RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
             for (SModel model : SetSequence.fromSet(models)) {
-              SModelDescriptor md = model.getModelDescriptor();
+              SModel md = model.getModelDescriptor();
               for (IFile file : CollectionSequence.fromCollection(ModelUtil.getFilesByModelDescriptor(md))) {
                 IFile fileToRefresh = file;
                 while (!(fileToRefresh.exists())) {

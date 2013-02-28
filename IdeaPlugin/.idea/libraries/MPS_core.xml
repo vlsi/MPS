@@ -15,6 +15,7 @@
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-icons.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-editor-runtime.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-tool.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../lib/ecj-4.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

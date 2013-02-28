@@ -19,7 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
 /**
@@ -51,7 +51,7 @@ public class ComponentsUtil {
   public static SNode nodeFromElement(Element nodeElement, IScope scope) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    SModelDescriptor modelDescriptor = scope.getModelDescriptor(SModelReference.fromString(modelUID));
+    SModel modelDescriptor = scope.getModelDescriptor(SModelReference.fromString(modelUID));
     if (modelDescriptor == null) return null;
     jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(id);
     assert nodeId != null : "wrong node id string";

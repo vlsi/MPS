@@ -19,9 +19,8 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
@@ -116,7 +115,7 @@ public class QueriesGenerated {
     List<Language> langs = SModelOperations.getLanguages(SNodeOperations.getModel(_context.getNode()), GlobalScope.getInstance());
     for (Language lang : langs) {
       for (ModuleReference mr : lang.getRuntimeModulesReferences()) {
-        for (SModelDescriptor smd : MPSModuleRepository.getInstance().getModule(mr).getOwnModelDescriptors()) {
+        for (SModel smd : MPSModuleRepository.getInstance().getModule(mr).getOwnModelDescriptors()) {
           SModel rtModel = smd.getSModel();
           for (SNode gwtmod : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(rtModel, "jetbrains.mps.gwt.client.structure.GWTModule")) {
             ListSequence.fromList(result).addElement(gwtmod);

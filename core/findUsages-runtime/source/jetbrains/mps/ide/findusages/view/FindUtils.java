@@ -33,7 +33,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
@@ -110,10 +110,10 @@ public class FindUtils {
   public static GeneratedFinder getFinderByClassName(String className) {
     try {
       String modelName = NameUtil.namespaceFromLongName(className);
-      List<SModelDescriptor> models = SModelRepository.getInstance().getModelDescriptorsByModelName(modelName);
+      List<SModel> models = SModelRepository.getInstance().getModelDescriptorsByModelName(modelName);
 
       Class c = null;
-      for (SModelDescriptor model : models) {
+      for (SModel model : models) {
         IModule module = model.getModule();
         if (module instanceof IClassLoadingModule) {
           c = ((IClassLoadingModule) module).getClass(className);

@@ -56,7 +56,7 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
@@ -432,7 +432,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
             return nodeVirtualFile.getNode().getModel();
           }
         });
-        SModelDescriptor d = smodel.getModelDescriptor();
+        SModel d = smodel.getModelDescriptor();
         if (d == null) return false;
 
         DataSource source = d.getSource();

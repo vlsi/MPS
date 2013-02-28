@@ -22,7 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.ActionPlace;
 
@@ -49,16 +49,16 @@ public class MPSCommonDataKeys extends PlatformDataKeys {
   public static final DataKey<List<SNode>> NODES = DataKey.create("MPS_SNode_List");
 
   @Description(description = "context model")
-  public static final DataKey<SModelDescriptor> CONTEXT_MODEL = DataKey.create("MPS_Context_SModelDescriptor");
+  public static final DataKey<SModel> CONTEXT_MODEL = DataKey.create("MPS_Context_SModel");
   @Description(description = "context module")
   public static final DataKey<IModule> CONTEXT_MODULE = DataKey.create("MPS_Context_IModule");
   @Description(description = "selected module")
   public static final DataKey<IModule> MODULE = DataKey.create("MPS_IModule");
 
   @Description(description = "selected model")
-  public static final DataKey<SModelDescriptor> MODEL = DataKey.create("MPS_SModelDescriptor");
+  public static final DataKey<SModel> MODEL = DataKey.create("MPS_SModel");
   @Description(description = "selected models")
-  public static final DataKey<List<SModelDescriptor>> MODELS = DataKey.create("MPS_SModelDescriptor_List");
+  public static final DataKey<List<SModel>> MODELS = DataKey.create("MPS_SModel_List");
 
   @Description(description = "throwable in select message")
   public static final DataKey<Throwable> EXCEPTION = DataKey.create("MPS_Exception");

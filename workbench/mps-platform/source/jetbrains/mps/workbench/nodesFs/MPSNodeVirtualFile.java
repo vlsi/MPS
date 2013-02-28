@@ -21,7 +21,7 @@ import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NonNls;
@@ -44,7 +44,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
 
   MPSNodeVirtualFile(@NotNull SNodeReference nodePointer) {
     myNode = nodePointer;
-    SModelDescriptor modelDescriptor = nodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodePointer.getModelReference());
+    SModel modelDescriptor = nodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodePointer.getModelReference());
     if (modelDescriptor instanceof BaseSModelDescriptorWithSource) {
       myTimeStamp = ((BaseSModelDescriptorWithSource) modelDescriptor).getSourceTimestamp();
     }
@@ -130,7 +130,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
         if (myNode == null) return null;
         SNode node = getNode();
         if (node == null) return null;
-        SModelDescriptor md = node.getModel().getModelDescriptor();
+        SModel md = node.getModel().getModelDescriptor();
         if (!(md instanceof DefaultSModelDescriptor)) return null;
         return ModelUtil.getFileByModel(node.getModel());
       }

@@ -8,7 +8,7 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
@@ -55,7 +55,7 @@ public class AddNodeMacro_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SModelDescriptor sm = SNodeOperations.getModel(node).getModelDescriptor();
+    SModel sm = SNodeOperations.getModel(node).getModelDescriptor();
     if (sm == null || !(sm.getModule() instanceof Generator)) {
       return false;
     }

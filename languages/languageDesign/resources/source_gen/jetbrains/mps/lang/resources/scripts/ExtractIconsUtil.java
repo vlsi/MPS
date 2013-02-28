@@ -70,7 +70,7 @@ public class ExtractIconsUtil {
   }
 
   private static EditableSModel getPluginModel(Language lang) {
-    SModelDescriptor plugin = LanguageAspect.PLUGIN.get(lang);
+    SModel plugin = LanguageAspect.PLUGIN.get(lang);
     LanguageAspect aspectForModel = lang.getAspectForModel(plugin);
     return aspectForModel.getOrCreate(lang);
   }

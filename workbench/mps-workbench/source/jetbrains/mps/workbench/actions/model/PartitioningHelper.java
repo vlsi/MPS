@@ -28,7 +28,7 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.output.OutputViewTool;
@@ -38,7 +38,7 @@ import java.awt.Frame;
 import java.util.*;
 
 public class PartitioningHelper {
-  public static void showMappingPartitioning(Project project, Frame frame, IScope scope, List<SModelDescriptor> models) {
+  public static void showMappingPartitioning(Project project, Frame frame, IScope scope, List<SModel> models) {
     // no multiple input models
     SModel inputModel = models.get(0).getSModel();
 
@@ -111,7 +111,7 @@ public class PartitioningHelper {
 
     // other
     List<SNode> roots = new ArrayList<SNode>();
-    for (SModelDescriptor md : models) {
+    for (SModel md : models) {
       SModel model = md.getSModel();
       for (SNode root : model.getRootNodes()) {
         roots.add(root);
@@ -126,8 +126,8 @@ public class PartitioningHelper {
     Map<String, String> existing = new HashMap<String, String>();
     MPSModuleRepository repo = MPSModuleRepository.getInstance();
     for(Generator g : repo.getAllGenerators()) {
-      List<SModelDescriptor> templateModels = g.getOwnTemplateModels();
-      for (SModelDescriptor templateModel : templateModels) {
+      List<SModel> templateModels = g.getOwnTemplateModels();
+      for (SModel templateModel : templateModels) {
         SModel m = templateModel.getSModel();
         for(SNode root : m.getRoots()) {
           for(SNode node : root.getDescendants(new IsInstanceCondition(MappingLabelDeclaration.concept))){

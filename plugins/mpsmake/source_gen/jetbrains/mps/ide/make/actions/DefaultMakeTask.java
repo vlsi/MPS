@@ -4,7 +4,7 @@ package jetbrains.mps.ide.make.actions;
 
 import com.intellij.openapi.progress.Task;
 import java.util.Set;
-import jetbrains.mps.project.IModule;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import com.intellij.openapi.project.Project;
@@ -23,9 +23,9 @@ import jetbrains.mps.messages.IMessage;
 
 public class DefaultMakeTask extends Task.Modal {
   private boolean needClean;
-  private Set<IModule> modules = SetSequence.fromSet(new LinkedHashSet<IModule>());
+  private Set<SModule> modules = SetSequence.fromSet(new LinkedHashSet<SModule>());
 
-  public DefaultMakeTask(Project project, String title, Set<IModule> modules, boolean needClean) {
+  public DefaultMakeTask(Project project, String title, Set<SModule> modules, boolean needClean) {
     super(project, title, true);
     this.needClean = needClean;
     SetSequence.fromSet(this.modules).addSequence(SetSequence.fromSet(modules));

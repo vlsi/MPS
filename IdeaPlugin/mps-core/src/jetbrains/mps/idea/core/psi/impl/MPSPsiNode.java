@@ -23,7 +23,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -142,7 +142,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
         SNode node = getNodeReference().resolve(MPSModuleRepository.getInstance());
         if (node == null) return;
 
-        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+        SModel modelDescriptor = node.getModel().getModelDescriptor();
         if (modelDescriptor == null) return;
 
         IModule module = modelDescriptor.getModule();

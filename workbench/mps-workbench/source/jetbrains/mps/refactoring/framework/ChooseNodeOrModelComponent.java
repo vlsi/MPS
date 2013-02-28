@@ -25,7 +25,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -51,8 +51,8 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private MyChooseItemComponent myChooseItemComponent = new MyChooseItemComponent();
   private String myConceptFQName;
   private IOperationContext myOperationContext;
-  private Set<SModelDescriptor> myModels = new HashSet<SModelDescriptor>();
-  private SModelDescriptor myModel = null;
+  private Set<SModel> myModels = new HashSet<SModel>();
+  private SModel myModel = null;
   boolean myMayBeModel;
   boolean myMayBeNode;
   boolean myReturnLoadedModels = false;
@@ -124,9 +124,9 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     myModels = getModelsFrom(modelCondition);
   }
 
-  private Set<SModelDescriptor> getModelsFrom(Condition<Object> condition) {
-    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(SModelRepository.getInstance().getModelDescriptors());
-    for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
+  private Set<SModel> getModelsFrom(Condition<Object> condition) {
+    Set<SModel> models = new HashSet<SModel>(SModelRepository.getInstance().getModelDescriptors());
+    for (SModel model : new ArrayList<SModel>(models)) {
       if (!(model instanceof EditableSModel)) {
         models.remove(model);
       } else if (((EditableSModel) model).isReadOnly()) {
@@ -194,7 +194,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       if (!myMayBeModel) {
         throw new InvalidInputValueException(myCaption + ": selected value should not not be a model");
       }
-      SModelDescriptor modelDescriptor = ((SModelTreeNode) node).getSModelDescriptor();
+      SModel modelDescriptor = ((SModelTreeNode) node).getSModelDescriptor();
       if (myReturnLoadedModels) {
         return modelDescriptor.getSModel();
       } else {
@@ -230,7 +230,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     return this;
   }
 
-  class MyChooseItemComponent extends ChooseItemComponent<SModelDescriptor> {
+  class MyChooseItemComponent extends ChooseItemComponent<SModel> {
     public MyChooseItemComponent() {
       super(null);
       setMinimumSize(new Dimension(400, 100));
@@ -238,12 +238,12 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     }
 
     @Override
-    protected String getItemPresentation(SModelDescriptor sm) {
-      return sm.getSModelReference().getSModelFqName().toString();
+    protected String getItemPresentation(SModel sm) {
+      return sm.getReference().getSModelFqName().toString();
     }
 
     @Override
-    public void doChoose(SModelDescriptor sModelDescriptor) {
+    public void doChoose(SModel sModelDescriptor) {
       myModel = sModelDescriptor;
       myTree.rebuildNow();//selectNode(myTree.findNodeWith(sModelDescriptor));
     }
@@ -251,8 +251,8 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     public void rebuild() {
       getNames().clear();
       getItemsMap().clear();
-      for (SModelDescriptor modelDescriptor : myModels) {
-        putItem(modelDescriptor.getSModelReference().getSModelFqName().toString(), modelDescriptor);
+      for (SModel modelDescriptor : myModels) {
+        putItem(modelDescriptor.getReference().getSModelFqName().toString(), modelDescriptor);
       }
       makeNamesConsistent();
     }

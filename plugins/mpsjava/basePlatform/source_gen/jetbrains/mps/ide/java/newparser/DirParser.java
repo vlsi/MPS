@@ -23,7 +23,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -166,7 +165,7 @@ public class DirParser {
 
   private SModel registerModelForPackage(String fqName) {
     SModelFqName sModelFqName = SModelFqName.fromString(fqName);
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelFqName);
+    SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelFqName);
     if (modelDescriptor != null) {
       if (!(myModule.getOwnModelDescriptors().contains(modelDescriptor))) {
         LOG.error("model with fq name " + fqName + " is not owned by module " + myModule.getModuleFqName());
@@ -187,7 +186,7 @@ public class DirParser {
       return null;
     }
 
-    SModelDescriptor modelDescr = myModule.createModel(packageName, getRootToCreateModel(packageName), null);
+    SModel modelDescr = myModule.createModel(packageName, getRootToCreateModel(packageName), null);
     assert modelDescr != null;
 
     return modelDescr.getSModel();

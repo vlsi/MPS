@@ -6,7 +6,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import jetbrains.mps.util.ReadUtil;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
@@ -35,6 +34,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -86,7 +86,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   public void generate() {
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
-        SModelDescriptor descriptor = getSModelDescriptor(new EmptyProgressIndicator());
+        SModel descriptor = getSModelDescriptor(new EmptyProgressIndicator());
 
         addRequiredImports(descriptor.getSModel(), descriptor.getModule().getModuleDescriptor());
 
@@ -180,7 +180,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     ((jetbrains.mps.smodel.SModel) smodel).addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getSModel().getModelDescriptor().getReference(), false);
   }
 
-  public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {
+  public SModel getSModelDescriptor(ProgressIndicator indicator) {
     if (getCreateModel()) {
       Solution solution;
       if (getCreateSolution()) {

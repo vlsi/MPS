@@ -8,7 +8,7 @@ import jetbrains.mps.ide.editor.warningPanel.WarningPanel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import jetbrains.mps.util.NameUtil;
@@ -18,7 +18,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.SModel;
 
 public class ConflictingModelsWarnings implements EditorWarningsProvider {
   public ConflictingModelsWarnings() {
@@ -27,7 +26,7 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
   @Nullable
   @Override
   public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull final Project project) {
-    SModelDescriptor md = check_bmsafs_a0a0b(node.getModel());
+    SModel md = check_bmsafs_a0a0b(node.getModel());
     final VirtualFile modelFile = ConflictsUtil.getModelFileIfConflicting(md, project);
     final VirtualFile moduleFile = ConflictsUtil.getModuleFileIfConflicting(check_bmsafs_a0a2a1(md), project);
     if (moduleFile != null) {
@@ -78,14 +77,14 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
     return null;
   }
 
-  private static SModelDescriptor check_bmsafs_a0a0b(SModel checkedDotOperand) {
+  private static SModel check_bmsafs_a0a0b(jetbrains.mps.smodel.SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IModule check_bmsafs_a0a2a1(SModelDescriptor checkedDotOperand) {
+  private static IModule check_bmsafs_a0a2a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

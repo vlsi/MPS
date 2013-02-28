@@ -27,7 +27,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -113,8 +113,8 @@ public class NamespaceTextNode extends TextTreeNode {
     return newGroup;
   }
 
-  public List<SModelDescriptor> getModelsUnder() {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+  public List<SModel> getModelsUnder() {
+    List<SModel> models = new ArrayList<SModel>();
     for (MPSTreeNode child : this) {
       if (child instanceof SModelTreeNode) {
         models.add(((SModelTreeNode) child).getSModelDescriptor());

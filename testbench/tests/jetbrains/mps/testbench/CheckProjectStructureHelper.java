@@ -38,7 +38,7 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.validation.ModelValidator;
 import jetbrains.mps.project.validation.ModuleValidatorFactory;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
@@ -257,7 +257,7 @@ public class CheckProjectStructureHelper {
       public void run() {
         for (SModel sm : models) {
           if (!SModelStereotype.isUserModel(sm)) continue;
-          checkModelNodes(((SModelDescriptor) sm).getSModel(), errors);
+          checkModelNodes(((SModel) sm).getSModel(), errors);
         }
       }
     });
@@ -335,7 +335,7 @@ public class CheckProjectStructureHelper {
           if (!SModelStereotype.isUserModel(sm)) continue;
           if (SModelStereotype.isGeneratorModel(sm)) continue;
           ModuleOperationContext operationContext = new ModuleOperationContext(sm.getModule());
-          for (SNode root : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(((SModelDescriptor) sm).getSModel(), null)) {
+          for (SNode root : jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getRoots(((SModel) sm).getSModel(), null)) {
             Set<IErrorReporter> errorReporters = null;
             try {
               errorReporters = checker.getErrors(root, operationContext);
@@ -379,7 +379,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : new NodesIterable(((SModelDescriptor) sm).getSModel())) {
+    for (SNode node : new NodesIterable(((SModel) sm).getSModel())) {
       Testbench.LOG.debug("Checking node " + node);
       if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
@@ -388,7 +388,7 @@ public class CheckProjectStructureHelper {
       }
     }
 
-    for (SNode node : new NodesIterable(((SModelDescriptor) sm).getSModel())) {
+    for (SNode node : new NodesIterable(((SModel) sm).getSModel())) {
       for (SReference ref : node.getReferences()) {
         if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;

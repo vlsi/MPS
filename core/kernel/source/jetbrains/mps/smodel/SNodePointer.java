@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -46,7 +46,7 @@ public class SNodePointer implements SNodeReference {
     if (myNodeId == null) return null;
 
     if (myModelReference != null) {
-      SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(myModelReference);
+      SModel model = SModelRepository.getInstance().getModelDescriptor(myModelReference);
       if (model != null) {
         SNode node = model.getSModel().getNode(myNodeId);
         if (node != null) {
@@ -126,7 +126,7 @@ public class SNodePointer implements SNodeReference {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public SModelDescriptor getModel() {
+  public SModel getModel() {
     if (getModelReference() == null) return null;
     return SModelRepository.getInstance().getModelDescriptor(getModelReference());
   }

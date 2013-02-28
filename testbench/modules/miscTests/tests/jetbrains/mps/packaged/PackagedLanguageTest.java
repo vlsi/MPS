@@ -21,7 +21,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -68,7 +68,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkStructureModelLoaded() {
-    final SModelDescriptor structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".structure"));
+    final SModel structureModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".structure"));
     Assert.assertNotNull(structureModelDescriptor);
     final SModel structureModel = structureModelDescriptor.getSModel();
     Assert.assertNotNull(structureModel);
@@ -81,7 +81,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkEditorModelLoaded() {
-    final SModelDescriptor editorModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".editor"));
+    final SModel editorModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + ".editor"));
     Assert.assertNotNull(editorModelDescriptor);
     final SModel editorModel = editorModelDescriptor.getSModel();
     Assert.assertNotNull(editorModel);
@@ -105,7 +105,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkStubsLoaded() {
-    final SModelDescriptor libraryModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + "/" + "dummy" + "@java_stub"));
+    final SModel libraryModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(PACKAGED_LANGUAGE + "/" + "dummy" + "@java_stub"));
     Assert.assertNotNull(libraryModelDescriptor);
     final SModel libraryModel = libraryModelDescriptor.getSModel();
     Assert.assertNotNull(libraryModel);

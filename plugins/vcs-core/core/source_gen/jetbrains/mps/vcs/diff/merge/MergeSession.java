@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -100,7 +101,7 @@ public class MergeSession {
   }
 
   public void installResultModelListener() {
-    myResultModel.getModelDescriptor().addModelListener(myModelListener);
+    ((SModelDescriptor) myResultModel.getModelDescriptor()).addModelListener(myModelListener);
   }
 
   private void fillNodeToChangesMap() {

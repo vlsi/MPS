@@ -24,10 +24,9 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.*;
@@ -139,7 +138,7 @@ public class TransientModelsModule extends ClassLoadingModule {
   public boolean publishTransientModel(SModel model) {
     if (myModels.containsKey(model.getModelName())) {
       if (myPublished.add(model)) {
-        SModelRepository.getInstance().registerModelDescriptor((SModelDescriptor) model, this);
+        SModelRepository.getInstance().registerModelDescriptor((SModel) model, this);
         return true;
       }
     }
@@ -149,7 +148,7 @@ public class TransientModelsModule extends ClassLoadingModule {
   public void removeModel(SModel md) {
     if (myModels.remove(md.getModelName()) != null) {
       if (myPublished.remove(md)) {
-        SModelRepository.getInstance().removeModelDescriptor((SModelDescriptor) md);
+        SModelRepository.getInstance().removeModelDescriptor((SModel) md);
       }
       if (md instanceof TransientSModelDescriptor) {
         ((TransientSModelDescriptor) md).dropModel();
@@ -176,13 +175,13 @@ public class TransientModelsModule extends ClassLoadingModule {
     }
   }
 
-  public SModelDescriptor createTransientModel(final String longName, String stereotype) {
+  public SModel createTransientModel(final String longName, String stereotype) {
     while (!isValidName(longName, stereotype)) {
       stereotype += "_";
     }
 
     String modelName = stereotype == null ? longName : longName + "@" + stereotype;
-    SModelDescriptor result = new TransientSModelDescriptor(modelName);
+    SModel result = new TransientSModelDescriptor(modelName);
 
     myModels.put(result.getModelName(), result);
     invalidateCaches();
@@ -194,8 +193,8 @@ public class TransientModelsModule extends ClassLoadingModule {
   }
 
   @Override
-  public List<SModelDescriptor> getOwnModelDescriptors() {
-    return new ArrayList<SModelDescriptor>((Collection) myModels.values());
+  public List<SModel> getOwnModelDescriptors() {
+    return new ArrayList<SModel>((Collection) myModels.values());
   }
 
   @Override
@@ -284,10 +283,10 @@ public class TransientModelsModule extends ClassLoadingModule {
     }
 
     @Override
-    public SModelDescriptor resolveModel(SModelReference reference) {
+    public SModel resolveModel(SModelReference reference) {
       if (reference.getLongName().equals(myLongName)) {
         SModel descriptor = myModels.get(reference.getModelName());
-        if (descriptor != null) return (SModelDescriptor) descriptor;
+        if (descriptor != null) return (SModel) descriptor;
       }
       return super.resolveModel(reference);
     }

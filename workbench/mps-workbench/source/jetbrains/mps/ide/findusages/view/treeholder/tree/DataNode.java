@@ -24,7 +24,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeD
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Condition;
@@ -82,8 +82,8 @@ public class DataNode implements IExternalizeable {
 
   //-------DATA QUERY--------
 
-  public List<SModelDescriptor> getIncludedModels() {
-    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+  public List<SModel> getIncludedModels() {
+    List<SModel> models = new ArrayList<SModel>();
     if (myData instanceof ModelNodeData) {
       if (!myData.isInvalid() && !myData.isExcluded()) {
         models.add(((ModelNodeData) myData).getModelDescriptor());
@@ -95,7 +95,7 @@ public class DataNode implements IExternalizeable {
     return models;
   }
 
-  public List<SModelDescriptor> getAllModels() {
+  public List<SModel> getAllModels() {
     List<DataNode> modelNodes = getDescendantsWithCondition(new Condition<BaseNodeData>() {
       @Override
       public boolean met(BaseNodeData nodeData) {
@@ -103,7 +103,7 @@ public class DataNode implements IExternalizeable {
       }
     });
 
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    List<SModel> result = new ArrayList<SModel>();
     for (DataNode node : modelNodes) {
       SModel model = ((ModelNodeData) node.getData()).getModel();
       if (model != null) result.add(model.getModelDescriptor());

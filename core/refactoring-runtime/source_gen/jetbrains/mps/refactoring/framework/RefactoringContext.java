@@ -9,7 +9,7 @@ import java.util.HashMap;
 import jetbrains.mps.findUsages.UsagesList;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
@@ -23,7 +23,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelOperations;
@@ -34,6 +33,7 @@ import jetbrains.mps.smodel.adapter.SConceptNodeAdapterBase;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
@@ -59,14 +59,14 @@ public class RefactoringContext {
   private Set<String> myTransientParameters = new HashSet<String>();
   private boolean myIsLocal = false;
   private boolean myDoesGenerateModels = false;
-  private SModelDescriptor mySelectedModel;
+  private SModel mySelectedModel;
   private SNode mySelectedNode;
   private List<SNode> mySelectedNodes = new ArrayList<SNode>();
   private IOperationContext myCurrentOperationContext;
   private IScope myCurrentScope;
   private Project mySelectedProject;
   private IModule mySelectedModule;
-  private List<SModelDescriptor> mySelectedModels;
+  private List<SModel> mySelectedModels;
   private List<IModule> mySelectedModules;
   private Map<StructureModificationData.ConceptFeature, StructureModificationData.ConceptFeature> myConceptFeatureMap = new HashMap<StructureModificationData.ConceptFeature, StructureModificationData.ConceptFeature>();
   private Map<StructureModificationData.FullNodeId, StructureModificationData.FullNodeId> myMoveMap = new HashMap<StructureModificationData.FullNodeId, StructureModificationData.FullNodeId>();
@@ -520,19 +520,19 @@ public class RefactoringContext {
     mySelectedNodes = selectedNodes;
   }
 
-  public SModelDescriptor getSelectedModel() {
+  public SModel getSelectedModel() {
     return mySelectedModel;
   }
 
-  public void setSelectedModel(SModelDescriptor selectedModel) {
+  public void setSelectedModel(SModel selectedModel) {
     mySelectedModel = selectedModel;
   }
 
-  public List<SModelDescriptor> getSelectedModels() {
+  public List<SModel> getSelectedModels() {
     return mySelectedModels;
   }
 
-  public void setSelectedModels(List<SModelDescriptor> selectedModels) {
+  public void setSelectedModels(List<SModel> selectedModels) {
     mySelectedModels = selectedModels;
   }
 
@@ -598,7 +598,7 @@ public class RefactoringContext {
 
               break;
             case MODEL:
-              SModelDescriptor descriptor = ((SModel) target).getModelDescriptor();
+              SModel descriptor = ((SModel) target).getModelDescriptor();
               setSelectedModel(descriptor);
               setSelectedModule(descriptor.getModule());
               break;

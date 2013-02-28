@@ -25,11 +25,10 @@ import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.DifflibFacade;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -43,7 +42,7 @@ public class IncrementalGenerationHandler {
 
   private static final String CONDITIONALS_ID = "";
 
-  private SModelDescriptor myModel;
+  private SModel myModel;
   private GenerationOptions myGenerationOptions;
   private IOperationContext myOperationContext;
   private final String myPlanSignature;
@@ -59,7 +58,7 @@ public class IncrementalGenerationHandler {
   private IntermediateModelsCache myCache;
 
   public IncrementalGenerationHandler(org.jetbrains.mps.openapi.model.SModel model, IOperationContext operationContext, GenerationOptions options, String planSignature, Map<String, Object> genParameters, IncrementalReporter tracer) {
-    myModel = (SModelDescriptor) model;
+    myModel = (SModel) model;
     myGenerationOptions = options;
     myOperationContext = operationContext;
     myPlanSignature = planSignature;
@@ -124,7 +123,7 @@ public class IncrementalGenerationHandler {
     String currentHash = myGenerationHashes.get(GeneratableSModel.FILE);
     ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, currentHash, true);
     if (cacheContainer == null) {
-      LOG.error("cannot create cache for " + currentHash + ", " + myModel.getSModelReference().toString());
+      LOG.error("cannot create cache for " + currentHash + ", " + myModel.getReference().toString());
       return null;
     }
 
@@ -142,7 +141,7 @@ public class IncrementalGenerationHandler {
     ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, oldHash, false);
     if (cacheContainer == null) {
       if (myTracer != null)
-        myTracer.report("No cache for " + myModel.getSModelReference().toString() + " (" + oldHash + ")");
+        myTracer.report("No cache for " + myModel.getReference().toString() + " (" + oldHash + ")");
       return;
     }
 
@@ -221,7 +220,7 @@ public class IncrementalGenerationHandler {
     Map<String, String> externalHashes = oldDependencies.getExternalHashes();
     for (Entry<String, String> entry : externalHashes.entrySet()) {
       String modelReference = entry.getKey();
-      SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
+      SModel sm = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
       if (sm == null) {
         changedModels.add(modelReference);
         continue;
@@ -518,7 +517,7 @@ public class IncrementalGenerationHandler {
     return graph;
   }
 
-  public SModelDescriptor getModel() {
+  public SModel getModel() {
     return myModel;
   }
 

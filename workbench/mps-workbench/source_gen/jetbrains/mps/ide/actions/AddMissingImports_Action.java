@@ -9,7 +9,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.logging.Logger;
 
 public class AddMissingImports_Action extends BaseAction {
@@ -48,7 +48,7 @@ public class AddMissingImports_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new MissingDependenciesFixer(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))).fix(true);
+      new MissingDependenciesFixer(((SModel) MapSequence.fromMap(_params).get("modelDescriptor"))).fix(true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "AddMissingImports", t);
     }

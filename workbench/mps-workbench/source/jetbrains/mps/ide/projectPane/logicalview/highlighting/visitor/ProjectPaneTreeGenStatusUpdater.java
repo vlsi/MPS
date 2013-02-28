@@ -29,7 +29,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -110,7 +110,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
 
   private boolean generationRequired(SModule module, IOperationContext context) {
     if (!(module instanceof AbstractModule)) return false;
-    for (SModelDescriptor md : ((AbstractModule) module).getOwnModelDescriptors()) {
+    for (SModel md : ((AbstractModule) module).getOwnModelDescriptors()) {
       boolean required = ModelGenerationStatusManager.getInstance().generationRequired(md);
       if (required) return true;
     }

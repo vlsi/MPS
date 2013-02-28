@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.runtime.evaluation.container;
 
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationException;
@@ -24,7 +24,6 @@ import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import java.util.Map;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
@@ -33,7 +32,7 @@ import jetbrains.mps.messages.MessageKind;
 
 public class GeneratorUtil {
   @Nullable
-  public static Class generateAndLoadEvaluatorClass(Project ideaProject, SModelDescriptor modelDescriptor, String className, IOperationContext context, boolean developerMode, InMemoryJavaGenerationHandler handler, ClassLoader parentloader) throws EvaluationException {
+  public static Class generateAndLoadEvaluatorClass(Project ideaProject, SModel modelDescriptor, String className, IOperationContext context, boolean developerMode, InMemoryJavaGenerationHandler handler, ClassLoader parentloader) throws EvaluationException {
     try {
 
       final String fullClassName = SNodeOperations.getModelLongName(modelDescriptor) + "." + className;

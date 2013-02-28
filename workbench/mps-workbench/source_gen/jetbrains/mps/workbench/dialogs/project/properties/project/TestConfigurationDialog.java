@@ -59,7 +59,6 @@ import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -342,13 +341,13 @@ public class TestConfigurationDialog extends DialogWrapper {
         @Override
         protected int doAdd(AnActionEvent e) {
           Iterable<SModel> models = myProject.getComponent(MPSProject.class).getProjectModels();
-          List<SModelDescriptor> descrs = SModelRepository.getInstance().getModelDescriptors();
+          List<SModel> descrs = SModelRepository.getInstance().getModelDescriptors();
           SModelReference modelRef = CommonChoosers.showDialogModelChooser(ProjectHelper.toIdeaProject(myProject), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
             public SModelReference select(SModel it) {
               return (SModelReference) it.getReference();
             }
-          }).toListSequence(), ListSequence.fromList(descrs).select(new ISelector<SModelDescriptor, SModelReference>() {
-            public SModelReference select(SModelDescriptor it) {
+          }).toListSequence(), ListSequence.fromList(descrs).select(new ISelector<SModel, SModelReference>() {
+            public SModelReference select(SModel it) {
               return it.getReference();
             }
           }).toListSequence());

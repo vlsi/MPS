@@ -11,7 +11,6 @@ import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.ModelsOnlyScope;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
@@ -36,7 +35,7 @@ public class ModelUsagesFinder implements IFinder {
     searchResults.getSearchedNodes().add(model);
     SModelReference modelReference = model.getReference();
     if (query.getScope() instanceof ModelsOnlyScope) {
-      for (SModelDescriptor modelDescriptor : (as_s8v3jk_a0a0a0g0b(query.getScope(), ModelsOnlyScope.class)).getModelDescriptors()) {
+      for (SModel modelDescriptor : (as_s8v3jk_a0a0a0g0b(query.getScope(), ModelsOnlyScope.class)).getModelDescriptors()) {
         if (monitor.isCanceled()) {
           return searchResults;
         }
@@ -64,7 +63,7 @@ public class ModelUsagesFinder implements IFinder {
         if (monitor.isCanceled()) {
           return searchResults;
         }
-        SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor((SModelId) scopeModel.getModelId());
+        SModel descriptor = SModelRepository.getInstance().getModelDescriptor((SModelId) scopeModel.getModelId());
         // <node> 
         if (!(SModelStereotype.isUserModel(scopeModel))) {
           continue;
@@ -85,7 +84,7 @@ public class ModelUsagesFinder implements IFinder {
         }
       }
     } else {
-      for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
+      for (SModel modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
         if (monitor.isCanceled()) {
           return searchResults;
         }

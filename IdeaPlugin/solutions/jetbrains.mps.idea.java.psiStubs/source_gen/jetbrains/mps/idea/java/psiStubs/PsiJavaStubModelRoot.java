@@ -22,7 +22,7 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.PsiJavaFile;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -160,7 +160,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
     if (Sequence.fromIterable(Sequence.fromArray(dir.getFiles())).ofType(PsiJavaFile.class).isNotEmpty()) {
 
       SModelReference modelRef = makeModelReference(sourceRoot, dir);
-      SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
+      SModel model = SModelRepository.getInstance().getModelDescriptor(modelRef);
 
       if (model == null) {
         model = makeModelDescriptor(modelRef, dir);

@@ -10,7 +10,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vcs.MPSVcsProjectConfiguration;
 import java.util.Collections;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.SModuleOperations;
@@ -29,7 +29,7 @@ public class GeneratedFilesExcludePolicy extends BaseDirectoryIndexExcludePolicy
       return Collections.EMPTY_SET;
     }
     Set<VirtualFile> roots = new HashSet<VirtualFile>();
-    for (SModelDescriptor modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
+    for (SModel modelDescriptor : SModelRepository.getInstance().getModelDescriptors()) {
       SModule module = modelDescriptor.getModule();
       if (module != null) {
         String outputPath = SModuleOperations.getOutputPathFor(modelDescriptor).getPath();

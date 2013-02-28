@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -22,7 +21,7 @@ public class MigrationUtil {
     Language language = SModelUtil.getDeclaringLanguage(applicableNode);
     assert language != null : "Language shouldn't be null for " + applicableNode;
 
-    SModelDescriptor md = aspect.get(language);
+    SModel md = aspect.get(language);
     if (md == null) {
       md = aspect.createNew(language);
     }

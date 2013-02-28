@@ -41,7 +41,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -692,7 +692,7 @@ public class UsagesTree extends MPSTree {
   public void navigateToNode(final SNode node, boolean focus) {
     ModelAccess.assertLegalWrite();
 
-    SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+    SModel modelDescriptor = node.getModel().getModelDescriptor();
     if (modelDescriptor == null) return;
 
     IModule module = modelDescriptor.getModule();

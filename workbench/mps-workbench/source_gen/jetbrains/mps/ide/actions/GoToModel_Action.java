@@ -15,7 +15,7 @@ import com.intellij.navigation.NavigationItem;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.Condition;
@@ -72,7 +72,7 @@ public class GoToModel_Action extends BaseAction {
             @Override
             public void navigate(boolean requestFocus) {
               ProjectPane projectPane = ProjectPane.getInstance(project);
-              SModelDescriptor md = SModelRepository.getInstance().getModelDescriptor(modelReference);
+              SModel md = SModelRepository.getInstance().getModelDescriptor(modelReference);
               projectPane.selectModel(md, true);
             }
           };
@@ -80,17 +80,17 @@ public class GoToModel_Action extends BaseAction {
 
         @Override
         public SModelReference[] find(IScope scope) {
-          Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
+          Condition<SModel> cond = new Condition<SModel>() {
             @Override
-            public boolean met(SModelDescriptor modelDescriptor) {
+            public boolean met(SModel modelDescriptor) {
               boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor) || SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor));
               boolean hasModule = modelDescriptor.getModule() != null;
               return rightStereotype && hasModule;
             }
           };
-          ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
+          ConditionalIterable<SModel> iter = new ConditionalIterable<SModel>(scope.getModelDescriptors(), cond);
           List<SModelReference> result = new ArrayList<SModelReference>();
-          for (SModelDescriptor md : iter) {
+          for (SModel md : iter) {
             result.add(md.getReference());
           }
           return result.toArray(new SModelReference[result.size()]);

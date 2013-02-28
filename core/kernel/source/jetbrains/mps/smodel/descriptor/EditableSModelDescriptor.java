@@ -16,12 +16,12 @@
 package jetbrains.mps.smodel.descriptor;
 
 import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 /**
  *  use EditableSModel
  */
 @Deprecated
-public interface EditableSModelDescriptor extends SModelDescriptor, EditableSModel {
+public interface EditableSModelDescriptor extends SModel, EditableSModel {
 
 }

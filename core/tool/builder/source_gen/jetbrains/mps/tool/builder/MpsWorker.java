@@ -10,6 +10,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.Set;
@@ -37,7 +38,6 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.apache.log4j.Level;
@@ -124,7 +124,7 @@ public abstract class MpsWorker {
       public void run() {
         ClassLoaderManager.getInstance().updateClassPath();
         ModuleMaker maker = new ModuleMaker();
-        maker.make(MPSModuleRepository.getInstance().getAllModules(), new EmptyProgressMonitor());
+        maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor());
       }
     });
     reload();
@@ -292,7 +292,7 @@ public abstract class MpsWorker {
       }
       info("Read model " + modelReference);
       SModelHeader d = ModelPersistence.loadDescriptor(ifile);
-      SModelDescriptor existingDescr = SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
+      SModel existingDescr = SModelRepository.getInstance().getModelDescriptor(d.getModelReference());
       if (existingDescr == null) {
         error("Module for " + ifile.getPath() + " was not found. Use \"library\" tag to load required modules.");
       } else {

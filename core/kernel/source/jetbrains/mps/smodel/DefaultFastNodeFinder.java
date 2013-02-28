@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -29,7 +29,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   private final Object myLock = new Object();
 
   private SModel myModel;
-  private SModelDescriptor myModelDescriptor;
+  private SModel myModelDescriptor;
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
   private SModelRepositoryAdapter myRepositoryAdapter = new MySModelRepositoryAdapter();
@@ -40,7 +40,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
     myModel = model;
     myModelDescriptor = model.getModelDescriptor();
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryAdapter);
-    myModelDescriptor.addModelListener(myListener);
+    ((SModelInternal) myModelDescriptor).addModelListener(myListener);
   }
 
   @Override
@@ -49,7 +49,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       myInitialized = false;
       myNodes.clear();
     }
-    myModelDescriptor.removeModelListener(myListener);
+    ((SModelInternal) myModelDescriptor).removeModelListener(myListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryAdapter);
   }
 
@@ -67,7 +67,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
 
     // pre-loading model to avoid deadlock (model loading process requires a lock)
     // model cannot be unloaded afterwards, because we have model read access
-    myModel.enforceFullLoad();
+    ((jetbrains.mps.smodel.SModel) myModel).enforceFullLoad();
 
     synchronized (myLock) {
       if (!myInitialized) {
@@ -194,7 +194,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
 
     @Override
-    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+    public void modelsReplaced(Set<SModel> replacedModels) {
       if (replacedModels.contains(myModelDescriptor)) {
         synchronized (myLock) {
           myInitialized = false;

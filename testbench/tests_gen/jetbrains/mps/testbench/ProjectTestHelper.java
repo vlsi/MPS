@@ -27,7 +27,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
@@ -151,8 +150,8 @@ public class ProjectTestHelper {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (IModule mod : withGenerators(Collections.singletonList(module))) {
-          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModelDescriptor>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
-            public boolean accept(SModelDescriptor it) {
+          models.value = Sequence.fromIterable(models.value).concat(Sequence.fromIterable(((Iterable<SModel>) mod.getOwnModelDescriptors())).where(new IWhereFilter<SModel>() {
+            public boolean accept(SModel it) {
               return SNodeOperations.isGeneratable(it);
             }
           }));

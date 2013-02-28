@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -29,7 +29,7 @@ public class GenerateBuildAction_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return GenerateBuildUtil.getLayout(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))) != null;
+    return GenerateBuildUtil.getLayout(((SModel) MapSequence.fromMap(_params).get("modelDescriptor"))) != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -61,7 +61,7 @@ public class GenerateBuildAction_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      boolean result = GenerateBuildUtil.generate(GenerateBuildUtil.getLayout(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))), ((Project) MapSequence.fromMap(_params).get("project")), true);
+      boolean result = GenerateBuildUtil.generate(GenerateBuildUtil.getLayout(((SModel) MapSequence.fromMap(_params).get("modelDescriptor"))), ((Project) MapSequence.fromMap(_params).get("project")), true);
       if (!(result)) {
         LOG.error("Build files were not generated.");
       }

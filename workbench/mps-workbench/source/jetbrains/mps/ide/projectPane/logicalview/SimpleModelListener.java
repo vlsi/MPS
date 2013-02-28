@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.projectPane.logicalview;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 
 public abstract class SimpleModelListener extends SModelAdapter {
@@ -38,12 +38,12 @@ public abstract class SimpleModelListener extends SModelAdapter {
   }
 
   @Override
-  public void modelSaved(SModelDescriptor sm) {
+  public void modelSaved(SModel sm) {
     updateNodePresentation(false, true);
   }
 
   @Override
-  public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
+  public void modelLoadingStateChanged(SModel sm, ModelLoadingState oldState, ModelLoadingState newState) {
     updateNodePresentation(false, false);
   }
 

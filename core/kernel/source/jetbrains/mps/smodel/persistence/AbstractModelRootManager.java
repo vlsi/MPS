@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.persistence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -28,7 +28,7 @@ import java.util.Collection;
 @Deprecated
 public class AbstractModelRootManager implements IModelRootManager {
 
-  public Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module) {
+  public Collection<SModel> load(@NotNull ModelRoot root, IModule module) {
     throw new RuntimeException("not implemented");
   }
 
@@ -36,12 +36,12 @@ public class AbstractModelRootManager implements IModelRootManager {
     return false;
   }
 
-  public SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
+  public SModel createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
     throw new RuntimeException("can't create new model " + fqName + " manager class = " + getClass());
   }
 
   @Override
-  public Collection<SModelDescriptor> load(@NotNull SModelRoot root) {
+  public Collection<SModel> load(@NotNull SModelRoot root) {
     return load(root.getModelRoot(), (IModule) root.getModule());
   }
 
@@ -51,7 +51,7 @@ public class AbstractModelRootManager implements IModelRootManager {
   }
 
   @Override
-  public SModelDescriptor createModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName) {
+  public SModel createModel(@NotNull SModelRoot root, @NotNull SModelFqName fqName) {
     return createModel((IModule) root.getModule(), root.getModelRoot(), fqName);
   }
 }

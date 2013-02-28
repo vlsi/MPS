@@ -91,7 +91,7 @@ public class DependencyTree extends MPSTree {
               for (SModule module : ((NamespaceTextNode) node).getModulesUnder()) {
                 scope.add(module);
               }
-              for (SModelDescriptor model : ((NamespaceTextNode) node).getModelsUnder()) {
+              for (SModel model : ((NamespaceTextNode) node).getModelsUnder()) {
                 scope.add(model);
               }
             }

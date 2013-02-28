@@ -28,7 +28,7 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 
@@ -67,8 +67,8 @@ public class TraceFilesManager implements ProjectComponent {
           if (mpsFacet == null) {
             continue;
           }
-          List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors(mpsFacet.getSolution());
-          for (SModelDescriptor descriptor : modelDescriptors) {
+          List<SModel> modelDescriptors = SModelRepository.getInstance().getModelDescriptors(mpsFacet.getSolution());
+          for (SModel descriptor : modelDescriptors) {
             TraceInfoCache.getInstance().clean(descriptor);
           }
         }

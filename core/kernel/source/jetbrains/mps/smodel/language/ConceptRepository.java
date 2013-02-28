@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.util.NameUtil;
@@ -57,7 +57,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     IModule module = MPSModuleRepository.getInstance().getModuleByFqName(langName);
     if (module instanceof Language) {
       Language lang = (Language) module;
-      SModelDescriptor smd = lang.getStructureModelDescriptor();
+      SModel smd = lang.getStructureModelDescriptor();
       if (smd != null) {
         SModel sm = smd.getSModel();
         String modelFqName = SNodeOperations.getModelLongName(sm);

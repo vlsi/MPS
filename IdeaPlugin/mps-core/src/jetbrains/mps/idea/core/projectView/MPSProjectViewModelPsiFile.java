@@ -26,23 +26,23 @@ import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModuleOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.workbench.choose.models.ModelPresentation;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.SwingUtilities;
 
 public class MPSProjectViewModelPsiFile extends PsiFileNode {
-  final private SModelDescriptor mySModelDescriptor;
+  final private SModel mySModelDescriptor;
 
-  public MPSProjectViewModelPsiFile(PsiFileNode originalPsiFileNode, SModelDescriptor modelDescriptor) {
+  public MPSProjectViewModelPsiFile(PsiFileNode originalPsiFileNode, SModel modelDescriptor) {
     super(originalPsiFileNode.getProject(), originalPsiFileNode.getValue(), originalPsiFileNode.getSettings());
     mySModelDescriptor = modelDescriptor;
   }
 
   @Override
   public void update(PresentationData presentationData) {
-    ModelPresentation modelPresentation = new ModelPresentation(mySModelDescriptor.getSModelReference());
+    ModelPresentation modelPresentation = new ModelPresentation(mySModelDescriptor.getReference());
     presentationData.setPresentableText(mySModelDescriptor.getModelName());
     presentationData.setIcon(modelPresentation.doGetIcon());
   }

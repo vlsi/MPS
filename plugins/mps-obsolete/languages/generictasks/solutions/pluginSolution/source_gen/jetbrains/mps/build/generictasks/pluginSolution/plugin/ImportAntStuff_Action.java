@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.build.generictasks.taskfromjar.Generator;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.logging.Logger;
 
@@ -71,7 +70,7 @@ public class ImportAntStuff_Action extends BaseAction {
     }
   }
 
-  private void importTasks(Language l, SModelDescriptor model, Generator.Modes m, final Map<String, Object> _params) {
+  private void importTasks(Language l, SModel model, Generator.Modes m, final Map<String, Object> _params) {
     assert model != null;
     new Generator().generateTasks(model.getSModel(), m, new SModel[]{SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.generated", "")).getSModel(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.optional", "")).getSModel()});
   }

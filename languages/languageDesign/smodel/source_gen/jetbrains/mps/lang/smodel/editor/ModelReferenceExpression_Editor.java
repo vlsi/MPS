@@ -27,7 +27,6 @@ import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -98,10 +97,10 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     }
 
     protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SModelDescriptor) parameterObject, node, model, scope, operationContext, editorContext);
+      this.handleAction_impl((SModel) parameterObject, node, model, scope, operationContext, editorContext);
     }
 
-    public void handleAction_impl(SModelDescriptor parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+    public void handleAction_impl(SModel parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "name", SNodeOperations.getModelLongName(parameterObject));
       SPropertyOperations.set(node, "stereotype", SModelStereotype.getStereotype(parameterObject));
     }
@@ -111,10 +110,10 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((SModelDescriptor) parameterObject);
+      return this.getMatchingText_internal((SModel) parameterObject);
     }
 
-    public String getMatchingText_internal(SModelDescriptor parameterObject) {
+    public String getMatchingText_internal(SModel parameterObject) {
       return SNodeOperations.getModelLongName(parameterObject) + "@" + SModelStereotype.getStereotype(parameterObject);
     }
   }

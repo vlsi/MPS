@@ -40,7 +40,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectMigrationState;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 
@@ -944,7 +944,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
         @Override
         public void run() {
           for (IModule module : mpsProject.getModulesWithGenerators()) {
-            for (SModelDescriptor smd : SModelRepository.getInstance().getModelDescriptors(module)) {
+            for (SModel smd : SModelRepository.getInstance().getModelDescriptors(module)) {
               if (smd instanceof DefaultSModelDescriptor) {
                 DefaultSModelDescriptor md = (DefaultSModelDescriptor) smd;
                 int modelVersion = md.getPersistenceVersion();

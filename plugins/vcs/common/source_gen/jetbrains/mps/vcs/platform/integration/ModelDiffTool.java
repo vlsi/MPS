@@ -18,7 +18,6 @@ import java.awt.Window;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.diff.DocumentContent;
 import com.intellij.openapi.diff.FileContent;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.ModelAccess;
@@ -72,7 +71,7 @@ public class ModelDiffTool implements DiffTool {
 
   private static SModel readModel(DiffContent content) throws ModelReadException {
     if ((content instanceof DocumentContent || content instanceof FileContent) && content.getFile() != null) {
-      final SModelDescriptor modelDescriptor = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(content.getFile()));
+      final SModel modelDescriptor = SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(content.getFile()));
 
       if (modelDescriptor != null) {
         return ModelAccess.instance().runReadAction(new Computable<SModel>() {

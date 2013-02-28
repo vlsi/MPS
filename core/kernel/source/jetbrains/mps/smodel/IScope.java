@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
@@ -29,7 +29,7 @@ public interface IScope extends SearchScope {
   /*
   Use ScopeOperations.getModelDescriptor(SearchScope, SModelReference)
   */
-  SModelDescriptor getModelDescriptor(SModelReference modelReference);
+  SModel getModelDescriptor(SModelReference modelReference);
 
   @Deprecated
   /*
@@ -47,7 +47,7 @@ public interface IScope extends SearchScope {
   /*
   Use ScopeOperations.getModelDescriptors(SearchScope), but getModels() better
    */
-  Iterable<SModelDescriptor> getModelDescriptors();
+  Iterable<SModel> getModelDescriptors();
 
   @Deprecated
   /*
@@ -71,13 +71,13 @@ public interface IScope extends SearchScope {
   /*
   Use something more meaningful
    */
-  Iterable<SModelDescriptor> getOwnModelDescriptors();
+  Iterable<SModel> getOwnModelDescriptors();
 
   @Deprecated
   /*
   Use ScopeOperations.getModelDescriptor(SearchScope, SModelFqName)
    */
-  SModelDescriptor getModelDescriptor(SModelFqName fqName);
+  SModel getModelDescriptor(SModelFqName fqName);
 
   @Deprecated
   /*

@@ -16,7 +16,8 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -85,9 +86,9 @@ public class ModuleContext extends StandaloneMPSContext {
   @Nullable
   @Deprecated
   public static ModuleContext create(final SNode node, Project project) {
-    SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
+    SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       @Override
-      public SModelDescriptor compute() {
+      public SModel compute() {
         return node.getModel().getModelDescriptor();
       }
     });
@@ -96,7 +97,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
   @Nullable
   @Deprecated
-  public static ModuleContext create(@NotNull final SModelDescriptor model, Project project) {
+  public static ModuleContext create(@NotNull final SModel model, Project project) {
 
     IModule owningModule = ModelAccess.instance().runReadAction(new Computable<IModule>() {
       @Override
@@ -107,7 +108,7 @@ public class ModuleContext extends StandaloneMPSContext {
 
     if (owningModule == null) {
       LOG.error("couldn't create module context for node:" +
-        "\ncouldn't find owner module for model '" + model.getSModelReference() + "'");
+        "\ncouldn't find owner module for model '" + model.getReference() + "'");
       return null;
     }
 

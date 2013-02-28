@@ -23,7 +23,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.usages.Usage;
 import com.intellij.usages.UsageGroup;
 import com.intellij.usages.impl.rules.FileGroupingRule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -42,7 +42,7 @@ public class ModelUsageGroupingRule extends FileGroupingRule {
   public UsageGroup groupUsage(@NotNull Usage usage) {
     if (usage instanceof UsageInModel) {
       final UsageInModel usageInModel = (UsageInModel) usage;
-      SModelDescriptor modelDescriptor = usageInModel.getModel();
+      SModel modelDescriptor = usageInModel.getModel();
       Collection<VirtualFile> filesByModelDescriptor = ModelUtil.getVFilesByModelDescriptor(modelDescriptor);
       if (filesByModelDescriptor.isEmpty()) {
         return null;
@@ -50,7 +50,7 @@ public class ModelUsageGroupingRule extends FileGroupingRule {
         // in case there are more than one file, result would be inaccurate, so better do not return anything
         // it used to fail but I do not like that
         // so adding an assert for a noble colleague who may encounter with this situation
-        LOG.warn("Multi-file model descriptor. Do not know what to do with it. Model " + modelDescriptor.getSModelReference());
+        LOG.warn("Multi-file model descriptor. Do not know what to do with it. Model " + modelDescriptor.getReference());
         return null;
       } else {
         return new FileUsageGroup(project, filesByModelDescriptor.iterator().next()) {

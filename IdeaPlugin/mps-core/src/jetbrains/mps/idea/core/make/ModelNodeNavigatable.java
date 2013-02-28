@@ -28,7 +28,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -80,8 +80,8 @@ public class ModelNodeNavigatable implements Navigatable {
     if (module != null) {
       MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
       SModelRepository smrepo = SModelRepository.getInstance();
-      for (SModelDescriptor smd: smrepo.getModelDescriptors(facet.getSolution())) {
-        if (smd.getSModelReference().getLongName().equals(modelName)) {
+      for (SModel smd: smrepo.getModelDescriptors(facet.getSolution())) {
+        if (smd.getReference().getLongName().equals(modelName)) {
           model = smd.getSModel();
         }
       }

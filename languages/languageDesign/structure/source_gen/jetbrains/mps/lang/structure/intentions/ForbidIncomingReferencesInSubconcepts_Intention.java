@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -83,16 +82,16 @@ public class ForbidIncomingReferencesInSubconcepts_Intention implements Intentio
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      Iterable<SModel> seq = Sequence.fromIterable(((Iterable<SModelDescriptor>) SModelRepository.getInstance().getModelDescriptors())).where(new IWhereFilter<SModelDescriptor>() {
-        public boolean accept(SModelDescriptor md) {
+      Iterable<SModel> seq = Sequence.fromIterable(((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors())).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel md) {
           return SModelStereotype.isUserModel(md);
         }
-      }).where(new IWhereFilter<SModelDescriptor>() {
-        public boolean accept(SModelDescriptor md) {
+      }).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel md) {
           return LanguageAspect.STRUCTURE.is(md);
         }
-      }).select(new ISelector<SModelDescriptor, SModel>() {
-        public SModel select(SModelDescriptor it) {
+      }).select(new ISelector<SModel, SModel>() {
+        public SModel select(SModel it) {
           return it.getSModel();
         }
       });

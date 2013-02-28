@@ -16,14 +16,14 @@
 package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.Condition;
 
 import javax.swing.JComponent;
 
 @Deprecated
 //left for compatibility with old refactorings
-public class ChooseModelDescriptorComponent implements IChooseComponent<SModelDescriptor> {
+public class ChooseModelDescriptorComponent implements IChooseComponent<SModel> {
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 
   public ChooseModelDescriptorComponent(IOperationContext operationContext) {
@@ -31,8 +31,8 @@ public class ChooseModelDescriptorComponent implements IChooseComponent<SModelDe
   }
 
   @Override
-  public SModelDescriptor submit() throws InvalidInputValueException {
-    return (SModelDescriptor) myChooseNodeOrModelComponent.submit();
+  public SModel submit() throws InvalidInputValueException {
+    return (SModel) myChooseNodeOrModelComponent.submit();
   }
 
   @Override
@@ -46,12 +46,12 @@ public class ChooseModelDescriptorComponent implements IChooseComponent<SModelDe
   }
 
   @Override
-  public void setInitialValue(SModelDescriptor initialValue) {
+  public void setInitialValue(SModel initialValue) {
     myChooseNodeOrModelComponent.setInitialValue(initialValue);
   }
 
   @Override
-  public void setCondition(Condition<SModelDescriptor> condition) {
+  public void setCondition(Condition<SModel> condition) {
     myChooseNodeOrModelComponent.setCondition((Condition) condition);
   }
 

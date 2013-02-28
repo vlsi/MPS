@@ -9,7 +9,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 
 public class DependencyViewerScope {
@@ -35,7 +34,7 @@ public class DependencyViewerScope {
     if (CollectionSequence.fromCollection(myRoots).contains(root) || CollectionSequence.fromCollection(myRoots).contains(node)) {
       return true;
     }
-    SModelDescriptor descriptor = ((SNode) root).getModel().getModelDescriptor();
+    SModel descriptor = ((SNode) root).getModel().getModelDescriptor();
     if (CollectionSequence.fromCollection(myModels).contains(descriptor)) {
       return true;
     }

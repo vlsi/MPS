@@ -14,9 +14,9 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.make.TextPreviewUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.logging.Logger;
 
@@ -79,11 +79,11 @@ public class TextPreviewModel_Action extends BaseAction {
   }
 
   private SModel modelToGenerate(final Map<String, Object> _params) {
-    SModelDescriptor md = null;
-    if (((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")) != null) {
-      md = ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel"));
-    } else if (((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")) != null && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() > 0) {
-      md = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0);
+    SModel md = null;
+    if (((SModel) MapSequence.fromMap(_params).get("cmodel")) != null) {
+      md = ((SModel) MapSequence.fromMap(_params).get("cmodel"));
+    } else if (((List<SModel>) MapSequence.fromMap(_params).get("models")) != null && ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() > 0) {
+      md = ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0);
     }
     return md;
   }

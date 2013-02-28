@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -38,7 +38,7 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
   }
 
   @Override
-  public ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model) {
+  public ModelElementTargetChooser createTargetChooser(Project project, SModel model) {
     return new ModelOrNodeChooser(project, model);
   }
 

@@ -14,7 +14,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
@@ -67,8 +66,8 @@ public class RebuildRequiredModels_Action extends BaseAction {
       final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          Iterable<SModel> allModels = Sequence.fromIterable(((Iterable<SModelDescriptor>) SModelRepository.getInstance().getModelDescriptors())).select(new ISelector<SModelDescriptor, SModel>() {
-            public SModel select(SModelDescriptor it) {
+          Iterable<SModel> allModels = Sequence.fromIterable(((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors())).select(new ISelector<SModel, SModel>() {
+            public SModel select(SModel it) {
               return (SModel) it;
             }
           });

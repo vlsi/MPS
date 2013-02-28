@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
@@ -62,17 +62,17 @@ public class GlobalSModelEventsManager implements CoreComponent {
       public void run() {
         mySModelRepository.addModelRepositoryListener(new SModelRepositoryAdapter() {
           @Override
-          public void modelAdded(SModelDescriptor modelDescriptor) {
+          public void modelAdded(SModel modelDescriptor) {
             addListeners(modelDescriptor);
           }
 
           @Override
-          public void modelRemoved(SModelDescriptor modelDescriptor) {
+          public void modelRemoved(SModel modelDescriptor) {
             removeListeners(modelDescriptor);
           }
         });
 
-        for (SModelDescriptor sm : mySModelRepository.getModelDescriptors()) {
+        for (SModel sm : mySModelRepository.getModelDescriptors()) {
           addListeners(sm);
         }
       }
@@ -83,16 +83,16 @@ public class GlobalSModelEventsManager implements CoreComponent {
   public void dispose() {
   }
 
-  private void addListeners(SModelDescriptor sm) {
+  private void addListeners(SModel sm) {
     for (SModelListener listener : myRelayListeners) {
-      sm.addModelListener(listener);
+      ((SModelInternal) sm).addModelListener(listener);
     }
     myEventsCollector.add(sm);
   }
 
-  private void removeListeners(SModelDescriptor sm) {
+  private void removeListeners(SModel sm) {
     for (SModelListener listener : myRelayListeners) {
-      sm.removeModelListener(listener);
+      ((SModelInternal) sm).removeModelListener(listener);
     }
     myEventsCollector.remove(sm);
   }

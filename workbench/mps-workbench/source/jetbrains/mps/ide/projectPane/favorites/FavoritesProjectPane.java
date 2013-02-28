@@ -38,7 +38,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -87,7 +87,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   }
 
   @Override
-  public void selectNextModel(SModelDescriptor md) {
+  public void selectNextModel(SModel md) {
     // todo: (after remove)
   }
 

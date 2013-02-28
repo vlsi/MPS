@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.resources.MResource;
@@ -56,9 +55,9 @@ public class MakeActionImpl {
     }
   }
 
-  private Iterable<SModelDescriptor> selectModels(Iterable<? extends IResource> inputRes) {
-    return Sequence.fromIterable(inputRes).translate(new ITranslator2<IResource, SModelDescriptor>() {
-      public Iterable<SModelDescriptor> translate(IResource it) {
+  private Iterable<SModel> selectModels(Iterable<? extends IResource> inputRes) {
+    return Sequence.fromIterable(inputRes).translate(new ITranslator2<IResource, SModel>() {
+      public Iterable<SModel> translate(IResource it) {
         return ((MResource) it).models();
       }
     });

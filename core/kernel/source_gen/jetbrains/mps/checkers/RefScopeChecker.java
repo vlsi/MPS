@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.resolve.ResolverComponent;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
@@ -112,7 +112,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     }
   }
 
-  private static IModule check_bt3k2y_a0b0b(SModelDescriptor checkedDotOperand) {
+  private static IModule check_bt3k2y_a0b0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

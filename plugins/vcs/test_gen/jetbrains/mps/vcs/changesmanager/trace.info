@@ -441,7 +441,7 @@
     <nodeInfo nodeId="7303989191346729279" fileName="ChangesManagerTest.java" startLine="335" startPosition="0" endLine="338" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="3907542737155192789" fileName="ChangesManagerTest.java" startLine="351" startPosition="0" endLine="354" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="5364815602089923610" fileName="ChangesManagerTest.java" startLine="360" startPosition="0" endLine="363" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1204007291430078018" fileName="ChangesManagerTest.java" startLine="406" startPosition="78" endLine="409" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1204007291430078018" fileName="ChangesManagerTest.java" startLine="406" startPosition="68" endLine="409" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5364815602089923622" fileName="ChangesManagerTest.java" startLine="435" startPosition="0" endLine="438" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3907542737155192950" fileName="ChangesManagerTest.java" startLine="439" startPosition="0" endLine="442" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3619977242337334878" fileName="ChangesManagerTest.java" startLine="447" startPosition="0" endLine="450" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
@@ -923,7 +923,7 @@
     <scopeInfo nodeId="3080098661456733772" fileName="ChangesManagerTest.java" startLine="390" startPosition="52" endLine="394" endPosition="16">
       <varInfo nodeId="3080098661456733766" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="1204007291429710146" fileName="ChangesManagerTest.java" startLine="406" startPosition="78" endLine="410" endPosition="28" />
+    <scopeInfo nodeId="1204007291429710146" fileName="ChangesManagerTest.java" startLine="406" startPosition="68" endLine="410" endPosition="28" />
     <scopeInfo nodeId="3080098661456733224" fileName="ChangesManagerTest.java" startLine="483" startPosition="0" endLine="487" endPosition="0">
       <varInfo nodeId="3080098661456733250" varName="currentDifference" />
     </scopeInfo>

@@ -16,9 +16,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelStereotype;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -73,7 +72,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           continue;
         }
 
-        for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+        for (SModel modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
           if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
             continue;
           }
@@ -90,7 +89,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           }
           // remove all imported already models 
           SetSequence.fromSet(dependencies).removeElement(modelDescriptor.getReference());
-          for (SModelDescriptor importedModel : ListSequence.fromList(jetbrains.mps.smodel.SModelOperations.allImportedModels(model, GlobalScope.getInstance()))) {
+          for (SModel importedModel : ListSequence.fromList(jetbrains.mps.smodel.SModelOperations.allImportedModels(model, GlobalScope.getInstance()))) {
             SetSequence.fromSet(dependencies).removeElement(importedModel.getReference());
           }
           // add new dependencies to model 

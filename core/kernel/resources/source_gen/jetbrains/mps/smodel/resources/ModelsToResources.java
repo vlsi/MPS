@@ -98,11 +98,11 @@ __switch__:
                       break;
                     case 7:
                       this.__CP__ = 1;
-                      this.yield(new MResource((IModule) ListSequence.fromList(models.value).last().getModule(), (Iterable<SModelDescriptor>) (Iterable) models.value));
+                      this.yield(new MResource((IModule) ListSequence.fromList(models.value).last().getModule(), (Iterable<SModel>) (Iterable) models.value));
                       return true;
                     case 16:
                       this.__CP__ = 17;
-                      this.yield(new MResource((IModule) ListSequence.fromList(models.value).last().getModule(), (Iterable<SModelDescriptor>) (Iterable) models.value));
+                      this.yield(new MResource((IModule) ListSequence.fromList(models.value).last().getModule(), (Iterable<SModel>) (Iterable) models.value));
                       return true;
                     case 0:
                       this.__CP__ = 2;

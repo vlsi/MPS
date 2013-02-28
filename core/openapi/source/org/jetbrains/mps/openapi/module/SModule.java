@@ -94,11 +94,16 @@ public interface SModule {
    */
   Iterable<SModel> getModels();
 
-  Iterable<ModelRoot> getModelRoots();
+  /**
+   * Retrieves all instantiated facets. (see {@link SModuleFacet})
+   */
+  Iterable<SModuleFacet> getFacets();
 
-  // do not use
+  /**
+   *  Returns facet of the specified class.
+   */
   @Nullable
   <T extends SModuleFacet> T getFacet(Class<T> clazz);
 
-  Iterable<SModuleFacet> getFacets();
+  Iterable<ModelRoot> getModelRoots();
 }

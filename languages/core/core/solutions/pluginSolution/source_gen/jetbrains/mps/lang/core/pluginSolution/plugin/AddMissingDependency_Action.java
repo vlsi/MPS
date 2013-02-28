@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
@@ -87,7 +87,7 @@ public class AddMissingDependency_Action extends BaseAction {
       for (SReference ref : ((SNode) MapSequence.fromMap(_params).get("selectedNode")).getReferences()) {
         SModelReference uid = ref.getTargetSModelReference();
         if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
-          SModelDescriptor sm = SModelRepository.getInstance().getModelDescriptor(uid);
+          SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
           ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getModule().addDependency(sm.getModule().getModuleReference(), false);
         }
       }

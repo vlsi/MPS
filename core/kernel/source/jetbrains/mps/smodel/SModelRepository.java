@@ -35,7 +35,12 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SModelRepository implements CoreComponent {
@@ -45,17 +50,17 @@ public class SModelRepository implements CoreComponent {
     return MPSCore.getInstance().getModelRepository();
   }
 
-  private final Map<org.jetbrains.mps.openapi.model.SModelId, SModelDescriptor> myIdToModelDescriptorMap = new ConcurrentHashMap<org.jetbrains.mps.openapi.model.SModelId, SModelDescriptor>();
-  private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
+  private final Map<org.jetbrains.mps.openapi.model.SModelId, SModel> myIdToModelDescriptorMap = new ConcurrentHashMap<org.jetbrains.mps.openapi.model.SModelId, SModel>();
+  private final Map<SModelFqName, SModel> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModel>();
 
   private final Object myModelsLock = new Object();
-  private final Map<SModelDescriptor, SModule> myModelOwner = new THashMap<SModelDescriptor, SModule>();
-  private final Map<SModule, Set<SModelDescriptor>> myModelsByOwner = new THashMap<SModule, Set<SModelDescriptor>>();
+  private final Map<SModel, SModule> myModelOwner = new THashMap<SModel, SModule>();
+  private final Map<SModule, Set<SModel>> myModelsByOwner = new THashMap<SModule, Set<SModel>>();
 
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
-  private final MultiMap<SModelDescriptor, SModel> myReloadingDescriptorMap = new MultiMap<SModelDescriptor, SModel>();
+  private final MultiMap<SModel, SModel> myReloadingDescriptorMap = new MultiMap<SModel, SModel>();
 
   private SModelListener myModelsListener = new ModelChangeListener();
 
@@ -77,7 +82,7 @@ public class SModelRepository implements CoreComponent {
   /**
    * NOTE: use only through ModelRootBase.register
    */
-  public void registerModelDescriptor(SModelDescriptor modelDescriptor, SModule container) {
+  public void registerModelDescriptor(SModel modelDescriptor, SModule container) {
     synchronized (myModelsLock) {
       SModule prevModule = myModelOwner.get(modelDescriptor);
       if (prevModule != null) {
@@ -87,21 +92,21 @@ public class SModelRepository implements CoreComponent {
         return;
       }
 
-      SModelReference modelReference = modelDescriptor.getSModelReference();
-      SModelDescriptor registeredModel = getModelDescriptor(modelReference);
+      SModelReference modelReference = modelDescriptor.getReference();
+      SModel registeredModel = getModelDescriptor(modelReference);
 
       LOG.assertLog(registeredModel == null || registeredModel == modelDescriptor,
         "Another model \"" + modelReference + "\" is already registered");
 
-      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(container);
+      Set<SModel> ownerModels = myModelsByOwner.get(container);
       if (ownerModels == null) {
-        ownerModels = new HashSet<SModelDescriptor>();
+        ownerModels = new HashSet<SModel>();
         myModelsByOwner.put(container, ownerModels);
       }
 
       ownerModels.add(modelDescriptor);
       myModelOwner.put(modelDescriptor, container);
-      modelDescriptor.setModule(container);
+      ((SModelInternal) modelDescriptor).setModule(container);
 
       assert modelReference.getModelId() != null : "can't add model w/o model id";
       myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
@@ -109,15 +114,13 @@ public class SModelRepository implements CoreComponent {
       if (modelReference.getSModelFqName() != null) {
         myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
       }
-      if (modelDescriptor instanceof BaseSModelDescriptor) {
-        ((BaseSModelDescriptor) modelDescriptor).attach();
-      }
-      modelDescriptor.addModelListener(myModelsListener);
+      modelDescriptor.attach();
+      ((SModelInternal) modelDescriptor).addModelListener(myModelsListener);
     }
     fireModelAdded(modelDescriptor);
   }
 
-  public void unRegisterModelDescriptor(SModelDescriptor md, SModule forModule) {
+  public void unRegisterModelDescriptor(SModel md, SModule forModule) {
     synchronized (myModelsLock) {
       SModule owner = myModelOwner.get(md);
       if (owner != forModule) throw new IllegalStateException();
@@ -125,27 +128,27 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  public void removeModelDescriptor(SModelDescriptor md) {
+  public void removeModelDescriptor(SModel md) {
     synchronized (myModelsLock) {
       fireBeforeModelRemoved(md);
       SModule owner = myModelOwner.remove(md);
       if (owner == null) throw new IllegalStateException();
-      Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
+      Set<SModel> ownerModels = myModelsByOwner.get(owner);
       if (!ownerModels.remove(md)) throw new IllegalStateException();
 
-      if (md.getSModelReference().getModelId() != null) {
-        myIdToModelDescriptorMap.remove(md.getSModelReference().getModelId());
-        md.setModule(null);
+      if (md.getReference().getModelId() != null) {
+        myIdToModelDescriptorMap.remove(md.getReference().getModelId());
+        ((SModelInternal) md).setModule(null);
       }
-      myFqNameToModelDescriptorMap.remove(md.getSModelReference().getSModelFqName());
-      md.removeModelListener(myModelsListener);
+      myFqNameToModelDescriptorMap.remove(md.getReference().getSModelFqName());
+      ((SModelInternal) md).removeModelListener(myModelsListener);
       fireModelRemoved(md);
-      md.dispose();
+      md.detach();
     }
   }
 
   public void unRegisterModelDescriptors(SModule module) {
-    for (SModelDescriptor sm : getModelDescriptors(module)) {
+    for (SModel sm : getModelDescriptors(module)) {
       unRegisterModelDescriptor(sm, module);
     }
   }
@@ -154,7 +157,7 @@ public class SModelRepository implements CoreComponent {
     ModelAccess.assertLegalWrite();
 
     fireModelWillBeDeletedEvent(d);
-    removeModelDescriptor((SModelDescriptor) d);
+    removeModelDescriptor((SModel) d);
 
     DataSource source = d.getSource();
     if (source instanceof FileDataSource) {
@@ -170,21 +173,21 @@ public class SModelRepository implements CoreComponent {
   //----------------------------get-----------------------------
 
 
-  public List<SModelDescriptor> getModelDescriptors() {
+  public List<SModel> getModelDescriptors() {
     synchronized (myModelsLock) {
-      return new ArrayList<SModelDescriptor>(myModelOwner.keySet());
+      return new ArrayList<SModel>(myModelOwner.keySet());
     }
   }
 
-  public SModelDescriptor getModelDescriptor(SModelId id) {
+  public SModel getModelDescriptor(SModelId id) {
     return myIdToModelDescriptorMap.get(id);
   }
 
   @Deprecated
-  public List<SModelDescriptor> getModelDescriptorsByModelName(String modelName) {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor d : getModelDescriptors()) {
-      if (modelName.equals(d.getLongName())) {
+  public List<SModel> getModelDescriptorsByModelName(String modelName) {
+    List<SModel> result = new ArrayList<SModel>();
+    for (SModel d : getModelDescriptors()) {
+      if (modelName.equals(jetbrains.mps.util.SNodeOperations.getModelLongName(d))) {
         result.add(d);
       }
     }
@@ -192,7 +195,7 @@ public class SModelRepository implements CoreComponent {
   }
 
   @Deprecated
-  public SModelDescriptor getModelDescriptor(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
+  public SModel getModelDescriptor(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
     if (modelReference == null) return null;
     org.jetbrains.mps.openapi.model.SModelId id = modelReference.getModelId();
 
@@ -206,17 +209,17 @@ public class SModelRepository implements CoreComponent {
     return myIdToModelDescriptorMap.get(id);
   }
 
-  public List<SModelDescriptor> getModelDescriptors(SModule module) {
+  public List<SModel> getModelDescriptors(SModule module) {
     synchronized (myModelsLock) {
-      Set<SModelDescriptor> result = myModelsByOwner.get(module);
+      Set<SModel> result = myModelsByOwner.get(module);
       if (result == null || result.size() == 0) return Collections.emptyList();
-      return new ArrayList<SModelDescriptor>(result);
+      return new ArrayList<SModel>(result);
     }
   }
 
   public SModule getOwner(SModel modelDescriptor) {
     synchronized (myModelsLock) {
-      return myModelOwner.get((SModelDescriptor) modelDescriptor);
+      return myModelOwner.get((SModel) modelDescriptor);
     }
   }
 
@@ -225,7 +228,7 @@ public class SModelRepository implements CoreComponent {
 
   private List<EditableSModel> getModelsToSave() {
     List<EditableSModel> modelsToSave = new ArrayList<EditableSModel>();
-    for (SModelDescriptor md : myModelOwner.keySet()) {
+    for (SModel md : myModelOwner.keySet()) {
       if (!(md instanceof EditableSModel)) continue;
 
       EditableSModel emd = ((EditableSModel) md);
@@ -333,7 +336,7 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  private void fireBeforeModelRemoved(SModelDescriptor modelDescriptor) {
+  private void fireBeforeModelRemoved(SModel modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
       try {
         l.beforeModelRemoved(modelDescriptor);
@@ -343,7 +346,7 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  private void fireModelRemoved(SModelDescriptor modelDescriptor) {
+  private void fireModelRemoved(SModel modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
       try {
         l.modelRemoved(modelDescriptor);
@@ -353,7 +356,7 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  private void fireModelAdded(SModelDescriptor modelDescriptor) {
+  private void fireModelAdded(SModel modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
       try {
         l.modelAdded(modelDescriptor);
@@ -366,7 +369,7 @@ public class SModelRepository implements CoreComponent {
   private void fireModelRenamed(SModel modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
       try {
-        l.modelRenamed((SModelDescriptor) modelDescriptor);
+        l.modelRenamed((SModel) modelDescriptor);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -376,7 +379,7 @@ public class SModelRepository implements CoreComponent {
   private void fireModelDeletedEvent(SModel modelDescriptor) {
     for (SModelRepositoryListener listener : listeners()) {
       try {
-        listener.modelDeleted((SModelDescriptor) modelDescriptor);
+        listener.modelDeleted((SModel) modelDescriptor);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -386,15 +389,15 @@ public class SModelRepository implements CoreComponent {
   private void fireModelWillBeDeletedEvent(SModel modelDescriptor) {
     for (SModelRepositoryListener listener : listeners()) {
       try {
-        listener.beforeModelDeleted((SModelDescriptor) modelDescriptor);
+        listener.beforeModelDeleted((SModel) modelDescriptor);
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
   }
 
-  private void fireModelsReplaced(Set<SModelDescriptor> modelDescriptors) {
-    Set<SModelDescriptor> unmodifiableModelDescriptorsSet = Collections.unmodifiableSet(modelDescriptors);
+  private void fireModelsReplaced(Set<SModel> modelDescriptors) {
+    Set<SModel> unmodifiableModelDescriptorsSet = Collections.unmodifiableSet(modelDescriptors);
     for (SModelRepositoryListener listener : listeners()) {
       try {
         listener.modelsReplaced(unmodifiableModelDescriptorsSet);
@@ -404,17 +407,17 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
-  //-------todo: changed functionality - is better to be moved to SModelDescriptor fully
+  //-------todo: changed functionality - is better to be moved to SModel fully
 
   @Deprecated
   public void markChanged(SModel model) {
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    SModel modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor instanceof EditableSModel) {
       ((EditableSModel) modelDescriptor).setChanged(true);
     }
   }
 
-  public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
+  public SModel getModelDescriptor(SModelFqName fqName) {
     if (fqName == null) return null;
     return myFqNameToModelDescriptorMap.get(fqName);
   }

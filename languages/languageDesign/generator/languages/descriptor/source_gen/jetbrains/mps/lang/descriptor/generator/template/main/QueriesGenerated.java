@@ -22,9 +22,8 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -150,7 +149,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace"));
       return false;
     }
-    SModelDescriptor ts = LanguageAspect.TYPESYSTEM.get(l);
+    SModel ts = LanguageAspect.TYPESYSTEM.get(l);
     if (ts == null) {
       return false;
     }
@@ -169,7 +168,7 @@ public class QueriesGenerated {
       _context.showErrorMessage(SLinkOperations.getTarget(_context.getNode(), "language", true), "No language in repository: " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "language", true), "namespace"));
       return false;
     }
-    SModelDescriptor ts = LanguageAspect.FIND_USAGES.get(l);
+    SModel ts = LanguageAspect.FIND_USAGES.get(l);
     if (ts == null) {
       return false;
     }
@@ -297,7 +296,7 @@ public class QueriesGenerated {
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         SModelReference ref = SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it));
-        SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
+        SModel descriptor = SModelRepository.getInstance().getModelDescriptor(ref);
         if (descriptor == null) {
           return false;
         }
@@ -321,7 +320,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1250389701475431822(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).translate(new ITranslator2<SNode, String>() {
       public Iterable<String> translate(SNode it) {
-        SModelDescriptor m = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it)));
+        SModel m = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(ModelReference_Behavior.call_getModelReference_6236774123822284799(it)));
         return (m == null ?
           Collections.<String>emptyList() :
           ModelContentUtil.getUsedLanguageNamespaces(m.getSModel(), true)

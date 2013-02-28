@@ -33,7 +33,7 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.progress.CancellationMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -51,9 +51,9 @@ public class GenerationFacade {
   private static final Logger LOG = Logger.getLogger(GenerationFacade.class);
 
   public static List<SNode/*MappingConfiguration*/> getOwnMappings(Generator generator) {
-    List<SModelDescriptor> list = generator.getOwnTemplateModels();
+    List<SModel> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();
-    for (SModelDescriptor templateModel : list) {
+    for (SModel templateModel : list) {
       List<SNode> nodes = ((jetbrains.mps.smodel.SModel) templateModel.getSModel()).getFastNodeFinder().getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true);
       mappings.addAll(nodes);
     }
@@ -89,7 +89,7 @@ public class GenerationFacade {
       Map<String, String> externalHashes = oldDependencies.getExternalHashes();
       for (Entry<String, String> entry : externalHashes.entrySet()) {
         String modelReference = entry.getKey();
-        SModelDescriptor rmd = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
+        SModel rmd = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelReference));
         if (rmd == null) {
           result.add(sm);
           break;
@@ -207,7 +207,7 @@ public class GenerationFacade {
     return result[0];
   }
 
-  public static ModelGenerationPlan getGenerationPlan(@NotNull SModelDescriptor inputModel, @Nullable Collection<String> additionalLanguages) {
+  public static ModelGenerationPlan getGenerationPlan(@NotNull SModel inputModel, @Nullable Collection<String> additionalLanguages) {
     GenerationPlan generationPlan = new GenerationPlan(inputModel.getSModel(), additionalLanguages);
     final List<List<TemplateMappingConfiguration>> result = new ArrayList<List<TemplateMappingConfiguration>>(generationPlan.getStepCount());
     for (int i = 0; i < generationPlan.getStepCount(); i++) {

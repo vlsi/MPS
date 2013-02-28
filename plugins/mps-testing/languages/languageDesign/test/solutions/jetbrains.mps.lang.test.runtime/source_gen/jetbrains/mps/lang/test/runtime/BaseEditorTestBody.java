@@ -25,7 +25,7 @@ import java.util.Collection;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -157,7 +157,7 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-  public static Editor openEditor(Project project, SModelDescriptor model, SNode node) {
+  public static Editor openEditor(Project project, SModel model, SNode node) {
     IOperationContext context = new ModuleContext(model.getModule(), project);
     return NavigationSupport.getInstance().openNode(context, node, true, !(jetbrains.mps.util.SNodeOperations.isRoot(node)));
   }

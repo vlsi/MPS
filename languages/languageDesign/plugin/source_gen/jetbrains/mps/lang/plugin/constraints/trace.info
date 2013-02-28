@@ -472,7 +472,7 @@
     <nodeInfo nodeId="6560218837114085029" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="84" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_lb7xg4_a0a0a0b0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6560218837114085040" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="91" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_lb7xg4_a0a0a0c0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="6560218837114085051" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="98" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_lb7xg4_a0a0a0d0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5543290333466292295" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="60" startPosition="137" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5543290333466292295" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="60" startPosition="127" endLine="68" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5543290333466290156" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="59" startPosition="60" endLine="69" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="52" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
     <nodeInfo nodeId="1217253124985" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="50" startPosition="56" endLine="78" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -506,7 +506,7 @@
     <scopeInfo nodeId="6560218837114085029" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="84" startPosition="0" endLine="90" endPosition="0" />
     <scopeInfo nodeId="6560218837114085040" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="91" startPosition="0" endLine="97" endPosition="0" />
     <scopeInfo nodeId="6560218837114085051" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="98" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="5543290333466290157" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="60" startPosition="137" endLine="68" endPosition="15" />
+    <scopeInfo nodeId="5543290333466290157" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="60" startPosition="127" endLine="68" endPosition="15" />
     <scopeInfo nodeId="5543290333466290156" fileName="ActionDataParameterDeclaration_Constraints.java" startLine="59" startPosition="60" endLine="69" endPosition="13">
       <varInfo nodeId="5543290333466290159" varName="importedModel" />
     </scopeInfo>
@@ -1057,11 +1057,11 @@
     <nodeInfo nodeId="8713489730824201195" fileName="EditableModel_Constraints.java" startLine="40" startPosition="148" endLine="41" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="44" startPosition="62" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="45" startPosition="30" endLine="46" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="46" startPosition="165" endLine="47" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="47" startPosition="274" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="46" startPosition="165" endLine="47" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="47" startPosition="289" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="45" startPosition="30" endLine="47" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="45" startPosition="30" endLine="47" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="45" startPosition="30" endLine="47" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="45" startPosition="30" endLine="47" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditableModel_Constraints#()V" />
     <nodeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="32" startPosition="0" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
@@ -1072,7 +1072,7 @@
     <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="25" startPosition="43" endLine="26" endPosition="16" />
     <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="33" startPosition="51" endLine="34" endPosition="67" />
     <scopeInfo nodeId="8713489730824201067" fileName="EditableModel_Constraints.java" startLine="40" startPosition="148" endLine="41" endPosition="269" />
-    <scopeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="45" startPosition="30" endLine="47" endPosition="274" />
+    <scopeInfo nodeId="8713489730824201199" fileName="EditableModel_Constraints.java" startLine="45" startPosition="30" endLine="47" endPosition="289" />
     <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <scopeInfo nodeId="8713489730824201065" fileName="EditableModel_Constraints.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="8713489730824201065" varName="childConcept" />

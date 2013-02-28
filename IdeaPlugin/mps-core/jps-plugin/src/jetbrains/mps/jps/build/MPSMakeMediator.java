@@ -48,7 +48,7 @@ import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.resources.IMResource;
@@ -214,7 +214,7 @@ public class MPSMakeMediator {
 
         myRefreshComponent.refresh(writtenFile);
 
-        SModelDescriptor source = makeFacetConfiguration.getSource(writtenFile);
+        SModel source = makeFacetConfiguration.getSource(writtenFile);
         if (source != null && source.getSource() instanceof FileDataSource) {
             myOutputConsumer.registerOutputFile(
               myToMake.get(source),
@@ -227,7 +227,7 @@ public class MPSMakeMediator {
       }
     }
     for (String keptFile : makeFacetConfiguration.getKeptFiles()) {
-      SModelDescriptor source = makeFacetConfiguration.getSource(keptFile);
+      SModel source = makeFacetConfiguration.getSource(keptFile);
       if (source != null && source.getSource() instanceof FileDataSource) {
         try {
           myOutputConsumer.registerOutputFile(

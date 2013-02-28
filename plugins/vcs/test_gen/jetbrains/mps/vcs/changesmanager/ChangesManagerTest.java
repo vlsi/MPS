@@ -60,7 +60,6 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import java.util.Set;
-import jetbrains.mps.smodel.SModelDescriptor;
 import java.io.IOException;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.rollback.RollbackProgressListener;
@@ -85,6 +84,7 @@ import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
@@ -403,7 +403,7 @@ public class ChangesManagerTest {
       public void run() {
         SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
           @Override
-          public void modelsReplaced(Set<SModelDescriptor> modelDescriptors) {
+          public void modelsReplaced(Set<SModel> modelDescriptors) {
             if (modelDescriptors.contains(modelDescriptor)) {
               SModelRepository.getInstance().removeModelRepositoryListener(this);
             }

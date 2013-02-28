@@ -17,7 +17,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -43,7 +43,7 @@ public class GenerationOptions {
 
   private final IncrementalGenerationStrategy myIncrementalStrategy;
   private final GenerationParametersProvider myParametersProvider;
-  private final Map<SModelDescriptor, ModelGenerationPlan> myCustomPlans;
+  private final Map<SModel, ModelGenerationPlan> myCustomPlans;
   private boolean myKeepOutputModel;
 
   private final boolean myGenerateInParallel;
@@ -65,7 +65,7 @@ public class GenerationOptions {
                             boolean showWarnings, boolean keepModelsWithWarnings, int numberOfModelsToKeep,
                             @NotNull IGenerationTracer generationTracer, IncrementalGenerationStrategy incrementalStrategy,
                             GenerationParametersProvider parametersProvider, boolean keepOutputModel, boolean showBadChildWarning,
-                            Map<SModelDescriptor, ModelGenerationPlan> customPlans,
+                            Map<SModel, ModelGenerationPlan> customPlans,
                             boolean debugIncrementalDependencies) {
     mySaveTransientModels = saveTransientModels;
     myGenerateInParallel = generateInParallel;
@@ -149,7 +149,7 @@ public class GenerationOptions {
     return myParametersProvider;
   }
 
-  public ModelGenerationPlan getCustomPlan(@NotNull SModelDescriptor model) {
+  public ModelGenerationPlan getCustomPlan(@NotNull SModel model) {
     return myCustomPlans.get(model);
   }
 
@@ -205,7 +205,7 @@ public class GenerationOptions {
         return false;
       }
     };
-    private Map<SModelDescriptor, ModelGenerationPlan> myCustomPlans = new HashMap<SModelDescriptor, ModelGenerationPlan>();
+    private Map<SModel, ModelGenerationPlan> myCustomPlans = new HashMap<SModel, ModelGenerationPlan>();
     private boolean myGenerateInParallel = false;
     private int myNumberOfThreads = 4;
     private int myTracingMode = TRACE_OFF;
@@ -299,7 +299,7 @@ public class GenerationOptions {
       return this;
     }
 
-    public OptionsBuilder customPlan(@NotNull SModelDescriptor model, @NotNull ModelGenerationPlan modelGenerationPlan) {
+    public OptionsBuilder customPlan(@NotNull SModel model, @NotNull ModelGenerationPlan modelGenerationPlan) {
       myCustomPlans.put(model, modelGenerationPlan);
       return this;
     }

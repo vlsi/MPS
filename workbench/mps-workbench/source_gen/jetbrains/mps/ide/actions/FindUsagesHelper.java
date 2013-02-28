@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
@@ -41,7 +41,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
     return getTool() != null && getOptionsComponent() != null;
   }
 
-  /*package*/ void invoke(final EditorCell cell, final SNode node, Frame frame, final IOperationContext context, final SModelDescriptor model) {
+  /*package*/ void invoke(final EditorCell cell, final SNode node, Frame frame, final IOperationContext context, final SModel model) {
     // get node 
     final Wrappers._T<SNode> operationNode = new Wrappers._T<SNode>();
     final Wrappers._T<String> concept = new Wrappers._T<String>();

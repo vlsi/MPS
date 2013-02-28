@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -57,7 +56,7 @@ public class AnnotationHelper {
     }
     final SNode root = editorComponent.getEditedNode();
     SModel model = check_19hp0u_a0d0c(root);
-    SModelDescriptor modelDescriptor = check_19hp0u_a0e0c(model);
+    SModel modelDescriptor = check_19hp0u_a0e0c(model);
     if (!((modelDescriptor instanceof DefaultSModelDescriptor))) {
       return false;
     }
@@ -139,7 +138,7 @@ public class AnnotationHelper {
     return null;
   }
 
-  private static SModelDescriptor check_19hp0u_a0e0c(SModel checkedDotOperand) {
+  private static SModel check_19hp0u_a0e0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

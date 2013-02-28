@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +27,7 @@ public class RevertMemoryChanges_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
+    return ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -58,7 +58,7 @@ public class RevertMemoryChanges_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((EditableSModel) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).reloadFromDisk();
+      ((EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).reloadFromDisk();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RevertMemoryChanges", t);
     }

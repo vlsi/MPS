@@ -11,7 +11,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.SNodeOperations;
@@ -34,7 +33,7 @@ public class AspectMethodsFinder implements IFinder {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (final SModelDescriptor descriptor : SModelRepository.getInstance().getModelDescriptorsByModelName(data.myModelName)) {
+        for (final SModel descriptor : SModelRepository.getInstance().getModelDescriptorsByModelName(data.myModelName)) {
           if (!(SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(descriptor)))) {
             applicableModelDescriptors.add(descriptor.getSModel());
           }

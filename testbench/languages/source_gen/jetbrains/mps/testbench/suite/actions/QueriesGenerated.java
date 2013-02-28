@@ -24,7 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.baseLanguage.search.AllSubclassifiersScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
@@ -93,8 +92,8 @@ public class QueriesGenerated {
           public Object compute() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
-              public Iterable<SNode> translate(SModelDescriptor smd) {
+            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
+              public Iterable<SNode> translate(SModel smd) {
                 return new AllSubclassifiersScope(SLinkOperations.getTarget(_quotation_createNode_lmauyr_a0a0a0a0a0a2a0a1a(), "classifier", false), smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
                   mscope :
                   operationContext.getScope()
@@ -146,8 +145,8 @@ public class QueriesGenerated {
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
             final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_wt5x6r_a0a2a0a1a(), "annotation", false);
 
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
-              public Iterable<SNode> translate(SModelDescriptor smd) {
+            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
+              public Iterable<SNode> translate(SModel smd) {
                 return new ReachableClassifiersScope(smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
                   mscope :
                   operationContext.getScope()
@@ -204,8 +203,8 @@ public class QueriesGenerated {
         Computable computable = new Computable() {
           public Object compute() {
             SNode msuite = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false);
-            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
-              public Iterable<SNode> translate(SModelDescriptor smd) {
+            return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModel, SNode>() {
+              public Iterable<SNode> translate(SModel smd) {
                 return SModelOperations.getNodes(((SModel) smd.getSModel()), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
               }
             }).toListSequence();

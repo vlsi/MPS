@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -44,9 +44,9 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    List<SModelDescriptor> m = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"));
-    return ListSequence.fromList(m).any(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
+    List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
+    return ListSequence.fromList(m).any(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
         return it instanceof DefaultSModelDescriptor && !(((DefaultSModelDescriptor) it).isReadOnly());
       }
     });
@@ -85,13 +85,13 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<SModelDescriptor> m = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"));
-      final Iterable<IFile> seq = ListSequence.fromList(m).where(new IWhereFilter<SModelDescriptor>() {
-        public boolean accept(SModelDescriptor it) {
+      List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
+      final Iterable<IFile> seq = ListSequence.fromList(m).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel it) {
           return it instanceof DefaultSModelDescriptor && !(((DefaultSModelDescriptor) it).isReadOnly());
         }
-      }).select(new ISelector<SModelDescriptor, IFile>() {
-        public IFile select(SModelDescriptor it) {
+      }).select(new ISelector<SModel, IFile>() {
+        public IFile select(SModel it) {
           return ((DefaultSModelDescriptor) it).getSource().getFile();
         }
       });

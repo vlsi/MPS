@@ -42,7 +42,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.refactoring.tests.IRefactoringTester;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 import junit.framework.TestCase;
 import junit.framework.TestFailure;
@@ -252,7 +252,7 @@ public class TestMain {
 
 */
 
-  public static SModelDescriptor getModel(Project project, String modelName) {
+  public static SModel getModel(Project project, String modelName) {
     return project.getScope().getModelDescriptor(SModelReference.fromString(modelName));
   }
 
@@ -298,7 +298,7 @@ public class TestMain {
     return testOnProjectCopy(sourceProjectDir, destinationProjectDir, REFACTORING_PROJECT,
       new ProjectRunnable() {
         public boolean execute(final Project project) {
-          final SModelDescriptor[] sandbox = new SModelDescriptor[]{null, null};
+          final SModel[] sandbox = new SModel[]{null, null};
           final Language[] testLanguage = new Language[]{null, null};
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {

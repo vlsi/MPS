@@ -18,7 +18,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.make.java.ModelDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.util.Status;
 import org.jetbrains.annotations.Nullable;
@@ -28,17 +28,17 @@ import org.jetbrains.annotations.Nullable;
  * Oct 24, 2005
  */
 public class GenerationStatus extends Status {
-  private SModelDescriptor myOutputModel;
-  private SModelDescriptor myInputModel;
+  private SModel myOutputModel;
+  private SModel myInputModel;
   private boolean myCanceled;
   private boolean myWarnings;
   private DebugInfo myDebugInfo;
   private GenerationDependencies myDependencies;
   private ModelDependencies myBLDependencies;
 
-  private SModelDescriptor myOriginalInputModel;
+  private SModel myOriginalInputModel;
 
-  public GenerationStatus(SModelDescriptor inputModel, SModelDescriptor outputModel, GenerationDependencies dependencies, boolean errors, boolean warnings, boolean canceled) {
+  public GenerationStatus(SModel inputModel, SModel outputModel, GenerationDependencies dependencies, boolean errors, boolean warnings, boolean canceled) {
     super(errors ? Code.ERROR : Code.OK, null);
     myCanceled = canceled;
     myOutputModel = outputModel;
@@ -69,11 +69,11 @@ public class GenerationStatus extends Status {
     return myInputModel != null ? myInputModel.getSModel() : null;
   }
 
-  public SModelDescriptor getOutputModelDescriptor () {
+  public SModel getOutputModelDescriptor () {
     return myOutputModel;
   }
 
-  public SModelDescriptor getInputModelDescriptor () {
+  public SModel getInputModelDescriptor () {
     return myInputModel;
   }
 
@@ -97,16 +97,16 @@ public class GenerationStatus extends Status {
     myBLDependencies = dependencies;
   }
 
-  public SModelDescriptor getOriginalInputModel() {
+  public SModel getOriginalInputModel() {
     return myOriginalInputModel;
   }
 
   public void setOriginalInputModel(org.jetbrains.mps.openapi.model.SModel originalInputModel) {
-    myOriginalInputModel = (SModelDescriptor) originalInputModel;
+    myOriginalInputModel = (SModel) originalInputModel;
   }
 
   public static class ERROR extends GenerationStatus {
-    public ERROR(SModelDescriptor inputModel) {
+    public ERROR(SModel inputModel) {
       super(inputModel, null, null, true, false, false);
     }
   }

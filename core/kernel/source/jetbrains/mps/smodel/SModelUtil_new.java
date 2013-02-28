@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
@@ -82,9 +82,9 @@ public class SModelUtil_new implements CoreComponent {
 
   private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
     @Override
-    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
-      for (SModelDescriptor descriptor : replacedModels) {
-        if (!descriptor.isRegistered())  {
+    public void modelsReplaced(Set<SModel> replacedModels) {
+      for (SModel descriptor : replacedModels) {
+        if (!jetbrains.mps.util.SNodeOperations.isRegistered(descriptor))  {
           continue;
         }
         if (Language.getModelAspect(descriptor) == LanguageAspect.STRUCTURE) {

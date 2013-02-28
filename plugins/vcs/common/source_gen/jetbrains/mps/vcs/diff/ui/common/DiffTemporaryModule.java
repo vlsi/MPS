@@ -9,7 +9,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.ModuleId;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.Arrays;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.IScope;
@@ -50,7 +49,7 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   @Override
-  public List<SModelDescriptor> getOwnModelDescriptors() {
+  public List<SModel> getOwnModelDescriptors() {
     return Arrays.asList(myModel.getModelDescriptor());
   }
 
@@ -63,7 +62,7 @@ public class DiffTemporaryModule extends AbstractModule {
     return new DiffTemporaryModule.DiffModuleContext();
   }
 
-  private SModelDescriptor findModel(SModelReference reference) {
+  private SModel findModel(SModelReference reference) {
     if (reference.equals(myModel.getReference())) {
       return myModel.getModelDescriptor();
     }
@@ -74,7 +73,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
     ListSequence.fromList(scopes).addElement(GlobalScope.getInstance());
     for (IScope scope : ListSequence.fromList(scopes)) {
-      SModelDescriptor md = scope.getModelDescriptor(reference);
+      SModel md = scope.getModelDescriptor(reference);
       if (md != null) {
         return md;
       }
@@ -82,7 +81,7 @@ public class DiffTemporaryModule extends AbstractModule {
     // if we can't find model using full reference, try to find by fq-name 
     // this is needed for viewing diff on models saved before MPS 2.0 M5 
     for (IScope scope : ListSequence.fromList(scopes)) {
-      SModelDescriptor md = ScopeOperations.getModelDescriptor(scope, reference.getSModelFqName());
+      SModel md = ScopeOperations.getModelDescriptor(scope, reference.getSModelFqName());
       if (md != null) {
         return md;
       }
@@ -100,7 +99,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
     IModule module = null;
     if (mergeResultModel) {
-      SModelDescriptor mdInRepo = SModelRepository.getInstance().getModelDescriptor(model.getReference());
+      SModel mdInRepo = SModelRepository.getInstance().getModelDescriptor(model.getReference());
       if (mdInRepo != null) {
         module = mdInRepo.getModule();
       }
@@ -137,7 +136,7 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   public static IOperationContext getOperationContext(com.intellij.openapi.project.Project project, SModel model) {
-    SModelDescriptor md = model.getModelDescriptor();
+    SModel md = model.getModelDescriptor();
     assert md != null;
     IModule module = md.getModule();
     if (module instanceof DiffTemporaryModule) {
@@ -196,7 +195,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    public SModelDescriptor resolveModel(SModelReference reference) {
+    public SModel resolveModel(SModelReference reference) {
       if (myModule instanceof DiffTemporaryModule.DiffModuleScope) {
         return ((DiffTemporaryModule) myModule).findModel(reference);
       } else {

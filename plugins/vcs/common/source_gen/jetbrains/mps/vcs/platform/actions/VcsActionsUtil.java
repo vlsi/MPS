@@ -36,7 +36,6 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelFileTracker;
@@ -175,23 +174,23 @@ __switch__:
     }).toListSequence();
   }
 
-  public static List<SModelDescriptor> getModels(@Nullable VirtualFile[] virtualFiles) {
+  public static List<SModel> getModels(@Nullable VirtualFile[] virtualFiles) {
     if (virtualFiles != null) {
       return Sequence.fromIterable(Sequence.fromArray(virtualFiles)).where(new IWhereFilter<VirtualFile>() {
         public boolean accept(VirtualFile vf) {
           return vf.isInLocalFileSystem() && vf.exists() && !(vf.isDirectory());
         }
-      }).select(new ISelector<VirtualFile, SModelDescriptor>() {
-        public SModelDescriptor select(VirtualFile vf) {
-          return ((SModelDescriptor) SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vf)));
+      }).select(new ISelector<VirtualFile, SModel>() {
+        public SModel select(VirtualFile vf) {
+          return ((SModel) SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vf)));
         }
-      }).where(new IWhereFilter<SModelDescriptor>() {
-        public boolean accept(SModelDescriptor m) {
+      }).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel m) {
           return m != null;
         }
       }).toListSequence();
     } else {
-      return ListSequence.fromList(new ArrayList<SModelDescriptor>());
+      return ListSequence.fromList(new ArrayList<SModel>());
     }
   }
 
