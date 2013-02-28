@@ -1312,7 +1312,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
     @Override
     public void setModelRoot(ModelRoot mr) {
-      LOG.warning("Setting model root of a detached model is quite ", new Throwable());
+      throw new UnsupportedOperationException("remove exception if excess");
     }
 
     @Override
@@ -1384,17 +1384,17 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
     @Override
     public void unload() {
-
+      throw new UnsupportedOperationException("remove exception if excess");
     }
 
     @Override
     public void attach() {
-
+      throw new UnsupportedOperationException("remove exception if excess");
     }
 
     @Override
     public void detach() {
-
+      throw new UnsupportedOperationException("remove exception if excess");
     }
   }
 }
