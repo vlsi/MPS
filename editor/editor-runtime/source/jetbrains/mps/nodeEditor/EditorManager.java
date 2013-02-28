@@ -27,11 +27,11 @@ import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
@@ -156,7 +156,7 @@ public class EditorManager {
   private static void fillContextToCellMapForChildren(EditorCell cell, Map<ReferencedNodeContext, EditorCell> map) {
     if (cell instanceof EditorCell_Collection) {
       for (jetbrains.mps.openapi.editor.cells.EditorCell childCell : ((EditorCell_Collection) cell)) {
-        fillContextToCellMap((EditorCell) childCell, map);
+        fillContextToCellMap(childCell, map);
       }
     }
   }
@@ -175,7 +175,7 @@ public class EditorManager {
 
   public EditorCell createRoleAttributeCell(jetbrains.mps.openapi.editor.EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
     // TODO: Make processing of style attributes more generic.
-    EditorCell attributeCell = (EditorCell) context.createRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
+    EditorCell attributeCell = context.createRoleAttributeCell(attributeKind, cellWithRole, roleAttribute);
     // see a comment for isAttributedCell() method
     if (attributeCell == cellWithRole) {
       return cellWithRole;
@@ -222,8 +222,8 @@ public class EditorManager {
       stack = new Stack<EditorCell>();
       myAttributedClassesToAttributedCellStacksMap.put(attributeKind, stack);
     }
-    stack.push((EditorCell) cellWithRole);
-    myLastAttributedCell = (EditorCell) cellWithRole;
+    stack.push(cellWithRole);
+    myLastAttributedCell = cellWithRole;
     EditorCell result = createEditorCell(context, modifications, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
     myLastAttributedCell = null;
     EditorCell cellWithRolePopped = stack.pop();
@@ -467,7 +467,7 @@ public class EditorManager {
     // decide position of the hint cell
     EditorCell resultCell;
     Object anchorId = node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
-    EditorCell anchorCell = anchorId == null ? null : nodeCell.findChild(CellFinders.byId(node, anchorId.toString()), true);
+    EditorCell anchorCell = anchorId == null ? null : CellFinders.byId(node, anchorId.toString()).find(nodeCell, true);
     if (anchorCell != null && anchorCell != nodeCell) {
       jetbrains.mps.openapi.editor.cells.EditorCell_Collection cellCollection = anchorCell.getParent();
       int index;
@@ -508,7 +508,7 @@ public class EditorManager {
     if (newlySelectedCell == null) return;
     editorComponent.changeSelection(newlySelectedCell);
     if (newlySelectedCell instanceof EditorCell_Label) {
-      ((EditorCell_Label) newlySelectedCell).end();
+      newlySelectedCell.end();
     }
   }
 
@@ -574,9 +574,7 @@ public class EditorManager {
   }
 
   private INodeEditor getEditor(jetbrains.mps.openapi.editor.EditorContext context, SNode node) {
-    INodeEditor editor = null;
-
-    editor = jetbrains.mps.editor.runtime.impl.EditorsFinderManager.getInstance().loadEditor(context, node);
+    INodeEditor editor = jetbrains.mps.editor.runtime.impl.EditorsFinderManager.getInstance().loadEditor(context, node);
     if (editor == null) {
       editor = new DefaultNodeEditor();
     }
@@ -606,21 +604,21 @@ public class EditorManager {
 
     public STHintCellInfo(EditorCell_Constant rightTransformHintCell, EditorCell anchorCell) {
       super(rightTransformHintCell);
-      myAnchorCellInfo = anchorCell.getCellInfo();
+      myAnchorCellInfo = ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getCellInfo();
     }
 
-    public EditorCell findCell(EditorComponent editorComponent) {
+    public jetbrains.mps.nodeEditor.cells.EditorCell findCell(EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) return super.findCell(editorComponent);
-      return anchorCell.getSTHintCell();
+      return ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getSTHintCell();
     }
 
-    public EditorCell findClosestCell(EditorComponent editorComponent) {
+    public jetbrains.mps.nodeEditor.cells.EditorCell findClosestCell(EditorComponent editorComponent) {
       EditorCell anchorCell = myAnchorCellInfo.findCell(editorComponent);
       if (anchorCell == null) return super.findCell(editorComponent);
-      EditorCell_Label rtHint = anchorCell.getSTHintCell();
+      EditorCell_Label rtHint = ((jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell).getSTHintCell();
       if (rtHint == null) {
-        return anchorCell;
+        return (jetbrains.mps.nodeEditor.cells.EditorCell) anchorCell;
       }
       return rtHint;
     }

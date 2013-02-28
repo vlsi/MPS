@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-
-public interface CellFinder<C extends EditorCell> {
-  C find(EditorCell cell, boolean includeCurrent);
+public interface CellFinder<C extends jetbrains.mps.openapi.editor.cells.EditorCell> {
+  C find(jetbrains.mps.openapi.editor.cells.EditorCell cell, boolean includeCurrent);
 }

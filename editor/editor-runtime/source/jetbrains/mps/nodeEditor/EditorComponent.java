@@ -230,14 +230,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
+  private WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNode>>();
 
-  private WeakHashMap<SNode, WeakReference<EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
+  private WeakHashMap<SNode, WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>>();
 
-  private WeakHashMap<EditorCell, Set<SNodeReference>> myCellsToRefTargetsToDependOnMap = new WeakHashMap<EditorCell, Set<SNodeReference>>();
+  private WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNodeReference>> myCellsToRefTargetsToDependOnMap = new WeakHashMap<jetbrains.mps.openapi.editor.cells.EditorCell, Set<SNodeReference>>();
   private HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell_Property>>();
-  private HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>>();
-  private HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodeReference, String>, WeakSet<EditorCell>>();
+  private HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>();
+  private HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodeReference, String>, WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>>();
 
   private Set<EditorCell> myFoldedCells = new HashSet<EditorCell>();
   private Set<EditorCell> myBracesEnabledCells = new HashSet<EditorCell>();
@@ -1680,9 +1680,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Nullable
   public EditorCell findNodeCell(final SNode node) {
-    WeakReference<EditorCell> weakReference = myNodesToBigCellsMap.get(node);
+    WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell> weakReference = myNodesToBigCellsMap.get(node);
     if (weakReference == null) return null;
-    EditorCell result = weakReference.get();
+    EditorCell result = (EditorCell) weakReference.get();
     if (result != null && (result.getRootParent() != getRootCell() || result.isUnderFolded())) {
       return null;
     }
@@ -1826,7 +1826,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myCellSynchronizationListeners.remove(listener);
   }
 
-  private void fireCellSynchronized(EditorCell cell) {
+  private void fireCellSynchronized(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     for (CellSynchronizationWithModelListener listener : myCellSynchronizationListeners) {
       listener.cellSynchronizedWithModel(cell);
     }
@@ -2574,42 +2574,42 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     dependentCells.add(cell);
   }
 
-  public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(EditorCell cell, Pair<SNodeReference, String> pair) {
-    WeakSet<EditorCell> dependentCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
+  public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(jetbrains.mps.openapi.editor.cells.EditorCell cell, Pair<SNodeReference, String> pair) {
+    WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell> dependentCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
     if (dependentCells == null) {
-      dependentCells = new WeakSet<EditorCell>();
+      dependentCells = new WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>();
       myNodePropertiesAccessedDirtilyToDependentCellsMap.put(pair, dependentCells);
     }
   }
 
-  public void addCellDependentOnNodePropertyWhichExistenceWasChecked(EditorCell cell, Pair<SNodeReference, String> pair) {
-    WeakSet<EditorCell> dependentCells = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
+  public void addCellDependentOnNodePropertyWhichExistenceWasChecked(jetbrains.mps.openapi.editor.cells.EditorCell cell, Pair<SNodeReference, String> pair) {
+    WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell> dependentCells = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
     if (dependentCells == null) {
-      dependentCells = new WeakSet<EditorCell>();
+      dependentCells = new WeakSet<jetbrains.mps.openapi.editor.cells.EditorCell>();
       myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.put(pair, dependentCells);
     }
     dependentCells.add(cell);
   }
 
-  public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodeReference> refTargets) {
+  public void putCellAndNodesToDependOn(jetbrains.mps.openapi.editor.cells.EditorCell cell, Set<SNode> nodes, Set<SNodeReference> refTargets) {
     assert !nodes.contains(null);
     myCellsToNodesToDependOnMap.put(cell, nodes);
     myCellsToRefTargetsToDependOnMap.put(cell, refTargets);
   }
 
-  public Set<SNode> getNodesCellDependOn(EditorCell cell) {
+  public Set<SNode> getNodesCellDependOn(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     Set<SNode> nodes = myCellsToNodesToDependOnMap.get(cell);
     if (nodes == null) return null;
     return Collections.unmodifiableSet(nodes);
   }
 
-  public Set<SNodeReference> getCopyOfRefTargetsCellDependsOn(EditorCell cell) {
+  public Set<SNodeReference> getCopyOfRefTargetsCellDependsOn(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     Set<SNodeReference> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
     if (nodeProxies == null) return null;
     return Collections.unmodifiableSet(nodeProxies);
   }
 
-  public boolean doesCellDependOnNode(EditorCell cell, SNode node, @NotNull SNodeReference nodePointer) {
+  public boolean doesCellDependOnNode(jetbrains.mps.openapi.editor.cells.EditorCell cell, SNode node, @NotNull SNodeReference nodePointer) {
     if (cell == null && node != null) return true;
 
     Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
@@ -2619,7 +2619,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return nodeProxies != null && nodeProxies.contains(nodePointer);
   }
 
-  public void clearNodesCellDependsOn(EditorCell cell, EditorManager editorManager) {
+  public void clearNodesCellDependsOn(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorManager editorManager) {
     if (editorManager == EditorManager.getInstanceFromContext(myOperationContext)) {
       myCellsToNodesToDependOnMap.remove(cell);
       myCellsToRefTargetsToDependOnMap.remove(cell);
@@ -2629,9 +2629,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  void registerAsBigCell(EditorCell cell, EditorManager manager) {
+  void registerAsBigCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorManager manager) {
     if (manager == EditorManager.getInstanceFromContext(myOperationContext)) {
-      myNodesToBigCellsMap.put(cell.getSNode(), new WeakReference<EditorCell>(cell));
+      myNodesToBigCellsMap.put(cell.getSNode(), new WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>(cell));
     }
   }
 
@@ -2803,14 +2803,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           SNodeReference nodeProxy = new jetbrains.mps.smodel.SNodePointer(((SModelPropertyEvent) events.get(0)).getNode());
           Pair<SNodeReference, String> pair = new Pair<SNodeReference, String>(nodeProxy, propertyName);
           Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
-          Set<EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
-          Set<EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
+          Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
+          Set<jetbrains.mps.openapi.editor.cells.EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
           if (editorCellsDependentOnExistence != null) {
             if (EventUtil.isPropertyAddedOrRemoved(events.get(0))) {
               rebuildEditorContent(events);
             } else {
-              for (EditorCell cell : editorCellsDependentOnExistence) {
-                cell.synchronizeViewWithModel();
+              for (jetbrains.mps.openapi.editor.cells.EditorCell cell : editorCellsDependentOnExistence) {
+                APICellAdapter.synchronizeViewWithModel(cell);
                 fireCellSynchronized(cell);
               }
               if (editorCell_properties != null) {
