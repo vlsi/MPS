@@ -50,7 +50,7 @@ public class DiffTemporaryModule extends AbstractModule {
 
   @Override
   public List<SModel> getOwnModelDescriptors() {
-    return Arrays.asList(myModel.getModelDescriptor());
+    return Arrays.asList(((SModel) myModel.getModelDescriptor()));
   }
 
   @Override

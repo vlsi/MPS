@@ -321,8 +321,8 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
   //todo will migrate after SModel is migrated
   @Override
-  public SModelDescriptor getModelDescriptor() {
-    return myModelDescriptor;
+  public SModelInternal getModelDescriptor() {
+    return myModelDescriptor != null ? myModelDescriptor : new FakeModelDescriptor(this);
   }
 
   public synchronized void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
@@ -1247,5 +1247,154 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(idString);
     assert nodeId != null : "wrong node id string";
     return getNodeById(nodeId);
+  }
+
+  /**
+   * This is for migration purposes, until we get rid of SModel class
+   */
+  private static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel,SModelInternal {
+    private SModel myModel;
+
+    public FakeModelDescriptor(@NotNull SModel md) {
+      myModel = md;
+    }
+
+    @Override
+    public org.jetbrains.mps.openapi.model.SModel resolveModel(SModelReference reference) {
+      return reference.resolve(MPSModuleRepository.getInstance());
+    }
+
+    @Override
+    public org.jetbrains.mps.openapi.model.SModel getSModel() {
+      return myModel;
+    }
+
+    @Override
+    public void setModule(SModule container) {
+      throw new UnsupportedOperationException("remove exception if excess");
+    }
+
+    @Override
+    public void addModelListener(@NotNull SModelListener listener) {
+      throw new UnsupportedOperationException("remove exception if excess");
+    }
+
+    @Override
+    public void removeModelListener(@NotNull SModelListener listener) {
+      throw new UnsupportedOperationException("remove exception if excess");
+    }
+
+    @Override
+    public SModel getModelDescriptor() {
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public SModelId getModelId() {
+      return myModel.getModelId();
+    }
+
+    @Override
+    public String getModelName() {
+      return getReference().getModelName();
+    }
+
+    @NotNull
+    @Override
+    public jetbrains.mps.smodel.SModelReference getReference() {
+      return myModel.getReference();
+    }
+
+    @Override
+    public ModelRoot getModelRoot() {
+      return null;
+    }
+
+    @Override
+    public void setModelRoot(ModelRoot mr) {
+      LOG.warning("Setting model root of a detached model is quite ", new Throwable());
+    }
+
+    @Override
+    public IModule getModule() {
+      return null;
+    }
+
+    @Override
+    public boolean isReadOnly() {
+      return false;
+    }
+
+    @Override
+    public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
+      return myModel.getRootNodes();
+    }
+
+    @Override
+    public boolean isRoot(org.jetbrains.mps.openapi.model.SNode node) {
+      return myModel.isRoot(node);
+    }
+
+    @Override
+    public void addRootNode(org.jetbrains.mps.openapi.model.SNode node) {
+      myModel.addRootNode(node);
+    }
+
+    @Override
+    public void removeRootNode(org.jetbrains.mps.openapi.model.SNode node) {
+      myModel.removeRootNode(node);
+    }
+
+    @Override
+    public org.jetbrains.mps.openapi.model.SNode getNode(org.jetbrains.mps.openapi.model.SNodeId id) {
+      return myModel.getNode(id);
+    }
+
+    @Override
+    public SModelScope getModelScope() {
+      return myModel.getModelScope();
+    }
+
+    @NotNull
+    @Override
+    public DataSource getSource() {
+      return new NullDataSource();
+    }
+
+    @Override
+    public boolean isLoaded() {
+      return true;
+    }
+
+    @Override
+    public void load() {
+
+    }
+
+    @NotNull
+    @Override
+    public Iterable<Problem> getProblems() {
+      return Collections.emptySet();
+    }
+
+    @Override
+    public void save() throws IOException {
+
+    }
+
+    @Override
+    public void unload() {
+
+    }
+
+    @Override
+    public void attach() {
+
+    }
+
+    @Override
+    public void detach() {
+
+    }
   }
 }

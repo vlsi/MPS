@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -57,7 +56,7 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
   }
 
   @Override
-  public SModel getModelDescriptor() {
+  public SModelInternal getModelDescriptor() {
     return this;
   }
 

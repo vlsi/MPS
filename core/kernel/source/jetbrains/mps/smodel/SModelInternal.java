@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
-public interface SModelInternal {
+public interface SModelInternal extends SModel {
   SModel resolveModel(jetbrains.mps.smodel.SModelReference reference);
   SModel getSModel();
   void setModule(SModule container);
