@@ -443,10 +443,11 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     types.add(JavaModuleFacet.FACET_TYPE);
   }
 
-  protected void setupFacet(ModuleFacetBase facet, Memento memento) {
+  protected ModuleFacetBase setupFacet(ModuleFacetBase facet, Memento memento) {
     facet.setModule(this);
     facet.load(memento != null ? memento : new MementoImpl());
     facet.attach();
+    return facet;
   }
 
   private void updateFacets() {
@@ -484,8 +485,10 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
       ModuleFacetBase facet = (ModuleFacetBase) newFacet;
       Memento m = config.get(facetType);
-      setupFacet(facet, m);
-      myFacets.add(facet);
+      facet = setupFacet(facet, m);
+      if(facet != null) {
+        myFacets.add(facet);
+      }
     }
   }
 
