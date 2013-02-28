@@ -29,11 +29,11 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 public class DevKit extends AbstractModule {
   private DevkitDescriptor myDescriptor;
@@ -186,8 +186,8 @@ public class DevKit extends AbstractModule {
   }
 
   @Override
-  protected List<SModuleFacet> createFacets() {
-    return Collections.emptyList();
+  protected void collectFacetTypes(Set<String> types) {
+    // no-op
   }
 
   @Deprecated

@@ -38,6 +38,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
     doTestIncrementalGeneration(p, descr,
       new ModelChangeRunnable() {
+        @Override
         public void run(SModel descr) {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"User");
@@ -64,6 +65,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
     doTestIncrementalGeneration(p, descr,
       new ModelChangeRunnable() {
+        @Override
         public void run(SModel descr) {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"GoToFile");
@@ -82,6 +84,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
     doTestIncrementalGeneration(p, descr,
       new ModelChangeRunnable() {
+        @Override
         public void run(SModel descr) {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"Expression");
@@ -100,6 +103,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
     doTestIncrementalGeneration(p, descr,
       new ModelChangeRunnable() {
+        @Override
         public void run(SModel descr) {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"StatementList_Editor");

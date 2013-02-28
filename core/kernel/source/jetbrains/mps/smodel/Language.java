@@ -411,14 +411,9 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   @Override
-  protected List<SModuleFacet> createFacets() {
-    List<SModuleFacet> facets = new ArrayList<SModuleFacet>();
-    facets.add(new JavaModuleFacetImpl(this));
-    TestsFacet testsFacet = TestsFacetImpl.fromModule(this);
-    if (testsFacet != null) {
-      facets.add(testsFacet);
-    }
-    return facets;
+  protected void collectFacetTypes(Set<String> types) {
+    super.collectFacetTypes(types);
+    types.add(TestsFacet.FACET_TYPE);
   }
 
   @Override

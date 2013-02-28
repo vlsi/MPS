@@ -15,45 +15,35 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
-import jetbrains.mps.project.facets.JavaModuleFacetImpl;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.IClassLoadingModule;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.DefaultScope;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.*;
+import jetbrains.mps.util.iterable.TranslatingIterator;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -61,26 +51,17 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SDependency;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
-import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.module.*;
+import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
+import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
 public abstract class AbstractModule implements IModule, FileSystemListener {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
@@ -92,13 +73,12 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   protected final IFile myDescriptorFile;
   private ModuleReference myModuleReference;
   private Set<ModelRoot> mySModelRoots = new LinkedHashSet<ModelRoot>();
+  private Set<ModuleFacetBase> myFacets = new LinkedHashSet<ModuleFacetBase>();
   private ModuleScope myScope = createScope();
 
   protected boolean myChanged = false;
   private SRepository myRepo;
 
-  // just for now
-  private final List<SModuleFacet> myFacets;
 
   //----model creation
 
@@ -106,14 +86,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     this(null);
   }
 
-  protected List<SModuleFacet> createFacets() {
-    // todo: why java module facet by default?
-    return Collections.<SModuleFacet>singletonList(new JavaModuleFacetImpl(this));
-  }
-
   protected AbstractModule(@Nullable IFile myDescriptorFile) {
     this.myDescriptorFile = myDescriptorFile;
-    myFacets = createFacets();
   }
 
   private static Set<ModelCreationListener> ourModelCreationListeners = new HashSet<ModelCreationListener>();
@@ -451,7 +425,75 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   protected void reloadAfterDescriptorChange() {
     updatePackagedDescriptorClasspath();
+    updateFacets();
     updateModelsSet();
+  }
+
+  protected void collectFacetTypes(Set<String> types) {
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) {
+      return;
+    }
+
+    types.addAll(FacetsFacade.getInstance().getApplicableFacetTypes(
+      new TranslatingIterator<ModuleReference, String>(descriptor.getUsedLanguages().iterator()) {
+        @Override
+        protected String translate(ModuleReference node) {
+          return node.getModuleName();
+        }
+      }));
+
+    // TODO: why java module facet by default?
+    types.add(JavaModuleFacet.FACET_TYPE);
+  }
+
+  protected ModuleFacetBase setupFacet(ModuleFacetBase facet, Memento memento) {
+    facet.setModule(this);
+    facet.load(memento != null ? memento : new MementoImpl());
+    facet.attach();
+    return facet;
+  }
+
+  private void updateFacets() {
+    ModelAccess.assertLegalWrite();
+
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) {
+      return;
+    }
+
+    for (ModuleFacetBase facet : myFacets) {
+      facet.dispose();
+    }
+    myFacets.clear();
+
+    Map<String, Memento> config = new HashMap<String, Memento>();
+    for (ModuleFacetDescriptor facetDescriptors : descriptor.getModuleFacetDescriptors()) {
+      config.put(facetDescriptors.getType(), facetDescriptors.getMemento());
+    }
+
+    Set<String> types = new HashSet<String>();
+    collectFacetTypes(types);
+
+    for (String facetType : types) {
+      FacetFactory factory = FacetsFacade.getInstance().getFacetFactory(facetType);
+      if (factory == null) {
+        LOG.error("no registered factory for a facet with type=`" + facetType + "'");
+        continue;
+      }
+      SModuleFacet newFacet = factory.create();
+      if (!(newFacet instanceof ModuleFacetBase)) {
+        LOG.error("broken facet factory: " + factory.getClass().getName());
+        continue;
+      }
+
+      ModuleFacetBase facet = (ModuleFacetBase) newFacet;
+      Memento m = config.get(facetType);
+      facet = setupFacet(facet, m);
+      if(facet != null) {
+        myFacets.add(facet);
+      }
+    }
   }
 
   @Override
@@ -550,6 +592,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   public void updateModelsSet() {
     doUpdateModelsSet();
+    // TODO why here?
     fireModuleInitialized();
   }
 
@@ -609,7 +652,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     }
   }
 
-  protected void fireModuleInitialized() {
+  private void fireModuleInitialized() {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
   }
 
@@ -710,7 +753,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   @Override
   public Iterable<SModuleFacet> getFacets() {
-    return Collections.unmodifiableList(myFacets);
+    return Collections.<SModuleFacet>unmodifiableSet(myFacets);
   }
 
   public class ModuleScope extends DefaultScope {

@@ -17,14 +17,12 @@ package jetbrains.mps.ide.make;
 
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
 import com.intellij.openapi.components.AbstractProjectComponent;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import jetbrains.mps.library.ProjectLibraryManager;
 import jetbrains.mps.make.ModuleMaker;
@@ -34,16 +32,12 @@ import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProjectMigrationListener;
-import jetbrains.mps.project.MPSProjectMigrationState;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-
-import java.util.LinkedHashSet;
+import jetbrains.mps.util.IterableUtil;
 
 public class StartupModuleMaker extends AbstractProjectComponent {
   private final FSChangesWatcher myWatcher;
@@ -60,7 +54,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
   }
 
 
-  private void compileProjectModulesWithProgress (final boolean early) {
+  private void compileProjectModulesWithProgress(final boolean early) {
     ApplicationManagerEx.getApplicationEx().runProcessWithProgressSynchronously(new Runnable() {
       @Override
       public void run() {
@@ -87,7 +81,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           myWatcher.executeUnderBlockedReload(new Computable<Object>() {
             @Override
             public Object compute() {
-              maker.make(new LinkedHashSet<IModule>(MPSModuleRepository.getInstance().getAllModules()), monitor.subTask(9));
+              maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9));
               return null;
             }
           });
@@ -114,7 +108,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
           ModelAccess.instance().runWriteAction(reloadTask);
         }
       });
-    }else {
+    } else {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         @Override
         public void run() {
@@ -140,6 +134,6 @@ public class StartupModuleMaker extends AbstractProjectComponent {
     public void handle(IMessage message) {
       this.mvt.add(message);
     }
-}
+  }
 
 }

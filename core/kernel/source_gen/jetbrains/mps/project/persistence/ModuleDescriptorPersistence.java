@@ -26,6 +26,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.util.MacroHelper;
 import java.util.ArrayList;
+import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
 import org.jdom.Attribute;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.IFile;
@@ -192,6 +193,19 @@ public class ModuleDescriptorPersistence {
     return result;
   }
 
+  public static List<ModuleFacetDescriptor> loadFacets(Iterable<Element> facetElements, MacroHelper macroHelper) {
+    List<ModuleFacetDescriptor> result = ListSequence.fromList(new ArrayList<ModuleFacetDescriptor>());
+    for (Element element : facetElements) {
+      Memento m = new MementoImpl();
+      readMemento(m, element, macroHelper);
+      String type = element.getAttributeValue("type");
+      if (type != null) {
+        ListSequence.fromList(result).addElement(new ModuleFacetDescriptor(type, m));
+      }
+    }
+    return result;
+  }
+
   public static void readMemento(Memento memento, Element element, final MacroHelper macroHelper) {
     for (Attribute attr : (List<Attribute>) element.getAttributes()) {
       String name = attr.getName();
@@ -246,6 +260,19 @@ public class ModuleDescriptorPersistence {
     }
     return macroHelper.expandPath(modelRootElement.getAttributeValue("path"));
   }
+
+  public static void saveFacets(Element result, Collection<ModuleFacetDescriptor> facets, MacroHelper macroHelper) {
+    for (ModuleFacetDescriptor facet : CollectionSequence.fromCollection(facets)) {
+      Memento memento = facet.getMemento();
+      Element facetElement = new Element("facet");
+      writeMemento(memento, facetElement, macroHelper);
+      String type = facet.getType();
+      facetElement.setAttribute("type", type);
+      result.addContent(facetElement);
+    }
+  }
+
+
 
   public static void saveModelRoots(Element result, Collection<ModelRootDescriptor> modelRoots, MacroHelper macroHelper) {
     for (ModelRootDescriptor root : CollectionSequence.fromCollection(modelRoots)) {

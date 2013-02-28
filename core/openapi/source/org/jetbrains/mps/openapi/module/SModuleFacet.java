@@ -15,5 +15,30 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.mps.openapi.persistence.Memento;
+
+/**
+ *  Facets allow to store language-specific settings on a module-level.
+ *  Every facet has a language it is associated with.
+ *  All facets associated with the used languages in a module are automatically instantiated and added to the module.
+ *  (see {@link FacetsFacade})
+ */
 public interface SModuleFacet {
+
+  /**
+   * The owning module
+   */
+  SModule getModule();
+
+  /**
+   * Gives the module facet the opportunity to persist into the supplied memento whatever configuration information
+   * may be needed to restore the models in the future.
+   */
+  void save(Memento memento);
+
+  /**
+   * Allows the model root to read its previously saved configuration information
+   */
+  void load(Memento memento);
+
 }

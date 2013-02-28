@@ -56,6 +56,10 @@ public class GeneratorDescriptorPersistence {
           result_wk2vdq_a0a0a0b.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(generatorElement, "modelRoot"), contentRoot, macroHelper));
         }
 
+        Element facets = XmlUtil.first(generatorElement, "facets");
+        if (facets != null) {
+          result_wk2vdq_a0a0a0b.getModuleFacetDescriptors().addAll(ModuleDescriptorPersistence.loadFacets(XmlUtil.children(facets, "facet"), macroHelper));
+        }
 
         ModuleDescriptorPersistence.loadDependencies(result_wk2vdq_a0a0a0b, generatorElement);
 
@@ -65,28 +69,28 @@ public class GeneratorDescriptorPersistence {
         }
 
         for (Element ruleElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(generatorElement, "mapping-priorities"), "mapping-priority-rule"))) {
-          final MappingPriorityRule result_wk2vdq_a0a91a0a0a0b = new MappingPriorityRule();
+          final MappingPriorityRule result_wk2vdq_a0a12a0a0a0b = new MappingPriorityRule();
           // TODO: remove when the error disappear. 
           try {
-            final RuleType result_wk2vdq_a0a1a0a91a0a0a0b = RuleType.parse(ruleElement.getAttributeValue("kind"));
-            result_wk2vdq_a0a91a0a0a0b.setType(result_wk2vdq_a0a1a0a91a0a0a0b);
+            final RuleType result_wk2vdq_a0a1a0a12a0a0a0b = RuleType.parse(ruleElement.getAttributeValue("kind"));
+            result_wk2vdq_a0a12a0a0a0b.setType(result_wk2vdq_a0a1a0a12a0a0a0b);
           } catch (IllegalArgumentException e) {
             LOG.error(e.getMessage() + " Rule type for generator " + genUID + " is set to EQUALS. You can change this in Generator Properties dialog.", e);
-            final RuleType result_wk2vdq_a1a0b0a0t0a0a0a1 = RuleType.STRICTLY_TOGETHER;
-            result_wk2vdq_a0a91a0a0a0b.setType(result_wk2vdq_a1a0b0a0t0a0a0a1);
+            final RuleType result_wk2vdq_a1a0b0a0v0a0a0a1 = RuleType.STRICTLY_TOGETHER;
+            result_wk2vdq_a0a12a0a0a0b.setType(result_wk2vdq_a1a0b0a0v0a0a0a1);
           }
 
           Element greaterPM = XmlUtil.first(ruleElement, "greater-priority-mapping");
           if (greaterPM != null) {
-            final MappingConfig_AbstractRef result_wk2vdq_a0a4a0a91a0a0a0b = loadGeneratorMappingConfigRef(greaterPM, genUID, false);
-            result_wk2vdq_a0a91a0a0a0b.setLeft(result_wk2vdq_a0a4a0a91a0a0a0b);
+            final MappingConfig_AbstractRef result_wk2vdq_a0a4a0a12a0a0a0b = loadGeneratorMappingConfigRef(greaterPM, genUID, false);
+            result_wk2vdq_a0a12a0a0a0b.setLeft(result_wk2vdq_a0a4a0a12a0a0a0b);
           }
           Element lesserPM = XmlUtil.first(ruleElement, "lesser-priority-mapping");
           if (lesserPM != null) {
-            final MappingConfig_AbstractRef result_wk2vdq_a0a6a0a91a0a0a0b = loadGeneratorMappingConfigRef(lesserPM, genUID, false);
-            result_wk2vdq_a0a91a0a0a0b.setRight(result_wk2vdq_a0a6a0a91a0a0a0b);
+            final MappingConfig_AbstractRef result_wk2vdq_a0a6a0a12a0a0a0b = loadGeneratorMappingConfigRef(lesserPM, genUID, false);
+            result_wk2vdq_a0a12a0a0a0b.setRight(result_wk2vdq_a0a6a0a12a0a0a0b);
           }
-          result_wk2vdq_a0a0a0b.getPriorityRules().add(result_wk2vdq_a0a91a0a0a0b);
+          result_wk2vdq_a0a0a0b.getPriorityRules().add(result_wk2vdq_a0a12a0a0a0b);
         }
         return result_wk2vdq_a0a0a0b;
       }
@@ -113,6 +117,12 @@ public class GeneratorDescriptorPersistence {
     Element models = new Element("models");
     ModuleDescriptorPersistence.saveModelRoots(models, descriptor.getModelRootDescriptors(), macroHelper);
     generator.addContent(models);
+
+    if (!(descriptor.getModuleFacetDescriptors().isEmpty())) {
+      Element facets = new Element("facets");
+      ModuleDescriptorPersistence.saveFacets(facets, descriptor.getModuleFacetDescriptors(), macroHelper);
+      generator.addContent(facets);
+    }
 
     // "depends on" generators 
     Element extTemplates = new Element("external-templates");

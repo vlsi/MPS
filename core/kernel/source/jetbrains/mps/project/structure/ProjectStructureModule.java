@@ -250,8 +250,8 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   }
 
   @Override
-  protected List<SModuleFacet> createFacets() {
-    return Collections.emptyList();
+  protected void collectFacetTypes(Set<String> types) {
+    // none
   }
 
   public class ProjectStructureModuleScope extends ModuleScope {

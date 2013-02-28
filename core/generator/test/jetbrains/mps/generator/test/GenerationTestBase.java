@@ -140,6 +140,7 @@ public class GenerationTestBase {
     String randomId = UUID.randomUUID().toString();
     final TestModule tm = new TestModule(randomName, randomId, originalModel.getModule());
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         MPSModuleRepository.getInstance().registerModule(tm, myOwner);
       }
@@ -261,6 +262,7 @@ public class GenerationTestBase {
       }
     } finally {
       ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
         public void run() {
           MPSModuleRepository.getInstance().unregisterModule(tm, myOwner);
         }
@@ -299,6 +301,7 @@ public class GenerationTestBase {
   protected static void cleanup(final Project p) {
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
       public void run() {
         p.dispose();
         IdeEventQueue.getInstance().flushQueue();
