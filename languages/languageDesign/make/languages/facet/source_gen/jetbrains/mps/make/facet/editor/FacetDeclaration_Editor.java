@@ -26,6 +26,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -231,7 +232,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -342,7 +343,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -440,7 +441,7 @@ public class FacetDeclaration_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

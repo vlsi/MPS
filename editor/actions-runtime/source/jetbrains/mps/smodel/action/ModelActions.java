@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.nodeEditor.CellSide;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -30,7 +31,19 @@ public class ModelActions {
   // child substitute
   //-------------------
 
-  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
+  /**
+   * Method should be removed after MPS 3.0
+   *
+   * @deprecated since MPS 3.0 use createChildNodeSubstituteActions() instead
+   */
+  @Deprecated
+  public static List<INodeSubstituteAction> createChildSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter,
+      IOperationContext context) {
+    return (List) ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
+  }
+
+  public static List<SubstituteAction> createChildNodeSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter,
+      IOperationContext context) {
     return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
   }
 
@@ -38,7 +51,8 @@ public class ModelActions {
   // referent substitute
   //-------------------
 
-  public static List<INodeSubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IOperationContext context) {
+  public static List<SubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
+      IOperationContext context) {
     return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, context);
   }
 
@@ -50,7 +64,19 @@ public class ModelActions {
     return new SideTransformHintSubstituteActionsHelper(sourceNode, side, transformTag, context).canCreateActions();
   }
 
-  public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
+  /**
+   * Method should be removed after MPS 3.0
+   *
+   * @deprecated since MPS 3.0 use createSideTransformHintSubstituteActions() instead
+   */
+  @Deprecated
+  public static List<INodeSubstituteAction> createRightTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag,
+      IOperationContext context) {
+    return (List) createSideTransformHintSubstituteActions(sourceNode, side, transformTag, context);
+  }
+
+  public static List<SubstituteAction> createSideTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag,
+      IOperationContext context) {
     return new SideTransformHintSubstituteActionsHelper(sourceNode, side, transformTag, context).createActions();
   }
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -47,7 +48,7 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "switch");
     editorCell.setCellId("Constant_g3hzyr_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -74,7 +75,7 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "kind");
     editorCell.setCellId("Constant_g3hzyr_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -154,7 +155,7 @@ public class SwitchNodeKindStatement_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no cases>");
       editorCell.setCellId("Constant_g3hzyr_a5a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

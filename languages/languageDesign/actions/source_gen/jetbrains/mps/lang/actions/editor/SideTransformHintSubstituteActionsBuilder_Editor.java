@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -131,7 +132,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -160,7 +161,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_transformTag");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -178,7 +179,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     editorCell.setCellId("Constant_185r4c_f0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -194,7 +195,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_description");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -414,7 +415,7 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
     editorCell.setCellId("Constant_185r4c_b5b1a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

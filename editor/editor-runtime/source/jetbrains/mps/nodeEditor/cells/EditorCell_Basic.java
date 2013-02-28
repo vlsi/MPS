@@ -39,13 +39,13 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
@@ -160,7 +160,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
     if (pattern.equals("")) return false;
 
-    List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
+    List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(pattern, strict);
     if (matchingActions.size() == 0 && canActivatePopup) {
       return false;
     }
@@ -631,7 +631,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   @Override
   public void setSubstituteInfo(SubstituteInfo info) {
-    //To change body of implemented methods use File | Settings | File Templates.
+    mySubstituteInfo = (NodeSubstituteInfo) info;
   }
 
   public void setSubstituteInfo(NodeSubstituteInfo substituteInfo) {
@@ -1291,6 +1291,11 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public Style getStyle() {
     return myStyle;
+  }
+
+  @Override
+  public void setStyle(jetbrains.mps.openapi.editor.style.Style style) {
+    myStyle = (Style) style;
   }
 
   public boolean isLeaf() {

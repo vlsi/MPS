@@ -58,7 +58,7 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
+    BaseLanguageStyle_StyleSheet.applyFirstLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }

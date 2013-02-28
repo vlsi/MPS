@@ -28,7 +28,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.ypath.behavior.IFeature_Behavior;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -39,6 +39,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 
@@ -276,8 +277,8 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
 
@@ -349,8 +350,8 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
 
@@ -377,8 +378,8 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_FeatureSetOpposite();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
 
@@ -498,7 +499,7 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter");
     editorCell.setCellId("Constant_ldpt8g_a0b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -671,7 +672,7 @@ public class ParamListFeature_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operations");
     editorCell.setCellId("Constant_ldpt8g_a3b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

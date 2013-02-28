@@ -15,6 +15,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IOperationContext;
@@ -110,7 +111,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -144,7 +145,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_tagName");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -304,7 +305,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no attributes>");
       editorCell.setCellId("Constant_b42orx_a01a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -395,7 +396,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no children>");
       editorCell.setCellId("Constant_b42orx_a21a");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -48,8 +49,8 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_73o0fl_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
-    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
+    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.magenta));
     editorCell.getStyle().putAll(style);
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -96,7 +97,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
@@ -120,7 +121,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     EditorCell editorCell = manager.getCurrentAttributedNodeCell();
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BRACKETS, true);
-    style.set(StyleAttributes.BRACKETS_COLOR, MPSColors.pink);
+    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
@@ -130,8 +131,8 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_73o0fl_d0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
-    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.magenta);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
+    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.magenta));
     editorCell.getStyle().putAll(style);
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
@@ -155,8 +156,8 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_73o0fl_a0_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -253,7 +254,7 @@ public class TemplateFragment_Editor extends DefaultNodeEditor {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name_1");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.orange);
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.orange));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();

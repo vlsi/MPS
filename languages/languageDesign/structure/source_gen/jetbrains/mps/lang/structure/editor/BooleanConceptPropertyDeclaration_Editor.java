@@ -16,6 +16,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 
@@ -70,7 +71,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<inheritable:");
     editorCell.setCellId("Constant_ns0lc3_c0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -102,7 +103,7 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_ns0lc3_e0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

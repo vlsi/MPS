@@ -1,38 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.editor.resolver.EditorResolver" file="EditorResolver.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.scope.Scope" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraints" />
-    <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
-    <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraints" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.INodeSubstituteAction" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode extendsClassName="jetbrains.mps.resolve.IResolver" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorComponent" />
   </dependency>
   <dependency className="jetbrains.mps.ide.editor.resolver.EditorResolverComponent" file="EditorResolverComponent.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
-    <classNode dependClassName="jetbrains.mps.ide.editor.resolver.EditorResolver" />
-    <classNode dependClassName="jetbrains.mps.resolve.ResolverComponent" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
+    <classNode dependClassName="jetbrains.mps.resolve.ResolverComponent" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.ide.editor.resolver.EditorResolver" />
+    <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
 </dependenciesRoot>

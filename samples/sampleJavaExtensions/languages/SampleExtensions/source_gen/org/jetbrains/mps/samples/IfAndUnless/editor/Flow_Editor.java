@@ -19,6 +19,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -58,7 +59,7 @@ public class Flow_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_gc1fin_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.BACKGROUND_COLOR, new Color(16119260));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(16119260)));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
     editorCell.getStyle().putAll(style);
     return editorCell;

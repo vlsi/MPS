@@ -16,10 +16,11 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IOperationContext;
@@ -70,8 +71,8 @@ public class VarMacro_Editor extends DefaultNodeEditor {
       this.myComponent = new replace_node_macro();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
 
@@ -83,7 +84,7 @@ public class VarMacro_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, new Color(26112));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(26112)));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     editorCell.getStyle().putAll(style);
     MacroSymbol_Actions.setCellActions(editorCell, node, editorContext);
@@ -121,8 +122,8 @@ public class VarMacro_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cubyf7_a0_0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray)));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

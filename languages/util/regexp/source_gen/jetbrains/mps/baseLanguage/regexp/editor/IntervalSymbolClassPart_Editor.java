@@ -13,6 +13,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -41,7 +42,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_start");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
     IntervalSymbolClassPart_removeLeft.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -59,7 +60,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
     editorCell.setCellId("Constant_ti1333_b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
@@ -76,7 +77,7 @@ public class IntervalSymbolClassPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_end");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
     IntervalSymbolClassPart_removeRight.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

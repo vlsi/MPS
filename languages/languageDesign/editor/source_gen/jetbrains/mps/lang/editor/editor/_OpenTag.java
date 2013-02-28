@@ -15,6 +15,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
 
 public class _OpenTag extends AbstractCellProvider {
@@ -53,13 +54,13 @@ public class _OpenTag extends AbstractCellProvider {
     editorCell.setCellId("ReadOnlyModelAccessor_mtiojs_a");
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBordered(style, editorCell);
-    style.set(StyleAttributes.BACKGROUND_COLOR, _OpenTag._StyleParameter_QueryFunction_mtiojs_a0a((editorCell == null ?
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_OpenTag._StyleParameter_QueryFunction_mtiojs_a0a((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
+    ))));
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;

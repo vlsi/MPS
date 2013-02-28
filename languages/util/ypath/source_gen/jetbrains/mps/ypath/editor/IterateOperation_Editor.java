@@ -22,13 +22,14 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -119,7 +120,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*");
     editorCell.setCellId("Constant_wgzfn3_b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
@@ -139,8 +140,8 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
 
@@ -185,7 +186,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
       style.set(StyleAttributes.EDITABLE, false);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -211,8 +212,8 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
 
@@ -224,7 +225,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     editorCell.getStyle().putAll(style);
     IterateOperation_DELETE.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new IterateOperation_Editor.IterateOperation_component_cellMenu_wgzfn3_a0d1a()}));
@@ -249,8 +250,8 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
       this.myComponent = new menu_SubstituteFeatureAndParameter();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
 

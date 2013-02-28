@@ -34,6 +34,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
@@ -473,7 +474,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.red);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
@@ -15,7 +16,7 @@ public class DocumentationCommentStyleSheet_StyleSheet {
   public static Style getComment(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     return style;
   }
 
@@ -36,7 +37,7 @@ public class DocumentationCommentStyleSheet_StyleSheet {
 
   public static void applyComment(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
   }
 
   public static void applyCommentTag(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {

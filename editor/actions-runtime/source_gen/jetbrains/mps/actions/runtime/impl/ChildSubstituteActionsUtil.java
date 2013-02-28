@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -98,7 +99,7 @@ public class ChildSubstituteActionsUtil {
     }
   }
 
-  public static List<INodeSubstituteAction> applyActionFilter(SNode builder, List<INodeSubstituteAction> actions, SNode parentNode, SNode currentChild, SNode childConcept, IOperationContext context) {
+  public static List<SubstituteAction> applyActionFilter(SNode builder, List<SubstituteAction> actions, SNode parentNode, SNode currentChild, SNode childConcept, IOperationContext context) {
 
     // remove banned concepts 
     Set<SNode> conceptsToRemove = SetSequence.fromSetWithValues(new HashSet<SNode>(), ListSequence.fromList(SLinkOperations.getTargets(builder, "part", true)).where(new IWhereFilter<SNode>() {
@@ -111,8 +112,8 @@ public class ChildSubstituteActionsUtil {
       }
     }));
     if (SetSequence.fromSet(conceptsToRemove).isNotEmpty()) {
-      for (Iterator<INodeSubstituteAction> it = ListSequence.fromList(actions).iterator(); it.hasNext();) {
-        INodeSubstituteAction action = it.next();
+      for (Iterator<SubstituteAction> it = ListSequence.fromList(actions).iterator(); it.hasNext();) {
+        SubstituteAction action = it.next();
         if (SetSequence.fromSet(conceptsToRemove).contains(SNodeOperations.as(action.getOutputConcept(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
           it.remove();
         }

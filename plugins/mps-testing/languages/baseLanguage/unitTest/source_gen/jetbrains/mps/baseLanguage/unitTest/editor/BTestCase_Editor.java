@@ -30,6 +30,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.baseLanguage.editor.GenericDeclaration_FoldedCodeBlock_Component;
 
@@ -245,7 +246,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_lq4ak4_a1b6a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -464,7 +465,7 @@ public class BTestCase_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_lq4ak4_a9b6a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, false);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

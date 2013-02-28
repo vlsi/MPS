@@ -13,6 +13,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -61,7 +62,7 @@ public class ValidateBlock_Editor extends DefaultNodeEditor {
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);
     style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());

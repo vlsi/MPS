@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.editor.runtime.style.CaretPosition;
 
@@ -177,7 +178,7 @@ public class ReplaceableAliasAndParms_Comp extends AbstractCellProvider {
       Style style = new StyleImpl();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
       style.set(StyleAttributes.EDITABLE, true);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
       style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.FIRST);
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");

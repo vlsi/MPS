@@ -10,8 +10,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -39,11 +39,11 @@ public class EditorResolver implements IResolver {
       if (cellWithRole == null) {
         return false;
       }
-      NodeSubstituteInfo substituteInfo = cellWithRole.getSubstituteInfo();
+      SubstituteInfo substituteInfo = cellWithRole.getSubstituteInfo();
       if (substituteInfo == null) {
         return false;
       }
-      final INodeSubstituteAction applicableSubstituteAction = getApplicableSubstituteAction(substituteInfo, resolveInfo);
+      final SubstituteAction applicableSubstituteAction = getApplicableSubstituteAction(substituteInfo, resolveInfo);
       if (applicableSubstituteAction == null) {
         return false;
       }
@@ -68,9 +68,9 @@ public class EditorResolver implements IResolver {
     return result;
   }
 
-  private INodeSubstituteAction getApplicableSubstituteAction(NodeSubstituteInfo substituteInfo, String resolveInfo) {
-    INodeSubstituteAction result = null;
-    for (INodeSubstituteAction nextAction : ListSequence.fromList(substituteInfo.getMatchingActions(resolveInfo, true))) {
+  private SubstituteAction getApplicableSubstituteAction(SubstituteInfo substituteInfo, String resolveInfo) {
+    SubstituteAction result = null;
+    for (SubstituteAction nextAction : ListSequence.fromList(substituteInfo.getMatchingActions(resolveInfo, true))) {
       if (nextAction.canSubstitute(resolveInfo)) {
         if (result != null) {
           return null;

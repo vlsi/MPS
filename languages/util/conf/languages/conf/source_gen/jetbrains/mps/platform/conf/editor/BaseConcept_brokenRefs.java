@@ -16,6 +16,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
@@ -86,7 +87,7 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Broken references:");
     editorCell.setCellId("Constant_bx3ota_a0a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.pink);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

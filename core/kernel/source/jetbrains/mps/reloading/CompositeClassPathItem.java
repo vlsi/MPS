@@ -19,7 +19,11 @@ import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.util.FlattenIterable;
 
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -28,14 +32,19 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
 
   public CompositeClassPathItem() {
-    ClassPathFactory.getInstance().addCompositeClassPathItem(this);
+    this(true);
+  }
+
+  public CompositeClassPathItem(boolean registerForInvalidate) {
+    if (registerForInvalidate) {
+      ClassPathFactory.getInstance().addCompositeClassPathItem(this);
+    }
   }
 
   public void add(IClassPathItem item) {
     assert item != null;
     checkValidity();
     myChildren.add(item);
-    item.addInvalidationAction(myInvalidationListener);
   }
 
   @Override
@@ -193,11 +202,4 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     result.append("}");
     return result.toString();
   }
-
-  private final Runnable myInvalidationListener = new Runnable() {
-    @Override
-    public void run() {
-      callInvalidationListeners();
-    }
-  };
 }

@@ -16,14 +16,15 @@
 package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.lang.editor.cellProviders.ReferenceCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
-import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
@@ -33,7 +34,7 @@ import java.util.List;
  */
 public class PrimaryReferentMenuCellMenuPart implements SubstituteInfoPart, SubstituteInfoPartExt {
   @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+  public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode referenceNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     SNode linkDeclaration = ((SNode) cellContext.get(ReferenceCellContext.LINK_DECLARATION));
     SNode currentReferent = (SNode) cellContext.getOpt(ReferenceCellContext.CURRENT_REFERENT_NODE);
@@ -41,6 +42,6 @@ public class PrimaryReferentMenuCellMenuPart implements SubstituteInfoPart, Subs
   }
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return createActions(cellContext, (EditorContext) editorContext);
+    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 }

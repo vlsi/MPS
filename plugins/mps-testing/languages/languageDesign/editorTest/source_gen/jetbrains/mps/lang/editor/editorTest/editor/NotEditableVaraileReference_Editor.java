@@ -16,6 +16,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class NotEditableVaraileReference_Editor extends DefaultNodeEditor {
@@ -69,7 +70,7 @@ public class NotEditableVaraileReference_Editor extends DefaultNodeEditor {
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.cyan);
+      style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
       style.set(StyleAttributes.EDITABLE, false);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());

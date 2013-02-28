@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -62,34 +63,34 @@ public class CellModel_TransactionalProperty_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a1b0((editorCell == null ?
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a1b0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.TEXT_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a2b0((editorCell == null ?
+    ))));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a2b0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a3b0((editorCell == null ?
+    ))));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a3b0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a4b0((editorCell == null ?
+    ))));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a4b0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
+    ))));
     style.set(StyleAttributes.FONT_STYLE, CellModel_TransactionalProperty_Editor._StyleParameter_QueryFunction_hop3er_a5b0((editorCell == null ?
       null :
       editorCell.getContext()

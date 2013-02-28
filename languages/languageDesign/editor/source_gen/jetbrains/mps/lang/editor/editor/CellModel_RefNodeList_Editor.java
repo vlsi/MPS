@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 
@@ -836,8 +837,8 @@ public class CellModel_RefNodeList_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_separatorText");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
-    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.yellow));
+    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new CellModel_RefNodeList_Editor.CellModel_RefNodeList_generic_cellMenu_2v2794_a0b6d0()}));
     SNode attributeConcept = provider.getRoleAttribute();

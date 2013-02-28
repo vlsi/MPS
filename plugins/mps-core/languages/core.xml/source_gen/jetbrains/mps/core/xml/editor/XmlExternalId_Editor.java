@@ -16,7 +16,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -78,8 +78,8 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
       this.myComponent = new ExternalIdMenu();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
 
@@ -123,8 +123,8 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
       this.myComponent = new ExternalIdMenu();
     }
 
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
+    public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
 

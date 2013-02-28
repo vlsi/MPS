@@ -15,6 +15,7 @@ import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -88,7 +89,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cv1jro_a1a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "brace");
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -104,7 +105,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_comment");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     style.set(StyleAttributes.PADDING_LEFT, new Padding(0.0, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
@@ -124,7 +125,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cv1jro_c1a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.MATCHING_LABEL, "brace");
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -151,7 +152,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "since build");
     editorCell.setCellId("Constant_cv1jro_a2a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(1.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
@@ -167,7 +168,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_build");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -227,7 +228,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_comment_1");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_GREEN);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -267,7 +268,7 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_build_1");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

@@ -22,10 +22,11 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.*;
 
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -34,7 +35,7 @@ import java.util.List;
  */
 public abstract class AbstractCellMenuPart_ReplaceChild_Item implements SubstituteInfoPart, SubstituteInfoPartExt {
   @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
+  public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
     IChildNodeSetter setter = new DefaultChildNodeSetter(linkDeclaration);
@@ -42,33 +43,33 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
     final SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
     final IOperationContext context = editorContext.getOperationContext();
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
-    actions.add(new DefaultChildNodeSubstituteAction(defaultConceptOfChild, parentNode, currentChild, setter, context.getScope()) {
-      protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
-        return AbstractCellMenuPart_ReplaceChild_Item.this.getMatchingText();
-      }
-
-      public String getDescriptionText(String pattern) {
-        return AbstractCellMenuPart_ReplaceChild_Item.this.getDescriptionText();
-      }
-
-      public SNode createChildNode(Object parameterConcept, SModel model, String pattern) {
-        SNode parameterNode = (SNode) parameterConcept;
-        if (isCustomCreateChildNode()) {
-          SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, defaultConceptOfChild, parentNode.getModel(), getScope(), context, editorContext);
-          if (newChild != null) {
-            NodeFactoryManager.setupNode(parameterNode, newChild, currentChild, parentNode, model, getScope());
+    return Collections.<SubstituteAction>singletonList(
+        new DefaultChildNodeSubstituteAction(defaultConceptOfChild, parentNode, currentChild, setter, context.getScope()) {
+          protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
+            return AbstractCellMenuPart_ReplaceChild_Item.this.getMatchingText();
           }
-          return newChild;
-        }
-        return NodeFactoryManager.createNode(parameterNode, currentChild, parentNode, parentNode.getModel(), getScope());
-      }
-    });
-    return actions;
+
+          public String getDescriptionText(String pattern) {
+            return AbstractCellMenuPart_ReplaceChild_Item.this.getDescriptionText();
+          }
+
+          public SNode createChildNode(Object parameterConcept, SModel model, String pattern) {
+            SNode parameterNode = (SNode) parameterConcept;
+            if (isCustomCreateChildNode()) {
+              SNode newChild = AbstractCellMenuPart_ReplaceChild_Item.this.customCreateChildNode(parentNode, currentChild, defaultConceptOfChild,
+                  parentNode.getModel(), getScope(), context, editorContext);
+              if (newChild != null) {
+                NodeFactoryManager.setupNode(parameterNode, newChild, currentChild, parentNode, model, getScope());
+              }
+              return newChild;
+            }
+            return NodeFactoryManager.createNode(parameterNode, currentChild, parentNode, parentNode.getModel(), getScope());
+          }
+        });
   }
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return createActions(cellContext, (EditorContext) editorContext);
+    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
   protected boolean isCustomCreateChildNode() {
@@ -77,14 +78,16 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Item implements Substitu
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>customCreateChildNode(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>customCreateChildNode(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
-  protected SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext) {
+  protected SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope,
+      IOperationContext operationContext) {
     return null;
   }
 
-  protected SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+  protected SNode customCreateChildNode(SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model, IScope scope,
+      IOperationContext operationContext, EditorContext editorContext) {
     return customCreateChildNode(node, currentChild, defaultConceptOfChild, model, scope, operationContext);
   }
 

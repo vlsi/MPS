@@ -21,6 +21,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 
@@ -143,7 +144,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_5606pw_a1c0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -244,7 +245,7 @@ public class AgreementDeclarations_Editor extends DefaultNodeEditor {
       editorCell.setCellId("Constant_5606pw_a1e0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.blue);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

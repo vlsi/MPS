@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import java.util.Collections;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -47,7 +47,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
     mySubstituteInfo = substituteInfo;
   }
 
-  public List<INodeSubstituteAction> createActions() {
+  public List<SubstituteAction> createActions() {
     if (myLinkDeclaration == null) {
       return Collections.emptyList();
     }
@@ -58,7 +58,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
       SNode parent = SNodeOperations.getParent(mySourceNode);
       String role = SNodeOperations.getContainingLinkRole(mySourceNode);
       SNode roleLink = ((SNode) SModelSearchUtil.findLinkDeclaration(SNodeOperations.getConceptDeclaration(parent), role));
-      return ModelActions.createChildSubstituteActions(parent, mySourceNode, SLinkOperations.getTarget(roleLink, "target", false), new DefaultChildNodeSetter(roleLink), mySubstituteInfo.getOperationContext());
+      return ModelActions.createChildNodeSubstituteActions(parent, mySourceNode, SLinkOperations.getTarget(roleLink, "target", false), new DefaultChildNodeSetter(roleLink), mySubstituteInfo.getOperationContext());
     }
     return ModelActions.createReferentSubstituteActions(mySourceNode, myCurrentReferent, myLinkDeclaration, mySubstituteInfo.getOperationContext());
   }

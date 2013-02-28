@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class XYCTableModel implements TableModel {
@@ -85,7 +85,7 @@ public class XYCTableModel implements TableModel {
   }
 
   @Override
-  public NodeSubstituteInfo getSubstituteInfo(int row, int column) {
+  public SubstituteInfo getSubstituteInfo(int row, int column) {
     if (row == 0 && column == 0) {
       return null;
     }

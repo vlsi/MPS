@@ -27,6 +27,7 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 
 public class Root_Editor extends DefaultNodeEditor {
@@ -215,7 +216,7 @@ public class Root_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<empty>");
       editorCell.setCellId("Constant_30aiet_a1b1b0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -299,7 +300,7 @@ public class Root_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<empty>");
       editorCell.setCellId("Constant_30aiet_a1d1b0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.gray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;

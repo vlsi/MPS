@@ -12,6 +12,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.smodel.IScope;
@@ -49,7 +50,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_4797dc_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyLeftBracket(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -109,7 +110,7 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_4797dc_e0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.applyRightBracket(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

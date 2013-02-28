@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -38,12 +39,12 @@ import java.util.List;
  */
 public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart, SubstituteInfoPartExt {
   @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+  public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
     final String role = CellUtil.getLinkDeclarationRole(linkDeclaration);
     SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
-    return ModelActions.createChildSubstituteActions(
+    return ModelActions.createChildNodeSubstituteActions(
             parentNode,
             currentChild,
             CellUtil.getLinkDeclarationTarget(linkDeclaration),
@@ -61,6 +62,6 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart, 
   }
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return createActions(cellContext, (EditorContext) editorContext);
+    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 }

@@ -20,15 +20,16 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -37,12 +38,11 @@ import java.util.List;
  */
 public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInfoPart, SubstituteInfoPartExt {
 
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
+  public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode node = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     final IOperationContext context = editorContext.getOperationContext();
 
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
-    actions.add(new AbstractNodeSubstituteAction(null, null, node) {
+    return Collections.<SubstituteAction>singletonList(new AbstractNodeSubstituteAction(null, null, node) {
 
       public String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
         return AbstractCellMenuPart_Generic_Item.this.getMatchingText();
@@ -61,17 +61,15 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
         return null;
       }
     });
-
-    return actions;
   }
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return createActions(cellContext, (EditorContext) editorContext);
+    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>handleAction(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>handleAction(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   protected void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {

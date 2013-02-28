@@ -97,9 +97,11 @@ import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
-import jetbrains.mps.openapi.editor.cells.*;
-import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.openapi.editor.ActionHandler;
+import jetbrains.mps.openapi.editor.cells.CellAction;
+import jetbrains.mps.openapi.editor.cells.KeyMapAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
@@ -111,7 +113,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -138,6 +139,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -2493,7 +2495,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
     if (trySubstituteNow) {
-      List<INodeSubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfo, isSmart, pattern);
+      List<SubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfo, isSmart, pattern);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         matchingActions.get(0).substitute(this.getEditorContext(), pattern);
         return true;
@@ -2509,13 +2511,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return true;
   }
 
-  private List<INodeSubstituteAction> getMatchingActions(final EditorCell editorCell, final NodeSubstituteInfo substituteInfo, final boolean isSmart, final String pattern) {
-    return ModelAccess.instance().runReadAction(new Computable<List<INodeSubstituteAction>>() {
+  private List<SubstituteAction> getMatchingActions(final EditorCell editorCell, final NodeSubstituteInfo substituteInfo, final boolean isSmart, final String pattern) {
+    return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
       @Override
-      public List<INodeSubstituteAction> compute() {
-        return TypeContextManager.getInstance().runTypeCheckingComputation(getTypecheckingContextOwner(), myNode, new Computation<List<INodeSubstituteAction>>() {
+      public List<SubstituteAction> compute() {
+        return TypeContextManager.getInstance().runTypeCheckingComputation(getTypecheckingContextOwner(), myNode, new Computation<List<SubstituteAction>>() {
           @Override
-          public List<INodeSubstituteAction> compute(TypeCheckingContext context) {
+          public List<SubstituteAction> compute(TypeCheckingContext context) {
             return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
               substituteInfo.getMatchingActions(pattern, false);
           }

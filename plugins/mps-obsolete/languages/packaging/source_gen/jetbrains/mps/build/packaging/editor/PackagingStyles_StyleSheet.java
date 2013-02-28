@@ -6,6 +6,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.editor.runtime.style.Padding;
@@ -15,21 +16,21 @@ public class PackagingStyles_StyleSheet {
   @Deprecated
   public static Style getHint(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
     return style;
   }
 
   @Deprecated
   public static Style getKeyword(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     return style;
   }
 
   @Deprecated
   public static Style getProjectComponent(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
@@ -37,8 +38,8 @@ public class PackagingStyles_StyleSheet {
   @Deprecated
   public static Style getConfiguration(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.WHITE);
-    style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.WHITE));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.3, Measure.SPACES));
     style.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
     return style;
@@ -57,7 +58,7 @@ public class PackagingStyles_StyleSheet {
   @Deprecated
   public static Style getVariable(final EditorCell editorCell) {
     Style style = new StyleImpl(editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
     return style;
   }
@@ -70,21 +71,21 @@ public class PackagingStyles_StyleSheet {
   }
 
   public static void applyHint(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
   }
 
   public static void applyKeyword(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
   }
 
   public static void applyProjectComponent(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 
   public static void applyConfiguration(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.WHITE);
-    style.set(StyleAttributes.BACKGROUND_COLOR, MPSColors.gray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.WHITE));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.3, Measure.SPACES));
     style.set(StyleAttributes.PADDING_LEFT, new Padding(0.2, Measure.SPACES));
   }
@@ -97,7 +98,7 @@ public class PackagingStyles_StyleSheet {
   }
 
   public static void applyVariable(Style style, jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
   }
 

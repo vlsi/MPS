@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.PropertySupport;
@@ -34,7 +35,11 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -42,14 +47,13 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
   private static final Logger LOG = Logger.getLogger(AbstractCellMenuPart_PropertyPostfixHints.class);
 
   @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+  public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
     final SNode property = (SNode) cellContext.get(PropertyCellContext.PROPERTY_DECLARATION);
     if (property == null) {
       return Collections.emptyList();
     }
     final IOperationContext context = editorContext.getOperationContext();
-    List<INodeSubstituteAction> actions = new LinkedList<INodeSubstituteAction>();
     List<String> postfixes = getPostfixes(node, context.getScope(), context, editorContext);
     if (postfixes == null) {
       postfixes = new ArrayList<String>();
@@ -65,15 +69,16 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
 
     final PostfixGroup postfixGroup = new PostfixGroup(postfixes);
     final PropertySupport propertySupport = PropertySupport.getPropertySupport(property);
+    List<SubstituteAction> actions = new ArrayList<SubstituteAction>(postfixes.size());
     for (final String postfix : postfixes) {
       actions.add(new PostfixSubstituteAction(postfix, node, postfixGroup,
-        propertySupport, property.getName(), context.getScope()));
+          propertySupport, property.getName(), context.getScope()));
     }
-    return (List) actions;
+    return actions;
   }
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return createActions(cellContext, (EditorContext) editorContext);
+    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
   /**

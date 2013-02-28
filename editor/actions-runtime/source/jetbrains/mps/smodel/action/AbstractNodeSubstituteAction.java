@@ -18,16 +18,16 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.NodeIconUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.PatternUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.Icon;
+import java.awt.Font;
 
 public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAction {
   private static final Logger LOG = Logger.getLogger(AbstractNodeSubstituteAction.class);
@@ -157,7 +157,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       public void run() {
         if (context != null) {
           // completion can be invoked by typing invalid stuff into exising cells, revert it back to the model state
-          EditorCell selectedCell = (EditorCell) context.getSelectedCell();
+          jetbrains.mps.nodeEditor.cells.EditorCell selectedCell = (jetbrains.mps.nodeEditor.cells.EditorCell) context.getSelectedCell();
           if (selectedCell != null) {
             selectedCell.getContainingBigCell().synchronizeViewWithModel();
           }

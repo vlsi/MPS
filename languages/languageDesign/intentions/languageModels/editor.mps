@@ -358,7 +358,6 @@
           <property name="vertical" nameId="tpc2.1073389446425" value="false" />
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1240395573432">
             <property name="text" nameId="tpc2.1073389577007" value="error intention :" />
-            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1240395573433">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3j.2522969319638091385" resolveInfo="isErrorIntention" />
@@ -375,7 +374,6 @@
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1240395573438">
             <property name="text" nameId="tpc2.1073389577007" value="available in child nodes :" />
-            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1240395573439">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3j.2522969319638091386" resolveInfo="isAvailableInChildNodes" />
@@ -420,18 +418,15 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1240395583745">
           <property name="text" nameId="tpc2.1073389577007" value="parameterized" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1240395573454">
           <property name="text" nameId="tpc2.1073389577007" value="intention" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1240395573455">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1240395573456">
           <property name="text" nameId="tpc2.1073389577007" value="for concept" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1240395573457">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3j.2522969319638198290" />
@@ -474,7 +469,6 @@
           <property name="vertical" nameId="tpc2.1073389446425" value="false" />
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6263518417926799615">
             <property name="text" nameId="tpc2.1073389577007" value="error intention :" />
-            <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
           </node>
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6263518417926799616">
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3j.2522969319638091385" resolveInfo="isErrorIntention" />
@@ -493,7 +487,6 @@
             </node>
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6263518417926799623">
               <property name="text" nameId="tpc2.1073389577007" value="available in child nodes :" />
-              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
             </node>
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6263518417926799624">
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tp3j.2522969319638091386" resolveInfo="isAvailableInChildNodes" />
@@ -504,7 +497,6 @@
             <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="6263518417926799627" />
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6263518417926799628">
               <property name="text" nameId="tpc2.1073389577007" value="child filter :" />
-              <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
             </node>
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="6263518417926799629">
               <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;all child nodes&gt;" />
@@ -554,7 +546,6 @@
         <property name="vertical" nameId="tpc2.1073389446425" value="false" />
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6263518417926799646">
           <property name="text" nameId="tpc2.1073389577007" value="intention" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="6263518417926799647">
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />

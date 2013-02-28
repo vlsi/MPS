@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -113,7 +114,7 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cuzp02_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -145,7 +146,7 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_cuzp02_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.darkGray);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

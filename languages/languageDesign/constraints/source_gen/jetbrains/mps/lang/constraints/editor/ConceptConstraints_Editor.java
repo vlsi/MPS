@@ -8,20 +8,19 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -32,6 +31,8 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class ConceptConstraints_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -52,9 +53,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g00aa7_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concepts constraints");
     editorCell.setCellId("Constant_g00aa7_a0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -187,9 +185,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g00aa7_a0d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default concrete concept:");
     editorCell.setCellId("Constant_g00aa7_a0d0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -276,9 +271,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g00aa7_a1d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can be child");
     editorCell.setCellId("Constant_g00aa7_a1d0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -378,9 +370,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g00aa7_a0e3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can be root");
     editorCell.setCellId("Constant_g00aa7_a0e3a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -458,9 +447,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g00aa7_a5d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can be parent");
     editorCell.setCellId("Constant_g00aa7_a5d0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -525,9 +511,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g00aa7_i3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can be ancestor");
     editorCell.setCellId("Constant_g00aa7_i3a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -631,9 +614,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_g00aa7_a0m3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "alternative icon");
     editorCell.setCellId("Constant_g00aa7_a0m3a");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.applyKeyWord(style, editorCell);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -760,7 +740,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<property constraints>>");
       editorCell.setCellId("Constant_g00aa7_a41d0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -833,7 +813,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<<referent constraints>>");
       editorCell.setCellId("Constant_g00aa7_a61d0");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, MPSColors.lightGray);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
       editorCell.getStyle().putAll(style);
       editorCell.setDefaultText("");
       return editorCell;
@@ -855,7 +835,6 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default scope");
     editorCell.setCellId("Constant_g00aa7_s3a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");

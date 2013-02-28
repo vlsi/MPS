@@ -15,19 +15,20 @@
  */
 package jetbrains.mps.nodeEditor.cellMenu;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class NullSubstituteInfo implements NodeSubstituteInfo {
-  public List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
-    return new ArrayList<INodeSubstituteAction>();
+  public List<SubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
+    return new ArrayList<SubstituteAction>();
   }
 
-  public List<INodeSubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
-    return new ArrayList<INodeSubstituteAction>();
+  @Override
+  public List<SubstituteAction> getSmartMatchingActions(String pattern, boolean strictMatching, EditorCell contextCell) {
+    return new ArrayList<SubstituteAction>();
   }
 
   public void invalidateActions() {

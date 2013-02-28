@@ -16,12 +16,10 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.net.URL;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author Kostik
@@ -51,6 +49,4 @@ public interface IClassPathItem extends ClassBytesProvider {
   IClassPathItem optimize();
 
   void accept(IClassPathItemVisitor visitor);
-
-  void addInvalidationAction(Runnable action);
 }

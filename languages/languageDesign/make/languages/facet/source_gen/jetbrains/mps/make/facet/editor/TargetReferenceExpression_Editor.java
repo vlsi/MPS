@@ -17,6 +17,7 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -71,7 +72,7 @@ public class TargetReferenceExpression_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new TargetReferenceExpression_Editor._Inline_gv9ozx_a2a());
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_MAGENTA);
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
     editorCell.getStyle().putAll(style);
     TargetReferenceExpression_DELETE.setCellActions(editorCell, node, editorContext);

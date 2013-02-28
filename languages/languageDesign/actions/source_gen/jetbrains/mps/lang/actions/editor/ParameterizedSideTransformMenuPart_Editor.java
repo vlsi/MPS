@@ -10,8 +10,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
@@ -35,7 +35,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameterized item");
     editorCell.setCellId("Constant_r514zz_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    BaseLanguageStyle_StyleSheet.applySecondLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -95,7 +95,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter type");
     editorCell.setCellId("Constant_r514zz_a0b1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    BaseLanguageStyle_StyleSheet.applyThirdLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -129,7 +129,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "query");
     editorCell.setCellId("Constant_r514zz_b1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    BaseLanguageStyle_StyleSheet.applyThirdLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -172,7 +172,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "matching text");
     editorCell.setCellId("Constant_r514zz_d1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    BaseLanguageStyle_StyleSheet.applyThirdLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -215,7 +215,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description text");
     editorCell.setCellId("Constant_r514zz_f1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    BaseLanguageStyle_StyleSheet.applyThirdLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -258,7 +258,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
     editorCell.setCellId("Constant_r514zz_h1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    BaseLanguageStyle_StyleSheet.applyThirdLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -301,7 +301,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_r514zz_j1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    BaseLanguageStyle_StyleSheet.applyThirdLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -344,7 +344,7 @@ public class ParameterizedSideTransformMenuPart_Editor extends DefaultNodeEditor
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do transform");
     editorCell.setCellId("Constant_r514zz_l1b0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, MPSColors.DARK_BLUE);
+    BaseLanguageStyle_StyleSheet.applyThirdLevel(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;

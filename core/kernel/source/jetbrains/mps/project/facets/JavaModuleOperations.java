@@ -69,7 +69,7 @@ public class JavaModuleOperations {
   }
 
   public static CompositeClassPathItem createClassPathItem(Iterable<String> classPath, String requestor) {
-    CompositeClassPathItem classPathItem = new CompositeClassPathItem();
+    CompositeClassPathItem classPathItem = new CompositeClassPathItem(false);
 
     for (String path : classPath) {
       try {

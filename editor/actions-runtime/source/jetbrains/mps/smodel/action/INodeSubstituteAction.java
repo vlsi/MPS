@@ -15,14 +15,15 @@
  */
 package jetbrains.mps.smodel.action;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
 
-public interface INodeSubstituteAction {
+public interface INodeSubstituteAction extends SubstituteAction {
   SNode getSourceNode();
 
   SNode getOutputConcept();

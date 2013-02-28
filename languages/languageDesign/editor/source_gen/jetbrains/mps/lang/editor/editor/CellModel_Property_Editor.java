@@ -13,6 +13,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
@@ -65,27 +66,27 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell = provider.createEditorCell(editorContext);
     Style style = new StyleImpl();
     Styles_StyleSheet.applyBordered(style, editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, CellModel_Property_Editor._StyleParameter_QueryFunction_adk1cf_a0b0((editorCell == null ?
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_Property_Editor._StyleParameter_QueryFunction_adk1cf_a0b0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.BACKGROUND_COLOR, CellModel_Property_Editor._StyleParameter_QueryFunction_adk1cf_a1b0((editorCell == null ?
+    ))));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_Property_Editor._StyleParameter_QueryFunction_adk1cf_a1b0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
-    style.set(StyleAttributes.TEXT_COLOR, CellModel_Property_Editor._StyleParameter_QueryFunction_adk1cf_a2b0((editorCell == null ?
+    ))));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(CellModel_Property_Editor._StyleParameter_QueryFunction_adk1cf_a2b0((editorCell == null ?
       null :
       editorCell.getContext()
     ), (editorCell == null ?
       null :
       editorCell.getSNode()
-    )));
+    ))));
     style.set(StyleAttributes.FONT_STYLE, CellModel_Property_Editor._StyleParameter_QueryFunction_adk1cf_a3b0((editorCell == null ?
       null :
       editorCell.getContext()
@@ -364,8 +365,8 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_noTargetText");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
-    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.yellow));
+    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -414,8 +415,8 @@ public class CellModel_Property_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_emptyNoTargetText");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.yellow);
-    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, MPSColors.cyan);
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.yellow));
+    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

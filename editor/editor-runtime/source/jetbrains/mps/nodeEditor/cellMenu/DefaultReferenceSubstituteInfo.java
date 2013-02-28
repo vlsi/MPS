@@ -16,13 +16,15 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.editor.runtime.impl.cellMenu.DefaultReferenceSubstituteInfoActionsFactory;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.Arrays;
@@ -68,7 +70,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     return inequalitiesForHole;
   }
 
-  public List<INodeSubstituteAction> createActions() {
+  public List<SubstituteAction> createActions() {
     return myActionFactory.createActions();
   }
 
