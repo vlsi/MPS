@@ -4681,6 +4681,7 @@
   <root id="1177506061638">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="1177506104969">
       <property name="description" nameId="tpdg.1158952484319" value="add type variables to class/interface declaration" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="default_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1109279851642" resolveInfo="GenericDeclaration" />
       <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="1177506104970">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1177506104971">
@@ -19294,7 +19295,7 @@
   <root id="8738693607161804631">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="8738693607161804691">
       <property name="description" nameId="tpdg.1158952484319" value="Add the implements clause after class name" />
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_3_RTransform" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="default_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
       <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="8738693607161829819">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8738693607161829820">
@@ -19333,6 +19334,52 @@
             </node>
           </node>
           <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="8738693607162019648">
+            <property name="text" nameId="tpdg.1196433942569" value="implements" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="2610794173362288020">
+      <property name="description" nameId="tpdg.1158952484319" value="Add the implements clause after extends" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_3_RTransform" />
+      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
+      <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="2610794173362288021">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2610794173362288022">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2610794173362288023">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2610794173362288024">
+              <node role="operation" roleId="tpee.1197027833540" type="tp2q.IsEmptyOperation" typeId="tp2q.1165530316231" id="2610794173362288025" />
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2610794173362288026">
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="2610794173362288027">
+                  <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1095933932569" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="2610794173362288028" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" roleId="tpdg.1177442283389" type="tpdg.AddMenuPart" typeId="tpdg.1177323996388" id="2610794173362288029">
+        <link role="concept" roleId="tpdg.1177333551023" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
+        <node role="part" roleId="tpdg.1177333559040" type="tpdg.SimpleSideTransformMenuPart" typeId="tpdg.1177498013932" id="2610794173362288030">
+          <node role="handler" roleId="tpdg.1177498207384" type="tpdg.QueryFunction_SideTransform_Handler" typeId="tpdg.1177498227294" id="2610794173362288031">
+            <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2610794173362288032">
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2610794173362288033">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2610794173362288034">
+                  <node role="operation" roleId="tpee.1197027833540" type="tpdg.NF_LinkList_AddNewChildOperation" typeId="tpdg.767145758118872833" id="2610794173362288035" />
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2610794173362288036">
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="2610794173362288037">
+                      <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1095933932569" />
+                    </node>
+                    <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="2610794173362288038" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2610794173362288039">
+                <node role="expression" roleId="tpee.1068580123156" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="2610794173362288040" />
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" roleId="tpdg.1177498166690" type="tpdg.SideTransform_SimpleString" typeId="tpdg.1196433923911" id="2610794173362288041">
             <property name="text" nameId="tpdg.1196433942569" value="implements" />
           </node>
         </node>
@@ -19663,7 +19710,7 @@
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="3190746170676596108">
       <property name="side" nameId="tpdg.1215605257730" value="both" />
       <property name="description" nameId="tpdg.1158952484319" value="Add the extends clause after class name" />
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_3_RTransform" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="default_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
       <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="3190746170676596109">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3190746170676596110">
@@ -19782,7 +19829,7 @@
   <root id="3190746170685670694">
     <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="3190746170685670695">
       <property name="description" nameId="tpdg.1158952484319" value="Add the extends clause after class name" />
-      <property name="transformTag" nameId="tpdg.1140829165817" value="ext_3_RTransform" />
+      <property name="transformTag" nameId="tpdg.1140829165817" value="default_RTransform" />
       <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tpee.1107796713796" resolveInfo="Interface" />
       <node role="precondition" roleId="tpdg.1154622757656" type="tpdg.SideTransformHintSubstitutePreconditionFunction" typeId="tpdg.1154622616118" id="3190746170685670747">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3190746170685670748">
