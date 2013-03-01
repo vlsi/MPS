@@ -524,11 +524,7 @@ public class TextLine {
   }
 
   private void drawStrikeOutLine(Graphics g, int beginX, int endX, int constY) {
-    Color textColor = g.getColor();
-    // COLORS: Remove hardcoded color
-    g.setColor(Color.DARK_GRAY);
     g.drawLine(beginX, constY + 1, endX, constY + 1);
-    g.setColor(textColor);
   }
 
   private void drawCaret(Graphics g, int shiftX, int shiftY) {

@@ -242,6 +242,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
       addIdeaMappingsExt("STATIC_FIELD","STATIC_FIELD_ATTRIBUTES");
       addIdeaMappingsExt("STATIC_FINAL_FIELD","STATIC_FINAL_FIELD_ATTRIBUTES");
       addIdeaMappingsExt("STATIC_METHOD","STATIC_METHOD_ATTRIBUTES");
+      addIdeaMappingsExt("DEPRECATED","DEPRECATED_ATTRIBUTES");
 
       addIdeaMappingsExt("CLASS_NAME","CLASS_NAME_ATTRIBUTES");
 
