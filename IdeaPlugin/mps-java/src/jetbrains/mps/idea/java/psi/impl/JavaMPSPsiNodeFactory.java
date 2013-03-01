@@ -18,7 +18,7 @@ package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
-import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
+import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -26,7 +26,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
@@ -38,7 +37,7 @@ import java.util.Map;
 /**
  * evgeny, 1/28/13
  */
-public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPSNodePsiSourceFinder {
+public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPS2PsiMapper {
 
   private static final Map<String, MPSPsiNodeFactory> factories = new HashMap<String, MPSPsiNodeFactory>();
 
@@ -148,10 +147,6 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPSNodePsiSourc
 
   @Override
   public PsiElement getPsiSource(SNode node, Project project) {
-    return getPsiSourceOf(node);
-  }
-
-  public static PsiElement getPsiSourceOf(SNode node) {
     // old SModel, non-openapi
     SModel model = node.getModel();
     if (model == null) return null;
@@ -163,4 +158,19 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPSNodePsiSourc
     PsiJavaStubModelDescriptor psiStubs = (PsiJavaStubModelDescriptor) mDesc;
     return psiStubs.getPsiSource(node);
   }
+
+  @Override
+  public SNode getMPSNodeForPsi(PsiElement element, Project project) {
+    // TODO make it efficient
+    for (SModelDescriptor mDesc : SModelRepository.getInstance().getModelDescriptors()) {
+      if (!(mDesc instanceof PsiJavaStubModelDescriptor)) continue;
+      SNode node = ((PsiJavaStubModelDescriptor) mDesc).getMPSNode(element);
+      if (node != null) {
+        return node;
+      }
+    }
+
+    return null;
+  }
+
 }

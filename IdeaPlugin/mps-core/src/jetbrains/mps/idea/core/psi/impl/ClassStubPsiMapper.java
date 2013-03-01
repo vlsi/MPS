@@ -4,7 +4,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.JavaPsiFacade;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.search.GlobalSearchScope;
-import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
+import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.SNodeOperations;
@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.module.SModule;
  * danilla 2/15/13
  */
 
-public class ClassStubPsiSourceFinder implements MPSNodePsiSourceFinder {
+public class ClassStubPsiMapper implements MPS2PsiMapper {
   @Nullable
   @Override
   public PsiElement getPsiSource(SNode node, Project project) {
@@ -55,5 +55,12 @@ public class ClassStubPsiSourceFinder implements MPSNodePsiSourceFinder {
 
     String classFQName = SNodeOperations.getModelLongName(model) + "." + node.getName();
     return JavaPsiFacade.getInstance(project).findClass(classFQName, GlobalSearchScope.allScope(project));
+  }
+
+  @Nullable
+  @Override
+  public SNode getMPSNodeForPsi(PsiElement element, Project project) {
+    // TODO
+    return null;
   }
 }

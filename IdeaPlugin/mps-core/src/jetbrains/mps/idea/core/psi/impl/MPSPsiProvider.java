@@ -29,8 +29,7 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.impl.PsiManagerImpl;
 import com.intellij.psi.impl.PsiModificationTrackerImpl;
 import com.intellij.psi.impl.PsiTreeChangeEventImpl;
-import com.intellij.psi.util.PsiModificationTracker;
-import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
+import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.file.impl.FileManager;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
@@ -111,11 +110,9 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
     if (node == null) return null;
 
     // give chance to other to tell us what the PSI element is
-    for (MPSNodePsiSourceFinder finder : MPSNodePsiSourceFinder.EP_NAME.getExtensions()) {
-      PsiElement psiElement = finder.getPsiSource(node, myProject);
-      if (psiElement != null) {
-        return psiElement;
-      }
+    PsiElement source = MPS2PsiMapperUtil.getPsiSource(node, myProject);
+    if (source != null) {
+      return source;
     }
 
     final SModel containingModel = node.getContainingModel();
