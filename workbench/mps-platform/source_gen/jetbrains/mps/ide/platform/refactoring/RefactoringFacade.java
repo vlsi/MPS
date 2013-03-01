@@ -280,7 +280,7 @@ public class RefactoringFacade {
     if (!(context.isLocal())) {
       Map<SModelReference, Integer> dependencies = context.getStructureModification().getDependencies();
       for (SModelReference modelRef : dependencies.keySet()) {
-        ((jetbrains.mps.smodel.SModel) model).updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
+        ((SModelInternal) model).updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
       }
     }
     if (model instanceof EditableSModel) {
