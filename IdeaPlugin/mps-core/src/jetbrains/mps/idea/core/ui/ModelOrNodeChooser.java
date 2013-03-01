@@ -34,8 +34,8 @@ import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.idea.core.projectView.MPSDataKeys;
-import jetbrains.mps.idea.core.projectView.MPSProjectViewNode;
+import jetbrains.mps.idea.core.MPSDataKeys;
+import jetbrains.mps.idea.core.projectView.MPSPsiElementTreeNode;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelFileTracker;
@@ -75,7 +75,7 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
             if (vFile != null && vFile.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE)) {
               result.add(o);
             }
-          } else if (o instanceof MPSProjectViewNode) {
+          } else if (o instanceof MPSPsiElementTreeNode) {
             result.add(o);
           } else if (o instanceof PsiDirectoryNode) {
             VirtualFile virtualFile = ((PsiDirectoryNode) o).getVirtualFile();
@@ -128,8 +128,8 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
 
   @Override
   public Object getSelectedObject() {
-    if ((getSelectedNode() != null) && (getSelectedNode().getUserObject() instanceof MPSProjectViewNode)) {
-      return ((MPSProjectViewNode) (getSelectedNode().getUserObject())).getValue().resolve(MPSModuleRepository.getInstance());
+    if ((getSelectedNode() != null) && (getSelectedNode().getUserObject() instanceof MPSPsiElementTreeNode)) {
+      return ((MPSPsiElementTreeNode) (getSelectedNode().getUserObject())).getValue().getSNodeReference().resolve(MPSModuleRepository.getInstance());
     } else {
       Set<IFile> models = MPSDataKeys.MODEL_FILES.getData(this);
       if (models != null && models.size() == 1) {

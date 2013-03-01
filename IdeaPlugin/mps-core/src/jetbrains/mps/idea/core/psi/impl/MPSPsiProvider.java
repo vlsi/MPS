@@ -33,11 +33,11 @@ import com.intellij.psi.util.PsiModificationTracker;
 import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.file.impl.FileManager;
-import jetbrains.mps.idea.core.psi.MPSKeys;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ModelProvider;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ReloadableModel;
+import jetbrains.mps.idea.core.psi.impl.file.RootNodePsiElement;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -192,8 +192,14 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
   }
 
   private void notifyPsiChanged(MPSPsiModel model, MPSPsiNodeBase node) {
+
     PsiManager manager = model.getManager();
     if (manager == null || !(manager instanceof PsiManagerImpl)) return;
+
+    myModificationTracker.incCounter();
+
+    // TODO: this is a dumb straightforward solution, better use beforeChage*. Or not?
+    manager.dropResolveCaches();
 
     PsiTreeChangeEventImpl event = new PsiTreeChangeEventImpl(manager);
     event.setParent(node != null ? node : model);
@@ -202,12 +208,11 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
     event.setOldLength(0);
     event.setGeneric(false);
 
-    // TODO: this is a dumb straightforward solution, better use beforeChage*. Or not?
-    manager.dropResolveCaches();
 
     ((PsiManagerImpl)manager).childrenChanged(event);
 
-    myModificationTracker.incCounter();
+
+
   }
 
   private class PsiFileEditorDataProvider implements FileEditorDataProvider {
@@ -240,10 +245,14 @@ public class MPSPsiProvider extends AbstractProjectComponent  {
 
         FileManager fileManager = ((PsiManagerEx) PsiManagerEx.getInstance(myProject)).getFileManager();
         PsiFile sourceFile = fileManager.findFile(sourceVFile);
+        if (sourceFile == null) return null;
 
         for (PsiElement psiElement : sourceFile.getChildren()) {
-          if (sNodePointer.equals(psiElement.getUserData(MPSKeys.NODE_REFERENCE))) {
-            return psiElement;
+          if (psiElement instanceof RootNodePsiElement) {
+            SNodeReference nodeRef = ((RootNodePsiElement) psiElement).getSNodeReference();
+            if (sNodePointer.equals(nodeRef)) {
+              return psiElement;
+            }
           }
         }
 

@@ -60,7 +60,7 @@ public abstract class MPSPsiNodeBase extends LightElement {
     return getContainingModel().getManager();
   }
 
-  protected MPSPsiModel getContainingModel() {
+  public MPSPsiModel getContainingModel() {
     PsiElement parent = this;
     while (parent != null && !(parent instanceof MPSPsiModel)) {
       parent = parent.getParent();
@@ -76,6 +76,11 @@ public abstract class MPSPsiNodeBase extends LightElement {
   @Override
   public PsiFile getContainingFile() {
     return getContainingModel();
+  }
+
+  @Override
+  public boolean isValid() {
+    return listEntry != null;
   }
 
   @Override
@@ -224,6 +229,11 @@ public abstract class MPSPsiNodeBase extends LightElement {
   protected final void replaceChild(@NotNull MPSPsiNodeBase oldNode, @NotNull MPSPsiNodeBase replacementNode) {
     children.replace(oldNode, replacementNode);
   }
+
+  protected final void clearChildren () {
+    children.clear();
+  }
+
 
   /*package*/ void setEntry (Entry newEntry) {
     assert (listEntry == null && newEntry != null) || (listEntry != null && newEntry == null);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,42 +14,53 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.projectView;
+package jetbrains.mps.idea.core.projectView.edit;
 
 import com.intellij.ide.DeleteProvider;
 import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class MPSProjectViewNodeDeleteProvider implements DeleteProvider {
-  private List<MPSProjectViewNode> myProjectViewNodes;
+/**
+ * Created with IntelliJ IDEA.
+ * User: fyodor
+ * Date: 2/27/13
+ * Time: 2:26 PM
+ * To change this template use File | Settings | File Templates.
+ */
+public class SNodeDeleteProvider implements DeleteProvider {
 
-  public MPSProjectViewNodeDeleteProvider(List<MPSProjectViewNode> projectViewNodes) {
-    myProjectViewNodes = projectViewNodes;
+  private Collection<SNodeReference> mySelectedNodes;
+  private Project myProject;
+  private EditableSModelDescriptor myModelDescriptor;
+
+  public SNodeDeleteProvider(Collection<SNodeReference> selectedNodes, @NotNull EditableSModelDescriptor modelDescriptor, @NotNull Project project) {
+    mySelectedNodes = selectedNodes;
+    myProject = project;
+    myModelDescriptor = modelDescriptor;
   }
 
   @Override
-  public void deleteElement(DataContext dataContext) {
-    Project mpsProject = getMPSProject(dataContext);
-    if (mpsProject == null) {
-      return;
-    }
+  public void deleteElement(@NotNull DataContext dataContext) {
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       @Override
       public void run() {
         Set<EditableSModel> modelsToSave = new HashSet<EditableSModel>();
-        for (MPSProjectViewNode myProjectViewNode : myProjectViewNodes) {
-          SNode nodeToDelete = myProjectViewNode.getValue().resolve(MPSModuleRepository.getInstance());
+        for (SNodeReference selectedNode : mySelectedNodes) {
+          SNode nodeToDelete = selectedNode.resolve(MPSModuleRepository.getInstance());
           if (nodeToDelete != null) {
             SModel modelDescriptor = nodeToDelete.getModel().getModelDescriptor();
             if (modelDescriptor instanceof EditableSModel) {
@@ -62,15 +73,11 @@ public class MPSProjectViewNodeDeleteProvider implements DeleteProvider {
           sModelDescriptor.save();
         }
       }
-    }, mpsProject);
+    }, myProject);
   }
 
   @Override
-  public boolean canDeleteElement(DataContext dataContext) {
-    return getMPSProject(dataContext) != null && !myProjectViewNodes.isEmpty();
-  }
-
-  private Project getMPSProject(DataContext dataContext) {
-    return ProjectHelper.toMPSProject(PlatformDataKeys.PROJECT.getData(dataContext));
+  public boolean canDeleteElement(@NotNull DataContext dataContext) {
+    return !mySelectedNodes.isEmpty();
   }
 }

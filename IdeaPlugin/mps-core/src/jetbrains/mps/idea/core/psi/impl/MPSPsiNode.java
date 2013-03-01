@@ -18,12 +18,11 @@ package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.psi.PsiElement;
 import com.intellij.util.ArrayUtil;
-import com.intellij.util.SmartList;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -69,8 +68,8 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     return myContainingRole;
   }
 
-  public SNodeReference getNodeReference() {
-    return new SNodePointer((SModelReference) getContainingModel().getModelReference(), myId);
+  public SNodeReference getSNodeReference() {
+    return new SNodePointer((SModelReference) getContainingModel().getSModelReference(), myId);
   }
 
   public String getProperty(String key) {
@@ -139,7 +138,7 @@ public class MPSPsiNode extends MPSPsiNodeBase {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        SNode node = getNodeReference().resolve(MPSModuleRepository.getInstance());
+        SNode node = getSNodeReference().resolve(MPSModuleRepository.getInstance());
         if (node == null) return;
 
         SModel modelDescriptor = node.getModel().getModelDescriptor();

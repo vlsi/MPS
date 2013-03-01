@@ -89,9 +89,6 @@
       <implementation-class>jetbrains.mps.idea.core.IdeaLibLoader</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.core.projectView.MPSTreeRootNameInvalidator</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.idea.core.psi.PsiChangesWatcher</implementation-class>
     </component>
     <component>
