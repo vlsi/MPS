@@ -45,6 +45,9 @@ public class AnnotationMethodDeclaration_Behavior {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return true;
     }
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.StringType")) {
+      return true;
+    }
     return false;
   }
 }
