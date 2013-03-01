@@ -28,11 +28,8 @@ import java.io.IOException;
 import static com.intellij.openapi.util.io.FileUtil.toSystemDependentName;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 1/15/13
- * Time: 2:12 PM
- * To change this template use File | Settings | File Templates.
  */
 public class MpsJpsBuildTestCase extends JpsBuildTestCase {
 

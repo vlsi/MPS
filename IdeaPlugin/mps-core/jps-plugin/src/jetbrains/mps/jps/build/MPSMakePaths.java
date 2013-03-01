@@ -17,11 +17,8 @@
 package jetbrains.mps.jps.build;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 12/21/12
- * Time: 2:24 PM
- * To change this template use File | Settings | File Templates.
  */
 public class MPSMakePaths {
 

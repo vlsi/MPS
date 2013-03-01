@@ -39,11 +39,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import javax.swing.Icon;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 2/5/13
- * Time: 11:47 AM
- * To change this template use File | Settings | File Templates.
  */
 public class RootNodePsiElement extends LightElement implements PsiFileSystemItem {
 

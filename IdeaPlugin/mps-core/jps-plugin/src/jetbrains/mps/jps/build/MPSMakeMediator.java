@@ -87,11 +87,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 12/19/12
- * Time: 2:10 PM
- * To change this template use File | Settings | File Templates.
  */
 public class MPSMakeMediator {
 

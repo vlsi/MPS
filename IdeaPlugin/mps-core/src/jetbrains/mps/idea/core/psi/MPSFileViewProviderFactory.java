@@ -41,11 +41,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 2/5/13
- * Time: 1:59 PM
- * To change this template use File | Settings | File Templates.
  */
 public class MPSFileViewProviderFactory implements FileViewProviderFactory {
   @Override

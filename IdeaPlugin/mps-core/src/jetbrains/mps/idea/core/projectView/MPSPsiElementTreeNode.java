@@ -33,11 +33,8 @@ import java.awt.Color;
 import java.util.Collection;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 2/28/13
- * Time: 2:33 PM
- * To change this template use File | Settings | File Templates.
  */
 public class MPSPsiElementTreeNode extends BasePsiNode<MPSPsiNode> {
 
