@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.java.psi.impl;
 
 import com.intellij.pom.java.LanguageLevel;
+import com.intellij.psi.PsiAnnotation;
 import com.intellij.psi.PsiClassType;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiExpression;
@@ -74,7 +75,7 @@ public class MPSPsiParameter extends MPSPsiNode implements PsiParameter {
   public PsiType getType() {
     MPSPsiNode typeNode = getChildOfType("type", MPSPsiNode.class);
     if (!(typeNode instanceof ComputesPsiType)) {
-      return null;
+      return new NonJavaMPSType(PsiAnnotation.EMPTY_ARRAY);
     }
 
     return ((ComputesPsiType) typeNode).getPsiType();

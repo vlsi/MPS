@@ -17,12 +17,14 @@
 package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiNamedElement;
 import com.intellij.psi.PsiReference;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
@@ -132,14 +134,15 @@ public class MPSPsiRef extends MPSPsiNodeBase {
         if (element instanceof MPSPsiNodeBase) {
           // TODO targeting mps node
         } else {
-          final SNode newTargetNode = MPS2PsiMapperUtil.findNodeByPsi(element, getProject());
+          final Project project = getProject();
+          final SNode newTargetNode = MPS2PsiMapperUtil.findNodeByPsi(element, project);
 
           PsiElement psiParent = getParent();
           if (psiParent instanceof MPSPsiNode) {
             MPSPsiNode mpsParent = (MPSPsiNode) psiParent;
             final SNode parentNode = mpsParent.getSNodeReference().resolve(MPSModuleRepository.getInstance());
 
-            ModelAccess.instance().runWriteAction(new Runnable() {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
               @Override
               public void run() {
                 // setReferenceTarget: ignoring the fact that there may be multiple references in one role?
@@ -154,10 +157,10 @@ public class MPSPsiRef extends MPSPsiNodeBase {
                   model = newTargetNode.getModel().getReference();
                   nodeId = newTargetNode.getNodeId();
                   // TODO toString is a bad fallback
-                  referenceText = element instanceof PsiNamedElement ? ((PsiNamedElement)element).getName() : element.toString();
+                  referenceText = element instanceof PsiNamedElement ? ((PsiNamedElement) element).getName() : element.toString();
                 }
               }
-            });
+            }, new MPSProject(project));
 
           }
         }
