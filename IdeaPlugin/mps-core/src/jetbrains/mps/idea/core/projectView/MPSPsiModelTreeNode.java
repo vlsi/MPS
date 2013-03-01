@@ -121,6 +121,12 @@ public class MPSPsiModelTreeNode extends PsiFileNode implements NavigatableWithT
     return psiModel.getSourceVirtualFile();
   }
 
+  @Nullable
+  @Override
+  public String getTestPresentation() {
+    return extractPsiFromValue().getQualifiedName();
+  }
+
   @Override
   protected void updateImpl(PresentationData presentation) {
     MPSPsiModel psiModel = extractPsiFromValue();

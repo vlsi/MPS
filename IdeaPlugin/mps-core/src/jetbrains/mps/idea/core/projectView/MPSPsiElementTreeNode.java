@@ -47,6 +47,12 @@ public class MPSPsiElementTreeNode extends BasePsiNode<MPSPsiNode> {
 
   @Nullable
   @Override
+  public String getTestPresentation() {
+    return extractPsiFromValue().getName();
+  }
+
+  @Nullable
+  @Override
   protected MPSPsiNode extractPsiFromValue() {
     return getValue();
   }
