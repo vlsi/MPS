@@ -27,6 +27,7 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
 import jetbrains.mps.openapi.editor.style.StyleListener;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.Color;
@@ -40,7 +41,7 @@ import java.util.Set;
 
 public class TextLine {
   // COLORS: Remove hardcoded color
-  private static final Color ERROR_COLOR = new Color(255, 220, 220);
+  private static final Color ERROR_COLOR = StyleRegistry.getInstance().isDarkTheme() ? StyleRegistry.getInstance().getEditorBackground() : new Color(255, 220, 220);
 
   private static Map<Font, FontMetrics> ourFontMetricsCache = new HashMap<Font, FontMetrics>();
   private static Map<String, Font> ourFontsCache = new HashMap<String, Font>();

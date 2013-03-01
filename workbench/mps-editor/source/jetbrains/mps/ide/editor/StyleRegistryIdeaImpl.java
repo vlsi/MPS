@@ -143,7 +143,7 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
 
   @Override
   public Color getSimpleColor(Color color, final Color bg) {
-    if(!EditorColorsManager.getInstance().getGlobalScheme().getName().contains("Darcula") || color == null || bg == null)
+    if(!isDarkTheme() || color == null || bg == null)
         return color;
 
     final Color original = color;
@@ -220,6 +220,11 @@ public class StyleRegistryIdeaImpl extends StyleRegistry implements EditorColors
     }
     
     return style;
+  }
+
+  @Override
+  public boolean isDarkTheme() {
+    return EditorColorsManager.getInstance().getGlobalScheme().getName().contains("Darcula");
   }
 
   private void fillIdeaMappings() {
