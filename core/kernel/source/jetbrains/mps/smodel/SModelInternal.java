@@ -94,4 +94,10 @@ public interface SModelInternal extends SModel {
   int getVersion();
 
   void setVersion(int version);
+
+  void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion);
+
+  boolean updateSModelReferences();
+
+  boolean updateModuleReferences();
 }

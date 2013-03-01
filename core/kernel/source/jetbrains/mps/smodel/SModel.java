@@ -980,6 +980,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
   }
 
+  @Override
   public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
     ModelChange.assertLegalChange(this);
 
@@ -995,6 +996,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     }
   }
 
+  @Override
   public boolean updateSModelReferences() {
     ModelChange.assertLegalChange(this);
     enforceFullLoad();
@@ -1036,6 +1038,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     return changed;
   }
 
+  @Override
   public boolean updateModuleReferences() {
     ModelChange.assertLegalChange(this);
 
@@ -1426,57 +1429,57 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
     @Override
     public ModelDependenciesManager getModelDepsManager() {
-      return getSModel().getModelDepsManager();
+      return myModel.getModelDepsManager();
     }
 
     @Override
     public List<ModuleReference> importedLanguages() {
-      return getSModel().importedLanguages();
+      return myModel.importedLanguages();
     }
 
     @Override
     public void deleteLanguage(@NotNull ModuleReference ref) {
-      getSModel().deleteLanguage(ref);
+      myModel.deleteLanguage(ref);
     }
 
     @Override
     public void addLanguage(ModuleReference ref) {
-      getSModel().addLanguage(ref);
+      myModel.addLanguage(ref);
     }
 
     @Override
     public List<ModuleReference> importedDevkits() {
-      return getSModel().importedDevkits();
+      return myModel.importedDevkits();
     }
 
     @Override
     public void addDevKit(ModuleReference ref) {
-      getSModel().addDevKit(ref);
+      myModel.addDevKit(ref);
     }
 
     @Override
     public void deleteDevKit(@NotNull ModuleReference ref) {
-      getSModel().deleteDevKit(ref);
+      myModel.deleteDevKit(ref);
     }
 
     @Override
     public List<ImportElement> importedModels() {
-      return getSModel().importedModels();
+      return myModel.importedModels();
     }
 
     @Override
     public void addModelImport(SModelReference modelReference, boolean firstVersion) {
-      getSModel().addModelImport(modelReference, firstVersion);
+      myModel.addModelImport(modelReference, firstVersion);
     }
 
     @Override
     public void addModelImport(ImportElement importElement) {
-      getSModel().addModelImport(importElement);
+      myModel.addModelImport(importElement);
     }
 
     @Override
     public void deleteModelImport(SModelReference modelReference) {
-      getSModel().deleteModelImport(modelReference);
+      myModel.deleteModelImport(modelReference);
     }
 
     @NotNull
@@ -1486,82 +1489,97 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
     @Override
     public void calculateImplicitImports() {
-      getSModel().calculateImplicitImports();
+      myModel.calculateImplicitImports();
     }
 
     @Override
     public List<ModuleReference> engagedOnGenerationLanguages() {
-      return getSModel().engagedOnGenerationLanguages();
+      return myModel.engagedOnGenerationLanguages();
     }
 
     @Override
     public void addEngagedOnGenerationLanguage(ModuleReference ref) {
-      getSModel().addEngagedOnGenerationLanguage(ref);
+      myModel.addEngagedOnGenerationLanguage(ref);
     }
 
     @Override
     public void removeEngagedOnGenerationLanguage(ModuleReference ref) {
-      getSModel().removeEngagedOnGenerationLanguage(ref);
+      myModel.removeEngagedOnGenerationLanguage(ref);
     }
 
     @Override
     public List<ImportElement> getAdditionalModelVersions() {
-      return getSModel().getAdditionalModelVersions();
+      return myModel.getAdditionalModelVersions();
     }
 
     @Override
     public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
-      getSModel().addAdditionalModelVersion(modelReference, usedVersion);
+      myModel.addAdditionalModelVersion(modelReference, usedVersion);
     }
 
     @Override
     public void addAdditionalModelVersion(@NotNull ImportElement element) {
-      getSModel().addAdditionalModelVersion(element);
+      myModel.addAdditionalModelVersion(element);
     }
 
     @Override
     public int getVersion() {
-      return getSModel().getVersion();
+      return myModel.getVersion();
     }
 
     @Override
     public void setVersion(int version) {
-      getSModel().setVersion(version);
+      myModel.setVersion(version);
     }
 
     @Override
     public StackTraceElement[] getDisposedStacktrace() {
-      return getSModel().getDisposedStacktrace();
+      return myModel.getDisposedStacktrace();
     }
 
     @Override
     public boolean isDisposed() {
-      return getSModel().isDisposed();
+      return myModel.isDisposed();
     }
 
     @Override
     public void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
-      getSModel().setModelDescriptor(modelDescriptor);
+      myModel.setModelDescriptor(modelDescriptor);
     }
 
     @Override
     public void dispose() {
-      getSModel().dispose();
+      myModel.dispose();
     }
 
     @Override
     public boolean canFireEvent() {
-      return getSModel().canFireEvent();
+      return myModel.canFireEvent();
     }
 
     @Override
     public FastNodeFinder getFastNodeFinder() {
-      return getSModel().getFastNodeFinder();
+      return myModel.getFastNodeFinder();
     }
 
     @Override
     public void disposeFastNodeFinder() {
-      getSModel().disposeFastNodeFinder();
+      myModel.disposeFastNodeFinder();
+    }
+
+    @Override
+    public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
+      myModel.updateImportedModelUsedVersion(sModelReference, currentVersion);
+    }
+
+    @Override
+    public boolean updateSModelReferences() {
+      return myModel.updateSModelReferences();
+    }
+
+    @Override
+    public boolean updateModuleReferences() {
+      return myModel.updateModuleReferences();
     }
   }
 }

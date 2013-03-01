@@ -465,4 +465,19 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
   public void disposeFastNodeFinder() {
     getSModel().disposeFastNodeFinder();
   }
+
+  @Override
+  public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
+    getSModel().updateImportedModelUsedVersion(sModelReference, currentVersion);
+  }
+
+  @Override
+  public boolean updateSModelReferences() {
+    return getSModel().updateSModelReferences();
+  }
+
+  @Override
+  public boolean updateModuleReferences() {
+    return getSModel().updateModuleReferences();
+  }
 }
