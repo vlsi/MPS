@@ -20,18 +20,22 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
   public ImplementingClasses_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Implementing Classes";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Interface";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 3);
     try {
@@ -62,6 +66,7 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
     for (SNode derivedInterface : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder", node, scope, new EmptyProgressMonitor()))) {
@@ -69,6 +74,7 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Implementing Classes";
   }

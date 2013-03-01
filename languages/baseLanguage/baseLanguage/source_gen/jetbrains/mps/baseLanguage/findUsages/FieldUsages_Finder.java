@@ -20,18 +20,22 @@ public class FieldUsages_Finder extends GeneratedFinder {
   public FieldUsages_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Field Usages";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
   }
 
+  @Override
   public boolean isApplicable(SNode node) {
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Interface", false, false) == null) {
       return false;
@@ -42,6 +46,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
     return true;
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
     try {
@@ -61,6 +66,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
@@ -70,6 +76,7 @@ public class FieldUsages_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Field Usages";
   }
