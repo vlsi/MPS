@@ -95,7 +95,7 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   public static void createModuleForModel(SModel model, String version, Project project, boolean mergeResultModel) {
-    if (model.getModelDescriptor() != null) {
+    if (model.getModelDescriptor() != null && !(model.getModelDescriptor() instanceof jetbrains.mps.smodel.SModel.FakeModelDescriptor)) {
       return;
     }
     IModule module = null;
