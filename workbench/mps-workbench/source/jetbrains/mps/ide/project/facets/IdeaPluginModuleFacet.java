@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package jetbrains.mps.ide.project.facets;
 
-package jetbrains.mps.idea.core.projectView;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import com.intellij.openapi.actionSystem.DataKey;
-import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.model.SModelReference;
-
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
-public class MPSDataKeys {
-    public static final DataKey<Set<IFile>> MODEL_FILES = DataKey.create("mps.model.files");
+/**
+ * evgeny, 2/28/13
+ */
+public interface IdeaPluginModuleFacet {
+
+  String getPluginId();
+
+  Set<SModuleReference> getContainedModules();
 }

@@ -16,12 +16,10 @@
 
 package jetbrains.mps.idea.core.psi.impl.file;
 
-import com.intellij.lang.Language;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiFileSystemItem;
-import com.intellij.psi.PsiManager;
 import com.intellij.psi.impl.light.LightElement;
 import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.util.IncorrectOperationException;
@@ -31,14 +29,12 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 
@@ -52,13 +48,13 @@ import javax.swing.Icon;
 public class RootNodePsiElement extends LightElement implements PsiFileSystemItem {
 
   private PsiFile mySourcePsiFile;
-  private SNodeReference mySNodePointer;
+  private SNodeReference mySNodeReference;
   private String myName;
 
   public RootNodePsiElement(PsiFile sourcePsiFile, SNodeReference sNodePointer, String name) {
     super(sourcePsiFile.getManager(), sourcePsiFile.getLanguage());
     mySourcePsiFile = sourcePsiFile;
-    mySNodePointer = sNodePointer;
+    mySNodeReference = sNodePointer;
     myName = name;
   }
 
@@ -84,6 +80,7 @@ public class RootNodePsiElement extends LightElement implements PsiFileSystemIte
     return null;
   }
 
+  @NotNull
   @Override
   public String getName() {
     return myName;
@@ -115,6 +112,10 @@ public class RootNodePsiElement extends LightElement implements PsiFileSystemIte
     return getName();
   }
 
+  public SNodeReference getSNodeReference() {
+    return mySNodeReference;
+  }
+
 
   @Nullable
   @Override
@@ -122,7 +123,9 @@ public class RootNodePsiElement extends LightElement implements PsiFileSystemIte
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       @Override
       public Icon compute() {
-        SNode sNode = mySNodePointer.resolve(MPSModuleRepository.getInstance());
+        SNode sNode = mySNodeReference.resolve(MPSModuleRepository.getInstance());
+        if (sNode == null) return null;
+
         return IconManager.getIconFor(sNode, true);
       }
     });
@@ -137,7 +140,7 @@ public class RootNodePsiElement extends LightElement implements PsiFileSystemIte
   public boolean canNavigate() {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
-        return mySNodePointer.resolve(MPSModuleRepository.getInstance()) != null;
+        return mySNodeReference.resolve(MPSModuleRepository.getInstance()) != null;
       }
     });
 
@@ -147,11 +150,13 @@ public class RootNodePsiElement extends LightElement implements PsiFileSystemIte
   public void navigate(final boolean requestFocus) {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
-        SNode root = mySNodePointer.resolve(MPSModuleRepository.getInstance());
+        SNode root = mySNodeReference.resolve(MPSModuleRepository.getInstance());
         if (root == null) return;
 
         ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
         NavigationSupport.getInstance().openNode(context, root, requestFocus, false);
       }
     });  }
+
+
 }

@@ -14,21 +14,26 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.psi;
+package jetbrains.mps.idea.core.usages;
 
-import com.intellij.openapi.util.Key;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import com.intellij.openapi.project.Project;
+import com.intellij.usages.RenameableUsage;
+import com.intellij.util.IncorrectOperationException;
+import jetbrains.mps.idea.core.usages.NodeUsage;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
- * Created with IntelliJ IDEA.
- * User: fyodor
- * Date: 2/5/13
- * Time: 3:36 PM
- * To change this template use File | Settings | File Templates.
+ * danilla 2/23/13
  */
-public class MPSKeys {
-  public static final Key<SModelReference> MODEL_REFERENCE = Key.create("mps.model.reference");
-  public static final Key<SNodeReference> NODE_REFERENCE = Key.create("mps.node.reference");
 
+public class RenameableNodeUsage extends NodeUsage implements RenameableUsage {
+  public RenameableNodeUsage(@NotNull SNodeReference node, @NotNull Project project, String category) {
+    super(node, project, category);
+  }
+
+  @Override
+  public void rename(String newName) throws IncorrectOperationException {
+    System.out.println("DEBUG: renaming to " + newName);
+  }
 }

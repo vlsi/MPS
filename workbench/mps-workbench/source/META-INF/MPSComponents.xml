@@ -16,6 +16,9 @@
       <implementation-class>jetbrains.mps.ide.persistence.PersistenceComponent</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.ide.MPSWorkbenchComponents</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.ide.generator.TransientSwapOwnerComponent</implementation-class>
     </component>
     <component>

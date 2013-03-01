@@ -114,11 +114,14 @@
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.DataSourceBase" />
   </dependency>
   <dependency className="jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor" file="PsiJavaStubModelDescriptor.java">
+    <classNode dependClassName="com.google.common.collect.BiMap" />
+    <classNode dependClassName="com.google.common.collect.HashBiMap" />
     <classNode dependClassName="com.intellij.psi.PsiClass" />
     <classNode dependClassName="com.intellij.psi.PsiElement" />
     <classNode dependClassName="com.intellij.psi.PsiFile" />
     <classNode dependClassName="com.intellij.psi.PsiFileSystemItem" />
     <classNode dependClassName="com.intellij.psi.PsiJavaFile" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
