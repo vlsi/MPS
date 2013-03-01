@@ -37,10 +37,6 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.iterable.TranslatingIterator;
@@ -448,7 +444,9 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   protected ModuleFacetBase setupFacet(ModuleFacetBase facet, Memento memento) {
-    facet.setModule(this);
+    if (!facet.setModule(this)) {
+      return null;
+    }
     facet.load(memento != null ? memento : new MementoImpl());
     facet.attach();
     return facet;
@@ -490,7 +488,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
       ModuleFacetBase facet = (ModuleFacetBase) newFacet;
       Memento m = config.get(facetType);
       facet = setupFacet(facet, m);
-      if(facet != null) {
+      if (facet != null) {
         myFacets.add(facet);
       }
     }
@@ -578,6 +576,10 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Override
   public void dispose() {
     FileSystem.getInstance().removeListener(this);
+    for (ModuleFacetBase f : myFacets) {
+      f.dispose();
+    }
+    myFacets.clear();
     for (ModelRoot m : mySModelRoots) {
       ((ModelRootBase) m).dispose();
     }

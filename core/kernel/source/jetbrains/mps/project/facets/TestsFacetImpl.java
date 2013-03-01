@@ -30,6 +30,11 @@ public class TestsFacetImpl extends ModuleFacetBase implements TestsFacet {
   }
 
   @Override
+  public String getFacetType() {
+    return FACET_TYPE;
+  }
+
+  @Override
   public void attach() {
     IFile descriptorFile = ((AbstractModule) getModule()).getDescriptorFile();
     if (descriptorFile != null) {

@@ -25,7 +25,7 @@ import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -37,7 +37,7 @@ public class MPSCoreComponents implements ApplicationComponent {
   @NotNull
   @Override
   public String getComponentName() {
-    return "MPS Workbench";
+    return "MPS Core Components";
   }
 
   //getFileSystemProvider return ideaFileSystemProvider ? null

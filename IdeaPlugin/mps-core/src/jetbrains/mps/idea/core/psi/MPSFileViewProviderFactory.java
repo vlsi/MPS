@@ -37,7 +37,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -108,22 +107,17 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
         public FileSourcePsiFile compute() {
           SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
           if(descr != null) {
-            return createAndUpdatePsiFile(descr);
+            // force loading the model and updating the PSI tree at this time
+            MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
+            MPSPsiModel psiModel = mpsPsiProvider.getPsi(descr);
+
+            return new FileSourcePsiFile(MySingleRootFileViewProvider.this, descr.getReference(), descr.getModelName());
           }
           return null;
         }
       });
       return psiFile;
     }
-
-    private FileSourcePsiFile createAndUpdatePsiFile (SModel descr) {
-      FileSourcePsiFile result = new FileSourcePsiFile(this, descr.getModelName());
-
-      MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
-      MPSPsiModel psiModel = mpsPsiProvider.getPsi(descr);
-
-      result.update(psiModel.getChildren());
-      return result;
-    }
   }
+
 }

@@ -24,7 +24,7 @@ import com.intellij.psi.PsiClassOwner;
 import com.intellij.psi.PsiFile;
 import jetbrains.mps.baseLanguage.search.MpsScopesUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.idea.core.projectView.MPSDataKeys;
+import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.ModelAccess;

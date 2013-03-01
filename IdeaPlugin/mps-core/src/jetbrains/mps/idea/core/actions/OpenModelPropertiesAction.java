@@ -22,7 +22,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.idea.core.projectView.MPSDataKeys;
+import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFileTracker;

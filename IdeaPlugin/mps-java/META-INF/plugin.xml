@@ -85,6 +85,7 @@
     <java.elementFinder implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaClassFinder"/>
     <java.shortNamesCache implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaShortNamesCache"/>
     <directClassInheritorsSearch implementation="jetbrains.mps.idea.java.usages.MPSJavaDirectInheritorsSearcher"/>
+    <referencesSearch implementation="jetbrains.mps.idea.java.psi.impl.MPSReferenceSearch"/>
   </extensions>
 
   <extensions defaultExtensionNs="jetbrains.mps">
