@@ -22,6 +22,7 @@ import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -162,7 +163,7 @@ public class JavaMPSPsiNodeFactory implements MPSPsiNodeFactory, MPS2PsiMapper {
   @Override
   public SNode getMPSNodeForPsi(PsiElement element, Project project) {
     // TODO make it efficient
-    for (SModelDescriptor mDesc : SModelRepository.getInstance().getModelDescriptors()) {
+    for (SModel mDesc : SModelRepository.getInstance().getModelDescriptors()) {
       if (!(mDesc instanceof PsiJavaStubModelDescriptor)) continue;
       SNode node = ((PsiJavaStubModelDescriptor) mDesc).getMPSNode(element);
       if (node != null) {

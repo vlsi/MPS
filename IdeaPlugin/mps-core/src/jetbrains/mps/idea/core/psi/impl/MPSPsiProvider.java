@@ -32,6 +32,7 @@ import com.intellij.psi.impl.PsiTreeChangeEventImpl;
 import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import com.intellij.psi.impl.PsiManagerEx;
 import com.intellij.psi.impl.file.impl.FileManager;
+import jetbrains.mps.idea.core.psi.MPS2PsiMapperUtil;
 import jetbrains.mps.idea.core.psi.MPSPsiNodeFactory;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor.ModelProvider;
 import jetbrains.mps.idea.core.psi.impl.events.SModelEventProcessor;

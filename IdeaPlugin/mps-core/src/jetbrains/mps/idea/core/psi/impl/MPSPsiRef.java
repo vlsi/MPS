@@ -137,7 +137,7 @@ public class MPSPsiRef extends MPSPsiNodeBase {
           PsiElement psiParent = getParent();
           if (psiParent instanceof MPSPsiNode) {
             MPSPsiNode mpsParent = (MPSPsiNode) psiParent;
-            final SNode parentNode = mpsParent.getNodeReference().resolve(MPSModuleRepository.getInstance());
+            final SNode parentNode = mpsParent.getSNodeReference().resolve(MPSModuleRepository.getInstance());
 
             ModelAccess.instance().runWriteAction(new Runnable() {
               @Override
