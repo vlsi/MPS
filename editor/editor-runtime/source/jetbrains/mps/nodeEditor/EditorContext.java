@@ -185,13 +185,13 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return (jetbrains.mps.nodeEditor.cells.EditorCell) nodeCell;
   }
 
-  public jetbrains.mps.nodeEditor.cells.EditorCell createReferentCell(AbstractCellProvider inlineComponent, SNode sourceNode, SNode targetNode, String role) {
+  public EditorCell createReferentCell(AbstractCellProvider inlineComponent, SNode sourceNode, SNode targetNode, String role) {
     if (myCurrentRefNodeContext == null) {
       initializeRefContext(targetNode);
     }
     ReferencedNodeContext oldNodeContext = myCurrentRefNodeContext;
     myCurrentRefNodeContext = myCurrentRefNodeContext.contextWithOneMoreReference(targetNode, sourceNode, role);
-    jetbrains.mps.nodeEditor.cells.EditorCell nodeCell = inlineComponent.createEditorCell((jetbrains.mps.openapi.editor.EditorContext) this);
+    EditorCell nodeCell = inlineComponent.createEditorCell((jetbrains.mps.openapi.editor.EditorContext) this);
     myCurrentRefNodeContext = oldNodeContext;
     return nodeCell;
   }
