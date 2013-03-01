@@ -22,11 +22,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 11/7/12
- * Time: 4:40 PM
- * To change this template use File | Settings | File Templates.
  */
 public class InferenceTypecheckingContext extends SimpleTypecheckingContext<State, BaseTypechecking<State, SimpleTypecheckingComponent<State>>> {
 

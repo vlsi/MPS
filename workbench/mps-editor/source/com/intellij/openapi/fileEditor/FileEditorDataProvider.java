@@ -21,11 +21,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 2/1/13
- * Time: 2:23 PM
- * To change this template use File | Settings | File Templates.
  */
 public interface FileEditorDataProvider {
   @Nullable

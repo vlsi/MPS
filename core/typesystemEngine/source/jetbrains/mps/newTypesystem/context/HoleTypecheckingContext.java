@@ -21,11 +21,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 /**
- * Created with IntelliJ IDEA.
  * User: fyodor
  * Date: 12/3/12
- * Time: 11:48 AM
- * To change this template use File | Settings | File Templates.
  */
 public class HoleTypecheckingContext extends SimpleTypecheckingContext<HoleState, HoleTypechecking> {
   public HoleTypecheckingContext(SNode node, TypeChecker typeChecker) {
