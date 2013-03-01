@@ -57,9 +57,8 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   }
 
   @Override
-  protected SModel createModel() {
-
-    SModel ourModel = new jetbrains.mps.smodel.SModel(myModelRef);
+  protected jetbrains.mps.smodel.SModel createModel() {
+    jetbrains.mps.smodel.SModel ourModel = new jetbrains.mps.smodel.SModel(myModelRef);
     myPsiSources = MapSequence.fromMap(new HashMap<SNodeId, PsiElement>());
 
     ASTConverter converter = new ASTConverter(myPsiSources);
