@@ -25,7 +25,6 @@ import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;

@@ -208,6 +208,6 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
       return null;
     }
     SNodeId nodeId = MapSequence.fromMap(myMps2PsiMappings).get(file).inverse().get(element);
-    return mySModel.getNodeById(nodeId);
+    return mySModel.getNode(nodeId);
   }
 }
