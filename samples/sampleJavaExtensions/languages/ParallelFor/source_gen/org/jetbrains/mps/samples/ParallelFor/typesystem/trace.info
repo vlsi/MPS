@@ -628,7 +628,7 @@
   </root>
   <root nodeRef="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)/7793246093816012185">
     <nodeInfo nodeId="7942685431171333076" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="23" startPosition="130" endLine="24" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735291553" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="25" startPosition="33" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735291553" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="25" startPosition="159" endLine="26" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2975785153735291562" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="26" startPosition="109" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7942685431171364666" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="27" startPosition="0" endLine="28" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7793246093816027855" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="31" startPosition="11" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -672,7 +672,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7793246093816012208" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="30" startPosition="80" endLine="38" endPosition="11" />
     <scopeInfo nodeId="7942685431171367462" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="29" startPosition="51" endLine="39" endPosition="9" />
-    <scopeInfo nodeId="7793246093816012191" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="25" startPosition="33" endLine="40" endPosition="7">
+    <scopeInfo nodeId="7793246093816012191" fileName="NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule.java" startLine="25" startPosition="159" endLine="40" endPosition="7">
       <varInfo nodeId="7942685431171364667" varName="declarationsAncestor" />
       <varInfo nodeId="2975785153735291554" varName="variableDeclaration" />
     </scopeInfo>
