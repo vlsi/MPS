@@ -2,8 +2,9 @@ package org.jetbrains.mps.openapi.persistence.indexing;
 
 import jetbrains.mps.components.CoreComponent;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class FastFindUsagesRegistry implements CoreComponent {
   private static FastFindUsagesRegistry INSTANCE;
@@ -28,17 +29,17 @@ public class FastFindUsagesRegistry implements CoreComponent {
 
   //------------CoreComponent stuff end----------------
 
-  private Map<String, FastFindSupport> myRootType2FindSupport = new HashMap<String, FastFindSupport>();
+  private Set<FindUsagesParticipant> myParticipants = new LinkedHashSet<FindUsagesParticipant>();
 
-  public void setFastFindSupport(String id, FastFindSupport ffs) {
-    if (ffs != null) {
-      myRootType2FindSupport.put(id, ffs);
-    } else {
-      myRootType2FindSupport.remove(id);
-    }
+  public void addParticipant(FindUsagesParticipant participant) {
+    myParticipants.add(participant);
   }
 
-  public FastFindSupport getFastFindSupport(String id) {
-    return myRootType2FindSupport.get(id);
+  public void removeParticipant(FindUsagesParticipant participant) {
+    myParticipants.remove(participant);
+  }
+
+  public Set<FindUsagesParticipant> getParticipants() {
+    return Collections.unmodifiableSet(myParticipants);
   }
 }

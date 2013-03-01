@@ -19,6 +19,7 @@ package jetbrains.mps.workbench.goTo;
 import com.intellij.navigation.GotoClassContributor;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
@@ -31,11 +32,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GoToClassMPSContributor implements GotoClassContributor {
+  @NotNull
   @Override
   public String[] getNames(Project project, boolean includeNonProjectItems) {
     return createModel(project).getNames(includeNonProjectItems);
   }
 
+  @NotNull
   @Override
   public NavigationItem[] getItemsByName(String name, String pattern, Project project, boolean includeNonProjectItems) {
     return createModel(project).getElementsByName(name, includeNonProjectItems, pattern);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence.indexing;
+package jetbrains.mps.util;
 
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.util.Consumer;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Map;
-import java.util.Set;
 
-public interface FastFindSupport {
-  Map<SModel, Collection<SConcept>> findModelsWithPossibleInstances(Collection<SModel> models, Set<SConcept> concepts);
+/**
+ * @author peter
+ */
+public class CollectConsumer<T> implements Consumer<T> {
+  private final Collection<T> myResult;
 
-  Map<SModel, Collection<SNode>> findModelsWithPossibleUsages(Collection<SModel> models, Set<SNode> nodes);
+  public CollectConsumer(Collection<T> result) {
+    myResult = result;
+  }
+
+  public CollectConsumer() {
+    this(new ArrayList<T>());
+  }
+
+  @Override
+  public void consume(T t) {
+    myResult.add(t);
+  }
+
+  public Collection<T> getResult() {
+    return myResult;
+  }
 }
