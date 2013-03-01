@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.cellProviders;
 
-import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
@@ -62,7 +62,7 @@ public abstract class AbstractCellListHandler {
   public void startInsertMode(EditorContext editorContext, EditorCell anchorCell, boolean insertBefore) {
     SNode anchorNode = getAnchorNode(anchorCell);
     myInsertedNode = createNodeToInsert(editorContext);
-    doInsertNode(anchorNode, insertBefore);    
+    doInsertNode(anchorNode, insertBefore);
   }
 
   protected void finishInsertMode(jetbrains.mps.nodeEditor.EditorContext editorContext) {
@@ -92,13 +92,13 @@ public abstract class AbstractCellListHandler {
     // calling deprecated method for the compatibility with generated code
     return createNodeCell((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
   }
-  
+
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
-  public EditorCell createNodeCell(jetbrains.mps.nodeEditor.EditorContext editorContext, SNode node) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createNodeCell(jetbrains.mps.nodeEditor.EditorContext editorContext, SNode node) {
     throw new RuntimeException("Method not implemented");
   }
 
@@ -108,23 +108,23 @@ public abstract class AbstractCellListHandler {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createSeparatorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>createSeparatorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
-  protected EditorCell createSeparatorCell(jetbrains.mps.nodeEditor.EditorContext editorContext, SNode node) {
+  protected jetbrains.mps.nodeEditor.cells.EditorCell createSeparatorCell(jetbrains.mps.nodeEditor.EditorContext editorContext, SNode node) {
     return null;
   }
 
   protected EditorCell createEmptyCell(EditorContext editorContext) {
     return createEmptyCell((jetbrains.mps.nodeEditor.EditorContext) editorContext);
   }
-  
+
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
-  protected EditorCell createEmptyCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  protected jetbrains.mps.nodeEditor.cells.EditorCell createEmptyCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     throw new RuntimeException("Method not implemented");
   }
 
@@ -139,7 +139,7 @@ public abstract class AbstractCellListHandler {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createNodeToInsert(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>createNodeToInsert(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   public SNode createNodeToInsert(jetbrains.mps.nodeEditor.EditorContext editorContext) {

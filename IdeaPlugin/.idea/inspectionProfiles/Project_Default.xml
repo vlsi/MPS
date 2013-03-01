@@ -14,5 +14,10 @@
       <option name="ignoreToString" value="false" />
       <option name="nonNlsCommentPattern" value="NON-NLS" />
     </inspection_tool>
+    <inspection_tool class="MissingDeprecatedAnnotation" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MissingOverrideAnnotation" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoreObjectMethods" value="true" />
+      <option name="ignoreAnonymousClassMethods" value="false" />
+    </inspection_tool>
   </profile>
 </component>

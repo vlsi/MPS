@@ -21,7 +21,7 @@ public class ConcreteNodeEx extends ConcreteNode implements INode {
     @Override
     public void newMethod(CharSequence arg) {
         // used for findUsages
-//        abstractNodeMethod();
+        abstractNodeMethod();
     }
 
     @Override

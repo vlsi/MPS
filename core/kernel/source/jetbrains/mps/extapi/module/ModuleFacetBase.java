@@ -27,14 +27,20 @@ public abstract class ModuleFacetBase implements SModuleFacet {
   private SModule myModule;
   private boolean isRegistered;
 
+  public abstract String getFacetType();
+
   @Override
   public SModule getModule() {
     return myModule;
   }
 
-  public void setModule(SModule module) {
+  /**
+   * Returns null if the facet cannot work within the passed module.
+   */
+  public boolean setModule(SModule module) {
     checkNotRegistered();
     myModule = module;
+    return true;
   }
 
   protected void checkNotRegistered() {

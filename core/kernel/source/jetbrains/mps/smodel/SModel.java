@@ -1282,7 +1282,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
   /**
    * This is for migration purposes, until we get rid of SModel class
    */
-  private static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel,SModelInternal {
+  public static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel,SModelInternal {
     private SModel myModel;
 
     public FakeModelDescriptor(@NotNull SModel md) {

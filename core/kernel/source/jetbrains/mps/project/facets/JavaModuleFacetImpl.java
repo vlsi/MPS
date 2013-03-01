@@ -49,6 +49,11 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
   }
 
   @Override
+  public String getFacetType() {
+    return FACET_TYPE;
+  }
+
+  @Override
   public AbstractModule getModule() {
     return (AbstractModule) super.getModule();
   }

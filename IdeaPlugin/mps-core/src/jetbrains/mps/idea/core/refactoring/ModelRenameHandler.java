@@ -33,7 +33,7 @@ import com.intellij.refactoring.rename.RenameHandler;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.idea.core.projectView.MPSDataKeys;
+import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.SNodeOperations;

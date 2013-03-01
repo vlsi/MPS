@@ -18,12 +18,12 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 
@@ -32,7 +32,6 @@ import java.util.List;
  * Time: Oct 21, 2003 5:12:16 PM
  */
 public abstract class EditorCellListHandler extends AbstractCellListHandler {
-
   private SNode myChildConcept;
   private SNode myLinkDeclaration;
 
@@ -55,11 +54,12 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
     return myChildConcept;
   }
 
-
+  @Override
   public EditorCell createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
-    return (EditorCell) editorContext.createNodeCell(node);
+    return editorContext.createNodeCell(node);
   }
 
+  @Override
   protected EditorCell createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext) {
     EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getOwner(), null);
     emptyCell.setDefaultText("<< ... >>");
@@ -70,6 +70,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
   }
 
 
+  @Override
   protected SNode getAnchorNode(EditorCell anchorCell) {
     SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);
     if (anchorNode != null) {
@@ -82,12 +83,13 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
     return anchorNode;
   }
 
+  @Override
   protected void doInsertNode(SNode anchorNode, boolean insertBefore) {
     SNodeOperations.insertChild(getOwner(), getElementRole(), myInsertedNode, anchorNode, insertBefore);
   }
 
+  @Override
   protected List<? extends SNode> getNodesForList() {
     return IterableUtil.asList(myOwnerNode.getChildren(getElementRole()));
   }
-
 }

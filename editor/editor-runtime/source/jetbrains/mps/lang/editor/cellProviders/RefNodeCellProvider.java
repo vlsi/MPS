@@ -16,11 +16,11 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class RefNodeCellProvider extends AbstractReferentCellProvider {
@@ -32,9 +32,9 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
   protected EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node) {
     EditorCell editorCell;
     if (myIsAggregation) {
-      editorCell = (EditorCell) context.createNodeCell(referencedNode);
+      editorCell = context.createNodeCell(referencedNode);
     } else {
-      editorCell = (EditorCell) context.createReferentCell(getSNode(), referencedNode, myGenuineRole);
+      editorCell = context.createReferentCell(getSNode(), referencedNode, myGenuineRole);
     }
     if (myIsCardinality1) {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));

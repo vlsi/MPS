@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class AbstractCellProvider {
   private SNode myNode;
@@ -54,10 +54,10 @@ public abstract class AbstractCellProvider {
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
-  public EditorCell createEditorCell(EditorContext editorContext) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(EditorContext editorContext) {
     throw new RuntimeException("Method not implemented");
   }
 }

@@ -48,20 +48,20 @@
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndexEntry" />
     <classNode dependClassName="com.intellij.util.indexing.FileBasedIndex" />
     <classNode dependClassName="gnu.trove.THashSet" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
+    <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.persistence.PersistenceRegistry" />
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
@@ -78,9 +78,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.util.Consumer" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.indexing.FastFindSupport" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.indexing.FindUsagesParticipant" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.findusages.StubModelsIndexer" file="StubModelsIndexer.java">
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndexEntry" />
