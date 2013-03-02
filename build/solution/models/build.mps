@@ -1157,10 +1157,6 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaModule" typeId="3ior.7389400916848073784" id="1692280246134675871">
       <property name="name" nameId="tpck.1169194664001" value="mps-test" />
       <node role="sources" roleId="3ior.7389400916848073826" type="3ior.BuildSource_JavaContentRoot" typeId="3ior.7389400916848073810" id="1692280246134675876">
-        <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="1692280246134675879">
-          <property name="relativePath" nameId="3ior.2754769020641429191" value="source" />
-          <property name="kind" nameId="3ior.5248329904288265467" value="source" />
-        </node>
         <node role="folders" roleId="3ior.2754769020641429197" type="3ior.BuildSource_JavaContentFolder" typeId="3ior.2754769020641429190" id="1692280246134675880">
           <property name="relativePath" nameId="3ior.2754769020641429191" value="source_gen" />
           <property name="kind" nameId="3ior.5248329904288265467" value="source" />
