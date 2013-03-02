@@ -114,7 +114,7 @@
   </root>
   <root nodeRef="r:c7fd1483-2eda-4417-bb41-aecb48302c10(jetbrains.mps.testbench)/5294483648489412787">
     <nodeInfo nodeId="5294483648489412790" fileName="MpsMakeHelper.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATTERNS" />
-    <nodeInfo nodeId="4232275527340635599" fileName="MpsMakeHelper.java" startLine="37" startPosition="10" endLine="38" endPosition="999" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4232275527340635599" fileName="MpsMakeHelper.java" startLine="37" startPosition="10" endLine="38" endPosition="976" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5294483648489412857" fileName="MpsMakeHelper.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="JVM_ARGS" />
     <nodeInfo nodeId="5294483648489412866" fileName="MpsMakeHelper.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DIRECT_MAKE" />
     <nodeInfo nodeId="5294483648489412870" fileName="MpsMakeHelper.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEnvironment" />
@@ -261,7 +261,7 @@
       <varInfo nodeId="5294483648489413736" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="5294483648489413742" fileName="MpsMakeHelper.java" startLine="222" startPosition="44" endLine="222" endPosition="44" />
-    <scopeInfo nodeId="5294483648531169346" fileName="MpsMakeHelper.java" startLine="37" startPosition="10" endLine="38" endPosition="999" />
+    <scopeInfo nodeId="5294483648531169346" fileName="MpsMakeHelper.java" startLine="37" startPosition="10" endLine="38" endPosition="976" />
     <scopeInfo nodeId="5294483648489412918" fileName="MpsMakeHelper.java" startLine="57" startPosition="49" endLine="58" endPosition="32" />
     <scopeInfo nodeId="5294483648489412925" fileName="MpsMakeHelper.java" startLine="61" startPosition="25" endLine="62" endPosition="28" />
     <scopeInfo nodeId="5294483648489412936" fileName="MpsMakeHelper.java" startLine="66" startPosition="22" endLine="67" endPosition="19" />
