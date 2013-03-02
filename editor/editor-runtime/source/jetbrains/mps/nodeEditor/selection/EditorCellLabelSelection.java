@@ -203,7 +203,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         if (nextSibling != null) {
           target = nextSibling;
         } else {
-          target = selectedCell.getNextLeaf(CellConditions.SELECTABLE);
+          target = APICellAdapter.getNextLeaf(selectedCell, CellConditions.SELECTABLE);
         }
       }
 
@@ -226,7 +226,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         if (prevSibling != null) {
           target = prevSibling;
         } else {
-          target = selectedCell.getPrevLeaf(CellConditions.SELECTABLE);
+          target = APICellAdapter.getPrevLeaf(selectedCell, CellConditions.SELECTABLE);
         }
       }
 

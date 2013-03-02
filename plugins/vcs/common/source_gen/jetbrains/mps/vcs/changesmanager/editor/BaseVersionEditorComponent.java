@@ -18,7 +18,8 @@ import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import java.awt.Rectangle;
 import javax.swing.BorderFactory;
 import java.awt.Color;
@@ -53,7 +54,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
       }
     });
     int rightMost = 0;
-    for (EditorCell leafCell = getRootCell().getFirstLeaf(); leafCell != null; leafCell = leafCell.getNextLeaf()) {
+    for (EditorCell leafCell = APICellAdapter.getFirstLeaf(getRootCell()); leafCell != null; leafCell = APICellAdapter.getNextLeaf(leafCell)) {
       if (verticalBounds.contains(leafCell.getY()) || verticalBounds.contains(leafCell.getBottom()) || verticalBounds.contains(leafCell.getY() + leafCell.getHeight() / 2)) {
         if (leafCell.getRight() > rightMost) {
           rightMost = leafCell.getRight();
@@ -71,7 +72,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     myScrollPane.getViewport().setViewPosition(viewRect.getLocation());
   }
 
-  protected EditorCell createRootCell(List<SModelEvent> events) {
+  protected jetbrains.mps.nodeEditor.cells.EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().getModel() == null) {
       EditorContext editorContext = getEditorContext();
       return new EditorCell_Constant(editorContext, getEditedNode(), "");

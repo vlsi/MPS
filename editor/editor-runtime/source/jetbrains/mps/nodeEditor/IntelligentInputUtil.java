@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.EditorManager.EditorCell_STHint;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -78,9 +79,9 @@ public class IntelligentInputUtil {
     NodeSubstituteInfo info = cell.getSubstituteInfo();
     String smallPattern = pattern.substring(0, pattern.length() - 1);
     String tail = "" + pattern.charAt(pattern.length() - 1);
-    EditorCell nextCell = cell.getNextLeaf();
+    jetbrains.mps.openapi.editor.cells.EditorCell nextCell = APICellAdapter.getNextLeaf(cell);
     while (nextCell != null && !nextCell.isSelectable()) {
-      nextCell = nextCell.getNextLeaf();
+      nextCell = APICellAdapter.getNextLeaf(nextCell);
     }
 
     if (canCompleteSmallPatternImmediately(info, pattern, "") ||

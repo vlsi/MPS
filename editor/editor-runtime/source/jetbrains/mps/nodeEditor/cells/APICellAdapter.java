@@ -26,6 +26,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -40,18 +41,15 @@ import java.util.List;
 public class APICellAdapter {
 
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextSibling(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    //!!!!!
-    //if (parent.getCellAt(parent.indexOf(parent.firstCell())) != parent.firstCell());
-    //!!!!
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextSibling(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     return getSibling(cell, true);
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevSibling(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevSibling(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     return getSibling(cell, false);
   }
 
-  private static jetbrains.mps.openapi.editor.cells.EditorCell getSibling(jetbrains.mps.openapi.editor.cells.EditorCell cell,
+  private static jetbrains.mps.openapi.editor.cells.EditorCell getSibling(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell,
                                                                           boolean forward) {
     final EditorCell_Collection parent = cell.getParent();
     if (parent == null) {
@@ -71,7 +69,7 @@ public class APICellAdapter {
 
 
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     jetbrains.mps.openapi.editor.cells.EditorCell next = getNextSibling(cell);
     if (next != null){
       return getFirstLeaf(next);
@@ -85,10 +83,10 @@ public class APICellAdapter {
     return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell, @NotNull Condition<EditorCell> condition) {
     jetbrains.mps.openapi.editor.cells.EditorCell current = getNextLeaf(cell);
     while (current != null) {
-      if (condition.met((jetbrains.mps.nodeEditor.cells.EditorCell) current)) {
+      if (condition.met(current)) {
         return current;
       }
       current = getNextLeaf(current);
@@ -96,7 +94,7 @@ public class APICellAdapter {
     return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     jetbrains.mps.openapi.editor.cells.EditorCell prev = getPrevSibling(cell);
     if (prev != null){
       return getLastLeaf(prev);
@@ -110,11 +108,10 @@ public class APICellAdapter {
     return null;
   }
 
-  //condition
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(@NotNull EditorCell cell, @NotNull Condition<EditorCell> condition) {
     jetbrains.mps.openapi.editor.cells.EditorCell current = getPrevLeaf(cell);
     while (current != null) {
-      if (condition.met((jetbrains.mps.nodeEditor.cells.EditorCell) current)) {
+      if (condition.met(current)) {
         return current;
       }
       current = getPrevLeaf(current);
@@ -122,7 +119,7 @@ public class APICellAdapter {
     return null;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getFirstLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getFirstLeaf(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     if (cell instanceof EditorCell_Collection) {
       return ((EditorCell_Collection) cell).getCellsCount() > 0 ? getFirstLeaf(((EditorCell_Collection) cell).firstCell()) : cell;
     } else {
@@ -130,7 +127,7 @@ public class APICellAdapter {
     }
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell getLastLeaf(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getLastLeaf(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     if (cell instanceof EditorCell_Collection) {
       return ((EditorCell_Collection) cell).getCellsCount() > 0 ? getLastLeaf(((EditorCell_Collection) cell).lastCell()) : cell;
     } else {
@@ -143,7 +140,6 @@ public class APICellAdapter {
   }
 
   public static boolean isPunctuationLayout(EditorCell cell) {
-    //return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isPunctuationLayout();
     return LayoutConstraints.PUNCTUATION_LAYOUT_CONSTRAINT.equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT));
   }
 
@@ -158,10 +154,6 @@ public class APICellAdapter {
 
   public static String getCellRole(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getCellRole();
-  }
-
-  public static List<SimpleEditorMessage> getMessages(EditorCell cell) {
-    return cell.getMessages();
   }
 
   public static <T extends EditorMessage> List<T> getMessages(EditorCell cell, Class<T> clazz) {

@@ -703,7 +703,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
   }
 
-  public EditorCell findLeaf(int x, int y, Condition<EditorCell> condition) {
+  public EditorCell findLeaf(int x, int y, Condition<? super EditorCell> condition) {
     if (myX <= x && x < myX + myWidth && myY <= y && y < myY + myHeight) {
       for (jetbrains.mps.openapi.editor.cells.EditorCell child : getVisibleChildCells()) {
         EditorCell result = ((EditorCell) child).findLeaf(x, y, condition);

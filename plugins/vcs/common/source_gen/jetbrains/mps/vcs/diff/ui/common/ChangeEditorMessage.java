@@ -365,17 +365,11 @@ __switch__:
 
   @Override
   public int getStart(jetbrains.mps.openapi.editor.EditorComponent component) {
-    if (!((component instanceof EditorComponent))) {
-      return -1;
-    }
     return (int) getBounds(((EditorComponent) component)).start();
   }
 
   @Override
   public int getHeight(jetbrains.mps.openapi.editor.EditorComponent component) {
-    if (!((component instanceof EditorComponent))) {
-      return -1;
-    }
     return getBounds(((EditorComponent) component)).length();
   }
 

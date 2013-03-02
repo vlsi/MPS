@@ -93,10 +93,6 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   public int getStart(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
-    //TODO remove this cast
-    if (!(editorComponent instanceof  EditorComponent)) {
-      return -1;
-    }
     EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
     if (editorCell == null) {
       return -1;
@@ -105,10 +101,6 @@ public class DefaultEditorMessage implements EditorMessage {
   }
 
   public int getHeight(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
-    //TODO remove this cast
-    if (!(editorComponent instanceof  EditorComponent)) {
-      return -1;
-    }
     EditorCell editorCell = getCellInBothWays((EditorComponent) editorComponent);
     if (editorCell == null) {
       return -1;

@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selection.Selection;
@@ -65,7 +66,7 @@ public class BracesHighlighter {
     } else if (newSelection instanceof EditorCell_Label) {
       EditorCell_Label editorCell = (EditorCell_Label) newSelection;
       if (editorCell.getCaretPosition() == 0) {
-        EditorCell cell = editorCell.getPrevLeaf();
+        jetbrains.mps.openapi.editor.cells.EditorCell cell = APICellAdapter.getPrevLeaf(editorCell);
         if (cell instanceof EditorCell_Label) {
           EditorCell_Label label = (EditorCell_Label) cell;
           if (label.getWidth() == 0 && editorCell.getLeftInset() == 0) {
@@ -73,7 +74,7 @@ public class BracesHighlighter {
           }
         }
       } else if (editorCell.getCaretPosition() == editorCell.getText().length()) {
-        EditorCell cell = editorCell.getNextLeaf();
+        jetbrains.mps.openapi.editor.cells.EditorCell cell = APICellAdapter.getNextLeaf(editorCell);
         if (cell instanceof EditorCell_Label) {
           EditorCell_Label label = (EditorCell_Label) cell;
           if (label.getWidth() == 0 && editorCell.getRightInset() == 0) {

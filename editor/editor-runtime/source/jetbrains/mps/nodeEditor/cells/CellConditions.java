@@ -18,14 +18,14 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.util.Condition;
 
 public class CellConditions {
-  public static final Condition<EditorCell> SELECTABLE = new Condition<EditorCell>() {
-    public boolean met(EditorCell object) {
+  public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> SELECTABLE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+    public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell object) {
       return object.isSelectable();
     }
   };
 
-  public static final Condition<EditorCell> EDITABLE = new Condition<EditorCell>() {
-    public boolean met(EditorCell object) {
+  public static final Condition<jetbrains.mps.openapi.editor.cells.EditorCell> EDITABLE = new Condition<jetbrains.mps.openapi.editor.cells.EditorCell>() {
+    public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell object) {
       return  object.isSelectable() && object instanceof EditorCell_Label && ((EditorCell_Label) object).isEditable();
     }
   };
