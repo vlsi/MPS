@@ -23,7 +23,31 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 
-@SuiteClassSymbols({ "jetbrains.mps.vcs.diff.merge.MergeCoreTest"})
+@SuiteClassSymbols({"jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest",
+    "jetbrains.mps.dataFlow.lang.LivenessAnalysisTest",
+    "jetbrains.mps.dataFlow.lang.ProgramTest",
+    "jetbrains.mps.dataFlow.lang.ReachabilityAnaysisTest",
+    "jetbrains.mps.dataFlow.lang.ReachingDefinitionsTest",
+    "jetbrains.mps.dataFlow.lang.StructuralProgramBuilderTest",
+    "jetbrains.mps.diff.DiffTestCase",
+    "jetbrains.mps.ide.blame.command.YouTrackURLTest",
+    "jetbrains.mps.ide.dependencyViewer.DependenciesViewerTest",
+    "jetbrains.mps.ide.messages.MessageViewListModelTest",
+    "jetbrains.mps.ide.moduleDependencyViewer.ModuleDependenciesTest",
+    "jetbrains.mps.make.TestMakeOnRealProject",
+    "jetbrains.mps.project.DependenciesTests",
+    "jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase",
+    "jetbrains.mps.make.dependencies.GraphTestCase",
+    "jetbrains.mps.packaged.PackagedLanguageTest",
+    "jetbrains.mps.refactoring.RefactoringTest",
+    "jetbrains.mps.vcs.DiskMemoryConflictsTest",
+//  "jetbrains.mps.vcs.changesmanager.ChangesManagerTest", [temporarily disabled]
+    "jetbrains.mps.vcs.diff.merge.MergeCoreTest",
+    "jetbrains.mps.vfs.VfsTest",
+    "jetbrains.mps.ide.test.blame.command.AffectedVersionTest",
+    "jetbrains.mps.workbench.ProjectCreationTest",
+    "jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest",
+    "jetbrains.mps.smodel.language.ExtensionRegistryTest"})
 @RunWith(WatchingSuite.class)
 public class GlobalTestSuite extends TestSuite {
   @BeforeClass
