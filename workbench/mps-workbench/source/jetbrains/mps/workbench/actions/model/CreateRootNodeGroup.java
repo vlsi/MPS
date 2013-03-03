@@ -84,7 +84,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       return;
     }
 
-    if (!(modelDescriptor instanceof EditableSModel) || (modelDescriptor.isReadOnly())) {
+    if (!(modelDescriptor instanceof EditableSModel) || (((EditableSModel) modelDescriptor).isReadOnly())) {
       event.getPresentation().setEnabled(false);
       event.getPresentation().setVisible(false);
       return;

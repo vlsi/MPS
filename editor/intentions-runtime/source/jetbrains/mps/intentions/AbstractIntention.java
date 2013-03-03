@@ -139,7 +139,7 @@ public abstract class AbstractIntention implements Intention {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       @Override
       public String compute() {
-        SNode intentionNode = getIntentionNodeReference().resolve(MPSModuleRepository.getInstance());
+        SNode intentionNode = ((SNodeReference) getIntentionNodeReference()).resolve(MPSModuleRepository.getInstance());
         if (intentionNode != null) {
           return intentionNode.getName();
         } else {

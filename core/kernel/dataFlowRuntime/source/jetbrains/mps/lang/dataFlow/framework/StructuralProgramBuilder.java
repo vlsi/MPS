@@ -85,10 +85,10 @@ public abstract class StructuralProgramBuilder<N> {
   }
 
   public void emitLabel(String label) {
-    if (!myLabels.containsKey(myProgram.getCurrent())) {
+    if (!myLabels.containsKey((N) myProgram.getCurrent())) {
       myLabels.put((N) myProgram.getCurrent(), new HashMap<String, Integer>());
     }
-    myLabels.get(myProgram.getCurrent()).put(label, myProgram.size());
+    myLabels.get((N) myProgram.getCurrent()).put(label, myProgram.size());
   }
 
   private void updateLabelsOnInsert(final int position) {

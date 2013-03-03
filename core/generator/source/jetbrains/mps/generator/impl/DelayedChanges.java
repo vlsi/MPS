@@ -122,7 +122,7 @@ public class DelayedChanges {
               myLogger.error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
                 GeneratorUtil.describe(myContext.getInput(), "input"),
                 GeneratorUtil.describe(getMapSrcMacro(), "template"),
-                new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference().getSModelFqName() + "'"));
+                new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + ((SModelReference) myGenerator.getGeneratorSessionContext().getOriginalInputModel().getReference()).getSModelFqName() + "'"));
             }
           }
 

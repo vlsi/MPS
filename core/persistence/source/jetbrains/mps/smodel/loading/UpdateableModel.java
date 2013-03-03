@@ -77,7 +77,7 @@ public abstract class UpdateableModel {
       assert res.getModel() == myModel;
     } else {
       myModel = res.getModel();
-      myModel.setModelDescriptor(myDescriptor);
+      ((jetbrains.mps.smodel.SModel) myModel).setModelDescriptor(myDescriptor);
     }
     myState = res.getState();
   }

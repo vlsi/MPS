@@ -34,7 +34,7 @@ public class SNodeDescriptorPresentation extends BasePresentation {
   }
 
   public String getModelName() {
-    SModelReference mr = myNodeResult.getNodeReference().getModelReference();
+    SModelReference mr = ((SModelReference) myNodeResult.getNodeReference().getModelReference());
     SModelFqName modelFqName = mr.getSModelFqName();
     if (modelFqName!=null) return modelFqName.toString();
     return SNodeOperations.getModelLongName(SModelRepository.getInstance().getModelDescriptor(mr));

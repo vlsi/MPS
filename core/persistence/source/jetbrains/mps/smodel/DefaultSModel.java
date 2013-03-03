@@ -87,7 +87,7 @@ public class DefaultSModel extends SModel {
 
   @Override
   protected SModel createEmptyCopy() {
-    return new DefaultSModel(getReference());
+    return new DefaultSModel(((SModelReference) getReference()));
   }
 
   @Override

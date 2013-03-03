@@ -83,7 +83,7 @@ public class TemplateModelInterpreted implements TemplateModel {
 
   @Override
   public SModelReference getSModelReference() {
-    return myModel.getReference();
+    return ((SModelReference) myModel.getReference());
   }
 
   @Override

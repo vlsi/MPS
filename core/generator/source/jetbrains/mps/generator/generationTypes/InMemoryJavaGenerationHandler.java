@@ -130,7 +130,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     for (SNode root : iterable) {
       TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
       wereErrors |= genResult.hasErrors();
-      String key = getKey(outputModel.getReference(), root);
+      String key = getKey((SModelReference) outputModel.getReference(), root);
       Object result = genResult.getResult();
       if (result instanceof String) {
         mySources.put(key, (String) result);

@@ -114,7 +114,7 @@ public class ReferencePersister4 implements IReferencePersister {
 
   // -- create reference
   private SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
-    SModelReference importedModelReference = model.getReference();
+    SModelReference importedModelReference = (SModelReference) model.getReference();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
         importedModelReference = SModelReference.fromString(myImportedModelInfo);

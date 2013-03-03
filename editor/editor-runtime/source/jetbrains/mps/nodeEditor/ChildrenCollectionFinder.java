@@ -64,7 +64,7 @@ public class ChildrenCollectionFinder {
             if (isMultipleCollectionCell(curr)) {
               return curr;
             }
-            curr = curr.getParent();
+            curr = (EditorCell) curr.getParent();
           }
           if (curr != null && curr.getSNode() == anchorNode && isMultipleCollectionCell(curr)) {
             return curr;

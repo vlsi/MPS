@@ -97,7 +97,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
               generator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
                 GeneratorUtil.describe(tNode, "template"),
                 GeneratorUtil.describe(templateContext.getInput(), "input"),
-                new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getSModelFqName() + "'"));
+                new ProblemDescription(null, "workaround: add the language '" + outputNodeLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + ((SModelReference) generator.getGeneratorSessionContext().getOriginalInputModel().getReference()).getSModelFqName() + "'"));
             }
           }
         }
@@ -127,7 +127,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         generator.getLogger().error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
           GeneratorUtil.describe(tNode, "template"),
           GeneratorUtil.describe(templateContext.getInput(), "input"),
-          new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + generator.getGeneratorSessionContext().getOriginalInputModel().getReference().getSModelFqName() + "'"));
+          new ProblemDescription(null, "workaround: add the language '" + childLang.getModuleFqName() + "' to list of 'Languages Engaged On Generation' in model '" + ((SModelReference) generator.getGeneratorSessionContext().getOriginalInputModel().getReference()).getSModelFqName() + "'"));
       }
     }
 

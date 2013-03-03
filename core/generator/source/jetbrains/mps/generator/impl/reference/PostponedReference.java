@@ -133,7 +133,7 @@ public class PostponedReference extends SReference {
           myReplacementReference = new StaticReference(
             role,
             outputSourceNode,
-            targetModelReference == null ? myGenerator.getOutputModel().getReference() : targetModelReference,
+            targetModelReference == null ? (SModelReference) myGenerator.getOutputModel().getReference() : targetModelReference,
             null,
             myReferenceInfo.getResolveInfoForNothing());
         }
@@ -145,7 +145,7 @@ public class PostponedReference extends SReference {
         myReplacementReference = new StaticReference(
           role,
           outputSourceNode,
-          targetModelReference == null ? myGenerator.getOutputModel().getReference() : targetModelReference,
+          targetModelReference == null ? (SModelReference) myGenerator.getOutputModel().getReference() : targetModelReference,
           null,
           myReferenceInfo.getResolveInfoForNothing());
       } else {

@@ -102,7 +102,7 @@ public class GenerationStatus extends Status {
   }
 
   public void setOriginalInputModel(org.jetbrains.mps.openapi.model.SModel originalInputModel) {
-    myOriginalInputModel = originalInputModel;
+    myOriginalInputModel = (SModel) originalInputModel;
   }
 
   public static class ERROR extends GenerationStatus {

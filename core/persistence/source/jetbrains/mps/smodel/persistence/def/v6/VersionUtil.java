@@ -42,7 +42,7 @@ public class VersionUtil {
   private Map<SModelReference, ImportElement> myImports;
 
   public VersionUtil(SModel model) {
-    myModelRef = model.getReference();
+    myModelRef = (SModelReference) model.getReference();
     myImports = new HashMap<SModelReference, ImportElement>();
     fillReferenceIDs(model);  // replace "-1" indice to valid values and advance maxImportIndex
     for (ImportElement elem : ((jetbrains.mps.smodel.SModel) model).importedModels()) {
@@ -90,7 +90,7 @@ public class VersionUtil {
 
   @NotNull
   private String genReferenceString(@Nullable SNode node, @NotNull String text, boolean usemodel) {
-    return node == null ? text : genReferenceString(node.getModel().getReference(), text, usemodel);
+    return node == null ? text : genReferenceString((SModelReference) node.getModel().getReference(), text, usemodel);
   }
 
   public String genType(@NotNull SNode node) {

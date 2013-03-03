@@ -143,7 +143,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
       return new MPSPsiElement(o);
     }
     if (MPSPsiElement.isListOf(o, SNodeReference.class)) {
-      return new MPSPsiElement(o);
+      return new MPSPsiElement(((List<SNodeReference>) o));
     }
     throw new IllegalArgumentException(o.getClass().getName());
   }

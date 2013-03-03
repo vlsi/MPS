@@ -138,7 +138,7 @@ public class TransientModelsModule extends ClassLoadingModule {
   public boolean publishTransientModel(SModel model) {
     if (myModels.containsKey(model.getModelName())) {
       if (myPublished.add(model)) {
-        SModelRepository.getInstance().registerModelDescriptor(model, this);
+        SModelRepository.getInstance().registerModelDescriptor((SModel) model, this);
         return true;
       }
     }
@@ -148,7 +148,7 @@ public class TransientModelsModule extends ClassLoadingModule {
   public void removeModel(SModel md) {
     if (myModels.remove(md.getModelName()) != null) {
       if (myPublished.remove(md)) {
-        SModelRepository.getInstance().removeModelDescriptor(md);
+        SModelRepository.getInstance().removeModelDescriptor((SModel) md);
       }
       if (md instanceof TransientSModelDescriptor) {
         ((TransientSModelDescriptor) md).dropModel();
@@ -267,7 +267,7 @@ public class TransientModelsModule extends ClassLoadingModule {
     private void dropModel() {
       if (mySModel != null) {
         LOG.debug("Dropped " + getSModelReference());
-        mySModel.dispose();
+        ((jetbrains.mps.smodel.SModel) mySModel).dispose();
         mySModel = null;
       }
     }
@@ -286,7 +286,7 @@ public class TransientModelsModule extends ClassLoadingModule {
     public SModel resolveModel(SModelReference reference) {
       if (reference.getLongName().equals(myLongName)) {
         SModel descriptor = myModels.get(reference.getModelName());
-        if (descriptor != null) return descriptor;
+        if (descriptor != null) return (SModel) descriptor;
       }
       return super.resolveModel(reference);
     }

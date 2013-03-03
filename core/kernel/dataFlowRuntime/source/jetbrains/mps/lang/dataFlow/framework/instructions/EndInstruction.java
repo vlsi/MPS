@@ -39,7 +39,7 @@ public class EndInstruction extends Instruction {
     }
     for (TryFinallyInfo info : getProgram().getBlockInfos()) {
       if (info.getParent() == null) {
-        myRootTryFinallies.add(info);
+        myRootTryFinallies.add((TryFinallyInfo) info);
       }
     }
   }

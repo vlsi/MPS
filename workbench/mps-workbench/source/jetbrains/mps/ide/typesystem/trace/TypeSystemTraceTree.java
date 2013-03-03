@@ -97,7 +97,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   private void initNodes(SNode node) {
     myNodes = new HashSet<SNode>();
-    myNodes.addAll(SNodeOperations.getDescendants(node, null, false, new String[]{}));
+    myNodes.addAll(SNodeOperations.getDescendants(((SNode) node), null, false, new String[]{}));
     myNodes.add(node);
   }
 
@@ -324,8 +324,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   @Override
   protected JPopupMenu createPopupMenu(final MPSTreeNode treeNode) {
-    DefaultActionGroup group = ActionUtils.groupFromActions(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToNode_Action"),
-        ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action"));
+    DefaultActionGroup group = ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToNode_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.GoToRule_Action")));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 

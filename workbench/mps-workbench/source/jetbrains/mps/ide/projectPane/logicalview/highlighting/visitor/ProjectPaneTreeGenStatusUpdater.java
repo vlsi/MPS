@@ -144,7 +144,7 @@ public class ProjectPaneTreeGenStatusUpdater extends TreeNodeVisitor {
   private boolean isPackaged(SModelTreeNode node) {
     SModel md = node.getModel();
     if (!(md instanceof EditableSModel)) return false;
-    return md.isReadOnly();
+    return ((EditableSModel) md).isReadOnly();
   }
 
   private boolean isDoNotGenerate(SModelTreeNode node) {

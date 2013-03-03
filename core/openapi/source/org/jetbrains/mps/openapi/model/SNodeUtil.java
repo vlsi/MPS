@@ -38,10 +38,10 @@ public class SNodeUtil {
   public static SNode replaceWithAnother(@NotNull SNode node, SNode replacer) {
     SNode nodeParent = node.getParent();
     if (nodeParent == null) {
-      jetbrains.mps.smodel.SModel model = node.getModel();
-      if (model != null && model.isRoot(node)) {
+      jetbrains.mps.smodel.SModel model = ((jetbrains.mps.smodel.SNode) node).getModel();
+      if (model != null && model.isRoot((jetbrains.mps.smodel.SNode) node)) {
         node.delete();
-        model.addRootNode(replacer);
+        model.addRootNode((jetbrains.mps.smodel.SNode) replacer);
       }
       return replacer;
     }

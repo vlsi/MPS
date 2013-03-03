@@ -262,7 +262,7 @@ public class GeneratorUIFacade {
 
     List<SModel> result = new ArrayList<SModel>();
 
-    for (TemplateModule templateModule : GenerationPartitioningUtil.getTemplateModules(model.getSModel())) {
+    for (TemplateModule templateModule : GenerationPartitioningUtil.getTemplateModules(((SModel) model).getSModel())) {
       Generator g = ModuleRepositoryFacade.getInstance().getModule(templateModule.getReference(), Generator.class);
       if (g == null) continue;
 

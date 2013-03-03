@@ -68,7 +68,7 @@ public class NodeIconUpdater extends AbstractProjectComponent {
       if (root == null) return;
       if (root.getModel() == null) return;
       synchronized (myUpdatedRoots) {
-        myUpdatedRoots.add(new jetbrains.mps.smodel.SNodePointer(event.getModel().getReference(), root.getNodeId()));
+        myUpdatedRoots.add(new jetbrains.mps.smodel.SNodePointer((SModelReference) event.getModel().getReference(), root.getNodeId()));
       }
     }
   }

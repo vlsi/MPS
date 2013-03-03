@@ -36,7 +36,7 @@ public class Program {
   private boolean hasOuterJumps = false;
 
   public List<Instruction> getInstructions() {
-    return Collections.unmodifiableList(myInstructions);
+    return Collections.unmodifiableList((List<? extends Instruction>) myInstructions);
   }
 
   public List<ProgramState> getStates() {
@@ -227,17 +227,17 @@ public class Program {
           throw new IllegalStateException("unexpected finally");
         }
 
-        stack.peek().myFinally = (FinallyInstruction) i;
+        ((TryFinallyInfo) stack.peek()).myFinally = (FinallyInstruction) i;
       }
 
 
       if (i instanceof EndTryInstruction) {
         if (stack.isEmpty() ||
-          stack.peek().myEndTry != null) {
+          ((TryFinallyInfo) stack.peek()).myEndTry != null) {
           throw new IllegalStateException("unexpected endtry");
         }
 
-        stack.peek().myEndTry = (EndTryInstruction) i;
+        ((TryFinallyInfo) stack.peek()).myEndTry = (EndTryInstruction) i;
         stack.pop();
       }
     }

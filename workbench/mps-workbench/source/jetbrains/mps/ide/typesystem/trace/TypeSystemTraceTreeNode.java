@@ -20,7 +20,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
 
   public TypeSystemTraceTreeNode(AbstractOperation userObject, IOperationContext operationContext, State state, EditorComponent editorComponent) {
     super(userObject, operationContext);
-    AbstractOperation operation = userObject;
+    AbstractOperation operation = (AbstractOperation) userObject;
     this.setAutoExpandable(true);
     this.setIcon(IdeIcons.DEFAULT_ICON);
     List<SNode> variables = operation.getVariables();
@@ -40,7 +40,7 @@ public class TypeSystemTraceTreeNode extends MPSTreeNode {
 
   public TypeSystemTraceTreeNode(AbstractOperation userObject, IOperationContext operationContext) {
     super(userObject, operationContext);
-    AbstractOperation operation = userObject;
+    AbstractOperation operation = (AbstractOperation) userObject;
     setNodeIdentifier(operation.getPresentation());
     this.setAutoExpandable(true);
     this.setIcon(IdeIcons.DEFAULT_ICON);

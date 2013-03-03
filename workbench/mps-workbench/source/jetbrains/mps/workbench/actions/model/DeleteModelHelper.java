@@ -58,7 +58,7 @@ public class DeleteModelHelper {
   }
 
   public static void deleteGeneratedFiles(SModel modelDescriptor) {
-    String moduleOutputPath = modelDescriptor.getModule().getOutputFor(modelDescriptor);
+    String moduleOutputPath = ((AbstractModule) modelDescriptor.getModule()).getOutputFor(modelDescriptor);
     if (moduleOutputPath == null) {
       return;
     }
@@ -88,8 +88,8 @@ public class DeleteModelHelper {
   public static void safeDelete(final Project project, final SModel modelDescriptor, boolean deleteFiles) {
     IRefactoring ref = new SafeDeleteModelRefactoring(deleteFiles);
     final RefactoringContext context = new RefactoringContext(ref);
-    context.setSelectedModel(modelDescriptor);
-    context.setSelectedModule(modelDescriptor.getModule());
+    context.setSelectedModel((SModel) modelDescriptor);
+    context.setSelectedModule((IModule) modelDescriptor.getModule());
     context.setSelectedProject(ProjectHelper.toMPSProject(project));
     context.setCurrentOperationContext(new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
     ModelAccess.instance().runWriteInEDT(new Runnable() {

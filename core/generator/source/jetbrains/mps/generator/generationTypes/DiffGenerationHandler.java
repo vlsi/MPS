@@ -67,9 +67,9 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
     String outputDir = ((IModule) module).getOutputFor(inputModel);
     myLastOutputDir = new File(context.getModule().getGeneratorOutputPath());
     myOutputModelToPath.put(outputModel, outputDir);
-    myOutputModelRefToPath.put(outputModel.getReference(), outputDir);
+    myOutputModelRefToPath.put((SModelReference) outputModel.getReference(), outputDir);
     List<String> roots = new ArrayList<String>();
-    myOutputModelRefToRoots.put(outputModel.getReference(), roots);
+    myOutputModelRefToRoots.put((SModelReference) outputModel.getReference(), roots);
 
     Condition<SNode> cond = new Condition<SNode>() {
       @Override
@@ -79,7 +79,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
     };
     Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.getRootNodes(), cond);
     for (SNode outputRoot : iterable) {
-      roots.add(getKey(outputModel.getReference(), outputRoot));
+      roots.add(getKey((SModelReference) outputModel.getReference(), outputRoot));
     }
     return super.collectSources(module, inputModel, context, outputModel);
   }
@@ -134,7 +134,7 @@ public class DiffGenerationHandler extends InMemoryJavaGenerationHandler {
     if (getSources().isEmpty()) {
       return null;
     }
-    return getSources().get(getKey(outputModel.getReference(), outputRoot));
+    return getSources().get(getKey((SModelReference) outputModel.getReference(), outputRoot));
   }
 
 

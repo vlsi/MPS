@@ -43,7 +43,7 @@ public class RootNodeElement implements NavigationItem {
   }
 
   public SModelReference getModel() {
-    return myNodeResult.getNodeReference().getModelReference();
+    return ((SModelReference) myNodeResult.getNodeReference().getModelReference());
   }
 
   @Override

@@ -125,7 +125,7 @@ public class NodeExplorerComponent {
     }
 
     protected void doInit() {
-      for (SReference reference : jetbrains.mps.util.SNodeOperations.getReferences(myNode.resolve(MPSModuleRepository.getInstance()))) {
+      for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(myNode.resolve(MPSModuleRepository.getInstance()))) {
         SNode referent = reference.getTargetNode();
         if (referent != null) {
           add(new MySNodeTreeNode(referent, reference.getRole(), getOperationContext()));

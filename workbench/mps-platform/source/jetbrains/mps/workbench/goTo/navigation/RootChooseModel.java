@@ -69,7 +69,7 @@ public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
-            SNode node = object.getNodeReference().resolve(MPSModuleRepository.getInstance());
+            SNode node = ((SNode) object.getNodeReference().resolve(MPSModuleRepository.getInstance()));
             if (node == null) {
               LOG.error("Can't find node for: " + object.getNodeReference());
               return;
