@@ -44,7 +44,7 @@ public class TemplateMappingScriptInterpreted implements TemplateMappingScript {
 
   @Override
   public String getLongName() {
-    return "'" + scriptNode.getName() + "' (" + ((SModelReference) scriptNode.getModel().getReference()).getSModelFqName() + ")";
+    return "'" + scriptNode.getName() + "' (" + scriptNode.getModel().getReference().getSModelFqName() + ")";
   }
 
   @Override

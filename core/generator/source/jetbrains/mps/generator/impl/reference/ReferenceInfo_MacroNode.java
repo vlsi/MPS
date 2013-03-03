@@ -41,7 +41,7 @@ public class ReferenceInfo_MacroNode extends ReferenceInfo_Macro {
 
   @Override
   public SNode getInputTargetNode() {
-    return (SNode) myTemplateReferenceNode.getReferenceTarget(getReferenceRole());
+    return myTemplateReferenceNode.getReferenceTarget(getReferenceRole());
   }
 
   @Override

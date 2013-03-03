@@ -304,7 +304,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       BookmarkInfo bookmarkInfo = state.myBookmarkInfos[i];
       if (!bookmarkInfo.myIsNull) {
         assert i == bookmarkInfo.myNumber;
-        myBookmarks[i] = ((SNodeReference) bookmarkInfo.myNodeRef);
+        myBookmarks[i] = bookmarkInfo.myNodeRef;
       } else {
         myBookmarks[i] = null;
       }

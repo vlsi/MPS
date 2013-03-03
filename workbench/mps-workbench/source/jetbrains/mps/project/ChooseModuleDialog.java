@@ -81,7 +81,7 @@ public class ChooseModuleDialog extends BaseDialog {
       JOptionPane.showMessageDialog(this, "Choose Module", "Error", JOptionPane.ERROR_MESSAGE);
       return;
     }
-    myResult = (IModule) ((ModuleTreeNode) selection.getLastPathComponent()).getModule();
+    myResult = ((ModuleTreeNode) selection.getLastPathComponent()).getModule();
     dispose();
   }
 

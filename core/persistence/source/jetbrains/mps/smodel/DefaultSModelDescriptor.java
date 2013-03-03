@@ -90,7 +90,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
       ModelLoadingState oldState = myModel.getState();
       jetbrains.mps.smodel.SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion
-      ((jetbrains.mps.smodel.SModel) res).setModelDescriptor(this);
+      res.setModelDescriptor(this);
       if (oldState != myModel.getState()) {
         fireModelStateChanged(oldState, myModel.getState());
       }

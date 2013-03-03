@@ -57,19 +57,19 @@ public class ModelReader6 implements IModelReader {
     // languages
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.LANGUAGE)) {
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      ((jetbrains.mps.smodel.SModel) model).addLanguage(ModuleReference.fromString(languageNamespace));
+      model.addLanguage(ModuleReference.fromString(languageNamespace));
     }
 
     // languages engaged on generation
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION)) {
       String languageNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      ((jetbrains.mps.smodel.SModel) model).addEngagedOnGenerationLanguage(ModuleReference.fromString(languageNamespace));
+      model.addEngagedOnGenerationLanguage(ModuleReference.fromString(languageNamespace));
     }
 
     //devkits
     for (Element element : (List<Element>) rootElement.getChildren(ModelPersistence.DEVKIT)) {
       String devkitNamespace = element.getAttributeValue(ModelPersistence.NAMESPACE);
-      ((jetbrains.mps.smodel.SModel) model).addDevKit(ModuleReference.fromString(devkitNamespace));
+      model.addDevKit(ModuleReference.fromString(devkitNamespace));
     }
 
     // imports

@@ -62,7 +62,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   public synchronized BinarySModel getSModel() {
     if (myModel == null) {
       myModel = loadSModel();
-      ((jetbrains.mps.smodel.SModel) myModel).setModelDescriptor(this);
+      myModel.setModelDescriptor(this);
       updateDiskTimestamp();
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
@@ -140,7 +140,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
   @Override
   public void setVersion(int newVersion) {
-    ((jetbrains.mps.smodel.SModel) getSModel()).setVersion(newVersion);
+    getSModel().setVersion(newVersion);
     setChanged(true);
   }
 

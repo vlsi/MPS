@@ -28,7 +28,7 @@ public class FrameRule implements GetDataRule {
   @Override
   @Nullable
   public Object getData(DataProvider dataProvider) {
-    Project project = (Project) MPSCommonDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    Project project = MPSCommonDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     if (project == null) {
       IdeFrame[] frames = WindowManager.getInstance().getAllFrames();
       return frames.length == 0 ? null : frames[0];
