@@ -59,9 +59,9 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   }
 
   @Override
-  protected SModel createModel() {
+  protected jetbrains.mps.smodel.SModel createModel() {
 
-    SModel ourModel = new jetbrains.mps.smodel.SModel(myModelRef);
+    jetbrains.mps.smodel.SModel ourModel = new jetbrains.mps.smodel.SModel(myModelRef);
 
     for (PsiJavaFile jf : Sequence.fromIterable(myDataSource.getJavaFiles())) {
 

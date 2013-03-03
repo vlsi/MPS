@@ -8,6 +8,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class ConceptMethodCallUtils {
   private ConceptMethodCallUtils() {
@@ -32,7 +33,7 @@ public class ConceptMethodCallUtils {
     return !(SModuleOperations.isCompileInMps(module));
   }
 
-  private static IModule check_bta47p_a0c0b(SModel checkedDotOperand) {
+  private static IModule check_bta47p_a0c0b(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

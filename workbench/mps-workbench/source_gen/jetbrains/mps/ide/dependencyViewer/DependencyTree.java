@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.projectPane.logicalview.nodes.ProjectModuleTreeNode;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -40,7 +40,7 @@ public class DependencyTree extends MPSTree {
       root.add(ProjectModuleTreeNode.createFor(myProject, module));
     }
     for (SModel model : myScope.getModels()) {
-      SModelTreeNode node = new SModelTreeNode((SModelDescriptor) model, null, new ModuleContext((IModule) model.getModule(), myProject));
+      SModelTreeNode node = new SModelTreeNode((SModelInternal) model, null, new ModuleContext((IModule) model.getModule(), myProject));
       root.add(node);
     }
     for (SNode node : myScope.getRoots()) {

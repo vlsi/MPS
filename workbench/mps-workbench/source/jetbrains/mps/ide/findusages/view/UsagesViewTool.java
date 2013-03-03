@@ -117,7 +117,6 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
         ProgressManager.getInstance().run(new Modal(getProject(), "Searching", true) {
           @Override
           public void run(@NotNull final ProgressIndicator indicator) {
-            indicator.setIndeterminate(true);
             searchResults[0] = FindUtils.getSearchResults(new ProgressMonitorAdapter(indicator), query, provider);
             isCancelled[0] = indicator.isCanceled();
           }

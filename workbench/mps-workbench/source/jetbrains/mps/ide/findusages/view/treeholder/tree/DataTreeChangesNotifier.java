@@ -99,7 +99,7 @@ public class DataTreeChangesNotifier {
           }
         } else if (event instanceof SModelChildEvent) {
           SModelChildEvent modelChildEvent = (SModelChildEvent) event;
-          SNodeReference childPointer = new jetbrains.mps.smodel.SNodePointer((SModelReference) modelChildEvent.getModel().getReference(), modelChildEvent.getChild().getNodeId());
+          SNodeReference childPointer = new jetbrains.mps.smodel.SNodePointer(modelChildEvent.getModel().getReference(), modelChildEvent.getChild().getNodeId());
           if (modelChildEvent.isRemoved() && myNodes.contains(childPointer)) {
             myChanged = true;
             return;

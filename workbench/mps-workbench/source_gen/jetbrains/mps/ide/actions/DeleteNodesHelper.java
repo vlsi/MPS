@@ -122,7 +122,6 @@ public class DeleteNodesHelper {
         final Set<SearchResult<SNode>> results = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-
             ListSequence.fromList(myNodesToDelete).visitAll(new IVisitor<SNode>() {
               public void visit(SNode it) {
                 SearchResults<SNode> usages = FindUtils.getSearchResults(new EmptyProgressMonitor(), it, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");

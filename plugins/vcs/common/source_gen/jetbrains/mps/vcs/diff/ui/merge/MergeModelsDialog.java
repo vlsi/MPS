@@ -60,6 +60,7 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class MergeModelsDialog extends DialogWrapper {
   public static final Icon APPLY_NON_CONFLICTS = AllIcons.Diff.ApplyNotConflicts;
@@ -547,14 +548,14 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  private static IModule check_3qqb0l_a0b0v(SModel checkedDotOperand) {
+  private static IModule check_3qqb0l_a0b0v(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_3qqb0l_a0a1a12(SModel checkedDotOperand) {
+  private static SModelInternal check_3qqb0l_a0a1a12(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

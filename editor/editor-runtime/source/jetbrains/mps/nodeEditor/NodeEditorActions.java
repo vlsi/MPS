@@ -89,7 +89,7 @@ public class NodeEditorActions {
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = getDeepestSelectedCell(context);
       EditorCell target = findTarget(selection);
-      ((EditorComponent) context.getEditorComponent()).changeSelection(target);
+      context.getEditorComponent().changeSelection(target);
       if (target instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) target;
         label.end();
@@ -213,7 +213,7 @@ public class NodeEditorActions {
     public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
       EditorCell selection = getDeepestSelectedCell(context);
       EditorCell target = findTarget(selection);
-      ((EditorComponent) context.getEditorComponent()).changeSelection(target);
+      context.getEditorComponent().changeSelection(target);
       if (target.isPunctuationLayout() && ((EditorCell_Label) target).isCaretPositionAllowed(1)) {
         ((EditorCell_Label) target).setCaretPosition(1);
       } else if (target instanceof EditorCell_Label) {

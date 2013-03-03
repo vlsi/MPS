@@ -1444,7 +1444,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       boolean registered = modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance()) != modelDescriptor;
 
       if (modelDescriptor != null && registered) {
-        assert myModelDescriptorsWithListener.contains(modelDescriptor) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
+        //assert myModelDescriptorsWithListener.contains(modelDescriptor) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
       }
     }
 

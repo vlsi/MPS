@@ -85,12 +85,12 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
   }
 
   @Override
-  public final SModel getSModel() {
+  public final jetbrains.mps.smodel.SModel getSModel() {
     synchronized (myModel) {
       ModelLoadingState oldState = myModel.getState();
-      SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
+      jetbrains.mps.smodel.SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
       if (res == null) return null; // this is when we are in recursion
-      ((jetbrains.mps.smodel.SModel) res).setModelDescriptor(this);
+      res.setModelDescriptor(this);
       if (oldState != myModel.getState()) {
         fireModelStateChanged(oldState, myModel.getState());
       }

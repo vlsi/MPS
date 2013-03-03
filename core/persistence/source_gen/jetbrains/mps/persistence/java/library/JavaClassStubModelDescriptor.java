@@ -4,11 +4,12 @@ package jetbrains.mps.persistence.java.library;
 
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.smodel.Language;
@@ -39,7 +40,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   }
 
   @Override
-  protected SModel getCurrentModelInternal() {
+  protected org.jetbrains.mps.openapi.model.SModel getCurrentModelInternal() {
     return myModel;
   }
 
@@ -58,7 +59,7 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   public synchronized SModel getSModel() {
     if (myModel == null) {
       myModel = createModel();
-      ((jetbrains.mps.smodel.SModel) myModel).setModelDescriptor(this);
+      ((SModelInternal) myModel).setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return myModel;
@@ -70,9 +71,9 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
   }
 
   private SModel createModel() {
-    SModel model = new jetbrains.mps.smodel.SModel(getSModelReference(), new ForeignNodeIdMap());
+    SModel model = new SModel(getSModelReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
-      ((jetbrains.mps.smodel.SModel) model).addLanguage(l.getModuleReference());
+      ((SModelInternal) model).addLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = createClassPath();
     new ASMModelLoader(((IModule) myModelRoot.getModule()), cp, model, false).updateModel();

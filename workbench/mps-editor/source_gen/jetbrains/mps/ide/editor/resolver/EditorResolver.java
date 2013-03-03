@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class EditorResolver implements IResolver {
   public EditorResolver() {
@@ -94,7 +94,7 @@ public class EditorResolver implements IResolver {
     }
   }
 
-  private static IModule check_jllgm1_a0c0c(SModel checkedDotOperand) {
+  private static IModule check_jllgm1_a0c0c(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

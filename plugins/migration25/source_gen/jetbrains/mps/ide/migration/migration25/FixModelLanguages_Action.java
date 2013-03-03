@@ -15,7 +15,7 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.Language;
@@ -71,12 +71,12 @@ public class FixModelLanguages_Action extends BaseAction {
             continue;
           }
 
-          SModel m = ((SModelDescriptor) md).getSModel();
+          SModel m = ((SModelInternal) md).getSModel();
           for (SNode node : SModelOperations.getNodes(m, null)) {
             Language l = ((Language) node.getConcept().getLanguage().getModule());
             ModuleReference lr = l.getModuleReference();
-            if (!(((jetbrains.mps.smodel.SModel) m).importedLanguages().contains(lr))) {
-              ((jetbrains.mps.smodel.SModel) m).addLanguage(lr);
+            if (!(((SModelInternal) m).importedLanguages().contains(lr))) {
+              ((SModelInternal) m).addLanguage(lr);
             }
           }
         }

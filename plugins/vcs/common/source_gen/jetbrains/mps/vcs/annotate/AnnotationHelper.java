@@ -31,6 +31,7 @@ import com.intellij.openapi.vcs.AbstractVcsHelper;
 import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.progress.ProgressManager;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class AnnotationHelper {
   private AnnotationHelper() {
@@ -138,7 +139,7 @@ public class AnnotationHelper {
     return null;
   }
 
-  private static SModel check_19hp0u_a0e0c(SModel checkedDotOperand) {
+  private static SModelInternal check_19hp0u_a0e0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

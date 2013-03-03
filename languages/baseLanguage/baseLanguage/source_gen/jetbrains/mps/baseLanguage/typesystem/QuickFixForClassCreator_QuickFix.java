@@ -9,7 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -35,21 +36,21 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
     }
   }
 
-  private static IModule check_8brg4q_a0b0a0a(SModel checkedDotOperand) {
+  private static IModule check_8brg4q_a0b0a0a(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModel check_8brg4q_a0a1a0a0(jetbrains.mps.smodel.SModel checkedDotOperand) {
+  private static SModelInternal check_8brg4q_a0a1a0a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static jetbrains.mps.smodel.SModel check_8brg4q_a0a0b0a0a(SNode checkedDotOperand) {
+  private static SModel check_8brg4q_a0a0b0a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

@@ -32,7 +32,7 @@ public class AuxilaryRuntimeModel {
     }
 
     @Override
-    protected SModel createModel() {
+    protected jetbrains.mps.smodel.SModel createModel() {
       return new jetbrains.mps.smodel.SModel(getSModelReference()) {
         protected void performUndoableAction(SNodeUndoableAction action) {
         }

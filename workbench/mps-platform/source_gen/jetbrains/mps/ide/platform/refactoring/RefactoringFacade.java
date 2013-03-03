@@ -39,6 +39,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.smodel.SNode;
@@ -279,7 +280,7 @@ public class RefactoringFacade {
     if (!(context.isLocal())) {
       Map<SModelReference, Integer> dependencies = context.getStructureModification().getDependencies();
       for (SModelReference modelRef : dependencies.keySet()) {
-        ((jetbrains.mps.smodel.SModel) model).updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
+        ((SModelInternal) model).updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
       }
     }
     if (model instanceof EditableSModel) {

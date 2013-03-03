@@ -24,22 +24,27 @@ public class DerivedMethods_Finder extends GeneratedFinder {
   public DerivedMethods_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Derived Methods";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
   }
 
+  @Override
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, final List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {

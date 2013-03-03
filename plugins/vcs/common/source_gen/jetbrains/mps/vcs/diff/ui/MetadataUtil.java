@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -30,8 +31,8 @@ public class MetadataUtil {
 
   public static SModel createMetadataModel(SModel model) {
     SModel metadataModel = new jetbrains.mps.smodel.SModel(new SModelReference(new SModelFqName(SModelOperations.getModelName(model), "metadata"), SModelId.generate()));
-    ((jetbrains.mps.smodel.SModel) metadataModel).addLanguage(ModuleReference.fromString("6df0089f-3288-4998-9d57-e698e7c8e145(jetbrains.mps.ide.vcs.modelmetadata)"));
-    ((jetbrains.mps.smodel.SModel) metadataModel).addLanguage(ModuleReference.fromString("86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)"));
+    ((SModelInternal) metadataModel).addLanguage(ModuleReference.fromString("6df0089f-3288-4998-9d57-e698e7c8e145(jetbrains.mps.ide.vcs.modelmetadata)"));
+    ((SModelInternal) metadataModel).addLanguage(ModuleReference.fromString("86ef8290-12bb-4ca7-947f-093788f263a9(jetbrains.mps.lang.project)"));
     SModelOperations.addRootNode(metadataModel, createModelRoot(model));
     return metadataModel;
   }
@@ -40,20 +41,20 @@ public class MetadataUtil {
     SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
     SPropertyOperations.set(root, "longname", SNodeOperations.getModelLongName(model));
     SPropertyOperations.set(root, "uuid", model.getModelId() + "");
-    SPropertyOperations.set(root, "version", "" + (((jetbrains.mps.smodel.SModel) model).getVersion()));
+    SPropertyOperations.set(root, "version", "" + (((SModelInternal) model).getVersion()));
     if (model instanceof DefaultSModel) {
       SPropertyOperations.set(root, "donotgenerate", "" + (check_ca1g54_a0a0e0c(((DefaultSModel) model).getSModelHeader())));
     }
-    for (ModuleReference language : ListSequence.fromList(((jetbrains.mps.smodel.SModel) model).importedLanguages())) {
+    for (ModuleReference language : ListSequence.fromList(((SModelInternal) model).importedLanguages())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).addElement(createModuleRefNode(language));
     }
-    for (ModuleReference genlanguage : ListSequence.fromList(((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages())) {
+    for (ModuleReference genlanguage : ListSequence.fromList(((SModelInternal) model).engagedOnGenerationLanguages())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "languageEngagedOnGeneration", true)).addElement(createModuleRefNode(genlanguage));
     }
-    for (ModuleReference devkit : ListSequence.fromList(((jetbrains.mps.smodel.SModel) model).importedDevkits())) {
+    for (ModuleReference devkit : ListSequence.fromList(((SModelInternal) model).importedDevkits())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "devkit", true)).addElement(createModuleRefNode(devkit));
     }
-    for (jetbrains.mps.smodel.SModel.ImportElement impmodel : ListSequence.fromList(((jetbrains.mps.smodel.SModel) model).importedModels())) {
+    for (jetbrains.mps.smodel.SModel.ImportElement impmodel : ListSequence.fromList(((SModelInternal) model).importedModels())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "import", true)).addElement(createModelRefNode(impmodel));
     }
 
@@ -81,12 +82,12 @@ public class MetadataUtil {
 
   public static void applyMetadataChanges(final SModel model, SModel metadataModel) {
     SNode root = ListSequence.fromList(SModelOperations.getRoots(metadataModel, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model")).first();
-    ((jetbrains.mps.smodel.SModel) model).setVersion(SPropertyOperations.getInteger(root, "version"));
+    ((SModelInternal) model).setVersion(SPropertyOperations.getInteger(root, "version"));
     if (model instanceof DefaultSModel) {
       check_ca1g54_a0a2a5(((DefaultSModel) model).getSModelHeader(), root);
     }
 
-    Set<ModuleReference> oldImpLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ((jetbrains.mps.smodel.SModel) model).importedLanguages());
+    Set<ModuleReference> oldImpLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ((SModelInternal) model).importedLanguages());
     Set<ModuleReference> impLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode it) {
         return new ModuleReference(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "uuid"));
@@ -94,16 +95,16 @@ public class MetadataUtil {
     }));
     SetSequence.fromSet(oldImpLang).subtract(SetSequence.fromSet(impLang)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        ((jetbrains.mps.smodel.SModel) model).deleteLanguage(it);
+        ((SModelInternal) model).deleteLanguage(it);
       }
     });
     SetSequence.fromSet(impLang).subtract(SetSequence.fromSet(oldImpLang)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        ((jetbrains.mps.smodel.SModel) model).addLanguage(it);
+        ((SModelInternal) model).addLanguage(it);
       }
     });
 
-    Set<ModuleReference> oldGenLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages());
+    Set<ModuleReference> oldGenLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ((SModelInternal) model).engagedOnGenerationLanguages());
     Set<ModuleReference> genLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "languageEngagedOnGeneration", true)).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode it) {
         return new ModuleReference(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "uuid"));
@@ -111,16 +112,16 @@ public class MetadataUtil {
     }));
     SetSequence.fromSet(oldGenLang).subtract(SetSequence.fromSet(genLang)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        ((jetbrains.mps.smodel.SModel) model).removeEngagedOnGenerationLanguage(it);
+        ((SModelInternal) model).removeEngagedOnGenerationLanguage(it);
       }
     });
     SetSequence.fromSet(genLang).subtract(SetSequence.fromSet(oldGenLang)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        ((jetbrains.mps.smodel.SModel) model).addEngagedOnGenerationLanguage(it);
+        ((SModelInternal) model).addEngagedOnGenerationLanguage(it);
       }
     });
 
-    Set<ModuleReference> oldDevkit = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ((jetbrains.mps.smodel.SModel) model).importedDevkits());
+    Set<ModuleReference> oldDevkit = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ((SModelInternal) model).importedDevkits());
     Set<ModuleReference> devkit = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "devkit", true)).select(new ISelector<SNode, ModuleReference>() {
       public ModuleReference select(SNode it) {
         return new ModuleReference(SPropertyOperations.getString(it, "qualifiedName"), SPropertyOperations.getString(it, "uuid"));
@@ -128,16 +129,16 @@ public class MetadataUtil {
     }));
     SetSequence.fromSet(oldDevkit).subtract(SetSequence.fromSet(devkit)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        ((jetbrains.mps.smodel.SModel) model).deleteDevKit(it);
+        ((SModelInternal) model).deleteDevKit(it);
       }
     });
     SetSequence.fromSet(devkit).subtract(SetSequence.fromSet(oldDevkit)).visitAll(new IVisitor<ModuleReference>() {
       public void visit(ModuleReference it) {
-        ((jetbrains.mps.smodel.SModel) model).addDevKit(it);
+        ((SModelInternal) model).addDevKit(it);
       }
     });
 
-    Set<SModelReference> oldImports = SetSequence.fromSetWithValues(new LinkedHashSet<SModelReference>(), Sequence.fromIterable(((Iterable<jetbrains.mps.smodel.SModel.ImportElement>) (((jetbrains.mps.smodel.SModel) model).importedModels()))).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModelReference>() {
+    Set<SModelReference> oldImports = SetSequence.fromSetWithValues(new LinkedHashSet<SModelReference>(), Sequence.fromIterable(((Iterable<jetbrains.mps.smodel.SModel.ImportElement>) (((SModelInternal) model).importedModels()))).select(new ISelector<jetbrains.mps.smodel.SModel.ImportElement, SModelReference>() {
       public SModelReference select(jetbrains.mps.smodel.SModel.ImportElement it) {
         return it.getModelReference();
       }
@@ -149,12 +150,12 @@ public class MetadataUtil {
     }));
     SetSequence.fromSet(oldImports).subtract(SetSequence.fromSet(imports)).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
-        ((jetbrains.mps.smodel.SModel) model).deleteModelImport(it);
+        ((SModelInternal) model).deleteModelImport(it);
       }
     });
     SetSequence.fromSet(imports).subtract(SetSequence.fromSet(oldImports)).visitAll(new IVisitor<SModelReference>() {
       public void visit(SModelReference it) {
-        ((jetbrains.mps.smodel.SModel) model).addModelImport(it, false);
+        ((SModelInternal) model).addModelImport(it, false);
       }
     });
   }

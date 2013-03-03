@@ -17,7 +17,7 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.smodel.SModelReference;
 import java.io.File;
 import java.io.IOException;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -62,7 +62,7 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
         }
       }
 
-      SModel md = (SModelDescriptor) model;
+      SModel md = (SModelInternal) model;
       iterateClassPath(md.getModule().getModuleReference(), cp, res, SNodeOperations.getModelLongName(md));
 
     }

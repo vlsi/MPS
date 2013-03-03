@@ -26,7 +26,7 @@ import java.util.Set;
 
 class ImportantNodes extends HashMap<SModelReference, Set<SNodeReference>> {
   public void add(SNodeReference node) {
-    SModelReference modelRef = (SModelReference) node.resolve(MPSModuleRepository.getInstance()).getModel().getReference();
+    SModelReference modelRef = node.resolve(MPSModuleRepository.getInstance()).getModel().getReference();
 
     Set<SNodeReference> nodes = get(modelRef);
     nodes.add(node);
