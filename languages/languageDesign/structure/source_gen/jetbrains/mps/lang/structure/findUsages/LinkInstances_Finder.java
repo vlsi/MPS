@@ -25,20 +25,23 @@ public class LinkInstances_Finder extends GeneratedFinder {
   public LinkInstances_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Link Instances";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 1);
     try {
       // collect roles 
       Set<String> roles = SetSequence.fromSet(new HashSet<String>());
@@ -54,7 +57,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
       }
       boolean isChild = SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference");
       // find instances and link examples 
-      for (SNode instance : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor.subTask(1)))) {
+      for (SNode instance : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor))) {
         for (String role : SetSequence.fromSet(roles)) {
           if (isChild) {
             for (SNode child : Sequence.fromIterable(instance.getChildren(role))) {
@@ -73,6 +76,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Link Instances";
   }

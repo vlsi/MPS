@@ -19,22 +19,27 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
   public ExactMethodUsages_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Exact Method Usages";
   }
 
+  @Override
   public String getLongDescription() {
     return "Usages of exactly this method, not including usages of overriding methods";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
 
+  @Override
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {

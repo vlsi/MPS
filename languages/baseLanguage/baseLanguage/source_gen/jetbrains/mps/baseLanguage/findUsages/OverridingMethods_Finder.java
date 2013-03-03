@@ -21,22 +21,27 @@ public class OverridingMethods_Finder extends GeneratedFinder {
   public OverridingMethods_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Overriding Methods";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
   }
 
+  @Override
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
@@ -52,6 +57,7 @@ public class OverridingMethods_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Overriding Methods";
   }

@@ -23,20 +23,23 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   public ConceptInstances_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Concept Instances";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 0);
     try {
       SConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(node));
       List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, scope, monitor));
@@ -48,6 +51,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Concept Instances";
   }
