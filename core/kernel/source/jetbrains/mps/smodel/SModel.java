@@ -111,12 +111,12 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
   @Override
   public ModelRoot getModelRoot() {
-    return getModelDescriptor() == null ? null : getModelDescriptor().getModelRoot();
+    return getModelDescriptor() instanceof FakeModelDescriptor ? null : getModelDescriptor().getModelRoot();
   }
 
   @Override
   public void setModelRoot(ModelRoot mr) {
-    if (getModelDescriptor() != null) {
+    if (!(getModelDescriptor() instanceof FakeModelDescriptor)) {
       getModelDescriptor().setModelRoot(mr);
     }
   }
@@ -124,7 +124,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
   @Override
   public IModule getModule() {
     org.jetbrains.mps.openapi.model.SModel md = getModelDescriptor();
-    return md == null ? null : md.getModule();
+    return md instanceof FakeModelDescriptor ? null : md.getModule();
   }
 
   @Override
@@ -231,7 +231,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
   @NotNull
   public DataSource getSource() {
     org.jetbrains.mps.openapi.model.SModel md = getModelDescriptor();
-    return md == null ? new NullDataSource() : md.getSource();
+    return md instanceof FakeModelDescriptor ? new NullDataSource() : md.getSource();
   }
 
   @Override
@@ -242,7 +242,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
   @Override
   public boolean isReadOnly() {
     org.jetbrains.mps.openapi.model.SModel md = getModelDescriptor();
-    return md != null && md.isReadOnly();
+    return !(md instanceof FakeModelDescriptor) && md.isReadOnly();
   }
 
   @Override
@@ -323,6 +323,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 
   //todo will migrate after SModel is migrated
   @Override
+  @NotNull
   public SModelInternal getModelDescriptor() {
     return myModelDescriptor != null ? myModelDescriptor : new FakeModelDescriptor(this);
   }
@@ -376,8 +377,8 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
 //---------listeners--------
 
   private List<SModelListener> getModelListeners() {
-    BaseSModelDescriptor modelDescriptor = (BaseSModelDescriptor) getModelDescriptor();
-    return modelDescriptor != null ? modelDescriptor.getModelListeners() : Collections.<SModelListener>emptyList();
+    SModelInternal modelDescriptor = getModelDescriptor();
+    return modelDescriptor instanceof BaseSModelDescriptor ?  ((BaseSModelDescriptor) modelDescriptor).getModelListeners():Collections.<SModelListener>emptyList();
   }
 
   //todo code in the following methods should be written w/o duplication

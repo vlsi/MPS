@@ -42,7 +42,7 @@ public class GenParameters {
   @Deprecated
   public List<SModel> getModelDescriptors() {
     for (SModel model : myModels) {
-      if (!(model instanceof SModel)) {
+      if (!(model instanceof jetbrains.mps.smodel.SModel)) {
         throw new IllegalStateException();
       }
     }

@@ -1366,9 +1366,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    */
   private boolean isInvalid() {
     return isInvalidLightweight() ||
-      getEditedNode().getModel() == null ||
       jetbrains.mps.util.SNodeOperations.isModelDisposed(getEditedNode().getModel()) ||
-      getEditedNode().getModel().getModelDescriptor() == null;
+      getEditedNode().getContainingModel() == null;
   }
 
   /*
@@ -1438,13 +1437,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && myNode.getModel() != null) {
-      SModel model = myNode.getModel();
-      SModel modelDescriptor = model.getModelDescriptor();
-      boolean registered = modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance()) != modelDescriptor;
-
-      if (modelDescriptor != null && registered) {
-        //assert myModelDescriptorsWithListener.contains(modelDescriptor) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
+    if (myNode != null && myNode.getContainingModel() != null) {
+      SModel model = myNode.getContainingModel();
+      if (model.getReference().resolve(MPSModuleRepository.getInstance()) == model) {
+        assert myModelDescriptorsWithListener.contains(model) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
       }
     }
 
