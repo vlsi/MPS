@@ -150,7 +150,7 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
     fireBeforeModelRenamed(new SModelRenamedEvent(model, oldFqName, newModelName));
 
     SModelReference newModelReference = new SModelReference(SModelFqName.fromString(newModelName), myModelReference.getSModelId());
-    ((jetbrains.mps.smodel.SModel) model).changeModelReference(newModelReference);
+    ((jetbrains.mps.smodel.SModelInternal) model).changeModelReference(newModelReference);
 
     if (!changeFile) {
       save();

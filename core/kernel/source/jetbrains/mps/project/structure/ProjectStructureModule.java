@@ -317,7 +317,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       if (mySModel == null) return;
 
       final SModel oldModel = mySModel;
-      ((jetbrains.mps.smodel.SModel) oldModel).setModelDescriptor(null);
+      ((jetbrains.mps.smodel.SModelInternal) oldModel).setModelDescriptor(null);
       mySModel = null;
       if (ModelAccess.instance().canWrite()) {
         notifyModelReplaced(oldModel);

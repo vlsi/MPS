@@ -134,7 +134,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   @Override
   public int getVersion() {
     SModel model = getCurrentModelInternal();
-    if (model != null) return ((jetbrains.mps.smodel.SModel) model).getVersion();
+    if (model != null) return ((jetbrains.mps.smodel.SModelInternal) model).getVersion();
     return myHeader.getVersion();
   }
 

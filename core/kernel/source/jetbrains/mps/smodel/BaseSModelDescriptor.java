@@ -490,4 +490,9 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
   public void changeModelReference(SModelReference newModelReference) {
     getSModel().changeModelReference(newModelReference);
   }
+
+  @Override
+  public void copyPropertiesTo(SModelInternal to) {
+    getSModel().copyPropertiesTo(to);
+  }
 }

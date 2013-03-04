@@ -106,4 +106,7 @@ public interface SModelInternal extends SModel {
   void changeModelReference(jetbrains.mps.smodel.SModelReference newModelReference);
 
   boolean updateModuleReferences();
+
+  void copyPropertiesTo(SModelInternal to);
+
 }

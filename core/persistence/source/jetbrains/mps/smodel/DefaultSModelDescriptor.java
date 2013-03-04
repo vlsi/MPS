@@ -130,7 +130,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
     SModel model = result.getModel();
     if (result.getState() == ModelLoadingState.FULLY_LOADED) {
-      boolean needToSave = ((jetbrains.mps.smodel.SModel) model).updateSModelReferences() || ((jetbrains.mps.smodel.SModel) model).updateModuleReferences();
+      boolean needToSave = ((jetbrains.mps.smodel.SModelInternal) model).updateSModelReferences() || ((jetbrains.mps.smodel.SModelInternal) model).updateModuleReferences();
 
       if (needToSave && !modelFile.isReadOnly()) {
         SModelRepository.getInstance().markChanged(model);
@@ -252,7 +252,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     int latestVersion = getStructureModificationLog().getLatestVersion(getSModelReference());
     myStructureModificationLog = null;  // we don't need to keep log in memory
     if (latestVersion != -1) {
-      ((jetbrains.mps.smodel.SModel) loadedSModel).setVersion(latestVersion);
+      ((jetbrains.mps.smodel.SModelInternal) loadedSModel).setVersion(latestVersion);
       LOG.error("Version for model " + getSModelReference().getSModelFqName() + " was not set.");
     }
   }

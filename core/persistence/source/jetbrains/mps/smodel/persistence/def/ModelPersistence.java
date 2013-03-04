@@ -302,7 +302,7 @@ public class ModelPersistence {
       modelPersistence = getCurrentModelPersistence();
     }
 
-    ((jetbrains.mps.smodel.SModel) sourceModel).calculateImplicitImports();
+    ((jetbrains.mps.smodel.SModelInternal) sourceModel).calculateImplicitImports();
     return modelPersistence.getModelWriter().saveModel(sourceModel);
   }
 

@@ -86,12 +86,12 @@ public class DefaultSModel extends SModel {
   }
 
   @Override
-  protected SModel createEmptyCopy() {
+  public SModel createEmptyCopy() {
     return new DefaultSModel(getReference());
   }
 
   @Override
-  protected void copyPropertiesTo(SModel to) {
+  public void copyPropertiesTo(SModelInternal to) {
     super.copyPropertiesTo(to);
     if (to instanceof DefaultSModel) {
       DefaultSModel dto = (DefaultSModel) to;

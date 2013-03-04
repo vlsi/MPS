@@ -1104,7 +1104,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     return new jetbrains.mps.smodel.SModel(getReference());
   }
 
-  protected void copyPropertiesTo(SModel to) {
+  public void copyPropertiesTo(SModelInternal to) {
     for (ImportElement ie : getAdditionalModelVersions()) {
       to.addAdditionalModelVersion(ie.copy());
     }
@@ -1591,6 +1591,11 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     @Override
     public boolean updateModuleReferences() {
       return myModel.updateModuleReferences();
+    }
+
+    @Override
+    public void copyPropertiesTo(SModelInternal to) {
+      myModel.copyPropertiesTo(to);
     }
   }
 }

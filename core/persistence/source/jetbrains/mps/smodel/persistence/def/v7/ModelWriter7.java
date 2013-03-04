@@ -45,7 +45,7 @@ public class ModelWriter7 implements IModelWriter {
     Element rootElement = new Element(ModelPersistence.MODEL);
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getReference().toString());
 
-    int version = ((jetbrains.mps.smodel.SModel) myModel).getVersion();
+    int version = ((jetbrains.mps.smodel.SModelInternal) myModel).getVersion();
     if (version >= 0) {
       rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
     }
@@ -65,28 +65,28 @@ public class ModelWriter7 implements IModelWriter {
     rootElement.addContent(persistenceElement);
 
     // languages
-    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModel) sourceModel).importedLanguages()) {
+    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModelInternal) sourceModel).importedLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     // languages engaged on generation
-    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModel) sourceModel).engagedOnGenerationLanguages()) {
+    for (ModuleReference languageNamespace : ((jetbrains.mps.smodel.SModelInternal) sourceModel).engagedOnGenerationLanguages()) {
       Element languageElem = new Element(ModelPersistence.LANGUAGE_ENGAGED_ON_GENERATION);
       languageElem.setAttribute(ModelPersistence.NAMESPACE, languageNamespace.toString());
       rootElement.addContent(languageElem);
     }
 
     //devkits
-    for (ModuleReference devkitNamespace : ((jetbrains.mps.smodel.SModel) sourceModel).importedDevkits()) {
+    for (ModuleReference devkitNamespace : ((jetbrains.mps.smodel.SModelInternal) sourceModel).importedDevkits()) {
       Element devkitElem = new Element(ModelPersistence.DEVKIT);
       devkitElem.setAttribute(ModelPersistence.NAMESPACE, devkitNamespace.toString());
       rootElement.addContent(devkitElem);
     }
 
     // imports
-    for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) sourceModel).importedModels()) {
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) sourceModel).importedModels()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);
@@ -95,7 +95,7 @@ public class ModelWriter7 implements IModelWriter {
       elem.setAttribute(ModelPersistence.VERSION, "" + importElement.getUsedVersion());
       rootElement.addContent(elem);
     }
-    for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) sourceModel).getAdditionalModelVersions()) {
+    for (ImportElement importElement : ((jetbrains.mps.smodel.SModelInternal) sourceModel).getAdditionalModelVersions()) {
       SModelReference modelRef = importElement.getModelReference();
       myHelper.addModelReference(modelRef);
       Element elem = new Element(ModelPersistence.IMPORT_ELEMENT);

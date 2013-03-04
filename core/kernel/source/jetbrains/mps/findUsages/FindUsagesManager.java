@@ -64,7 +64,7 @@ public class FindUsagesManager {
    */
   public static void collectInstances(SModel model, Collection<SConcept> concepts, Consumer<SNode> consumer) {
     for (SConcept concept : concepts) {
-      for (SNode instance : ((jetbrains.mps.smodel.SModel) model.getSModel()).getFastNodeFinder().getNodes(concept.getId(), false)) {
+      for (SNode instance : ((jetbrains.mps.smodel.SModelInternal) model.getSModel()).getFastNodeFinder().getNodes(concept.getId(), false)) {
         consumer.consume(instance);
       }
     }

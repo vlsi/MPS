@@ -63,15 +63,15 @@ public class ModelValidator {
     }
 
     List<ModuleReference> langsToCheck = new ArrayList<ModuleReference>();
-    langsToCheck.addAll(IterableUtil.asCollection(((jetbrains.mps.smodel.SModel) myModel).getModelDepsManager().getAllImportedLanguages()));
-    langsToCheck.addAll(((jetbrains.mps.smodel.SModel) myModel).engagedOnGenerationLanguages());
+    langsToCheck.addAll(IterableUtil.asCollection(((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages()));
+    langsToCheck.addAll(((jetbrains.mps.smodel.SModelInternal) myModel).engagedOnGenerationLanguages());
     for (ModuleReference lang : langsToCheck) {
       if (scope.getLanguage(lang) == null) {
         errors.add("Can't find language: " + lang.getModuleFqName());
       }
     }
 
-    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModel) myModel).importedDevkits()) {
+    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModelInternal) myModel).importedDevkits()) {
       if (scope.getDevKit(devKit) == null) {
         errors.add("Can't find devkit: " + devKit.getModuleFqName());
       }
