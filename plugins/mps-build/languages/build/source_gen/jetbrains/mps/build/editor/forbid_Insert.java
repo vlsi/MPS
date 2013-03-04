@@ -27,7 +27,7 @@ public class forbid_Insert {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      EditorCell cell = (jetbrains.mps.nodeEditor.cells.EditorCell) editorContext.getEditorComponent().findNodeCell(node);
+      EditorCell cell = editorContext.getEditorComponent().findNodeCell(node);
       EditorCell outerCollection = (cell != null ?
         EditorActionUtils.getSiblingCollectionForInsert(cell, false) :
         null

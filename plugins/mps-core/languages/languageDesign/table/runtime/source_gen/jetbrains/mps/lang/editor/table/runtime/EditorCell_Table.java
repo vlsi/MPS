@@ -9,7 +9,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.TableComponent;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -55,7 +55,7 @@ public class EditorCell_Table extends EditorCell_Collection {
       return;
     }
     for (int row = 0; row < myModel.getRowCount(); row++) {
-      final EditorCell_Collection rowCell = this.createRowCell(row);
+      final jetbrains.mps.openapi.editor.cells.EditorCell_Collection rowCell = this.createRowCell(row);
       String rowId = myUniquePrefix + "_row_" + row;
       rowCell.setCellId(rowId);
 
@@ -64,7 +64,7 @@ public class EditorCell_Table extends EditorCell_Collection {
         public void execute(EditorContext editorContext) {
           assert !(myEmpty);
           EditorComponent editorComponent = getEditor();
-          editorComponent.getSelectionManager().pushSelection(editorComponent.getSelectionManager().createSelection(rowCell));
+          editorComponent.getSelectionManager().pushSelection(editorComponent.getSelectionManager().createSelection((jetbrains.mps.nodeEditor.cells.EditorCell) rowCell));
         }
       };
       rowCell.setAction(CellActionType.SELECT_LEFT, selectRowAction);
@@ -88,7 +88,7 @@ public class EditorCell_Table extends EditorCell_Collection {
           SNode value = myModel.getValueAt(row, column);
           EditorCell editorCell;
           if (value != null) {
-            editorCell = (EditorCell) getContext().createNodeCell(value);
+            editorCell = getContext().createNodeCell(value);
             editorCell.setAction(CellActionType.DELETE, new AbstractCellAction() {
               @Override
               public void execute(EditorContext editorContext) {
@@ -156,17 +156,17 @@ public class EditorCell_Table extends EditorCell_Collection {
     List<Integer> positionsX = ListSequence.fromList(new ArrayList<Integer>());
     List<Integer> positionsY = ListSequence.fromList(new ArrayList<Integer>());
 
-    for (Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
-      jetbrains.mps.openapi.editor.cells.EditorCell nextRow = rowsIterator.next();
-      assert nextRow instanceof EditorCell_Collection;
+    for (Iterator<EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
+      EditorCell nextRow = rowsIterator.next();
+      assert nextRow instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
       ListSequence.fromList(positionsY).addElement(nextRow.getY());
       if (!(rowsIterator.hasNext())) {
         // adding last row bottom coordinates 
         ListSequence.fromList(positionsY).addElement(nextRow.getY() + nextRow.getHeight());
       }
       int index = -1;
-      for (Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> cellIterator = ((EditorCell_Collection) nextRow).iterator(); cellIterator.hasNext(); index++) {
-        jetbrains.mps.openapi.editor.cells.EditorCell nextCell = cellIterator.next();
+      for (Iterator<EditorCell> cellIterator = ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) nextRow).iterator(); cellIterator.hasNext(); index++) {
+        EditorCell nextCell = cellIterator.next();
         if (index < 0) {
           //  skipping first cell 
           continue;
@@ -203,16 +203,16 @@ public class EditorCell_Table extends EditorCell_Collection {
     assert !(myEmpty);
     assert columnIntex >= 0 && columnIntex < myModel.getColumnCount();
     List<EditorCell> result = ListSequence.fromList(new ArrayList<EditorCell>());
-    for (Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
-      jetbrains.mps.openapi.editor.cells.EditorCell nextRow = rowsIterator.next();
-      assert nextRow instanceof EditorCell_Collection;
-      ListSequence.fromList(result).addElement((EditorCell) ((EditorCell_Collection) nextRow).getCellAt(columnIntex + 1));
+    for (Iterator<EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
+      EditorCell nextRow = rowsIterator.next();
+      assert nextRow instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
+      ListSequence.fromList(result).addElement(((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) nextRow).getCellAt(columnIntex + 1));
     }
     return result;
   }
 
-  private EditorCell_Collection createRowCell(final int row) {
-    EditorCell_Collection rowCell = EditorCell_Collection.create(getContext(), getSNode(), new CellLayout_Horizontal(), null);
+  private jetbrains.mps.openapi.editor.cells.EditorCell_Collection createRowCell(final int row) {
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection rowCell = EditorCell_Collection.create(getContext(), getSNode(), new CellLayout_Horizontal(), null);
     rowCell.getStyle().set(StyleAttributes.TABLE_COMPONENT, TableComponent.HORIZONTAL_COLLECTION);
     rowCell.setAction(CellActionType.DELETE, new AbstractCellAction() {
       @Override
@@ -288,7 +288,7 @@ public class EditorCell_Table extends EditorCell_Collection {
     return EditorSettings.getInstance().getVerticalBoundWidth() / columnCount;
   }
 
-  public static EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model, String uniquePrefix) {
+  public static jetbrains.mps.openapi.editor.cells.EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model, String uniquePrefix) {
     return new EditorCell_Table(editorContext, node, new CellLayout_Table(), model, uniquePrefix);
   }
 

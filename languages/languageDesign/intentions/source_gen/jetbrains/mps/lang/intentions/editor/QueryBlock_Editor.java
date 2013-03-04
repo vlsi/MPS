@@ -114,7 +114,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
           @Override
-          public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(EditorContext editorContext) {
+          public EditorCell createEditorCell(EditorContext editorContext) {
             jetbrains.mps.openapi.editor.cells.EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
             collection.addEditorCell(new EditorCell_Constant(editorContext, node, "Concept function help:"));
             if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {
@@ -131,7 +131,7 @@ public class QueryBlock_Editor extends DefaultNodeEditor {
               EditorCell_Constant message = new EditorCell_Constant(editorContext, node, alias + " : " + description);
               collection.addEditorCell(message);
             }
-            return (jetbrains.mps.nodeEditor.cells.EditorCell) collection;
+            return collection;
           }
         };
       }

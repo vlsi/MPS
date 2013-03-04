@@ -41,9 +41,9 @@ public class RedirectOutputExpression {
       // it does some magic with selection 
       editorContext.flushEvents();
       EditorComponent editor = editorContext.getEditorComponent();
-      jetbrains.mps.nodeEditor.cells.EditorCell cell = (jetbrains.mps.nodeEditor.cells.EditorCell) editor.findNodeCell(expression);
+      EditorCell cell = editor.findNodeCell(expression);
       if (cell != null) {
-        jetbrains.mps.nodeEditor.cells.EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
+        EditorCell lastLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLastLeaf(CellConditions.SELECTABLE);
         editor.changeSelection(lastLeaf);
         if (lastLeaf instanceof EditorCell_Label) {
           ((EditorCell_Label) lastLeaf).end();

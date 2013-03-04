@@ -20,7 +20,7 @@ public class AbstractOperation_Editor extends DefaultNodeEditor {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
           @Override
-          public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(EditorContext context) {
+          public EditorCell createEditorCell(EditorContext context) {
             return new EditorCell_Error(context, node, "<" + node.getRoleInParent() + ">");
           }
         };
