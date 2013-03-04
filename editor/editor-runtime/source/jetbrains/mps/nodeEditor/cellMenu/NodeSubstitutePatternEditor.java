@@ -172,6 +172,7 @@ public class NodeSubstitutePatternEditor {
       setSize(w, h);
     }
 
+    @Override
     public void paint(Graphics g) {
       // COLORS: move colors to properties
       Rectangle bounds = g.getClipBounds();

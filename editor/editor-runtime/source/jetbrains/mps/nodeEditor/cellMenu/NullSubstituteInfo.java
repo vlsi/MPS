@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NullSubstituteInfo implements NodeSubstituteInfo {
+  @Override
   public List<SubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
     return new ArrayList<SubstituteAction>();
   }
@@ -31,16 +32,20 @@ public class NullSubstituteInfo implements NodeSubstituteInfo {
     return new ArrayList<SubstituteAction>();
   }
 
+  @Override
   public void invalidateActions() {
   }
 
+  @Override
   public void setOriginalText(String text) {
   }
 
+  @Override
   public String getOriginalText() {
     return null;
   }
 
+  @Override
   public boolean hasExactlyNActions(String pattern, boolean strictMatching, int n) {
     return n == 0;
   }

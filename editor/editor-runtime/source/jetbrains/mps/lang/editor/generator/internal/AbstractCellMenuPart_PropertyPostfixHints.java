@@ -77,6 +77,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     return actions;
   }
 
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }
@@ -204,6 +205,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
       return super.canSubstituteStrictly(pattern) && canSubstitute(pattern);
     }
 
+    @Override
     public boolean canSubstitute(String pattern) {
       if (myPostfixGroup.canSubstitute(pattern, myPostfix)) {
         String text = myPostfixGroup.getMatchingText(pattern, myPostfix);
@@ -213,6 +215,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
       }
     }
 
+    @Override
     protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
       return myPostfixGroup.getMatchingText(pattern, myPostfix);
     }

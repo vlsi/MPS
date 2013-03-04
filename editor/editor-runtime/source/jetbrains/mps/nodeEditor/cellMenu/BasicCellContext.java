@@ -33,15 +33,18 @@ public class BasicCellContext implements CellContext {
     put(EDITED_NODE, node);
   }
 
+  @Override
   public void put(Object key, Object value) {
     myValues.put(key, value);
   }
 
+  @Override
   @NotNull
   public Object get(Object key) {
     return myValues.get(key);
   }
 
+  @Override
   public Object getOpt(Object key) {
     return myValues.get(key);
   }

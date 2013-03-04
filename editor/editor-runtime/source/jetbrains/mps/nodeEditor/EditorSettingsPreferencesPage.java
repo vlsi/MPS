@@ -170,6 +170,7 @@ class EditorSettingsPreferencesPage {
     }
 
     ActionListener listener = new ActionListener() {
+      @Override
       public void actionPerformed(ActionEvent e) {
         myBlinkingDemo.repaint();
         EditorCell rootCell = myBlinkingDemo.getRootCell();
@@ -206,16 +207,19 @@ class EditorSettingsPreferencesPage {
         setEditorContext(new EditorContext(this, null, null));
         CaretBlinker.getInstance().unregisterEditor(this);
         ModelAccess.instance().runReadInEDT(new Runnable() {
+          @Override
           public void run() {
             rebuildEditorContent();
           }
         });
       }
 
+      @Override
       public EditorCell createRootCell() {
         return new EditorCell_Demo(getEditorContext(), "blinking");
       }
 
+      @Override
       public EditorCell createRootCell(List<SModelEvent> events) {
         return createRootCell();
       }
@@ -236,6 +240,7 @@ class EditorSettingsPreferencesPage {
 
   public void commit() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         String fontName = myFontsComboBox.getSelectedItem().toString();
         int fontSize = Integer.parseInt(myFontSizesComboBox.getSelectedItem().toString());
@@ -335,6 +340,7 @@ class EditorSettingsPreferencesPage {
     myFirstSelection.setSelected(true);
 
     ModelAccess.instance().runReadInEDT(new Runnable() {
+      @Override
       public void run() {
         myBlinkingDemo.rebuildEditorContent();
       }
@@ -351,17 +357,21 @@ class EditorSettingsPreferencesPage {
       this.setCaretPosition(3);
     }
 
+    @Override
     public void changeText(String text) {
     }
 
+    @Override
     public boolean isEditable() {
       return true;
     }
 
+    @Override
     public boolean isSelectable() {
       return true;
     }
 
+    @Override
     public void paintSelection(Graphics g, Color c, boolean drawBorder) {
 
     }

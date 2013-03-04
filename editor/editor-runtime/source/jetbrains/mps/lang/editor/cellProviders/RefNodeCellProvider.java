@@ -29,6 +29,7 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
     super(node, context);
   }
 
+  @Override
   protected EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node) {
     EditorCell editorCell;
     if (myIsAggregation) {

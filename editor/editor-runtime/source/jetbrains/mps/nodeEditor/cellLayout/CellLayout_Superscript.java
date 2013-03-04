@@ -32,6 +32,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
   private int myBaseScale = 0;
   private static final double scaleCoo = 0.8;
 
+  @Override
   public boolean canBeFolded() {
     return true;
   }
@@ -64,6 +65,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     }
   }
 
+  @Override
   public void doLayout(EditorCell_Collection editorCells) {
     if (CellLayout_Indent_Old.DO_INDENT_EVERYWHERE) {
       CellLayout_Indent_Old._doLayout(editorCells);
@@ -134,6 +136,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     editorCells.setHeight(height);
   }
 
+  @Override
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
@@ -142,6 +145,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     return result;
   }
 
+  @Override
   public int getAscent(EditorCell_Collection editorCells) {
     int floor2 = 0;
     int floor3 = 0;
@@ -161,6 +165,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     return floor3 + floor2;
   }
 
+  @Override
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
     EditorCell editorCell = editorCell_collection.firstCell();
     if (editorCell != null) return editorCell.getRightInset();

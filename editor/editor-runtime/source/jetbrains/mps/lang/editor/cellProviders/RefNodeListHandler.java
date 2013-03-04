@@ -42,6 +42,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
     super(ownerNode, childRole, editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+      @Override
       public void run() {
         myLinkDeclaration = ((jetbrains.mps.smodel.SNode) ownerNode).getLinkDeclaration(childRole);
         assert myLinkDeclaration != null : "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getId();

@@ -70,15 +70,18 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return myNodeEditorComponent;
   }
 
+  @Override
   public boolean isEditable() {
     SNode node = myNodeEditorComponent.getRootCell().getSNode();
     return node != null && node.getModel() != null && !node.getModel().isReadOnly();
   }
 
+  @Override
   public boolean isInspector() {
     return myNodeEditorComponent instanceof InspectorEditorComponent;
   }
 
+  @Override
   public EditorCell getSelectedCell() {
     return myNodeEditorComponent.getSelectedCell();
   }
@@ -91,18 +94,22 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return null;
   }
 
+  @Override
   public IScope getScope() {
     return myOperationContext.getScope();
   }
 
+  @Override
   public SNode getSelectedNode() {
     return myNodeEditorComponent.getSelectedNode();
   }
 
+  @Override
   public SModel getModel() {
     return myModelDescriptor.getSModel();
   }
 
+  @Override
   public IOperationContext getOperationContext() {
     return myOperationContext;
   }
@@ -196,36 +203,43 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return nodeCell;
   }
 
+  @Override
   public void flushEvents() {
     myNodeEditorComponent.flushEvents();
   }
 
+  @Override
   public Object createMemento(boolean full) {
     return new Memento(this, full);
   }
 
+  @Override
   public Object createMemento() {
     return createMemento(true);
   }
 
+  @Override
   public void select(final SNode node) {
     flushEvents();
 
     getNodeEditorComponent().selectNode(node);
   }
 
+  @Override
   public void selectRange(SNode first, SNode last) {
     flushEvents();
     SelectionManager selectionManager = getNodeEditorComponent().getSelectionManager();
     selectionManager.setSelection(selectionManager.createRangeSelection(first, last));
   }
 
+  @Override
   public void select(final SNode node, String cellId) {
     flushEvents();
 
     getNodeEditorComponent().selectNode(node, cellId);
   }
 
+  @Override
   public void selectBefore(final SNode node) {
     flushEvents();
 
@@ -238,6 +252,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
   }
 
+  @Override
   public void selectAfter(final SNode node) {
     flushEvents();
 
@@ -251,6 +266,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   }
 
+  @Override
   public void selectWRTFocusPolicy(final SNode node) {
     selectWRTFocusPolicy(node, true);
   }
@@ -260,6 +276,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return getOperationContext().getComponent(InspectorTool.class);
   }
 
+  @Override
   public void selectWRTFocusPolicy(final SNode node, final boolean force) {
     flushEvents();
 
@@ -278,6 +295,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     getNodeEditorComponent().changeSelectionWRTFocusPolicy((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell);
   }
 
+  @Override
   public void openInspector() {
     SwingUtilities.invokeLater(new Runnable() {
       @Override
@@ -295,6 +313,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     });
   }
 
+  @Override
   public void selectAndSetCaret(final SNode node, final int position) {
     flushEvents();
 
@@ -324,10 +343,12 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return newPosition;
   }
 
+  @Override
   public boolean setMemento(Object o) {
     if (o instanceof Memento) {
       final Memento memento = (Memento) o;
       ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
         public void run() {
           myNodeEditorComponent.relayout();
           memento.restore(myNodeEditorComponent);
@@ -352,8 +373,10 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return (jetbrains.mps.nodeEditor.cells.EditorCell) myContextCell;
   }
 
+  @Override
   public void runWithContextCell(EditorCell contextCell, final Runnable r) {
     runWithContextCell(contextCell, new Computable<Object>() {
+      @Override
       public Object compute() {
         r.run();
         return null;
@@ -362,6 +385,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   }
 
 
+  @Override
   public <T> T runWithContextCell(EditorCell contextCell, Computable<T> r) {
     EditorCell oldContextCell = myContextCell;
     myContextCell = contextCell;
@@ -372,6 +396,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
   }
 
+  @Override
   public EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute) {
     if (myCurrentRefNodeContext != null) {
       if (attributeKind != AttributeKind.Reference.class && myCurrentRefNodeContext.hasRoles())
@@ -382,14 +407,17 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, (cellWithRole), this, roleAttribute, myModelModifications);
   }
 
+  @Override
   public List<SNode> getSelectedNodes() {
     return myNodeEditorComponent.getSelectedNodes();
   }
 
+  @Override
   public void executeCommand(Runnable r) {
     myNodeEditorComponent.executeCommand(r);
   }
 
+  @Override
   public <T> T executeCommand(Computable<T> c) {
     return myNodeEditorComponent.executeCommand(c);
   }

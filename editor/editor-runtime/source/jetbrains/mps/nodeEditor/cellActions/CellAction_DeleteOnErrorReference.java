@@ -31,6 +31,7 @@ public class CellAction_DeleteOnErrorReference extends AbstractCellAction {
     myRole = role;
   }
 
+  @Override
   public void execute(EditorContext context) {
     if (mySource.getReference(myRole) != null && mySource.getReferenceTarget(myRole) == null) {
       mySource.setReference(myRole, null);

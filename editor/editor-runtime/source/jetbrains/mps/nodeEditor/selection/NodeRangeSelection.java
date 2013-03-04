@@ -179,6 +179,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     int selectedCellsSize = getSelectedCells().size();
     if (selectedCellsSize > 1) {
       editorContext.executeCommand(new Runnable() {
+        @Override
         public void run() {
           List<SNode> selectedNodes = getSelectedNodes();
           for (SNode node : selectedNodes) {
@@ -192,6 +193,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       if (action == null) return;
 
       if (!ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        @Override
         public Boolean compute() {
           return action.canExecute(editorContext);
         }
@@ -199,6 +201,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
       if (action.executeInCommand()) {
         editorContext.executeCommand(new Runnable() {
+          @Override
           public void run() {
             action.execute(editorContext);
           }

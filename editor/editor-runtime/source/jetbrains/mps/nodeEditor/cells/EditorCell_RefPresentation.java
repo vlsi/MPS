@@ -73,6 +73,7 @@ public class EditorCell_RefPresentation {
       return current;
     }
 
+    @Override
     public String getText() {
       if (myRefNode != null) {
         SReference ref = myRefNode.getReference(SModelUtil.getLinkDeclarationRole(myLinkDeclaration));
@@ -105,9 +106,11 @@ public class EditorCell_RefPresentation {
       return presentation.getText(referenceTarget, true, false, true);
     }
 
+    @Override
     public void setText(String text) {
     }
 
+    @Override
     public boolean isValidText(String text) {
       return EqualUtil.equals(getText(), text);
     }

@@ -52,6 +52,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     }
   }
 
+  @Override
   public String getMatchingText(String pattern) {
     if (myPresentation != null) {
       return myPresentation.getText((SNode) getParameterObject(), false, false, false);
@@ -60,6 +61,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     return getMatchingText(pattern, true, false);
   }
 
+  @Override
   public String getVisibleMatchingText(String pattern) {
     if (myPresentation != null) {
       return myPresentation.getText((SNode) getParameterObject(), true, false, false);
@@ -68,10 +70,12 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     return getMatchingText(pattern, true, true);
   }
 
+  @Override
   public String getDescriptionText(String pattern) {
     return getDescriptionText(pattern, true);
   }
 
+  @Override
   public Icon getIconFor(String pattern) {
     return super.getIconFor(pattern, true);
   }
@@ -86,6 +90,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     return NodePresentationUtil.getSortPriority(getSourceNode(), (SNode) getParameterObject());
   }
 
+  @Override
   public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
     SNode parameterNode = (SNode) getParameterObject();
     if (myCurrentReferent != parameterNode) {

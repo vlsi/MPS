@@ -149,6 +149,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   EditorCell_Label getSTHintCell();
 
   // TODO: move to open API
+  @Override
   Style getStyle();
 
   boolean isLeaf();

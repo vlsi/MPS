@@ -52,6 +52,7 @@ public class CallAction_ToggleCellFolding extends AbstractCellAction {
       return null;
     }
     return editorCell.findParent(new Condition<EditorCell_Collection>() {
+      @Override
       public boolean met(EditorCell_Collection object) {
         return object.isFolded() || object.canBePossiblyFolded();
       }

@@ -22,9 +22,11 @@ import java.awt.Rectangle;
 
 public abstract class AbstractAdditionalPainter<T> implements AdditionalPainter<T> {
 
+  @Override
   public void afterAdding(EditorComponent editorComponent) {
   }
 
+  @Override
   public void beforeRemoval(EditorComponent editorComponent) {
   }
 

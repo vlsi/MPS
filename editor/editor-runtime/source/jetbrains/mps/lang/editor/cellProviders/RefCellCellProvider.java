@@ -39,12 +39,14 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     super(node, context);
   }
 
+  @Override
   public EditorCell createEditorCell(EditorContext context) {
     EditorCell result = super.createEditorCell(context);
     result.setRefNode(getSNode());
     return result;
   }
 
+  @Override
   protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
     AbstractCellProvider inlineComponent = myAuxiliaryCellProvider;
     myAuxiliaryCellProvider.setSNode(effectiveNode);
@@ -91,6 +93,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     }
   }
 
+  @Override
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error, true);
     errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));

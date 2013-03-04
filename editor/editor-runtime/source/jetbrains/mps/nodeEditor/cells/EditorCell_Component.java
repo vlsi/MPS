@@ -39,10 +39,12 @@ public class EditorCell_Component extends EditorCell_Basic {
     myComponent = component;
 
     myComponent.addKeyListener(new KeyAdapter() {
+      @Override
       public void keyPressed(KeyEvent e) {
         nodeEditorComponent.sendKeyEvent(e);
       }
 
+      @Override
       public void keyReleased(KeyEvent e) {
         nodeEditorComponent.sendKeyEvent(e);
       }
@@ -54,21 +56,25 @@ public class EditorCell_Component extends EditorCell_Basic {
     setAction(CellActionType.PASTE_BEFORE, EmptyCellAction.getInstance());
   }
 
+  @Override
   public void setX(int x) {
     myComponent.setLocation(x, myComponent.getY());
     super.setX(x);
   }
 
+  @Override
   public void setY(int y) {
     myComponent.setLocation(myComponent.getX(), y);
     super.setY(y);
   }
 
+  @Override
   public void moveTo(int x, int y) {
     super.moveTo(x, y);
     myComponent.setLocation(myX, myY);
   }
 
+  @Override
   public void relayoutImpl() {
     Dimension preferredSize = myComponent.getPreferredSize();
     myComponent.setSize(preferredSize);
@@ -76,6 +82,7 @@ public class EditorCell_Component extends EditorCell_Basic {
     setHeight(myComponent.getHeight());
   }
 
+  @Override
   public boolean isDrawBorder() {
     return false;
   }
@@ -84,9 +91,11 @@ public class EditorCell_Component extends EditorCell_Basic {
     return myComponent;
   }
 
+  @Override
   public void paintContent(Graphics g, ParentSettings parentSettings) {
   }
 
+  @Override
   public int getAscent() {
     if (myComponent == null) {
       LOG.errorWithTrace("my component is null");
@@ -106,10 +115,12 @@ public class EditorCell_Component extends EditorCell_Basic {
     return editorCell_component;
   }
 
+  @Override
   public TextBuilder renderText() {
     return TextBuilder.fromString("[JComponent " + myComponent.toString() +  " ]");
   }
 
+  @Override
   protected boolean isSelectionPainted() {
     return false;
   }

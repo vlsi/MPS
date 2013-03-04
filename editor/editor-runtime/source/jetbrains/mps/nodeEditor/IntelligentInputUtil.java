@@ -47,6 +47,7 @@ public class IntelligentInputUtil {
     }
 
     return editorContext.executeCommand(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         return TypeContextManager.getInstance().runTypeCheckingComputation(
           ((EditorComponent)editorContext.getEditorComponent()).getTypecheckingContextOwner(),
@@ -448,6 +449,7 @@ public class IntelligentInputUtil {
   private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
     final SideTransformHintSubstituteActionsHelper helper = new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getRightTransformAnchorTag(), cell.getContext().getOperationContext());
     NodeSubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
+      @Override
       protected List<SubstituteAction> createActions() {
         return helper.createActions();
       }

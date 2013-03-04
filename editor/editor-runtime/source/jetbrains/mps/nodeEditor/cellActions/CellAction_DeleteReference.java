@@ -33,10 +33,12 @@ public class CellAction_DeleteReference extends AbstractCellAction {
     myRole = role;
   }
 
+  @Override
   public boolean canExecute(EditorContext context) {
     return true;
   }
 
+  @Override
   public void execute(EditorContext context) {
     SNodeAccessUtil.setReferenceTarget(mySource, myRole, null);
   }

@@ -30,6 +30,7 @@ public abstract class DefaultSimpleSubstituteAction extends DefaultChildNodeSubs
     return false;
   }
 
+  @Override
   public boolean canSubstituteStrictly(String pattern) {
     if (hasSubstitute()) {
       return canSubstitute_internal(pattern, true);
@@ -37,6 +38,7 @@ public abstract class DefaultSimpleSubstituteAction extends DefaultChildNodeSubs
     return super.canSubstituteStrictly(pattern);
   }
 
+  @Override
   public boolean canSubstitute(String pattern) {
     if (hasSubstitute()) {
       return canSubstitute_internal(pattern, false);

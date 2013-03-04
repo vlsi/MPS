@@ -28,6 +28,7 @@ public abstract class EditorCellAction extends AbstractCellAction implements Cel
    * Since MPS 3.0
    * should be transformed to abstract method in future
    */
+  @Override
   public void execute(jetbrains.mps.openapi.editor.EditorContext context) {
     execute((EditorContext) context);
   }

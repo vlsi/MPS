@@ -42,12 +42,14 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     myLinkDeclaration = linkDeclaration;
 
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+      @Override
       public void run() {
         myActionFactory = new DefaultReferenceSubstituteInfoActionsFactory(sourceNode, linkDeclaration, DefaultReferenceSubstituteInfo.this);
       }
     });
   }
 
+  @Override
   protected InequalitySystem getInequalitiesSystem(EditorCell contextCell) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     CopyUtil.copy(Arrays.asList(mySourceNode.getContainingRoot()), mapping).get(0);
@@ -70,6 +72,7 @@ public class DefaultReferenceSubstituteInfo extends AbstractNodeSubstituteInfo {
     return inequalitiesForHole;
   }
 
+  @Override
   public List<SubstituteAction> createActions() {
     return myActionFactory.createActions();
   }

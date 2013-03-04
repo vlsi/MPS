@@ -62,6 +62,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     List<SubstituteAction> result = new ArrayList<SubstituteAction>(actions.size());
     for (SubstituteAction a : actions) {
       result.add(new NodeSubstituteActionWrapper(a) {
+        @Override
         public SNode substitute(@Nullable EditorContext context, String pattern) {
           String selectedCellId = null;
           if (context != null) {
@@ -87,6 +88,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
     return result;
   }
 
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, final jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }

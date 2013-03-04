@@ -44,6 +44,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
   private String myPropertyName;
   private SNode myPropertyDeclaration;
 
+  @Override
   public void setRole(Object role) {
     myPropertyName = InternUtil.intern(role.toString());
     myPropertyDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
@@ -59,6 +60,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     super(node, context);
   }
 
+  @Override
   public EditorCell createEditorCell(EditorContext context) {
     PropertyAccessor propertyAccessor = new PropertyAccessor(getSNode(), myPropertyName, myReadOnly, myAllowsEmptyTarget, context);
     EditorCell_Property editorCell = EditorCell_Property.create(context, propertyAccessor, getSNode());
@@ -71,18 +73,22 @@ public class PropertyCellProvider extends CellProviderWithRole {
     return editorCell;
   }
 
+  @Override
   public SNode getRoleAttribute() {
     SNode node = getSNode();
     return AttributeOperations.getPropertyAttribute(node, null, myPropertyName);
   }
 
   // gets a kind of attributes possibly hanging on this provider's role
+  @Override
   public Class getRoleAttributeClass() {
     return AttributeKind.Property.class;
   }
 
+  @Override
   public NodeSubstituteInfo createDefaultSubstituteInfo() {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<NodeSubstituteInfo>() {
+      @Override
       public NodeSubstituteInfo compute() {
         if (myPropertyDeclaration == null) {
           return null;
@@ -100,6 +106,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     });
   }
 
+  @Override
   public CellContext getCellContext() {
     return myPropertyDeclaration != null ? new PropertyCellContext(getSNode(), myPropertyDeclaration) : super.getCellContext();
   }

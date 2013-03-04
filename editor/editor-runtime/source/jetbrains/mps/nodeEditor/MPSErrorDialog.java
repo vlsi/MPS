@@ -37,6 +37,7 @@ public class MPSErrorDialog extends JDialog {
   private Frame myOwnerFrame;
   private String myErrorString;
   private KeyListener myEscapeListener = new KeyAdapter() {
+    @Override
     public void keyPressed(KeyEvent e) {
       if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
         dispose();
@@ -66,6 +67,7 @@ public class MPSErrorDialog extends JDialog {
     myField.setEditable(false);
     myField.addKeyListener(myEscapeListener);
     JButton button = new JButton(new AbstractAction("OK") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         dispose();
       }
@@ -101,6 +103,7 @@ public class MPSErrorDialog extends JDialog {
     myIsInitialized = false;
   }
 
+  @Override
   public void setVisible(boolean b) {
     assert !b || myIsInitialized;
     super.setVisible(b);

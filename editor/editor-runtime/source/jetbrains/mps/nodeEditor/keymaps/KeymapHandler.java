@@ -62,6 +62,7 @@ public abstract class KeymapHandler<E> {
     final Collection<ActionKey> actionKeys = getActionKeys(event);
     assert !actionKeys.isEmpty();
     return ModelAccess.instance().runReadAction(new Computable<List<Pair<KeyMapAction, EditorCell>>>() {
+      @Override
       public List<Pair<KeyMapAction, EditorCell>> compute() {
         // collect all keymaps available
         List<Pair<KeyMap, EditorCell>> keymapsAndCells = getRegisteredKeymaps(selectedCell, context);
@@ -78,8 +79,10 @@ public abstract class KeymapHandler<E> {
 
   public void executeAction(final KeyMapAction action, EditorCell contextCell, final EditorContext editorContext) {
     editorContext.runWithContextCell(contextCell, new Runnable() {
+      @Override
       public void run() {
         editorContext.executeCommand(new Runnable() {
+          @Override
           public void run() {
             action.execute(editorContext);
           }
@@ -217,6 +220,7 @@ public abstract class KeymapHandler<E> {
 
   private boolean canExecuteKeyMapAction(final KeyMapAction action, EditorCell contextCell, final EditorContext editorContext) {
     return editorContext.runWithContextCell(contextCell, new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         return action.canExecute(editorContext);
       }

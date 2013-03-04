@@ -38,24 +38,29 @@ import java.util.List;
  */
 public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInfoPart, SubstituteInfoPartExt {
 
+  @Override
   public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     final SNode node = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     final IOperationContext context = editorContext.getOperationContext();
 
     return Collections.<SubstituteAction>singletonList(new AbstractNodeSubstituteAction(null, null, node) {
 
+      @Override
       public String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
         return AbstractCellMenuPart_Generic_Item.this.getMatchingText();
       }
 
+      @Override
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
 
+      @Override
       public String getDescriptionText(String pattern) {
         return null;
       }
 
+      @Override
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         handleAction(node, node.getModel(), context.getScope(), context, editorContext);
         return null;
@@ -63,6 +68,7 @@ public abstract class AbstractCellMenuPart_Generic_Item implements SubstituteInf
     });
   }
 
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }

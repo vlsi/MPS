@@ -47,6 +47,7 @@ public class NodeEditorComponent extends EditorComponent {
       protected void selectionChangedTo(EditorComponent editorComponent, SingularSelection newSelection) {
         final SNode[] toSelect = new SNode[]{newSelection.getEditorCell().getSNode()};
         ModelAccess.instance().runReadAction(new Runnable() {
+          @Override
           public void run() {
             if (isShowing() || IdeMain.getTestMode() != TestMode.NO_TEST) {
               inspect(toSelect[0]);
@@ -57,6 +58,7 @@ public class NodeEditorComponent extends EditorComponent {
     });
 
     addHierarchyListener(new HierarchyListener() {
+      @Override
       public void hierarchyChanged(HierarchyEvent hierarchyEvent) {
         if (HierarchyEvent.SHOWING_CHANGED != (hierarchyEvent.getChangeFlags() & HierarchyEvent.SHOWING_CHANGED)){
           return;
@@ -87,6 +89,7 @@ public class NodeEditorComponent extends EditorComponent {
 
   private void adjustInspector() {
     ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
         SNode selectedNode = getSelectedNode();
 
@@ -124,12 +127,14 @@ public class NodeEditorComponent extends EditorComponent {
     return true;
   }
 
+  @Override
   public void rebuildEditorContent() {
     if (isValidEditor()) {
       super.rebuildEditorContent();
     }
   }
 
+  @Override
   public EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().getModel() == null) {
       jetbrains.mps.openapi.editor.EditorContext editorContext = getEditorContext();
@@ -148,6 +153,7 @@ public class NodeEditorComponent extends EditorComponent {
     return getOperationContext().getComponent(InspectorTool.class);
   }
 
+  @Override
   public void dispose() {
     notifyDisposal();
     InspectorTool inspectorTool = getInspectorTool();

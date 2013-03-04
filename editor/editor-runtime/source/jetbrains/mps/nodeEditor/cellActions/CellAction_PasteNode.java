@@ -54,6 +54,7 @@ import java.util.Set;
 public class CellAction_PasteNode extends AbstractCellAction {
   private static final Logger LOG = Logger.getLogger(CellAction_PasteNode.class);
 
+  @Override
   public boolean canExecute(EditorContext context) {
     EditorCell selectedCell = getCellToPasteTo((EditorCell) context.getSelectedCell());
     if (selectedCell == null) {
@@ -75,6 +76,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
     return true;
   }
 
+  @Override
   public void execute(final EditorContext context) {
     LOG.assertInCommand();
     final EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
@@ -96,9 +98,11 @@ public class CellAction_PasteNode extends AbstractCellAction {
     //this is used in case node is in repo to pass it into invokeLater
     final SNodeReference selectedNodePointer = nodeSelected.getReference();
     SwingUtilities.invokeLater(new Runnable() {
+      @Override
       public void run() {
         final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modeltoPaste, context.getOperationContext());
         ModelAccess.instance().runCommandInEDT(new Runnable() {
+          @Override
           public void run() {
             if (addImportsRunnable != null) {
               addImportsRunnable.run();

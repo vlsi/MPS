@@ -85,6 +85,7 @@ public final class CreateFromUsageUtil {
     Component editorComponent = ((EditorContext) editorContext).getNodeEditorComponent();
     final DataContext dataContext = DataManager.getInstance().getDataContext(editorComponent, x, y);
     ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
+      @Override
       public ListPopup compute() {
         ActionGroup group = getQuickCreateGroup(selectedCell.getSNode().getModel(), editorContext.getScope(), conceptsFilter, newRootHandler);
         ListPopup popup = null;
@@ -113,8 +114,10 @@ public final class CreateFromUsageUtil {
       for (final SNode concept : language.getConceptDeclarations()) {
         if (SNodeUtil.getConceptDeclaration_IsRootable(concept) && (conceptsFilter == null || conceptsFilter.met(concept))) {
           BaseAction action = new BaseAction(NodePresentationUtil.matchingText(concept)) {
+            @Override
             protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
               ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                @Override
                 public void run() {
                   SNode result = NodeFactoryManager.createNode(concept, null, null, model, scope);
                   model.addRootNode(result);

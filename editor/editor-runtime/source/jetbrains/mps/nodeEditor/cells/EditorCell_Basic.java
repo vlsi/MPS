@@ -125,14 +125,17 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getContext().getEditorComponent();
   }
 
+  @Override
   public boolean isErrorState() {
     return myErrorState;
   }
 
+  @Override
   public boolean isPunctuationLayout() {
     return LayoutConstraints.PUNCTUATION_LAYOUT_CONSTRAINT.equals(getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT));
   }
 
+  @Override
   public void setErrorState(boolean errorState) {
     boolean wasState = myErrorState;
     myErrorState = errorState;
@@ -146,6 +149,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
+  @Override
   public boolean validate(boolean strict, boolean canActivatePopup) {
     SubstituteInfo substituteInfo = getSubstituteInfo();
     if (substituteInfo == null) {
@@ -181,10 +185,12 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
 
+  @Override
   public void setCellBackgroundColor(Color color) {
     getStyle().set(StyleAttributes.BACKGROUND_COLOR, color);
   }
 
+  @Override
   public Color getCellBackgroundColor() {
     return getStyle().get(StyleAttributes.BACKGROUND_COLOR);
   }
@@ -193,10 +199,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getStyle().get(StyleAttributes.BRACKETS_COLOR);
   }
 
+  @Override
   public CellAction getAction(CellActionType type) {
     return myActionMap.get(type);
   }
 
+  @Override
   public Collection<CellActionType> getAvailableActions() {
     return new HashSet<CellActionType>(myActionMap.keySet());
   }
@@ -204,15 +212,18 @@ public abstract class EditorCell_Basic implements EditorCell {
   /**
    * should be removed after MPS 3.0
    */
+  @Override
   @Deprecated
   public void setAction(jetbrains.mps.nodeEditor.CellActionType type, EditorCellAction action) {
     setAction(CellActionType.valueOf(type.name()), action);
   }
 
+  @Override
   public void setAction(CellActionType type, CellAction action) {
     myActionMap.put(type, action);
   }
 
+  @Override
   public void addKeyMap(KeyMap keyMap) {
     if (myKeyMap != null) {
       myKeyMap.addKeyMap(keyMap);
@@ -221,14 +232,17 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
+  @Override
   public KeyMap getKeyMap() {
     return myKeyMap;
   }
 
+  @Override
   public SNode getSNode() {
     return myNode;
   }
 
+  @Override
   public SNode getSNodeWRTReference() {
     SNode target = getStyle().get(StyleAttributes.NAVIGATABLE_NODE);
     if (target != null) {
@@ -248,6 +262,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return operationNode;
   }
 
+  @Override
   public String getCellRole() {
     SNode linkDeclaration = getLinkDeclaration();
     if (linkDeclaration != null) {
@@ -261,10 +276,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     myNode = node;
   }
 
+  @Override
   public int getHeight() {
     return myHeight;
   }
 
+  @Override
   public void setHeight(int height) {
     myHeight = height;
   }
@@ -279,38 +296,47 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getX() + getWidth();
   }
 
+  @Override
   public int getEffectiveWidth() {
     return myWidth;
   }
 
+  @Override
   public int getLeftInset() {
     return 0;
   }
 
+  @Override
   public int getRightInset() {
     return 0;
   }
 
+  @Override
   public int getTopInset() {
     return 0;
   }
 
+  @Override
   public int getBottomInset() {
     return 0;
   }
 
+  @Override
   public int getWidth() {
     return myWidth;
   }
 
+  @Override
   public void setWidth(int width) {
     myWidth = width;
   }
 
+  @Override
   public int getY() {
     return myY;
   }
 
+  @Override
   public void setY(int y) {
     if (myY == y) {
       return;
@@ -319,10 +345,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     requestRelayout();
   }
 
+  @Override
   public int getX() {
     return myX;
   }
 
+  @Override
   public void setX(int x) {
     if (myX == x) {
       return;
@@ -331,6 +359,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     requestRelayout();
   }
 
+  @Override
   public boolean isSelected() {
     return mySelected;
   }
@@ -340,33 +369,41 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
 
+  @Override
   public boolean isSelectable() {
     return getStyle().get(StyleAttributes.SELECTABLE);
   }
 
+  @Override
   public void setSelectable(boolean selectable) {
     getStyle().set(StyleAttributes.SELECTABLE, selectable);
   }
 
+  @Override
   public void setCellId(String cellId) {
     assert myCellId == null;
     myCellId = cellId;
   }
 
+  @Override
   public String getCellId() {
     return myCellId;
   }
 
+  @Override
   public String getRole() {
     return myRole;
   }
 
+  @Override
   public void setRole(String role) {
     myRole = role;
   }
 
+  @Override
   public void setLinkDeclaration(final SNode link) {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
+      @Override
       public void run() {
         if (link != null) {
           myLinkDeclarationPointer = new jetbrains.mps.smodel.SNodePointer(link);
@@ -379,6 +416,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     });
   }
 
+  @Override
   public SNode getLinkDeclaration() {
     String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
     if (role != null) {
@@ -387,18 +425,22 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myLinkDeclarationPointer != null ? myLinkDeclarationPointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 
+  @Override
   public boolean isReferenceCell() {
     return myIsReferenceCell;
   }
 
+  @Override
   public SNode getRefNode() {
     return myRefNodePointer != null ? myRefNodePointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 
+  @Override
   public void setRefNode(SNode refNode) {
     myRefNodePointer = (refNode != null) ? new jetbrains.mps.smodel.SNodePointer(refNode) : null;
   }
 
+  @Override
   public void setSelected(boolean selected) {
     mySelected = selected;
   }
@@ -407,6 +449,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getStyle().get(StyleAttributes.DRAW_BORDER);
   }
 
+  @Override
   public Object getUserObject(Object key) {
     if (myUserObjects == null) {
       return null;
@@ -414,11 +457,13 @@ public abstract class EditorCell_Basic implements EditorCell {
     return myUserObjects.get(key);
   }
 
+  @Override
   public void moveTo(int x, int y) {
     myX = x;
     myY = y;
   }
 
+  @Override
   public void putUserObject(Object key, Object value) {
     if (myUserObjects == null) {
       myUserObjects = new ListMap();
@@ -429,6 +474,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   /**
    * @deprecated since MPS 3.0 use getContext() instead
    */
+  @Override
   @Deprecated
   public jetbrains.mps.nodeEditor.EditorContext getEditorContext() {
     return (jetbrains.mps.nodeEditor.EditorContext) getContext();
@@ -443,6 +489,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getContext().getOperationContext();
   }
 
+  @Override
   public final boolean processKeyPressed(KeyEvent e, boolean allowErrors) {
     if (e.isConsumed()) return false;
     return doProcessKeyPressed(e, allowErrors);
@@ -452,6 +499,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return false;
   }
 
+  @Override
   public final boolean processKeyTyped(KeyEvent e, boolean allowErrors) {
     if (e.isConsumed()) return false;
     return doProcessKeyTyped(e, allowErrors);
@@ -461,6 +509,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (getSNode() == null || !isBigCell()) return false;
 
     if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         return getSNode().getModel() != null && getSNode().getModel().isRoot(getSNode());
       }
@@ -469,6 +518,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (!UIUtil.isReallyTypedEvent(e)) return false;
 
     getContext().executeCommand(new Runnable() {
+      @Override
       public void run() {
         EditorComponent editor = getEditor();
         SNode oldNode = getSNode();
@@ -516,26 +566,32 @@ public abstract class EditorCell_Basic implements EditorCell {
     return newNode;
   }
 
+  @Override
   public void setCaretX(int x) {
     myCaretX = x;
   }
 
+  @Override
   public int getCaretX() {
     return myCaretX;
   }
 
+  @Override
   public void home() {
 
   }
 
+  @Override
   public void end() {
 
   }
 
+  @Override
   public final EditorCell findLeaf(int x, int y) {
     return findLeaf(x, y, Condition.TRUE_CONDITION);
   }
 
+  @Override
   public EditorCell findLeaf(int x, int y, Condition<EditorCell> condition) {
     if (myX <= x && x < myX + myWidth && myY <= y && y < myY + myHeight && condition.met(this)) {
       return this;
@@ -543,10 +599,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public final EditorCell findCellWeak(int x, int y) {
     return findCellWeak(x, y, Condition.TRUE_CONDITION);
   }
 
+  @Override
   public EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition) {
     Set<EditorCell> candidates = new LinkedHashSet<EditorCell>();
     collectCellsWithY(this, y, candidates);
@@ -599,10 +657,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
+  @Override
   public EditorCell_Collection getParent() {
     return myParent;
   }
 
+  @Override
   public boolean isSingleNodeCell() {
     if (myParent == null) {
       return true;
@@ -620,10 +680,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     myParent = parent;
   }
 
+  @Override
   public boolean processMousePressed(MouseEvent e) {
     return false;
   }
 
+  @Override
   public NodeSubstitutePatternEditor createSubstitutePatternEditor() {
     return new NodeSubstitutePatternEditor();
   }
@@ -638,10 +700,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     return mySubstituteInfo;
   }
 
+  @Override
   public void paint(Graphics g) {
     paint(g, null);
   }
 
+  @Override
   public void paint(Graphics g, ParentSettings parentSettings) {
     if (!isSelectionPaintedOnAncestor(parentSettings).isSelectionPainted()) {
       paintBackground(g, parentSettings);
@@ -718,10 +782,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
+  @Override
   public List<EditorMessage> getMessages() {
     return getEditor().getHighlightManager().getMessages(this);
   }
 
+  @Override
   public <T extends EditorMessage> List<T> getMessages(Class<T> clazz) {
     List<T> result = new ArrayList<T>();
     for (EditorMessage message : getMessages()) {
@@ -732,6 +798,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return result;
   }
 
+  @Override
   public List<EditorMessage> getMessagesForOwner(EditorMessageOwner owner) {
     ArrayList<EditorMessage> result = new ArrayList<EditorMessage>(1);
     for (EditorMessage message : getMessages()) {
@@ -742,6 +809,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return result;
   }
 
+  @Override
   public boolean hasErrorMessages() {
     for (EditorMessage message : getMessages()) {
       if (message.getStatus() == MessageStatus.ERROR) {
@@ -751,6 +819,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return false;
   }
 
+  @Override
   public EditorCell_Label getSTHintCell() {
     SNode node = getSNode();
     if (node == null) {
@@ -792,30 +861,37 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public void synchronizeViewWithModel() {
   }
 
+  @Override
   public void setBaseline(int y) {
     int relBaseline = getAscent();
     moveTo(myX, y - relBaseline);
   }
 
+  @Override
   public int getBaseline() {
     return myY + getAscent();
   }
 
+  @Override
   public int getAscent() {
     return myHeight;
   }
 
+  @Override
   public int getDescent() {
     return myHeight - getAscent();
   }
 
+  @Override
   public void paintSelection(Graphics g, Color c, boolean drawBorder) {
     paintSelection(g, c, drawBorder, ParentSettings.createDefaultSetting());
   }
 
+  @Override
   public void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings) {
     g.setColor(c);
     g.fillRect(getX(), getY() /*+ getTopInset()*/, getWidth(), getHeight() - getTopInset() - getBottomInset());
@@ -825,10 +901,12 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
+  @Override
   public TextBuilder renderText() {
     return TextBuilder.getEmptyTextBuilder();
   }
 
+  @Override
   public final void relayout() {
     if (!myIsNeedRelayout) {
       return;
@@ -854,26 +932,32 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   }
 
+  @Override
   public void switchCaretVisible() {
 
   }
 
+  @Override
   public CellInfo getCellInfo() {
     return new DefaultCellInfo(this);
   }
 
+  @Override
   public void setRightTransformAnchorTag(String tag) {
     getStyle().set(StyleAttributes.RT_ANCHOR_TAG, tag);
   }
 
+  @Override
   public String getRightTransformAnchorTag() {
     return getStyle().get(StyleAttributes.RT_ANCHOR_TAG);
   }
 
+  @Override
   public boolean hasRightTransformAnchorTag(String tag) {
     return getRightTransformAnchorTag() != null && getRightTransformAnchorTag().equals(tag);
   }
 
+  @Override
   public boolean isAncestorOf(EditorCell cell) {
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = cell.getParent();
     while (parent != null) {
@@ -891,14 +975,17 @@ public abstract class EditorCell_Basic implements EditorCell {
     return EditorSettings.getInstance().getRangeSelectionForegroundColor();
   }
 
+  @Override
   public Iterator<EditorCell_Collection> parents() {
     return new Iterator<EditorCell_Collection>() {
       private EditorCell myCurrentCell = EditorCell_Basic.this;
 
+      @Override
       public boolean hasNext() {
         return myCurrentCell.getParent() != null;
       }
 
+      @Override
       public EditorCell_Collection next() {
         EditorCell_Collection parent = (EditorCell_Collection) myCurrentCell.getParent();
         if (parent == null) throw new NoSuchElementException();
@@ -906,16 +993,19 @@ public abstract class EditorCell_Basic implements EditorCell {
         return parent;
       }
 
+      @Override
       public void remove() {
         throw new UnsupportedOperationException();
       }
     };
   }
 
+  @Override
   public boolean isUnderFolded() {
     return getFoldedAbove() != null;
   }
 
+  @Override
   public EditorCell_Collection getFoldedAbove() {
     for (EditorCell_Collection parent : IterableUtil.asIterable(parents())) {
       if (parent.isFolded()) return parent;
@@ -923,6 +1013,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public EditorCell_Collection findParent(Condition<EditorCell_Collection> condition) {
     if (this instanceof EditorCell_Collection && condition.met((EditorCell_Collection) this)) {
       return (EditorCell_Collection) this;
@@ -935,26 +1026,32 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public <C extends EditorCell> C findChild(CellFinder<C> finder, boolean includeThis) {
     return finder.find(this, includeThis);
   }
 
+  @Override
   public <C extends EditorCell> C findChild(CellFinder<C> finder) {
     return findChild(finder, false);
   }
 
+  @Override
   public boolean isFolded() {
     return false;
   }
 
+  @Override
   public boolean isUnfoldedCollection() {
     return false;
   }
 
+  @Override
   public boolean canBePossiblyFolded() {
     return false;
   }
 
+  @Override
   public EditorCell getRootParent() {
     EditorCell cell = this;
     EditorCell prevCell = null;
@@ -965,6 +1062,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return prevCell;
   }
 
+  @Override
   public boolean isBigCell() {
     return getParent() == null || getParent().getSNode() != getSNode();
   }
@@ -974,38 +1072,47 @@ public abstract class EditorCell_Basic implements EditorCell {
       || (getParent().getChildCount() == 1 && getParent().isSelectable() && getParent().isTopCell());
   }
 
+  @Override
   public boolean isFirstCaretPosition() {
     return false;
   }
 
+  @Override
   public boolean isLastCaretPosition() {
     return false;
   }
 
+  @Override
   public boolean isFirstPositionInBigCell() {
     return false;
   }
 
+  @Override
   public boolean isLastPositionInBigCell() {
     return false;
   }
 
+  @Override
   public boolean isLastChild() {
     return getNextSibling() == null && getParent() != null;
   }
 
+  @Override
   public boolean isFirstChild() {
     return getPrevSibling() == null && getParent() != null;
   }
 
+  @Override
   public boolean isOnLeftBoundary() {
     return getPrevLeaf() == null || getPrevLeaf().getSNode() != getSNode();
   }
 
+  @Override
   public boolean isOnRightBoundary() {
     return getNextLeaf() == null || getNextLeaf().getSNode() != getSNode();
   }
 
+  @Override
   public EditorCell getContainingBigCell() {
     if (isBigCell()) {
       return this;
@@ -1016,22 +1123,27 @@ public abstract class EditorCell_Basic implements EditorCell {
     return getParent().getContainingBigCell();
   }
 
+  @Override
   public void setFocusPolicy(jetbrains.mps.nodeEditor.FocusPolicy fp) {
     getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.valueOf(fp.name()));
   }
 
+  @Override
   public boolean isAbove(EditorCell cell) {
     return getY() + getHeight() <= cell.getY();
   }
 
+  @Override
   public boolean isBelow(EditorCell cell) {
     return cell.isAbove(this);
   }
 
+  @Override
   public boolean isToLeft(EditorCell cell) {
     return getX() + getWidth() <= cell.getX();
   }
 
+  @Override
   public boolean isToRight(EditorCell cell) {
     return cell.isToLeft(this);
   }
@@ -1041,6 +1153,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return Math.min(Math.abs(cell.getX() - x), Math.abs(cell.getX() + cell.getWidth() - x));
   }
 
+  @Override
   public EditorCell getUpper(Condition<EditorCell> condition, int baseX) {
     EditorCell bestMatch = null;
     EditorCell current = getPrevLeaf(condition);
@@ -1066,6 +1179,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return bestMatch;
   }
 
+  @Override
   public EditorCell getLower(Condition<EditorCell> condition, int baseX) {
     EditorCell bestMatch = null;
     EditorCell current = getNextLeaf(condition);
@@ -1091,6 +1205,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return bestMatch;
   }
 
+  @Override
   public EditorCell getEndCell(Condition<EditorCell> condition) {
     EditorCell current = this;
     while (current.getLeafToRight(condition) != null) {
@@ -1099,6 +1214,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return current.getLastLeaf(condition);
   }
 
+  @Override
   public EditorCell getHomeCell(Condition<EditorCell> condition) {
     EditorCell current = this;
     while (current.getLeafToLeft(condition) != null) {
@@ -1107,22 +1223,27 @@ public abstract class EditorCell_Basic implements EditorCell {
     return current.getFirstLeaf();
   }
 
+  @Override
   public EditorCell getLeafToLeft(Condition<EditorCell> condition) {
     return getPrevLeaf(new Condition<EditorCell>() {
+      @Override
       public boolean met(EditorCell current) {
         return current.isSelectable() && !isAbove(current) && !isBelow(current) && isToRight(current);
       }
     });
   }
 
+  @Override
   public EditorCell getLeafToRight(Condition<EditorCell> condition) {
     return getNextLeaf(new Condition<EditorCell>() {
+      @Override
       public boolean met(EditorCell current) {
         return current.isSelectable() && !isAbove(current) && !isBelow(current) && isToLeft(current);
       }
     });
   }
 
+  @Override
   public EditorCell getNextSibling() {
     if (myParent == null) {
       return null;
@@ -1134,6 +1255,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public EditorCell getNextSibling(Condition<EditorCell> condition) {
     EditorCell current = getNextSibling();
     while (current != null) {
@@ -1145,6 +1267,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public EditorCell getPrevSibling() {
     if (myParent == null) {
       return null;
@@ -1156,6 +1279,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public EditorCell getPrevSibling(Condition<EditorCell> condition) {
     EditorCell current = getPrevSibling();
     while (current != null) {
@@ -1167,6 +1291,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public EditorCell getNextLeaf() {
     if (getNextSibling() != null) {
       return getNextSibling().getFirstLeaf();
@@ -1177,6 +1302,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public EditorCell getNextLeaf(Condition<EditorCell> condition) {
     EditorCell current = getNextLeaf();
     while (current != null) {
@@ -1188,6 +1314,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public EditorCell getPrevLeaf() {
     if (getPrevSibling() != null) {
       return getPrevSibling().getLastLeaf();
@@ -1198,6 +1325,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public EditorCell getPrevLeaf(Condition<EditorCell> condition) {
     EditorCell current = getPrevLeaf();
     while (current != null) {
@@ -1209,46 +1337,55 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public EditorCell getFirstLeaf() {
     return this;
   }
 
+  @Override
   public EditorCell getLastLeaf() {
     return this;
   }
 
+  @Override
   public EditorCell getFirstLeaf(final Condition<EditorCell> condition) {
     EditorCell firstLeaf = getFirstLeaf();
     if (condition.met(firstLeaf)) {
       return firstLeaf;
     }
     return firstLeaf.getNextLeaf(new Condition<EditorCell>() {
+      @Override
       public boolean met(EditorCell object) {
         return isAncestorOf(object) && condition.met(object);
       }
     });
   }
 
+  @Override
   public EditorCell getLastLeaf(final Condition<EditorCell> condition) {
     EditorCell lastLeaf = getLastLeaf();
     if (condition.met(lastLeaf)) {
       return lastLeaf;
     }
     return lastLeaf.getPrevLeaf(new Condition<EditorCell>() {
+      @Override
       public boolean met(EditorCell object) {
         return isAncestorOf(object) && condition.met(object);
       }
     });
   }
 
+  @Override
   public EditorCell getLastChild() {
     return this;
   }
 
+  @Override
   public EditorCell getFirstChild() {
     return this;
   }
 
+  @Override
   public EditorCell getFirstDescendant(Condition<EditorCell> condition) {
     EditorCell current = getFirstChild();
 
@@ -1267,6 +1404,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public EditorCell getLastDescendant(Condition<EditorCell> condition) {
     EditorCell current = getLastChild();
 
@@ -1285,6 +1423,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     return null;
   }
 
+  @Override
   public Style getStyle() {
     return myStyle;
   }
@@ -1294,6 +1433,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     myStyle = (Style) style;
   }
 
+  @Override
   public boolean isLeaf() {
     return true;
   }
@@ -1318,6 +1458,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
   }
 
+  @Override
   public void setLeftGap(int gap) {
     // TODO: remove this line and modify getEffectiveWidth() method in order to return
     // getWidth() + myGapRight + myGapLeft
@@ -1326,6 +1467,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     myGapLeft = gap;
   }
 
+  @Override
   public void setRightGap(int gap) {
     // TODO: remove this line and modify getEffectiveWidth() method in order to return
     // getWidth() + myGapRight + myGapLeft

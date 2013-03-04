@@ -25,10 +25,12 @@ import jetbrains.mps.openapi.editor.EditorContext;
 public class CellAction_Empty extends EditorCellAction {
   private Throwable myCreationPoint = new Throwable();
 
+  @Override
   public boolean canExecute(EditorContext context) {
     return true;
   }
 
+  @Override
   public void execute(EditorContext context) {
   }
 }

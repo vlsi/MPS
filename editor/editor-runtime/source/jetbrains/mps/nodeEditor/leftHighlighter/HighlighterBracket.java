@@ -151,6 +151,7 @@ public class HighlighterBracket {
       return myBeginning;
     }
 
+    @Override
     public int compareTo(BracketEdge o) {
       if (myY == o.myY) {
         if (isBeggining() && !o.isBeggining()) {

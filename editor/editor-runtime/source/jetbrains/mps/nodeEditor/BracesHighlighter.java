@@ -118,6 +118,7 @@ public class BracesHighlighter {
       EditorCell validCellForNode = matchigCell.getEditor().getBigValidCellForNode(matchigCell.getSNode());
       if (validCellForNode != null) {
         EditorCell editorCell = validCellForNode.getFirstDescendant(new Condition<EditorCell>() {
+          @Override
           public boolean met(EditorCell cell) {
             return cell != matchigCell && cell.getSNode() == matchigCell.getSNode() && pair.o2.equals(cell.getStyle().get(StyleAttributes.MATCHING_LABEL));
           }

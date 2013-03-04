@@ -35,6 +35,7 @@ public class BooleanPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
     myPropertyName = propertyName;
   }
 
+  @Override
   public List<SubstituteAction> createActions() {
     List<SubstituteAction> list = new ArrayList<SubstituteAction>(2);
     list.add(new PropertySubstituteAction(myNode, myPropertyName, "true"));

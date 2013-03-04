@@ -82,8 +82,10 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private List<Editor> myAdditionalEditors = new ArrayList<Editor>();
 
   private ReloadListener myReloadListener = new ReloadAdapter() {
+    @Override
     public void unload() {
       addPendingAction(new Runnable() {
+        @Override
         public void run() {
           myCheckedOnceEditors.clear();
           myInspectorMessagesCreated = false;
@@ -93,6 +95,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   };
   private SModelCommandListener myModelCommandListener = new SModelCommandListener() {
+    @Override
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
       synchronized (EVENTS_LOCK) {
@@ -101,6 +104,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   };
   private SModelRepositoryListener myModelReloadListener = new SModelRepositoryAdapter() {
+    @Override
     public void modelsReplaced(Set<SModel> replacedModels) {
       for (SModel modelDescriptor : replacedModels) {
         if (!jetbrains.mps.util.SNodeOperations.isRegistered(modelDescriptor)){
@@ -118,6 +122,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   private Project myProject;
   private ModelAccessListener myCommandListener = new ModelAccessAdapter() {
+    @Override
     public void commandFinished() {
       myLastCommandTime = System.currentTimeMillis();
     }
@@ -135,6 +140,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     myInspectorTool = inspector;
   }
 
+  @Override
   public void projectOpened() {
     if (myThread != null && myThread.isAlive()) {
       LOG.error("trying to initialize a Highlighter being already initialized", new Throwable());
@@ -168,6 +174,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     myThread.start();
   }
 
+  @Override
   public void projectClosed() {
     stopUpdater();
     ModelAccess.instance().removeCommandListener(myCommandListener);
@@ -178,16 +185,19 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     myInspectorTool = null;
   }
 
+  @Override
   @NonNls
   @NotNull
   public String getComponentName() {
     return "MPS Higlighter";
   }
 
+  @Override
   public void initComponent() {
 
   }
 
+  @Override
   public void disposeComponent() {
 
   }
@@ -215,6 +225,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         myCheckers.add(checker);
       }
       addPendingAction(new Runnable() {
+        @Override
         public void run() {
           myCheckedOnceEditors.clear();
           myInspectorMessagesCreated = false;
@@ -382,6 +393,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     final List<EditorComponent> editorComponents = new ArrayList();
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
+        @Override
         public void run() {
           for (Editor editor : list) {
             EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
@@ -413,6 +425,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   private boolean updateEditorComponent(final EditorComponent component, final List<SModelEvent> events, final Set<BaseEditorChecker> checkers, final Set<BaseEditorChecker> checkersToRemove, final boolean mainEditorMessagesChanged) {
     return runUpdateMessagesAction(new Computable<Boolean>() {
+      @Override
       public Boolean compute() {
         final SNode editedNode = component.getEditedNode();
         if (editedNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(editedNode)) {
@@ -422,6 +435,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             checkersToRecheck.addAll(checkers);
           } else {
             ModelAccess.instance().runReadAction(new Runnable() {
+              @Override
               public void run() {
                 if (myStopThread) {
                   return;
@@ -473,6 +487,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   public void resetCheckedState(final EditorComponent editorComponent) {
     runUpdateMessagesAction(new Runnable() {
+      @Override
       public void run() {
         myForceUpdateInPowerSaveModeFlag = true;
         if (editorComponent instanceof InspectorEditorComponent) {
@@ -492,6 +507,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     for (final BaseEditorChecker checker : checkersToRecheck) {
       final LinkedHashSet<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
       boolean changed = runLoPrioRead(new Computable<Boolean>() {
+        @Override
         public Boolean compute() {
           if (myStopThread) return false;
 
@@ -538,6 +554,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
     for (final BaseEditorChecker checker : checkersToRemove) {
       EditorMessageOwner owner = ModelAccess.instance().runReadAction(new Computable<EditorMessageOwner>() {
+        @Override
         public EditorMessageOwner compute() {
           if (myStopThread) return null;
           SNode node = editor.getEditedNode();
@@ -587,6 +604,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       setDaemon(true);
     }
 
+    @Override
     public void run() {
       if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
       DumbService dumbService = DumbService.getInstance(myProject);

@@ -24,6 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class AbstractCellLayout implements CellLayout {
+  @Override
   public int getAscent(EditorCell_Collection editorCells) {
     int ascent = 0;
     for (EditorCell cell : editorCells) {
@@ -32,6 +33,7 @@ public abstract class AbstractCellLayout implements CellLayout {
     return ascent;
   }
 
+  @Override
   public int getDescent(EditorCell_Collection editorCells) {
     return editorCells.getHeight() - getAscent(editorCells);
   }
@@ -41,6 +43,7 @@ public abstract class AbstractCellLayout implements CellLayout {
     return null;
   }
 
+  @Override
   public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
     return Arrays.asList(GeometryUtil.getBounds(editorCells));
   }
@@ -57,6 +60,7 @@ public abstract class AbstractCellLayout implements CellLayout {
     return editorCell.getLeftInset();
   }
 
+  @Override
   public boolean canBeFolded() {
     return false;
   }

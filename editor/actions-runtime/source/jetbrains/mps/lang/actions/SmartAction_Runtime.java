@@ -67,16 +67,19 @@ public abstract class SmartAction_Runtime {
     JPanel buttonPanel = new JPanel();
     buttonPanel.setLayout(new FlowLayout());
     buttonPanel.add(new JButton(new AbstractAction("OK") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         onOk(mainPanel, selectedCell, dialog);
       }
     }));
     buttonPanel.add(new JButton(new AbstractAction("Cancel") {
+      @Override
       public void actionPerformed(ActionEvent e) {
         dialog.dispose();
       }
     }));
     mainPanel.setOnOk(new Runnable() {
+      @Override
       public void run() {
         onOk(mainPanel, selectedCell, dialog);
       }

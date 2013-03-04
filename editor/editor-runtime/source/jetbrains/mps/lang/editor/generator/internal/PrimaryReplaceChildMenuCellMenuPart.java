@@ -49,6 +49,7 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart, 
             currentChild,
             CellUtil.getLinkDeclarationTarget(linkDeclaration),
             new AbstractChildNodeSetter() {
+              @Override
               public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope, @Nullable EditorContext editorContext) {
                 if (oldChild == null) {
                   parentNode.addChild(role, newChild);
@@ -61,6 +62,7 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPart, 
             editorContext.getOperationContext());
   }
 
+  @Override
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     return (List) createActions(cellContext, (EditorContext) editorContext);
   }
