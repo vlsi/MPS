@@ -1316,8 +1316,8 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     }
 
     @Override
-    public SModel getModelDescriptor() {
-      throw new UnsupportedOperationException();
+    public SModelInternal getModelDescriptor() {
+      return this;
     }
 
     @Override
