@@ -192,7 +192,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       myProperties[index + 1] = propertyValue;
     }
 
-    SModel model = getModel();
+    SModel model = getModelInternal();
     if (model == null) return;
 
     final String finalPropertyValue = propertyValue;
@@ -272,7 +272,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     final SNode anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
 
     assert wasRole != null;
-    SModel model = getModel();
+    SModel model = getModelInternal();
     if (model != null && ModelChange.needFireEvents(model, this)) {
       model.fireBeforeChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
@@ -457,10 +457,10 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     children_insertAfter(((SNode) anchor), schild);
     schild.setRoleInParent(role);
 
-    SModel model = getModel();
+    SModel model = getModelInternal();
     if (model != null) {
       schild.registerInModel(model);
-    } else if (schild.getModel() != null) {
+    } else if (schild.getModelInternal() != null) {
       schild.clearModel();
     }
 
@@ -794,13 +794,16 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public void setConceptFqName(@NotNull String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
     //MihMuh: that's strange since we try not to mark models as changed after refactorings
-    SModelRepository.getInstance().markChanged(getModel());
+    SModelRepository.getInstance().markChanged(getModelInternal());
   }
 
   //--------------
 
-  @Override
   public SModel getModel() {
+    return getModelInternal();
+  }
+
+  public SModel getModelInternal() {
     assertRead();
     assertDisposed();
 
@@ -834,7 +837,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     newArray[oldLen] = reference;
     myReferences = newArray;
 
-    SModel model = getModel();
+    SModel model = getModelInternal();
     if (model == null) return;
 
     model.performUndoableAction(new Computable<SNodeUndoableAction>() {
@@ -870,7 +873,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     System.arraycopy(myReferences, index + 1, newArray, index, myReferences.length - index - 1);
     myReferences = newArray;
 
-    SModel model = getModel();
+    SModel model = getModelInternal();
     if (model == null) return;
 
     model.performUndoableAction(new Computable<SNodeUndoableAction>() {
@@ -1156,7 +1159,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public boolean isRoot() {
-    return getModel() != null && getModel().isRoot(this);
+    return getModelInternal() != null && getModelInternal().isRoot(this);
   }
 
   @Deprecated
@@ -1165,7 +1168,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public boolean isDeleted() {
-    return getModel() == null;
+    return getModelInternal() == null;
   }
 
   @Deprecated
@@ -1205,7 +1208,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public boolean isRegistered() {
-    return getModel() != null;
+    return getModelInternal() != null;
   }
 
   @Deprecated
@@ -1214,7 +1217,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public boolean isDetached() {
-    return getModel() == null;
+    return getModelInternal() == null;
   }
 
   @Deprecated
@@ -1279,7 +1282,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     int size = children.size();
     if (size > 1) {
       String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(
-          getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getReference() + "\n";
+          getClass().getName()) + "[" + getNodeId().toString() + "] " + getModelInternal().getReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, new Throwable(), this);
     }
@@ -1609,7 +1612,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public StackTraceElement[] getModelDisposedTrace() {
-    return getModel() == null ? null : getModel().getDisposedStacktrace();
+    return getModelInternal() == null ? null : getModelInternal().getDisposedStacktrace();
   }
 
   @Deprecated
