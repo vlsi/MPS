@@ -7,8 +7,8 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
@@ -20,14 +20,14 @@ public class check_CellKeyMapItem_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   public void applyRule(final SNode cellKeyMapKeystroke, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(AWTKeymapHandler.getValidKeyCodes().contains(SPropertyOperations.getString(cellKeyMapKeystroke, "keycode")))) {
+    if (SPropertyOperations.getString(cellKeyMapKeystroke, "keycode") != null && SPropertyOperations.getString(cellKeyMapKeystroke, "keycode").length() > 1 && !(AWTKeymapHandler.getValidKeyCodes().contains(SPropertyOperations.getString(cellKeyMapKeystroke, "keycode")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("keycode");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cellKeyMapKeystroke, "Invalid keymap keycode: " + SPropertyOperations.getString(cellKeyMapKeystroke, "keycode"), "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1324308523799901888", null, errorTarget);
       }
     }
-    if (!(AWTKeymapHandler.getValidModifiers().contains(SPropertyOperations.getString(cellKeyMapKeystroke, "modifiers")))) {
+    if (SPropertyOperations.getString(cellKeyMapKeystroke, "modifiers") != null && !(AWTKeymapHandler.getValidModifiers().contains(SPropertyOperations.getString(cellKeyMapKeystroke, "modifiers")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("modifiers");
