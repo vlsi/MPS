@@ -109,7 +109,7 @@ public class NodeNodeData extends BaseNodeData {
   public void read(Element element, Project project) throws CantLoadSomethingException {
     super.read(element, project);
     List children = element.getChild(NODE).getChildren();
-    myNodePointer = new jetbrains.mps.smodel.SNodePointer((SNode) null);
+    myNodePointer = new jetbrains.mps.smodel.SNodePointer(null);
     if (!children.isEmpty()) {
       myNodePointer = ComponentsUtil.nodePointerFromElement((Element) children.get(0));
     }

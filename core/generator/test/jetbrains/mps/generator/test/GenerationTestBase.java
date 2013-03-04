@@ -290,7 +290,7 @@ public class GenerationTestBase {
         }
         String longName = descr.getReference().getModelName();
         if (longName.equals(fqName)) {
-          return (SModel) descr;
+          return descr;
         }
       }
     }

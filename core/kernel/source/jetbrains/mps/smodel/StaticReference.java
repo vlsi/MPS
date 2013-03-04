@@ -134,7 +134,7 @@ public final class StaticReference extends SReferenceBase {
 
     SModel modelDescriptor = null;
     if (current != null && current.getModelDescriptor() != null && !(current.getModelDescriptor() instanceof FakeModelDescriptor)) {
-      modelDescriptor = ((SModelInternal) current.getModelDescriptor()).resolveModel(targetModelReference);
+      modelDescriptor = current.getModelDescriptor().resolveModel(targetModelReference);
     } else if (!MPSCore.getInstance().isMergeDriverMode()) {
       modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
     }

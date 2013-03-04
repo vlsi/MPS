@@ -130,12 +130,12 @@ public class BinaryPersistence {
   }
 
   private static void loadModelProperties(BinarySModel model, ModelInputStream is) throws IOException {
-    for (ModuleReference ref : loadModuleRefList(is)) ((jetbrains.mps.smodel.SModel) model).addLanguage(ref);
-    for (ModuleReference ref : loadModuleRefList(is)) ((jetbrains.mps.smodel.SModel) model).addEngagedOnGenerationLanguage(ref);
-    for (ModuleReference ref : loadModuleRefList(is)) ((jetbrains.mps.smodel.SModel) model).addDevKit(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) model.addLanguage(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
 
-    for (ImportElement imp : loadImports(is)) ((jetbrains.mps.smodel.SModel) model).addModelImport(imp);
-    for (ImportElement imp : loadImports(is)) ((jetbrains.mps.smodel.SModel) model).addAdditionalModelVersion(imp);
+    for (ImportElement imp : loadImports(is)) model.addModelImport(imp);
+    for (ImportElement imp : loadImports(is)) model.addAdditionalModelVersion(imp);
 
     if (is.readInt() != 0xbaba) {
       throw new IOException("bad stream, no sync token");
@@ -180,7 +180,7 @@ public class BinaryPersistence {
     // header
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
-    os.writeModelReference((SModelReference) model.getReference());
+    os.writeModelReference(model.getReference());
     os.writeInt(((jetbrains.mps.smodel.SModel) model).getVersion());
     os.writeBoolean(model instanceof BinarySModel && ((BinarySModel) model).getHeader().isDoNotGenerate());
     os.writeInt(0xabab);

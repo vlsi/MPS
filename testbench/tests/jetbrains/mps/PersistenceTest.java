@@ -79,7 +79,7 @@ public class PersistenceTest extends BaseMPSTest {
                   }
                   assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                   ModelAssert.assertDeepModelEquals(model, result.getModel());
-                  ((jetbrains.mps.smodel.SModel) result.getModel()).dispose();
+                  result.getModel().dispose();
                 }
               } catch (AssertionFailedError e) {
                 e.printStackTrace();
@@ -164,8 +164,8 @@ public class PersistenceTest extends BaseMPSTest {
 
                 ModelAccess.instance().runWriteAction(new Runnable() {
                   public void run() {
-                    ((jetbrains.mps.smodel.SModel) resultFrom.getModel()).dispose();
-                    ((jetbrains.mps.smodel.SModel) resultTo.getModel()).dispose();
+                    resultFrom.getModel().dispose();
+                    resultTo.getModel().dispose();
                   }
                 });
                 ModelAccess.instance().flushEventQueue();

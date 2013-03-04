@@ -66,7 +66,7 @@ public abstract class ModelListener {
     @Override
     public void rootRemoved(SModelRootEvent event) {
       SNode root = event.getRoot();
-      SModelReference modelRef = (SModelReference) event.getModel().getReference();
+      SModelReference modelRef = event.getModel().getReference();
       SNodeReference nodePointer = new jetbrains.mps.smodel.SNodePointer(modelRef, root.getNodeId());
 
       if (!myImportantNodes.get(modelRef).contains(nodePointer)) return;

@@ -195,7 +195,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
           return false;
         }
       };
-      ((jetbrains.mps.smodel.SModel) model).addEngagedOnGenerationLanguage(BootstrapLanguages.DESCRIPTOR);
+      model.addEngagedOnGenerationLanguage(BootstrapLanguages.DESCRIPTOR);
       return model;
     }
 

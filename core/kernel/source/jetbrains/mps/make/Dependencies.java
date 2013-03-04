@@ -96,7 +96,7 @@ class Dependencies {
     for (SModel md : m.getModels()) {
       if (!SModelStereotype.isUserModel(md)) continue;
 
-      ModelDependencies dependRoot = BLDependenciesCache.getInstance().get((SModel) md);
+      ModelDependencies dependRoot = BLDependenciesCache.getInstance().get(md);
       if (dependRoot == null) continue;
       add(m, dependRoot);
     }

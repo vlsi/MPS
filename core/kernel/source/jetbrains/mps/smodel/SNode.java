@@ -335,7 +335,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       removeReferenceInternal(reference);
     }
 
-    addReferenceInternal(jetbrains.mps.smodel.SReference.create(role, this, ((SNode) target)));
+    addReferenceInternal(jetbrains.mps.smodel.SReference.create(role, this, target));
   }
 
   @Override
@@ -818,7 +818,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     int oldLen = myReferences.length;
     jetbrains.mps.smodel.SReference[] newArray = new jetbrains.mps.smodel.SReference[oldLen + 1];
     System.arraycopy(myReferences, 0, newArray, 0, oldLen);
-    newArray[oldLen] = ((jetbrains.mps.smodel.SReference) reference);
+    newArray[oldLen] = reference;
     myReferences = newArray;
 
     SModel model = getModel();
@@ -908,12 +908,12 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
 
   private void fireNodeUnclassifiedReadAccess() {
-    if (myModel == null || !((jetbrains.mps.smodel.SModel) myModel).canFireEvent()) return;
+    if (myModel == null || !myModel.canFireEvent()) return;
     NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
   }
 
   private void fireNodeReadAccess() {
-    if (myModel == null || !((jetbrains.mps.smodel.SModel) myModel).canFireEvent()) return;
+    if (myModel == null || !myModel.canFireEvent()) return;
     NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
   }
 
@@ -933,7 +933,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   private void firePropertyReadAccessInEditor(String propertyName, boolean propertyExistenceCheck) {
-    if (myModel == null || !((jetbrains.mps.smodel.SModel) myModel).canFireEvent()) return;
+    if (myModel == null || !myModel.canFireEvent()) return;
     NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
   }
 
@@ -1846,7 +1846,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public SNode nextSibling() {
-    return (SNode) treeNext();
+    return treeNext();
   }
 
   @Deprecated

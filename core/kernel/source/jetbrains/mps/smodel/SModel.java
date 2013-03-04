@@ -1100,7 +1100,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
   }
 
   protected SModel createEmptyCopy() {
-    return new jetbrains.mps.smodel.SModel(((SModelReference) getReference()));
+    return new jetbrains.mps.smodel.SModel(getReference());
   }
 
   protected void copyPropertiesTo(SModel to) {
@@ -1147,7 +1147,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
    * @Deprecated in 3.0
    */
   public SModelFqName getSModelFqName() {
-    return ((SModelReference) getReference()).getSModelFqName();
+    return getReference().getSModelFqName();
   }
 
 

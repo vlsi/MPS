@@ -30,7 +30,7 @@ public class ModelValidator {
   private SModel myModel;
 
   public ModelValidator(org.jetbrains.mps.openapi.model.SModel model) {
-    myModel = ((SModel) model).getSModel();
+    myModel = model.getSModel();
   }
 
   public List<String> validate(IScope scope) {

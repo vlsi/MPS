@@ -157,7 +157,7 @@ public class SModelRepository implements CoreComponent {
     ModelAccess.assertLegalWrite();
 
     fireModelWillBeDeletedEvent(d);
-    removeModelDescriptor((SModel) d);
+    removeModelDescriptor(d);
 
     DataSource source = d.getSource();
     if (source instanceof FileDataSource) {
@@ -219,7 +219,7 @@ public class SModelRepository implements CoreComponent {
 
   public SModule getOwner(SModel modelDescriptor) {
     synchronized (myModelsLock) {
-      return myModelOwner.get((SModel) modelDescriptor);
+      return myModelOwner.get(modelDescriptor);
     }
   }
 
@@ -369,7 +369,7 @@ public class SModelRepository implements CoreComponent {
   private void fireModelRenamed(SModel modelDescriptor) {
     for (SModelRepositoryListener l : listeners()) {
       try {
-        l.modelRenamed((SModel) modelDescriptor);
+        l.modelRenamed(modelDescriptor);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -379,7 +379,7 @@ public class SModelRepository implements CoreComponent {
   private void fireModelDeletedEvent(SModel modelDescriptor) {
     for (SModelRepositoryListener listener : listeners()) {
       try {
-        listener.modelDeleted((SModel) modelDescriptor);
+        listener.modelDeleted(modelDescriptor);
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -389,7 +389,7 @@ public class SModelRepository implements CoreComponent {
   private void fireModelWillBeDeletedEvent(SModel modelDescriptor) {
     for (SModelRepositoryListener listener : listeners()) {
       try {
-        listener.beforeModelDeleted((SModel) modelDescriptor);
+        listener.beforeModelDeleted(modelDescriptor);
       } catch (Throwable t) {
         LOG.error(t);
       }

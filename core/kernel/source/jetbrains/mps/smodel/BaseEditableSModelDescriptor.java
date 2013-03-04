@@ -87,13 +87,13 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
   protected abstract void reload();
 
   public void resolveDiskConflict() {
-    LOG.warning("Model=" + ((SModelReference) getSModel().getReference()).getSModelFqName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
+    LOG.warning("Model=" + getSModel().getReference().getSModelFqName() + ", file ts=" + getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
     DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getSource().getFile(), getSModel(), this);
   }
 
   public boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
-      LOG.warning("Model file " + ((SModelReference) getSModel().getReference()).getSModelFqName() + " was modified externally!\n" +
+      LOG.warning("Model file " + getSModel().getReference().getSModelFqName() + " was modified externally!\n" +
         "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       resolveDiskConflict();
       return false;

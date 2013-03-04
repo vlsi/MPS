@@ -76,7 +76,7 @@ abstract class SReferenceBase extends SReference {
     SNode immatureNode = myImmatureTargetNode;
     if (immatureNode == null || makeIndirect()) return myTargetModelReference;
     SModel model = immatureNode.getModel();
-    return model == null ? null : (SModelReference) model.getReference();
+    return model == null ? null : model.getReference();
   }
 
   @Override
@@ -146,7 +146,7 @@ abstract class SReferenceBase extends SReference {
     final SNode immatureNode = myImmatureTargetNode;
     myImmatureTargetNode = null;
     adjustMature(immatureNode);
-    setTargetSModelReference((SModelReference) immatureNode.getModel().getReference());
+    setTargetSModelReference(immatureNode.getModel().getReference());
     setResolveInfo(jetbrains.mps.util.SNodeOperations.getResolveInfo(immatureNode));
   }
 

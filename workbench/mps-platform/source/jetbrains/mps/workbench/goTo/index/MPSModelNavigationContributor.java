@@ -102,7 +102,7 @@ public class MPSModelNavigationContributor implements NodeNavigationContributor,
       for (SNode root : index.getRootsToIterate(((DefaultSModelDescriptor) sm).getSModel())) {
         String nodeName = (root.getName() == null) ? "null" : root.getName();
         NodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
-          nodeName, root.getConcept().getId(), (SModelReference) root.getModel().getReference(), root.getNodeId());
+          nodeName, root.getConcept().getId(), root.getModel().getReference(), root.getNodeId());
         keys.add(nodeDescriptor);
       }
     }
