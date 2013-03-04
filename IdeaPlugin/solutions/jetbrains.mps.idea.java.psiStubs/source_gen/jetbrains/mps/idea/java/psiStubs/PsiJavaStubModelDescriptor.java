@@ -207,7 +207,11 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
     if (file == null) {
       return null;
     }
-    SNodeId nodeId = MapSequence.fromMap(myMps2PsiMappings).get(file).inverse().get(element);
+    BiMap<SNodeId, PsiElement> mapping = MapSequence.fromMap(myMps2PsiMappings).get(file);
+    if (mapping == null) {
+      return null;
+    }
+    SNodeId nodeId = mapping.inverse().get(element);
     return mySModel.getNode(nodeId);
   }
 }

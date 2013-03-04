@@ -8,4 +8,7 @@ package jetbrains.mps.psiTest;
  * To change this template use File | Settings | File Templates.
  */
 public interface Marker {
+
+    int x = 1;
+    interface InnerMarker {}
 }
