@@ -15,15 +15,14 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.SModelHeader;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.util.xml.XMLSAXHandler;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.List;
-import java.util.Map;
 
 public interface IModelPersistence {
   IModelWriter getModelWriter();
@@ -36,5 +35,5 @@ public interface IModelPersistence {
 
   XMLSAXHandler<List<LineContent>> getLineToContentMapReaderHandler();
 
-  Map<IndexEntry,Integer> index(char[] data);
+  void index(char[] data, Consumer<String> consumer);
 }

@@ -21,7 +21,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -42,13 +41,19 @@ import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.util.Consumer;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.*;
+import java.io.CharArrayReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -397,11 +402,11 @@ public class ModelPersistence {
     }
   }
 
-  public static Map<IndexEntry, Integer> index(char[] data) throws ModelReadException {
+  public static void index(char[] data, Consumer<String> consumer) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new CharArrayReader(data)));
     IModelPersistence mp = getModelPersistence(header);
     assert mp != null : "Using unsupported persistence version: " + header.getPersistenceVersion();
-    return mp.index(data);
+    mp.index(data, consumer);
   }
 
   private static class MyDescriptorHandler extends DefaultHandler {

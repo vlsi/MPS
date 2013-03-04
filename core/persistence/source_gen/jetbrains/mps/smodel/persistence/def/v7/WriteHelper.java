@@ -25,7 +25,6 @@ import jetbrains.mps.logging.Logger;
 
 public class WriteHelper {
   public static final char MODEL_SEPARATOR_CHAR = '.';
-  public static final char VERSION_SEPARATOR_CHAR = ':';
   public static final String DYNAMIC_REFERENCE_ID = "^";
   private static final int HASH_BASE = 10 + 26;
   private static final int HASH_SIZE = HASH_BASE * HASH_BASE * HASH_BASE * HASH_BASE;
@@ -65,7 +64,7 @@ public class WriteHelper {
       LOG.error("model " + ref + " not found in index");
       return encode(text);
     }
-    return new StringBuilder().append(index).append(MODEL_SEPARATOR_CHAR).append(encode(text)).toString();
+    return index + MODEL_SEPARATOR_CHAR + encode(text);
   }
 
   @NotNull
@@ -79,7 +78,7 @@ public class WriteHelper {
     if (index == null) {
       return MODEL_SEPARATOR_CHAR + fqName;
     }
-    return new StringBuilder().append(index).append(MODEL_SEPARATOR_CHAR).append(name).toString();
+    return index + MODEL_SEPARATOR_CHAR + name;
   }
 
   @Nullable
