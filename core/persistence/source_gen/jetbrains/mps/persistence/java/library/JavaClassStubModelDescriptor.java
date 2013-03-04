@@ -57,6 +57,11 @@ public class JavaClassStubModelDescriptor extends BaseSModelDescriptorWithSource
 
   @Override
   public synchronized SModel getSModel() {
+    return getSModelInternal();
+  }
+
+  @Override
+  public synchronized SModel getSModelInternal() {
     if (myModel == null) {
       myModel = createModel();
       ((SModelInternal) myModel).setModelDescriptor(this);

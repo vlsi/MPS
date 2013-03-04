@@ -27,7 +27,12 @@ public abstract class BaseSpecialModelDescriptor extends BaseSModelDescriptor {
   }
 
   @Override
-  public final synchronized jetbrains.mps.smodel.SModel getSModel() {
+  public final synchronized SModel getSModel() {
+    return getSModelInternal();
+  }
+
+  @Override
+  public final synchronized jetbrains.mps.smodel.SModel getSModelInternal() {
     if (mySModel == null) {
       mySModel = createModel();
       mySModel.setModelDescriptor(this);

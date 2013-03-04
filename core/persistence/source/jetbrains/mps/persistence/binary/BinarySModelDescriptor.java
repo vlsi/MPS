@@ -60,6 +60,11 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
   @Override
   public synchronized BinarySModel getSModel() {
+    return getSModelInternal();
+  }
+
+  @Override
+  public synchronized BinarySModel getSModelInternal() {
     if (myModel == null) {
       myModel = loadSModel();
       myModel.setModelDescriptor(this);
@@ -102,7 +107,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
   @Override
   protected boolean saveModel() {
-    SModel smodel = getSModel();
+    SModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
@@ -140,7 +145,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
   @Override
   public void setVersion(int newVersion) {
-    getSModel().setVersion(newVersion);
+    getSModelInternal().setVersion(newVersion);
     setChanged(true);
   }
 
@@ -173,7 +178,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
   @Override
   public void setDoNotGenerate(boolean value) {
-    getSModel().getHeader().setDoNotGenerate(value);
+    getSModelInternal().getHeader().setDoNotGenerate(value);
     setChanged(true);
   }
 

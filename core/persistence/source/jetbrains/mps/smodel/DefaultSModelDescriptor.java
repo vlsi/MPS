@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -86,6 +86,11 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
   @Override
   public final jetbrains.mps.smodel.SModel getSModel() {
+    return getSModelInternal();
+  }
+
+  @Override
+  public final jetbrains.mps.smodel.SModel getSModelInternal() {
     synchronized (myModel) {
       ModelLoadingState oldState = myModel.getState();
       jetbrains.mps.smodel.SModel res = myModel.getModel(ModelLoadingState.ROOTS_LOADED);
@@ -178,7 +183,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
   @Override
   protected boolean saveModel() {
-    SModel smodel = getSModel();
+    SModel smodel = getSModelInternal();
     if (smodel instanceof InvalidSModel) {
       // we do not save stub model to not overwrite the real model
       return false;
