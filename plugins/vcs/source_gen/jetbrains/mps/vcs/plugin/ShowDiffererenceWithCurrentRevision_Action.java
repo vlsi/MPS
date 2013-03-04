@@ -9,7 +9,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.util.SNodeOperations;
@@ -21,8 +21,8 @@ import com.intellij.openapi.vcs.impl.VcsFileStatusProvider;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 import jetbrains.mps.extapi.model.EditableSModel;
+import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 import jetbrains.mps.logging.Logger;
 
 public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
@@ -40,10 +40,10 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(((SModel) MapSequence.fromMap(_params).get("model")) instanceof DefaultSModelDescriptor)) {
+    if (!(((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource)) {
       return false;
     }
-    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) ((SModel) MapSequence.fromMap(_params).get("model"))).getSource().getFile());
+    VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource()).getFile());
     if (SNodeOperations.isRoot(((SNode) MapSequence.fromMap(_params).get("node"))) && ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getVcsFor(virtualFile) != null) {
       FileStatus fileStatus = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(VcsFileStatusProvider.class).getFileStatus(virtualFile);
       return FileStatus.ADDED != fileStatus && FileStatus.UNKNOWN != fileStatus;
@@ -77,6 +77,9 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
     if (MapSequence.fromMap(_params).get("model") == null) {
+      return false;
+    }
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModel) || ((EditableSModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
       return false;
     }
     return true;

@@ -19,7 +19,12 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
@@ -28,6 +33,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.xml.sax.InputSource;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -89,6 +95,40 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   @Override
   public boolean canCreate(String modelName, StreamDataSource dataSource) {
     return dataSource instanceof FileDataSource;
+  }
+
+  @Override
+  public boolean needsUpgrade(StreamDataSource dataSource) throws IOException {
+    InputStream in = null;
+    try {
+      in = dataSource.openInputStream();
+      InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
+
+      SModelHeader header = ModelPersistence.loadDescriptor(source);
+      return header.getPersistenceVersion() < ModelPersistence.LAST_VERSION;
+    } catch (ModelReadException ex) {
+      throw new IOException(ex.getMessage(), ex);
+    } finally {
+      FileUtil.closeFileSafe(in);
+    }
+  }
+
+  @Override
+  public void upgrade(StreamDataSource dataSource) throws IOException {
+    if (!(dataSource instanceof FileDataSource)) {
+      // TODO support streams
+      throw new IOException("cannot upgrade `" + dataSource.getLocation() + "', file is expected");
+    }
+
+    FileDataSource source = (FileDataSource) dataSource;
+    IFile file = source.getFile();
+
+    try {
+      DefaultSModel model = ModelPersistence.readModel(file, false);
+      ModelPersistence.saveModel(model, file, ModelPersistence.LAST_VERSION);
+    } catch (ModelReadException ex) {
+      throw new IOException(ex.getMessage(), ex);
+    }
   }
 
   public static Map<String, String> getDigestMap(@NotNull IFile mpsFile) {

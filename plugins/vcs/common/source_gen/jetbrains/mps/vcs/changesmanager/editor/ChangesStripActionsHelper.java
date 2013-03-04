@@ -134,7 +134,7 @@ public class ChangesStripActionsHelper {
           return Sequence.<SNode>singleton(oldModel.getNode(((NodeChange) ch).getAffectedNodeId()));
         } else if (ch instanceof NodeGroupChange) {
           NodeGroupChange ngc = (NodeGroupChange) ch;
-          List<SNode> changeChildren = ((List) IterableUtil.asList(oldModel.getNode(ngc.getParentNodeId()).getChildren(ngc.getRole())));
+          List<SNode> changeChildren = ((List<SNode>) IterableUtil.asList(oldModel.getNode(ngc.getParentNodeId()).getChildren(ngc.getRole())));
           return ListSequence.fromList(changeChildren).page(ngc.getBegin(), ngc.getEnd());
         } else {
           return Sequence.fromIterable(Collections.<SNode>emptyList());

@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -64,8 +64,8 @@ public class EditorHighlighter implements EditorMessageOwner {
                 model.getModelDescriptor() :
                 null
               );
-              if (descriptor instanceof DefaultSModelDescriptor) {
-                myCurrentDifference = CurrentDifferenceRegistry.getInstance(project).getCurrentDifference((DefaultSModelDescriptor) descriptor);
+              if (descriptor instanceof BaseEditableSModelDescriptor) {
+                myCurrentDifference = CurrentDifferenceRegistry.getInstance(project).getCurrentDifference((BaseEditableSModelDescriptor) descriptor);
                 myListener = new EditorHighlighter.MyCurrentDifferenceListener();
               }
               if (myListener != null) {

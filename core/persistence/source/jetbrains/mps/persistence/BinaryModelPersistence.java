@@ -69,6 +69,16 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory {
     return dataSource instanceof FileDataSource;
   }
 
+  @Override
+  public boolean needsUpgrade(StreamDataSource dataSource) throws IOException {
+    return false;
+  }
+
+  @Override
+  public void upgrade(StreamDataSource dataSource) throws IOException {
+    // no-op
+  }
+
   public static Map<String, String> getDigestMap(@NotNull IFile mpsFile) {
     try {
       BinarySModel model = BinaryPersistence.readModel(mpsFile.openInputStream());
