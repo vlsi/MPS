@@ -137,7 +137,7 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
     SModel smodel = getCurrentModelInternal();
     if (smodel != null) {
       fireBeforeModelDisposed(smodel);
-      ((jetbrains.mps.smodel.SModel) smodel).dispose();
+      ((jetbrains.mps.smodel.SModelInternal) smodel).dispose();
     }
     clearListeners();
   }
@@ -479,5 +479,15 @@ public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SMode
   @Override
   public boolean updateModuleReferences() {
     return getSModel().updateModuleReferences();
+  }
+
+  @Override
+  public boolean canFireReadEvent() {
+    return getSModel().canFireReadEvent();
+  }
+
+  @Override
+  public void changeModelReference(SModelReference newModelReference) {
+    getSModel().changeModelReference(newModelReference);
   }
 }

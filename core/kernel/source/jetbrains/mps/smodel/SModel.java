@@ -352,7 +352,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     return myModelDescriptor != null && jetbrains.mps.util.SNodeOperations.isRegistered(myModelDescriptor) && !isUpdateMode();
   }
 
-  protected boolean canFireReadEvent() {
+  public boolean canFireReadEvent() {
     return canFireEvent();
   }
 
@@ -1060,7 +1060,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     return changed;
   }
 
-  void changeModelReference(SModelReference newModelReference) {
+  public void changeModelReference(SModelReference newModelReference) {
     enforceFullLoad();
     SModelReference oldReference = myReference;
     myReference = newModelReference;
@@ -1574,8 +1574,18 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel,SModelInte
     }
 
     @Override
+    public boolean canFireReadEvent() {
+      return myModel.canFireReadEvent();
+    }
+
+    @Override
     public boolean updateSModelReferences() {
       return myModel.updateSModelReferences();
+    }
+
+    @Override
+    public void changeModelReference(SModelReference newModelReference) {
+      myModel.changeModelReference(newModelReference);
     }
 
     @Override
