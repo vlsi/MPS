@@ -132,6 +132,9 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     // Applicable only to single element selection
     AbstractTreeNode selectedNode = selected.iterator().next();
 
+    if (PlatformDataKeys.VIRTUAL_FILE_ARRAY.is(dataName)) {
+      return getModelFilesArray(selectedNode);
+    }
     if (PlatformDataKeys.PASTE_PROVIDER.is(dataName)) {
       return getModelProvider(selectedNode, PASTE_PROVIDER_FACTORY);
     }
@@ -225,6 +228,17 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
       return FileSystem.getInstance().getFileByPath(virtualFile.getPath());
     }
     return null;
+  }
+
+  private VirtualFile[] getModelFilesArray (AbstractTreeNode treeNode) {
+    if (!(treeNode instanceof MPSPsiModelTreeNode)) {
+      return null;
+    }
+    MPSPsiModelTreeNode fileNode = (MPSPsiModelTreeNode) treeNode;
+    VirtualFile virtualFile = fileNode.getVirtualFile();
+    if (virtualFile == null || virtualFile.getFileType() != MPSFileTypeFactory.MODEL_FILE_TYPE) return null;
+
+    return new VirtualFile[] {virtualFile};
   }
 
   private IModule getModule(AbstractTreeNode selectedNode) {
