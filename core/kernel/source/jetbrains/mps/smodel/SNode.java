@@ -20,11 +20,16 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.AbstractImmutableList;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.containers.EmptyIterable;
 import org.jetbrains.annotations.NotNull;
@@ -35,18 +40,22 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.model.SModelScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class SNode implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
@@ -116,7 +125,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     if (myModel == null) return null;
 
-    return myModel.getModelDescriptor();
+    SModelInternal md = myModel.getModelDescriptor();
+    return md instanceof FakeModelDescriptor ? null : md;
   }
 
   @Override
@@ -328,7 +338,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
       }
     }
     if (toDelete.size() > 1) {
-      LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+      LOG.errorWithTrace(
+          "ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
     for (SReference reference : toDelete) {
@@ -431,8 +442,10 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     final SNode schild = (SNode) child;
     SNode parentOfChild = schild.getParent();
     if (parentOfChild != null) {
-      throw new RuntimeException(org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(parentOfChild) + "\n" +
-        "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+      throw new RuntimeException(
+          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              parentOfChild) + "\n" +
+              "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
     if (getTopmostAncestor() == child) {
@@ -881,7 +894,7 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (model == null) return;
 
     org.jetbrains.mps.openapi.model.SModel desc = model.getModelDescriptor();
-    if (desc == null) return;
+    if (desc instanceof FakeModelDescriptor) return;
 
     SModule module = desc.getModule();
     if (module == null) return;
@@ -1265,7 +1278,8 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     List<SNode> children = getChildren(role);
     int size = children.size();
     if (size > 1) {
-      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getReference() + "\n";
+      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(
+          getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, new Throwable(), this);
     }
