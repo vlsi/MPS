@@ -16,7 +16,7 @@ public class NodeSourcePosition extends SourcePosition {
 
   @Override
   public int hashCode() {
-    return myNode.hashCode();
+    return ((SNodePointer) myNode).hashCode();
   }
 
   @Override
@@ -31,7 +31,7 @@ public class NodeSourcePosition extends SourcePosition {
   }
 
   public SNode getNode() {
-    return myNode.resolve(MPSModuleRepository.getInstance());
+    return ((SNodePointer) myNode).resolve(MPSModuleRepository.getInstance());
   }
 
   private static boolean eq_1z1n6b_a0e0d(Object a, Object b) {
