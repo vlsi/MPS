@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
+import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions.ScopeType;
@@ -57,10 +58,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
 
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
-    myPanel.setBorder(
-      BorderFactory.createCompoundBorder(
-        BorderFactory.createTitledBorder("Scope"),
-        BorderFactory.createEmptyBorder(7, 3, 3, 3)));
+    myPanel.setBorder(IdeBorderFactory.createTitledBorder("Scope", false));
 
     myGlobalScopeButton = new JRadioButton(new AbstractAction(GLOBAL_SCOPE) {
       @Override

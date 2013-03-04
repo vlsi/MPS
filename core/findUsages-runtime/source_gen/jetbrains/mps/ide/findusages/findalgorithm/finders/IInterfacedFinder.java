@@ -11,6 +11,7 @@ public interface IInterfacedFinder extends IFinder {
   public String getConcept();
   public boolean isApplicable(SNode node);
   public boolean isVisible(SNode node);
+  public boolean isUsedByDefault(SNode node);
   public String getDescription();
   public String getLongDescription();
   public boolean canNavigate();

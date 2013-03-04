@@ -20,6 +20,11 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
   }
 
   @Override
+  public boolean isUsedByDefault(SNode node) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+  }
+
+  @Override
   public String getDescription() {
     return "Exact Method Usages";
   }
@@ -53,5 +58,10 @@ public class ExactMethodUsages_Finder extends GeneratedFinder {
     } finally {
       monitor.done();
     }
+  }
+
+  @Override
+  public String getNodeCategory(SNode node) {
+    return "Exact Mathod Usages";
   }
 }

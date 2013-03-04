@@ -23,11 +23,11 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.DeleteNode_Action", getShortcut(" DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.actions.DeletePropertyAction_Action", getShortcut(" DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.actions.DeleteReferenceAction_Action", getShortcut(" DELETE"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.FastFindNodeUsages_Action", getShortcut("ctrl F7"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.FastFindNodeUsages_Action", getShortcut("alt F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindModelUsages_Action", getShortcut("alt F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindNext_Action", getShortcut(" F3"));
     addSimpleShortcut("jetbrains.mps.ide.actions.FindPrevious_Action", getShortcut("shift F3"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action", getShortcut("alt F7"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.FindSpecificNodeUsages_Action", getShortcut("ctrl alt shift F7"));
     addSimpleShortcut("jetbrains.mps.ide.actions.Find_Action", getShortcut("ctrl F"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action", getShortcut("ctrl shift B"));
     addSimpleShortcut("jetbrains.mps.ide.actions.GoToModel_Action", getShortcut("ctrl alt shift M"));

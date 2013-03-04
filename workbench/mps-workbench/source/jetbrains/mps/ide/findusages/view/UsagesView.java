@@ -35,7 +35,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.findusages.view.icons.IconManager;
-import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
@@ -44,12 +43,13 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.ProjectOperationContext;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -397,8 +397,9 @@ public abstract class UsagesView implements IExternalizeable {
           @Override
           public void update(AnActionEvent event) {
             super.update(event);
+
             event.getPresentation().setIcon(AllIcons.General.Pin_tab);
-            event.getPresentation().setVisible(true);
+            event.getPresentation().setEnabledAndVisible(true);
           }
         });
       }
