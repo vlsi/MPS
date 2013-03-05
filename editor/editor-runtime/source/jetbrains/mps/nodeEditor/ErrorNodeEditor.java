@@ -15,19 +15,21 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ErrorNodeEditor implements INodeEditor {
 
+  @Override
   public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     return new EditorCell_Error(editorContext, node, node.getPresentation());
   }
 
+  @Override
   public EditorCell createInspectedCell(jetbrains.mps.openapi.editor.EditorContext editorContext, SNode node) {
     EditorCell_Collection collection = EditorCell_Collection.createVertical(editorContext, node);
     collection.addEditorCell(new EditorCell_Error(editorContext, node, "Can't find an editor."));

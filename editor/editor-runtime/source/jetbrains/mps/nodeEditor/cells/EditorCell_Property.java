@@ -16,15 +16,15 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Author: Sergey Dmitriev
@@ -132,10 +132,11 @@ public class EditorCell_Property extends EditorCell_Label {
     });
   }
 
-  public NodeSubstituteInfo getSubstituteInfo() {
-    final NodeSubstituteInfo substituteInfo = super.getSubstituteInfo();
-    return ModelAccess.instance().runReadAction(new Computable<NodeSubstituteInfo>() {
-      public NodeSubstituteInfo compute() {
+  @Override
+  public SubstituteInfo getSubstituteInfo() {
+    final SubstituteInfo substituteInfo = super.getSubstituteInfo();
+    return ModelAccess.instance().runReadAction(new Computable<SubstituteInfo>() {
+      public SubstituteInfo compute() {
         if (substituteInfo != null) {
           substituteInfo.setOriginalText(myModelAccessor.getText());
         }

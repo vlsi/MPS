@@ -16,12 +16,12 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -42,13 +42,20 @@ import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.jetbrains.mps.openapi.util.Consumer;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
-import java.io.*;
+import java.io.CharArrayReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -126,15 +133,15 @@ public class ModelPersistence {
   }
   //--------read--------
 
-  private static void loadDescriptor(SModelHeader result, IFile file) throws ModelReadException {
+  private static void loadDescriptor(SModelHeader result, StreamDataSource dataSource) throws ModelReadException {
     InputStream in = null;
     try {
-      in = file.openInputStream();
+      in = dataSource.openInputStream();
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
 
       loadDescriptor(result, source);
     } catch (IOException e) {
-      throw new ModelReadException("Couldn't read descriptor from " + file.getPath() + ": " + e.getMessage(), e);
+      throw new ModelReadException("Couldn't read descriptor from " + dataSource.getLocation() + ": " + e.getMessage(), e);
     } finally {
       FileUtil.closeFileSafe(in);
     }
@@ -150,13 +157,13 @@ public class ModelPersistence {
     return result;
   }
 
-  public static SModelHeader loadDescriptor(IFile file) throws ModelReadException {
+  public static SModelHeader loadDescriptor(StreamDataSource source) throws ModelReadException {
     final SModelHeader result = new SModelHeader();
-    loadDescriptor(result, file);
+    loadDescriptor(result, source);
 
     // for old persistences try to load header from metadata
-    if (result.getPersistenceVersion() < 7) {
-      Map<String, String> metadata = loadMetadata(file);
+    if (result.getPersistenceVersion() < 7 && source instanceof FileDataSource) {
+      Map<String, String> metadata = loadMetadata(((FileDataSource) source).getFile());
       if (metadata != null) {
         if (metadata.containsKey(SModelHeader.VERSION)) {
           try {
@@ -196,10 +203,11 @@ public class ModelPersistence {
   }
 
   @NotNull
-  public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull IFile file, ModelLoadingState state) throws ModelReadException {
+  public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull StreamDataSource dataSource, ModelLoadingState state) throws
+    ModelReadException {
     InputStream in = null;
     try {
-      in = file.openInputStream();
+      in = dataSource.openInputStream();
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
       return readModel(header, source, state);
     } catch (IOException e) {
@@ -230,23 +238,23 @@ public class ModelPersistence {
   /*
    *  Saves model and metadata.
    */
-  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull IFile file) {
+  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source) {
     int persistenceVersion =
       model instanceof DefaultSModel ? ((DefaultSModel) model).getPersistenceVersion() : ModelPersistence.LAST_VERSION;
-    return saveModel(model, file, persistenceVersion);
+    return saveModel(model, source, persistenceVersion);
   }
 
   /*
    *  returns upgraded model, or null if the model doesn't require update
    */
-  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull IFile file, int persistenceVersion) {
-    LOG.debug("Save model " + model.getReference() + " to file " + file.getPath());
+  public static DefaultSModel saveModel(@NotNull SModel model, @NotNull StreamDataSource source, int persistenceVersion) {
+    LOG.debug("Saving model " + model.getReference() + " to " + source.getLocation());
 
     // (since 3.0) we do not support saving in old persistences (before 7)
     persistenceVersion = Math.min(7, persistenceVersion);
 
-    if (file.isReadOnly()) {
-      LOG.error("Can't write to " + file.getPath());
+    if (source.isReadOnly()) {
+      LOG.error("Can't write to " + source.getLocation());
       return null;
     }
 
@@ -264,9 +272,9 @@ public class ModelPersistence {
     // save model
     Document document = saveModel(model);
     try {
-      JDOMUtil.writeDocument(document, file);
+      JDOMUtil.writeDocument(document, source);
     } catch (IOException e) {
-      LOG.error("Error in file " + file, e);
+      LOG.error("Error in " + source.getLocation(), e);
     }
 
     if (oldVersion != persistenceVersion) {
@@ -334,10 +342,10 @@ public class ModelPersistence {
   }
 
   @NotNull
-  public static DefaultSModel readModel(@NotNull final IFile file, boolean onlyRoots) throws ModelReadException {
-    SModelHeader header = loadDescriptor(file);
+  public static DefaultSModel readModel(@NotNull final StreamDataSource source, boolean onlyRoots) throws ModelReadException {
+    SModelHeader header = loadDescriptor(source);
     ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
-    return readModel(header, file, state).getModel();
+    return readModel(header, source, state).getModel();
   }
 
   @NotNull
@@ -397,11 +405,11 @@ public class ModelPersistence {
     }
   }
 
-  public static Map<IndexEntry, Integer> index(char[] data) throws ModelReadException {
+  public static void index(char[] data, Consumer<String> consumer) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new CharArrayReader(data)));
     IModelPersistence mp = getModelPersistence(header);
     assert mp != null : "Using unsupported persistence version: " + header.getPersistenceVersion();
-    return mp.index(data);
+    mp.index(data, consumer);
   }
 
   private static class MyDescriptorHandler extends DefaultHandler {

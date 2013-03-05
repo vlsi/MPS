@@ -26,18 +26,22 @@ public class BaseMethod_Finder extends GeneratedFinder {
   public BaseMethod_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Base Methods";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
 
+  @Override
   public boolean isApplicable(SNode node) {
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Interface", false, false) == null) {
       return false;
@@ -48,9 +52,10 @@ public class BaseMethod_Finder extends GeneratedFinder {
     return true;
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 3);
     try {
+      monitor.start("Base method", 3);
       List<SNode> allAncestors = new ArrayList<SNode>();
       SNode method = node;
       boolean isStatic = SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
@@ -63,6 +68,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
       } else if (interfaceNode != null) {
         ListSequence.fromList(allAncestors).addElement(interfaceNode);
         ListSequence.fromList(allAncestors).addSequence(ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", interfaceNode, scope, monitor.subTask(1))));
+        monitor.advance(1);
       }
       Set<SNode> results = SetSequence.fromSet(new HashSet<SNode>());
       for (SNode ancestor : ListSequence.fromList(allAncestors)) {
@@ -92,6 +98,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Base methods";
   }

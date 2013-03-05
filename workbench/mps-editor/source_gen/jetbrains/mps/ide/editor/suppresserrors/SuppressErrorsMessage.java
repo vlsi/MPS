@@ -4,13 +4,10 @@ package jetbrains.mps.ide.editor.suppresserrors;
 
 import jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import javax.swing.Icon;
-import jetbrains.mps.ide.icons.IconManager;
+import com.intellij.icons.AllIcons;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -19,7 +16,6 @@ import javax.swing.JPopupMenu;
 
 public class SuppressErrorsMessage extends AbstractLeftEditorHighlighterMessage {
   private static final EditorMessageIconRenderer.IconRendererType TYPE = new EditorMessageIconRenderer.IconRendererType(1);
-  private static String ICON_PATH = MacrosFactory.forModuleFile(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c")).getDescriptorFile()).expandPath("${language_descriptor}/icons/suppress.png");
 
   public SuppressErrorsMessage(SNode node, EditorMessageOwner owner, String tooltip) {
     super(node, owner, tooltip);
@@ -27,7 +23,7 @@ public class SuppressErrorsMessage extends AbstractLeftEditorHighlighterMessage 
 
   @Override
   public Icon getIcon() {
-    return IconManager.loadIcon(ICON_PATH, true);
+    return AllIcons.Actions.CloseNew;
   }
 
   @Override

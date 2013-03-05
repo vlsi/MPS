@@ -23,13 +23,14 @@ import jetbrains.mps.persistence.ModelDigestHelper;
 import jetbrains.mps.refactoring.StructureModificationLog;
 import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.InvalidSModel;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.util.Map;
 
@@ -48,7 +49,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
 
-  public BinarySModelDescriptor(FileDataSource source, BinaryModelHeader header) {
+  public BinarySModelDescriptor(StreamDataSource source, BinaryModelHeader header) {
     super(header.getReference(), source);
     myHeader = header;
   }
@@ -62,7 +63,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   public synchronized BinarySModel getSModel() {
     if (myModel == null) {
       myModel = loadSModel();
-      ((jetbrains.mps.smodel.SModel) myModel).setModelDescriptor(this);
+      myModel.setModelDescriptor(this);
       updateDiskTimestamp();
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
@@ -72,7 +73,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   @NotNull
   private BinarySModel loadSModel() {
     try {
-      return BinaryPersistence.readModel(getReference(), getSource().getFile());
+      return BinaryPersistence.readModel(getReference(), getSource());
     } catch (ModelReadException e) {
       return new InvalidBinarySModel(getReference(), e);
     }
@@ -107,7 +108,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
       // we do not save stub model to not overwrite the real model
       return false;
     }
-    BinaryPersistence.writeModel(smodel, getSource().getFile());
+    BinaryPersistence.writeModel(smodel, getSource());
     return false;
   }
 
@@ -115,8 +116,8 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   @NotNull
   public StructureModificationLog getStructureModificationLog() {
     synchronized (myRefactoringHistoryLock) {
-      if (myStructureModificationLog == null) {
-        myStructureModificationLog = RefactoringsPersistence.load(getSource().getFile());
+      if (myStructureModificationLog == null && getSource() instanceof FileDataSource) {
+        myStructureModificationLog = RefactoringsPersistence.load(((FileDataSource) getSource()).getFile());
       }
       if (myStructureModificationLog == null) {
         myStructureModificationLog = new StructureModificationLog();
@@ -128,7 +129,8 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
   @Override
   public void saveStructureModificationLog(@NotNull StructureModificationLog log) {
     myStructureModificationLog = log;
-    RefactoringsPersistence.save(getSource().getFile(), log);
+    if (!(getSource() instanceof FileDataSource)) throw new UnsupportedOperationException("cannot save structure modification log");
+    RefactoringsPersistence.save(((FileDataSource) getSource()).getFile(), log);
   }
 
   @Override
@@ -140,7 +142,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
 
   @Override
   public void setVersion(int newVersion) {
-    ((jetbrains.mps.smodel.SModel) getSModel()).setVersion(newVersion);
+    getSModel().setVersion(newVersion);
     setChanged(true);
   }
 
@@ -154,7 +156,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
     String modelHash = ModelDigestHelper.getInstance().getModelHash(getSource());
     if (modelHash != null) return modelHash;
 
-    return ModelDigestUtil.hash(getSource().getFile(), false);
+    return ModelDigestUtil.hash(getSource(), false);
   }
 
   @Override
@@ -162,7 +164,7 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
     Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
     if (generationHashes != null) return generationHashes;
 
-    return BinaryModelPersistence.getDigestMap(getSource().getFile());
+    return BinaryModelPersistence.getDigestMap(getSource());
   }
 
   @Override

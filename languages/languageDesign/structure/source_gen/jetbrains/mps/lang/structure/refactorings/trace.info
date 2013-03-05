@@ -273,97 +273,97 @@
     <unitInfo nodeId="1347577327951781789" fileName="RenameProperty_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.RenameProperty_Target" />
   </root>
   <root nodeRef="r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)/3068114543317961454">
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="41" startPosition="25" endLine="42" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="42" startPosition="46" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="43" startPosition="46" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="47" startPosition="39" endLine="48" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="51" startPosition="47" endLine="52" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="55" startPosition="52" endLine="56" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3068114543317978831" fileName="MoveConcepts.java" startLine="61" startPosition="25" endLine="62" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5584053826601525455" fileName="MoveConcepts.java" startLine="62" startPosition="118" endLine="63" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3883347270486227158" fileName="MoveConcepts.java" startLine="63" startPosition="83" endLine="64" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2864517217434236200" fileName="MoveConcepts.java" startLine="66" startPosition="7" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3068114543317978962" fileName="MoveConcepts.java" startLine="70" startPosition="69" endLine="71" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6934781091951606355" fileName="MoveConcepts.java" startLine="71" startPosition="173" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6934781091951606353" fileName="MoveConcepts.java" startLine="72" startPosition="0" endLine="73" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3883347270486229674" fileName="MoveConcepts.java" startLine="73" startPosition="24" endLine="74" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6934781091951606398" fileName="MoveConcepts.java" startLine="74" startPosition="185" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8299073042392940169" fileName="MoveConcepts.java" startLine="75" startPosition="0" endLine="76" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8299073042392952079" fileName="MoveConcepts.java" startLine="78" startPosition="50" endLine="79" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8299073042392964905" fileName="MoveConcepts.java" startLine="83" startPosition="38" endLine="84" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8299073042392964938" fileName="MoveConcepts.java" startLine="87" startPosition="48" endLine="88" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8299073042392964973" fileName="MoveConcepts.java" startLine="91" startPosition="49" endLine="92" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8299073042392939550" fileName="MoveConcepts.java" startLine="94" startPosition="24" endLine="95" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8299073042392951834" fileName="MoveConcepts.java" startLine="97" startPosition="50" endLine="98" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8299073042392962476" fileName="MoveConcepts.java" startLine="100" startPosition="92" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6934781091951606361" fileName="MoveConcepts.java" startLine="101" startPosition="0" endLine="102" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6934781091951606365" fileName="MoveConcepts.java" startLine="103" startPosition="62" endLine="104" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6934781091951606387" fileName="MoveConcepts.java" startLine="105" startPosition="5" endLine="106" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6934781091951606357" fileName="MoveConcepts.java" startLine="106" startPosition="210" endLine="107" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3883347270486229102" fileName="MoveConcepts.java" startLine="108" startPosition="98" endLine="109" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3883347270486211467" fileName="MoveConcepts.java" startLine="109" startPosition="112" endLine="110" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3883347270486229119" fileName="MoveConcepts.java" startLine="110" startPosition="70" endLine="111" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3883347270486229119" fileName="MoveConcepts.java" startLine="110" startPosition="70" endLine="111" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3883347270486221609" fileName="MoveConcepts.java" startLine="111" startPosition="52" endLine="112" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3883347270486229123" fileName="MoveConcepts.java" startLine="112" startPosition="97" endLine="113" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3883347270486229123" fileName="MoveConcepts.java" startLine="112" startPosition="97" endLine="113" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8299073042392951989" fileName="MoveConcepts.java" startLine="114" startPosition="5" endLine="115" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8299073042392951992" fileName="MoveConcepts.java" startLine="116" startPosition="26" endLine="117" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8299073042392952018" fileName="MoveConcepts.java" startLine="119" startPosition="70" endLine="120" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3068114543317979332" fileName="MoveConcepts.java" startLine="124" startPosition="88" endLine="125" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3068114543317980421" fileName="MoveConcepts.java" startLine="125" startPosition="73" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3068114543317980413" fileName="MoveConcepts.java" startLine="126" startPosition="0" endLine="127" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3068114543317979772" fileName="MoveConcepts.java" startLine="128" startPosition="81" endLine="129" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3068114543317979864" fileName="MoveConcepts.java" startLine="130" startPosition="84" endLine="131" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3068114543317979360" fileName="MoveConcepts.java" startLine="133" startPosition="5" endLine="134" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3068114543317979842" fileName="MoveConcepts.java" startLine="135" startPosition="33" endLine="136" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3068114543317979879" fileName="MoveConcepts.java" startLine="137" startPosition="84" endLine="138" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3068114543317979377" fileName="MoveConcepts.java" startLine="140" startPosition="5" endLine="141" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3068114543317978887" fileName="MoveConcepts.java" startLine="144" startPosition="86" endLine="145" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3068114543317978895" fileName="MoveConcepts.java" startLine="146" startPosition="88" endLine="147" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3883347270486229695" fileName="MoveConcepts.java" startLine="148" startPosition="5" endLine="149" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3883347270486229145" fileName="MoveConcepts.java" startLine="151" startPosition="56" endLine="152" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4893885478268658538" fileName="MoveConcepts.java" startLine="154" startPosition="9" endLine="155" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3068114543317978904" fileName="MoveConcepts.java" startLine="156" startPosition="5" endLine="157" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3068114543317979381" fileName="MoveConcepts.java" startLine="160" startPosition="92" endLine="161" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="165" startPosition="36" endLine="166" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="167" startPosition="5" endLine="168" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="172" startPosition="36" endLine="173" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="174" startPosition="5" endLine="175" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
-    <nodeInfo nodeId="8299073042392952077" fileName="MoveConcepts.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8299073042392964901" fileName="MoveConcepts.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="8299073042392964934" fileName="MoveConcepts.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/project/structure/modules/ModuleReference;" />
-    <nodeInfo nodeId="8299073042392964969" fileName="MoveConcepts.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Z" />
-    <nodeInfo nodeId="8299073042392951832" fileName="MoveConcepts.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6934781091951606363" fileName="MoveConcepts.java" startLine="102" startPosition="26" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8299073042392952007" fileName="MoveConcepts.java" startLine="115" startPosition="65" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8299073042392952013" fileName="MoveConcepts.java" startLine="118" startPosition="5" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3068114543317979858" fileName="MoveConcepts.java" startLine="129" startPosition="172" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3068114543317979873" fileName="MoveConcepts.java" startLine="136" startPosition="124" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3068114543317978892" fileName="MoveConcepts.java" startLine="145" startPosition="54" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3883347270486229141" fileName="MoveConcepts.java" startLine="151" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/util/List;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="160" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-    <nodeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="164" startPosition="79" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="171" startPosition="88" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveConcepts#()V" />
-    <nodeInfo nodeId="3125670498081651054" fileName="MoveConcepts.java" startLine="61" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8299073042392952065" fileName="MoveConcepts.java" startLine="76" startPosition="44" endLine="81" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8299073042392939544" fileName="MoveConcepts.java" startLine="95" startPosition="92" endLine="100" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3068114543317979348" fileName="MoveConcepts.java" startLine="127" startPosition="62" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3068114543317979365" fileName="MoveConcepts.java" startLine="134" startPosition="173" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="164" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_u6ijv2_a0a0a0a0a0a7a0#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="171" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_u6ijv2_a0a0a0a0a7a0#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/project/structure/modules/ModuleReference;" />
-    <nodeInfo nodeId="3125670498081651053" fileName="MoveConcepts.java" startLine="59" startPosition="68" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4893885478268658550" fileName="MoveConcepts.java" startLine="107" startPosition="20" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4893885478268658533" fileName="MoveConcepts.java" startLine="149" startPosition="185" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="59" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
-    <nodeInfo nodeId="8299073042392964888" fileName="MoveConcepts.java" startLine="81" startPosition="78" endLine="94" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="144" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="124" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljava/util/List;" />
-    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="70" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="42" startPosition="25" endLine="43" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="43" startPosition="46" endLine="44" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="44" startPosition="46" endLine="45" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="48" startPosition="39" endLine="49" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="52" startPosition="47" endLine="53" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="56" startPosition="52" endLine="57" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3068114543317978831" fileName="MoveConcepts.java" startLine="62" startPosition="25" endLine="63" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5584053826601525455" fileName="MoveConcepts.java" startLine="63" startPosition="118" endLine="64" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3883347270486227158" fileName="MoveConcepts.java" startLine="64" startPosition="83" endLine="65" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2864517217434236200" fileName="MoveConcepts.java" startLine="67" startPosition="7" endLine="68" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3068114543317978962" fileName="MoveConcepts.java" startLine="71" startPosition="69" endLine="72" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6934781091951606355" fileName="MoveConcepts.java" startLine="72" startPosition="173" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6934781091951606353" fileName="MoveConcepts.java" startLine="73" startPosition="0" endLine="74" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3883347270486229674" fileName="MoveConcepts.java" startLine="74" startPosition="24" endLine="75" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6934781091951606398" fileName="MoveConcepts.java" startLine="75" startPosition="185" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8299073042392940169" fileName="MoveConcepts.java" startLine="76" startPosition="0" endLine="77" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8299073042392952079" fileName="MoveConcepts.java" startLine="79" startPosition="50" endLine="80" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8299073042392964905" fileName="MoveConcepts.java" startLine="84" startPosition="46" endLine="85" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8299073042392964938" fileName="MoveConcepts.java" startLine="88" startPosition="56" endLine="89" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8299073042392964973" fileName="MoveConcepts.java" startLine="92" startPosition="49" endLine="93" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8299073042392939550" fileName="MoveConcepts.java" startLine="95" startPosition="24" endLine="96" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8299073042392951834" fileName="MoveConcepts.java" startLine="98" startPosition="50" endLine="99" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8299073042392962476" fileName="MoveConcepts.java" startLine="101" startPosition="92" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6934781091951606361" fileName="MoveConcepts.java" startLine="102" startPosition="0" endLine="103" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6934781091951606365" fileName="MoveConcepts.java" startLine="104" startPosition="62" endLine="105" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6934781091951606387" fileName="MoveConcepts.java" startLine="106" startPosition="5" endLine="107" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6934781091951606357" fileName="MoveConcepts.java" startLine="107" startPosition="210" endLine="108" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3883347270486229102" fileName="MoveConcepts.java" startLine="109" startPosition="98" endLine="110" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3883347270486211467" fileName="MoveConcepts.java" startLine="110" startPosition="112" endLine="111" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3883347270486229119" fileName="MoveConcepts.java" startLine="111" startPosition="70" endLine="112" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3883347270486229119" fileName="MoveConcepts.java" startLine="111" startPosition="70" endLine="112" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3883347270486221609" fileName="MoveConcepts.java" startLine="112" startPosition="52" endLine="113" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3883347270486229123" fileName="MoveConcepts.java" startLine="113" startPosition="97" endLine="114" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3883347270486229123" fileName="MoveConcepts.java" startLine="113" startPosition="97" endLine="114" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8299073042392951989" fileName="MoveConcepts.java" startLine="115" startPosition="5" endLine="116" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8299073042392951992" fileName="MoveConcepts.java" startLine="117" startPosition="26" endLine="118" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8299073042392952018" fileName="MoveConcepts.java" startLine="120" startPosition="70" endLine="121" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3068114543317979332" fileName="MoveConcepts.java" startLine="125" startPosition="88" endLine="126" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3068114543317980421" fileName="MoveConcepts.java" startLine="126" startPosition="73" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3068114543317980413" fileName="MoveConcepts.java" startLine="127" startPosition="0" endLine="128" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3068114543317979772" fileName="MoveConcepts.java" startLine="129" startPosition="81" endLine="130" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3068114543317979864" fileName="MoveConcepts.java" startLine="131" startPosition="84" endLine="132" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3068114543317979360" fileName="MoveConcepts.java" startLine="134" startPosition="5" endLine="135" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3068114543317979842" fileName="MoveConcepts.java" startLine="136" startPosition="33" endLine="137" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3068114543317979879" fileName="MoveConcepts.java" startLine="138" startPosition="84" endLine="139" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3068114543317979377" fileName="MoveConcepts.java" startLine="141" startPosition="5" endLine="142" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3068114543317978887" fileName="MoveConcepts.java" startLine="145" startPosition="86" endLine="146" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3068114543317978895" fileName="MoveConcepts.java" startLine="147" startPosition="88" endLine="148" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3883347270486229695" fileName="MoveConcepts.java" startLine="149" startPosition="5" endLine="150" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3883347270486229145" fileName="MoveConcepts.java" startLine="152" startPosition="56" endLine="153" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4893885478268658538" fileName="MoveConcepts.java" startLine="155" startPosition="9" endLine="156" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3068114543317978904" fileName="MoveConcepts.java" startLine="157" startPosition="5" endLine="158" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3068114543317979381" fileName="MoveConcepts.java" startLine="161" startPosition="92" endLine="162" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="166" startPosition="36" endLine="167" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="168" startPosition="5" endLine="169" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="173" startPosition="36" endLine="174" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="175" startPosition="5" endLine="176" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOverridenRefactoringClass#()Ljava/lang/Class;" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="8299073042392952077" fileName="MoveConcepts.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8299073042392964901" fileName="MoveConcepts.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/SModelInternal;" />
+    <nodeInfo nodeId="8299073042392964934" fileName="MoveConcepts.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SModelInternal;)Ljetbrains/mps/project/structure/modules/ModuleReference;" />
+    <nodeInfo nodeId="8299073042392964969" fileName="MoveConcepts.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/project/structure/modules/ModuleReference;)Z" />
+    <nodeInfo nodeId="8299073042392951832" fileName="MoveConcepts.java" startLine="98" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6934781091951606363" fileName="MoveConcepts.java" startLine="103" startPosition="26" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8299073042392952007" fileName="MoveConcepts.java" startLine="116" startPosition="65" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8299073042392952013" fileName="MoveConcepts.java" startLine="119" startPosition="5" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3068114543317979858" fileName="MoveConcepts.java" startLine="130" startPosition="172" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3068114543317979873" fileName="MoveConcepts.java" startLine="137" startPosition="124" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3068114543317978892" fileName="MoveConcepts.java" startLine="146" startPosition="54" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3883347270486229141" fileName="MoveConcepts.java" startLine="152" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljava/util/List;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="161" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateModel#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="165" startPosition="87" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="172" startPosition="88" endLine="175" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveConcepts#()V" />
+    <nodeInfo nodeId="3125670498081651054" fileName="MoveConcepts.java" startLine="62" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8299073042392952065" fileName="MoveConcepts.java" startLine="77" startPosition="44" endLine="82" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8299073042392939544" fileName="MoveConcepts.java" startLine="96" startPosition="92" endLine="101" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3068114543317979348" fileName="MoveConcepts.java" startLine="128" startPosition="62" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3068114543317979365" fileName="MoveConcepts.java" startLine="135" startPosition="173" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="165" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_u6ijv2_a0a0a0a0a0a7a0#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelInternal;" />
+    <nodeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="172" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_u6ijv2_a0a0a0a0a7a0#(Ljetbrains/mps/smodel/Language;)Ljetbrains/mps/project/structure/modules/ModuleReference;" />
+    <nodeInfo nodeId="3125670498081651053" fileName="MoveConcepts.java" startLine="60" startPosition="68" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4893885478268658550" fileName="MoveConcepts.java" startLine="108" startPosition="20" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4893885478268658533" fileName="MoveConcepts.java" startLine="150" startPosition="185" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="60" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Z" />
+    <nodeInfo nodeId="8299073042392964888" fileName="MoveConcepts.java" startLine="82" startPosition="78" endLine="95" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="145" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="125" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelsToGenerate#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljava/util/List;" />
+    <nodeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="71" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
     <nodeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -375,117 +375,117 @@
     <nodeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="25" startPosition="52" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="47" startPosition="39" endLine="48" endPosition="27" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="51" startPosition="47" endLine="52" endPosition="27" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="55" startPosition="52" endLine="56" endPosition="37" />
-    <scopeInfo nodeId="8299073042392952078" fileName="MoveConcepts.java" startLine="78" startPosition="50" endLine="79" endPosition="68" />
-    <scopeInfo nodeId="8299073042392964902" fileName="MoveConcepts.java" startLine="83" startPosition="38" endLine="84" endPosition="73" />
-    <scopeInfo nodeId="8299073042392964935" fileName="MoveConcepts.java" startLine="87" startPosition="48" endLine="88" endPosition="70" />
-    <scopeInfo nodeId="8299073042392964970" fileName="MoveConcepts.java" startLine="91" startPosition="49" endLine="92" endPosition="26" />
-    <scopeInfo nodeId="8299073042392951833" fileName="MoveConcepts.java" startLine="97" startPosition="50" endLine="98" endPosition="68" />
-    <scopeInfo nodeId="6934781091951606364" fileName="MoveConcepts.java" startLine="103" startPosition="62" endLine="104" endPosition="243" />
-    <scopeInfo nodeId="3883347270486229119" fileName="MoveConcepts.java" startLine="110" startPosition="70" endLine="111" endPosition="52" />
-    <scopeInfo nodeId="3883347270486229123" fileName="MoveConcepts.java" startLine="112" startPosition="97" endLine="113" endPosition="50" />
-    <scopeInfo nodeId="8299073042392952008" fileName="MoveConcepts.java" startLine="116" startPosition="26" endLine="117" endPosition="126" />
-    <scopeInfo nodeId="8299073042392952016" fileName="MoveConcepts.java" startLine="119" startPosition="70" endLine="120" endPosition="46" />
-    <scopeInfo nodeId="3068114543317979863" fileName="MoveConcepts.java" startLine="130" startPosition="84" endLine="131" endPosition="94" />
-    <scopeInfo nodeId="3068114543317979878" fileName="MoveConcepts.java" startLine="137" startPosition="84" endLine="138" endPosition="94" />
-    <scopeInfo nodeId="3068114543317978894" fileName="MoveConcepts.java" startLine="146" startPosition="88" endLine="147" endPosition="261" />
-    <scopeInfo nodeId="3883347270486229142" fileName="MoveConcepts.java" startLine="151" startPosition="56" endLine="152" endPosition="18" />
-    <scopeInfo nodeId="4893885478268658536" fileName="MoveConcepts.java" startLine="154" startPosition="9" endLine="155" endPosition="191" />
-    <scopeInfo nodeId="3068114543317979380" fileName="MoveConcepts.java" startLine="160" startPosition="92" endLine="161" endPosition="46" />
-    <scopeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="165" startPosition="36" endLine="166" endPosition="52" />
-    <scopeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="172" startPosition="36" endLine="173" endPosition="52" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="41" startPosition="25" endLine="44" endPosition="49" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="3125670498081651055" fileName="MoveConcepts.java" startLine="61" startPosition="25" endLine="64" endPosition="142">
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="48" startPosition="39" endLine="49" endPosition="27" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="52" startPosition="47" endLine="53" endPosition="27" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="56" startPosition="52" endLine="57" endPosition="37" />
+    <scopeInfo nodeId="8299073042392952078" fileName="MoveConcepts.java" startLine="79" startPosition="50" endLine="80" endPosition="68" />
+    <scopeInfo nodeId="8299073042392964902" fileName="MoveConcepts.java" startLine="84" startPosition="46" endLine="85" endPosition="73" />
+    <scopeInfo nodeId="8299073042392964935" fileName="MoveConcepts.java" startLine="88" startPosition="56" endLine="89" endPosition="70" />
+    <scopeInfo nodeId="8299073042392964970" fileName="MoveConcepts.java" startLine="92" startPosition="49" endLine="93" endPosition="26" />
+    <scopeInfo nodeId="8299073042392951833" fileName="MoveConcepts.java" startLine="98" startPosition="50" endLine="99" endPosition="68" />
+    <scopeInfo nodeId="6934781091951606364" fileName="MoveConcepts.java" startLine="104" startPosition="62" endLine="105" endPosition="243" />
+    <scopeInfo nodeId="3883347270486229119" fileName="MoveConcepts.java" startLine="111" startPosition="70" endLine="112" endPosition="52" />
+    <scopeInfo nodeId="3883347270486229123" fileName="MoveConcepts.java" startLine="113" startPosition="97" endLine="114" endPosition="50" />
+    <scopeInfo nodeId="8299073042392952008" fileName="MoveConcepts.java" startLine="117" startPosition="26" endLine="118" endPosition="126" />
+    <scopeInfo nodeId="8299073042392952016" fileName="MoveConcepts.java" startLine="120" startPosition="70" endLine="121" endPosition="46" />
+    <scopeInfo nodeId="3068114543317979863" fileName="MoveConcepts.java" startLine="131" startPosition="84" endLine="132" endPosition="94" />
+    <scopeInfo nodeId="3068114543317979878" fileName="MoveConcepts.java" startLine="138" startPosition="84" endLine="139" endPosition="94" />
+    <scopeInfo nodeId="3068114543317978894" fileName="MoveConcepts.java" startLine="147" startPosition="88" endLine="148" endPosition="261" />
+    <scopeInfo nodeId="3883347270486229142" fileName="MoveConcepts.java" startLine="152" startPosition="56" endLine="153" endPosition="18" />
+    <scopeInfo nodeId="4893885478268658536" fileName="MoveConcepts.java" startLine="155" startPosition="9" endLine="156" endPosition="191" />
+    <scopeInfo nodeId="3068114543317979380" fileName="MoveConcepts.java" startLine="161" startPosition="92" endLine="162" endPosition="46" />
+    <scopeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="166" startPosition="36" endLine="167" endPosition="52" />
+    <scopeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="173" startPosition="36" endLine="174" endPosition="52" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="42" startPosition="25" endLine="45" endPosition="49" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
+    <scopeInfo nodeId="3125670498081651055" fileName="MoveConcepts.java" startLine="62" startPosition="25" endLine="65" endPosition="142">
       <varInfo nodeId="3068114543317978832" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="8299073042392952077" fileName="MoveConcepts.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="8299073042392952077" fileName="MoveConcepts.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="8299073042392952077" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8299073042392964901" fileName="MoveConcepts.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="8299073042392964901" fileName="MoveConcepts.java" startLine="84" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="8299073042392964901" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8299073042392964934" fileName="MoveConcepts.java" startLine="87" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="8299073042392964934" fileName="MoveConcepts.java" startLine="88" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="8299073042392964934" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8299073042392964969" fileName="MoveConcepts.java" startLine="91" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="8299073042392964969" fileName="MoveConcepts.java" startLine="92" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="8299073042392964969" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8299073042392951832" fileName="MoveConcepts.java" startLine="97" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="8299073042392951832" fileName="MoveConcepts.java" startLine="98" startPosition="0" endLine="101" endPosition="0">
       <varInfo nodeId="8299073042392951832" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6934781091951606363" fileName="MoveConcepts.java" startLine="102" startPosition="26" endLine="105" endPosition="5">
+    <scopeInfo nodeId="6934781091951606363" fileName="MoveConcepts.java" startLine="103" startPosition="26" endLine="106" endPosition="5">
       <varInfo nodeId="6934781091951606382" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8299073042392952013" fileName="MoveConcepts.java" startLine="118" startPosition="5" endLine="121" endPosition="5">
+    <scopeInfo nodeId="8299073042392952013" fileName="MoveConcepts.java" startLine="119" startPosition="5" endLine="122" endPosition="5">
       <varInfo nodeId="8299073042392952014" varName="ext" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979858" fileName="MoveConcepts.java" startLine="129" startPosition="172" endLine="132" endPosition="7">
+    <scopeInfo nodeId="3068114543317979858" fileName="MoveConcepts.java" startLine="130" startPosition="172" endLine="133" endPosition="7">
       <varInfo nodeId="3068114543317979859" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979873" fileName="MoveConcepts.java" startLine="136" startPosition="124" endLine="139" endPosition="7">
+    <scopeInfo nodeId="3068114543317979873" fileName="MoveConcepts.java" startLine="137" startPosition="124" endLine="140" endPosition="7">
       <varInfo nodeId="3068114543317979874" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317978892" fileName="MoveConcepts.java" startLine="145" startPosition="54" endLine="148" endPosition="5">
+    <scopeInfo nodeId="3068114543317978892" fileName="MoveConcepts.java" startLine="146" startPosition="54" endLine="149" endPosition="5">
       <varInfo nodeId="3068114543317978893" varName="selNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3883347270486229141" fileName="MoveConcepts.java" startLine="151" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="3883347270486229141" fileName="MoveConcepts.java" startLine="152" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="3883347270486229141" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="160" startPosition="0" endLine="163" endPosition="0">
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="161" startPosition="0" endLine="164" endPosition="0">
       <varInfo nodeId="3068114543317961454" varName="model" />
       <varInfo nodeId="3068114543317961454" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979349" fileName="MoveConcepts.java" startLine="128" startPosition="81" endLine="132" endPosition="7">
+    <scopeInfo nodeId="3068114543317979349" fileName="MoveConcepts.java" startLine="129" startPosition="81" endLine="133" endPosition="7">
       <varInfo nodeId="3068114543317979773" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979366" fileName="MoveConcepts.java" startLine="135" startPosition="33" endLine="139" endPosition="7">
+    <scopeInfo nodeId="3068114543317979366" fileName="MoveConcepts.java" startLine="136" startPosition="33" endLine="140" endPosition="7">
       <varInfo nodeId="3068114543317979843" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="164" startPosition="79" endLine="168" endPosition="16" />
-    <scopeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="171" startPosition="88" endLine="175" endPosition="16" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="3125670498081651054" fileName="MoveConcepts.java" startLine="61" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="4893885478268658553" fileName="MoveConcepts.java" startLine="108" startPosition="98" endLine="113" endPosition="50">
+    <scopeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="165" startPosition="87" endLine="169" endPosition="16" />
+    <scopeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="172" startPosition="88" endLine="176" endPosition="16" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="3125670498081651054" fileName="MoveConcepts.java" startLine="62" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="4893885478268658553" fileName="MoveConcepts.java" startLine="109" startPosition="98" endLine="114" endPosition="50">
       <varInfo nodeId="3883347270486229103" varName="fromModel" />
       <varInfo nodeId="3883347270486211468" varName="toModel" />
     </scopeInfo>
-    <scopeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="164" startPosition="0" endLine="170" endPosition="0">
+    <scopeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="165" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="8299073042392964918" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="171" startPosition="0" endLine="177" endPosition="0">
+    <scopeInfo nodeId="8299073042392964958" fileName="MoveConcepts.java" startLine="172" startPosition="0" endLine="178" endPosition="0">
       <varInfo nodeId="8299073042392964958" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="4893885478268658550" fileName="MoveConcepts.java" startLine="107" startPosition="20" endLine="114" endPosition="5">
+    <scopeInfo nodeId="4893885478268658550" fileName="MoveConcepts.java" startLine="108" startPosition="20" endLine="115" endPosition="5">
       <varInfo nodeId="4893885478268658551" varName="aspect" />
     </scopeInfo>
-    <scopeInfo nodeId="4893885478268658533" fileName="MoveConcepts.java" startLine="149" startPosition="185" endLine="156" endPosition="5">
+    <scopeInfo nodeId="4893885478268658533" fileName="MoveConcepts.java" startLine="150" startPosition="185" endLine="157" endPosition="5">
       <varInfo nodeId="4893885478268658534" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317978761" fileName="MoveConcepts.java" startLine="59" startPosition="68" endLine="67" endPosition="16" />
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="59" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="3068114543317978761" fileName="MoveConcepts.java" startLine="60" startPosition="68" endLine="68" endPosition="16" />
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="60" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="3068114543317961454" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317978886" fileName="MoveConcepts.java" startLine="144" startPosition="86" endLine="157" endPosition="25">
+    <scopeInfo nodeId="3068114543317978886" fileName="MoveConcepts.java" startLine="145" startPosition="86" endLine="158" endPosition="25">
       <varInfo nodeId="3883347270486229696" varName="aspectNodes" />
       <varInfo nodeId="3068114543317978888" varName="searchResults" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="144" startPosition="0" endLine="159" endPosition="0">
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="145" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="3068114543317961454" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317979331" fileName="MoveConcepts.java" startLine="124" startPosition="88" endLine="141" endPosition="18">
+    <scopeInfo nodeId="3068114543317979331" fileName="MoveConcepts.java" startLine="125" startPosition="88" endLine="142" endPosition="18">
       <varInfo nodeId="3068114543317980414" varName="project" />
       <varInfo nodeId="3068114543317979333" varName="result" />
       <varInfo nodeId="3068114543317979361" varName="targetLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="124" startPosition="0" endLine="143" endPosition="0">
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="125" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="3068114543317961454" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317961457" fileName="MoveConcepts.java" startLine="70" startPosition="69" endLine="121" endPosition="5">
+    <scopeInfo nodeId="3068114543317961457" fileName="MoveConcepts.java" startLine="71" startPosition="69" endLine="122" endPosition="5">
       <varInfo nodeId="3883347270486229675" varName="aspectNodes" />
       <varInfo nodeId="8299073042392939545" varName="isSourceExtends" />
       <varInfo nodeId="8299073042392939551" varName="srcModel" />
@@ -493,7 +493,7 @@
       <varInfo nodeId="8299073042392964889" varName="targetExtends" />
       <varInfo nodeId="3068114543317978963" varName="targetLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="70" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="71" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="3068114543317961454" varName="refactoringContext" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="10" startPosition="32" endLine="10" endPosition="32" />
@@ -511,14 +511,14 @@
     <scopeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="3068114543317961951" varName="entity" />
     </scopeInfo>
-    <unitInfo nodeId="8299073042392952077" fileName="MoveConcepts.java" startLine="77" startPosition="109" endLine="81" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$2" />
-    <unitInfo nodeId="8299073042392964901" fileName="MoveConcepts.java" startLine="82" startPosition="88" endLine="86" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$3" />
-    <unitInfo nodeId="8299073042392964934" fileName="MoveConcepts.java" startLine="86" startPosition="29" endLine="90" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$4" />
-    <unitInfo nodeId="8299073042392964969" fileName="MoveConcepts.java" startLine="90" startPosition="17" endLine="94" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$5" />
-    <unitInfo nodeId="8299073042392951832" fileName="MoveConcepts.java" startLine="96" startPosition="243" endLine="100" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$6" />
-    <unitInfo nodeId="3883347270486229141" fileName="MoveConcepts.java" startLine="150" startPosition="101" endLine="154" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$7" />
-    <unitInfo nodeId="3125670498081651054" fileName="MoveConcepts.java" startLine="60" startPosition="45" endLine="66" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$1" />
-    <unitInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="40" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts" />
+    <unitInfo nodeId="8299073042392952077" fileName="MoveConcepts.java" startLine="78" startPosition="109" endLine="82" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$2" />
+    <unitInfo nodeId="8299073042392964901" fileName="MoveConcepts.java" startLine="83" startPosition="88" endLine="87" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$3" />
+    <unitInfo nodeId="8299073042392964934" fileName="MoveConcepts.java" startLine="87" startPosition="29" endLine="91" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$4" />
+    <unitInfo nodeId="8299073042392964969" fileName="MoveConcepts.java" startLine="91" startPosition="17" endLine="95" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$5" />
+    <unitInfo nodeId="8299073042392951832" fileName="MoveConcepts.java" startLine="97" startPosition="243" endLine="101" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$6" />
+    <unitInfo nodeId="3883347270486229141" fileName="MoveConcepts.java" startLine="151" startPosition="101" endLine="155" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$7" />
+    <unitInfo nodeId="3125670498081651054" fileName="MoveConcepts.java" startLine="61" startPosition="45" endLine="67" endPosition="5" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts$1" />
+    <unitInfo nodeId="3068114543317961454" fileName="MoveConcepts.java" startLine="41" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts" />
     <unitInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.refactorings.MoveConcepts_Target" />
   </root>
   <root nodeRef="r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)/3068114543317979887">

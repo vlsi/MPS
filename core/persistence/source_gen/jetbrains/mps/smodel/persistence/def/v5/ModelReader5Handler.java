@@ -17,8 +17,9 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.util.InternUtil;
@@ -224,27 +225,27 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("languageAspect".equals(tagName)) {
         String[] child = (String[]) value;
         int version = Integer.parseInt(child[1]);
-        ((SModel) fieldmodel).addAdditionalModelVersion(SModelReference.fromString(child[0]), version);
+        ((SModelInternal) fieldmodel).addAdditionalModelVersion(SModelReference.fromString(child[0]), version);
         return;
       }
       if ("language".equals(tagName)) {
         String child = (String) value;
-        ((SModel) fieldmodel).addLanguage(ModuleReference.fromString(child));
+        ((SModelInternal) fieldmodel).addLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("language-engaged-on-generation".equals(tagName)) {
         String child = (String) value;
-        ((SModel) fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
+        ((SModelInternal) fieldmodel).addEngagedOnGenerationLanguage(ModuleReference.fromString(child));
         return;
       }
       if ("devkit".equals(tagName)) {
         String child = (String) value;
-        ((SModel) fieldmodel).addDevKit(ModuleReference.fromString(child));
+        ((SModelInternal) fieldmodel).addDevKit(ModuleReference.fromString(child));
         return;
       }
       if ("import".equals(tagName)) {
         SModel.ImportElement child = (SModel.ImportElement) value;
-        ((SModel) fieldmodel).addModelImport(child);
+        ((SModelInternal) fieldmodel).addModelImport(child);
         return;
       }
       if ("node".equals(tagName)) {

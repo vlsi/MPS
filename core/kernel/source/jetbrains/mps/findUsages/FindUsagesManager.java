@@ -15,15 +15,22 @@
  */
 package jetbrains.mps.findUsages;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.containers.MultiMap;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.util.Consumer;
 
-import java.util.HashSet;
+import java.util.Collection;
 import java.util.Set;
 
 public class FindUsagesManager {
@@ -31,31 +38,81 @@ public class FindUsagesManager {
     return new FindUsagesManager();
   }
 
-  public <T, R> Set<T> findUsages(Set<R> nodes, SearchType<T, R> type, SearchScope scope, @Nullable ProgressMonitor monitor) {
-    MultiMap<SModel, R> directSearch = type.findMatchingModelsInCache(nodes, scope.getModels(), null);
-
-    Set<T> result = new HashSet<T>();
+  public <T, R> Set<T> findUsages(Set<R> elements, SearchType<T, R> type, SearchScope scope, @Nullable ProgressMonitor monitor) {
     if (monitor == null) monitor = new EmptyProgressMonitor();
-    monitor.start("Finding usages...", directSearch.size());
-    try {
-      result.addAll(type.findInModel(directSearch, new MyProgressNotifier(monitor)));
-    } finally {
-      monitor.done();
-    }
-    return result;
+
+    return type.search(elements, scope, monitor);
   }
 
-  private static class MyProgressNotifier implements Computable<Boolean> {
-    private final ProgressMonitor myProgress;
-
-    public MyProgressNotifier(ProgressMonitor progress) {
-      myProgress = progress;
+  /**
+   * Finds references to the provided nodes in the model.
+   */
+  public static void collectUsages(SModel model, Collection<SNode> nodes, Consumer<SReference> consumer) {
+    Set<StaticReferenceInfo> srefs = new THashSet<StaticReferenceInfo>();
+    for (SNode n : nodes) {
+      SModelReference mr = n.getModel().getReference();
+      srefs.add(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), n.getNodeId()));
     }
 
-    @Override
-    public Boolean compute() {
-      myProgress.advance(1);
-      return !myProgress.isCanceled();
+    for (SNode root : model.getRootNodes()) {
+      collectUsages(root, nodes, srefs, consumer);
+    }
+  }
+
+  /**
+   * Finds exact instances of the provided concepts in the model.
+   */
+  public static void collectInstances(SModel model, Collection<SConcept> concepts, Consumer<SNode> consumer) {
+    for (SConcept concept : concepts) {
+      for (SNode instance : ((jetbrains.mps.smodel.SModel) model.getSModel()).getFastNodeFinder().getNodes(concept.getId(), false)) {
+        consumer.consume(instance);
+      }
+    }
+  }
+
+  private static void collectUsages(SNode current, Collection<SNode> nodes, Set<StaticReferenceInfo> srefs, Consumer<SReference> consumer) {
+    for (SReference ref : current.getReferences()) {
+      if (ref instanceof StaticReference) {
+        SModelReference mr = ref.getTargetSModelReference();
+        if (srefs.contains(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), ref.getTargetNodeId()))) {
+          consumer.consume(ref);
+        }
+      } else {
+        if (nodes.contains(ref.getTargetNode())) {
+          consumer.consume(ref);
+        }
+      }
+    }
+    for (SNode child : current.getChildren()) {
+      collectUsages(child, nodes, srefs, consumer);
+    }
+  }
+
+  private static class StaticReferenceInfo {
+    private SModel myModelRef;
+    private SNodeId myNodeId;
+
+    public StaticReferenceInfo(SModel modelRef, SNodeId nodeId) {
+      myModelRef = modelRef;
+      myNodeId = nodeId;
+    }
+
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      StaticReferenceInfo that = (StaticReferenceInfo) o;
+
+      if (myModelRef != null ? !myModelRef.equals(that.myModelRef) : that.myModelRef != null) return false;
+      if (myNodeId != null ? !myNodeId.equals(that.myNodeId) : that.myNodeId != null) return false;
+
+      return true;
+    }
+
+    public int hashCode() {
+      int result = myModelRef != null ? myModelRef.hashCode() : 0;
+      result = 31 * result + (myNodeId != null ? myNodeId.hashCode() : 0);
+      return result;
     }
   }
 }

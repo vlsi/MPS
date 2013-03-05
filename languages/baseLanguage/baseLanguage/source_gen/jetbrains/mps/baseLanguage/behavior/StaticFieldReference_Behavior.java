@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class StaticFieldReference_Behavior {
   public static void init(SNode thisNode) {
@@ -56,7 +56,7 @@ public class StaticFieldReference_Behavior {
     return true;
   }
 
-  private static IModule check_o8sx3d_a0d0a(SModel checkedDotOperand) {
+  private static IModule check_o8sx3d_a0d0a(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

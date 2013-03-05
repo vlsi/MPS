@@ -117,6 +117,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) != null;
   }
 
+  public static boolean ifMacro_Condition_8441762775552326216(final IOperationContext operationContext, final IfMacroContext _context) {
+    return ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "findFunction", true), "body", true), "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_progressMonitor", false, new String[]{})).isEmpty();
+  }
+
   public static boolean ifMacro_Condition_1218978335315(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "searchedNodesBlock", true) != null;
   }
@@ -130,7 +134,12 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7810572934689511369(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.findUsages.structure.FindBlock", false, false) != null;
+    SNode ancestor = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.findUsages.structure.FindBlock", false, false);
+    return ancestor != null && ((SLinkOperations.getTarget(_context.getNode(), "monitor", true) != null) || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(ancestor, "body", true), "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_progressMonitor", false, new String[]{})).isEmpty());
+  }
+
+  public static boolean ifMacro_Condition_8441762775553373730(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "monitor", true) == null);
   }
 
   public static SNode sourceNodeQuery_4192433084863763900(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -179,6 +188,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5140158946217876057(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "queryScope", true);
+  }
+
+  public static SNode sourceNodeQuery_8441762775553394176(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "monitor", true);
   }
 
   public static Iterable sourceNodesQuery_4192433084863763935(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -19,18 +19,22 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
   public DerivedInterfaces_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Derived Interfaces";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Interface";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
@@ -55,6 +59,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Derived Interfaces";
   }

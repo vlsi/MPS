@@ -18,7 +18,7 @@ import com.intellij.openapi.vcs.history.VcsFileRevision;
 import com.intellij.openapi.vcs.annotate.LineAnnotationAspect;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Set;
@@ -88,8 +88,9 @@ import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.vcs.changes.BackgroundFromStartOption;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vcs.CommittedChangesProvider;
-import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
+import com.intellij.openapi.vcs.versionBrowser.ChangeBrowserSettings;
+import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.FilePathImpl;
 import com.intellij.openapi.vcs.ui.VcsBalloonProblemNotifier;
@@ -116,7 +117,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private LineAnnotationAspect myAuthorAnnotationAspect;
   private AbstractVcs myVcs;
   private VirtualFile myModelVirtualFile;
-  private DefaultSModelDescriptor myModelDescriptor;
+  private BaseEditableSModelDescriptor myModelDescriptor;
   private List<LineContent> myFileLineToContent;
   private Map<ModelChange, LineContent[]> myChangesToLineContents = MapSequence.fromMap(new HashMap<ModelChange, LineContent[]>());
   private Set<Integer> myCurrentPseudoLines = null;
@@ -196,7 +197,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myRevisionRange = new VcsRevisionRange(this, myFileAnnotation);
     ListSequence.fromList(myAspectSubcolumns).addElement(new HighlightRevisionSubcolumn(this, myRevisionRange));
     myModelVirtualFile = modelVirtualFile;
-    myModelDescriptor = (DefaultSModelDescriptor) model.getModelDescriptor();
+    myModelDescriptor = (BaseEditableSModelDescriptor) model.getModelDescriptor();
     myVcs = vcs;
     final CurrentDifferenceRegistry registry = CurrentDifferenceRegistry.getInstance(getProject());
     registry.getCommandQueue().runTask(new Runnable() {
@@ -356,8 +357,8 @@ public class AnnotationColumn extends AbstractLeftColumn {
     if (cell == null) {
       return Sequence.fromIterable(Collections.<Integer>emptyList());
     }
-    final int startPseudoLine = Collections.binarySearch(myPseudoLinesY, cell.getY());
-    final Wrappers._int endPseudoLine = new Wrappers._int(Collections.binarySearch(myPseudoLinesY, cell.getY() + cell.getHeight()));
+    final int startPseudoLine = Collections.binarySearch((List) myPseudoLinesY, cell.getY());
+    final Wrappers._int endPseudoLine = new Wrappers._int(Collections.binarySearch((List) myPseudoLinesY, cell.getY() + cell.getHeight()));
     if (endPseudoLine.value < 0) {
       endPseudoLine.value = -endPseudoLine.value - 1;
     }
@@ -508,7 +509,7 @@ __switch__:
   }
 
   private int findPseudoLineByY(int y) {
-    int pseudoLine = Collections.binarySearch(myPseudoLinesY, y);
+    int pseudoLine = Collections.binarySearch((List) myPseudoLinesY, y);
     if (pseudoLine < 0) {
       pseudoLine = -pseudoLine - 2;
     }
@@ -662,7 +663,7 @@ __switch__:
         ProgressManager.getInstance().run(new Task.Backgroundable(project, "Loading revision " + revisionNumber.asString() + " contents", true, BackgroundFromStartOption.getInstance()) {
           @Override
           public void run(@NotNull ProgressIndicator pi) {
-            CommittedChangesProvider provider = myVcs.getCommittedChangesProvider();
+            CommittedChangesProvider<CommittedChangeList, ChangeBrowserSettings> provider = myVcs.getCommittedChangesProvider();
 
             try {
               Pair<CommittedChangeList, FilePath> pair = null;

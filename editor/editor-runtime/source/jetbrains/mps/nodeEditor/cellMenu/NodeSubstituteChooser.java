@@ -32,6 +32,7 @@ import jetbrains.mps.nodeEditor.KeyboardHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -93,7 +94,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   private boolean myIsSmart = false;
   private EditorComponent myEditorComponent;
   private NodeSubstitutePatternEditor myPatternEditor;
-  private NodeSubstituteInfo myNodeSubstituteInfo;
+  private SubstituteInfo myNodeSubstituteInfo;
   private List<SubstituteAction> mySubstituteActions = new ArrayList<SubstituteAction>();
   private boolean myMenuEmpty;
 
@@ -131,7 +132,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
   }
 
-  public void setNodeSubstituteInfo(NodeSubstituteInfo nodeSubstituteInfo) {
+  public void setNodeSubstituteInfo(SubstituteInfo nodeSubstituteInfo) {
     myNodeSubstituteInfo = nodeSubstituteInfo;
   }
 

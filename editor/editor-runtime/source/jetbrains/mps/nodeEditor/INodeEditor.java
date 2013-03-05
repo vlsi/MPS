@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public interface INodeEditor {

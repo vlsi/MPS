@@ -4,7 +4,7 @@ package jetbrains.mps.kernel.model;
 
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IScope;
@@ -26,7 +26,7 @@ public class MissingDependenciesFixer {
   private SModel myModelDescriptor;
 
   public MissingDependenciesFixer(SModel modelDescriptor) {
-    myModelDescriptor = (SModelDescriptor) modelDescriptor;
+    myModelDescriptor = (SModelInternal) modelDescriptor;
   }
 
   @Deprecated
@@ -69,7 +69,7 @@ public class MissingDependenciesFixer {
           md.getDependencies().add(dep);
           wereChanges = true;
         }
-        for (ModuleReference namespace : CollectionUtil.union(((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).importedLanguages(), ((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).engagedOnGenerationLanguages())) {
+        for (ModuleReference namespace : CollectionUtil.union(((SModelInternal) myModelDescriptor.getSModel()).importedLanguages(), ((SModelInternal) myModelDescriptor.getSModel()).engagedOnGenerationLanguages())) {
           if (ScopeOperations.resolveModule(moduleScope, namespace, Language.class) != null) {
             continue;
           }
@@ -81,7 +81,7 @@ public class MissingDependenciesFixer {
           md.getUsedLanguages().add(ref);
           wereChanges = true;
         }
-        for (ModuleReference devKitNamespace : ((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).importedDevkits()) {
+        for (ModuleReference devKitNamespace : ((SModelInternal) myModelDescriptor.getSModel()).importedDevkits()) {
           if (ScopeOperations.resolveModule(moduleScope, devKitNamespace, DevKit.class) != null) {
             continue;
           }

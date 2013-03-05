@@ -36,6 +36,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class JavaParser {
   private static Logger LOG = Logger.getLogger(JavaParser.class);
@@ -367,7 +368,7 @@ public class JavaParser {
 
         SModel targetModel = target.getModel();
         if (targetModel != null) {
-          ((jetbrains.mps.smodel.SModel) ourModel).addModelImport(targetModel.getReference(), true);
+          ((SModelInternal) ourModel).addModelImport(targetModel.getReference(), true);
         }
       }
     }

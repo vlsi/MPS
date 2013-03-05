@@ -18,14 +18,14 @@ package jetbrains.mps.lang.editor.cellProviders;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodeUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -68,33 +68,37 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     return myChildConcept;
   }
 
+  @Override
   public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
     return createNodeCell((jetbrains.mps.nodeEditor.EditorContext) editorContext, node);
   }
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   * This method should be removed, content moved to:
-   * <code>createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             This method should be removed, content moved to:
+   *             <code>createNodeCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
+  @Override
   @Deprecated
-  public EditorCell createNodeCell(jetbrains.mps.nodeEditor.EditorContext editorContext, SNode node) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createNodeCell(jetbrains.mps.nodeEditor.EditorContext editorContext, SNode node) {
     return editorContext.createNodeCell(node);
   }
 
+  @Override
   protected EditorCell createEmptyCell(EditorContext editorContext) {
     return createEmptyCell((jetbrains.mps.nodeEditor.EditorContext) editorContext);
   }
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   * This method should be removed, content moved to:
-   * <code>createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             This method should be removed, content moved to:
+   *             <code>createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
+  @Override
   @Deprecated
-  protected EditorCell createEmptyCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
+  protected jetbrains.mps.nodeEditor.cells.EditorCell createEmptyCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getOwner(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
@@ -105,6 +109,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   }
 
 
+  @Override
   protected SNode getAnchorNode(EditorCell anchorCell) {
     SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);
     if (anchorNode != null) {
@@ -117,6 +122,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     return anchorNode;
   }
 
+  @Override
   protected void doInsertNode(SNode anchorNode, boolean insertBefore) {
     insertBefore = insertBefore != myIsReverseOrder;
     if (anchorNode == null && insertBefore) {
@@ -126,6 +132,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     }
   }
 
+  @Override
   protected List<SNode> getNodesForList() {
     List<SNode> resultList = new ArrayList<SNode>();
     if (!myIsReverseOrder) {

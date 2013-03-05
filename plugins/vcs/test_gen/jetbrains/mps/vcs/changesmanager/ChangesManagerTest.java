@@ -18,7 +18,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.openapi.vcs.VcsShowConfirmationOption;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.platform.watching.FSChangesWatcher;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -33,6 +33,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.vcs.FileStatusListener;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -84,10 +85,9 @@ import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import org.junit.BeforeClass;
 import jetbrains.mps.smodel.SReference;
 import com.intellij.openapi.util.registry.Registry;
@@ -138,7 +138,7 @@ public class ChangesManagerTest {
 
     setAutoaddPolicy(VcsShowConfirmationOption.Value.DO_NOTHING_SILENTLY);
 
-    myUtilVirtualFile = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) myUtilDiff.getModelDescriptor()).getSource().getFile());
+    myUtilVirtualFile = VirtualFileUtils.getVirtualFile(((FileDataSource) myUtilDiff.getModelDescriptor().getSource()).getFile());
 
     FSChangesWatcher.instance().addReloadListener(new ChangesManagerTest.MyReloadListener());
 
@@ -260,7 +260,7 @@ public class ChangesManagerTest {
   }
 
   private CurrentDifference getCurrentDifference(String shortName) {
-    return myRegistry.getCurrentDifference((DefaultSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(MODEL_PREFIX + shortName)));
+    return myRegistry.getCurrentDifference((BaseEditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(MODEL_PREFIX + shortName)));
   }
 
   private void checkAndEnable() {
@@ -280,12 +280,12 @@ public class ChangesManagerTest {
 
   private void checkRootStatuses() {
     final NodeFileStatusMapping fsm = myIdeaProject.getComponent(NodeFileStatusMapping.class);
-    final List<DefaultSModelDescriptor> interestingModels = Arrays.asList(myHtmlDiff.getModelDescriptor(), myUiDiff.getModelDescriptor(), myUtilDiff.getModelDescriptor());
+    final List<BaseEditableSModelDescriptor> interestingModels = Arrays.asList(myHtmlDiff.getModelDescriptor(), myUiDiff.getModelDescriptor(), myUtilDiff.getModelDescriptor());
     // query for first time 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        ListSequence.fromList(interestingModels).translate(new ITranslator2<DefaultSModelDescriptor, SNode>() {
-          public Iterable<SNode> translate(DefaultSModelDescriptor md) {
+        ListSequence.fromList(interestingModels).translate(new ITranslator2<BaseEditableSModelDescriptor, SNode>() {
+          public Iterable<SNode> translate(BaseEditableSModelDescriptor md) {
             return md.getSModel().getRootNodes();
           }
         }).visitAll(new IVisitor<SNode>() {
@@ -299,8 +299,8 @@ public class ChangesManagerTest {
     waitForChangesManager();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (SNode r : ListSequence.fromList(interestingModels).translate(new ITranslator2<DefaultSModelDescriptor, SNode>() {
-          public Iterable<SNode> translate(DefaultSModelDescriptor md) {
+        for (SNode r : ListSequence.fromList(interestingModels).translate(new ITranslator2<BaseEditableSModelDescriptor, SNode>() {
+          public Iterable<SNode> translate(BaseEditableSModelDescriptor md) {
             return md.getSModel().getRootNodes();
           }
         })) {
@@ -396,7 +396,7 @@ public class ChangesManagerTest {
 
   private void modifyExternally() throws ModelReadException {
     int changesBefore = ListSequence.fromList(check_4gxggu_a0a0a53(myUtilDiff.getChangeSet())).count();
-    final SModel modelContent = ModelPersistence.readModel(((DefaultSModelDescriptor) myUtilDiff.getModelDescriptor()).getSource().getFile(), false);
+    final SModel modelContent = ModelPersistence.readModel(myUtilDiff.getModelDescriptor().getSource(), false);
     createNewRoot(modelContent);
     final EditableSModelDescriptor modelDescriptor = myUtilDiff.getModelDescriptor();
     waitForSomething(new Runnable() {
@@ -879,7 +879,7 @@ public class ChangesManagerTest {
     });
     ModelAccess.instance().flushEventQueue();
 
-    final VirtualFile vf = VirtualFileUtils.getVirtualFile(((DefaultSModelDescriptor) md).getSource().getFile());
+    final VirtualFile vf = VirtualFileUtils.getVirtualFile(((FileDataSource) md.getSource()).getFile());
     doSomethingAndWaitForFileStatusChange(new Runnable() {
       public void run() {
       }
@@ -893,8 +893,8 @@ public class ChangesManagerTest {
 
     runCommandAndWait(new Runnable() {
       public void run() {
-        SModel m = ((SModelDescriptor) md).getSModel();
-        ((jetbrains.mps.smodel.SModel) m).addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
+        SModel m = ((SModelInternal) md).getSModel();
+        ((SModelInternal) m).addLanguage(ModuleReference.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"));
         createNewRoot(m);
       }
     });
@@ -966,7 +966,7 @@ public class ChangesManagerTest {
     doSomethingAndWaitForFileStatusChange(new Runnable() {
       public void run() {
       }
-    }, VirtualFileUtils.getVirtualFile(((BaseEditableSModelDescriptor) myUiDiff.getModelDescriptor()).getSource().getFile()), FileStatus.MODIFIED);
+    }, VirtualFileUtils.getVirtualFile(((FileDataSource) myUiDiff.getModelDescriptor().getSource()).getFile()), FileStatus.MODIFIED);
     waitForChangesManager();
     Assert.assertEquals(changeSetStringBefore, getChangeSetString(myUiDiff.getChangeSet()));
 

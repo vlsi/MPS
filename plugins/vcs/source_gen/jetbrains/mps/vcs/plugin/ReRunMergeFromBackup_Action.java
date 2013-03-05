@@ -6,9 +6,11 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -23,14 +25,12 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.xml.sax.InputSource;
 import java.io.StringReader;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.diff.MergeRequest;
 import com.intellij.openapi.diff.DiffRequestFactory;
 import com.intellij.openapi.diff.DiffManager;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 
@@ -49,6 +49,9 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource)) {
+      return false;
+    }
     ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
     if (manager.getAllVersionedRoots().length == 0) {
       return false;
@@ -129,7 +132,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
   }
 
   private IFile getModelFile(final Map<String, Object> _params) {
-    return ((BaseEditableSModelDescriptor) ((SModel) MapSequence.fromMap(_params).get("model"))).getSource().getFile();
+    return ((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource()).getFile();
   }
 
   private String selectMineModel(String currentModel, String backUpModel, final Map<String, Object> _params) {

@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
@@ -51,7 +52,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
     }.convert();
 
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86ef8290-12bb-4ca7-947f-093788f263a9")).getModuleReference();
-    ((jetbrains.mps.smodel.SModel) model).addLanguage(lang);
+    ((SModelInternal) model).addLanguage(lang);
     module.addUsedLanguage(lang);
     return model;
   }

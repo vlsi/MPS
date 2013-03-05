@@ -16,11 +16,14 @@
 package jetbrains.mps;
 
 import jetbrains.mps.TestMain.ProjectRunnable;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -31,6 +34,8 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import junit.framework.AssertionFailedError;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -46,7 +51,8 @@ public class PersistenceTest extends BaseMPSTest {
   private static Logger LOG = Logger.getLogger(PersistenceTest.class);
 
   private TestOutputFilter filter = new TestOutputFilter() {
-    @Override protected boolean isLineOK(String line) {
+    @Override
+    protected boolean isLineOK(String line) {
       return !(line.contains("attribute") && line.contains("undeclared child role:"));
     }
   };
@@ -57,29 +63,29 @@ public class PersistenceTest extends BaseMPSTest {
         public boolean execute(final Project project) {
           final File tempFile = new File(tempDir, "testModel");
           final IFile file = FileSystem.getInstance().getFileByPath(tempFile.getAbsolutePath());
-          final boolean success[] = { true };
+          final boolean success[] = {true};
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             public void run() {
               try {
                 DefaultSModelDescriptor testModel = (DefaultSModelDescriptor) TestMain.getModel(project, TEST_MODEL);
                 assertTrue(testModel.getPersistenceVersion() == START_PERSISTENCE_TEST_VERSION);
                 SModel model = testModel.getSModel();
-                for (int i = START_PERSISTENCE_TEST_VERSION; i <=  ModelPersistence.LAST_VERSION; ++i) {
+                for (int i = START_PERSISTENCE_TEST_VERSION; i <= ModelPersistence.LAST_VERSION; ++i) {
                   try { // errors about not found attributes are expected for old models
                     filter.start();
-                    ModelPersistence.saveModel(model, file, i);
+                    ModelPersistence.saveModel(model, new FileDataSource(file), i);
                   } finally {
                     filter.stop();
                   }
                   ModelLoadResult result = null;
                   try {
-                    result = ModelPersistence.readModel(SModelHeader.create(i), file, ModelLoadingState.FULLY_LOADED);
+                    result = ModelPersistence.readModel(SModelHeader.create(i), new FileDataSource(file), ModelLoadingState.FULLY_LOADED);
                   } catch (ModelReadException e) {
                     fail();
                   }
                   assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                   ModelAssert.assertDeepModelEquals(model, result.getModel());
-                  ((jetbrains.mps.smodel.SModel) result.getModel()).dispose();
+                  result.getModel().dispose();
                 }
               } catch (AssertionFailedError e) {
                 e.printStackTrace();
@@ -98,9 +104,9 @@ public class PersistenceTest extends BaseMPSTest {
     try { // errors about not found attributes are expected for old models
       filter.start();
 
-      final int version[] = { START_PERSISTENCE_TEST_VERSION, START_PERSISTENCE_TEST_VERSION };
+      final int version[] = {START_PERSISTENCE_TEST_VERSION, START_PERSISTENCE_TEST_VERSION};
       for (; version[0] < ModelPersistence.LAST_VERSION; ++version[0])
-        for (version[1] = version[0] + 1; version[1] <=  ModelPersistence.LAST_VERSION; ++version[1]) {
+        for (version[1] = version[0] + 1; version[1] <= ModelPersistence.LAST_VERSION; ++version[1]) {
           boolean result = TestMain.testOnProjectCopy(sourceZip, tempDir, TEST_PERSISTENCE_PROJECT,
             new ProjectRunnable() {
               public boolean execute(final Project project) {
@@ -130,7 +136,8 @@ public class PersistenceTest extends BaseMPSTest {
                 final ModelLoadResult resultFrom = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                   public ModelLoadResult compute() {
                     try {
-                      ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[0]), testModel.getSource().getFile(), ModelLoadingState.FULLY_LOADED);
+                      ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[0]), testModel.getSource(),
+                        ModelLoadingState.FULLY_LOADED);
                       assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                       return result;
                     } catch (ModelReadException e) {
@@ -151,7 +158,8 @@ public class PersistenceTest extends BaseMPSTest {
                 final ModelLoadResult resultTo = ModelAccess.instance().runReadAction(new Computable<ModelLoadResult>() {
                   public ModelLoadResult compute() {
                     try {
-                      ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), testModel.getSource().getFile(), ModelLoadingState.FULLY_LOADED);
+                      ModelLoadResult result = ModelPersistence.readModel(SModelHeader.create(version[1]), testModel.getSource(),
+                        ModelLoadingState.FULLY_LOADED);
                       assertTrue(result.getState() == ModelLoadingState.FULLY_LOADED);
                       ModelAssert.assertDeepModelEquals(resultFrom.getModel(), result.getModel());
                       return result;
@@ -164,8 +172,8 @@ public class PersistenceTest extends BaseMPSTest {
 
                 ModelAccess.instance().runWriteAction(new Runnable() {
                   public void run() {
-                    ((jetbrains.mps.smodel.SModel) resultFrom.getModel()).dispose();
-                    ((jetbrains.mps.smodel.SModel) resultTo.getModel()).dispose();
+                    resultFrom.getModel().dispose();
+                    resultTo.getModel().dispose();
                   }
                 });
                 ModelAccess.instance().flushEventQueue();
@@ -185,8 +193,8 @@ public class PersistenceTest extends BaseMPSTest {
     for (final DefaultSModelDescriptor modelDescriptor : modelDescriptors) {
       assert ThreadUtils.isEventDispatchThread() : "you must be in EDT to write files";
 
-      IFile file = modelDescriptor.getSource().getFile();
-      if (file.isReadOnly()) continue;
+      StreamDataSource source = modelDescriptor.getSource();
+      if (source.isReadOnly()) continue;
 
       boolean wasInitialized = modelDescriptor.isLoaded();
       if (wasInitialized) {
@@ -196,11 +204,11 @@ public class PersistenceTest extends BaseMPSTest {
       int fromVersion = modelDescriptor.getPersistenceVersion();
       if (fromVersion >= toVersion) continue;
 
-      assert file != null;
+      assert source != null;
 
       try {
-        SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(file, false);
-        ModelPersistence.saveModel(model, file, toVersion);
+        SModel model = wasInitialized ? modelDescriptor.getSModel() : ModelPersistence.readModel(source, false);
+        ModelPersistence.saveModel(model, source, toVersion);
         modelDescriptor.reloadFromDisk();
       } catch (ModelReadException e) {
         // This hardly can happend, unreadable model should be already filtered out

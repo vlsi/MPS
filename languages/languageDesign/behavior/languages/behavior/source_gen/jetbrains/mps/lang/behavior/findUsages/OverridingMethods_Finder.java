@@ -9,8 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OverridingMethods_Finder extends GeneratedFinder {
@@ -19,33 +20,48 @@ public class OverridingMethods_Finder extends GeneratedFinder {
   public OverridingMethods_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Overriding Methods";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration";
   }
 
+  @Override
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.behavior.structure.ConceptBehavior");
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 2);
     try {
-      for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(1)))) {
+      monitor.start("Overriding methods", 10);
+      List<SNode> nodes = FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", node, scope, monitor.subTask(2));
+
+      ProgressMonitor sm = monitor.subTask(8);
+      final SNode n = node;
+      sm.start("", ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "overriddenMethod", false) == n;
+        }
+      }).count());
+      for (SNode nodeUsage : ListSequence.fromList(nodes)) {
         if (SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(nodeUsage, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "overriddenMethod", false) == node) {
           ListSequence.fromList(_results).addElement(nodeUsage);
-          for (SNode overriding : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder", nodeUsage, scope, monitor.subTask(1)))) {
+          for (SNode overriding : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder", nodeUsage, scope, sm.subTask(1)))) {
             ListSequence.fromList(_results).addElement(overriding);
           }
         }
       }
+      sm.done();
     } finally {
       monitor.done();
     }

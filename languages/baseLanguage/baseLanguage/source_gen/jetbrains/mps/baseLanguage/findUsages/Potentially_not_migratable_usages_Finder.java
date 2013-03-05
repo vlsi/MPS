@@ -18,18 +18,22 @@ public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
   public Potentially_not_migratable_usages_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Potentially not migratable usages";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {

@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -37,7 +38,7 @@ public class StructureModificationProcessor {
     boolean result = data.apply(myModelMap);
     for (IMapping<SModelReference, Integer> entry : MapSequence.fromMap(data.getDependencies())) {
       // also adds implicit import if necessary 
-      ((jetbrains.mps.smodel.SModel) myModel).updateImportedModelUsedVersion(entry.key(), entry.value() + 1);
+      ((SModelInternal) myModel).updateImportedModelUsedVersion(entry.key(), entry.value() + 1);
     }
     return result;
   }

@@ -19,18 +19,22 @@ public class ClassUsages_Finder extends GeneratedFinder {
   public ClassUsages_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Class Usages";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
     try {
@@ -47,6 +51,7 @@ public class ClassUsages_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
     for (SNode constructor : Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(node))) {
@@ -54,6 +59,7 @@ public class ClassUsages_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Class Usages";
   }

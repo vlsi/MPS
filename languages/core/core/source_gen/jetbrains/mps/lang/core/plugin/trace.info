@@ -9,7 +9,7 @@
     <nodeInfo nodeId="5521353027965879665" fileName="MakeGenerationHandler.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="resourceHandler" />
     <nodeInfo nodeId="5521353027965879583" fileName="MakeGenerationHandler.java" startLine="21" startPosition="116" endLine="22" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5521353027965879618" fileName="MakeGenerationHandler.java" startLine="26" startPosition="42" endLine="27" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5521353027965879634" fileName="MakeGenerationHandler.java" startLine="31" startPosition="142" endLine="32" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5521353027965879634" fileName="MakeGenerationHandler.java" startLine="31" startPosition="142" endLine="32" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5521353027965879652" fileName="MakeGenerationHandler.java" startLine="36" startPosition="47" endLine="37" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5521353027965879579" fileName="MakeGenerationHandler.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeGenerationHandler#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)V" />
     <nodeInfo nodeId="5521353027965879614" fileName="MakeGenerationHandler.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="estimateCompilationMillis#()I" />
@@ -17,7 +17,7 @@
     <nodeInfo nodeId="5521353027965879646" fileName="MakeGenerationHandler.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canHandle#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
     <scopeInfo nodeId="5521353027965879582" fileName="MakeGenerationHandler.java" startLine="21" startPosition="116" endLine="22" endPosition="43" />
     <scopeInfo nodeId="5521353027965879617" fileName="MakeGenerationHandler.java" startLine="26" startPosition="42" endLine="27" endPosition="13" />
-    <scopeInfo nodeId="5521353027965879633" fileName="MakeGenerationHandler.java" startLine="31" startPosition="142" endLine="32" endPosition="114" />
+    <scopeInfo nodeId="5521353027965879633" fileName="MakeGenerationHandler.java" startLine="31" startPosition="142" endLine="32" endPosition="112" />
     <scopeInfo nodeId="5521353027965879651" fileName="MakeGenerationHandler.java" startLine="36" startPosition="47" endLine="37" endPosition="135" />
     <scopeInfo nodeId="5521353027965879579" fileName="MakeGenerationHandler.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="5521353027965879589" varName="resourceHandler" />

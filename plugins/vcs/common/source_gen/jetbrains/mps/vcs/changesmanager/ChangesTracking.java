@@ -24,6 +24,7 @@ import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -152,7 +153,10 @@ public class ChangesTracking {
       return;
     }
 
-    IFile modelFile = myModelDescriptor.getSource().getFile();
+    if (!(myModelDescriptor.getSource() instanceof FileDataSource)) {
+      return;
+    }
+    IFile modelFile = ((FileDataSource) myModelDescriptor.getSource()).getFile();
     if (!(modelFile.exists())) {
       return;
     }

@@ -40,7 +40,7 @@ public class PsiTestMain {
             case RED: break;
         }
 
-//        MarkerRenamed m = null;
+//        Marker m = null;
 
         Container<String> container = new Container<String>("first");
         String var = container.head;

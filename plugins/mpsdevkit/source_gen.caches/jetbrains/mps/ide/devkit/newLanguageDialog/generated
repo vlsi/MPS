@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-76cgkwxtz1vtid7ia73tovngbeh2j8v">
+<dependencies version="2" modelHash="-6ielh0jncwvyq0raqmu6lzxvkwo2540">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt.image(JDK/java.awt.image@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -72,7 +72,7 @@
     <file name="NewLanguageDialog.java" />
     <file name="NewLanguageDialogContentPane.java" />
   </source>
-  <source id="1203685087824" name="NewLanguageDialog_Controller" hash="-21hf3qkg58is6zgmk2mteh3ywf1ar2b">
+  <source id="1203685087824" name="NewLanguageDialog_Controller" hash="c4wehvboc8s6h0hvaoswf3hgo2z0oz7">
     <dep root="1203684597238" />
   </source>
 </dependencies>

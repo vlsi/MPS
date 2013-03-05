@@ -70,6 +70,6 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
   public void selectInTree(@NotNull IOperationContext context, @NotNull SModule module, boolean focus) {
     ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(context.getProject()));
     // TODO IModule cast
-    projectPane.selectModule((IModule)module, focus);
+    projectPane.selectModule(module, focus);
   }
 }

@@ -18,6 +18,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.ScopeOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -50,7 +51,7 @@ public class DiffTemporaryModule extends AbstractModule {
 
   @Override
   public List<SModel> getOwnModelDescriptors() {
-    return Arrays.asList(myModel.getModelDescriptor());
+    return Arrays.asList(((SModel) myModel.getModelDescriptor()));
   }
 
   @Override
@@ -94,7 +95,7 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   public static void createModuleForModel(SModel model, String version, Project project, boolean mergeResultModel) {
-    if (model.getModelDescriptor() != null) {
+    if (model.getModelDescriptor() != null && !(model.getModelDescriptor() instanceof jetbrains.mps.smodel.SModel.FakeModelDescriptor)) {
       return;
     }
     IModule module = null;
@@ -108,7 +109,7 @@ public class DiffTemporaryModule extends AbstractModule {
     if (module == null) {
       module = new DiffTemporaryModule(model, version, project);
     }
-    ((jetbrains.mps.smodel.SModel) model).setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, model, mergeResultModel));
+    ((SModelInternal) model).setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, (jetbrains.mps.smodel.SModel) model, mergeResultModel));
   }
 
   public static void setSModelId(SModel model, String version) {
@@ -182,7 +183,7 @@ public class DiffTemporaryModule extends AbstractModule {
     private IModule myModule;
     private boolean myEditable;
 
-    private DiffSModelDescriptor(IModule module, SModel model, boolean editable) {
+    private DiffSModelDescriptor(IModule module, jetbrains.mps.smodel.SModel model, boolean editable) {
       super(model.getReference());
       myModule = module;
       mySModel = model;
@@ -235,7 +236,7 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     @Override
-    protected SModel createModel() {
+    protected jetbrains.mps.smodel.SModel createModel() {
       throw new UnsupportedOperationException();
     }
 

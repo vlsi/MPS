@@ -10,7 +10,7 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import com.intellij.openapi.project.Project;
 import com.intellij.icons.AllIcons;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -31,7 +31,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
 
   public void onCreateStructureModel(SModel md) {
     myStructureModels.add(md);
-    ((SModelDescriptor) md).addModelListener(myModelListener);
+    ((SModelInternal) md).addModelListener(myModelListener);
   }
 
   @Override
@@ -48,7 +48,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
     super.projectOpened();
     for (SModel md : SModelRepository.getInstance().getModelDescriptors()) {
       if (LanguageAspect.STRUCTURE.is(md)) {
-        myStructureModels.add((SModelDescriptor) md);
+        myStructureModels.add((SModelInternal) md);
       }
     }
   }
@@ -71,7 +71,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
 
       @Override
       public void onCreate(SModule module, SModel model) {
-        onCreateStructureModel((SModelDescriptor) model);
+        onCreateStructureModel((SModelInternal) model);
       }
     };
     AbstractModule.registerModelCreationListener(myCreationListener);
@@ -87,14 +87,14 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   @Override
   protected void doRegister() {
     for (SModel md : myStructureModels) {
-      ((SModelDescriptor) md).addModelListener(myModelListener);
+      ((SModelInternal) md).addModelListener(myModelListener);
     }
   }
 
   @Override
   protected void doUnregister() {
     for (SModel md : myStructureModels) {
-      ((SModelDescriptor) md).removeModelListener(myModelListener);
+      ((SModelInternal) md).removeModelListener(myModelListener);
     }
     myStructureModels.clear();
   }

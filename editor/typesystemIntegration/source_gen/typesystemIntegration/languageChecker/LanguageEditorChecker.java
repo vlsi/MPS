@@ -22,7 +22,7 @@ import jetbrains.mps.checkers.RefScopeChecker;
 import jetbrains.mps.checkers.CardinalitiesChecker;
 import jetbrains.mps.checkers.TargetConceptChecker;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 import java.util.List;
@@ -108,14 +108,14 @@ public class LanguageEditorChecker extends BaseEditorChecker {
 
   private void removeModelListener(SModel modelDescriptor) {
     if (SetSequence.fromSet(myListenedModels).contains(modelDescriptor)) {
-      ((SModelDescriptor) modelDescriptor).removeModelListener(myModelListener);
+      ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).removeElement(modelDescriptor);
     }
   }
 
   private void addModelListener(SModel modelDescriptor) {
     if (!(SetSequence.fromSet(myListenedModels).contains(modelDescriptor))) {
-      ((SModelDescriptor) modelDescriptor).addModelListener(myModelListener);
+      ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
       SetSequence.fromSet(myListenedModels).addElement(modelDescriptor);
     }
   }

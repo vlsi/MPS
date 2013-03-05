@@ -37,7 +37,7 @@ import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.extapi.model.EditableSModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -194,7 +194,7 @@ public class NewGeneratorDialog extends DialogWrapper {
       return;
     }
     EditableSModel templateModelDescriptor = newGenerator.createModel(getTemplateModelPrefix(sourceLanguage) + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next(), null);
-    SModel templateModel = ((SModelDescriptor) templateModelDescriptor).getSModel();
+    SModel templateModel = ((SModelInternal) templateModelDescriptor).getSModel();
     SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     SPropertyOperations.set(mappingConfiguration, "name", "main");
     SModelOperations.addRootNode(templateModel, mappingConfiguration);

@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class MethodCallChecker extends SpecificChecker {
   public MethodCallChecker() {
@@ -118,7 +119,7 @@ public class MethodCallChecker extends SpecificChecker {
     return null;
   }
 
-  private static IModule check_lz161n_a0b0a0f0a0h0b0g0b(SModel checkedDotOperand) {
+  private static IModule check_lz161n_a0b0a0f0a0h0b0g0b(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

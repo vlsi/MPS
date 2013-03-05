@@ -26,7 +26,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource implements Cloneable {
   private static final Logger LOG = Logger.getLogger(BaseStubModelDescriptor.class);
   private SModule myModule;
-  private SModel mySModel;
+  private jetbrains.mps.smodel.SModel mySModel;
 
   public BaseStubModelDescriptor(SModelReference modelReference, @NotNull StubModelDataSource source, SModule module) {
     super(modelReference, source);
@@ -47,17 +47,17 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   //------------common descriptor stuff-------------------
 
   @Override
-  public synchronized SModel getSModel() {
+  public synchronized jetbrains.mps.smodel.SModel getSModel() {
     if (mySModel == null) {
       mySModel = createModel();
-      ((jetbrains.mps.smodel.SModel) mySModel).setModelDescriptor(this);
+      mySModel.setModelDescriptor(this);
       fireModelStateChanged(ModelLoadingState.NOT_LOADED, ModelLoadingState.FULLY_LOADED);
     }
     return mySModel;
   }
 
-  private SModel createModel() {
-    SModel model = getSource().loadSModel((IModule) myModule, this);
+  private jetbrains.mps.smodel.SModel createModel() {
+    jetbrains.mps.smodel.SModel model = ((jetbrains.mps.smodel.SModel) getSource().loadSModel((IModule) myModule, this));
     updateDiskTimestamp();
     return model;
   }
@@ -94,7 +94,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
       updateDiskTimestamp();
       return;
     }
-    final SModel result = getSource().loadSModel((IModule) myModule, this);
+    final jetbrains.mps.smodel.SModel result = ((jetbrains.mps.smodel.SModel) getSource().loadSModel((IModule) myModule, this));
     updateDiskTimestamp();
     replaceModel(new Runnable() {
       @Override

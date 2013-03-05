@@ -23,20 +23,23 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   public NodeAndDescendantsUsages_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Node & Descendants Usages";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 0);
     try {
       Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(nodes).addElement(node);
@@ -56,10 +59,12 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Node Descendants Usages";
   }

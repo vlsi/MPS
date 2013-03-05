@@ -34,7 +34,7 @@ public class Graph<V extends IVertex> {
     for (IVertex next : vertex.getNexts()) {
       if (next == null) {
         LOG.error("Next of vertex " + vertex + " is null.");
-      } else if (!myData.contains((V) next)) {
+      } else if (!myData.contains(next)) {
         add((V) next);
       }
     }

@@ -221,7 +221,7 @@ public class ImportHelper {
           @Override
           public void navigate(boolean requestFocus) {
             ModelAccess.assertLegalRead();
-            new AddModelItem(project, model, ((SModelReference) object.getNodeReference().getModelReference()), contextModule).navigate(requestFocus);
+            new AddModelItem(project, model, object.getNodeReference().getModelReference(), contextModule).navigate(requestFocus);
           }
         };
       }

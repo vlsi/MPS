@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.model;
 
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -36,7 +37,7 @@ public interface SModel {
 
   @Deprecated
 //todo migration only. REMOVE
-  SModel getModelDescriptor();
+  SModelInternal getModelDescriptor();
 
   /**
    * Returns the id of the model valid within the containing module.

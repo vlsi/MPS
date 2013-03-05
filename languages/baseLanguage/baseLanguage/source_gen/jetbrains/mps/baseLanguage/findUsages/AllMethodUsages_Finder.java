@@ -20,18 +20,22 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
   public AllMethodUsages_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "All Method Usages";
   }
 
+  @Override
   public String getLongDescription() {
     return "Usages of this method, overriding methods and implementing methods";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
 
+  @Override
   public boolean isApplicable(SNode node) {
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Interface", false, false) == null) {
       return false;
@@ -42,9 +46,10 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
     return true;
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
-    monitor.start(getDescription(), 3);
     try {
+      monitor.start("All method usages", 10);
       List<SNode> methodDeclarations;
       if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
@@ -56,20 +61,27 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
         methodDeclarations = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder", node, scope, monitor.subTask(1));
       }
       ListSequence.fromList(methodDeclarations).addElement(node);
-      // 
-      for (SNode methodDeclaration : methodDeclarations) {
-        for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", methodDeclaration, scope, monitor.subTask(1)))) {
-          if (!(SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
-            continue;
+
+      ProgressMonitor sm = monitor.subTask(9);
+      try {
+        sm.start("", ListSequence.fromList(methodDeclarations).count());
+        for (SNode methodDeclaration : methodDeclarations) {
+          for (SNode nodeUsage : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", methodDeclaration, scope, sm.subTask(1)))) {
+            if (!(SNodeOperations.isInstanceOf(nodeUsage, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) {
+              continue;
+            }
+            ListSequence.fromList(_results).addElement(nodeUsage);
           }
-          ListSequence.fromList(_results).addElement(nodeUsage);
         }
+      } finally {
+        sm.done();
       }
     } finally {
       monitor.done();
     }
   }
 
+  @Override
   public void getSearchedNodes(SNode node, IScope scope, List<SNode> _results) {
     List<SNode> methodDeclarations = new ArrayList<SNode>();
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null) {
@@ -86,6 +98,7 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Overriden And Implemented methods";
   }

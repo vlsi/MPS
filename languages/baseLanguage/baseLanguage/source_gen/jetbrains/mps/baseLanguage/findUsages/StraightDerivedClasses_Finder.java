@@ -18,18 +18,22 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
   public StraightDerivedClasses_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Straight Derivatives";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
     try {
@@ -45,6 +49,7 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Straight Derivatives";
   }

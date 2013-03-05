@@ -13,6 +13,7 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.ArrayList;
@@ -47,7 +48,7 @@ public class TemporaryModelOwner extends AbstractModule {
   public Collection<ModuleReference> getUsedLanguagesReferences() {
     Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
     for (SModel md : getOwnModelDescriptors()) {
-      result.addAll(((jetbrains.mps.smodel.SModel) md.getSModel()).importedLanguages());
+      result.addAll(((SModelInternal) md.getSModel()).importedLanguages());
     }
     return result;
   }
@@ -56,7 +57,7 @@ public class TemporaryModelOwner extends AbstractModule {
   public Collection<ModuleReference> getUsedDevkitReferences() {
     Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
     for (SModel md : getOwnModelDescriptors()) {
-      result.addAll(((jetbrains.mps.smodel.SModel) md.getSModel()).importedDevkits());
+      result.addAll(((SModelInternal) md.getSModel()).importedDevkits());
     }
     return result;
   }
@@ -65,7 +66,7 @@ public class TemporaryModelOwner extends AbstractModule {
   public List<Dependency> getDependencies() {
     List<Dependency> result = new ArrayList<Dependency>();
     for (SModel md : getOwnModelDescriptors()) {
-      for (jetbrains.mps.smodel.SModel.ImportElement ie : ((jetbrains.mps.smodel.SModel) md.getSModel()).importedModels()) {
+      for (jetbrains.mps.smodel.SModel.ImportElement ie : ((SModelInternal) md.getSModel()).importedModels()) {
         SModelReference mRef = ie.getModelReference();
         SModel model = SModelRepository.getInstance().getModelDescriptor(mRef);
         if (model == null) {

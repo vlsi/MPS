@@ -862,7 +862,7 @@
     <nodeInfo nodeId="4366542054834703299" fileName="ModelOrNodeChooser.java" startLine="35" startPosition="25" endLine="36" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4366542054834703313" fileName="ModelOrNodeChooser.java" startLine="38" startPosition="29" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4366542054834705990" fileName="ModelOrNodeChooser.java" startLine="40" startPosition="48" endLine="41" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4366542054834708873" fileName="ModelOrNodeChooser.java" startLine="42" startPosition="56" endLine="43" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4366542054834708873" fileName="ModelOrNodeChooser.java" startLine="42" startPosition="56" endLine="43" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4366542054834703324" fileName="ModelOrNodeChooser.java" startLine="45" startPosition="35" endLine="46" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4366542054834703329" fileName="ModelOrNodeChooser.java" startLine="47" startPosition="13" endLine="48" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3548249452606133128" fileName="ModelOrNodeChooser.java" startLine="56" startPosition="37" endLine="57" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -887,7 +887,7 @@
     <nodeInfo nodeId="4366542054834703768" fileName="ModelOrNodeChooser.java" startLine="30" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelOrNodeChooser#(Lcom/intellij/openapi/project/Project;Ljava/lang/Object;)V" />
     <scopeInfo nodeId="2270577049313342670" fileName="ModelOrNodeChooser.java" startLine="25" startPosition="37" endLine="26" endPosition="44" />
     <scopeInfo nodeId="4366542054834705995" fileName="ModelOrNodeChooser.java" startLine="40" startPosition="48" endLine="41" endPosition="88" />
-    <scopeInfo nodeId="4366542054834708868" fileName="ModelOrNodeChooser.java" startLine="42" startPosition="56" endLine="43" endPosition="99" />
+    <scopeInfo nodeId="4366542054834708868" fileName="ModelOrNodeChooser.java" startLine="42" startPosition="56" endLine="43" endPosition="97" />
     <scopeInfo nodeId="4366542054834703323" fileName="ModelOrNodeChooser.java" startLine="45" startPosition="35" endLine="46" endPosition="21" />
     <scopeInfo nodeId="3548249452606133144" fileName="ModelOrNodeChooser.java" startLine="61" startPosition="49" endLine="62" endPosition="64" />
     <scopeInfo nodeId="3548249452606133161" fileName="ModelOrNodeChooser.java" startLine="63" startPosition="57" endLine="64" endPosition="65" />
