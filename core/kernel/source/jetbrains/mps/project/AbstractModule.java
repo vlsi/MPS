@@ -86,36 +86,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     this.myDescriptorFile = myDescriptorFile;
   }
 
-  /**
-   * Do nothing. If you need it please vote and add comment to MPS-17524
-   */
-  @Deprecated
-  public static void registerModelCreationListener(ModelCreationListener listener) {
-  }
-
-  /**
-   * Do nothing. If you need it please vote and add comment to MPS-17524
-   */
-  @Deprecated
-  public static void unregisterModelCreationListener(ModelCreationListener creationListener) {
-  }
-
-  @Override
-  @Deprecated
-  public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
-    // todo: remove register from ModelRoot
-    if (adj == null) {
-      return (EditableSModelDescriptor) SModuleOperations.createModelWithAdjustments(name, root);
-    } else {
-      EditableSModelDescriptor descriptor = (EditableSModelDescriptor) SModuleOperations.createModelWithAdjustments(name, root);
-      adj.adjust(descriptor);
-      return descriptor;
-    }
-  }
-
   //----reference
-
-
   @Override
   public SModuleId getModuleId() {
     return getModuleReference().getModuleId();
@@ -793,6 +764,29 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   @Deprecated
   public final Collection<String> getIndexablePaths() {
     return SModuleOperations.getIndexablePaths(this);
+  }
+
+  /**
+   * Do nothing. If you need it please vote and add comment to MPS-17524
+   */
+  @Deprecated
+  public static void registerModelCreationListener(ModelCreationListener listener) {
+  }
+
+  /**
+   * Do nothing. If you need it please vote and add comment to MPS-17524
+   */
+  @Deprecated
+  public static void unregisterModelCreationListener(ModelCreationListener creationListener) {
+  }
+
+  /**
+   * @see SModuleOperations#createModelWithAdjustments
+   */
+  @Override
+  @Deprecated
+  public final EditableSModelDescriptor createModel(String name, @NotNull ModelRoot root, ModelAdjuster adj) {
+    throw new UnsupportedOperationException();
   }
 
   @Deprecated
