@@ -288,7 +288,9 @@ public class EditorCell_Table extends EditorCell_Collection {
     return EditorSettings.getInstance().getVerticalBoundWidth() / columnCount;
   }
 
-  public static jetbrains.mps.openapi.editor.cells.EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model, String uniquePrefix) {
+  public static EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model, String uniquePrefix) {
+    // using EditorCell_Collection class as a return value just for compatibility reasons. 
+    //  it should be replaced with interface after MPS 3.0 
     return new EditorCell_Table(editorContext, node, new CellLayout_Table(), model, uniquePrefix);
   }
 

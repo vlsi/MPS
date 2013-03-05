@@ -41,7 +41,7 @@ public class EditorActionUtils {
     if (!(selection instanceof SingularSelection)) {
       return null;
     }
-    Iterator<jetbrains.mps.nodeEditor.cells.EditorCell> iterator = selection.getSelectedCells().iterator();
+    Iterator<EditorCell> iterator = (Iterator<EditorCell>) ((Iterator) selection.getSelectedCells().iterator());
     if (!(iterator.hasNext())) {
       return null;
     }
@@ -188,7 +188,7 @@ public class EditorActionUtils {
             return true;
           }
         }
-        return hasSingleRolesAtLeftBoundary((jetbrains.mps.nodeEditor.cells.EditorCell) parentCell);
+        return hasSingleRolesAtLeftBoundary((EditorCell) parentCell);
       }
     }
     return true;

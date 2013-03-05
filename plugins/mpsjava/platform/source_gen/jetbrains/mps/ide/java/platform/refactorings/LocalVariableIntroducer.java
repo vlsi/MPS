@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import com.intellij.ui.awt.RelativePoint;
@@ -76,13 +76,13 @@ public class LocalVariableIntroducer {
         EditorCell_Label ecl = ((EditorCell_Label) cell);
         myEditorComponent.getSelectionManager().setSelection(ecl, 0, 0, ecl.getText().length());
       } else {
-        myEditorComponent.getSelectionManager().setSelection(cell);
+        myEditorComponent.getSelectionManager().setSelection((jetbrains.mps.nodeEditor.cells.EditorCell) cell);
       }
     }
   }
 
   private RelativePoint getRelativePoint() {
-    jetbrains.mps.openapi.editor.cells.EditorCell cell = myEditorContext.getContextCell();
+    EditorCell cell = myEditorContext.getContextCell();
     return new RelativePoint(myEditorComponent, new Point(cell.getX(), cell.getY()));
   }
 }
