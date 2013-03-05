@@ -19,7 +19,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 
 public class GoToTypeErrorRuleUtil {
@@ -43,7 +43,7 @@ public class GoToTypeErrorRuleUtil {
       return;
     }
     modelUID = SModelReference.fromString(modelUID.getLongName());
-    final SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+    final SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) {
       LOG.error("can't find rule's model " + ruleModel);
       return;

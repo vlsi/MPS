@@ -18,22 +18,19 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.SideTransformUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.context.CachingTypecheckingContext;
 import jetbrains.mps.nodeEditor.CellSide;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
-import jetbrains.mps.typesystem.inference.ITypeContextOwner;
-import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
-import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.StringTokenizer;
 
 public class SideTransformHintSubstituteActionsHelper {
   public static final String SIDE_TRANSFORM_TAG_SEPARATOR = "|";
@@ -52,7 +49,7 @@ public class SideTransformHintSubstituteActionsHelper {
     mySourceNode = sourceNode;
     if (mySourceNode != null) {
       if (transformTags != null) {
-        for (StringTokenizer tokenizer = new StringTokenizer(transformTags, SIDE_TRANSFORM_TAG_SEPARATOR); tokenizer.hasMoreTokens();) {
+        for (StringTokenizer tokenizer = new StringTokenizer(transformTags, SIDE_TRANSFORM_TAG_SEPARATOR); tokenizer.hasMoreTokens(); ) {
           myTransformTags.add(tokenizer.nextToken());
         }
       }
@@ -60,7 +57,7 @@ public class SideTransformHintSubstituteActionsHelper {
     }
   }
 
-  public boolean isValid () {
+  public boolean isValid() {
     return mySourceNode != null;
   }
 
@@ -74,14 +71,14 @@ public class SideTransformHintSubstituteActionsHelper {
     });
   }
 
-  public List<INodeSubstituteAction> createActions() {
+  public List<SubstituteAction> createActions() {
     if (!isValid()) return Collections.emptyList();
     // enable R/O access
-    return ModelAccess.instance().runReadAction(new Computable<List<INodeSubstituteAction>>() {
-      public List<INodeSubstituteAction> compute() {
-        return TypeContextManager.getInstance().runResolveAction(new Computable<List<INodeSubstituteAction>>() {
+    return ModelAccess.instance().runReadAction(new Computable<List<SubstituteAction>>() {
+      public List<SubstituteAction> compute() {
+        return TypeContextManager.getInstance().runResolveAction(new Computable<List<SubstituteAction>>() {
           @Override
-          public List<INodeSubstituteAction> compute() {
+          public List<SubstituteAction> compute() {
             return Collections.unmodifiableList(SideTransformUtil.createActions(mySourceNode, myTransformTags, mySide, myContext));
           }
         });

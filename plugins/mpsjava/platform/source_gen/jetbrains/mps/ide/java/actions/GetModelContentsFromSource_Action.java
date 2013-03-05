@@ -7,14 +7,13 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import org.jetbrains.mps.openapi.model.SModel;
 import java.io.File;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.SNodeOperations;
@@ -40,7 +39,7 @@ public class GetModelContentsFromSource_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IModule module = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule();
+    IModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
     if (module == null) {
       return false;
     }
@@ -93,11 +92,11 @@ public class GetModelContentsFromSource_Action extends BaseAction {
       // Now it ignores model, and does exactly the same as new models from source 
       // It should be either deleted or changed 
 
-      IModule module = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule();
+      IModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
       TreeFileChooser treeFileChooser = new TreeFileChooser();
       treeFileChooser.setDirectoriesAreAlwaysVisible(true);
       treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
-      final SModel sModel = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
+      final SModel sModel = ((SModel) MapSequence.fromMap(_params).get("model")).getSModel();
       String generatorOutputPath = module.getGeneratorOutputPath();
       File initial = null;
       File output = new File(generatorOutputPath);

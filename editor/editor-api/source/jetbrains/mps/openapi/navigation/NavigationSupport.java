@@ -18,7 +18,7 @@ package jetbrains.mps.openapi.navigation;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -72,7 +72,7 @@ public abstract class NavigationSupport implements CoreComponent {
    * @param model model to select
    * @param focus focus on project tree tool
    */
-  public abstract void selectInTree(@NotNull IOperationContext context, @NotNull SModelDescriptor model, boolean focus);
+  public abstract void selectInTree(@NotNull IOperationContext context, @NotNull SModel model, boolean focus);
 
   /**
    * Activates project tree tool and selects the module. Requires: module read, EDT.

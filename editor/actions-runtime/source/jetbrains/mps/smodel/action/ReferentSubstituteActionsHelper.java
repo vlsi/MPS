@@ -17,28 +17,28 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 /*package*/ class ReferentSubstituteActionsHelper {
   private static final Logger LOG = Logger.getLogger(ReferentSubstituteActionsHelper.class);
 
-  public static List<INodeSubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IOperationContext context) {
+  public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration, IOperationContext context) {
     IScope scope = context.getScope();
 
     // proceed with custom builders
@@ -46,7 +46,7 @@ import java.util.List;
     Language primaryLanguage = SModelUtil.getDeclaringLanguage(referenceNodeConcept);
     if (primaryLanguage == null) {
       LOG.error("Couldn't build actions : couldn't get declaring language for concept " + SNodeUtil.getDebugText(referenceNodeConcept));
-      return new LinkedList<INodeSubstituteAction>();
+      return Collections.emptyList();
     }
 
     // search scope
@@ -54,14 +54,14 @@ import java.util.List;
     Scope searchScope = refDescriptor.getScope();
     if (searchScope instanceof ErrorScope) {
       LOG.error("Couldn't create referent search scope : " + ((ErrorScope) searchScope).getMessage());
-      return new LinkedList<INodeSubstituteAction>();
+      return Collections.emptyList();
     }
 
     IReferencePresentation presentation = refDescriptor.getReferencePresentation();
     return createActions(referenceNode, currentReferent, linkDeclaration, searchScope, presentation, scope);
   }
 
-  private static List<INodeSubstituteAction> createActions(
+  private static List<SubstituteAction> createActions(
     SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
     Scope searchScope, IReferencePresentation presentation, final IScope scope) {
 
@@ -71,9 +71,10 @@ import java.util.List;
     }
     String referentConceptFqName = NameUtil.nodeFQName(referentConcept);
     Iterable<SNode> nodes = searchScope.getAvailableElements(null);
-    List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
+    List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
     for (SNode node : nodes) {
-      if (node == null || !node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(referentConceptFqName))) continue;
+      if (node == null || !node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(referentConceptFqName)))
+        continue;
       actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration, presentation));
     }
     return actions;

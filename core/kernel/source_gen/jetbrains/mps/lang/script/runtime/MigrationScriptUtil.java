@@ -6,9 +6,8 @@ import jetbrains.mps.logging.Logger;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.IOperationContext;
@@ -34,7 +33,7 @@ public class MigrationScriptUtil {
   }
 
   public static List<SNode> getMigrationScripts(Language language) {
-    SModelDescriptor modelDescr = LanguageAspect.SCRIPTS.get(language);
+    SModel modelDescr = LanguageAspect.SCRIPTS.get(language);
     SModel model = (modelDescr == null ?
       null :
       modelDescr.getSModel()

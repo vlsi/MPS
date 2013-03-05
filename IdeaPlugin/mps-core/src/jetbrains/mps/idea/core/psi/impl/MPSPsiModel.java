@@ -32,7 +32,6 @@ import com.intellij.testFramework.LightVirtualFile;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.idea.core.psi.MPSKeys;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -71,8 +70,18 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
     return reference.getModelName();
   }
 
-  public SModelReference getModelReference() {
+  @Override
+  public String getName() {
+    return getQualifiedName();
+  }
+
+  public SModelReference getSModelReference() {
     return reference;
+  }
+
+  @Override
+  public boolean isValid() {
+    return true;
   }
 
   MPSPsiNode reload(SNodeId sNodeId) {
@@ -80,7 +89,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
     MPSPsiNode mpsPsiNode = lookupNode(sNodeId);
     if (mpsPsiNode == null) return null;
 
-    SNode sNode = mpsPsiNode.getNodeReference().resolve(MPSModuleRepository.getInstance());
+    SNode sNode = mpsPsiNode.getSNodeReference().resolve(MPSModuleRepository.getInstance());
     MPSPsiNode replacement = convert(sNode);
     ((MPSPsiNodeBase)mpsPsiNode.getParent()).replaceChild(mpsPsiNode, replacement);
     return replacement;
@@ -102,6 +111,7 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
   }
 
   void reload(SModel model) {
+    clearChildren();
     MPSPsiNode last = null;
     for (SNode root : model.getRootNodes()) {
       MPSPsiNode psiRoot = convert(root);
@@ -114,14 +124,12 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
     if (source instanceof FileDataSource) {
       File file = new File(((FileDataSource) source).getFile().getPath());
       VirtualFile vfile = LocalFileSystem.getInstance().findFileByIoFile(file);
-      this.mySourceVirtualFile =vfile;
-      vfile.putUserData(MPSKeys.MODEL_REFERENCE, reference);
+      this.mySourceVirtualFile = vfile;
     }
   }
 
   MPSPsiNode convert(SNode node) {
     MPSPsiNode psiNode = MPSPsiProvider.getInstance(getProject()).create(node.getNodeId(), node.getConcept().getQualifiedName(), node.getRoleInParent());
-    psiNode.putUserData(MPSKeys.NODE_REFERENCE, node.getReference());
     nodes.put(node.getNodeId(), psiNode);
 
     // properties
@@ -244,4 +252,5 @@ public class MPSPsiModel extends MPSPsiNodeBase implements PsiFile {
   public VirtualFile getSourceVirtualFile() {
     return mySourceVirtualFile;
   }
+
 }

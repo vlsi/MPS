@@ -7,11 +7,11 @@ import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.stubs.util.PathItem;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -45,10 +45,10 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
   }
 
   @Override
-  public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
+  public SModel loadSModel(IModule module, SModel descriptor) {
     SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
-    ((jetbrains.mps.smodel.SModel) model).addLanguage(lang);
+    ((SModelInternal) model).addLanguage(lang);
 
     String pkg = model.getReference().getSModelFqName().getLongName();
     PathItem pi = GWTModulePathItem.getPathItem(path);
@@ -116,7 +116,7 @@ public class GWTStubsSource extends FolderSetDataSource implements FastFindSuppo
   }
 
   @Override
-  public boolean hasModel(SModelDescriptor md) {
+  public boolean hasModel(SModel md) {
     return !(getPaths().isEmpty());
   }
 }

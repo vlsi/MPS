@@ -33,6 +33,7 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -49,16 +50,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 
@@ -111,7 +103,7 @@ public class ModuleMaker {
     }
   }
 
-  public MPSCompilationResult make(Set<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
+  public MPSCompilationResult make(Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
     monitor.start("Compiling", 12);
     ttrace.push("making " + modules.size() + " modules", false);
     try {
@@ -192,9 +184,9 @@ public class ModuleMaker {
     List<MyMessage> messages = new ArrayList<MyMessage>();
 
     for (SModule m : modules) {
-      if (getJavaFacet(m).isCompileInMps()) {
-        hasAnythingToCompile = true;
-      }
+      if (isExcluded(m)) continue;
+
+      hasAnythingToCompile = true;
     }
 
     if (!hasAnythingToCompile) {
@@ -217,7 +209,7 @@ public class ModuleMaker {
         continue;
       }
 
-      ModuleSources sources = getModuleSources((IModule) m);
+      ModuleSources sources = getModuleSources(m);
       hasFilesToCopyOrDelete |= !sources.isResourcesUpToDate();
       hasJavaToCompile |= !sources.isJavaUpToDate();
 
@@ -393,7 +385,7 @@ public class ModuleMaker {
   }
 
   private boolean isExcluded(SModule m) {
-    return m.isPackaged() || !SModuleOperations.isCompileInMps(m);
+    return m instanceof Generator || m.isPackaged() || !SModuleOperations.isCompileInMps(m);
   }
 
   private class MyCompilationResultAdapter extends CompilationResultAdapter {

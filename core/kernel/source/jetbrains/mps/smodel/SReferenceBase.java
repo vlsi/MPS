@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NotNull;
@@ -76,7 +76,7 @@ abstract class SReferenceBase extends SReference {
     SNode immatureNode = myImmatureTargetNode;
     if (immatureNode == null || makeIndirect()) return myTargetModelReference;
     SModel model = immatureNode.getModel();
-    return model == null ? null : (SModelReference) model.getReference();
+    return model == null ? null : model.getReference();
   }
 
   @Override
@@ -146,7 +146,7 @@ abstract class SReferenceBase extends SReference {
     final SNode immatureNode = myImmatureTargetNode;
     myImmatureTargetNode = null;
     adjustMature(immatureNode);
-    setTargetSModelReference((SModelReference) immatureNode.getModel().getReference());
+    setTargetSModelReference(immatureNode.getModel().getReference());
     setResolveInfo(jetbrains.mps.util.SNodeOperations.getResolveInfo(immatureNode));
   }
 

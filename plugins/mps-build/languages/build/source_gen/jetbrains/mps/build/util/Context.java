@@ -16,7 +16,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.concurrent.ConcurrentMap;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.generator.TransientSModel;
-import jetbrains.mps.smodel.SModelDescriptor;
 
 public class Context {
   private Map<String, Object> myProperties = MapSequence.fromMap(new HashMap<String, Object>());
@@ -98,7 +97,7 @@ public class Context {
     if (model instanceof TransientSModel && myGenerationContext != null) {
       model = myGenerationContext.getOriginalInputModel();
     }
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    SModel modelDescriptor = model.getModelDescriptor();
     if (model instanceof TransientSModel || modelDescriptor == null) {
       return null;
     }

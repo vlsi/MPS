@@ -152,7 +152,7 @@ public class BaseExtensionRegistry {
   }
 
   private <T> Collection<Extension<T>> extensionsBucket(String id, Map<String, Collection<Extension<T>>> store) {
-    Collection<Extension<T>> extensions = (Collection<Extension<T>>) store.get(id);
+    Collection<Extension<T>> extensions = store.get(id);
     if (extensions == null) {
       extensions = new ArrayList<Extension<T>>();
       store.put(id, extensions);

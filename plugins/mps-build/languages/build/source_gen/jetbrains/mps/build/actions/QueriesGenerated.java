@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -25,7 +25,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.build.behavior.BuildCompositePath_Behavior;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
@@ -117,7 +116,7 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_BuildProject_6099797596647447257(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SModelDescriptor modelDescriptor = _context.getModel().getModelDescriptor();
+    SModel modelDescriptor = _context.getModel().getModelDescriptor();
     if (_context.getModel() instanceof TransientSModel || modelDescriptor == null) {
       return;
     }

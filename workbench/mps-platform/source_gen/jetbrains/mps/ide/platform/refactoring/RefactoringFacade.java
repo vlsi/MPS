@@ -26,7 +26,6 @@ import com.intellij.ide.DataManager;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.findUsages.UsagesList;
 import java.util.Set;
@@ -40,6 +39,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
 import jetbrains.mps.smodel.SNode;
@@ -211,8 +211,8 @@ public class RefactoringFacade {
   }
 
   public void updateLoadedModels(final RefactoringContext context) {
-    SetSequence.fromSet(loadedModelsForUpdate(context)).visitAll(new IVisitor<SModelDescriptor>() {
-      public void visit(SModelDescriptor it) {
+    SetSequence.fromSet(loadedModelsForUpdate(context)).visitAll(new IVisitor<SModel>() {
+      public void visit(SModel it) {
         updateModel(it.getSModel(), context);
       }
     });
@@ -244,18 +244,18 @@ public class RefactoringFacade {
     }
   }
 
-  private Set<SModelDescriptor> loadedModelsForUpdate(RefactoringContext context) {
+  private Set<SModel> loadedModelsForUpdate(RefactoringContext context) {
     final SModelRepository modelRepository = SModelRepository.getInstance();
     Map<SModelReference, Integer> dependencies = context.getStructureModification().getDependencies();
-    Set<SModelDescriptor> result = SetSequence.fromSet(new HashSet<SModelDescriptor>());
+    Set<SModel> result = SetSequence.fromSet(new HashSet<SModel>());
     //  the dependencies should be added manually: they should be loaded after refactoring but have no ImportElement for themselves 
-    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).select(new ISelector<SModelReference, SModelDescriptor>() {
-      public SModelDescriptor select(SModelReference it) {
+    SetSequence.fromSet(result).addSequence(SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).select(new ISelector<SModelReference, SModel>() {
+      public SModel select(SModelReference it) {
         return modelRepository.getModelDescriptor(it);
       }
     }));
 
-    for (SModelDescriptor descr : modelRepository.getModelDescriptors()) {
+    for (SModel descr : modelRepository.getModelDescriptors()) {
       if (!(SModelStereotype.isUserModel(descr)) || !(descr.isLoaded())) {
         continue;
       }
@@ -280,7 +280,7 @@ public class RefactoringFacade {
     if (!(context.isLocal())) {
       Map<SModelReference, Integer> dependencies = context.getStructureModification().getDependencies();
       for (SModelReference modelRef : dependencies.keySet()) {
-        ((jetbrains.mps.smodel.SModel) model).updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
+        ((SModelInternal) model).updateImportedModelUsedVersion(modelRef, dependencies.get(modelRef) + 1);
       }
     }
     if (model instanceof EditableSModel) {

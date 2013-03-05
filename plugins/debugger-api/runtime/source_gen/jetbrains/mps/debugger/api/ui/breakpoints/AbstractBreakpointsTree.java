@@ -18,7 +18,7 @@ import javax.swing.JComponent;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
@@ -182,7 +182,7 @@ import javax.swing.UIManager;
     public IModule getGroup(AbstractBreakpointsTree.BreakpointNodeData breakpointData) {
       IBreakpoint breakpoint = breakpointData.getBreakpoint();
       if (breakpoint instanceof ILocationBreakpoint) {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(((ILocationBreakpoint) breakpoint).getLocation().getModelReference());
+        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(((ILocationBreakpoint) breakpoint).getLocation().getModelReference());
         if (modelDescriptor != null) {
           return modelDescriptor.getModule();
         }

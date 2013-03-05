@@ -16,9 +16,16 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.Reader;
+import java.io.StringReader;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -31,12 +38,12 @@ public class ModelDigestUtil {
   /**
    * Ignores newlines when isText == true.
    */
-  public static String hash(IFile file, boolean isText) {
-    if (file == null) return null;
+  public static String hash(StreamDataSource source, boolean isText) {
+    if (source == null) return null;
 
     InputStream is = null;
     try {
-      is = file.openInputStream();
+      is = source.openInputStream();
       return isText ? hashText(new InputStreamReader(is, FileUtil.DEFAULT_CHARSET)) : hashBytes(is);
     } catch (IOException e) {
       /* ignore */

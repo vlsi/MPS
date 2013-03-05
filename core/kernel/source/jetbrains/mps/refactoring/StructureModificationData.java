@@ -16,7 +16,7 @@
 package jetbrains.mps.refactoring;
 
 import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.InternUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -46,7 +46,7 @@ public class StructureModificationData {
     }
 
     public FullNodeId(SNode node) {
-      this(node.getNodeId(), (SModelReference) node.getModel().getReference());
+      this(node.getNodeId(), node.getModel().getReference());
     }
 
     @Override
@@ -88,14 +88,14 @@ public class StructureModificationData {
     }
 
     public SNode getNode() {
-      SModelDescriptor model = getModel();
+      SModel model = getModel();
       if (model == null) {
         return null;
       }
       return model.getSModel().getNode(myNodeId);
     }
 
-    public SModelDescriptor getModel() {
+    public SModel getModel() {
       if (myModelReference == null) return null;
       return SModelRepository.getInstance().getModelDescriptor(myModelReference);
     }

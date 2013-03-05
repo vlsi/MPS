@@ -45,7 +45,7 @@ import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
@@ -233,11 +233,11 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     element.addContent(contentsXML);
   }
 
-  public List<SModelDescriptor> getIncludedModels() {
+  public List<SModel> getIncludedModels() {
     return myContents.getIncludedModels();
   }
 
-  public List<SModelDescriptor> getAllModels() {
+  public List<SModel> getAllModels() {
     return myContents.getAllModels();
   }
 

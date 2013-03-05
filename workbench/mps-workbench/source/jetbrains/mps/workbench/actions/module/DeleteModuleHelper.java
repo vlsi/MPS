@@ -26,7 +26,7 @@ import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
@@ -58,7 +58,7 @@ public class DeleteModuleHelper {
     }
 
     if (deleteFiles) {
-      for (SModelDescriptor model : module.getOwnModelDescriptors()) {
+      for (SModel model : module.getOwnModelDescriptors()) {
         DeleteModelHelper.delete(module, model, true);
       }
 

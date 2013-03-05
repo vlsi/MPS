@@ -19,7 +19,7 @@ import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStatus;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -133,7 +133,7 @@ public class PostponedReference extends SReference {
           myReplacementReference = new StaticReference(
             role,
             outputSourceNode,
-            targetModelReference == null ? (SModelReference) myGenerator.getOutputModel().getReference() : targetModelReference,
+            targetModelReference == null ? myGenerator.getOutputModel().getReference() : targetModelReference,
             null,
             myReferenceInfo.getResolveInfoForNothing());
         }
@@ -145,7 +145,7 @@ public class PostponedReference extends SReference {
         myReplacementReference = new StaticReference(
           role,
           outputSourceNode,
-          targetModelReference == null ? (SModelReference) myGenerator.getOutputModel().getReference() : targetModelReference,
+          targetModelReference == null ? myGenerator.getOutputModel().getReference() : targetModelReference,
           null,
           myReferenceInfo.getResolveInfoForNothing());
       } else {

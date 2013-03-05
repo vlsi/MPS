@@ -17,7 +17,9 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Comparing;
 import jetbrains.mps.util.ToStringComparator;
@@ -25,16 +27,16 @@ import jetbrains.mps.util.ToStringComparator;
 import java.util.*;
 
 public class SortUtil {
-  public static List<SModelDescriptor> sortModels(List<SModelDescriptor> modelDescriptors) {
-    List<SModelDescriptor> sortedModels = new ArrayList<SModelDescriptor>(modelDescriptors);
-    Collections.sort(sortedModels, new Comparator<SModelDescriptor>() {
+  public static List<SModel> sortModels(List<SModel> modelDescriptors) {
+    List<SModel> sortedModels = new ArrayList<SModel>(modelDescriptors);
+    Collections.sort(sortedModels, new Comparator<SModel>() {
       @Override
-      public int compare(SModelDescriptor o, SModelDescriptor o1) {
+      public int compare(SModel o, SModel o1) {
         if (o == o1) return 0;
-        int result = Comparing.compare(o.getLongName(), o1.getLongName());
+        int result = Comparing.compare(SNodeOperations.getModelLongName(o), SNodeOperations.getModelLongName(o1));
         if (result != 0) return result;
-        String str = o.getStereotype();
-        String str1 = o1.getStereotype();
+        String str = SModelStereotype.getStereotype(o);
+        String str1 = SModelStereotype.getStereotype(o1);
         if ((o instanceof TransientSModelDescriptor) && (o1 instanceof TransientSModelDescriptor)) {
           String[] part = str.split("_");
           String[] part1 = str1.split("_");

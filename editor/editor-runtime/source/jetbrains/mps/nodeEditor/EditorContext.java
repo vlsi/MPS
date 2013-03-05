@@ -18,20 +18,24 @@ package jetbrains.mps.nodeEditor;
 import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorInspector;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
-import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
@@ -43,9 +47,9 @@ import java.util.List;
  */
 public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext {
   private EditorComponent myNodeEditorComponent;
-  private SModelDescriptor myModelDescriptor;
+  private SModel myModelDescriptor;
   private IOperationContext myOperationContext;
-  private jetbrains.mps.openapi.editor.cells.EditorCell myContextCell;
+  private EditorCell myContextCell;
   private List<Pair<SNode,SNodeReference>> myModelModifications = null;
   private IPerformanceTracer myPerformanceTracer = null;
 
@@ -121,22 +125,22 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return myOperationContext.getComponent(EditorManager.class).createEditorCell(this, modifications, myCurrentRefNodeContext);
   }
 
-  public EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
     myModelModifications = EditorManager.convert(events);
     initializeRefContext(node);
     EditorCell result = myOperationContext.getComponent(EditorManager.class).createRootCell(this, node, events);
     resetCurrentRefContext();
     myModelModifications = null;
-    return result;
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) result;
   }
 
-  public EditorCell createInspectedCell(SNode node, java.util.List<SModelEvent> events) {
+  public jetbrains.mps.nodeEditor.cells.EditorCell createInspectedCell(SNode node, java.util.List<SModelEvent> events) {
     myModelModifications = EditorManager.convert(events);
     initializeRefContext(node);
     EditorCell result = myOperationContext.getComponent(EditorManager.class).createInspectedCell(this, node, events);
     resetCurrentRefContext();
     myModelModifications = null;
-    return result;
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) result;
   }
 
   private void initializeRefContext(SNode rootNode) {
@@ -147,7 +151,13 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myCurrentRefNodeContext = null;
   }
 
-  public EditorCell createNodeCell(SNode node) {
+  /**
+   * Modify this method after MPS 3.0 in order to return instance of jetbrains.mps.openapi.editor.cells.EditorCell
+   *
+   * @return instance of jetbrains.mps.nodeEditor.cells.EditorCell only for compatibility with prev. generated code.
+   */
+  @Override
+  public jetbrains.mps.nodeEditor.cells.EditorCell createNodeCell(SNode node) {
     if (myCurrentRefNodeContext == null) {
       initializeRefContext(node);
     }
@@ -155,10 +165,16 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myCurrentRefNodeContext = myCurrentRefNodeContext.sameContextButAnotherNode(node);
     EditorCell nodeCell = createNodeCell(myModelModifications);
     myCurrentRefNodeContext = oldNodeContext;
-    return nodeCell;
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) nodeCell;
   }
 
-  public EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role) {
+  /**
+   * Modify this method after MPS 3.0 in order to return instance of jetbrains.mps.openapi.editor.cells.EditorCell
+   *
+   * @return instance of jetbrains.mps.nodeEditor.cells.EditorCell only for compatibility with prev. generated code.
+   */
+  @Override
+  public jetbrains.mps.nodeEditor.cells.EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role) {
     if (myCurrentRefNodeContext == null) {
       initializeRefContext(targetNode);
     }
@@ -166,7 +182,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myCurrentRefNodeContext = myCurrentRefNodeContext.contextWithOneMoreReference(targetNode, sourceNode, role);
     EditorCell nodeCell = createNodeCell(myModelModifications);
     myCurrentRefNodeContext = oldNodeContext;
-    return nodeCell;
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) nodeCell;
   }
 
   public EditorCell createReferentCell(AbstractCellProvider inlineComponent, SNode sourceNode, SNode targetNode, String role) {
@@ -253,13 +269,13 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
     EditorCell cell = getNodeEditorComponent().findNodeCell(node);
     if (cell != null) {
-      getNodeEditorComponent().changeSelectionWRTFocusPolicy(cell);
+      getNodeEditorComponent().changeSelectionWRTFocusPolicy((jetbrains.mps.nodeEditor.cells.EditorCell) cell);
     }
   }
 
   @Override
-  public void selectWRTFocusPolicy(jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
-    getNodeEditorComponent().changeSelectionWRTFocusPolicy((EditorCell) editorCell);
+  public void selectWRTFocusPolicy(EditorCell editorCell) {
+    getNodeEditorComponent().changeSelectionWRTFocusPolicy((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell);
   }
 
   public void openInspector() {
@@ -287,7 +303,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     setCaretPosition(selectedCell, position);
   }
 
-  private int setCaretPosition(jetbrains.mps.openapi.editor.cells.EditorCell editorCell, int position) {
+  private int setCaretPosition(EditorCell editorCell, int position) {
     int newPosition = position;
     if (editorCell instanceof EditorCell_Label) {
       EditorCell_Label editorCell_label = (EditorCell_Label) editorCell;
@@ -296,9 +312,9 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
         getNodeEditorComponent().changeSelection(editorCell);
         editorCell_label.setCaretPosition(position);
       }
-    } else if (editorCell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
-      jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell_iterable = (jetbrains.mps.openapi.editor.cells.EditorCell_Collection) editorCell;
-      for (jetbrains.mps.openapi.editor.cells.EditorCell subEditorCell : editorCell_iterable) {
+    } else if (editorCell instanceof EditorCell_Collection) {
+      EditorCell_Collection editorCell_iterable = (EditorCell_Collection) editorCell;
+      for (EditorCell subEditorCell : editorCell_iterable) {
         newPosition = setCaretPosition(subEditorCell, newPosition);
         if (newPosition < 0) {
           break;
@@ -325,12 +341,18 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return false;
   }
 
-  public EditorCell getContextCell() {
+  /**
+   * Modify this method after MPS 3.0 in order to return instance of jetbrains.mps.openapi.editor.cells.EditorCell
+   *
+   * @return instance of jetbrains.mps.nodeEditor.cells.EditorCell only for compatibility with prev. generated code.
+   */
+  @Override
+  public jetbrains.mps.nodeEditor.cells.EditorCell getContextCell() {
     if (myContextCell == null) return getNodeEditorComponent().getSelectedCell();
-    return (EditorCell) myContextCell;
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) myContextCell;
   }
 
-  public void runWithContextCell(jetbrains.mps.openapi.editor.cells.EditorCell contextCell, final Runnable r) {
+  public void runWithContextCell(EditorCell contextCell, final Runnable r) {
     runWithContextCell(contextCell, new Computable<Object>() {
       public Object compute() {
         r.run();
@@ -340,8 +362,8 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   }
 
 
-  public <T> T runWithContextCell(jetbrains.mps.openapi.editor.cells.EditorCell contextCell, Computable<T> r) {
-    jetbrains.mps.openapi.editor.cells.EditorCell oldContextCell = myContextCell;
+  public <T> T runWithContextCell(EditorCell contextCell, Computable<T> r) {
+    EditorCell oldContextCell = myContextCell;
     myContextCell = contextCell;
     try {
       return r.compute();
@@ -350,14 +372,14 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
   }
 
-  public jetbrains.mps.openapi.editor.cells.EditorCell createRoleAttributeCell(Class attributeKind, jetbrains.mps.openapi.editor.cells.EditorCell cellWithRole, SNode roleAttribute) {
+  public EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute) {
     if (myCurrentRefNodeContext != null) {
       if (attributeKind != AttributeKind.Reference.class && myCurrentRefNodeContext.hasRoles())
         //Do not show attributes on reference cells.
         return cellWithRole;
     }
     
-    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, ((EditorCell) cellWithRole), this, roleAttribute, myModelModifications);
+    return myOperationContext.getComponent(EditorManager.class).doCreateRoleAttributeCell(attributeKind, (cellWithRole), this, roleAttribute, myModelModifications);
   }
 
   public List<SNode> getSelectedNodes() {

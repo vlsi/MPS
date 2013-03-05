@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.MPSExtentions;
@@ -44,9 +45,9 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    List<SModelDescriptor> m = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"));
-    return ListSequence.fromList(m).any(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
+    List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
+    return ListSequence.fromList(m).any(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
         return it instanceof DefaultSModelDescriptor && !(((DefaultSModelDescriptor) it).isReadOnly());
       }
     });
@@ -85,14 +86,14 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      List<SModelDescriptor> m = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"));
-      final Iterable<IFile> seq = ListSequence.fromList(m).where(new IWhereFilter<SModelDescriptor>() {
-        public boolean accept(SModelDescriptor it) {
+      List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
+      final Iterable<IFile> seq = ListSequence.fromList(m).where(new IWhereFilter<SModel>() {
+        public boolean accept(SModel it) {
           return it instanceof DefaultSModelDescriptor && !(((DefaultSModelDescriptor) it).isReadOnly());
         }
-      }).select(new ISelector<SModelDescriptor, IFile>() {
-        public IFile select(SModelDescriptor it) {
-          return ((DefaultSModelDescriptor) it).getSource().getFile();
+      }).select(new ISelector<SModel, IFile>() {
+        public IFile select(SModel it) {
+          return ((FileDataSource) it.getSource()).getFile();
         }
       });
 
@@ -105,7 +106,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
 
             DefaultSModel rmodel;
             try {
-              rmodel = ModelPersistence.readModel(oldFile, false);
+              rmodel = ModelPersistence.readModel(new FileDataSource(oldFile), false);
             } catch (ModelReadException ex) {
               LOG.error("cannot read " + oldFile, ex);
               continue;
@@ -117,7 +118,7 @@ public class ConvertToBinaryPersistence_Action extends BaseAction {
 
             IFile newFile = oldFile.getParent().getDescendant(FileUtil.getNameWithoutExtension(oldFile.getName()) + "." + MPSExtentions.MODEL_BINARY);
             SModule module = modelDescriptor.getModule();
-            if (BinaryPersistence.writeModel(rmodel, newFile)) {
+            if (BinaryPersistence.writeModel(rmodel, new FileDataSource(newFile))) {
               SModelRepository.getInstance().removeModelDescriptor(modelDescriptor);
               oldFile.delete();
               ((AbstractModule) module).updateModelsSet();

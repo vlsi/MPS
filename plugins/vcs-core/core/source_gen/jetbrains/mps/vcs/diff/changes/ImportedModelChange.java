@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class ImportedModelChange extends DependencyChange {
   private SModelReference myModelReference;
@@ -36,9 +37,9 @@ public class ImportedModelChange extends DependencyChange {
   @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     if (isDelete()) {
-      ((jetbrains.mps.smodel.SModel) model).deleteModelImport(myModelReference);
+      ((SModelInternal) model).deleteModelImport(myModelReference);
     } else {
-      ((jetbrains.mps.smodel.SModel) model).addModelImport(myModelReference, false);
+      ((SModelInternal) model).addModelImport(myModelReference, false);
     }
   }
 }

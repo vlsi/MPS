@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import com.intellij.ide.CopyPasteManagerEx;
 import java.awt.datatransfer.StringSelection;
@@ -35,7 +36,6 @@ import java.io.IOException;
 import java.awt.datatransfer.DataFlavor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
@@ -203,14 +203,14 @@ public class CopyPasteUtil {
     SModelReference modelReference = model.getReference();
     SModelFqName fqName = new SModelFqName(modelReference.getLongName(), SModelStereotype.INTERNAL_COPY);
     SModel newModel = new jetbrains.mps.smodel.SModel(new SModelReference(fqName, SModelId.generate()));
-    for (ModuleReference language : ((jetbrains.mps.smodel.SModel) model).importedLanguages()) {
-      ((jetbrains.mps.smodel.SModel) newModel).addLanguage(language);
+    for (ModuleReference language : ((SModelInternal) model).importedLanguages()) {
+      ((SModelInternal) newModel).addLanguage(language);
     }
     for (SModelReference importedModel : SModelOperations.getImportedModelUIDs(model)) {
-      ((jetbrains.mps.smodel.SModel) newModel).addModelImport(importedModel, false);
+      ((SModelInternal) newModel).addModelImport(importedModel, false);
     }
-    for (ModuleReference devKit : ((jetbrains.mps.smodel.SModel) model).importedDevkits()) {
-      ((jetbrains.mps.smodel.SModel) newModel).addDevKit(devKit);
+    for (ModuleReference devKit : ((SModelInternal) model).importedDevkits()) {
+      ((SModelInternal) newModel).addDevKit(devKit);
     }
     return newModel;
   }
@@ -324,7 +324,7 @@ public class CopyPasteUtil {
       @Override
       public void run() {
         List<SModelReference> allImportedModels = new ArrayList<SModelReference>();
-        for (SModelDescriptor sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {
+        for (SModel sm : SModelOperations.allImportedModels(targetModel, context.getScope())) {
           allImportedModels.add(sm.getReference());
         }
         for (SModelReference modelReference : necessaryImports) {
@@ -369,10 +369,10 @@ public class CopyPasteUtil {
       public void run() {
         //  model properties 
         for (SModelReference imported : requiredImports) {
-          ((jetbrains.mps.smodel.SModel) targetModel).addModelImport(imported, false);
+          ((SModelInternal) targetModel).addModelImport(imported, false);
         }
         for (ModuleReference language : requiredLanguages) {
-          ((jetbrains.mps.smodel.SModel) targetModel).addLanguage(language);
+          ((SModelInternal) targetModel).addLanguage(language);
         }
         //  model's module properties 
         IModule targetModule = targetModel.getModelDescriptor().getModule();
@@ -385,7 +385,7 @@ public class CopyPasteUtil {
         }
 
         for (SModelReference model : requiredImports) {
-          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
+          SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
           if (modelDescriptor == null) {
             continue;
           }

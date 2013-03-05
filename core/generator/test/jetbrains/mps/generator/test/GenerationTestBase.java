@@ -32,13 +32,13 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
@@ -82,7 +82,7 @@ public class GenerationTestBase {
     Testbench.reloadAll();
   }
 
-  protected void doMeasureParallelGeneration(final Project p, final SModelDescriptor descr, int threads) throws IOException {
+  protected void doMeasureParallelGeneration(final Project p, final SModel descr, int threads) throws IOException {
 
     // Stage 1. Regenerate
 
@@ -135,17 +135,18 @@ public class GenerationTestBase {
     }
   }
 
-  protected void doTestIncrementalGeneration(final Project p, final SModelDescriptor originalModel, final ModelChangeRunnable... changeModel) throws IOException {
+  protected void doTestIncrementalGeneration(final Project p, final SModel originalModel, final ModelChangeRunnable... changeModel) throws IOException {
     String randomName = "testxw" + Math.abs(UUID.randomUUID().getLeastSignificantBits()) + "." + originalModel.getModule().getModuleFqName();
     String randomId = UUID.randomUUID().toString();
     final TestModule tm = new TestModule(randomName, randomId, originalModel.getModule());
     ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
       public void run() {
         MPSModuleRepository.getInstance().registerModule(tm, myOwner);
       }
     });
 
-    final SModelDescriptor[] descr1 = new SModelDescriptor[]{null};
+    final SModel[] descr1 = new SModel[]{null};
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         @Override
@@ -154,7 +155,7 @@ public class GenerationTestBase {
           tm.publish(descr1[0]);
         }
       });
-      final SModelDescriptor descr = descr1[0];
+      final SModel descr = descr1[0];
 
       File generatorCaches = new File(PathManager.getSystemPath(), "mps-generator-test");
       if (generatorCaches.exists()) {
@@ -261,6 +262,7 @@ public class GenerationTestBase {
       }
     } finally {
       ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
         public void run() {
           MPSModuleRepository.getInstance().unregisterModule(tm, myOwner);
         }
@@ -280,7 +282,7 @@ public class GenerationTestBase {
     return result;
   }
 
-  protected static SModelDescriptor findModel(Project project, String fqName) {
+  protected static SModel findModel(Project project, String fqName) {
     for (SModule m : project.getModules()) {
       for (SModel descr : m.getModels()) {
         if (!(descr instanceof EditableSModel)) {
@@ -288,7 +290,7 @@ public class GenerationTestBase {
         }
         String longName = descr.getReference().getModelName();
         if (longName.equals(fqName)) {
-          return (SModelDescriptor) descr;
+          return descr;
         }
       }
     }
@@ -299,6 +301,7 @@ public class GenerationTestBase {
   protected static void cleanup(final Project p) {
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      @Override
       public void run() {
         p.dispose();
         IdeEventQueue.getInstance().flushQueue();
@@ -389,12 +392,12 @@ public class GenerationTestBase {
   }
 
   private static class MyIncrementalGenerationStrategy implements IncrementalGenerationStrategy {
-    private final SModelDescriptor myModel;
+    private final SModel myModel;
     private final FileBasedGenerationCacheContainer myGenerationCacheContainer;
     private Map<String, String> myHash;
     private GenerationDependencies myDependencies;
 
-    public MyIncrementalGenerationStrategy(SModelDescriptor descr, FileBasedGenerationCacheContainer generationCacheContainer) {
+    public MyIncrementalGenerationStrategy(SModel descr, FileBasedGenerationCacheContainer generationCacheContainer) {
       myModel = descr;
       myGenerationCacheContainer = generationCacheContainer;
     }
@@ -467,6 +470,6 @@ public class GenerationTestBase {
   }
 
   protected interface ModelChangeRunnable {
-    void run(SModelDescriptor model);
+    void run(SModel model);
   }
 }

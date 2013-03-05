@@ -25,7 +25,8 @@ import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
@@ -88,21 +89,21 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     return results;
   }
 
-  private static SModuleReference check_xiru3y_a0b0a0f0a0f0c0g0b(SModule checkedDotOperand) {
+  private static ModuleReference check_xiru3y_a0b0a0f0a0f0c0g0b(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
 
-  private static SModule check_xiru3y_a0a1a0a5a0a5a2a6a1(SModel checkedDotOperand) {
+  private static IModule check_xiru3y_a0a1a0a5a0a5a2a6a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModelDescriptor checkedDotOperand) {
+  private static IModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

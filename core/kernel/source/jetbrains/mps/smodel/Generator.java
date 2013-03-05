@@ -13,43 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModelsAutoImportsManager;
+import jetbrains.mps.project.*;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
-import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.facets.JavaModuleFacetImpl;
-import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.project.structure.modules.*;
+import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Generator extends AbstractModule implements IClassLoadingModule {
   public static final Logger LOG = Logger.getLogger(Generator.class);
@@ -144,24 +122,9 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return getSourceLanguage().isPackaged();
   }
 
-  @Override
-  protected List<SModuleFacet> createFacets() {
-    return Collections.<SModuleFacet>singletonList(new JavaModuleFacetImpl(this) {
-      @Override
-      public Set<String> getLibraryClassPath() {
-        return Collections.emptySet();
-      }
-
-      @Override
-      public IFile getClassesGen() {
-        return mySourceLanguage.getFacet(JavaModuleFacet.class).getClassesGen();
-      }
-    });
-  }
-
-  public List<SModelDescriptor> getOwnTemplateModels() {
-    List<SModelDescriptor> templateModels = new ArrayList<SModelDescriptor>();
-    for (SModelDescriptor modelDescriptor : getOwnModelDescriptors()) {
+  public List<SModel> getOwnTemplateModels() {
+    List<SModel> templateModels = new ArrayList<SModel>();
+    for (SModel modelDescriptor : getOwnModelDescriptors()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
         templateModels.add(modelDescriptor);
       }
@@ -204,7 +167,7 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
   }
 
   public static String generateGeneratorUID(Language sourceLanguage) {
-    return sourceLanguage.getModuleName() + "#" + SModel.generateUniqueId();
+    return sourceLanguage.getModuleName() + "#" + jetbrains.mps.smodel.SModel.generateUniqueId();
   }
 
   public Language getSourceLanguage() {
@@ -269,10 +232,10 @@ public class Generator extends AbstractModule implements IClassLoadingModule {
     return descriptorChanged[0];
   }
 
-  public List<SModelDescriptor> getGeneratorModels() {
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    List<SModelDescriptor> ownModels = this.getOwnModelDescriptors();
-    for (SModelDescriptor ownModel : ownModels) {
+  public List<SModel> getGeneratorModels() {
+    List<SModel> result = new ArrayList<SModel>();
+    List<SModel> ownModels = this.getOwnModelDescriptors();
+    for (SModel ownModel : ownModels) {
       if (SModelStereotype.isGeneratorModel(ownModel)) {
         result.add((ownModel));
       } else if (SModelStereotype.isUserModel(ownModel)) {

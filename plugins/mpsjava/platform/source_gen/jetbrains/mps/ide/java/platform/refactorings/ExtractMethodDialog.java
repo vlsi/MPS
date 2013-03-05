@@ -36,13 +36,13 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodMatch;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -305,7 +305,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
   }
 
   public void chooseStaticContainer() {
-    final Wrappers._T<SModelDescriptor> model = new Wrappers._T<SModelDescriptor>();
+    final Wrappers._T<SModel> model = new Wrappers._T<SModel>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myRefactoringModel = SNodeOperations.getModel(ListSequence.fromList(ExtractMethodDialog.this.myParameters.getNodesToRefactor()).first());
@@ -368,7 +368,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
           myContext.select(result.value);
           if ((myRefactoringModel != null) && myExtractIntoOuterContainer) {
             SModelReference ref = SNodeOperations.getModel(myStaticTarget).getReference();
-            ((jetbrains.mps.smodel.SModel) myRefactoringModel).addModelImport(ref, false);
+            ((SModelInternal) myRefactoringModel).addModelImport(ref, false);
           }
         }
       });

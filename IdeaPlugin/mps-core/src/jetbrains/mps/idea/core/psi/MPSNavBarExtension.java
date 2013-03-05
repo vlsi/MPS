@@ -20,6 +20,10 @@ import com.intellij.ide.navigationToolbar.NavBarModelExtension;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.impl.PsiManagerEx;
+import com.intellij.psi.impl.file.impl.FileManager;
+import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.idea.core.psi.impl.file.RootNodePsiElement;
 import org.jetbrains.annotations.Nullable;
@@ -38,7 +42,7 @@ public class MPSNavBarExtension implements NavBarModelExtension{
   @Nullable
   @Override
   public String getPresentableText(Object object) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return null;
   }
 
   @Nullable
@@ -53,6 +57,12 @@ public class MPSNavBarExtension implements NavBarModelExtension{
   @Nullable
   @Override
   public PsiElement adjustElement(PsiElement psiElement) {
+    if (psiElement instanceof MPSPsiModel) {
+      VirtualFile virtualFile = ((MPSPsiModel) psiElement).getSourceVirtualFile();
+      FileManager fileManager = ((PsiManagerEx) PsiManagerEx.getInstance(psiElement.getProject())).getFileManager();
+      PsiFile psiFile = fileManager.findFile(virtualFile);
+      if (psiFile != null) return psiFile;
+    }
     return psiElement;
   }
 

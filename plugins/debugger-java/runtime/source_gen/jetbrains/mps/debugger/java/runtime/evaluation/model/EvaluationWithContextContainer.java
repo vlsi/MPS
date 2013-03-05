@@ -9,13 +9,13 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -80,7 +80,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   protected void setUpNode(List<SNodeReference> nodesToImport) {
     EvaluationModule containerModule = (EvaluationModule) myContainerModule.resolve(myDebuggerRepository);
     // wanted to use resolve method here, but it was not implemented:( 
-    SModelDescriptor containerModel = (SModelDescriptor) SModelRepository.getInstance().getModelDescriptor(myContainerModel);
+    SModel containerModel = (SModelInternal) SModelRepository.getInstance().getModelDescriptor(myContainerModel);
 
     setUpDependencies(containerModule, containerModel);
 
@@ -95,7 +95,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     SModelOperations.validateLanguagesAndImports(containerModel.getSModel(), true, true);
   }
 
-  private void setUpDependencies(final EvaluationModule containerModule, SModelDescriptor containerModel) {
+  private void setUpDependencies(final EvaluationModule containerModule, SModel containerModel) {
     ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(getDebuggerStubPath())).visitAll(new IVisitor<String>() {
       public void visit(String it) {
         containerModule.addClassPathItem(it);
@@ -103,8 +103,8 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     });
     containerModule.updateModelsSet();
 
-    ((SModel) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
-    ((SModel) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
+    ((SModelInternal) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
+    ((SModelInternal) containerModel.getSModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
     containerModule.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.evaluation", Language.class).getModuleReference());
     containerModule.addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.debugger.java.privateMembers", Language.class).getModuleReference());
     containerModule.addDependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")).getModuleReference(), false);
@@ -212,9 +212,9 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   public SNode findUnit(final String unitName) {
     // I hate the next piece of code 
     // (and this class in general, since it inherited a lot of the ugly stuff from the old evaluation code) 
-    SModelDescriptor stub = findStubForFqName(modelFqNameFromUnitName(unitName));
+    SModel stub = findStubForFqName(modelFqNameFromUnitName(unitName));
     if (stub != null) {
-      org.jetbrains.mps.openapi.model.SModel model = stub.getSModel();
+      SModel model = stub.getSModel();
       SNode node = ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(model, "jetbrains.mps.lang.traceable.structure.UnitConcept")).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return eq_v5yv3u_a0a0a0a0a0a0b0d0o(BehaviorReflection.invokeVirtual(String.class, it, "virtual_getUnitName_5067982036267369911", new Object[]{}), unitName) && SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
@@ -237,7 +237,7 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   }
 
   @Nullable
-  private SModelDescriptor findStubForFqName(String fqName) {
+  private SModel findStubForFqName(String fqName) {
     return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(fqName, "java_stub"));
   }
 
@@ -273,14 +273,14 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     }).toListSequence();
   }
 
-  public static Iterable<SModelDescriptor> getCandidateNonStubModels(String unitName) {
+  public static Iterable<SModel> getCandidateNonStubModels(String unitName) {
     final String modelFqName = modelFqNameFromUnitName(unitName);
-    return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<String, SModelDescriptor>() {
-      public SModelDescriptor select(String stereotype) {
+    return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<String, SModel>() {
+      public SModel select(String stereotype) {
         return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(modelFqName, stereotype));
       }
-    }).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
         return it != null;
       }
     });

@@ -41,7 +41,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -239,7 +239,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
     if (node == null) return true;
     SModel model = node.getModel();
     if (model == null) return true;
-    SModelDescriptor md = model.getModelDescriptor();
+    SModel md = model.getModelDescriptor();
     if (md == null) return true;
     IModule module = md.getModule();
     if (module == null) return true;

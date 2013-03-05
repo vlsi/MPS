@@ -33,10 +33,9 @@ import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class DeleteModelHelper {
@@ -59,7 +58,7 @@ public class DeleteModelHelper {
   }
 
   public static void deleteGeneratedFiles(SModel modelDescriptor) {
-    String moduleOutputPath = ((AbstractModule) modelDescriptor.getModule()).getOutputFor(modelDescriptor);
+    String moduleOutputPath = modelDescriptor.getModule().getOutputFor(modelDescriptor);
     if (moduleOutputPath == null) {
       return;
     }
@@ -89,16 +88,14 @@ public class DeleteModelHelper {
   public static void safeDelete(final Project project, final SModel modelDescriptor, boolean deleteFiles) {
     IRefactoring ref = new SafeDeleteModelRefactoring(deleteFiles);
     final RefactoringContext context = new RefactoringContext(ref);
-    context.setSelectedModel((SModelDescriptor) modelDescriptor);
-    context.setSelectedModule((IModule) modelDescriptor.getModule());
+    context.setSelectedModel(modelDescriptor);
+    context.setSelectedModule(modelDescriptor.getModule());
     context.setSelectedProject(ProjectHelper.toMPSProject(project));
     context.setCurrentOperationContext(new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (!(((SModelDescriptor) modelDescriptor).isRegistered())) {
-          return;
-        }
+        if (modelDescriptor.getReference().resolve(MPSModuleRepository.getInstance())!=modelDescriptor) return;
         RefactoringAccess.getInstance().getRefactoringFacade().execute(context);
       }
     });
@@ -158,7 +155,7 @@ public class DeleteModelHelper {
 
     @Override
     public void refactor(RefactoringContext refactoringContext) {
-      SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
+      SModel modelDescriptor = refactoringContext.getSelectedModel();
       SModule modelOwner = SModelRepository.getInstance().getOwner(modelDescriptor);
       if (modelOwner instanceof Language) {
         deleteModelFromLanguage((Language) modelOwner, modelDescriptor);
@@ -171,9 +168,9 @@ public class DeleteModelHelper {
       }
 
       // delete imports from available models, helps if there are no references to deleted model
-      for (SModelDescriptor md : SModelRepository.getInstance().getModelDescriptors()) {
+      for (SModel md : SModelRepository.getInstance().getModelDescriptors()) {
         if (SModelStereotype.isUserModel(md) && new ModelFindOperations(md).hasImportedModel(modelDescriptor)) {
-          ((jetbrains.mps.smodel.SModel) md.getSModel()).deleteModelImport(modelDescriptor.getSModelReference());
+          ((jetbrains.mps.smodel.SModel) md.getSModel()).deleteModelImport(modelDescriptor.getReference());
         }
       }
 

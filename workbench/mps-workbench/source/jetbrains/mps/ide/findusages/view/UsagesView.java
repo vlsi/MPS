@@ -42,7 +42,7 @@ import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import org.jdom.Element;
@@ -148,7 +148,7 @@ public abstract class UsagesView implements IExternalizeable {
 
   private void regenerate() {
     List<SModel> models = new ArrayList<SModel>();
-    for (SModelDescriptor modelDescriptor : myTreeComponent.getIncludedModels()) {
+    for (SModel modelDescriptor : myTreeComponent.getIncludedModels()) {
       if (!GenerationFacade.canGenerate(modelDescriptor)) continue;
       models.add(modelDescriptor);
     }
@@ -184,11 +184,11 @@ public abstract class UsagesView implements IExternalizeable {
 
   //----RESULTS MANIPUALTION STUFF----
 
-  public List<SModelDescriptor> getIncludedModels() {
+  public List<SModel> getIncludedModels() {
     return myTreeComponent.getIncludedModels();
   }
 
-  public List<SModelDescriptor> getAllModels() {
+  public List<SModel> getAllModels() {
     return myTreeComponent.getAllModels();
   }
 

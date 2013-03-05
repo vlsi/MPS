@@ -19,7 +19,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 
@@ -36,7 +36,7 @@ public class ModelNavigatable extends BaseNavigatable {
 
   @Override
   protected void doNavigate(boolean focus) {
-    SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+    SModel descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (descriptor == null) return;
 
     IModule module = descriptor.getModule();

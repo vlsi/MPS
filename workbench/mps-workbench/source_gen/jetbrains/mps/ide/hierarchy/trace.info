@@ -1845,7 +1845,6 @@
     </scopeInfo>
     <unitInfo nodeId="5797068448049414443" fileName="ConceptHierarchyTree.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree" />
   </root>
-  <root nodeRef="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)/5797068448049415238" />
   <root nodeRef="r:8a82b7a4-1180-4262-8f18-8c96a5d3ac16(jetbrains.mps.ide.hierarchy)/5797068448049415534">
     <nodeInfo nodeId="5797068448049415537" fileName="CircularHierarchyException.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRepeatedObject" />
     <nodeInfo nodeId="5797068448049415548" fileName="CircularHierarchyException.java" startLine="9" startPosition="76" endLine="10" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -25,10 +25,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.CellAction;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -75,7 +75,7 @@ public class IntelligentInputUtil {
   }
 
   private static boolean processSTHintCell(EditorCell_STHint cell, jetbrains.mps.openapi.editor.EditorContext editorContext, String pattern) {
-    NodeSubstituteInfo info = cell.getSubstituteInfo();
+    SubstituteInfo info = cell.getSubstituteInfo();
     String smallPattern = pattern.substring(0, pattern.length() - 1);
     String tail = "" + pattern.charAt(pattern.length() - 1);
     EditorCell nextCell = cell.getNextLeaf();
@@ -98,8 +98,8 @@ public class IntelligentInputUtil {
         smallPattern = trimLeft(smallPattern);
       }
 
-      List<INodeSubstituteAction> matchingActions = info.getMatchingActions(smallPattern, true);
-      INodeSubstituteAction item = matchingActions.get(0);
+      List<SubstituteAction> matchingActions = info.getMatchingActions(smallPattern, true);
+      SubstituteAction item = matchingActions.get(0);
       SNode newNode = item.substitute(editorContext, smallPattern);
       editorContext.flushEvents();
       EditorCell cellForNewNode = (EditorCell) editorContext.getEditorComponent().findNodeCell(newNode);
@@ -145,7 +145,7 @@ public class IntelligentInputUtil {
   }
 
   private static boolean processCellAtEnd(EditorCell_Label cell, final jetbrains.mps.openapi.editor.EditorContext editorContext, String smallPattern, final String tail) {
-    NodeSubstituteInfo substituteInfo = cell.getSubstituteInfo();
+    SubstituteInfo substituteInfo = cell.getSubstituteInfo();
     if (substituteInfo == null) {
       substituteInfo = new NullSubstituteInfo();
     }
@@ -165,8 +165,8 @@ public class IntelligentInputUtil {
         smallPattern = trimLeft(smallPattern);
       }
 
-      List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
-      INodeSubstituteAction item = matchingActions.get(0);
+      List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern, true);
+      SubstituteAction item = matchingActions.get(0);
       item.substitute(editorContext, smallPattern);
 
       newNode = editorContext.getSelectedCell().getSNode();
@@ -194,8 +194,8 @@ public class IntelligentInputUtil {
         smallPattern = trimLeft(smallPattern);
       }
 
-      List<INodeSubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern + tail, true);
-      INodeSubstituteAction item = matchingActions.get(0);
+      List<SubstituteAction> matchingActions = substituteInfo.getMatchingActions(smallPattern + tail, true);
+      SubstituteAction item = matchingActions.get(0);
       item.substitute(editorContext, smallPattern + tail);
       return true;
     } else {
@@ -242,12 +242,12 @@ public class IntelligentInputUtil {
     EditorCell rtHintCell = prepareSTCell(editorContext, newCellForNewNode, tail);
 
     if (rtHintCell != null) {
-      final NodeSubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
+      final SubstituteInfo rtSubstituteInfo = rtHintCell.getSubstituteInfo();
       assert rtSubstituteInfo != null;
-      List<INodeSubstituteAction> rtMatchingActions =
-        TypeContextManager.getInstance().runResolveAction(new Computable<List<INodeSubstituteAction>>() {
+      List<SubstituteAction> rtMatchingActions =
+        TypeContextManager.getInstance().runResolveAction(new Computable<List<SubstituteAction>>() {
           @Override
-          public List<INodeSubstituteAction> compute() {
+          public List<SubstituteAction> compute() {
             return rtSubstituteInfo.getMatchingActions(tail, true);
           }
         });
@@ -263,7 +263,7 @@ public class IntelligentInputUtil {
         return true;
       }
 
-      INodeSubstituteAction rtItem = rtMatchingActions.get(0);
+      SubstituteAction rtItem = rtMatchingActions.get(0);
       final SNode yetNewNode = rtItem.substitute(editorContext, tail);
 
       editorContext.flushEvents();
@@ -288,7 +288,7 @@ public class IntelligentInputUtil {
     return true;
   }
 
-  private static boolean tryToSubstituteFirstSutable(jetbrains.mps.openapi.editor.EditorContext editorContext, String text, NodeSubstituteInfo substituteInfo) {
+  private static boolean tryToSubstituteFirstSutable(jetbrains.mps.openapi.editor.EditorContext editorContext, String text, SubstituteInfo substituteInfo) {
     SNode concept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
     if (concept == null) {
       return false;
@@ -296,12 +296,12 @@ public class IntelligentInputUtil {
     boolean property = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept)), "virtual_substituteInAmbigousPosition_1262430001741498020", new Object[]{});
     if (property) {
       SNode outputConcept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
-      for (INodeSubstituteAction action : substituteInfo.getMatchingActions(text, true)) {
+      for (SubstituteAction action : substituteInfo.getMatchingActions(text, true)) {
         if (outputConcept != action.getOutputConcept()) {
           return false;
         }
       }
-      INodeSubstituteAction action = substituteInfo.getMatchingActions(text, true).get(0);
+      SubstituteAction action = substituteInfo.getMatchingActions(text, true).get(0);
       action.substitute(editorContext, text);
       return true;
     }
@@ -309,7 +309,7 @@ public class IntelligentInputUtil {
   }
 
   private static boolean processCellAtStart(EditorCell_Label cell, final jetbrains.mps.openapi.editor.EditorContext editorContext, String head, String smallPattern) {
-    NodeSubstituteInfo info = cell.getSubstituteInfo();
+    SubstituteInfo info = cell.getSubstituteInfo();
     if (info == null) {
       info = new NullSubstituteInfo();
     }
@@ -330,8 +330,8 @@ public class IntelligentInputUtil {
       return applyLeftTransform(editorContext, head, smallPattern, cellForNewNode, newNode, false);
     } else if (canCompleteTheWholeStringImmediately(info, head + smallPattern)) {
 
-      List<INodeSubstituteAction> matchingActions = info.getMatchingActions(head + smallPattern, true);
-      INodeSubstituteAction item = matchingActions.get(0);
+      List<SubstituteAction> matchingActions = info.getMatchingActions(head + smallPattern, true);
+      SubstituteAction item = matchingActions.get(0);
       item.substitute(editorContext, head + smallPattern);
       return true;
     } else {
@@ -379,11 +379,11 @@ public class IntelligentInputUtil {
     return "";
   }
 
-  private static boolean canCompleteSmallPatternImmediatelyLeft(NodeSubstituteInfo info, String head, String smallPattern) {
+  private static boolean canCompleteSmallPatternImmediatelyLeft(SubstituteInfo info, String head, String smallPattern) {
     return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(head + smallPattern, false, 0);
   }
 
-  private static boolean canCompleteSmallPatternImmediately(NodeSubstituteInfo info, String smallPattern, String tail) {
+  private static boolean canCompleteSmallPatternImmediately(SubstituteInfo info, String smallPattern, String tail) {
     if ("".equals(tail)) {
       return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(smallPattern, false, 1);
     }
@@ -393,15 +393,15 @@ public class IntelligentInputUtil {
     return info.hasExactlyNActions(smallPattern, true, 1) && (tail.equals("*") || info.hasExactlyNActions(smallPattern + tail, false, 0));
   }
 
-  private static boolean canCompleteTheWholeStringImmediately(NodeSubstituteInfo info, String pattern) {
+  private static boolean canCompleteTheWholeStringImmediately(SubstituteInfo info, String pattern) {
     return info.hasExactlyNActions(pattern, true, 1) && info.hasExactlyNActions(pattern, false, 1);
   }
 
-  private static boolean isInAmbigousPosition(NodeSubstituteInfo info, String smallPattern, String tail) {
+  private static boolean isInAmbigousPosition(SubstituteInfo info, String smallPattern, String tail) {
     return info.getMatchingActions(smallPattern, true).size() > 1 && info.getMatchingActions(smallPattern + tail, false).isEmpty();
   }
 
-  private static boolean isInOneStepAmbigousPosition(NodeSubstituteInfo info, String smallPattern) {
+  private static boolean isInOneStepAmbigousPosition(SubstituteInfo info, String smallPattern) {
     return info.getMatchingActions(smallPattern, true).size() > 1 && info.getMatchingActions(smallPattern, true).size() == info.getMatchingActions(smallPattern, false).size();
   }
 
@@ -448,14 +448,14 @@ public class IntelligentInputUtil {
   private static boolean hasSideActions(EditorCell cell, CellSide side, String prefix) {
     final SideTransformHintSubstituteActionsHelper helper = new SideTransformHintSubstituteActionsHelper(cell.getSNode(), side, cell.getRightTransformAnchorTag(), cell.getContext().getOperationContext());
     NodeSubstituteInfo info = new AbstractNodeSubstituteInfo(cell.getContext()) {
-      protected List<INodeSubstituteAction> createActions() {
+      protected List<SubstituteAction> createActions() {
         return helper.createActions();
       }
     };
     return !info.hasExactlyNActions(prefix, false, 0);
   }
 
-  private static void activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.EditorContext editorContext, EditorCell cell, NodeSubstituteInfo info) {
+  private static void activateNodeSubstituteChooser(jetbrains.mps.openapi.editor.EditorContext editorContext, EditorCell cell, SubstituteInfo info) {
     ((EditorComponent) editorContext.getEditorComponent()).activateNodeSubstituteChooser(cell, info, false);
   }
 

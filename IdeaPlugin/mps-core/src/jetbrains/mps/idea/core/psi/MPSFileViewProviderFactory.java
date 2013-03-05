@@ -30,14 +30,13 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiModel;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.file.FileSourcePsiFile;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModelReference;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -106,24 +105,19 @@ public class MPSFileViewProviderFactory implements FileViewProviderFactory {
       FileSourcePsiFile psiFile = ModelAccess.instance().runReadAction(new Computable<FileSourcePsiFile>() {
         @Override
         public FileSourcePsiFile compute() {
-          SModelDescriptor descr = SModelFileTracker.getInstance().findModel(modelFile);
+          SModel descr = SModelFileTracker.getInstance().findModel(modelFile);
           if(descr != null) {
-            return createAndUpdatePsiFile(descr);
+            // force loading the model and updating the PSI tree at this time
+            MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
+            MPSPsiModel psiModel = mpsPsiProvider.getPsi(descr);
+
+            return new FileSourcePsiFile(MySingleRootFileViewProvider.this, descr.getReference(), descr.getModelName());
           }
           return null;
         }
       });
       return psiFile;
     }
-
-    private FileSourcePsiFile createAndUpdatePsiFile (SModelDescriptor descr) {
-      FileSourcePsiFile result = new FileSourcePsiFile(this, descr.getModelName());
-
-      MPSPsiProvider mpsPsiProvider = MPSPsiProvider.getInstance(getManager().getProject());
-      MPSPsiModel psiModel = mpsPsiProvider.getPsi(descr);
-
-      result.update(psiModel.getChildren());
-      return result;
-    }
   }
+
 }

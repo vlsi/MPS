@@ -17,19 +17,23 @@ package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
+import org.jetbrains.mps.openapi.util.Consumer;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -45,10 +49,10 @@ public class BinaryPersistence {
 
   private static final Logger LOG = Logger.getLogger(BinaryPersistence.class);
 
-  public static BinaryModelHeader readHeader(@NotNull IFile file) throws ModelReadException {
+  public static BinaryModelHeader readHeader(@NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;
     try {
-      mis = new ModelInputStream(file.openInputStream());
+      mis = new ModelInputStream(source.openInputStream());
       return loadHeader(mis);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
@@ -57,10 +61,10 @@ public class BinaryPersistence {
     }
   }
 
-  public static BinarySModel readModel(@NotNull SModelReference mref, @NotNull IFile file) throws ModelReadException {
+  public static BinarySModel readModel(@NotNull SModelReference mref, @NotNull StreamDataSource source) throws ModelReadException {
     ModelInputStream mis = null;
     try {
-      mis = new ModelInputStream(file.openInputStream());
+      mis = new ModelInputStream(source.openInputStream());
       return loadModel(mref, mis);
     } catch (IOException e) {
       throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, mref);
@@ -82,19 +86,19 @@ public class BinaryPersistence {
     }
   }
 
-  public static boolean writeModel(@NotNull SModel model, @NotNull IFile file) {
-    if (file.isReadOnly()) {
-      LOG.error("Can't write to " + file);
+  public static boolean writeModel(@NotNull SModel model, @NotNull StreamDataSource source) {
+    if (source.isReadOnly()) {
+      LOG.error("Can't write to " + source.getLocation());
       return false;
     }
 
     ModelOutputStream os = null;
     try {
-      os = new ModelOutputStream(file.openOutputStream());
+      os = new ModelOutputStream(source.openOutputStream());
       saveModel(model, os);
       return true;
     } catch (IOException e) {
-      LOG.error("Can't write to " + file, e);
+      LOG.error("Can't write to " + source.getLocation(), e);
     } finally {
       FileUtil.closeFileSafe(os);
     }
@@ -125,6 +129,19 @@ public class BinaryPersistence {
     return result;
   }
 
+  private static void loadModelProperties(BinarySModel model, ModelInputStream is) throws IOException {
+    for (ModuleReference ref : loadModuleRefList(is)) model.addLanguage(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
+    for (ModuleReference ref : loadModuleRefList(is)) model.addDevKit(ref);
+
+    for (ImportElement imp : loadImports(is)) model.addModelImport(imp);
+    for (ImportElement imp : loadImports(is)) model.addAdditionalModelVersion(imp);
+
+    if (is.readInt() != 0xbaba) {
+      throw new IOException("bad stream, no sync token");
+    }
+  }
+
   @NotNull
   private static BinarySModel loadModel(@Nullable SModelReference modelReference, ModelInputStream is) throws IOException {
     BinaryModelHeader modelHeader = loadHeader(is);
@@ -133,17 +150,7 @@ public class BinaryPersistence {
     }
 
     BinarySModel model = new BinarySModel(modelHeader);
-
-    for (ModuleReference ref : loadModuleRefList(is)) ((jetbrains.mps.smodel.SModel) model).addLanguage(ref);
-    for (ModuleReference ref : loadModuleRefList(is)) ((jetbrains.mps.smodel.SModel) model).addEngagedOnGenerationLanguage(ref);
-    for (ModuleReference ref : loadModuleRefList(is)) ((jetbrains.mps.smodel.SModel) model).addDevKit(ref);
-
-    for (ImportElement imp : loadImports(is)) ((jetbrains.mps.smodel.SModel) model).addModelImport(imp);
-    for (ImportElement imp : loadImports(is)) ((jetbrains.mps.smodel.SModel) model).addAdditionalModelVersion(imp);
-
-    if (is.readInt() != 0xbaba) {
-      throw new IOException("bad stream, no sync token");
-    }
+    loadModelProperties(model, is);
 
     List<Pair<String, SNode>> roots = new NodesReader(modelReference).readNodes(model, is);
     for (Pair<String, SNode> r : roots) {
@@ -173,7 +180,7 @@ public class BinaryPersistence {
     // header
     os.writeInt(HEADER);
     os.writeInt(STREAM_ID);
-    os.writeModelReference((SModelReference) model.getReference());
+    os.writeModelReference(model.getReference());
     os.writeInt(((jetbrains.mps.smodel.SModel) model).getVersion());
     os.writeBoolean(model instanceof BinarySModel && ((BinarySModel) model).getHeader().isDoNotGenerate());
     os.writeInt(0xabab);
@@ -221,5 +228,34 @@ public class BinaryPersistence {
       result.add(new ImportElement(ref, -1, is.readInt()));
     }
     return result;
+  }
+
+  public static void index(byte[] content, final Consumer<String> consumer) throws ModelReadException {
+    ModelInputStream mis = null;
+    try {
+      mis = new ModelInputStream(new ByteArrayInputStream(content));
+      BinaryModelHeader modelHeader = loadHeader(mis);
+      BinarySModel model = new BinarySModel(modelHeader);
+      loadModelProperties(model, mis);
+      new NodesReader(modelHeader.getReference()) {
+        @Override
+        protected String readConceptQualifiedName(ModelInputStream is) throws IOException {
+          String name = super.readConceptQualifiedName(is);
+          consumer.consume(NameUtil.shortNameFromLongName(name));
+          return name;
+        }
+
+        @Override
+        protected SNodeId readTargetNodeId(ModelInputStream is) throws IOException {
+          SNodeId id = super.readTargetNodeId(is);
+          consumer.consume(id.toString());
+          return id;
+        }
+      }.readNodes(model, mis);
+    } catch (IOException e) {
+      throw new ModelReadException("Couldn't read model: " + e.getMessage(), e);
+    } finally {
+      FileUtil.closeFileSafe(mis);
+    }
   }
 }

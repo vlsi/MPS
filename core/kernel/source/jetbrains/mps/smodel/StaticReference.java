@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
+
+import jetbrains.mps.smodel.SModel.FakeModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -129,8 +132,8 @@ public final class StaticReference extends SReferenceBase {
     // It can be tmp reference created while copy/pasting a node
     if (targetModelReference == null) return null;
 
-    SModelDescriptor modelDescriptor = null;
-    if (current != null && current.getModelDescriptor() != null) {
+    SModel modelDescriptor = null;
+    if (current != null && current.getModelDescriptor() != null && !(current.getModelDescriptor() instanceof FakeModelDescriptor)) {
       modelDescriptor = current.getModelDescriptor().resolveModel(targetModelReference);
     } else if (!MPSCore.getInstance().isMergeDriverMode()) {
       modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);

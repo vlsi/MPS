@@ -22,7 +22,7 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
 
   public void applyRule(final SNode variableReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode directAncestor = SNodeOperations.getAncestor(variableReference, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
-    if (directAncestor != null) {
+    if (directAncestor != null && !(SNodeOperations.hasRole(variableReference, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "threadPool"))) {
       SNode variableDeclaration = SLinkOperations.getTarget(variableReference, "variableDeclaration", false);
 
       SNode declarationsAncestor = SNodeOperations.getAncestor(variableDeclaration, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);

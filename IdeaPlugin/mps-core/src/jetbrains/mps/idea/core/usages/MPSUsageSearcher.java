@@ -19,29 +19,21 @@ package jetbrains.mps.idea.core.usages;
 import com.intellij.facet.FacetManager;
 import com.intellij.find.findUsages.CustomUsageSearcher;
 import com.intellij.find.findUsages.FindUsagesOptions;
-import com.intellij.openapi.application.QueryExecutorBase;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiMethod;
-import com.intellij.psi.PsiReference;
 import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.psi.search.searches.MethodReferencesSearch.SearchParameters;
 import com.intellij.usages.Usage;
 import com.intellij.util.Processor;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.idea.core.psi.MPSNodePsiSourceFinder;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
+import jetbrains.mps.idea.core.psi.MPS2PsiMapper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
-import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
-import jetbrains.mps.idea.core.usages.NodeUsage;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -76,7 +68,7 @@ public class MPSUsageSearcher extends CustomUsageSearcher {
         @Override
         public void run() {
 
-          for (SModelDescriptor model : SModelRepository.getInstance().getModelDescriptors(facetSolution)) {
+          for (SModel model : SModelRepository.getInstance().getModelDescriptors(facetSolution)) {
             Deque<SNode> stack = new ArrayDeque<SNode>();
             for (SNode node : model.getRootNodes()) {
               stack.addLast(node);
@@ -88,9 +80,11 @@ public class MPSUsageSearcher extends CustomUsageSearcher {
               }
               for (SReference ref : node.getReferences()) {
                 SNode targetNode = ref.getTargetNode();
+                if (targetNode == null) continue;
+
                 PsiElement targetPsiElement = null;
 
-                for (MPSNodePsiSourceFinder finder : MPSNodePsiSourceFinder.EP_NAME.getExtensions()) {
+                for (MPS2PsiMapper finder : MPS2PsiMapper.EP_NAME.getExtensions()) {
                   PsiElement psiElement = finder.getPsiSource(targetNode, project);
                   if (psiElement != null) {
                     targetPsiElement = psiElement;
@@ -104,7 +98,7 @@ public class MPSUsageSearcher extends CustomUsageSearcher {
                 }
 
                 if (targetPsiElement == element) {
-                  boolean proceed = processor.process(new NodeUsage(node.getReference(), project, "Bla-bla"));
+                  boolean proceed = processor.process(new RenameableNodeUsage(node.getReference(), project, "Usage in MPS model"));
                   if (!proceed) return;
                 }
               }

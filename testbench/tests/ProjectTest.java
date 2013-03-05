@@ -21,13 +21,13 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.*;
+import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;
 import jetbrains.mps.testbench.junit.Order;
 import jetbrains.mps.testbench.junit.runners.WatchingParameterized;
-import jetbrains.mps.util.Computable;
 import org.junit.*;
 import org.junit.rules.TestName;
 import org.junit.rules.TestWatchman;
@@ -126,8 +126,8 @@ public class ProjectTest {
   }
 
   private static boolean needsGeneration(IModule module) {
-    for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
-      if (descriptor.isGeneratable()) return true;
+    for (SModel descriptor : module.getOwnModelDescriptors()) {
+      if (jetbrains.mps.util.SNodeOperations.isGeneratable(descriptor)) return true;
     }
     return false;
   }

@@ -24,7 +24,7 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DependencyRecorder;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.event.*;
@@ -49,7 +49,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
     myDependencyRecorder = recorder;
   }
 
-  public abstract SModelDescriptor getSModelDescriptor();
+  public abstract SModel getSModelDescriptor();
 
   public abstract void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages);
 

@@ -69,7 +69,7 @@ public class CloneUtil {
     }
     for (SReference reference : inputNode.getReferences()) {
       boolean ext = inputNode.getModel() == null || !inputNode.getModel().getReference().equals(reference.getTargetSModelReference());
-      SModelReference targetModelReference = ext ? reference.getTargetSModelReference() : (SModelReference) outputModel.getReference();
+      SModelReference targetModelReference = ext ? reference.getTargetSModelReference() : outputModel.getReference();
       if (reference instanceof StaticReference) {
         if (targetModelReference == null) {
           LOG.warning("broken reference '" + reference.getRole() + "' in " + SNodeUtil.getDebugText(inputNode), inputNode);
@@ -78,7 +78,7 @@ public class CloneUtil {
             reference.getRole(),
             outputNode,
             targetModelReference,
-            ((StaticReference) reference).getTargetNodeId(),
+            reference.getTargetNodeId(),
             ((StaticReference) reference).getResolveInfo());
           outputNode.setReference(outputReference.getRole(), outputReference);
         }

@@ -21,7 +21,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
@@ -37,7 +37,7 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodeReference>
 
     if (!(realNode.getModel() != null)) return false;
 
-    SModelDescriptor modelDescriptor = realNode.getModel().getModelDescriptor();
+    SModel modelDescriptor = realNode.getModel().getModelDescriptor();
     if (modelDescriptor == null) return false;
 
     IModule module = modelDescriptor.getModule();

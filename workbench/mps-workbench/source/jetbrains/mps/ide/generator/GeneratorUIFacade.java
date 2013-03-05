@@ -33,7 +33,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -260,19 +260,19 @@ public class GeneratorUIFacade {
     SModule module = model.getModule();
     if (module == null) return Collections.emptyList();
 
-    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+    List<SModel> result = new ArrayList<SModel>();
 
-    for (TemplateModule templateModule : GenerationPartitioningUtil.getTemplateModules(((SModelDescriptor) model).getSModel())) {
+    for (TemplateModule templateModule : GenerationPartitioningUtil.getTemplateModules(model.getSModel())) {
       Generator g = ModuleRepositoryFacade.getInstance().getModule(templateModule.getReference(), Generator.class);
       if (g == null) continue;
 
-      for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
+      for (SModel sm : g.getOwnModelDescriptors()) {
         if (SModelStereotype.isUserModel(sm)) {
           result.add(sm);
         }
       }
 
-      for (SModelDescriptor sm : LanguageAspect.getAspectModels(g.getSourceLanguage())) {
+      for (SModel sm : LanguageAspect.getAspectModels(g.getSourceLanguage())) {
         result.add(sm);
       }
     }

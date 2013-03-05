@@ -11,7 +11,7 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -19,7 +19,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.ModelRootUtil;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
@@ -46,7 +46,7 @@ public class NewSubTestModel_Action extends BaseAction {
     if (!(((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof SModelTreeNode)) {
       return false;
     }
-    return SModelStereotype.NONE.equals(SModelStereotype.getStereotype(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))));
+    return SModelStereotype.NONE.equals(SModelStereotype.getStereotype(((SModel) MapSequence.fromMap(_params).get("model"))));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -86,22 +86,22 @@ public class NewSubTestModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<SModelDescriptor> result = new Wrappers._T<SModelDescriptor>();
+      final Wrappers._T<SModel> result = new Wrappers._T<SModel>();
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           SModelFqName newModelFqName = new SModelFqName(NewSubTestModel_Action.this.getTestModelName(_params), SModelStereotype.TESTS);
-          result.value = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule().createModel(newModelFqName.toString(), ModelRootUtil.getModelRoot(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
+          result.value = ((SModel) MapSequence.fromMap(_params).get("model")).getModule().createModel(newModelFqName.toString(), ModelRootUtil.getModelRoot(((SModel) MapSequence.fromMap(_params).get("model"))), null);
           SModel createdModel = result.value.getSModel();
-          SModel sourceModel = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
-          ((jetbrains.mps.smodel.SModel) createdModel).addModelImport(sourceModel.getReference(), false);
-          for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((jetbrains.mps.smodel.SModel) sourceModel).importedModels()) {
-            ((jetbrains.mps.smodel.SModel) createdModel).addModelImport(sourceModel.getReference(), false);
+          SModel sourceModel = ((SModel) MapSequence.fromMap(_params).get("model")).getSModel();
+          ((SModelInternal) createdModel).addModelImport(sourceModel.getReference(), false);
+          for (jetbrains.mps.smodel.SModel.ImportElement importElement : ((SModelInternal) sourceModel).importedModels()) {
+            ((SModelInternal) createdModel).addModelImport(sourceModel.getReference(), false);
           }
-          for (ModuleReference importedLanguage : ((jetbrains.mps.smodel.SModel) sourceModel).importedLanguages()) {
-            ((jetbrains.mps.smodel.SModel) createdModel).addLanguage(importedLanguage);
+          for (ModuleReference importedLanguage : ((SModelInternal) sourceModel).importedLanguages()) {
+            ((SModelInternal) createdModel).addLanguage(importedLanguage);
           }
-          for (ModuleReference devKit : ((jetbrains.mps.smodel.SModel) sourceModel).importedDevkits()) {
-            ((jetbrains.mps.smodel.SModel) createdModel).addDevKit(devKit);
+          for (ModuleReference devKit : ((SModelInternal) sourceModel).importedDevkits()) {
+            ((SModelInternal) createdModel).addDevKit(devKit);
           }
         }
       });
@@ -113,15 +113,15 @@ public class NewSubTestModel_Action extends BaseAction {
 
   /*package*/ String getTestModelName(final Map<String, Object> _params) {
     StringBuilder builder = new StringBuilder();
-    builder.append(SNodeOperations.getModelLongName(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))));
+    builder.append(SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))));
     int testModelCount = 0;
-    List<SModelDescriptor> models = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule().getOwnModelDescriptors();
-    List<SModelDescriptor> sortedModels = SortUtil.sortModels(models);
-    for (SModelDescriptor md : sortedModels) {
+    List<SModel> models = ((SModel) MapSequence.fromMap(_params).get("model")).getModule().getOwnModelDescriptors();
+    List<SModel> sortedModels = SortUtil.sortModels(models);
+    for (SModel md : sortedModels) {
       if (!(SModelStereotype.TESTS.equals(SModelStereotype.getStereotype(md)))) {
         continue;
       }
-      String name = SNodeOperations.getModelLongName(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))) + ((testModelCount == 0 ?
+      String name = SNodeOperations.getModelLongName(((SModel) MapSequence.fromMap(_params).get("model"))) + ((testModelCount == 0 ?
         "" :
         testModelCount
       ));

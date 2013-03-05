@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
@@ -22,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
@@ -37,7 +37,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
   }
 
   @Override
-  public SModel loadSModel(IModule module, SModelDescriptor descriptor) {
+  public SModel loadSModel(IModule module, SModel descriptor) {
     SModel model = new jetbrains.mps.smodel.SModel(descriptor.getReference(), new ForeignNodeIdMap());
     final ModuleDescriptor moduleDesc = ModulesMiner.getInstance().loadModuleDescriptor(getFile());
     new ProjectStructureBuilder(moduleDesc, getFile(), model) {
@@ -52,7 +52,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
     }.convert();
 
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86ef8290-12bb-4ca7-947f-093788f263a9")).getModuleReference();
-    ((jetbrains.mps.smodel.SModel) model).addLanguage(lang);
+    ((SModelInternal) model).addLanguage(lang);
     module.addUsedLanguage(lang);
     return model;
   }
@@ -76,7 +76,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
   }
 
   @Override
-  public boolean hasModel(SModelDescriptor descriptor) {
+  public boolean hasModel(SModel descriptor) {
     return getFile() != null && getFile().exists();
   }
 }

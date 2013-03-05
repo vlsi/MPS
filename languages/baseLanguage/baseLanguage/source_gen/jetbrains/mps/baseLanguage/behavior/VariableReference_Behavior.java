@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 
 public class VariableReference_Behavior {
   public static void init(SNode thisNode) {
@@ -120,7 +120,7 @@ public class VariableReference_Behavior {
     return true;
   }
 
-  private static IModule check_gidzrl_a0e0a0e(SModelDescriptor checkedDotOperand) {
+  private static IModule check_gidzrl_a0e0a0e(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

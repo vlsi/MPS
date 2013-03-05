@@ -19,7 +19,7 @@ import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.IterableUtil;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class ModelValidator {
   private SModel myModel;
 
   public ModelValidator(org.jetbrains.mps.openapi.model.SModel model) {
-    myModel = ((SModelDescriptor) model).getSModel();
+    myModel = model.getSModel();
   }
 
   public List<String> validate(IScope scope) {

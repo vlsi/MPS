@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder" file="AllMethodUsages_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -15,6 +16,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder" file="BaseMethodUsages_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
@@ -30,6 +32,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder" file="BaseMethod_Finder.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />
@@ -50,6 +53,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder" file="ClassAncestors_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -62,6 +66,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder" file="ClassUsages_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
@@ -75,6 +80,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder" file="ConstructorUsages_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
@@ -92,6 +98,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder" file="DerivedClasses_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -105,6 +112,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder" file="DerivedInterfaces_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -118,6 +126,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder" file="DerivedMethods_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior" />
@@ -136,6 +145,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder" file="ExactMethodUsages_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter" />
@@ -149,6 +159,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder" file="FieldUsages_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -188,6 +199,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.BaseFindUsagesDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.ImplementedInterfaces_Finder" file="ImplementedInterfaces_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -202,6 +214,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder" file="ImplementingClasses_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -216,6 +229,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder" file="InterfaceAncestors_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
@@ -228,6 +242,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.InterfaceMethodImplementations_Finder" file="InterfaceMethodImplementations_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -247,6 +262,7 @@
   <dependency className="jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder" file="OverridingFields_Finder.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior" />
@@ -265,6 +281,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder" file="OverridingMethods_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior" />
@@ -280,6 +297,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.ParameterUsages_Finder" file="ParameterUsages_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
@@ -294,6 +312,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.Potentially_not_migratable_usages_Finder" file="Potentially_not_migratable_usages_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scripts.NonMigratableUsagesFinder" />
@@ -306,6 +325,7 @@
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder" file="StraightDerivedClasses_Finder.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />

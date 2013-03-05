@@ -18,15 +18,22 @@ package jetbrains.mps.workbench.nodesFs;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
+import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -44,7 +51,8 @@ public class MPSNodeVirtualFile extends VirtualFile {
 
   MPSNodeVirtualFile(@NotNull SNodeReference nodePointer) {
     myNode = nodePointer;
-    SModelDescriptor modelDescriptor = nodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodePointer.getModelReference());
+    SModel modelDescriptor =
+      nodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodePointer.getModelReference());
     if (modelDescriptor instanceof BaseSModelDescriptorWithSource) {
       myTimeStamp = ((BaseSModelDescriptorWithSource) modelDescriptor).getSourceTimestamp();
     }
@@ -62,7 +70,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
           myPath = myNode.getModelReference().getSModelFqName() + "/" + myName;
         } else {
           myName = "" + node.getPresentation();
-          myPath = ((SModelReference) node.getModel().getReference()).getSModelFqName() + "/" + myName;
+          myPath = node.getModel().getReference().getSModelFqName() + "/" + myName;
         }
       }
     });
@@ -130,9 +138,13 @@ public class MPSNodeVirtualFile extends VirtualFile {
         if (myNode == null) return null;
         SNode node = getNode();
         if (node == null) return null;
-        SModelDescriptor md = node.getModel().getModelDescriptor();
-        if (!(md instanceof DefaultSModelDescriptor)) return null;
-        return ModelUtil.getFileByModel(node.getModel());
+        SModel md = node.getModel().getModelDescriptor();
+        if (md == null) return null;
+
+        DataSource source = md.getSource();
+        if (!(source instanceof FileDataSource)) return null;
+
+        return VirtualFileUtils.getVirtualFile(((FileDataSource) source).getFile());
       }
     });
   }

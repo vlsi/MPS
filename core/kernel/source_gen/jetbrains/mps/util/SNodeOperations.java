@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -31,8 +30,10 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.FastNodeFinder;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 
 public class SNodeOperations {
@@ -229,7 +230,7 @@ public class SNodeOperations {
     }
   }
 
-  public static SModelDescriptor getModelFromNodeReference(SNodeReference ref) {
+  public static SModel getModelFromNodeReference(SNodeReference ref) {
     SModelReference mr = ref.getModelReference();
     if (mr == null) {
       return null;
@@ -331,19 +332,23 @@ public class SNodeOperations {
   }
 
   public static boolean isModelDisposed(SModel model) {
-    return ((jetbrains.mps.smodel.SModel) model).isDisposed();
+    return ((SModelInternal) model).isDisposed();
   }
 
   public static FastNodeFinder getModelFastFinder(SModel model) {
-    return ((jetbrains.mps.smodel.SModel) model).getFastNodeFinder();
+    return ((SModelInternal) model).getFastNodeFinder();
   }
 
   public static int nodesCount(SModel model) {
     return IterableUtil.asCollection(new NodesIterable(model)).size();
   }
 
+  public static boolean isRegistered(SModel model) {
+    return model.getReference().resolve(MPSModuleRepository.getInstance()) != null;
+  }
+
   public static boolean isGeneratable(SModel model) {
-    assert model instanceof SModelDescriptor;
+    assert model instanceof SModel;
     return model instanceof GeneratableSModel && ((GeneratableSModel) model).isGeneratable();
   }
 }

@@ -22,8 +22,9 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.structure.*;
+import jetbrains.mps.util.SNodeOperations;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -50,9 +51,9 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
 
   @Override
   public IHelginsDescriptor getTypesystem() {
-    SModelDescriptor helginsModelDescriptor = LanguageAspect.TYPESYSTEM.get(myLanguage);
+    SModel helginsModelDescriptor = LanguageAspect.TYPESYSTEM.get(myLanguage);
     if (helginsModelDescriptor == null) return null;
-    String packageName = helginsModelDescriptor.getLongName();
+    String packageName = SNodeOperations.getModelLongName(helginsModelDescriptor);
 
     Object helginsDescriptor = getObjectByClassNameForLanguage(packageName + ".TypesystemDescriptor", IHelginsDescriptor.class, myLanguage, true);
 
@@ -66,9 +67,9 @@ public class LanguageRuntimeInterpreted extends LanguageRuntime {
   @Override
   public BaseFindUsagesDescriptor getFindUsages() {
     try {
-      SModelDescriptor findUsages = LanguageAspect.FIND_USAGES.get(myLanguage);
+      SModel findUsages = LanguageAspect.FIND_USAGES.get(myLanguage);
       if (findUsages == null) return null;
-      String packageName = findUsages.getLongName();
+      String packageName = SNodeOperations.getModelLongName(findUsages);
 
       Class<?> cls = myLanguage.getClass(packageName + ".FindUsagesDescriptor");
       if (cls == null) {

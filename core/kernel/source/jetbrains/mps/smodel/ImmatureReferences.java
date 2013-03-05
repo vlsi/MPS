@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.components.CoreComponent;
 
@@ -96,14 +96,14 @@ public class ImmatureReferences implements CoreComponent {
   void add(SReferenceBase ref) {
     if (myDisabled) return;
     SModel model = ref.getSourceNode().getModel();
-    SModelReference modelRef = model == null ? VIRTUAL_REF : (SModelReference) model.getReference();
+    SModelReference modelRef = model == null ? VIRTUAL_REF : model.getReference();
     ConcurrentMap<SReferenceBase, Object> refSet = getOrCreateRefSet(modelRef);
     refSet.put(ref, PRESENT);
   }
 
   void remove(SReferenceBase ref) {
     if (myDisabled) return;
-    SModelReference modelRef = (SModelReference) ref.getSourceNode().getModel().getReference();
+    SModelReference modelRef = ref.getSourceNode().getModel().getReference();
     ConcurrentMap<SReferenceBase, Object> refSet = myReferences.get(modelRef);
     if (refSet != null) {
       refSet.remove(ref);
@@ -135,8 +135,8 @@ public class ImmatureReferences implements CoreComponent {
 
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
     @Override
-    public void modelRemoved(SModelDescriptor modelDescriptor) {
-      ConcurrentMap<SReferenceBase, Object> refSet = myReferences.remove(modelDescriptor.getSModelReference());
+    public void modelRemoved(SModel modelDescriptor) {
+      ConcurrentMap<SReferenceBase, Object> refSet = myReferences.remove(modelDescriptor.getReference());
       if (refSet != null) {
         refSet.clear();
       }

@@ -37,11 +37,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -173,7 +173,7 @@ public class EditorsFinderManager implements ApplicationComponent {
     if (language == null) {
       return null;
     }
-    SModelDescriptor editorModelDescriptor = LanguageAspect.EDITOR.get(language);
+    SModel editorModelDescriptor = LanguageAspect.EDITOR.get(language);
     String editorUID = null;
     if (editorModelDescriptor != null) {
       editorUID = editorModelDescriptor.getReference().getSModelFqName().toString();

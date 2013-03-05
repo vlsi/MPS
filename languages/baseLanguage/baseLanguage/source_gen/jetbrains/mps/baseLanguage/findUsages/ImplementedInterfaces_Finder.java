@@ -20,18 +20,22 @@ public class ImplementedInterfaces_Finder extends GeneratedFinder {
   public ImplementedInterfaces_Finder() {
   }
 
+  @Override
   public String getDescription() {
     return "Implemented Interfaces";
   }
 
+  @Override
   public String getLongDescription() {
     return "";
   }
 
+  @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
 
+  @Override
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
     try {
@@ -53,6 +57,7 @@ public class ImplementedInterfaces_Finder extends GeneratedFinder {
     }
   }
 
+  @Override
   public String getNodeCategory(SNode node) {
     return "Implemented Interfaces";
   }

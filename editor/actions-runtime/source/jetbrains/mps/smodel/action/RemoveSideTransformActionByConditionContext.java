@@ -15,20 +15,31 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
 
 public class RemoveSideTransformActionByConditionContext {
-  private Iterator<INodeSubstituteAction> myActions;
+  private Iterator<SubstituteAction> myActions;
   private SNode mySourceNode;
 
-  public RemoveSideTransformActionByConditionContext(Iterator<INodeSubstituteAction> actions, SNode sourceNode) {
+  public RemoveSideTransformActionByConditionContext(Iterator<SubstituteAction> actions, SNode sourceNode) {
     myActions = actions;
     mySourceNode = sourceNode;
   }
 
+  /**
+   * Method should be removed after MPS 3.0
+   *
+   * @deprecated since MPS 3.0 use getSideTransformActions() instead
+   */
+  @Deprecated
   public Iterator<INodeSubstituteAction> getActions() {
+    return (Iterator) myActions;
+  }
+
+  public Iterator<SubstituteAction> getSideTransformActions() {
     return myActions;
   }
 

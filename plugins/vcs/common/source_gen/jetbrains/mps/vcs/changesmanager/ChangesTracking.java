@@ -24,6 +24,7 @@ import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -67,7 +68,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.logging.Logger;
 
 public class ChangesTracking {
@@ -153,7 +153,10 @@ public class ChangesTracking {
       return;
     }
 
-    IFile modelFile = myModelDescriptor.getSource().getFile();
+    if (!(myModelDescriptor.getSource() instanceof FileDataSource)) {
+      return;
+    }
+    IFile modelFile = ((FileDataSource) myModelDescriptor.getSource()).getFile();
     if (!(modelFile.exists())) {
       return;
     }
@@ -559,7 +562,7 @@ public class ChangesTracking {
     }
 
     @Override
-    public void modelsReplaced(Set<SModelDescriptor> descriptors) {
+    public void modelsReplaced(Set<SModel> descriptors) {
       if (descriptors.contains(myModelDescriptor)) {
         scheduleFullUpdate();
       }

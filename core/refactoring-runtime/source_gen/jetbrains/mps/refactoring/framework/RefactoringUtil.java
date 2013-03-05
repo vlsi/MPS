@@ -16,9 +16,8 @@ import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -80,7 +79,7 @@ public class RefactoringUtil {
   public static Set<IRefactoring> getRefactorings(Language language) {
     Set<IRefactoring> result = new HashSet<IRefactoring>();
     {
-      SModelDescriptor scriptsModelDescriptor = LanguageAspect.SCRIPTS.get(language);
+      SModel scriptsModelDescriptor = LanguageAspect.SCRIPTS.get(language);
       if (scriptsModelDescriptor != null) {
         SModel scriptsModel = scriptsModelDescriptor.getSModel();
         String packageName = SNodeOperations.getModelLongName(scriptsModel);
@@ -102,7 +101,7 @@ public class RefactoringUtil {
         }
       }
     }
-    SModelDescriptor refModelDescriptor = LanguageAspect.REFACTORINGS.get(language);
+    SModel refModelDescriptor = LanguageAspect.REFACTORINGS.get(language);
     if (refModelDescriptor != null) {
       SModel refactoringsModel = refModelDescriptor.getSModel();
       String packageName = SNodeOperations.getModelLongName(refactoringsModel);

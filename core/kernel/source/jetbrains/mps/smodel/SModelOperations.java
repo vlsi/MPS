@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -55,15 +55,15 @@ public class SModelOperations {
     ModelChange.assertLegalChange(model);
 
     GlobalScope scope = GlobalScope.getInstance();
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    SModel modelDescriptor = model.getModelDescriptor();
     final IModule module = modelDescriptor == null ? null : modelDescriptor.getModule();
     final Collection<IModule> declaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
     final Collection<Language> declaredUsedLanguages = module != null ? new GlobalModuleDependenciesManager(module).getUsedLanguages() : null;
     Set<ModuleReference> usedLanguages = getAllImportedLanguages(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
-    for (SModelDescriptor sm : allImportedModels(model, scope)) {
-      importedModels.add(sm.getSModelReference());
+    for (SModel sm : allImportedModels(model, scope)) {
+      importedModels.add(sm.getReference());
     }
 
     for (SNode node : new NodesIterable(model)) {
@@ -91,7 +91,7 @@ public class SModelOperations {
         SModelReference targetModelReference = reference.getTargetSModelReference();
         if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
           if (respectModulesScopes && module != null) {
-            SModelDescriptor targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
+            SModel targetModelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelReference);
             IModule targetModule = targetModelDescriptor == null ? null : targetModelDescriptor.getModule();
             if (targetModule != null && !declaredDependencies.contains(targetModule)) {
               module.addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
@@ -169,13 +169,13 @@ public class SModelOperations {
   }
 
   //todo rewrite using iterators
-  public static List<SModelDescriptor> allImportedModels(SModel model, IScope scope) {
-    SModelDescriptor sourceModel = model.getModelDescriptor();
-    Set<SModelDescriptor> result = new LinkedHashSet<SModelDescriptor>();
+  public static List<SModel> allImportedModels(SModel model, IScope scope) {
+    SModel sourceModel = model.getModelDescriptor();
+    Set<SModel> result = new LinkedHashSet<SModel>();
     for (Language language : getLanguages(model, scope)) {
-      for (SModelDescriptor am : language.getAccessoryModels()) {
+      for (SModel am : language.getAccessoryModels()) {
         if (am != sourceModel) {
-          SModelDescriptor scopeModelDescriptor = scope.getModelDescriptor(am.getSModelReference());
+          SModel scopeModelDescriptor = scope.getModelDescriptor(am.getReference());
           if (scopeModelDescriptor != null) {
             result.add(scopeModelDescriptor);
           }
@@ -183,13 +183,13 @@ public class SModelOperations {
       }
     }
 
-    for (SModelDescriptor importedModel : importedModels(model, scope)) {
+    for (SModel importedModel : importedModels(model, scope)) {
       if (importedModel != sourceModel) {
         result.add(importedModel);
       }
     }
 
-    return new ArrayList<SModelDescriptor>(result);
+    return new ArrayList<SModel>(result);
   }
 
   @Nullable
@@ -222,8 +222,8 @@ public class SModelOperations {
 
   //todo rewrite using iterators
   @NotNull
-  public static Set<SModelDescriptor> getDependenciesModels(SModel sModel) {
-    Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>(allImportedModels(sModel, GlobalScope.getInstance()));
+  public static Set<SModel> getDependenciesModels(SModel sModel) {
+    Set<SModel> modelDescriptors = new HashSet<SModel>(allImportedModels(sModel, GlobalScope.getInstance()));
     for (Language language : getLanguages(sModel, GlobalScope.getInstance())) {
       modelDescriptors.addAll(LanguageAspect.getAspectModels(language));
     }
@@ -234,8 +234,8 @@ public class SModelOperations {
   @NotNull
   public static Set<SModelReference> getDependenciesModelRefs(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
-    for (SModelDescriptor sm : getDependenciesModels(sModel)) {
-      result.add(sm.getSModelReference());
+    for (SModel sm : getDependenciesModels(sModel)) {
+      result.add(sm.getReference());
     }
     return result;
   }
@@ -290,16 +290,16 @@ public class SModelOperations {
 
   //todo rewrite using iterators
   @NotNull
-  private static List<SModelDescriptor> importedModels(SModel model, @NotNull IScope scope) {
-    List<SModelDescriptor> modelsList = new ArrayList<SModelDescriptor>();
+  private static List<SModel> importedModels(SModel model, @NotNull IScope scope) {
+    List<SModel> modelsList = new ArrayList<SModel>();
     for (ImportElement importElement : ((jetbrains.mps.smodel.SModel) model).importedModels()) {
       SModelReference modelReference = importElement.getModelReference();
-      SModelDescriptor modelDescriptor = scope.getModelDescriptor(modelReference);
+      SModel modelDescriptor = scope.getModelDescriptor(modelReference);
 
       if (modelDescriptor == null) {
         for (Language l : getLanguages(model, scope)) {
-          for (SModelDescriptor accessory : l.getAccessoryModels()) {
-            if (modelReference.equals(accessory.getSModelReference())) {
+          for (SModel accessory : l.getAccessoryModels()) {
+            if (modelReference.equals(accessory.getReference())) {
               modelDescriptor = accessory;
               break;
             }

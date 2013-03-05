@@ -22,7 +22,7 @@ import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -323,7 +323,7 @@ public class GenerationTracer implements IGenerationTracer {
     if (mappingScripts == null) return null;
     SModelReference reference = myModelsProcessedByScripts.getOutputForInput(node.getModel());
     if (reference == null) return null;
-    SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
+    SModel descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (descriptor == null) return null;
     SModel outputModel = descriptor.getSModel();
     SNode inputNode = node;
@@ -388,7 +388,7 @@ public class GenerationTracer implements IGenerationTracer {
     if (mappingScripts == null) return null;
     SModelReference reference = myModelsProcessedByScripts.getInputForOutput(node.getModel());
     if (reference == null) return null;
-    SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
+    SModel descriptor = SModelRepository.getInstance().getModelDescriptor(reference);
     if (descriptor == null) return null;
     SModel inputModel = descriptor.getSModel();
     SNode outputNode = node;

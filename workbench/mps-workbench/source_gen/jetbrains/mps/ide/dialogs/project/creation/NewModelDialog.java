@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.project.Project;
 import java.awt.HeadlessException;
 import java.awt.GridLayout;
@@ -54,7 +54,7 @@ public class NewModelDialog extends DialogWrapper {
   private JTextField myModelName = new JTextField();
   private JComboBox myModelStereotype = new JComboBox();
   private JComboBox myModelRoots = new JComboBox();
-  private SModelDescriptor myResult;
+  private SModel myResult;
   private String myNamespace;
 
   public NewModelDialog(Project project, IModule module, String namespace, IOperationContext context, String stereotype, boolean strict) throws HeadlessException {
@@ -76,7 +76,7 @@ public class NewModelDialog extends DialogWrapper {
     init();
   }
 
-  public SModelDescriptor getResult() {
+  public SModel getResult() {
     return myResult;
   }
 
@@ -198,9 +198,9 @@ public class NewModelDialog extends DialogWrapper {
       }
     }
 
-    myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
+    myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
       @Override
-      public SModelDescriptor compute() {
+      public SModel compute() {
         String fqName = getFqName();
         ModelRoot mr = (ModelRoot) myModelRoots.getSelectedItem();
         return myModule.createModel(fqName, mr, null);

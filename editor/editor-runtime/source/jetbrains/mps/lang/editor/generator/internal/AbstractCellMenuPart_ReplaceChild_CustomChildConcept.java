@@ -22,15 +22,16 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -39,7 +40,7 @@ import java.util.List;
  */
 public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept implements SubstituteInfoPart, SubstituteInfoPartExt {
   @Override
-  public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+  public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
     SNode parentNode = (SNode) cellContext.get(BasicCellContext.EDITED_NODE);
     SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
     IChildNodeSetter setter = new DefaultChildNodeSetter(linkDeclaration);
@@ -50,19 +51,19 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
     IOperationContext context = editorContext.getOperationContext();
     SNode childNodeConcept = getConceptOfChild(parentNode, currentChild, defaultConceptOfChild, context.getScope(), context, editorContext);
     if (childNodeConcept == null) {
-      return new LinkedList<INodeSubstituteAction>();  // no actions
+      return Collections.emptyList();
     }
 
-    return ModelActions.createChildSubstituteActions(parentNode, currentChild, childNodeConcept, setter, context);
+    return ModelActions.createChildNodeSubstituteActions(parentNode, currentChild, childNodeConcept, setter, context);
   }
 
   public List<INodeSubstituteAction> createActions(CellContext cellContext, jetbrains.mps.nodeEditor.EditorContext editorContext) {
-    return createActions(cellContext, (EditorContext) editorContext);
+    return (List) createActions(cellContext, (EditorContext) editorContext);
   }
 
   /**
    * @deprecated starting from MPS 3.0 another method should be used:
-   * <code>getConceptOfChild(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
+   *             <code>getConceptOfChild(... jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
    */
   @Deprecated
   protected SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext context) {
@@ -72,7 +73,8 @@ public abstract class AbstractCellMenuPart_ReplaceChild_CustomChildConcept imple
   /**
    * should become abstract after MPS 3.0
    */
-  protected SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext context, EditorContext editorContext) {
-    return  getConceptOfChild(node, currentChild, defaultConceptOfChild, scope, context);
+  protected SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext context,
+      EditorContext editorContext) {
+    return getConceptOfChild(node, currentChild, defaultConceptOfChild, scope, context);
   }
 }

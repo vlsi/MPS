@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.projectView;
+package jetbrains.mps.idea.core.projectView.edit;
 
 import com.intellij.openapi.actionSystem.DataContext;
 import jetbrains.mps.datatransfer.PasteNodeData;
@@ -24,7 +24,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
@@ -36,12 +36,12 @@ import java.util.Set;
  * User: shatalin
  * Date: 5/4/12
  */
-public class PasteProvider implements com.intellij.ide.PasteProvider, Runnable {
+public class SNodePasteProvider implements com.intellij.ide.PasteProvider, Runnable {
   private Project myProject;
   private SModel myModel;
   private EditableSModelDescriptor myModelDescriptor;
 
-  public PasteProvider(SModel sModel, Project project, EditableSModelDescriptor modelDescriptor) {
+  public SNodePasteProvider(SModel sModel, Project project, EditableSModelDescriptor modelDescriptor) {
     myProject = project;
     myModel = sModel;
     myModelDescriptor = modelDescriptor;

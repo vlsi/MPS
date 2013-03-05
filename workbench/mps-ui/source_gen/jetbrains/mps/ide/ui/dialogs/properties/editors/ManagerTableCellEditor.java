@@ -18,9 +18,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
@@ -71,7 +70,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-          SModelDescriptor stubsAspect = LanguageAspect.STUBS.get(l);
+          SModel stubsAspect = LanguageAspect.STUBS.get(l);
           if (stubsAspect == null) {
             continue;
           }
@@ -84,7 +83,7 @@ public class ManagerTableCellEditor extends DefaultCellEditor {
           if (!(SolutionKind.NONE.equals(s.getModuleDescriptor().getKind()))) {
             // a plugin solution 
 
-            for (SModelDescriptor smd : SModelRepository.getInstance().getModelDescriptors(s)) {
+            for (SModel smd : SModelRepository.getInstance().getModelDescriptors(s)) {
               if (jetbrains.mps.util.SNodeOperations.getModelLongName(smd).endsWith(".stubManagers")) {
                 SModel m = smd.getSModel();
                 ListSequence.fromList(result).addSequence(ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration")));

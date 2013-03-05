@@ -29,39 +29,38 @@
     <unitInfo nodeId="7348309840067517697" fileName="SuppressErrorsChecker.java" startLine="20" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsChecker" />
   </root>
   <root nodeRef="r:ae9ec0c8-644a-4abb-bd37-ca2f4eb2d3d9(jetbrains.mps.ide.editor.suppresserrors)/7348309840067517756">
-    <nodeInfo nodeId="7348309840067517757" fileName="SuppressErrorsMessage.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
-    <nodeInfo nodeId="7348309840067517763" fileName="SuppressErrorsMessage.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON_PATH" />
-    <nodeInfo nodeId="7348309840067517780" fileName="SuppressErrorsMessage.java" startLine="24" startPosition="86" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7348309840067517789" fileName="SuppressErrorsMessage.java" startLine="29" startPosition="25" endLine="30" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7348309840067517797" fileName="SuppressErrorsMessage.java" startLine="34" startPosition="63" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7348309840067517805" fileName="SuppressErrorsMessage.java" startLine="39" startPosition="52" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7348309840067517811" fileName="SuppressErrorsMessage.java" startLine="44" startPosition="36" endLine="45" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7348309840067517817" fileName="SuppressErrorsMessage.java" startLine="49" startPosition="36" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7348309840067517770" fileName="SuppressErrorsMessage.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuppressErrorsMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7348309840067517785" fileName="SuppressErrorsMessage.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="7348309840067517793" fileName="SuppressErrorsMessage.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
-    <nodeInfo nodeId="7348309840067517799" fileName="SuppressErrorsMessage.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnchorCell#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="7348309840067517807" fileName="SuppressErrorsMessage.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
-    <nodeInfo nodeId="7348309840067517813" fileName="SuppressErrorsMessage.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPopupMenu#()Ljavax/swing/JPopupMenu;" />
-    <scopeInfo nodeId="7348309840067517779" fileName="SuppressErrorsMessage.java" startLine="24" startPosition="86" endLine="25" endPosition="32" />
-    <scopeInfo nodeId="7348309840067517788" fileName="SuppressErrorsMessage.java" startLine="29" startPosition="25" endLine="30" endPosition="49" />
-    <scopeInfo nodeId="7348309840067517796" fileName="SuppressErrorsMessage.java" startLine="34" startPosition="63" endLine="35" endPosition="16" />
-    <scopeInfo nodeId="7348309840067517804" fileName="SuppressErrorsMessage.java" startLine="39" startPosition="52" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="7348309840067517810" fileName="SuppressErrorsMessage.java" startLine="44" startPosition="36" endLine="45" endPosition="127" />
-    <scopeInfo nodeId="7348309840067517816" fileName="SuppressErrorsMessage.java" startLine="49" startPosition="36" endLine="50" endPosition="16" />
-    <scopeInfo nodeId="7348309840067517770" fileName="SuppressErrorsMessage.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+    <nodeInfo nodeId="7348309840067517757" fileName="SuppressErrorsMessage.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TYPE" />
+    <nodeInfo nodeId="7348309840067517780" fileName="SuppressErrorsMessage.java" startLine="20" startPosition="86" endLine="21" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7348309840067517789" fileName="SuppressErrorsMessage.java" startLine="25" startPosition="25" endLine="26" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7348309840067517797" fileName="SuppressErrorsMessage.java" startLine="30" startPosition="63" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7348309840067517805" fileName="SuppressErrorsMessage.java" startLine="35" startPosition="52" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7348309840067517811" fileName="SuppressErrorsMessage.java" startLine="40" startPosition="36" endLine="41" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7348309840067517817" fileName="SuppressErrorsMessage.java" startLine="45" startPosition="36" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7348309840067517770" fileName="SuppressErrorsMessage.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuppressErrorsMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/nodeEditor/EditorMessageOwner;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7348309840067517785" fileName="SuppressErrorsMessage.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="7348309840067517793" fileName="SuppressErrorsMessage.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/nodeEditor/EditorMessageIconRenderer/IconRendererType;" />
+    <nodeInfo nodeId="7348309840067517799" fileName="SuppressErrorsMessage.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnchorCell#(Ljetbrains/mps/nodeEditor/cells/EditorCell;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="7348309840067517807" fileName="SuppressErrorsMessage.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClickAction#()Lcom/intellij/openapi/actionSystem/AnAction;" />
+    <nodeInfo nodeId="7348309840067517813" fileName="SuppressErrorsMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPopupMenu#()Ljavax/swing/JPopupMenu;" />
+    <scopeInfo nodeId="7348309840067517779" fileName="SuppressErrorsMessage.java" startLine="20" startPosition="86" endLine="21" endPosition="32" />
+    <scopeInfo nodeId="7348309840067517788" fileName="SuppressErrorsMessage.java" startLine="25" startPosition="25" endLine="26" endPosition="37" />
+    <scopeInfo nodeId="7348309840067517796" fileName="SuppressErrorsMessage.java" startLine="30" startPosition="63" endLine="31" endPosition="16" />
+    <scopeInfo nodeId="7348309840067517804" fileName="SuppressErrorsMessage.java" startLine="35" startPosition="52" endLine="36" endPosition="16" />
+    <scopeInfo nodeId="7348309840067517810" fileName="SuppressErrorsMessage.java" startLine="40" startPosition="36" endLine="41" endPosition="127" />
+    <scopeInfo nodeId="7348309840067517816" fileName="SuppressErrorsMessage.java" startLine="45" startPosition="36" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="7348309840067517770" fileName="SuppressErrorsMessage.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="7348309840067517771" varName="node" />
       <varInfo nodeId="7348309840067517773" varName="owner" />
       <varInfo nodeId="7348309840067517775" varName="tooltip" />
     </scopeInfo>
-    <scopeInfo nodeId="7348309840067517785" fileName="SuppressErrorsMessage.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="7348309840067517793" fileName="SuppressErrorsMessage.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="7348309840067517799" fileName="SuppressErrorsMessage.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="7348309840067517785" fileName="SuppressErrorsMessage.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="7348309840067517793" fileName="SuppressErrorsMessage.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="7348309840067517799" fileName="SuppressErrorsMessage.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="7348309840067517802" varName="cell" />
     </scopeInfo>
-    <scopeInfo nodeId="7348309840067517807" fileName="SuppressErrorsMessage.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="7348309840067517813" fileName="SuppressErrorsMessage.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
-    <unitInfo nodeId="7348309840067517756" fileName="SuppressErrorsMessage.java" startLine="20" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsMessage" />
+    <scopeInfo nodeId="7348309840067517807" fileName="SuppressErrorsMessage.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="7348309840067517813" fileName="SuppressErrorsMessage.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <unitInfo nodeId="7348309840067517756" fileName="SuppressErrorsMessage.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.ide.editor.suppresserrors.SuppressErrorsMessage" />
   </root>
 </debugInfo>
 

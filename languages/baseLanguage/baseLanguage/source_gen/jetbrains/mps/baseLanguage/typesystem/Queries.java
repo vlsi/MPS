@@ -6,10 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
 import java.util.Arrays;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -30,7 +29,7 @@ public class Queries {
   public static SNode getBinaryOperationType(SNode leftType, SNode rightType, boolean mayBeString) {
     List<SNode> leastCommonSupertypes = SubtypingUtil.leastCommonSuperTypes(Arrays.asList(leftType, rightType), null);
     if (mayBeString) {
-      SModelDescriptor javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString("java.lang@java_stub"));
+      SModel javaLangJavaStubModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString("java.lang@java_stub"));
       assert javaLangJavaStubModelDescriptor != null;
       SModel javaLang = javaLangJavaStubModelDescriptor.getSModel();
       SNode stringClass = SModelOperations.getRootByName(javaLang, "String");

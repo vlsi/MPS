@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.projectView;
+package jetbrains.mps.idea.core.projectView.edit;
 
 import com.intellij.ide.CopyProvider;
 import com.intellij.ide.CutProvider;
@@ -30,23 +30,24 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
  * User: shatalin
  * Date: 5/3/12
  */
-public class CutCopyProvider implements CopyProvider, CutProvider {
-  private List<SNodeReference> mySelectedNodes;
+public class SNodeCutCopyProvider implements CopyProvider, CutProvider {
+
+  private Collection<SNodeReference> mySelectedNodes;
   private Project myProject;
   private EditableSModelDescriptor myModelDescriptor;
 
-  public CutCopyProvider(List<SNodeReference> selectedNodes, @NotNull EditableSModelDescriptor modelDescriptor, @NotNull Project project) {
+  public SNodeCutCopyProvider(Collection<SNodeReference> selectedNodes, @NotNull EditableSModelDescriptor modelDescriptor, @NotNull Project project) {
     mySelectedNodes = selectedNodes;
     myProject = project;
     myModelDescriptor = modelDescriptor;
   }
-
   @Override
   public void performCopy(@NotNull DataContext dataContext) {
     performCopy(false);

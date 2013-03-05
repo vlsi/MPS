@@ -23,9 +23,9 @@ import jetbrains.mps.nodeEditor.selection.SelectionListener;
 import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -100,11 +100,11 @@ public class BracesHighlighter {
 
   private void clearBracesSelection() {
     if (!myHightLightedCells.isEmpty()) {
-      for (EditorCell editorCell: myHightLightedCells) {
-        //TODO: editorCell.getStyle().putAll(getBracesAttributes());
-        editorCell.getStyle().set(StyleAttributes.TEXT_COLOR, getBracesAttributes().get(StyleAttributes.TEXT_COLOR));
-        editorCell.getStyle().set(StyleAttributes.TEXT_BACKGROUND_COLOR, getBracesAttributes().get(StyleAttributes.TEXT_BACKGROUND_COLOR));
-        editorCell.getStyle().set(StyleAttributes.FONT_STYLE, getBracesAttributes().get(StyleAttributes.FONT_STYLE));
+      for (EditorCell editorCell : myHightLightedCells) {
+        Style style = editorCell.getStyle();
+        if (style instanceof BraceStyle) {
+          editorCell.setStyle(((BraceStyle) style).getOriginalStyle());
+        }
         myEditorComponent.leftUnhighlightCell(editorCell);
       }
     }
@@ -135,21 +135,41 @@ public class BracesHighlighter {
 
   private void hightlightCell(EditorCell editorCell) {
     myHightLightedCells.add(editorCell);
-    //TODO: editorCell.getStyle().putAll(getMatchedBraceAttributes());
-    editorCell.getStyle().set(StyleAttributes.TEXT_COLOR, getMatchedBraceAttributes().get(StyleAttributes.TEXT_COLOR));
-    editorCell.getStyle().set(StyleAttributes.TEXT_BACKGROUND_COLOR, getMatchedBraceAttributes().get(StyleAttributes.TEXT_BACKGROUND_COLOR));
-    editorCell.getStyle().set(StyleAttributes.FONT_STYLE, getMatchedBraceAttributes().get(StyleAttributes.FONT_STYLE));
+    editorCell.setStyle(new BraceStyle(editorCell));
   }
 
 
   private static Style getMatchedBraceAttributes() {
-    if(ourMatchedBraceAttributes == null)
+    if (ourMatchedBraceAttributes == null)
       ourMatchedBraceAttributes = StyleRegistry.getInstance().getStyle("MATCHED_BRACE_ATTRIBUTES");
     return ourMatchedBraceAttributes;
   }
+
   private static Style getBracesAttributes() {
-    if(ourBraceAttributes == null)
+    if (ourBraceAttributes == null)
       ourBraceAttributes = StyleRegistry.getInstance().getStyle("BRACES");
     return ourBraceAttributes;
+  }
+
+  /**
+   * Change this class after MPS 3.0
+   * TODO: extend StyleImpl class instead of jetbrains.mps.nodeEditor.style.Style
+   */
+  private static class BraceStyle extends jetbrains.mps.nodeEditor.style.Style {
+    private final Style myOriginalStyle;
+
+    BraceStyle(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
+      super(cell.getStyle().getContextCell());
+      myOriginalStyle = cell.getStyle();
+      putAll(myOriginalStyle);
+      //TODO: editorCell.getStyle().putAll(getMatchedBraceAttributes());
+      set(StyleAttributes.TEXT_COLOR, getMatchedBraceAttributes().get(StyleAttributes.TEXT_COLOR));
+      set(StyleAttributes.TEXT_BACKGROUND_COLOR, getMatchedBraceAttributes().get(StyleAttributes.TEXT_BACKGROUND_COLOR));
+      set(StyleAttributes.FONT_STYLE, getMatchedBraceAttributes().get(StyleAttributes.FONT_STYLE));
+    }
+
+    public Style getOriginalStyle() {
+      return myOriginalStyle;
+    }
   }
 }

@@ -17,9 +17,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.BaseEditableSModelDescriptor;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -86,9 +87,9 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
   private boolean calcStatus(@NotNull final SNodeReference root) {
     FileStatus status = ModelAccess.instance().runReadAction(new Computable<FileStatus>() {
       public FileStatus compute() {
-        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
-        if (modelDescriptor instanceof DefaultSModelDescriptor) {
-          DefaultSModelDescriptor md = (DefaultSModelDescriptor) modelDescriptor;
+        SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
+        if (modelDescriptor instanceof BaseEditableSModelDescriptor && modelDescriptor.getSource() instanceof FileDataSource) {
+          BaseEditableSModelDescriptor md = (BaseEditableSModelDescriptor) modelDescriptor;
           if (ConflictsUtil.isModelOrModuleConflicting(md, myProject)) {
             return FileStatus.MERGED_WITH_CONFLICTS;
           }
@@ -101,7 +102,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
           }).toListSequence();
           if (ListSequence.fromList(rootChanges).count() != 0) {
             if (ListSequence.fromList(rootChanges).first() instanceof AddRootChange) {
-              VirtualFile vf = VirtualFileUtils.getVirtualFile(md.getSource().getFile());
+              VirtualFile vf = VirtualFileUtils.getVirtualFile(((FileDataSource) modelDescriptor.getSource()).getFile());
               if (vf != null) {
                 FileStatus modelStatus = FileStatusManager.getInstance(myProject).getStatus(vf);
                 if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {
@@ -136,12 +137,12 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
           public void run() {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
-                SModelDescriptor modelDescriptor = null;
+                SModel modelDescriptor = null;
                 if (!(SNodeOperations.isDisposed(root) || SNodeOperations.isModelDisposed(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root)))) {
                   modelDescriptor = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(root).getModelDescriptor();
                 }
-                if (modelDescriptor instanceof DefaultSModelDescriptor) {
-                  myRegistry.getCurrentDifference((DefaultSModelDescriptor) modelDescriptor).setEnabled(true);
+                if (modelDescriptor instanceof BaseEditableSModelDescriptor) {
+                  myRegistry.getCurrentDifference((BaseEditableSModelDescriptor) modelDescriptor).setEnabled(true);
                 }
               }
             });

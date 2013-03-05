@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.logging.Logger;
 
 @Deprecated
@@ -173,28 +173,28 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       return ListSequence.fromList(classifiers).getElement(0);
     }
 
-    private static IModule check_x9ho2v_a0b0a0h0e7(SModelDescriptor checkedDotOperand) {
+    private static IModule check_x9ho2v_a0b0a0h0e7(SModelInternal checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
       }
       return null;
     }
 
-    private static SModelDescriptor check_x9ho2v_a0a1a0a7a4h(SModel checkedDotOperand) {
+    private static SModelInternal check_x9ho2v_a0a1a0a7a4h(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModelDescriptor();
       }
       return null;
     }
 
-    private static IModule check_x9ho2v_a0b0a0h0e7_0(SModelDescriptor checkedDotOperand) {
+    private static IModule check_x9ho2v_a0b0a0h0e7_0(SModelInternal checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
       }
       return null;
     }
 
-    private static SModelDescriptor check_x9ho2v_a0a1a0a7a4h_0(SModel checkedDotOperand) {
+    private static SModelInternal check_x9ho2v_a0a1a0a7a4h_0(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModelDescriptor();
       }

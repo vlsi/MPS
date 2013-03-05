@@ -6,9 +6,9 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.ArrayList;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.extapi.model.EditableSModel;
@@ -34,34 +34,34 @@ public class ModelProperties {
   private List<ModuleReference> myUsedLanguages = new ArrayList<ModuleReference>();
   private List<ModuleReference> myUsedDevKits = new ArrayList<ModuleReference>();
   private List<ModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<ModuleReference>();
-  private SModelDescriptor myModelDescriptor;
+  private SModel myModelDescriptor;
   private boolean myDoNotGenerate;
   private boolean myGenerateIntoModelFolder;
 
-  public ModelProperties(SModelDescriptor modelDescriptor) {
+  public ModelProperties(SModel modelDescriptor) {
     myModelDescriptor = modelDescriptor;
     SModel model = myModelDescriptor.getSModel();
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
-    myUsedLanguages.addAll(((jetbrains.mps.smodel.SModel) model).importedLanguages());
-    myUsedDevKits.addAll(((jetbrains.mps.smodel.SModel) model).importedDevkits());
-    myLanguagesEngagedOnGeneration.addAll(((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages());
+    myUsedLanguages.addAll(((SModelInternal) model).importedLanguages());
+    myUsedDevKits.addAll(((SModelInternal) model).importedDevkits());
+    myLanguagesEngagedOnGeneration.addAll(((SModelInternal) model).engagedOnGenerationLanguages());
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
     myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
   }
 
   @Deprecated
-  public ModelProperties(SModelDescriptor modelDescriptor, IOperationContext context) {
+  public ModelProperties(SModel modelDescriptor, IOperationContext context) {
     myModelDescriptor = modelDescriptor;
     SModel model = myModelDescriptor.getSModel();
     myImportedModels.addAll(SModelOperations.getImportedModelUIDs(model));
-    myUsedLanguages.addAll(((jetbrains.mps.smodel.SModel) model).importedLanguages());
-    myUsedDevKits.addAll(((jetbrains.mps.smodel.SModel) model).importedDevkits());
-    myLanguagesEngagedOnGeneration.addAll(((jetbrains.mps.smodel.SModel) model).engagedOnGenerationLanguages());
+    myUsedLanguages.addAll(((SModelInternal) model).importedLanguages());
+    myUsedDevKits.addAll(((SModelInternal) model).importedDevkits());
+    myLanguagesEngagedOnGeneration.addAll(((SModelInternal) model).engagedOnGenerationLanguages());
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
     myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
   }
 
-  public SModelDescriptor getModelDescriptor() {
+  public SModel getModelDescriptor() {
     return myModelDescriptor;
   }
 
@@ -134,23 +134,23 @@ public class ModelProperties {
   }
 
   private void addNewDevKits() {
-    Set<ModuleReference> devKitsInModel = new HashSet<ModuleReference>(((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).importedDevkits());
+    Set<ModuleReference> devKitsInModel = new HashSet<ModuleReference>(((SModelInternal) myModelDescriptor.getSModel()).importedDevkits());
     Set<ModuleReference> devKitsInProperties = new HashSet<ModuleReference>(getUsedDevKits());
     devKitsInProperties.removeAll(devKitsInModel);
     for (ModuleReference dk : devKitsInProperties) {
       DevKit devKit = ModuleRepositoryFacade.getInstance().getModule(dk, DevKit.class);
       assert devKit != null;
       SModel model = myModelDescriptor.getSModel();
-      ((jetbrains.mps.smodel.SModel) model).addDevKit(dk);
+      ((SModelInternal) model).addDevKit(dk);
     }
   }
 
   private void removeUnusedDevKits() {
     Set<ModuleReference> propsDevKits = new HashSet<ModuleReference>(getUsedDevKits());
-    List<ModuleReference> imported = new ArrayList<ModuleReference>(((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).importedDevkits());
+    List<ModuleReference> imported = new ArrayList<ModuleReference>(((SModelInternal) myModelDescriptor.getSModel()).importedDevkits());
     for (ModuleReference dk : imported) {
       if (!(propsDevKits.contains(dk))) {
-        ((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).deleteDevKit(dk);
+        ((SModelInternal) myModelDescriptor.getSModel()).deleteDevKit(dk);
       }
     }
   }
@@ -160,7 +160,7 @@ public class ModelProperties {
   }
 
   private void addNewLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).importedLanguages());
+    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((SModelInternal) myModelDescriptor.getSModel()).importedLanguages());
     Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getUsedLanguages());
     languagesInProps.removeAll(languagesInModel);
     for (ModuleReference ref : languagesInProps) {
@@ -171,34 +171,34 @@ public class ModelProperties {
       if (ScopeOperations.resolveModule(myModelDescriptor.getModule().getScope(), language.getModuleReference(), Language.class) == null) {
         myModelDescriptor.getModule().addUsedLanguage(language.getModuleReference());
       }
-      ((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).addLanguage(language.getModuleReference());
+      ((SModelInternal) myModelDescriptor.getSModel()).addLanguage(language.getModuleReference());
     }
   }
 
   private void removeUnusedLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).importedLanguages());
+    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((SModelInternal) myModelDescriptor.getSModel()).importedLanguages());
     Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getUsedLanguages());
     languagesInModel.removeAll(languagesInProps);
     for (ModuleReference namespace : languagesInModel) {
-      ((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).deleteLanguage(namespace);
+      ((SModelInternal) myModelDescriptor.getSModel()).deleteLanguage(namespace);
     }
   }
 
   private void addNewEngagedOnGenerationLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).engagedOnGenerationLanguages());
+    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((SModelInternal) myModelDescriptor.getSModel()).engagedOnGenerationLanguages());
     Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getLanguagesEngagedOnGeneration());
     languagesInProps.removeAll(languagesInModel);
     for (ModuleReference namespace : languagesInProps) {
-      ((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).addEngagedOnGenerationLanguage(namespace);
+      ((SModelInternal) myModelDescriptor.getSModel()).addEngagedOnGenerationLanguage(namespace);
     }
   }
 
   private void removeUnusedEngagedOnGenerationLanguages() {
-    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).engagedOnGenerationLanguages());
+    Set<ModuleReference> languagesInModel = new HashSet<ModuleReference>(((SModelInternal) myModelDescriptor.getSModel()).engagedOnGenerationLanguages());
     Set<ModuleReference> languagesInProps = new HashSet<ModuleReference>(getLanguagesEngagedOnGeneration());
     languagesInModel.removeAll(languagesInProps);
     for (ModuleReference ref : languagesInModel) {
-      ((jetbrains.mps.smodel.SModel) myModelDescriptor.getSModel()).removeEngagedOnGenerationLanguage(ref);
+      ((SModelInternal) myModelDescriptor.getSModel()).removeEngagedOnGenerationLanguage(ref);
     }
   }
 
@@ -207,7 +207,7 @@ public class ModelProperties {
     SModel smodel = myModelDescriptor.getSModel();
     modelsInProps.removeAll(SModelOperations.getImportedModelUIDs(smodel));
     for (SModelReference modelReference : modelsInProps) {
-      ((jetbrains.mps.smodel.SModel) smodel).addModelImport(modelReference, false);
+      ((SModelInternal) smodel).addModelImport(modelReference, false);
     }
   }
 
@@ -216,7 +216,7 @@ public class ModelProperties {
     Set<SModelReference> modelsInModel = new HashSet<SModelReference>(SModelOperations.getImportedModelUIDs(smodel));
     modelsInModel.removeAll(getImportedModels());
     for (SModelReference modelReference : modelsInModel) {
-      ((jetbrains.mps.smodel.SModel) smodel).deleteModelImport(modelReference);
+      ((SModelInternal) smodel).deleteModelImport(modelReference);
     }
   }
 

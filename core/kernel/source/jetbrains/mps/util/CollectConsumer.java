@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package jetbrains.mps.util;
 
-package jetbrains.mps.idea.core.projectView;
+import org.jetbrains.mps.openapi.util.Consumer;
 
-import com.intellij.openapi.actionSystem.DataKey;
-import jetbrains.mps.vfs.IFile;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import java.util.ArrayList;
+import java.util.Collection;
 
-import java.util.Set;
+/**
+ * @author peter
+ */
+public class CollectConsumer<T> implements Consumer<T> {
+  private final Collection<T> myResult;
 
-public class MPSDataKeys {
-    public static final DataKey<Set<IFile>> MODEL_FILES = DataKey.create("mps.model.files");
+  public CollectConsumer(Collection<T> result) {
+    myResult = result;
+  }
+
+  public CollectConsumer() {
+    this(new ArrayList<T>());
+  }
+
+  @Override
+  public void consume(T t) {
+    myResult.add(t);
+  }
+
+  public Collection<T> getResult() {
+    return myResult;
+  }
 }

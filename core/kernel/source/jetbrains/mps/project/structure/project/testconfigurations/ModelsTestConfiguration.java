@@ -21,7 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -47,7 +47,7 @@ public class ModelsTestConfiguration extends BaseTestConfiguration {
 
   @Override
   public GenParameters getGenParams(Project project, boolean fullRegeneration) throws IllegalGeneratorConfigurationException {
-    Set<SModelDescriptor> modelDescriptors = new LinkedHashSet<SModelDescriptor>();
+    Set<SModel> modelDescriptors = new LinkedHashSet<SModel>();
 
     for (SModelReference m : getModels()) {
       modelDescriptors.add(project.getScope().getModelDescriptor(m));

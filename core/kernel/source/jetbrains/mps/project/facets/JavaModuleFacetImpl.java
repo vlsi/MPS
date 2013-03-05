@@ -15,9 +15,13 @@
  */
 package jetbrains.mps.project.facets;
 
+import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ProjectPathUtil;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,21 +33,41 @@ import java.util.Set;
 /**
  * todo: divide into two parts: JavaModuleFacetSrcImpl && JavaModuleFacetPackagedImpl
  */
-public class JavaModuleFacetImpl implements JavaModuleFacet {
-  private final AbstractModule module;
+public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFacet {
 
-  public JavaModuleFacetImpl(AbstractModule module) {
-    this.module = module;
+  public JavaModuleFacetImpl() {
   }
 
   @Override
   public boolean isCompileInMps() {
-    return true;
+    AbstractModule module = getModule();
+    if(module instanceof Generator) {
+      return true;
+    }
+    ModuleDescriptor descriptor = module.getModuleDescriptor();
+    return descriptor != null && descriptor.getCompileInMPS();
+  }
+
+  @Override
+  public String getFacetType() {
+    return FACET_TYPE;
+  }
+
+  @Override
+  public AbstractModule getModule() {
+    return (AbstractModule) super.getModule();
   }
 
   @Override
   @Nullable
   public IFile getClassesGen() {
+    AbstractModule module = getModule();
+    if (module instanceof Generator) {
+      return ((Generator) module).getSourceLanguage().getFacet(JavaModuleFacet.class).getClassesGen();
+    }
+    if (!(module instanceof Solution) && !(module instanceof Language)) {
+      return null;
+    }
     return ProjectPathUtil.getClassesGenFolder(module.getDescriptorFile());
   }
 
@@ -52,15 +76,15 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
     Set<String> libraryClassPath = new LinkedHashSet<String>();
 
     // add additional java stub paths
-    ModuleDescriptor moduleDescriptor = module.getModuleDescriptor();
+    ModuleDescriptor moduleDescriptor = getModule().getModuleDescriptor();
     if (moduleDescriptor != null) {
       libraryClassPath.addAll(moduleDescriptor.getAdditionalJavaStubPaths());
     }
 
     // add classes folder for modules compiled outside MPS
-    if (!isCompileInMps()) {
+    if (getModule() instanceof Solution && !isCompileInMps()) {
       // todo: remove this logic?
-      IFile classes = ProjectPathUtil.getClassesFolder(module.getDescriptorFile());
+      IFile classes = ProjectPathUtil.getClassesFolder(getModule().getDescriptorFile());
       if (classes != null && classes.exists()) {
         libraryClassPath.add(classes.getPath());
       }
@@ -82,7 +106,7 @@ public class JavaModuleFacetImpl implements JavaModuleFacet {
 
   @Override
   public Set<String> getAdditionalSourcePaths() {
-    ModuleDescriptor moduleDescriptor = module.getModuleDescriptor();
+    ModuleDescriptor moduleDescriptor = getModule().getModuleDescriptor();
 
     if (moduleDescriptor == null) {
       return Collections.emptySet();

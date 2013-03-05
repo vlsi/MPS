@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.TemplateModelScanner;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.Collection;
@@ -60,7 +60,7 @@ public class ModelContentUtil {
       }
     }
     // empty behavior model should have it's behavior aspect descriptor generated
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    SModel modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor != null && modelDescriptor.getModule() instanceof Language && LanguageAspect.BEHAVIOR.is(modelDescriptor)) {
       namespaces.add(BootstrapLanguages.BEHAVIOR.getModuleFqName());
     }

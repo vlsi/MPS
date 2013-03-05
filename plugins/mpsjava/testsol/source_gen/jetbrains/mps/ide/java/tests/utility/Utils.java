@@ -33,7 +33,7 @@ import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
 import java.util.Iterator;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.project.SModelRoot;
@@ -127,7 +127,7 @@ public class Utils {
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
     for (SModel md : Sequence.fromIterable(mr.loadModels())) {
-      SModel m = ((SModelDescriptor) md).getSModel();
+      SModel m = ((SModelInternal) md).getSModel();
       ListSequence.fromList(models).addElement(m);
     }
 
@@ -190,8 +190,8 @@ public class Utils {
     SModelRoot binSRoot = new SModelRoot();
     binSRoot.setModule(mod1);
     binSRoot.setPath(binPath);
-    Collection<SModelDescriptor> binStubModels = bin.load(binSRoot);
-    for (SModelDescriptor md : CollectionSequence.fromCollection(binStubModels)) {
+    Collection<SModel> binStubModels = bin.load(binSRoot);
+    for (SModel md : CollectionSequence.fromCollection(binStubModels)) {
       SModel m = md.getSModel();
       ListSequence.fromList(binModels).addElement(m);
 
@@ -218,7 +218,7 @@ public class Utils {
     for (SModel m : Sequence.fromIterable(srcModels)) {
       // <node> 
 
-      SModel zzz = ((SModelDescriptor) m).getSModel();
+      SModel zzz = ((SModelInternal) m).getSModel();
       srcModelsX.add(zzz);
 
       for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(zzz, null))) {

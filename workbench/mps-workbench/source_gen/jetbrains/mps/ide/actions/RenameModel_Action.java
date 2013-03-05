@@ -9,7 +9,7 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.extapi.model.EditableSModel;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -35,10 +35,10 @@ public class RenameModel_Action extends BaseAction {
     if (!(((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
       return true;
     }
-    if (!(Language.isLanguageOwnedAccessoryModel(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))))) {
+    if (!(Language.isLanguageOwnedAccessoryModel(((SModel) MapSequence.fromMap(_params).get("model"))))) {
       return false;
     }
-    return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
+    return ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -81,7 +81,7 @@ public class RenameModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModel) ((SModelDescriptor) MapSequence.fromMap(_params).get("model"))).show();
+      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), (EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).show();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "RenameModel", t);
     }

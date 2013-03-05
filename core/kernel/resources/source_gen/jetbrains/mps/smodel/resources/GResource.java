@@ -4,16 +4,16 @@ package jetbrains.mps.smodel.resources;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 
-public class GResource extends MultiTuple._4<IModule, SModelDescriptor, Iterable<SModelDescriptor>, GenerationStatus> implements IGResource {
+public class GResource extends MultiTuple._4<IModule, SModel, Iterable<SModel>, GenerationStatus> implements IGResource {
   public GResource() {
     super();
   }
 
-  public GResource(IModule module, SModelDescriptor model, Iterable<SModelDescriptor> retainedModels, GenerationStatus status) {
+  public GResource(IModule module, SModel model, Iterable<SModel> retainedModels, GenerationStatus status) {
     super(module, model, retainedModels, status);
   }
 
@@ -21,11 +21,11 @@ public class GResource extends MultiTuple._4<IModule, SModelDescriptor, Iterable
     return super._0(value);
   }
 
-  public SModelDescriptor model(SModelDescriptor value) {
+  public SModel model(SModel value) {
     return super._1(value);
   }
 
-  public Iterable<SModelDescriptor> retainedModels(Iterable<SModelDescriptor> value) {
+  public Iterable<SModel> retainedModels(Iterable<SModel> value) {
     return super._2(value);
   }
 
@@ -37,11 +37,11 @@ public class GResource extends MultiTuple._4<IModule, SModelDescriptor, Iterable
     return super._0();
   }
 
-  public SModelDescriptor model() {
+  public SModel model() {
     return super._1();
   }
 
-  public Iterable<SModelDescriptor> retainedModels() {
+  public Iterable<SModel> retainedModels() {
     return super._2();
   }
 
@@ -50,7 +50,7 @@ public class GResource extends MultiTuple._4<IModule, SModelDescriptor, Iterable
   }
 
   @SuppressWarnings(value = "unchecked")
-  public GResource assignFrom(Tuples._4<IModule, SModelDescriptor, Iterable<SModelDescriptor>, GenerationStatus> from) {
+  public GResource assignFrom(Tuples._4<IModule, SModel, Iterable<SModel>, GenerationStatus> from) {
     return (GResource) super.assign(from);
   }
 

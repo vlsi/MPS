@@ -152,16 +152,16 @@
     <nodeInfo nodeId="8797237962361650882" fileName="CheckUtils.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckUtils#()V" />
     <nodeInfo nodeId="8797237962361654494" fileName="CheckUtils.java" startLine="25" startPosition="10" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8797237962361708427" fileName="CheckUtils.java" startLine="46" startPosition="10" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8797237962361651660" fileName="CheckUtils.java" startLine="52" startPosition="81" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8797237962361651661" fileName="CheckUtils.java" startLine="59" startPosition="81" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="825821767789064099" fileName="CheckUtils.java" startLine="66" startPosition="81" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="825821767789064100" fileName="CheckUtils.java" startLine="73" startPosition="81" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8797237962361651660" fileName="CheckUtils.java" startLine="52" startPosition="79" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8797237962361651661" fileName="CheckUtils.java" startLine="59" startPosition="79" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="825821767789064099" fileName="CheckUtils.java" startLine="66" startPosition="79" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="825821767789064100" fileName="CheckUtils.java" startLine="73" startPosition="79" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="825821767789062527" fileName="CheckUtils.java" startLine="32" startPosition="69" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8797237962361651669" fileName="CheckUtils.java" startLine="22" startPosition="97" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8797237962361651660" fileName="CheckUtils.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_c4dr2s_a0a0c#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="8797237962361651661" fileName="CheckUtils.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_c4dr2s_a0a0a2#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelDescriptor;" />
-    <nodeInfo nodeId="825821767789064099" fileName="CheckUtils.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_c4dr2s_a0c0e#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/project/IModule;" />
-    <nodeInfo nodeId="825821767789064100" fileName="CheckUtils.java" startLine="73" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_c4dr2s_a0a2a4#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelDescriptor;" />
+    <nodeInfo nodeId="8797237962361651660" fileName="CheckUtils.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_c4dr2s_a0a0c#(Ljetbrains/mps/smodel/SModelInternal;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="8797237962361651661" fileName="CheckUtils.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_c4dr2s_a0a0a2#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelInternal;" />
+    <nodeInfo nodeId="825821767789064099" fileName="CheckUtils.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_c4dr2s_a0c0e#(Ljetbrains/mps/smodel/SModelInternal;)Ljetbrains/mps/project/IModule;" />
+    <nodeInfo nodeId="825821767789064100" fileName="CheckUtils.java" startLine="73" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_c4dr2s_a0a2a4#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljetbrains/mps/smodel/SModelInternal;" />
     <nodeInfo nodeId="8797237962361664470" fileName="CheckUtils.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkPluginKindForMPSTestCase#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="8797237962361707494" fileName="CheckUtils.java" startLine="38" startPosition="97" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="825821767789047256" fileName="CheckUtils.java" startLine="32" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fixPluginKindForMPSTestCase#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -175,10 +175,10 @@
     <scopeInfo nodeId="8797237962361650882" fileName="CheckUtils.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="825821767789062529" fileName="CheckUtils.java" startLine="33" startPosition="50" endLine="35" endPosition="18" />
     <scopeInfo nodeId="8797237962361708428" fileName="CheckUtils.java" startLine="46" startPosition="12" endLine="48" endPosition="19" />
-    <scopeInfo nodeId="8797237962361651660" fileName="CheckUtils.java" startLine="52" startPosition="81" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="8797237962361651661" fileName="CheckUtils.java" startLine="59" startPosition="81" endLine="63" endPosition="16" />
-    <scopeInfo nodeId="825821767789064099" fileName="CheckUtils.java" startLine="66" startPosition="81" endLine="70" endPosition="16" />
-    <scopeInfo nodeId="825821767789064100" fileName="CheckUtils.java" startLine="73" startPosition="81" endLine="77" endPosition="16" />
+    <scopeInfo nodeId="8797237962361651660" fileName="CheckUtils.java" startLine="52" startPosition="79" endLine="56" endPosition="16" />
+    <scopeInfo nodeId="8797237962361651661" fileName="CheckUtils.java" startLine="59" startPosition="79" endLine="63" endPosition="16" />
+    <scopeInfo nodeId="825821767789064099" fileName="CheckUtils.java" startLine="66" startPosition="79" endLine="70" endPosition="16" />
+    <scopeInfo nodeId="825821767789064100" fileName="CheckUtils.java" startLine="73" startPosition="79" endLine="77" endPosition="16" />
     <scopeInfo nodeId="8797237962361650971" fileName="CheckUtils.java" startLine="21" startPosition="71" endLine="27" endPosition="5">
       <varInfo nodeId="8797237962361651659" varName="module" />
     </scopeInfo>

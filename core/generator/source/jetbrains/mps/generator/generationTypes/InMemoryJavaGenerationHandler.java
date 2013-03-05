@@ -28,7 +28,7 @@ import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.util.Condition;
@@ -130,7 +130,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     for (SNode root : iterable) {
       TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
       wereErrors |= genResult.hasErrors();
-      String key = getKey((SModelReference) outputModel.getReference(), root);
+      String key = getKey(outputModel.getReference(), root);
       Object result = genResult.getResult();
       if (result instanceof String) {
         mySources.put(key, (String) result);

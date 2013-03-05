@@ -27,7 +27,7 @@ import jetbrains.mps.idea.core.ui.ModelOrNodeChooser;
 import jetbrains.mps.idea.core.ui.RefactoringViewItemImpl;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 
@@ -63,7 +63,7 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
   }
 
   @Override
-  public ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model) {
+  public ModelElementTargetChooser createTargetChooser(Project project, SModel model) {
     return new ModelOrNodeChooser(project, model);
   }
 

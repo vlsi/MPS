@@ -15,6 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.project.dependency.ModelDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.SModel.ImportElement;
+import org.jetbrains.mps.openapi.model.SModel;
+
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
@@ -24,7 +29,6 @@ import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -36,9 +40,10 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public abstract class BaseSModelDescriptor implements SModelDescriptor {
+public abstract class BaseSModelDescriptor implements jetbrains.mps.smodel.SModelDescriptor {
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
   private ModelRoot myModelRoot;
@@ -57,7 +62,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
-  public SModelDescriptor getModelDescriptor() {
+  public SModelInternal getModelDescriptor() {
     return this;
   }
 
@@ -110,14 +115,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   @Override
   public void addRootNode(@NotNull SNode node) {
-    // TODO remove cast
-    getSModel().addRootNode((jetbrains.mps.smodel.SNode) node);
+    getSModel().addRootNode(node);
   }
 
   @Override
   public void removeRootNode(@NotNull SNode node) {
-    // TODO remove cast
-    getSModel().removeRootNode((jetbrains.mps.smodel.SNode) node);
+    getSModel().removeRootNode(node);
   }
 
   @Override
@@ -129,7 +132,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
-  public void dispose() {
+  public void detach() {
     ModelAccess.assertLegalWrite();
     SModel smodel = getCurrentModelInternal();
     if (smodel != null) {
@@ -139,6 +142,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     clearListeners();
   }
 
+  public void dispose() {
+    detach();
+  }
+
   @Override
   public boolean isGeneratable() {
     return false;
@@ -146,7 +153,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   @Override
   public boolean isRegistered() {
-    // Note: can be called without read action
     SModule copy = myModule;
     return copy != null && copy.getRepository() != null;
   }
@@ -291,7 +297,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
-  public SModelDescriptor resolveModel(SModelReference reference) {
+  public SModel resolveModel(SModelReference reference) {
     return SModelRepository.getInstance().getModelDescriptor(reference);
   }
 
@@ -319,5 +325,159 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   @Override
   public void unload() {
     // TODO implement
+  }
+
+  //-------------------------temporary
+
+  public abstract jetbrains.mps.smodel.SModel getSModel();
+
+  @Override
+  public ModelDependenciesManager getModelDepsManager() {
+    return getSModel().getModelDepsManager();
+  }
+
+  @Override
+  public List<ModuleReference> importedLanguages() {
+    return getSModel().importedLanguages();
+  }
+
+  @Override
+  public void deleteLanguage(@NotNull ModuleReference ref) {
+    getSModel().deleteLanguage(ref);
+  }
+
+  @Override
+  public void addLanguage(ModuleReference ref) {
+    getSModel().addLanguage(ref);
+  }
+
+  @Override
+  public List<ModuleReference> importedDevkits() {
+    return getSModel().importedDevkits();
+  }
+
+  @Override
+  public void addDevKit(ModuleReference ref) {
+    getSModel().addDevKit(ref);
+  }
+
+  @Override
+  public void deleteDevKit(@NotNull ModuleReference ref) {
+    getSModel().deleteDevKit(ref);
+  }
+
+  @Override
+  public List<ImportElement> importedModels() {
+    return getSModel().importedModels();
+  }
+
+  @Override
+  public void addModelImport(SModelReference modelReference, boolean firstVersion) {
+    getSModel().addModelImport(modelReference, firstVersion);
+  }
+
+  @Override
+  public void addModelImport(ImportElement importElement) {
+    getSModel().addModelImport(importElement);
+  }
+
+  @Override
+  public void deleteModelImport(SModelReference modelReference) {
+    getSModel().deleteModelImport(modelReference);
+  }
+
+  @NotNull
+  public static Set<SModelReference> collectUsedModels(@NotNull jetbrains.mps.smodel.SModel model, @NotNull Set<SModelReference> result) {
+    return jetbrains.mps.smodel.SModel.collectUsedModels(model, result);
+  }
+
+  @Override
+  public void calculateImplicitImports() {
+    getSModel().calculateImplicitImports();
+  }
+
+  @Override
+  public List<ModuleReference> engagedOnGenerationLanguages() {
+    return getSModel().engagedOnGenerationLanguages();
+  }
+
+  @Override
+  public void addEngagedOnGenerationLanguage(ModuleReference ref) {
+    getSModel().addEngagedOnGenerationLanguage(ref);
+  }
+
+  @Override
+  public void removeEngagedOnGenerationLanguage(ModuleReference ref) {
+    getSModel().removeEngagedOnGenerationLanguage(ref);
+  }
+
+  @Override
+  public List<ImportElement> getAdditionalModelVersions() {
+    return getSModel().getAdditionalModelVersions();
+  }
+
+  @Override
+  public void addAdditionalModelVersion(@NotNull SModelReference modelReference, int usedVersion) {
+    getSModel().addAdditionalModelVersion(modelReference, usedVersion);
+  }
+
+  @Override
+  public void addAdditionalModelVersion(@NotNull ImportElement element) {
+    getSModel().addAdditionalModelVersion(element);
+  }
+
+  @Override
+  public int getVersion() {
+    return getSModel().getVersion();
+  }
+
+  @Override
+  public void setVersion(int version) {
+    getSModel().setVersion(version);
+  }
+
+  @Override
+  public StackTraceElement[] getDisposedStacktrace() {
+    return getSModel().getDisposedStacktrace();
+  }
+
+  @Override
+  public boolean isDisposed() {
+    return getSModel().isDisposed();
+  }
+
+  @Override
+  public void setModelDescriptor(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
+    getSModel().setModelDescriptor(modelDescriptor);
+  }
+
+  @Override
+  public boolean canFireEvent() {
+    return getSModel().canFireEvent();
+  }
+
+  @Override
+  public FastNodeFinder getFastNodeFinder() {
+    return getSModel().getFastNodeFinder();
+  }
+
+  @Override
+  public void disposeFastNodeFinder() {
+    getSModel().disposeFastNodeFinder();
+  }
+
+  @Override
+  public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
+    getSModel().updateImportedModelUsedVersion(sModelReference, currentVersion);
+  }
+
+  @Override
+  public boolean updateSModelReferences() {
+    return getSModel().updateSModelReferences();
+  }
+
+  @Override
+  public boolean updateModuleReferences() {
+    return getSModel().updateModuleReferences();
   }
 }

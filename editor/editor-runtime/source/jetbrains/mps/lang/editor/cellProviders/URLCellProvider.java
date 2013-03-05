@@ -17,10 +17,10 @@ package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeletePropertyOrNode;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_URL;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class URLCellProvider extends PropertyCellProvider {  
@@ -29,7 +29,7 @@ public class URLCellProvider extends PropertyCellProvider {
     super(node, context);
   }
 
-  public EditorCell createEditorCell(EditorContext context) {    
+  public EditorCell createEditorCell(EditorContext context) {
     EditorCell_URL editorCell = EditorCell_URL.create(context, getSNode(), getPropertyName());
     editorCell.setDefaultText(myNoTargetText);
     if (!myReadOnly) {

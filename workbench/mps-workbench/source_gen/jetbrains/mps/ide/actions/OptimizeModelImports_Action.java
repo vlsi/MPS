@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -38,9 +38,9 @@ public class OptimizeModelImports_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    List<SModelDescriptor> m = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"));
-    return ListSequence.fromList(m).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor it) {
+    List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
+    return ListSequence.fromList(m).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
         return it instanceof EditableSModel && !(((EditableSModel) it).isReadOnly());
       }
     }).isNotEmpty();
@@ -82,7 +82,7 @@ public class OptimizeModelImports_Action extends BaseAction {
       final Wrappers._T<String> report = new Wrappers._T<String>();
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          report.value = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context"))).optimizeModelsImports(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
+          report.value = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context"))).optimizeModelsImports(((List<SModel>) MapSequence.fromMap(_params).get("models")));
           SModelRepository.getInstance().saveAll();
         }
       });

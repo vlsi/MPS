@@ -18,7 +18,7 @@ package jetbrains.mps.smodel.presentation;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.Computable;
 
@@ -112,7 +112,7 @@ public class ReferenceConceptUtil {
     if (reference instanceof DynamicReference) {
       return ((DynamicReference) reference).getResolveInfo();
     }
-    SNode referentNode = (SNode) node.getReferenceTarget(genuineRole);
+    SNode referentNode = node.getReferenceTarget(genuineRole);
     String referentPresentation = "<no " + SModelUtil.getLinkDeclarationRole(characteristicReference) + ">";
     if (referentNode != null) {
       referentPresentation = referentNode.toString();

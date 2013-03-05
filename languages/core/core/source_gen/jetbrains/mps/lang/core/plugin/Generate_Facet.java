@@ -36,7 +36,7 @@ import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.smodel.resources.MResource;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -429,8 +429,8 @@ public class Generate_Facet extends IFacet.Stub {
                   monitor.currentProgress().advanceWork("Pre-loading models", 100);
                   ModelAccess.instance().runReadAction(new Runnable() {
                     public void run() {
-                      Sequence.fromIterable(mod.models()).visitAll(new IVisitor<SModelDescriptor>() {
-                        public void visit(SModelDescriptor m) {
+                      Sequence.fromIterable(mod.models()).visitAll(new IVisitor<SModel>() {
+                        public void visit(SModel m) {
                           m.load();
                         }
                       });
@@ -528,7 +528,7 @@ public class Generate_Facet extends IFacet.Stub {
                   tracer.discardTracing();
                 }
               }
-              final Wrappers._T<Map<IModule, Iterable<SModelDescriptor>>> retainedModels = new Wrappers._T<Map<IModule, Iterable<SModelDescriptor>>>();
+              final Wrappers._T<Map<IModule, Iterable<SModel>>> retainedModels = new Wrappers._T<Map<IModule, Iterable<SModel>>>();
 
               ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
@@ -560,8 +560,8 @@ public class Generate_Facet extends IFacet.Stub {
                 }
               }));
               try {
-                List<SModelDescriptor> models = Sequence.fromIterable(input).translate(new ITranslator2<MResource, SModelDescriptor>() {
-                  public Iterable<SModelDescriptor> translate(MResource in) {
+                List<SModel> models = Sequence.fromIterable(input).translate(new ITranslator2<MResource, SModel>() {
+                  public Iterable<SModel> translate(MResource in) {
                     return in.models();
                   }
                 }).toListSequence();

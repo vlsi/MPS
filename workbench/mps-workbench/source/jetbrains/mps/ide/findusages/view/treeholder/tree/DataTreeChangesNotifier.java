@@ -88,7 +88,7 @@ public class DataTreeChangesNotifier {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
         if (event.getModelDescriptor() == null) continue;
-        if (!myModels.contains(event.getModelDescriptor().getSModelReference())) continue;
+        if (!myModels.contains(event.getModelDescriptor().getReference())) continue;
 
         if (event instanceof SModelRootEvent) {
           SModelRootEvent modelRootEvent = (SModelRootEvent) event;
@@ -99,7 +99,7 @@ public class DataTreeChangesNotifier {
           }
         } else if (event instanceof SModelChildEvent) {
           SModelChildEvent modelChildEvent = (SModelChildEvent) event;
-          SNodeReference childPointer = new jetbrains.mps.smodel.SNodePointer((SModelReference) modelChildEvent.getModel().getReference(), modelChildEvent.getChild().getNodeId());
+          SNodeReference childPointer = new jetbrains.mps.smodel.SNodePointer(modelChildEvent.getModel().getReference(), modelChildEvent.getChild().getNodeId());
           if (modelChildEvent.isRemoved() && myNodes.contains(childPointer)) {
             myChanged = true;
             return;
@@ -111,8 +111,8 @@ public class DataTreeChangesNotifier {
 
   private class MyModelRepositoryListener extends SModelRepositoryAdapter {
     @Override
-    public void modelDeleted(SModelDescriptor modelDescriptor) {
-      if (!myModels.contains(modelDescriptor.getSModelReference())) return;
+    public void modelDeleted(SModel modelDescriptor) {
+      if (!myModels.contains(modelDescriptor.getReference())) return;
       myChanged = true;
     }
   }

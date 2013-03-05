@@ -10,7 +10,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
@@ -38,8 +39,8 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
             MPSTreeNode treeNode = null;
             if (initialValue instanceof SNode) {
               treeNode = myHelper.findMostSuitableSNodeTreeNode(((SNode) initialValue));
-            } else if (initialValue instanceof SModelDescriptor) {
-              treeNode = myHelper.findMostSuitableModelTreeNode(((SModelDescriptor) initialValue));
+            } else if (initialValue instanceof SModel) {
+              treeNode = myHelper.findMostSuitableModelTreeNode(((SModelInternal) initialValue));
             }
             if (treeNode == null) {
               return;

@@ -15,20 +15,23 @@
  */
 package jetbrains.mps.findUsages;
 
+import jetbrains.mps.progress.ProgressMonitor;
+import jetbrains.mps.progress.SubProgressKind;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.containers.MultiMap;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.CollectConsumer;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.persistence.indexing.FastFindSupport;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
+import org.jetbrains.mps.openapi.persistence.indexing.FindUsagesParticipant;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Map.Entry;
 import java.util.Set;
 
 class InstancesSearchType extends SearchType<SNode, SConcept> {
@@ -39,46 +42,48 @@ class InstancesSearchType extends SearchType<SNode, SConcept> {
   }
 
   @Override
-  public MultiMap<SModel, SConcept> findMatchingModelsInCache(Set<SConcept> concepts, Iterable<SModel> models, @Nullable Computable<Boolean> callback) {
-    Set<SConcept> queryConcepts = new HashSet<SConcept>();
-    for (SConcept concept : concepts) {
-      queryConcepts.add(concept);
+  public Set<SNode> search(Set<SConcept> elements, SearchScope scope, @NotNull ProgressMonitor monitor) {
+    CollectConsumer<SNode> consumer = new CollectConsumer(new HashSet<SNode>());
+    Collection<FindUsagesParticipant> participants = FastFindUsagesRegistry.getInstance().getParticipants();
+
+    monitor.start("Finding usages...", participants.size() + 5);
+    try {
+      Set<SConcept> queryConcepts = new HashSet<SConcept>(elements);
       if (!myExact) {
-        Set<String> desc = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(concept.getId());
-        for (String cName : desc) {
-          queryConcepts.add(SConceptRepository.getInstance().getConcept(cName));
+        for (SConcept concept : elements) {
+          Set<String> desc = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(concept.getQualifiedName());
+          for (String cName : desc) {
+            queryConcepts.add(SConceptRepository.getInstance().getConcept(cName));
+          }
         }
       }
-    }
+      monitor.advance(1);
 
-    MultiMap<SModel, SConcept> result = new MultiMap<SModel, SConcept>();
-    MultiMap<FastFindSupport, SModel> gm = groupModelByFastFindSupport(models);
-    for (Entry<FastFindSupport, Collection<SModel>> e : gm.entrySet()) {
-      if (e.getKey() == null) {
-        for (SModel model : e.getValue()) {
-          result.putValues(model, queryConcepts);
-        }
-        continue;
+      Collection<SModel> current = IterableUtil.asCollection(scope.getModels());
+      for (FindUsagesParticipant participant : participants) {
+        final Set<SModel> next = new HashSet<SModel>(current);
+        participant.findInstances(current, queryConcepts, consumer, new Consumer<SModel>() {
+          @Override
+          public void consume(SModel sModel) {
+            next.remove(sModel);
+          }
+        });
+        current = next;
+        monitor.advance(1);
       }
 
-      result.putAllValues(e.getKey().findModelsWithPossibleInstances(e.getValue(), queryConcepts));
-    }
-    return result;
-  }
-
-  @Override
-  public Set<SNode> findInModel(MultiMap<SModel, SConcept> models, @Nullable Computable<Boolean> callback) {
-    Set<SNode> result = new HashSet<SNode>();
-    for (Entry<SModel, Collection<SConcept>> e : models.entrySet()) {
-      SModel model = e.getKey();
-      if (model == null) continue;
-
-      for (SConcept concept : e.getValue()) {
-        result.addAll(((jetbrains.mps.smodel.SModel) ((SModelDescriptor) model).getSModel()).getFastNodeFinder().getNodes(concept.getId(), !myExact));
+      ProgressMonitor subMonitor = monitor.subTask(4, SubProgressKind.DEFAULT);
+      subMonitor.start("", current.size());
+      for (SModel m : current) {
+        subMonitor.step(m.getModelName());
+        FindUsagesManager.collectInstances(m, queryConcepts, consumer);
+        if (monitor.isCanceled()) break;
+        subMonitor.advance(1);
       }
-
-      if (callback != null && !callback.compute()) break;
+      subMonitor.done();
+    } finally {
+      monitor.done();
     }
-    return result;
+    return (Set<SNode>) consumer.getResult();
   }
 }

@@ -17,7 +17,7 @@ package jetbrains.mps.cache;
 
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SModelAdapter;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Computable;
 
@@ -52,7 +52,7 @@ public abstract class AbstractCache extends SModelAdapter {
     return CachesManager.getInstance().getCache(myKey, null, null) == this;
   }
 
-  public abstract Set<SModelDescriptor> getDependsOnModels(Object element);
+  public abstract Set<SModel> getDependsOnModels(Object element);
 
   public void removeDataSet(DataSet dataSet) {
     myDataSets.remove(dataSet.getId());

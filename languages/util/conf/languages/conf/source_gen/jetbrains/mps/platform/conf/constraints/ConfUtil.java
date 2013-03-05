@@ -8,9 +8,9 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class ConfUtil {
@@ -20,19 +20,19 @@ public class ConfUtil {
   }
 
   public static Iterable<SModel> visibleConfModels(IScope scope) {
-    return Sequence.fromIterable(((Iterable<IModule>) scope.getVisibleModules())).translate(new ITranslator2<IModule, SModelDescriptor>() {
-      public Iterable<SModelDescriptor> translate(IModule m) {
+    return Sequence.fromIterable(((Iterable<IModule>) scope.getVisibleModules())).translate(new ITranslator2<IModule, SModel>() {
+      public Iterable<SModel> translate(IModule m) {
         return m.getOwnModelDescriptors();
       }
-    }).where(new IWhereFilter<SModelDescriptor>() {
-      public boolean accept(SModelDescriptor smd) {
+    }).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel smd) {
         return ((SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(smd))) ?
           "conf_stub".equals(SModelStereotype.getStereotype(smd)) :
-          Sequence.fromIterable(((Iterable<ModuleReference>) ((jetbrains.mps.smodel.SModel) smd.getSModel()).importedLanguages())).contains(ConfUtil.CONF_LANG)
+          Sequence.fromIterable(((Iterable<ModuleReference>) ((SModelInternal) smd.getSModel()).importedLanguages())).contains(ConfUtil.CONF_LANG)
         );
       }
-    }).select(new ISelector<SModelDescriptor, SModel>() {
-      public SModel select(SModelDescriptor smd) {
+    }).select(new ISelector<SModel, SModel>() {
+      public SModel select(SModel smd) {
         return (SModel) (smd.getSModel());
       }
     });

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.EditableSModel;
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -21,9 +21,10 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,11 +33,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ModelFindOperations {
-  private SModelDescriptor myModelDescriptor;
+  private SModel myModelDescriptor;
   private FileDataSource myDataSource;
   private boolean myNeedSearchForStrings;
 
-  public ModelFindOperations(SModelDescriptor descriptor) {
+  public ModelFindOperations(SModel descriptor) {
     myModelDescriptor = descriptor;
     DataSource source = descriptor != null ? myModelDescriptor.getSource() : null;
     myDataSource = source instanceof FileDataSource ? (FileDataSource) source : null;
@@ -53,7 +54,7 @@ public class ModelFindOperations {
     return s.replaceAll("<", "&lt;").replaceAll(">", "&gt;");
   }
 
-  public boolean hasImportedModel(SModelDescriptor modelDescriptor) {
+  public boolean hasImportedModel(SModel modelDescriptor) {
     if (myDataSource == null) return false;
     if (myNeedSearchForStrings && !containsString(myModelDescriptor, modelDescriptor.toString()))
       return false;
@@ -61,7 +62,7 @@ public class ModelFindOperations {
     SModel model = myModelDescriptor.getSModel();
     if (model == null) return false;
 
-    return SModelOperations.getImportElement(model, modelDescriptor.getSModelReference()) != null;
+    return SModelOperations.getImportElement(model, modelDescriptor.getReference()) != null;
   }
 
   public boolean hasUsages(Set<SModelReference> models) {
@@ -78,23 +79,23 @@ public class ModelFindOperations {
     SModel model = myModelDescriptor.getSModel();
     if (model == null) return false;
 
-    for (SModelDescriptor modelDescriptor : SModelOperations.allImportedModels(model, GlobalScope.getInstance())) {
-      if (models.contains(modelDescriptor.getSModelReference())) {
+    for (SModel modelDescriptor : SModelOperations.allImportedModels(model, GlobalScope.getInstance())) {
+      if (models.contains(modelDescriptor.getReference())) {
         return true;
       }
     }
     return false;
   }
 
-  public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {
+  public boolean containsSomeString(@NotNull SModel sm, @NotNull Set<String> strings) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     if (dsm.isChanged()) return true;
 
-    IFile modelFile = dsm.getSource().getFile();
-    if (!modelFile.exists()) return true;
+    StreamDataSource source = dsm.getSource();
+    if (source.getTimestamp() == -1) return true;
     BufferedReader r = null;
     try {
-      r = new BufferedReader(new InputStreamReader(modelFile.openInputStream(), FileUtil.DEFAULT_CHARSET));
+      r = new BufferedReader(new InputStreamReader(source.openInputStream(), FileUtil.DEFAULT_CHARSET));
       String line;
       boolean result = false;
       while ((line = r.readLine()) != null) {
@@ -120,7 +121,7 @@ public class ModelFindOperations {
     return true;
   }
 
-  public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
+  public boolean containsString(@NotNull SModel modelDescriptor, @NotNull String string) {
     return containsSomeString(modelDescriptor, CollectionUtil.set(string));
   }
 }

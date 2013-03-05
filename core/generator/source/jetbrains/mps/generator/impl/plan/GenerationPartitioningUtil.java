@@ -23,7 +23,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.*;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
@@ -191,7 +191,7 @@ public class GenerationPartitioningUtil {
       if (nodeID.equals("*")) {
         return s + "*";
       } else {
-        SModelDescriptor refModel = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelUID));
+        SModel refModel = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(modelUID));
         if (refModel != null) {
           jetbrains.mps.smodel.SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(nodeID);
           assert nodeId != null : "wrong node id string";

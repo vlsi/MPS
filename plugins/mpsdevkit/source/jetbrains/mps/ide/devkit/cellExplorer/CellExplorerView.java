@@ -154,7 +154,7 @@ public class CellExplorerView extends BaseProjectTool {
     List<EditorCell> path = new ArrayList<EditorCell>();
     while (cell != null) {
       path.add(cell);
-      cell = (EditorCell) cell.getParent();
+      cell = cell.getParent();
     }
     Collections.reverse(path);
 
@@ -303,7 +303,7 @@ public class CellExplorerView extends BaseProjectTool {
       if (myCell instanceof EditorCell_Collection) {
         EditorCell_Collection cell = (EditorCell_Collection) myCell;
         for (jetbrains.mps.openapi.editor.cells.EditorCell child : cell) {
-          add(new CellTreeNode((EditorCell) child));
+          add(new CellTreeNode(child));
         }
         myInitialized = true;
       }

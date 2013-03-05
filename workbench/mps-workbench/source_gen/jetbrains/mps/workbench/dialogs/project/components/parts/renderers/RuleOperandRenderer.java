@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -118,7 +118,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {
           @Override
           public String compute() {
-            SModelDescriptor model = SNodeOperations.getModelFromNodeReference(((SNodePointer) p));
+            SModel model = SNodeOperations.getModelFromNodeReference(((SNodePointer) p));
             SNode node = ((SNodePointer) p).resolve(MPSModuleRepository.getInstance());
             if (model == null || node == null) {
               return null;

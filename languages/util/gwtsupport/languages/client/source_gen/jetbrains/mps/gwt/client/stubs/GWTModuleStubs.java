@@ -4,7 +4,7 @@ package jetbrains.mps.gwt.client.stubs;
 
 import jetbrains.mps.smodel.persistence.ModelRootManagerBase;
 import java.util.Collection;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.SModelRoot;
 import java.util.List;
@@ -22,8 +22,8 @@ public class GWTModuleStubs extends ModelRootManagerBase {
   }
 
   @Override
-  public Collection<SModelDescriptor> load(@NotNull SModelRoot modelRoot) {
-    List<SModelDescriptor> res = ListSequence.fromList(new ArrayList<SModelDescriptor>());
+  public Collection<SModel> load(@NotNull SModelRoot modelRoot) {
+    List<SModel> res = ListSequence.fromList(new ArrayList<SModel>());
     ListSequence.fromList(res).addSequence(SetSequence.fromSet(new StubModelDescriptors(SModelStereotype.getStubStereotypeForId("gwt"), modelRoot.getModelRoot().getPath(), modelRoot.getModule()) {
       @Override
       public StubModelDataSource createStubsSource(String loc) {

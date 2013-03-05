@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.impl.dependencies;
 
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jdom.Attribute;
@@ -165,7 +165,7 @@ public class GenerationRootDependencies {
 
   public static GenerationRootDependencies fromData(RootDependenciesBuilder l, List<String> generatedFiles) {
     final Collection<SNode> localNodes = l.getDependsOn();
-    final Collection<SModelDescriptor> externalModels = l.getDependsOnModels();
+    final Collection<SModel> externalModels = l.getDependsOnModels();
 
     List<String> local = new ArrayList<String>(localNodes.size());
     for (SNode n : localNodes) {
@@ -174,8 +174,8 @@ public class GenerationRootDependencies {
     Collections.sort(local);
 
     List<String> external = new ArrayList<String>(externalModels.size());
-    for (SModelDescriptor m : externalModels) {
-      final SModelReference modelRef = m.getSModelReference();
+    for (SModel m : externalModels) {
+      final SModelReference modelRef = m.getReference();
       if(modelRef == null) {
         continue; // TODO report error?
       }

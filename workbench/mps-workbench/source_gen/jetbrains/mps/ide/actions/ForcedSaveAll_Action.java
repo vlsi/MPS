@@ -7,7 +7,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -46,7 +46,7 @@ public class ForcedSaveAll_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      for (SModelDescriptor descr : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
+      for (SModel descr : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
         if (!(SModelStereotype.isUserModel(descr) && descr instanceof EditableSModel)) {
           continue;
         }

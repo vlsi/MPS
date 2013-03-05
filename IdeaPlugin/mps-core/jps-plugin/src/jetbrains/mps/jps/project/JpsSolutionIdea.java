@@ -1,6 +1,7 @@
 package jetbrains.mps.jps.project;
 
 import com.intellij.openapi.util.io.FileUtil;
+import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
@@ -10,7 +11,6 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleFacetImpl;
-import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -23,25 +23,15 @@ import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.model.java.JpsJavaExtensionService;
 import org.jetbrains.jps.model.java.JpsJavaSdkType;
 import org.jetbrains.jps.model.library.JpsLibrary;
-import org.jetbrains.jps.model.module.JpsDependencyElement;
-import org.jetbrains.jps.model.module.JpsLibraryDependency;
-import org.jetbrains.jps.model.module.JpsModule;
-import org.jetbrains.jps.model.module.JpsModuleDependency;
-import org.jetbrains.jps.model.module.JpsSdkDependency;
+import org.jetbrains.jps.model.module.*;
 import org.jetbrains.jps.service.JpsServiceManager;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -138,33 +128,27 @@ public class JpsSolutionIdea extends Solution {
   }
 
   @Override
-  protected List<SModuleFacet> createFacets() {
-    JavaModuleFacet javaFacet = new JavaModuleFacetImpl(this) {
-      @Override
-      public IFile getClassesGen() {
-        IFile descriptorFile = getDescriptorFile();
-        if (descriptorFile != null && descriptorFile.isReadOnly()) {
-          myCompileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, " super.ClassesGen " + super.getClassesGen()));
-          return super.getClassesGen();
-        }
+  protected ModuleFacetBase setupFacet(ModuleFacetBase facet, Memento memento) {
+    if (facet instanceof JavaModuleFacet) {
+      facet = new JavaModuleFacetImpl() {
+        @Override
+        public IFile getClassesGen() {
+          IFile descriptorFile = getDescriptorFile();
+          if (descriptorFile != null && descriptorFile.isReadOnly()) {
+            myCompileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, " super.ClassesGen " + super.getClassesGen()));
+            return super.getClassesGen();
+          }
 
-        // FIX hard-coded forTests=false
-        // TODO use ProjectPaths.getModuleOutputDir(myModule, false); (using JpsJavaExtensionService directly to be compatible with IDEA 12.0.0 release)
-        File outputDir = JpsJavaExtensionService.getInstance().getOutputDirectory(myModule, false);
-        MPSCompilerUtil.debug(myCompileContext, " ClassesGen from module " + FileSystem.getInstance().getFileByPath(outputDir.getPath()));
-        if (outputDir != null) return FileSystem.getInstance().getFileByPath(outputDir.getPath());
-        else return null;
-      }
-    };
-    TestsFacet testsFacet = new TestsFacet() {
-      @Override
-      public IFile getTestsOutputPath() {
-        // Needed only for ReducedGenerationWorker
-        //return ""; // just not null
-        return getClassesGen();
-      }
-    };
-    return Arrays.asList(javaFacet, testsFacet);
+          // FIX hard-coded forTests=false
+          // TODO use ProjectPaths.getModuleOutputDir(myModule, false); (using JpsJavaExtensionService directly to be compatible with IDEA 12.0.0 release)
+          File outputDir = JpsJavaExtensionService.getInstance().getOutputDirectory(myModule, false);
+          if (outputDir == null) return null;
+          MPSCompilerUtil.debug(myCompileContext, " ClassesGen from module " + outputDir.getPath());
+          return FileSystem.getInstance().getFileByPath(outputDir.getPath());
+        }
+      };
+    }
+    return super.setupFacet(facet, memento);
   }
 
   @Override

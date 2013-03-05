@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 
@@ -36,11 +36,11 @@ public class StateUtil {
   }
 
   public static boolean isInScope(final IScope scope, final SModelReference modelReference) {
-    SModelDescriptor model;
+    SModel model;
     if (scope != null) {
-      model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
+      model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
         @Override
-        public SModelDescriptor compute() {
+        public SModel compute() {
           return scope.getModelDescriptor(modelReference);
         }
       });

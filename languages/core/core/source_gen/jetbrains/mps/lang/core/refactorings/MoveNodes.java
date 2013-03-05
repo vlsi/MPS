@@ -20,8 +20,8 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -77,7 +77,7 @@ public class MoveNodes extends BaseLoggableRefactoring {
             }
           }
           result.value = true;
-        } else if (((Object) refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
+        } else if (((Object) refactoringContext.getParameter("target")) instanceof SModel) {
           for (SNode node : refactoringContext.getSelectedNodes()) {
             if (!(SNodeOperations.isInstanceOf(SNodeOperations.getConceptDeclaration(node), "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) || !(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
               return;
@@ -94,8 +94,8 @@ public class MoveNodes extends BaseLoggableRefactoring {
     List<SNode> nodes = refactoringContext.getSelectedNodes();
     SModel targetModel = null;
     List<SNode> movedNodes = null;
-    if (((Object) refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
-      targetModel = ((SModelDescriptor) ((Object) refactoringContext.getParameter("target"))).getSModel();
+    if (((Object) refactoringContext.getParameter("target")) instanceof SModel) {
+      targetModel = ((SModelInternal) ((Object) refactoringContext.getParameter("target"))).getSModel();
       movedNodes = refactoringContext.moveNodesToModel(nodes, targetModel);
     }
     if (((Object) refactoringContext.getParameter("target")) instanceof SNode) {

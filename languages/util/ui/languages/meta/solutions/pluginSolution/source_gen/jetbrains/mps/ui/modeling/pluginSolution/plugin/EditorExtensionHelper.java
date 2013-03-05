@@ -5,10 +5,9 @@ package jetbrains.mps.ui.modeling.pluginSolution.plugin;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -26,7 +25,7 @@ public class EditorExtensionHelper {
   }
 
   public void init() {
-    SModelDescriptor wdesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getWidgetTemplatesModel(this.templatesBase)));
+    SModel wdesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getWidgetTemplatesModel(this.templatesBase)));
     final SModel widgetsModel = (wdesc != null ?
       wdesc.getSModel() :
       null
@@ -57,7 +56,7 @@ public class EditorExtensionHelper {
         return EditorExtensionHelper.this.templatesBase;
       }
     };
-    SModelDescriptor edesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getEventHandlerTemplatesModel(this.templatesBase)));
+    SModel edesc = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(this.getEventHandlerTemplatesModel(this.templatesBase)));
     final SModel eventsModel = (edesc != null ?
       edesc.getSModel() :
       null

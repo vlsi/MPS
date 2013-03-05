@@ -52,17 +52,17 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   private void addListeners() {
     if (myEventsListener == null) return;
     SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
-    myEventsListener.getModelDescriptor().addModelListener(mySNodeModelListener);
+    ((SModelInternal) myEventsListener.getModelDescriptor()).addModelListener(mySNodeModelListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
   }
 
   private void removeListeners() {
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
 
-    SModelDescriptor md = getModelDescriptor();
+    SModel md = getModelDescriptor();
     if (md == null) return;
     if (mySNodeModelListener != null) {
-      getModelDescriptor().removeModelListener(mySNodeModelListener);
+      ((SModelInternal) getModelDescriptor()).removeModelListener(mySNodeModelListener);
     }
     if (myEventsListener == null) return;
     SModelEventsDispatcher.getInstance().unregisterListener(myEventsListener);
@@ -89,7 +89,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     };
     myModelRepositoryListener = new SModelRepositoryAdapter() {
       @Override
-      public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      public void modelsReplaced(Set<SModel> replacedModels) {
         if (replacedModels.contains(getModelDescriptor())) {
           ModelAccess.instance().runReadInEDT(new Runnable() {
             @Override
@@ -109,15 +109,15 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   }
 
   private class MyEventsListener implements SModelEventsListener {
-    private SModelDescriptor myModelDescriptor;
+    private SModel myModelDescriptor;
 
-    private MyEventsListener(SModelDescriptor modelDescriptor) {
+    private MyEventsListener(SModel modelDescriptor) {
       myModelDescriptor = modelDescriptor;
     }
 
     @NotNull
     @Override
-    public SModelDescriptor getModelDescriptor() {
+    public SModel getModelDescriptor() {
       return myModelDescriptor;
     }
 
@@ -145,7 +145,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     }
 
     @Override
-    public SModelDescriptor getSModelDescriptor() {
+    public SModel getSModelDescriptor() {
       return myTreeNode.getSNode().getModel().getModelDescriptor();
     }
 

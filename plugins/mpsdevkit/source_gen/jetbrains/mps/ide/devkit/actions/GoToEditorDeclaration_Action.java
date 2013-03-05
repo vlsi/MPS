@@ -22,7 +22,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
@@ -119,7 +119,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
           return SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
         }
       });
-      SModelDescriptor editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l, conceptDeclaration, ((IScope) MapSequence.fromMap(_params).get("scope")));
+      SModel editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l, conceptDeclaration, ((IScope) MapSequence.fromMap(_params).get("scope")));
       if (editorModel == null) {
         return;
       }

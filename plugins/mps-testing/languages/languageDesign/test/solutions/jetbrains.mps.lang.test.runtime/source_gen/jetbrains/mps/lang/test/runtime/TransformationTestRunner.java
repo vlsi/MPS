@@ -13,7 +13,7 @@ import junit.framework.Assert;
 import jetbrains.mps.util.MacrosFactory;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Arrays;
@@ -77,7 +77,7 @@ public class TransformationTestRunner {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model));
+            SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model));
             if (modelDescriptor == null) {
               Assert.fail("Can't find model " + model + " in projects " + Arrays.toString(ProjectManager.getInstance().getOpenProjects()) + ".");
             }

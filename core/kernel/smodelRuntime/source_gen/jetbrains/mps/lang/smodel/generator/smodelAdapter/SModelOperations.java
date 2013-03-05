@@ -15,10 +15,10 @@ import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.util.NodesIterable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -92,8 +92,8 @@ public class SModelOperations {
   private static List<SNode> allNodesIncludingImported(SModel sModel, IScope scope, boolean roots, @Nullable SNode concept) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(sModel);
-    List<SModelDescriptor> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
-    for (SModelDescriptor descriptor : modelDescriptors) {
+    List<SModel> modelDescriptors = jetbrains.mps.smodel.SModelOperations.allImportedModels(sModel, scope);
+    for (SModel descriptor : modelDescriptors) {
       modelsList.add(descriptor.getSModel());
     }
     List<SNode> resultNodes = new ArrayList<SNode>();
@@ -107,7 +107,7 @@ public class SModelOperations {
       } else if (roots) {
         resultNodes.addAll(IterableUtil.asList(new ConditionalIterable(nodes, new IsInstanceCondition(concept))));
       } else {
-        resultNodes.addAll(IterableUtil.asList(((jetbrains.mps.smodel.SModel) aModel).getFastNodeFinder().getNodes(NameUtil.nodeFQName(concept), true)));
+        resultNodes.addAll(IterableUtil.asList(((SModelInternal) aModel).getFastNodeFinder().getNodes(NameUtil.nodeFQName(concept), true)));
       }
     }
     return resultNodes;
@@ -118,7 +118,7 @@ public class SModelOperations {
       return new ArrayList<SNode>();
     }
     if (conceptFqName != null) {
-      return ((jetbrains.mps.smodel.SModel) model).getFastNodeFinder().getNodes(conceptFqName, true);
+      return ((SModelInternal) model).getFastNodeFinder().getNodes(conceptFqName, true);
     }
     List<SNode> result = new ArrayList<SNode>();
     for (SNode node : new NodesIterable(model)) {

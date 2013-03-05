@@ -5,7 +5,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.util.SNodeOperations;
@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.ModuleContext;
 import org.jetbrains.annotations.NotNull;
@@ -36,7 +35,7 @@ public class ModelChecker {
     myOperationContext = operationContext;
   }
 
-  public void checkModel(final SModelDescriptor modelDescriptor, final ProgressMonitor monitor) {
+  public void checkModel(final SModel modelDescriptor, final ProgressMonitor monitor) {
     final Wrappers._T<List<SpecificChecker>> specificCheckers = new Wrappers._T<List<SpecificChecker>>(mySpecificCheckers);
     if (specificCheckers.value == null) {
       specificCheckers.value = ModelCheckerSettings.getInstance().getSpecificCheckers();

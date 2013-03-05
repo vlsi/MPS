@@ -30,6 +30,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -101,7 +102,7 @@ public class ModelRepositoryComponent {
 
           if (MPSCore.getInstance().isTestMode()) return;
 
-          for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getModelDescriptors())) {
+          for (SModel modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getModelDescriptors())) {
             root[0].add(new ModelTreeNode(modelDescriptor));
           }
         }
@@ -112,12 +113,12 @@ public class ModelRepositoryComponent {
     }
 
     private class ModelTreeNode extends MPSTreeNode {
-      private SModelDescriptor myModelDescriptor;
+      private SModel myModelDescriptor;
 
-      public ModelTreeNode(SModelDescriptor modelDescriptor) {
+      public ModelTreeNode(SModel modelDescriptor) {
         super(null);
         myModelDescriptor = modelDescriptor;
-        setNodeIdentifier(myModelDescriptor.getLongName());
+        setNodeIdentifier(SNodeOperations.getModelLongName(myModelDescriptor));
         SModule owner = SModelRepository.getInstance().getOwner(myModelDescriptor);
         if (owner != null) {
           add(new OwnerTreeNode(owner));
@@ -133,7 +134,7 @@ public class ModelRepositoryComponent {
           //setColor(new Color(0x00, 0x00, 0x90));
         }
         setColor(EditorColorsManager.getInstance().getGlobalScheme().getColor(ColorKey.createColorKey("FILESTATUS_NOT_CHANGED")));
-        String text = myModelDescriptor.getLongName();
+        String text = jetbrains.mps.util.SNodeOperations.getModelLongName(myModelDescriptor);
         if (myModelDescriptor instanceof DefaultSModelDescriptor) {
           text += "(" + ((DefaultSModelDescriptor) myModelDescriptor).getLoadingState().toString() + ")";
         }
@@ -192,7 +193,7 @@ public class ModelRepositoryComponent {
 
     private SModelListener myModelListener = new SModelAdapter() {
       @Override
-      public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
+      public void modelLoadingStateChanged(SModel sm, ModelLoadingState oldState, ModelLoadingState newState) {
         requestUpdate();
       }
     };

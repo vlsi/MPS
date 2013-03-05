@@ -33,10 +33,11 @@ import com.intellij.refactoring.rename.RenameHandler;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.idea.core.projectView.MPSDataKeys;
+import jetbrains.mps.idea.core.MPSDataKeys;
 import jetbrains.mps.project.ReferenceUpdater;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
@@ -56,7 +57,7 @@ public class ModelRenameHandler implements RenameHandler {
   public boolean isAvailableOnDataContext(DataContext dataContext) {
     IFile modelFile = getModelFile(dataContext);
     if (modelFile == null) return false;
-    SModelDescriptor descriptor = SModelFileTracker.getInstance().findModel(modelFile);
+    SModel descriptor = SModelFileTracker.getInstance().findModel(modelFile);
     return (descriptor instanceof EditableSModelDescriptor);
   }
 
@@ -75,16 +76,16 @@ public class ModelRenameHandler implements RenameHandler {
     IFile modelFile = getModelFile(dataContext);
     if (modelFile == null) return;
 
-    SModelDescriptor descriptor = SModelFileTracker.getInstance().findModel(modelFile);
+    SModel descriptor = SModelFileTracker.getInstance().findModel(modelFile);
     if (!(descriptor instanceof EditableSModelDescriptor)) return;
 
     final EditableSModelDescriptor modelDescriptor = (EditableSModelDescriptor) descriptor;
     final AtomicReference<String> targetFqName = new AtomicReference<String>(null);
 
     Pair<String, Boolean> result = Messages.showInputDialogWithCheckBox(
-      MPSBundle.message("rename.model.to", modelDescriptor.getLongName()),
+      MPSBundle.message("rename.model.to", SNodeOperations.getModelLongName(modelDescriptor)),
       MPSBundle.message("rename.model"),
-      MPSBundle.message("update.all.references"), true, true, null, modelDescriptor.getLongName(),
+      MPSBundle.message("update.all.references"), true, true, null, SNodeOperations.getModelLongName(modelDescriptor),
       new MyInputValidator() {
         @Override
         protected void doRename(String fqName) {
@@ -135,7 +136,7 @@ public class ModelRenameHandler implements RenameHandler {
     return modelFile;
   }
 
-  private void deleteGeneratedFiles(SModelDescriptor modelDescriptor) {
+  private void deleteGeneratedFiles(SModel modelDescriptor) {
     // TODO: find a way to safely delete generated files. Until then, let's not make a mess
     if (true) return;
     String moduleOutputPath = modelDescriptor.getModule().getOutputFor(modelDescriptor);

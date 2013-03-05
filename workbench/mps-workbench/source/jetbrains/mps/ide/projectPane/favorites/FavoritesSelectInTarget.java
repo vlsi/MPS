@@ -25,7 +25,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -88,9 +88,9 @@ public class FavoritesSelectInTarget extends AbstractProjectViewSelectInTarget {
     Project project = getProject();
     MPSNodeVirtualFile nodeVirtualFile = (MPSNodeVirtualFile) context.getVirtualFile();
     final SNode nodeToSelect = nodeVirtualFile.getNode();
-    SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
+    SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
       @Override
-      public SModelDescriptor compute() {
+      public SModel compute() {
         return nodeToSelect.getModel().getModelDescriptor();
       }
     });

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;
 
 import jetbrains.mps.generator.TransientSModel;
 
@@ -139,7 +139,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.getModel() != null && targetNode.getModel() != null) {
       // 'mature' reference
-      return new StaticReference(role, sourceNode, (SModelReference) targetNode.getModel().getReference(), targetNode.getNodeId(), targetNode.getName());
+      return new StaticReference(role, sourceNode, targetNode.getModel().getReference(), targetNode.getNodeId(), targetNode.getName());
     }
     return new StaticReference(role, sourceNode, targetNode);
   }

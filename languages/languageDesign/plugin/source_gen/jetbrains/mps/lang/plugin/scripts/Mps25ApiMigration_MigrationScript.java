@@ -15,7 +15,7 @@ import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -1126,7 +1126,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
         SModelReference[] modelRefs = new SModelReference[]{new SModelReference("jetbrains.mps.editor.runtime", ""), new SModelReference("jetbrains.mps.baseLanguage.util", ""), new SModelReference("jetbrains.mps.ide.editor.util", "")};
         IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
         for (SModelReference modelRef : modelRefs) {
-          ((SModel) SNodeOperations.getModel(node)).addModelImport(modelRef, false);
+          ((SModelInternal) SNodeOperations.getModel(node)).addModelImport(modelRef, false);
           ModuleReference moduleReference = SModelRepository.getInstance().getModelDescriptor(modelRef).getModule().getModuleReference();
           module.addDependency(moduleReference, false);
         }
@@ -1571,7 +1571,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
     quotedNode_2.addChild("expression", quotedNode_4);
     quotedNode_1.addChild("operand", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~Language.getStructureModelDescriptor():jetbrains.mps.smodel.SModelDescriptor")));
+    quotedNode_3.setReference("baseMethodDeclaration", jetbrains.mps.smodel.SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~Language.getStructureModelDescriptor():org.jetbrains.mps.openapi.model.SModel")));
     quotedNode_1.addChild("operation", quotedNode_3);
     return quotedNode_1;
   }

@@ -9,10 +9,9 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.annotations.NotNull;
@@ -56,7 +55,7 @@ public class SModelUtil {
   public static SNode findNodeByFQName(String nodeFQName, SNode concept, IScope scope) {
     String modelName = NameUtil.namespaceFromLongName(nodeFQName);
     String name = NameUtil.shortNameFromLongName(nodeFQName);
-    for (SModelDescriptor descriptor : Sequence.fromIterable(scope.getModelDescriptors())) {
+    for (SModel descriptor : Sequence.fromIterable(scope.getModelDescriptors())) {
       if (!(modelName.equals(SNodeOperations.getModelLongName(descriptor)))) {
         continue;
       }

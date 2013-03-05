@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
@@ -62,7 +63,7 @@ public class HighlightUtil {
 
   public static Color getMessageColor(MessageStatus messageStatus) {
     if (messageStatus == MessageStatus.ERROR) return Color.RED;
-    if (messageStatus == MessageStatus.WARNING) return Color.YELLOW;
+    if (messageStatus == MessageStatus.WARNING) return StyleRegistry.getInstance().isDarkTheme() ? new Color(140, 140, 0) : Color.YELLOW;
     if (messageStatus == MessageStatus.OK) return Color.LIGHT_GRAY;
     return Color.BLACK;
   }

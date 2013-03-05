@@ -24,7 +24,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeReference;import org.jetbrains.mps.openapi.model.SReference;import org.jetbrains.mps.openapi.model.SModelId;import org.jetbrains.mps.openapi.model.SModel;import org.jetbrains.mps.openapi.model.SModel;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
@@ -122,7 +122,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       @Override
       public void run() {
-        SModelDescriptor targetModel = getTargetModel(treePath);
+        SModel targetModel = getTargetModel(treePath);
         if (targetModel == null) return;
 
         for (Pair<SNode, String> sourceNode : getNodesToMove(targetModel, targetPackage, sourceNodes)) {
@@ -139,7 +139,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     });
   }
 
-  private List<Pair<SNode, String>> getNodesToMove(@NotNull SModelDescriptor targetModel, String virtualPackage, List<Pair<SNodeReference, String>> sourceNodes) {
+  private List<Pair<SNode, String>> getNodesToMove(@NotNull SModel targetModel, String virtualPackage, List<Pair<SNodeReference, String>> sourceNodes) {
     if (targetModel == null) return Collections.emptyList();
     List<Pair<SNode, String>> result = new ArrayList<Pair<SNode, String>>();
     for (final Pair<SNodeReference, String> node : sourceNodes) {
@@ -147,7 +147,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
       if (snode==null) continue;
       if (EqualUtil.equals(virtualPackage + node.o2, getVirtualPackage(snode))) continue;
-      SModelDescriptor sourceModel = snode.getModel().getModelDescriptor();
+      SModel sourceModel = snode.getModel().getModelDescriptor();
       if (EqualUtil.equals(sourceModel, targetModel)) {
         result.add(new Pair(snode, node.o2));
       }
@@ -172,7 +172,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
     return null;
   }
 
-  private SModelDescriptor getTargetModel(TreePath target) {
+  private SModel getTargetModel(TreePath target) {
     MPSTreeNode node = (MPSTreeNode) target.getLastPathComponent();
     while (node != null && !(node instanceof SModelTreeNode)) {
       node = (MPSTreeNode) node.getParent();

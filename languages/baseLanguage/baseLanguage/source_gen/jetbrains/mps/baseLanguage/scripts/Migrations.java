@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class Migrations {
@@ -715,14 +715,14 @@ public class Migrations {
     return null;
   }
 
-  private static SModelReference check_b5gojm_a0a0a0e0b0a0a0q(SModelDescriptor checkedDotOperand) {
+  private static SModelReference check_b5gojm_a0a0a0e0b0a0a0q(SModelInternal checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModelReference();
+      return checkedDotOperand.getReference();
     }
     return null;
   }
 
-  private static SModelDescriptor check_b5gojm_a0a0a0a4a1a0a0a61(SModel checkedDotOperand) {
+  private static SModelInternal check_b5gojm_a0a0a0a4a1a0a0a61(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

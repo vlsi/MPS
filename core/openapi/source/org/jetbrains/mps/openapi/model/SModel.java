@@ -15,9 +15,12 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
@@ -30,7 +33,11 @@ public interface SModel {
 
   @Deprecated
 //todo migration only. REMOVE
-  SModelDescriptor getModelDescriptor();
+  SModel getSModel();
+
+  @Deprecated
+//todo migration only. REMOVE
+  SModelInternal getModelDescriptor();
 
   /**
    * Returns the id of the model valid within the containing module.
@@ -55,7 +62,7 @@ public interface SModel {
   /**
    * Retrieves the owning module
    */
-  SModule getModule();
+  IModule getModule();
 
   boolean isReadOnly();
 
@@ -65,6 +72,7 @@ public interface SModel {
    */
   Iterable<SNode> getRootNodes();
 
+  // TODO remove
   boolean isRoot(SNode node);
 
   /**
@@ -116,9 +124,13 @@ public interface SModel {
    */
   void unload();
 
+  void attach();
+
+  void detach();
+
   /**
-   * Represents a problem with the persitence.
-   */
+     * Represents a problem with the persitence.
+     */
   interface Problem {
 
     int getColumn();

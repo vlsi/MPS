@@ -1,14 +1,15 @@
 package jetbrains.mps.psiTest;
 
 import java.io.IOException;
-import java.io.InterruptedIOException;
 
 
 public class PsiTestMain {
 
+    public static int CONST = 1;
+
     public static void main(String[] args) {
         ConcreteNode node1 = new ConcreteNode();
-        AbstractNode node2 = new ConcreteNode();
+//        AbstractNode node2 = new ConcreteNode();
         ConcreteNode node3 = new ConcreteNodeEx();
 
         StringBuilder sb = new StringBuilder();
@@ -38,6 +39,8 @@ public class PsiTestMain {
             case BLACK: break;
             case RED: break;
         }
+
+//        Marker m = null;
 
         Container<String> container = new Container<String>("first");
         String var = container.head;
